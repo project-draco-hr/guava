@@ -1,0 +1,11 @@
+{
+  checkArgument(array.length > 0);
+  int min=array[0] & 0xFF;
+  for (int i=1; i < array.length; i++) {
+    int next=array[i] & 0xFF;
+    if (next < min) {
+      min=next;
+    }
+  }
+  return (byte)min;
+}

@@ -1,0 +1,9 @@
+{
+  if (value > 255) {
+    return (byte)255;
+  }
+  if (value < 0) {
+    return (byte)0;
+  }
+  return (byte)value;
+}

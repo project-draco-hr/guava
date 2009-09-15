@@ -1,0 +1,10 @@
+{
+  Preconditions.checkNotNull(in);
+  Preconditions.checkNotNull(charset);
+  return new InputSupplier<InputStreamReader>(){
+    public InputStreamReader getInput() throws IOException {
+      return new InputStreamReader(in.getInput(),charset);
+    }
+  }
+;
+}

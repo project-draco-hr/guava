@@ -1,0 +1,4 @@
+{
+  checkArgument(value >> 8 == 0,"out of range: %s",value);
+  return (byte)value;
+}

@@ -1,0 +1,23 @@
+{
+  long count=0;
+  boolean threw=true;
+  InputStream in=supplier.getInput();
+  try {
+    while (true) {
+      long amt=in.skip(Integer.MAX_VALUE);
+      if (amt == 0) {
+        if (in.read() == -1) {
+          threw=false;
+          return count;
+        }
+        count++;
+      }
+ else {
+        count+=amt;
+      }
+    }
+  }
+  finally {
+    Closeables.close(in,threw);
+  }
+}

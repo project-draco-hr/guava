@@ -1,0 +1,5 @@
+{
+  ValueFuture<T> future=ValueFuture.create();
+  future.set(value);
+  return future;
+}

@@ -1,0 +1,13 @@
+{
+  final LookupTable table=new LookupTable();
+  setBits(table);
+  return new CharMatcher(){
+    @Override public boolean matches(    char c){
+      return table.get(c);
+    }
+    @Override public CharMatcher precomputed(){
+      return this;
+    }
+  }
+;
+}

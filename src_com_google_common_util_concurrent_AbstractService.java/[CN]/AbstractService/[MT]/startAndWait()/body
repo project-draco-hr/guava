@@ -1,0 +1,12 @@
+{
+  try {
+    return start().get();
+  }
+ catch (  InterruptedException e) {
+    Thread.currentThread().interrupt();
+    throw new RuntimeException(e);
+  }
+catch (  ExecutionException e) {
+    throw Throwables.propagate(e.getCause());
+  }
+}

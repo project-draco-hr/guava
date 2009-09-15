@@ -1,0 +1,12 @@
+{
+  Preconditions.checkNotNull(from);
+  boolean threw=true;
+  W out=to.getOutput();
+  try {
+    out.append(from);
+    threw=false;
+  }
+  finally {
+    Closeables.close(out,threw);
+  }
+}

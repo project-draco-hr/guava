@@ -1,0 +1,11 @@
+{
+  if (collection instanceof DoubleArrayAsList) {
+    return ((DoubleArrayAsList)collection).toDoubleArray();
+  }
+  int counter=0;
+  double[] array=new double[collection.size()];
+  for (  Double value : collection) {
+    array[counter++]=value;
+  }
+  return array;
+}

@@ -1,0 +1,2 @@
+ListenableFuture<T> delegate
+Function<Exception,E> mapper

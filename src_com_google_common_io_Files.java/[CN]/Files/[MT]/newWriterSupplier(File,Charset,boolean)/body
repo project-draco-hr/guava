@@ -1,0 +1,3 @@
+{
+  return CharStreams.newWriterSupplier(newOutputStreamSupplier(file,append),charset);
+}

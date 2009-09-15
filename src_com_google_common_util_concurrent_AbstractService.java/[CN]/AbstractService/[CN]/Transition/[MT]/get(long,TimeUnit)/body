@@ -1,0 +1,6 @@
+{
+  if (done.await(timeout,unit)) {
+    return getImmediately();
+  }
+  throw new TimeoutException();
+}

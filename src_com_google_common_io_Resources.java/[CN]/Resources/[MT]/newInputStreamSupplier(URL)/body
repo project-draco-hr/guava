@@ -1,0 +1,9 @@
+{
+  checkNotNull(url);
+  return new InputSupplier<InputStream>(){
+    public InputStream getInput() throws IOException {
+      return url.openStream();
+    }
+  }
+;
+}

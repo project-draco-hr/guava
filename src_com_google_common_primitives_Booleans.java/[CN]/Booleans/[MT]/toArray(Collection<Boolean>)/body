@@ -1,0 +1,11 @@
+{
+  if (collection instanceof BooleanArrayAsList) {
+    return ((BooleanArrayAsList)collection).toBooleanArray();
+  }
+  int counter=0;
+  boolean[] array=new boolean[collection.size()];
+  for (  Boolean value : collection) {
+    array[counter++]=value;
+  }
+  return array;
+}

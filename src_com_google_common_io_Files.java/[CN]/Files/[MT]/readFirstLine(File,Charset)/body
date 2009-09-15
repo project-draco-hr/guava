@@ -1,0 +1,3 @@
+{
+  return CharStreams.readFirstLine(Files.newReaderSupplier(file,charset));
+}

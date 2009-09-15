@@ -1,0 +1,3 @@
+{
+  return new Or(Arrays.asList(this,checkNotNull(other)));
+}

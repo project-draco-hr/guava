@@ -1,0 +1,11 @@
+{
+  if (collection instanceof IntArrayAsList) {
+    return ((IntArrayAsList)collection).toIntArray();
+  }
+  int counter=0;
+  int[] array=new int[collection.size()];
+  for (  Integer value : collection) {
+    array[counter++]=value;
+  }
+  return array;
+}

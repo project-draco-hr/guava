@@ -1,0 +1,2 @@
+Function<? super I,? extends ListenableFuture<? extends O>> function
+ListenableFuture<? extends I> inputFuture

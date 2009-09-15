@@ -1,0 +1,14 @@
+{
+  lock.lock();
+  try {
+    if (shutdownWhenStartupFinishes && state == State.STARTING) {
+      return State.STOPPING;
+    }
+ else {
+      return state;
+    }
+  }
+  finally {
+    lock.unlock();
+  }
+}

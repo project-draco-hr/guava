@@ -1,0 +1,5 @@
+{
+  if (read(in,b,off,len) != len) {
+    throw new EOFException();
+  }
+}

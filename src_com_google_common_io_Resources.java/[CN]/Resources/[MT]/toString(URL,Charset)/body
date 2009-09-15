@@ -1,0 +1,3 @@
+{
+  return CharStreams.toString(newReaderSupplier(url,charset));
+}

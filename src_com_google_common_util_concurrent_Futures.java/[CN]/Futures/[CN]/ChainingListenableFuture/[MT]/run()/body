@@ -1,0 +1,38 @@
+{
+  try {
+    I sourceResult;
+    try {
+      sourceResult=inputFuture.get();
+    }
+ catch (    CancellationException e) {
+      cancel();
+      return;
+    }
+catch (    ExecutionException e) {
+      setException(e.getCause());
+      return;
+    }
+    final ListenableFuture<? extends O> outputFuture=function.apply(sourceResult);
+    outputFuture.addListener(new Runnable(){
+      public void run(){
+        try {
+          set(makeUninterruptible(outputFuture).get());
+        }
+ catch (        ExecutionException e) {
+          setException(e.getCause());
+        }
+      }
+    }
+,Executors.sameThreadExecutor());
+  }
+ catch (  UndeclaredThrowableException e) {
+    setException(e.getCause());
+  }
+catch (  RuntimeException e) {
+    setException(e);
+  }
+catch (  Error e) {
+    setException(e);
+    throw e;
+  }
+}

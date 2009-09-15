@@ -1,0 +1,8 @@
+{
+  if (result == State.FAILED) {
+    throw new ExecutionException(failureCause);
+  }
+ else {
+    return result;
+  }
+}

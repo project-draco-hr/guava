@@ -1,0 +1,19 @@
+{
+  Preconditions.checkArgument(file.length() <= Integer.MAX_VALUE);
+  if (file.length() == 0) {
+    return ByteStreams.toByteArray(newInputStreamSupplier(file));
+  }
+ else {
+    byte[] b=new byte[(int)file.length()];
+    boolean threw=true;
+    InputStream in=new FileInputStream(file);
+    try {
+      ByteStreams.readFully(in,b);
+      threw=false;
+    }
+  finally {
+      Closeables.close(in,threw);
+    }
+    return b;
+  }
+}

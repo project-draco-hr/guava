@@ -1,0 +1,4 @@
+{
+  Preconditions.checkNotNull(factory);
+  this.factory=factory;
+}

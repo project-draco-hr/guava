@@ -1,0 +1,5 @@
+{
+  checkState(this.result == null);
+  this.result=result;
+  done.countDown();
+}

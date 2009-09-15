@@ -1,0 +1,17 @@
+{
+  checkNotNull(cause);
+  lock.lock();
+  try {
+    if (state == State.STARTING) {
+      startup.transitionFailed(cause);
+      shutdown.transitionFailed(new Exception("Service failed to start.",cause));
+    }
+ else     if (state == State.STOPPING) {
+      shutdown.transitionFailed(cause);
+    }
+    state=State.FAILED;
+  }
+  finally {
+    lock.unlock();
+  }
+}

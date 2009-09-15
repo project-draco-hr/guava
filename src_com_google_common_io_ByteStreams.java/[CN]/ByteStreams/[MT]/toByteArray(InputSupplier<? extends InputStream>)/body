@@ -1,0 +1,12 @@
+{
+  boolean threw=true;
+  InputStream in=supplier.getInput();
+  try {
+    byte[] result=toByteArray(in);
+    threw=false;
+    return result;
+  }
+  finally {
+    Closeables.close(in,threw);
+  }
+}

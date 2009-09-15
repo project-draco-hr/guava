@@ -1,0 +1,21 @@
+{
+  Preconditions.checkNotNull(supplier);
+  Preconditions.checkArgument(offset >= 0,"offset is negative");
+  Preconditions.checkArgument(length >= 0,"length is negative");
+  return new InputSupplier<InputStream>(){
+    @Override public InputStream getInput() throws IOException {
+      InputStream in=supplier.getInput();
+      if (offset > 0) {
+        try {
+          skipFully(in,offset);
+        }
+ catch (        IOException e) {
+          Closeables.closeQuietly(in);
+          throw e;
+        }
+      }
+      return new LimitInputStream(in,length);
+    }
+  }
+;
+}

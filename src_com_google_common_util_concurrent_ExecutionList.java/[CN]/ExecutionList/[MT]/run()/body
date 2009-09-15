@@ -1,0 +1,8 @@
+{
+synchronized (runnables) {
+    executed=true;
+  }
+  for (  RunnableExecutorPair runnableAndExecutor : runnables) {
+    runnableAndExecutor.execute();
+  }
+}

@@ -1,0 +1,16 @@
+{
+  lock.lock();
+  try {
+    if (state == State.NEW) {
+      state=State.STARTING;
+      doStart();
+    }
+  }
+ catch (  Throwable startupFailure) {
+    notifyFailed(startupFailure);
+  }
+ finally {
+    lock.unlock();
+  }
+  return startup;
+}

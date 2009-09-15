@@ -1,0 +1,11 @@
+{
+  if (collection instanceof ByteArrayAsList) {
+    return ((ByteArrayAsList)collection).toByteArray();
+  }
+  int counter=0;
+  byte[] array=new byte[collection.size()];
+  for (  Byte value : collection) {
+    array[counter++]=value;
+  }
+  return array;
+}

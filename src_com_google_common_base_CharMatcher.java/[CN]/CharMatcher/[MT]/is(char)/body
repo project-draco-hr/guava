@@ -1,0 +1,26 @@
+{
+  return new CharMatcher(){
+    @Override public boolean matches(    char c){
+      return c == match;
+    }
+    @Override public String replaceFrom(    CharSequence sequence,    char replacement){
+      return sequence.toString().replace(match,replacement);
+    }
+    @Override public CharMatcher and(    CharMatcher other){
+      return other.matches(match) ? this : NONE;
+    }
+    @Override public CharMatcher or(    CharMatcher other){
+      return other.matches(match) ? other : super.or(other);
+    }
+    @Override public CharMatcher negate(){
+      return isNot(match);
+    }
+    @Override protected void setBits(    LookupTable table){
+      table.set(match);
+    }
+    @Override public CharMatcher precomputed(){
+      return this;
+    }
+  }
+;
+}

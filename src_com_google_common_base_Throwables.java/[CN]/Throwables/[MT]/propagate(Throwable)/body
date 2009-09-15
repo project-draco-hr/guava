@@ -1,0 +1,4 @@
+{
+  propagateIfPossible(throwable);
+  throw new RuntimeException(throwable);
+}

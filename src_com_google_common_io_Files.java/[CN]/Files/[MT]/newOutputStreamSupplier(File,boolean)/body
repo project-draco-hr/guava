@@ -1,0 +1,9 @@
+{
+  Preconditions.checkNotNull(file);
+  return new OutputSupplier<FileOutputStream>(){
+    public FileOutputStream getOutput() throws IOException {
+      return new FileOutputStream(file,append);
+    }
+  }
+;
+}

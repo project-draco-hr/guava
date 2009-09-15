@@ -1,0 +1,16 @@
+{
+  Preconditions.checkNotNull(runnable,"Runnable was null.");
+  Preconditions.checkNotNull(executor,"Executor was null.");
+  boolean executeImmediate=false;
+synchronized (runnables) {
+    if (!executed) {
+      runnables.add(new RunnableExecutorPair(runnable,executor));
+    }
+ else {
+      executeImmediate=true;
+    }
+  }
+  if (executeImmediate) {
+    executor.execute(runnable);
+  }
+}

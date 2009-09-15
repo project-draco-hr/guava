@@ -1,0 +1,12 @@
+{
+  boolean threw=true;
+  R r=supplier.getInput();
+  try {
+    String line=new LineReader(r).readLine();
+    threw=false;
+    return line;
+  }
+  finally {
+    Closeables.close(r,threw);
+  }
+}

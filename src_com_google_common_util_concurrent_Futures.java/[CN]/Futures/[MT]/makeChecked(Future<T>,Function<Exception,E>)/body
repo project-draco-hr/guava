@@ -1,0 +1,3 @@
+{
+  return new MappingCheckedFuture<T,E>(makeListenable(future),mapper);
+}

@@ -1,0 +1,8 @@
+{
+  for (  CharMatcher matcher : components) {
+    if (!matcher.matches(c)) {
+      return false;
+    }
+  }
+  return true;
+}

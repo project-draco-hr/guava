@@ -1,0 +1,26 @@
+{
+  while (offset != -1) {
+    int start=offset;
+    int end;
+    int separatorPosition=separatorStart(offset);
+    if (separatorPosition == -1) {
+      end=toSplit.length();
+      offset=-1;
+    }
+ else {
+      end=separatorPosition;
+      offset=separatorEnd(separatorPosition);
+    }
+    while (start < end && trimmer.matches(toSplit.charAt(start))) {
+      start++;
+    }
+    while (end > start && trimmer.matches(toSplit.charAt(end - 1))) {
+      end--;
+    }
+    if (omitEmptyStrings && start == end) {
+      continue;
+    }
+    return toSplit.subSequence(start,end).toString();
+  }
+  return endOfData();
+}

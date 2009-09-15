@@ -1,0 +1,14 @@
+{
+  return readBytes(supplier,new ByteProcessor<Long>(){
+    public boolean processBytes(    byte[] buf,    int off,    int len){
+      checksum.update(buf,off,len);
+      return true;
+    }
+    public Long getResult(){
+      long result=checksum.getValue();
+      checksum.reset();
+      return result;
+    }
+  }
+);
+}

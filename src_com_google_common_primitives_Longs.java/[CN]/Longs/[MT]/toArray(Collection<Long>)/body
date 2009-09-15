@@ -1,0 +1,11 @@
+{
+  if (collection instanceof LongArrayAsList) {
+    return ((LongArrayAsList)collection).toLongArray();
+  }
+  int counter=0;
+  long[] array=new long[collection.size()];
+  for (  Long value : collection) {
+    array[counter++]=value;
+  }
+  return array;
+}

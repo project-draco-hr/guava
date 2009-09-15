@@ -1,0 +1,5 @@
+{
+  if (declaredType.isInstance(throwable)) {
+    throw declaredType.cast(throwable);
+  }
+}

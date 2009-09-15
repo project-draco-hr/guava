@@ -1,0 +1,4 @@
+{
+  checkNotNull(executor);
+  this.executor=executor;
+}

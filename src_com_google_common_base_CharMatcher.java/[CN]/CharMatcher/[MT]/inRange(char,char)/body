@@ -1,0 +1,21 @@
+{
+  checkArgument(endInclusive >= startInclusive);
+  return new CharMatcher(){
+    @Override public boolean matches(    char c){
+      return startInclusive <= c && c <= endInclusive;
+    }
+    @Override protected void setBits(    LookupTable table){
+      char c=startInclusive;
+      while (true) {
+        table.set(c);
+        if (c++ == endInclusive) {
+          break;
+        }
+      }
+    }
+    @Override public CharMatcher precomputed(){
+      return this;
+    }
+  }
+;
+}

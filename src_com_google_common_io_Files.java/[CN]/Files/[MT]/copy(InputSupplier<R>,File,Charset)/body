@@ -1,0 +1,3 @@
+{
+  CharStreams.copy(from,newWriterSupplier(to,charset));
+}

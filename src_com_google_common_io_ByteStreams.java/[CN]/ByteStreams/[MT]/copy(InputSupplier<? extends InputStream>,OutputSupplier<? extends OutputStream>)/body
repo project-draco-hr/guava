@@ -1,0 +1,18 @@
+{
+  boolean threw=true;
+  InputStream in=from.getInput();
+  try {
+    OutputStream out=to.getOutput();
+    try {
+      long count=copy(in,out);
+      threw=false;
+      return count;
+    }
+  finally {
+      Closeables.close(out,threw);
+    }
+  }
+  finally {
+    Closeables.close(in,threw);
+  }
+}

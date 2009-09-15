@@ -1,0 +1,37 @@
+{
+switch (sequence.length()) {
+case 0:
+    return NONE;
+case 1:
+  return is(sequence.charAt(0));
+case 2:
+final char match1=sequence.charAt(0);
+final char match2=sequence.charAt(1);
+return new CharMatcher(){
+@Override public boolean matches(char c){
+return c == match1 || c == match2;
+}
+@Override protected void setBits(LookupTable table){
+table.set(match1);
+table.set(match2);
+}
+@Override public CharMatcher precomputed(){
+return this;
+}
+}
+;
+}
+final char[] chars=sequence.toString().toCharArray();
+Arrays.sort(chars);
+return new CharMatcher(){
+@Override public boolean matches(char c){
+return Arrays.binarySearch(chars,c) >= 0;
+}
+@Override protected void setBits(LookupTable table){
+for (char c : chars) {
+table.set(c);
+}
+}
+}
+;
+}

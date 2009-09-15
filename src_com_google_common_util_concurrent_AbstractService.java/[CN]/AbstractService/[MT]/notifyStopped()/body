@@ -1,0 +1,15 @@
+{
+  lock.lock();
+  try {
+    if (state != State.STOPPING && state != State.RUNNING) {
+      IllegalStateException failure=new IllegalStateException("Cannot notifyStopped() when the service is " + state);
+      notifyFailed(failure);
+      throw failure;
+    }
+    state=State.TERMINATED;
+    shutdown.transitionSucceeded(State.TERMINATED);
+  }
+  finally {
+    lock.unlock();
+  }
+}

@@ -1,0 +1,3 @@
+{
+  return chain(input,function,Executors.sameThreadExecutor());
+}

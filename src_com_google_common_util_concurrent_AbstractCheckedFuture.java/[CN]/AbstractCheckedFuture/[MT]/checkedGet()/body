@@ -1,0 +1,15 @@
+{
+  try {
+    return get();
+  }
+ catch (  InterruptedException e) {
+    cancel(true);
+    throw mapException(e);
+  }
+catch (  CancellationException e) {
+    throw mapException(e);
+  }
+catch (  ExecutionException e) {
+    throw mapException(e);
+  }
+}

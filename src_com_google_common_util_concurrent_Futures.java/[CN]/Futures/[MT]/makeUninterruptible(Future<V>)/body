@@ -1,0 +1,57 @@
+{
+  checkNotNull(future);
+  if (future instanceof UninterruptibleFuture) {
+    return (UninterruptibleFuture<V>)future;
+  }
+  return new UninterruptibleFuture<V>(){
+    public boolean cancel(    boolean mayInterruptIfRunning){
+      return future.cancel(mayInterruptIfRunning);
+    }
+    public boolean isCancelled(){
+      return future.isCancelled();
+    }
+    public boolean isDone(){
+      return future.isDone();
+    }
+    public V get(    long timeoutDuration,    TimeUnit timeoutUnit) throws TimeoutException, ExecutionException {
+      boolean interrupted=false;
+      try {
+        long timeoutNanos=timeoutUnit.toNanos(timeoutDuration);
+        long end=System.nanoTime() + timeoutNanos;
+        for (long remaining=timeoutNanos; remaining > 0; remaining=end - System.nanoTime()) {
+          try {
+            return future.get(remaining,TimeUnit.NANOSECONDS);
+          }
+ catch (          InterruptedException ignored) {
+            interrupted=true;
+          }
+        }
+        throw new TimeoutException();
+      }
+  finally {
+        if (interrupted) {
+          Thread.currentThread().interrupt();
+        }
+      }
+    }
+    public V get() throws ExecutionException {
+      boolean interrupted=false;
+      try {
+        while (true) {
+          try {
+            return future.get();
+          }
+ catch (          InterruptedException ignored) {
+            interrupted=true;
+          }
+        }
+      }
+  finally {
+        if (interrupted) {
+          Thread.currentThread().interrupt();
+        }
+      }
+    }
+  }
+;
+}

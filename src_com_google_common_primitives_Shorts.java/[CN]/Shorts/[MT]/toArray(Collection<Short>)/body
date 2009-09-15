@@ -1,0 +1,11 @@
+{
+  if (collection instanceof ShortArrayAsList) {
+    return ((ShortArrayAsList)collection).toShortArray();
+  }
+  int counter=0;
+  short[] array=new short[collection.size()];
+  for (  Short value : collection) {
+    array[counter++]=value;
+  }
+  return array;
+}

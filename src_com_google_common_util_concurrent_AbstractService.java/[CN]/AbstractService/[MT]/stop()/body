@@ -1,0 +1,25 @@
+{
+  lock.lock();
+  try {
+    if (state == State.NEW) {
+      state=State.TERMINATED;
+      startup.transitionSucceeded(State.TERMINATED);
+      shutdown.transitionSucceeded(State.TERMINATED);
+    }
+ else     if (state == State.STARTING) {
+      shutdownWhenStartupFinishes=true;
+      startup.transitionSucceeded(State.STOPPING);
+    }
+ else     if (state == State.RUNNING) {
+      state=State.STOPPING;
+      doStop();
+    }
+  }
+ catch (  Throwable shutdownFailure) {
+    notifyFailed(shutdownFailure);
+  }
+ finally {
+    lock.unlock();
+  }
+  return shutdown;
+}

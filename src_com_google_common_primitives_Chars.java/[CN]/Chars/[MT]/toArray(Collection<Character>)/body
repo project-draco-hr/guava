@@ -1,0 +1,11 @@
+{
+  if (collection instanceof CharArrayAsList) {
+    return ((CharArrayAsList)collection).toCharArray();
+  }
+  int counter=0;
+  char[] array=new char[collection.size()];
+  for (  Character value : collection) {
+    array[counter++]=value;
+  }
+  return array;
+}

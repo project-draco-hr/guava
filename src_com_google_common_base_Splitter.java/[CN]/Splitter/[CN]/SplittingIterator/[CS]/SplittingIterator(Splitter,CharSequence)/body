@@ -1,0 +1,5 @@
+{
+  this.trimmer=splitter.trimmer;
+  this.omitEmptyStrings=splitter.omitEmptyStrings;
+  this.toSplit=toSplit;
+}

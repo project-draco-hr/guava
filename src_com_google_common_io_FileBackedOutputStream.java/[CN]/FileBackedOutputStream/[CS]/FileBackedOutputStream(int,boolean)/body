@@ -1,0 +1,30 @@
+{
+  this.fileThreshold=fileThreshold;
+  this.resetOnFinalize=resetOnFinalize;
+  memory=new MemoryOutput();
+  out=memory;
+  if (resetOnFinalize) {
+    supplier=new InputSupplier<InputStream>(){
+      public InputStream getInput() throws IOException {
+        return openStream();
+      }
+      @Override protected void finalize(){
+        try {
+          reset();
+        }
+ catch (        Throwable t) {
+          t.printStackTrace(System.err);
+        }
+      }
+    }
+;
+  }
+ else {
+    supplier=new InputSupplier<InputStream>(){
+      public InputStream getInput() throws IOException {
+        return openStream();
+      }
+    }
+;
+  }
+}

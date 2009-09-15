@@ -1,0 +1,11 @@
+{
+  char c=Character.MIN_VALUE;
+  while (true) {
+    if (matches(c)) {
+      table.set(c);
+    }
+    if (c++ == Character.MAX_VALUE) {
+      break;
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  if (collection instanceof FloatArrayAsList) {
+    return ((FloatArrayAsList)collection).toFloatArray();
+  }
+  int counter=0;
+  float[] array=new float[collection.size()];
+  for (  Float value : collection) {
+    array[counter++]=value;
+  }
+  return array;
+}

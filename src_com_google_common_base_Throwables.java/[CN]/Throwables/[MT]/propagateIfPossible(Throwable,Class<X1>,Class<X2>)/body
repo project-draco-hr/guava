@@ -1,0 +1,4 @@
+{
+  propagateIfInstanceOf(throwable,aDeclaredType);
+  propagateIfPossible(throwable,anotherDeclaredType);
+}

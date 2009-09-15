@@ -1,0 +1,1 @@
+Iterator<? extends InputSupplier<? extends Reader>> readers

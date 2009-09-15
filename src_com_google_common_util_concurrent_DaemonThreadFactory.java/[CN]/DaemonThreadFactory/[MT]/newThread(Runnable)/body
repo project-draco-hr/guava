@@ -1,0 +1,5 @@
+{
+  Thread t=factory.newThread(r);
+  t.setDaemon(true);
+  return t;
+}

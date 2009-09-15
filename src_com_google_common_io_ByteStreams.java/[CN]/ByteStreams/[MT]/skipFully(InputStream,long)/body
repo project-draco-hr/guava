@@ -1,0 +1,14 @@
+{
+  while (n > 0) {
+    long amt=in.skip(n);
+    if (amt == 0) {
+      if (in.read() == -1) {
+        throw new EOFException();
+      }
+      n--;
+    }
+ else {
+      n-=amt;
+    }
+  }
+}
