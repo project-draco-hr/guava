@@ -1,7 +1,7 @@
 {
   if (!hasListeners.get() && hasListeners.compareAndSet(false,true)) {
     adapterExecutor.execute(new Runnable(){
-      @Override public void run(){
+      public void run(){
         try {
           delegate.get();
         }

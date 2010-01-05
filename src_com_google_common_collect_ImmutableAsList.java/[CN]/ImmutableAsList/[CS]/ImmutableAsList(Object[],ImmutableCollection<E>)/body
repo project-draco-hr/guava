@@ -1,0 +1,4 @@
+{
+  super(array,0,array.length);
+  this.collection=collection;
+}

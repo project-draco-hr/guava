@@ -1,6 +1,6 @@
 {
   return new Callable<T>(){
-    @Override public T call(){
+    public T call(){
       return value;
     }
   }

@@ -1,0 +1,11 @@
+{
+  long dividend=1;
+  ImmutableList.Builder<Axis> builder=ImmutableList.builder();
+  for (  Set<? extends B> set : sets) {
+    Axis axis=new Axis(set,(int)dividend);
+    builder.add(axis);
+    dividend*=axis.size();
+  }
+  this.axes=builder.build();
+  size=Ints.checkedCast(dividend);
+}

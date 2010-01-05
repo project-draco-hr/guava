@@ -1,0 +1,8 @@
+{
+  String name=clazz.getName();
+  int start=name.lastIndexOf('$');
+  if (start == -1) {
+    start=name.lastIndexOf('.');
+  }
+  return name.substring(start + 1);
+}

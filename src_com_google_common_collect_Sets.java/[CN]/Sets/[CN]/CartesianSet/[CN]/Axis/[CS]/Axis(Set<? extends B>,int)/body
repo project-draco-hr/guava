@@ -1,0 +1,4 @@
+{
+  choices=ImmutableSet.copyOf(set);
+  this.dividend=dividend;
+}

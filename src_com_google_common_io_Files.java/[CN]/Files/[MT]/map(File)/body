@@ -1,0 +1,3 @@
+{
+  return map(file,MapMode.READ_ONLY);
+}

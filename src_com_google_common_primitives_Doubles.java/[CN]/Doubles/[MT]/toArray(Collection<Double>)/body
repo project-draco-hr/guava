@@ -2,10 +2,11 @@
   if (collection instanceof DoubleArrayAsList) {
     return ((DoubleArrayAsList)collection).toDoubleArray();
   }
-  int counter=0;
-  double[] array=new double[collection.size()];
-  for (  Double value : collection) {
-    array[counter++]=value;
+  Object[] boxedArray=collection.toArray();
+  int len=boxedArray.length;
+  double[] array=new double[len];
+  for (int i=0; i < len; i++) {
+    array[i]=(Double)boxedArray[i];
   }
   return array;
 }

@@ -2,10 +2,11 @@
   if (collection instanceof ShortArrayAsList) {
     return ((ShortArrayAsList)collection).toShortArray();
   }
-  int counter=0;
-  short[] array=new short[collection.size()];
-  for (  Short value : collection) {
-    array[counter++]=value;
+  Object[] boxedArray=collection.toArray();
+  int len=boxedArray.length;
+  short[] array=new short[len];
+  for (int i=0; i < len; i++) {
+    array[i]=(Short)boxedArray[i];
   }
   return array;
 }

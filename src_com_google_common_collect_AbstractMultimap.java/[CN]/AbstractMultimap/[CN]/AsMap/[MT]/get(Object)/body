@@ -1,5 +1,5 @@
 {
-  Collection<V> collection=submap.get(key);
+  Collection<V> collection=Maps.safeGet(submap,key);
   if (collection == null) {
     return null;
   }

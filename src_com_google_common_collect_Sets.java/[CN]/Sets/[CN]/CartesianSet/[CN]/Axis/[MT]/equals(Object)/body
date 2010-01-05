@@ -1,0 +1,7 @@
+{
+  if (obj instanceof CartesianSet.Axis) {
+    CartesianSet.Axis that=(CartesianSet.Axis)obj;
+    return this.choices.equals(that.choices);
+  }
+  return false;
+}

@@ -1,0 +1,4 @@
+{
+  fieldString.add(String.valueOf(value));
+  return this;
+}

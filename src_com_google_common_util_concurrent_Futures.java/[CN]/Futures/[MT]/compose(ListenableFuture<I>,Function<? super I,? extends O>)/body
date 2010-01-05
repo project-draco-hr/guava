@@ -1,10 +1,3 @@
 {
-  Function<I,ListenableFuture<O>> wrapperFunction=new Function<I,ListenableFuture<O>>(){
-    public ListenableFuture<O> apply(    I input){
-      O output=function.apply(input);
-      return immediateFuture(output);
-    }
-  }
-;
-  return chain(future,wrapperFunction);
+  return compose(future,function,Executors.sameThreadExecutor());
 }

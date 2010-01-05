@@ -6,6 +6,6 @@
  else   if (array.length > size) {
     array[size]=null;
   }
-  System.arraycopy(elements,fromIndex,array,0,size);
+  Platform.unsafeArrayCopy(elements,fromIndex,array,0,size);
   return array;
 }

@@ -1,0 +1,13 @@
+{
+  if (target == null) {
+    return -1;
+  }
+  int position;
+  try {
+    position=binarySearch(target);
+  }
+ catch (  ClassCastException e) {
+    return -1;
+  }
+  return (position >= 0 && elements[position].equals(target)) ? position - fromIndex : -1;
+}

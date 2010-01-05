@@ -1,0 +1,4 @@
+Object[] array
+int offset
+int size
+ImmutableSortedSet<E> set

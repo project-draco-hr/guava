@@ -1,0 +1,3 @@
+{
+  this.instance=Preconditions.checkNotNull(instance);
+}

@@ -2,10 +2,11 @@
   if (collection instanceof ByteArrayAsList) {
     return ((ByteArrayAsList)collection).toByteArray();
   }
-  int counter=0;
-  byte[] array=new byte[collection.size()];
-  for (  Byte value : collection) {
-    array[counter++]=value;
+  Object[] boxedArray=collection.toArray();
+  int len=boxedArray.length;
+  byte[] array=new byte[len];
+  for (int i=0; i < len; i++) {
+    array[i]=(Byte)boxedArray[i];
   }
   return array;
 }

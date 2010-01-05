@@ -1,0 +1,12 @@
+{
+  Preconditions.checkNotNull(predicate,"predicate");
+  int i=0;
+  while (iterator.hasNext()) {
+    T current=iterator.next();
+    if (predicate.apply(current)) {
+      return i;
+    }
+    i++;
+  }
+  return -1;
+}

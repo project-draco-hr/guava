@@ -1,13 +1,4 @@
 {
-  if (elements instanceof ImmutableList) {
-    @SuppressWarnings("unchecked") ImmutableList<E> list=(ImmutableList<E>)elements;
-    return list;
-  }
- else   if (elements instanceof Collection) {
-    @SuppressWarnings("unchecked") Collection<? extends E> coll=(Collection<? extends E>)elements;
-    return copyOfInternal(coll);
-  }
- else {
-    return copyOfInternal(Lists.newArrayList(elements));
-  }
+  checkNotNull(elements);
+  return (elements instanceof Collection) ? copyOf((Collection<? extends E>)elements) : copyOf(elements.iterator());
 }

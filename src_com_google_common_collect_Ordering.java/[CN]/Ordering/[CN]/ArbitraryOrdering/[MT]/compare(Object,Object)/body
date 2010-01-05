@@ -1,0 +1,15 @@
+{
+  if (left == right) {
+    return 0;
+  }
+  int leftCode=identityHashCode(left);
+  int rightCode=identityHashCode(right);
+  if (leftCode != rightCode) {
+    return leftCode < rightCode ? -1 : 1;
+  }
+  int result=uids.get(left).compareTo(uids.get(right));
+  if (result == 0) {
+    throw new AssertionError();
+  }
+  return result;
+}

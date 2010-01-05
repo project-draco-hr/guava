@@ -1,0 +1,4 @@
+{
+  CartesianSet<B> cartesianSet=new CartesianSet<B>(sets);
+  return cartesianSet.isEmpty() ? ImmutableSet.<List<B>>of() : cartesianSet;
+}

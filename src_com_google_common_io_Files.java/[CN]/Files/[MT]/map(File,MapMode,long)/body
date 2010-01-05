@@ -1,0 +1,12 @@
+{
+  RandomAccessFile raf=new RandomAccessFile(file,mode == MapMode.READ_ONLY ? "r" : "rw");
+  boolean threw=true;
+  try {
+    MappedByteBuffer mbb=map(raf,mode,size);
+    threw=false;
+    return mbb;
+  }
+  finally {
+    Closeables.close(raf,threw);
+  }
+}

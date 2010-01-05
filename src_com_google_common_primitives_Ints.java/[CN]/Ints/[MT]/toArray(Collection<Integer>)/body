@@ -2,10 +2,11 @@
   if (collection instanceof IntArrayAsList) {
     return ((IntArrayAsList)collection).toIntArray();
   }
-  int counter=0;
-  int[] array=new int[collection.size()];
-  for (  Integer value : collection) {
-    array[counter++]=value;
+  Object[] boxedArray=collection.toArray();
+  int len=boxedArray.length;
+  int[] array=new int[len];
+  for (int i=0; i < len; i++) {
+    array[i]=(Integer)boxedArray[i];
   }
   return array;
 }

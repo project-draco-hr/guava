@@ -12,7 +12,7 @@
   }
  else {
     Object[] copy=new Object[size];
-    System.arraycopy(array,0,copy,0,size);
+    Platform.unsafeArrayCopy(array,0,copy,0,size);
     return copy;
   }
 }
