@@ -1,0 +1,3 @@
+{
+  this(elements,comparator,0,elements.length);
+}

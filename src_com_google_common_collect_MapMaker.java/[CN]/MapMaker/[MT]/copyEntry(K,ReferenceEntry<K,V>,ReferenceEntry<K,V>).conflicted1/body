@@ -1,4 +1,4 @@
 {
-  SoftEntry<K,V> from=(SoftEntry<K,V>)original;
-  return (newNext == null) ? new SoftEntry<K,V>(from.internals,key,from.hash) : new LinkedSoftEntry<K,V>(from.internals,key,from.hash,newNext);
+  StrongEntry<K,V> from=(StrongEntry<K,V>)original;
+  return (newNext == null) ? new StrongEntry<K,V>(from.internals,key,from.hash) : new LinkedStrongEntry<K,V>(from.internals,key,from.hash,newNext);
 }

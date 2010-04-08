@@ -13,7 +13,7 @@
         tuple[i]=axes.get(i).getForIndex(index);
       }
       index++;
-      @SuppressWarnings("unchecked") List<B> result=(ImmutableList<B>)ImmutableList.of(tuple);
+      @SuppressWarnings("unchecked") List<B> result=(ImmutableList<B>)ImmutableList.copyOf(tuple);
       return result;
     }
   }

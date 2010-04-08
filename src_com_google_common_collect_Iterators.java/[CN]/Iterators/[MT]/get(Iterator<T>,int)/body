@@ -1,7 +1,5 @@
 {
-  if (position < 0) {
-    throw new IndexOutOfBoundsException("position (" + position + ") must not be negative");
-  }
+  checkNonnegative(position);
   int skipped=0;
   while (iterator.hasNext()) {
     T t=iterator.next();

@@ -1,4 +1,4 @@
 {
   Collection<Map.Entry<K,V>> result=entries;
-  return (entries == null) ? entries=createEntries() : result;
+  return (result == null) ? entries=createEntries() : result;
 }

@@ -5,7 +5,6 @@
   List<E> elements=new ArrayList<E>(count);
   int hashCode=0;
   for (  E element : iterable) {
-    checkNotNull(element);
     int hash=element.hashCode();
     for (int i=Hashing.smear(hash); true; i++) {
       int index=i & mask;

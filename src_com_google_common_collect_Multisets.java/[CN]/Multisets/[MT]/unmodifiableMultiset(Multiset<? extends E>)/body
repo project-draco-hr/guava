@@ -1,3 +1,3 @@
 {
-  return new UnmodifiableMultiset<E>(multiset);
+  return new UnmodifiableMultiset<E>(checkNotNull(multiset));
 }

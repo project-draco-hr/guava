@@ -1,0 +1,4 @@
+{
+  Integer index=rankMap().get(target);
+  return (index != null && index >= fromIndex && index < toIndex) ? index - fromIndex : -1;
+}

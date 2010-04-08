@@ -1,0 +1,15 @@
+{
+  Integer index=rankMap().get(element);
+  if (index == null) {
+    throw new ClassCastException();
+  }
+  if (index <= fromIndex) {
+    return fromIndex;
+  }
+ else   if (index >= toIndex) {
+    return toIndex;
+  }
+ else {
+    return index;
+  }
+}

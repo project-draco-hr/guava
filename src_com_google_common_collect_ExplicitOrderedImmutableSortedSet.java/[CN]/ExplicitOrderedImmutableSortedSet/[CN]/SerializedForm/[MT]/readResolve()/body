@@ -1,0 +1,3 @@
+{
+  return ImmutableSortedSet.withExplicitOrder(Arrays.asList(elements));
+}

@@ -1,0 +1,7 @@
+{
+  final int paramCount=12;
+  Object[] array=new Object[paramCount + others.length];
+  copyIntoArray(array,0,e1,e2,e3,e4,e5,e6,e7,e8,e9,e10,e11,e12);
+  copyIntoArray(array,paramCount,others);
+  return new RegularImmutableList<E>(array);
+}

@@ -4,7 +4,7 @@
     if (list.isEmpty()) {
       throw new NoSuchElementException();
     }
-    return list.get(list.size() - 1);
+    return getLastInNonemptyList(list);
   }
   if (iterable instanceof SortedSet) {
     SortedSet<T> sortedSet=(SortedSet<T>)iterable;

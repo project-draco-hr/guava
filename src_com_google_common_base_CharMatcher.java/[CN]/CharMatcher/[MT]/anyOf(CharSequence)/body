@@ -11,7 +11,7 @@ return new CharMatcher(){
 @Override public boolean matches(char c){
 return c == match1 || c == match2;
 }
-@Override protected void setBits(LookupTable table){
+@Override void setBits(LookupTable table){
 table.set(match1);
 table.set(match2);
 }
@@ -27,7 +27,7 @@ return new CharMatcher(){
 @Override public boolean matches(char c){
 return Arrays.binarySearch(chars,c) >= 0;
 }
-@Override protected void setBits(LookupTable table){
+@Override void setBits(LookupTable table){
 for (char c : chars) {
 table.set(c);
 }

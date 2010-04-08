@@ -1,19 +1,18 @@
 {
-  @SuppressWarnings("unchecked") Entry<K,V>[] tmp=(Entry<K,V>[])checkNotNull(immutableEntries);
+  @SuppressWarnings("unchecked") Entry<K,V>[] tmp=(Entry<K,V>[])immutableEntries;
   this.entries=tmp;
   int tableSize=Hashing.chooseTableSize(immutableEntries.length);
   table=new Object[tableSize * 2];
   mask=tableSize - 1;
   int keySetHashCodeMutable=0;
   for (  Entry<K,V> entry : this.entries) {
-    checkNotNull(entry);
-    K key=checkNotNull(entry.getKey());
+    K key=entry.getKey();
     int keyHashCode=key.hashCode();
     for (int i=Hashing.smear(keyHashCode); true; i++) {
       int index=(i & mask) * 2;
       Object existing=table[index];
       if (existing == null) {
-        V value=checkNotNull(entry.getValue());
+        V value=entry.getValue();
         table[index]=key;
         table[index + 1]=value;
         keySetHashCodeMutable+=keyHashCode;

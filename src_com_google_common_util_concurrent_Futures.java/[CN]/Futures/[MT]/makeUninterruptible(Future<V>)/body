@@ -18,15 +18,15 @@
       try {
         long timeoutNanos=timeoutUnit.toNanos(timeoutDuration);
         long end=System.nanoTime() + timeoutNanos;
-        for (long remaining=timeoutNanos; remaining > 0; remaining=end - System.nanoTime()) {
+        while (true) {
           try {
-            return future.get(remaining,TimeUnit.NANOSECONDS);
+            return future.get(timeoutNanos,NANOSECONDS);
           }
- catch (          InterruptedException ignored) {
+ catch (          InterruptedException e) {
+            timeoutNanos=end - System.nanoTime();
             interrupted=true;
           }
         }
-        throw new TimeoutException();
       }
   finally {
         if (interrupted) {

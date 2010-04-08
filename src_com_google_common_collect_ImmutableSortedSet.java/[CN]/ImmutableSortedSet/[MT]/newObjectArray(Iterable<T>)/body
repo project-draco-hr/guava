@@ -1,5 +1,5 @@
 {
-  Collection<T> collection=(iterable instanceof Collection) ? (Collection<T>)iterable : Lists.newArrayList(iterable);
+  Collection<T> collection=Collections2.toCollection(iterable);
   Object[] array=new Object[collection.size()];
   return collection.toArray(array);
 }

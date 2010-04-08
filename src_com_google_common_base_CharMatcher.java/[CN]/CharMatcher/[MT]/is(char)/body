@@ -15,7 +15,7 @@
     @Override public CharMatcher negate(){
       return isNot(match);
     }
-    @Override protected void setBits(    LookupTable table){
+    @Override void setBits(    LookupTable table){
       table.set(match);
     }
     @Override public CharMatcher precomputed(){

@@ -1,7 +1,7 @@
 {
   return new Executor(){
     public void execute(    Runnable command){
-      new Thread(command,AbstractIdleService.this.toString() + " " + state).start();
+      new Thread(command,getServiceName() + " " + state).start();
     }
   }
 ;

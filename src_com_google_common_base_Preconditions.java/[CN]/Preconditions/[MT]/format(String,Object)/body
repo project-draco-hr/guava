@@ -1,4 +1,5 @@
 {
+  template=String.valueOf(template);
   StringBuilder builder=new StringBuilder(template.length() + 16 * args.length);
   int templateStart=0;
   int i=0;

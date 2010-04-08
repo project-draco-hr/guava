@@ -16,7 +16,7 @@
     for (int j=0; j < valueCount; j++) {
       array[j]=stream.readObject();
     }
-    builder.put(key,ImmutableList.of(array));
+    builder.put(key,ImmutableList.copyOf(array));
     tmpSize+=valueCount;
   }
   ImmutableMap<Object,ImmutableList<Object>> tmpMap;

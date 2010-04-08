@@ -4,7 +4,7 @@
     @Override public boolean matches(    char c){
       return startInclusive <= c && c <= endInclusive;
     }
-    @Override protected void setBits(    LookupTable table){
+    @Override void setBits(    LookupTable table){
       char c=startInclusive;
       while (true) {
         table.set(c);

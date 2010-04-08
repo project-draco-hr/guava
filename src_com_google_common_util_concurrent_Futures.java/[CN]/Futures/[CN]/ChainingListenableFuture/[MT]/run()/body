@@ -23,7 +23,7 @@ catch (    ExecutionException e) {
         }
       }
     }
-,Executors.sameThreadExecutor());
+,MoreExecutors.sameThreadExecutor());
   }
  catch (  UndeclaredThrowableException e) {
     setException(e.getCause());

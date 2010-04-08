@@ -1,5 +1,4 @@
 {
-  checkNotNull(elements);
   while (elements.hasNext()) {
     add(elements.next());
   }

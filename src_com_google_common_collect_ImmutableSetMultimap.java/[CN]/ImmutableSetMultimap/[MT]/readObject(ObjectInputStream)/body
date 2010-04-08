@@ -16,7 +16,7 @@
     for (int j=0; j < valueCount; j++) {
       array[j]=stream.readObject();
     }
-    ImmutableSet<Object> valueSet=ImmutableSet.of(array);
+    ImmutableSet<Object> valueSet=ImmutableSet.copyOf(array);
     if (valueSet.size() != array.length) {
       throw new InvalidObjectException("Duplicate key-value pairs exist for key " + key);
     }

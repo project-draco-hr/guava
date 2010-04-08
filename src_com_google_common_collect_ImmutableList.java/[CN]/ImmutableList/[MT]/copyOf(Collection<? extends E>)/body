@@ -1,8 +1,7 @@
 {
-  checkNotNull(elements);
-  if (elements instanceof ImmutableList) {
-    @SuppressWarnings("unchecked") ImmutableList<E> list=(ImmutableList<E>)elements;
-    return list;
+  if (elements instanceof ImmutableCollection) {
+    @SuppressWarnings("unchecked") ImmutableCollection<E> list=(ImmutableCollection<E>)elements;
+    return list.asList();
   }
   return copyFromCollection(elements);
 }

@@ -1,0 +1,9 @@
+{
+  checkNotNull(iterator);
+  checkArgument(numberToSkip >= 0,"number to skip cannot be negative");
+  int i;
+  for (i=0; i < numberToSkip && iterator.hasNext(); i++) {
+    iterator.next();
+  }
+  return i;
+}

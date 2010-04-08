@@ -10,10 +10,6 @@
       to++;
     }
   }
-  ListIterator<T> iter=list.listIterator(list.size());
-  for (int idx=from - to; idx > 0; idx--) {
-    iter.previous();
-    iter.remove();
-  }
+  list.subList(to,list.size()).clear();
   return from != to;
 }

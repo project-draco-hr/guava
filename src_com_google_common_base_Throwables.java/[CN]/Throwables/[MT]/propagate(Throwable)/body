@@ -1,4 +1,4 @@
 {
-  propagateIfPossible(throwable);
+  propagateIfPossible(checkNotNull(throwable));
   throw new RuntimeException(throwable);
 }

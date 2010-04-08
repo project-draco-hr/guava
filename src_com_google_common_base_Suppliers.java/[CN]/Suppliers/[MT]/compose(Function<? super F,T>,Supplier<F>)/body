@@ -1,5 +1,5 @@
 {
   Preconditions.checkNotNull(function);
-  Preconditions.checkNotNull(first);
-  return new SupplierComposition<F,T>(function,first);
+  Preconditions.checkNotNull(supplier);
+  return new SupplierComposition<F,T>(function,supplier);
 }

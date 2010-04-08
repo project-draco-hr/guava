@@ -1,13 +1,3 @@
 {
-  Runtime.getRuntime().addShutdownHook(new Thread(new Runnable(){
-    public void run(){
-      try {
-        service.shutdown();
-        service.awaitTermination(terminationTimeout,timeUnit);
-      }
- catch (      InterruptedException ignored) {
-      }
-    }
-  }
-));
+  MoreExecutors.addDelayedShutdownHook(service,terminationTimeout,timeUnit);
 }

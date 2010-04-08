@@ -1,5 +1,5 @@
 {
-  if (obj instanceof NotPredicate<?>) {
+  if (obj instanceof NotPredicate) {
     NotPredicate<?> that=(NotPredicate<?>)obj;
     return predicate.equals(that.predicate);
   }

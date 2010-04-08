@@ -1,0 +1,6 @@
+{
+  executor.setThreadFactory(daemonThreadFactory(executor.getThreadFactory()));
+  ScheduledExecutorService service=Executors.unconfigurableScheduledExecutorService(executor);
+  addDelayedShutdownHook(service,terminationTimeout,timeUnit);
+  return service;
+}

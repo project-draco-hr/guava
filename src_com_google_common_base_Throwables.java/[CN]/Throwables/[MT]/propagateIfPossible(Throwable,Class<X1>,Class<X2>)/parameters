@@ -1,3 +1,3 @@
 Throwable throwable
-Class<X1> aDeclaredType
-Class<X2> anotherDeclaredType
+Class<X1> declaredType1
+Class<X2> declaredType2

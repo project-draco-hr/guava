@@ -1,4 +1,6 @@
 {
+  checkNotNull(future);
+  checkNotNull(function);
   return new Future<O>(){
     private final Object lock=new Object();
     private boolean set=false;

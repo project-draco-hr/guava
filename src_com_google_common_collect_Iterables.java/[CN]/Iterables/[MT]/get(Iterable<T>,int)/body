@@ -8,9 +8,7 @@
     Preconditions.checkElementIndex(position,collection.size());
   }
  else {
-    if (position < 0) {
-      throw new IndexOutOfBoundsException("position cannot be negative: " + position);
-    }
+    checkNonnegativeIndex(position);
   }
   return Iterators.get(iterable.iterator(),position);
 }

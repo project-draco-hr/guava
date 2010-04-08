@@ -1,7 +1,7 @@
 {
   return new Executor(){
     public void execute(    Runnable command){
-      new Thread(command,AbstractExecutionThreadService.this.toString()).start();
+      new Thread(command,getServiceName()).start();
     }
   }
 ;

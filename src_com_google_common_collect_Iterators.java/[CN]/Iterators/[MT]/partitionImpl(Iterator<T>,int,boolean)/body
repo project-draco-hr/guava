@@ -15,7 +15,7 @@
         array[count]=iterator.next();
       }
       @SuppressWarnings("unchecked") List<T> list=Collections.unmodifiableList((List<T>)Arrays.asList(array));
-      return (pad || count == size) ? list : Platform.subList(list,0,count);
+      return (pad || count == size) ? list : list.subList(0,count);
     }
   }
 ;

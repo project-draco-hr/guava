@@ -1,0 +1,17 @@
+{
+  if (iterable instanceof Collection) {
+    Collection<T> collection=(Collection<T>)iterable;
+    if (collection.isEmpty()) {
+      return defaultValue;
+    }
+  }
+  if (iterable instanceof List) {
+    List<T> list=(List<T>)iterable;
+    return getLastInNonemptyList(list);
+  }
+  if (iterable instanceof SortedSet) {
+    SortedSet<T> sortedSet=(SortedSet<T>)iterable;
+    return sortedSet.last();
+  }
+  return Iterators.getLast(iterable.iterator(),defaultValue);
+}

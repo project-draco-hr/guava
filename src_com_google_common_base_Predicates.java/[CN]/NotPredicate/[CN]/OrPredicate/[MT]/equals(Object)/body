@@ -1,5 +1,5 @@
 {
-  if (obj instanceof OrPredicate<?>) {
+  if (obj instanceof OrPredicate) {
     OrPredicate<?> that=(OrPredicate<?>)obj;
     return iterableElementsEqual(components,that.components);
   }

@@ -12,7 +12,7 @@
     return string;
   }
   int len=string.length();
-  StringBuilder buf=new StringBuilder((int)(len * 1.5) + 16);
+  StringBuilder buf=new StringBuilder((len * 3 / 2) + 16);
   int oldpos=0;
   do {
     buf.append(string,oldpos,pos);
