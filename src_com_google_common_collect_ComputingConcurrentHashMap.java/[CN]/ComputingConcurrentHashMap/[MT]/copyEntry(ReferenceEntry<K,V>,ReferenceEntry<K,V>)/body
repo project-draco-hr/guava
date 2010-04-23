@@ -1,0 +1,11 @@
+{
+  ReferenceEntry<K,V> newEntry=entryFactory.copyEntry(this,original,newNext);
+  ValueReference<K,V> valueReference=original.getValueReference();
+  if (valueReference == UNSET) {
+    newEntry.setValueReference(new FutureValueReference(original,newEntry));
+  }
+ else {
+    newEntry.setValueReference(valueReference.copyFor(newEntry));
+  }
+  return newEntry;
+}

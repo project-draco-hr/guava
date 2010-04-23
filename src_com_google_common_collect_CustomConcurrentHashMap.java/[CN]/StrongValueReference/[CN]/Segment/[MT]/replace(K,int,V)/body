@@ -1,0 +1,24 @@
+{
+  checkNotNull(newValue);
+  lock();
+  try {
+    if (expires) {
+      expireEntries();
+    }
+    for (ReferenceEntry<K,V> e=getFirst(hash); e != null; e=e.getNext()) {
+      K entryKey=e.getKey();
+      if (e.getHash() == hash && entryKey != null && keyEquivalence.equivalent(key,entryKey)) {
+        V entryValue=e.getValueReference().get();
+        if (entryValue == null) {
+          return null;
+        }
+        setValue(e,newValue,false);
+        return entryValue;
+      }
+    }
+    return null;
+  }
+  finally {
+    unlock();
+  }
+}

@@ -1,5 +1,3 @@
 {
-  Thread t=factory.newThread(r);
-  t.setDaemon(true);
-  return t;
+  return delegate.newThread(r);
 }

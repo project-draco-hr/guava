@@ -1,4 +1,6 @@
 {
-  builder.concurrencyLevel(concurrencyLevel);
+  checkState(this.concurrencyLevel == UNSET_CONCURRENCY_LEVEL,"concurrency level was already set to " + this.concurrencyLevel);
+  checkArgument(concurrencyLevel > 0);
+  this.concurrencyLevel=concurrencyLevel;
   return this;
 }

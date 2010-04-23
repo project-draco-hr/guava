@@ -1,8 +1,8 @@
 {
-  if (valueStrength != Strength.STRONG) {
-    throw new IllegalStateException("Value strength was already set to " + valueStrength + ".");
+  checkState(valueStrength == null,"Value strength was already set to " + valueStrength + ".");
+  valueStrength=checkNotNull(strength);
+  if (strength != Strength.STRONG) {
+    useCustomMap=true;
   }
-  valueStrength=strength;
-  useCustomMap=true;
   return this;
 }

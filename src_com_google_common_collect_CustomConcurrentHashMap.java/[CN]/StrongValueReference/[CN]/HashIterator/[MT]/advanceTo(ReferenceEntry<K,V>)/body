@@ -1,0 +1,11 @@
+{
+  K key=entry.getKey();
+  V value=entry.getValueReference().get();
+  if (key != null && value != null) {
+    nextExternal=new WriteThroughEntry(key,value);
+    return true;
+  }
+ else {
+    return false;
+  }
+}

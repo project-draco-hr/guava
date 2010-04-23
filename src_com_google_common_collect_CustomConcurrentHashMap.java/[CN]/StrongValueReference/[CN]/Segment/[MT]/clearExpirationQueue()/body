@@ -1,0 +1,11 @@
+{
+  Expirable expirable=expirationHead.getNextExpirable();
+  while (expirable != expirationHead) {
+    Expirable next=expirable.getNextExpirable();
+    expirable.setNextExpirable(NullExpirable.INSTANCE);
+    expirable.setPreviousExpirable(NullExpirable.INSTANCE);
+    expirable=next;
+  }
+  expirationHead.setNextExpirable(expirationHead);
+  expirationHead.setPreviousExpirable(expirationHead);
+}

@@ -1,5 +1,5 @@
 {
-  super((keyComparator == null) ? new TreeMap<K,Collection<V>>() : new TreeMap<K,Collection<V>>(keyComparator));
+  super(new TreeMap<K,Collection<V>>(keyComparator));
   this.keyComparator=keyComparator;
   this.valueComparator=valueComparator;
 }

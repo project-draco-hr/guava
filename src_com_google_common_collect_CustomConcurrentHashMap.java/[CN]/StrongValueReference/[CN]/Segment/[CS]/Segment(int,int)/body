@@ -1,0 +1,4 @@
+{
+  setTable(newEntryArray(initialCapacity));
+  this.maxSegmentSize=maxSegmentSize;
+}

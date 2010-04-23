@@ -1,0 +1,3 @@
+{
+  return isExpired((Expirable)entry,System.nanoTime());
+}

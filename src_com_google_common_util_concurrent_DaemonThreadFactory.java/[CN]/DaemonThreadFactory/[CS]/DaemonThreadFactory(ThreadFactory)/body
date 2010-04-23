@@ -1,4 +1,3 @@
 {
-  Preconditions.checkNotNull(factory);
-  this.factory=factory;
+  this.delegate=new ThreadFactoryBuilder().setThreadFactory(factory).setDaemon(true).build();
 }

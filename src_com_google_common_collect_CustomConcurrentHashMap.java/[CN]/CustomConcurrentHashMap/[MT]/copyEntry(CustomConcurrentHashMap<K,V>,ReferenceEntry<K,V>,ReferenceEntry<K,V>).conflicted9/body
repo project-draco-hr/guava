@@ -1,0 +1,3 @@
+{
+  return newEntry(map,original.getKey(),original.getHash(),newNext);
+}

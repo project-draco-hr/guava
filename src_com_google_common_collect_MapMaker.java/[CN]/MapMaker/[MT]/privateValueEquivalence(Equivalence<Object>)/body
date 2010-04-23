@@ -1,0 +1,6 @@
+{
+  checkState(valueEquivalence == null,"value equivalence was already set to " + valueEquivalence);
+  this.valueEquivalence=checkNotNull(equivalence);
+  this.useCustomMap=true;
+  return this;
+}

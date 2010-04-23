@@ -1,0 +1,9 @@
+{
+  int index=Integer.numberOfTrailingZeros(remainingSetBits);
+  if (index == 32) {
+    throw new NoSuchElementException();
+  }
+  int currentElementMask=1 << index;
+  remainingSetBits&=~currentElementMask;
+  return input.get(index);
+}

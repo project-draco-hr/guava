@@ -1,3 +1,4 @@
 {
-  return new StrategyImpl<K,V>(this,computingFunction).map;
+  Cache<K,V> cache=makeCache(computingFunction);
+  return new ComputingMapAdapter<K,V>(cache);
 }

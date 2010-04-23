@@ -1,0 +1,3 @@
+{
+  return (expirationNanos == UNSET_EXPIRATION_NANOS) ? DEFAULT_EXPIRATION_NANOS : expirationNanos;
+}

@@ -1,0 +1,11 @@
+{
+  ValueReference<K,V> valueReference=entry.getValueReference();
+  if (valueReference == UNSET) {
+synchronized (entry) {
+      while ((valueReference=entry.getValueReference()) == UNSET) {
+        entry.wait();
+      }
+    }
+  }
+  return valueReference.waitForValue();
+}

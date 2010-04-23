@@ -1,4 +1,6 @@
 {
-  builder.initialCapacity(initialCapacity);
+  checkState(this.initialCapacity == UNSET_INITIAL_CAPACITY,"initial capacity was already set to " + this.initialCapacity);
+  checkArgument(initialCapacity >= 0);
+  this.initialCapacity=initialCapacity;
   return this;
 }

@@ -1,0 +1,13 @@
+{
+  if (expires) {
+    removeExpirable((Expirable)removed);
+  }
+  ReferenceEntry<K,V> newFirst=removed.getNext();
+  for (ReferenceEntry<K,V> p=first; p != removed; p=p.getNext()) {
+    K pKey=p.getKey();
+    if (pKey != null) {
+      newFirst=copyEntry(p,newFirst);
+    }
+  }
+  return newFirst;
+}

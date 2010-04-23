@@ -1,0 +1,3 @@
+{
+  super(keyStrength,valueStrength,keyEquivalence,valueEquivalence,expirationNanos,maximumSize,concurrencyLevel,delegate);
+}

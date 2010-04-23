@@ -1,0 +1,48 @@
+{
+  keyStrength=builder.getKeyStrength();
+  valueStrength=builder.getValueStrength();
+  keyEquivalence=builder.getKeyEquivalence();
+  valueEquivalence=builder.getValueEquivalence();
+  expirationNanos=builder.getExpirationNanos();
+  maximumSize=builder.maximumSize;
+  evicts=maximumSize != MapMaker.UNSET_MAXIMUM_SIZE;
+  expires=expirationNanos > 0;
+  entryFactory=EntryFactory.getFactory(keyStrength,expires,evicts);
+  concurrencyLevel=filterConcurrencyLevel(builder.getConcurrencyLevel());
+  int initialCapacity=builder.getInitialCapacity();
+  if (initialCapacity > MAXIMUM_CAPACITY) {
+    initialCapacity=MAXIMUM_CAPACITY;
+  }
+  int segmentShift=0;
+  int segmentCount=1;
+  while (segmentCount < concurrencyLevel) {
+    ++segmentShift;
+    segmentCount<<=1;
+  }
+  this.segmentShift=32 - segmentShift;
+  segmentMask=segmentCount - 1;
+  this.segments=newSegmentArray(segmentCount);
+  int segmentCapacity=initialCapacity / segmentCount;
+  if (segmentCapacity * segmentCount < initialCapacity) {
+    ++segmentCapacity;
+  }
+  int segmentSize=1;
+  while (segmentSize < segmentCapacity) {
+    segmentSize<<=1;
+  }
+  if (evicts) {
+    int maximumSegmentSize=maximumSize / segmentCount + 1;
+    int remainder=maximumSize % segmentCount;
+    for (int i=0; i < this.segments.length; ++i) {
+      if (i == remainder) {
+        maximumSegmentSize--;
+      }
+      this.segments[i]=new Segment(segmentSize,maximumSegmentSize);
+    }
+  }
+ else {
+    for (int i=0; i < this.segments.length; ++i) {
+      this.segments[i]=new Segment(segmentSize,MapMaker.UNSET_MAXIMUM_SIZE);
+    }
+  }
+}

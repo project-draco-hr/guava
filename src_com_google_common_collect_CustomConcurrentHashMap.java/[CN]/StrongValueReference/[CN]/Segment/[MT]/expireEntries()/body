@@ -1,0 +1,13 @@
+{
+  Expirable expirable=expirationHead.getNextExpirable();
+  if (expirable == expirationHead) {
+    return;
+  }
+  long now=System.nanoTime();
+  while (expirable != expirationHead && isExpired(expirable,now)) {
+    @SuppressWarnings("unchecked") ReferenceEntry<K,V> entry=(ReferenceEntry<K,V>)expirable;
+    removeEntry(entry,entry.getHash());
+    removeExpirable(expirable);
+    expirable=expirationHead.getNextExpirable();
+  }
+}

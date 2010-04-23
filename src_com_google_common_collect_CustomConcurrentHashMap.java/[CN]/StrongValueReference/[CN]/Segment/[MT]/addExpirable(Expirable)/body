@@ -1,0 +1,6 @@
+{
+  removeExpirable(added);
+  added.setWriteTime(System.nanoTime());
+  connectExpirable(expirationHead.getPreviousExpirable(),added);
+  connectExpirable(added,expirationHead);
+}

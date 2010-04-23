@@ -1,0 +1,5 @@
+{
+  Evictable originalEvictable=(Evictable)original;
+  Evictable newEvictable=(Evictable)newEntry;
+  newEvictable.setLastUsage(originalEvictable.getLastUsage());
+}

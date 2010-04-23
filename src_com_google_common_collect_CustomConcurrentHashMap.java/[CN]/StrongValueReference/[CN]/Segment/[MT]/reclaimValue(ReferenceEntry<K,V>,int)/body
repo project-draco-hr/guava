@@ -1,0 +1,28 @@
+{
+  lock();
+  try {
+    int newCount=this.count - 1;
+    AtomicReferenceArray<ReferenceEntry<K,V>> table=this.table;
+    int index=hash & (table.length() - 1);
+    ReferenceEntry<K,V> first=table.get(index);
+    for (ReferenceEntry<K,V> e=first; e != null; e=e.getNext()) {
+      if (e == entry) {
+        V entryValue=e.getValueReference().get();
+        if (entryValue == null) {
+          ++modCount;
+          ReferenceEntry<K,V> newFirst=removeFromTable(first,e);
+          table.set(index,newFirst);
+          this.count=newCount;
+          return true;
+        }
+ else {
+          return false;
+        }
+      }
+    }
+    return false;
+  }
+  finally {
+    unlock();
+  }
+}

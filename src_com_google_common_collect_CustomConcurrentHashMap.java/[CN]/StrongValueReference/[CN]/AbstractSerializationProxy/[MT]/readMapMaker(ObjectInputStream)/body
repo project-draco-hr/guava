@@ -1,0 +1,11 @@
+{
+  int size=in.readInt();
+  MapMaker mapMaker=new MapMaker().initialCapacity(size).setKeyStrength(keyStrength).setValueStrength(valueStrength).privateKeyEquivalence(keyEquivalence).privateValueEquivalence(valueEquivalence).concurrencyLevel(concurrencyLevel);
+  if (expirationNanos != 0) {
+    mapMaker.expiration(expirationNanos,TimeUnit.NANOSECONDS);
+  }
+  if (maximumSize != MapMaker.UNSET_MAXIMUM_SIZE) {
+    mapMaker.maximumSize(maximumSize);
+  }
+  return mapMaker;
+}

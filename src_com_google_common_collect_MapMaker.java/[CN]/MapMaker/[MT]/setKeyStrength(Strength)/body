@@ -1,8 +1,8 @@
 {
-  if (keyStrength != Strength.STRONG) {
-    throw new IllegalStateException("Key strength was already set to " + keyStrength + ".");
+  checkState(keyStrength == null,"Key strength was already set to " + keyStrength + ".");
+  keyStrength=checkNotNull(strength);
+  if (strength != Strength.STRONG) {
+    useCustomMap=true;
   }
-  keyStrength=strength;
-  useCustomMap=true;
   return this;
 }

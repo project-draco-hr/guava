@@ -1,0 +1,22 @@
+{
+  return new ThreadFactory(){
+    private final AtomicLong count=(nameFormat != null) ? new AtomicLong(0) : null;
+    @Override public Thread newThread(    Runnable runnable){
+      Thread thread=(backingThreadFactory != null) ? backingThreadFactory.newThread(runnable) : new Thread(runnable);
+      if (wasDaemonSet) {
+        thread.setDaemon(daemon);
+      }
+      if (nameFormat != null) {
+        thread.setName(String.format(nameFormat,count.getAndIncrement()));
+      }
+      if (priority >= Thread.MIN_PRIORITY) {
+        thread.setPriority(priority);
+      }
+      if (uncaughtExceptionHandler != null) {
+        thread.setUncaughtExceptionHandler(uncaughtExceptionHandler);
+      }
+      return thread;
+    }
+  }
+;
+}

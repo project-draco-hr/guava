@@ -1,3 +1,0 @@
-ThreadPoolExecutor executor
-long terminationTimeout
-TimeUnit timeUnit

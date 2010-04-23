@@ -1,3 +1,0 @@
-{
-  MoreExecutors.addDelayedShutdownHook(service,terminationTimeout,timeUnit);
-}

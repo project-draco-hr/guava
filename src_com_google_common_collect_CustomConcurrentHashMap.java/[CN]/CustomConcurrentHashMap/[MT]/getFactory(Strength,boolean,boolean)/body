@@ -1,0 +1,4 @@
+{
+  int flags=(expires ? EXPIRABLE_MASK : 0) | (evicts ? EVICTABLE_MASK : 0);
+  return FACTORIES[keyStrength.ordinal()][flags];
+}
