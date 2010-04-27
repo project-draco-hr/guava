@@ -1,0 +1,9 @@
+{
+  iterator.next();
+  try {
+    iterator.remove();
+    fail();
+  }
+ catch (  UnsupportedOperationException expected) {
+  }
+}

@@ -1,0 +1,4 @@
+{
+  Iterable<String> notMuch=Splitter.on(".").split("");
+  assertContentsInOrder(notMuch,"");
+}

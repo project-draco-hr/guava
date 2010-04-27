@@ -1,0 +1,11 @@
+{
+  Function<Object,Object> f=Functions.<Object>constant("correct");
+  assertEquals("correct",f.apply(new Object()));
+  assertEquals("correct",f.apply(null));
+  Function<Object,String> g=Functions.constant(null);
+  assertEquals(null,g.apply(2));
+  assertEquals(null,g.apply(null));
+  new EqualsTester(f).addEqualObject(Functions.constant("correct")).addNotEqualObject(Functions.constant("incorrect")).addNotEqualObject(Functions.toStringFunction()).addNotEqualObject(g).testEquals();
+  new EqualsTester(g).addEqualObject(Functions.constant(null)).addNotEqualObject(Functions.constant("incorrect")).addNotEqualObject(Functions.toStringFunction()).addNotEqualObject(f).testEquals();
+  checkCanReserialize(Functions.constant(5));
+}

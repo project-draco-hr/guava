@@ -1,0 +1,3 @@
+{
+  assertFalse(Splitter.on(".").omitEmptyStrings().split("").iterator().hasNext());
+}

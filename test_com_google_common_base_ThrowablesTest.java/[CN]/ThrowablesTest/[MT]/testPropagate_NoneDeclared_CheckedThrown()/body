@@ -1,0 +1,20 @@
+{
+  Sample sample=new Sample(){
+    @Override public void noneDeclared(){
+      try {
+        methodThatThrowsChecked();
+      }
+ catch (      Throwable t) {
+        throw Throwables.propagate(t);
+      }
+    }
+  }
+;
+  try {
+    sample.noneDeclared();
+    fail();
+  }
+ catch (  RuntimeException expected) {
+    assertTrue(expected.getCause() instanceof SomeCheckedException);
+  }
+}

@@ -1,0 +1,8 @@
+{
+  try {
+    Splitter.on(Pattern.compile("a*"));
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}

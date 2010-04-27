@@ -1,0 +1,13 @@
+{
+  SomeCheckedException cause=new SomeCheckedException();
+  SomeChainingException outer=new SomeChainingException(cause);
+  StackTraceElement[] expectedTrace=cause.getStackTrace();
+  try {
+    Throwables.throwCause(outer,false);
+    fail("Exception not thrown properly");
+  }
+ catch (  Exception e) {
+    assertSame(e,cause);
+    assertTrue(Arrays.equals(expectedTrace,e.getStackTrace()));
+  }
+}

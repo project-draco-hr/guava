@@ -1,0 +1,7 @@
+{
+  Predicate<Object> isComparable=Predicates.instanceOf(Comparable.class);
+  assertTrue(isComparable.apply(1));
+  assertTrue(isComparable.apply(2.0f));
+  assertTrue(isComparable.apply(""));
+  assertFalse(isComparable.apply(null));
+}

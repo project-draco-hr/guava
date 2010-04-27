@@ -1,0 +1,32 @@
+{
+  final Supplier<Integer> nonThreadSafe=new Supplier<Integer>(){
+    int counter=0;
+    public Integer get(){
+      int nextValue=counter + 1;
+      Thread.yield();
+      counter=nextValue;
+      return counter;
+    }
+  }
+;
+  final int numThreads=10;
+  final int iterations=1000;
+  Thread[] threads=new Thread[numThreads];
+  for (int i=0; i < numThreads; i++) {
+    threads[i]=new Thread(){
+      @Override public void run(){
+        for (int j=0; j < iterations; j++) {
+          Suppliers.synchronizedSupplier(nonThreadSafe).get();
+        }
+      }
+    }
+;
+  }
+  for (  Thread t : threads) {
+    t.start();
+  }
+  for (  Thread t : threads) {
+    t.join();
+  }
+  assertEquals(new Integer(numThreads * iterations + 1),nonThreadSafe.get());
+}

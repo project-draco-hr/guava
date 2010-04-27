@@ -1,0 +1,19 @@
+{
+  Sample sample=new Sample(){
+    @Override public void noneDeclared(){
+      try {
+        methodThatThrowsError();
+      }
+ catch (      Throwable t) {
+        throw Throwables.propagate(t);
+      }
+    }
+  }
+;
+  try {
+    sample.noneDeclared();
+    fail();
+  }
+ catch (  SomeError expected) {
+  }
+}

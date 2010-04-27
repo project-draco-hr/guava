@@ -1,0 +1,5 @@
+{
+  Predicate<CharSequence> isFoobar=Predicates.contains(Pattern.compile("^Fo.*o.*bar$"));
+  assertTrue(isFoobar.apply("Foxyzoabcbar"));
+  assertFalse(isFoobar.apply("Foobarx"));
+}

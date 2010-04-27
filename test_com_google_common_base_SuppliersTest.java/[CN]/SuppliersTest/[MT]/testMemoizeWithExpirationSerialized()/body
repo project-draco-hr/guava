@@ -1,0 +1,9 @@
+{
+  CountingSupplier countingSupplier=new CountingSupplier();
+  Supplier<Integer> memoizedSupplier=Suppliers.memoizeWithExpiration(countingSupplier,75,TimeUnit.MILLISECONDS);
+  memoizedSupplier.get();
+  Supplier<Integer> copy=reserialize(memoizedSupplier);
+  memoizedSupplier.get();
+  CountingSupplier countingCopy=(CountingSupplier)((Suppliers.ExpiringMemoizingSupplier<Integer>)copy).delegate;
+  checkExpiration(countingCopy,copy);
+}

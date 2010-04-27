@@ -1,0 +1,4 @@
+{
+  SomeCheckedException exception=new SomeCheckedException();
+  assertSame(exception,Throwables.getRootCause(exception));
+}

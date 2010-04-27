@@ -1,0 +1,5 @@
+{
+  for (int c=0; c <= Character.MAX_VALUE; c++) {
+    assertEquals("" + c,Character.isWhitespace(c),CharMatcher.JAVA_WHITESPACE.matches((char)c));
+  }
+}

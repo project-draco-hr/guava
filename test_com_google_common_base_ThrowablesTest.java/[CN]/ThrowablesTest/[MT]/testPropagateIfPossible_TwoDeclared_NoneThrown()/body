@@ -1,0 +1,15 @@
+{
+  Sample sample=new Sample(){
+    @Override public void twoDeclared() throws SomeCheckedException, SomeOtherCheckedException {
+      try {
+        methodThatDoesntThrowAnything();
+      }
+ catch (      Throwable t) {
+        Throwables.propagateIfPossible(t,SomeCheckedException.class,SomeOtherCheckedException.class);
+        throw new SomeChainingException(t);
+      }
+    }
+  }
+;
+  sample.twoDeclared();
+}

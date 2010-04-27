@@ -1,0 +1,5 @@
+{
+  final String result=Objects.toStringHelper(new TestClass()).addValue(null).addValue("Hello").addValue(null).toString();
+  final String expected="TestClass{null, Hello, null}";
+  assertEquals(expected,result);
+}

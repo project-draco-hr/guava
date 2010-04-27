@@ -1,0 +1,4 @@
+{
+  Iterable<String> blankblank=Splitter.on(".").split(".");
+  assertContentsInOrder(blankblank,"","");
+}

@@ -1,0 +1,5 @@
+{
+  CountingSupplier countingSupplier=new CountingSupplier();
+  Supplier<Integer> memoizedSupplier=Suppliers.memoizeWithExpiration(countingSupplier,75,TimeUnit.MILLISECONDS);
+  checkExpiration(countingSupplier,memoizedSupplier);
+}

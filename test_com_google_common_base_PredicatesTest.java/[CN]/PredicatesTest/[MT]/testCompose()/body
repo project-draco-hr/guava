@@ -1,0 +1,12 @@
+{
+  Function<String,String> trim=TrimStringFunction.INSTANCE;
+  Predicate<String> equalsFoo=Predicates.equalTo("Foo");
+  Predicate<String> equalsBar=Predicates.equalTo("Bar");
+  Predicate<String> trimEqualsFoo=Predicates.compose(equalsFoo,trim);
+  Function<String,String> identity=Functions.identity();
+  assertTrue(trimEqualsFoo.apply("Foo"));
+  assertTrue(trimEqualsFoo.apply("   Foo   "));
+  assertFalse(trimEqualsFoo.apply("Foo-b-que"));
+  new EqualsTester(trimEqualsFoo).addEqualObject(Predicates.compose(equalsFoo,trim)).addNotEqualObject(equalsFoo).addNotEqualObject(trim).addNotEqualObject(Predicates.compose(equalsFoo,identity)).addNotEqualObject(Predicates.compose(equalsBar,trim)).testEquals();
+  SerializableTester.reserializeAndAssert(trimEqualsFoo);
+}

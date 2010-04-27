@@ -1,0 +1,20 @@
+{
+  doTestTrimAndCollapse("-","");
+  doTestTrimAndCollapse("x-","x");
+  doTestTrimAndCollapse("-x","x");
+  doTestTrimAndCollapse("--","");
+  doTestTrimAndCollapse("x--","x");
+  doTestTrimAndCollapse("--x","x");
+  doTestTrimAndCollapse("-x-","x");
+  doTestTrimAndCollapse("x-x","x_x");
+  doTestTrimAndCollapse("---","");
+  doTestTrimAndCollapse("--x-","x");
+  doTestTrimAndCollapse("--xx","xx");
+  doTestTrimAndCollapse("-x--","x");
+  doTestTrimAndCollapse("-x-x","x_x");
+  doTestTrimAndCollapse("-xx-","xx");
+  doTestTrimAndCollapse("x--x","x_x");
+  doTestTrimAndCollapse("x-x-","x_x");
+  doTestTrimAndCollapse("x-xx","x_xx");
+  doTestTrimAndCollapse("x-x--xx---x----x","x_x_xx_x_x");
+}

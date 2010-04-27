@@ -1,0 +1,5 @@
+{
+  Predicate<Integer> pre=Predicates.or(Arrays.asList(TRUE,FALSE));
+  Predicate<Integer> post=SerializableTester.reserializeAndAssert(pre);
+  assertEquals(pre.apply(0),post.apply(0));
+}

@@ -1,0 +1,19 @@
+{
+  Function<? super Integer,Y> g=SerializableTester.reserializeAndAssert(f);
+  for (int i=1; i < 5; i++) {
+    Y expected=null;
+    try {
+      expected=f.apply(i);
+    }
+ catch (    IllegalArgumentException e) {
+      try {
+        g.apply(i);
+        fail();
+      }
+ catch (      IllegalArgumentException ok) {
+        continue;
+      }
+    }
+    assertEquals(expected,g.apply(i));
+  }
+}

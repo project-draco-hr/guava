@@ -1,0 +1,14 @@
+{
+  try {
+    LOWER_CAMEL.to(null,"");
+    fail();
+  }
+ catch (  NullPointerException expected) {
+  }
+  try {
+    LOWER_CAMEL.to(LOWER_HYPHEN,null);
+    fail();
+  }
+ catch (  NullPointerException expected) {
+  }
+}

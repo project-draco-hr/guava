@@ -1,0 +1,4 @@
+{
+  assertEvalsLike(expected,actual);
+  assertEquals(actual.toString() + " should hash like " + expected.toString(),expected.hashCode(),actual.hashCode());
+}

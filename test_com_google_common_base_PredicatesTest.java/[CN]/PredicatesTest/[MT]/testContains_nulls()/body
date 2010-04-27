@@ -1,0 +1,5 @@
+{
+  NullPointerTester tester=new NullPointerTester();
+  Predicate<CharSequence> isWooPattern=Predicates.contains(Pattern.compile("Woo"));
+  tester.testAllPublicInstanceMethods(isWooPattern);
+}

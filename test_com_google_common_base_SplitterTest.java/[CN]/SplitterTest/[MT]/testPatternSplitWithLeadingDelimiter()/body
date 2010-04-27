@@ -1,0 +1,5 @@
+{
+  String leading=",a,b,c";
+  Iterable<String> letters=Splitter.onPattern(",").split(leading);
+  assertContentsInOrder(letters,"","a","b","c");
+}

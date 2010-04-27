@@ -1,0 +1,12 @@
+{
+  FinalizableReferenceQueue.DecoupledLoader decoupledLoader=new FinalizableReferenceQueue.DecoupledLoader(){
+    @Override URLClassLoader newLoader(    URL base){
+      return new DecoupledClassLoader(new URL[]{base});
+    }
+  }
+;
+  Class<?> finalizerCopy=decoupledLoader.loadFinalizer();
+  assertNotNull(finalizerCopy);
+  assertNotSame(Finalizer.class,finalizerCopy);
+  assertNotNull(FinalizableReferenceQueue.getStartFinalizer(finalizerCopy));
+}

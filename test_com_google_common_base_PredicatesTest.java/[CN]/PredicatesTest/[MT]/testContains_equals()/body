@@ -1,0 +1,3 @@
+{
+  new EqualsTester().addEqualityGroup(Predicates.contains(Pattern.compile("foo")),Predicates.containsPattern("foo")).addEqualityGroup(Predicates.contains(Pattern.compile("foo",Pattern.CASE_INSENSITIVE))).addEqualityGroup(Predicates.containsPattern("bar")).testEquals();
+}

@@ -1,0 +1,5 @@
+{
+  assertEquals("Foo",LOWER_CAMEL.to(UPPER_CAMEL,"foo"));
+  assertEquals("FooBar",LOWER_CAMEL.to(UPPER_CAMEL,"fooBar"));
+  assertEquals("HTTP",LOWER_CAMEL.to(UPPER_CAMEL,"hTTP"));
+}

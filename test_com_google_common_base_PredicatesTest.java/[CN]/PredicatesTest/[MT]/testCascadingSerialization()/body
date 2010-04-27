@@ -1,0 +1,6 @@
+{
+  Predicate<? super Integer> nasty=Predicates.not(Predicates.and(Predicates.or(Predicates.equalTo((Object)1),Predicates.equalTo(null),Predicates.alwaysFalse(),Predicates.alwaysTrue(),Predicates.isNull(),Predicates.notNull(),Predicates.in(Arrays.asList(1)))));
+  assertEvalsToFalse(nasty);
+  Predicate<? super Integer> stillNasty=SerializableTester.reserializeAndAssert(nasty);
+  assertEvalsToFalse(stillNasty);
+}

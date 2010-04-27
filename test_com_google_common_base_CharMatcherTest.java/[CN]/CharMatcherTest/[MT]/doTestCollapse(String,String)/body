@@ -1,0 +1,9 @@
+{
+  assertEquals(out,is('-').collapseFrom(in,'_'));
+  assertEquals(out,is('-').or(is('#')).collapseFrom(in,'_'));
+  assertEquals(out,isNot('x').collapseFrom(in,'_'));
+  assertEquals(out,is('x').negate().collapseFrom(in,'_'));
+  assertEquals(out,anyOf("-").collapseFrom(in,'_'));
+  assertEquals(out,anyOf("-#").collapseFrom(in,'_'));
+  assertEquals(out,anyOf("-#123").collapseFrom(in,'_'));
+}

@@ -1,0 +1,7 @@
+{
+  Function<? super String,Y> g=SerializableTester.reserializeAndAssert(f);
+  assertSame(f,g);
+  for (Integer i=1; i < 5; i++) {
+    assertEquals(f.apply(i.toString()),g.apply(i.toString()));
+  }
+}

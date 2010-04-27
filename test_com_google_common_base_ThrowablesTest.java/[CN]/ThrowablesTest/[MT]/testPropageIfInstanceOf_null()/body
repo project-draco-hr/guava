@@ -1,0 +1,3 @@
+{
+  Throwables.propagateIfInstanceOf(null,SomeCheckedException.class);
+}

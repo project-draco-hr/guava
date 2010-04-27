@@ -1,0 +1,5 @@
+{
+  Predicate<Integer> isNull=Predicates.equalTo(null);
+  assertTrue(isNull.apply(null));
+  assertFalse(isNull.apply(1));
+}

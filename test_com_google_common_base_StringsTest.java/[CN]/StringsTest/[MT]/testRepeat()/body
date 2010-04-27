@@ -1,0 +1,13 @@
+{
+  String input="20";
+  assertEquals("",Strings.repeat(input,0));
+  assertEquals("20",Strings.repeat(input,1));
+  assertEquals("202020",Strings.repeat(input,3));
+  assertEquals("",Strings.repeat("",4));
+  try {
+    Strings.repeat("x",-1);
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}

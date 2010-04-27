@@ -1,0 +1,6 @@
+{
+  NullPointerTester tester=new NullPointerTester();
+  tester.testAllPublicStaticMethods(CharMatcher.class);
+  tester.testAllPublicInstanceMethods(CharMatcher.ANY);
+  tester.testAllPublicInstanceMethods(CharMatcher.anyOf("abc"));
+}

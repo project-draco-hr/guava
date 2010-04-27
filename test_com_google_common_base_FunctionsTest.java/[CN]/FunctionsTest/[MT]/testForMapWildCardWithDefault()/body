@@ -1,0 +1,10 @@
+{
+  Map<String,Integer> map=Maps.newHashMap();
+  map.put("One",1);
+  map.put("Three",3);
+  Number number=Double.valueOf(42);
+  Function<String,Number> function=Functions.forMap(map,number);
+  assertEquals(1,function.apply("One").intValue());
+  assertEquals(number,function.apply("Two"));
+  assertEquals(3L,function.apply("Three").longValue());
+}

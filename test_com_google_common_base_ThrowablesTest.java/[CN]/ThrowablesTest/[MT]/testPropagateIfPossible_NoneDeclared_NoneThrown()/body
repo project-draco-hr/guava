@@ -1,0 +1,15 @@
+{
+  Sample sample=new Sample(){
+    @Override public void noneDeclared(){
+      try {
+        methodThatDoesntThrowAnything();
+      }
+ catch (      Throwable t) {
+        Throwables.propagateIfPossible(t);
+        throw new SomeChainingException(t);
+      }
+    }
+  }
+;
+  sample.noneDeclared();
+}

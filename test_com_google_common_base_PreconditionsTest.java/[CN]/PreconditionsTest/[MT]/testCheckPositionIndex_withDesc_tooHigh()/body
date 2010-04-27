@@ -1,0 +1,9 @@
+{
+  try {
+    Preconditions.checkPositionIndex(2,1,"foo");
+    fail();
+  }
+ catch (  IndexOutOfBoundsException expected) {
+    assertEquals("foo (2) must not be greater than size (1)",expected.getMessage());
+  }
+}

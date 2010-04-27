@@ -1,0 +1,5 @@
+{
+  assertIteratorIsUnmodifiable(Splitter.on(',').split("a,b").iterator());
+  assertIteratorIsUnmodifiable(Splitter.on(",").split("a,b").iterator());
+  assertIteratorIsUnmodifiable(Splitter.on(Pattern.compile(",")).split("a,b").iterator());
+}

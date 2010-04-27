@@ -1,0 +1,7 @@
+{
+  Predicate<Object> isInteger=Predicates.instanceOf(Integer.class);
+  assertTrue(isInteger.apply(1));
+  assertFalse(isInteger.apply(2.0f));
+  assertFalse(isInteger.apply(""));
+  assertFalse(isInteger.apply(null));
+}

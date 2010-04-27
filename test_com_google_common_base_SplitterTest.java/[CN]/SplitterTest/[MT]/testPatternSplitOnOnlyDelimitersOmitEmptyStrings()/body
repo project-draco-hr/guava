@@ -1,0 +1,4 @@
+{
+  Iterable<String> empty=Splitter.on(LITERAL_DOT_PATTERN).omitEmptyStrings().split("...");
+  assertContentsInOrder(empty);
+}

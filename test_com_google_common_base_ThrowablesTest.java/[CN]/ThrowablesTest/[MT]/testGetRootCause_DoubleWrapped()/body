@@ -1,0 +1,5 @@
+{
+  SomeCheckedException cause=new SomeCheckedException();
+  SomeChainingException exception=new SomeChainingException(new SomeChainingException(cause));
+  assertSame(cause,Throwables.getRootCause(exception));
+}

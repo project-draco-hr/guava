@@ -1,0 +1,5 @@
+{
+  assertEquals("foo",LOWER_CAMEL.to(LOWER_HYPHEN,"foo"));
+  assertEquals("foo-bar",LOWER_CAMEL.to(LOWER_HYPHEN,"fooBar"));
+  assertEquals("h-t-t-p",LOWER_CAMEL.to(LOWER_HYPHEN,"HTTP"));
+}

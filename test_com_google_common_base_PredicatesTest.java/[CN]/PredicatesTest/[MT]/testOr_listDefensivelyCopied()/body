@@ -1,0 +1,7 @@
+{
+  List list=new ArrayList<Predicate>();
+  Predicate<Object> predicate=Predicates.or(list);
+  assertFalse(predicate.apply(1));
+  list.add(Predicates.alwaysTrue());
+  assertFalse(predicate.apply(1));
+}

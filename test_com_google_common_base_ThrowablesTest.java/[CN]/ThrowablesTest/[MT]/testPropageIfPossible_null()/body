@@ -1,0 +1,5 @@
+{
+  Throwables.propagateIfPossible(null);
+  Throwables.propagateIfPossible(null,SomeCheckedException.class);
+  Throwables.propagateIfPossible(null,SomeCheckedException.class,SomeUncheckedException.class);
+}

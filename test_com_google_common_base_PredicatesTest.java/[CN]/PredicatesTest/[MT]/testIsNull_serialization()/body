@@ -1,0 +1,6 @@
+{
+  Predicate<String> pre=Predicates.isNull();
+  Predicate<String> post=SerializableTester.reserializeAndAssert(pre);
+  assertEquals(pre.apply("foo"),post.apply("foo"));
+  assertEquals(pre.apply(null),post.apply(null));
+}

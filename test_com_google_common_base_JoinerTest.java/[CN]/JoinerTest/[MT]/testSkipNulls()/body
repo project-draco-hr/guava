@@ -1,0 +1,13 @@
+{
+  Joiner skipNulls=J.skipNulls();
+  checkNoOutput(skipNulls,ITERABLE_);
+  checkNoOutput(skipNulls,ITERABLE_NULL);
+  checkNoOutput(skipNulls,ITERABLE_NULL_NULL);
+  checkNoOutput(skipNulls,ITERABLE_FOUR_NULLS);
+  checkResult(skipNulls,ITERABLE_1,"1");
+  checkResult(skipNulls,ITERABLE_12,"1-2");
+  checkResult(skipNulls,ITERABLE_123,"1-2-3");
+  checkResult(skipNulls,ITERABLE_NULL_1,"1");
+  checkResult(skipNulls,ITERABLE_1_NULL,"1");
+  checkResult(skipNulls,ITERABLE_1_NULL_2,"1-2");
+}

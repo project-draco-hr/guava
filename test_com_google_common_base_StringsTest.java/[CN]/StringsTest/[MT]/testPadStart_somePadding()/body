@@ -1,0 +1,7 @@
+{
+  assertEquals("-",Strings.padStart("",1,'-'));
+  assertEquals("--",Strings.padStart("",2,'-'));
+  assertEquals("-x",Strings.padStart("x",2,'-'));
+  assertEquals("--x",Strings.padStart("x",3,'-'));
+  assertEquals("-xx",Strings.padStart("xx",3,'-'));
+}

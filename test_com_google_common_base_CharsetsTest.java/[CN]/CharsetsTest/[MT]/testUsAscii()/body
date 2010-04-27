@@ -1,0 +1,3 @@
+{
+  assertEquals(Charset.forName("US-ASCII"),Charsets.US_ASCII);
+}

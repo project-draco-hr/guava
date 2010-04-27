@@ -1,0 +1,6 @@
+{
+  new EqualsTester(TRUE).addEqualObject(Predicates.alwaysTrue()).addNotEqualObject(FALSE).addNotEqualObject(Predicates.not(TRUE)).testEquals();
+  new EqualsTester(FALSE).addEqualObject(Predicates.alwaysFalse()).addNotEqualObject(TRUE).addNotEqualObject(Predicates.not(FALSE)).testEquals();
+  new EqualsTester(Predicates.isNull()).addEqualObject(Predicates.isNull()).addNotEqualObject(Predicates.notNull()).addNotEqualObject(Predicates.not(Predicates.isNull())).testEquals();
+  new EqualsTester(Predicates.notNull()).addEqualObject(Predicates.notNull()).addNotEqualObject(Predicates.isNull()).addNotEqualObject(Predicates.not(Predicates.notNull())).testEquals();
+}

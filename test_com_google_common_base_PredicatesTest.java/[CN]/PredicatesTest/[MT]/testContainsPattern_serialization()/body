@@ -1,0 +1,5 @@
+{
+  Predicate<CharSequence> pre=Predicates.containsPattern("foo");
+  Predicate<CharSequence> post=SerializableTester.reserializeAndAssert(pre);
+  assertEquals(pre.apply("foo"),post.apply("foo"));
+}

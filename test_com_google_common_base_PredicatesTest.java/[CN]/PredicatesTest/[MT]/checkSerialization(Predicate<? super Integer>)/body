@@ -1,0 +1,4 @@
+{
+  Predicate<? super Integer> reserialized=SerializableTester.reserializeAndAssert(predicate);
+  assertEvalsLike(predicate,reserialized);
+}

@@ -1,0 +1,28 @@
+{
+  Map<String,Integer> mJapaneseToInteger=Maps.newHashMap();
+  mJapaneseToInteger.put("Ichi",1);
+  mJapaneseToInteger.put("Ni",2);
+  mJapaneseToInteger.put("San",3);
+  Function<String,Integer> japaneseToInteger=Functions.forMap(mJapaneseToInteger);
+  Map<Integer,String> mIntegerToSpanish=Maps.newHashMap();
+  mIntegerToSpanish.put(1,"Uno");
+  mIntegerToSpanish.put(3,"Tres");
+  mIntegerToSpanish.put(4,"Cuatro");
+  Function<Integer,String> integerToSpanish=Functions.forMap(mIntegerToSpanish);
+  Function<String,String> japaneseToSpanish=Functions.compose(integerToSpanish,japaneseToInteger);
+  assertEquals("Uno",japaneseToSpanish.apply("Ichi"));
+  try {
+    japaneseToSpanish.apply("Ni");
+    fail();
+  }
+ catch (  IllegalArgumentException e) {
+  }
+  assertEquals("Tres",japaneseToSpanish.apply("San"));
+  try {
+    japaneseToSpanish.apply("Shi");
+    fail();
+  }
+ catch (  IllegalArgumentException e) {
+  }
+  new EqualsTester(japaneseToSpanish).addEqualObject(Functions.compose(integerToSpanish,japaneseToInteger)).addEqualObject(SerializableTester.reserialize(japaneseToSpanish)).addNotEqualObject(japaneseToInteger).addNotEqualObject(integerToSpanish).addNotEqualObject(Functions.compose(japaneseToInteger,integerToSpanish)).testEquals();
+}

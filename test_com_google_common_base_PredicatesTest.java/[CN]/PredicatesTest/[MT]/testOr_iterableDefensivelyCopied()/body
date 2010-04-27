@@ -1,0 +1,13 @@
+{
+  final List list=new ArrayList<Predicate>();
+  Iterable iterable=new Iterable<Predicate>(){
+    public Iterator<Predicate> iterator(){
+      return list.iterator();
+    }
+  }
+;
+  Predicate<Object> predicate=Predicates.or(iterable);
+  assertFalse(predicate.apply(1));
+  list.add(Predicates.alwaysTrue());
+  assertFalse(predicate.apply(1));
+}

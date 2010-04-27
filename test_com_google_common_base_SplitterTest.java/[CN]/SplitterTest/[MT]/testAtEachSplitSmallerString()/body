@@ -1,0 +1,5 @@
+{
+  String simple="ab";
+  Iterable<String> letters=Splitter.fixedLength(3).split(simple);
+  assertContentsInOrder(letters,"ab");
+}

@@ -1,0 +1,13 @@
+{
+class StackTraceException extends Exception {
+    StackTraceException(    String message){
+      super(message);
+    }
+  }
+  StackTraceException e=new StackTraceException("my message");
+  String firstLine=quote(e.getClass().getName() + ": " + e.getMessage());
+  String secondLine="\\s*at " + ThrowablesTest.class.getName() + "\\..*";
+  String moreLines="(?:.*\n?)*";
+  String expected=firstLine + "\n" + secondLine+ "\n"+ moreLines;
+  assertTrue(getStackTraceAsString(e).matches(expected));
+}

@@ -1,0 +1,4 @@
+{
+  final String result=Objects.toStringHelper(new TestClass()).add("Hello",null).toString();
+  assertEquals("TestClass{Hello=null}",result);
+}

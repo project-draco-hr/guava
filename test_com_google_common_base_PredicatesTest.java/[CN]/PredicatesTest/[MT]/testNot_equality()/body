@@ -1,0 +1,3 @@
+{
+  new EqualsTester(Predicates.not(isOdd())).addEqualObject(Predicates.not(isOdd())).addNotEqualObject(Predicates.not(TRUE)).addNotEqualObject(isOdd()).testEquals();
+}

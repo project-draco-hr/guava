@@ -1,0 +1,21 @@
+{
+  Sample sample=new Sample(){
+    @Override public void oneDeclared() throws SomeCheckedException {
+      try {
+        methodThatThrowsOtherChecked();
+      }
+ catch (      Throwable t) {
+        Throwables.propagateIfInstanceOf(t,SomeCheckedException.class);
+        throw Throwables.propagate(t);
+      }
+    }
+  }
+;
+  try {
+    sample.oneDeclared();
+    fail();
+  }
+ catch (  RuntimeException e) {
+    assertTrue(e.getCause() instanceof SomeOtherCheckedException);
+  }
+}

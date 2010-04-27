@@ -1,0 +1,3 @@
+{
+  new EqualsTester(Predicates.instanceOf(Integer.class)).addEqualObject(Predicates.instanceOf(Integer.class)).addNotEqualObject(Predicates.instanceOf(Number.class)).addNotEqualObject(Predicates.instanceOf(Float.class)).testEquals();
+}

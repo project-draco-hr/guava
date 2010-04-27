@@ -1,0 +1,17 @@
+{
+  doTestNoMatches(CharMatcher.NONE,"blah");
+  doTestNoMatches(is('a'),"bcde");
+  doTestNoMatches(isNot('a'),"aaaa");
+  doTestNoMatches(anyOf(""),"abcd");
+  doTestNoMatches(anyOf("x"),"abcd");
+  doTestNoMatches(anyOf("xy"),"abcd");
+  doTestNoMatches(anyOf("CharMatcher"),"zxqy");
+  doTestNoMatches(noneOf("CharMatcher"),"ChMa");
+  doTestNoMatches(inRange('p','x'),"mom");
+  doTestNoMatches(forPredicate(Predicates.equalTo('c')),"abe");
+  doTestNoMatches(inRange('A','Z').and(inRange('F','K').negate()),"F1a");
+  doTestNoMatches(CharMatcher.DIGIT,"\tAz()");
+  doTestNoMatches(CharMatcher.JAVA_DIGIT,"\tAz()");
+  doTestNoMatches(CharMatcher.DIGIT.and(CharMatcher.ASCII),"\tAz()");
+  doTestNoMatches(CharMatcher.SINGLE_WIDTH,"\u05bf\u3000");
+}

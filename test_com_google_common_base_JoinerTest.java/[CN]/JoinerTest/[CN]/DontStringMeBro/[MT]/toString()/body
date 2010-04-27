@@ -1,0 +1,4 @@
+{
+  Assert.fail("shouldn't be invoked");
+  return null;
+}

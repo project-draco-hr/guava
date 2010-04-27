@@ -1,0 +1,20 @@
+{
+  Sample sample=new Sample(){
+    @Override public void oneDeclared() throws SomeCheckedException {
+      try {
+        methodThatThrowsUndeclaredChecked();
+      }
+ catch (      Throwable t) {
+        Throwables.propagateIfPossible(t,SomeCheckedException.class);
+        throw new SomeChainingException(t);
+      }
+    }
+  }
+;
+  try {
+    sample.oneDeclared();
+    fail();
+  }
+ catch (  SomeChainingException expected) {
+  }
+}

@@ -1,0 +1,4 @@
+{
+  Iterable<String> testCharacteringMotto=Splitter.on('-').split("Testing-rocks-Debugging-sucks");
+  assertContentsInOrder(testCharacteringMotto,"Testing","rocks","Debugging","sucks");
+}

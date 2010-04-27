@@ -1,0 +1,9 @@
+{
+  NullPointerTester tester=new NullPointerTester();
+  tester.setDefault(StringBuilder.class,new StringBuilder());
+  tester.testAllPublicStaticMethods(Joiner.class);
+  tester.testAllPublicInstanceMethods(Joiner.on(","));
+  tester.testAllPublicInstanceMethods(Joiner.on(",").skipNulls());
+  tester.testAllPublicInstanceMethods(Joiner.on(",").useForNull("x"));
+  tester.testAllPublicInstanceMethods(Joiner.on(",").withKeyValueSeparator("="));
+}

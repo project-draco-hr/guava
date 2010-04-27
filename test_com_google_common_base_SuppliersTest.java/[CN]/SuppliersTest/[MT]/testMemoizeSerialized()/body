@@ -1,0 +1,10 @@
+{
+  CountingSupplier countingSupplier=new CountingSupplier();
+  Supplier<Integer> memoizedSupplier=Suppliers.memoize(countingSupplier);
+  checkMemoize(countingSupplier,memoizedSupplier);
+  memoizedSupplier.get();
+  Supplier<Integer> copy=reserialize(memoizedSupplier);
+  memoizedSupplier.get();
+  CountingSupplier countingCopy=(CountingSupplier)((Suppliers.MemoizingSupplier<Integer>)copy).delegate;
+  checkMemoize(countingCopy,copy);
+}

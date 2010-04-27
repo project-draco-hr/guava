@@ -1,0 +1,24 @@
+{
+  Predicate<Integer> p1=Predicates.isNull();
+  Predicate<Integer> p2=isOdd();
+  Predicate<Integer> p3=new Predicate<Integer>(){
+    public boolean apply(    Integer i){
+      return (Integer.bitCount(i) & 1) == 1;
+    }
+    @Override public String toString(){
+      return "oddBitCount";
+    }
+  }
+;
+  checkConsistency(p1,Predicates.not(Predicates.not(p1)));
+  checkConsistency(Predicates.and(Predicates.not(p1),Predicates.not(p2)),Predicates.not(Predicates.or(p1,p2)));
+  checkConsistency(Predicates.or(Predicates.not(p1),Predicates.not(p2)),Predicates.not(Predicates.and(p1,p2)));
+  checkConsistency(Predicates.and(Predicates.and(p1,p2),p3),Predicates.and(p1,Predicates.and(p2,p3)));
+  checkConsistency(Predicates.or(Predicates.or(p1,p2),p3),Predicates.or(p1,Predicates.or(p2,p3)));
+  checkConsistency(Predicates.or(Predicates.and(p1,p2),p3),Predicates.and(Predicates.or(p1,p3),Predicates.or(p2,p3)));
+  checkConsistency(Predicates.and(Predicates.or(p1,p2),p3),Predicates.or(Predicates.and(p1,p3),Predicates.and(p2,p3)));
+  assertEvalsLike(Predicates.alwaysTrue(),Predicates.not(Predicates.alwaysFalse()));
+  assertEvalsLike(Predicates.alwaysFalse(),Predicates.not(Predicates.alwaysTrue()));
+  assertEvalsLike(Predicates.alwaysFalse(),Predicates.and(p1,Predicates.not(p1)));
+  assertEvalsLike(Predicates.alwaysTrue(),Predicates.or(p1,Predicates.not(p1)));
+}

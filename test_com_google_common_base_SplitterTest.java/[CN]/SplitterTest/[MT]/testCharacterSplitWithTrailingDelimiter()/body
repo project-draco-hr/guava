@@ -1,0 +1,5 @@
+{
+  String trailing="a,b,c,";
+  Iterable<String> letters=Splitter.on(',').split(trailing);
+  assertContentsInOrder(letters,"a","b","c","");
+}

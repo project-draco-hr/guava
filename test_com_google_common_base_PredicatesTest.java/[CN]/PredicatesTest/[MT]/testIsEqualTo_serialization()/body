@@ -1,0 +1,3 @@
+{
+  checkSerialization(Predicates.equalTo(1));
+}

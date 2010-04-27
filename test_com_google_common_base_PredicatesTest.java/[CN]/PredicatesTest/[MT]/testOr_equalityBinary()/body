@@ -1,0 +1,3 @@
+{
+  new EqualsTester(Predicates.or(FALSE,NEVER_REACHED)).addEqualObject(Predicates.or(FALSE,NEVER_REACHED)).addNotEqualObject(Predicates.or(NEVER_REACHED,FALSE)).addNotEqualObject(Predicates.or(TRUE)).addNotEqualObject(Predicates.and(FALSE,NEVER_REACHED)).testEquals();
+}

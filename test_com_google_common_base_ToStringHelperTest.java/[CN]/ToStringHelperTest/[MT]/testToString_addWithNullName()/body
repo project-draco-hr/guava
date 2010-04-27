@@ -1,0 +1,9 @@
+{
+  Objects.ToStringHelper helper=Objects.toStringHelper(new TestClass());
+  try {
+    helper.add(null,"Hello");
+    fail("No exception was thrown.");
+  }
+ catch (  NullPointerException expected) {
+  }
+}

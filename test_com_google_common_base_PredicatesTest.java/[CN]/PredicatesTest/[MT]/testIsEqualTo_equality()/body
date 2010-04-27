@@ -1,0 +1,3 @@
+{
+  new EqualsTester(Predicates.equalTo(1)).addEqualObject(Predicates.equalTo(1)).addNotEqualObject(Predicates.equalTo(2)).addNotEqualObject(Predicates.equalTo(null)).testEquals();
+}

@@ -1,0 +1,5 @@
+{
+  String doubled="a,,b,c";
+  Iterable<String> letters=Splitter.onPattern(",").split(doubled);
+  assertContentsInOrder(letters,"a","","b","c");
+}

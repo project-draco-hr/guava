@@ -1,0 +1,3 @@
+{
+  assertEquals(Charset.forName("UTF-16"),Charsets.UTF_16);
+}

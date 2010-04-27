@@ -1,0 +1,15 @@
+{
+  Sample sample=new Sample(){
+    @Override public void oneDeclared() throws SomeCheckedException {
+      try {
+        methodThatDoesntThrowAnything();
+      }
+ catch (      Throwable t) {
+        Throwables.propagateIfInstanceOf(t,SomeCheckedException.class);
+        throw Throwables.propagate(t);
+      }
+    }
+  }
+;
+  sample.oneDeclared();
+}

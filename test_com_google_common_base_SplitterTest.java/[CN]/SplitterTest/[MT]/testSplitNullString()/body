@@ -1,0 +1,8 @@
+{
+  try {
+    Iterable<String> letters=Splitter.on(',').split(null);
+    fail();
+  }
+ catch (  NullPointerException expected) {
+  }
+}

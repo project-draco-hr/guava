@@ -1,0 +1,8 @@
+{
+  try {
+    Preconditions.checkPositionIndex(1,-1);
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}

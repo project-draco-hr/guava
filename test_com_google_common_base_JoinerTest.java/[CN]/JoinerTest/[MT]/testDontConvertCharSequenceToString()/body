@@ -1,0 +1,4 @@
+{
+  assertEquals("foo,foo",Joiner.on(",").join(new DontStringMeBro(),new DontStringMeBro()));
+  assertEquals("foo,bar,foo",Joiner.on(",").useForNull("bar").join(new DontStringMeBro(),null,new DontStringMeBro()));
+}

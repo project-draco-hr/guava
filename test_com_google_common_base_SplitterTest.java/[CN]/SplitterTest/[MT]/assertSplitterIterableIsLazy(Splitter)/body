@@ -1,0 +1,11 @@
+{
+  StringBuilder builder=new StringBuilder();
+  Iterator<String> iterator=splitter.split(builder).iterator();
+  builder.append("A,");
+  assertEquals("A",iterator.next());
+  builder.append("B,");
+  assertEquals("B",iterator.next());
+  builder.append("C");
+  assertEquals("C",iterator.next());
+  assertFalse(iterator.hasNext());
+}

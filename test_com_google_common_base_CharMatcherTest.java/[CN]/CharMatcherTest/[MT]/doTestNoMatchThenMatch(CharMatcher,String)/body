@@ -1,0 +1,7 @@
+{
+  reallyTestNoMatchThenMatch(matcher,s);
+  reallyTestMatchThenNoMatch(matcher.negate(),s);
+  reallyTestNoMatchThenMatch(matcher.precomputed(),s);
+  reallyTestMatchThenNoMatch(matcher.negate().precomputed(),s);
+  reallyTestMatchThenNoMatch(matcher.precomputed().negate(),s);
+}

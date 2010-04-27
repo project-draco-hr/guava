@@ -1,0 +1,9 @@
+{
+  try {
+    Preconditions.checkNotNull(null,new Message());
+    fail("no exception thrown");
+  }
+ catch (  NullPointerException expected) {
+    verifySimpleMessage(expected);
+  }
+}

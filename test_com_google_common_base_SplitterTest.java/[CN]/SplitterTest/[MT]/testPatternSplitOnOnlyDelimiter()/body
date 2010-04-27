@@ -1,0 +1,4 @@
+{
+  Iterable<String> blankblank=Splitter.on(LITERAL_DOT_PATTERN).split(".");
+  assertContentsInOrder(blankblank,"","");
+}
