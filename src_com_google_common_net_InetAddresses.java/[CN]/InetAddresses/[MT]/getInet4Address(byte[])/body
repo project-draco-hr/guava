@@ -1,0 +1,13 @@
+{
+  Preconditions.checkArgument(bytes.length == 4,"Byte array has invalid length for an IPv4 address: %s != 4.",bytes.length);
+  try {
+    InetAddress ipv4=InetAddress.getByAddress(bytes);
+    if (!(ipv4 instanceof Inet4Address)) {
+      throw new UnknownHostException(String.format("'%s' is not an IPv4 address.",ipv4.getHostAddress()));
+    }
+    return (Inet4Address)ipv4;
+  }
+ catch (  UnknownHostException e) {
+    throw new IllegalArgumentException(String.format("Host address '%s' is not a valid IPv4 address.",Arrays.toString(bytes)),e);
+  }
+}

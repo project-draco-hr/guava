@@ -1,0 +1,6 @@
+{
+  this.name=name;
+  this.parts=ImmutableList.copyOf(DOT_SPLITTER.split(name));
+  Preconditions.checkArgument(validateSyntax(parts),"Not a valid domain name: '%s'",name);
+  this.tldIndex=findTld();
+}

@@ -1,0 +1,3 @@
+{
+  return tldIndex != NO_TLD_FOUND;
+}

@@ -1,4 +1,4 @@
 {
   Set<V> result=values;
-  return (result == null) ? values=Collections.<V>unmodifiableSet(delegate.values()) : result;
+  return (result == null) ? values=Collections.unmodifiableSet(delegate.values()) : result;
 }

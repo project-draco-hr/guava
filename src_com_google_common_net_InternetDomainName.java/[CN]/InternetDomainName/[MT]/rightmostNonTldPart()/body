@@ -1,0 +1,3 @@
+{
+  return tldIndex >= 1 ? parts.get(tldIndex - 1) : null;
+}

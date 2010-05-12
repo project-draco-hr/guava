@@ -1,0 +1,20 @@
+{
+  byte[] addr=sun.net.util.IPAddressUtil.textToNumericFormatV4(ipString);
+  if (addr != null) {
+    if (!sanityCheckIPv4String(ipString)) {
+      addr=null;
+    }
+  }
+ else {
+    addr=sun.net.util.IPAddressUtil.textToNumericFormatV6(ipString);
+  }
+  if (addr == null) {
+    throw new IllegalArgumentException(String.format("'%s' is not an IP string literal.",ipString));
+  }
+  try {
+    return InetAddress.getByAddress(addr);
+  }
+ catch (  UnknownHostException e) {
+    throw new IllegalArgumentException(String.format("'%s' is extremely broken.",ipString),e);
+  }
+}

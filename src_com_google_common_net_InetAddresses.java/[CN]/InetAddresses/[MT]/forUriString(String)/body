@@ -1,0 +1,21 @@
+{
+  Preconditions.checkNotNull(hostAddr);
+  Preconditions.checkArgument(hostAddr.length() > 0,"host string is empty");
+  InetAddress retval=null;
+  try {
+    retval=forString(hostAddr);
+    if (retval instanceof Inet4Address) {
+      return retval;
+    }
+  }
+ catch (  IllegalArgumentException e) {
+  }
+  if (!(hostAddr.startsWith("[") && hostAddr.endsWith("]"))) {
+    throw new IllegalArgumentException("Not a valid address: \"" + hostAddr + '"');
+  }
+  retval=forString(hostAddr.substring(1,hostAddr.length() - 1));
+  if (retval instanceof Inet6Address) {
+    return retval;
+  }
+  throw new IllegalArgumentException("Not a valid address: \"" + hostAddr + '"');
+}

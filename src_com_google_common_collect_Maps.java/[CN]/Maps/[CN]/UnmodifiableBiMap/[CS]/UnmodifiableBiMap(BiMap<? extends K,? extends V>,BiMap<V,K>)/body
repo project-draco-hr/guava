@@ -1,5 +1,5 @@
 {
-  unmodifiableMap=Collections.<K,V>unmodifiableMap(delegate);
+  unmodifiableMap=Collections.unmodifiableMap(delegate);
   this.delegate=delegate;
   this.inverse=inverse;
 }

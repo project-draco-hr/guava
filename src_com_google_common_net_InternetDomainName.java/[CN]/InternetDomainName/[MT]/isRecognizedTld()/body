@@ -1,0 +1,3 @@
+{
+  return tldIndex == 0;
+}

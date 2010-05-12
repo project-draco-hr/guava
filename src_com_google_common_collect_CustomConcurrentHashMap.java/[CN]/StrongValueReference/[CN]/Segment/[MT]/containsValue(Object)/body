@@ -4,7 +4,7 @@
     int length=table.length();
     for (int i=0; i < length; ++i) {
       for (ReferenceEntry<K,V> e=table.get(i); e != null; e=e.getNext()) {
-        V entryValue=validValue(e);
+        V entryValue=getUnexpiredValue(e);
         if (entryValue == null) {
           continue;
         }

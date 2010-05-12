@@ -1,0 +1,3 @@
+{
+  return part.length() <= MAX_DOMAIN_PART_LENGTH && part.matches(pattern);
+}

@@ -1,0 +1,23 @@
+{
+  InetAddress addr=null;
+  try {
+    addr=InetAddresses.forString(specifier);
+  }
+ catch (  IllegalArgumentException e) {
+  }
+  if (addr == null) {
+    try {
+      addr=InetAddresses.forUriString(specifier);
+    }
+ catch (    IllegalArgumentException e) {
+    }
+  }
+  if (addr != null) {
+    return new HostSpecifier(InetAddresses.toUriString(addr));
+  }
+  final InternetDomainName domain=InternetDomainName.from(specifier);
+  if (domain.isUnderRecognizedTld()) {
+    return new HostSpecifier(domain.name());
+  }
+  throw new IllegalArgumentException("Domain name not under a recognized TLD: " + specifier);
+}

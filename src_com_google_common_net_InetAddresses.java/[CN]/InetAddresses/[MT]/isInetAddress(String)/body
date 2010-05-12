@@ -1,0 +1,9 @@
+{
+  try {
+    forString(ipString);
+    return true;
+  }
+ catch (  IllegalArgumentException e) {
+    return false;
+  }
+}

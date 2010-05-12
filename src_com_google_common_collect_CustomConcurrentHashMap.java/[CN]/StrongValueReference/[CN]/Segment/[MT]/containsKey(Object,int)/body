@@ -9,7 +9,7 @@
         continue;
       }
       if (keyEquivalence.equivalent(entryKey,key)) {
-        return validValue(e) != null;
+        return getUnexpiredValue(e) != null;
       }
     }
   }

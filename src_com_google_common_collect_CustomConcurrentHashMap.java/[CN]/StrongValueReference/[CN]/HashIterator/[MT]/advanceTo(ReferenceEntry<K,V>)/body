@@ -1,6 +1,6 @@
 {
   K key=entry.getKey();
-  V value=entry.getValueReference().get();
+  V value=getUnexpiredValue(entry);
   if (key != null && value != null) {
     nextExternal=new WriteThroughEntry(key,value);
     return true;
