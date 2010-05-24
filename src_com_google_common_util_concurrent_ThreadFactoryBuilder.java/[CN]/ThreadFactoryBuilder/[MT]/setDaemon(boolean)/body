@@ -1,5 +1,4 @@
 {
   this.daemon=daemon;
-  this.wasDaemonSet=true;
   return this;
 }

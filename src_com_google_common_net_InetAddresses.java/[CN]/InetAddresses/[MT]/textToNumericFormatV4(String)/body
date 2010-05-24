@@ -1,0 +1,38 @@
+{
+  boolean isIpv6=false;
+  if (ipString.toUpperCase(Locale.US).startsWith("::FFFF:")) {
+    ipString=ipString.substring(7);
+  }
+ else   if (ipString.startsWith("::")) {
+    ipString=ipString.substring(2);
+    isIpv6=true;
+  }
+  String[] address=ipString.split("\\.");
+  if (address.length != IPV4_PART_COUNT) {
+    return null;
+  }
+  try {
+    byte[] bytes=new byte[IPV4_PART_COUNT];
+    for (int i=0; i < bytes.length; i++) {
+      int piece=Integer.parseInt(address[i]);
+      if (piece < 0 || piece > 255) {
+        return null;
+      }
+      if (address[i].startsWith("0") && piece != 0) {
+        return null;
+      }
+      bytes[i]=(byte)piece;
+    }
+    if (isIpv6) {
+      byte[] data=new byte[2 * IPV6_PART_COUNT];
+      System.arraycopy(bytes,0,data,12,IPV4_PART_COUNT);
+      return data;
+    }
+ else {
+      return bytes;
+    }
+  }
+ catch (  NumberFormatException ex) {
+    return null;
+  }
+}

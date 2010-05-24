@@ -1,7 +1,5 @@
 {
-  checkNotNull(original);
-  checkArgument(from >= 0 && from <= original.length);
-  checkArgument(to >= from);
+  Preconditions.checkNotNull(original);
   int end=Math.min(to,original.length);
   byte[] result=new byte[to - from];
   System.arraycopy(original,from,result,0,end - from);

@@ -1,9 +1,4 @@
 {
-  Expirable next=removed.getNextExpirable();
-  if (next == null) {
-    return;
-  }
-  connectExpirable(removed.getPreviousExpirable(),next);
-  removed.setNextExpirable(NullExpirable.INSTANCE);
-  removed.setPreviousExpirable(NullExpirable.INSTANCE);
+  connectExpirable(removed.getPreviousExpirable(),removed.getNextExpirable());
+  nullifyExpirable(removed);
 }

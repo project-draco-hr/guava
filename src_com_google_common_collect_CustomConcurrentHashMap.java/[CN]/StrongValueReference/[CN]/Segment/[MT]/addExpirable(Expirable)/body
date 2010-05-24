@@ -1,5 +1,5 @@
 {
-  removeExpirable(added);
+  connectExpirable(added.getPreviousExpirable(),added.getNextExpirable());
   added.setWriteTime(System.nanoTime());
   connectExpirable(expirationHead.getPreviousExpirable(),added);
   connectExpirable(added,expirationHead);

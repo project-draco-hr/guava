@@ -2,8 +2,7 @@
   Expirable expirable=expirationHead.getNextExpirable();
   while (expirable != expirationHead) {
     Expirable next=expirable.getNextExpirable();
-    expirable.setNextExpirable(NullExpirable.INSTANCE);
-    expirable.setPreviousExpirable(NullExpirable.INSTANCE);
+    nullifyExpirable(expirable);
     expirable=next;
   }
   expirationHead.setNextExpirable(expirationHead);
