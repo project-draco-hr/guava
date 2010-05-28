@@ -18,7 +18,7 @@
       if (piece < 0 || piece > 255) {
         return null;
       }
-      if (address[i].startsWith("0") && piece != 0) {
+      if (address[i].startsWith("0") && address[i].length() != 1) {
         return null;
       }
       bytes[i]=(byte)piece;
