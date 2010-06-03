@@ -1,3 +1,0 @@
-{
-  return new ThreadFactoryBuilder().setThreadFactory(factory).setDaemon(true).build();
-}
