@@ -2,6 +2,4 @@
   Function<String,String> identity=Functions.identity();
   assertNull(identity.apply(null));
   assertSame("foo",identity.apply("foo"));
-  assertNotSame("foo",identity.apply(new String("foo")));
-  checkCanReserializeSingleton(Functions.identity());
 }

@@ -21,6 +21,4 @@
   assertEquals("",matcher.replaceFrom("","ZZ"));
   assertEquals("",matcher.trimFrom(""));
   assertEquals(0,matcher.countIn(""));
-  NullPointerTester tester=new NullPointerTester();
-  tester.testAllPublicInstanceMethods(matcher);
 }

@@ -1,5 +1,4 @@
 {
   assertSplitterIterableIsLazy(Splitter.on(','));
   assertSplitterIterableIsLazy(Splitter.on(","));
-  assertSplitterIterableIsLazy(Splitter.on(Pattern.compile(",")));
 }

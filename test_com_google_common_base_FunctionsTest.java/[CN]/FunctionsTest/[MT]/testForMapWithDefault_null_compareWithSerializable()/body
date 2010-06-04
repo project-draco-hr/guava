@@ -1,0 +1,7 @@
+{
+  ImmutableMap<String,Integer> map=ImmutableMap.of("One",1);
+  Function<String,Integer> function=Functions.forMap(map,null);
+  assertEquals((Integer)1,function.apply("One"));
+  assertNull(function.apply("Two"));
+  new EqualsTester(function).addEqualObject(SerializableTester.reserialize(function)).addNotEqualObject(Functions.forMap(map,1)).testEquals();
+}

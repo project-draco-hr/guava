@@ -7,9 +7,9 @@
   assertEquals(-1,matcher.lastIndexIn(s));
   assertFalse(matcher.matchesAllOf(s));
   assertTrue(matcher.matchesNoneOf(s));
-  assertSame(s,matcher.removeFrom(s));
-  assertSame(s,matcher.replaceFrom(s,'z'));
-  assertSame(s,matcher.replaceFrom(s,"ZZ"));
-  assertSame(s,matcher.trimFrom(s));
+  assertEquals(s,matcher.removeFrom(s));
+  assertEquals(s,matcher.replaceFrom(s,'z'));
+  assertEquals(s,matcher.replaceFrom(s,"ZZ"));
+  assertEquals(s,matcher.trimFrom(s));
   assertEquals(0,matcher.countIn(s));
 }

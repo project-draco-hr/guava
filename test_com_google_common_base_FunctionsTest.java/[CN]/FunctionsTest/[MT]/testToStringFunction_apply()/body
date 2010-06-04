@@ -13,5 +13,4 @@
   }
  catch (  NullPointerException e) {
   }
-  checkCanReserializeSingleton(Functions.toStringFunction());
 }

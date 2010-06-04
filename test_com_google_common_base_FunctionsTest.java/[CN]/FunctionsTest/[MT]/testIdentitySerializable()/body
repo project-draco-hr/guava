@@ -1,0 +1,3 @@
+{
+  checkCanReserializeSingleton(Functions.identity());
+}

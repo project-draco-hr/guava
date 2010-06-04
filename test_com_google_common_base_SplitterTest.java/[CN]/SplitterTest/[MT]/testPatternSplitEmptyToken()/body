@@ -1,5 +1,5 @@
 {
   String emptyToken="a. .c";
-  Iterable<String> letters=Splitter.on(LITERAL_DOT_PATTERN).trimResults().split(emptyToken);
+  Iterable<String> letters=Splitter.on(literalDotPattern()).trimResults().split(emptyToken);
   assertContentsInOrder(letters,"a","","c");
 }

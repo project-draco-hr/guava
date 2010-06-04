@@ -1,0 +1,6 @@
+{
+  Function<String,String> trim=TrimStringFunction.INSTANCE;
+  Predicate<String> equalsFoo=Predicates.equalTo("Foo");
+  Predicate<String> trimEqualsFoo=Predicates.compose(equalsFoo,trim);
+  SerializableTester.reserializeAndAssert(trimEqualsFoo);
+}

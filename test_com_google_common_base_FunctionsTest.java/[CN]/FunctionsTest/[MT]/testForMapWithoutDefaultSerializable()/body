@@ -1,0 +1,3 @@
+{
+  checkCanReserialize(Functions.forMap(ImmutableMap.of(1,2)));
+}

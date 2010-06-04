@@ -1,5 +1,0 @@
-{
-  reallyTestEmptyAndNull(matcher);
-  reallyTestEmptyAndNull(matcher.negate());
-  reallyTestEmptyAndNull(matcher.precomputed());
-}

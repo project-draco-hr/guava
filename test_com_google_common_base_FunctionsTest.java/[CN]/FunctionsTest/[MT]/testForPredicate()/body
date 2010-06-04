@@ -4,5 +4,4 @@
   assertTrue(alwaysTrue.apply(0));
   assertFalse(alwaysFalse.apply(0));
   new EqualsTester(alwaysTrue).addEqualObject(Functions.forPredicate(Predicates.alwaysTrue())).addNotEqualObject(alwaysFalse).addNotEqualObject(Functions.identity()).testEquals();
-  checkCanReserialize(Functions.forPredicate(Predicates.equalTo(5)));
 }

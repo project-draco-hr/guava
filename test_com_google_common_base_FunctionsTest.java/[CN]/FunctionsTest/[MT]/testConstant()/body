@@ -7,5 +7,4 @@
   assertEquals(null,g.apply(null));
   new EqualsTester(f).addEqualObject(Functions.constant("correct")).addNotEqualObject(Functions.constant("incorrect")).addNotEqualObject(Functions.toStringFunction()).addNotEqualObject(g).testEquals();
   new EqualsTester(g).addEqualObject(Functions.constant(null)).addNotEqualObject(Functions.constant("incorrect")).addNotEqualObject(Functions.toStringFunction()).addNotEqualObject(f).testEquals();
-  checkCanReserialize(Functions.constant(5));
 }

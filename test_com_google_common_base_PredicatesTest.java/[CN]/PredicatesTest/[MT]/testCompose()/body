@@ -8,5 +8,4 @@
   assertTrue(trimEqualsFoo.apply("   Foo   "));
   assertFalse(trimEqualsFoo.apply("Foo-b-que"));
   new EqualsTester(trimEqualsFoo).addEqualObject(Predicates.compose(equalsFoo,trim)).addNotEqualObject(equalsFoo).addNotEqualObject(trim).addNotEqualObject(Predicates.compose(equalsFoo,identity)).addNotEqualObject(Predicates.compose(equalsBar,trim)).testEquals();
-  SerializableTester.reserializeAndAssert(trimEqualsFoo);
 }

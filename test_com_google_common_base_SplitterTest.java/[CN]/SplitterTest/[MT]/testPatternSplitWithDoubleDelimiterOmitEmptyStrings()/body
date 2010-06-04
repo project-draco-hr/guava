@@ -1,5 +1,5 @@
 {
   String doubled="a..b.c";
-  Iterable<String> letters=Splitter.on(LITERAL_DOT_PATTERN).omitEmptyStrings().split(doubled);
+  Iterable<String> letters=Splitter.on(literalDotPattern()).omitEmptyStrings().split(doubled);
   assertContentsInOrder(letters,"a","b","c");
 }
