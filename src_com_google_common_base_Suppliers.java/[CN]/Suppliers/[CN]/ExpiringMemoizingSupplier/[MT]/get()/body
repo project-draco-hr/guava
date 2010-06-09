@@ -1,8 +1,8 @@
 {
-  if (!initialized || System.nanoTime() - expirationNanos >= 0) {
+  if (!initialized || Platform.systemNanoTime() - expirationNanos >= 0) {
     value=delegate.get();
     initialized=true;
-    expirationNanos=System.nanoTime() + durationNanos;
+    expirationNanos=Platform.systemNanoTime() + durationNanos;
   }
   return value;
 }
