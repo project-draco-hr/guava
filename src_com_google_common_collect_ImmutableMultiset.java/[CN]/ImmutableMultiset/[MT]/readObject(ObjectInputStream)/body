@@ -13,5 +13,5 @@
     tmpSize+=count;
   }
   FieldSettersHolder.MAP_FIELD_SETTER.set(this,builder.build());
-  FieldSettersHolder.SIZE_FIELD_SETTER.set(this,(int)Math.min(tmpSize,Integer.MAX_VALUE));
+  FieldSettersHolder.SIZE_FIELD_SETTER.set(this,Ints.saturatedCast(tmpSize));
 }

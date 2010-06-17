@@ -1,6 +1,6 @@
 {
   return new InputSupplier<Reader>(){
-    public Reader getInput() throws IOException {
+    @Override public Reader getInput() throws IOException {
       return new MultiReader(suppliers.iterator());
     }
   }

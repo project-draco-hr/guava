@@ -1,6 +1,6 @@
 {
-  Preconditions.checkArgument(!parts.isEmpty());
+  checkArgument(!parts.isEmpty());
   this.parts=ImmutableList.copyOf(parts);
   this.name=DOT_JOINER.join(parts);
-  this.tldIndex=findTld();
+  this.publicSuffixIndex=findPublicSuffix();
 }

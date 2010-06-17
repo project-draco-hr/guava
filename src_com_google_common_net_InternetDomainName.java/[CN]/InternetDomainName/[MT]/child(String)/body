@@ -1,4 +1,3 @@
 {
-  Preconditions.checkNotNull(leftParts);
-  return InternetDomainName.from(leftParts + "." + name);
+  return InternetDomainName.from(checkNotNull(leftParts) + "." + name);
 }

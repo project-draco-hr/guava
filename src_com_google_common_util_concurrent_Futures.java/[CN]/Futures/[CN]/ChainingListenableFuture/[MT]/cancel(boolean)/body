@@ -1,0 +1,7 @@
+{
+  Future<? extends I> future=inputFuture;
+  if (future != null) {
+    return future.cancel(mayInterruptIfRunning);
+  }
+  return false;
+}

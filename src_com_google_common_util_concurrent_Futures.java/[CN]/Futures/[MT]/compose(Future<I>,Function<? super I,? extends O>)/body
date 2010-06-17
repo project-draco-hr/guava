@@ -5,10 +5,10 @@
     private final Object lock=new Object();
     private boolean set=false;
     private O value=null;
-    public O get() throws InterruptedException, ExecutionException {
+    @Override public O get() throws InterruptedException, ExecutionException {
       return apply(future.get());
     }
-    public O get(    long timeout,    TimeUnit unit) throws InterruptedException, ExecutionException, TimeoutException {
+    @Override public O get(    long timeout,    TimeUnit unit) throws InterruptedException, ExecutionException, TimeoutException {
       return apply(future.get(timeout,unit));
     }
     private O apply(    I raw){
@@ -20,13 +20,13 @@ synchronized (lock) {
         return value;
       }
     }
-    public boolean cancel(    boolean mayInterruptIfRunning){
+    @Override public boolean cancel(    boolean mayInterruptIfRunning){
       return future.cancel(mayInterruptIfRunning);
     }
-    public boolean isCancelled(){
+    @Override public boolean isCancelled(){
       return future.isCancelled();
     }
-    public boolean isDone(){
+    @Override public boolean isDone(){
       return future.isDone();
     }
   }

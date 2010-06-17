@@ -1,6 +1,6 @@
 {
   return new InputSupplier<InputStream>(){
-    public InputStream getInput() throws IOException {
+    @Override public InputStream getInput() throws IOException {
       return new MultiInputStream(suppliers.iterator());
     }
   }

@@ -11,5 +11,5 @@
   if (size == 0) {
     return of();
   }
-  return new ImmutableMultiset<E>(builder.build(),(int)Math.min(size,Integer.MAX_VALUE));
+  return new ImmutableMultiset<E>(builder.build(),Ints.saturatedCast(size));
 }

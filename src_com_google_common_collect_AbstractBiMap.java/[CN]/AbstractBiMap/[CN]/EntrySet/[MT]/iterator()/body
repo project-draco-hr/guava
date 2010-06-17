@@ -2,10 +2,10 @@
   final Iterator<Entry<K,V>> iterator=esDelegate.iterator();
   return new Iterator<Entry<K,V>>(){
     Entry<K,V> entry;
-    public boolean hasNext(){
+    @Override public boolean hasNext(){
       return iterator.hasNext();
     }
-    public Entry<K,V> next(){
+    @Override public Entry<K,V> next(){
       entry=iterator.next();
       final Entry<K,V> finalEntry=entry;
       return new ForwardingMapEntry<K,V>(){
@@ -26,7 +26,7 @@
       }
 ;
     }
-    public void remove(){
+    @Override public void remove(){
       checkState(entry != null);
       V value=entry.getValue();
       iterator.remove();

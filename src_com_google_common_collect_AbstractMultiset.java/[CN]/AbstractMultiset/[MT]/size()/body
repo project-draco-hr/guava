@@ -3,5 +3,5 @@
   for (  Entry<E> entry : entrySet()) {
     sum+=entry.getCount();
   }
-  return (int)Math.min(sum,Integer.MAX_VALUE);
+  return Ints.saturatedCast(sum);
 }

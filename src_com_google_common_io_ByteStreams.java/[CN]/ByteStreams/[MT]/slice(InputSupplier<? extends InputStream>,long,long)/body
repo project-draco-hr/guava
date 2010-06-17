@@ -3,7 +3,7 @@
   Preconditions.checkArgument(offset >= 0,"offset is negative");
   Preconditions.checkArgument(length >= 0,"length is negative");
   return new InputSupplier<InputStream>(){
-    public InputStream getInput() throws IOException {
+    @Override public InputStream getInput() throws IOException {
       InputStream in=supplier.getInput();
       if (offset > 0) {
         try {

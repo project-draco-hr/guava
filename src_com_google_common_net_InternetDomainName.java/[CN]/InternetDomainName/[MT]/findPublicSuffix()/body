@@ -2,9 +2,9 @@
   final int partsSize=parts.size();
   for (int i=0; i < partsSize; i++) {
     String ancestorName=DOT_JOINER.join(parts.subList(i,partsSize));
-    if (isTldInternal(ancestorName)) {
+    if (isPublicSuffixInternal(ancestorName)) {
       return i;
     }
   }
-  return NO_TLD_FOUND;
+  return NO_PUBLIC_SUFFIX_FOUND;
 }

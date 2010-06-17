@@ -1,4 +1,4 @@
 {
-  Preconditions.checkState(hasParent(),"Domain '%s' has no parent",name);
+  checkState(hasParent(),"Domain '%s' has no parent",name);
   return ancestor(1);
 }

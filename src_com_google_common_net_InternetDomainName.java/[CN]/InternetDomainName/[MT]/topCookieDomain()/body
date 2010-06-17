@@ -1,9 +1,3 @@
 {
-  if (isImmediatelyUnderTld()) {
-    return this;
-  }
-  if (!isUnderRecognizedTld()) {
-    throw new IllegalStateException("Not under TLD: " + name);
-  }
-  return ancestor(tldIndex - 1);
+  return topPrivateDomain();
 }

@@ -1,7 +1,7 @@
 {
   checkArgument(length > 0,"The length may not be less than 1");
   return new Splitter(new Strategy(){
-    public SplittingIterator iterator(    final Splitter splitter,    CharSequence toSplit){
+    @Override public SplittingIterator iterator(    final Splitter splitter,    CharSequence toSplit){
       return new SplittingIterator(splitter,toSplit){
         @Override public int separatorStart(        int start){
           int nextChunkStart=start + length;

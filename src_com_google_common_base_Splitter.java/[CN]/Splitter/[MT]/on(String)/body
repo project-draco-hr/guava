@@ -1,7 +1,7 @@
 {
   checkArgument(separator.length() != 0,"The separator may not be the empty string.");
   return new Splitter(new Strategy(){
-    public SplittingIterator iterator(    Splitter splitter,    CharSequence toSplit){
+    @Override public SplittingIterator iterator(    Splitter splitter,    CharSequence toSplit){
       return new SplittingIterator(splitter,toSplit){
         @Override public int separatorStart(        int start){
           int delimeterLength=separator.length();

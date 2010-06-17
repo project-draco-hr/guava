@@ -1,0 +1,3 @@
+{
+  return TldPatterns.EXACT.contains(domain) || (!TldPatterns.EXCLUDED.contains(domain) && matchesWildcardPublicSuffix(domain));
+}
