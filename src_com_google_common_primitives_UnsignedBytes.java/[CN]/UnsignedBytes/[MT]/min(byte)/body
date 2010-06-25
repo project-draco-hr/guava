@@ -1,8 +1,8 @@
 {
   checkArgument(array.length > 0);
-  int min=array[0] & 0xFF;
+  int min=toInt(array[0]);
   for (int i=1; i < array.length; i++) {
-    int next=array[i] & 0xFF;
+    int next=toInt(array[i]);
     if (next < min) {
       min=next;
     }

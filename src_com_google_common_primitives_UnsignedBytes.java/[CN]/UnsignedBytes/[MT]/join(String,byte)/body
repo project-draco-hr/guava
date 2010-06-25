@@ -4,9 +4,9 @@
     return "";
   }
   StringBuilder builder=new StringBuilder(array.length * 5);
-  builder.append(array[0] & 0xFF);
+  builder.append(toInt(array[0]));
   for (int i=1; i < array.length; i++) {
-    builder.append(separator).append(array[i] & 0xFF);
+    builder.append(separator).append(toInt(array[i]));
   }
   return builder.toString();
 }

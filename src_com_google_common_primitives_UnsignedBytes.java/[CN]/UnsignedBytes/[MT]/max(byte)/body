@@ -1,8 +1,8 @@
 {
   checkArgument(array.length > 0);
-  int max=array[0] & 0xFF;
+  int max=toInt(array[0]);
   for (int i=1; i < array.length; i++) {
-    int next=array[i] & 0xFF;
+    int next=toInt(array[i]);
     if (next > max) {
       max=next;
     }
