@@ -1,0 +1,18 @@
+{
+  if (part.length() < 1 || part.length() > MAX_DOMAIN_PART_LENGTH) {
+    return false;
+  }
+  if (!CharMatcher.ASCII.matchesAllOf(part)) {
+    return true;
+  }
+  if (!PART_CHAR_MATCHER.matchesAllOf(part)) {
+    return false;
+  }
+  if (DASH_MATCHER.matches(part.charAt(0)) || DASH_MATCHER.matches(part.charAt(part.length() - 1))) {
+    return false;
+  }
+  if (isFinalPart && CharMatcher.DIGIT.matches(part.charAt(0))) {
+    return false;
+  }
+  return true;
+}
