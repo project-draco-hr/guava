@@ -1,7 +1,0 @@
-{
-  if (object instanceof Entry) {
-    Entry<?,?> that=(Entry<?,?>)object;
-    return key.equals(that.getKey()) && value.equals(that.getValue());
-  }
-  return false;
-}

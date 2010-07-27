@@ -1,0 +1,10 @@
+Strength keyStrength
+Strength valueStrength
+Equivalence<Object> keyEquivalence
+Equivalence<Object> valueEquivalence
+long expirationNanos
+int maximumSize
+int concurrencyLevel
+MapEvictionListener<K,V> evictionListener
+ConcurrentMap<K,V> delegate
+Function<? super K,? extends V> computingFunction

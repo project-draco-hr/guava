@@ -11,6 +11,10 @@
       @Override public boolean contains(      Object key){
         return keyCount.contains(key);
       }
+      @Override public boolean removeAll(      Collection<?> c){
+        checkNotNull(c);
+        return super.removeAll(c);
+      }
     }
 ;
   }

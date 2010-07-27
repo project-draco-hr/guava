@@ -1,3 +1,0 @@
-{
-  return new SerializationProxy<K,V>(keyStrength,valueStrength,keyEquivalence,valueEquivalence,expirationNanos,maximumSize,concurrencyLevel,this);
-}

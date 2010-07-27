@@ -1,7 +1,0 @@
-{
-  ReferenceEntry<K,V> entry=getEntry(key,hash);
-  if (entry == null) {
-    return null;
-  }
-  return entry.getValueReference().get();
-}

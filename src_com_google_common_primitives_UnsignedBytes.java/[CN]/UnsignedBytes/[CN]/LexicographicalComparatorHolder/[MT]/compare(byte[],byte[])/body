@@ -1,0 +1,40 @@
+{
+  int minLength=Math.min(left.length,right.length);
+  int minWords=minLength / Longs.BYTES;
+  for (int i=0; i < minWords * Longs.BYTES; i+=Longs.BYTES) {
+    long lw=theUnsafe.getLong(left,BYTE_ARRAY_BASE_OFFSET + (long)i);
+    long rw=theUnsafe.getLong(right,BYTE_ARRAY_BASE_OFFSET + (long)i);
+    long diff=lw ^ rw;
+    if (diff != 0) {
+      if (!littleEndian) {
+        return lessThanUnsigned(lw,rw) ? -1 : 1;
+      }
+      int n=0;
+      int y;
+      int x=(int)diff;
+      if (x == 0) {
+        x=(int)(diff >>> 32);
+        n=32;
+      }
+      y=x << 16;
+      if (y == 0) {
+        n+=16;
+      }
+ else {
+        x=y;
+      }
+      y=x << 8;
+      if (y == 0) {
+        n+=8;
+      }
+      return (int)(((lw >>> n) & 0xFFL) - ((rw >>> n) & 0xFFL));
+    }
+  }
+  for (int i=minWords * Longs.BYTES; i < minLength; i++) {
+    int result=UnsignedBytes.compare(left[i],right[i]);
+    if (result != 0) {
+      return result;
+    }
+  }
+  return left.length - right.length;
+}

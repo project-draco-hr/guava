@@ -1,4 +1,0 @@
-{
-  connectExpirable(removed.getPreviousExpirable(),removed.getNextExpirable());
-  nullifyExpirable(removed);
-}

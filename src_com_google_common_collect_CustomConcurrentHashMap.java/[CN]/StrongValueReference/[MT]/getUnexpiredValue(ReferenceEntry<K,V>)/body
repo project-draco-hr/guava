@@ -1,4 +1,0 @@
-{
-  V value=e.getValueReference().get();
-  return (expires && isExpired(e)) ? null : value;
-}

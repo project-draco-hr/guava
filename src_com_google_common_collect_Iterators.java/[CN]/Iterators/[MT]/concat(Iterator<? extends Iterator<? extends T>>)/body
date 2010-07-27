@@ -5,7 +5,7 @@
     Iterator<? extends T> removeFrom;
     public boolean hasNext(){
       boolean currentHasNext;
-      while (!(currentHasNext=current.hasNext()) && inputs.hasNext()) {
+      while (!(currentHasNext=checkNotNull(current).hasNext()) && inputs.hasNext()) {
         current=inputs.next();
       }
       return currentHasNext;

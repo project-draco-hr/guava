@@ -1,7 +1,0 @@
-{
-  if (expires) {
-    Expirable expirable=(Expirable)entry;
-    addExpirable(expirable);
-  }
-  setValueReference(entry,valueStrength.referenceValue(entry,value));
-}

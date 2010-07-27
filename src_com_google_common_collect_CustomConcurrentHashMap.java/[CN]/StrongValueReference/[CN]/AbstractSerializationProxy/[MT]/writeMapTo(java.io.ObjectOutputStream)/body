@@ -1,8 +1,0 @@
-{
-  out.writeInt(delegate.size());
-  for (  Entry<K,V> entry : delegate.entrySet()) {
-    out.writeObject(entry.getKey());
-    out.writeObject(entry.getValue());
-  }
-  out.writeObject(null);
-}

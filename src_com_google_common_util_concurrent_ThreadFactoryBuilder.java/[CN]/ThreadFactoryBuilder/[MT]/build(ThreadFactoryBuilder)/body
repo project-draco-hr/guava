@@ -3,11 +3,11 @@
   final Boolean daemon=builder.daemon;
   final Integer priority=builder.priority;
   final UncaughtExceptionHandler uncaughtExceptionHandler=builder.uncaughtExceptionHandler;
-  final ThreadFactory backingThreadFactory=builder.backingThreadFactory;
+  final ThreadFactory backingThreadFactory=(builder.backingThreadFactory != null) ? builder.backingThreadFactory : Executors.defaultThreadFactory();
   final AtomicLong count=(nameFormat != null) ? new AtomicLong(0) : null;
   return new ThreadFactory(){
     @Override public Thread newThread(    Runnable runnable){
-      Thread thread=(backingThreadFactory != null) ? backingThreadFactory.newThread(runnable) : new Thread(runnable);
+      Thread thread=backingThreadFactory.newThread(runnable);
       if (nameFormat != null) {
         thread.setName(String.format(nameFormat,count.getAndIncrement()));
       }

@@ -1,4 +1,0 @@
-{
-  int hash=hash(key);
-  return segmentFor(hash).get(key,hash);
-}

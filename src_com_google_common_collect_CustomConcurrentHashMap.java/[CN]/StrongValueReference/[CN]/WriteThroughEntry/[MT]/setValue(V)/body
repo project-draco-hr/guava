@@ -1,5 +1,0 @@
-{
-  V oldValue=put(key,newValue);
-  value=newValue;
-  return oldValue;
-}

@@ -1,5 +1,0 @@
-{
-  checkState(lastReturned != null);
-  CustomConcurrentHashMap.this.remove(lastReturned.getKey());
-  lastReturned=null;
-}

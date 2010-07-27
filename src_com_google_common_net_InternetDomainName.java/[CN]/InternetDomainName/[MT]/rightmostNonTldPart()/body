@@ -1,3 +1,0 @@
-{
-  return publicSuffixIndex >= 1 ? parts.get(publicSuffixIndex - 1) : null;
-}

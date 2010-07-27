@@ -1,4 +1,4 @@
 {
-  Cache<K,V> cache=makeCache(computingFunction);
+  Cache<K,V> cache=makeCache(computingFunction,null);
   return new ComputingMapAdapter<K,V>(cache);
 }

@@ -1,7 +1,7 @@
 {
   in.defaultReadObject();
   MapMaker mapMaker=readMapMaker(in);
-  cache=mapMaker.makeCache(computingFunction);
+  cache=mapMaker.makeCache(computingFunction,evictionListener);
   delegate=cache.asMap();
   readEntries(in);
 }
