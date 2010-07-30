@@ -3,6 +3,6 @@
     executor.execute(runnable);
   }
  catch (  RuntimeException e) {
-    LOG.log(Level.SEVERE,"RuntimeException while executing runnable " + runnable + " with executor "+ executor,e);
+    log.log(Level.SEVERE,"RuntimeException while executing runnable " + runnable + " with executor "+ executor,e);
   }
 }

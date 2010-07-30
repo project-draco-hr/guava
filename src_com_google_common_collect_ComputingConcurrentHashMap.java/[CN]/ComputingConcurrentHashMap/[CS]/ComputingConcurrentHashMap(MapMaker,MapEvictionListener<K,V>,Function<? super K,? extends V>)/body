@@ -1,4 +1,0 @@
-{
-  super(builder,listener);
-  this.computingFunction=checkNotNull(computingFunction);
-}

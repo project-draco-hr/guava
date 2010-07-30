@@ -1,2 +1,0 @@
-Function<? super K,? extends V> computingFunction
-MapEvictionListener<K,V> listener

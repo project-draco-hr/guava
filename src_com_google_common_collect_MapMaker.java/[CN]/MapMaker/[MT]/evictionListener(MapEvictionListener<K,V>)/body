@@ -1,0 +1,7 @@
+{
+  checkState(this.evictionListener == null);
+  @SuppressWarnings("unchecked") GenericMapMaker<K,V> me=(GenericMapMaker<K,V>)this;
+  me.evictionListener=checkNotNull(listener);
+  useCustomMap=true;
+  return me;
+}
