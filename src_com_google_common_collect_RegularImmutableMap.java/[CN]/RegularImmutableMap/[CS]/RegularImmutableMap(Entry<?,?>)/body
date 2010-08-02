@@ -1,26 +1,23 @@
 {
-  @SuppressWarnings("unchecked") Entry<K,V>[] tmp=(Entry<K,V>[])immutableEntries;
-  this.entries=tmp;
-  int tableSize=Hashing.chooseTableSize(immutableEntries.length);
-  table=new Object[tableSize * 2];
+  int size=immutableEntries.length;
+  entries=createEntryArray(size);
+  int tableSize=Hashing.chooseTableSize(size);
+  table=createEntryArray(tableSize);
   mask=tableSize - 1;
   int keySetHashCodeMutable=0;
-  for (  Entry<K,V> entry : this.entries) {
+  for (int entryIndex=0; entryIndex < size; entryIndex++) {
+    @SuppressWarnings("unchecked") Entry<K,V> entry=(Entry<K,V>)immutableEntries[entryIndex];
     K key=entry.getKey();
     int keyHashCode=key.hashCode();
-    for (int i=Hashing.smear(keyHashCode); true; i++) {
-      int index=(i & mask) * 2;
-      Object existing=table[index];
-      if (existing == null) {
-        V value=entry.getValue();
-        table[index]=key;
-        table[index + 1]=value;
-        keySetHashCodeMutable+=keyHashCode;
-        break;
-      }
- else       if (existing.equals(key)) {
-        throw new IllegalArgumentException("duplicate key: " + key);
-      }
+    keySetHashCodeMutable+=keyHashCode;
+    int tableIndex=Hashing.smear(keyHashCode) & mask;
+    @Nullable LinkedEntry<K,V> existing=table[tableIndex];
+    LinkedEntry<K,V> linkedEntry=new LinkedEntry<K,V>(key,entry.getValue(),existing);
+    table[tableIndex]=linkedEntry;
+    entries[entryIndex]=linkedEntry;
+    while (existing != null) {
+      checkArgument(!key.equals(existing.getKey()),"duplicate key: %s",key);
+      existing=existing.next;
     }
   }
   keySetHashCode=keySetHashCodeMutable;
