@@ -1,0 +1,4 @@
+{
+  writer.writeObject(instance.singleKey);
+  writer.writeObject(instance.singleValue);
+}

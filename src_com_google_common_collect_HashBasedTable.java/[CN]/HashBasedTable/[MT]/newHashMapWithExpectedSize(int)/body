@@ -1,0 +1,4 @@
+{
+  checkArgument(expectedSize >= 0);
+  return new HashMap<C,V>(Math.max(expectedSize * 2,16));
+}

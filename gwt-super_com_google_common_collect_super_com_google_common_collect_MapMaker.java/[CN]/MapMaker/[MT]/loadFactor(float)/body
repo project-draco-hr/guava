@@ -1,0 +1,7 @@
+{
+  if (loadFactor <= 0) {
+    throw new IllegalArgumentException();
+  }
+  this.loadFactor=loadFactor;
+  return this;
+}

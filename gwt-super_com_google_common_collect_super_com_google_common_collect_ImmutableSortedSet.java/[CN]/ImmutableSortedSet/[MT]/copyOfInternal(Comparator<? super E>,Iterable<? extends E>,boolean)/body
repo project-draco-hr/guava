@@ -1,0 +1,12 @@
+{
+  checkNotNull(comparator);
+  boolean hasSameComparator=fromSortedSet || hasSameComparator(elements,comparator);
+  if (hasSameComparator && (elements instanceof ImmutableSortedSet)) {
+    @SuppressWarnings("unchecked") ImmutableSortedSet<E> result=(ImmutableSortedSet<E>)elements;
+    boolean isSubset=(result instanceof RegularImmutableSortedSet) && ((RegularImmutableSortedSet)result).isSubset;
+    if (!isSubset) {
+      return result;
+    }
+  }
+  return copyOfInternal(comparator,elements.iterator());
+}

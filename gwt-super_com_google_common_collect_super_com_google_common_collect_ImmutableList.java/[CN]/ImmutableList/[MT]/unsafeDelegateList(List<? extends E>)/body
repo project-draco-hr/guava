@@ -1,0 +1,11 @@
+{
+switch (list.size()) {
+case 0:
+    return of();
+case 1:
+  return new SingletonImmutableList<E>(list.iterator().next());
+default :
+@SuppressWarnings("unchecked") List<E> castedList=(List<E>)list;
+return new RegularImmutableList<E>(castedList);
+}
+}

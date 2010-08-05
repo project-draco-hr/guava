@@ -1,0 +1,14 @@
+{
+  checkNotNull(iterable);
+  if (iterable instanceof List) {
+    return ((List<T>)iterable).get(position);
+  }
+  if (iterable instanceof Collection) {
+    Collection<T> collection=(Collection<T>)iterable;
+    Preconditions.checkElementIndex(position,collection.size());
+  }
+ else {
+    checkNonnegativeIndex(position);
+  }
+  return Iterators.get(iterable.iterator(),position);
+}

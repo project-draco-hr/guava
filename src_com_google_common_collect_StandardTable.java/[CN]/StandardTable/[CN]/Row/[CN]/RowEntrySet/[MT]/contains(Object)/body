@@ -1,0 +1,7 @@
+{
+  if (o instanceof Entry) {
+    Entry<?,?> entry=(Entry<?,?>)o;
+    return containsMapping(rowKey,entry.getKey(),entry.getValue());
+  }
+  return false;
+}

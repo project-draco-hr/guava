@@ -1,0 +1,13 @@
+{
+  final Iterator<C> columnIterator=columnKeySet().iterator();
+  return new UnmodifiableIterator<Entry<C,Map<R,V>>>(){
+    @Override public boolean hasNext(){
+      return columnIterator.hasNext();
+    }
+    @Override public Entry<C,Map<R,V>> next(){
+      C columnKey=columnIterator.next();
+      return new ImmutableEntry<C,Map<R,V>>(columnKey,column(columnKey));
+    }
+  }
+;
+}

@@ -1,0 +1,3 @@
+{
+  return new ComparatorOrdering<Object>((Comparator<Object>)reader.readObject());
+}

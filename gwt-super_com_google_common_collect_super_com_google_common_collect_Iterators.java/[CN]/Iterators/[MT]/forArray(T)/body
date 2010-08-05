@@ -1,0 +1,19 @@
+{
+  checkNotNull(array);
+  return new UnmodifiableIterator<T>(){
+    final int length=array.length;
+    int i=0;
+    public boolean hasNext(){
+      return i < length;
+    }
+    public T next(){
+      if (i < length) {
+        return array[i++];
+      }
+ else {
+        throw new NoSuchElementException();
+      }
+    }
+  }
+;
+}

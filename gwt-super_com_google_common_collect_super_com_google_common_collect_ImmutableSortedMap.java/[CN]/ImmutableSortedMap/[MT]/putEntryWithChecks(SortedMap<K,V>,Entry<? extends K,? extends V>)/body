@@ -1,0 +1,9 @@
+{
+  K key=checkNotNull(entry.getKey());
+  V value=checkNotNull(entry.getValue());
+  if (map.containsKey(key)) {
+    Entry<K,V> previousEntry=map.tailMap(key).entrySet().iterator().next();
+    throw new IllegalArgumentException("Duplicate keys in mappings " + previousEntry.getKey() + "="+ previousEntry.getValue()+ " and "+ key+ "="+ value);
+  }
+  map.put(key,value);
+}

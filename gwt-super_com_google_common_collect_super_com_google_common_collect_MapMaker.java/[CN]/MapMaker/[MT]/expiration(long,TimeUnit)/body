@@ -1,0 +1,11 @@
+{
+  if (expirationMillis != 0) {
+    throw new IllegalStateException("expiration time of " + expirationMillis + " ns was already set");
+  }
+  if (duration <= 0) {
+    throw new IllegalArgumentException("invalid duration: " + duration);
+  }
+  this.expirationMillis=unit.toMillis(duration);
+  useCustomMap=true;
+  return this;
+}

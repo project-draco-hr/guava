@@ -1,0 +1,11 @@
+{
+  Map<K,V> delegate=Maps.newLinkedHashMap();
+  for (  Entry<? extends K,? extends V> entry : entries) {
+    K key=checkNotNull(entry.getKey());
+    V previous=delegate.put(key,checkNotNull(entry.getValue()));
+    if (previous != null) {
+      throw new IllegalArgumentException("duplicate key: " + key);
+    }
+  }
+  this.delegate=Collections.unmodifiableMap(delegate);
+}

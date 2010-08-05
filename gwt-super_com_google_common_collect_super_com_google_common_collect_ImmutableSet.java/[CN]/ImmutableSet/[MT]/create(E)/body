@@ -1,0 +1,15 @@
+{
+  Set<E> set=Sets.newLinkedHashSet();
+  Collections.addAll(set,elements);
+  for (  E element : set) {
+    checkNotNull(element);
+  }
+switch (set.size()) {
+case 0:
+    return of();
+case 1:
+  return new SingletonImmutableSet<E>(set.iterator().next());
+default :
+return new RegularImmutableSet<E>(set);
+}
+}

@@ -1,0 +1,13 @@
+{
+  if (obj == this) {
+    return true;
+  }
+  if (!(obj instanceof Set)) {
+    return false;
+  }
+  Set<?> os=(Set<?>)obj;
+  if (os.size() != size()) {
+    return false;
+  }
+  return containsAll(os);
+}

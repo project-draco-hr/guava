@@ -1,0 +1,4 @@
+{
+  checkNotNull(elements);
+  return copyOf(Arrays.asList(elements));
+}

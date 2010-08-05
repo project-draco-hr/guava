@@ -1,0 +1,4 @@
+{
+  checkNotNull(toKey);
+  return new ImmutableSortedMap<K,V>(sortedDelegate.headMap(toKey));
+}

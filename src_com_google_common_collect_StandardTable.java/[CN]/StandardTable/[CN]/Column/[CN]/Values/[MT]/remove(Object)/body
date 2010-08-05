@@ -1,0 +1,16 @@
+{
+  if (obj == null) {
+    return false;
+  }
+  Iterator<Map<C,V>> iterator=backingMap.values().iterator();
+  while (iterator.hasNext()) {
+    Map<C,V> map=iterator.next();
+    if (map.entrySet().remove(new ImmutableEntry<C,Object>(columnKey,obj))) {
+      if (map.isEmpty()) {
+        iterator.remove();
+      }
+      return true;
+    }
+  }
+  return false;
+}

@@ -1,0 +1,4 @@
+{
+  checkNotNull(fromElement);
+  return new StandardRowSortedTable<R,C,V>(sortedBackingMap().tailMap(fromElement),factory).rowKeySet();
+}

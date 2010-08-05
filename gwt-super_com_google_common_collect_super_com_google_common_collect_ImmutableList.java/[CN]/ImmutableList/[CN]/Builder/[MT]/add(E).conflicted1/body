@@ -1,0 +1,5 @@
+{
+  checkNotNull(elements);
+  super.add(elements);
+  return this;
+}

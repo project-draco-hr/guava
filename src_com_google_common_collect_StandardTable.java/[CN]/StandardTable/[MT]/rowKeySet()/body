@@ -1,0 +1,4 @@
+{
+  Set<R> result=rowKeySet;
+  return (result == null) ? rowKeySet=new RowKeySet() : result;
+}

@@ -1,0 +1,3 @@
+{
+  return Array.createFrom(reference,length);
+}

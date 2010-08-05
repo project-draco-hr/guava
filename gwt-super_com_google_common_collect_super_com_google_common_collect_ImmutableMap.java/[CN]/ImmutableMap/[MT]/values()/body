@@ -1,0 +1,6 @@
+{
+  if (cachedValues != null) {
+    return cachedValues;
+  }
+  return cachedValues=ImmutableCollection.unsafeDelegate(delegate.values());
+}

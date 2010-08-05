@@ -1,0 +1,3 @@
+{
+  return new LexicographicalOrdering<Object>((Ordering<Object>)reader.readObject());
+}

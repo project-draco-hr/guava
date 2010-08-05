@@ -1,0 +1,9 @@
+{
+  int distinctElements=reader.readInt();
+  for (int i=0; i < distinctElements; i++) {
+    Object element=reader.readObject();
+    int count=reader.readInt();
+    multiset.add(element,count);
+  }
+  return multiset;
+}

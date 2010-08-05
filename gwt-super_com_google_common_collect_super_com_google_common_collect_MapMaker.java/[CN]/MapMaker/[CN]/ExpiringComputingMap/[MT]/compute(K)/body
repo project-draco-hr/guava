@@ -1,0 +1,15 @@
+{
+  V value;
+  try {
+    value=computer.apply(key);
+  }
+ catch (  Throwable t) {
+    throw new ComputationException(t);
+  }
+  if (value == null) {
+    String message=computer + " returned null for key " + key+ ".";
+    throw new NullPointerException(message);
+  }
+  put(key,value);
+  return value;
+}

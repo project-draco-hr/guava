@@ -1,0 +1,8 @@
+{
+  try {
+    return map.containsKey(key);
+  }
+ catch (  ClassCastException e) {
+    return false;
+  }
+}

@@ -1,0 +1,7 @@
+{
+  if (obj instanceof Cell) {
+    Cell<?,?,?> cell=(Cell<?,?,?>)obj;
+    return removeMapping(cell.getRowKey(),cell.getColumnKey(),cell.getValue());
+  }
+  return false;
+}

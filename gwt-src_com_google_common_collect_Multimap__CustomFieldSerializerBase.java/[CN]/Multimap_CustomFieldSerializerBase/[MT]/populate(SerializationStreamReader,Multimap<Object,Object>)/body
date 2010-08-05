@@ -1,0 +1,12 @@
+{
+  int keyCount=reader.readInt();
+  for (int i=0; i < keyCount; ++i) {
+    Object key=reader.readObject();
+    int valueCount=reader.readInt();
+    for (int j=0; j < valueCount; ++j) {
+      Object value=reader.readObject();
+      multimap.put(key,value);
+    }
+  }
+  return multimap;
+}

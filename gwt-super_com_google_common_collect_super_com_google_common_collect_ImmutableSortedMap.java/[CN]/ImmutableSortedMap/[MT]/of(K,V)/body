@@ -1,0 +1,3 @@
+{
+  return create(Ordering.natural(),entryOf(k1,v1));
+}

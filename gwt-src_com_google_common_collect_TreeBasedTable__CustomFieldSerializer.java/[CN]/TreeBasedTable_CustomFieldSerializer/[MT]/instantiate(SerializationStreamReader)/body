@@ -1,0 +1,10 @@
+{
+  @SuppressWarnings("unchecked") Comparator<Object> rowComparator=(Comparator<Object>)reader.readObject();
+  @SuppressWarnings("unchecked") Comparator<Object> columnComparator=(Comparator<Object>)reader.readObject();
+  Map<?,?> backingMap=(Map<?,?>)reader.readObject();
+  TreeBasedTable<Object,Object,Object> table=TreeBasedTable.create(rowComparator,columnComparator);
+  for (  Entry<?,?> row : backingMap.entrySet()) {
+    table.row(row.getKey()).putAll((Map<?,?>)row.getValue());
+  }
+  return table;
+}

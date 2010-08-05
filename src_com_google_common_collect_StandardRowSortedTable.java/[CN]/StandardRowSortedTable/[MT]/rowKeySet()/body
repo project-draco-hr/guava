@@ -1,0 +1,4 @@
+{
+  SortedSet<R> result=rowKeySet;
+  return (result == null) ? rowKeySet=new RowKeySortedSet() : result;
+}

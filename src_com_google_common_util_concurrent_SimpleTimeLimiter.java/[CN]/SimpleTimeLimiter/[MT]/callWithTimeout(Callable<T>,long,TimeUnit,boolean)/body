@@ -1,7 +1,7 @@
 {
   checkNotNull(callable);
   checkNotNull(timeoutUnit);
-  checkArgument(timeoutDuration > 0,"bad timeout: " + timeoutDuration);
+  checkArgument(timeoutDuration > 0,"timeout must be positive: %s",timeoutDuration);
   Future<T> future=executor.submit(callable);
   try {
     if (amInterruptible) {

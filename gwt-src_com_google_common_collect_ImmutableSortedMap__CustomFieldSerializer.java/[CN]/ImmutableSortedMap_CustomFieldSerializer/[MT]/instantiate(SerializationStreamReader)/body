@@ -1,0 +1,6 @@
+{
+  @SuppressWarnings("unchecked") Comparator<Object> comparator=(Comparator<Object>)reader.readObject();
+  SortedMap<Object,Object> entries=new TreeMap<Object,Object>(comparator);
+  Map_CustomFieldSerializerBase.deserialize(reader,entries);
+  return ImmutableSortedMap.orderedBy(comparator).putAll(entries).build();
+}

@@ -1,0 +1,3 @@
+{
+  return size / choices.size() * choices.hashCode();
+}

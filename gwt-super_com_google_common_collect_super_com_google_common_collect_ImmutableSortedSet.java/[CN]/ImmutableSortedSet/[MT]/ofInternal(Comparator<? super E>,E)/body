@@ -1,0 +1,14 @@
+{
+  checkNotNull(elements);
+switch (elements.length) {
+case 0:
+    return emptySet(comparator);
+default :
+  SortedSet<E> delegate=new TreeSet<E>(comparator);
+for (E element : elements) {
+  checkNotNull(element);
+  delegate.add(element);
+}
+return new RegularImmutableSortedSet<E>(delegate,false);
+}
+}

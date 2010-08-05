@@ -1,0 +1,6 @@
+{
+  checkNotNull(fromKey);
+  checkNotNull(toKey);
+  checkArgument(comparator.compare(fromKey,toKey) <= 0);
+  return new ImmutableSortedMap<K,V>(sortedDelegate.subMap(fromKey,toKey));
+}

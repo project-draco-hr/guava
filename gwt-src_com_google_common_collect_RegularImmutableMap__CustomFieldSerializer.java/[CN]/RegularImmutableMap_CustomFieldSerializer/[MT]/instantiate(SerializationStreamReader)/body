@@ -1,0 +1,5 @@
+{
+  Map<Object,Object> entries=new LinkedHashMap<Object,Object>();
+  Map_CustomFieldSerializerBase.deserialize(reader,entries);
+  return (RegularImmutableMap<Object,Object>)ImmutableMap.copyOf(entries);
+}

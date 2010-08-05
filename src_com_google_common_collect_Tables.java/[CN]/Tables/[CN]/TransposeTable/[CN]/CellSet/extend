@@ -1,0 +1,1 @@
+TransformedCollection<Cell<R,C,V>,Cell<C,R,V>>

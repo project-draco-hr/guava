@@ -1,0 +1,10 @@
+{
+  LinkedHashMultimap<Object,Object> multimap=(LinkedHashMultimap<Object,Object>)Multimap_CustomFieldSerializerBase.populate(in,LinkedHashMultimap.create());
+  multimap.linkedEntries.clear();
+  for (int i=0; i < multimap.size(); i++) {
+    Object key=in.readObject();
+    Object value=in.readObject();
+    multimap.linkedEntries.add(Maps.immutableEntry(key,value));
+  }
+  return multimap;
+}

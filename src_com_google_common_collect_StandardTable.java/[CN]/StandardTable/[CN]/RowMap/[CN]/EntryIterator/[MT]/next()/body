@@ -1,0 +1,4 @@
+{
+  R rowKey=delegate.next();
+  return new ImmutableEntry<R,Map<C,V>>(rowKey,row(rowKey));
+}

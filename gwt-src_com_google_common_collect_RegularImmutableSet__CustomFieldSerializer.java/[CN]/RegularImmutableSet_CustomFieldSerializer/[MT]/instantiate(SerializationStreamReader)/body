@@ -1,0 +1,5 @@
+{
+  List<Object> elements=Lists.newArrayList();
+  Collection_CustomFieldSerializerBase.deserialize(reader,elements);
+  return (RegularImmutableSet<Object>)ImmutableSet.copyOf(elements);
+}

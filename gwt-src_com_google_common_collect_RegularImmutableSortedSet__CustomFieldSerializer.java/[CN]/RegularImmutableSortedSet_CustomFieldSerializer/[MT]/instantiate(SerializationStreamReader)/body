@@ -1,0 +1,6 @@
+{
+  @SuppressWarnings("unchecked") Comparator<Object> comparator=(Comparator<Object>)reader.readObject();
+  List<Object> elements=new ArrayList<Object>();
+  Collection_CustomFieldSerializerBase.deserialize(reader,elements);
+  return (RegularImmutableSortedSet<Object>)ImmutableSortedSet.copyOf(comparator,elements);
+}

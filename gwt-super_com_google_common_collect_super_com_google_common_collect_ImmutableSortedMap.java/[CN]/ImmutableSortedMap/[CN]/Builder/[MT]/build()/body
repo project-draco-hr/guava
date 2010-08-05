@@ -1,0 +1,7 @@
+{
+  SortedMap<K,V> delegate=Maps.newTreeMap(comparator);
+  for (  Entry<? extends K,? extends V> entry : entries) {
+    putEntryWithChecks(delegate,entry);
+  }
+  return new ImmutableSortedMap<K,V>(delegate);
+}

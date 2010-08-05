@@ -1,0 +1,4 @@
+{
+  Object element=reader.readObject();
+  return new SingletonImmutableSet<Object>(element);
+}

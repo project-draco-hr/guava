@@ -1,0 +1,11 @@
+{
+  if (elements instanceof Collection) {
+    @SuppressWarnings("unchecked") Collection<? extends E> collection=(Collection<? extends E>)elements;
+    return new LinkedHashSet<E>(collection);
+  }
+  LinkedHashSet<E> set=newLinkedHashSet();
+  for (  E element : elements) {
+    set.add(element);
+  }
+  return set;
+}

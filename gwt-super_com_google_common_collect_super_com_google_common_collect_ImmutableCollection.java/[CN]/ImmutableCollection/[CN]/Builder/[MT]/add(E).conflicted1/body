@@ -1,0 +1,7 @@
+{
+  checkNotNull(elements);
+  for (  E element : elements) {
+    add(checkNotNull(element));
+  }
+  return this;
+}

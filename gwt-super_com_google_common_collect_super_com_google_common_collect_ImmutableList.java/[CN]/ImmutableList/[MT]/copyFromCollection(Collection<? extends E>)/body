@@ -1,0 +1,12 @@
+{
+  Object[] elements=collection.toArray();
+switch (elements.length) {
+case 0:
+    return of();
+case 1:
+  @SuppressWarnings("unchecked") ImmutableList<E> list=new SingletonImmutableList<E>((E)elements[0]);
+return list;
+default :
+return new RegularImmutableList<E>(ImmutableList.<E>nullCheckedList(elements));
+}
+}

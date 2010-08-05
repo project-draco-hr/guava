@@ -1,0 +1,4 @@
+{
+  writer.writeObject(instance.function);
+  writer.writeObject(instance.ordering);
+}

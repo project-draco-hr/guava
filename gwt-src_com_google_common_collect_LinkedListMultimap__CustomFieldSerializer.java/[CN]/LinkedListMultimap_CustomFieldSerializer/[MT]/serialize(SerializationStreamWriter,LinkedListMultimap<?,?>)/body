@@ -1,0 +1,7 @@
+{
+  out.writeInt(multimap.size());
+  for (  Map.Entry<?,?> entry : multimap.entries()) {
+    out.writeObject(entry.getKey());
+    out.writeObject(entry.getValue());
+  }
+}

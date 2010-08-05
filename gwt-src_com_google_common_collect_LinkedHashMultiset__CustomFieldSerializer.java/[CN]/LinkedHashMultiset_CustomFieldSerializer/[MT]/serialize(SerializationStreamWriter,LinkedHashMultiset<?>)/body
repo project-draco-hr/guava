@@ -1,0 +1,3 @@
+{
+  Multiset_CustomFieldSerializerBase.serialize(writer,instance);
+}

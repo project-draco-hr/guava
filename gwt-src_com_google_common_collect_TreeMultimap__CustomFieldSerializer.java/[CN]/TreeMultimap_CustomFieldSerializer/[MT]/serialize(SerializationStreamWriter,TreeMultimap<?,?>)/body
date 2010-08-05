@@ -1,0 +1,5 @@
+{
+  out.writeObject(multimap.keyComparator());
+  out.writeObject(multimap.valueComparator());
+  Multimap_CustomFieldSerializerBase.serialize(out,multimap);
+}

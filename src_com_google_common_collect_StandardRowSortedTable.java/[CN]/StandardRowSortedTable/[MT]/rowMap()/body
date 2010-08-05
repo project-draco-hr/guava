@@ -1,0 +1,4 @@
+{
+  RowSortedMap result=rowMap;
+  return (result == null) ? rowMap=new RowSortedMap() : result;
+}

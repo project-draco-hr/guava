@@ -1,0 +1,2 @@
+long expirationMillis
+Function<? super K,? extends V> computer

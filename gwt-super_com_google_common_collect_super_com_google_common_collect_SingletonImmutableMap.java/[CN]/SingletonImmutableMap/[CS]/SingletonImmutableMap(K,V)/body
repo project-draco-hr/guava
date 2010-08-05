@@ -1,0 +1,5 @@
+{
+  super(Collections.singletonMap(checkNotNull(key),checkNotNull(value)));
+  this.singleKey=key;
+  this.singleValue=value;
+}

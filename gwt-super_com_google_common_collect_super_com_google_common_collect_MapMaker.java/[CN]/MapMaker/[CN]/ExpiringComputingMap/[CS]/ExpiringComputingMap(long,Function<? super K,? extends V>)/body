@@ -1,0 +1,4 @@
+{
+  this.expirationMillis=expirationMillis;
+  this.computer=computer;
+}

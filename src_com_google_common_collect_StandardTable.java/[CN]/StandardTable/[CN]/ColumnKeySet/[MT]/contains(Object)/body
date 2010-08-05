@@ -1,0 +1,11 @@
+{
+  if (obj == null) {
+    return false;
+  }
+  for (  Map<C,V> map : backingMap.values()) {
+    if (map.containsKey(obj)) {
+      return true;
+    }
+  }
+  return false;
+}

@@ -1,0 +1,8 @@
+{
+  int entryCount=instance.entrySet().size();
+  writer.writeInt(entryCount);
+  for (  Multiset.Entry<?> entry : instance.entrySet()) {
+    writer.writeObject(entry.getElement());
+    writer.writeInt(entry.getCount());
+  }
+}

@@ -1,0 +1,4 @@
+{
+  Values result=columnValues;
+  return (result == null) ? columnValues=new Values() : result;
+}

@@ -1,0 +1,7 @@
+{
+  if (initialCapacity < 0) {
+    throw new IllegalArgumentException();
+  }
+  this.initialCapacity=initialCapacity;
+  return this;
+}

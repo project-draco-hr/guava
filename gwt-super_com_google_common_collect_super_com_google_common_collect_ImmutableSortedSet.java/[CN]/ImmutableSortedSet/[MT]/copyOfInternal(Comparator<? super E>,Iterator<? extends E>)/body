@@ -1,0 +1,13 @@
+{
+  checkNotNull(comparator);
+  if (!elements.hasNext()) {
+    return emptySet(comparator);
+  }
+  SortedSet<E> delegate=new TreeSet<E>(comparator);
+  while (elements.hasNext()) {
+    E element=elements.next();
+    checkNotNull(element);
+    delegate.add(element);
+  }
+  return new RegularImmutableSortedSet<E>(delegate,false);
+}

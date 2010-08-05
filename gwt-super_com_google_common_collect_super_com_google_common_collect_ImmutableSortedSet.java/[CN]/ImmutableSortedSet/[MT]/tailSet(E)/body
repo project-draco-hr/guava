@@ -1,0 +1,4 @@
+{
+  checkNotNull(fromElement);
+  return unsafeDelegateSortedSet(sortedDelegate.tailSet(fromElement),true);
+}

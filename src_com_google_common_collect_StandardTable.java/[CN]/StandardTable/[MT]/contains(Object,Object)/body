@@ -1,0 +1,7 @@
+{
+  if ((rowKey == null) || (columnKey == null)) {
+    return false;
+  }
+  Map<C,V> map=safeGet(backingMap,rowKey);
+  return map != null && safeContainsKey(map,columnKey);
+}

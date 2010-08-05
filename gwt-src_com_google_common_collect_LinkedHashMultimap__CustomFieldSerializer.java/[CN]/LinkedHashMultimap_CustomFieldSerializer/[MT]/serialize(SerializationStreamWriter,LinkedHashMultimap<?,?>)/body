@@ -1,0 +1,7 @@
+{
+  Multimap_CustomFieldSerializerBase.serialize(out,multimap);
+  for (  Map.Entry<?,?> entry : multimap.entries()) {
+    out.writeObject(entry.getKey());
+    out.writeObject(entry.getValue());
+  }
+}

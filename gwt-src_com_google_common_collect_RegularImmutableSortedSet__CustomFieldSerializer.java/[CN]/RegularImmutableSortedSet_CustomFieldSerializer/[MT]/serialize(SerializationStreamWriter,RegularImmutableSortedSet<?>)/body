@@ -1,0 +1,4 @@
+{
+  writer.writeObject(instance.comparator());
+  Collection_CustomFieldSerializerBase.serialize(writer,instance);
+}

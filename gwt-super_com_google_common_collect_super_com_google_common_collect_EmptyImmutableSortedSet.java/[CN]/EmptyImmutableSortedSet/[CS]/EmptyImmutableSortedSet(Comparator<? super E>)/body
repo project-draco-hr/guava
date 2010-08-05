@@ -1,0 +1,3 @@
+{
+  super(Sets.newTreeSet(comparator));
+}

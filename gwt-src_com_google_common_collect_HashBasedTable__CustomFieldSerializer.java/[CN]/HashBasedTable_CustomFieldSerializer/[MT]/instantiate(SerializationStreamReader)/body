@@ -1,0 +1,8 @@
+{
+  Map<?,?> hashMap=(Map<?,?>)reader.readObject();
+  HashBasedTable<Object,Object,Object> table=HashBasedTable.create();
+  for (  Entry<?,?> row : hashMap.entrySet()) {
+    table.row(row.getKey()).putAll((Map<?,?>)row.getValue());
+  }
+  return table;
+}

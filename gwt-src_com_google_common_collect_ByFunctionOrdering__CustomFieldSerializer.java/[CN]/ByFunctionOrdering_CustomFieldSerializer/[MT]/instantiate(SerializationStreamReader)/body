@@ -1,0 +1,3 @@
+{
+  return new ByFunctionOrdering<Object,Object>((Function<Object,Object>)reader.readObject(),(Ordering<Object>)reader.readObject());
+}

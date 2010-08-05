@@ -1,0 +1,3 @@
+{
+  return (HashMultiset<Object>)Multiset_CustomFieldSerializerBase.populate(reader,HashMultiset.create());
+}

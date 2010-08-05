@@ -1,0 +1,5 @@
+{
+  super(delegate);
+  this.comparator=(delegate.comparator() == null) ? NATURAL_ORDER : delegate.comparator();
+  this.sortedDelegate=Collections.unmodifiableSortedMap(delegate);
+}

@@ -1,0 +1,3 @@
+{
+  return delegate.isEmpty() ? emptySet(delegate.comparator()) : new RegularImmutableSortedSet<E>(delegate,isSubset);
+}

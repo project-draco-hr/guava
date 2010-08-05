@@ -1,0 +1,5 @@
+{
+  Object key=checkNotNull(reader.readObject());
+  Object value=checkNotNull(reader.readObject());
+  return new SingletonImmutableMap<Object,Object>(key,value);
+}

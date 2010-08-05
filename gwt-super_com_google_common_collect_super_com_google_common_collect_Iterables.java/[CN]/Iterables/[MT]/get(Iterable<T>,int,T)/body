@@ -1,0 +1,10 @@
+{
+  checkNotNull(iterable);
+  checkNonnegativeIndex(position);
+  try {
+    return get(iterable,position);
+  }
+ catch (  IndexOutOfBoundsException e) {
+    return defaultValue;
+  }
+}

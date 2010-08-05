@@ -1,0 +1,13 @@
+{
+  for (  Object target : targets) {
+    if (target == null) {
+      return false;
+    }
+  }
+  try {
+    return sortedDelegate.containsAll(targets);
+  }
+ catch (  ClassCastException e) {
+    return false;
+  }
+}

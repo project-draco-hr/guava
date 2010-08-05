@@ -1,0 +1,3 @@
+{
+  return (ImmutableSetMultimap<Object,Object>)Multimap_CustomFieldSerializerBase.instantiate(reader,ImmutableSetMultimap.builder());
+}

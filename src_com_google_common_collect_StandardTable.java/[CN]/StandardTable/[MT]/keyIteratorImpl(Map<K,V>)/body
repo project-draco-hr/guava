@@ -1,0 +1,15 @@
+{
+  final Iterator<Entry<K,V>> entryIterator=map.entrySet().iterator();
+  return new Iterator<K>(){
+    public boolean hasNext(){
+      return entryIterator.hasNext();
+    }
+    public K next(){
+      return entryIterator.next().getKey();
+    }
+    public void remove(){
+      entryIterator.remove();
+    }
+  }
+;
+}

@@ -1,0 +1,8 @@
+{
+  checkNotNull(comparator);
+  SortedMap<K,V> delegate=Maps.newTreeMap(comparator);
+  for (  Entry<? extends K,? extends V> entry : entries) {
+    delegate.put(entry.getKey(),entry.getValue());
+  }
+  return new ImmutableSortedMap<K,V>(delegate);
+}

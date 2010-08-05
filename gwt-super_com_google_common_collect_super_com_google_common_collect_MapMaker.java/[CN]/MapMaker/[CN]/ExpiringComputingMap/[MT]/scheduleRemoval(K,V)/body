@@ -1,0 +1,9 @@
+{
+  Timer timer=new Timer(){
+    public void run(){
+      remove(key,value);
+    }
+  }
+;
+  timer.schedule((int)expirationMillis);
+}

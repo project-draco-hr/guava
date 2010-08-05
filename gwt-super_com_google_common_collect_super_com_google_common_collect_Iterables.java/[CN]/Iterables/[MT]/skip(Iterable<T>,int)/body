@@ -1,0 +1,44 @@
+{
+  checkNotNull(iterable);
+  checkArgument(numberToSkip >= 0,"number to skip cannot be negative");
+  if (iterable instanceof List) {
+    final List<T> list=(List<T>)iterable;
+    return new IterableWithToString<T>(){
+      public Iterator<T> iterator(){
+        return (numberToSkip >= list.size()) ? Iterators.<T>emptyIterator() : list.subList(numberToSkip,list.size()).iterator();
+      }
+    }
+;
+  }
+  return new IterableWithToString<T>(){
+    public Iterator<T> iterator(){
+      final Iterator<T> iterator=iterable.iterator();
+      Iterators.skip(iterator,numberToSkip);
+      return new Iterator<T>(){
+        boolean atStart=true;
+        public boolean hasNext(){
+          return iterator.hasNext();
+        }
+        public T next(){
+          if (!hasNext()) {
+            throw new NoSuchElementException();
+          }
+          try {
+            return iterator.next();
+          }
+  finally {
+            atStart=false;
+          }
+        }
+        public void remove(){
+          if (atStart) {
+            throw new IllegalStateException();
+          }
+          iterator.remove();
+        }
+      }
+;
+    }
+  }
+;
+}

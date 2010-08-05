@@ -1,0 +1,7 @@
+{
+  V result=super.put(key,value);
+  if (expirationMillis > 0) {
+    scheduleRemoval(key,value);
+  }
+  return result;
+}

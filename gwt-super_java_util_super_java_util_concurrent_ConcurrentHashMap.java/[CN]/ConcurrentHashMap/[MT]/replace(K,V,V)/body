@@ -1,0 +1,12 @@
+{
+  if (oldValue == null || newValue == null) {
+    throw new NullPointerException();
+  }
+ else   if (containsKey(key) && get(key).equals(oldValue)) {
+    put(key,newValue);
+    return true;
+  }
+ else {
+    return false;
+  }
+}

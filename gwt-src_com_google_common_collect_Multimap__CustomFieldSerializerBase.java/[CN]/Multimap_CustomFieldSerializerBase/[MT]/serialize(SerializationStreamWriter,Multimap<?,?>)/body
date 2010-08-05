@@ -1,0 +1,10 @@
+{
+  writer.writeInt(instance.asMap().size());
+  for (  Map.Entry<?,? extends Collection<?>> entry : instance.asMap().entrySet()) {
+    writer.writeObject(entry.getKey());
+    writer.writeInt(entry.getValue().size());
+    for (    Object value : entry.getValue()) {
+      writer.writeObject(value);
+    }
+  }
+}

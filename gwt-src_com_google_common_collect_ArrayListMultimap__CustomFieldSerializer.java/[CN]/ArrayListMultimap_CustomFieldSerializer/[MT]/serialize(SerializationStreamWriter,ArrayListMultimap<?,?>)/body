@@ -1,0 +1,3 @@
+{
+  Multimap_CustomFieldSerializerBase.serialize(out,multimap);
+}

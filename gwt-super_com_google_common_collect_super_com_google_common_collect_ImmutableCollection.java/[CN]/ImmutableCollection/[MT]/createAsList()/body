@@ -1,0 +1,11 @@
+{
+switch (size()) {
+case 0:
+    return ImmutableList.of();
+case 1:
+  return ImmutableList.of(iterator().next());
+default :
+@SuppressWarnings("unchecked") E[] castedArray=(E[])toArray();
+return new RegularImmutableList<E>(Arrays.asList(castedArray));
+}
+}

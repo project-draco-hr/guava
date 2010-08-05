@@ -1,0 +1,15 @@
+{
+  if (map instanceof ImmutableSortedMap) {
+    @SuppressWarnings("unchecked") ImmutableSortedMap<K,V> kvMap=(ImmutableSortedMap<K,V>)map;
+    Comparator<?> comparator2=kvMap.comparator();
+    boolean sameComparator=(comparator2 == null) ? comparator == NATURAL_ORDER : comparator.equals(comparator2);
+    if (sameComparator) {
+      return kvMap;
+    }
+  }
+  SortedMap<K,V> delegate=Maps.newTreeMap(comparator);
+  for (  Entry<? extends K,? extends V> entry : map.entrySet()) {
+    putEntryWithChecks(delegate,entry);
+  }
+  return new ImmutableSortedMap<K,V>(delegate);
+}

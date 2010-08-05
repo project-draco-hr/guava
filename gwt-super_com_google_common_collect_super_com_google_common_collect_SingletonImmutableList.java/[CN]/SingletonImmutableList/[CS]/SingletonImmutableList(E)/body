@@ -1,0 +1,4 @@
+{
+  super(Collections.singletonList(checkNotNull(element)));
+  this.element=element;
+}

@@ -1,0 +1,4 @@
+{
+  Ordering<E> ordering=Ordering.explicit(elements);
+  return elements.isEmpty() ? new EmptyImmutableSortedSet<E>(ordering) : new ExplicitOrderedImmutableSortedSet<E>(elements,ordering);
+}
