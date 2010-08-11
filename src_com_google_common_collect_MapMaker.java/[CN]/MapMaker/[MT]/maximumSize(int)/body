@@ -1,6 +1,6 @@
 {
   checkState(this.maximumSize == UNSET_MAXIMUM_SIZE,"maximum size was already set to " + this.maximumSize);
-  checkArgument(initialCapacity >= 0);
+  checkArgument(size > 0,"maximum size must be positive");
   this.maximumSize=size;
   this.useCustomMap=true;
   return this;
