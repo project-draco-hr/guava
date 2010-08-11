@@ -1,4 +1,4 @@
 {
   checkArgument(bytes.length >= BYTES,"array too small: %s < %s",bytes.length,BYTES);
-  return (char)((bytes[0] << 8) | (bytes[1] & 0xFF));
+  return fromBytes(bytes[0],bytes[1]);
 }
