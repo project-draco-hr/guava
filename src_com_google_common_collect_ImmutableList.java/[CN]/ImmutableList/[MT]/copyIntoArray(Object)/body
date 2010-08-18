@@ -1,3 +1,0 @@
-{
-  return copyIntoArray(new Object[source.length],0,source);
-}

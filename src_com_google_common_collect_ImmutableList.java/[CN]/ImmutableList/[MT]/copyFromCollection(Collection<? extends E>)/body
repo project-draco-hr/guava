@@ -7,6 +7,6 @@ case 1:
   @SuppressWarnings("unchecked") ImmutableList<E> list=new SingletonImmutableList<E>((E)elements[0]);
 return list;
 default :
-return new RegularImmutableList<E>(copyIntoArray(elements));
+return construct(elements);
 }
 }

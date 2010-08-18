@@ -1,0 +1,6 @@
+{
+  for (int i=0; i < elements.length; i++) {
+    checkElementNotNull(elements[i],i);
+  }
+  return new RegularImmutableList<E>(elements);
+}
