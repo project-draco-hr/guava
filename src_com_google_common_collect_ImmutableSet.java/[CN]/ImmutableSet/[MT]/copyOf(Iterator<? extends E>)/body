@@ -1,4 +1,3 @@
 {
-  Collection<E> list=Lists.newArrayList(elements);
-  return copyOfInternal(list);
+  return copyFromCollection(Lists.newArrayList(elements));
 }

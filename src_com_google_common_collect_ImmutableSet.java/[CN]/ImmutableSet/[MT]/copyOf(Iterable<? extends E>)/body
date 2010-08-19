@@ -1,7 +1,7 @@
 {
-  if (elements instanceof ImmutableSet && !(elements instanceof ImmutableSortedSet)) {
-    @SuppressWarnings("unchecked") ImmutableSet<E> set=(ImmutableSet<E>)elements;
-    return set;
+  if (elements instanceof Collection) {
+    Collection<? extends E> collection=(Collection<? extends E>)elements;
+    return copyOf(collection);
   }
-  return copyOfInternal(Collections2.toCollection(elements));
+  return copyOf(elements.iterator());
 }

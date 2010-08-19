@@ -1,0 +1,44 @@
+{
+  int tableSize=Hashing.chooseTableSize(elements.length);
+  Object[] table=new Object[tableSize];
+  int mask=tableSize - 1;
+  ArrayList<Object> uniqueElementsList=null;
+  int hashCode=0;
+  for (int i=0; i < elements.length; i++) {
+    Object element=elements[i];
+    int hash=element.hashCode();
+    for (int j=Hashing.smear(hash); ; j++) {
+      int index=j & mask;
+      Object value=table[index];
+      if (value == null) {
+        if (uniqueElementsList != null) {
+          uniqueElementsList.add(element);
+        }
+        table[index]=element;
+        hashCode+=hash;
+        break;
+      }
+ else       if (value.equals(element)) {
+        if (uniqueElementsList == null) {
+          uniqueElementsList=new ArrayList<Object>(elements.length);
+          for (int k=0; k < i; k++) {
+            Object previous=elements[k];
+            uniqueElementsList.add(previous);
+          }
+        }
+        break;
+      }
+    }
+  }
+  Object[] uniqueElements=uniqueElementsList == null ? elements : uniqueElementsList.toArray();
+  if (uniqueElements.length == 1) {
+    @SuppressWarnings("unchecked") E element=(E)uniqueElements[0];
+    return new SingletonImmutableSet<E>(element,hashCode);
+  }
+ else   if (tableSize > 2 * Hashing.chooseTableSize(uniqueElements.length)) {
+    return construct(uniqueElements);
+  }
+ else {
+    return new RegularImmutableSet<E>(uniqueElements,hashCode,table,mask);
+  }
+}

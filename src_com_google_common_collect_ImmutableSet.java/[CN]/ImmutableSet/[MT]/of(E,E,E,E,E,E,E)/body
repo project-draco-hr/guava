@@ -1,7 +1,14 @@
 {
-  int size=others.length + 6;
-  List<E> all=new ArrayList<E>(size);
-  Collections.addAll(all,e1,e2,e3,e4,e5,e6);
-  Collections.addAll(all,others);
-  return create(all,size);
+  final int paramCount=6;
+  Object[] elements=new Object[paramCount + others.length];
+  elements[0]=e1;
+  elements[1]=e2;
+  elements[2]=e3;
+  elements[3]=e4;
+  elements[4]=e5;
+  elements[5]=e6;
+  for (int i=paramCount; i < elements.length; i++) {
+    elements[i]=others[i - paramCount];
+  }
+  return construct(elements);
 }
