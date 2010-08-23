@@ -1,6 +1,6 @@
 {
   if (elementsToAdd instanceof Collection) {
-    @SuppressWarnings("unchecked") Collection<? extends T> c=(Collection<? extends T>)elementsToAdd;
+    Collection<? extends T> c=Collections2.cast(elementsToAdd);
     return addTo.addAll(c);
   }
   return Iterators.addAll(addTo,elementsToAdd.iterator());

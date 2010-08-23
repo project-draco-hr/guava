@@ -1,7 +1,3 @@
 {
-  if (elements instanceof Collection) {
-    Collection<? extends E> collection=(Collection<? extends E>)elements;
-    return copyOf(collection);
-  }
-  return copyOf(elements.iterator());
+  return (elements instanceof Collection) ? copyOf(Collections2.cast(elements)) : copyOf(elements.iterator());
 }

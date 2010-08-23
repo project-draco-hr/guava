@@ -1,9 +1,3 @@
 {
-  if (elements instanceof Collection) {
-    @SuppressWarnings("unchecked") Collection<? extends E> collection=(Collection<? extends E>)elements;
-    return new HashSet<E>(collection);
-  }
- else {
-    return newHashSet(elements.iterator());
-  }
+  return (elements instanceof Collection) ? new HashSet<E>(Collections2.cast(elements)) : newHashSet(elements.iterator());
 }

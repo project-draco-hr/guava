@@ -1,6 +1,6 @@
 {
   if (elements instanceof Multiset) {
-    @SuppressWarnings("unchecked") Multiset<? extends E> multiset=(Multiset<? extends E>)elements;
+    Multiset<? extends E> multiset=Multisets.cast(elements);
     for (    Entry<? extends E> entry : multiset.entrySet()) {
       addCopies(entry.getElement(),entry.getCount());
     }

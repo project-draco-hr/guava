@@ -6,7 +6,7 @@
   int oldSize=collection.size();
   boolean changed=false;
   if (values instanceof Collection) {
-    @SuppressWarnings("unchecked") Collection<? extends V> c=(Collection<? extends V>)values;
+    Collection<? extends V> c=Collections2.cast(values);
     changed=collection.addAll(c);
   }
  else {
