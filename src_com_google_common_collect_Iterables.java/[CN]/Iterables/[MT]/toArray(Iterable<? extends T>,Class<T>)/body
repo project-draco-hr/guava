@@ -1,5 +1,5 @@
 {
-  Collection<? extends T> collection=Collections2.toCollection(iterable);
+  Collection<? extends T> collection=toCollection(iterable);
   T[] array=ObjectArrays.newArray(type,collection.size());
   return collection.toArray(array);
 }

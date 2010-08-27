@@ -1,5 +1,5 @@
 {
   stream.defaultReadObject();
-  FieldSettersHolder.COUNT_MAP_FIELD_SETTER.set(this,new ConcurrentHashMap<Object,Object>());
-  Serialization.populateMultiset(this,stream);
+  @SuppressWarnings("unchecked") ConcurrentMap<E,Integer> deserializedCountMap=(ConcurrentMap<E,Integer>)stream.readObject();
+  FieldSettersHolder.COUNT_MAP_FIELD_SETTER.set(this,deserializedCountMap);
 }

@@ -1,5 +1,5 @@
 {
-  boolean result=sync.setException(throwable);
+  boolean result=sync.setException(checkNotNull(throwable));
   if (result) {
     done();
   }

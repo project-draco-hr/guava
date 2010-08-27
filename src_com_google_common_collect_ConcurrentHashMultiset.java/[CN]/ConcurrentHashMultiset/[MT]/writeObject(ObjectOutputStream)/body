@@ -1,4 +1,4 @@
 {
   stream.defaultWriteObject();
-  Serialization.writeMultiset(HashMultiset.create(this),stream);
+  stream.writeObject(countMap);
 }

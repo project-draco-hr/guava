@@ -3,5 +3,5 @@
   List<E> all=new ArrayList<E>(size);
   Collections.addAll(all,e1,e2,e3,e4,e5,e6);
   Collections.addAll(all,others);
-  return copyOfInternal(all);
+  return copyOf(all.iterator());
 }

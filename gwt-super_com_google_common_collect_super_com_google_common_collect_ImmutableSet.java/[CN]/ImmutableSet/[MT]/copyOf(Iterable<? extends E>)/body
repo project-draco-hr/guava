@@ -3,5 +3,5 @@
     @SuppressWarnings("unchecked") ImmutableSet<E> set=(ImmutableSet<E>)elements;
     return set;
   }
-  return copyOfInternal(Collections2.toCollection(elements));
+  return copyOf(elements.iterator());
 }

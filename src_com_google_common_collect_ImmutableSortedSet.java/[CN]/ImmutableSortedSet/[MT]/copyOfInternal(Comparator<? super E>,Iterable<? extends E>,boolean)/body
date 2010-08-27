@@ -6,7 +6,7 @@
       return result;
     }
   }
-  Object[] array=newObjectArray(elements);
+  Object[] array=Iterables.toArray(elements);
   if (array.length == 0) {
     return emptySet(comparator);
   }

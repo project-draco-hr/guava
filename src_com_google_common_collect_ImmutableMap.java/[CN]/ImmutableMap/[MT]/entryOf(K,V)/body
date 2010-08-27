@@ -1,3 +1,3 @@
 {
-  return Maps.immutableEntry(checkNotNull(key),checkNotNull(value));
+  return Maps.immutableEntry(checkNotNull(key,"null key"),checkNotNull(value,"null value"));
 }

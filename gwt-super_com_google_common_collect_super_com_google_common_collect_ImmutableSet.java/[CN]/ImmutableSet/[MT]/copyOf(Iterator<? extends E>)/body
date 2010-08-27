@@ -1,4 +1,16 @@
 {
-  Collection<E> list=Lists.newArrayList(elements);
-  return copyOfInternal(list);
+  if (!elements.hasNext()) {
+    return of();
+  }
+  E first=elements.next();
+  if (!elements.hasNext()) {
+    return ImmutableSet.<E>of(first);
+  }
+  Set<E> delegate=Sets.newLinkedHashSet();
+  delegate.add(checkNotNull(first));
+  do {
+    delegate.add(checkNotNull(elements.next()));
+  }
+ while (elements.hasNext());
+  return new RegularImmutableSet<E>(delegate);
 }
