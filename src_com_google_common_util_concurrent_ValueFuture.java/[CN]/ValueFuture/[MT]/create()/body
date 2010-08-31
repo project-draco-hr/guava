@@ -1,3 +1,3 @@
 {
-  return new ValueFuture<T>();
+  return new ValueFuture<V>();
 }

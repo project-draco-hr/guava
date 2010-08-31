@@ -1,9 +1,0 @@
-{
-  checkNotNull(exception);
-  return makeChecked(Futures.<T>immediateFailedFuture(exception),new Function<Exception,E>(){
-    public E apply(    Exception e){
-      return exception;
-    }
-  }
-);
-}

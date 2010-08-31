@@ -1,0 +1,5 @@
+{
+  List<E> list=Lists.newArrayList(this);
+  Collections.reverse(list);
+  return unsafeDelegateList(list);
+}

@@ -1,6 +1,5 @@
 {
-  checkNotNull(throwable);
   ValueFuture<V> future=ValueFuture.create();
-  future.setException(throwable);
+  future.set(value);
   return future;
 }

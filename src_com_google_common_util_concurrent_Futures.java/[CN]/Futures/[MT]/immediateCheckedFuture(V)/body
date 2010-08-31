@@ -1,0 +1,10 @@
+{
+  ValueFuture<V> future=ValueFuture.create();
+  future.set(value);
+  return Futures.makeChecked(future,new Function<Exception,X>(){
+    public X apply(    Exception e){
+      throw new AssertionError("impossible");
+    }
+  }
+);
+}

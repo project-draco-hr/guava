@@ -1,6 +1,0 @@
-{
-  if (future instanceof ListenableFuture) {
-    return (ListenableFuture<T>)future;
-  }
-  return new ListenableFutureAdapter<T>(future);
-}

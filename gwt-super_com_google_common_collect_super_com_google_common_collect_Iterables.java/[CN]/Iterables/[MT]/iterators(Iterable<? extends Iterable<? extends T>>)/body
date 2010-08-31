@@ -1,0 +1,12 @@
+{
+  final Iterator<? extends Iterable<? extends T>> iterableIterator=iterables.iterator();
+  return new UnmodifiableIterator<Iterator<? extends T>>(){
+    public boolean hasNext(){
+      return iterableIterator.hasNext();
+    }
+    public Iterator<? extends T> next(){
+      return iterableIterator.next().iterator();
+    }
+  }
+;
+}
