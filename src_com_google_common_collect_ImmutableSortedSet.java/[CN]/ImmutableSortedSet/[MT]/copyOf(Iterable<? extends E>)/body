@@ -1,4 +1,4 @@
 {
   @SuppressWarnings("unchecked") Ordering<E> naturalOrder=(Ordering)Ordering.<Comparable>natural();
-  return copyOf(naturalOrder,elements);
+  return copyOfInternal(naturalOrder,elements,false);
 }
