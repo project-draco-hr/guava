@@ -1,7 +1,10 @@
 {
   File parent=file.getCanonicalFile().getParentFile();
+  if (parent == null) {
+    return;
+  }
   parent.mkdirs();
-  if (!parent.exists()) {
+  if (!parent.isDirectory()) {
     throw new IOException("Unable to create parent directories of " + file);
   }
 }
