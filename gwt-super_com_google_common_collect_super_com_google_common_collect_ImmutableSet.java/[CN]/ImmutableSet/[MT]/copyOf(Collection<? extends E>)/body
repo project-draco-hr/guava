@@ -1,0 +1,4 @@
+{
+  Iterable<? extends E> iterable=elements;
+  return copyOf(iterable);
+}
