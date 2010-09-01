@@ -2,7 +2,7 @@
   boolean hasSameComparator=fromSortedSet || hasSameComparator(elements,comparator);
   if (hasSameComparator && (elements instanceof ImmutableSortedSet)) {
     @SuppressWarnings("unchecked") ImmutableSortedSet<E> result=(ImmutableSortedSet<E>)elements;
-    if (!result.hasPartialArray()) {
+    if (!result.isPartialView()) {
       return result;
     }
   }

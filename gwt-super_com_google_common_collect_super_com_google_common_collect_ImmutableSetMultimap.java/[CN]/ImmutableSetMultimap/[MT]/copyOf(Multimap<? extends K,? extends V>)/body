@@ -5,7 +5,9 @@
   }
   if (multimap instanceof ImmutableSetMultimap) {
     @SuppressWarnings("unchecked") ImmutableSetMultimap<K,V> kvMultimap=(ImmutableSetMultimap<K,V>)multimap;
-    return kvMultimap;
+    if (!kvMultimap.isPartialView()) {
+      return kvMultimap;
+    }
   }
   ImmutableMap.Builder<K,ImmutableSet<V>> builder=ImmutableMap.builder();
   int size=0;

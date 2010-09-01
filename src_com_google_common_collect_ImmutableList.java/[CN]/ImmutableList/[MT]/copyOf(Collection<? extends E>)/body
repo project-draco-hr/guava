@@ -1,7 +1,7 @@
 {
   if (elements instanceof ImmutableCollection) {
-    @SuppressWarnings("unchecked") ImmutableCollection<E> list=(ImmutableCollection<E>)elements;
-    return list.asList();
+    @SuppressWarnings("unchecked") ImmutableList<E> list=((ImmutableCollection<E>)elements).asList();
+    return list.isPartialView() ? copyFromCollection(list) : list;
   }
   return copyFromCollection(elements);
 }

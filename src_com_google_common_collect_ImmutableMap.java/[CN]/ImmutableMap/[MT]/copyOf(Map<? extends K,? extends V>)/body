@@ -1,7 +1,9 @@
 {
   if ((map instanceof ImmutableMap) && !(map instanceof ImmutableSortedMap)) {
     @SuppressWarnings("unchecked") ImmutableMap<K,V> kvMap=(ImmutableMap<K,V>)map;
-    return kvMap;
+    if (!kvMap.isPartialView()) {
+      return kvMap;
+    }
   }
   @SuppressWarnings("unchecked") Entry<K,V>[] entries=map.entrySet().toArray(new Entry[0]);
 switch (entries.length) {

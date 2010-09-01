@@ -7,7 +7,9 @@
   }
   if (sameComparator && (map instanceof ImmutableSortedMap)) {
     @SuppressWarnings("unchecked") ImmutableSortedMap<K,V> kvMap=(ImmutableSortedMap<K,V>)map;
-    return kvMap;
+    if (!kvMap.isPartialView()) {
+      return kvMap;
+    }
   }
   List<Entry<?,?>> list=Lists.newArrayListWithCapacity(map.size());
   for (  Entry<? extends K,? extends V> entry : map.entrySet()) {
