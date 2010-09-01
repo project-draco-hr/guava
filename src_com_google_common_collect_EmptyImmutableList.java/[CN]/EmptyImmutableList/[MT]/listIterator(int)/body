@@ -1,4 +1,4 @@
 {
   checkPositionIndex(start,0);
-  return Collections.emptyList().listIterator();
+  return ITERATOR;
 }
