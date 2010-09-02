@@ -1,0 +1,13 @@
+{
+  if (asMap == null) {
+    Map<K,Collection<V2>> aM=Maps.transformEntries(fromMultimap.asMap(),new EntryTransformer<K,Collection<V1>,Collection<V2>>(){
+      @Override public Collection<V2> transformEntry(      K key,      Collection<V1> value){
+        return transform(key,value);
+      }
+    }
+);
+    asMap=aM;
+    return aM;
+  }
+  return asMap;
+}

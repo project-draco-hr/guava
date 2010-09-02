@@ -1,0 +1,9 @@
+{
+  super(fromMultimap.entries(),new Function<Entry<K,V1>,Entry<K,V2>>(){
+    @Override public Entry<K,V2> apply(    Entry<K,V1> entry){
+      K key=entry.getKey();
+      return Maps.immutableEntry(key,transformer.transformEntry(key,entry.getValue()));
+    }
+  }
+);
+}

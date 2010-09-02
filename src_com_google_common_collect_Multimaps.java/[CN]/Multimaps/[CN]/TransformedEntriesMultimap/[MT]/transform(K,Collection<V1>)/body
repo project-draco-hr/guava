@@ -1,0 +1,8 @@
+{
+  return Collections2.transform(values,new Function<V1,V2>(){
+    @Override public V2 apply(    V1 value){
+      return transformer.transformEntry(key,value);
+    }
+  }
+);
+}
