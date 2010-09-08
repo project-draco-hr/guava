@@ -1,0 +1,10 @@
+{
+  if (object == this) {
+    return true;
+  }
+  if (object instanceof List) {
+    List<?> that=(List<?>)object;
+    return this.size() == that.size() && Iterables.elementsEqual(this,that);
+  }
+  return false;
+}

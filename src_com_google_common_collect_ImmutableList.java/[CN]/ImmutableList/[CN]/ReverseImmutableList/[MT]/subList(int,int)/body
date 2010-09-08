@@ -1,0 +1,4 @@
+{
+  Preconditions.checkPositionIndexes(fromIndex,toIndex,size);
+  return forwardList.subList(reversePosition(toIndex),reversePosition(fromIndex)).reverse();
+}

@@ -1,0 +1,17 @@
+{
+  if (!worryAboutDuplicates) {
+    return index;
+  }
+  upper=index;
+  while (lower < upper) {
+    int middle=lower + (upper - lower) / 2;
+    int c=comparator.compare(list.get(middle),e);
+    if (c < 0) {
+      lower=middle + 1;
+    }
+ else {
+      upper=middle;
+    }
+  }
+  return lower;
+}

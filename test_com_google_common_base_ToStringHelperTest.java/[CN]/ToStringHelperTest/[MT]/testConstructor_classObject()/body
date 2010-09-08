@@ -1,0 +1,4 @@
+{
+  String toTest=Objects.toStringHelper(TestClass.class).toString();
+  assertEquals("TestClass{}",toTest);
+}

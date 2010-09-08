@@ -1,0 +1,3 @@
+{
+  return FLOOR.exactMatchFound(list,e,lower,index,upper,comparator,worryAboutDuplicates) - 1;
+}

@@ -1,0 +1,7 @@
+List<? extends E> list
+E e
+int lower
+int index
+int upper
+Comparator<? super E> comparator
+boolean worryAboutDuplicates
