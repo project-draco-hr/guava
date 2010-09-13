@@ -3,7 +3,7 @@
     return get();
   }
  catch (  InterruptedException e) {
-    cancel(true);
+    Thread.currentThread().interrupt();
     throw mapException(e);
   }
 catch (  CancellationException e) {

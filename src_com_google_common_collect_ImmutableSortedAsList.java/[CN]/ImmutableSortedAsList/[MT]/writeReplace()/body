@@ -1,3 +1,3 @@
 {
-  return new ImmutableAsList.SerializedForm(set);
+  return new ImmutableAsList.SerializedForm(backingSet);
 }

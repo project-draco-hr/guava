@@ -1,3 +1,3 @@
 {
-  return set.indexOf(target);
+  return backingSet.indexOf(target);
 }

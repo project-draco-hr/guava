@@ -1,7 +1,7 @@
 {
   int hash=0;
-  for (int i=fromIndex; i < toIndex; i++) {
-    hash+=elements[i].hashCode();
+  for (  E e : this) {
+    hash+=e.hashCode();
   }
   return hash;
 }

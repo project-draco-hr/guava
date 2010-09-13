@@ -1,6 +1,3 @@
 {
-  super(comparator);
-  this.elements=elements;
-  this.fromIndex=0;
-  this.toIndex=elements.length;
+  this(new RegularImmutableList<E>(elements),comparator);
 }

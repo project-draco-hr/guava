@@ -1,4 +1,0 @@
-{
-  super(array,offset,size);
-  this.set=set;
-}

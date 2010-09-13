@@ -1,6 +1,6 @@
 {
   if (newFromIndex < newToIndex) {
-    return new RegularImmutableSortedSet<E>(elements,comparator,newFromIndex,newToIndex);
+    return new RegularImmutableSortedSet<E>(elements.subList(newFromIndex,newToIndex),comparator);
   }
  else {
     return emptySet(comparator);

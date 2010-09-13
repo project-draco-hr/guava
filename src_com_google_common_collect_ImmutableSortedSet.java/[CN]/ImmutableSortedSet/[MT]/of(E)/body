@@ -1,4 +1,3 @@
 {
-  Object[] array={checkNotNull(element)};
-  return new RegularImmutableSortedSet<E>(array,Ordering.natural());
+  return new RegularImmutableSortedSet<E>(ImmutableList.of(element),Ordering.natural());
 }

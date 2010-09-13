@@ -1,2 +1,2 @@
-Object[] array
 Comparator<? super E> comparator
+List<E> list

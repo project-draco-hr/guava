@@ -1,2 +1,2 @@
+ImmutableList<E> elements
 Comparator<? super E> comparator
-Object elements

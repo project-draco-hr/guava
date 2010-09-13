@@ -1,4 +1,4 @@
 {
   Preconditions.checkPositionIndexes(fromIndex,toIndex,size());
-  return (fromIndex == toIndex) ? ImmutableList.<E>of() : new RegularImmutableSortedSet<E>(array(),set.comparator(),offset() + fromIndex,offset() + toIndex).asList();
+  return (fromIndex == toIndex) ? ImmutableList.<E>of() : new RegularImmutableSortedSet<E>(backingList.subList(fromIndex,toIndex),backingSet.comparator()).asList();
 }

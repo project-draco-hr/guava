@@ -10,11 +10,13 @@
     return false;
   }
   if (hasSameComparator(that,comparator)) {
-    Iterator<?> iterator=that.iterator();
+    Iterator<?> otherIterator=that.iterator();
     try {
-      for (int i=fromIndex; i < toIndex; i++) {
-        Object otherElement=iterator.next();
-        if (otherElement == null || unsafeCompare(elements[i],otherElement) != 0) {
+      Iterator<E> iterator=iterator();
+      while (iterator.hasNext()) {
+        Object element=iterator.next();
+        Object otherElement=otherIterator.next();
+        if (otherElement == null || unsafeCompare(element,otherElement) != 0) {
           return false;
         }
       }

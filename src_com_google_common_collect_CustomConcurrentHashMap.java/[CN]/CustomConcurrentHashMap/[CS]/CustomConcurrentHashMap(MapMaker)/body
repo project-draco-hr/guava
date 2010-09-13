@@ -26,7 +26,7 @@
   }
   int segmentShift=0;
   int segmentCount=1;
-  while (segmentCount < concurrencyLevel) {
+  while (segmentCount < concurrencyLevel && (!evicts || segmentCount * 2 <= maximumSize)) {
     ++segmentShift;
     segmentCount<<=1;
   }

@@ -5,17 +5,29 @@
     private final Object lock=new Object();
     private boolean set=false;
     private O value=null;
+    private ExecutionException exception=null;
     @Override public O get() throws InterruptedException, ExecutionException {
       return apply(future.get());
     }
     @Override public O get(    long timeout,    TimeUnit unit) throws InterruptedException, ExecutionException, TimeoutException {
       return apply(future.get(timeout,unit));
     }
-    private O apply(    I raw){
+    private O apply(    I raw) throws ExecutionException {
 synchronized (lock) {
         if (!set) {
-          value=function.apply(raw);
+          try {
+            value=function.apply(raw);
+          }
+ catch (          RuntimeException e) {
+            exception=new ExecutionException(e);
+          }
+catch (          Error e) {
+            exception=new ExecutionException(e);
+          }
           set=true;
+        }
+        if (exception != null) {
+          throw exception;
         }
         return value;
       }

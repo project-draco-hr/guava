@@ -1,21 +1,20 @@
 {
   boolean hasSameComparator=fromSortedSet || hasSameComparator(elements,comparator);
   if (hasSameComparator && (elements instanceof ImmutableSortedSet)) {
-    @SuppressWarnings("unchecked") ImmutableSortedSet<E> result=(ImmutableSortedSet<E>)elements;
-    if (!result.isPartialView()) {
-      return result;
+    @SuppressWarnings("unchecked") ImmutableSortedSet<E> original=(ImmutableSortedSet<E>)elements;
+    if (original.isEmpty()) {
+      return original;
     }
+    ImmutableList<E> elementsList=original.asList();
+    ImmutableList<E> copiedElementsList=ImmutableList.copyOf(elements);
+    if (elementsList == copiedElementsList) {
+      return original;
+    }
+    return new RegularImmutableSortedSet<E>(copiedElementsList,comparator);
   }
-  Object[] array=Iterables.toArray(elements);
-  if (array.length == 0) {
+  ImmutableList<E> list=immutableSortedUniqueCopy(comparator,Lists.newArrayList(elements));
+  if (list.isEmpty()) {
     return emptySet(comparator);
   }
-  for (  Object e : array) {
-    checkNotNull(e);
-  }
-  if (!hasSameComparator) {
-    sort(array,comparator);
-    array=removeDupes(array,comparator);
-  }
-  return new RegularImmutableSortedSet<E>(array,comparator);
+  return new RegularImmutableSortedSet<E>(list,comparator);
 }
