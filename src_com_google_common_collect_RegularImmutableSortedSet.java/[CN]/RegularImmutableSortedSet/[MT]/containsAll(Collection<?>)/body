@@ -2,17 +2,17 @@
   if (!hasSameComparator(targets,comparator()) || (targets.size() <= 1)) {
     return super.containsAll(targets);
   }
-  Iterator<E> myIterator=iterator();
-  Iterator<?> iterator=targets.iterator();
-  Object target=iterator.next();
+  Iterator<E> thisIterator=iterator();
+  Iterator<?> thatIterator=targets.iterator();
+  Object target=thatIterator.next();
   try {
-    while (myIterator.hasNext()) {
-      int cmp=unsafeCompare(myIterator.next(),target);
+    while (thisIterator.hasNext()) {
+      int cmp=unsafeCompare(thisIterator.next(),target);
       if (cmp == 0) {
-        if (!iterator.hasNext()) {
+        if (!thatIterator.hasNext()) {
           return true;
         }
-        target=iterator.next();
+        target=thatIterator.next();
       }
  else       if (cmp > 0) {
         return false;

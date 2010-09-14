@@ -1,0 +1,3 @@
+{
+  return charactersOf(sequence.subSequence(fromIndex,toIndex));
+}

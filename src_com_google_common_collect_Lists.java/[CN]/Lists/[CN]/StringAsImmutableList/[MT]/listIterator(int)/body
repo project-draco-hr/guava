@@ -1,0 +1,10 @@
+{
+  int n=size();
+  checkPositionIndex(index,n);
+  return new AbstractIndexedIterator<Character>(index,n){
+    @Override protected Character get(    int index){
+      return string.charAt(index);
+    }
+  }
+;
+}
