@@ -1,0 +1,9 @@
+{
+  assertEquals(OBJECT.hashCode(),Equivalences.equals().hash(OBJECT));
+  try {
+    Equivalences.equals().hash(null);
+    fail("expected a NPE");
+  }
+ catch (  NullPointerException expected) {
+  }
+}

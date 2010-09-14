@@ -1,4 +1,3 @@
 {
-  constraint.checkElement(element);
-  return delegate.add(element);
+  return standardAdd(element);
 }

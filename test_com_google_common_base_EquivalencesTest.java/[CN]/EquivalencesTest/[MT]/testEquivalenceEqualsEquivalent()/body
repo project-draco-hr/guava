@@ -1,0 +1,10 @@
+{
+  assertTrue(Equivalences.equals().equivalent(OBJECT,OBJECT));
+  assertFalse(Equivalences.equals().equivalent(OBJECT,null));
+  try {
+    Equivalences.equals().equivalent(null,OBJECT);
+    fail("expected a NPE");
+  }
+ catch (  NullPointerException expected) {
+  }
+}

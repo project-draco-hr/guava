@@ -1,0 +1,4 @@
+{
+  AtomicInteger frequency=backingMap.get(element);
+  return frequency != null && frequency.get() > 0;
+}
