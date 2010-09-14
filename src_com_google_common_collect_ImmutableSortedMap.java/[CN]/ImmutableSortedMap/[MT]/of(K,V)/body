@@ -1,4 +1,3 @@
 {
-  Entry<?,?>[] entries={entryOf(k1,v1)};
-  return new ImmutableSortedMap<K,V>(entries,Ordering.natural());
+  return new ImmutableSortedMap<K,V>(ImmutableList.of(entryOf(k1,v1)),Ordering.natural());
 }

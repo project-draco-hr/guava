@@ -11,14 +11,15 @@
       return kvMap;
     }
   }
-  List<Entry<?,?>> list=Lists.newArrayListWithCapacity(map.size());
-  for (  Entry<? extends K,? extends V> entry : map.entrySet()) {
-    list.add(entryOf(entry.getKey(),entry.getValue()));
+  @SuppressWarnings("unchecked") Entry<K,V>[] entries=map.entrySet().toArray(new Entry[0]);
+  for (int i=0; i < entries.length; i++) {
+    Entry<K,V> entry=entries[i];
+    entries[i]=entryOf(entry.getKey(),entry.getValue());
   }
-  Entry<?,?>[] entryArray=list.toArray(new Entry<?,?>[list.size()]);
+  List<Entry<K,V>> list=Arrays.asList(entries);
   if (!sameComparator) {
-    sortEntries(entryArray,comparator);
-    validateEntries(entryArray,comparator);
+    sortEntries(list,comparator);
+    validateEntries(list,comparator);
   }
-  return new ImmutableSortedMap<K,V>(entryArray,comparator);
+  return new ImmutableSortedMap<K,V>(ImmutableList.copyOf(list),comparator);
 }

@@ -1,4 +1,4 @@
 {
   int newFromIndex=findSubmapIndex(checkNotNull(fromKey));
-  return createSubmap(newFromIndex,toIndex);
+  return createSubmap(newFromIndex,size());
 }

@@ -3,6 +3,6 @@
     return "{}";
   }
   StringBuilder builder=new StringBuilder(map.size() * 16).append('{');
-  joiner.appendTo(builder,map);
+  JOINER.appendTo(builder,map);
   return builder.append("]}").toString();
 }

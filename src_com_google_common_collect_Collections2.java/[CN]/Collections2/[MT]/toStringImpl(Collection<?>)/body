@@ -1,0 +1,11 @@
+{
+  Iterator<?> i=collection.iterator();
+  StringBuilder sb=new StringBuilder(collection.size() * 16).append('[');
+  STANDARD_JOINER.appendTo(sb,Iterables.transform(collection,new Function<Object,Object>(){
+    @Override public Object apply(    Object input){
+      return input == collection ? "(this Collection)" : input;
+    }
+  }
+));
+  return sb.append(']').toString();
+}

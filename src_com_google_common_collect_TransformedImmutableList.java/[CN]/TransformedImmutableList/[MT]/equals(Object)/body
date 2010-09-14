@@ -1,0 +1,10 @@
+{
+  if (obj == this) {
+    return true;
+  }
+  if (obj instanceof List) {
+    List<?> list=(List<?>)obj;
+    return size() == list.size() && Iterators.elementsEqual(iterator(),list.iterator());
+  }
+  return false;
+}

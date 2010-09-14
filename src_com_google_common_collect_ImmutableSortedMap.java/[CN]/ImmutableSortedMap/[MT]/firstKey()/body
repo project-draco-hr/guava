@@ -2,5 +2,5 @@
   if (isEmpty()) {
     throw new NoSuchElementException();
   }
-  return entries[fromIndex].getKey();
+  return entries.get(0).getKey();
 }

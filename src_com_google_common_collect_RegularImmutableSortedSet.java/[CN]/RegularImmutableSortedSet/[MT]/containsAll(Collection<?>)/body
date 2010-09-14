@@ -5,17 +5,25 @@
   Iterator<E> myIterator=iterator();
   Iterator<?> iterator=targets.iterator();
   Object target=iterator.next();
-  while (myIterator.hasNext()) {
-    int cmp=unsafeCompare(myIterator.next(),target);
-    if (cmp == 0) {
-      if (!iterator.hasNext()) {
-        return true;
+  try {
+    while (myIterator.hasNext()) {
+      int cmp=unsafeCompare(myIterator.next(),target);
+      if (cmp == 0) {
+        if (!iterator.hasNext()) {
+          return true;
+        }
+        target=iterator.next();
       }
-      target=iterator.next();
+ else       if (cmp > 0) {
+        return false;
+      }
     }
- else     if (cmp > 0) {
-      return false;
-    }
+  }
+ catch (  NullPointerException e) {
+    return false;
+  }
+catch (  ClassCastException e) {
+    return false;
   }
   return false;
 }

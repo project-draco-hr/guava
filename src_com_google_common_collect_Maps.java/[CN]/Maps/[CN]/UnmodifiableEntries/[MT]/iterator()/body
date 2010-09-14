@@ -4,6 +4,9 @@
     @Override public Entry<K,V> next(){
       return unmodifiableEntry(super.next());
     }
+    @Override public void remove(){
+      throw new UnsupportedOperationException();
+    }
     @Override protected Iterator<Entry<K,V>> delegate(){
       return delegate;
     }

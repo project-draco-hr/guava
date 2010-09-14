@@ -1,0 +1,7 @@
+{
+  for (int i=1; i < entries.size(); i++) {
+    if (comparator.compare(entries.get(i - 1).getKey(),entries.get(i).getKey()) == 0) {
+      throw new IllegalArgumentException("Duplicate keys in mappings " + entries.get(i - 1) + " and "+ entries.get(i));
+    }
+  }
+}

@@ -1,8 +1,8 @@
 {
   if (NATURAL_ORDER.equals(comparator)) {
-    return ImmutableSortedMap.of();
+    return (ImmutableSortedMap<K,V>)NATURAL_EMPTY_MAP;
   }
  else {
-    return new ImmutableSortedMap<K,V>(EMPTY_ARRAY,comparator);
+    return new ImmutableSortedMap<K,V>(ImmutableList.<Entry<K,V>>of(),comparator);
   }
 }

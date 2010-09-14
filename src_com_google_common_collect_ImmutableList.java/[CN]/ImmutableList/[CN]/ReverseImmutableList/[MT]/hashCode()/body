@@ -1,7 +1,0 @@
-{
-  int hashCode=1;
-  for (  E e : this) {
-    hashCode=31 * hashCode + e.hashCode();
-  }
-  return hashCode;
-}

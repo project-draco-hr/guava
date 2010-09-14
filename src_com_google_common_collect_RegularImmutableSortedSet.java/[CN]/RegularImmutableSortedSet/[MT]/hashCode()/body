@@ -1,7 +1,0 @@
-{
-  int hash=0;
-  for (  E e : this) {
-    hash+=e.hashCode();
-  }
-  return hash;
-}

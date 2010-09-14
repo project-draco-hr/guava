@@ -1,0 +1,3 @@
+{
+  return new TransformedView(backingList.subList(fromIndex,toIndex));
+}

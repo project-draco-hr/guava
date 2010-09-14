@@ -1,6 +1,6 @@
 {
   if (newFromIndex < newToIndex) {
-    return new ImmutableSortedMap<K,V>(entries,comparator,newFromIndex,newToIndex);
+    return new ImmutableSortedMap<K,V>(entries.subList(newFromIndex,newToIndex),comparator);
   }
  else {
     return emptyMap(comparator);

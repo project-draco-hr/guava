@@ -3,6 +3,6 @@
     return true;
   }
 synchronized (mutex) {
-    return Collections2.setEquals(delegate(),o);
+    return Sets.equalsImpl(delegate(),o);
   }
 }

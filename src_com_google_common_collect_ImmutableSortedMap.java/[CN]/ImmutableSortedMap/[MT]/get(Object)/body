@@ -4,10 +4,10 @@
   }
   int i;
   try {
-    i=binarySearch(key);
+    i=SortedLists.binarySearch(Lists.transform(entries,keyFunction),key,unsafeComparator(),EQUAL,false);
   }
  catch (  ClassCastException e) {
     return null;
   }
-  return (i >= 0) ? entries[i].getValue() : null;
+  return i >= 0 ? entries.get(i).getValue() : null;
 }
