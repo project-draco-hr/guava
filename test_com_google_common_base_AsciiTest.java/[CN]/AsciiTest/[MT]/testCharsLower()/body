@@ -1,0 +1,9 @@
+{
+  for (  char c : LOWER.toCharArray()) {
+    String str=String.valueOf(c);
+    assertTrue(str,c == Ascii.toLowerCase(c));
+    assertFalse(str,c == Ascii.toUpperCase(c));
+    assertTrue(str,Ascii.isLowerCase(c));
+    assertFalse(str,Ascii.isUpperCase(c));
+  }
+}

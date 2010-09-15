@@ -23,5 +23,5 @@
     }
   }
   boolean areEqual=eq && onlyOnRight.isEmpty();
-  return new MapDifferenceImpl<K,V>(areEqual,onlyOnLeft,onlyOnRight,onBoth,differences);
+  return mapDifference(areEqual,onlyOnLeft,onlyOnRight,onBoth,differences);
 }

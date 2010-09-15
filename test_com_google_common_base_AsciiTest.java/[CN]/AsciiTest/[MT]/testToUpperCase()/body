@@ -1,0 +1,5 @@
+{
+  assertEquals(UPPER,Ascii.toUpperCase(LOWER));
+  assertEquals(UPPER,Ascii.toUpperCase(UPPER));
+  assertEquals(IGNORED,Ascii.toUpperCase(IGNORED));
+}
