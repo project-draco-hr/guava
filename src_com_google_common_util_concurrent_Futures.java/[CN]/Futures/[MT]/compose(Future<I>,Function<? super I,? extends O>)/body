@@ -1,4 +1,7 @@
 {
+  if (future instanceof ListenableFuture) {
+    return compose((ListenableFuture<I>)future,function);
+  }
   checkNotNull(future);
   checkNotNull(function);
   return new Future<O>(){
