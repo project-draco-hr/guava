@@ -1,6 +1,6 @@
 {
   checkNotNull(future);
-  if (future instanceof UninterruptibleFuture) {
+  if (future instanceof UninterruptibleFuture<?>) {
     return (UninterruptibleFuture<V>)future;
   }
   return new UninterruptibleFuture<V>(){

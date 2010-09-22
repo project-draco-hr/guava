@@ -1,0 +1,14 @@
+{
+  if (!isDone()) {
+    ListenableFuture<? extends I> inputFuture=this.inputFuture;
+    if (inputFuture != null) {
+      inputFuture.get();
+    }
+    outputCreated.await();
+    ListenableFuture<? extends O> outputFuture=this.outputFuture;
+    if (outputFuture != null) {
+      outputFuture.get();
+    }
+  }
+  return super.get();
+}

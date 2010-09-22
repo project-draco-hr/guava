@@ -2,7 +2,7 @@
   try {
     I sourceResult;
     try {
-      sourceResult=inputFuture.get();
+      sourceResult=makeUninterruptible(inputFuture).get();
     }
  catch (    CancellationException e) {
       cancel();
@@ -50,10 +50,10 @@ catch (  RuntimeException e) {
   }
 catch (  Error e) {
     setException(e);
-    throw e;
   }
  finally {
     function=null;
     inputFuture=null;
+    outputCreated.countDown();
   }
 }

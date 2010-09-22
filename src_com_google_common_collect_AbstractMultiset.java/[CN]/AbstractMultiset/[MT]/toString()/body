@@ -1,3 +1,3 @@
 {
-  return Multisets.toStringImpl(this);
+  return entrySet().toString();
 }

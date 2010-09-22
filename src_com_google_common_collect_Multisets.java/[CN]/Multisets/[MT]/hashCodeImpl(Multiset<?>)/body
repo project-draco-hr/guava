@@ -1,3 +1,0 @@
-{
-  return multiset.entrySet().hashCode();
-}

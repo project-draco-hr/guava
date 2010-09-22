@@ -1,4 +1,4 @@
 {
   this.function=checkNotNull(function);
-  this.inputFuture=makeUninterruptible(inputFuture);
+  this.inputFuture=checkNotNull(inputFuture);
 }
