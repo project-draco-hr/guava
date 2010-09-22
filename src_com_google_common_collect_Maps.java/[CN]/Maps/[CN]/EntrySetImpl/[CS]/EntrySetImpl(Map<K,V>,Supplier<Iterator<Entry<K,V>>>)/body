@@ -1,0 +1,4 @@
+{
+  this.map=checkNotNull(map);
+  this.entryIteratorSupplier=checkNotNull(entryIteratorSupplier);
+}

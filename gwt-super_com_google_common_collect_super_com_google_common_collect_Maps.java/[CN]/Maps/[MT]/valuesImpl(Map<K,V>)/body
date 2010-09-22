@@ -1,0 +1,3 @@
+{
+  return new AbstractMapWrapper<K,V>(map).values();
+}

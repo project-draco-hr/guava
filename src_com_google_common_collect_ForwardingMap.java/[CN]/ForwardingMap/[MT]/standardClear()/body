@@ -1,0 +1,7 @@
+{
+  Iterator<Entry<K,V>> entryIterator=entrySet().iterator();
+  while (entryIterator.hasNext()) {
+    entryIterator.next();
+    entryIterator.remove();
+  }
+}

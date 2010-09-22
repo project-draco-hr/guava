@@ -9,6 +9,13 @@
       @Override public boolean isEmpty(){
         return ImprovedAbstractMap.this.isEmpty();
       }
+      @Override public boolean remove(      Object object){
+        if (contains(object)) {
+          ImprovedAbstractMap.this.remove(object);
+          return true;
+        }
+        return false;
+      }
     }
 ;
   }

@@ -1,0 +1,11 @@
+{
+  if (o instanceof Entry) {
+    Entry<?,?> entry=(Entry<?,?>)o;
+    Object key=entry.getKey();
+    if (map.containsKey(key)) {
+      V value=map.get(entry.getKey());
+      return Objects.equal(value,entry.getValue());
+    }
+  }
+  return false;
+}

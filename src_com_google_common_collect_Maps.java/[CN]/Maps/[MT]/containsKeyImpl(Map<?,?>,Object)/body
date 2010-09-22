@@ -1,0 +1,8 @@
+{
+  for (  Entry<?,?> entry : map.entrySet()) {
+    if (Objects.equal(entry.getKey(),key)) {
+      return true;
+    }
+  }
+  return false;
+}
