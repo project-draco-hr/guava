@@ -1,0 +1,5 @@
+{
+  List<Object> elements=new ArrayList<Object>();
+  Collection_CustomFieldSerializerBase.deserialize(reader,elements);
+  return new ImmutableAsList<Object>(elements);
+}

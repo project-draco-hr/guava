@@ -1,17 +1,10 @@
 {
   checkArgument(length >= 0);
-  final int end=offset + length;
+  int end=offset + length;
   Preconditions.checkPositionIndexes(offset,end,array.length);
-  return new UnmodifiableIterator<T>(){
-    int i=offset;
-    public boolean hasNext(){
-      return i < end;
-    }
-    public T next(){
-      if (!hasNext()) {
-        throw new NoSuchElementException();
-      }
-      return array[i++];
+  return new AbstractIndexedIterator<T>(length){
+    @Override protected T get(    int index){
+      return array[offset + index];
     }
   }
 ;
