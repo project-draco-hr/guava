@@ -1,0 +1,9 @@
+{
+  String s1="test", s2=s1;
+  Assert.assertSame(s1,s2);
+  try {
+    Assert.assertEquals(s1,s2);
+  }
+ catch (  AssertionFailedError e) {
+  }
+}

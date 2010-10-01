@@ -1,0 +1,3 @@
+{
+  assertTrue("Condition expected to be false but was true.",!condition);
+}

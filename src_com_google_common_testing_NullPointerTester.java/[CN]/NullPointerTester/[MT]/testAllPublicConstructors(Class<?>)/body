@@ -1,0 +1,7 @@
+{
+  for (  Constructor<?> constructor : c.getDeclaredConstructors()) {
+    if (isPublic(constructor) && !isStatic(constructor) && !isIgnored(constructor)) {
+      testConstructor(constructor);
+    }
+  }
+}

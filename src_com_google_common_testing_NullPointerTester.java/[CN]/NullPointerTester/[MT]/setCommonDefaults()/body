@@ -1,0 +1,31 @@
+{
+  setDefault(Appendable.class,new StringBuilder());
+  setDefault(CharSequence.class,"");
+  setDefault(Class.class,Class.class);
+  setDefault(Collection.class,Collections.emptySet());
+  setDefault(Comparable.class,0);
+  setDefault(Comparator.class,Collections.reverseOrder());
+  setDefault(Function.class,Functions.identity());
+  setDefault(Integer.class,0);
+  setDefault(Iterable.class,Collections.emptySet());
+  setDefault(Iterator.class,Iterators.emptyIterator());
+  setDefault(List.class,Collections.emptyList());
+  setDefault(Map.class,Collections.emptyMap());
+  setDefault(Object.class,new Object());
+  setDefault(Object[].class,new Object[0]);
+  setDefault(Pattern.class,Pattern.compile(""));
+  setDefault(Predicate.class,Predicates.alwaysTrue());
+  setDefault(Set.class,Collections.emptySet());
+  setDefault(String.class,"");
+  setDefault(Supplier.class,Suppliers.ofInstance(1));
+  setDefault(Throwable.class,new Exception());
+  setDefault(TimeUnit.class,TimeUnit.SECONDS);
+  setDefault(int.class,0);
+  setDefault(long.class,0L);
+  setDefault(short.class,(short)0);
+  setDefault(char.class,'a');
+  setDefault(byte.class,(byte)0);
+  setDefault(float.class,0.0f);
+  setDefault(double.class,0.0d);
+  setDefault(boolean.class,false);
+}

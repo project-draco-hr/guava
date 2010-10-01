@@ -1,0 +1,3 @@
+{
+  if (!condition)   fail("Condition exepected to be true but was false.");
+}

@@ -1,0 +1,3 @@
+{
+  assertNotEquals(format("Objects '%s' and '%s' are equal but should not be",o1,o2),o1,o2);
+}

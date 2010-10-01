@@ -1,0 +1,13 @@
+{
+  Class<?>[] types=func.getParameterTypes();
+  Object[] params=new Object[types.length];
+  for (int i=0; i < types.length; i++) {
+    if (i != indexOfParamToSetToNull) {
+      params[i]=defaults.get(types[i]);
+      if (!parameterIsPrimitiveOrNullable(func,indexOfParamToSetToNull)) {
+        Assert.assertNotNull("No default value found for " + types[i].getName(),params[i]);
+      }
+    }
+  }
+  return params;
+}

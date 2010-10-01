@@ -1,0 +1,7 @@
+{
+  try {
+    Assert.assertNull(new Object());
+  }
+ catch (  AssertionFailedError e) {
+  }
+}

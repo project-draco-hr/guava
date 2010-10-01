@@ -1,0 +1,8 @@
+{
+  try {
+    Assert.fail();
+    throw new AssertionError("Failed to fail as expected.");
+  }
+ catch (  AssertionFailedError e) {
+  }
+}

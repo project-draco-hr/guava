@@ -1,0 +1,11 @@
+{
+  try {
+    Assert.fail("Message");
+    throw new AssertionError("Failed to fail as expected.");
+  }
+ catch (  AssertionFailedError e) {
+    if (!e.getMessage().equals("Message")) {
+      throw new AssertionError("Assert.fail threw exception but message was not the expected content.");
+    }
+  }
+}

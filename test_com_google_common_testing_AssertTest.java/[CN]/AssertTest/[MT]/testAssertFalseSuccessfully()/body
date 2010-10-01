@@ -1,0 +1,3 @@
+{
+  Assert.assertFalse("This message should never appear.",false);
+}

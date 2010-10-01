@@ -1,0 +1,7 @@
+{
+  for (  Method method : c.getDeclaredMethods()) {
+    if (isPublic(method) && isStatic(method) && !isIgnored(method)) {
+      testMethod(null,method);
+    }
+  }
+}

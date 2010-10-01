@@ -1,0 +1,15 @@
+{
+  for (  Iterable<Object> group : equalityGroups) {
+    for (    Object reference : group) {
+      assertNotEquals(reference,null);
+      assertTrue(reference + " is expected to be equal to itself",reference.equals(reference));
+      assertNotEquals(reference,NotAnInstance.SINGLETON);
+      for (      Object right : group) {
+        if (reference != right) {
+          assertEquals(reference + " is expected to be equal to " + right,reference,right);
+          assertEquals(reference + " hash code is expected to be equal to " + right+ " hash code",reference.hashCode(),right.hashCode());
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,3 @@
+{
+  assertNull(format("Expected null but found '%s'.",object),object);
+}

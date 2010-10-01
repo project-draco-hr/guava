@@ -1,0 +1,15 @@
+{
+  Iterable<List<Object>> inequalityGroups=Iterables.concat(equalityGroups,Collections.singletonList(defaultNotEqualObjects));
+  for (  Iterable<Object> group : inequalityGroups) {
+    for (    Iterable<Object> anotherGroup : inequalityGroups) {
+      if (group == anotherGroup) {
+        continue;
+      }
+      for (      Object left : group) {
+        for (        Object right : anotherGroup) {
+          assertNotEquals(left,right);
+        }
+      }
+    }
+  }
+}

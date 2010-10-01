@@ -1,0 +1,8 @@
+{
+  Object o1=new Object(), o2=new Object();
+  try {
+    Assert.assertEquals(o1,o2);
+  }
+ catch (  AssertionFailedError e) {
+  }
+}

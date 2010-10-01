@@ -1,0 +1,4 @@
+{
+  ignoredMembers.add(member);
+  return this;
+}
