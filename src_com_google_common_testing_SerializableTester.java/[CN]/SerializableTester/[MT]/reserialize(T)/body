@@ -7,13 +7,10 @@
     ObjectInputStream in=new ObjectInputStream(new ByteArrayInputStream(bytes.toByteArray()));
     return (T)in.readObject();
   }
- catch (  RuntimeException e) {
-    throw new SerializationException(e);
-  }
-catch (  IOException e) {
-    throw new SerializationException(e);
+ catch (  IOException e) {
+    throw new RuntimeException(e);
   }
 catch (  ClassNotFoundException e) {
-    throw new SerializationException(e);
+    throw new RuntimeException(e);
   }
 }

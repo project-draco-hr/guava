@@ -1,3 +1,0 @@
-{
-  assertNotSame(format("Objects '%s' and '%s' are not the same.",o1,o2),o1,o2);
-}

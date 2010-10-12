@@ -1,8 +1,0 @@
-{
-  if (o1 == o2) {
-    fail(format("Objects '%s' and '%s' should not be equal but are identical",o1,o2));
-  }
- else {
-    assertFalse(message,o1.equals(o2));
-  }
-}

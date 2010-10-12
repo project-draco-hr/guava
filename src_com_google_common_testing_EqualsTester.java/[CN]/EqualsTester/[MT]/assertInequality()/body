@@ -7,7 +7,7 @@
       }
       for (      Object left : group) {
         for (        Object right : anotherGroup) {
-          assertNotEquals(left,right);
+          assertTrue(!left.equals(right));
         }
       }
     }

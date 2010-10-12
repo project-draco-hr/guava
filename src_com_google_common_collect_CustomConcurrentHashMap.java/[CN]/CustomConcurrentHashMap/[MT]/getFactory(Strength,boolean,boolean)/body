@@ -1,4 +1,4 @@
 {
-  int flags=(expires ? EXPIRABLE_MASK : 0) | (evicts ? EVICTABLE_MASK : 0);
+  int flags=(expireAfterWrite ? EXPIRABLE_MASK : 0) | (evictsBySize ? EVICTABLE_MASK : 0);
   return factories[keyStrength.ordinal()][flags];
 }

@@ -1,3 +1,3 @@
 {
-  return new ComputingSerializationProxy<K,V>(keyStrength,valueStrength,keyEquivalence,valueEquivalence,expirationNanos,maximumSize,concurrencyLevel,evictionListener,this,computingFunction);
+  return new ComputingSerializationProxy<K,V>(keyStrength,valueStrength,keyEquivalence,valueEquivalence,expireAfterWriteNanos,maximumSize,concurrencyLevel,evictionListener,this,computingFunction);
 }

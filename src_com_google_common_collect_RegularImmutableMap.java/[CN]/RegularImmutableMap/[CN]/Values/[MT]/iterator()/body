@@ -1,5 +1,5 @@
 {
-  return new AbstractIndexedIterator<V>(map.entries.length){
+  return new AbstractIndexedListIterator<V>(map.entries.length){
     @Override protected V get(    int index){
       return map.entries[index].getValue();
     }

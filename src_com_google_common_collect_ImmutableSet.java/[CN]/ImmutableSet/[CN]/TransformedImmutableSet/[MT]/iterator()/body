@@ -1,5 +1,5 @@
 {
-  return new AbstractIndexedIterator<E>(source.length){
+  return new AbstractIndexedListIterator<E>(source.length){
     @Override protected E get(    int index){
       return transform(source[index]);
     }

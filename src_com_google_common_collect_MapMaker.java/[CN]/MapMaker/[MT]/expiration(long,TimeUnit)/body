@@ -1,7 +1,3 @@
 {
-  checkState(expirationNanos == UNSET_EXPIRATION_NANOS,"expiration time of " + expirationNanos + " ns was already set");
-  checkArgument(duration > 0,"invalid duration: " + duration);
-  this.expirationNanos=unit.toNanos(duration);
-  useCustomMap=true;
-  return this;
+  return timeToLive(duration,unit);
 }

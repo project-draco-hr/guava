@@ -1,9 +1,9 @@
 {
   for (  Iterable<Object> group : equalityGroups) {
     for (    Object reference : group) {
-      assertNotEquals(reference,null);
+      assertTrue(reference != null);
       assertTrue(reference + " is expected to be equal to itself",reference.equals(reference));
-      assertNotEquals(reference,NotAnInstance.SINGLETON);
+      assertTrue(!reference.equals(NotAnInstance.SINGLETON));
       for (      Object right : group) {
         if (reference != right) {
           assertEquals(reference + " is expected to be equal to " + right,reference,right);

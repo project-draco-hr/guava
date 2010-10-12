@@ -3,11 +3,16 @@
   valueStrength=builder.getValueStrength();
   keyEquivalence=builder.getKeyEquivalence();
   valueEquivalence=builder.getValueEquivalence();
-  expirationNanos=builder.getExpirationNanos();
+  expireAfterReadNanos=builder.getTimeToIdleNanos();
+  if (expiresAfterRead()) {
+    expireAfterWriteNanos=expireAfterReadNanos;
+  }
+ else {
+    expireAfterWriteNanos=builder.getTimeToLiveNanos();
+  }
   maximumSize=builder.maximumSize;
-  evicts=maximumSize != MapMaker.UNSET_MAXIMUM_SIZE;
-  expires=expirationNanos > 0;
-  entryFactory=EntryFactory.getFactory(keyStrength,expires,evicts);
+  boolean evictsBySize=evictsBySize();
+  entryFactory=EntryFactory.getFactory(keyStrength,expiresAfterWrite(),evictsBySize);
   MapEvictionListener<? super K,? super V> evictionListener=builder.evictionListener;
   if (evictionListener == null || evictionListener.equals(NullListener.INSTANCE)) {
     @SuppressWarnings("unchecked") Queue<ReferenceEntry<K,V>> defaultQueue=(Queue)discardingQueue;
@@ -26,7 +31,7 @@
   }
   int segmentShift=0;
   int segmentCount=1;
-  while (segmentCount < concurrencyLevel && (!evicts || segmentCount * 2 <= maximumSize)) {
+  while (segmentCount < concurrencyLevel && (!evictsBySize || segmentCount * 2 <= maximumSize)) {
     ++segmentShift;
     segmentCount<<=1;
   }
@@ -41,19 +46,19 @@
   while (segmentSize < segmentCapacity) {
     segmentSize<<=1;
   }
-  if (evicts) {
+  if (evictsBySize) {
     int maximumSegmentSize=maximumSize / segmentCount + 1;
     int remainder=maximumSize % segmentCount;
     for (int i=0; i < this.segments.length; ++i) {
       if (i == remainder) {
         maximumSegmentSize--;
       }
-      this.segments[i]=new Segment(segmentSize,maximumSegmentSize);
+      this.segments[i]=createSegment(segmentSize,maximumSegmentSize);
     }
   }
  else {
     for (int i=0; i < this.segments.length; ++i) {
-      this.segments[i]=new Segment(segmentSize,MapMaker.UNSET_MAXIMUM_SIZE);
+      this.segments[i]=createSegment(segmentSize,MapMaker.UNSET_INT);
     }
   }
 }

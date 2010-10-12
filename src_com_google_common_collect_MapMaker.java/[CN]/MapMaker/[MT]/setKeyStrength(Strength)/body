@@ -1,5 +1,5 @@
 {
-  checkState(keyStrength == null,"Key strength was already set to " + keyStrength + ".");
+  checkState(keyStrength == null,"Key strength was already set to %s",keyStrength);
   keyStrength=checkNotNull(strength);
   if (strength != Strength.STRONG) {
     useCustomMap=true;

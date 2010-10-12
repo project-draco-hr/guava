@@ -1,7 +1,7 @@
 {
   Expirable originalExpirable=(Expirable)original;
   Expirable newExpirable=(Expirable)newEntry;
-  newExpirable.setWriteTime(originalExpirable.getWriteTime());
+  newExpirable.setExpirationTime(originalExpirable.getExpirationTime());
   connectExpirables(originalExpirable.getPreviousExpirable(),newExpirable);
   connectExpirables(newExpirable,originalExpirable.getNextExpirable());
   nullifyExpirable(originalExpirable);

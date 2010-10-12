@@ -1,3 +1,3 @@
 {
-  assertEquals(format("Objects '%s' and '%s' are not equal",o1,o2),o1,o2);
+  assertEquals(format("Expected '%s' but got '%s'",expected,actual),expected,actual);
 }

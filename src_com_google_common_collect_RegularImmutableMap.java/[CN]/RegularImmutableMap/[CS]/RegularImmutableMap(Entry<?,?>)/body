@@ -1,7 +1,7 @@
 {
   int size=immutableEntries.length;
   entries=createEntryArray(size);
-  int tableSize=Hashing.chooseTableSize(size);
+  int tableSize=chooseTableSize(size);
   table=createEntryArray(tableSize);
   mask=tableSize - 1;
   int keySetHashCodeMutable=0;

@@ -16,8 +16,8 @@
     return new HostSpecifier(InetAddresses.toUriString(addr));
   }
   final InternetDomainName domain=InternetDomainName.from(specifier);
-  if (domain.isUnderPublicSuffix()) {
+  if (domain.hasPublicSuffix()) {
     return new HostSpecifier(domain.name());
   }
-  throw new IllegalArgumentException("Domain name not under a recognized TLD: " + specifier);
+  throw new IllegalArgumentException("Domain name does not have a recognized public suffix: " + specifier);
 }

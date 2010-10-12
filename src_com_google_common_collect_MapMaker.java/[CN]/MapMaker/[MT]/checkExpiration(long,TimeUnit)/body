@@ -1,0 +1,5 @@
+{
+  checkState(timeToLiveNanos == UNSET_INT,"time to live of %s ns was already set",timeToLiveNanos);
+  checkState(timeToIdleNanos == UNSET_INT,"time to idle of ns was already set",timeToIdleNanos);
+  checkArgument(duration > 0,"invalid duration: %s %s",duration,unit);
+}

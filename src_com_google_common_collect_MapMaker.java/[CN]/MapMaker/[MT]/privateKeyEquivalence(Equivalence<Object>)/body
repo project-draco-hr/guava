@@ -1,5 +1,5 @@
 {
-  checkState(keyEquivalence == null,"key equivalence was already set to " + keyEquivalence);
+  checkState(keyEquivalence == null,"key equivalence was already set to %s",keyEquivalence);
   keyEquivalence=checkNotNull(equivalence);
   this.useCustomMap=true;
   return this;

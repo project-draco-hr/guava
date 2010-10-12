@@ -1,5 +1,5 @@
 {
-  checkState(this.concurrencyLevel == UNSET_CONCURRENCY_LEVEL,"concurrency level was already set to " + this.concurrencyLevel);
+  checkState(this.concurrencyLevel == UNSET_INT,"concurrency level was already set to %s",this.concurrencyLevel);
   checkArgument(concurrencyLevel > 0);
   this.concurrencyLevel=concurrencyLevel;
   return this;

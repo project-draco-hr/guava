@@ -1,6 +1,5 @@
 {
-  checkPositionIndex(index,size());
-  return new AbstractIndexedIterator<E>(index,size()){
+  return new AbstractIndexedListIterator<E>(size(),index){
     @Override protected E get(    int index){
       return TransformedImmutableList.this.get(index);
     }

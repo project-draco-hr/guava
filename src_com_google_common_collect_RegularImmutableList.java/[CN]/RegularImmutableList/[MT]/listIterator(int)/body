@@ -1,6 +1,5 @@
 {
-  Preconditions.checkPositionIndex(start,size);
-  return new AbstractIndexedIterator<E>(start,size){
+  return new AbstractIndexedListIterator<E>(size,start){
     @SuppressWarnings("unchecked") @Override protected E get(    int index){
       return (E)array[index + offset];
     }

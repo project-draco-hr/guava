@@ -1,5 +1,5 @@
 {
-  int tableSize=Hashing.chooseTableSize(elements.length);
+  int tableSize=chooseTableSize(elements.length);
   Object[] table=new Object[tableSize];
   int mask=tableSize - 1;
   ArrayList<Object> uniqueElementsList=null;
@@ -35,7 +35,7 @@
     @SuppressWarnings("unchecked") E element=(E)uniqueElements[0];
     return new SingletonImmutableSet<E>(element,hashCode);
   }
- else   if (tableSize > 2 * Hashing.chooseTableSize(uniqueElements.length)) {
+ else   if (tableSize > 2 * chooseTableSize(uniqueElements.length)) {
     return construct(uniqueElements);
   }
  else {

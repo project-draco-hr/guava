@@ -2,7 +2,7 @@ Strength keyStrength
 Strength valueStrength
 Equivalence<Object> keyEquivalence
 Equivalence<Object> valueEquivalence
-long expirationNanos
+long expireAfterWriteNanos
 int maximumSize
 int concurrencyLevel
 MapEvictionListener<? super K,? super V> evictionListener

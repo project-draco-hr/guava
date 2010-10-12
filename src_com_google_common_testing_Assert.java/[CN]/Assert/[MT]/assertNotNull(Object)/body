@@ -1,3 +1,0 @@
-{
-  assertNotNull(format("Null returned where expected non null result."),object);
-}

@@ -1,0 +1,71 @@
+{
+  outer:   while (true) {
+    ReferenceEntry<K,V> entry=getEntry(key,hash);
+    if (entry == null) {
+      boolean created=false;
+      lock();
+      try {
+        if (expiresAfterWrite()) {
+          expireEntries();
+        }
+        entry=getEntry(key,hash);
+        if (entry == null) {
+          created=true;
+          int newCount=this.count + 1;
+          if (evictsBySize() && newCount > maxSegmentSize) {
+            evictEntry();
+            newCount=this.count + 1;
+          }
+ else           if (newCount > threshold) {
+            expand();
+          }
+          AtomicReferenceArray<ReferenceEntry<K,V>> table=this.table;
+          int index=hash & (table.length() - 1);
+          ReferenceEntry<K,V> first=table.get(index);
+          ++modCount;
+          entry=entryFactory.newEntry(ComputingConcurrentHashMap.this,key,hash,first);
+          table.set(index,entry);
+          this.count=newCount;
+        }
+      }
+  finally {
+        unlock();
+      }
+      if (created) {
+        boolean success=false;
+        try {
+          V value=compute(key,entry);
+          checkNotNull(value,"compute() returned null unexpectedly");
+          success=true;
+          return value;
+        }
+  finally {
+          if (!success) {
+            removeEntry(entry,hash);
+          }
+        }
+      }
+    }
+    boolean interrupted=false;
+    try {
+      while (true) {
+        try {
+          V value=waitForValue(entry);
+          if (value == null) {
+            removeEntry(entry,hash);
+            continue outer;
+          }
+          return value;
+        }
+ catch (        InterruptedException e) {
+          interrupted=true;
+        }
+      }
+    }
+  finally {
+      if (interrupted) {
+        Thread.currentThread().interrupt();
+      }
+    }
+  }
+}

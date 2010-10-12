@@ -1,5 +1,5 @@
 {
-  return new AbstractIndexedIterator<Set<E>>(powerSetSize){
+  return new AbstractIndexedListIterator<Set<E>>(powerSetSize){
     @Override protected Set<E> get(    final int setBits){
       return new AbstractSet<E>(){
         @Override public int size(){
