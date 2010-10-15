@@ -1,4 +1,0 @@
-{
-  super(keyStrength,valueStrength,keyEquivalence,valueEquivalence,expireAfterWriteNanos,maximumSize,concurrencyLevel,evictionListener,delegate);
-  this.computingFunction=computingFunction;
-}

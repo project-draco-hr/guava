@@ -5,7 +5,7 @@
       boolean created=false;
       lock();
       try {
-        if (expiresAfterWrite()) {
+        if (expires()) {
           expireEntries();
         }
         entry=getEntry(key,hash);

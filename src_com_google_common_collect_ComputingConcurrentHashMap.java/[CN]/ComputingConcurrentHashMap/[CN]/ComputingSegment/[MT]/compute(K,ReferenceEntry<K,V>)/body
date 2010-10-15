@@ -16,7 +16,7 @@ catch (  Throwable t) {
     setValueReference(entry,new NullOutputExceptionReference<K,V>(message));
     throw new NullOutputException(message);
   }
-  if (evictsBySize() || expiresAfterWrite()) {
+  if (evictsBySize() || expires()) {
     lock();
     try {
       setValue(entry,value);

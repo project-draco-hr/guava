@@ -3,16 +3,11 @@
   valueStrength=builder.getValueStrength();
   keyEquivalence=builder.getKeyEquivalence();
   valueEquivalence=builder.getValueEquivalence();
-  expireAfterReadNanos=builder.getTimeToIdleNanos();
-  if (expiresAfterRead()) {
-    expireAfterWriteNanos=expireAfterReadNanos;
-  }
- else {
-    expireAfterWriteNanos=builder.getTimeToLiveNanos();
-  }
+  expireAfterAccessNanos=builder.getExpireAfterAccessNanos();
+  expireAfterWriteNanos=builder.getExpireAfterWriteNanos();
   maximumSize=builder.maximumSize;
   boolean evictsBySize=evictsBySize();
-  entryFactory=EntryFactory.getFactory(keyStrength,expiresAfterWrite(),evictsBySize);
+  entryFactory=EntryFactory.getFactory(keyStrength,expires(),evictsBySize);
   MapEvictionListener<? super K,? super V> evictionListener=builder.evictionListener;
   if (evictionListener == null || evictionListener.equals(NullListener.INSTANCE)) {
     @SuppressWarnings("unchecked") Queue<ReferenceEntry<K,V>> defaultQueue=(Queue)discardingQueue;

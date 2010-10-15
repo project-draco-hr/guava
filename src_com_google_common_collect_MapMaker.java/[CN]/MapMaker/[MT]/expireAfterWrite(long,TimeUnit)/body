@@ -1,6 +1,6 @@
 {
   checkExpiration(duration,unit);
-  this.timeToLiveNanos=unit.toNanos(duration);
+  this.expireAfterWriteNanos=unit.toNanos(duration);
   useCustomMap=true;
   return this;
 }

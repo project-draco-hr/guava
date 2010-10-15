@@ -1,3 +1,0 @@
-{
-  return (timeToLiveNanos == UNSET_INT) ? DEFAULT_EXPIRATION_NANOS : timeToLiveNanos;
-}

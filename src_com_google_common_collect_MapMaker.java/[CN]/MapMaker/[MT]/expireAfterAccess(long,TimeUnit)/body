@@ -1,6 +1,6 @@
 {
   checkExpiration(duration,unit);
-  this.timeToIdleNanos=unit.toNanos(duration);
+  this.expireAfterAccessNanos=unit.toNanos(duration);
   useCustomMap=true;
   return this;
 }
