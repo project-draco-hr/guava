@@ -1,4 +1,4 @@
 {
   checkArgument(expectedSize >= 0);
-  return Math.max(expectedSize * 2,16);
+  return Ints.saturatedCast(Math.max(expectedSize * 2L,16L));
 }

@@ -1,0 +1,10 @@
+{
+  checkNotNull(function);
+  EntryTransformer<K,V1,V2> transformer=new EntryTransformer<K,V1,V2>(){
+    public V2 transformEntry(    K key,    V1 value){
+      return function.apply(value);
+    }
+  }
+;
+  return transformEntries(fromMap,transformer);
+}

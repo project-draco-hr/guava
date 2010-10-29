@@ -1,0 +1,20 @@
+{
+  checkPositionIndex(index,size);
+  modCount++;
+  size--;
+  if (size == index) {
+    queue[size]=null;
+    return null;
+  }
+  E toTrickle=elementData(size);
+  queue[size]=null;
+  Heap heap=heapForIndex(index);
+  int vacated=heap.fillHoleAt(index);
+  int bubbledTo=heap.bubbleUpAlternatingLevels(vacated,toTrickle);
+  if (bubbledTo == vacated) {
+    return heap.tryCrossOverAndBubbleUp(index,vacated,toTrickle);
+  }
+ else {
+    return (bubbledTo < index) ? new MoveDesc<E>(toTrickle,elementData(index)) : null;
+  }
+}

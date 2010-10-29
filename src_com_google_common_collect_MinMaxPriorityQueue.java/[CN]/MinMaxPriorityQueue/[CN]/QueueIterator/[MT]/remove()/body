@@ -1,0 +1,22 @@
+{
+  checkState(canRemove,"no calls to remove() since the last call to next()");
+  checkModCount();
+  canRemove=false;
+  expectedModCount++;
+  if (cursor < size()) {
+    MoveDesc<E> moved=removeAt(cursor);
+    if (moved != null) {
+      if (forgetMeNot == null) {
+        forgetMeNot=new LinkedList<E>();
+        skipMe=new ArrayList<E>(3);
+      }
+      forgetMeNot.add(moved.toTrickle);
+      skipMe.add(moved.replaced);
+    }
+    cursor--;
+  }
+ else {
+    checkState(removeExact(lastFromForgetMeNot));
+    lastFromForgetMeNot=null;
+  }
+}

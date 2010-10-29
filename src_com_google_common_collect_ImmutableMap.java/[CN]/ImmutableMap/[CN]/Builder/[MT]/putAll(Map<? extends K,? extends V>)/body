@@ -1,4 +1,5 @@
 {
+  entries.ensureCapacity(entries.size() + map.size());
   for (  Entry<? extends K,? extends V> entry : map.entrySet()) {
     put(entry.getKey(),entry.getValue());
   }

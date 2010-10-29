@@ -1,0 +1,5 @@
+{
+  Object key=reader.readObject();
+  Object value=reader.readObject();
+  return new ImmutableEntry<Object,Object>(key,value);
+}

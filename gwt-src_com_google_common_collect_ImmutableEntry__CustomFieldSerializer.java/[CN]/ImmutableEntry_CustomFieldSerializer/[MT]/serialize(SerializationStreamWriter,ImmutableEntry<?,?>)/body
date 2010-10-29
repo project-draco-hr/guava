@@ -1,0 +1,4 @@
+{
+  writer.writeObject(instance.getKey());
+  writer.writeObject(instance.getValue());
+}

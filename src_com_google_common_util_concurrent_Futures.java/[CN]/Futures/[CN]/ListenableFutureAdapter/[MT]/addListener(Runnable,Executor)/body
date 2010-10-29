@@ -1,5 +1,10 @@
 {
+  executionList.add(listener,exec);
   if (!hasListeners.get() && hasListeners.compareAndSet(false,true)) {
+    if (delegate.isDone()) {
+      executionList.run();
+      return;
+    }
     adapterExecutor.execute(new Runnable(){
       @Override public void run(){
         try {
@@ -8,6 +13,7 @@
  catch (        CancellationException e) {
         }
 catch (        InterruptedException e) {
+          Thread.currentThread().interrupt();
           throw new IllegalStateException("Adapter thread interrupted!",e);
         }
 catch (        ExecutionException e) {
@@ -17,5 +23,4 @@ catch (        ExecutionException e) {
     }
 );
   }
-  executionList.add(listener,exec);
 }

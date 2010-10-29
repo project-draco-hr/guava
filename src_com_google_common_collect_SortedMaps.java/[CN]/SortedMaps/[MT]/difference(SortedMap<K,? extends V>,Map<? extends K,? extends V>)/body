@@ -1,0 +1,29 @@
+{
+  Comparator<? super K> comparator=orNaturalOrder(left.comparator());
+  SortedMap<K,V> onlyOnLeft=Maps.newTreeMap(comparator);
+  SortedMap<K,V> onlyOnRight=Maps.newTreeMap(comparator);
+  onlyOnRight.putAll(right);
+  SortedMap<K,V> onBoth=Maps.newTreeMap(comparator);
+  SortedMap<K,MapDifference.ValueDifference<V>> differences=Maps.newTreeMap(comparator);
+  boolean eq=true;
+  for (  Entry<? extends K,? extends V> entry : left.entrySet()) {
+    K leftKey=entry.getKey();
+    V leftValue=entry.getValue();
+    if (right.containsKey(leftKey)) {
+      V rightValue=onlyOnRight.remove(leftKey);
+      if (Objects.equal(leftValue,rightValue)) {
+        onBoth.put(leftKey,leftValue);
+      }
+ else {
+        eq=false;
+        differences.put(leftKey,new ValueDifferenceImpl<V>(leftValue,rightValue));
+      }
+    }
+ else {
+      eq=false;
+      onlyOnLeft.put(leftKey,leftValue);
+    }
+  }
+  boolean areEqual=eq && onlyOnRight.isEmpty();
+  return sortedMapDifference(areEqual,onlyOnLeft,onlyOnRight,onBoth,differences);
+}
