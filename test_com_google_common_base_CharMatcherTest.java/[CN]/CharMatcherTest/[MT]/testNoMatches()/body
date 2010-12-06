@@ -13,5 +13,4 @@
   doTestNoMatches(CharMatcher.DIGIT,"\tAz()");
   doTestNoMatches(CharMatcher.JAVA_DIGIT,"\tAz()");
   doTestNoMatches(CharMatcher.DIGIT.and(CharMatcher.ASCII),"\tAz()");
-  doTestNoMatches(CharMatcher.SINGLE_WIDTH,"\u05bf\u3000");
 }

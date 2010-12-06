@@ -1,0 +1,8 @@
+{
+  try {
+    sloppyTearDown();
+  }
+ catch (  Throwable t) {
+    logger.log(Level.INFO,"exception thrown during tearDown: " + t.getMessage(),t);
+  }
+}

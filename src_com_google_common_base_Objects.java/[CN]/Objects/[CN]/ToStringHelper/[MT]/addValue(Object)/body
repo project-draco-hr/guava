@@ -1,4 +1,5 @@
 {
-  fieldString.add(String.valueOf(value));
+  builder.append(separator).append(value);
+  separator=", ";
   return this;
 }

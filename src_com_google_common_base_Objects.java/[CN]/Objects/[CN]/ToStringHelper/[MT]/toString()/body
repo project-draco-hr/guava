@@ -1,4 +1,3 @@
 {
-  StringBuilder builder=new StringBuilder(100).append(className).append('{');
-  return JOINER.appendTo(builder,fieldString).append('}').toString();
+  return builder.append('}').toString();
 }

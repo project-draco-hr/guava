@@ -1,3 +1,5 @@
 {
-  return addValue(Preconditions.checkNotNull(name) + "=" + value);
+  builder.append(separator).append(checkNotNull(name)).append('=').append(value);
+  separator=", ";
+  return this;
 }
