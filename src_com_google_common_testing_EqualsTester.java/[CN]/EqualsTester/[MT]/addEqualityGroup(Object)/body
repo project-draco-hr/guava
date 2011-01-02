@@ -1,5 +1,0 @@
-{
-  checkNotNull(equalityGroup);
-  equalityGroups.add(ImmutableList.copyOf(equalityGroup));
-  return this;
-}

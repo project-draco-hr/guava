@@ -1,5 +1,0 @@
-{
-  checkNotNull(equalObjects);
-  defaultEqualObjects.addAll(list(equalObjects));
-  return this;
-}

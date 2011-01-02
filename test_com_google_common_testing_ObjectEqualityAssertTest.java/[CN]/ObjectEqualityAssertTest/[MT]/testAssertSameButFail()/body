@@ -1,7 +1,0 @@
-{
-  try {
-    Assert.assertSame(new Object(),new Object());
-  }
- catch (  AssertionFailedError e) {
-  }
-}

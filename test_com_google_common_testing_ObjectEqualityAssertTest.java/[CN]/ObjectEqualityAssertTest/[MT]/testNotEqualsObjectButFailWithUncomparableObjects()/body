@@ -1,4 +1,0 @@
-{
-  Object o1=new Object(), o2=new Object();
-  Assert.assertNotEquals(o1,o2);
-}

@@ -1,6 +1,0 @@
-{
-  Class<?>[] types=ctor.getParameterTypes();
-  for (int nullIndex=0; nullIndex < types.length; nullIndex++) {
-    testConstructorParameter(ctor,nullIndex);
-  }
-}

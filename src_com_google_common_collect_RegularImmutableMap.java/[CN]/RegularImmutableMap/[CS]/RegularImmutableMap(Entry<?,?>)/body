@@ -12,12 +12,12 @@
     keySetHashCodeMutable+=keyHashCode;
     int tableIndex=Hashing.smear(keyHashCode) & mask;
     @Nullable LinkedEntry<K,V> existing=table[tableIndex];
-    LinkedEntry<K,V> linkedEntry=new LinkedEntry<K,V>(key,entry.getValue(),existing);
+    LinkedEntry<K,V> linkedEntry=newLinkedEntry(key,entry.getValue(),existing);
     table[tableIndex]=linkedEntry;
     entries[entryIndex]=linkedEntry;
     while (existing != null) {
       checkArgument(!key.equals(existing.getKey()),"duplicate key: %s",key);
-      existing=existing.next;
+      existing=existing.next();
     }
   }
   keySetHashCode=keySetHashCodeMutable;

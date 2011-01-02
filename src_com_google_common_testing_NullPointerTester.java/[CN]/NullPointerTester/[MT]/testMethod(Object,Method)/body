@@ -1,6 +1,0 @@
-{
-  Class<?>[] types=method.getParameterTypes();
-  for (int nullIndex=0; nullIndex < types.length; nullIndex++) {
-    testMethodParameter(instance,method,nullIndex);
-  }
-}

@@ -1,8 +1,0 @@
-{
-  try {
-    Object o1=new Object();
-    Assert.assertNotSame(o1,o1);
-  }
- catch (  AssertionFailedError e) {
-  }
-}

@@ -1,5 +1,0 @@
-{
-  assertEquality();
-  assertInequality();
-  return this;
-}

@@ -1,5 +1,0 @@
-{
-  T copy=reserialize(object);
-  GuavaAsserts.checkEqualsAndHashCodeMethods("Equals/Hashcode mismatch.  original=" + object + ", copy="+ copy,object,copy,true);
-  return copy;
-}

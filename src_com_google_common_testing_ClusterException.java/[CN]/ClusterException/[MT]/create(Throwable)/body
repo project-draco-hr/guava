@@ -1,7 +1,0 @@
-{
-  ArrayList<Throwable> temp=new ArrayList<Throwable>();
-  for (  Throwable exception : exceptions) {
-    temp.add(exception);
-  }
-  return create(temp);
-}

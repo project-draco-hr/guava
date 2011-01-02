@@ -1,4 +1,0 @@
-{
-  Object o1=new Object();
-  Assert.assertSame(o1,o1);
-}

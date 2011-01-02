@@ -1,8 +1,0 @@
-{
-  String s1="test1", s2="test2";
-  try {
-    Assert.assertEquals(s1,s2);
-  }
- catch (  AssertionFailedError e) {
-  }
-}

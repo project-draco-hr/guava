@@ -1,4 +1,0 @@
-{
-  List<LogRecord> result=new ArrayList<LogRecord>(list);
-  return Collections.unmodifiableList(result);
-}

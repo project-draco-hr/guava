@@ -1,8 +1,0 @@
-{
-  try {
-    Assert.assertTrue(false);
-    throw new AssertionError("Failed to throw AssertionFailed exception appropriately.");
-  }
- catch (  AssertionFailedError e) {
-  }
-}

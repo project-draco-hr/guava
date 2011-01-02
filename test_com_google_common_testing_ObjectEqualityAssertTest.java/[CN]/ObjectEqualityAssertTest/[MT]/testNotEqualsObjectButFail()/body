@@ -1,9 +1,0 @@
-{
-  String s1=new StringBuilder().append('t').append("est").toString();
-  String s2=new StringBuilder().append("te").append("st").toString();
-  try {
-    Assert.assertEquals(s1,s2);
-  }
- catch (  AssertionFailedError e) {
-  }
-}

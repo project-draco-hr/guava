@@ -1,3 +1,9 @@
 {
+  if (valueComparator != null) {
+    for (    Collection<V> values : builderMultimap.asMap().values()) {
+      List<V> list=(List<V>)values;
+      Collections.sort(list,valueComparator);
+    }
+  }
   return copyOf(builderMultimap);
 }

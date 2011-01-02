@@ -13,8 +13,8 @@ catch (  Throwable t) {
   }
   if (value == null) {
     String message=computingFunction + " returned null for key " + key+ ".";
-    setValueReference(entry,new NullOutputExceptionReference<K,V>(message));
-    throw new NullOutputException(message);
+    setValueReference(entry,new NullPointerExceptionReference<K,V>(message));
+    throw new NullPointerException(message);
   }
   setComputedValue(entry,value);
   return value;

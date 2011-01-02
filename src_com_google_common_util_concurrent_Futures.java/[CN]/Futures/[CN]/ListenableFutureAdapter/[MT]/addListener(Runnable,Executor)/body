@@ -1,6 +1,6 @@
 {
   executionList.add(listener,exec);
-  if (!hasListeners.get() && hasListeners.compareAndSet(false,true)) {
+  if (hasListeners.compareAndSet(false,true)) {
     if (delegate.isDone()) {
       executionList.run();
       return;
@@ -10,13 +10,14 @@
         try {
           delegate.get();
         }
- catch (        CancellationException e) {
+ catch (        Error e) {
+          throw e;
         }
 catch (        InterruptedException e) {
           Thread.currentThread().interrupt();
           throw new IllegalStateException("Adapter thread interrupted!",e);
         }
-catch (        ExecutionException e) {
+catch (        Throwable e) {
         }
         executionList.run();
       }

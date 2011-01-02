@@ -1,3 +1,0 @@
-{
-  Assert.assertNotSame(new Object(),new Object());
-}

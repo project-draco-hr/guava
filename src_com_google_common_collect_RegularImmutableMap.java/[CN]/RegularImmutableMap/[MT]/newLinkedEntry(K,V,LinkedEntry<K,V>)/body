@@ -1,0 +1,3 @@
+{
+  return (next == null) ? new TerminalEntry<K,V>(key,value) : new NonTerminalEntry<K,V>(key,value,next);
+}

@@ -1,3 +1,0 @@
-{
-  assertEquals(format("Expected '%s' but got '%s'",expected,actual),expected,actual);
-}

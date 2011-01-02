@@ -1,7 +1,0 @@
-{
-  try {
-    Assert.assertNotNull(null);
-  }
- catch (  AssertionFailedError e) {
-  }
-}

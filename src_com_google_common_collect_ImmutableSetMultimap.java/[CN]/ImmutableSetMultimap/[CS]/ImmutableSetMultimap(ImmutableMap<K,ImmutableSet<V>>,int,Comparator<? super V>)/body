@@ -1,0 +1,4 @@
+{
+  super(map,size);
+  this.emptySet=(valueComparator == null) ? null : ImmutableSortedSet.<V>emptySet(valueComparator);
+}

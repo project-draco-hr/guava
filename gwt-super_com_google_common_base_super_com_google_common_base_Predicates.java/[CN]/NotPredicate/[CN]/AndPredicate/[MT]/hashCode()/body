@@ -1,7 +1,3 @@
 {
-  int result=-1;
-  for (  Predicate<? super T> predicate : components) {
-    result&=predicate.hashCode();
-  }
-  return result;
+  return components.hashCode() + 0x12472c2c;
 }
