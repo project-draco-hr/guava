@@ -3,6 +3,8 @@
     return fromValid(specifier);
   }
  catch (  IllegalArgumentException e) {
-    throw new ParseException("Invalid host specifier: " + specifier,0);
+    ParseException parseException=new ParseException("Invalid host specifier: " + specifier,0);
+    parseException.initCause(e);
+    throw parseException;
   }
 }

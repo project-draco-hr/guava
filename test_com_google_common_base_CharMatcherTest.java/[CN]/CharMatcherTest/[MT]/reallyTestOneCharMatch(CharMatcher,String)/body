@@ -5,6 +5,7 @@
   assertEquals(0,matcher.indexIn(s,0));
   assertEquals(-1,matcher.indexIn(s,1));
   assertEquals(0,matcher.lastIndexIn(s));
+  assertTrue(matcher.matchesAnyOf(s));
   assertTrue(matcher.matchesAllOf(s));
   assertFalse(matcher.matchesNoneOf(s));
   assertEquals("",matcher.removeFrom(s));

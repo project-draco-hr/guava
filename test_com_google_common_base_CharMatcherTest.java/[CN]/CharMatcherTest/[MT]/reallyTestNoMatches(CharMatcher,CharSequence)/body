@@ -17,6 +17,7 @@
  catch (  IndexOutOfBoundsException expected) {
   }
   assertEquals(-1,matcher.lastIndexIn(s));
+  assertFalse(matcher.matchesAnyOf(s));
   assertFalse(matcher.matchesAllOf(s));
   assertTrue(matcher.matchesNoneOf(s));
   assertEquals(s.toString(),matcher.removeFrom(s));

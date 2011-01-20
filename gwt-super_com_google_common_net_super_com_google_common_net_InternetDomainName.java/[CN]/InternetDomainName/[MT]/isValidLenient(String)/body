@@ -1,6 +1,6 @@
 {
   try {
-    from(name);
+    fromLenient(name);
     return true;
   }
  catch (  IllegalArgumentException e) {

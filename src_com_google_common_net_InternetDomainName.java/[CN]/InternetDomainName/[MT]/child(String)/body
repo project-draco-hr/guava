@@ -1,3 +1,3 @@
 {
-  return InternetDomainName.from(checkNotNull(leftParts) + "." + name);
+  return InternetDomainName.fromLenient(checkNotNull(leftParts) + "." + name);
 }
