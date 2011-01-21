@@ -1,0 +1,21 @@
+{
+  if (evictsBySize() || expires()) {
+    lock();
+    try {
+      if (evictsBySize() || expires()) {
+        K key=entry.getKey();
+        int hash=entry.getHash();
+        ReferenceEntry<K,V> newEntry=getEntry(key,hash);
+        recordWrite(newEntry);
+      }
+    }
+  finally {
+      unlock();
+    }
+  }
+synchronized (entry) {
+    if (entry.getValueReference().get() == null) {
+      setValueReference(entry,valueStrength.referenceValue(entry,value));
+    }
+  }
+}
