@@ -1,4 +1,4 @@
 {
   this.joiner=joiner;
-  this.keyValueSeparator=keyValueSeparator;
+  this.keyValueSeparator=checkNotNull(keyValueSeparator);
 }
