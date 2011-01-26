@@ -1,4 +1,3 @@
 {
-  checkNotNull(o);
-  return o.hashCode();
+  return System.identityHashCode(o);
 }

@@ -11,4 +11,5 @@
   doTestAllMatches(CharMatcher.DIGIT,"0123456789\u0ED0\u1B59");
   doTestAllMatches(CharMatcher.JAVA_DIGIT,"0123456789");
   doTestAllMatches(CharMatcher.DIGIT.and(CharMatcher.ASCII),"0123456789");
+  doTestAllMatches(CharMatcher.SINGLE_WIDTH,"\t0123ABCdef~\u00A0\u2111");
 }

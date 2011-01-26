@@ -1,0 +1,3 @@
+{
+  assertSame(Equivalences.equals(),Equivalences.nullAwareEquals());
+}

@@ -1,4 +1,3 @@
 {
-  checkNotNull(a);
-  return a.equals(b);
+  return a == b;
 }

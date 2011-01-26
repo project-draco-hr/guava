@@ -1,4 +1,0 @@
-{
-  assertEquals(OBJECT.hashCode(),Equivalences.nullAwareEquals().hash(OBJECT));
-  assertEquals(0,Equivalences.nullAwareEquals().hash(null));
-}

@@ -1,5 +1,0 @@
-{
-  assertTrue(Equivalences.nullAwareEquals().equivalent(null,null));
-  assertTrue(Equivalences.nullAwareEquals().equivalent(OBJECT,OBJECT));
-  assertFalse(Equivalences.nullAwareEquals().equivalent(OBJECT,null));
-}

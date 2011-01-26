@@ -13,17 +13,15 @@
     public boolean isDone(){
       return future.isDone();
     }
-    public V get(    long timeoutDuration,    TimeUnit timeoutUnit) throws TimeoutException, ExecutionException {
+    public V get(    long originalTimeout,    TimeUnit originalUnit) throws TimeoutException, ExecutionException {
       boolean interrupted=false;
       try {
-        long timeoutNanos=timeoutUnit.toNanos(timeoutDuration);
-        long end=System.nanoTime() + timeoutNanos;
+        long end=System.nanoTime() + originalUnit.toNanos(originalTimeout);
         while (true) {
           try {
-            return future.get(timeoutNanos,NANOSECONDS);
+            return future.get(end - System.nanoTime(),NANOSECONDS);
           }
  catch (          InterruptedException e) {
-            timeoutNanos=end - System.nanoTime();
             interrupted=true;
           }
         }
