@@ -20,6 +20,16 @@
     if (omitEmptyStrings && start == end) {
       continue;
     }
+    if (limit == 1) {
+      end=toSplit.length();
+      offset=-1;
+      while (end > start && trimmer.matches(toSplit.charAt(end - 1))) {
+        end--;
+      }
+    }
+ else {
+      limit--;
+    }
     return toSplit.subSequence(start,end).toString();
   }
   return endOfData();
