@@ -1,9 +1,0 @@
-{
-synchronized (entry) {
-    boolean notifyOthers=(entry.getValueReference() == UNSET);
-    entry.setValueReference(valueReference);
-    if (notifyOthers) {
-      entry.notifyAll();
-    }
-  }
-}

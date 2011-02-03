@@ -1,0 +1,10 @@
+{
+  if (computedReference == UNSET) {
+synchronized (this) {
+      if (computedReference == UNSET) {
+        wait();
+      }
+    }
+  }
+  return get();
+}

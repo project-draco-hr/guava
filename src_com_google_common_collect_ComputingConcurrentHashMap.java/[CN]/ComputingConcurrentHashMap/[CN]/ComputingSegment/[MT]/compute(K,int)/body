@@ -3,6 +3,7 @@
     ReferenceEntry<K,V> entry=getEntry(key,hash);
     if (entry == null) {
       boolean created=false;
+      ComputingValueReference computingValueReference=null;
       lock();
       try {
         if (expires()) {
@@ -24,6 +25,8 @@
           ReferenceEntry<K,V> first=table.get(index);
           ++modCount;
           entry=entryFactory.newEntry(ComputingConcurrentHashMap.this,key,hash,first);
+          computingValueReference=new ComputingValueReference();
+          entry.setValueReference(computingValueReference);
           table.set(index,entry);
           this.count=newCount;
         }
@@ -34,7 +37,7 @@
       if (created) {
         boolean success=false;
         try {
-          V value=compute(key,entry);
+          V value=computingValueReference.compute(key,hash);
           checkNotNull(value,"compute() returned null unexpectedly");
           success=true;
           return value;
@@ -50,7 +53,7 @@
     try {
       while (true) {
         try {
-          V value=waitForValue(entry);
+          V value=entry.getValueReference().waitForValue();
           if (value == null) {
             removeEntry(entry,hash);
             continue outer;
