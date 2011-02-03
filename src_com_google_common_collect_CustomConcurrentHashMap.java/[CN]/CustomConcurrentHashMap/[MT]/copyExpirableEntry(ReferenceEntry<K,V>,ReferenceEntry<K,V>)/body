@@ -1,8 +1,6 @@
 {
-  Expirable originalExpirable=(Expirable)original;
-  Expirable newExpirable=(Expirable)newEntry;
-  newExpirable.setExpirationTime(originalExpirable.getExpirationTime());
-  connectExpirables(originalExpirable.getPreviousExpirable(),newExpirable);
-  connectExpirables(newExpirable,originalExpirable.getNextExpirable());
-  nullifyExpirable(originalExpirable);
+  newEntry.setExpirationTime(original.getExpirationTime());
+  connectExpirables(original.getPreviousExpirable(),newEntry);
+  connectExpirables(newEntry,original.getNextExpirable());
+  nullifyExpirable(original);
 }

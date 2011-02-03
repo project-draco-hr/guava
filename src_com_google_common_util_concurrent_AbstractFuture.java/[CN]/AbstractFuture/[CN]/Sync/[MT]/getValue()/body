@@ -3,7 +3,7 @@
 switch (state) {
 case COMPLETED:
     if (exception != null) {
-      throw exception;
+      throw new ExecutionException(exception);
     }
  else {
       return value;

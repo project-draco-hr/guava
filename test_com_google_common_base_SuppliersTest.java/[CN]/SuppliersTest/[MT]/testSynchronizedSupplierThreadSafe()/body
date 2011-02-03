@@ -28,5 +28,5 @@
   for (  Thread t : threads) {
     t.join();
   }
-  assertEquals(new Integer(numThreads * iterations + 1),nonThreadSafe.get());
+  assertEquals(numThreads * iterations + 1,(int)nonThreadSafe.get());
 }
