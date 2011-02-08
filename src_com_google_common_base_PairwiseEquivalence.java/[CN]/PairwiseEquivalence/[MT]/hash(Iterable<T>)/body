@@ -1,0 +1,10 @@
+{
+  if (iterable == null) {
+    return 0;
+  }
+  int hash=78721;
+  for (  T element : iterable) {
+    hash=hash * 24943 + elementEquivalence.hash(element);
+  }
+  return hash;
+}

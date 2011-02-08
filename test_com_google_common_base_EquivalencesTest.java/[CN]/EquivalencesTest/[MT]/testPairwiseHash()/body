@@ -1,0 +1,6 @@
+{
+  Equivalence<Iterable<String>> pairwise=Equivalences.pairwise(Equivalences.equals());
+  assertEquals(0,pairwise.hash(null));
+  assertEquals(pairwise.hash(ImmutableList.of("a")),pairwise.hash(ImmutableSet.of("a")));
+  assertEquals(pairwise.hash(ImmutableList.of("a","b","c")),pairwise.hash(Lists.newArrayList("a","b","c")));
+}

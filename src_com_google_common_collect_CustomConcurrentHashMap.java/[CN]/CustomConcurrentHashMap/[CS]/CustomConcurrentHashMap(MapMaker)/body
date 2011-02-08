@@ -11,12 +11,12 @@
   MapEvictionListener<? super K,? super V> evictionListener=builder.evictionListener;
   if (evictionListener == null || evictionListener.equals(NullListener.INSTANCE)) {
     @SuppressWarnings("unchecked") Queue<ReferenceEntry<K,V>> defaultQueue=(Queue)discardingQueue;
-    pendingEvictionNotifications=defaultQueue;
+    evictionNotificationQueue=defaultQueue;
     @SuppressWarnings("unchecked") MapEvictionListener<K,V> defaultListener=NullListener.INSTANCE;
     this.evictionListener=defaultListener;
   }
  else {
-    pendingEvictionNotifications=new ConcurrentLinkedQueue<ReferenceEntry<K,V>>();
+    evictionNotificationQueue=new ConcurrentLinkedQueue<ReferenceEntry<K,V>>();
     this.evictionListener=evictionListener;
   }
   concurrencyLevel=filterConcurrencyLevel(builder.getConcurrencyLevel());

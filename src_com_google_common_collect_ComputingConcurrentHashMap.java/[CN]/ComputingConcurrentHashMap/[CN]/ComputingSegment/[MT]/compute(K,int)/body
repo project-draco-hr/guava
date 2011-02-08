@@ -1,14 +1,13 @@
 {
   outer:   while (true) {
     ReferenceEntry<K,V> entry=getEntry(key,hash);
-    if (entry == null) {
+    if (entry == null || entry.getValueReference() == UNSET) {
       boolean created=false;
       ComputingValueReference computingValueReference=null;
       lock();
       try {
-        if (expires()) {
-          expireEntries();
-        }
+        expireEntries();
+        cleanup();
         entry=getEntry(key,hash);
         if (entry == null) {
           created=true;
@@ -33,18 +32,22 @@
       }
   finally {
         unlock();
+        processPendingNotifications();
       }
       if (created) {
         boolean success=false;
         try {
-          V value=computingValueReference.compute(key,hash);
+          V value=null;
+synchronized (entry) {
+            value=computingValueReference.compute(key,hash);
+          }
           checkNotNull(value,"compute() returned null unexpectedly");
           success=true;
           return value;
         }
   finally {
           if (!success) {
-            removeEntry(entry,hash);
+            invalidateValue(entry,hash,computingValueReference);
           }
         }
       }
@@ -53,9 +56,11 @@
     try {
       while (true) {
         try {
-          V value=entry.getValueReference().waitForValue();
+          checkState(!Thread.holdsLock(entry),"Recursive computation");
+          ValueReference<K,V> valueReference=entry.getValueReference();
+          V value=valueReference.waitForValue();
           if (value == null) {
-            removeEntry(entry,hash);
+            invalidateValue(entry,hash,valueReference);
             continue outer;
           }
           return value;

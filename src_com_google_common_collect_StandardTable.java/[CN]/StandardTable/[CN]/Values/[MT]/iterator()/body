@@ -1,13 +1,13 @@
 {
   final Iterator<Cell<R,C,V>> cellIterator=cellSet().iterator();
   return new Iterator<V>(){
-    public boolean hasNext(){
+    @Override public boolean hasNext(){
       return cellIterator.hasNext();
     }
-    public V next(){
+    @Override public V next(){
       return cellIterator.next().getValue();
     }
-    public void remove(){
+    @Override public void remove(){
       cellIterator.remove();
     }
   }
