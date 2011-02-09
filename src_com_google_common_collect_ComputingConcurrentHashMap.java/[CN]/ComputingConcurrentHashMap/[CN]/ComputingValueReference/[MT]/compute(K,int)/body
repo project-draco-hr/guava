@@ -17,5 +17,6 @@ catch (  Throwable t) {
     throw new NullPointerException(message);
   }
   setComputedValue(key,hash,value);
+  setValueReference(new ComputedReference<K,V>(value));
   return value;
 }

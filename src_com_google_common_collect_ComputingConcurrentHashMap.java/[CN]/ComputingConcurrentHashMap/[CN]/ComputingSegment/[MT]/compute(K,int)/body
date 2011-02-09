@@ -11,6 +11,7 @@
         entry=getEntry(key,hash);
         if (entry == null) {
           created=true;
+          computingValueReference=new ComputingValueReference();
           int newCount=this.count + 1;
           if (evictsBySize() && newCount > maxSegmentSize) {
             evictEntry();
@@ -24,7 +25,6 @@
           ReferenceEntry<K,V> first=table.get(index);
           ++modCount;
           entry=entryFactory.newEntry(ComputingConcurrentHashMap.this,key,hash,first);
-          computingValueReference=new ComputingValueReference();
           entry.setValueReference(computingValueReference);
           table.set(index,entry);
           this.count=newCount;
@@ -47,7 +47,7 @@ synchronized (entry) {
         }
   finally {
           if (!success) {
-            invalidateValue(entry,hash,computingValueReference);
+            clearValue(key,hash,computingValueReference);
           }
         }
       }
@@ -60,7 +60,7 @@ synchronized (entry) {
           ValueReference<K,V> valueReference=entry.getValueReference();
           V value=valueReference.waitForValue();
           if (value == null) {
-            invalidateValue(entry,hash,valueReference);
+            clearValue(key,hash,valueReference);
             continue outer;
           }
           return value;

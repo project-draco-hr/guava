@@ -7,13 +7,7 @@
       if (e.getHash() == hash && entryKey != null && keyEquivalence.equivalent(key,entryKey)) {
         ValueReference<K,V> liveValueReference=e.getValueReference();
         if (liveValueReference == this) {
-          if (evictsBySize() || expires()) {
-            segment.recordWrite(e);
-          }
-          setValueReference(valueStrength.referenceValue(e,value));
-        }
- else {
-          setValueReference(liveValueReference);
+          segment.setValue(e,value);
         }
         return;
       }
