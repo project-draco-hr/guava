@@ -1,0 +1,2 @@
+Iterable<? extends Iterator<T>> iterators
+Comparator<? super T> itemComparator

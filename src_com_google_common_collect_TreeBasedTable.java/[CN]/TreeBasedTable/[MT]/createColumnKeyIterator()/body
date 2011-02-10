@@ -1,0 +1,8 @@
+{
+  return new MergingIterator<C>(Iterables.transform(backingMap.values(),new Function<Map<C,V>,Iterator<C>>(){
+    @Override public Iterator<C> apply(    Map<C,V> input){
+      return input.keySet().iterator();
+    }
+  }
+),columnComparator());
+}
