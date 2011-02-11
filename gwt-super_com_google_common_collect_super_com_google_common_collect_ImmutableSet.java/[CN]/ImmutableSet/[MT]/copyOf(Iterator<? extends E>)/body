@@ -12,5 +12,5 @@
     delegate.add(checkNotNull(elements.next()));
   }
  while (elements.hasNext());
-  return new RegularImmutableSet<E>(delegate);
+  return unsafeDelegate(delegate);
 }

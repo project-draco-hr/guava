@@ -1,3 +1,4 @@
 {
   super(delegate);
+  checkArgument(delegate.size() >= 2);
 }
