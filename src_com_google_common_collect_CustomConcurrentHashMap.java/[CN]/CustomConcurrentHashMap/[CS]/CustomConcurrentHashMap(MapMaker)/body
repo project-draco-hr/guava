@@ -6,8 +6,8 @@
   expireAfterAccessNanos=builder.getExpireAfterAccessNanos();
   expireAfterWriteNanos=builder.getExpireAfterWriteNanos();
   maximumSize=builder.maximumSize;
-  boolean evictsBySize=evictsBySize();
-  entryFactory=EntryFactory.getFactory(keyStrength,expires(),evictsBySize);
+  entryFactory=EntryFactory.getFactory(keyStrength,expires(),evictsBySize());
+  cleanupExecutor=builder.getCleanupExecutor();
   MapEvictionListener<? super K,? super V> evictionListener=builder.evictionListener;
   if (evictionListener == null || evictionListener.equals(NullListener.INSTANCE)) {
     @SuppressWarnings("unchecked") Queue<ReferenceEntry<K,V>> defaultQueue=(Queue)discardingQueue;
@@ -26,7 +26,7 @@
   }
   int segmentShift=0;
   int segmentCount=1;
-  while (segmentCount < concurrencyLevel && (!evictsBySize || segmentCount * 2 <= maximumSize)) {
+  while (segmentCount < concurrencyLevel && (!evictsBySize() || segmentCount * 2 <= maximumSize)) {
     ++segmentShift;
     segmentCount<<=1;
   }
@@ -41,7 +41,7 @@
   while (segmentSize < segmentCapacity) {
     segmentSize<<=1;
   }
-  if (evictsBySize) {
+  if (evictsBySize()) {
     int maximumSegmentSize=maximumSize / segmentCount + 1;
     int remainder=maximumSize % segmentCount;
     for (int i=0; i < this.segments.length; ++i) {

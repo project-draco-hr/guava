@@ -15,6 +15,6 @@
   }
   finally {
     segment.unlock();
-    processPendingNotifications();
+    segment.scheduleCleanup();
   }
 }

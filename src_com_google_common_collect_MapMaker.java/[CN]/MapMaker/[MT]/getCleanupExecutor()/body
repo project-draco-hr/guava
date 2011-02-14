@@ -1,0 +1,3 @@
+{
+  return (cleanupExecutor == null) ? DEFAULT_CLEANUP_EXECUTOR : cleanupExecutor;
+}
