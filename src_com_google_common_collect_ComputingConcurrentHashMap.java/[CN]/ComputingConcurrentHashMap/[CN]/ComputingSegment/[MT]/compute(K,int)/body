@@ -11,6 +11,7 @@
     lock();
     try {
       expireEntries();
+      processPendingCleanup();
       AtomicReferenceArray<ReferenceEntry<K,V>> table=this.table;
       int index=hash & (table.length() - 1);
       ReferenceEntry<K,V> first=table.get(index);
