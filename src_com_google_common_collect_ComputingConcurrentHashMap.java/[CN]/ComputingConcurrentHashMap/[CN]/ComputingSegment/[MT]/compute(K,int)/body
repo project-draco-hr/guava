@@ -2,7 +2,10 @@
   outer:   while (true) {
     ReferenceEntry<K,V> entry=getLiveEntry(key,hash);
     if (entry != null) {
-      return entry.getValueReference().get();
+      V value=entry.getValueReference().get();
+      if (value != null) {
+        return value;
+      }
     }
     ComputingValueReference computingValueReference=null;
     lock();
@@ -54,8 +57,7 @@ synchronized (entry) {
       while (true) {
         try {
           checkState(!Thread.holdsLock(entry),"Recursive computation");
-          ValueReference<K,V> valueReference=entry.getValueReference();
-          V value=valueReference.waitForValue();
+          V value=entry.getValueReference().waitForValue();
           if (value == null) {
             continue outer;
           }
