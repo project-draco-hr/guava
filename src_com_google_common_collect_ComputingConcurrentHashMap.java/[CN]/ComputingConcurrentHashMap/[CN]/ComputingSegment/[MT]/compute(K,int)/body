@@ -21,7 +21,7 @@
           break;
         }
       }
-      if (entry == null || isUnset(entry)) {
+      if (entry == null || isInvalid(entry)) {
         computingValueReference=new ComputingValueReference();
         if (entry == null) {
           entry=entryFactory.newEntry(ComputingConcurrentHashMap.this,key,hash,first);
