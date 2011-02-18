@@ -1,12 +1,10 @@
 {
   outer:   while (true) {
-    ReferenceEntry<K,V> entry=getLiveEntry(key,hash);
-    if (entry != null) {
-      V value=entry.getValueReference().get();
-      if (value != null) {
-        return value;
-      }
+    V value=get(key,hash);
+    if (value != null) {
+      return value;
     }
+    ReferenceEntry<K,V> entry=null;
     ComputingValueReference computingValueReference=null;
     lock();
     try {
@@ -18,6 +16,14 @@
         K entryKey=e.getKey();
         if (e.getHash() == hash && entryKey != null && keyEquivalence.equivalent(key,entryKey)) {
           entry=e;
+          ValueReference<K,V> valueReference=entry.getValueReference();
+          value=valueReference.get();
+          if (value != null) {
+            return value;
+          }
+          if (!valueReference.isComputingReference()) {
+            unsetLiveEntry(entry,hash);
+          }
           break;
         }
       }
@@ -37,16 +43,14 @@
     if (computingValueReference != null) {
       boolean success=false;
       try {
-        V value=null;
 synchronized (entry) {
           value=computingValueReference.compute(key,hash);
         }
         checkNotNull(value,"compute() returned null unexpectedly");
-        success=true;
         return value;
       }
   finally {
-        if (!success) {
+        if (value == null) {
           clearValue(key,hash,computingValueReference);
           scheduleCleanup();
         }
@@ -57,12 +61,8 @@ synchronized (entry) {
       while (true) {
         try {
           checkState(!Thread.holdsLock(entry),"Recursive computation");
-          ValueReference<K,V> valueReference=entry.getValueReference();
-          V value=valueReference.waitForValue();
+          value=entry.getValueReference().waitForValue();
           if (value == null) {
-            if (!valueReference.isComputingReference()) {
-              invalidateValue(key,hash,valueReference);
-            }
             continue outer;
           }
           recordRead(entry);

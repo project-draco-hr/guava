@@ -10,10 +10,8 @@
   cleanupExecutor=builder.getCleanupExecutor();
   MapEvictionListener<? super K,? super V> evictionListener=builder.evictionListener;
   if (evictionListener == null || evictionListener.equals(NullListener.INSTANCE)) {
-    @SuppressWarnings("unchecked") Queue<ReferenceEntry<K,V>> defaultQueue=(Queue)discardingQueue;
-    evictionNotificationQueue=defaultQueue;
-    @SuppressWarnings("unchecked") MapEvictionListener<K,V> defaultListener=NullListener.INSTANCE;
-    this.evictionListener=defaultListener;
+    evictionNotificationQueue=discardingQueue();
+    this.evictionListener=nullListener();
   }
  else {
     evictionNotificationQueue=new ConcurrentLinkedQueue<ReferenceEntry<K,V>>();
