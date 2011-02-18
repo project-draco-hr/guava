@@ -2,7 +2,7 @@
   Segment segment=segmentFor(hash);
   segment.lock();
   try {
-    segment.expireEntries();
+    segment.preWriteCleanup();
     int newCount=segment.count + 1;
     if (newCount > segment.threshold) {
       segment.expand();

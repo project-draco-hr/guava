@@ -8,7 +8,7 @@
     ComputingValueReference computingValueReference=null;
     lock();
     try {
-      expireEntries();
+      preWriteCleanup();
       AtomicReferenceArray<ReferenceEntry<K,V>> table=this.table;
       int index=hash & (table.length() - 1);
       ReferenceEntry<K,V> first=table.get(index);
@@ -52,7 +52,6 @@ synchronized (entry) {
   finally {
         if (value == null) {
           clearValue(key,hash,computingValueReference);
-          scheduleCleanup();
         }
       }
     }
