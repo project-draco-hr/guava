@@ -1,6 +1,8 @@
 {
 synchronized (this) {
-    computedReference=valueReference;
-    notifyAll();
+    if (computedReference == UNSET) {
+      computedReference=valueReference;
+      notifyAll();
+    }
   }
 }
