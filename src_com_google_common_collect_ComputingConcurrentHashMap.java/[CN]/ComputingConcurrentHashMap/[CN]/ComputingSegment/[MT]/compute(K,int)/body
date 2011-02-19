@@ -38,7 +38,7 @@
     }
   finally {
       unlock();
-      scheduleCleanup();
+      postWriteCleanup();
     }
     if (computingValueReference != null) {
       boolean success=false;

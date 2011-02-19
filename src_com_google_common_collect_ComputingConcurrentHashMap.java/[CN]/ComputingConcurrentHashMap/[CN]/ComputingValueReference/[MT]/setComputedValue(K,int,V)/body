@@ -25,6 +25,6 @@
   }
   finally {
     segment.unlock();
-    segment.scheduleCleanup();
+    segment.postWriteCleanup();
   }
 }
