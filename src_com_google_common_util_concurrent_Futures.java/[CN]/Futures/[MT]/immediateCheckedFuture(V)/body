@@ -1,5 +1,5 @@
 {
-  ValueFuture<V> future=ValueFuture.create();
+  SettableFuture<V> future=SettableFuture.create();
   future.set(value);
   return Futures.makeChecked(future,new Function<Exception,X>(){
     public X apply(    Exception e){
