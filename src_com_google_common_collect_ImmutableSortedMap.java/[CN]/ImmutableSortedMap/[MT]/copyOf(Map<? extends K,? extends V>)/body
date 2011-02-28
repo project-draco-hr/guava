@@ -1,4 +1,4 @@
 {
-  @SuppressWarnings("unchecked") Ordering<K> naturalOrder=(Ordering)Ordering.<Comparable>natural();
+  @SuppressWarnings("unchecked") Ordering<K> naturalOrder=(Ordering<K>)Ordering.<Comparable>natural();
   return copyOfInternal(map,naturalOrder);
 }

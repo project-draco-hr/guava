@@ -1,3 +1,4 @@
 {
-  return ((ExplicitOrdering)comparator()).rankMap;
+  ExplicitOrdering<E> eo=(ExplicitOrdering<E>)comparator();
+  return eo.rankMap;
 }

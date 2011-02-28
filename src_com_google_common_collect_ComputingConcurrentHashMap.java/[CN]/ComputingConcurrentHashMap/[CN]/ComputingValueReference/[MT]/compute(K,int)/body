@@ -16,7 +16,7 @@ catch (  Throwable t) {
     setValueReference(new NullPointerExceptionReference<K,V>(message));
     throw new NullPointerException(message);
   }
-  setComputedValue(key,hash,value);
   setValueReference(new ComputedReference<K,V>(value));
+  segmentFor(hash).put(key,hash,value,true);
   return value;
 }

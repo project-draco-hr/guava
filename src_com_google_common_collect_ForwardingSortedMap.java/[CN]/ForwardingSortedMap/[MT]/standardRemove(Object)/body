@@ -1,6 +1,6 @@
 {
   try {
-    @SuppressWarnings("unchecked") SortedMap<Object,V> self=(SortedMap)this;
+    @SuppressWarnings("unchecked") SortedMap<Object,V> self=(SortedMap<Object,V>)this;
     Iterator<Entry<Object,V>> entryIterator=self.tailMap(key).entrySet().iterator();
     if (entryIterator.hasNext()) {
       Entry<Object,V> ceilingEntry=entryIterator.next();

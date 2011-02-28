@@ -1,3 +1,3 @@
 {
-  return (Iterator)Iterators.unmodifiableIterator(delegate.iterator());
+  return (Iterator<E>)Iterators.unmodifiableIterator(delegate.iterator());
 }

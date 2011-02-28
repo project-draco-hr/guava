@@ -5,6 +5,17 @@
   }
   int parentIndex=getParentIndex(index);
   E parentElement=elementData(parentIndex);
+  if (parentIndex != 0) {
+    int grandparentIndex=getParentIndex(parentIndex);
+    int uncleIndex=getRightChildIndex(grandparentIndex);
+    if (uncleIndex != parentIndex) {
+      E uncleElement=elementData(uncleIndex);
+      if (ordering.compare(uncleElement,parentElement) < 0) {
+        parentIndex=uncleIndex;
+        parentElement=uncleElement;
+      }
+    }
+  }
   if (ordering.compare(parentElement,x) < 0) {
     queue[index]=parentElement;
     queue[parentIndex]=x;

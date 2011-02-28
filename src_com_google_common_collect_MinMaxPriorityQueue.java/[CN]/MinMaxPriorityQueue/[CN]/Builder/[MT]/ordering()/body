@@ -1,3 +1,3 @@
 {
-  return Ordering.from((Comparator)comparator);
+  return Ordering.from((Comparator<T>)comparator);
 }

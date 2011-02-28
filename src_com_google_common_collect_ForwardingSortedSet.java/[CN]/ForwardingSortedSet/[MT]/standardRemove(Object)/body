@@ -1,6 +1,6 @@
 {
   try {
-    @SuppressWarnings("unchecked") SortedSet<Object> self=(SortedSet)this;
+    @SuppressWarnings("unchecked") SortedSet<Object> self=(SortedSet<Object>)this;
     Iterator<Object> iterator=self.tailSet(object).iterator();
     if (iterator.hasNext()) {
       Object ceiling=iterator.next();

@@ -17,12 +17,16 @@
         if (e.getHash() == hash && entryKey != null && keyEquivalence.equivalent(key,entryKey)) {
           entry=e;
           ValueReference<K,V> valueReference=entry.getValueReference();
-          value=valueReference.get();
-          if (value != null) {
-            return value;
-          }
           if (!valueReference.isComputingReference()) {
-            unsetLiveEntry(entry,hash);
+            value=valueReference.get();
+            boolean absent=(value == null);
+            if (absent) {
+              unsetLiveEntry(entry,hash);
+            }
+ else {
+              recordRead(entry);
+              return value;
+            }
           }
           break;
         }
@@ -41,7 +45,6 @@
       postWriteCleanup();
     }
     if (computingValueReference != null) {
-      boolean success=false;
       try {
 synchronized (entry) {
           value=computingValueReference.compute(key,hash);

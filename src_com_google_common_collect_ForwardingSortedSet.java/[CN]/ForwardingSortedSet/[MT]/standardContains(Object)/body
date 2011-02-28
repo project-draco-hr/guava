@@ -1,6 +1,6 @@
 {
   try {
-    @SuppressWarnings("unchecked") SortedSet<Object> self=(SortedSet)this;
+    @SuppressWarnings("unchecked") SortedSet<Object> self=(SortedSet<Object>)this;
     Object ceiling=self.tailSet(object).first();
     return unsafeCompare(ceiling,object) == 0;
   }
