@@ -1,0 +1,4 @@
+{
+  checkNotNull(value);
+  return false;
+}

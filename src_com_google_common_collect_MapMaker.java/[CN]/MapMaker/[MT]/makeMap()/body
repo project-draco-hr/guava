@@ -1,3 +1,6 @@
 {
-  return useCustomMap ? new CustomConcurrentHashMap<K,V>(this) : new ConcurrentHashMap<K,V>(getInitialCapacity(),0.75f,getConcurrencyLevel());
+  if (!useCustomMap) {
+    return new ConcurrentHashMap<K,V>(getInitialCapacity(),0.75f,getConcurrencyLevel());
+  }
+  return useNullMap ? new NullConcurrentMap<K,V>(this) : new CustomConcurrentHashMap<K,V>(this);
 }

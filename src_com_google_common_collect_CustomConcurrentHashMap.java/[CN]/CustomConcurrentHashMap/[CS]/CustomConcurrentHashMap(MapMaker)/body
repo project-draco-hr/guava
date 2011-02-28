@@ -8,15 +8,8 @@
   maximumSize=builder.maximumSize;
   entryFactory=EntryFactory.getFactory(keyStrength,expires(),evictsBySize());
   cleanupExecutor=builder.getCleanupExecutor();
-  MapEvictionListener<? super K,? super V> evictionListener=builder.evictionListener;
-  if (evictionListener == null || evictionListener.equals(NullListener.INSTANCE)) {
-    evictionNotificationQueue=discardingQueue();
-    this.evictionListener=nullListener();
-  }
- else {
-    evictionNotificationQueue=new ConcurrentLinkedQueue<ReferenceEntry<K,V>>();
-    this.evictionListener=evictionListener;
-  }
+  evictionListener=builder.getEvictionListener();
+  evictionNotificationQueue=(evictionListener == NullListener.INSTANCE) ? CustomConcurrentHashMap.<ReferenceEntry<K,V>>discardingQueue() : new ConcurrentLinkedQueue<ReferenceEntry<K,V>>();
   concurrencyLevel=filterConcurrencyLevel(builder.getConcurrencyLevel());
   int initialCapacity=builder.getInitialCapacity();
   if (initialCapacity > MAXIMUM_CAPACITY) {

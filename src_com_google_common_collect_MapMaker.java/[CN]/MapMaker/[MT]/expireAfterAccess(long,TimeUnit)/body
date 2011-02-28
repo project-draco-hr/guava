@@ -1,6 +1,7 @@
 {
   checkExpiration(duration,unit);
   this.expireAfterAccessNanos=unit.toNanos(duration);
+  useNullMap|=(duration == 0);
   useCustomMap=true;
   return this;
 }

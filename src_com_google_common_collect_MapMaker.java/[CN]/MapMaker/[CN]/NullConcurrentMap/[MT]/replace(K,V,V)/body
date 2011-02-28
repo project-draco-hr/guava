@@ -1,0 +1,6 @@
+{
+  checkNotNull(key);
+  checkNotNull(oldValue);
+  checkNotNull(newValue);
+  return false;
+}

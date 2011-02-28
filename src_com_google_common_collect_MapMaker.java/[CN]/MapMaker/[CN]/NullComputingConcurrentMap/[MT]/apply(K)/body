@@ -1,0 +1,6 @@
+{
+  V value=compute(key);
+  checkNotNull(value,computingFunction + " returned null for key " + key+ ".");
+  evictionListener.onEviction(key,value);
+  return value;
+}
