@@ -1,11 +1,3 @@
 {
-  checkNotNull(function);
-  Function<I,ListenableFuture<O>> wrapperFunction=new Function<I,ListenableFuture<O>>(){
-    @Override public ListenableFuture<O> apply(    I input){
-      O output=function.apply(input);
-      return immediateFuture(output);
-    }
-  }
-;
-  return chain(future,wrapperFunction,exec);
+  return transform(future,function,exec);
 }
