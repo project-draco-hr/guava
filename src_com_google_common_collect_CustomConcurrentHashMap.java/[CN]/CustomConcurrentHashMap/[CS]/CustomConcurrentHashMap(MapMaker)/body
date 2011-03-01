@@ -10,10 +10,10 @@
   cleanupExecutor=builder.getCleanupExecutor();
   evictionListener=builder.getEvictionListener();
   evictionNotificationQueue=(evictionListener == NullListener.INSTANCE) ? CustomConcurrentHashMap.<ReferenceEntry<K,V>>discardingQueue() : new ConcurrentLinkedQueue<ReferenceEntry<K,V>>();
-  concurrencyLevel=filterConcurrencyLevel(builder.getConcurrencyLevel());
-  int initialCapacity=builder.getInitialCapacity();
-  if (initialCapacity > MAXIMUM_CAPACITY) {
-    initialCapacity=MAXIMUM_CAPACITY;
+  concurrencyLevel=Math.min(builder.getConcurrencyLevel(),MAX_SEGMENTS);
+  int initialCapacity=Math.min(builder.getInitialCapacity(),MAXIMUM_CAPACITY);
+  if (evictsBySize()) {
+    initialCapacity=Math.min(initialCapacity,maximumSize);
   }
   int segmentShift=0;
   int segmentCount=1;
