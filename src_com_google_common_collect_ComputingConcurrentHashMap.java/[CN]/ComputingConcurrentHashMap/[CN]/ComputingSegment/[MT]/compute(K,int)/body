@@ -19,8 +19,7 @@
           ValueReference<K,V> valueReference=entry.getValueReference();
           if (!valueReference.isComputingReference()) {
             value=valueReference.get();
-            boolean absent=(value == null);
-            if (absent) {
+            if (value == null) {
               unsetLiveEntry(entry,hash);
             }
  else {
@@ -34,7 +33,7 @@
       if (entry == null || isUnset(entry)) {
         computingValueReference=new ComputingValueReference();
         if (entry == null) {
-          entry=entryFactory.newEntry(ComputingConcurrentHashMap.this,key,hash,first);
+          entry=newEntry(key,hash,first);
           table.set(index,entry);
         }
         entry.setValueReference(computingValueReference);
