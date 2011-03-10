@@ -1,2 +1,0 @@
-Future<I> future
-Function<? super I,? extends O> function
