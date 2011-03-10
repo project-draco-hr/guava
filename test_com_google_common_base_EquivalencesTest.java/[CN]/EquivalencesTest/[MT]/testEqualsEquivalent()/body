@@ -1,8 +1,8 @@
 {
   assertTrue(Equivalences.equals().equivalent(null,null));
   assertTrue(Equivalences.equals().equivalent(OBJECT,OBJECT));
-  assertTrue(Equivalences.equals().equivalent(((Integer)42),OBJECT));
-  assertTrue(Equivalences.equals().equivalent(OBJECT,((Integer)42)));
+  assertTrue(Equivalences.equals().equivalent((42),OBJECT));
+  assertTrue(Equivalences.equals().equivalent(OBJECT,(42)));
   assertFalse(Equivalences.equals().equivalent(OBJECT,null));
   assertFalse(Equivalences.equals().equivalent(null,OBJECT));
 }
