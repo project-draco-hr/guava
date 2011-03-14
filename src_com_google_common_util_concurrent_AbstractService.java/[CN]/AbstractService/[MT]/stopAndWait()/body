@@ -1,12 +1,8 @@
 {
   try {
-    return stop().get();
+    return Futures.makeUninterruptible(stop()).get();
   }
  catch (  ExecutionException e) {
     throw Throwables.propagate(e.getCause());
-  }
-catch (  InterruptedException e) {
-    Thread.currentThread().interrupt();
-    throw new RuntimeException(e);
   }
 }

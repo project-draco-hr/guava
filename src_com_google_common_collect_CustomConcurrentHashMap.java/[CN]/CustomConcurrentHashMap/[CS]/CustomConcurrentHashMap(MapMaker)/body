@@ -1,16 +1,17 @@
 {
+  concurrencyLevel=Math.min(builder.getConcurrencyLevel(),MAX_SEGMENTS);
   keyStrength=builder.getKeyStrength();
   valueStrength=builder.getValueStrength();
   keyEquivalence=builder.getKeyEquivalence();
   valueEquivalence=builder.getValueEquivalence();
+  maximumSize=builder.maximumSize;
   expireAfterAccessNanos=builder.getExpireAfterAccessNanos();
   expireAfterWriteNanos=builder.getExpireAfterWriteNanos();
-  maximumSize=builder.maximumSize;
   entryFactory=EntryFactory.getFactory(keyStrength,expires(),evictsBySize());
   cleanupExecutor=builder.getCleanupExecutor();
+  ticker=builder.getTicker();
   evictionListener=builder.getEvictionListener();
   evictionNotificationQueue=(evictionListener == NullListener.INSTANCE) ? CustomConcurrentHashMap.<ReferenceEntry<K,V>>discardingQueue() : new ConcurrentLinkedQueue<ReferenceEntry<K,V>>();
-  concurrencyLevel=Math.min(builder.getConcurrencyLevel(),MAX_SEGMENTS);
   int initialCapacity=Math.min(builder.getInitialCapacity(),MAXIMUM_CAPACITY);
   if (evictsBySize()) {
     initialCapacity=Math.min(initialCapacity,maximumSize);
