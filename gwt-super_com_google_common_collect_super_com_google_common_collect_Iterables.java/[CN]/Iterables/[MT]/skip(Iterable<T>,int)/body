@@ -4,22 +4,22 @@
   if (iterable instanceof List) {
     final List<T> list=(List<T>)iterable;
     return new IterableWithToString<T>(){
-      public Iterator<T> iterator(){
+      @Override public Iterator<T> iterator(){
         return (numberToSkip >= list.size()) ? Iterators.<T>emptyIterator() : list.subList(numberToSkip,list.size()).iterator();
       }
     }
 ;
   }
   return new IterableWithToString<T>(){
-    public Iterator<T> iterator(){
+    @Override public Iterator<T> iterator(){
       final Iterator<T> iterator=iterable.iterator();
       Iterators.skip(iterator,numberToSkip);
       return new Iterator<T>(){
         boolean atStart=true;
-        public boolean hasNext(){
+        @Override public boolean hasNext(){
           return iterator.hasNext();
         }
-        public T next(){
+        @Override public T next(){
           if (!hasNext()) {
             throw new NoSuchElementException();
           }
@@ -30,7 +30,7 @@
             atStart=false;
           }
         }
-        public void remove(){
+        @Override public void remove(){
           if (atStart) {
             throw new IllegalStateException();
           }

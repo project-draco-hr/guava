@@ -1,10 +1,10 @@
 {
   return new UnmodifiableIterator<T>(){
     boolean done;
-    public boolean hasNext(){
+    @Override public boolean hasNext(){
       return !done;
     }
-    public T next(){
+    @Override public T next(){
       if (done) {
         throw new NoSuchElementException();
       }

@@ -1,10 +1,10 @@
 {
   final Iterator<K> keyIterator=new DistinctKeyIterator();
   return new Iterator<Entry<K,Collection<V>>>(){
-    public boolean hasNext(){
+    @Override public boolean hasNext(){
       return keyIterator.hasNext();
     }
-    public Entry<K,Collection<V>> next(){
+    @Override public Entry<K,Collection<V>> next(){
       final K key=keyIterator.next();
       return new AbstractMapEntry<K,Collection<V>>(){
         @Override public K getKey(){
@@ -16,7 +16,7 @@
       }
 ;
     }
-    public void remove(){
+    @Override public void remove(){
       keyIterator.remove();
     }
   }

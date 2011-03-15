@@ -5,7 +5,7 @@
   out=memory;
   if (resetOnFinalize) {
     supplier=new InputSupplier<InputStream>(){
-      public InputStream getInput() throws IOException {
+      @Override public InputStream getInput() throws IOException {
         return openStream();
       }
       @Override protected void finalize(){
@@ -21,7 +21,7 @@
   }
  else {
     supplier=new InputSupplier<InputStream>(){
-      public InputStream getInput() throws IOException {
+      @Override public InputStream getInput() throws IOException {
         return openStream();
       }
     }

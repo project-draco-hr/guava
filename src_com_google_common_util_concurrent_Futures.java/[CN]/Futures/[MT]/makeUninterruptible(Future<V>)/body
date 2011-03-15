@@ -4,16 +4,16 @@
     return (UninterruptibleFuture<V>)future;
   }
   return new UninterruptibleFuture<V>(){
-    public boolean cancel(    boolean mayInterruptIfRunning){
+    @Override public boolean cancel(    boolean mayInterruptIfRunning){
       return future.cancel(mayInterruptIfRunning);
     }
-    public boolean isCancelled(){
+    @Override public boolean isCancelled(){
       return future.isCancelled();
     }
-    public boolean isDone(){
+    @Override public boolean isDone(){
       return future.isDone();
     }
-    public V get(    long originalTimeout,    TimeUnit originalUnit) throws TimeoutException, ExecutionException {
+    @Override public V get(    long originalTimeout,    TimeUnit originalUnit) throws TimeoutException, ExecutionException {
       boolean interrupted=false;
       try {
         long end=System.nanoTime() + originalUnit.toNanos(originalTimeout);
@@ -32,7 +32,7 @@
         }
       }
     }
-    public V get() throws ExecutionException {
+    @Override public V get() throws ExecutionException {
       boolean interrupted=false;
       try {
         while (true) {

@@ -1,7 +1,7 @@
 {
   final List list=new ArrayList<Predicate>();
   Iterable iterable=new Iterable<Predicate>(){
-    public Iterator<Predicate> iterator(){
+    @Override public Iterator<Predicate> iterator(){
       return list.iterator();
     }
   }

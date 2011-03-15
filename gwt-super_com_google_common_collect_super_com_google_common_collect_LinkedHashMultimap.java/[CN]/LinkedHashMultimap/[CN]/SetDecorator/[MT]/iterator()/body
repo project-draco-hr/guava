@@ -2,14 +2,14 @@
   final Iterator<V> delegateIterator=delegate.iterator();
   return new Iterator<V>(){
     V value;
-    public boolean hasNext(){
+    @Override public boolean hasNext(){
       return delegateIterator.hasNext();
     }
-    public V next(){
+    @Override public V next(){
       value=delegateIterator.next();
       return value;
     }
-    public void remove(){
+    @Override public void remove(){
       delegateIterator.remove();
       linkedEntries.remove(createEntry(value));
     }

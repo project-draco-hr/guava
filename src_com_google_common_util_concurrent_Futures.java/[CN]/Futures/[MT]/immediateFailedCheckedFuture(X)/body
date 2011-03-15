@@ -1,7 +1,7 @@
 {
   checkNotNull(exception);
   return makeChecked(Futures.<V>immediateFailedFuture(exception),new Function<Exception,X>(){
-    public X apply(    Exception e){
+    @Override public X apply(    Exception e){
       return exception;
     }
   }

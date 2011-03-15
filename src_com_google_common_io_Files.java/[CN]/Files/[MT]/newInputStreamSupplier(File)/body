@@ -1,7 +1,7 @@
 {
   Preconditions.checkNotNull(file);
   return new InputSupplier<FileInputStream>(){
-    public FileInputStream getInput() throws IOException {
+    @Override public FileInputStream getInput() throws IOException {
       return new FileInputStream(file);
     }
   }

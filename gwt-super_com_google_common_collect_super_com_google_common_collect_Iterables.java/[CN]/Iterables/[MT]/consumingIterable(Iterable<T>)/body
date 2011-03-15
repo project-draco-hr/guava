@@ -1,7 +1,7 @@
 {
   if (iterable instanceof Queue) {
     return new Iterable<T>(){
-      public Iterator<T> iterator(){
+      @Override public Iterator<T> iterator(){
         return new ConsumingQueueIterator<T>((Queue<T>)iterable);
       }
     }
@@ -9,7 +9,7 @@
   }
   checkNotNull(iterable);
   return new Iterable<T>(){
-    public Iterator<T> iterator(){
+    @Override public Iterator<T> iterator(){
       return Iterators.consumingIterator(iterable.iterator());
     }
   }

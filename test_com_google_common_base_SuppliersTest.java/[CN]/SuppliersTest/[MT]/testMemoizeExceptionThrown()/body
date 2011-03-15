@@ -1,6 +1,6 @@
 {
   Supplier<Integer> exceptingSupplier=new Supplier<Integer>(){
-    public Integer get(){
+    @Override public Integer get(){
       throw new NullPointerException();
     }
   }

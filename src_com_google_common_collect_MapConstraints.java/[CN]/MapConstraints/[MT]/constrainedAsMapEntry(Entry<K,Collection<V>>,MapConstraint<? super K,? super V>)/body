@@ -7,7 +7,7 @@
     }
     @Override public Collection<V> getValue(){
       return Constraints.constrainedTypePreservingCollection(entry.getValue(),new Constraint<V>(){
-        public V checkElement(        V value){
+        @Override public V checkElement(        V value){
           constraint.checkKeyValue(getKey(),value);
           return value;
         }

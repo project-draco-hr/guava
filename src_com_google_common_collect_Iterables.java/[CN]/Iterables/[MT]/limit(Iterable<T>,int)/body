@@ -2,7 +2,7 @@
   checkNotNull(iterable);
   checkArgument(limitSize >= 0,"limit is negative");
   return new IterableWithToString<T>(){
-    public Iterator<T> iterator(){
+    @Override public Iterator<T> iterator(){
       return Iterators.limit(iterable.iterator(),limitSize);
     }
   }

@@ -1,7 +1,7 @@
 {
   checkNotNull(collection);
   Predicate<E> combinedPredicate=new Predicate<E>(){
-    public boolean apply(    E input){
+    @Override public boolean apply(    E input){
       return predicate.apply(input) && !collection.contains(input);
     }
   }

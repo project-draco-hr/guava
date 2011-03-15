@@ -1,7 +1,7 @@
 {
   Preconditions.checkNotNull(value);
   return new InputSupplier<StringReader>(){
-    public StringReader getInput(){
+    @Override public StringReader getInput(){
       return new StringReader(value);
     }
   }

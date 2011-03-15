@@ -2,17 +2,17 @@
   final Iterator<Map.Entry<E,AtomicInteger>> backingEntries=backingMap.entrySet().iterator();
   return new Iterator<Multiset.Entry<E>>(){
     Map.Entry<E,AtomicInteger> toRemove;
-    public boolean hasNext(){
+    @Override public boolean hasNext(){
       return backingEntries.hasNext();
     }
-    public Multiset.Entry<E> next(){
+    @Override public Multiset.Entry<E> next(){
       final Map.Entry<E,AtomicInteger> mapEntry=backingEntries.next();
       toRemove=mapEntry;
       return new Multisets.AbstractEntry<E>(){
-        public E getElement(){
+        @Override public E getElement(){
           return mapEntry.getKey();
         }
-        public int getCount(){
+        @Override public int getCount(){
           int count=mapEntry.getValue().get();
           if (count == 0) {
             AtomicInteger frequency=backingMap.get(getElement());
@@ -25,7 +25,7 @@
       }
 ;
     }
-    public void remove(){
+    @Override public void remove(){
       checkState(toRemove != null,"no calls to next() since the last call to remove()");
       size-=toRemove.getValue().getAndSet(0);
       backingEntries.remove();

@@ -3,10 +3,10 @@
   return new UnmodifiableIterator<E>(){
     int remaining;
     E element;
-    public boolean hasNext(){
+    @Override public boolean hasNext(){
       return (remaining > 0) || mapIterator.hasNext();
     }
-    public E next(){
+    @Override public E next(){
       if (remaining <= 0) {
         Map.Entry<E,Integer> entry=mapIterator.next();
         element=entry.getKey();

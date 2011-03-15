@@ -1,7 +1,7 @@
 {
   checkNotNull(inputs);
   return new IterableWithToString<T>(){
-    public Iterator<T> iterator(){
+    @Override public Iterator<T> iterator(){
       return Iterators.concat(iterators(inputs));
     }
   }

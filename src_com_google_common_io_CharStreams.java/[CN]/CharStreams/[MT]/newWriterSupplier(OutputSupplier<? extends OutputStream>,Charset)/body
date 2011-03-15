@@ -2,7 +2,7 @@
   Preconditions.checkNotNull(out);
   Preconditions.checkNotNull(charset);
   return new OutputSupplier<OutputStreamWriter>(){
-    public OutputStreamWriter getOutput() throws IOException {
+    @Override public OutputStreamWriter getOutput() throws IOException {
       return new OutputStreamWriter(out.getOutput(),charset);
     }
   }

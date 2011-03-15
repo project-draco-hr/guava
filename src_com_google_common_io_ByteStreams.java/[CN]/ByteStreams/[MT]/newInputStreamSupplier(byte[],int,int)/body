@@ -1,6 +1,6 @@
 {
   return new InputSupplier<ByteArrayInputStream>(){
-    public ByteArrayInputStream getInput(){
+    @Override public ByteArrayInputStream getInput(){
       return new ByteArrayInputStream(b,off,len);
     }
   }

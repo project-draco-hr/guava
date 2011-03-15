@@ -2,7 +2,7 @@
   return new MapEvictionListener<K,V>(){
     @Override public void onEviction(    @Nullable final K key,    @Nullable final V value){
       executor.execute(new Runnable(){
-        public void run(){
+        @Override public void run(){
           listener.onEviction(key,value);
         }
       }

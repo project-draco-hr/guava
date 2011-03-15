@@ -1,10 +1,10 @@
 {
   return new UnmodifiableIterator<List<B>>(){
     int index;
-    public boolean hasNext(){
+    @Override public boolean hasNext(){
       return index < size;
     }
-    public List<B> next(){
+    @Override public List<B> next(){
       if (!hasNext()) {
         throw new NoSuchElementException();
       }

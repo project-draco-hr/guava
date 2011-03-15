@@ -8,13 +8,13 @@
       @Override public Iterator<V> iterator(){
         final Iterator<Node<K,V>> nodes=new NodeIterator();
         return new Iterator<V>(){
-          public boolean hasNext(){
+          @Override public boolean hasNext(){
             return nodes.hasNext();
           }
-          public V next(){
+          @Override public V next(){
             return nodes.next().value;
           }
-          public void remove(){
+          @Override public void remove(){
             nodes.remove();
           }
         }

@@ -1,10 +1,10 @@
 {
   checkNotNull(iterator);
   return new Enumeration<T>(){
-    public boolean hasMoreElements(){
+    @Override public boolean hasMoreElements(){
       return iterator.hasNext();
     }
-    public T nextElement(){
+    @Override public T nextElement(){
       return iterator.next();
     }
   }

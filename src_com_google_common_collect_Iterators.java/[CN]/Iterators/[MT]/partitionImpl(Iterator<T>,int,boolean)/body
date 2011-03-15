@@ -2,10 +2,10 @@
   checkNotNull(iterator);
   checkArgument(size > 0);
   return new UnmodifiableIterator<List<T>>(){
-    public boolean hasNext(){
+    @Override public boolean hasNext(){
       return iterator.hasNext();
     }
-    public List<T> next(){
+    @Override public List<T> next(){
       if (!hasNext()) {
         throw new NoSuchElementException();
       }

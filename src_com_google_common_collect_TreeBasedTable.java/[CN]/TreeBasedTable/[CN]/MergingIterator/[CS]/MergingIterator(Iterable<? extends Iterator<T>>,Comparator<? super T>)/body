@@ -1,7 +1,7 @@
 {
   this.comparator=itemComparator;
   Comparator<PeekingIterator<T>> heapComparator=new Comparator<PeekingIterator<T>>(){
-    public int compare(    PeekingIterator<T> o1,    PeekingIterator<T> o2){
+    @Override public int compare(    PeekingIterator<T> o1,    PeekingIterator<T> o2){
       return comparator.compare(o1.peek(),o2.peek());
     }
   }

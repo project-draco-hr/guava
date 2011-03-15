@@ -1,7 +1,7 @@
 {
   final Supplier<Integer> nonThreadSafe=new Supplier<Integer>(){
     int counter=0;
-    public Integer get(){
+    @Override public Integer get(){
       int nextValue=counter + 1;
       Thread.yield();
       counter=nextValue;

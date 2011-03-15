@@ -1,10 +1,10 @@
 {
   checkArgument(n >= 0);
   return new AbstractEntry<E>(){
-    public E getElement(){
+    @Override public E getElement(){
       return e;
     }
-    public int getCount(){
+    @Override public int getCount(){
       return n;
     }
   }

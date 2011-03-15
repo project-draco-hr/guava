@@ -2,7 +2,7 @@
   frq=new FinalizableReferenceQueue();
   queueReference=new WeakReference<ReferenceQueue<Object>>(frq.queue);
   reference=new FinalizableWeakReference<Object>(new Object(),frq){
-    public void finalizeReferent(){
+    @Override public void finalizeReferent(){
       reference=null;
       frq=null;
     }

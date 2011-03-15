@@ -2,7 +2,7 @@
   checkNotNull(fromIterable);
   checkNotNull(function);
   return new IterableWithToString<T>(){
-    public Iterator<T> iterator(){
+    @Override public Iterator<T> iterator(){
       return Iterators.transform(fromIterable.iterator(),function);
     }
   }

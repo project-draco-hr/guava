@@ -1,7 +1,7 @@
 {
   checkNotNull(iterable);
   return new Iterable<T>(){
-    public Iterator<T> iterator(){
+    @Override public Iterator<T> iterator(){
       return Iterators.cycle(iterable);
     }
     @Override public String toString(){

@@ -1,31 +1,31 @@
 {
   final ListIterator<F> delegate=fromList.listIterator(index);
   return new ListIterator<T>(){
-    public void add(    T e){
+    @Override public void add(    T e){
       throw new UnsupportedOperationException();
     }
-    public boolean hasNext(){
+    @Override public boolean hasNext(){
       return delegate.hasNext();
     }
-    public boolean hasPrevious(){
+    @Override public boolean hasPrevious(){
       return delegate.hasPrevious();
     }
-    public T next(){
+    @Override public T next(){
       return function.apply(delegate.next());
     }
-    public int nextIndex(){
+    @Override public int nextIndex(){
       return delegate.nextIndex();
     }
-    public T previous(){
+    @Override public T previous(){
       return function.apply(delegate.previous());
     }
-    public int previousIndex(){
+    @Override public int previousIndex(){
       return delegate.previousIndex();
     }
-    public void remove(){
+    @Override public void remove(){
       delegate.remove();
     }
-    public void set(    T e){
+    @Override public void set(    T e){
       throw new UnsupportedOperationException("not supported");
     }
   }

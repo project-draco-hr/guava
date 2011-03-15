@@ -1,6 +1,6 @@
 {
   return Constraints.constrainedTypePreservingCollection(delegate.get(key),new Constraint<V>(){
-    public V checkElement(    V value){
+    @Override public V checkElement(    V value){
       constraint.checkKeyValue(key,value);
       return value;
     }

@@ -6,22 +6,22 @@
     @Override public Iterator<Entry<K>> iterator(){
       final Iterator<K> keyIterator=new DistinctKeyIterator();
       return new Iterator<Entry<K>>(){
-        public boolean hasNext(){
+        @Override public boolean hasNext(){
           return keyIterator.hasNext();
         }
-        public Entry<K> next(){
+        @Override public Entry<K> next(){
           final K key=keyIterator.next();
           return new Multisets.AbstractEntry<K>(){
-            public K getElement(){
+            @Override public K getElement(){
               return key;
             }
-            public int getCount(){
+            @Override public int getCount(){
               return keyCount.count(key);
             }
           }
 ;
         }
-        public void remove(){
+        @Override public void remove(){
           keyIterator.remove();
         }
       }
