@@ -1,0 +1,6 @@
+{
+  super(initialCapacity,loadFactor,(maximumSize != -1));
+  this.expirationMillis=expirationMillis;
+  this.computer=computer;
+  this.maximumSize=maximumSize;
+}

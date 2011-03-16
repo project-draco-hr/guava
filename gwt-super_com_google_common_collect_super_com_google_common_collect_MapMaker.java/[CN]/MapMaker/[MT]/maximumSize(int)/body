@@ -1,0 +1,11 @@
+{
+  if (this.maximumSize != -1) {
+    throw new IllegalStateException("maximum size of " + maximumSize + " was already set");
+  }
+  if (maximumSize < 0) {
+    throw new IllegalArgumentException("invalid maximum size: " + maximumSize);
+  }
+  this.maximumSize=maximumSize;
+  useCustomMap=true;
+  return this;
+}

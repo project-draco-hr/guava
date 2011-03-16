@@ -1,0 +1,7 @@
+{
+  if (containsKey(key) && get(key).equals(oldValue)) {
+    put(key,newValue);
+    return true;
+  }
+  return false;
+}
