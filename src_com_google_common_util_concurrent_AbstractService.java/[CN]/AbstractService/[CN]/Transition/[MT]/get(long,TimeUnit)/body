@@ -1,6 +1,8 @@
 {
-  if (done.await(timeout,unit)) {
-    return getImmediately();
+  try {
+    return super.get(timeout,unit);
   }
-  throw new TimeoutException(AbstractService.this.toString());
+ catch (  TimeoutException e) {
+    throw new TimeoutException(AbstractService.this.toString());
+  }
 }

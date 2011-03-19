@@ -1,0 +1,14 @@
+{
+  return new InvertibleFunction<B,A>(){
+    @Override public A apply(    B b){
+      return InvertibleFunction.this.invert(b);
+    }
+    @Override B invert(    A a){
+      return InvertibleFunction.this.apply(a);
+    }
+    @Override public InvertibleFunction<A,B> inverse(){
+      return InvertibleFunction.this;
+    }
+  }
+;
+}

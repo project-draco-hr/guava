@@ -7,7 +7,7 @@
       throw failure;
     }
     state=State.TERMINATED;
-    shutdown.transitionSucceeded(State.TERMINATED);
+    shutdown.set(State.TERMINATED);
   }
   finally {
     lock.unlock();

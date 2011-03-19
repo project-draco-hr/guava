@@ -1,6 +1,0 @@
-{
-  checkArgument(!parts.isEmpty());
-  this.parts=ImmutableList.copyOf(parts);
-  this.name=DOT_JOINER.join(parts);
-  this.publicSuffixIndex=findPublicSuffix();
-}

@@ -15,18 +15,16 @@
       for (ReferenceEntry<K,V> e=first; e != null; e=e.getNext()) {
         K entryKey=e.getKey();
         if (e.getHash() == hash && entryKey != null && keyEquivalence.equivalent(key,entryKey)) {
-          entry=e;
-          ValueReference<K,V> valueReference=entry.getValueReference();
+          ValueReference<K,V> valueReference=e.getValueReference();
           if (!valueReference.isComputingReference()) {
             value=valueReference.get();
-            if (value == null) {
-              unsetLiveEntry(entry,hash);
-            }
- else {
-              recordRead(entry);
+            if (value != null) {
+              recordRead(e);
               return value;
             }
+            unsetLiveEntry(e,hash);
           }
+          entry=e;
           break;
         }
       }
@@ -63,11 +61,11 @@ synchronized (entry) {
         try {
           checkState(!Thread.holdsLock(entry),"Recursive computation");
           value=entry.getValueReference().waitForValue();
-          if (value == null) {
-            continue outer;
+          if (value != null) {
+            recordRead(entry);
+            return value;
           }
-          recordRead(entry);
-          return value;
+          continue outer;
         }
  catch (        InterruptedException e) {
           interrupted=true;

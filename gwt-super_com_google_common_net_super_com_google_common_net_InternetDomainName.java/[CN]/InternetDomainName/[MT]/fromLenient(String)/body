@@ -1,3 +1,3 @@
 {
-  return new InternetDomainName(Ascii.toLowerCase(checkNotNull(domain)));
+  return new InternetDomainName(checkNotNull(domain));
 }

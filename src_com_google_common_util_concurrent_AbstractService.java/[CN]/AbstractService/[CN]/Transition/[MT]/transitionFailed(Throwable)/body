@@ -1,6 +1,0 @@
-{
-  checkState(result == null);
-  this.result=State.FAILED;
-  this.failureCause=cause;
-  done.countDown();
-}

@@ -1,0 +1,3 @@
+{
+  return new TransformedSet<A,B>(Preconditions.checkNotNull(set,"set"),Preconditions.checkNotNull(bijection,"bijection"));
+}

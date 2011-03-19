@@ -1,3 +1,3 @@
 {
-  return new InternetDomainName(parts.subList(levels,parts.size()));
+  return fromInternal(DOT_JOINER.join(parts.subList(levels,parts.size())));
 }

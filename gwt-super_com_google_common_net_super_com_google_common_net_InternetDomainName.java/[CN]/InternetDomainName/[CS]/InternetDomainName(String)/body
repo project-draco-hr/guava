@@ -1,5 +1,5 @@
 {
-  name=DOTS_MATCHER.replaceFrom(name,'.');
+  name=Ascii.toLowerCase(DOTS_MATCHER.replaceFrom(name,'.'));
   if (name.endsWith(".")) {
     name=name.substring(0,name.length() - 1);
   }

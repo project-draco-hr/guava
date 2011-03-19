@@ -2,6 +2,6 @@
   stream.defaultReadObject();
   keyType=(Class<K>)stream.readObject();
   valueType=(Class<V>)stream.readObject();
-  setDelegates(new EnumMap<K,V>(keyType),new EnumMap<V,K>(valueType));
+  setDelegates(WellBehavedMap.wrap(new EnumMap<K,V>(keyType)),WellBehavedMap.wrap(new EnumMap<V,K>(valueType)));
   Serialization.populateMap(this,stream);
 }

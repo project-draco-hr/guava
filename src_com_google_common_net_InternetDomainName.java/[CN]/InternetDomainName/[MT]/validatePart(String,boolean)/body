@@ -2,10 +2,8 @@
   if (part.length() < 1 || part.length() > MAX_DOMAIN_PART_LENGTH) {
     return false;
   }
-  if (!CharMatcher.ASCII.matchesAllOf(part)) {
-    return true;
-  }
-  if (!PART_CHAR_MATCHER.matchesAllOf(part)) {
+  String asciiChars=CharMatcher.ASCII.retainFrom(part);
+  if (!PART_CHAR_MATCHER.matchesAllOf(asciiChars)) {
     return false;
   }
   if (DASH_MATCHER.matches(part.charAt(0)) || DASH_MATCHER.matches(part.charAt(part.length() - 1))) {

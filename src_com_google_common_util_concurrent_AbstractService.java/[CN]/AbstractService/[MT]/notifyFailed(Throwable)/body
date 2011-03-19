@@ -3,11 +3,11 @@
   lock.lock();
   try {
     if (state == State.STARTING) {
-      startup.transitionFailed(cause);
-      shutdown.transitionFailed(new Exception("Service failed to start.",cause));
+      startup.setException(cause);
+      shutdown.setException(new Exception("Service failed to start.",cause));
     }
  else     if (state == State.STOPPING) {
-      shutdown.transitionFailed(cause);
+      shutdown.setException(cause);
     }
     state=State.FAILED;
   }

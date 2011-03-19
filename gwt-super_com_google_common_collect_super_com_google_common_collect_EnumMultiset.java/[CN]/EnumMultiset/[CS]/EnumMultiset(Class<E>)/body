@@ -1,4 +1,4 @@
 {
-  super(new EnumMap<E,AtomicInteger>(type));
+  super(WellBehavedMap.wrap(new EnumMap<E,AtomicInteger>(type)));
   this.type=type;
 }

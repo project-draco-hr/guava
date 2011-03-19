@@ -11,7 +11,7 @@
       stop();
     }
  else {
-      startup.transitionSucceeded(State.RUNNING);
+      startup.set(State.RUNNING);
     }
   }
   finally {

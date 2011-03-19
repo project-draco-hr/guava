@@ -3,12 +3,12 @@
   try {
     if (state == State.NEW) {
       state=State.TERMINATED;
-      startup.transitionSucceeded(State.TERMINATED);
-      shutdown.transitionSucceeded(State.TERMINATED);
+      startup.set(State.TERMINATED);
+      shutdown.set(State.TERMINATED);
     }
  else     if (state == State.STARTING) {
       shutdownWhenStartupFinishes=true;
-      startup.transitionSucceeded(State.STOPPING);
+      startup.set(State.STOPPING);
     }
  else     if (state == State.RUNNING) {
       state=State.STOPPING;
