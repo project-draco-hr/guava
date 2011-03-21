@@ -15,11 +15,10 @@
       for (ReferenceEntry<K,V> e=first; e != null; e=e.getNext()) {
         K entryKey=e.getKey();
         if (e.getHash() == hash && entryKey != null && keyEquivalence.equivalent(key,entryKey)) {
-          ValueReference<K,V> valueReference=e.getValueReference();
-          if (!valueReference.isComputingReference()) {
-            value=valueReference.get();
+          if (!e.getValueReference().isComputingReference()) {
+            value=getLiveValue(e);
             if (value != null) {
-              recordRead(e);
+              recordLockedRead(e);
               return value;
             }
             unsetLiveEntry(e,hash);
