@@ -8,7 +8,7 @@
   if (parentIndex != 0) {
     int grandparentIndex=getParentIndex(parentIndex);
     int uncleIndex=getRightChildIndex(grandparentIndex);
-    if (uncleIndex != parentIndex) {
+    if (uncleIndex != parentIndex && getLeftChildIndex(uncleIndex) >= size) {
       E uncleElement=elementData(uncleIndex);
       if (ordering.compare(uncleElement,parentElement) < 0) {
         parentIndex=uncleIndex;
