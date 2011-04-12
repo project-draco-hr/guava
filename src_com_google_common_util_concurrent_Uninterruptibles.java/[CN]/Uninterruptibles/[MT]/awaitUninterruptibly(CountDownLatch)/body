@@ -1,0 +1,19 @@
+{
+  boolean interrupted=false;
+  try {
+    while (true) {
+      try {
+        latch.await();
+        return;
+      }
+ catch (      InterruptedException ignored) {
+        interrupted=true;
+      }
+    }
+  }
+  finally {
+    if (interrupted) {
+      Thread.currentThread().interrupt();
+    }
+  }
+}
