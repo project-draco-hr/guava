@@ -1,0 +1,6 @@
+{
+  if (concurrencyLevel < 1) {
+    throw new IllegalArgumentException("GWT only supports a concurrency level of 1");
+  }
+  return this;
+}
