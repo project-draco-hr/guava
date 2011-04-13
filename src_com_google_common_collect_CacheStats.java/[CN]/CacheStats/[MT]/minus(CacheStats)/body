@@ -1,3 +1,0 @@
-{
-  return new CacheStats(hitCount - other.hitCount,missCount - other.missCount,createCount - other.createCount,evictionCount - other.evictionCount,totalCreateTime - other.totalCreateTime);
-}

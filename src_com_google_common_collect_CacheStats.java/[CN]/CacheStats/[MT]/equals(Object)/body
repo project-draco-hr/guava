@@ -1,7 +1,0 @@
-{
-  if (object instanceof CacheStats) {
-    CacheStats other=(CacheStats)object;
-    return hitCount == other.hitCount && missCount == other.missCount && createCount == other.createCount && evictionCount == other.evictionCount && totalCreateTime == other.totalCreateTime;
-  }
-  return false;
-}

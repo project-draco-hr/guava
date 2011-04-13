@@ -1,4 +1,0 @@
-{
-  long reqeustCount=requestCount();
-  return (reqeustCount == 0) ? 0.0 : (double)missCount / reqeustCount;
-}

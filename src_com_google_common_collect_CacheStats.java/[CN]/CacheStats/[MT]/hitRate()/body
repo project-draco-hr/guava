@@ -1,4 +1,0 @@
-{
-  long reqeustCount=requestCount();
-  return (reqeustCount == 0) ? 1.0 : (double)hitCount / reqeustCount;
-}

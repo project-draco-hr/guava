@@ -1,5 +1,0 @@
-long hitCount
-long missCount
-long createCount
-long evictionCount
-long totalCreateTime
