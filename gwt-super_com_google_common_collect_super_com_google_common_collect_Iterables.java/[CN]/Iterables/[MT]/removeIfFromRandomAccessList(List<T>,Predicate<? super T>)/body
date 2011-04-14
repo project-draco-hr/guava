@@ -5,7 +5,13 @@
     T element=list.get(from);
     if (!predicate.apply(element)) {
       if (from > to) {
-        list.set(to,element);
+        try {
+          list.set(to,element);
+        }
+ catch (        UnsupportedOperationException e) {
+          slowRemoveIfForRemainingElements(list,predicate,to,from);
+          return true;
+        }
       }
       to++;
     }
