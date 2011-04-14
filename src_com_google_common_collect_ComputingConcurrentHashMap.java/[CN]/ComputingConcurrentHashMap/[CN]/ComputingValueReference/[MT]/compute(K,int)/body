@@ -1,7 +1,7 @@
 {
   V value;
   try {
-    value=computingFunction.apply(key);
+    value=map.computingFunction.apply(key);
   }
  catch (  ComputationException e) {
     setValueReference(new ComputationExceptionReference<K,V>(e.getCause()));
@@ -12,11 +12,11 @@ catch (  Throwable t) {
     throw new ComputationException(t);
   }
   if (value == null) {
-    String message=computingFunction + " returned null for key " + key+ ".";
+    String message=map.computingFunction + " returned null for key " + key+ ".";
     setValueReference(new NullPointerExceptionReference<K,V>(message));
     throw new NullPointerException(message);
   }
   setValueReference(new ComputedReference<K,V>(value));
-  segmentFor(hash).put(key,hash,value,true);
+  map.segmentFor(hash).put(key,hash,value,true);
   return value;
 }
