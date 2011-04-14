@@ -1,0 +1,5 @@
+{
+  Predicate<Class<?>> isComparable=Predicates.assignableFrom(Comparable.class);
+  assertTrue(isComparable.apply(Integer.class));
+  assertTrue(isComparable.apply(Float.class));
+}

@@ -1,0 +1,5 @@
+{
+  Predicate<Class<?>> isNumber=Predicates.assignableFrom(Number.class);
+  assertTrue(isNumber.apply(Integer.class));
+  assertTrue(isNumber.apply(Float.class));
+}

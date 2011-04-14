@@ -1,0 +1,11 @@
+{
+  Predicate<Class<?>> isInteger=Predicates.assignableFrom(Integer.class);
+  assertTrue(isInteger.apply(Integer.class));
+  assertFalse(isInteger.apply(Float.class));
+  try {
+    isInteger.apply(null);
+    fail();
+  }
+ catch (  NullPointerException expected) {
+  }
+}

@@ -1,3 +1,0 @@
-Predicate<? super Integer> expected
-Predicate<? super Integer> actual
-Integer input

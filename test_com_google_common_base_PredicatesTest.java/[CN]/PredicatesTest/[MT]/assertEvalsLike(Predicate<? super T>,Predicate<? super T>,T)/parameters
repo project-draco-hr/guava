@@ -1,0 +1,3 @@
+Predicate<? super T> expected
+Predicate<? super T> actual
+T input
