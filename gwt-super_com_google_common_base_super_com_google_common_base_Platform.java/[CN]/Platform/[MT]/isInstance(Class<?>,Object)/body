@@ -1,3 +1,0 @@
-{
-  throw new UnsupportedOperationException("Class.isInstance is not supported in GWT yet.");
-}
