@@ -1,0 +1,16 @@
+{
+  try {
+    ReferenceEntry<K,V> e=getEntry(key,hash);
+    if (e != null) {
+      V value=getLiveValue(e);
+      if (value != null) {
+        recordRead(e);
+      }
+      return value;
+    }
+    return null;
+  }
+  finally {
+    postReadCleanup();
+  }
+}

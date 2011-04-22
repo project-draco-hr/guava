@@ -1,0 +1,4 @@
+{
+  super(referent,QueueHolder.queue);
+  this.entry=entry;
+}

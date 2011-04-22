@@ -1,0 +1,7 @@
+{
+  ValueReference<K,V> unset=unset();
+  entry.setValueReference(unset);
+  cleanupQueue.offer(entry);
+  evictionQueue.remove(entry);
+  expirationQueue.remove(entry);
+}

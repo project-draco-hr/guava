@@ -1,0 +1,34 @@
+{
+  checkNotNull(value);
+  lock();
+  try {
+    preWriteCleanup();
+    int newCount=this.count - 1;
+    AtomicReferenceArray<ReferenceEntry<K,V>> table=this.table;
+    int index=hash & (table.length() - 1);
+    ReferenceEntry<K,V> first=table.get(index);
+    for (ReferenceEntry<K,V> e=first; e != null; e=e.getNext()) {
+      K entryKey=e.getKey();
+      if (e.getHash() == hash && entryKey != null && map.keyEquivalence.equivalent(key,entryKey)) {
+        V entryValue=e.getValueReference().get();
+        if (entryValue == null) {
+          unsetLiveEntry(e,hash);
+        }
+ else         if (map.valueEquivalence.equivalent(value,entryValue)) {
+          ++modCount;
+          ReferenceEntry<K,V> newFirst=removeFromChain(first,e);
+          newCount=this.count - 1;
+          table.set(index,newFirst);
+          this.count=newCount;
+          return true;
+        }
+        return false;
+      }
+    }
+    return false;
+  }
+  finally {
+    unlock();
+    postWriteCleanup();
+  }
+}

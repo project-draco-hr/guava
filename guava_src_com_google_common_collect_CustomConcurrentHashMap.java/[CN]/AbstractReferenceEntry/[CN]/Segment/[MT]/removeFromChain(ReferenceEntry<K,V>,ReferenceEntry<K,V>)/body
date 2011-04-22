@@ -1,0 +1,14 @@
+{
+  evictionQueue.remove(entry);
+  expirationQueue.remove(entry);
+  ReferenceEntry<K,V> newFirst=entry.getNext();
+  for (ReferenceEntry<K,V> e=first; e != entry; e=e.getNext()) {
+    if (isCollected(e)) {
+      unsetLiveEntry(e,e.getHash());
+    }
+ else {
+      newFirst=map.copyEntry(e,newFirst);
+    }
+  }
+  return newFirst;
+}

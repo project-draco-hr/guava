@@ -1,0 +1,3 @@
+{
+  entry.notifyValueReclaimed(this);
+}

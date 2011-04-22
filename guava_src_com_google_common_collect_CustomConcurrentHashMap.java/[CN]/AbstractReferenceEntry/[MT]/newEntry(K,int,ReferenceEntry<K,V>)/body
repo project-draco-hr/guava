@@ -1,0 +1,3 @@
+{
+  return entryFactory.newEntry(this,key,hash,next);
+}

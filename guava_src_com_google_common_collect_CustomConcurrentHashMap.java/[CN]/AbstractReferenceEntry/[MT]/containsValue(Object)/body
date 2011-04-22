@@ -1,0 +1,26 @@
+{
+  checkNotNull(value);
+  final Segment<K,V>[] segments=this.segments;
+  int last=-1;
+  for (int i=0; i < CONTAINS_VALUE_RETRIES; i++) {
+    int sum=0;
+    for (    Segment<K,V> segment : segments) {
+      @SuppressWarnings({"UnusedDeclaration","unused"}) int c=segment.count;
+      AtomicReferenceArray<ReferenceEntry<K,V>> table=segment.table;
+      for (int j=0; j < table.length(); j++) {
+        for (ReferenceEntry<K,V> e=table.get(j); e != null; e=e.getNext()) {
+          V v=segment.getLiveValue(e);
+          if (v != null && valueEquivalence.equivalent(value,v)) {
+            return true;
+          }
+        }
+      }
+      sum+=segment.modCount;
+    }
+    if (sum == last) {
+      break;
+    }
+    last=sum;
+  }
+  return false;
+}

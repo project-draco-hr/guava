@@ -1,0 +1,8 @@
+{
+  if (evictionNotificationQueue == DISCARDING_QUEUE) {
+    return;
+  }
+  ReferenceEntry<K,V> notifyEntry=newEntry(key,hash,null);
+  notifyEntry.setValueReference(valueReference.copyFor(notifyEntry));
+  evictionNotificationQueue.offer(notifyEntry);
+}

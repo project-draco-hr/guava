@@ -1,0 +1,6 @@
+{
+  ValueReference<K,V> valueReference=original.getValueReference();
+  ReferenceEntry<K,V> newEntry=entryFactory.copyEntry(this,original,newNext);
+  newEntry.setValueReference(valueReference.copyFor(newEntry));
+  return newEntry;
+}

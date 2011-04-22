@@ -1,0 +1,24 @@
+{
+  lock();
+  try {
+    int newCount=this.count - 1;
+    for (ReferenceEntry<K,V> e=getFirst(hash); e != null; e=e.getNext()) {
+      K entryKey=e.getKey();
+      if (e.getHash() == hash && entryKey != null && map.keyEquivalence.equivalent(key,entryKey)) {
+        ValueReference<K,V> v=e.getValueReference();
+        if (v == valueReference) {
+          ++modCount;
+          map.enqueueNotification(key,hash,valueReference);
+          enqueueCleanup(e);
+          this.count=newCount;
+          return true;
+        }
+        return false;
+      }
+    }
+    return false;
+  }
+  finally {
+    unlock();
+  }
+}

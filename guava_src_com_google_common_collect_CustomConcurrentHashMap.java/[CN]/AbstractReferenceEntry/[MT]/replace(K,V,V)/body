@@ -1,0 +1,4 @@
+{
+  int hash=hash(key);
+  return segmentFor(hash).replace(key,hash,oldValue,newValue);
+}

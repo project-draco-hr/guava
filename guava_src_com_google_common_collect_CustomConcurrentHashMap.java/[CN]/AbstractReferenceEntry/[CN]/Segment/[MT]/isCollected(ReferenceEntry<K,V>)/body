@@ -1,0 +1,10 @@
+{
+  if (entry.getKey() == null) {
+    return true;
+  }
+  ValueReference<K,V> valueReference=entry.getValueReference();
+  if (valueReference.isComputingReference()) {
+    return false;
+  }
+  return valueReference.get() == null;
+}

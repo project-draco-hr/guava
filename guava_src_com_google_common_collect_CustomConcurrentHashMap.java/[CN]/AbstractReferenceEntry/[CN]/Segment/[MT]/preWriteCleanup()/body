@@ -1,0 +1,8 @@
+{
+  if (map.isInlineCleanup()) {
+    runLockedCleanup();
+  }
+ else {
+    expireEntries();
+  }
+}

@@ -1,0 +1,11 @@
+{
+  lock();
+  try {
+    expireEntries();
+    processPendingCleanup();
+    readCount.set(0);
+  }
+  finally {
+    unlock();
+  }
+}

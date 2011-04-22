@@ -1,0 +1,8 @@
+{
+  this.map=map;
+  this.maxSegmentSize=maxSegmentSize;
+  initTable(newEntryArray(initialCapacity));
+  recencyQueue=(map.evictsBySize() || map.expiresAfterAccess()) ? new ConcurrentLinkedQueue<ReferenceEntry<K,V>>() : CustomConcurrentHashMap.<ReferenceEntry<K,V>>discardingQueue();
+  evictionQueue=map.evictsBySize() ? new EvictionQueue() : CustomConcurrentHashMap.<ReferenceEntry<K,V>>discardingQueue();
+  expirationQueue=map.expires() ? new ExpirationQueue() : CustomConcurrentHashMap.<ReferenceEntry<K,V>>discardingQueue();
+}

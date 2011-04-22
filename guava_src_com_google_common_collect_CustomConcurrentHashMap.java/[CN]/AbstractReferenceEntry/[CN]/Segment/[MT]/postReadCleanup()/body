@@ -1,0 +1,10 @@
+{
+  if ((readCount.incrementAndGet() & DRAIN_THRESHOLD) == 0) {
+    if (map.isInlineCleanup()) {
+      runCleanup();
+    }
+ else     if (!isHeldByCurrentThread()) {
+      map.cleanupExecutor.execute(cleanupRunnable);
+    }
+  }
+}

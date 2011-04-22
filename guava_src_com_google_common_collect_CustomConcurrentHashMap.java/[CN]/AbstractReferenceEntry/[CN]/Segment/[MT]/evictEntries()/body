@@ -1,0 +1,11 @@
+{
+  if (map.evictsBySize() && count >= maxSegmentSize) {
+    drainRecencyQueue();
+    ReferenceEntry<K,V> e=evictionQueue.remove();
+    if (!unsetEntry(e,e.getHash())) {
+      throw new AssertionError();
+    }
+    return true;
+  }
+  return false;
+}

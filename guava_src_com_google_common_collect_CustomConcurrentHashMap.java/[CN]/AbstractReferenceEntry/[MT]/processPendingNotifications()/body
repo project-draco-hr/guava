@@ -1,0 +1,6 @@
+{
+  ReferenceEntry<K,V> entry;
+  while ((entry=evictionNotificationQueue.poll()) != null) {
+    evictionListener.onEviction(entry.getKey(),entry.getValueReference().get());
+  }
+}

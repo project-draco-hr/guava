@@ -1,0 +1,4 @@
+{
+  int h=keyEquivalence.hash(checkNotNull(key));
+  return rehash(h);
+}

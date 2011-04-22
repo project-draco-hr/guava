@@ -1,0 +1,32 @@
+{
+  checkNotNull(oldValue);
+  checkNotNull(newValue);
+  lock();
+  try {
+    preWriteCleanup();
+    for (ReferenceEntry<K,V> e=getFirst(hash); e != null; e=e.getNext()) {
+      K entryKey=e.getKey();
+      if (e.getHash() == hash && entryKey != null && map.keyEquivalence.equivalent(key,entryKey)) {
+        V entryValue=e.getValueReference().get();
+        if (entryValue == null) {
+          unsetLiveEntry(e,hash);
+          return false;
+        }
+        if (map.valueEquivalence.equivalent(oldValue,entryValue)) {
+          ++modCount;
+          setValue(e,newValue);
+          return true;
+        }
+ else {
+          recordLockedRead(e);
+          return false;
+        }
+      }
+    }
+    return false;
+  }
+  finally {
+    unlock();
+    postWriteCleanup();
+  }
+}

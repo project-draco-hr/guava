@@ -1,0 +1,14 @@
+{
+  if (entry.getKey() == null) {
+    return null;
+  }
+  V value=entry.getValueReference().get();
+  if (value == null) {
+    return null;
+  }
+  if (map.expires() && map.isExpired(entry)) {
+    tryExpireEntries();
+    return null;
+  }
+  return value;
+}
