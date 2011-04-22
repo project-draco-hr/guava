@@ -1,0 +1,13 @@
+{
+  if (that == BELOW_ALL) {
+    return 1;
+  }
+  if (that == ABOVE_ALL) {
+    return -1;
+  }
+  int result=compareOrThrow(endpoint,that.endpoint);
+  if (result != 0) {
+    return result;
+  }
+  return Booleans.compare(this instanceof AboveValue,that instanceof AboveValue);
+}

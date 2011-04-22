@@ -1,0 +1,8 @@
+{
+  try {
+    return range.contains((C)object);
+  }
+ catch (  ClassCastException e) {
+    return false;
+  }
+}

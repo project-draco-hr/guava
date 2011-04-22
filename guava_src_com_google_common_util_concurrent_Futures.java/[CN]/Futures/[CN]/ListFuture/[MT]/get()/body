@@ -1,0 +1,4 @@
+{
+  callAllGets();
+  return super.get();
+}

@@ -1,0 +1,7 @@
+{
+  this.futures=futures;
+  this.values=Lists.newArrayListWithCapacity(futures.size());
+  this.allMustSucceed=allMustSucceed;
+  this.remaining=new AtomicInteger(futures.size());
+  init(listenerExecutor);
+}

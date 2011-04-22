@@ -1,0 +1,27 @@
+{
+  addListener(new Runnable(){
+    @Override public void run(){
+      ListFuture.this.values=null;
+      ListFuture.this.futures=null;
+    }
+  }
+,MoreExecutors.sameThreadExecutor());
+  if (futures.isEmpty()) {
+    set(Lists.newArrayList(values));
+    return;
+  }
+  for (int i=0; i < futures.size(); ++i) {
+    values.add(null);
+  }
+  ImmutableList<? extends ListenableFuture<? extends T>> localFutures=futures;
+  for (int i=0; i < localFutures.size(); i++) {
+    final ListenableFuture<? extends T> listenable=localFutures.get(i);
+    final int index=i;
+    listenable.addListener(new Runnable(){
+      @Override public void run(){
+        setOneValue(index,listenable);
+      }
+    }
+,listenerExecutor);
+  }
+}

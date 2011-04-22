@@ -1,0 +1,5 @@
+{
+  Cut<C> newLower=Ordering.natural().min(lowerBound,other.lowerBound);
+  Cut<C> newUpper=Ordering.natural().max(upperBound,other.upperBound);
+  return create(newLower,newUpper);
+}

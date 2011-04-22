@@ -1,0 +1,5 @@
+{
+  super(Ordering.natural());
+  this.range=range;
+  this.domain=domain;
+}

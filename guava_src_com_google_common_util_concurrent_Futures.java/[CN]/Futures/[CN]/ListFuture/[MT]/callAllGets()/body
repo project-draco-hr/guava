@@ -1,0 +1,26 @@
+{
+  List<? extends ListenableFuture<? extends T>> oldFutures=futures;
+  if (oldFutures != null && !isDone()) {
+    for (    ListenableFuture<? extends T> future : oldFutures) {
+      while (!future.isDone()) {
+        try {
+          future.get();
+        }
+ catch (        Error e) {
+          throw e;
+        }
+catch (        InterruptedException e) {
+          throw e;
+        }
+catch (        Throwable e) {
+          if (allMustSucceed) {
+            return;
+          }
+ else {
+            continue;
+          }
+        }
+      }
+    }
+  }
+}

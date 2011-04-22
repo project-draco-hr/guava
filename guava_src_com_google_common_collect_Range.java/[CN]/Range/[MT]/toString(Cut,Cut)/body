@@ -1,0 +1,7 @@
+{
+  StringBuilder sb=new StringBuilder();
+  lowerBound.describeAsLowerBound(sb);
+  sb.append('\u2025');
+  upperBound.describeAsUpperBound(sb);
+  return sb.toString();
+}

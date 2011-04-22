@@ -1,0 +1,16 @@
+{
+  checkNotNull(domain);
+  Range<C> effectiveRange=this;
+  try {
+    if (!hasLowerBound()) {
+      effectiveRange=effectiveRange.intersection(Ranges.atLeast(domain.minValue()));
+    }
+    if (!hasUpperBound()) {
+      effectiveRange=effectiveRange.intersection(Ranges.atMost(domain.maxValue()));
+    }
+  }
+ catch (  NoSuchElementException e) {
+    throw new IllegalArgumentException(e);
+  }
+  return effectiveRange.isEmpty() ? ImmutableSortedSet.<C>of() : new ContiguousSet<C>(effectiveRange,domain);
+}

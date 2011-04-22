@@ -1,0 +1,3 @@
+{
+  return create(Ranges.<C>noLowerBound(),new BelowValue<C>(endpoint));
+}

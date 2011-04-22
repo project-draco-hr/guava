@@ -1,0 +1,7 @@
+{
+  if (object instanceof Optional) {
+    Optional<?> other=(Optional<?>)object;
+    return Objects.equal(reference,other.reference);
+  }
+  return false;
+}

@@ -1,0 +1,3 @@
+{
+  return create(new AboveValue<C>(endpoint),Ranges.<C>noUpperBound());
+}

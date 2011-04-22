@@ -1,0 +1,3 @@
+{
+  return compareOrThrow(endpoint,value) < 0;
+}
