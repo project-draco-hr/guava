@@ -1,9 +1,9 @@
 {
   checkNotNull(value);
   final Segment<K,V>[] segments=this.segments;
-  int last=-1;
+  long last=-1L;
   for (int i=0; i < CONTAINS_VALUE_RETRIES; i++) {
-    int sum=0;
+    long sum=0L;
     for (    Segment<K,V> segment : segments) {
       @SuppressWarnings({"UnusedDeclaration","unused"}) int c=segment.count;
       AtomicReferenceArray<ReferenceEntry<K,V>> table=segment.table;

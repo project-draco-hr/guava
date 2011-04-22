@@ -1,18 +1,21 @@
 {
+  long sum=0L;
   Segment<K,V>[] segments=this.segments;
-  int[] mc=new int[segments.length];
-  int mcsum=0;
   for (int i=0; i < segments.length; ++i) {
     if (segments[i].count != 0) {
       return false;
     }
-    mcsum+=mc[i]=segments[i].modCount;
+    sum+=segments[i].modCount;
   }
-  if (mcsum != 0) {
+  if (sum != 0L) {
     for (int i=0; i < segments.length; ++i) {
-      if (segments[i].count != 0 || mc[i] != segments[i].modCount) {
+      if (segments[i].count != 0) {
         return false;
       }
+      sum-=segments[i].modCount;
+    }
+    if (sum != 0L) {
+      return false;
     }
   }
   return true;
