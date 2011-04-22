@@ -1,87 +1,91 @@
 {
-  outer:   while (true) {
-    ReferenceEntry<K,V> e=getEntry(key,hash);
-    if (e != null) {
-      V value=getLiveValue(e);
-      if (value != null) {
-        recordRead(e);
-        return value;
-      }
-    }
-    if (e == null || !e.getValueReference().isComputingReference()) {
-      ComputingValueReference<K,V> computingValueReference=null;
-      lock();
-      try {
-        preWriteCleanup();
-        AtomicReferenceArray<ReferenceEntry<K,V>> table=this.table;
-        int index=hash & (table.length() - 1);
-        ReferenceEntry<K,V> first=table.get(index);
-        for (e=first; e != null; e=e.getNext()) {
-          K entryKey=e.getKey();
-          if (e.getHash() == hash && entryKey != null && map.keyEquivalence.equivalent(key,entryKey)) {
-            if (!e.getValueReference().isComputingReference()) {
-              V value=getLiveValue(e);
-              if (value != null) {
-                recordLockedRead(e);
-                return value;
-              }
-              unsetLiveEntry(e,hash);
-            }
-            break;
-          }
-        }
-        if (e == null || isUnset(e)) {
-          ComputingConcurrentHashMap<K,V> computingMap=(ComputingConcurrentHashMap<K,V>)map;
-          computingValueReference=new ComputingValueReference<K,V>(computingMap);
-          if (e == null) {
-            e=computingMap.newEntry(key,hash,first);
-            table.set(index,e);
-          }
-          e.setValueReference(computingValueReference);
-        }
-      }
-  finally {
-        unlock();
-        postWriteCleanup();
-      }
-      if (computingValueReference != null) {
-        V value=null;
-        try {
-synchronized (e) {
-            value=computingValueReference.compute(key,hash);
-          }
-          checkNotNull(value,"compute() returned null unexpectedly");
+  try {
+    outer:     while (true) {
+      ReferenceEntry<K,V> e=getEntry(key,hash);
+      if (e != null) {
+        V value=getLiveValue(e);
+        if (value != null) {
+          recordRead(e);
           return value;
         }
-  finally {
-          if (value == null) {
-            clearValue(key,hash,computingValueReference);
+      }
+      if (e == null || !e.getValueReference().isComputingReference()) {
+        ComputingValueReference<K,V> computingValueReference=null;
+        lock();
+        try {
+          preWriteCleanup();
+          AtomicReferenceArray<ReferenceEntry<K,V>> table=this.table;
+          int index=hash & (table.length() - 1);
+          ReferenceEntry<K,V> first=table.get(index);
+          for (e=first; e != null; e=e.getNext()) {
+            K entryKey=e.getKey();
+            if (e.getHash() == hash && entryKey != null && map.keyEquivalence.equivalent(key,entryKey)) {
+              if (!e.getValueReference().isComputingReference()) {
+                V value=getLiveValue(e);
+                if (value != null) {
+                  recordLockedRead(e);
+                  return value;
+                }
+                unsetLiveEntry(e,hash);
+              }
+              break;
+            }
+          }
+          if (e == null || isUnset(e)) {
+            ComputingConcurrentHashMap<K,V> computingMap=(ComputingConcurrentHashMap<K,V>)map;
+            computingValueReference=new ComputingValueReference<K,V>(computingMap);
+            if (e == null) {
+              e=computingMap.newEntry(key,hash,first);
+              table.set(index,e);
+            }
+            e.setValueReference(computingValueReference);
           }
         }
-      }
-    }
-    boolean interrupted=false;
-    try {
-      while (true) {
-        try {
-          checkState(!Thread.holdsLock(e),"Recursive computation");
-          V value=e.getValueReference().waitForValue();
-          if (value != null) {
-            recordRead(e);
-            postReadCleanup();
+  finally {
+          unlock();
+          postWriteCleanup();
+        }
+        if (computingValueReference != null) {
+          V value=null;
+          try {
+synchronized (e) {
+              value=computingValueReference.compute(key,hash);
+            }
+            checkNotNull(value,"compute() returned null unexpectedly");
             return value;
           }
-          continue outer;
-        }
- catch (        InterruptedException ie) {
-          interrupted=true;
-        }
-      }
-    }
   finally {
-      if (interrupted) {
-        Thread.currentThread().interrupt();
+            if (value == null) {
+              clearValue(key,hash,computingValueReference);
+            }
+          }
+        }
+      }
+      boolean interrupted=false;
+      try {
+        while (true) {
+          try {
+            checkState(!Thread.holdsLock(e),"Recursive computation");
+            V value=e.getValueReference().waitForValue();
+            if (value != null) {
+              recordRead(e);
+              return value;
+            }
+            continue outer;
+          }
+ catch (          InterruptedException ie) {
+            interrupted=true;
+          }
+        }
+      }
+  finally {
+        if (interrupted) {
+          Thread.currentThread().interrupt();
+        }
       }
     }
+  }
+  finally {
+    postReadCleanup();
   }
 }
