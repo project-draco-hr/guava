@@ -1,0 +1,19 @@
+{
+  boolean interrupted=false;
+  try {
+    while (true) {
+      try {
+        checkState(!Thread.holdsLock(entry),"Recursive computation");
+        return entry.getValueReference().waitForValue();
+      }
+ catch (      InterruptedException ie) {
+        interrupted=true;
+      }
+    }
+  }
+  finally {
+    if (interrupted) {
+      Thread.currentThread().interrupt();
+    }
+  }
+}

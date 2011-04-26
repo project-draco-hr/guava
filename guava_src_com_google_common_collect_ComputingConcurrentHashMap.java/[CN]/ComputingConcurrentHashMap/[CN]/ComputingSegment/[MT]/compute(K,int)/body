@@ -61,28 +61,12 @@ synchronized (e) {
           }
         }
       }
-      boolean interrupted=false;
-      try {
-        while (true) {
-          try {
-            checkState(!Thread.holdsLock(e),"Recursive computation");
-            V value=e.getValueReference().waitForValue();
-            if (value != null) {
-              recordRead(e);
-              return value;
-            }
-            continue outer;
-          }
- catch (          InterruptedException ie) {
-            interrupted=true;
-          }
-        }
+      V value=waitForValue(e);
+      if (value != null) {
+        recordRead(e);
+        return value;
       }
-  finally {
-        if (interrupted) {
-          Thread.currentThread().interrupt();
-        }
-      }
+      continue outer;
     }
   }
   finally {

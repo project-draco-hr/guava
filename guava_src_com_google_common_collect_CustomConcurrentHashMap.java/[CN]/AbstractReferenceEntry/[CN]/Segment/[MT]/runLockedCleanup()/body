@@ -1,11 +1,12 @@
 {
-  lock();
-  try {
-    expireEntries();
-    processPendingCleanup();
-    readCount.set(0);
-  }
+  if (tryLock()) {
+    try {
+      expireEntries();
+      processPendingCleanup();
+      readCount.set(0);
+    }
   finally {
-    unlock();
+      unlock();
+    }
   }
 }
