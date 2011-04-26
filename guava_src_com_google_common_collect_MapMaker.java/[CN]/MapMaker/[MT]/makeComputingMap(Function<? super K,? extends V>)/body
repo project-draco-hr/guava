@@ -1,4 +1,3 @@
 {
-  Cache<K,V> cache=makeCache(computingFunction);
-  return new ComputingMapAdapter<K,V>(cache);
+  return useNullMap ? new NullComputingConcurrentMap<K,V>(this,computingFunction) : new ComputingMapAdapter<K,V>(this,computingFunction);
 }

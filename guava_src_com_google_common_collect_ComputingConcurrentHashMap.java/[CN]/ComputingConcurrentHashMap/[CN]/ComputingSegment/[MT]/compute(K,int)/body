@@ -51,7 +51,6 @@
 synchronized (e) {
               value=computingValueReference.compute(key,hash);
             }
-            checkNotNull(value,"compute() returned null unexpectedly");
             return value;
           }
   finally {
