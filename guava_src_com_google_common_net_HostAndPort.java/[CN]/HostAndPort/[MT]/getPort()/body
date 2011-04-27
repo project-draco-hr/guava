@@ -1,0 +1,4 @@
+{
+  Preconditions.checkState(hasPort());
+  return port;
+}
