@@ -1,3 +1,2 @@
 {
-  List<Class<?>> allClasses=Arrays.<Class<?>>asList(InternetDomainName.class,TldPatterns.class);
 }

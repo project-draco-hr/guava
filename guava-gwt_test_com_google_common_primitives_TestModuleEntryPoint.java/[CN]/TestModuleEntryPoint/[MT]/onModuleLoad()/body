@@ -1,3 +1,2 @@
 {
-  List<Class<?>> allClasses=Arrays.<Class<?>>asList(Booleans.class,Ints.class,Shorts.class,Chars.class,Longs.class,Floats.class,Doubles.class,Bytes.class,SignedBytes.class);
 }

@@ -1,3 +1,2 @@
 {
-  List<Class<?>> allClasses=Arrays.<Class<?>>asList(CharMatcher.class,Equivalence.class,Equivalences.class,Function.class,Functions.class,Joiner.class,Objects.class,Preconditions.class,Predicate.class,Predicates.class,Strings.class,Splitter.class,Supplier.class);
 }
