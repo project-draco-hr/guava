@@ -1,0 +1,8 @@
+{
+  if (task == null) {
+    throw new NullPointerException();
+  }
+  ListenableFutureTask<T> ftask=newTaskFor(task);
+  execute(ftask);
+  return ftask;
+}
