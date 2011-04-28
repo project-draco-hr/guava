@@ -1,7 +1,7 @@
 {
   V value;
   try {
-    value=computingFunction.apply(key);
+    value=map.computingFunction.apply(key);
   }
  catch (  ComputationException e) {
     setValueReference(new ComputationExceptionReference<K,V>(e.getCause()));
@@ -12,5 +12,8 @@ catch (  Throwable t) {
     throw new ComputationException(t);
   }
   setValueReference(new ComputedReference<K,V>(value));
+  if (value != null) {
+    map.segmentFor(hash).put(key,hash,value,true);
+  }
   return value;
 }

@@ -1,9 +1,0 @@
-{
-  int newCount=this.count - 1;
-  ++modCount;
-  K key=entry.getKey();
-  map.enqueueNotification(key,hash,valueReference);
-  evictionQueue.remove(entry);
-  expirationQueue.remove(entry);
-  this.count=newCount;
-}

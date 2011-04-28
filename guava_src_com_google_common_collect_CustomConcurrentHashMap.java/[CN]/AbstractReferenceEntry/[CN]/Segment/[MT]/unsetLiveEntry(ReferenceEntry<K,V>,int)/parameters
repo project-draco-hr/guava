@@ -1,3 +1,2 @@
 ReferenceEntry<K,V> entry
 int hash
-ValueReference<K,V> valueReference

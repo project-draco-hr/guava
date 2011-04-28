@@ -1,0 +1,19 @@
+{
+  AtomicReferenceArray<ReferenceEntry<K,V>> table=this.table;
+  ReferenceEntry<K,V> entry;
+  int cleanedUp=0;
+  while (cleanedUp < CLEANUP_MAX && (entry=cleanupQueue.poll()) != null) {
+    int index=entry.getHash() & (table.length() - 1);
+    ReferenceEntry<K,V> first=table.get(index);
+    for (ReferenceEntry<K,V> e=first; e != null; e=e.getNext()) {
+      if (e == entry) {
+        if (isUnset(e)) {
+          ReferenceEntry<K,V> newFirst=removeFromChain(first,e);
+          table.set(index,newFirst);
+          cleanedUp++;
+        }
+        break;
+      }
+    }
+  }
+}

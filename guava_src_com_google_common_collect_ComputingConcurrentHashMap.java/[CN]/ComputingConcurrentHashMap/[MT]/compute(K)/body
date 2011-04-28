@@ -1,4 +1,4 @@
 {
   int hash=hash(key);
-  return segmentFor(hash).compute(key,hash,computingFunction);
+  return segmentFor(hash).compute(key,hash);
 }

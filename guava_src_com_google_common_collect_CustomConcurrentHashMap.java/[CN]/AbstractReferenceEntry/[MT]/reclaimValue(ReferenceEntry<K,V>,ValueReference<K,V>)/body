@@ -1,4 +1,8 @@
 {
   int hash=entry.getHash();
-  segmentFor(hash).reclaimValue(entry.getKey(),hash,valueReference);
+  Segment<K,V> segment=segmentFor(hash);
+  segment.unsetValue(entry.getKey(),hash,valueReference);
+  if (!segment.isHeldByCurrentThread()) {
+    segment.postWriteCleanup();
+  }
 }
