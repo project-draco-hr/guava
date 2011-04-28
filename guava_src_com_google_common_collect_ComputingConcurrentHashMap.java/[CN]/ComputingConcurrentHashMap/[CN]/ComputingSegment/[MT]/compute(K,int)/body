@@ -60,7 +60,8 @@ synchronized (e) {
           }
         }
       }
-      V value=waitForValue(e);
+      checkState(!Thread.holdsLock(e),"Recursive computation");
+      V value=e.getValueReference().waitForValue();
       if (value != null) {
         recordRead(e);
         return value;
