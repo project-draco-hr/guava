@@ -1,0 +1,12 @@
+{
+  try {
+    return super.removeAll(c);
+  }
+ catch (  UnsupportedOperationException e) {
+    boolean changed=true;
+    for (    Object o : c) {
+      changed|=remove(o);
+    }
+    return changed;
+  }
+}

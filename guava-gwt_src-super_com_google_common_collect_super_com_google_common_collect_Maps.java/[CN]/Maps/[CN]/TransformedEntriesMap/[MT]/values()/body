@@ -1,0 +1,3 @@
+{
+  return (values == null) ? values=new Values(super.values()) : values;
+}
