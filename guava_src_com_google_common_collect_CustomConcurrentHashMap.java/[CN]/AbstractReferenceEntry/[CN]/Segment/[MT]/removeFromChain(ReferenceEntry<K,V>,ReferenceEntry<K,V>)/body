@@ -4,7 +4,7 @@
   ReferenceEntry<K,V> newFirst=entry.getNext();
   for (ReferenceEntry<K,V> e=first; e != entry; e=e.getNext()) {
     if (isCollected(e)) {
-      unsetLiveEntry(e,e.getHash());
+      clearLiveEntry(e,e.getHash(),e.getValueReference());
     }
  else {
       newFirst=map.copyEntry(e,newFirst);

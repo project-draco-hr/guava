@@ -1,0 +1,12 @@
+{
+  AtomicReferenceArray<ReferenceEntry<K,V>> table=this.table;
+  int index=hash & (table.length() - 1);
+  ReferenceEntry<K,V> first=table.get(index);
+  for (ReferenceEntry<K,V> e=first; e != null; e=e.getNext()) {
+    if (e == entry) {
+      ValueReference<K,V> valueReference=e.getValueReference();
+      return removeLiveEntry(table,index,first,entry,hash,valueReference);
+    }
+  }
+  return false;
+}

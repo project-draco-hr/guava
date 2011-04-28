@@ -1,0 +1,9 @@
+{
+  if (valueReference.isComputingReference()) {
+    return false;
+  }
+  ReferenceEntry<K,V> newFirst=removeFromChain(first,entry);
+  table.set(index,newFirst);
+  clearLiveEntry(entry,hash,valueReference);
+  return true;
+}

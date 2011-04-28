@@ -4,12 +4,16 @@
   lock();
   try {
     preWriteCleanup();
-    for (ReferenceEntry<K,V> e=getFirst(hash); e != null; e=e.getNext()) {
+    AtomicReferenceArray<ReferenceEntry<K,V>> table=this.table;
+    int index=hash & (table.length() - 1);
+    ReferenceEntry<K,V> first=table.get(index);
+    for (ReferenceEntry<K,V> e=first; e != null; e=e.getNext()) {
       K entryKey=e.getKey();
       if (e.getHash() == hash && entryKey != null && map.keyEquivalence.equivalent(key,entryKey)) {
-        V entryValue=e.getValueReference().get();
+        ValueReference<K,V> valueReference=e.getValueReference();
+        V entryValue=valueReference.get();
         if (entryValue == null) {
-          unsetLiveEntry(e,hash);
+          removeLiveEntry(table,index,first,e,hash,valueReference);
           return false;
         }
         if (map.valueEquivalence.equivalent(oldValue,entryValue)) {

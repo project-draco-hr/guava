@@ -1,0 +1,6 @@
+AtomicReferenceArray<ReferenceEntry<K,V>> table
+int index
+ReferenceEntry<K,V> first
+ReferenceEntry<K,V> entry
+int hash
+ValueReference<K,V> valueReference

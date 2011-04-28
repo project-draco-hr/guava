@@ -1,3 +1,0 @@
-{
-  return isUnset(entry.getValueReference());
-}
