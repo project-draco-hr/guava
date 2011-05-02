@@ -17,29 +17,25 @@
           AtomicReferenceArray<ReferenceEntry<K,V>> table=this.table;
           int index=hash & (table.length() - 1);
           ReferenceEntry<K,V> first=table.get(index);
-          boolean createNewEntry=true;
           for (e=first; e != null; e=e.getNext()) {
             K entryKey=e.getKey();
             if (e.getHash() == hash && entryKey != null && map.keyEquivalence.equivalent(key,entryKey)) {
-              ValueReference<K,V> valueReference=e.getValueReference();
-              if (valueReference.isComputingReference()) {
-                createNewEntry=false;
-              }
- else {
+              if (!e.getValueReference().isComputingReference()) {
                 V value=getLiveValue(e);
                 if (value != null) {
                   recordLockedRead(e);
                   return value;
                 }
-                removeLiveEntry(e,hash);
+                unsetLiveEntry(e,hash);
               }
               break;
             }
           }
-          if (createNewEntry) {
-            computingValueReference=new ComputingValueReference<K,V>(computingFunction);
+          if (e == null || isUnset(e)) {
+            ComputingConcurrentHashMap<K,V> computingMap=(ComputingConcurrentHashMap<K,V>)map;
+            computingValueReference=new ComputingValueReference<K,V>(computingMap);
             if (e == null) {
-              e=map.newEntry(key,hash,first);
+              e=computingMap.newEntry(key,hash,first);
               table.set(index,e);
             }
             e.setValueReference(computingValueReference);
@@ -54,9 +50,6 @@
           try {
 synchronized (e) {
               value=computingValueReference.compute(key,hash);
-            }
-            if (value != null) {
-              put(key,hash,value,true);
             }
             return value;
           }

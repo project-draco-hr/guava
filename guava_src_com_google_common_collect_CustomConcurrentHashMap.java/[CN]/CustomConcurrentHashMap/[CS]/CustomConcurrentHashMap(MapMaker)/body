@@ -48,7 +48,4 @@
       this.segments[i]=createSegment(segmentSize,MapMaker.UNSET_INT);
     }
   }
-  if (cleanupExecutor != null) {
-    cleanupExecutor.execute(cleanupTask);
-  }
 }

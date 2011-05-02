@@ -1,3 +1,13 @@
 {
-  runUnlockedCleanup();
+  if (map.isInlineCleanup()) {
+    if (isHeldByCurrentThread()) {
+      runLockedCleanup();
+    }
+ else {
+      runUnlockedCleanup();
+    }
+  }
+ else   if (!isHeldByCurrentThread()) {
+    map.cleanupExecutor.execute(cleanupRunnable);
+  }
 }

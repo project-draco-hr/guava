@@ -1,4 +1,4 @@
 {
   int hash=entry.getHash();
-  segmentFor(hash).reclaimKey(entry,hash);
+  segmentFor(hash).unsetKey(entry,hash);
 }
