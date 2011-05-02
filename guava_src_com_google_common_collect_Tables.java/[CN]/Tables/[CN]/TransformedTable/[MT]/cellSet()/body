@@ -1,0 +1,3 @@
+{
+  return (cellSet == null) ? cellSet=new CellSet() : cellSet;
+}
