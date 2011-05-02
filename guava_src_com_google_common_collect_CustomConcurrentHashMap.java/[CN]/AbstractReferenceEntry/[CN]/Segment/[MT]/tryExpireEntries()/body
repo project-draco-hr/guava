@@ -5,6 +5,7 @@
     }
   finally {
       unlock();
+      postWriteCleanup();
     }
   }
 }

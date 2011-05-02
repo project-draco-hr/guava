@@ -20,5 +20,8 @@
   }
   finally {
     unlock();
+    if (!isHeldByCurrentThread()) {
+      postWriteCleanup();
+    }
   }
 }

@@ -11,7 +11,7 @@
       if (e.getHash() == hash && entryKey != null && map.keyEquivalence.equivalent(key,entryKey)) {
         V entryValue=e.getValueReference().get();
         if (entryValue == null) {
-          unsetLiveEntry(e,hash);
+          removeLiveEntry(e,hash);
         }
  else {
           ++modCount;

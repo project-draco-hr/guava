@@ -1,7 +1,7 @@
 {
   for (ReferenceEntry<K,V> e=getFirst(hash); e != null; e=e.getNext()) {
     if (e == entry) {
-      return unsetLiveEntry(entry,hash);
+      return removeLiveEntry(entry,hash);
     }
   }
   return false;
