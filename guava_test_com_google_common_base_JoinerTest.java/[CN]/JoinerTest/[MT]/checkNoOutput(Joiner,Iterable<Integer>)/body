@@ -1,5 +1,5 @@
 {
-  Object[] array=Iterables.toArray(set,Integer.class);
+  Object[] array=Lists.newArrayList(set).toArray(new Integer[0]);
   assertEquals("",joiner.join(set));
   assertEquals("",joiner.join(array));
   StringBuilder sb1=new StringBuilder();

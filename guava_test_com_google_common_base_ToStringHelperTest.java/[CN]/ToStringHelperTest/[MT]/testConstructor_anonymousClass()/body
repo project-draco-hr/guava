@@ -2,5 +2,5 @@
   String toTest=Objects.toStringHelper(new Object(){
   }
 ).toString();
-  assertTrue(toTest.matches("[0-9]+\\{\\}"));
+  assertTrue(toTest,toTest.matches("[0-9]+\\{\\}"));
 }
