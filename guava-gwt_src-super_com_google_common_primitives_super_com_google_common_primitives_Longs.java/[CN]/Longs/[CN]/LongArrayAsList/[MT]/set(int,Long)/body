@@ -1,6 +1,6 @@
 {
   checkElementIndex(index,size());
   long oldValue=array[start + index];
-  array[start + index]=element;
+  array[start + index]=checkNotNull(element);
   return oldValue;
 }
