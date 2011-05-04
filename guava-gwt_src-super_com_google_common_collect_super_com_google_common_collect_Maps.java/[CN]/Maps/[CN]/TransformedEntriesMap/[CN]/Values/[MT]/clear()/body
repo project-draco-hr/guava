@@ -1,0 +1,8 @@
+{
+  try {
+    super.clear();
+  }
+ catch (  UnsupportedOperationException e) {
+    fromMap.clear();
+  }
+}
