@@ -3,6 +3,8 @@
   checkArgument(size >= 0,"maximum size must not be negative");
   this.maximumSize=size;
   this.useCustomMap=true;
-  this.useNullMap|=(maximumSize == 0);
+  if (maximumSize == 0) {
+    this.nullRemovalCause=RemovalCause.SIZE;
+  }
   return this;
 }

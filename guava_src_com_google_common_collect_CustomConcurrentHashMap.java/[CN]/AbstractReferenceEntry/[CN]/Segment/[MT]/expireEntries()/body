@@ -6,7 +6,7 @@
   long now=map.ticker.read();
   ReferenceEntry<K,V> e;
   while ((e=expirationQueue.peek()) != null && map.isExpired(e,now)) {
-    if (!removeEntry(e,e.getHash())) {
+    if (!removeEntry(e,e.getHash(),RemovalCause.EXPIRED)) {
       throw new AssertionError();
     }
   }

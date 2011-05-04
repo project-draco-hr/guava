@@ -31,7 +31,7 @@
                   recordLockedRead(e);
                   return value;
                 }
-                removeLiveEntry(e,hash);
+                removeLiveEntry(e,hash,RemovalCause.COLLECTED);
               }
               break;
             }

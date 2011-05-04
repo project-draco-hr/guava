@@ -1,7 +1,7 @@
 {
   int size=in.readInt();
   MapMaker mapMaker=new MapMaker().initialCapacity(size).setKeyStrength(keyStrength).setValueStrength(valueStrength).privateKeyEquivalence(keyEquivalence).privateValueEquivalence(valueEquivalence).concurrencyLevel(concurrencyLevel);
-  mapMaker.evictionListener(evictionListener);
+  mapMaker.removalListener(removalListener);
   if (expireAfterWriteNanos > 0) {
     mapMaker.expireAfterWrite(expireAfterWriteNanos,TimeUnit.NANOSECONDS);
   }

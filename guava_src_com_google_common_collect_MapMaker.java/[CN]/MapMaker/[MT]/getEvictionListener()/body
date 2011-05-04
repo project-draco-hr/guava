@@ -1,3 +1,0 @@
-{
-  return evictionListener == null ? (MapEvictionListener<K,V>)NullListener.INSTANCE : (MapEvictionListener<K,V>)evictionListener;
-}

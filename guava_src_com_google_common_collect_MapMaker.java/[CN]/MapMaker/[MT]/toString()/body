@@ -27,8 +27,8 @@
   if (valueEquivalence != null) {
     s.addValue("valueEquivalence");
   }
-  if (evictionListener != null) {
-    s.addValue("evictionListener");
+  if (removalListener != null) {
+    s.addValue("removalListener");
   }
   if (cleanupExecutor != null) {
     s.addValue("cleanupExecutor");

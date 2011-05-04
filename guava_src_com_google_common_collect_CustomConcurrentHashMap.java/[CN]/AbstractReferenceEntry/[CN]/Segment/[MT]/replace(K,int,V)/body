@@ -8,7 +8,7 @@
       if (e.getHash() == hash && entryKey != null && map.keyEquivalence.equivalent(key,entryKey)) {
         V entryValue=e.getValueReference().get();
         if (entryValue == null) {
-          removeLiveEntry(e,hash);
+          removeLiveEntry(e,hash,RemovalCause.COLLECTED);
           return null;
         }
         ++modCount;

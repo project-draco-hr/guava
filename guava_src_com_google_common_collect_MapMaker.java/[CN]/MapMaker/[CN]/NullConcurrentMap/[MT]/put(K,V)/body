@@ -1,6 +1,0 @@
-{
-  checkNotNull(key);
-  checkNotNull(value);
-  evictionListener.onEviction(key,value);
-  return null;
-}

@@ -10,8 +10,8 @@
   entryFactory=EntryFactory.getFactory(keyStrength,expires(),evictsBySize());
   cleanupExecutor=builder.getCleanupExecutor();
   ticker=builder.getTicker();
-  evictionListener=builder.getEvictionListener();
-  evictionNotificationQueue=(evictionListener == NullListener.INSTANCE) ? CustomConcurrentHashMap.<ReferenceEntry<K,V>>discardingQueue() : new ConcurrentLinkedQueue<ReferenceEntry<K,V>>();
+  removalListener=builder.getRemovalListener();
+  removalNotificationQueue=(removalListener == NullListener.INSTANCE) ? CustomConcurrentHashMap.<RemovalNotification<K,V>>discardingQueue() : new ConcurrentLinkedQueue<RemovalNotification<K,V>>();
   int initialCapacity=Math.min(builder.getInitialCapacity(),MAXIMUM_CAPACITY);
   if (evictsBySize()) {
     initialCapacity=Math.min(initialCapacity,maximumSize);

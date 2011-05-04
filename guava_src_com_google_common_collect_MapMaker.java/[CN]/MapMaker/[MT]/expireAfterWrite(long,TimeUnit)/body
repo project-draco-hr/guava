@@ -1,7 +1,9 @@
 {
   checkExpiration(duration,unit);
   this.expireAfterWriteNanos=unit.toNanos(duration);
-  useNullMap|=(duration == 0);
+  if (duration == 0 && this.nullRemovalCause == null) {
+    this.nullRemovalCause=RemovalCause.EXPIRED;
+  }
   useCustomMap=true;
   return this;
 }

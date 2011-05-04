@@ -28,7 +28,7 @@
         newTable.set(tailIndex,tail);
         for (ReferenceEntry<K,V> e=head; e != tail; e=e.getNext()) {
           if (isCollected(e)) {
-            removeLiveEntry(e,e.getHash());
+            removeLiveEntry(e,e.getHash(),RemovalCause.COLLECTED);
           }
  else {
             int newIndex=e.getHash() & newMask;

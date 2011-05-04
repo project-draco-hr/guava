@@ -8,7 +8,7 @@
         ValueReference<K,V> v=e.getValueReference();
         if (v == valueReference) {
           ++modCount;
-          map.enqueueNotification(key,hash,valueReference);
+          map.enqueueNotification(key,hash,valueReference,RemovalCause.COLLECTED);
           enqueueCleanup(e);
           this.count=newCount;
           return true;
