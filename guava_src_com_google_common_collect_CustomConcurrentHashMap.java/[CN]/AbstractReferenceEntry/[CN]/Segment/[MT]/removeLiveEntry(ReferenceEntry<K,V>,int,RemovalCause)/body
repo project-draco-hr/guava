@@ -9,7 +9,7 @@
     return false;
   }
   K key=entry.getKey();
-  map.enqueueNotification(key,hash,valueReference,cause);
+  enqueueNotification(key,hash,valueReference,cause);
   enqueueCleanup(entry);
   this.count=newCount;
   return true;

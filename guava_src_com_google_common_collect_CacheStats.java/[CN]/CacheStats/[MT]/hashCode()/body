@@ -1,0 +1,3 @@
+{
+  return Objects.hashCode(hitCount,missCount,createCount,totalCreateTime,evictionCount);
+}

@@ -1,0 +1,3 @@
+{
+  counts.incrementAndGet(EVICTION_INDEX);
+}

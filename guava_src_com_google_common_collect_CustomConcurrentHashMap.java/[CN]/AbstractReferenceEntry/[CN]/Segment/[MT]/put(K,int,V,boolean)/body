@@ -31,7 +31,7 @@
         }
  else {
           ++modCount;
-          map.enqueueNotification(key,hash,valueReference,RemovalCause.REPLACED);
+          enqueueNotification(key,hash,valueReference,RemovalCause.REPLACED);
           setValue(e,value);
           return entryValue;
         }

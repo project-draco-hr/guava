@@ -1,0 +1,3 @@
+{
+  return (createCount == 0) ? 0.0 : (double)totalCreateTime / createCount;
+}

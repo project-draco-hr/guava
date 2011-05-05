@@ -8,7 +8,7 @@
     for (ReferenceEntry<K,V> e=first; e != null; e=e.getNext()) {
       if (e == entry) {
         ++modCount;
-        map.enqueueNotification(e.getKey(),hash,e.getValueReference(),RemovalCause.COLLECTED);
+        enqueueNotification(e.getKey(),hash,e.getValueReference(),RemovalCause.COLLECTED);
         enqueueCleanup(e);
         count=newCount;
         return true;

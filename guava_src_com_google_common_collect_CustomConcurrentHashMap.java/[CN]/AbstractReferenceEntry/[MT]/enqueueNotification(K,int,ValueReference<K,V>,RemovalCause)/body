@@ -1,7 +1,0 @@
-{
-  if (removalNotificationQueue == DISCARDING_QUEUE) {
-    return;
-  }
-  RemovalNotification<K,V> notification=new RemovalNotification<K,V>(key,valueReference.get(),cause);
-  removalNotificationQueue.offer(notification);
-}

@@ -1,0 +1,3 @@
+{
+  super(mapMaker,statsCounterSupplier,computingFunction);
+}

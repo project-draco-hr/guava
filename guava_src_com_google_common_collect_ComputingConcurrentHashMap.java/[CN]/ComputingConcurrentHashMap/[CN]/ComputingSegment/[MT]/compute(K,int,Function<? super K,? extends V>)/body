@@ -6,6 +6,7 @@
         V value=getLiveValue(e);
         if (value != null) {
           recordRead(e);
+          statsCounter.recordHit();
           return value;
         }
       }
@@ -29,6 +30,7 @@
                 V value=getLiveValue(e);
                 if (value != null) {
                   recordLockedRead(e);
+                  statsCounter.recordHit();
                   return value;
                 }
                 removeLiveEntry(e,hash,RemovalCause.COLLECTED);
@@ -52,12 +54,18 @@
         if (computingValueReference != null) {
           V value=null;
           try {
+            long start;
+            long end;
 synchronized (e) {
+              start=map.ticker.read();
               value=computingValueReference.compute(key,hash);
+              end=map.ticker.read();
             }
             if (value != null) {
               put(key,hash,value,true);
             }
+            statsCounter.recordMiss();
+            statsCounter.recordCreate(end - start);
             return value;
           }
   finally {
@@ -71,6 +79,7 @@ synchronized (e) {
       V value=e.getValueReference().waitForValue();
       if (value != null) {
         recordRead(e);
+        statsCounter.recordMiss();
         return value;
       }
       continue outer;
