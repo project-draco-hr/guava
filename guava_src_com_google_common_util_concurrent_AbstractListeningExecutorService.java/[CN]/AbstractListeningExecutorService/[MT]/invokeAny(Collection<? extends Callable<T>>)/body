@@ -1,2 +1,8 @@
 {
+  try {
+    return doInvokeAny(tasks,false,0);
+  }
+ catch (  TimeoutException cannotHappen) {
+    return null;
+  }
 }
