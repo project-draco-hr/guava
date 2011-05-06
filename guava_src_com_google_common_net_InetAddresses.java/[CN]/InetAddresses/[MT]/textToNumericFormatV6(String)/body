@@ -19,11 +19,7 @@
     String[] parts=addressHalves[0].split(":",IPV6_PART_COUNT);
     try {
       for (int i=0; i < parts.length; i++) {
-        if (parts[i].equals("")) {
-          return null;
-        }
-        int piece=Integer.parseInt(parts[i],16);
-        rawBytes.putShort(2 * i,(short)piece);
+        rawBytes.putShort(2 * i,parseHextet(parts[i]));
       }
       partsHi=parts.length;
     }
@@ -40,12 +36,8 @@
       try {
         for (int i=0; i < parts.length; i++) {
           int partsIndex=parts.length - i - 1;
-          if (parts[partsIndex].equals("")) {
-            return null;
-          }
-          int piece=Integer.parseInt(parts[partsIndex],16);
           int bytesIndex=2 * (IPV6_PART_COUNT - i - 1);
-          rawBytes.putShort(bytesIndex,(short)piece);
+          rawBytes.putShort(bytesIndex,parseHextet(parts[partsIndex]));
         }
         partsLo=parts.length;
       }

@@ -2,21 +2,14 @@
   if (ipString.contains(":")) {
     return null;
   }
-  String[] address=ipString.split("\\.");
+  String[] address=ipString.split("\\.",IPV4_PART_COUNT + 1);
   if (address.length != IPV4_PART_COUNT) {
     return null;
   }
   byte[] bytes=new byte[IPV4_PART_COUNT];
   try {
     for (int i=0; i < bytes.length; i++) {
-      int piece=Integer.parseInt(address[i]);
-      if (piece < 0 || piece > 255) {
-        return null;
-      }
-      if (address[i].startsWith("0") && address[i].length() != 1) {
-        return null;
-      }
-      bytes[i]=(byte)piece;
+      bytes[i]=parseOctet(address[i]);
     }
   }
  catch (  NumberFormatException ex) {
