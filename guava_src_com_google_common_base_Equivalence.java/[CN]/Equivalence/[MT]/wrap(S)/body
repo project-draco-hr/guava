@@ -1,3 +1,0 @@
-{
-  return new EquivalenceWrapper<S>(this,reference);
-}

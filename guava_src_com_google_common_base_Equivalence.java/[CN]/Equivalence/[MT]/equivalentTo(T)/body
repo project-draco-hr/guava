@@ -1,3 +1,0 @@
-{
-  return new EquivalentToPredicate<T>(this,target);
-}

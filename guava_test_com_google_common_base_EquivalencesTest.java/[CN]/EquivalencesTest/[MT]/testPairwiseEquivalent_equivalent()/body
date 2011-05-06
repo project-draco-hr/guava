@@ -1,0 +1,11 @@
+{
+  Equivalence<Iterable<String>> pairwise=Equivalences.pairwise(Equivalences.equals());
+  List<String> empty=ImmutableList.of();
+  List<String> a=ImmutableList.of("a");
+  List<String> b=ImmutableList.of("b");
+  List<String> ab=ImmutableList.of("a","b");
+  assertTrue(pairwise.equivalent(empty,empty));
+  assertTrue(pairwise.equivalent(a,a));
+  assertTrue(pairwise.equivalent(b,b));
+  assertTrue(pairwise.equivalent(ab,ab));
+}

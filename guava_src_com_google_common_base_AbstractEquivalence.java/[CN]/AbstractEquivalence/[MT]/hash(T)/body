@@ -1,6 +1,0 @@
-{
-  if (t == null) {
-    return 0;
-  }
-  return hashNonNull(t);
-}

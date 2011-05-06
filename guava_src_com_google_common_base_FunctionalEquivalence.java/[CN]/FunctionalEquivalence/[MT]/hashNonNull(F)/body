@@ -1,3 +1,0 @@
-{
-  return resultEquivalence.hash(function.apply(a));
-}

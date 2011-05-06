@@ -1,7 +1,0 @@
-{
-  if (obj instanceof FunctionalEquivalence) {
-    FunctionalEquivalence<?,?> that=(FunctionalEquivalence<?,?>)obj;
-    return function.equals(that.function) && resultEquivalence.equals(that.resultEquivalence);
-  }
-  return false;
-}
