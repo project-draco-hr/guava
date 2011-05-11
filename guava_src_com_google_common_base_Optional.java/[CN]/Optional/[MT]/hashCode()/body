@@ -1,3 +1,0 @@
-{
-  return 0x598df91c + (isPresent() ? reference.hashCode() : 0);
-}

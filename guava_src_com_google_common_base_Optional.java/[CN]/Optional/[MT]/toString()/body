@@ -1,3 +1,0 @@
-{
-  return isPresent() ? "Optional.of(" + reference + ")" : "Optional.absent()";
-}
