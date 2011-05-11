@@ -1,3 +1,10 @@
 {
-  return false;
+  if (!sync.cancel()) {
+    return false;
+  }
+  done();
+  if (mayInterruptIfRunning) {
+    interruptTask();
+  }
+  return true;
 }
