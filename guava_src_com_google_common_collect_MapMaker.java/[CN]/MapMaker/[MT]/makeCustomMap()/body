@@ -1,0 +1,3 @@
+{
+  return new CustomConcurrentHashMap<K,V>(this,DEFAULT_STATS_COUNTER);
+}
