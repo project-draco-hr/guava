@@ -1,3 +1,3 @@
 {
-  return firstNonNull(ticker,DEFAULT_TICKER);
+  return firstNonNull(ticker,Ticker.systemTicker());
 }
