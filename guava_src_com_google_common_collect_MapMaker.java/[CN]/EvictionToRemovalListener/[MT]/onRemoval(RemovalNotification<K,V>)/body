@@ -1,0 +1,5 @@
+{
+  if (notification.wasEvicted()) {
+    evictionListener.onEviction(notification.getKey(),notification.getValue());
+  }
+}

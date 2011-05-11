@@ -2,6 +2,6 @@
   K key=(K)k;
   V value=compute(key);
   checkNotNull(value,computingFunction + " returned null for key " + key+ ".");
-  removalListener.onRemoval(key,value,removalCause);
+  notifyRemoval(key,value);
   return value;
 }

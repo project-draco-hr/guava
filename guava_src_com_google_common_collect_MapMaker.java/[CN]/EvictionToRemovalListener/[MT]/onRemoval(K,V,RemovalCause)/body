@@ -1,5 +1,0 @@
-{
-  if (cause.wasEvicted()) {
-    evictionListener.onEviction(key,value);
-  }
-}

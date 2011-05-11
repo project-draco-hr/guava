@@ -1,6 +1,6 @@
 {
   checkNotNull(key);
   checkNotNull(value);
-  removalListener.onRemoval(key,value,removalCause);
+  notifyRemoval(key,value);
   return null;
 }

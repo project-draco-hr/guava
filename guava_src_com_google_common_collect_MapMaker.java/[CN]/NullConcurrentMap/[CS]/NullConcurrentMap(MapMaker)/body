@@ -1,4 +1,4 @@
 {
-  removalListener=(RemovalListener<K,V>)mapMaker.getRemovalListener();
+  removalListener=mapMaker.getRemovalListener();
   removalCause=mapMaker.nullRemovalCause;
 }
