@@ -1,0 +1,7 @@
+{
+  Supplier<Integer> supplier=new CountingSupplier();
+  Function<Object,Integer> function=Functions.forSupplier(supplier);
+  assertEquals(1,(int)function.apply(null));
+  assertEquals(2,(int)function.apply("foo"));
+  new EqualsTester(function).addEqualObject(Functions.forSupplier(supplier)).addNotEqualObject(Functions.forSupplier(new CountingSupplier())).addNotEqualObject(Functions.forSupplier(Suppliers.ofInstance(12))).addNotEqualObject(Functions.toStringFunction()).testEquals();
+}
