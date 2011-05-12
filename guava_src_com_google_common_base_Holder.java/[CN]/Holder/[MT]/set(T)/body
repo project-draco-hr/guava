@@ -1,0 +1,3 @@
+{
+  setNullable(checkNotNull(instance));
+}
