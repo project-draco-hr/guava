@@ -1,7 +1,22 @@
 {
-  V value=compute((K)key);
+  V value;
+  try {
+    value=compute((K)key);
+  }
+ catch (  AsynchronousExecutionException e) {
+    Throwable cause=e.getCause();
+    if (cause instanceof ComputationException) {
+      throw new AsynchronousComputationException(cause.getCause());
+    }
+    throw new AsynchronousComputationException(cause);
+  }
+catch (  ExecutionException e) {
+    Throwable cause=e.getCause();
+    Throwables.propagateIfInstanceOf(cause,ComputationException.class);
+    throw new ComputationException(cause);
+  }
   if (value == null) {
-    throw new NullPointerException(computingFunction + " returned null for key " + key+ ".");
+    throw new NullPointerException(loader + " returned null for key " + key+ ".");
   }
   return value;
 }

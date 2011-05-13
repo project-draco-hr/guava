@@ -1,4 +1,0 @@
-{
-  super(mapMaker);
-  this.computingFunction=checkNotNull(computingFunction);
-}

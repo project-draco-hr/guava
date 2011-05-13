@@ -1,7 +1,7 @@
 {
   checkNotNull(key);
   try {
-    return computingFunction.apply(key);
+    return loader.load(key);
   }
  catch (  ComputationException e) {
     throw e;

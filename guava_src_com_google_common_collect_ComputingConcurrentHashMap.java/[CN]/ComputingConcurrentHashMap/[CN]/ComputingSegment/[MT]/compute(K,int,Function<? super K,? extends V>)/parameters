@@ -1,3 +1,0 @@
-K key
-int hash
-Function<? super K,? extends V> computingFunction
