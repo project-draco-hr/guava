@@ -1,3 +1,0 @@
-MapMaker mapMaker
-Supplier<? extends CacheStatsCounter> statsCounterSupplier
-CacheLoader<? super K,? extends V> loader

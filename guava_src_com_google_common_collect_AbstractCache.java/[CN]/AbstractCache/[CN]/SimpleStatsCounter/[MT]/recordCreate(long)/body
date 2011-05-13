@@ -1,0 +1,4 @@
+{
+  createCount.incrementAndGet();
+  totalCreateTime.addAndGet(createTime);
+}

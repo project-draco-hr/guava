@@ -1,3 +1,0 @@
-{
-  return new CacheStats(counts.get(HIT_INDEX),counts.get(MISS_INDEX),counts.get(CREATE_INDEX),counts.get(CREATE_TIME_INDEX),counts.get(EVICTION_INDEX));
-}

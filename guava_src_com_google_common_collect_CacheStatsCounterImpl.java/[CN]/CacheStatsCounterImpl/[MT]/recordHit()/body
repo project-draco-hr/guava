@@ -1,3 +1,0 @@
-{
-  counts.incrementAndGet(HIT_INDEX);
-}

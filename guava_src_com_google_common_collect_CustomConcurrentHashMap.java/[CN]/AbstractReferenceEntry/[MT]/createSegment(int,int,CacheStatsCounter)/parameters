@@ -1,3 +1,0 @@
-int initialCapacity
-int maxSegmentSize
-CacheStatsCounter statsCounter

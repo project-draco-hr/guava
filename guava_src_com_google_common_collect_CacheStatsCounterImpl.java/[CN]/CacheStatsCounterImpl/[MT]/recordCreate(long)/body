@@ -1,4 +1,0 @@
-{
-  counts.incrementAndGet(CREATE_INDEX);
-  counts.addAndGet(CREATE_TIME_INDEX,createTime);
-}
