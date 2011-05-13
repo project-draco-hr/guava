@@ -31,7 +31,7 @@
         }
  else {
           ++modCount;
-          enqueueNotification(key,hash,valueReference,RemovalCause.REPLACED);
+          enqueueNotification(key,hash,entryValue,RemovalCause.REPLACED);
           setValue(e,value);
           return entryValue;
         }

@@ -1,2 +1,0 @@
-MapEvictionListener<K,V> listener
-Executor executor

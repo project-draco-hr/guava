@@ -21,7 +21,7 @@
           table.set(index,newFirst);
           this.count=newCount;
           ValueReference<K,V> valueReference=e.getValueReference();
-          enqueueNotification(entryKey,hash,valueReference,RemovalCause.EXPLICIT);
+          enqueueNotification(entryKey,hash,entryValue,RemovalCause.EXPLICIT);
           return true;
         }
         return false;

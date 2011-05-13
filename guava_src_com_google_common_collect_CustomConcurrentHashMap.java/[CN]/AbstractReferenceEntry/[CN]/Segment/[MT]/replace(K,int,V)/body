@@ -12,6 +12,7 @@
           return null;
         }
         ++modCount;
+        enqueueNotification(key,hash,entryValue,RemovalCause.REPLACED);
         setValue(e,newValue);
         return entryValue;
       }
