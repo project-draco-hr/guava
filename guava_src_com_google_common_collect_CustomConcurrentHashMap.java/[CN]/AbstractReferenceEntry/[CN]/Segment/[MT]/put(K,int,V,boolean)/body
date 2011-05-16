@@ -28,7 +28,7 @@
             newCount=this.count;
           }
           this.count=newCount;
-          return entryValue;
+          return null;
         }
  else         if (onlyIfAbsent) {
           recordLockedRead(e);
