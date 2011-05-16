@@ -1,6 +1,6 @@
 {
   int hextet=Integer.parseInt(ipPart,16);
-  if (ipPart.startsWith("-") || hextet > 0xffff) {
+  if (Character.digit(ipPart.charAt(0),16) == -1 || hextet > 0xffff) {
     throw new NumberFormatException();
   }
   return (short)hextet;
