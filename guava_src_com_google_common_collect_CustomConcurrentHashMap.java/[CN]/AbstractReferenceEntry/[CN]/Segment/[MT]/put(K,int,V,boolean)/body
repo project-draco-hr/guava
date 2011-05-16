@@ -6,7 +6,6 @@
     int newCount=this.count + 1;
     if (newCount > this.threshold) {
       expand();
-      newCount=this.count + 1;
     }
     AtomicReferenceArray<ReferenceEntry<K,V>> table=this.table;
     int index=hash & (table.length() - 1);
@@ -18,10 +17,16 @@
         V entryValue=valueReference.get();
         if (entryValue == null) {
           ++modCount;
-          valueReference.notifyValueReclaimed();
-          evictEntries();
-          newCount=this.count + 1;
           setValue(e,value);
+          if (valueReference.isComputingReference()) {
+            if (evictEntries()) {
+              newCount=this.count + 1;
+            }
+          }
+ else {
+            enqueueNotification(key,hash,entryValue,RemovalCause.COLLECTED);
+            newCount=this.count;
+          }
           this.count=newCount;
           return entryValue;
         }
@@ -37,14 +42,13 @@
         }
       }
     }
-    if (evictEntries()) {
-      newCount=this.count + 1;
-      first=table.get(index);
-    }
     ++modCount;
     ReferenceEntry<K,V> newEntry=map.newEntry(key,hash,first);
     setValue(newEntry,value);
     table.set(index,newEntry);
+    if (evictEntries()) {
+      newCount=this.count + 1;
+    }
     this.count=newCount;
     return null;
   }

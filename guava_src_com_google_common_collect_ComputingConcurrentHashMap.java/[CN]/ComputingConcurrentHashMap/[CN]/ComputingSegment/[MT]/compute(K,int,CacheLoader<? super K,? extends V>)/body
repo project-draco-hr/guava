@@ -15,6 +15,7 @@
         lock();
         try {
           preWriteCleanup();
+          int newCount=this.count - 1;
           AtomicReferenceArray<ReferenceEntry<K,V>> table=this.table;
           int index=hash & (table.length() - 1);
           ReferenceEntry<K,V> first=table.get(index);
@@ -33,7 +34,10 @@
                   statsCounter.recordHit();
                   return value;
                 }
-                removeLiveEntry(e,hash,RemovalCause.COLLECTED);
+                enqueueNotification(entryKey,hash,value,RemovalCause.COLLECTED);
+                evictionQueue.remove(e);
+                expirationQueue.remove(e);
+                this.count=newCount;
               }
               break;
             }

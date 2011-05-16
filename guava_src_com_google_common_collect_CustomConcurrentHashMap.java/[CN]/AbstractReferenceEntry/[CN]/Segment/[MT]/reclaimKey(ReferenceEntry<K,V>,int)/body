@@ -9,8 +9,9 @@
       if (e == entry) {
         ++modCount;
         enqueueNotification(e.getKey(),hash,e.getValueReference().get(),RemovalCause.COLLECTED);
-        enqueueCleanup(e);
-        count=newCount;
+        ReferenceEntry<K,V> newFirst=removeFromChain(first,e);
+        table.set(index,newFirst);
+        this.count=newCount;
         return true;
       }
     }

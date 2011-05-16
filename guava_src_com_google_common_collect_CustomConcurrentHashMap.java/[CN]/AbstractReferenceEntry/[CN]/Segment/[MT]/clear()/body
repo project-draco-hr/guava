@@ -6,7 +6,7 @@
       if (map.removalNotificationQueue != DISCARDING_QUEUE) {
         for (int i=0; i < table.length(); ++i) {
           for (ReferenceEntry<K,V> e=table.get(i); e != null; e=e.getNext()) {
-            enqueueNotification(e.getKey(),e.getHash(),e.getValueReference().get(),RemovalCause.EXPLICIT);
+            enqueueNotification(e,RemovalCause.EXPLICIT);
           }
         }
       }
