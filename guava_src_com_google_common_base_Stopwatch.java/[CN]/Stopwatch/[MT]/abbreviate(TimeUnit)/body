@@ -1,0 +1,14 @@
+{
+switch (unit) {
+case NANOSECONDS:
+    return "ns";
+case MICROSECONDS:
+  return "\u03bcs";
+case MILLISECONDS:
+return "ms";
+case SECONDS:
+return "s";
+default :
+throw new AssertionError();
+}
+}
