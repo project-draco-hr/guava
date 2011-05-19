@@ -1,5 +1,0 @@
-{
-  checkNotNull(firstElement);
-  checkNotNull(remainingElementsInOrder);
-  return withExplicitOrder(Lists.asList(firstElement,remainingElementsInOrder));
-}

@@ -1,0 +1,12 @@
+{
+  if (func.getParameterTypes()[paramIndex].isPrimitive()) {
+    return true;
+  }
+  Annotation[] annotations=func.getParameterAnnotations()[paramIndex];
+  for (  Annotation annotation : annotations) {
+    if (annotation instanceof Nullable) {
+      return true;
+    }
+  }
+  return false;
+}

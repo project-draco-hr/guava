@@ -1,0 +1,4 @@
+{
+  nanos.addAndGet(nanoseconds);
+  return this;
+}

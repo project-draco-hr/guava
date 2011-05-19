@@ -1,0 +1,4 @@
+{
+  defaults.put(type,value);
+  return this;
+}

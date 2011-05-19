@@ -1,0 +1,4 @@
+Object instance
+Functor func
+int paramIndex
+Class<?> testedClass

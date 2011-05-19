@@ -1,3 +1,0 @@
-{
-  return new ImmutableSortedAsList<E>(this,new RegularImmutableList<E>(elements,fromIndex,size()));
-}

@@ -1,0 +1,15 @@
+{
+  ctor.setAccessible(true);
+  testFunctorParameter(null,new Functor(){
+    @Override public Class<?>[] getParameterTypes(){
+      return ctor.getParameterTypes();
+    }
+    @Override public Annotation[][] getParameterAnnotations(){
+      return ctor.getParameterAnnotations();
+    }
+    @Override public void invoke(    Object instance,    Object[] params) throws InvocationTargetException, IllegalAccessException, InstantiationException {
+      ctor.newInstance(params);
+    }
+  }
+,paramIndex,ctor.getDeclaringClass());
+}

@@ -1,8 +1,0 @@
-{
-  ExplicitOrdering<E> ordering=new ExplicitOrdering<E>(list);
-  if (ordering.rankMap.isEmpty()) {
-    return emptySet(ordering);
-  }
-  Object[] elements=ordering.rankMap.keySet().toArray();
-  return new ExplicitOrderedImmutableSortedSet<E>(elements,ordering);
-}

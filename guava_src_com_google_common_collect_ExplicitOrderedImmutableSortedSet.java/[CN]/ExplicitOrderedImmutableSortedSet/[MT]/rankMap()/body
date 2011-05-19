@@ -1,4 +1,0 @@
-{
-  ExplicitOrdering<E> eo=(ExplicitOrdering<E>)comparator();
-  return eo.rankMap;
-}

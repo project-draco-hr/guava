@@ -1,0 +1,5 @@
+{
+  if (!condition) {
+    fail("Condition expected to be true but was false.");
+  }
+}
