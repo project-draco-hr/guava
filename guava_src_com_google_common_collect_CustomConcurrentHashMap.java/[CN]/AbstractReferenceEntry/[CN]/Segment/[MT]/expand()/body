@@ -4,6 +4,7 @@
   if (oldCapacity >= MAXIMUM_CAPACITY) {
     return;
   }
+  int newCount=count;
   AtomicReferenceArray<ReferenceEntry<K,V>> newTable=newEntryArray(oldCapacity << 1);
   threshold=newTable.length() * 3 / 4;
   int newMask=newTable.length() - 1;
@@ -27,13 +28,20 @@
         }
         newTable.set(tailIndex,tail);
         for (ReferenceEntry<K,V> e=head; e != tail; e=e.getNext()) {
-          int newIndex=e.getHash() & newMask;
-          ReferenceEntry<K,V> newNext=newTable.get(newIndex);
-          ReferenceEntry<K,V> newFirst=map.copyEntry(e,newNext);
-          newTable.set(newIndex,newFirst);
+          if (isCollected(e)) {
+            removeCollectedEntry(e);
+            newCount--;
+          }
+ else {
+            int newIndex=e.getHash() & newMask;
+            ReferenceEntry<K,V> newNext=newTable.get(newIndex);
+            ReferenceEntry<K,V> newFirst=map.copyEntry(e,newNext);
+            newTable.set(newIndex,newFirst);
+          }
         }
       }
     }
   }
   table=newTable;
+  this.count=newCount;
 }

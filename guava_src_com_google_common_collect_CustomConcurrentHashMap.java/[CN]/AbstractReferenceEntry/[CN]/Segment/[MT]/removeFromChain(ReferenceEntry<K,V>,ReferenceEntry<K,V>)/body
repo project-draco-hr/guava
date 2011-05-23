@@ -1,9 +1,17 @@
 {
   evictionQueue.remove(entry);
   expirationQueue.remove(entry);
+  int newCount=count;
   ReferenceEntry<K,V> newFirst=entry.getNext();
   for (ReferenceEntry<K,V> e=first; e != entry; e=e.getNext()) {
-    newFirst=map.copyEntry(e,newFirst);
+    if (isCollected(e)) {
+      removeCollectedEntry(e);
+      newCount--;
+    }
+ else {
+      newFirst=map.copyEntry(e,newFirst);
+    }
   }
+  this.count=newCount;
   return newFirst;
 }
