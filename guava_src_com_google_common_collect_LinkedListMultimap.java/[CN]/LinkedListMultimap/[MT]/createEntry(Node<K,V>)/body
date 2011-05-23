@@ -1,0 +1,16 @@
+{
+  return new AbstractMapEntry<K,V>(){
+    @Override public K getKey(){
+      return node.key;
+    }
+    @Override public V getValue(){
+      return node.value;
+    }
+    @Override public V setValue(    V value){
+      V oldValue=node.value;
+      node.value=value;
+      return oldValue;
+    }
+  }
+;
+}

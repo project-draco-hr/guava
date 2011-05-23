@@ -1,0 +1,7 @@
+{
+  checkElement(previous);
+  next=current=previous;
+  previous=previous.previous;
+  nextIndex--;
+  return current;
+}

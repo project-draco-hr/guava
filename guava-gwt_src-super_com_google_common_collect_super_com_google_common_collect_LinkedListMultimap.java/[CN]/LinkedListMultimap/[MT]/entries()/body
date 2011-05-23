@@ -1,35 +1,39 @@
 {
-  Collection<Entry<K,V>> result=entries;
+  List<Entry<K,V>> result=entries;
   if (result == null) {
-    entries=result=new AbstractCollection<Entry<K,V>>(){
+    entries=result=new AbstractSequentialList<Entry<K,V>>(){
       @Override public int size(){
         return keyCount.size();
       }
-      @Override public Iterator<Entry<K,V>> iterator(){
-        final Iterator<Node<K,V>> nodes=new NodeIterator();
-        return new Iterator<Entry<K,V>>(){
+      @Override public ListIterator<Entry<K,V>> listIterator(      int index){
+        final ListIterator<Node<K,V>> nodes=new NodeIterator(index);
+        return new ListIterator<Entry<K,V>>(){
           @Override public boolean hasNext(){
             return nodes.hasNext();
           }
           @Override public Entry<K,V> next(){
-            final Node<K,V> node=nodes.next();
-            return new AbstractMapEntry<K,V>(){
-              @Override public K getKey(){
-                return node.key;
-              }
-              @Override public V getValue(){
-                return node.value;
-              }
-              @Override public V setValue(              V value){
-                V oldValue=node.value;
-                node.value=value;
-                return oldValue;
-              }
-            }
-;
+            return createEntry(nodes.next());
           }
           @Override public void remove(){
             nodes.remove();
+          }
+          @Override public boolean hasPrevious(){
+            return nodes.hasPrevious();
+          }
+          @Override public Map.Entry<K,V> previous(){
+            return createEntry(nodes.previous());
+          }
+          @Override public int nextIndex(){
+            return nodes.nextIndex();
+          }
+          @Override public int previousIndex(){
+            return nodes.previousIndex();
+          }
+          @Override public void set(          Map.Entry<K,V> e){
+            throw new UnsupportedOperationException();
+          }
+          @Override public void add(          Map.Entry<K,V> e){
+            throw new UnsupportedOperationException();
           }
         }
 ;

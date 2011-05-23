@@ -1,6 +1,7 @@
 {
   checkElement(next);
-  current=next;
+  previous=current=next;
   next=next.next;
+  nextIndex++;
   return current;
 }
