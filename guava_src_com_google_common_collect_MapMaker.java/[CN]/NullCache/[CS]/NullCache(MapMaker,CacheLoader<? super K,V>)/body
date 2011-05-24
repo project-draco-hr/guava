@@ -1,0 +1,4 @@
+{
+  this.map=new NullConcurrentMap<K,V>(mapMaker);
+  this.loader=checkNotNull(loader);
+}

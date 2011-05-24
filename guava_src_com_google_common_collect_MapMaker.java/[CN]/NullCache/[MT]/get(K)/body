@@ -1,0 +1,8 @@
+{
+  try {
+    return getChecked(key);
+  }
+ catch (  ExecutionException e) {
+    throw new ComputationException(e.getCause());
+  }
+}

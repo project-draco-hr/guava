@@ -1,0 +1,5 @@
+{
+  long count=computeCount.get();
+  long time=computeTime.get();
+  return new CacheStats(0,count,count,time,count);
+}

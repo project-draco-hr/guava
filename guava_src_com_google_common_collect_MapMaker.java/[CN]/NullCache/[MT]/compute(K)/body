@@ -1,0 +1,9 @@
+{
+  checkNotNull(key);
+  try {
+    return loader.load(key);
+  }
+ catch (  Throwable t) {
+    throw new ExecutionException(t);
+  }
+}
