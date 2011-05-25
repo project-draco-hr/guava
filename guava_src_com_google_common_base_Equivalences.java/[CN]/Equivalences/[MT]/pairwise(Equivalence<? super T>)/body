@@ -1,3 +1,0 @@
-{
-  return new PairwiseEquivalence<T>(elementEquivalence);
-}

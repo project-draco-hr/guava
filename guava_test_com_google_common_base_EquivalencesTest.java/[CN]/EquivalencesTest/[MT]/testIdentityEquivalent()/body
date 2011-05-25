@@ -1,9 +1,3 @@
 {
-  assertTrue(Equivalences.identity().equivalent(null,null));
-  assertTrue(Equivalences.identity().equivalent(OBJECT,OBJECT));
-  assertTrue(Equivalences.identity().equivalent(12L,12L));
-  assertFalse(Equivalences.identity().equivalent(OBJECT,null));
-  assertFalse(Equivalences.identity().equivalent(null,OBJECT));
-  assertFalse(Equivalences.identity().equivalent(12L,new Long(12L)));
-  assertFalse(Equivalences.identity().equivalent(new Long(12L),12L));
+  EquivalenceTester.of(Equivalences.identity()).addEquivalenceGroup(new Integer(42)).addEquivalenceGroup(new Integer(42)).addEquivalenceGroup("a").test();
 }
