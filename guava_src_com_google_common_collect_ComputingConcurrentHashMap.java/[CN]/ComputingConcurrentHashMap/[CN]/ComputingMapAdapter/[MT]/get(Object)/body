@@ -3,14 +3,7 @@
   try {
     value=compute((K)key);
   }
- catch (  AsynchronousExecutionException e) {
-    Throwable cause=e.getCause();
-    if (cause instanceof ComputationException) {
-      throw new AsynchronousComputationException(cause.getCause());
-    }
-    throw new AsynchronousComputationException(cause);
-  }
-catch (  ExecutionException e) {
+ catch (  ExecutionException e) {
     Throwable cause=e.getCause();
     Throwables.propagateIfInstanceOf(cause,ComputationException.class);
     throw new ComputationException(cause);
