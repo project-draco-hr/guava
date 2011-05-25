@@ -3,7 +3,7 @@
     return true;
   }
   if (values instanceof SortedSet) {
-    @SuppressWarnings("unchecked") SortedSet<? extends C> set=(SortedSet<? extends C>)values;
+    SortedSet<? extends C> set=cast(values);
     Comparator<?> comparator=set.comparator();
     if (Ordering.natural().equals(comparator) || comparator == null) {
       return contains(set.first()) && contains(set.last());

@@ -19,7 +19,7 @@
   Inet6Address ip6=(Inet6Address)ip;
   long addressAsLong=0;
   if (hasEmbeddedIPv4ClientAddress(ip6)) {
-    addressAsLong=(long)getEmbeddedIPv4ClientAddress(ip6).hashCode();
+    addressAsLong=getEmbeddedIPv4ClientAddress(ip6).hashCode();
   }
  else {
     addressAsLong=ByteBuffer.wrap(ip6.getAddress(),0,8).getLong();

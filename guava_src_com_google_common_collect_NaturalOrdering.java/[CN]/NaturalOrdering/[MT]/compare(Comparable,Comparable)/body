@@ -3,6 +3,5 @@
   if (left == right) {
     return 0;
   }
-  @SuppressWarnings("unchecked") int result=left.compareTo(right);
-  return result;
+  return left.compareTo(right);
 }
