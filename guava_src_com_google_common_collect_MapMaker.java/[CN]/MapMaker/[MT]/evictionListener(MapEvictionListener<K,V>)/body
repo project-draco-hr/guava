@@ -1,7 +1,14 @@
 {
   checkState(this.removalListener == null);
   @SuppressWarnings("unchecked") GenericMapMaker<K,V> me=(GenericMapMaker<K,V>)this;
-  me.removalListener=new EvictionToRemovalListener<K,V>(listener);
+  me.removalListener=new RemovalListener<K,V>(){
+    @Override public void onRemoval(    RemovalNotification<K,V> notification){
+      if (notification.wasEvicted()) {
+        listener.onEviction(notification.getKey(),notification.getValue());
+      }
+    }
+  }
+;
   useCustomMap=true;
   return me;
 }
