@@ -49,6 +49,6 @@
     }
   }
   if (cleanupExecutor != null) {
-    cleanupExecutor.execute(cleanupTask);
+    cleanupExecutor.scheduleWithFixedDelay(new CleanupMapTask(this),CLEANUP_EXECUTOR_DELAY_SECS,CLEANUP_EXECUTOR_DELAY_SECS,TimeUnit.SECONDS);
   }
 }
