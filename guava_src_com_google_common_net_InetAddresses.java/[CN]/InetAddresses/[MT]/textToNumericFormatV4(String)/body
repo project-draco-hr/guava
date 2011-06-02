@@ -1,7 +1,4 @@
 {
-  if (ipString.contains(":")) {
-    return null;
-  }
   String[] address=ipString.split("\\.",IPV4_PART_COUNT + 1);
   if (address.length != IPV4_PART_COUNT) {
     return null;

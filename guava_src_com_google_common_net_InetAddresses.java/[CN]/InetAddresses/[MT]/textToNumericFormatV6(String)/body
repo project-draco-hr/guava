@@ -1,59 +1,54 @@
 {
-  if (!ipString.contains(":")) {
+  String[] parts=ipString.split(":",IPV6_PART_COUNT + 2);
+  if (parts.length < 3 || parts.length > IPV6_PART_COUNT + 1) {
     return null;
   }
-  if (ipString.contains(":::")) {
-    return null;
-  }
-  if (ipString.contains(".")) {
-    ipString=convertDottedQuadToHex(ipString);
-    if (ipString == null) {
-      return null;
-    }
-  }
-  ByteBuffer rawBytes=ByteBuffer.allocate(2 * IPV6_PART_COUNT);
-  int partsHi=0;
-  int partsLo=0;
-  String[] addressHalves=ipString.split("::",2);
-  if (!addressHalves[0].equals("")) {
-    String[] parts=addressHalves[0].split(":",IPV6_PART_COUNT);
-    try {
-      for (int i=0; i < parts.length; i++) {
-        rawBytes.putShort(2 * i,parseHextet(parts[i]));
-      }
-      partsHi=parts.length;
-    }
- catch (    NumberFormatException ex) {
-      return null;
-    }
-  }
- else {
-    partsHi=1;
-  }
-  if (addressHalves.length > 1) {
-    if (!addressHalves[1].equals("")) {
-      String[] parts=addressHalves[1].split(":",IPV6_PART_COUNT);
-      try {
-        for (int i=0; i < parts.length; i++) {
-          int partsIndex=parts.length - i - 1;
-          int bytesIndex=2 * (IPV6_PART_COUNT - i - 1);
-          rawBytes.putShort(bytesIndex,parseHextet(parts[partsIndex]));
-        }
-        partsLo=parts.length;
-      }
- catch (      NumberFormatException ex) {
+  int skipIndex=-1;
+  for (int i=1; i < parts.length - 1; i++) {
+    if (parts[i].length() == 0) {
+      if (skipIndex >= 0) {
         return null;
       }
-    }
- else {
-      partsLo=1;
+      skipIndex=i;
     }
   }
-  int totalParts=partsHi + partsLo;
-  if (totalParts > IPV6_PART_COUNT) {
+  int partsHi;
+  if (parts[0].length() == 0) {
+    if (!ipString.startsWith("::")) {
+      return null;
+    }
+    partsHi=0;
+  }
+ else {
+    partsHi=skipIndex >= 0 ? skipIndex : parts.length;
+  }
+  int partsLo;
+  if (parts[parts.length - 1].length() == 0) {
+    if (!ipString.endsWith("::")) {
+      return null;
+    }
+    partsLo=0;
+  }
+ else {
+    partsLo=skipIndex >= 0 ? parts.length - skipIndex - 1 : 0;
+  }
+  int partsSkipped=IPV6_PART_COUNT - (partsHi + partsLo);
+  if (!(skipIndex >= 0 ? partsSkipped >= 1 : partsSkipped == 0)) {
     return null;
   }
-  if (addressHalves.length == 1 && totalParts != IPV6_PART_COUNT) {
+  ByteBuffer rawBytes=ByteBuffer.allocate(2 * IPV6_PART_COUNT);
+  try {
+    for (int i=0; i < partsHi; i++) {
+      rawBytes.putShort(parseHextet(parts[i]));
+    }
+    for (int i=0; i < partsSkipped; i++) {
+      rawBytes.putShort((short)0);
+    }
+    for (int i=partsLo; i > 0; i--) {
+      rawBytes.putShort(parseHextet(parts[parts.length - i]));
+    }
+  }
+ catch (  NumberFormatException ex) {
     return null;
   }
   return rawBytes.array();

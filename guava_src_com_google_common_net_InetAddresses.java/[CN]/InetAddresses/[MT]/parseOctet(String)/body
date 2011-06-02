@@ -1,7 +1,6 @@
 {
   int octet=Integer.parseInt(ipPart);
-  int firstDigit=Character.digit(ipPart.charAt(0),10);
-  if (firstDigit == -1 || octet > 255 || (firstDigit == 0 && ipPart.length() > 1)) {
+  if (octet > 255 || (ipPart.startsWith("0") && ipPart.length() > 1)) {
     throw new NumberFormatException();
   }
   return (byte)octet;

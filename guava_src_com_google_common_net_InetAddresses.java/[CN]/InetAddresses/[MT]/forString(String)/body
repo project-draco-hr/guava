@@ -1,8 +1,5 @@
 {
-  byte[] addr=textToNumericFormatV4(ipString);
-  if (addr == null) {
-    addr=textToNumericFormatV6(ipString);
-  }
+  byte[] addr=ipStringToBytes(ipString);
   if (addr == null) {
     throw new IllegalArgumentException(String.format("'%s' is not an IP string literal.",ipString));
   }
