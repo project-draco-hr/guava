@@ -57,13 +57,13 @@
         }
         if (computingValueReference != null) {
           V value=null;
+          long start=System.nanoTime();
+          long end=0;
           try {
-            long start;
-            long end;
 synchronized (e) {
-              start=System.nanoTime();
               value=computingValueReference.compute(key,hash);
               end=System.nanoTime();
+              statsCounter.recordCreateSuccess(end - start);
             }
             if (value != null) {
               V oldValue=put(key,hash,value,true);
@@ -71,11 +71,13 @@ synchronized (e) {
                 enqueueNotification(key,hash,value,RemovalCause.REPLACED);
               }
             }
-            statsCounter.recordMiss();
-            statsCounter.recordCreate(end - start);
             return value;
           }
   finally {
+            if (end == 0) {
+              end=System.nanoTime();
+              statsCounter.recordCreateException(end - start);
+            }
             if (value == null) {
               clearValue(key,hash,computingValueReference);
             }
@@ -86,7 +88,7 @@ synchronized (e) {
       V value=e.getValueReference().waitForValue();
       if (value != null) {
         recordRead(e);
-        statsCounter.recordMiss();
+        statsCounter.recordConcurrentMiss();
         return value;
       }
       continue outer;

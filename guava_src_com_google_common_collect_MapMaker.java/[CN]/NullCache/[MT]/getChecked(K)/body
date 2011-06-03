@@ -1,9 +1,5 @@
 {
-  long start=System.nanoTime();
   V value=compute(key);
-  long end=System.nanoTime();
-  computeCount.incrementAndGet();
-  computeTime.addAndGet(end - start);
   map.notifyRemoval(key,value);
   return value;
 }

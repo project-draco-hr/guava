@@ -1,5 +1,6 @@
 long hitCount
 long missCount
-long createCount
+long createSuccessCount
+long createExceptionCount
 long totalCreateTime
 long evictionCount

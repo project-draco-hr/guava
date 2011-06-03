@@ -1,9 +1,18 @@
 {
   checkNotNull(key);
+  long start=System.nanoTime();
   try {
-    return loader.load(key);
+    V value=loader.load(key);
+    long end=System.nanoTime();
+    statsCounter.recordCreateSuccess(end - start);
+    return value;
   }
  catch (  Throwable t) {
+    long end=System.nanoTime();
+    statsCounter.recordCreateException(end - start);
     throw new ExecutionException(t);
+  }
+ finally {
+    statsCounter.recordEviction();
   }
 }

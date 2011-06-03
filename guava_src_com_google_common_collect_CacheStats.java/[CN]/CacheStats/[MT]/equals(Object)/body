@@ -1,7 +1,7 @@
 {
   if (object instanceof CacheStats) {
     CacheStats other=(CacheStats)object;
-    return hitCount == other.hitCount && missCount == other.missCount && createCount == other.createCount && totalCreateTime == other.totalCreateTime && evictionCount == other.evictionCount;
+    return hitCount == other.hitCount && missCount == other.missCount && createSuccessCount == other.createSuccessCount && createExceptionCount == other.createExceptionCount && totalCreateTime == other.totalCreateTime && evictionCount == other.evictionCount;
   }
   return false;
 }
