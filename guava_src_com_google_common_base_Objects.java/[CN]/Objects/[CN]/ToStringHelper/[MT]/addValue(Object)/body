@@ -1,4 +1,5 @@
 {
+  cachedString=null;
   builder.append(separator).append(value);
   separator=", ";
   return this;

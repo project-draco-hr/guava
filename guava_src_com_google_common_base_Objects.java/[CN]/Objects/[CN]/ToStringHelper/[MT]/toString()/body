@@ -1,3 +1,6 @@
 {
-  return builder.append('}').toString();
+  if (cachedString == null) {
+    cachedString=builder.toString();
+  }
+  return cachedString + '}';
 }

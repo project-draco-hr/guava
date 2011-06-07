@@ -1,0 +1,9 @@
+{
+  Objects.ToStringHelper helper=Objects.toStringHelper(new TestClass()).add("field1",1).addValue("value1").add("field2","value2");
+  final String expected="TestClass{field1=1, value1, field2=value2}";
+  assertEquals(expected,helper.toString());
+  assertEquals(expected,helper.toString());
+  final String expected2="TestClass{field1=1, value1, field2=value2, 2}";
+  helper.addValue(2);
+  assertEquals(expected2,helper.toString());
+}
