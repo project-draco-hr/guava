@@ -1,4 +1,3 @@
 {
-  checkNotNull(key);
   return null;
 }

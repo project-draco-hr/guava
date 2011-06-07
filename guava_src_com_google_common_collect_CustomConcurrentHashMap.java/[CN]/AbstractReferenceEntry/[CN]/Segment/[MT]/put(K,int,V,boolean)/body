@@ -1,5 +1,4 @@
 {
-  checkNotNull(value);
   lock();
   try {
     preWriteCleanup();
