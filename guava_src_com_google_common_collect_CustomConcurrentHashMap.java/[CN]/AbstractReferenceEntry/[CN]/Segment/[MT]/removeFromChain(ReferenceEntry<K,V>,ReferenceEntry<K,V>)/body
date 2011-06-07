@@ -9,7 +9,7 @@
       newCount--;
     }
  else {
-      newFirst=map.copyEntry(e,newFirst);
+      newFirst=copyEntry(e,newFirst);
     }
   }
   this.count=newCount;

@@ -1,6 +1,0 @@
-{
-  super(key,QueueHolder.queue);
-  this.map=map;
-  this.hash=hash;
-  this.next=next;
-}

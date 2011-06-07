@@ -35,7 +35,7 @@
  else {
             int newIndex=e.getHash() & newMask;
             ReferenceEntry<K,V> newNext=newTable.get(newIndex);
-            ReferenceEntry<K,V> newFirst=map.copyEntry(e,newNext);
+            ReferenceEntry<K,V> newFirst=copyEntry(e,newNext);
             newTable.set(newIndex,newFirst);
           }
         }

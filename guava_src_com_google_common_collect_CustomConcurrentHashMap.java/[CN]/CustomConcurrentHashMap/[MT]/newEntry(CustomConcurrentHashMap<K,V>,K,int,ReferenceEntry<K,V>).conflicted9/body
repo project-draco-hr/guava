@@ -1,3 +1,0 @@
-{
-  return new SoftEntry<K,V>(map,key,hash,next);
-}

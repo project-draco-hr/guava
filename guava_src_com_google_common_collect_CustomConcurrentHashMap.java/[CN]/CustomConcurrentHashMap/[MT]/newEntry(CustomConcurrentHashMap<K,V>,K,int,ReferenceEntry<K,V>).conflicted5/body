@@ -1,3 +1,0 @@
-{
-  return new WeakExpirableEvictableEntry<K,V>(map,key,hash,next);
-}

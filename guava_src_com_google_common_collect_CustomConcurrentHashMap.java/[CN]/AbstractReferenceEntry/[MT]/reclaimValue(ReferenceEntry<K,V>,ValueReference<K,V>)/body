@@ -1,4 +1,0 @@
-{
-  int hash=entry.getHash();
-  segmentFor(hash).reclaimValue(entry.getKey(),hash,valueReference);
-}

@@ -1,3 +1,0 @@
-{
-  return new StrongEntry<K,V>(map,key,hash,next);
-}

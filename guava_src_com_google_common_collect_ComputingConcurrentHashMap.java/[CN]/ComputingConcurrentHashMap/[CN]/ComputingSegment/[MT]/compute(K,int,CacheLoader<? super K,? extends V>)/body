@@ -45,7 +45,7 @@
           if (createNewEntry) {
             computingValueReference=new ComputingValueReference<K,V>(loader);
             if (e == null) {
-              e=map.newEntry(key,hash,first);
+              e=newEntry(key,hash,first);
               table.set(index,e);
             }
             e.setValueReference(computingValueReference);

@@ -1,3 +1,0 @@
-{
-  return new SoftEvictableEntry<K,V>(map,key,hash,next);
-}

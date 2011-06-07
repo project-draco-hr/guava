@@ -1,1 +1,1 @@
-FinalizableSoftReference<V>
+SoftReference<V>

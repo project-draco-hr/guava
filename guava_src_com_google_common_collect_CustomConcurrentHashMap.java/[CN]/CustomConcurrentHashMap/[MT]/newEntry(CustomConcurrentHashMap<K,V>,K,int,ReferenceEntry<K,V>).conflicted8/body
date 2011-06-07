@@ -1,3 +1,0 @@
-{
-  return new SoftExpirableEvictableEntry<K,V>(map,key,hash,next);
-}

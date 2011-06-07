@@ -1,6 +1,0 @@
-{
-  ReferenceEntry<K,V> newEntry=super.copyEntry(map,original,newNext);
-  copyExpirableEntry(original,newEntry);
-  copyEvictableEntry(original,newEntry);
-  return newEntry;
-}

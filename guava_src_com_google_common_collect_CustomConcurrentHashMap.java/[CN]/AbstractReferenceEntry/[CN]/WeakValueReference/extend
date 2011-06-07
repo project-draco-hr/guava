@@ -1,1 +1,1 @@
-FinalizableWeakReference<V>
+WeakReference<V>

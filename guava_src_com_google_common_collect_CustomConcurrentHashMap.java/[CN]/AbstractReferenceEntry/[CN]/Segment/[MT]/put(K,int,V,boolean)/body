@@ -42,7 +42,7 @@
       }
     }
     ++modCount;
-    ReferenceEntry<K,V> newEntry=map.newEntry(key,hash,first);
+    ReferenceEntry<K,V> newEntry=newEntry(key,hash,first);
     setValue(newEntry,value);
     table.set(index,newEntry);
     if (evictEntries()) {

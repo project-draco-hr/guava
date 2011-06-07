@@ -1,0 +1,3 @@
+{
+  return new SoftExpirableEntry<K,V>(segment.keyReferenceQueue,key,hash,next);
+}

@@ -1,4 +1,0 @@
-CustomConcurrentHashMap<K,V> map
-K key
-int hash
-ReferenceEntry<K,V> next
