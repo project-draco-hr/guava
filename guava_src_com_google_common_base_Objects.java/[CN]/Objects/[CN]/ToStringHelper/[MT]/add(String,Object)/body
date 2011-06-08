@@ -1,7 +1,5 @@
 {
   checkNotNull(name);
-  cachedString=null;
-  builder.append(separator).append(name).append('=').append(value);
-  separator=", ";
+  maybeAppendSeparator().append(name).append('=').append(value);
   return this;
 }

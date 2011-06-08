@@ -1,6 +1,8 @@
 {
-  if (cachedString == null) {
-    cachedString=builder.toString();
+  try {
+    return builder.append('}').toString();
   }
-  return cachedString + '}';
+  finally {
+    builder.setLength(builder.length() - 1);
+  }
 }

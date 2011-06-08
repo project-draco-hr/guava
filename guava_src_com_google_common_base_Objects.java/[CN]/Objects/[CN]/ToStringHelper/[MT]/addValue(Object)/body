@@ -1,6 +1,4 @@
 {
-  cachedString=null;
-  builder.append(separator).append(value);
-  separator=", ";
+  maybeAppendSeparator().append(value);
   return this;
 }
