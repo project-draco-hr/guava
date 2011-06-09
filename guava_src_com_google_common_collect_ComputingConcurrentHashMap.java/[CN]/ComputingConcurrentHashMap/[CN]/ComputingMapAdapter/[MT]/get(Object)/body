@@ -1,7 +1,7 @@
 {
   V value;
   try {
-    value=compute((K)key);
+    value=getOrCompute((K)key);
   }
  catch (  ExecutionException e) {
     Throwable cause=e.getCause();

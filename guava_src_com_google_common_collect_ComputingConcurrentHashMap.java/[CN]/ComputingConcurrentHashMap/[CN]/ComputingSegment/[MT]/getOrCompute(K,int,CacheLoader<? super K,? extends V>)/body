@@ -56,32 +56,7 @@
           postWriteCleanup();
         }
         if (computingValueReference != null) {
-          V value=null;
-          long start=System.nanoTime();
-          long end=0;
-          try {
-synchronized (e) {
-              value=computingValueReference.compute(key,hash);
-              end=System.nanoTime();
-              statsCounter.recordCreateSuccess(end - start);
-            }
-            if (value != null) {
-              V oldValue=put(key,hash,value,true);
-              if (oldValue != null) {
-                enqueueNotification(key,hash,value,RemovalCause.REPLACED);
-              }
-            }
-            return value;
-          }
-  finally {
-            if (end == 0) {
-              end=System.nanoTime();
-              statsCounter.recordCreateException(end - start);
-            }
-            if (value == null) {
-              clearValue(key,hash,computingValueReference);
-            }
-          }
+          return compute(key,hash,e,computingValueReference);
         }
       }
       checkState(!Thread.holdsLock(e),"Recursive computation");

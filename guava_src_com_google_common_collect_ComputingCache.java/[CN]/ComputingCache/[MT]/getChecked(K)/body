@@ -1,3 +1,3 @@
 {
-  return map.compute(key);
+  return map.getOrCompute(key);
 }
