@@ -6,6 +6,7 @@
       }
       K entryKey=e.getKey();
       if (entryKey == null) {
+        tryDrainReferenceQueues();
         continue;
       }
       if (map.keyEquivalence.equivalent(key,entryKey)) {

@@ -1,14 +1,17 @@
 {
   try {
-    ReferenceEntry<K,V> e=getEntry(key,hash);
-    if (e != null) {
-      V value=getLiveValue(e);
-      if (value != null) {
-        recordRead(e);
-      }
-      return value;
+    ReferenceEntry<K,V> e=getLiveEntry(key,hash);
+    if (e == null) {
+      return null;
     }
-    return null;
+    V value=e.getValueReference().get();
+    if (value != null) {
+      recordRead(e);
+    }
+ else {
+      tryDrainReferenceQueues();
+    }
+    return value;
   }
   finally {
     postReadCleanup();
