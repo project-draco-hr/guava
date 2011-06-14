@@ -1,7 +1,0 @@
-{
-  E referent=super.get();
-  if (referent == null) {
-    finalizeReferent();
-  }
-  return referent;
-}

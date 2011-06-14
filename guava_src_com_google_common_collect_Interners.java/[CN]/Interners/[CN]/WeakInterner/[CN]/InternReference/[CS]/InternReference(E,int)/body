@@ -1,4 +1,0 @@
-{
-  super(key,frq);
-  hashCode=hash;
-}
