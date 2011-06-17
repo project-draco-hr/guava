@@ -6,9 +6,9 @@
 synchronized (e) {
       value=computingValueReference.compute(key,hash);
       end=System.nanoTime();
-      statsCounter.recordCreateSuccess(end - start);
     }
     if (value != null) {
+      statsCounter.recordCreateSuccess(end - start);
       V oldValue=put(key,hash,value,true);
       if (oldValue != null) {
         enqueueNotification(key,hash,value,RemovalCause.REPLACED);
