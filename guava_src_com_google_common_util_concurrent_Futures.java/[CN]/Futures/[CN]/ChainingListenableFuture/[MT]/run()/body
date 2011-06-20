@@ -5,7 +5,7 @@
       sourceResult=makeUninterruptible(inputFuture).get();
     }
  catch (    CancellationException e) {
-      cancel();
+      cancel(false);
       return;
     }
 catch (    ExecutionException e) {
@@ -29,7 +29,7 @@ catch (    ExecutionException e) {
           set(makeUninterruptible(outputFuture).get());
         }
  catch (        CancellationException e) {
-          cancel();
+          cancel(false);
           return;
         }
 catch (        ExecutionException e) {

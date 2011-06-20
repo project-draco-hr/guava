@@ -10,7 +10,7 @@
   }
  catch (  CancellationException e) {
     if (allMustSucceed) {
-      cancel();
+      cancel(false);
     }
   }
 catch (  ExecutionException e) {
