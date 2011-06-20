@@ -1,0 +1,15 @@
+{
+  checkNotNull(future);
+  try {
+    return makeUninterruptible(future).get();
+  }
+ catch (  CancellationException e) {
+    throw e;
+  }
+catch (  ExecutionException e) {
+    throw newWithCause(UncheckedExecutionException.class,e.getCause());
+  }
+catch (  RuntimeException e) {
+    throw newWithCause(UncheckedExecutionException.class,e);
+  }
+}

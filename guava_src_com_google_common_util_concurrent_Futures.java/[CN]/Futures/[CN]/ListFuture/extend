@@ -1,1 +1,1 @@
-AbstractFuture<List<T>>
+AbstractFuture<List<V>>

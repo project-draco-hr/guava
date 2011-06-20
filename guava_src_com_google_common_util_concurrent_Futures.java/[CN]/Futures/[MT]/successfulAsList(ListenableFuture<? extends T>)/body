@@ -1,3 +1,0 @@
-{
-  return new ListFuture<T>(ImmutableList.copyOf(futures),false,MoreExecutors.sameThreadExecutor());
-}

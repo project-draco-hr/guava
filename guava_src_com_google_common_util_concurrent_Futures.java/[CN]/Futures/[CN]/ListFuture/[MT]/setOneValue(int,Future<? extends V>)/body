@@ -1,5 +1,5 @@
 {
-  List<T> localValues=values;
+  List<V> localValues=values;
   if (isDone() || localValues == null) {
     checkState(allMustSucceed,"Future was done before all dependencies completed");
     return;

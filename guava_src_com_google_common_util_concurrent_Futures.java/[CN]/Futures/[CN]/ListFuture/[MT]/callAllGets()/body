@@ -1,7 +1,7 @@
 {
-  List<? extends ListenableFuture<? extends T>> oldFutures=futures;
+  List<? extends ListenableFuture<? extends V>> oldFutures=futures;
   if (oldFutures != null && !isDone()) {
-    for (    ListenableFuture<? extends T> future : oldFutures) {
+    for (    ListenableFuture<? extends V> future : oldFutures) {
       while (!future.isDone()) {
         try {
           future.get();

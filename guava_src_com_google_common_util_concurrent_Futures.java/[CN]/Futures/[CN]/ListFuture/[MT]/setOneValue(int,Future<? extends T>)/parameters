@@ -1,2 +1,0 @@
-int index
-Future<? extends T> future

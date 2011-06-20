@@ -1,3 +1,0 @@
-ImmutableList<? extends ListenableFuture<? extends T>> futures
-boolean allMustSucceed
-Executor listenerExecutor
