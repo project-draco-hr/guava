@@ -1,0 +1,7 @@
+{
+  Iterator<Entry<E>> iterator=iterator();
+  while (iterator.hasNext()) {
+    iterator.next();
+    iterator.remove();
+  }
+}

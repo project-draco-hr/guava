@@ -1,4 +1,23 @@
 {
   Set<Entry<E>> es=entrySet;
-  return (es == null) ? entrySet=new EntrySet() : es;
+  if (es == null) {
+    es=new EntrySet<E>(){
+      @Override Multiset<E> multiset(){
+        return SetMultiset.this;
+      }
+      @Override public Iterator<Entry<E>> iterator(){
+        return Iterators.transform(delegate.iterator(),new Function<E,Entry<E>>(){
+          @Override public Entry<E> apply(          E elem){
+            return immutableEntry(elem,1);
+          }
+        }
+);
+      }
+      @Override public int size(){
+        return delegate.size();
+      }
+    }
+;
+  }
+  return es;
 }

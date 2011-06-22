@@ -1,0 +1,3 @@
+{
+  return contains(o) && multiset().elementSet().remove(((Entry<?>)o).getElement());
+}

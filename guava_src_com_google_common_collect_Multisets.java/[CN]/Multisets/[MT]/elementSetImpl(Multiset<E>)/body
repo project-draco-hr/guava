@@ -1,3 +1,9 @@
 {
-  return new ElementSetImpl<E>(self);
+  checkNotNull(multiset);
+  return new ElementSet<E>(){
+    @Override Multiset<E> multiset(){
+      return multiset;
+    }
+  }
+;
 }
