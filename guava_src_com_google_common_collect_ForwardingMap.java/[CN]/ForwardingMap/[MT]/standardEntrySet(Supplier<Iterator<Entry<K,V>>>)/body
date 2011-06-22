@@ -1,3 +1,11 @@
 {
-  return Maps.entrySetImpl(this,entryIteratorSupplier);
+  return new Maps.EntrySet<K,V>(){
+    @Override Map<K,V> map(){
+      return ForwardingMap.this;
+    }
+    @Override public Iterator<Map.Entry<K,V>> iterator(){
+      return entryIteratorSupplier.get();
+    }
+  }
+;
 }

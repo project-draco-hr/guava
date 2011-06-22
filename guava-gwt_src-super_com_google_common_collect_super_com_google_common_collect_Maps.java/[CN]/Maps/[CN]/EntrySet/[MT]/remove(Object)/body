@@ -1,0 +1,8 @@
+{
+  if (contains(o)) {
+    Entry<?,?> entry=(Entry<?,?>)o;
+    map().remove(entry.getKey());
+    return true;
+  }
+  return false;
+}

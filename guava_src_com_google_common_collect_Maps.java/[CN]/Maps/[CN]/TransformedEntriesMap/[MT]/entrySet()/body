@@ -1,7 +1,21 @@
 {
-  EntrySet result=entrySet;
+  Set<Entry<K,V2>> result=entrySet;
   if (result == null) {
-    entrySet=result=new EntrySet();
+    entrySet=result=new EntrySet<K,V2>(){
+      @Override Map<K,V2> map(){
+        return TransformedEntriesMap.this;
+      }
+      @Override public Iterator<Entry<K,V2>> iterator(){
+        final Iterator<Entry<K,V1>> backingIterator=fromMap.entrySet().iterator();
+        return Iterators.transform(backingIterator,new Function<Entry<K,V1>,Entry<K,V2>>(){
+          @Override public Entry<K,V2> apply(          Entry<K,V1> entry){
+            return immutableEntry(entry.getKey(),transformer.transformEntry(entry.getKey(),entry.getValue()));
+          }
+        }
+);
+      }
+    }
+;
   }
   return result;
 }

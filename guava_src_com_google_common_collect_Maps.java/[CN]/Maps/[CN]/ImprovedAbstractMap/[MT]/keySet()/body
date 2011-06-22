@@ -1,20 +1,9 @@
 {
   Set<K> result=keySet;
   if (result == null) {
-    final Set<K> delegate=super.keySet();
-    keySet=result=new ForwardingSet<K>(){
-      @Override protected Set<K> delegate(){
-        return delegate;
-      }
-      @Override public boolean isEmpty(){
-        return ImprovedAbstractMap.this.isEmpty();
-      }
-      @Override public boolean remove(      Object object){
-        if (contains(object)) {
-          ImprovedAbstractMap.this.remove(object);
-          return true;
-        }
-        return false;
+    return keySet=new KeySet<K,V>(){
+      @Override Map<K,V> map(){
+        return ImprovedAbstractMap.this;
       }
     }
 ;
