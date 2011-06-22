@@ -11,6 +11,6 @@ synchronized (runnables) {
     }
   }
   if (executeImmediate) {
-    executor.execute(runnable);
+    new RunnableExecutorPair(runnable,executor).execute();
   }
 }
