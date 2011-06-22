@@ -1,4 +1,4 @@
 {
   ImmutableSet<Entry<E>> es=entrySet;
-  return (es == null) ? (entrySet=new EntrySet<E>(this)) : es;
+  return (es == null) ? (entrySet=createEntrySet()) : es;
 }

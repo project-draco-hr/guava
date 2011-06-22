@@ -1,13 +1,3 @@
 {
-  final Iterator<Map.Entry<E,Integer>> mapIterator=multiset.map.entrySet().iterator();
-  return new UnmodifiableIterator<Entry<E>>(){
-    @Override public boolean hasNext(){
-      return mapIterator.hasNext();
-    }
-    @Override public Entry<E> next(){
-      Map.Entry<E,Integer> mapEntry=mapIterator.next();
-      return Multisets.immutableEntry(mapEntry.getKey(),mapEntry.getValue());
-    }
-  }
-;
+  return multiset.entryIterator();
 }

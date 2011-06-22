@@ -1,3 +1,0 @@
-{
-  return Multiset_CustomFieldSerializerBase.instantiate(reader,ImmutableMultiset.builder());
-}

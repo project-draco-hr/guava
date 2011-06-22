@@ -11,5 +11,5 @@
   if (size == 0) {
     return of();
   }
-  return new ImmutableMultiset<E>(builder.build(),Ints.saturatedCast(size));
+  return new RegularImmutableMultiset<E>(builder.build(),Ints.saturatedCast(size));
 }
