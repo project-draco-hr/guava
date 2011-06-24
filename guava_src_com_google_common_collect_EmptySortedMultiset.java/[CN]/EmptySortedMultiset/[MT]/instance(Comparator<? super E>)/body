@@ -1,0 +1,6 @@
+{
+  if (comparator == null || Ordering.natural().equals(comparator)) {
+    return (EmptySortedMultiset)NATURAL_INSTANCE;
+  }
+  return new EmptySortedMultiset(comparator);
+}
