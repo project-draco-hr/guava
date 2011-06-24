@@ -1,0 +1,7 @@
+{
+  Set<Entry<C,V>> result=entrySet;
+  if (result == null) {
+    return entrySet=new RowEntrySet();
+  }
+  return result;
+}

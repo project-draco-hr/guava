@@ -1,0 +1,12 @@
+{
+  Set<C> result=keySet;
+  if (result == null) {
+    return keySet=new Maps.KeySet<C,V>(){
+      @Override Map<C,V> map(){
+        return Row.this;
+      }
+    }
+;
+  }
+  return result;
+}

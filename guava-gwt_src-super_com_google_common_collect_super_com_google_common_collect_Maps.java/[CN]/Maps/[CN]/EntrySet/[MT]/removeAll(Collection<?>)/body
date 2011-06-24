@@ -1,6 +1,6 @@
 {
   try {
-    return super.removeAll(c);
+    return super.removeAll(checkNotNull(c));
   }
  catch (  UnsupportedOperationException e) {
     boolean changed=true;

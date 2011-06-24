@@ -1,3 +1,4 @@
 {
-  return StandardTable.this.get(rowKey,key);
+  Map<C,V> backingRowMap=backingRowMap();
+  return (key == null || backingRowMap == null) ? null : Maps.safeGet(backingRowMap,key);
 }

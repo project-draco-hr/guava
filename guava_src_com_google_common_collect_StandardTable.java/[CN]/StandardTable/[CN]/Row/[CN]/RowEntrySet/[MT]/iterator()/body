@@ -1,5 +1,5 @@
 {
-  final Map<C,V> map=backingMap.get(rowKey);
+  final Map<C,V> map=backingRowMap();
   if (map == null) {
     return Iterators.emptyModifiableIterator();
   }
@@ -17,14 +17,15 @@
         @Override public V setValue(        V value){
           return super.setValue(checkNotNull(value));
         }
+        @Override public boolean equals(        Object object){
+          return standardEquals(object);
+        }
       }
 ;
     }
     @Override public void remove(){
       iterator.remove();
-      if (map.isEmpty()) {
-        backingMap.remove(rowKey);
-      }
+      maintainEmptyInvariant();
     }
   }
 ;

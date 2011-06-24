@@ -1,1 +1,1 @@
-AbstractSet<Entry<C,V>>
+Maps.EntrySet<C,V>

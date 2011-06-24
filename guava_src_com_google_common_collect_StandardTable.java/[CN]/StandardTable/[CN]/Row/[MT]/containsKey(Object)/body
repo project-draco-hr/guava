@@ -1,3 +1,4 @@
 {
-  return contains(rowKey,key);
+  Map<C,V> backingRowMap=backingRowMap();
+  return (key == null || backingRowMap == null) ? false : Maps.safeContainsKey(backingRowMap,key);
 }
