@@ -1,1 +1,1 @@
-AbstractSet<Multiset.Entry<E>>
+AbstractMultiset<E>.EntrySet

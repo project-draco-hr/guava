@@ -1,3 +1,8 @@
 {
-  return Multisets.elementSetImpl(this);
+  return new Multisets.ElementSet<E>(){
+    @Override Multiset<E> multiset(){
+      return ForwardingMultiset.this;
+    }
+  }
+;
 }

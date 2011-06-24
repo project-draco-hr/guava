@@ -1,3 +1,3 @@
 {
-  entrySet().clear();
+  Iterators.clear(entryIterator());
 }

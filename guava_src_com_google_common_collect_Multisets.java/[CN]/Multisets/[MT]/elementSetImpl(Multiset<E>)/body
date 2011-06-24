@@ -1,9 +1,0 @@
-{
-  checkNotNull(multiset);
-  return new ElementSet<E>(){
-    @Override Multiset<E> multiset(){
-      return multiset;
-    }
-  }
-;
-}

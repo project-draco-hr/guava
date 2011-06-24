@@ -1,19 +1,8 @@
 {
-  try {
-    return multiset().setCount((E)o,0) > 0;
+  int count=multiset().count(o);
+  if (count > 0) {
+    multiset().remove(o,count);
+    return true;
   }
- catch (  NullPointerException e) {
-    return false;
-  }
-catch (  ClassCastException e) {
-    return false;
-  }
-catch (  UnsupportedOperationException e) {
-    int count=multiset().count(o);
-    if (count > 0) {
-      multiset().remove(o,count);
-      return true;
-    }
-    return false;
-  }
+  return false;
 }
