@@ -1,3 +1,0 @@
-{
-  return multiset().subMultiset(fromElement,BoundType.CLOSED,toElement,BoundType.OPEN).elementSet();
-}

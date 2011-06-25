@@ -1,4 +1,0 @@
-{
-  checkNotNull(element);
-  throw new IllegalArgumentException();
-}

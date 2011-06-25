@@ -1,4 +1,0 @@
-{
-  SortedMultiset<E> result=descendingMultiset;
-  return (result == null) ? descendingMultiset=createDescendingMultiset() : result;
-}

@@ -1,8 +1,0 @@
-{
-  return new SortedMultisets.ElementSet<E>(){
-    @Override SortedMultiset<E> multiset(){
-      return AbstractSortedMultiset.this;
-    }
-  }
-;
-}

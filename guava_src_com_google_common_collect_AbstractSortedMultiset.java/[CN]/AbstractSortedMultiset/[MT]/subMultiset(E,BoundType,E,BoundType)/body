@@ -1,3 +1,0 @@
-{
-  return tailMultiset(fromElement,fromBoundType).headMultiset(toElement,toBoundType);
-}

@@ -1,4 +1,0 @@
-{
-  Iterator<Entry<E>> entryIterator=descendingEntryIterator();
-  return entryIterator.hasNext() ? entryIterator.next() : null;
-}
