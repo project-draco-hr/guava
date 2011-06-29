@@ -1,0 +1,4 @@
+{
+  int index=index(toElement,inclusive ? Relation.HIGHER : Relation.CEILING);
+  return createSubset(0,index);
+}

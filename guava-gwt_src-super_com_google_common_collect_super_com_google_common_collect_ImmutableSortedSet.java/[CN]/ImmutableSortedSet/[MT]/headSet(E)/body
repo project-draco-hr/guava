@@ -1,4 +1,9 @@
 {
   checkNotNull(toElement);
-  return unsafeDelegateSortedSet(sortedDelegate.headSet(toElement),true);
+  try {
+    return unsafeDelegateSortedSet(sortedDelegate.headSet(toElement),true);
+  }
+ catch (  IllegalArgumentException e) {
+    return emptySet(comparator());
+  }
 }

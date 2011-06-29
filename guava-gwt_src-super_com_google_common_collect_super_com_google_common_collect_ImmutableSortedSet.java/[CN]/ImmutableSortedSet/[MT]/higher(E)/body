@@ -1,0 +1,11 @@
+{
+  checkNotNull(e);
+  Iterator<E> iterator=tailSet(e).iterator();
+  while (iterator.hasNext()) {
+    E higher=iterator.next();
+    if (comparator().compare(e,higher) < 0) {
+      return higher;
+    }
+  }
+  return null;
+}

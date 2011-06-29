@@ -1,0 +1,5 @@
+{
+  checkNotNull(toKey);
+  int index=index(toKey,inclusive ? Relation.HIGHER : Relation.CEILING);
+  return createSubmap(0,index);
+}

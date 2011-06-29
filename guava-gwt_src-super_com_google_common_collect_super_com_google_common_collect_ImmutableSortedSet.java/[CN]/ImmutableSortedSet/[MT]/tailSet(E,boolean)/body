@@ -1,0 +1,11 @@
+{
+  checkNotNull(fromElement);
+  if (!inclusive) {
+    E tmp=higher(fromElement);
+    if (tmp == null) {
+      return emptySet(comparator());
+    }
+    fromElement=tmp;
+  }
+  return tailSet(fromElement);
+}

@@ -1,0 +1,10 @@
+{
+  Iterator<K> iterator=keySet().tailSet(k).iterator();
+  while (iterator.hasNext()) {
+    K tmp=iterator.next();
+    if (comparator().compare(k,tmp) < 0) {
+      return tmp;
+    }
+  }
+  return null;
+}

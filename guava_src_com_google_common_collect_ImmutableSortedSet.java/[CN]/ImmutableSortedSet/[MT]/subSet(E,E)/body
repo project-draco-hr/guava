@@ -1,6 +1,3 @@
 {
-  checkNotNull(fromElement);
-  checkNotNull(toElement);
-  checkArgument(comparator.compare(fromElement,toElement) <= 0);
-  return subSetImpl(fromElement,toElement);
+  return subSet(fromElement,true,toElement,false);
 }

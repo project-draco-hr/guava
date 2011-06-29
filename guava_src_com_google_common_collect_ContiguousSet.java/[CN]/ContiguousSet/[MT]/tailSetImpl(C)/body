@@ -1,3 +1,0 @@
-{
-  return range.intersection(Ranges.atLeast(fromElement)).asSet(domain);
-}

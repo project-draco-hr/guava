@@ -1,0 +1,11 @@
+{
+  checkNotNull(toElement);
+  if (inclusive) {
+    E tmp=higher(toElement);
+    if (tmp == null) {
+      return this;
+    }
+    toElement=tmp;
+  }
+  return headSet(toElement);
+}

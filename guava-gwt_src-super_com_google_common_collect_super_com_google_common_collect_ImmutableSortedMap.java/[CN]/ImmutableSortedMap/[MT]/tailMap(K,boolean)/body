@@ -1,0 +1,10 @@
+{
+  checkNotNull(fromKey);
+  if (!inclusive) {
+    fromKey=higher(fromKey);
+    if (fromKey == null) {
+      return emptyMap(comparator());
+    }
+  }
+  return tailMap(fromKey);
+}

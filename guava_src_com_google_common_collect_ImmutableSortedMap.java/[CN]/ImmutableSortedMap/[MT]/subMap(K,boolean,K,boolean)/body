@@ -1,0 +1,6 @@
+{
+  checkNotNull(fromKey);
+  checkNotNull(toKey);
+  checkArgument(comparator.compare(fromKey,toKey) <= 0);
+  return tailMap(fromKey,fromInclusive).headMap(toKey,toInclusive);
+}

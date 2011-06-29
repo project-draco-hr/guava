@@ -1,4 +1,3 @@
 {
-  int newFromIndex=findSubmapIndex(checkNotNull(fromKey));
-  return createSubmap(newFromIndex,size());
+  return tailMap(fromKey,true);
 }

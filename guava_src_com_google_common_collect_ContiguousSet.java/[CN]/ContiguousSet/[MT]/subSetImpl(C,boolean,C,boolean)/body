@@ -1,0 +1,20 @@
+{
+  Range<C> subRange;
+  if (fromInclusive) {
+    if (toInclusive) {
+      subRange=Ranges.closed(fromElement,toElement);
+    }
+ else {
+      subRange=Ranges.closedOpen(fromElement,toElement);
+    }
+  }
+ else {
+    if (toInclusive) {
+      subRange=Ranges.openClosed(fromElement,toElement);
+    }
+ else {
+      subRange=Ranges.open(fromElement,toElement);
+    }
+  }
+  return range.intersection(subRange).asSet(domain);
+}

@@ -1,0 +1,11 @@
+{
+  checkNotNull(toKey);
+  if (inclusive) {
+    K tmp=higher(toKey);
+    if (tmp == null) {
+      return this;
+    }
+    toKey=tmp;
+  }
+  return headMap(toKey);
+}

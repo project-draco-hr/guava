@@ -1,8 +1,3 @@
 {
-  checkNotNull(fromKey);
-  checkNotNull(toKey);
-  checkArgument(comparator.compare(fromKey,toKey) <= 0);
-  int newFromIndex=findSubmapIndex(fromKey);
-  int newToIndex=findSubmapIndex(toKey);
-  return createSubmap(newFromIndex,newToIndex);
+  return subMap(fromKey,true,toKey,false);
 }

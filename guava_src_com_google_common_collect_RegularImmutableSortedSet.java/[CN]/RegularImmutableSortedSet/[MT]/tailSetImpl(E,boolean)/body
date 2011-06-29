@@ -1,0 +1,4 @@
+{
+  int index=index(fromElement,inclusive ? Relation.LOWER : Relation.FLOOR);
+  return createSubset(index + 1,size());
+}

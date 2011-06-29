@@ -1,3 +1,0 @@
-{
-  return SortedLists.binarySearch(Lists.transform(entries,keyFunction),key,comparator,CEILING,false);
-}

@@ -4,7 +4,7 @@
   }
   int position;
   try {
-    position=binarySearch(target);
+    position=index(target,Relation.EQUAL);
   }
  catch (  ClassCastException e) {
     return -1;

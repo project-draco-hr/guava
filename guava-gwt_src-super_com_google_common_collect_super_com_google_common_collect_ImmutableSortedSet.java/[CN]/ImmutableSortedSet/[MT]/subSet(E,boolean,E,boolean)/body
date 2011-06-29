@@ -1,0 +1,10 @@
+{
+  checkNotNull(fromElement);
+  checkNotNull(toElement);
+  int cmp=comparator().compare(fromElement,toElement);
+  checkArgument(cmp <= 0,"fromElement (%s) is less than toElement (%s)",fromElement,toElement);
+  if (cmp == 0 && !(fromInclusive && toInclusive)) {
+    return emptySet(comparator());
+  }
+  return tailSet(fromElement,fromInclusive).headSet(toElement,toInclusive);
+}

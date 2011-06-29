@@ -1,4 +1,3 @@
 {
-  int newToIndex=findSubmapIndex(checkNotNull(toKey));
-  return createSubmap(0,newToIndex);
+  return headMap(toKey,false);
 }

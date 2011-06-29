@@ -4,7 +4,7 @@
   }
   int i;
   try {
-    i=SortedLists.binarySearch(Lists.transform(entries,keyFunction),key,unsafeComparator(),EQUAL,false);
+    i=index(key,Relation.EQUAL);
   }
  catch (  ClassCastException e) {
     return null;

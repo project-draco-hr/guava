@@ -1,0 +1,5 @@
+{
+  checkNotNull(fromKey);
+  int index=index(fromKey,inclusive ? Relation.LOWER : Relation.FLOOR);
+  return createSubmap(index + 1,size());
+}
