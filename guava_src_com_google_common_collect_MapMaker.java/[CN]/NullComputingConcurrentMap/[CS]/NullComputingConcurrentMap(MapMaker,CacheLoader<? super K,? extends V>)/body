@@ -1,4 +1,0 @@
-{
-  super(mapMaker);
-  this.loader=checkNotNull(loader);
-}

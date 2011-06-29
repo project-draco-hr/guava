@@ -1,3 +1,0 @@
-{
-  return useNullCache() ? new ComputingCache<K,V>(this,CACHE_STATS_COUNTER,loader) : new NullCache<K,V>(this,CACHE_STATS_COUNTER,loader);
-}

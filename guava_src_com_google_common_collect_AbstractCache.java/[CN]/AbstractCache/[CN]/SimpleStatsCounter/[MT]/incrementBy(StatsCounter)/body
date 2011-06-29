@@ -1,9 +1,0 @@
-{
-  CacheStats otherStats=other.snapshot();
-  hitCount.addAndGet(otherStats.hitCount());
-  missCount.addAndGet(otherStats.missCount());
-  createSuccessCount.addAndGet(otherStats.createSuccessCount());
-  createExceptionCount.addAndGet(otherStats.createExceptionCount());
-  totalCreateTime.addAndGet(otherStats.totalCreateTime());
-  evictionCount.addAndGet(otherStats.evictionCount());
-}

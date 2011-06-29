@@ -1,4 +1,0 @@
-{
-  super(builder,statsCounterSupplier);
-  this.loader=checkNotNull(loader);
-}

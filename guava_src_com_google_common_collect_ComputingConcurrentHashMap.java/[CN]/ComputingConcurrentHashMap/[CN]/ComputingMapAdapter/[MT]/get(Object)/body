@@ -9,7 +9,7 @@
     throw new ComputationException(cause);
   }
   if (value == null) {
-    throw new NullPointerException(loader + " returned null for key " + key+ ".");
+    throw new NullPointerException(computingFunction + " returned null for key " + key+ ".");
   }
   return value;
 }

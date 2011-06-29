@@ -1,3 +1,0 @@
-{
-  return useNullCache() ? new ComputingMapAdapter<K,V>(this,DEFAULT_STATS_COUNTER,loader) : new NullComputingConcurrentMap<K,V>(this,loader);
-}

@@ -1,0 +1,3 @@
+CustomConcurrentHashMap<K,V> map
+int initialCapacity
+int maxSegmentSize

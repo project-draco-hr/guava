@@ -1,3 +1,0 @@
-K key
-int hash
-CacheLoader<? super K,? extends V> loader

@@ -1,4 +1,0 @@
-{
-  ConcurrentMap<K,V> am=asMap;
-  return (am != null) ? am : (asMap=new CacheAsMap<K,V>(map));
-}

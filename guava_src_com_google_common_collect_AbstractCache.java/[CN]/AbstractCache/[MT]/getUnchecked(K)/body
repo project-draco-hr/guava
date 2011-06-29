@@ -1,8 +1,0 @@
-{
-  try {
-    return get(key);
-  }
- catch (  ExecutionException e) {
-    throw new UncheckedExecutionException(e.getCause());
-  }
-}

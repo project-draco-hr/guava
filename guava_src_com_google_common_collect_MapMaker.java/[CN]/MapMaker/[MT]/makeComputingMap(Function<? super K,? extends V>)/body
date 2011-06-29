@@ -1,4 +1,3 @@
 {
-  CacheLoader<? super K,? extends V> loader=CacheLoader.from(computingFunction);
-  return makeComputingMap(loader);
+  return useNullMap() ? new ComputingMapAdapter<K,V>(this,computingFunction) : new NullComputingConcurrentMap<K,V>(this,computingFunction);
 }

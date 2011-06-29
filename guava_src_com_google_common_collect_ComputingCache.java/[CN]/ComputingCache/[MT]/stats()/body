@@ -1,7 +1,0 @@
-{
-  SimpleStatsCounter aggregator=new SimpleStatsCounter();
-  for (  Segment<K,V> segment : map.segments) {
-    aggregator.incrementBy(segment.statsCounter);
-  }
-  return aggregator.snapshot();
-}

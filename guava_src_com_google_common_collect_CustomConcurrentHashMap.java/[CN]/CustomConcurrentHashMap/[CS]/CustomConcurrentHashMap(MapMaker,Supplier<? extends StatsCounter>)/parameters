@@ -1,2 +1,0 @@
-MapMaker builder
-Supplier<? extends StatsCounter> statsCounterSupplier

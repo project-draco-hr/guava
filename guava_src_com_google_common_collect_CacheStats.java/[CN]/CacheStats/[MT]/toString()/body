@@ -1,3 +1,0 @@
-{
-  return Objects.toStringHelper(this).add("hitCount",hitCount).add("missCount",missCount).add("createSuccessCount",createSuccessCount).add("createExceptionCount",createExceptionCount).add("totalCreateTime",totalCreateTime).add("evictionCount",evictionCount).toString();
-}

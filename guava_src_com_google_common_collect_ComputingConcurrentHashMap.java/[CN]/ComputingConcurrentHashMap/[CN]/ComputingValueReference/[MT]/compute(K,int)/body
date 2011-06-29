@@ -1,7 +1,7 @@
 {
   V value;
   try {
-    value=loader.load(key);
+    value=computingFunction.apply(key);
   }
  catch (  Throwable t) {
     setValueReference(new ComputationExceptionReference<K,V>(t));
