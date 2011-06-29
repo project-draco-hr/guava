@@ -1,0 +1,4 @@
+{
+  removalListener=builder.getRemovalListener();
+  removalCause=builder.nullRemovalCause;
+}

@@ -1,0 +1,5 @@
+{
+  missCount.incrementAndGet();
+  createExceptionCount.incrementAndGet();
+  totalCreateTime.addAndGet(createTime);
+}

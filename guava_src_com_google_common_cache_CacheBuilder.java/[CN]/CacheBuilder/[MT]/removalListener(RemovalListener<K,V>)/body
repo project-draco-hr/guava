@@ -1,0 +1,6 @@
+{
+  checkState(this.removalListener == null);
+  @SuppressWarnings("unchecked") CacheBuilder<K,V> me=(CacheBuilder<K,V>)this;
+  me.removalListener=checkNotNull(listener);
+  return me;
+}

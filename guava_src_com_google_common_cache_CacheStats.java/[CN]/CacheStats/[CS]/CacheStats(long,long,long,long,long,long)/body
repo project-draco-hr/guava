@@ -1,0 +1,14 @@
+{
+  checkArgument(hitCount >= 0);
+  checkArgument(missCount >= 0);
+  checkArgument(createSuccessCount >= 0);
+  checkArgument(createExceptionCount >= 0);
+  checkArgument(totalCreateTime >= 0);
+  checkArgument(evictionCount >= 0);
+  this.hitCount=hitCount;
+  this.missCount=missCount;
+  this.createSuccessCount=createSuccessCount;
+  this.createExceptionCount=createExceptionCount;
+  this.totalCreateTime=totalCreateTime;
+  this.evictionCount=evictionCount;
+}

@@ -1,0 +1,4 @@
+{
+  ReferenceEntry<K,V> e=delegate.getEntry(key);
+  return (e == null) ? null : e.getValueReference().get();
+}

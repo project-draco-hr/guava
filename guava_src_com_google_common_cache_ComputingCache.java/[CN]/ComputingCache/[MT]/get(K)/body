@@ -1,0 +1,7 @@
+{
+  V value=map.getOrCompute(key);
+  if (value == null) {
+    throw new NullPointerException(map.loader + " returned null for key " + key+ ".");
+  }
+  return value;
+}

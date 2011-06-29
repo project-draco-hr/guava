@@ -1,0 +1,6 @@
+{
+  if (entry.getKey() == null) {
+    return true;
+  }
+  return isCollected(entry.getValueReference());
+}

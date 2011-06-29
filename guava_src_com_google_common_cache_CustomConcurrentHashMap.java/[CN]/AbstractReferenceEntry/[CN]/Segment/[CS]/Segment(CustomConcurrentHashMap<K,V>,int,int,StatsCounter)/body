@@ -1,0 +1,11 @@
+{
+  this.map=map;
+  this.maxSegmentSize=maxSegmentSize;
+  this.statsCounter=statsCounter;
+  initTable(newEntryArray(initialCapacity));
+  keyReferenceQueue=map.usesKeyReferences() ? new ReferenceQueue<K>() : null;
+  valueReferenceQueue=map.usesValueReferences() ? new ReferenceQueue<V>() : null;
+  recencyQueue=(map.evictsBySize() || map.expiresAfterAccess()) ? new ConcurrentLinkedQueue<ReferenceEntry<K,V>>() : CustomConcurrentHashMap.<ReferenceEntry<K,V>>discardingQueue();
+  evictionQueue=map.evictsBySize() ? new EvictionQueue<K,V>() : CustomConcurrentHashMap.<ReferenceEntry<K,V>>discardingQueue();
+  expirationQueue=map.expires() ? new ExpirationQueue<K,V>() : CustomConcurrentHashMap.<ReferenceEntry<K,V>>discardingQueue();
+}

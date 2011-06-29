@@ -1,0 +1,12 @@
+{
+  checkNotNull(key);
+  try {
+    return loader.load(key);
+  }
+ catch (  UncheckedExecutionException e) {
+    throw e;
+  }
+catch (  Throwable t) {
+    throw new UncheckedExecutionException(t);
+  }
+}

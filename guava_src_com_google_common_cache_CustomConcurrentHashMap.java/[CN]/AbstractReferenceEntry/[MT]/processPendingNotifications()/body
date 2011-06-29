@@ -1,0 +1,6 @@
+{
+  RemovalNotification<K,V> notification;
+  while ((notification=removalNotificationQueue.poll()) != null) {
+    removalListener.onRemoval(notification);
+  }
+}

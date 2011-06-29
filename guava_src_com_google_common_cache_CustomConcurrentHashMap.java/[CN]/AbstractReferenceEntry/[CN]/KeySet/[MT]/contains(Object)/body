@@ -1,0 +1,3 @@
+{
+  return CustomConcurrentHashMap.this.containsKey(o);
+}
