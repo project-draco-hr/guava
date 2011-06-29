@@ -1,0 +1,8 @@
+{
+  try {
+    Splitter.on(",").withKeyValueSeparator("=").split("a=1,b,c=2");
+    fail("Shouldn't accept malformed entry \"b\"");
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}

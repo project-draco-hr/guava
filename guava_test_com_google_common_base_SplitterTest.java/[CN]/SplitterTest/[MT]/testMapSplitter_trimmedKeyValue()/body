@@ -1,0 +1,7 @@
+{
+  Map<String,String> m=Splitter.on(',').withKeyValueSeparator(Splitter.on(':').trimResults()).split("boy  : tom , girl: tina , cat  : kitty , dog: tommy ");
+  assertEquals("tom",m.get("boy"));
+  assertEquals("tina",m.get("girl"));
+  assertEquals("kitty",m.get("cat"));
+  assertEquals("tommy",m.get("dog"));
+}
