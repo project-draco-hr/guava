@@ -1,0 +1,3 @@
+{
+  multimap().removeAll(key);
+}

@@ -1,4 +1,12 @@
 {
   Multiset<K> result=multiset;
-  return (result == null) ? multiset=new MultisetView() : result;
+  if (result == null) {
+    return multiset=new Multimaps.Keys<K,V>(){
+      @Override Multimap<K,V> multimap(){
+        return AbstractMultimap.this;
+      }
+    }
+;
+  }
+  return result;
 }

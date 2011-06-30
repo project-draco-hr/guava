@@ -1,0 +1,15 @@
+{
+  try {
+    if (multimap().containsKey(element)) {
+      Collection<V> values=multimap().asMap().get(element);
+      return (values == null) ? 0 : values.size();
+    }
+    return 0;
+  }
+ catch (  ClassCastException e) {
+    return 0;
+  }
+catch (  NullPointerException e) {
+    return 0;
+  }
+}

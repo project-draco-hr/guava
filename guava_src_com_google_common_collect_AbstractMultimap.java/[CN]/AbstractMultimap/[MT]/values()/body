@@ -1,4 +1,12 @@
 {
   Collection<V> result=valuesCollection;
-  return (result == null) ? valuesCollection=new Values() : result;
+  if (result == null) {
+    return valuesCollection=new Multimaps.Values<K,V>(){
+      @Override Multimap<K,V> multimap(){
+        return AbstractMultimap.this;
+      }
+    }
+;
+  }
+  return result;
 }

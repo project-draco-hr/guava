@@ -1,4 +1,0 @@
-{
-  checkNotNull(c);
-  return super.removeAll(c);
-}
