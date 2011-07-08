@@ -2,5 +2,5 @@
   super(new LinkedHashMap<K,Collection<V>>(expectedKeys));
   Preconditions.checkArgument(expectedValuesPerKey >= 0);
   this.expectedValuesPerKey=expectedValuesPerKey;
-  linkedEntries=new LinkedHashSet<Map.Entry<K,V>>((int)Math.min(1 << 30,((long)expectedKeys) * expectedValuesPerKey));
+  linkedEntries=new LinkedHashSet<Map.Entry<K,V>>((int)Math.min(Ints.MAX_POWER_OF_TWO,((long)expectedKeys) * expectedValuesPerKey));
 }
