@@ -1,4 +1,8 @@
 {
+  checkNotNull(values);
+  if (values instanceof ContiguousSet) {
+    return ((ContiguousSet<C>)values).range();
+  }
   Iterator<C> valueIterator=values.iterator();
   C min=checkNotNull(valueIterator.next());
   C max=min;

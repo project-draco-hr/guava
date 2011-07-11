@@ -12,5 +12,5 @@
  catch (  NoSuchElementException e) {
     throw new IllegalArgumentException(e);
   }
-  return effectiveRange.isEmpty() ? ImmutableSortedSet.<C>of() : new ContiguousSet<C>(effectiveRange,domain);
+  return effectiveRange.isEmpty() || (lowerBound.leastValueAbove(domain).compareTo(upperBound.greatestValueBelow(domain)) > 0) ? new EmptyContiguousSet<C>(domain) : new RegularContiguousSet<C>(effectiveRange,domain);
 }

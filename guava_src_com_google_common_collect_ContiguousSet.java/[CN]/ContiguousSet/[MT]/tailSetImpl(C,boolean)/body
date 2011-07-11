@@ -1,3 +1,0 @@
-{
-  return range.intersection(inclusive ? Ranges.atLeast(fromElement) : Ranges.greaterThan(fromElement)).asSet(domain);
-}
