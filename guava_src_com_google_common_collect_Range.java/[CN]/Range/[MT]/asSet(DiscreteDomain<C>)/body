@@ -12,5 +12,6 @@
  catch (  NoSuchElementException e) {
     throw new IllegalArgumentException(e);
   }
-  return effectiveRange.isEmpty() || (lowerBound.leastValueAbove(domain).compareTo(upperBound.greatestValueBelow(domain)) > 0) ? new EmptyContiguousSet<C>(domain) : new RegularContiguousSet<C>(effectiveRange,domain);
+  boolean empty=effectiveRange.isEmpty() || compareOrThrow(lowerBound.leastValueAbove(domain),upperBound.greatestValueBelow(domain)) > 0;
+  return empty ? new EmptyContiguousSet<C>(domain) : new RegularContiguousSet<C>(effectiveRange,domain);
 }

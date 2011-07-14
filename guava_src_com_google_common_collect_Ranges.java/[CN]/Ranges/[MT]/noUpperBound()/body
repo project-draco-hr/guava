@@ -1,3 +1,0 @@
-{
-  return (Cut<C>)Cut.ABOVE_ALL;
-}

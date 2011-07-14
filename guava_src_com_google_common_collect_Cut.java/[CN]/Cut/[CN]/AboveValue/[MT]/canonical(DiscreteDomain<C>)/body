@@ -1,8 +1,4 @@
 {
   C next=leastValueAbove(domain);
-  if (next != null) {
-    return new BelowValue<C>(next);
-  }
-  Cut<C> aboveAll=(Cut<C>)ABOVE_ALL;
-  return aboveAll;
+  return (next != null) ? belowValue(next) : Cut.<C>aboveAll();
 }

@@ -1,7 +1,7 @@
 {
   checkNotNull(lowerType);
   checkNotNull(upperType);
-  Cut<C> lowerBound=(lowerType == BoundType.OPEN) ? new AboveValue<C>(lower) : new BelowValue<C>(lower);
-  Cut<C> upperBound=(upperType == BoundType.OPEN) ? new BelowValue<C>(upper) : new AboveValue<C>(upper);
+  Cut<C> lowerBound=(lowerType == BoundType.OPEN) ? Cut.aboveValue(lower) : Cut.belowValue(lower);
+  Cut<C> upperBound=(upperType == BoundType.OPEN) ? Cut.belowValue(upper) : Cut.aboveValue(upper);
   return create(lowerBound,upperBound);
 }

@@ -2,7 +2,7 @@
 switch (boundType) {
 case OPEN:
     @Nullable C next=domain.next(endpoint);
-  return (Cut<C>)((next == null) ? ABOVE_ALL : new BelowValue<C>(next));
+  return (next == null) ? Cut.<C>aboveAll() : belowValue(next);
 case CLOSED:
 return this;
 default :
