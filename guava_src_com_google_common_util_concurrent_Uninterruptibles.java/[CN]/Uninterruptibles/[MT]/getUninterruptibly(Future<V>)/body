@@ -1,0 +1,18 @@
+{
+  boolean interrupted=false;
+  try {
+    while (true) {
+      try {
+        return future.get();
+      }
+ catch (      InterruptedException ignored) {
+        interrupted=true;
+      }
+    }
+  }
+  finally {
+    if (interrupted) {
+      Thread.currentThread().interrupt();
+    }
+  }
+}

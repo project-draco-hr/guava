@@ -2,7 +2,7 @@
   try {
     I sourceResult;
     try {
-      sourceResult=makeUninterruptible(inputFuture).get();
+      sourceResult=getUninterruptibly(inputFuture);
     }
  catch (    CancellationException e) {
       cancel(false);
@@ -26,7 +26,7 @@ catch (    ExecutionException e) {
     outputFuture.addListener(new Runnable(){
       @Override public void run(){
         try {
-          set(makeUninterruptible(outputFuture).get());
+          set(getUninterruptibly(outputFuture));
         }
  catch (        CancellationException e) {
           cancel(false);

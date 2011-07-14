@@ -1,7 +1,7 @@
 {
   checkNotNull(future);
   try {
-    return makeUninterruptible(future).get();
+    return getUninterruptibly(future);
   }
  catch (  CancellationException e) {
     throw e;
