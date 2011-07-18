@@ -6,7 +6,9 @@
   List<Future<T>> futures=new ArrayList<Future<T>>(tasks.size());
   boolean done=false;
   try {
-    for (    Callable<T> t : tasks)     futures.add(newTaskFor(t));
+    for (    Callable<T> t : tasks) {
+      futures.add(ListenableFutureTask.create(t));
+    }
     long lastTime=System.nanoTime();
     Iterator<Future<T>> it=futures.iterator();
     while (it.hasNext()) {
@@ -43,7 +45,9 @@ catch (        TimeoutException toe) {
   }
   finally {
     if (!done) {
-      for (      Future<T> f : futures)       f.cancel(true);
+      for (      Future<T> f : futures) {
+        f.cancel(true);
+      }
     }
   }
 }

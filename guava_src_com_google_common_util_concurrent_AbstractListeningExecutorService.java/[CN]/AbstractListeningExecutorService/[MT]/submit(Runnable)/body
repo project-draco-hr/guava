@@ -1,8 +1,5 @@
 {
-  if (task == null) {
-    throw new NullPointerException();
-  }
-  ListenableFutureTask<Void> ftask=newTaskFor(task,null);
+  ListenableFutureTask<Void> ftask=ListenableFutureTask.create(task,null);
   execute(ftask);
   return ftask;
 }
