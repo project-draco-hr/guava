@@ -1,0 +1,8 @@
+{
+class LocalInnerClass {
+class LocalInnerNestedClass {
+    }
+  }
+  String toTest=Objects.toStringHelper(new LocalInnerClass().new LocalInnerNestedClass()).toString();
+  assertTrue(toTest,toTest.matches(".*\\{\\}"));
+}

@@ -1,5 +1,5 @@
 {
   String toTest=Objects.toStringHelper(new TestClass()).add("field1",1).addValue("value1").add("field2","value2").addValue(2).toString();
-  final String expected=".+\\{field1\\=1, value1, field2\\=value2, 2\\}";
+  final String expected=".*\\{field1\\=1, value1, field2\\=value2, 2\\}";
   assertTrue(toTest,toTest.matches(expected));
 }

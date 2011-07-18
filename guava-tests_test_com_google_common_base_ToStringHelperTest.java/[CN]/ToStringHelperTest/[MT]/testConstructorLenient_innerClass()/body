@@ -1,4 +1,4 @@
 {
   String toTest=Objects.toStringHelper(new TestClass()).toString();
-  assertTrue(toTest,toTest.matches(".+\\{\\}"));
+  assertTrue(toTest,toTest.matches(".*\\{\\}"));
 }

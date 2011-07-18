@@ -1,5 +1,5 @@
 {
   final String result=Objects.toStringHelper(new TestClass()).addValue(null).addValue("Hello").addValue(null).toString();
-  final String expected=".+\\{null, Hello, null\\}";
+  final String expected=".*\\{null, Hello, null\\}";
   assertTrue(result,result.matches(expected));
 }

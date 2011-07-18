@@ -1,4 +1,4 @@
 {
   final String result=Objects.toStringHelper(new TestClass()).add("Hello",null).toString();
-  assertTrue(result,result.matches(".+\\{Hello\\=null\\}"));
+  assertTrue(result,result.matches(".*\\{Hello\\=null\\}"));
 }
