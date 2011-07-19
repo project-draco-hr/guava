@@ -14,43 +14,10 @@
       return future.isDone();
     }
     @Override public V get(    long timeout,    TimeUnit unit) throws TimeoutException, ExecutionException {
-      boolean interrupted=false;
-      try {
-        long remainingNanos=unit.toNanos(timeout);
-        long end=System.nanoTime() + remainingNanos;
-        while (true) {
-          try {
-            return future.get(remainingNanos,NANOSECONDS);
-          }
- catch (          InterruptedException e) {
-            interrupted=true;
-            remainingNanos=end - System.nanoTime();
-          }
-        }
-      }
-  finally {
-        if (interrupted) {
-          Thread.currentThread().interrupt();
-        }
-      }
+      return Uninterruptibles.getUninterruptibly(future,timeout,unit);
     }
     @Override public V get() throws ExecutionException {
-      boolean interrupted=false;
-      try {
-        while (true) {
-          try {
-            return future.get();
-          }
- catch (          InterruptedException ignored) {
-            interrupted=true;
-          }
-        }
-      }
-  finally {
-        if (interrupted) {
-          Thread.currentThread().interrupt();
-        }
-      }
+      return Uninterruptibles.getUninterruptibly(future);
     }
   }
 ;

@@ -1,6 +1,6 @@
 {
   try {
-    return Futures.makeUninterruptible(stop()).get();
+    return Uninterruptibles.getUninterruptibly(stop());
   }
  catch (  ExecutionException e) {
     throw Throwables.propagate(e.getCause());

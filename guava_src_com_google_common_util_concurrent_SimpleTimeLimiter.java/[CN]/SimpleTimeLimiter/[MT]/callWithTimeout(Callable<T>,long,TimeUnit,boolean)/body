@@ -14,8 +14,7 @@
       }
     }
  else {
-      Future<T> uninterruptible=Futures.makeUninterruptible(future);
-      return uninterruptible.get(timeoutDuration,timeoutUnit);
+      return Uninterruptibles.getUninterruptibly(future,timeoutDuration,timeoutUnit);
     }
   }
  catch (  ExecutionException e) {
