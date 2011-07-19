@@ -1,3 +1,6 @@
 {
-  return (wholeRow == null || (wholeRow.isEmpty() && backingMap.containsKey(rowKey))) ? wholeRow=(SortedMap<C,V>)backingMap.get(rowKey) : wholeRow;
+  if (wholeRow == null || (wholeRow.isEmpty() && backingMap.containsKey(rowKey))) {
+    wholeRow=(SortedMap<C,V>)backingMap.get(rowKey);
+  }
+  return wholeRow;
 }
