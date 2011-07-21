@@ -1,6 +1,6 @@
 {
   if (o instanceof Entry) {
-    Entry<?> entry=(Entry<?>)o;
+    @SuppressWarnings("cast") Entry<?> entry=(Entry<?>)o;
     if (entry.getCount() <= 0) {
       return false;
     }
