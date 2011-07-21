@@ -1,0 +1,6 @@
+{
+  String toTest=Objects.toStringHelper(new Object(){
+  }
+).toString();
+  assertTrue(toTest,toTest.matches(".*\\{\\}"));
+}
