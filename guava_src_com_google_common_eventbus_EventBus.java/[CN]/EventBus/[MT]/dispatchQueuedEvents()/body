@@ -1,0 +1,18 @@
+{
+  if (isDispatching.get()) {
+    return;
+  }
+  isDispatching.set(true);
+  try {
+    while (true) {
+      EventWithHandler eventWithHandler=eventsToDispatch.get().poll();
+      if (eventWithHandler == null) {
+        break;
+      }
+      dispatch(eventWithHandler.event,eventWithHandler.handler);
+    }
+  }
+  finally {
+    isDispatching.set(false);
+  }
+}

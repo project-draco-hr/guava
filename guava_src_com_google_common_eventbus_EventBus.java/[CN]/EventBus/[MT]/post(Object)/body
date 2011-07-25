@@ -1,0 +1,17 @@
+{
+  Set<Class<?>> dispatchTypes=flattenHierarchy(event.getClass());
+  boolean dispatched=false;
+  for (  Class<?> eventType : dispatchTypes) {
+    Set<EventHandler> wrappers=getHandlersForEventType(eventType);
+    if (wrappers != null && !wrappers.isEmpty()) {
+      dispatched=true;
+      for (      EventHandler wrapper : wrappers) {
+        enqueueEvent(event,wrapper);
+      }
+    }
+  }
+  if (!dispatched && !(event instanceof DeadEvent)) {
+    post(new DeadEvent(this,event));
+  }
+  dispatchQueuedEvents();
+}

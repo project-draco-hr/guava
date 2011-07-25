@@ -1,0 +1,10 @@
+{
+  Multimap<Class<?>,EventHandler> methodsInListener=finder.findAllHandlers(object);
+  if (methodsInListener.isEmpty()) {
+    throw new IllegalArgumentException("no subscribe method found on: " + object);
+  }
+  for (  Class<?> eventClass : methodsInListener.keySet()) {
+    Set<EventHandler> currentHandlers=getOrCreateHandlersForEventType(eventClass);
+    currentHandlers.addAll(methodsInListener.get(eventClass));
+  }
+}

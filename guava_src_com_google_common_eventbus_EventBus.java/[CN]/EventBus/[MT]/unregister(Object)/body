@@ -1,0 +1,14 @@
+{
+  Multimap<Class<?>,EventHandler> methodsInListener=finder.findAllHandlers(object);
+  if (methodsInListener.isEmpty()) {
+    throw new IllegalArgumentException("no subscribe method found on: " + object);
+  }
+  for (  Class<?> eventClass : methodsInListener.keySet()) {
+    Set<EventHandler> currentHandlers=getHandlersForEventType(eventClass);
+    Collection<EventHandler> eventMethodsInListener=methodsInListener.get(eventClass);
+    if (currentHandlers == null || !currentHandlers.containsAll(eventMethodsInListener)) {
+      throw new IllegalArgumentException("missing event handler for an annotated method. Is " + object + " registered?");
+    }
+    currentHandlers.removeAll(eventMethodsInListener);
+  }
+}

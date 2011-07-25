@@ -1,0 +1,20 @@
+{
+  Multimap<Class<?>,EventHandler> methodsInListener=HashMultimap.create();
+  Class clazz=listener.getClass();
+  while (clazz != null) {
+    for (    Method method : clazz.getMethods()) {
+      Subscribe annotation=method.getAnnotation(Subscribe.class);
+      if (annotation != null) {
+        Class<?>[] parameterTypes=method.getParameterTypes();
+        if (parameterTypes.length != 1) {
+          throw new IllegalArgumentException("Method " + method + " has @Subscribe annotation, but requires "+ parameterTypes.length+ " arguments.  Event handler methods "+ "must require a single argument.");
+        }
+        Class<?> eventType=parameterTypes[0];
+        EventHandler handler=makeHandler(listener,method);
+        methodsInListener.put(eventType,handler);
+      }
+    }
+    clazz=clazz.getSuperclass();
+  }
+  return methodsInListener;
+}
