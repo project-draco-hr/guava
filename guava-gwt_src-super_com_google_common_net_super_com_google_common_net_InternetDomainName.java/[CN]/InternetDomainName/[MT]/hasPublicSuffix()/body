@@ -1,3 +1,0 @@
-{
-  return publicSuffixIndex != NO_PUBLIC_SUFFIX_FOUND;
-}

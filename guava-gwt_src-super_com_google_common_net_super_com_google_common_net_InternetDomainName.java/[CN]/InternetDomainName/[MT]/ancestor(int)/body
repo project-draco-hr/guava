@@ -1,3 +1,0 @@
-{
-  return fromInternal(DOT_JOINER.join(parts.subList(levels,parts.size())));
-}

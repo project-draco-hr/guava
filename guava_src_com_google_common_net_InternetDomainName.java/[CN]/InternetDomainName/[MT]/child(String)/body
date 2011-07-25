@@ -1,3 +1,3 @@
 {
-  return fromInternal(checkNotNull(leftParts) + "." + name);
+  return from(checkNotNull(leftParts) + "." + name);
 }
