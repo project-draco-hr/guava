@@ -1,0 +1,6 @@
+{
+  this.key=checkNotNull(key);
+  this.count=1 + countOrZero(left) + countOrZero(right);
+  this.left=left;
+  this.right=right;
+}

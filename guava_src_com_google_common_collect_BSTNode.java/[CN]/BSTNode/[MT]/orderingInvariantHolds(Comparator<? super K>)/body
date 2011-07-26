@@ -1,0 +1,11 @@
+{
+  checkNotNull(comparator);
+  boolean result=true;
+  if (hasChild(LEFT)) {
+    result&=comparator.compare(getChild(LEFT).getKey(),key) < 0;
+  }
+  if (hasChild(RIGHT)) {
+    result&=comparator.compare(getChild(RIGHT).getKey(),key) > 0;
+  }
+  return result;
+}

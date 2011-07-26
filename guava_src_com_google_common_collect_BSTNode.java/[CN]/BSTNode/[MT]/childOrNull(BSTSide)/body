@@ -1,0 +1,10 @@
+{
+switch (side) {
+case LEFT:
+    return left;
+case RIGHT:
+  return right;
+default :
+throw new AssertionError();
+}
+}
