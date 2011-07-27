@@ -1,0 +1,20 @@
+{
+  if (getTip().hasChild(RIGHT)) {
+    BSTInOrderPath<K,N> path=extension(this,RIGHT);
+    while (path.getTip().hasChild(LEFT)) {
+      path=extension(path,LEFT);
+    }
+    return Optional.of(path);
+  }
+ else {
+    BSTInOrderPath<K,N> current=this;
+    while (current.side == RIGHT) {
+      current=current.getPrefix();
+    }
+    current=current.prefixOrNull();
+    if (current != null) {
+      current.prevInOrder=Optional.of(this);
+    }
+    return Optional.fromNullable(current);
+  }
+}

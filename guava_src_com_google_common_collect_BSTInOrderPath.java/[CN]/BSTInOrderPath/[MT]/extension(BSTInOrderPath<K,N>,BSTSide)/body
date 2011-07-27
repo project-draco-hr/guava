@@ -1,0 +1,5 @@
+{
+  checkNotNull(path);
+  N tip=path.getTip();
+  return new BSTInOrderPath<K,N>(tip.getChild(side),side,path);
+}
