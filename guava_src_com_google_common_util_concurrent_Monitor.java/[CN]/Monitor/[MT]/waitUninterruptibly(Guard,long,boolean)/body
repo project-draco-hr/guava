@@ -1,0 +1,45 @@
+{
+  if (!guard.isSatisfied()) {
+    long startNanos=System.nanoTime();
+    if (signalBeforeWaiting) {
+      signalConditionsOfSatisfiedGuards(null);
+    }
+    boolean interruptIgnored=false;
+    try {
+      incrementWaiters(guard);
+      try {
+        final Condition condition=guard.condition;
+        long remainingNanos=timeoutNanos;
+        do {
+          if (remainingNanos <= 0) {
+            return false;
+          }
+          try {
+            remainingNanos=condition.awaitNanos(remainingNanos);
+          }
+ catch (          InterruptedException ignored) {
+            try {
+              signalConditionsOfSatisfiedGuards(guard);
+            }
+ catch (            Throwable throwable) {
+              Thread.currentThread().interrupt();
+              throw Throwables.propagate(throwable);
+            }
+            interruptIgnored=true;
+            remainingNanos=(timeoutNanos - (System.nanoTime() - startNanos));
+          }
+        }
+ while (!guard.isSatisfied());
+      }
+  finally {
+        decrementWaiters(guard);
+      }
+    }
+  finally {
+      if (interruptIgnored) {
+        Thread.currentThread().interrupt();
+      }
+    }
+  }
+  return true;
+}

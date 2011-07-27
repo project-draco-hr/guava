@@ -1,0 +1,4 @@
+{
+  Collection<V> v=values;
+  return (v == null) ? values=new Values() : v;
+}

@@ -1,0 +1,4 @@
+{
+  ColumnEntrySet set=entrySet;
+  return (set == null) ? entrySet=new ColumnEntrySet(columnIndex) : set;
+}

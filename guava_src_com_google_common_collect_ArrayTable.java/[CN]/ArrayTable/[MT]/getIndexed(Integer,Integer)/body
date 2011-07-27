@@ -1,0 +1,3 @@
+{
+  return (rowIndex == null || columnIndex == null) ? null : array[rowIndex][columnIndex];
+}

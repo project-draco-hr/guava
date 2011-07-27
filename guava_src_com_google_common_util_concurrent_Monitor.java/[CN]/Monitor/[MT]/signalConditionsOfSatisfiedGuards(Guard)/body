@@ -1,0 +1,23 @@
+{
+  final ArrayList<Guard> guards=this.activeGuards;
+  final int guardCount=guards.size();
+  try {
+    for (int i=0; i < guardCount; i++) {
+      Guard guard=guards.get(i);
+      if ((guard == interruptedGuard) && (guard.waiterCount == 1)) {
+        continue;
+      }
+      if (guard.isSatisfied()) {
+        guard.condition.signal();
+        return;
+      }
+    }
+  }
+ catch (  Throwable throwable) {
+    for (int i=0; i < guardCount; i++) {
+      Guard guard=guards.get(i);
+      guard.condition.signalAll();
+    }
+    throw Throwables.propagate(throwable);
+  }
+}

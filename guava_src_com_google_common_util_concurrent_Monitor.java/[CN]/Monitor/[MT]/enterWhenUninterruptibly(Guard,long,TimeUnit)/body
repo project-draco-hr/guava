@@ -1,0 +1,49 @@
+{
+  if (guard.monitor != this) {
+    throw new IllegalMonitorStateException();
+  }
+  final ReentrantLock lock=this.lock;
+  boolean reentrant=lock.isHeldByCurrentThread();
+  long startNanos=System.nanoTime();
+  long timeoutNanos=unit.toNanos(time);
+  long remainingNanos=timeoutNanos;
+  boolean interruptIgnored=false;
+  try {
+    while (true) {
+      try {
+        if (lock.tryLock(remainingNanos,TimeUnit.NANOSECONDS)) {
+          break;
+        }
+ else {
+          return false;
+        }
+      }
+ catch (      InterruptedException ignored) {
+        interruptIgnored=true;
+      }
+ finally {
+        remainingNanos=(timeoutNanos - (System.nanoTime() - startNanos));
+      }
+    }
+    boolean satisfied;
+    try {
+      satisfied=waitUninterruptibly(guard,remainingNanos,reentrant);
+    }
+ catch (    Throwable throwable) {
+      lock.unlock();
+      throw Throwables.propagate(throwable);
+    }
+    if (satisfied) {
+      return true;
+    }
+ else {
+      lock.unlock();
+      return false;
+    }
+  }
+  finally {
+    if (interruptIgnored) {
+      Thread.currentThread().interrupt();
+    }
+  }
+}

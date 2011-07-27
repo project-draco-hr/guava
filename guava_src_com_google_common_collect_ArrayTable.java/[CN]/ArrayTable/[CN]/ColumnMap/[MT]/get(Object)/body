@@ -1,0 +1,4 @@
+{
+  Integer columnIndex=columnKeyToIndex.get(columnKey);
+  return (columnIndex == null) ? null : new Column(columnIndex);
+}

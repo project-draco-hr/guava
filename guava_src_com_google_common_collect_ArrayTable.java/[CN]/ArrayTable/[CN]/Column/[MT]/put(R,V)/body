@@ -1,0 +1,6 @@
+{
+  checkNotNull(rowKey);
+  Integer rowIndex=rowKeyToIndex.get(rowKey);
+  checkArgument(rowIndex != null,"Row %s not in %s",rowKey,rowList);
+  return set(rowIndex,columnIndex,value);
+}

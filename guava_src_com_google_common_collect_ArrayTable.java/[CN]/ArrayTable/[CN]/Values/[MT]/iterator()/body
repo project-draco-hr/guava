@@ -1,0 +1,10 @@
+{
+  return new AbstractIndexedListIterator<V>(size()){
+    @Override protected V get(    int index){
+      int rowIndex=index / columnList.size();
+      int columnIndex=index % columnList.size();
+      return array[rowIndex][columnIndex];
+    }
+  }
+;
+}

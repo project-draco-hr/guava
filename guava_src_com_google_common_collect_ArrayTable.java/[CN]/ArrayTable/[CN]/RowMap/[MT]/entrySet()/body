@@ -1,0 +1,4 @@
+{
+  RowMapEntrySet set=entrySet;
+  return (set == null) ? entrySet=new RowMapEntrySet() : set;
+}

@@ -1,0 +1,12 @@
+{
+  final ReentrantLock lock=this.lock;
+  if (!lock.isHeldByCurrentThread()) {
+    throw new IllegalMonitorStateException();
+  }
+  try {
+    signalConditionsOfSatisfiedGuards(null);
+  }
+  finally {
+    lock.unlock();
+  }
+}

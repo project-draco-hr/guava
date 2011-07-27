@@ -1,0 +1,23 @@
+{
+  final ReentrantLock lock=this.lock;
+  long startNanos=System.nanoTime();
+  long timeoutNanos=unit.toNanos(time);
+  long remainingNanos=timeoutNanos;
+  boolean interruptIgnored=false;
+  try {
+    while (true) {
+      try {
+        return lock.tryLock(remainingNanos,TimeUnit.NANOSECONDS);
+      }
+ catch (      InterruptedException ignored) {
+        interruptIgnored=true;
+        remainingNanos=(timeoutNanos - (System.nanoTime() - startNanos));
+      }
+    }
+  }
+  finally {
+    if (interruptIgnored) {
+      Thread.currentThread().interrupt();
+    }
+  }
+}

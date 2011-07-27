@@ -1,0 +1,27 @@
+{
+  if (guard.monitor != this) {
+    throw new IllegalMonitorStateException();
+  }
+  final ReentrantLock lock=this.lock;
+  boolean reentrant=lock.isHeldByCurrentThread();
+  long startNanos=System.nanoTime();
+  if (!lock.tryLock(time,unit)) {
+    return false;
+  }
+  boolean satisfied;
+  try {
+    long remainingNanos=unit.toNanos(time) - (System.nanoTime() - startNanos);
+    satisfied=waitInterruptibly(guard,remainingNanos,reentrant);
+  }
+ catch (  Throwable throwable) {
+    lock.unlock();
+    throw Throwables.propagate(throwable);
+  }
+  if (satisfied) {
+    return true;
+  }
+ else {
+    lock.unlock();
+    return false;
+  }
+}

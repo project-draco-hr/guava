@@ -1,0 +1,30 @@
+{
+  if (!guard.isSatisfied()) {
+    if (signalBeforeWaiting) {
+      signalConditionsOfSatisfiedGuards(null);
+    }
+    incrementWaiters(guard);
+    try {
+      final Condition condition=guard.condition;
+      do {
+        try {
+          condition.await();
+        }
+ catch (        InterruptedException interrupt) {
+          try {
+            signalConditionsOfSatisfiedGuards(guard);
+          }
+ catch (          Throwable throwable) {
+            Thread.currentThread().interrupt();
+            throw Throwables.propagate(throwable);
+          }
+          throw interrupt;
+        }
+      }
+ while (!guard.isSatisfied());
+    }
+  finally {
+      decrementWaiters(guard);
+    }
+  }
+}

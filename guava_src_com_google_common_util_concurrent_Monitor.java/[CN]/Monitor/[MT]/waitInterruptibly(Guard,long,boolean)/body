@@ -1,0 +1,34 @@
+{
+  if (!guard.isSatisfied()) {
+    if (signalBeforeWaiting) {
+      signalConditionsOfSatisfiedGuards(null);
+    }
+    incrementWaiters(guard);
+    try {
+      final Condition condition=guard.condition;
+      do {
+        if (remainingNanos <= 0) {
+          return false;
+        }
+        try {
+          remainingNanos=condition.awaitNanos(remainingNanos);
+        }
+ catch (        InterruptedException interrupt) {
+          try {
+            signalConditionsOfSatisfiedGuards(guard);
+          }
+ catch (          Throwable throwable) {
+            Thread.currentThread().interrupt();
+            throw Throwables.propagate(throwable);
+          }
+          throw interrupt;
+        }
+      }
+ while (!guard.isSatisfied());
+    }
+  finally {
+      decrementWaiters(guard);
+    }
+  }
+  return true;
+}

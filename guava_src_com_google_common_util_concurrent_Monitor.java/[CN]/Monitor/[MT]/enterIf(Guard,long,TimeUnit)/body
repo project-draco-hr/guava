@@ -1,0 +1,24 @@
+{
+  if (guard.monitor != this) {
+    throw new IllegalMonitorStateException();
+  }
+  final ReentrantLock lock=this.lock;
+  if (!enter(time,unit)) {
+    return false;
+  }
+  boolean satisfied;
+  try {
+    satisfied=guard.isSatisfied();
+  }
+ catch (  Throwable throwable) {
+    lock.unlock();
+    throw Throwables.propagate(throwable);
+  }
+  if (satisfied) {
+    return true;
+  }
+ else {
+    lock.unlock();
+    return false;
+  }
+}

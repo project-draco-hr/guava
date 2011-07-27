@@ -1,0 +1,4 @@
+{
+  Integer rowIndex=rowKeyToIndex.get(rowKey);
+  return getIndexed(rowIndex,columnIndex);
+}

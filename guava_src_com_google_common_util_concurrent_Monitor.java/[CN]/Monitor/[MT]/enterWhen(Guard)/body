@@ -1,0 +1,15 @@
+{
+  if (guard.monitor != this) {
+    throw new IllegalMonitorStateException();
+  }
+  final ReentrantLock lock=this.lock;
+  boolean reentrant=lock.isHeldByCurrentThread();
+  lock.lockInterruptibly();
+  try {
+    waitInterruptibly(guard,reentrant);
+  }
+ catch (  Throwable throwable) {
+    lock.unlock();
+    throw Throwables.propagate(throwable);
+  }
+}

@@ -2,7 +2,7 @@
   checkNotNull(sequence);
   return new Iterable<String>(){
     @Override public Iterator<String> iterator(){
-      return strategy.iterator(Splitter.this,sequence);
+      return spliterator(sequence);
     }
   }
 ;

@@ -1,0 +1,19 @@
+{
+  return new AbstractIndexedListIterator<Entry<C,V>>(size()){
+    @Override protected Entry<C,V> get(    final int columnIndex){
+      return new AbstractMapEntry<C,V>(){
+        @Override public C getKey(){
+          return columnList.get(columnIndex);
+        }
+        @Override public V getValue(){
+          return array[rowIndex][columnIndex];
+        }
+        @Override public V setValue(        V value){
+          return ArrayTable.this.set(rowIndex,columnIndex,value);
+        }
+      }
+;
+    }
+  }
+;
+}

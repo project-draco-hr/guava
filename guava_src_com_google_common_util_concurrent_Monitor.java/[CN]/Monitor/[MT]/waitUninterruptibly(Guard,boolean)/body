@@ -1,0 +1,18 @@
+{
+  if (!guard.isSatisfied()) {
+    if (signalBeforeWaiting) {
+      signalConditionsOfSatisfiedGuards(null);
+    }
+    incrementWaiters(guard);
+    try {
+      final Condition condition=guard.condition;
+      do {
+        condition.awaitUninterruptibly();
+      }
+ while (!guard.isSatisfied());
+    }
+  finally {
+      decrementWaiters(guard);
+    }
+  }
+}
