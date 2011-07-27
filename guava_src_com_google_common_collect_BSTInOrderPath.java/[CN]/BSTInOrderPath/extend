@@ -1,1 +1,1 @@
-BSTPath<K,N,BSTInOrderPath<K,N>>
+BSTPath<N,BSTInOrderPath<N>>

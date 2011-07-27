@@ -1,10 +1,10 @@
 {
-  return new BSTPathFactory<K,N,BSTInOrderPath<K,N>>(){
-    @Override public BSTInOrderPath<K,N> extension(    BSTInOrderPath<K,N> path,    BSTSide side){
+  return new BSTPathFactory<N,BSTInOrderPath<N>>(){
+    @Override public BSTInOrderPath<N> extension(    BSTInOrderPath<N> path,    BSTSide side){
       return BSTInOrderPath.extension(path,side);
     }
-    @Override public BSTInOrderPath<K,N> initialPath(    N root){
-      return new BSTInOrderPath<K,N>(root,null,null);
+    @Override public BSTInOrderPath<N> initialPath(    N root){
+      return new BSTInOrderPath<N>(root,null,null);
     }
   }
 ;

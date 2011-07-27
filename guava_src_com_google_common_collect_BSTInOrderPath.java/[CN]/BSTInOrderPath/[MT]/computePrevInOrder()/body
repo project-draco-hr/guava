@@ -1,13 +1,13 @@
 {
   if (getTip().hasChild(LEFT)) {
-    BSTInOrderPath<K,N> path=extension(this,LEFT);
+    BSTInOrderPath<N> path=extension(this,LEFT);
     while (path.getTip().hasChild(RIGHT)) {
       path=extension(path,RIGHT);
     }
     return Optional.of(path);
   }
  else {
-    BSTInOrderPath<K,N> current=this;
+    BSTInOrderPath<N> current=this;
     while (current.side == LEFT) {
       current=current.getPrefix();
     }
