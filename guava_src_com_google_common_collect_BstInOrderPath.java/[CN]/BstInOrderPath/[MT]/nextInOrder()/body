@@ -1,0 +1,4 @@
+{
+  Optional<BstInOrderPath<N>> result=nextInOrder;
+  return (result == null) ? nextInOrder=computeNextInOrder() : result;
+}

@@ -1,4 +1,0 @@
-N liftOriginalRoot
-BSTSide side
-BSTNodeFactory<N> nodeFactory
-BSTBalancePolicy<N> balancePolicy

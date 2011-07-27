@@ -1,4 +1,0 @@
-{
-  Optional<BSTInOrderPath<N>> result=prevInOrder;
-  return (result == null) ? prevInOrder=computePrevInOrder() : result;
-}

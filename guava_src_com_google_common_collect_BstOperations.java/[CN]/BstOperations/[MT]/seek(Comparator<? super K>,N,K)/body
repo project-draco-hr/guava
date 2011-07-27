@@ -1,0 +1,14 @@
+{
+  checkNotNull(comparator);
+  if (tree == null) {
+    return null;
+  }
+  int cmp=comparator.compare(key,tree.getKey());
+  if (cmp == 0) {
+    return tree;
+  }
+ else {
+    BstSide side=(cmp < 0) ? LEFT : RIGHT;
+    return seek(comparator,tree.childOrNull(side),key);
+  }
+}

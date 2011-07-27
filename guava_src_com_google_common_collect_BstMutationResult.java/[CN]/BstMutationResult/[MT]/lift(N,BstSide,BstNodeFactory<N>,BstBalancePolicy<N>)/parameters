@@ -1,0 +1,4 @@
+N liftOriginalRoot
+BstSide side
+BstNodeFactory<N> nodeFactory
+BstBalancePolicy<N> balancePolicy

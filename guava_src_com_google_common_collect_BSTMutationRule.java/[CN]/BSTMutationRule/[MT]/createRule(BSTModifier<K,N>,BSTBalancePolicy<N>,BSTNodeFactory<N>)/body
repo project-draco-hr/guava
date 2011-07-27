@@ -1,3 +1,0 @@
-{
-  return new BSTMutationRule<K,N>(modifier,balancePolicy,nodeFactory);
-}
