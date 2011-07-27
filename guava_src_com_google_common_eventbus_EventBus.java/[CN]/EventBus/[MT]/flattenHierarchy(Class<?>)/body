@@ -1,17 +1,8 @@
 {
-  List<Class<?>> parents=Lists.newLinkedList();
-  Set<Class<?>> classes=Sets.newHashSet();
-  parents.add(concreteClass);
-  while (!parents.isEmpty()) {
-    Class<?> clazz=parents.remove(0);
-    classes.add(clazz);
-    Class<?> parent=clazz.getSuperclass();
-    if (parent != null) {
-      parents.add(parent);
-    }
-    for (    Class<?> iface : clazz.getInterfaces()) {
-      parents.add(iface);
-    }
+  try {
+    return flattenHierarchyCache.get(concreteClass);
   }
-  return classes;
+ catch (  ExecutionException e) {
+    throw Throwables.propagate(e.getCause());
+  }
 }
