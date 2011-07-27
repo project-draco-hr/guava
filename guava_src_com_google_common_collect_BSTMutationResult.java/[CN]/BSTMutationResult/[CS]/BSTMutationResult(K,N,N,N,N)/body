@@ -1,0 +1,10 @@
+{
+  assert(originalTarget == null | originalRoot != null);
+  assert(changedTarget == null | changedRoot != null);
+  assert((originalRoot == changedRoot) == (originalTarget == changedTarget));
+  this.targetKey=checkNotNull(targetKey);
+  this.originalRoot=originalRoot;
+  this.changedRoot=changedRoot;
+  this.originalTarget=originalTarget;
+  this.changedTarget=changedTarget;
+}
