@@ -1,0 +1,4 @@
+{
+  checkState(hasPrefix());
+  return prefix;
+}
