@@ -1,2 +1,3 @@
 GeneralRange<K> range
-N root
+K key
+BstSide side

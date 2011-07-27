@@ -1,5 +1,0 @@
-{
-  checkNotNull(range);
-  checkNotNull(pathFactory);
-  return (root == null) ? null : lastPath(pathFactory.initialPath(root),range,pathFactory);
-}

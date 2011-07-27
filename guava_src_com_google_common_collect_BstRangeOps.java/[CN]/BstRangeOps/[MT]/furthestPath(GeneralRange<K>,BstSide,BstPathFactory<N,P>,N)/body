@@ -1,0 +1,10 @@
+{
+  checkNotNull(range);
+  checkNotNull(pathFactory);
+  checkNotNull(side);
+  if (root == null) {
+    return null;
+  }
+  P path=pathFactory.initialPath(root);
+  return furthestPath(range,side,pathFactory,path);
+}

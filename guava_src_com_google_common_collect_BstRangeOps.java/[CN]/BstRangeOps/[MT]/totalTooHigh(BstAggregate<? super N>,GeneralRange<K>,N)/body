@@ -1,0 +1,14 @@
+{
+  int accum=0;
+  while (root != null) {
+    if (range.tooHigh(root.getKey())) {
+      accum+=aggregate.entryValue(root);
+      accum+=aggregate.treeValue(root.childOrNull(RIGHT));
+      root=root.childOrNull(LEFT);
+    }
+ else {
+      root=root.childOrNull(RIGHT);
+    }
+  }
+  return accum;
+}
