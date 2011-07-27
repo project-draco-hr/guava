@@ -1,6 +1,6 @@
 {
   if (ip instanceof Inet6Address) {
-    return "[" + ip.getHostAddress() + "]";
+    return "[" + toAddrString(ip) + "]";
   }
-  return ip.getHostAddress();
+  return toAddrString(ip);
 }
