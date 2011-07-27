@@ -1,0 +1,64 @@
+{
+  return new BstBalancePolicy<N>(){
+    @Override public N balance(    BstNodeFactory<N> nodeFactory,    N source,    @Nullable N left,    @Nullable N right){
+      int countL=countOrZero(left);
+      int countR=countOrZero(right);
+      if (countL + countR > 1) {
+        if (countR >= SINGLE_ROTATE_RATIO * countL) {
+          return rotateL(nodeFactory,source,left,right);
+        }
+ else         if (countL >= SINGLE_ROTATE_RATIO * countR) {
+          return rotateR(nodeFactory,source,left,right);
+        }
+      }
+      return nodeFactory.createNode(source,left,right);
+    }
+    private N rotateL(    BstNodeFactory<N> nodeFactory,    N source,    @Nullable N left,    N right){
+      checkNotNull(right);
+      N rl=right.childOrNull(LEFT);
+      N rr=right.childOrNull(RIGHT);
+      if (countOrZero(rl) >= SECOND_ROTATE_RATIO * countOrZero(rr)) {
+        right=singleR(nodeFactory,right,rl,rr);
+      }
+      return singleL(nodeFactory,source,left,right);
+    }
+    private N rotateR(    BstNodeFactory<N> nodeFactory,    N source,    N left,    @Nullable N right){
+      checkNotNull(left);
+      N lr=left.childOrNull(RIGHT);
+      N ll=left.childOrNull(LEFT);
+      if (countOrZero(lr) >= SECOND_ROTATE_RATIO * countOrZero(ll)) {
+        left=singleL(nodeFactory,left,ll,lr);
+      }
+      return singleR(nodeFactory,source,left,right);
+    }
+    private N singleL(    BstNodeFactory<N> nodeFactory,    N source,    @Nullable N left,    N right){
+      checkNotNull(right);
+      return nodeFactory.createNode(right,nodeFactory.createNode(source,left,right.childOrNull(LEFT)),right.childOrNull(RIGHT));
+    }
+    private N singleR(    BstNodeFactory<N> nodeFactory,    N source,    N left,    @Nullable N right){
+      checkNotNull(left);
+      return nodeFactory.createNode(left,left.childOrNull(LEFT),nodeFactory.createNode(source,left.childOrNull(RIGHT),right));
+    }
+    @Nullable @Override public N combine(    BstNodeFactory<N> nodeFactory,    @Nullable N left,    @Nullable N right){
+      if (left == null) {
+        return right;
+      }
+ else       if (right == null) {
+        return left;
+      }
+      N newRootSource;
+      if (left.count() > right.count()) {
+        BstMutationResult<K,N> extractLeftMax=extractMax(left,nodeFactory,this);
+        newRootSource=extractLeftMax.getOriginalTarget();
+        left=extractLeftMax.getChangedRoot();
+      }
+ else {
+        BstMutationResult<K,N> extractRightMin=extractMin(right,nodeFactory,this);
+        newRootSource=extractRightMin.getOriginalTarget();
+        right=extractRightMin.getChangedRoot();
+      }
+      return nodeFactory.createNode(newRootSource,left,right);
+    }
+  }
+;
+}
