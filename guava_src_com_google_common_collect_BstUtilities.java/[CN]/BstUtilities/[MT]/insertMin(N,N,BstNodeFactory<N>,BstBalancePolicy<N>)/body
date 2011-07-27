@@ -1,0 +1,11 @@
+{
+  checkNotNull(entry);
+  checkNotNull(nodeFactory);
+  checkNotNull(balancePolicy);
+  if (root == null) {
+    return nodeFactory.createLeaf(entry);
+  }
+ else {
+    return balancePolicy.balance(nodeFactory,root,insertMin(root.childOrNull(LEFT),entry,nodeFactory,balancePolicy),root.childOrNull(RIGHT));
+  }
+}

@@ -1,0 +1,10 @@
+{
+  checkNotNull(root);
+  checkNotNull(nodeFactory);
+  checkNotNull(balancePolicy);
+  if (root.hasChild(RIGHT)) {
+    BstMutationResult<K,N> subResult=extractMax(root.getChild(RIGHT),nodeFactory,balancePolicy);
+    return subResult.lift(root,RIGHT,nodeFactory,balancePolicy);
+  }
+  return BstMutationResult.mutationResult(root.getKey(),root,root.childOrNull(LEFT),root,null);
+}
