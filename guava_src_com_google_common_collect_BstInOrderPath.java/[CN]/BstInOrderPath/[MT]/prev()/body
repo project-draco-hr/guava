@@ -1,6 +1,0 @@
-{
-  if (!hasPrev()) {
-    throw new NoSuchElementException();
-  }
-  return prevInOrder().get();
-}

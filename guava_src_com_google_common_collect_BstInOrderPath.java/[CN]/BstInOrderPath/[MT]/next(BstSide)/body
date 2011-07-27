@@ -1,0 +1,6 @@
+{
+  if (!hasNext(side)) {
+    throw new NoSuchElementException();
+  }
+  return nextInOrder(side).get();
+}
