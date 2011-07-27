@@ -1,0 +1,31 @@
+{
+  checkNotNull(other);
+  checkArgument(comparator.equals(other.comparator));
+  Optional<T> lowEnd=lowerEndpoint;
+  BoundType lowType=lowerBoundType;
+  if (!hasLowerBound()) {
+    lowEnd=other.lowerEndpoint;
+    lowType=other.lowerBoundType;
+  }
+ else   if (other.hasLowerBound()) {
+    int cmp=comparator.compare(lowerEndpoint.get(),other.lowerEndpoint.get());
+    if (cmp < 0 || (cmp == 0 && other.lowerBoundType == OPEN)) {
+      lowEnd=other.lowerEndpoint;
+      lowType=other.lowerBoundType;
+    }
+  }
+  Optional<T> upEnd=upperEndpoint;
+  BoundType upType=upperBoundType;
+  if (!hasUpperBound()) {
+    upEnd=other.upperEndpoint;
+    upType=other.upperBoundType;
+  }
+ else   if (other.hasUpperBound()) {
+    int cmp=comparator.compare(upperEndpoint.get(),other.upperEndpoint.get());
+    if (cmp > 0 || (cmp == 0 && other.upperBoundType == OPEN)) {
+      upEnd=other.upperEndpoint;
+      upType=other.upperBoundType;
+    }
+  }
+  return new GeneralRange<T>(comparator,lowEnd,lowType,upEnd,upType);
+}

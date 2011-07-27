@@ -1,0 +1,13 @@
+{
+  if (root == null || range.isEmpty()) {
+    return 0;
+  }
+  int totalCount=root.count();
+  if (range.hasLowerBound()) {
+    totalCount-=countTooLow(range,root);
+  }
+  if (range.hasUpperBound()) {
+    totalCount-=countTooHigh(range,root);
+  }
+  return totalCount;
+}

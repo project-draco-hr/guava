@@ -1,0 +1,12 @@
+{
+  if (root == null) {
+    return null;
+  }
+  if (range.tooLow(root.getKey())) {
+    N right=subTreeTooLow(range,balancePolicy,nodeFactory,root.childOrNull(RIGHT));
+    return balancePolicy.balance(nodeFactory,root,root.childOrNull(LEFT),right);
+  }
+ else {
+    return subTreeTooLow(range,balancePolicy,nodeFactory,root.childOrNull(LEFT));
+  }
+}

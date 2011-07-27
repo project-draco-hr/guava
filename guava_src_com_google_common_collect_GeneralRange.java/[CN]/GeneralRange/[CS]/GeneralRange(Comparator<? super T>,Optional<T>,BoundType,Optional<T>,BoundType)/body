@@ -1,0 +1,7 @@
+{
+  this.comparator=checkNotNull(comparator);
+  this.lowerEndpoint=checkNotNull(lowerEndpoint);
+  this.lowerBoundType=checkNotNull(lowerBoundType);
+  this.upperEndpoint=checkNotNull(upperEndpoint);
+  this.upperBoundType=checkNotNull(upperBoundType);
+}

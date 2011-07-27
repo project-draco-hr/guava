@@ -1,0 +1,8 @@
+{
+  checkNotNull(range);
+  checkNotNull(balancePolicy);
+  checkNotNull(nodeFactory);
+  N higher=range.hasUpperBound() ? subTreeTooHigh(range,balancePolicy,nodeFactory,root) : null;
+  N lower=range.hasLowerBound() ? subTreeTooLow(range,balancePolicy,nodeFactory,root) : null;
+  return balancePolicy.combine(nodeFactory,lower,higher);
+}

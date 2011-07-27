@@ -1,0 +1,3 @@
+{
+  return Objects.hashCode(comparator,lowerEndpoint,lowerBoundType,upperEndpoint,upperBoundType);
+}

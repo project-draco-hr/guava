@@ -1,0 +1,3 @@
+{
+  return (hasUpperBound() && tooLow(upperEndpoint.get())) || (hasLowerBound() && tooHigh(lowerEndpoint.get()));
+}

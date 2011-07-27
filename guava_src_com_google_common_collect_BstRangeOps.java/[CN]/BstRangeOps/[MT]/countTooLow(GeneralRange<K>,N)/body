@@ -1,0 +1,11 @@
+{
+  if (root == null) {
+    return 0;
+  }
+ else   if (range.tooLow(root.getKey())) {
+    return 1 + countOrZero(root.childOrNull(LEFT)) + countTooLow(range,root.childOrNull(RIGHT));
+  }
+ else {
+    return countTooLow(range,root.childOrNull(LEFT));
+  }
+}

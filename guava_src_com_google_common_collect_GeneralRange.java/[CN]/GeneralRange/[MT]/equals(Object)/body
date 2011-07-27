@@ -1,0 +1,7 @@
+{
+  if (obj instanceof GeneralRange) {
+    GeneralRange<?> r=(GeneralRange<?>)obj;
+    return comparator.equals(r.comparator) && lowerEndpoint.equals(r.lowerEndpoint) && lowerBoundType.equals(r.lowerBoundType)&& upperEndpoint.equals(r.upperEndpoint)&& upperBoundType.equals(r.upperBoundType);
+  }
+  return false;
+}

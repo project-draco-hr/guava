@@ -1,0 +1,8 @@
+{
+  if (!hasUpperBound()) {
+    return false;
+  }
+  T ubound=upperEndpoint.get();
+  int cmp=comparator.compare(t,ubound);
+  return cmp > 0 | (cmp == 0 & upperBoundType == OPEN);
+}
