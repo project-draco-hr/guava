@@ -11,7 +11,7 @@
   if (addr != null) {
     return new HostSpecifier(InetAddresses.toUriString(addr));
   }
-  final InternetDomainName domain=InternetDomainName.fromLenient(host);
+  final InternetDomainName domain=InternetDomainName.from(host);
   if (domain.hasPublicSuffix()) {
     return new HostSpecifier(domain.name());
   }
