@@ -1,8 +1,8 @@
 {
-  if (that == BELOW_ALL) {
+  if (that == belowAll()) {
     return 1;
   }
-  if (that == ABOVE_ALL) {
+  if (that == aboveAll()) {
     return -1;
   }
   int result=Range.compareOrThrow(endpoint,that.endpoint);
