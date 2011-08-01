@@ -1,3 +1,0 @@
-{
-  defaultEqualObjects.add(checkNotNull(reference,"Reference object cannot be null"));
-}

@@ -1,5 +1,0 @@
-{
-  checkNotNull(notEqualObjects);
-  defaultNotEqualObjects.addAll(ImmutableList.copyOf(notEqualObjects));
-  return this;
-}

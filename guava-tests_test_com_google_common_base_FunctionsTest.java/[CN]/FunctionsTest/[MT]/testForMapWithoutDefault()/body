@@ -13,5 +13,5 @@
   }
  catch (  IllegalArgumentException expected) {
   }
-  new EqualsTester(function).addEqualObject(Functions.forMap(map)).addEqualObject(Functions.forMap(map)).addNotEqualObject(Functions.forMap(map,42)).testEquals();
+  new EqualsTester().addEqualityGroup(function,Functions.forMap(map)).addEqualityGroup(Functions.forMap(map,42)).testEquals();
 }

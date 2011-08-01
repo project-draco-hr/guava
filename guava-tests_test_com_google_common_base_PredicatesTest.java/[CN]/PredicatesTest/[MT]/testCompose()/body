@@ -7,5 +7,5 @@
   assertTrue(trimEqualsFoo.apply("Foo"));
   assertTrue(trimEqualsFoo.apply("   Foo   "));
   assertFalse(trimEqualsFoo.apply("Foo-b-que"));
-  new EqualsTester(trimEqualsFoo).addEqualObject(Predicates.compose(equalsFoo,trim)).addNotEqualObject(equalsFoo).addNotEqualObject(trim).addNotEqualObject(Predicates.compose(equalsFoo,identity)).addNotEqualObject(Predicates.compose(equalsBar,trim)).testEquals();
+  new EqualsTester().addEqualityGroup(trimEqualsFoo,Predicates.compose(equalsFoo,trim)).addEqualityGroup(equalsFoo).addEqualityGroup(trim).addEqualityGroup(Predicates.compose(equalsFoo,identity)).addEqualityGroup(Predicates.compose(equalsBar,trim)).testEquals();
 }

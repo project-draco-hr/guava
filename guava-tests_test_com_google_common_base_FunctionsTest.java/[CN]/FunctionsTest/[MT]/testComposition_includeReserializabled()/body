@@ -10,5 +10,5 @@
   mIntegerToSpanish.put(4,"Cuatro");
   Function<Integer,String> integerToSpanish=Functions.forMap(mIntegerToSpanish);
   Function<String,String> japaneseToSpanish=Functions.compose(integerToSpanish,japaneseToInteger);
-  new EqualsTester(japaneseToSpanish).addEqualObject(Functions.compose(integerToSpanish,japaneseToInteger)).addEqualObject(SerializableTester.reserialize(japaneseToSpanish)).addNotEqualObject(japaneseToInteger).addNotEqualObject(integerToSpanish).addNotEqualObject(Functions.compose(japaneseToInteger,integerToSpanish)).testEquals();
+  new EqualsTester().addEqualityGroup(japaneseToSpanish,Functions.compose(integerToSpanish,japaneseToInteger),SerializableTester.reserialize(japaneseToSpanish)).addEqualityGroup(japaneseToInteger).addEqualityGroup(integerToSpanish).addEqualityGroup(Functions.compose(japaneseToInteger,integerToSpanish)).testEquals();
 }

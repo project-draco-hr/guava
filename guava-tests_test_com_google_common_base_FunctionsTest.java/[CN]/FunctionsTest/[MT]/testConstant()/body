@@ -5,6 +5,6 @@
   Function<Object,String> g=Functions.constant(null);
   assertEquals(null,g.apply(2));
   assertEquals(null,g.apply(null));
-  new EqualsTester(f).addEqualObject(Functions.constant("correct")).addNotEqualObject(Functions.constant("incorrect")).addNotEqualObject(Functions.toStringFunction()).addNotEqualObject(g).testEquals();
-  new EqualsTester(g).addEqualObject(Functions.constant(null)).addNotEqualObject(Functions.constant("incorrect")).addNotEqualObject(Functions.toStringFunction()).addNotEqualObject(f).testEquals();
+  new EqualsTester().addEqualityGroup(f,Functions.constant("correct")).addEqualityGroup(Functions.constant("incorrect")).addEqualityGroup(Functions.toStringFunction()).addEqualityGroup(g).testEquals();
+  new EqualsTester().addEqualityGroup(g,Functions.constant(null)).addEqualityGroup(Functions.constant("incorrect")).addEqualityGroup(Functions.toStringFunction()).addEqualityGroup(f).testEquals();
 }

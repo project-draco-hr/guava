@@ -1,3 +1,3 @@
 {
-  new EqualsTester(Predicates.and(TRUE,NEVER_REACHED)).addEqualObject(Predicates.and(TRUE,NEVER_REACHED)).addNotEqualObject(Predicates.and(NEVER_REACHED,TRUE)).addNotEqualObject(Predicates.and(TRUE)).addNotEqualObject(Predicates.or(TRUE,NEVER_REACHED)).testEquals();
+  new EqualsTester().addEqualityGroup(Predicates.and(TRUE,NEVER_REACHED),Predicates.and(TRUE,NEVER_REACHED)).addEqualityGroup(Predicates.and(NEVER_REACHED,TRUE)).addEqualityGroup(Predicates.and(TRUE)).addEqualityGroup(Predicates.or(TRUE,NEVER_REACHED)).testEquals();
 }

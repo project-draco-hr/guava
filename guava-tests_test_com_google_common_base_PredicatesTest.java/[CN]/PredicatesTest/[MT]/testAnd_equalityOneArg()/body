@@ -1,3 +1,4 @@
 {
-  new EqualsTester(Predicates.and(NEVER_REACHED)).addEqualObject(Predicates.and(NEVER_REACHED)).addNotEqualObject(Predicates.and(NEVER_REACHED,FALSE)).addNotEqualObject(Predicates.and(isOdd())).addNotEqualObject(Predicates.and()).addNotEqualObject(Predicates.or(NEVER_REACHED)).testEquals();
+  Object[] notEqualObjects={Predicates.and(NEVER_REACHED,FALSE)};
+  new EqualsTester().addEqualityGroup(Predicates.and(NEVER_REACHED),Predicates.and(NEVER_REACHED)).addEqualityGroup(notEqualObjects).addEqualityGroup(Predicates.and(isOdd())).addEqualityGroup(Predicates.and()).addEqualityGroup(Predicates.or(NEVER_REACHED)).testEquals();
 }

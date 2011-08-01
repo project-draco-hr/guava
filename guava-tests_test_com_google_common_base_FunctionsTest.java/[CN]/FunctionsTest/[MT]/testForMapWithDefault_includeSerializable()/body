@@ -6,5 +6,5 @@
   assertEquals(1,function.apply("One").intValue());
   assertEquals(42,function.apply("Two").intValue());
   assertEquals(3,function.apply("Three").intValue());
-  new EqualsTester(function).addEqualObject(Functions.forMap(map,42)).addEqualObject(SerializableTester.reserialize(function)).addNotEqualObject(Functions.forMap(map)).addNotEqualObject(Functions.forMap(map,null)).addNotEqualObject(Functions.forMap(map,43)).testEquals();
+  new EqualsTester().addEqualityGroup(function,Functions.forMap(map,42),SerializableTester.reserialize(function)).addEqualityGroup(Functions.forMap(map)).addEqualityGroup(Functions.forMap(map,null)).addEqualityGroup(Functions.forMap(map,43)).testEquals();
 }
