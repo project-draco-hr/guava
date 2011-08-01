@@ -1,6 +1,5 @@
 {
-  int capacity=Maps.capacity(elements.length);
-  HashSet<E> set=new HashSet<E>(capacity);
+  HashSet<E> set=newHashSetWithExpectedSize(elements.length);
   Collections.addAll(set,elements);
   return set;
 }

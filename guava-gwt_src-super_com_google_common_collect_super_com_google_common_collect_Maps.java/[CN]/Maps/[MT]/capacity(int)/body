@@ -1,4 +1,10 @@
 {
-  checkArgument(expectedSize >= 0);
-  return Ints.saturatedCast(Math.max(expectedSize * 2L,16L));
+  if (expectedSize < 3) {
+    checkArgument(expectedSize >= 0);
+    return expectedSize + 1;
+  }
+  if (expectedSize < Ints.MAX_POWER_OF_TWO) {
+    return expectedSize + expectedSize / 3;
+  }
+  return Integer.MAX_VALUE;
 }
