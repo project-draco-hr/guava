@@ -1,1 +1,1 @@
-AbstractEquivalence<Iterable<T>>
+Equivalence<Iterable<T>>
