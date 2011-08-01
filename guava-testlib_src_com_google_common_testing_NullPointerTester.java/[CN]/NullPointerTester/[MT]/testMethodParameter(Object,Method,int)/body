@@ -11,7 +11,7 @@
       method.invoke(instance,params);
     }
     @Override public String toString(){
-      return method.getName();
+      return method.getName() + "(" + Arrays.toString(getParameterTypes())+ ")";
     }
   }
 ,paramIndex,method.getDeclaringClass());

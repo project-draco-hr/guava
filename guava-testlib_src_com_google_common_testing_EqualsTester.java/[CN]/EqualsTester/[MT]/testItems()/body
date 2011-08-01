@@ -1,0 +1,8 @@
+{
+  for (  Object item : Iterables.concat(defaultEqualObjects,Iterables.concat(equalityGroups))) {
+    assertTrue(item + " must be unequal to null",!item.equals(null));
+    assertTrue(item + " must be unequal to an arbitrary object of another class",!item.equals(NotAnInstance.EQUAL_TO_NOTHING));
+    assertEquals(item + " must be equal to itself",item,item);
+    assertEquals("the hash of " + item + " must be consistent",item.hashCode(),item.hashCode());
+  }
+}

@@ -1,0 +1,4 @@
+int groupNumber
+int itemNumber
+int unrelatedGroupNumber
+int unrelatedItemNumber

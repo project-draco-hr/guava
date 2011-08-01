@@ -1,5 +1,3 @@
 {
-  this();
-  checkNotNull(reference,"Reference object cannot be null");
-  defaultEqualObjects.add(reference);
+  defaultEqualObjects.add(checkNotNull(reference,"Reference object cannot be null"));
 }

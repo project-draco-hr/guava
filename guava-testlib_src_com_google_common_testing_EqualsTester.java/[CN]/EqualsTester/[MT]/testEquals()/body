@@ -1,5 +1,26 @@
 {
-  assertEquality();
-  assertInequality();
+  RelationshipTester<Object> delegate=new RelationshipTester<Object>(new RelationshipAssertion<Object>(){
+    @Override public void assertRelated(    Object item,    Object related){
+      assertEquals("$ITEM must be equal to $RELATED",item,related);
+      int itemHash=item.hashCode();
+      int relatedHash=related.hashCode();
+      assertEquals("the hash (" + itemHash + ") of $ITEM must be equal to the hash ("+ relatedHash+ ") of $RELATED",itemHash,relatedHash);
+    }
+    @Override public void assertUnrelated(    Object item,    Object unrelated){
+      assertTrue("$ITEM must be unequal to $UNRELATED",!Objects.equal(item,unrelated));
+    }
+  }
+);
+  if (!defaultEqualObjects.isEmpty()) {
+    delegate.addRelatedGroup(defaultEqualObjects);
+  }
+  for (  List<Object> group : equalityGroups) {
+    delegate.addRelatedGroup(group);
+  }
+  for (int run=0; run < REPETITIONS; run++) {
+    testItems();
+    delegate.test();
+    testLegacyDefaultNotEqualsObjects();
+  }
   return this;
 }

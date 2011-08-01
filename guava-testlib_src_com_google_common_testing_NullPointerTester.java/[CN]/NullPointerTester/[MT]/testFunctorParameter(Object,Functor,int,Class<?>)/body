@@ -9,6 +9,11 @@
   }
  catch (  InvocationTargetException e) {
     Throwable cause=e.getCause();
-    GuavaAsserts.assertTrue("wrong exception thrown from " + func + ": "+ cause,cause instanceof NullPointerException || cause instanceof UnsupportedOperationException);
+    if (cause instanceof NullPointerException || cause instanceof UnsupportedOperationException) {
+      return;
+    }
+    TestAssertionFailure error=new TestAssertionFailure("wrong exception thrown from " + func + ": "+ cause);
+    error.initCause(cause);
+    throw error;
   }
 }

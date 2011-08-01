@@ -1,5 +1,5 @@
 {
   checkNotNull(notEqualObjects);
-  Collections.addAll(defaultNotEqualObjects,notEqualObjects);
+  defaultNotEqualObjects.addAll(ImmutableList.copyOf(notEqualObjects));
   return this;
 }

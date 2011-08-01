@@ -1,0 +1,10 @@
+{
+  T item=groups.get(groupNumber).get(itemNumber);
+  T unrelated=groups.get(unrelatedGroupNumber).get(unrelatedItemNumber);
+  try {
+    assertion.assertUnrelated(item,unrelated);
+  }
+ catch (  TestAssertionFailure e) {
+    throw new TestAssertionFailure(e.getMessage().replace("$ITEM",itemString(item,groupNumber,itemNumber)).replace("$UNRELATED",itemString(unrelated,unrelatedGroupNumber,unrelatedItemNumber)));
+  }
+}

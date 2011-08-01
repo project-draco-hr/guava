@@ -1,0 +1,3 @@
+{
+  return new StringBuilder().append(item).append(" [group ").append(groupNumber + 1).append(", item ").append(itemNumber + 1).append(']').toString();
+}

@@ -1,0 +1,4 @@
+{
+  groups.add(ImmutableList.copyOf(group));
+  return this;
+}

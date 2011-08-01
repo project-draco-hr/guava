@@ -1,0 +1,11 @@
+{
+  ImmutableList<T> group=groups.get(groupNumber);
+  T item=group.get(itemNumber);
+  T related=group.get(relatedItemNumber);
+  try {
+    assertion.assertRelated(item,related);
+  }
+ catch (  TestAssertionFailure e) {
+    throw new TestAssertionFailure(e.getMessage().replace("$ITEM",itemString(item,groupNumber,itemNumber)).replace("$RELATED",itemString(related,groupNumber,relatedItemNumber)));
+  }
+}

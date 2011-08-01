@@ -1,3 +1,3 @@
 {
-  return ignoredMembers.contains(member);
+  return member.isSynthetic() || ignoredMembers.contains(member);
 }
