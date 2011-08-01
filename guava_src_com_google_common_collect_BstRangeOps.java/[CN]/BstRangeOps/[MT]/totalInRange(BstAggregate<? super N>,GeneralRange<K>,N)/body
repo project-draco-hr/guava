@@ -6,10 +6,10 @@
   }
   int total=aggregate.treeValue(root);
   if (range.hasLowerBound()) {
-    total-=totalTooLow(aggregate,range,root);
+    total-=totalBeyondRangeToSide(aggregate,range,LEFT,root);
   }
   if (range.hasUpperBound()) {
-    total-=totalTooHigh(aggregate,range,root);
+    total-=totalBeyondRangeToSide(aggregate,range,RIGHT,root);
   }
   return total;
 }
