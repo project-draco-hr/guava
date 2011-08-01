@@ -30,8 +30,5 @@
   if (removalListener != null) {
     s.addValue("removalListener");
   }
-  if (cleanupExecutor != null) {
-    s.addValue("cleanupExecutor");
-  }
   return s.toString();
 }

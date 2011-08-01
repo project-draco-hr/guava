@@ -8,7 +8,6 @@
   expireAfterAccessNanos=builder.getExpireAfterAccessNanos();
   expireAfterWriteNanos=builder.getExpireAfterWriteNanos();
   entryFactory=EntryFactory.getFactory(keyStrength,expires(),evictsBySize());
-  cleanupExecutor=builder.getCleanupExecutor();
   ticker=builder.getTicker();
   removalListener=builder.getRemovalListener();
   removalNotificationQueue=(removalListener == NullListener.INSTANCE) ? CustomConcurrentHashMap.<RemovalNotification<K,V>>discardingQueue() : new ConcurrentLinkedQueue<RemovalNotification<K,V>>();
@@ -47,8 +46,5 @@
     for (int i=0; i < this.segments.length; ++i) {
       this.segments[i]=createSegment(segmentSize,MapMaker.UNSET_INT);
     }
-  }
-  if (cleanupExecutor != null) {
-    cleanupExecutor.scheduleWithFixedDelay(new CleanupMapTask(this),CLEANUP_EXECUTOR_DELAY_SECS,CLEANUP_EXECUTOR_DELAY_SECS,TimeUnit.SECONDS);
   }
 }
