@@ -1,4 +1,0 @@
-{
-  checkState(isPresent());
-  return instance;
-}

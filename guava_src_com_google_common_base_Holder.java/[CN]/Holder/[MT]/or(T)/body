@@ -1,4 +1,0 @@
-{
-  checkNotNull(defaultValue,"use orNull() instead of or(null)");
-  return isPresent() ? instance : defaultValue;
-}

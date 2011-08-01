@@ -1,3 +1,0 @@
-{
-  return isPresent() ? "Holder.of(" + instance + ")" : "Holder.absent()";
-}
