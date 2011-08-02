@@ -1,0 +1,8 @@
+{
+  try {
+    return range.containsAll((Iterable<? extends C>)targets);
+  }
+ catch (  ClassCastException e) {
+    return false;
+  }
+}

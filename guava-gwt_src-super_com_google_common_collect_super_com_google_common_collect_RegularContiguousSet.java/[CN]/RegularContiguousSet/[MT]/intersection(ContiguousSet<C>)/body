@@ -1,0 +1,12 @@
+{
+  checkNotNull(other);
+  checkArgument(this.domain.equals(other.domain));
+  if (other.isEmpty()) {
+    return other;
+  }
+ else {
+    C lowerEndpoint=Ordering.natural().max(this.first(),other.first());
+    C upperEndpoint=Ordering.natural().min(this.last(),other.last());
+    return (lowerEndpoint.compareTo(upperEndpoint) < 0) ? Ranges.closed(lowerEndpoint,upperEndpoint).asSet(domain) : new EmptyContiguousSet<C>(domain);
+  }
+}

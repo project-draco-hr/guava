@@ -1,0 +1,3 @@
+{
+  return range.intersection(Ranges.range(fromElement,BoundType.forBoolean(fromInclusive),toElement,BoundType.forBoolean(toInclusive))).asSet(domain);
+}
