@@ -27,12 +27,17 @@
                 createNewEntry=false;
               }
  else {
-                V value=getLiveValue(e);
-                if (value != null) {
+                V value=e.getValueReference().get();
+                if (value == null) {
+                  enqueueNotification(entryKey,hash,value,RemovalCause.COLLECTED);
+                }
+ else                 if (map.expires() && map.isExpired(e)) {
+                  enqueueNotification(entryKey,hash,value,RemovalCause.EXPIRED);
+                }
+ else {
                   recordLockedRead(e);
                   return value;
                 }
-                enqueueNotification(entryKey,hash,value,RemovalCause.COLLECTED);
                 evictionQueue.remove(e);
                 expirationQueue.remove(e);
                 this.count=newCount;
