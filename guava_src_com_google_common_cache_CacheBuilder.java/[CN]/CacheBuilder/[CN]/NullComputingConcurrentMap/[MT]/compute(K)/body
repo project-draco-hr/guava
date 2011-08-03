@@ -7,6 +7,7 @@
     throw e;
   }
 catch (  Throwable t) {
-    throw new UncheckedExecutionException(t);
+    wrapAndThrowUnchecked(t);
+    throw new AssertionError();
   }
 }

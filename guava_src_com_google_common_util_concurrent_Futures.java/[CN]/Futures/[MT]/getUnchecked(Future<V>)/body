@@ -7,9 +7,7 @@
     throw e;
   }
 catch (  ExecutionException e) {
-    throw new UncheckedExecutionException(e.getCause());
-  }
-catch (  RuntimeException e) {
-    throw new UncheckedExecutionException(e);
+    wrapAndThrowUnchecked(e.getCause());
+    throw new AssertionError();
   }
 }
