@@ -1,0 +1,3 @@
+{
+  return delegate.ceilingKey(checkValid(key));
+}

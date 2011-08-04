@@ -1,0 +1,11 @@
+{
+  if (level == stimuli.length) {
+    compareResultsForThisListOfStimuli();
+  }
+ else {
+    for (    Stimulus<E,? super I> stimulus : getStimulusValues()) {
+      stimuli[level]=stimulus;
+      recurse(level + 1);
+    }
+  }
+}

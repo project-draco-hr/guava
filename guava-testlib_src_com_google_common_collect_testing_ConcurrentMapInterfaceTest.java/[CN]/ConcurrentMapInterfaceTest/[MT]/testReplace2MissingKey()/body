@@ -1,0 +1,30 @@
+{
+  final ConcurrentMap<K,V> map;
+  final K keyToReplace;
+  final V newValue;
+  try {
+    map=makeEitherMap();
+    keyToReplace=getKeyNotInPopulatedMap();
+    newValue=getValueNotInPopulatedMap();
+  }
+ catch (  UnsupportedOperationException e) {
+    return;
+  }
+  if (supportsPut) {
+    int initialSize=map.size();
+    assertNull(map.replace(keyToReplace,newValue));
+    assertNull(map.get(keyToReplace));
+    assertFalse(map.containsKey(keyToReplace));
+    assertFalse(map.containsValue(newValue));
+    assertEquals(initialSize,map.size());
+  }
+ else {
+    try {
+      map.replace(keyToReplace,newValue);
+      fail("Expected UnsupportedOperationException.");
+    }
+ catch (    UnsupportedOperationException e) {
+    }
+  }
+  assertInvariants(map);
+}

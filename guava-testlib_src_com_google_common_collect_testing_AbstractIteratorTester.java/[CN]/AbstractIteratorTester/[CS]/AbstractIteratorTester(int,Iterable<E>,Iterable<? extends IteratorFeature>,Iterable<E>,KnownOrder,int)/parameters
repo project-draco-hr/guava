@@ -1,0 +1,6 @@
+int steps
+Iterable<E> elementsToInsertIterable
+Iterable<? extends IteratorFeature> features
+Iterable<E> expectedElements
+KnownOrder knownOrder
+int startIndex

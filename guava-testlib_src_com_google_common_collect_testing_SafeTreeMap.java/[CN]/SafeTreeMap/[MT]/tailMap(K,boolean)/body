@@ -1,0 +1,3 @@
+{
+  return new SafeTreeMap<K,V>(delegate.tailMap(checkValid(fromKey),inclusive));
+}

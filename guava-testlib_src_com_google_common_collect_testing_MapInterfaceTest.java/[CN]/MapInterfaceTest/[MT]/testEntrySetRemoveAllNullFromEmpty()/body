@@ -1,0 +1,29 @@
+{
+  final Map<K,V> map;
+  try {
+    map=makeEmptyMap();
+  }
+ catch (  UnsupportedOperationException e) {
+    return;
+  }
+  Set<Entry<K,V>> entrySet=map.entrySet();
+  if (supportsRemove) {
+    try {
+      entrySet.removeAll(null);
+      fail("Expected NullPointerException.");
+    }
+ catch (    NullPointerException e) {
+    }
+  }
+ else {
+    try {
+      entrySet.removeAll(null);
+      fail("Expected UnsupportedOperationException or NullPointerException.");
+    }
+ catch (    UnsupportedOperationException e) {
+    }
+catch (    NullPointerException e) {
+    }
+  }
+  assertInvariants(map);
+}

@@ -1,0 +1,3 @@
+{
+  return getNumElements() / 2;
+}

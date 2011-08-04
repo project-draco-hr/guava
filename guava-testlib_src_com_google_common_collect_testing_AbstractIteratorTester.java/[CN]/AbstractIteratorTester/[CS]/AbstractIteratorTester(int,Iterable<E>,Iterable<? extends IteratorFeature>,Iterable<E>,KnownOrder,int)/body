@@ -1,0 +1,11 @@
+{
+  stimuli=new Stimulus[steps];
+  if (!elementsToInsertIterable.iterator().hasNext()) {
+    throw new IllegalArgumentException();
+  }
+  elementsToInsert=Helpers.cycle(elementsToInsertIterable);
+  this.features=Helpers.copyToSet(features);
+  this.expectedElements=Helpers.copyToList(expectedElements);
+  this.knownOrder=knownOrder;
+  this.startIndex=startIndex;
+}

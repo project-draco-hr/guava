@@ -1,0 +1,17 @@
+{
+  final SortedMap<K,V> map;
+  try {
+    map=makeEitherMap();
+  }
+ catch (  UnsupportedOperationException e) {
+    return;
+  }
+  List<Entry<K,V>> list=toList(map.entrySet());
+  for (int i=0; i < list.size(); i++) {
+    for (int j=i; j < list.size(); j++) {
+      List<Entry<K,V>> expected=subListSnapshot(list,i,j);
+      SortedMap<K,V> subMap=map.subMap(list.get(i).getKey(),list.get(j).getKey());
+      assertEquals(expected,toList(subMap.entrySet()));
+    }
+  }
+}

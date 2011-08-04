@@ -1,0 +1,4 @@
+{
+  Collection<E> elements=getSampleElements(getCollectionSize().getNumElements());
+  return generator.create(elements.toArray());
+}

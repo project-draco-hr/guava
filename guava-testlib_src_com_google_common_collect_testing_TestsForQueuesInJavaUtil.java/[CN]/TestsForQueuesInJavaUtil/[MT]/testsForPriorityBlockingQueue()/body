@@ -1,0 +1,8 @@
+{
+  return QueueTestSuiteBuilder.using(new TestStringQueueGenerator(){
+    @Override public Queue<String> create(    String[] elements){
+      return new PriorityBlockingQueue<String>(MinimalCollection.of(elements));
+    }
+  }
+).named("PriorityBlockingQueue").withFeatures(CollectionFeature.GENERAL_PURPOSE,CollectionSize.ANY).suppressing(suppressForPriorityBlockingQueue()).createTestSuite();
+}

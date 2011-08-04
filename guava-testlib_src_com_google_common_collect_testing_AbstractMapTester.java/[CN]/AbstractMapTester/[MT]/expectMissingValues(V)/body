@@ -1,0 +1,5 @@
+{
+  for (  V element : elements) {
+    assertFalse("Should not contain value " + element,getMap().containsValue(element));
+  }
+}

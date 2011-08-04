@@ -1,0 +1,1 @@
+PerCollectionSizeTestSuiteBuilder<MapTestSuiteBuilder<K,V>,TestMapGenerator<K,V>,Map<K,V>,Map.Entry<K,V>>

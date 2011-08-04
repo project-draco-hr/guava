@@ -1,0 +1,7 @@
+{
+  try {
+    assertFalse(message,getMap().containsKey(null));
+  }
+ catch (  NullPointerException tolerated) {
+  }
+}

@@ -1,0 +1,13 @@
+{
+  final TestMapGenerator<K,V> delegate=(TestMapGenerator<K,V>)parentBuilder.getSubjectGenerator().getInnerGenerator();
+  List<Feature<?>> features=new ArrayList<Feature<?>>();
+  features.add(NoRecurse.DESCENDING);
+  features.addAll(parentBuilder.getFeatures());
+  return NavigableMapTestSuiteBuilder.using(new ForwardingTestMapGenerator<K,V>(delegate){
+    @Override public Map<K,V> create(    Object... entries){
+      NavigableMap<K,V> map=(NavigableMap<K,V>)delegate.create(entries);
+      return map.descendingMap();
+    }
+  }
+).named(parentBuilder.getName() + " descending").withFeatures(features).suppressing(parentBuilder.getSuppressedTests()).createTestSuite();
+}

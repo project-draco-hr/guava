@@ -1,0 +1,14 @@
+{
+  List<String> temp=new ArrayList<String>();
+  for (  Feature<?> feature : features) {
+    Object featureAsObject=feature;
+    if (featureAsObject instanceof Enum) {
+      Enum<?> f=(Enum<?>)featureAsObject;
+      temp.add(Platform.classGetSimpleName(f.getDeclaringClass()) + "." + feature);
+    }
+ else {
+      temp.add(feature.toString());
+    }
+  }
+  return temp.toString();
+}

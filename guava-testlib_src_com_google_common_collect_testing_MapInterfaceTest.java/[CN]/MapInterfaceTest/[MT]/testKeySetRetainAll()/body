@@ -1,0 +1,25 @@
+{
+  final Map<K,V> map;
+  try {
+    map=makePopulatedMap();
+  }
+ catch (  UnsupportedOperationException e) {
+    return;
+  }
+  Set<K> keys=map.keySet();
+  K key=keys.iterator().next();
+  if (supportsRemove) {
+    keys.retainAll(Collections.singleton(key));
+    assertEquals(1,map.size());
+    assertTrue(map.containsKey(key));
+  }
+ else {
+    try {
+      keys.retainAll(Collections.singleton(key));
+      fail("Expected UnsupportedOperationException.");
+    }
+ catch (    UnsupportedOperationException e) {
+    }
+  }
+  assertInvariants(map);
+}

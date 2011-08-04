@@ -1,0 +1,5 @@
+{
+  super.setUp();
+  samples=this.getSubjectGenerator().samples();
+  resetContainer();
+}

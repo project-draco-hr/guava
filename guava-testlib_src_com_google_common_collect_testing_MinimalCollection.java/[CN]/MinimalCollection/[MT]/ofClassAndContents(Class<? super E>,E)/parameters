@@ -1,0 +1,2 @@
+Class<? super E> type
+E contents

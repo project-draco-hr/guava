@@ -1,0 +1,4 @@
+{
+  E[] array=createArrayWithNullElement();
+  resetContainer(getSubjectGenerator().create(array));
+}

@@ -1,0 +1,6 @@
+{
+  super.expectContents(expected);
+  for (  Entry<K,V> entry : expected) {
+    assertEquals("Wrong value for key " + entry.getKey(),entry.getValue(),getMap().get(entry.getKey()));
+  }
+}

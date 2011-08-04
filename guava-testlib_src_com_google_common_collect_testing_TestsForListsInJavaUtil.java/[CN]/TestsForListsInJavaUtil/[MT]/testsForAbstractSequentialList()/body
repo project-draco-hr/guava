@@ -1,0 +1,18 @@
+{
+  return ListTestSuiteBuilder.using(new TestStringListGenerator(){
+    @Override protected List<String> create(    final String[] elements){
+      final List<String> list=new ArrayList<String>();
+      Collections.addAll(list,elements);
+      return new AbstractSequentialList<String>(){
+        @Override public int size(){
+          return list.size();
+        }
+        @Override public ListIterator<String> listIterator(        int index){
+          return list.listIterator(index);
+        }
+      }
+;
+    }
+  }
+).named("AbstractSequentialList").withFeatures(ListFeature.GENERAL_PURPOSE,CollectionFeature.ALLOWS_NULL_VALUES,CollectionSize.ANY).suppressing(suppressForAbstractSequentialList()).createTestSuite();
+}

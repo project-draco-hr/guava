@@ -1,0 +1,3 @@
+{
+  return delegate.floorEntry(checkValid(key));
+}

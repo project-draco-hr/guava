@@ -1,0 +1,6 @@
+{
+  this.delegate=delegate;
+  for (  E e : this) {
+    checkValid(e);
+  }
+}

@@ -1,0 +1,7 @@
+{
+  Set<Feature<?>> valuesCollectionFeatures=computeCommonDerivedCollectionFeatures(mapFeatures);
+  if (mapFeatures.contains(MapFeature.ALLOWS_NULL_VALUES)) {
+    valuesCollectionFeatures.add(CollectionFeature.ALLOWS_NULL_VALUES);
+  }
+  return valuesCollectionFeatures;
+}

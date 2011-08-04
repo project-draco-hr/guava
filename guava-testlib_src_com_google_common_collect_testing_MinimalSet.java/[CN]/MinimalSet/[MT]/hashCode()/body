@@ -1,0 +1,7 @@
+{
+  int hashCodeSum=0;
+  for (  Object o : this) {
+    hashCodeSum+=(o == null) ? 0 : o.hashCode();
+  }
+  return hashCodeSum;
+}

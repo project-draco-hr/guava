@@ -1,0 +1,35 @@
+{
+  if (allowsNullValues) {
+    return;
+  }
+  final ConcurrentMap<K,V> map;
+  final K keyToReplace;
+  try {
+    map=makePopulatedMap();
+  }
+ catch (  UnsupportedOperationException e) {
+    return;
+  }
+  keyToReplace=map.keySet().iterator().next();
+  int initialSize=map.size();
+  if (supportsPut) {
+    try {
+      map.replace(keyToReplace,null);
+      fail("Expected NullPointerException");
+    }
+ catch (    NullPointerException e) {
+    }
+  }
+ else {
+    try {
+      map.replace(keyToReplace,null);
+      fail("Expected UnsupportedOperationException or NullPointerException");
+    }
+ catch (    UnsupportedOperationException e) {
+    }
+catch (    NullPointerException e) {
+    }
+  }
+  assertEquals(initialSize,map.size());
+  assertInvariants(map);
+}

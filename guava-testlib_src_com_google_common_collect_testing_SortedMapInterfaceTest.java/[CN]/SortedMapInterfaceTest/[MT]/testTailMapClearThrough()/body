@@ -1,0 +1,22 @@
+{
+  final SortedMap<K,V> map;
+  try {
+    map=makePopulatedMap();
+  }
+ catch (  UnsupportedOperationException e) {
+    return;
+  }
+  int oldSize=map.size();
+  if (map.size() < 2 || !supportsClear) {
+    return;
+  }
+  Iterator<Entry<K,V>> iterator=map.entrySet().iterator();
+  Entry<K,V> firstEntry=iterator.next();
+  Entry<K,V> secondEntry=iterator.next();
+  K key=secondEntry.getKey();
+  SortedMap<K,V> subMap=map.tailMap(key);
+  int subMapSize=subMap.size();
+  subMap.clear();
+  assertEquals(map.size(),oldSize - subMapSize);
+  assertTrue(subMap.isEmpty());
+}

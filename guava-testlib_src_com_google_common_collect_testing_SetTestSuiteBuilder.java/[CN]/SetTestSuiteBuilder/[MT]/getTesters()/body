@@ -1,0 +1,10 @@
+{
+  List<Class<? extends AbstractTester>> testers=Helpers.copyToList(super.getTesters());
+  testers.add(SetAddAllTester.class);
+  testers.add(SetAddTester.class);
+  testers.add(SetCreationTester.class);
+  testers.add(SetHashCodeTester.class);
+  testers.add(SetEqualsTester.class);
+  testers.add(SetRemoveTester.class);
+  return testers;
+}

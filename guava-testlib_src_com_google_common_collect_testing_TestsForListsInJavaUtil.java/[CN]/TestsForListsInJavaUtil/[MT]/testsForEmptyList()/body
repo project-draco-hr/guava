@@ -1,0 +1,8 @@
+{
+  return ListTestSuiteBuilder.using(new TestStringListGenerator(){
+    @Override public List<String> create(    String[] elements){
+      return Collections.emptyList();
+    }
+  }
+).named("emptyList").withFeatures(CollectionFeature.NONE,CollectionSize.ZERO).suppressing(suppressForEmptyList()).createTestSuite();
+}

@@ -1,0 +1,4 @@
+{
+  suppressedTests.addAll(methods);
+  return self();
+}

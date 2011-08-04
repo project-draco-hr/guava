@@ -1,0 +1,3 @@
+{
+  return SampleElements.mapEntries(keys,values);
+}

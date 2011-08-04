@@ -1,0 +1,8 @@
+{
+  return new Comparator<T>(){
+    @Override public int compare(    T left,    T right){
+      return String.valueOf(left).compareTo(String.valueOf(right));
+    }
+  }
+;
+}

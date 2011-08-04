@@ -1,0 +1,4 @@
+{
+  checkCanCreate();
+  return new IteratorTestSuiteBuilder<E>().named(getName() + " iterator").usingGenerator(new DerivedTestIteratorGenerator<E>(getSubjectGenerator())).withFeatures(getFeatures()).createTestSuite();
+}

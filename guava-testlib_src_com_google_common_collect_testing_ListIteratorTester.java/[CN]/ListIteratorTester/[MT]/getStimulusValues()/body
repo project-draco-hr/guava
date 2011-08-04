@@ -1,0 +1,6 @@
+{
+  List<Stimulus<E,? super ListIterator<E>>> list=new ArrayList<Stimulus<E,? super ListIterator<E>>>();
+  Helpers.addAll(list,iteratorStimuli());
+  Helpers.addAll(list,listIteratorStimuli());
+  return list;
+}

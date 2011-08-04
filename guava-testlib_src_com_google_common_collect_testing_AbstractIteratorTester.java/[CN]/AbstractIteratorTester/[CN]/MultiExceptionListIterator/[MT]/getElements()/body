@@ -1,0 +1,6 @@
+{
+  List<E> elements=new ArrayList<E>();
+  Helpers.addAll(elements,previousElements);
+  Helpers.addAll(elements,Helpers.reverse(nextElements));
+  return elements;
+}

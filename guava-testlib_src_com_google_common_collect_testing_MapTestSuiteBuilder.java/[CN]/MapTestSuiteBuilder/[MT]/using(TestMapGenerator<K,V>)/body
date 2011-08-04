@@ -1,0 +1,3 @@
+{
+  return new MapTestSuiteBuilder<K,V>().usingGenerator(generator);
+}

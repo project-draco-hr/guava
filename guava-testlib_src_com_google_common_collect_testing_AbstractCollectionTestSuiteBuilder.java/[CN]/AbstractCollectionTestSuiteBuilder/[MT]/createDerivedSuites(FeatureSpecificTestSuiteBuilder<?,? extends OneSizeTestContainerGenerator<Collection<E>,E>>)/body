@@ -1,0 +1,4 @@
+{
+  DerivedIteratorTestSuiteBuilder<?> iteratorTestSuiteBuilder=new DerivedIteratorTestSuiteBuilder<E>().named(parentBuilder.getName()).usingGenerator(parentBuilder.getSubjectGenerator()).withFeatures(parentBuilder.getFeatures());
+  return Collections.singletonList(iteratorTestSuiteBuilder.createTestSuite());
+}

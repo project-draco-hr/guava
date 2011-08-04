@@ -1,0 +1,4 @@
+{
+  this.setUp=setUp;
+  return self();
+}

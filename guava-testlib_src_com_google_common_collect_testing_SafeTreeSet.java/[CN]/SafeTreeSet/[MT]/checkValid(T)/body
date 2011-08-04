@@ -1,0 +1,5 @@
+{
+  @SuppressWarnings("unchecked") E e=(E)t;
+  comparator().compare(e,e);
+  return t;
+}

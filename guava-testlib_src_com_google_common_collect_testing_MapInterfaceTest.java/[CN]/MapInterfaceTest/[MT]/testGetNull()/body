@@ -1,0 +1,18 @@
+{
+  Map<K,V> map=makeEitherMap();
+  if (allowsNullKeys) {
+    if (allowsNullValues) {
+    }
+ else {
+      assertEquals(map.containsKey(null),map.get(null) != null);
+    }
+  }
+ else {
+    try {
+      map.get(null);
+    }
+ catch (    NullPointerException optional) {
+    }
+  }
+  assertInvariants(map);
+}

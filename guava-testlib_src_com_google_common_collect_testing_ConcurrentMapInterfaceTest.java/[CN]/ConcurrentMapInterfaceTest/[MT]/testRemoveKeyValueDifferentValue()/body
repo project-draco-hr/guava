@@ -1,0 +1,30 @@
+{
+  final ConcurrentMap<K,V> map;
+  final K keyToRemove;
+  final V valueToRemove;
+  try {
+    map=makePopulatedMap();
+    valueToRemove=getValueNotInPopulatedMap();
+  }
+ catch (  UnsupportedOperationException e) {
+    return;
+  }
+  keyToRemove=map.keySet().iterator().next();
+  if (supportsRemove) {
+    int initialSize=map.size();
+    V oldValue=map.get(keyToRemove);
+    assertFalse(map.remove(keyToRemove,valueToRemove));
+    assertEquals(oldValue,map.get(keyToRemove));
+    assertTrue(map.containsKey(keyToRemove));
+    assertEquals(initialSize,map.size());
+  }
+ else {
+    try {
+      map.remove(keyToRemove,valueToRemove);
+      fail("Expected UnsupportedOperationException.");
+    }
+ catch (    UnsupportedOperationException e) {
+    }
+  }
+  assertInvariants(map);
+}

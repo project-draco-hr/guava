@@ -1,0 +1,3 @@
+{
+  return ofClassAndContents(Object.class,(E[])new Object[0],contents);
+}

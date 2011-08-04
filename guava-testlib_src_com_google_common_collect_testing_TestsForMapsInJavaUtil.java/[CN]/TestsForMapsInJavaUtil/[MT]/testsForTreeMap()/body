@@ -1,0 +1,8 @@
+{
+  return NavigableMapTestSuiteBuilder.using(new TestStringMapGenerator(){
+    @Override protected Map<String,String> create(    Entry<String,String>[] entries){
+      return populate(new TreeMap<String,String>(arbitraryNullFriendlyComparator()),entries);
+    }
+  }
+).named("TreeMap").withFeatures(MapFeature.GENERAL_PURPOSE,MapFeature.ALLOWS_NULL_KEYS,MapFeature.ALLOWS_NULL_VALUES,CollectionFeature.KNOWN_ORDER,CollectionSize.ANY).suppressing(suppressForTreeMap()).createTestSuite();
+}

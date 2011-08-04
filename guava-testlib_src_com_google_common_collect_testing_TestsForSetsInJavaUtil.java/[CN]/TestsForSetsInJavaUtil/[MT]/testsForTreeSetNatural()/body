@@ -1,0 +1,8 @@
+{
+  return SetTestSuiteBuilder.using(new TestStringSortedSetGenerator(){
+    @Override public SortedSet<String> create(    String[] elements){
+      return new TreeSet<String>(MinimalCollection.of(elements));
+    }
+  }
+).named("TreeSet, natural").withFeatures(SetFeature.GENERAL_PURPOSE,CollectionFeature.KNOWN_ORDER,CollectionSize.ANY).suppressing(suppressForTreeSetNatural()).createTestSuite();
+}

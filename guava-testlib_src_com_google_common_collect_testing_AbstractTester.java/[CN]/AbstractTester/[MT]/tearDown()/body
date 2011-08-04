@@ -1,0 +1,5 @@
+{
+  if (tearDown != null) {
+    tearDown.run();
+  }
+}

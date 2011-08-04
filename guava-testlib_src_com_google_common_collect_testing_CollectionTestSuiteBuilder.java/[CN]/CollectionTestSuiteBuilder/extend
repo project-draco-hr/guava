@@ -1,0 +1,1 @@
+AbstractCollectionTestSuiteBuilder<CollectionTestSuiteBuilder<E>,E>

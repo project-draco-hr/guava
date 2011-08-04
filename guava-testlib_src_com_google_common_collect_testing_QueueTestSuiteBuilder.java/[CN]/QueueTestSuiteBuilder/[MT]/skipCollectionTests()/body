@@ -1,0 +1,4 @@
+{
+  runCollectionTests=false;
+  return this;
+}

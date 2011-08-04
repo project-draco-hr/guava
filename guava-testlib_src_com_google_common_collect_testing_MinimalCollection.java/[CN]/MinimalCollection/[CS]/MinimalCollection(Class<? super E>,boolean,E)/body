@@ -1,0 +1,10 @@
+{
+  this.contents=Platform.clone(contents);
+  this.type=type;
+  this.allowNulls=allowNulls;
+  if (!allowNulls) {
+    for (    Object element : contents) {
+      Helpers.checkNotNull(element);
+    }
+  }
+}

@@ -1,0 +1,4 @@
+G subjectGenerator
+String suiteName
+Runnable setUp
+Runnable tearDown

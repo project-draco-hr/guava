@@ -1,0 +1,7 @@
+{
+  Map.Entry<K,V>[] array=createSamplesArray();
+  final int nullValueLocation=getNullLocation();
+  final Map.Entry<K,V> oldEntry=array[nullValueLocation];
+  array[nullValueLocation]=entry(oldEntry.getKey(),null);
+  return array;
+}

@@ -1,0 +1,3 @@
+{
+  assertInvariants(makeEitherMap());
+}

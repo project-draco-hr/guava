@@ -1,0 +1,8 @@
+{
+  if (nextElements.remove(e)) {
+    nextElements.push(e);
+  }
+ else {
+    throw new UnknownElementException(nextElements,e);
+  }
+}

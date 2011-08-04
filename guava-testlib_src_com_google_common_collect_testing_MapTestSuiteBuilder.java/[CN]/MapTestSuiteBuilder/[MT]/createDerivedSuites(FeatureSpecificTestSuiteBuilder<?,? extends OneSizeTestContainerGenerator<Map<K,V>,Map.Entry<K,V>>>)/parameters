@@ -1,0 +1,1 @@
+FeatureSpecificTestSuiteBuilder<?,? extends OneSizeTestContainerGenerator<Map<K,V>,Map.Entry<K,V>>> parentBuilder

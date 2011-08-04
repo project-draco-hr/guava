@@ -1,0 +1,3 @@
+{
+  return obj instanceof Collider && ((Collider)obj).value == value;
+}

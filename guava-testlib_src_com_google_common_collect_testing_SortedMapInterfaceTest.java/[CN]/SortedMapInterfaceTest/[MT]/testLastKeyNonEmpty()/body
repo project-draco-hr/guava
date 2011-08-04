@@ -1,0 +1,15 @@
+{
+  final SortedMap<K,V> map;
+  try {
+    map=makePopulatedMap();
+  }
+ catch (  UnsupportedOperationException e) {
+    return;
+  }
+  K expected=null;
+  for (  K key : map.keySet()) {
+    expected=key;
+  }
+  assertEquals(expected,map.lastKey());
+  assertInvariants(map);
+}

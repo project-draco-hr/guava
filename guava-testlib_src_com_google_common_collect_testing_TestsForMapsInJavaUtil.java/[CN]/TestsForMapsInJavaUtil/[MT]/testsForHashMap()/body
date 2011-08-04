@@ -1,0 +1,11 @@
+{
+  return MapTestSuiteBuilder.using(new TestStringMapGenerator(){
+    @Override protected Map<String,String> create(    Entry<String,String>[] entries){
+      return toHashMap(entries);
+    }
+    @Override public Iterable<Entry<String,String>> order(    List<Entry<String,String>> insertionOrder){
+      throw new UnsupportedOperationException();
+    }
+  }
+).named("HashMap").withFeatures(MapFeature.GENERAL_PURPOSE,MapFeature.ALLOWS_NULL_KEYS,MapFeature.ALLOWS_NULL_VALUES,CollectionSize.ANY).suppressing(suppressForHashMap()).createTestSuite();
+}

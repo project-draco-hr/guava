@@ -1,0 +1,3 @@
+{
+  return (this.value < o.value) ? -1 : (this.value > o.value) ? 1 : 0;
+}

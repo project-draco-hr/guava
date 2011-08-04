@@ -1,0 +1,7 @@
+{
+  if (!allowNulls) {
+    Helpers.checkNotNull(object);
+  }
+  Platform.checkCast(type,object);
+  return Arrays.asList(contents).contains(object);
+}

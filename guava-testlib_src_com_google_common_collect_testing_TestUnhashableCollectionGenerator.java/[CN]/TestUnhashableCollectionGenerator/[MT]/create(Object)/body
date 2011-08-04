@@ -1,0 +1,8 @@
+{
+  UnhashableObject[] array=createArray(elements.length);
+  int i=0;
+  for (  Object e : elements) {
+    array[i++]=(UnhashableObject)e;
+  }
+  return create(array);
+}

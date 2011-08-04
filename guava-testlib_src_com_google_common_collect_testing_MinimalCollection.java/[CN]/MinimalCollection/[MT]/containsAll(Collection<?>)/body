@@ -1,0 +1,8 @@
+{
+  if (!allowNulls) {
+    for (    Object object : collection) {
+      Helpers.checkNotNull(object);
+    }
+  }
+  return super.containsAll(collection);
+}

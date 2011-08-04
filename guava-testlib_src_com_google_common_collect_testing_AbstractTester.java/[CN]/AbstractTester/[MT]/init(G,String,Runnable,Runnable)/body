@@ -1,0 +1,6 @@
+{
+  this.subjectGenerator=subjectGenerator;
+  this.suiteName=suiteName;
+  this.setUp=setUp;
+  this.tearDown=tearDown;
+}

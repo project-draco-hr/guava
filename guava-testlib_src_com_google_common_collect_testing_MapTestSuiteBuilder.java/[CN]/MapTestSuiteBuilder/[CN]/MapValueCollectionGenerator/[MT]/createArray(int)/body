@@ -1,0 +1,4 @@
+{
+  final V[] vs=((TestMapGenerator<K,V>)mapGenerator.getInnerGenerator()).createValueArray(length);
+  return vs;
+}

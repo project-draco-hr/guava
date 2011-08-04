@@ -1,0 +1,5 @@
+{
+  E[] array=createSamplesArray();
+  array[getNullLocation()]=null;
+  return array;
+}

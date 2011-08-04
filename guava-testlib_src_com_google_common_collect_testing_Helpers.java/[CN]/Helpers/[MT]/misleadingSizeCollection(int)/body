@@ -1,0 +1,8 @@
+{
+  return new ArrayList<T>(){
+    @Override public int size(){
+      return Math.max(0,super.size() + delta);
+    }
+  }
+;
+}

@@ -1,0 +1,8 @@
+{
+  return MapTestSuiteBuilder.using(new TestStringMapGenerator(){
+    @Override protected Map<String,String> create(    Entry<String,String>[] entries){
+      return populate(new LinkedHashMap<String,String>(),entries);
+    }
+  }
+).named("LinkedHashMap").withFeatures(MapFeature.GENERAL_PURPOSE,MapFeature.ALLOWS_NULL_KEYS,MapFeature.ALLOWS_NULL_VALUES,CollectionFeature.KNOWN_ORDER,CollectionSize.ANY).suppressing(suppressForLinkedHashMap()).createTestSuite();
+}

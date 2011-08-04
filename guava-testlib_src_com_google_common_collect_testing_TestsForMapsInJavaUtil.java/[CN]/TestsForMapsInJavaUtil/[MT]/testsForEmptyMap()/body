@@ -1,0 +1,8 @@
+{
+  return MapTestSuiteBuilder.using(new TestStringMapGenerator(){
+    @Override protected Map<String,String> create(    Entry<String,String>[] entries){
+      return Collections.emptyMap();
+    }
+  }
+).named("emptyMap").withFeatures(CollectionFeature.NONE,CollectionSize.ZERO).suppressing(suppressForEmptyMap()).createTestSuite();
+}

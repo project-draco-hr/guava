@@ -1,0 +1,36 @@
+{
+  final Map<K,V> map;
+  try {
+    map=makePopulatedMap();
+  }
+ catch (  UnsupportedOperationException e) {
+    return;
+  }
+  Set<Entry<K,V>> entrySet=map.entrySet();
+  Iterator<Entry<K,V>> iterator=entrySet.iterator();
+  if (supportsIteratorRemove) {
+    int initialSize=map.size();
+    Entry<K,V> entry=iterator.next();
+    Entry<K,V> entryCopy=Helpers.mapEntry(entry.getKey(),entry.getValue());
+    iterator.remove();
+    assertEquals(initialSize - 1,map.size());
+    assertFalse(entrySet.contains(entryCopy));
+    assertInvariants(map);
+    try {
+      iterator.remove();
+      fail("Expected IllegalStateException.");
+    }
+ catch (    IllegalStateException e) {
+    }
+  }
+ else {
+    try {
+      iterator.next();
+      iterator.remove();
+      fail("Expected UnsupportedOperationException.");
+    }
+ catch (    UnsupportedOperationException e) {
+    }
+  }
+  assertInvariants(map);
+}

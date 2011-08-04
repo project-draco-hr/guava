@@ -1,0 +1,5 @@
+{
+  NavigableMapTestSuiteBuilder<K,V> result=new NavigableMapTestSuiteBuilder<K,V>();
+  result.usingGenerator(generator);
+  return result;
+}

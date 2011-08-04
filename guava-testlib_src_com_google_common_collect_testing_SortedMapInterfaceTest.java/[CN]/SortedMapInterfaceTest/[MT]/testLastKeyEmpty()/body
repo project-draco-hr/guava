@@ -1,0 +1,16 @@
+{
+  final SortedMap<K,V> map;
+  try {
+    map=makeEmptyMap();
+  }
+ catch (  UnsupportedOperationException e) {
+    return;
+  }
+  try {
+    map.lastKey();
+    fail("Expected NoSuchElementException");
+  }
+ catch (  NoSuchElementException expected) {
+  }
+  assertInvariants(map);
+}

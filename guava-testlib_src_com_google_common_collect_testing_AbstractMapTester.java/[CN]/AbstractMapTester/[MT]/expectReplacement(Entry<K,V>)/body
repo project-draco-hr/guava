@@ -1,0 +1,5 @@
+{
+  List<Entry<K,V>> expected=Helpers.copyToList(getSampleElements());
+  replaceValue(expected,newEntry);
+  expectContents(expected);
+}

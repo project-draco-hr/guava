@@ -1,0 +1,3 @@
+{
+  return new SafeTreeMap<K,V>(delegate.subMap(checkValid(fromKey),fromInclusive,checkValid(toKey),toInclusive));
+}

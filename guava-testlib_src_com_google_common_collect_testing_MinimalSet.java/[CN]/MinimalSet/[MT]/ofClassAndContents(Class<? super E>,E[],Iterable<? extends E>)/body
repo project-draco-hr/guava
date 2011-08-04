@@ -1,0 +1,9 @@
+{
+  List<E> setContents=new ArrayList<E>();
+  for (  E e : contents) {
+    if (!setContents.contains(e)) {
+      setContents.add(e);
+    }
+  }
+  return new MinimalSet<E>(type,setContents.toArray(emptyArrayForContents));
+}

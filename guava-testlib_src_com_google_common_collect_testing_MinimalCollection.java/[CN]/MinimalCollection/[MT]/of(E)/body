@@ -1,0 +1,3 @@
+{
+  return new MinimalCollection<E>(Object.class,true,contents);
+}

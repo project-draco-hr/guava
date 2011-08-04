@@ -1,0 +1,5 @@
+{
+  NavigableSetTestSuiteBuilder<E> builder=new NavigableSetTestSuiteBuilder<E>();
+  builder.usingGenerator(generator);
+  return builder;
+}

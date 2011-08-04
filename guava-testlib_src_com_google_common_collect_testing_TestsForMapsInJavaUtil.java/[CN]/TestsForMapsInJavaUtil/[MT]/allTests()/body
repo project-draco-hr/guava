@@ -1,0 +1,11 @@
+{
+  TestSuite suite=new TestSuite("java.util Maps");
+  suite.addTest(testsForEmptyMap());
+  suite.addTest(testsForSingletonMap());
+  suite.addTest(testsForHashMap());
+  suite.addTest(testsForLinkedHashMap());
+  suite.addTest(testsForTreeMap());
+  suite.addTest(testsForEnumMap());
+  suite.addTest(testsForConcurrentHashMap());
+  return suite;
+}

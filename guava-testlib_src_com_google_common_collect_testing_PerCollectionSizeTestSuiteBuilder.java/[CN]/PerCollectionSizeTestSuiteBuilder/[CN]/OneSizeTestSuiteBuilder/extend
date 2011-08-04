@@ -1,0 +1,1 @@
+FeatureSpecificTestSuiteBuilder<OneSizeTestSuiteBuilder<T,E>,OneSizeGenerator<T,E>>

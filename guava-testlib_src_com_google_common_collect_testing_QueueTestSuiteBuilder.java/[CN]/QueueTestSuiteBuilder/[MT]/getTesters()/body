@@ -1,0 +1,12 @@
+{
+  List<Class<? extends AbstractTester>> testers=new ArrayList<Class<? extends AbstractTester>>();
+  if (runCollectionTests) {
+    testers.addAll(super.getTesters());
+  }
+  testers.add(QueueElementTester.class);
+  testers.add(QueueOfferTester.class);
+  testers.add(QueuePeekTester.class);
+  testers.add(QueuePollTester.class);
+  testers.add(QueueRemoveTester.class);
+  return testers;
+}

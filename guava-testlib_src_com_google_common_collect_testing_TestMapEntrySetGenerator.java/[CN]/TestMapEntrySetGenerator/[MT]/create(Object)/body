@@ -1,0 +1,5 @@
+{
+  Map.Entry<K,V>[] entries=createArray(elements.length);
+  Platform.unsafeArrayCopy(elements,0,entries,0,elements.length);
+  return createFromEntries(entries);
+}

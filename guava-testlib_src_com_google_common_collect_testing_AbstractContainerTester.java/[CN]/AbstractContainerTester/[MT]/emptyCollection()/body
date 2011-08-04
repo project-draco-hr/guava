@@ -1,0 +1,3 @@
+{
+  return MinimalCollection.<E>of();
+}

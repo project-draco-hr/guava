@@ -1,0 +1,11 @@
+{
+  TestSuite filtered=new TestSuite(suite.getName());
+  final Enumeration<?> tests=suite.tests();
+  while (tests.hasMoreElements()) {
+    Test test=(Test)tests.nextElement();
+    if (matches(test)) {
+      filtered.addTest(test);
+    }
+  }
+  return filtered;
+}

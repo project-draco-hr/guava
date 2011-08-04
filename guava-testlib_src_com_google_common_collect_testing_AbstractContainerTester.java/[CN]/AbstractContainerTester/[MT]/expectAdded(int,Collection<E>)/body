@@ -1,0 +1,5 @@
+{
+  List<E> expected=Helpers.copyToList(getSampleElements());
+  expected.addAll(index,elements);
+  expectContents(expected);
+}

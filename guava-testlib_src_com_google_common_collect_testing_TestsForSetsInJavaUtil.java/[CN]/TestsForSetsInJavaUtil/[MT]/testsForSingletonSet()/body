@@ -1,0 +1,8 @@
+{
+  return SetTestSuiteBuilder.using(new TestStringSetGenerator(){
+    @Override public Set<String> create(    String[] elements){
+      return Collections.singleton(elements[0]);
+    }
+  }
+).named("singleton").withFeatures(CollectionFeature.NONE,CollectionFeature.ALLOWS_NULL_VALUES,CollectionSize.ONE).suppressing(suppressForSingletonSet()).createTestSuite();
+}

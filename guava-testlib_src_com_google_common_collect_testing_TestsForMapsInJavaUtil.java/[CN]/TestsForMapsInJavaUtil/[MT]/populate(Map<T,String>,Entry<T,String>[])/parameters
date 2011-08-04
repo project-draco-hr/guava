@@ -1,0 +1,2 @@
+Map<T,String> map
+Entry<T,String>[] entries

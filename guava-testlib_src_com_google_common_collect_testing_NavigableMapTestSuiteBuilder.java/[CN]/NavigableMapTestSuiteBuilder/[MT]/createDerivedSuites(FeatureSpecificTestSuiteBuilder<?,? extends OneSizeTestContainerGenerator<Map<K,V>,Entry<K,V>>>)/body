@@ -1,0 +1,17 @@
+{
+  List<TestSuite> derivedSuites=super.createDerivedSuites(parentBuilder);
+  if (!parentBuilder.getFeatures().contains(NoRecurse.DESCENDING)) {
+    derivedSuites.add(createDescendingSuite(parentBuilder));
+  }
+  if (!parentBuilder.getFeatures().contains(NoRecurse.SUBMAP)) {
+    derivedSuites.add(createSubmapSuite(parentBuilder,Bound.NO_BOUND,Bound.EXCLUSIVE));
+    derivedSuites.add(createSubmapSuite(parentBuilder,Bound.NO_BOUND,Bound.INCLUSIVE));
+    derivedSuites.add(createSubmapSuite(parentBuilder,Bound.EXCLUSIVE,Bound.NO_BOUND));
+    derivedSuites.add(createSubmapSuite(parentBuilder,Bound.EXCLUSIVE,Bound.EXCLUSIVE));
+    derivedSuites.add(createSubmapSuite(parentBuilder,Bound.EXCLUSIVE,Bound.INCLUSIVE));
+    derivedSuites.add(createSubmapSuite(parentBuilder,Bound.INCLUSIVE,Bound.NO_BOUND));
+    derivedSuites.add(createSubmapSuite(parentBuilder,Bound.INCLUSIVE,Bound.EXCLUSIVE));
+    derivedSuites.add(createSubmapSuite(parentBuilder,Bound.INCLUSIVE,Bound.INCLUSIVE));
+  }
+  return derivedSuites;
+}

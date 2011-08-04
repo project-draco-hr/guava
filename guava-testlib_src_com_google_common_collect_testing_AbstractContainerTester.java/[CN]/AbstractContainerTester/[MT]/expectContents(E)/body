@@ -1,0 +1,3 @@
+{
+  expectContents(Arrays.asList(elements));
+}

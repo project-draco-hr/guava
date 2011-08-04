@@ -1,0 +1,6 @@
+{
+  Helpers.addAll(nextElements,Helpers.reverse(expectedElements));
+  for (int i=0; i < startIndex; i++) {
+    previousElements.push(nextElements.pop());
+  }
+}

@@ -1,0 +1,6 @@
+{
+  if (!isPermitted(exception)) {
+    String message="Exception " + exception.getClass() + " was thrown; expected "+ this;
+    Helpers.fail(exception,message);
+  }
+}

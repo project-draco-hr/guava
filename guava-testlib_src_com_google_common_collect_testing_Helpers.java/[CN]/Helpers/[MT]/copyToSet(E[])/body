@@ -1,0 +1,3 @@
+{
+  return copyToSet(Arrays.asList(elements));
+}

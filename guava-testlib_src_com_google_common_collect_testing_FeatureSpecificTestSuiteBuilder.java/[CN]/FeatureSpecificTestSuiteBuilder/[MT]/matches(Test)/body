@@ -1,0 +1,34 @@
+{
+  final Method method;
+  try {
+    method=extractMethod(test);
+  }
+ catch (  IllegalArgumentException e) {
+    logger.finer(Platform.format("%s: including by default: %s",test,e.getMessage()));
+    return true;
+  }
+  if (suppressedTests.contains(method)) {
+    logger.finer(Platform.format("%s: excluding because it was explicitly suppressed.",test));
+    return false;
+  }
+  final TesterRequirements requirements;
+  try {
+    requirements=FeatureUtil.getTesterRequirements(method);
+  }
+ catch (  ConflictingRequirementsException e) {
+    throw new RuntimeException(e);
+  }
+  Set<Feature<?>> missingFeatures=Helpers.copyToSet(requirements.getPresentFeatures());
+  missingFeatures.removeAll(features);
+  if (!missingFeatures.isEmpty()) {
+    logger.finer(Platform.format("%s: skipping because these features " + "are absent: %s",method,missingFeatures));
+    return false;
+  }
+  Set<Feature<?>> unwantedFeatures=Helpers.copyToSet(requirements.getAbsentFeatures());
+  unwantedFeatures.retainAll(features);
+  if (!unwantedFeatures.isEmpty()) {
+    logger.finer(Platform.format("%s: skipping because these features " + "are present: %s",method,unwantedFeatures));
+    return false;
+  }
+  return true;
+}

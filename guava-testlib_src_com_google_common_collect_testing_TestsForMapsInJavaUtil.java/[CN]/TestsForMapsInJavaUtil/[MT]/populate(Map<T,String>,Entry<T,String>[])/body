@@ -1,0 +1,6 @@
+{
+  for (  Entry<T,String> entry : entries) {
+    map.put(entry.getKey(),entry.getValue());
+  }
+  return map;
+}

@@ -1,0 +1,6 @@
+{
+  for (  K key : map.keySet()) {
+    checkValid(key);
+  }
+  delegate.putAll(map);
+}

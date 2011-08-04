@@ -1,0 +1,3 @@
+{
+  return new SampleElements<Entry<AnEnum,String>>(Helpers.mapEntry(AnEnum.A,"January"),Helpers.mapEntry(AnEnum.B,"February"),Helpers.mapEntry(AnEnum.C,"March"),Helpers.mapEntry(AnEnum.D,"April"),Helpers.mapEntry(AnEnum.E,"May"));
+}

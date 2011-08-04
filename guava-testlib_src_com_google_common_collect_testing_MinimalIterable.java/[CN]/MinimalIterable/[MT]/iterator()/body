@@ -1,0 +1,11 @@
+{
+  if (iterator == null) {
+    throw new IllegalStateException();
+  }
+  try {
+    return iterator;
+  }
+  finally {
+    iterator=null;
+  }
+}

@@ -1,0 +1,11 @@
+{
+  final Object toInsert=elementsToInsert.next();
+  return new IteratorOperation(){
+    @Override public Object execute(    Iterator<?> iterator){
+      @SuppressWarnings("unchecked") ListIterator<Object> rawIterator=(ListIterator<Object>)iterator;
+      rawIterator.add(toInsert);
+      return null;
+    }
+  }
+;
+}

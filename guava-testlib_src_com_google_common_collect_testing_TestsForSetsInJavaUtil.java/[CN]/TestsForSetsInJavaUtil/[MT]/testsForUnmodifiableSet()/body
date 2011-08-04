@@ -1,0 +1,10 @@
+{
+  return SetTestSuiteBuilder.using(new TestStringSetGenerator(){
+    @Override public Set<String> create(    String[] elements){
+      Set<String> innerSet=new HashSet<String>();
+      Collections.addAll(innerSet,elements);
+      return Collections.unmodifiableSet(innerSet);
+    }
+  }
+).named("unmodifiableSet/HashSet").withFeatures(CollectionFeature.NONE,CollectionFeature.ALLOWS_NULL_VALUES,CollectionSize.ANY).suppressing(suppressForUnmodifiableSet()).createTestSuite();
+}

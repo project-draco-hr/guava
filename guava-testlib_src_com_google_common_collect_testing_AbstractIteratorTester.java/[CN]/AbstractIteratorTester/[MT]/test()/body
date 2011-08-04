@@ -1,0 +1,8 @@
+{
+  try {
+    recurse(0);
+  }
+ catch (  RuntimeException e) {
+    throw new RuntimeException(Arrays.toString(stimuli),e);
+  }
+}

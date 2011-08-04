@@ -1,0 +1,9 @@
+{
+  for (ListIterator<Entry<K,V>> i=expected.listIterator(); i.hasNext(); ) {
+    if (Helpers.equal(i.next().getKey(),newEntry.getKey())) {
+      i.set(newEntry);
+      return;
+    }
+  }
+  throw new IllegalArgumentException(Platform.format("key %s not found in entries %s",newEntry.getKey(),expected));
+}

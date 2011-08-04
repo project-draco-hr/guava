@@ -1,0 +1,7 @@
+{
+  List<E> list=new ArrayList<E>();
+  for (  E e : getSubjectGenerator().order(new ArrayList<E>(getSampleElements()))) {
+    list.add(e);
+  }
+  return Collections.unmodifiableList(list);
+}

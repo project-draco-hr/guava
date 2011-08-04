@@ -1,0 +1,10 @@
+{
+  TestSuite suite=new TestSuite();
+  suite.addTest(testsForLinkedList());
+  suite.addTest(testsForArrayBlockingQueue());
+  suite.addTest(testsForConcurrentLinkedQueue());
+  suite.addTest(testsForLinkedBlockingQueue());
+  suite.addTest(testsForPriorityBlockingQueue());
+  suite.addTest(testsForPriorityQueue());
+  return suite;
+}

@@ -1,0 +1,16 @@
+{
+  TestSuite suite=new TestSuite("java.util Sets");
+  suite.addTest(testsForEmptySet());
+  suite.addTest(testsForSingletonSet());
+  suite.addTest(testsForHashSet());
+  suite.addTest(testsForLinkedHashSet());
+  suite.addTest(testsForEnumSet());
+  suite.addTest(testsForTreeSetNatural());
+  suite.addTest(testsForTreeSetWithComparator());
+  suite.addTest(testsForCopyOnWriteArraySet());
+  suite.addTest(testsForUnmodifiableSet());
+  suite.addTest(testsForCheckedSet());
+  suite.addTest(testsForAbstractSet());
+  suite.addTest(testsForBadlyCollidingHashSet());
+  return suite;
+}

@@ -1,0 +1,33 @@
+{
+  if (allowsNullValues) {
+    return;
+  }
+  final ConcurrentMap<K,V> map;
+  final K keyToRemove;
+  try {
+    map=makeEitherMap();
+    keyToRemove=getKeyNotInPopulatedMap();
+  }
+ catch (  UnsupportedOperationException e) {
+    return;
+  }
+  int initialSize=map.size();
+  if (supportsRemove) {
+    try {
+      assertFalse(map.remove(keyToRemove,null));
+    }
+ catch (    NullPointerException e) {
+    }
+  }
+ else {
+    try {
+      assertFalse(map.remove(keyToRemove,null));
+    }
+ catch (    UnsupportedOperationException e) {
+    }
+catch (    NullPointerException e) {
+    }
+  }
+  assertEquals(initialSize,map.size());
+  assertInvariants(map);
+}

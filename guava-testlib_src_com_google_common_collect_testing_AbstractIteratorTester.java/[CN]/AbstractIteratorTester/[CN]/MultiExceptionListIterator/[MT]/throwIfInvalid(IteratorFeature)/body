@@ -1,0 +1,12 @@
+{
+  Set<Class<? extends RuntimeException>> exceptions=new HashSet<Class<? extends RuntimeException>>();
+  if (!features.contains(methodFeature)) {
+    exceptions.add(UnsupportedOperationException.class);
+  }
+  if (stackWithLastReturnedElementAtTop == null) {
+    exceptions.add(IllegalStateException.class);
+  }
+  if (!exceptions.isEmpty()) {
+    throw new PermittedMetaException(exceptions);
+  }
+}

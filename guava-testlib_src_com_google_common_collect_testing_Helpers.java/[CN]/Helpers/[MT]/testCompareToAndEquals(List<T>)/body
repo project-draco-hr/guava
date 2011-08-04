@@ -1,0 +1,17 @@
+{
+  for (int i=0; i < valuesInExpectedOrder.size(); i++) {
+    T t=valuesInExpectedOrder.get(i);
+    for (int j=0; j < i; j++) {
+      T lesser=valuesInExpectedOrder.get(j);
+      assertTrue(lesser + ".compareTo(" + t+ ')',lesser.compareTo(t) < 0);
+      assertFalse(lesser.equals(t));
+    }
+    assertEquals(t + ".compareTo(" + t+ ')',0,t.compareTo(t));
+    assertTrue(t.equals(t));
+    for (int j=i + 1; j < valuesInExpectedOrder.size(); j++) {
+      T greater=valuesInExpectedOrder.get(j);
+      assertTrue(greater + ".compareTo(" + t+ ')',greater.compareTo(t) > 0);
+      assertFalse(greater.equals(t));
+    }
+  }
+}

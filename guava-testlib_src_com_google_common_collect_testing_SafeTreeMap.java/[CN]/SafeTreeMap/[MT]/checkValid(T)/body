@@ -1,0 +1,5 @@
+{
+  @SuppressWarnings("unchecked") K k=(K)t;
+  comparator().compare(k,k);
+  return t;
+}

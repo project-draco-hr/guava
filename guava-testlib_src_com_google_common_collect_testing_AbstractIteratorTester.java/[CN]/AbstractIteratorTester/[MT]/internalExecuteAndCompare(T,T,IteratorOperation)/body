@@ -1,0 +1,38 @@
+{
+  Object referenceReturnValue=null;
+  PermittedMetaException referenceException=null;
+  Object targetReturnValue=null;
+  RuntimeException targetException=null;
+  try {
+    targetReturnValue=method.execute(target);
+  }
+ catch (  RuntimeException e) {
+    targetException=e;
+  }
+  try {
+    if (method == NEXT_METHOD && targetException == null && knownOrder == KnownOrder.UNKNOWN_ORDER) {
+      @SuppressWarnings("unchecked") E targetReturnValueFromNext=(E)targetReturnValue;
+      MultiExceptionListIterator multiExceptionListIterator=(MultiExceptionListIterator)reference;
+      multiExceptionListIterator.promoteToNext(targetReturnValueFromNext);
+    }
+    referenceReturnValue=method.execute(reference);
+  }
+ catch (  PermittedMetaException e) {
+    referenceException=e;
+  }
+catch (  UnknownElementException e) {
+    Helpers.fail(e,e.getMessage());
+  }
+  if (referenceException == null) {
+    if (targetException != null) {
+      Helpers.fail(targetException,"Target threw exception when reference did not");
+    }
+    assertEquals(referenceReturnValue,targetReturnValue);
+    return false;
+  }
+  if (targetException == null) {
+    fail("Target failed to throw " + referenceException);
+  }
+  referenceException.assertPermitted(targetException);
+  return true;
+}

@@ -1,0 +1,7 @@
+{
+  if (object instanceof Set) {
+    Set<?> that=(Set<?>)object;
+    return (this.size() == that.size()) && this.containsAll(that);
+  }
+  return false;
+}

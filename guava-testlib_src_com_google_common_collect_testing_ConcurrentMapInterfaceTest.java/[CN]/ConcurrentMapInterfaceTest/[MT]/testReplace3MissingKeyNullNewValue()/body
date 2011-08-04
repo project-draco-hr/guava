@@ -1,0 +1,35 @@
+{
+  if (allowsNullValues) {
+    return;
+  }
+  final ConcurrentMap<K,V> map;
+  final K keyToReplace;
+  final V oldValue;
+  try {
+    map=makeEitherMap();
+    keyToReplace=getKeyNotInPopulatedMap();
+    oldValue=getValueNotInPopulatedMap();
+  }
+ catch (  UnsupportedOperationException e) {
+    return;
+  }
+  int initialSize=map.size();
+  if (supportsPut) {
+    try {
+      map.replace(keyToReplace,oldValue,null);
+    }
+ catch (    NullPointerException e) {
+    }
+  }
+ else {
+    try {
+      map.replace(keyToReplace,oldValue,null);
+    }
+ catch (    UnsupportedOperationException e) {
+    }
+catch (    NullPointerException e) {
+    }
+  }
+  assertEquals(initialSize,map.size());
+  assertInvariants(map);
+}

@@ -1,0 +1,21 @@
+{
+  final Map<K,V> map;
+  final Set<Entry<K,V>> entrySet;
+  try {
+    map=makeEitherMap();
+  }
+ catch (  UnsupportedOperationException e) {
+    return;
+  }
+  assertInvariants(map);
+  entrySet=map.entrySet();
+  final V unmappedValue;
+  try {
+    unmappedValue=getValueNotInPopulatedMap();
+  }
+ catch (  UnsupportedOperationException e) {
+    return;
+  }
+  Entry<IncompatibleComparableKeyType,V> entry=mapEntry(new IncompatibleComparableKeyType(),unmappedValue);
+  assertFalse(entrySet.contains(entry));
+}

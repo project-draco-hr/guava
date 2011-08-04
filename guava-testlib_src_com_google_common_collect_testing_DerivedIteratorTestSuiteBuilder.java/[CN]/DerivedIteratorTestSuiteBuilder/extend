@@ -1,0 +1,1 @@
+FeatureSpecificTestSuiteBuilder<DerivedIteratorTestSuiteBuilder<E>,TestSubjectGenerator<? extends Iterable<E>>>

@@ -1,0 +1,7 @@
+{
+  if (!features.contains(IteratorFeature.SUPPORTS_ADD)) {
+    throw new PermittedMetaException(UnsupportedOperationException.class);
+  }
+  previousElements.push(e);
+  stackWithLastReturnedElementAtTop=null;
+}

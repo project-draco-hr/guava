@@ -1,0 +1,3 @@
+{
+  resetMap(createArrayWithNullValue());
+}

@@ -1,0 +1,8 @@
+{
+  return MapTestSuiteBuilder.using(new TestStringMapGenerator(){
+    @Override protected Map<String,String> create(    Entry<String,String>[] entries){
+      return populate(new ConcurrentHashMap<String,String>(),entries);
+    }
+  }
+).named("ConcurrentHashMap").withFeatures(MapFeature.GENERAL_PURPOSE,CollectionSize.ANY).suppressing(suppressForConcurrentHashMap()).createTestSuite();
+}

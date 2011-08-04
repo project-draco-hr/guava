@@ -1,0 +1,9 @@
+{
+  this.delegate=delegate;
+  if (delegate == null) {
+    throw new NullPointerException();
+  }
+  for (  K k : keySet()) {
+    checkValid(k);
+  }
+}

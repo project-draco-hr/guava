@@ -1,0 +1,7 @@
+{
+  if (object instanceof UnhashableObject) {
+    UnhashableObject that=(UnhashableObject)object;
+    return this.value == that.value;
+  }
+  return false;
+}

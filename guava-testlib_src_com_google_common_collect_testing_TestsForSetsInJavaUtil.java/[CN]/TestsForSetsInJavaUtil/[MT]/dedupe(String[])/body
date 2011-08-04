@@ -1,0 +1,5 @@
+{
+  Set<String> tmp=new LinkedHashSet<String>();
+  Collections.addAll(tmp,elements);
+  return tmp.toArray(new String[0]);
+}

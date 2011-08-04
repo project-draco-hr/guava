@@ -1,0 +1,14 @@
+{
+  TestSuite suite=new TestSuite("java.util Lists");
+  suite.addTest(testsForEmptyList());
+  suite.addTest(testsForSingletonList());
+  suite.addTest(testsForArraysAsList());
+  suite.addTest(testsForArrayList());
+  suite.addTest(testsForLinkedList());
+  suite.addTest(testsForCopyOnWriteArrayList());
+  suite.addTest(testsForUnmodifiableList());
+  suite.addTest(testsForCheckedList());
+  suite.addTest(testsForAbstractList());
+  suite.addTest(testsForAbstractSequentialList());
+  return suite;
+}

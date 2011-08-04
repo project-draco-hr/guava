@@ -1,0 +1,4 @@
+{
+  this.features=Helpers.copyToSet(features);
+  return self();
+}

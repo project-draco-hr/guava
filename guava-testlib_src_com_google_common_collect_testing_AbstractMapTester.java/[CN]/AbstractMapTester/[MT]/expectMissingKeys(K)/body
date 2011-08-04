@@ -1,0 +1,5 @@
+{
+  for (  K element : elements) {
+    assertFalse("Should not contain key " + element,getMap().containsKey(element));
+  }
+}

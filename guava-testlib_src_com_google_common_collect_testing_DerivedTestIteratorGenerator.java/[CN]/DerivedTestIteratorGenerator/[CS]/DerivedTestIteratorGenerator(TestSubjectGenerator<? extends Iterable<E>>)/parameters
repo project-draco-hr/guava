@@ -1,0 +1,1 @@
+TestSubjectGenerator<? extends Iterable<E>> collectionGenerator

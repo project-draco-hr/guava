@@ -1,0 +1,8 @@
+{
+  return SetTestSuiteBuilder.using(new TestCollidingSetGenerator(){
+    @Override public Set<Object> create(    Object... elements){
+      return new HashSet<Object>(MinimalCollection.of(elements));
+    }
+  }
+).named("badly colliding HashSet").withFeatures(SetFeature.GENERAL_PURPOSE,CollectionFeature.ALLOWS_NULL_VALUES,CollectionSize.SEVERAL).suppressing(suppressForHashSet()).createTestSuite();
+}

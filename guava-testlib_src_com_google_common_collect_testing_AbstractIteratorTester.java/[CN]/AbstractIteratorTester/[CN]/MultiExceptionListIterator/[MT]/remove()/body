@@ -1,0 +1,5 @@
+{
+  throwIfInvalid(IteratorFeature.SUPPORTS_REMOVE);
+  stackWithLastReturnedElementAtTop.pop();
+  stackWithLastReturnedElementAtTop=null;
+}

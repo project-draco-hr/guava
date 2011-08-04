@@ -1,0 +1,18 @@
+{
+  return new Iterator<T>(){
+    Iterator<T> iterator=Collections.<T>emptySet().iterator();
+    @Override public boolean hasNext(){
+      return true;
+    }
+    @Override public T next(){
+      if (!iterator.hasNext()) {
+        iterator=iterable.iterator();
+      }
+      return iterator.next();
+    }
+    @Override public void remove(){
+      throw new UnsupportedOperationException();
+    }
+  }
+;
+}

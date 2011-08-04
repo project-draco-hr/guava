@@ -1,0 +1,16 @@
+{
+  return ListTestSuiteBuilder.using(new TestStringListGenerator(){
+    @Override protected List<String> create(    final String[] elements){
+      return new AbstractList<String>(){
+        @Override public int size(){
+          return elements.length;
+        }
+        @Override public String get(        int index){
+          return elements[index];
+        }
+      }
+;
+    }
+  }
+).named("AbstractList").withFeatures(CollectionFeature.NONE,CollectionFeature.ALLOWS_NULL_VALUES,CollectionSize.ANY).suppressing(suppressForAbstractList()).createTestSuite();
+}
