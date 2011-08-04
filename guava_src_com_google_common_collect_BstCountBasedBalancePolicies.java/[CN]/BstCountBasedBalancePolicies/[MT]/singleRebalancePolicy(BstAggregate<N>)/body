@@ -1,8 +1,9 @@
 {
+  checkNotNull(countAggregate);
   return new BstBalancePolicy<N>(){
     @Override public N balance(    BstNodeFactory<N> nodeFactory,    N source,    @Nullable N left,    @Nullable N right){
-      int countL=countOrZero(left);
-      int countR=countOrZero(right);
+      int countL=countAggregate.treeValue(left);
+      int countR=countAggregate.treeValue(right);
       if (countL + countR > 1) {
         if (countR >= SINGLE_ROTATE_RATIO * countL) {
           return rotateL(nodeFactory,source,left,right);
@@ -17,7 +18,7 @@
       checkNotNull(right);
       N rl=right.childOrNull(LEFT);
       N rr=right.childOrNull(RIGHT);
-      if (countOrZero(rl) >= SECOND_ROTATE_RATIO * countOrZero(rr)) {
+      if (countAggregate.treeValue(rl) >= SECOND_ROTATE_RATIO * countAggregate.treeValue(rr)) {
         right=singleR(nodeFactory,right,rl,rr);
       }
       return singleL(nodeFactory,source,left,right);
@@ -26,7 +27,7 @@
       checkNotNull(left);
       N lr=left.childOrNull(RIGHT);
       N ll=left.childOrNull(LEFT);
-      if (countOrZero(lr) >= SECOND_ROTATE_RATIO * countOrZero(ll)) {
+      if (countAggregate.treeValue(lr) >= SECOND_ROTATE_RATIO * countAggregate.treeValue(ll)) {
         left=singleL(nodeFactory,left,ll,lr);
       }
       return singleR(nodeFactory,source,left,right);
@@ -47,7 +48,7 @@
         return left;
       }
       N newRootSource;
-      if (left.count() > right.count()) {
+      if (countAggregate.treeValue(left) > countAggregate.treeValue(right)) {
         BstMutationResult<K,N> extractLeftMax=extractMax(left,nodeFactory,this);
         newRootSource=extractLeftMax.getOriginalTarget();
         left=extractLeftMax.getChangedRoot();

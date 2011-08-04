@@ -1,4 +1,5 @@
 {
+  checkNotNull(countAggregate);
   return new BstBalancePolicy<N>(){
     @Override public N balance(    BstNodeFactory<N> nodeFactory,    N source,    @Nullable N left,    @Nullable N right){
       return checkNotNull(nodeFactory).createNode(source,left,right);
@@ -10,7 +11,7 @@
  else       if (right == null) {
         return left;
       }
- else       if (left.count() > right.count()) {
+ else       if (countAggregate.treeValue(left) > countAggregate.treeValue(right)) {
         return nodeFactory.createNode(left,left.childOrNull(LEFT),combine(nodeFactory,left.childOrNull(RIGHT),right));
       }
  else {
