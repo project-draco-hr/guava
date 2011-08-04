@@ -1,8 +1,3 @@
 {
-  return new Maps.KeySet<K,V>(){
-    @Override Map<K,V> map(){
-      return ForwardingMap.this;
-    }
-  }
-;
+  return new StandardKeySet();
 }

@@ -1,8 +1,5 @@
 {
-  return new Maps.EntrySet<K,V>(){
-    @Override Map<K,V> map(){
-      return ForwardingMap.this;
-    }
+  return new StandardEntrySet(){
     @Override public Iterator<Map.Entry<K,V>> iterator(){
       return entryIteratorSupplier.get();
     }
