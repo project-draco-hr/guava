@@ -1,0 +1,16 @@
+{
+  if (divisor < 0) {
+    if (dividend + Long.MIN_VALUE < divisor + Long.MIN_VALUE) {
+      return dividend;
+    }
+ else {
+      return dividend - divisor;
+    }
+  }
+  if (dividend >= 0) {
+    return dividend % divisor;
+  }
+  long quotient=((dividend >>> 1) / divisor) << 1;
+  long rem=dividend - quotient * divisor;
+  return rem - (rem + Long.MIN_VALUE >= divisor + Long.MIN_VALUE ? divisor : 0);
+}

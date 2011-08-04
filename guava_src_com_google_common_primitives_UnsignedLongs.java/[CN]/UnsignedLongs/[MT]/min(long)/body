@@ -1,0 +1,11 @@
+{
+  checkArgument(array.length > 0);
+  long min=array[0] + Long.MIN_VALUE;
+  for (int i=1; i < array.length; i++) {
+    long next=array[i] + Long.MIN_VALUE;
+    if (next < min) {
+      min=next;
+    }
+  }
+  return min - Long.MIN_VALUE;
+}

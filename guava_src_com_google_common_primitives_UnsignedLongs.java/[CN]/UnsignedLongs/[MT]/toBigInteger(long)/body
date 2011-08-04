@@ -1,0 +1,7 @@
+{
+  BigInteger result=BigInteger.valueOf(unsigned & Long.MAX_VALUE);
+  if (unsigned < 0) {
+    result=result.setBit(63);
+  }
+  return result;
+}

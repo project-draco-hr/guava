@@ -1,0 +1,3 @@
+{
+  return Longs.compare(a + Long.MIN_VALUE,b + Long.MIN_VALUE);
+}

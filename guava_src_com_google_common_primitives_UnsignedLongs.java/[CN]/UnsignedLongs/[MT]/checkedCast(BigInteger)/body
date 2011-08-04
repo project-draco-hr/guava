@@ -1,0 +1,5 @@
+{
+  checkNotNull(value);
+  checkArgument(value.signum() >= 0 && value.bitLength() <= 64,"out of range: %s",value);
+  return value.longValue();
+}
