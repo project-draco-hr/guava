@@ -10,6 +10,7 @@
         }
       }
       if (e == null || !e.getValueReference().isComputingReference()) {
+        boolean createNewEntry=true;
         ComputingValueReference<K,V> computingValueReference=null;
         lock();
         try {
@@ -18,7 +19,6 @@
           AtomicReferenceArray<ReferenceEntry<K,V>> table=this.table;
           int index=hash & (table.length() - 1);
           ReferenceEntry<K,V> first=table.get(index);
-          boolean createNewEntry=true;
           for (e=first; e != null; e=e.getNext()) {
             K entryKey=e.getKey();
             if (e.getHash() == hash && entryKey != null && map.keyEquivalence.equivalent(key,entryKey)) {
@@ -49,16 +49,19 @@
             computingValueReference=new ComputingValueReference<K,V>(computingFunction);
             if (e == null) {
               e=newEntry(key,hash,first);
+              e.setValueReference(computingValueReference);
               table.set(index,e);
             }
-            e.setValueReference(computingValueReference);
+ else {
+              e.setValueReference(computingValueReference);
+            }
           }
         }
   finally {
           unlock();
           postWriteCleanup();
         }
-        if (computingValueReference != null) {
+        if (createNewEntry) {
           return compute(key,hash,e,computingValueReference);
         }
       }
