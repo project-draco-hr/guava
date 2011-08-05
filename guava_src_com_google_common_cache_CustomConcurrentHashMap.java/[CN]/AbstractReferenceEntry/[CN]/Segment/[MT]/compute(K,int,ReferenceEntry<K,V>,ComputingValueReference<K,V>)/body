@@ -1,13 +1,12 @@
 {
   V value=null;
   long start=System.nanoTime();
-  long end=0;
   try {
 synchronized (e) {
       value=computingValueReference.compute(key,hash);
-      end=System.nanoTime();
     }
     if (value != null) {
+      long end=System.nanoTime();
       statsCounter.recordCreateSuccess(end - start);
       V oldValue=put(key,hash,value,true);
       if (oldValue != null) {
@@ -17,11 +16,9 @@ synchronized (e) {
     return value;
   }
   finally {
-    if (end == 0) {
-      end=System.nanoTime();
-      statsCounter.recordCreateException(end - start);
-    }
     if (value == null) {
+      long end=System.nanoTime();
+      statsCounter.recordCreateException(end - start);
       clearValue(key,hash,computingValueReference);
     }
   }
