@@ -1,4 +1,4 @@
 {
   Set<E> es=elementSet;
-  return (es == null) ? elementSet=Collections.<E>unmodifiableSet(delegate.elementSet()) : es;
+  return (es == null) ? elementSet=createElementSet() : es;
 }
