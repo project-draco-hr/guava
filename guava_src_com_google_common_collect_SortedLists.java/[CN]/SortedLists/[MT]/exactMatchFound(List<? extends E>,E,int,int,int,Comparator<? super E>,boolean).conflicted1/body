@@ -2,15 +2,15 @@
   if (!worryAboutDuplicates) {
     return index;
   }
-  upper=index;
+  lower=index;
   while (lower < upper) {
-    int middle=lower + (upper - lower) / 2;
+    int middle=(lower + upper + 1) >>> 1;
     int c=comparator.compare(list.get(middle),e);
-    if (c < 0) {
-      lower=middle + 1;
+    if (c > 0) {
+      upper=middle - 1;
     }
  else {
-      upper=middle;
+      lower=middle;
     }
   }
   return lower;

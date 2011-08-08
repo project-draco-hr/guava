@@ -1,0 +1,4 @@
+List<E> list
+Function<? super E,K> keyFunction
+K key
+Relation relation

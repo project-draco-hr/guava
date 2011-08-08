@@ -1,3 +1,17 @@
 {
-  return CEILING.exactMatchFound(list,e,lower,index,upper,comparator,worryAboutDuplicates) + 1;
+  if (!worryAboutDuplicates) {
+    return index;
+  }
+  upper=index;
+  while (lower < upper) {
+    int middle=(lower + upper) >>> 1;
+    int c=comparator.compare(list.get(middle),e);
+    if (c < 0) {
+      lower=middle + 1;
+    }
+ else {
+      upper=middle;
+    }
+  }
+  return lower;
 }
