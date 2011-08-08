@@ -1,3 +1,5 @@
 {
-  return delegate.schedule(callable,delay,unit);
+  ListenableFutureTask<V> task=ListenableFutureTask.create(callable);
+  Delayed delayed=delegate.schedule(task,delay,unit);
+  return new ListenableScheduledTask<V>(task,delayed);
 }

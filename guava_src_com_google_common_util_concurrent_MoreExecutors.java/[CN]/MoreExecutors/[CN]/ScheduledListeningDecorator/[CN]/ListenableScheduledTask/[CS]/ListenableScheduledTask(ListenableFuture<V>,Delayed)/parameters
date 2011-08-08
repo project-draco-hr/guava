@@ -1,0 +1,2 @@
+ListenableFuture<V> futureDelegate
+Delayed delayedDelegate
