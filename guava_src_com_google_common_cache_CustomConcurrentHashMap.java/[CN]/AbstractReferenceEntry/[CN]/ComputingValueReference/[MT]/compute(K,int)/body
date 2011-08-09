@@ -1,12 +1,19 @@
 {
-  V value;
   try {
-    value=loader.load(key);
+    V value=loader.load(key);
+    setValueReference(new ComputedReference<K,V>(value));
+    return value;
   }
- catch (  Throwable t) {
-    setValueReference(new ComputationExceptionReference<K,V>(t));
-    throw new ExecutionException(t);
+ catch (  RuntimeException e) {
+    setValueReference(new UncheckedComputationExceptionReference<K,V>(e));
+    throw new UncheckedExecutionException(e);
   }
-  setValueReference(new ComputedReference<K,V>(value));
-  return value;
+catch (  Exception e) {
+    setValueReference(new ComputationExceptionReference<K,V>(e));
+    throw new ExecutionException(e);
+  }
+catch (  Error e) {
+    setValueReference(new ComputationErrorReference<K,V>(e));
+    throw new ExecutionError(e);
+  }
 }

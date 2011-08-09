@@ -3,7 +3,6 @@
     return get(key);
   }
  catch (  ExecutionException e) {
-    wrapAndThrowUnchecked(e.getCause());
-    throw new AssertionError();
+    throw new UncheckedExecutionException(e.getCause());
   }
 }

@@ -3,11 +3,10 @@
   try {
     return loader.load(key);
   }
- catch (  UncheckedExecutionException e) {
-    throw e;
+ catch (  Exception e) {
+    throw new UncheckedExecutionException(e);
   }
-catch (  Throwable t) {
-    wrapAndThrowUnchecked(t);
-    throw new AssertionError();
+catch (  Error e) {
+    throw new ExecutionError(e);
   }
 }

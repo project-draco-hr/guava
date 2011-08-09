@@ -1,9 +1,0 @@
-{
-  if (cause instanceof Error) {
-    throw new ExecutionError((Error)cause);
-  }
-  if (cause instanceof Exception) {
-    throw new UncheckedExecutionException((Exception)cause);
-  }
-  throw new UncheckedExecutionExceptionForThrowable(cause);
-}
