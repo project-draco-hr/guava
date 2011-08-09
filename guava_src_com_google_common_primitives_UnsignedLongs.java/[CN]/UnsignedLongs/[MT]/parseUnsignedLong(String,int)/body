@@ -1,7 +1,5 @@
 {
-  if (s == null) {
-    throw new NumberFormatException("null string");
-  }
+  checkNotNull(s);
   if (s.length() == 0) {
     throw new NumberFormatException("empty string");
   }
