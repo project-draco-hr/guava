@@ -1,5 +1,5 @@
 {
-  Preconditions.checkNotNull(equivalence);
+  Preconditions.checkNotNull(valueEquivalence);
   Map<K,V> onlyOnLeft=newHashMap();
   Map<K,V> onlyOnRight=new HashMap<K,V>(right);
   Map<K,V> onBoth=newHashMap();
@@ -10,7 +10,7 @@
     V leftValue=entry.getValue();
     if (right.containsKey(leftKey)) {
       V rightValue=onlyOnRight.remove(leftKey);
-      if (equivalence.equivalent(leftValue,rightValue)) {
+      if (valueEquivalence.equivalent(leftValue,rightValue)) {
         onBoth.put(leftKey,leftValue);
       }
  else {
