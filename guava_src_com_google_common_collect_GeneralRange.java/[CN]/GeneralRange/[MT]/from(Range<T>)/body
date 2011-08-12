@@ -1,0 +1,7 @@
+{
+  Optional<T> lowerEndpoint=range.hasLowerBound() ? Optional.of(range.lowerEndpoint()) : Optional.<T>absent();
+  BoundType lowerBoundType=range.hasLowerBound() ? range.lowerBoundType() : OPEN;
+  Optional<T> upperEndpoint=range.hasUpperBound() ? Optional.of(range.upperEndpoint()) : Optional.<T>absent();
+  BoundType upperBoundType=range.hasUpperBound() ? range.upperBoundType() : OPEN;
+  return new GeneralRange<T>(Ordering.natural(),lowerEndpoint,lowerBoundType,upperEndpoint,upperBoundType);
+}

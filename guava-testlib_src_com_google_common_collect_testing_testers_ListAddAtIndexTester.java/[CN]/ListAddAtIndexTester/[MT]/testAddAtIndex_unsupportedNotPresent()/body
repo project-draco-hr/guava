@@ -1,0 +1,10 @@
+{
+  try {
+    getList().add(0,samples.e3);
+    fail("add(n, notPresent) should throw");
+  }
+ catch (  UnsupportedOperationException expected) {
+  }
+  expectUnchanged();
+  expectMissing(samples.e3);
+}

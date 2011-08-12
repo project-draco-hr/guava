@@ -1,0 +1,5 @@
+{
+  List<E> subList=getList().subList(0,1);
+  getList().set(0,samples.e3);
+  assertEquals("A set() call to a list after a sublist has been created " + "should be reflected in the sublist",Collections.singletonList(samples.e3),subList);
+}

@@ -1,0 +1,18 @@
+{
+  List<Annotation> result=new ArrayList<Annotation>();
+  Annotation[] annotations;
+synchronized (annotationCache) {
+    annotations=annotationCache.get(classOrMethod);
+    if (annotations == null) {
+      annotations=classOrMethod.getDeclaredAnnotations();
+      annotationCache.put(classOrMethod,annotations);
+    }
+  }
+  for (  Annotation a : annotations) {
+    Class<? extends Annotation> annotationClass=a.annotationType();
+    if (annotationClass.isAnnotationPresent(TesterAnnotation.class)) {
+      result.add(a);
+    }
+  }
+  return result;
+}

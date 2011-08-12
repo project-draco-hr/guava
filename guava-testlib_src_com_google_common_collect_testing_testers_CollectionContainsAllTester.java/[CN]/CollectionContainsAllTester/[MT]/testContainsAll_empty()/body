@@ -1,0 +1,3 @@
+{
+  assertTrue("containsAll(empty) should return true",collection.containsAll(MinimalCollection.of()));
+}

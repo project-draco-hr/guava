@@ -1,0 +1,4 @@
+{
+  assertEquals(c,navigableSet.pollLast());
+  assertEquals(values.subList(0,values.size() - 1),Helpers.copyToList(navigableSet));
+}

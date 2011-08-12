@@ -1,0 +1,7 @@
+{
+  try {
+    assertEquals(getMethodName() + "(wrongType) should return -1 or throw",-1,find(WrongType.VALUE));
+  }
+ catch (  ClassCastException tolerated) {
+  }
+}

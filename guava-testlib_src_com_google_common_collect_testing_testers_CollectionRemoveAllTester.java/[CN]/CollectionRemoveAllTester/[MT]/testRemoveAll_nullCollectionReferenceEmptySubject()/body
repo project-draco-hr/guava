@@ -1,0 +1,7 @@
+{
+  try {
+    collection.removeAll(null);
+  }
+ catch (  NullPointerException expected) {
+  }
+}

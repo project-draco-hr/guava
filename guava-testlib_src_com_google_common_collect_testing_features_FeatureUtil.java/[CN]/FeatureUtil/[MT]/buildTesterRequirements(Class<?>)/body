@@ -1,0 +1,11 @@
+{
+  final TesterRequirements declaredRequirements=buildDeclaredTesterRequirements(testerClass);
+  Class<?> baseClass=testerClass.getSuperclass();
+  if (baseClass == null) {
+    return declaredRequirements;
+  }
+ else {
+    final TesterRequirements clonedBaseRequirements=new TesterRequirements(getTesterRequirements(baseClass));
+    return incorporateRequirements(clonedBaseRequirements,declaredRequirements,testerClass);
+  }
+}

@@ -1,0 +1,9 @@
+{
+  try {
+    getQueue().element();
+    fail("emptyQueue.element() should throw");
+  }
+ catch (  NoSuchElementException expected) {
+  }
+  expectUnchanged();
+}

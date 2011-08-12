@@ -1,0 +1,4 @@
+{
+  assertEquals(a,navigableSet.pollLast());
+  assertTrue(navigableSet.isEmpty());
+}

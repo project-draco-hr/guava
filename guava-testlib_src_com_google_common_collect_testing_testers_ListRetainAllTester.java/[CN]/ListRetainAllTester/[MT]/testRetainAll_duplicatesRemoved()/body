@@ -1,0 +1,7 @@
+{
+  E[] array=createSamplesArray();
+  array[1]=samples.e0;
+  collection=getSubjectGenerator().create(array);
+  assertTrue("containsDuplicates.retainAll(subset) should return true",collection.retainAll(MinimalCollection.of(samples.e2)));
+  expectContents(samples.e2);
+}

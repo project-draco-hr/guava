@@ -1,0 +1,4 @@
+{
+  assertFalse("remove(notPresent) should return false",collection.remove(samples.e3));
+  expectUnchanged();
+}

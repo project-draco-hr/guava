@@ -1,0 +1,4 @@
+{
+  Collection<Map.Entry<K,V>> fewerEntries=getSampleEntries(getNumEntries() - 1);
+  assertFalse("Maps of different sizes should not be equal.",getMap().equals(newHashMap(fewerEntries)));
+}

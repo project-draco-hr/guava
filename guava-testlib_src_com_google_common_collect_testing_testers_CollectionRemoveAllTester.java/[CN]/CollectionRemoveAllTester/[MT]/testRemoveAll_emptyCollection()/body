@@ -1,0 +1,4 @@
+{
+  assertFalse("removeAll(emptyCollection) should return false",collection.removeAll(MinimalCollection.of()));
+  expectUnchanged();
+}

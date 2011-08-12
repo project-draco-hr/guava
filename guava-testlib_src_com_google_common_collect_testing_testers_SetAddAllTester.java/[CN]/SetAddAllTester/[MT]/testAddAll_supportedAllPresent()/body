@@ -1,0 +1,4 @@
+{
+  assertFalse("add(allPresent) should return false",getSet().addAll(MinimalCollection.of(samples.e0)));
+  expectUnchanged();
+}

@@ -1,0 +1,4 @@
+{
+  expectReturnsTrue(nonEmptyProperSubset);
+  expectContents(nonEmptyProperSubset.toRetain);
+}

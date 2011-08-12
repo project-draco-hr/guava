@@ -1,0 +1,3 @@
+{
+  assertTrue("A Set should equal any other Set containing the same elements.",getSet().equals(MinimalSet.from(getSampleElements())));
+}

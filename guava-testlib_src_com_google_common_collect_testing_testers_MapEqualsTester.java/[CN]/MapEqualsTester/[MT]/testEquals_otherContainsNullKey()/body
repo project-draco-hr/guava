@@ -1,0 +1,6 @@
+{
+  Collection<Map.Entry<K,V>> entries=getSampleEntries(getNumEntries() - 1);
+  entries.add(entry(null,samples.e3.getValue()));
+  Map<K,V> other=newHashMap(entries);
+  assertFalse("Two Maps should not be equal if exactly one of them contains a null " + "key.",getMap().equals(other));
+}

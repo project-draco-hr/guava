@@ -1,0 +1,5 @@
+{
+  TesterRequirements clonedClassRequirements=new TesterRequirements(getTesterRequirements(testerMethod.getDeclaringClass()));
+  TesterRequirements declaredRequirements=buildDeclaredTesterRequirements(testerMethod);
+  return incorporateRequirements(clonedClassRequirements,declaredRequirements,testerMethod);
+}

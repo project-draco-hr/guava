@@ -1,0 +1,3 @@
+{
+  assertEquals(getMethodName() + "(notPresent) should return -1",-1,find(samples.e3));
+}

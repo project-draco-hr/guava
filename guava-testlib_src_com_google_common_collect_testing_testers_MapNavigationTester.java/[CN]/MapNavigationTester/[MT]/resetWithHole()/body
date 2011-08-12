@@ -1,0 +1,5 @@
+{
+  Entry<K,V>[] entries=new Entry[]{a,c};
+  super.resetMap(entries);
+  navigableMap=(NavigableMap<K,V>)getMap();
+}

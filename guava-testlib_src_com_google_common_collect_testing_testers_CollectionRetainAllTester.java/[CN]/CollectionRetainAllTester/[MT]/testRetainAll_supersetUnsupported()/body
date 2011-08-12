@@ -1,0 +1,4 @@
+{
+  expectReturnsFalseOrThrows(superset);
+  expectUnchanged();
+}

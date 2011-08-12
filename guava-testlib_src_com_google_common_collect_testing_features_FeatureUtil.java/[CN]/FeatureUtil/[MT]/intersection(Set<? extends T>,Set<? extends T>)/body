@@ -1,0 +1,3 @@
+{
+  return intersection(new Set[]{set1,set2});
+}

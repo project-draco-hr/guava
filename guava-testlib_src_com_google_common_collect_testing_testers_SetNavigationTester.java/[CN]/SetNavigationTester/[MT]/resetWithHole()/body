@@ -1,0 +1,4 @@
+{
+  super.resetContainer(getSubjectGenerator().create(a,c));
+  navigableSet=(NavigableSet<E>)getSet();
+}

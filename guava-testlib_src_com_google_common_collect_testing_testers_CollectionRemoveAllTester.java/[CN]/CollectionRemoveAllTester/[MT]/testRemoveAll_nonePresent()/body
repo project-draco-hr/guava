@@ -1,0 +1,4 @@
+{
+  assertFalse("removeAll(disjointCollection) should return false",collection.removeAll(MinimalCollection.of(samples.e3)));
+  expectUnchanged();
+}

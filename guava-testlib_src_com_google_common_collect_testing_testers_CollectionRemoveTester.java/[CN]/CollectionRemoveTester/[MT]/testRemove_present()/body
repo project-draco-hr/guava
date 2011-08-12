@@ -1,0 +1,6 @@
+{
+  int initialSize=collection.size();
+  assertTrue("remove(present) should return true",collection.remove(samples.e0));
+  assertEquals("remove(present) should decrease a collection's size by one.",initialSize - 1,collection.size());
+  expectMissing(samples.e0);
+}

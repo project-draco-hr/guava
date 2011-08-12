@@ -1,0 +1,4 @@
+{
+  initMapWithNullValue();
+  assertFalse("containsValue(notPresent) should return false",getMap().containsValue(samples.e3.getValue()));
+}

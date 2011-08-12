@@ -1,0 +1,8 @@
+{
+  Set<Feature<?>> implied=new LinkedHashSet<Feature<?>>();
+  for (  Feature<?> feature : features) {
+    implied.addAll(feature.getImpliedFeatures());
+  }
+  addImpliedFeatures(implied);
+  return implied;
+}

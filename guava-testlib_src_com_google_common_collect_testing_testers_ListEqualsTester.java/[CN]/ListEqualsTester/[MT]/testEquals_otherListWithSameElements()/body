@@ -1,0 +1,3 @@
+{
+  assertTrue("A List should equal any other List containing the same elements.",getList().equals(new ArrayList<E>(getSampleElements())));
+}

@@ -1,0 +1,9 @@
+{
+  try {
+    getList().remove(-1);
+    fail("remove(-1) should throw");
+  }
+ catch (  IndexOutOfBoundsException expected) {
+  }
+  expectUnchanged();
+}

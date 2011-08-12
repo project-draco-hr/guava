@@ -1,0 +1,3 @@
+{
+  assertEquals(getMethodName() + "(firstElement) should return 0",0,find(samples.e0));
+}

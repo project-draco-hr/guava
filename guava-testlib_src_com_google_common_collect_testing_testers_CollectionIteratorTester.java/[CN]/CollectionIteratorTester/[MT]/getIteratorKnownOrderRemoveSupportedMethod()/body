@@ -1,0 +1,3 @@
+{
+  return Platform.getMethod(CollectionIteratorTester.class,"testIterator_knownOrderRemoveSupported");
+}

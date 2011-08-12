@@ -1,0 +1,6 @@
+{
+  if (!features.isEmpty()) {
+    features.addAll(impliedFeatures(features));
+  }
+  return features;
+}

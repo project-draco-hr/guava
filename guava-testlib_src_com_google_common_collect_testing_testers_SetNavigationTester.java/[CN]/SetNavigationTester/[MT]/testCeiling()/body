@@ -1,0 +1,6 @@
+{
+  resetWithHole();
+  assertEquals(a,navigableSet.ceiling(a));
+  assertEquals(c,navigableSet.ceiling(b));
+  assertEquals(c,navigableSet.ceiling(c));
+}

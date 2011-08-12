@@ -1,0 +1,4 @@
+{
+  assertNull("emptyQueue.peek() should return null",getQueue().peek());
+  expectUnchanged();
+}

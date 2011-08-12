@@ -1,0 +1,7 @@
+{
+  E[] array=createSamplesArray();
+  array[1]=samples.e0;
+  collection=getSubjectGenerator().create(array);
+  List<E> expectedWithDuplicateRemoved=Arrays.asList(array).subList(1,getNumElements());
+  expectContents(expectedWithDuplicateRemoved);
+}

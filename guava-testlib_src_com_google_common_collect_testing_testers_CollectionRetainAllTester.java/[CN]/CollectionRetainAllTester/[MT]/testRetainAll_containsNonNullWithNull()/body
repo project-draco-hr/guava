@@ -1,0 +1,5 @@
+{
+  initCollectionWithNullElement();
+  expectReturnsTrue(disjoint);
+  expectContents();
+}

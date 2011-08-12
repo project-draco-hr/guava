@@ -1,0 +1,9 @@
+{
+  try {
+    getList().remove(0);
+    fail("remove(i) should throw");
+  }
+ catch (  UnsupportedOperationException expected) {
+  }
+  expectUnchanged();
+}

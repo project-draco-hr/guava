@@ -1,0 +1,5 @@
+{
+  super(message);
+  this.conflicts=conflicts;
+  this.source=source;
+}

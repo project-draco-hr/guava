@@ -1,0 +1,4 @@
+{
+  assertTrue("removeAll(intersectingCollection) should return true",collection.removeAll(MinimalCollection.of(samples.e0,samples.e3)));
+  expectMissing(samples.e0);
+}

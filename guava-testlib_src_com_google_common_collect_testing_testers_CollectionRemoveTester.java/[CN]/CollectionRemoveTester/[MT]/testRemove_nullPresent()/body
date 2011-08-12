@@ -1,0 +1,7 @@
+{
+  collection=getSubjectGenerator().create(createArrayWithNullElement());
+  int initialSize=collection.size();
+  assertTrue("remove(null) should return true",collection.remove(null));
+  assertEquals("remove(present) should decrease a collection's size by one.",initialSize - 1,collection.size());
+  expectMissing((E)null);
+}

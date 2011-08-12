@@ -1,0 +1,5 @@
+{
+  ArrayList<E> other=new ArrayList<E>(getSampleElements());
+  other.set(other.size() / 2,getSubjectGenerator().samples().e3);
+  assertFalse("A List should not equal another List containing different elements.",getList().equals(other));
+}

@@ -1,0 +1,8 @@
+{
+  try {
+    navigableSet.pollLast();
+    fail();
+  }
+ catch (  UnsupportedOperationException e) {
+  }
+}

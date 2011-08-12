@@ -1,0 +1,3 @@
+{
+  return Platform.getMethod(SetAddTester.class,"testAdd_supportedNullPresent");
+}

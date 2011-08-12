@@ -1,0 +1,7 @@
+{
+  try {
+    assertFalse("contains(wrongType) should return false or throw",collection.contains(WrongType.VALUE));
+  }
+ catch (  ClassCastException tolerated) {
+  }
+}

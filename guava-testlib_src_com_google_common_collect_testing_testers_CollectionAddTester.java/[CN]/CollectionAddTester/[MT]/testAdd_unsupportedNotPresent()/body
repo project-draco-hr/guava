@@ -1,0 +1,10 @@
+{
+  try {
+    collection.add(samples.e3);
+    fail("add(notPresent) should throw");
+  }
+ catch (  UnsupportedOperationException expected) {
+  }
+  expectUnchanged();
+  expectMissing(samples.e3);
+}

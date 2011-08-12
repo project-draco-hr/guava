@@ -1,0 +1,3 @@
+{
+  assertFalse("containsValue(null) should return false",getMap().containsValue(null));
+}

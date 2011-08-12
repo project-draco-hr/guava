@@ -1,0 +1,4 @@
+{
+  assertTrue("offer(notPresent) should return true",getQueue().offer(samples.e3));
+  expectAdded(samples.e3);
+}

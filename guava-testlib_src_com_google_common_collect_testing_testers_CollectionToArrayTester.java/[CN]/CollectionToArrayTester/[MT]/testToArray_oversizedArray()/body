@@ -1,0 +1,12 @@
+{
+  E[] array=getSubjectGenerator().createArray(getNumElements() + 2);
+  array[getNumElements()]=samples.e3;
+  array[getNumElements() + 1]=samples.e3;
+  assertSame("toArray(overSizedE[]) should return the given array",array,collection.toArray(array));
+  List<E> subArray=Arrays.asList(array).subList(0,getNumElements());
+  E[] expectedSubArray=createSamplesArray();
+  for (int i=0; i < getNumElements(); i++) {
+    assertTrue("toArray(overSizedE[]) should contain element " + expectedSubArray[i],subArray.contains(expectedSubArray[i]));
+  }
+  assertNull("The array element " + "immediately following the end of the collection should be nulled",array[getNumElements()]);
+}

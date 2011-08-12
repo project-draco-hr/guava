@@ -1,0 +1,3 @@
+{
+  assertFalse("contains(notPresent) should return false",collection.contains(samples.e3));
+}

@@ -1,0 +1,34 @@
+{
+  StringBuilder builder=new StringBuilder();
+  builder.append(comparator).append(":");
+switch (lowerBoundType) {
+case CLOSED:
+    builder.append('[');
+  break;
+case OPEN:
+builder.append('(');
+break;
+}
+if (hasLowerBound()) {
+builder.append(lowerEndpoint.get());
+}
+ else {
+builder.append("-\u221e");
+}
+builder.append(',');
+if (hasUpperBound()) {
+builder.append(upperEndpoint.get());
+}
+ else {
+builder.append("\u221e");
+}
+switch (upperBoundType) {
+case CLOSED:
+builder.append(']');
+break;
+case OPEN:
+builder.append(')');
+break;
+}
+return builder.toString();
+}

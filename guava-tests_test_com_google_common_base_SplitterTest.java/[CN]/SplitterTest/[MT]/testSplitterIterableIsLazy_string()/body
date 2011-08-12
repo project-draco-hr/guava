@@ -1,0 +1,3 @@
+{
+  assertSplitterIterableIsLazy(Splitter.on(","));
+}

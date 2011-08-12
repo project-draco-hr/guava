@@ -1,0 +1,10 @@
+{
+  int index=getNumElements();
+  try {
+    getList().set(index,samples.e3);
+    fail("set(size) should throw IndexOutOfBoundsException");
+  }
+ catch (  IndexOutOfBoundsException expected) {
+  }
+  expectUnchanged();
+}

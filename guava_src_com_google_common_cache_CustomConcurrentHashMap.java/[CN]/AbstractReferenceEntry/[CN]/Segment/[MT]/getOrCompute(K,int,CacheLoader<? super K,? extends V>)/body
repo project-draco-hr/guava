@@ -1,13 +1,16 @@
 {
   try {
     outer:     while (true) {
-      ReferenceEntry<K,V> e=getEntry(key,hash);
-      if (e != null) {
-        V value=getLiveValue(e);
-        if (value != null) {
-          recordRead(e);
-          statsCounter.recordHit();
-          return value;
+      ReferenceEntry<K,V> e=null;
+      if (count != 0) {
+        e=getEntry(key,hash);
+        if (e != null) {
+          V value=getLiveValue(e);
+          if (value != null) {
+            recordRead(e);
+            statsCounter.recordHit();
+            return value;
+          }
         }
       }
       if (e == null || !e.getValueReference().isComputingReference()) {

@@ -1,0 +1,3 @@
+{
+  this(tr.getPresentFeatures(),tr.getAbsentFeatures());
+}

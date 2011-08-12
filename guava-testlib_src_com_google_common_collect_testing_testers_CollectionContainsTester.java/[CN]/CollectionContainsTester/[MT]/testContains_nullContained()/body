@@ -1,0 +1,4 @@
+{
+  initCollectionWithNullElement();
+  assertTrue("contains(null) should return true",collection.contains(null));
+}

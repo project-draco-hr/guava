@@ -1,0 +1,4 @@
+{
+  initCollectionWithNullElement();
+  assertTrue("removeAll(containsNull) should return true",collection.removeAll(Collections.singleton(null)));
+}

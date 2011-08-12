@@ -1,0 +1,3 @@
+{
+  assertTrue("containsValue(present) should return true",getMap().containsValue(samples.e0.getValue()));
+}

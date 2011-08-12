@@ -1,0 +1,3 @@
+{
+  assertFalse("A Collection should never equal an " + "object that is not a Collection.",collection.equals("huh?"));
+}

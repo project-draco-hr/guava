@@ -1,0 +1,4 @@
+{
+  initMapWithNullValue();
+  assertTrue("containsValue(null) should return true",getMap().containsValue(null));
+}

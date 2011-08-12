@@ -1,0 +1,6 @@
+{
+  resetWithHole();
+  assertEquals(c,navigableSet.higher(a));
+  assertEquals(c,navigableSet.higher(b));
+  assertEquals(null,navigableSet.higher(c));
+}

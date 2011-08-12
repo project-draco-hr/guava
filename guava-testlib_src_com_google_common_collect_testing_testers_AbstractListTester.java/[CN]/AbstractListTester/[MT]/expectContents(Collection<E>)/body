@@ -1,0 +1,13 @@
+{
+  List<E> expectedList=Helpers.copyToList(expectedCollection);
+  if (getList().size() != expectedList.size()) {
+    fail("size mismatch: " + reportContext(expectedList));
+  }
+  for (int i=0; i < expectedList.size(); i++) {
+    E expected=expectedList.get(i);
+    E actual=getList().get(i);
+    if (expected != actual && (expected == null || !expected.equals(actual))) {
+      fail("mismatch at index " + i + ": "+ reportContext(expectedList));
+    }
+  }
+}

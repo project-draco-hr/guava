@@ -1,0 +1,8 @@
+{
+  Entry<K,V> newEntry=entry(null,samples.e3.getValue());
+  initMapWithNullKey();
+  assertEquals("put(present, value) should return the associated value",getValueForNullKey(),put(newEntry));
+  Entry<K,V>[] expected=createArrayWithNullKey();
+  expected[getNullLocation()]=newEntry;
+  expectContents(expected);
+}

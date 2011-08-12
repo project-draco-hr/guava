@@ -1,0 +1,4 @@
+{
+  Collection<E> moreElements=getSampleElements(getNumElements() + 1);
+  assertFalse("Lists of different sizes should not be equal.",getList().equals(new ArrayList<E>(moreElements)));
+}

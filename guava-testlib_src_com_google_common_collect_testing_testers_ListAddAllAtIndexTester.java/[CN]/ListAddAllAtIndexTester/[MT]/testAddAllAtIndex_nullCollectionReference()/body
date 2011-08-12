@@ -1,0 +1,9 @@
+{
+  try {
+    getList().addAll(0,null);
+    fail("addAll(n, null) should throw");
+  }
+ catch (  NullPointerException expected) {
+  }
+  expectUnchanged();
+}

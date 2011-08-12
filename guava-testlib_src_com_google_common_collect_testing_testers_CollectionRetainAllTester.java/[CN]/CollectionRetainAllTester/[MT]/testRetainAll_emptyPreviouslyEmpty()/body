@@ -1,0 +1,4 @@
+{
+  expectReturnsFalse(empty);
+  expectUnchanged();
+}

@@ -1,7 +1,7 @@
 {
   try {
-    Splitter.on(",").withKeyValueSeparator("");
-    fail("Should be impossible to use an empty separator.");
+    COMMA_SPLITTER.withKeyValueSeparator("");
+    fail();
   }
  catch (  IllegalArgumentException expected) {
   }

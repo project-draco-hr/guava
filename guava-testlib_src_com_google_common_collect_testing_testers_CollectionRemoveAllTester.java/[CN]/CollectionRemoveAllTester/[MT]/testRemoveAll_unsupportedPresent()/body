@@ -1,0 +1,10 @@
+{
+  try {
+    collection.removeAll(MinimalCollection.of(samples.e0));
+    fail("removeAll(intersectingCollection) should throw " + "UnsupportedOperationException");
+  }
+ catch (  UnsupportedOperationException expected) {
+  }
+  expectUnchanged();
+  assertTrue(collection.contains(samples.e0));
+}

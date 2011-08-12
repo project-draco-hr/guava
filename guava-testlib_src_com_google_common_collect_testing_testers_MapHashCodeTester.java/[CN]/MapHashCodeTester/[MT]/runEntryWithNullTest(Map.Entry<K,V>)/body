@@ -1,0 +1,10 @@
+{
+  Collection<Map.Entry<K,V>> entries=getSampleEntries(getNumEntries() - 1);
+  entries.add(entryWithNull);
+  int expectedHashCode=0;
+  for (  Map.Entry<K,V> entry : entries) {
+    expectedHashCode+=hash(entry);
+  }
+  resetContainer(getSubjectGenerator().create(entries.toArray()));
+  assertEquals("A Map's hashCode() should be the sum of those of its entries (where " + "a null element in an entry counts as having a hash of zero).",expectedHashCode,getMap().hashCode());
+}

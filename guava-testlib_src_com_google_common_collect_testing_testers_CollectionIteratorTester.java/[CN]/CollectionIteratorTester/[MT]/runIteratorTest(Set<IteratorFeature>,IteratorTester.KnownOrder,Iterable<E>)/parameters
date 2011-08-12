@@ -1,0 +1,3 @@
+Set<IteratorFeature> features
+IteratorTester.KnownOrder knownOrder
+Iterable<E> elements

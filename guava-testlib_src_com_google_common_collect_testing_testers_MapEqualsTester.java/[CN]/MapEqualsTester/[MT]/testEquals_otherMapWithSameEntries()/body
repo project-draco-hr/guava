@@ -1,0 +1,3 @@
+{
+  assertTrue("A Map should equal any other Map containing the same entries.",getMap().equals(newHashMap(getSampleEntries())));
+}

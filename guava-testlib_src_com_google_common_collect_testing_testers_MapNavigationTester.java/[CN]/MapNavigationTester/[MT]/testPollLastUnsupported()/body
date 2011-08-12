@@ -1,0 +1,8 @@
+{
+  try {
+    navigableMap.pollLastEntry();
+    fail();
+  }
+ catch (  UnsupportedOperationException e) {
+  }
+}

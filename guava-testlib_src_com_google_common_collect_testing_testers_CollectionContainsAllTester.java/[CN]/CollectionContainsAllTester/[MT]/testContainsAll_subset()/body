@@ -1,0 +1,3 @@
+{
+  assertTrue("containsAll(subset) should return true",collection.containsAll(MinimalCollection.of(samples.e0)));
+}

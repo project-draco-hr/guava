@@ -1,0 +1,8 @@
+{
+  if (entries == null) {
+    Collection<Entry<K,V2>> es=new TransformedEntries(transformer);
+    entries=es;
+    return es;
+  }
+  return entries;
+}

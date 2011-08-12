@@ -1,0 +1,4 @@
+{
+  assertTrue("add(null) should return true",collection.add(null));
+  expectAdded((E)null);
+}

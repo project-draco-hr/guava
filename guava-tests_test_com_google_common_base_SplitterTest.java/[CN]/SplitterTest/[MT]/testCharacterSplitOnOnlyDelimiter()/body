@@ -1,4 +1,4 @@
 {
   Iterable<String> blankblank=Splitter.on('.').split(".");
-  assertContentsInOrder(blankblank,"","");
+  ASSERT.that(blankblank).hasContentsInOrder("","");
 }

@@ -1,0 +1,4 @@
+{
+  this.presentFeatures=Helpers.copyToSet(presentFeatures);
+  this.absentFeatures=Helpers.copyToSet(absentFeatures);
+}

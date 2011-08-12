@@ -1,0 +1,3 @@
+{
+  return Platform.getMethod(ListListIteratorTester.class,"testListIterator_fullyModifiable");
+}

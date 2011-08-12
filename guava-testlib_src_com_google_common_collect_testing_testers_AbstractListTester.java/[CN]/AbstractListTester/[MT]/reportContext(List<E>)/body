@@ -1,0 +1,3 @@
+{
+  return Platform.format("expected collection %s; actual collection %s",expected,this.collection);
+}

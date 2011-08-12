@@ -1,0 +1,4 @@
+{
+  assertFalse("remove(null) should return false",collection.remove(null));
+  expectUnchanged();
+}

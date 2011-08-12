@@ -1,0 +1,4 @@
+{
+  expectThrows(disjoint);
+  expectUnchanged();
+}

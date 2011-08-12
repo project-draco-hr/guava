@@ -1,0 +1,7 @@
+{
+  try {
+    assertNull("get(null) should return null or throw",get(null));
+  }
+ catch (  NullPointerException tolerated) {
+  }
+}

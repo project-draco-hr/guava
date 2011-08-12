@@ -1,0 +1,3 @@
+{
+  assertTrue("An Object should be equal to itself.",collection.equals(collection));
+}

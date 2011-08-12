@@ -1,0 +1,3 @@
+{
+  assertFalse("A List should never equal a Map.",getMap().equals(Helpers.copyToList(getMap().entrySet())));
+}

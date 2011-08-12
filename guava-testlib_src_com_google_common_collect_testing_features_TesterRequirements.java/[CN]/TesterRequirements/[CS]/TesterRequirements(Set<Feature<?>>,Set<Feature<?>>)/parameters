@@ -1,0 +1,2 @@
+Set<Feature<?>> presentFeatures
+Set<Feature<?>> absentFeatures

@@ -1,0 +1,3 @@
+{
+  assertNull("get(null) should return null",get(null));
+}

@@ -1,0 +1,9 @@
+{
+  MinimalCollection<?> containsNull=MinimalCollection.of((Object)null);
+  try {
+    assertFalse("removeAll(containsNull) should return false or throw",collection.removeAll(containsNull));
+  }
+ catch (  NullPointerException tolerated) {
+  }
+  expectUnchanged();
+}

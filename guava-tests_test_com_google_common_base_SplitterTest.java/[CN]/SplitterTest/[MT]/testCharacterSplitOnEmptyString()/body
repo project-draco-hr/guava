@@ -1,4 +1,4 @@
 {
   Iterable<String> nothing=Splitter.on('.').split("");
-  assertContentsInOrder(nothing,"");
+  ASSERT.that(nothing).hasContentsInOrder("");
 }

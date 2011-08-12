@@ -1,0 +1,1 @@
+Collection<? extends Map.Entry<? extends K,? extends V>> entries

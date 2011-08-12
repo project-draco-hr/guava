@@ -1,0 +1,8 @@
+{
+  try {
+    assertFalse("addAll(n, nothing) should return false or throw",getList().addAll(0,emptyCollection()));
+  }
+ catch (  UnsupportedOperationException tolerated) {
+  }
+  expectUnchanged();
+}

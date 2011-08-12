@@ -1,0 +1,3 @@
+{
+  assertEquals("size1Collection.toString should return [{element}]","[" + samples.e0 + "]",collection.toString());
+}

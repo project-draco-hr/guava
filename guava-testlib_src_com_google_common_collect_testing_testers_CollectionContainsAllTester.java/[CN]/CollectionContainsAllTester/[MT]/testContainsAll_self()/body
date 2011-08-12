@@ -1,0 +1,3 @@
+{
+  assertTrue("containsAll(this) should return true",collection.containsAll(collection));
+}

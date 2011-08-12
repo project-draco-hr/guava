@@ -1,0 +1,3 @@
+{
+  return Platform.getMethod(CollectionToArrayTester.class,"testToArray_isPlainObjectArray");
+}

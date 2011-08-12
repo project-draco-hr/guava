@@ -1,0 +1,4 @@
+{
+  putAll(createDisjointCollection());
+  expectAdded(samples.e3,samples.e4);
+}

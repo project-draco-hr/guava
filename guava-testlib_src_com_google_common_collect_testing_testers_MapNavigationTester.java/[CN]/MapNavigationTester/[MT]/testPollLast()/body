@@ -1,0 +1,4 @@
+{
+  assertEquals(c,navigableMap.pollLastEntry());
+  assertEquals(entries.subList(0,entries.size() - 1),Helpers.copyToList(navigableMap.entrySet()));
+}

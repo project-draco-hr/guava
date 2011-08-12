@@ -1,0 +1,3 @@
+{
+  this(Collections.<Feature<?>>emptySet(),Collections.<Feature<?>>emptySet());
+}

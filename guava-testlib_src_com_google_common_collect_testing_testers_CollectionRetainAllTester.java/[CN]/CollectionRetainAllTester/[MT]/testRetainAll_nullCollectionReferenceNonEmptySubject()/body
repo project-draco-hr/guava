@@ -1,0 +1,8 @@
+{
+  try {
+    collection.retainAll(null);
+    fail("retainAll(null) should throw NullPointerException");
+  }
+ catch (  NullPointerException expected) {
+  }
+}

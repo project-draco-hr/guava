@@ -1,0 +1,7 @@
+{
+  try {
+    assertFalse("containsKey(wrongType) should return false or throw",getMap().containsKey(WrongType.VALUE));
+  }
+ catch (  ClassCastException tolerated) {
+  }
+}

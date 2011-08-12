@@ -1,0 +1,4 @@
+{
+  assertNull("emptyQueue.poll() should return null",getQueue().poll());
+  expectUnchanged();
+}

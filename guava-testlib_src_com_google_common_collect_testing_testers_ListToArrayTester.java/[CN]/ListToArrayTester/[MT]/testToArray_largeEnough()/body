@@ -1,0 +1,4 @@
+{
+  Object[] actual=getList().toArray(new Object[getNumElements()]);
+  assertArrayEquals("toArray(largeEnough) order should match list",createSamplesArray(),actual);
+}

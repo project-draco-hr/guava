@@ -1,0 +1,4 @@
+{
+  expectReturnsTrue(nullSingleton);
+  expectContents();
+}

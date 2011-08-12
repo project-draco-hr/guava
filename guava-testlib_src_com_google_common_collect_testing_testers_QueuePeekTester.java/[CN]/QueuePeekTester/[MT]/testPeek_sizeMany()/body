@@ -1,0 +1,4 @@
+{
+  assertEquals("sizeManyQueue.peek() should return first element",samples.e0,getQueue().peek());
+  expectUnchanged();
+}

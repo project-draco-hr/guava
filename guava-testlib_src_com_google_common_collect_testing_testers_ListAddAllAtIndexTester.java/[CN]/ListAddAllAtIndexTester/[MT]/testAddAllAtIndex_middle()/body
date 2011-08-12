@@ -1,0 +1,4 @@
+{
+  assertTrue("addAll(middle, disjoint) should return true",getList().addAll(getNumElements() / 2,createDisjointCollection()));
+  expectAdded(getNumElements() / 2,createDisjointCollection());
+}

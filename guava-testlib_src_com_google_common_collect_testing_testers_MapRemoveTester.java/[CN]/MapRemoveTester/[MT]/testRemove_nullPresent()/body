@@ -1,0 +1,7 @@
+{
+  initMapWithNullKey();
+  int initialSize=getMap().size();
+  assertEquals("remove(null) should return the associated value",getValueForNullKey(),getMap().remove(null));
+  assertEquals("remove(present) should decrease a map's size by one.",initialSize - 1,getMap().size());
+  expectMissing(entry(null,getValueForNullKey()));
+}

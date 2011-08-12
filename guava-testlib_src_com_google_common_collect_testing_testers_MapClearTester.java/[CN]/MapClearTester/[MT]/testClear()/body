@@ -1,0 +1,4 @@
+{
+  getMap().clear();
+  assertTrue("After clear(), a map should be empty.",getMap().isEmpty());
+}

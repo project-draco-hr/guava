@@ -1,0 +1,4 @@
+{
+  expectThrows(partialOverlap);
+  expectUnchanged();
+}

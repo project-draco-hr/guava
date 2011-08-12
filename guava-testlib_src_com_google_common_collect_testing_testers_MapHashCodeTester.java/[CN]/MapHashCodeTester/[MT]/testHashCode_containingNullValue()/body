@@ -1,0 +1,4 @@
+{
+  Map.Entry<K,V> entryWithNull=entry(samples.e3.getKey(),null);
+  runEntryWithNullTest(entryWithNull);
+}

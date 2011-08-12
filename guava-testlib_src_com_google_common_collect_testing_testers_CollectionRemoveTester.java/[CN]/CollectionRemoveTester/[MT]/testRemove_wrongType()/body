@@ -1,0 +1,8 @@
+{
+  try {
+    assertFalse(collection.remove(WrongType.VALUE));
+  }
+ catch (  ClassCastException tolerated) {
+  }
+  expectUnchanged();
+}

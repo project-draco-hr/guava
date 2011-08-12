@@ -4,4 +4,11 @@
   this.lowerBoundType=checkNotNull(lowerBoundType);
   this.upperEndpoint=checkNotNull(upperEndpoint);
   this.upperBoundType=checkNotNull(upperBoundType);
+  if (lowerEndpoint.isPresent() && upperEndpoint.isPresent()) {
+    int cmp=comparator.compare(lowerEndpoint.get(),upperEndpoint.get());
+    checkArgument(cmp <= 0,"lowerEndpoint (%s) > upperEndpoint (%s)",lowerEndpoint,upperEndpoint);
+    if (cmp == 0) {
+      checkArgument(lowerBoundType != OPEN | upperBoundType != OPEN);
+    }
+  }
 }

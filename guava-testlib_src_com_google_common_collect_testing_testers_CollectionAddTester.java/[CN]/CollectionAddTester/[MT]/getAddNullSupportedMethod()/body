@@ -1,0 +1,3 @@
+{
+  return Platform.getMethod(CollectionAddTester.class,"testAdd_nullSupported");
+}

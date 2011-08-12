@@ -1,0 +1,7 @@
+{
+  try {
+    assertNull("get(wrongType) should return null or throw",getMap().get(WrongType.VALUE));
+  }
+ catch (  ClassCastException tolerated) {
+  }
+}

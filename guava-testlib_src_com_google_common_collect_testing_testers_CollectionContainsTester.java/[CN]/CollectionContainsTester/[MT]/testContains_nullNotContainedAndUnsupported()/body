@@ -1,0 +1,3 @@
+{
+  expectNullMissingWhenNullUnsupported("contains(null) should return false or throw");
+}

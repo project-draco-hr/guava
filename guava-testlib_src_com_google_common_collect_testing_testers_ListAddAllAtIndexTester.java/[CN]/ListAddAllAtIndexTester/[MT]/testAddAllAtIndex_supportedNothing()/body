@@ -1,0 +1,4 @@
+{
+  assertFalse("addAll(n, nothing) should return false",getList().addAll(0,emptyCollection()));
+  expectUnchanged();
+}

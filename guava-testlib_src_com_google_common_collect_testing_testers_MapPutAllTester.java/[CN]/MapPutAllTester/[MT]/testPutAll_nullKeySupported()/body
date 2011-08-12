@@ -1,0 +1,4 @@
+{
+  putAll(containsNullKey);
+  expectAdded(containsNullKey.get(0));
+}

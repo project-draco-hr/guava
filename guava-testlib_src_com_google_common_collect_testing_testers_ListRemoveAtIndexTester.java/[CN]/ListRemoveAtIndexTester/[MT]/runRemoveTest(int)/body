@@ -1,0 +1,6 @@
+{
+  assertEquals(Platform.format("remove(%d) should return the element at index %d",index,index),getList().get(index),getList().remove(index));
+  List<E> expected=Helpers.copyToList(createSamplesArray());
+  expected.remove(index);
+  expectContents(expected);
+}

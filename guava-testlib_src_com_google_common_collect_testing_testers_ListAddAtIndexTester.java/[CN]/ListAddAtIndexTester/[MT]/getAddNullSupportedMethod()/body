@@ -1,0 +1,3 @@
+{
+  return Platform.getMethod(ListAddAtIndexTester.class,"testAddAtIndex_nullSupported");
+}

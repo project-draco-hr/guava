@@ -1,0 +1,9 @@
+{
+  try {
+    getList().remove(getNumElements());
+    fail("remove(size) should throw");
+  }
+ catch (  IndexOutOfBoundsException expected) {
+  }
+  expectUnchanged();
+}

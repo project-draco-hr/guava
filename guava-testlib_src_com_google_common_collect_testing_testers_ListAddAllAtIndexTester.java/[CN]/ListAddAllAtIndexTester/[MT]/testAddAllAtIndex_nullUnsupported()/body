@@ -1,0 +1,11 @@
+{
+  List<E> containsNull=singletonList(null);
+  try {
+    getList().addAll(0,containsNull);
+    fail("addAll(n, containsNull) should throw");
+  }
+ catch (  NullPointerException expected) {
+  }
+  expectUnchanged();
+  expectNullMissingWhenNullUnsupported("Should not contain null after unsupported addAll(n, containsNull)");
+}

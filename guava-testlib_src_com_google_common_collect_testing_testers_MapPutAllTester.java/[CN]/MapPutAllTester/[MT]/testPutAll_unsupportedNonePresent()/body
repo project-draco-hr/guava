@@ -1,0 +1,10 @@
+{
+  try {
+    putAll(createDisjointCollection());
+    fail("putAll(nonePresent) should throw");
+  }
+ catch (  UnsupportedOperationException expected) {
+  }
+  expectUnchanged();
+  expectMissing(samples.e3,samples.e4);
+}

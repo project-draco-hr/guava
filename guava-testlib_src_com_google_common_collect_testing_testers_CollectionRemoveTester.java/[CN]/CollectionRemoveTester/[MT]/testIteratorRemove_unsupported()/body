@@ -1,0 +1,12 @@
+{
+  Iterator<E> iterator=collection.iterator();
+  iterator.next();
+  try {
+    iterator.remove();
+    fail("iterator.remove() should throw UnsupportedOperationException");
+  }
+ catch (  UnsupportedOperationException expected) {
+  }
+  expectUnchanged();
+  assertTrue(collection.contains(samples.e0));
+}

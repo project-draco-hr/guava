@@ -1,0 +1,5 @@
+{
+  super.setUp();
+  containsNullKey=singletonList(entry(null,samples.e3.getValue()));
+  containsNullValue=singletonList(entry(samples.e3.getKey(),null));
+}

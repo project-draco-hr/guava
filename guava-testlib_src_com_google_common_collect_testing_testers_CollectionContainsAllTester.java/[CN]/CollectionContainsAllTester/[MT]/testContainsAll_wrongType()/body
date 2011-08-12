@@ -1,0 +1,8 @@
+{
+  Collection<WrongType> wrong=MinimalCollection.of(WrongType.VALUE);
+  try {
+    assertFalse("containsAll(wrongType) should return false or throw",collection.containsAll(wrong));
+  }
+ catch (  ClassCastException tolerated) {
+  }
+}

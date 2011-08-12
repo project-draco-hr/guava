@@ -1,0 +1,10 @@
+{
+  try {
+    getList().add(0,null);
+    fail("add(n, null) should throw");
+  }
+ catch (  NullPointerException expected) {
+  }
+  expectUnchanged();
+  expectNullMissingWhenNullUnsupported("Should not contain null after unsupported add(n, null)");
+}

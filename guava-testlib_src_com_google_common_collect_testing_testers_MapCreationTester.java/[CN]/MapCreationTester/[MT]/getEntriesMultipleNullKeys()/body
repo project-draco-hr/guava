@@ -1,0 +1,5 @@
+{
+  Entry<K,V>[] entries=createArrayWithNullKey();
+  entries[0]=entries[getNullLocation()];
+  return entries;
+}

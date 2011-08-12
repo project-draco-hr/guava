@@ -1,0 +1,4 @@
+{
+  assertEquals(a,navigableMap.pollFirstEntry());
+  assertTrue(navigableMap.isEmpty());
+}

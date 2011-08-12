@@ -1,0 +1,3 @@
+{
+  assertNull(navigableMap.pollLastEntry());
+}

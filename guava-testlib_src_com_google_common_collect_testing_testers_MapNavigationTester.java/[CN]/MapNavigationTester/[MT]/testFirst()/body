@@ -1,0 +1,4 @@
+{
+  assertEquals(a,navigableMap.firstEntry());
+  assertEquals(a.getKey(),navigableMap.firstKey());
+}

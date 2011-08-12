@@ -1,7 +1,7 @@
 {
   try {
     Splitter.on(",").withKeyValueSeparator(":").split("a:1,b:2,a:3");
-    fail("Expected IllegalArgumentException");
+    fail();
   }
  catch (  IllegalArgumentException expected) {
   }

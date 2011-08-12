@@ -1,0 +1,9 @@
+{
+  resetWithHole();
+  assertEquals(a,navigableMap.floorEntry(a.getKey()));
+  assertEquals(a.getKey(),navigableMap.floorKey(a.getKey()));
+  assertEquals(a,navigableMap.floorEntry(b.getKey()));
+  assertEquals(a.getKey(),navigableMap.floorKey(b.getKey()));
+  assertEquals(c,navigableMap.floorEntry(c.getKey()));
+  assertEquals(c.getKey(),navigableMap.floorKey(c.getKey()));
+}

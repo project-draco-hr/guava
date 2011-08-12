@@ -1,19 +1,23 @@
 {
+  ComputedValue<V> valueWrapper;
   try {
     V value=loader.load(key);
-    setValueReference(new ComputedReference<K,V>(value));
-    return value;
+    if (value == null) {
+      valueWrapper=new ComputedNull<K,V>(loader,key);
+    }
+ else {
+      valueWrapper=new ComputedReference<V>(value);
+    }
   }
  catch (  RuntimeException e) {
-    setValueReference(new UncheckedComputationExceptionReference<K,V>(e));
-    throw new UncheckedExecutionException(e);
+    valueWrapper=new ComputedUncheckedException<V>(e);
   }
 catch (  Exception e) {
-    setValueReference(new ComputationExceptionReference<K,V>(e));
-    throw new ExecutionException(e);
+    valueWrapper=new ComputedException<V>(e);
   }
 catch (  Error e) {
-    setValueReference(new ComputationErrorReference<K,V>(e));
-    throw new ExecutionError(e);
+    valueWrapper=new ComputedError<V>(e);
   }
+  setComputedValue(valueWrapper);
+  return valueWrapper.get();
 }

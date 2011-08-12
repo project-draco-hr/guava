@@ -1,5 +1,3 @@
 {
-  ValueReference<K,V> previous=this.valueReference;
   this.valueReference=valueReference;
-  previous.clear(valueReference);
 }

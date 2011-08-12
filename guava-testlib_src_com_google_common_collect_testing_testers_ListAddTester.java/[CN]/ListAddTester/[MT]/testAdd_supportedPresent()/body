@@ -1,0 +1,4 @@
+{
+  assertTrue("add(present) should return true",getList().add(samples.e0));
+  expectAdded(samples.e0);
+}

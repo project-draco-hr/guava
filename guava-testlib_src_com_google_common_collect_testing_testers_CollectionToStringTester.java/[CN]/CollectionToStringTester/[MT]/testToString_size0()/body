@@ -1,0 +1,3 @@
+{
+  assertEquals("emptyCollection.toString should return []","[]",collection.toString());
+}

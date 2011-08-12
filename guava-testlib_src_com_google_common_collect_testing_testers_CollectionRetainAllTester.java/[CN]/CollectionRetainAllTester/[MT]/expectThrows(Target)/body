@@ -1,0 +1,9 @@
+{
+  try {
+    collection.retainAll(target.toRetain);
+    String message=Platform.format("retainAll(%s) should throw",target);
+    fail(message);
+  }
+ catch (  UnsupportedOperationException expected) {
+  }
+}

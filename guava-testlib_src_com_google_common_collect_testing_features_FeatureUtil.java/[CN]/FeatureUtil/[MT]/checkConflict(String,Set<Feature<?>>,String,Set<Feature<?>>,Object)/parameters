@@ -1,0 +1,5 @@
+String earlierRequirement
+Set<Feature<?>> earlierFeatures
+String newRequirement
+Set<Feature<?>> newFeatures
+Object source

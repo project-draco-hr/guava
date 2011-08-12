@@ -1,0 +1,4 @@
+{
+  assertFalse("add(present) should return false",getSet().add(samples.e0));
+  expectUnchanged();
+}

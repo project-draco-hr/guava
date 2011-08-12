@@ -1,9 +1,9 @@
 {
-  if (computedReference == UNSET) {
+  if (computedValue == null) {
     boolean interrupted=false;
     try {
 synchronized (this) {
-        while (computedReference == UNSET) {
+        while (computedValue == null) {
           try {
             wait();
           }
@@ -19,5 +19,5 @@ synchronized (this) {
       }
     }
   }
-  return computedReference.waitForValue();
+  return computedValue.get();
 }

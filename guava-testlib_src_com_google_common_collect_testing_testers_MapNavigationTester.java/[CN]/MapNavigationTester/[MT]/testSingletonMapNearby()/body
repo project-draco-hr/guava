@@ -1,0 +1,10 @@
+{
+  assertNull(navigableMap.lowerEntry(samples.e0.getKey()));
+  assertNull(navigableMap.lowerKey(samples.e0.getKey()));
+  assertEquals(a,navigableMap.floorEntry(samples.e0.getKey()));
+  assertEquals(a.getKey(),navigableMap.floorKey(samples.e0.getKey()));
+  assertEquals(a,navigableMap.ceilingEntry(samples.e0.getKey()));
+  assertEquals(a.getKey(),navigableMap.ceilingKey(samples.e0.getKey()));
+  assertNull(navigableMap.higherEntry(samples.e0.getKey()));
+  assertNull(navigableMap.higherKey(samples.e0.getKey()));
+}

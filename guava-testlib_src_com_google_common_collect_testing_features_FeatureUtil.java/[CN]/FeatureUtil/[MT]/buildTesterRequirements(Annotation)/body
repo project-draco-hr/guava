@@ -1,0 +1,19 @@
+{
+  Class<? extends Annotation> annotationClass=testerAnnotation.getClass();
+  final Feature<?>[] presentFeatures;
+  final Feature<?>[] absentFeatures;
+  try {
+    presentFeatures=(Feature[])annotationClass.getMethod("value").invoke(testerAnnotation);
+    absentFeatures=(Feature[])annotationClass.getMethod("absent").invoke(testerAnnotation);
+  }
+ catch (  Exception e) {
+    throw new IllegalArgumentException("Error extracting features from tester annotation.",e);
+  }
+  Set<Feature<?>> allPresentFeatures=addImpliedFeatures(Helpers.<Feature<?>>copyToSet(presentFeatures));
+  Set<Feature<?>> allAbsentFeatures=addImpliedFeatures(Helpers.<Feature<?>>copyToSet(absentFeatures));
+  Set<Feature<?>> conflictingFeatures=intersection(allPresentFeatures,allAbsentFeatures);
+  if (!conflictingFeatures.isEmpty()) {
+    throw new ConflictingRequirementsException("Annotation explicitly or " + "implicitly requires one or more features to be both present " + "and absent.",conflictingFeatures,testerAnnotation);
+  }
+  return new TesterRequirements(allPresentFeatures,allAbsentFeatures);
+}

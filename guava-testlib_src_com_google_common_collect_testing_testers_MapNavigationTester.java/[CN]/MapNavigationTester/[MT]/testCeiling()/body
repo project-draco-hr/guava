@@ -1,0 +1,9 @@
+{
+  resetWithHole();
+  assertEquals(a,navigableMap.ceilingEntry(a.getKey()));
+  assertEquals(a.getKey(),navigableMap.ceilingKey(a.getKey()));
+  assertEquals(c,navigableMap.ceilingEntry(b.getKey()));
+  assertEquals(c.getKey(),navigableMap.ceilingKey(b.getKey()));
+  assertEquals(c,navigableMap.ceilingEntry(c.getKey()));
+  assertEquals(c.getKey(),navigableMap.ceilingKey(c.getKey()));
+}

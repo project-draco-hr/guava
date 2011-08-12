@@ -1,0 +1,10 @@
+{
+  try {
+    getQueue().offer(null);
+    fail("offer(null) should throw");
+  }
+ catch (  NullPointerException expected) {
+  }
+  expectUnchanged();
+  expectNullMissingWhenNullUnsupported("Should not contain null after unsupported offer(null)");
+}

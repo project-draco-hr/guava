@@ -1,0 +1,8 @@
+{
+  String message=Platform.format("retainAll(%s) should return false or throw",target);
+  try {
+    assertFalse(message,collection.retainAll(target.toRetain));
+  }
+ catch (  UnsupportedOperationException tolerated) {
+  }
+}

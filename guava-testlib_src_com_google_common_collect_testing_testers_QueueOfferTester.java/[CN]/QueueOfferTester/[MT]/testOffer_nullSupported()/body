@@ -1,0 +1,4 @@
+{
+  assertTrue("offer(null) should return true",getQueue().offer(null));
+  expectAdded((E)null);
+}

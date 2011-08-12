@@ -1,0 +1,3 @@
+{
+  assertTrue("containsKey(present) should return true",getMap().containsKey(samples.e0.getKey()));
+}

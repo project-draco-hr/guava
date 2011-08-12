@@ -1,5 +1,5 @@
 {
   String doubled="a,, b,c";
-  Iterable<String> letters=Splitter.on(',').split(doubled);
-  assertContentsInOrder(letters,"a",""," b","c");
+  Iterable<String> letters=COMMA_SPLITTER.split(doubled);
+  ASSERT.that(letters).hasContentsInOrder("a",""," b","c");
 }

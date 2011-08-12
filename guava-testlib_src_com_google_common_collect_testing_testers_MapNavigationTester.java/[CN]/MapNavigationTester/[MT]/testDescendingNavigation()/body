@@ -1,0 +1,8 @@
+{
+  List<Entry<K,V>> descending=new ArrayList<Entry<K,V>>();
+  for (  Entry<K,V> entry : navigableMap.descendingMap().entrySet()) {
+    descending.add(entry);
+  }
+  Collections.reverse(descending);
+  assertEquals(entries,descending);
+}

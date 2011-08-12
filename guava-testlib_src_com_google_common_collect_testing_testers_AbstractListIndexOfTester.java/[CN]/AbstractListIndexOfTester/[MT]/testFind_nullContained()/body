@@ -1,0 +1,4 @@
+{
+  initCollectionWithNullElement();
+  assertEquals(getMethodName() + "(null) should return " + getNullLocation(),getNullLocation(),find(null));
+}

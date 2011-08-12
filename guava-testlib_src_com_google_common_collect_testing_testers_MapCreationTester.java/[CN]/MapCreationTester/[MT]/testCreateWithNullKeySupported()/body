@@ -1,0 +1,4 @@
+{
+  initMapWithNullKey();
+  expectContents(createArrayWithNullKey());
+}

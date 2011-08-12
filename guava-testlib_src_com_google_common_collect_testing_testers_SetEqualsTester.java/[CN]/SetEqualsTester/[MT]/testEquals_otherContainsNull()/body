@@ -1,0 +1,6 @@
+{
+  Collection<E> elements=getSampleElements(getNumElements() - 1);
+  elements.add(null);
+  Set<E> other=MinimalSet.from(elements);
+  assertFalse("Two Sets should not be equal if exactly one of them contains null.",getSet().equals(other));
+}

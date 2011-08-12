@@ -1,0 +1,6 @@
+{
+  E[] array=createSamplesArray();
+  array[getNumElements() / 2]=samples.e0;
+  collection=getSubjectGenerator().create(array);
+  assertEquals("indexOf(duplicate) should return index of first occurrence",0,getList().indexOf(samples.e0));
+}

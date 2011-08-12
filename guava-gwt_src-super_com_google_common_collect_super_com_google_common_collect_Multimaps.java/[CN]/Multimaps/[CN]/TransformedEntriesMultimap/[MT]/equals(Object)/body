@@ -1,0 +1,7 @@
+{
+  if (obj instanceof Multimap) {
+    Multimap<?,?> other=(Multimap<?,?>)obj;
+    return asMap().equals(other.asMap());
+  }
+  return false;
+}

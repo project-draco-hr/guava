@@ -1,0 +1,4 @@
+{
+  initMapWithNullKey();
+  assertNull("get(notPresent) should return null",get(samples.e3.getKey()));
+}

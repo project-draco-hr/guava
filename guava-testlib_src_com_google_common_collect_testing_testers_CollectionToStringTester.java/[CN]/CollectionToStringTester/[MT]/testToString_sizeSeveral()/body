@@ -1,0 +1,4 @@
+{
+  String expected=Helpers.copyToList(getOrderedElements()).toString();
+  assertEquals("collection.toString() incorrect",expected,collection.toString());
+}

@@ -1,0 +1,4 @@
+{
+  expectReturnsFalse(containsDuplicates);
+  expectContents(samples.e0);
+}

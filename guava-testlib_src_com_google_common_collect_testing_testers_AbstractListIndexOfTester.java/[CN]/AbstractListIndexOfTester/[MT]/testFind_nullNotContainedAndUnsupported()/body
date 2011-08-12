@@ -1,0 +1,7 @@
+{
+  try {
+    assertEquals(getMethodName() + "(nullNotPresent) should return -1 or throw",-1,find(null));
+  }
+ catch (  NullPointerException tolerated) {
+  }
+}

@@ -1,0 +1,3 @@
+{
+  assertFalse("contains(null) should return false",collection.contains(null));
+}

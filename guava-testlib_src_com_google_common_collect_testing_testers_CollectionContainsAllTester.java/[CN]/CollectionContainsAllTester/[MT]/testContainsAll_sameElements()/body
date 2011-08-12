@@ -1,0 +1,3 @@
+{
+  assertTrue("containsAll(sameElements) should return true",collection.containsAll(MinimalCollection.of(createSamplesArray())));
+}

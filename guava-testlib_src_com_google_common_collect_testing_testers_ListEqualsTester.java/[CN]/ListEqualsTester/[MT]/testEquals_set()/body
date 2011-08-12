@@ -1,0 +1,3 @@
+{
+  assertFalse("A List should never equal a Set.",getList().equals(MinimalSet.from(getList())));
+}

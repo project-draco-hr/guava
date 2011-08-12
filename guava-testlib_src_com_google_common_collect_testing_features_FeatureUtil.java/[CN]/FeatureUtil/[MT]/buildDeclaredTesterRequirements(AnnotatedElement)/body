@@ -1,0 +1,9 @@
+{
+  TesterRequirements requirements=new TesterRequirements();
+  Iterable<Annotation> testerAnnotations=getTesterAnnotations(classOrMethod);
+  for (  Annotation testerAnnotation : testerAnnotations) {
+    TesterRequirements moreRequirements=buildTesterRequirements(testerAnnotation);
+    incorporateRequirements(requirements,moreRequirements,testerAnnotation);
+  }
+  return requirements;
+}

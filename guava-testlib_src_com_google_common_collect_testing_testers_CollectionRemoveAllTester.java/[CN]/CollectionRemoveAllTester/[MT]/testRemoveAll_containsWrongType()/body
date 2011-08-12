@@ -1,0 +1,8 @@
+{
+  try {
+    assertFalse("removeAll(containsWrongType) should return false or throw",collection.removeAll(MinimalCollection.of(WrongType.VALUE)));
+  }
+ catch (  ClassCastException tolerated) {
+  }
+  expectUnchanged();
+}

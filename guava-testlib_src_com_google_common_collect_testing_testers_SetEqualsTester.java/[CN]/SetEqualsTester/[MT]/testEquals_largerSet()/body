@@ -1,0 +1,4 @@
+{
+  Collection<E> moreElements=getSampleElements(getNumElements() + 1);
+  assertFalse("Sets of different sizes should not be equal.",getSet().equals(MinimalSet.from(moreElements)));
+}

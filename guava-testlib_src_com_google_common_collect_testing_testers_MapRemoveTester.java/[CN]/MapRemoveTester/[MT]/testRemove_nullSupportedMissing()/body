@@ -1,0 +1,4 @@
+{
+  assertNull("remove(null) should return null",getMap().remove(null));
+  expectUnchanged();
+}

@@ -1,0 +1,4 @@
+{
+  collection.clear();
+  assertTrue("After clear(), a collection should be empty.",collection.isEmpty());
+}

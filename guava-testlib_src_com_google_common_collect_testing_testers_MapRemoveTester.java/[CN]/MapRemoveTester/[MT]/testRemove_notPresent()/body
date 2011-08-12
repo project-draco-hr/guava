@@ -1,0 +1,4 @@
+{
+  assertNull("remove(notPresent) should return null",getMap().remove(samples.e3.getKey()));
+  expectUnchanged();
+}

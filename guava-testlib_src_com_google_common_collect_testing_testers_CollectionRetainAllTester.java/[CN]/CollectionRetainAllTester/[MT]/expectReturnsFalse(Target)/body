@@ -1,0 +1,4 @@
+{
+  String message=Platform.format("retainAll(%s) should return false",target);
+  assertFalse(message,collection.retainAll(target.toRetain));
+}

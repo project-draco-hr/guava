@@ -1,0 +1,7 @@
+{
+  int expectedHashCode=0;
+  for (  Map.Entry<K,V> entry : getSampleEntries()) {
+    expectedHashCode+=hash(entry);
+  }
+  assertEquals("A Map's hashCode() should be the sum of those of its entries.",expectedHashCode,getMap().hashCode());
+}

@@ -1,0 +1,10 @@
+{
+  E[] array=createArrayWithNullElement();
+  array[0]=null;
+  try {
+    collection=getSubjectGenerator().create(array);
+    fail("Should reject duplicate null elements at creation");
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}

@@ -1,0 +1,3 @@
+{
+  runRemoveTest(getNumElements() / 2);
+}

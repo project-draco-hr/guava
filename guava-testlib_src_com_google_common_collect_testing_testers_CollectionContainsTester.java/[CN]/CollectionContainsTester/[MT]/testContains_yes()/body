@@ -1,0 +1,3 @@
+{
+  assertTrue("contains(present) should return true",collection.contains(samples.e0));
+}

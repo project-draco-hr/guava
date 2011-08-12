@@ -1,0 +1,4 @@
+{
+  initMapWithNullKey();
+  assertEquals("get(null) should return the associated value",getValueForNullKey(),get(null));
+}

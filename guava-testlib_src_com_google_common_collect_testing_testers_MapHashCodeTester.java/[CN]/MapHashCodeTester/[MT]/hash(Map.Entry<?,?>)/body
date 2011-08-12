@@ -1,0 +1,3 @@
+{
+  return (e.getKey() == null ? 0 : e.getKey().hashCode()) ^ (e.getValue() == null ? 0 : e.getValue().hashCode());
+}
