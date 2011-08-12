@@ -1,0 +1,4 @@
+{
+  addEquivalenceGroup(Lists.asList(first,rest));
+  return this;
+}

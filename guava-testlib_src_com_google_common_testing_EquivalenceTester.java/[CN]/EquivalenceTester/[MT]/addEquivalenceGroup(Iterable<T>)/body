@@ -1,0 +1,5 @@
+{
+  delegate.addRelatedGroup(group);
+  items.addAll(ImmutableList.copyOf(group));
+  return this;
+}
