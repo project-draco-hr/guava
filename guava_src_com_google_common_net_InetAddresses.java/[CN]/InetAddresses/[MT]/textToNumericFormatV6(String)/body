@@ -13,24 +13,20 @@
     }
   }
   int partsHi;
-  if (parts[0].length() == 0) {
-    if (!ipString.startsWith("::")) {
-      return null;
-    }
-    partsHi=0;
-  }
- else {
-    partsHi=skipIndex >= 0 ? skipIndex : parts.length;
-  }
   int partsLo;
-  if (parts[parts.length - 1].length() == 0) {
-    if (!ipString.endsWith("::")) {
+  if (skipIndex >= 0) {
+    partsHi=skipIndex;
+    partsLo=parts.length - skipIndex - 1;
+    if (parts[0].length() == 0 && --partsHi != 0) {
       return null;
     }
-    partsLo=0;
+    if (parts[parts.length - 1].length() == 0 && --partsLo != 0) {
+      return null;
+    }
   }
  else {
-    partsLo=skipIndex >= 0 ? parts.length - skipIndex - 1 : 0;
+    partsHi=parts.length;
+    partsLo=0;
   }
   int partsSkipped=IPV6_PART_COUNT - (partsHi + partsLo);
   if (!(skipIndex >= 0 ? partsSkipped >= 1 : partsSkipped == 0)) {

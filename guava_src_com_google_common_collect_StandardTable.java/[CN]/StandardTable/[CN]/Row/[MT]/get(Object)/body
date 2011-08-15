@@ -1,4 +1,4 @@
 {
   Map<C,V> backingRowMap=backingRowMap();
-  return (key == null || backingRowMap == null) ? null : Maps.safeGet(backingRowMap,key);
+  return (key != null && backingRowMap != null) ? Maps.safeGet(backingRowMap,key) : null;
 }

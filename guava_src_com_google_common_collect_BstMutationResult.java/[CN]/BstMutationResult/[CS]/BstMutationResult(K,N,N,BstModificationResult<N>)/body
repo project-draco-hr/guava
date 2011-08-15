@@ -1,0 +1,6 @@
+{
+  this.targetKey=checkNotNull(targetKey);
+  this.originalRoot=originalRoot;
+  this.changedRoot=changedRoot;
+  this.modificationResult=checkNotNull(modificationResult);
+}

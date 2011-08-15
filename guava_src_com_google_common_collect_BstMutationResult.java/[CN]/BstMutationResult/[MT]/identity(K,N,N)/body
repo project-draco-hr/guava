@@ -1,3 +1,0 @@
-{
-  return mutationResult(targetKey,root,root,target,target);
-}

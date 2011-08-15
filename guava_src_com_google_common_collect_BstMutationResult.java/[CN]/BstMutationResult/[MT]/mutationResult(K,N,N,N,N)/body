@@ -1,3 +1,0 @@
-{
-  return new BstMutationResult<K,N>(targetKey,originalRoot,changedRoot,originalTarget,changedTarget);
-}

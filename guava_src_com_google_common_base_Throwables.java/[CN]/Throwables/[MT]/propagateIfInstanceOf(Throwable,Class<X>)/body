@@ -1,5 +1,5 @@
 {
-  if (declaredType.isInstance(throwable)) {
+  if (throwable != null && declaredType.isInstance(throwable)) {
     throw declaredType.cast(throwable);
   }
 }

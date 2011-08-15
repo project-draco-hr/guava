@@ -1,0 +1,45 @@
+{
+  BstBalancePolicy<N> rebalancePolicy=mutationRule.getBalancePolicy();
+  BstNodeFactory<N> nodeFactory=mutationRule.getNodeFactory();
+  BstModifier<K,N> modifier=mutationRule.getModifier();
+  N originalRoot=tree;
+  N changedRoot;
+  N originalTarget=(tree == null) ? null : nodeFactory.createLeaf(tree);
+  BstModificationResult<N> modResult=modifier.modify(key,originalTarget);
+  N originalLeft=null;
+  N originalRight=null;
+  if (tree != null) {
+    originalLeft=tree.childOrNull(LEFT);
+    originalRight=tree.childOrNull(RIGHT);
+  }
+switch (modResult.getType()) {
+case IDENTITY:
+    changedRoot=tree;
+  break;
+case REBUILDING_CHANGE:
+if (modResult.getChangedTarget() != null) {
+  changedRoot=nodeFactory.createNode(modResult.getChangedTarget(),originalLeft,originalRight);
+}
+ else if (tree == null) {
+  changedRoot=null;
+}
+ else {
+  throw new AssertionError("Modification result is a REBUILDING_CHANGE, but rebalancing required");
+}
+break;
+case REBALANCING_CHANGE:
+if (modResult.getChangedTarget() != null) {
+changedRoot=rebalancePolicy.balance(nodeFactory,modResult.getChangedTarget(),originalLeft,originalRight);
+}
+ else if (tree != null) {
+changedRoot=rebalancePolicy.combine(nodeFactory,originalLeft,originalRight);
+}
+ else {
+changedRoot=null;
+}
+break;
+default :
+throw new AssertionError();
+}
+return BstMutationResult.mutationResult(key,originalRoot,changedRoot,modResult);
+}

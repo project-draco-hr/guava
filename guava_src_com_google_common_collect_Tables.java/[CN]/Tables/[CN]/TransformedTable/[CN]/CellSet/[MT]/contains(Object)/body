@@ -1,7 +1,10 @@
 {
   if (obj instanceof Cell) {
     Cell<?,?,?> cell=(Cell<?,?,?>)obj;
-    return Objects.equal(cell.getValue(),get(cell.getRowKey(),cell.getColumnKey())) && (cell.getValue() != null || fromTable.contains(cell.getRowKey(),cell.getColumnKey()));
+    if (!Objects.equal(cell.getValue(),get(cell.getRowKey(),cell.getColumnKey()))) {
+      return false;
+    }
+    return cell.getValue() != null || fromTable.contains(cell.getRowKey(),cell.getColumnKey());
   }
   return false;
 }

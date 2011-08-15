@@ -1,0 +1,3 @@
+{
+  return new BstModificationResult<N>(target,target,ModificationType.IDENTITY);
+}

@@ -2,32 +2,13 @@
   checkNotNull(comparator);
   checkNotNull(mutationRule);
   checkNotNull(key);
-  BstBalancePolicy<N> rebalancePolicy=mutationRule.getBalancePolicy();
-  BstNodeFactory<N> nodeFactory=mutationRule.getNodeFactory();
-  BstModifier<K,N> modifier=mutationRule.getModifier();
   if (tree != null) {
     int cmp=comparator.compare(key,tree.getKey());
     if (cmp != 0) {
       BstSide side=(cmp < 0) ? LEFT : RIGHT;
       BstMutationResult<K,N> mutation=mutate(comparator,mutationRule,tree.childOrNull(side),key);
-      return mutation.lift(tree,side,nodeFactory,rebalancePolicy);
+      return mutation.lift(tree,side,mutationRule.getNodeFactory(),mutationRule.getBalancePolicy());
     }
   }
-  N newTree=modifier.modify(key,tree);
-  if (newTree == tree) {
-    return BstMutationResult.identity(key,tree,tree);
-  }
- else   if (newTree == null) {
-    newTree=rebalancePolicy.combine(nodeFactory,tree.childOrNull(LEFT),tree.childOrNull(RIGHT));
-  }
- else {
-    N left=null;
-    N right=null;
-    if (tree != null) {
-      left=tree.childOrNull(LEFT);
-      right=tree.childOrNull(RIGHT);
-    }
-    newTree=rebalancePolicy.balance(nodeFactory,newTree,left,right);
-  }
-  return BstMutationResult.mutationResult(key,tree,newTree,tree,newTree);
+  return modify(tree,key,mutationRule);
 }
