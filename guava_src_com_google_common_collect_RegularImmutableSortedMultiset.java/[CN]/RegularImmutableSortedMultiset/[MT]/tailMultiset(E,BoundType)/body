@@ -1,0 +1,4 @@
+{
+  int index=index(checkNotNull(lowerBound),checkNotNull(boundType) == BoundType.CLOSED ? Relation.CEILING : Relation.HIGHER);
+  return createSubMultiset(index,distinctElements());
+}

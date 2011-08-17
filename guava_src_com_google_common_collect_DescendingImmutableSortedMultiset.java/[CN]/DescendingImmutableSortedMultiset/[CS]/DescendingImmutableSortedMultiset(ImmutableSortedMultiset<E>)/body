@@ -1,0 +1,4 @@
+{
+  super(forward.reverseComparator());
+  this.forward=forward;
+}

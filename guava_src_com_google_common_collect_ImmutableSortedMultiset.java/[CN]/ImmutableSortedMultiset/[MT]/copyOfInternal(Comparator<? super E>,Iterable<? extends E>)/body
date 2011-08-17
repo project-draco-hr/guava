@@ -1,0 +1,11 @@
+{
+  if (SortedIterables.hasSameComparator(comparator,iterable) && iterable instanceof ImmutableSortedMultiset<?>) {
+    return (ImmutableSortedMultiset<E>)iterable;
+  }
+  ImmutableList<Entry<E>> entries=(ImmutableList)ImmutableList.copyOf(SortedIterables.sortedCounts(comparator,iterable));
+  if (entries.isEmpty()) {
+    return emptyMultiset(comparator);
+  }
+  verifyEntries(entries);
+  return RegularImmutableSortedMultiset.createFromSorted(comparator,entries);
+}

@@ -1,0 +1,7 @@
+{
+  super(checkElement(key),left,right);
+  checkArgument(elemCount > 0);
+  this.elemOccurrences=elemCount;
+  this.size=elemCount + sizeOrZero(left) + sizeOrZero(right);
+  this.distinct=1 + distinctOrZero(left) + distinctOrZero(right);
+}

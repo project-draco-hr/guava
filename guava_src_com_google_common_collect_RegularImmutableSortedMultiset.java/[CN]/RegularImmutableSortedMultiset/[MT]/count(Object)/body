@@ -1,0 +1,12 @@
+{
+  if (element == null) {
+    return 0;
+  }
+  try {
+    int index=index(element,Relation.EQUAL);
+    return (index >= 0) ? entries.get(index).getCount() : 0;
+  }
+ catch (  ClassCastException e) {
+    return 0;
+  }
+}

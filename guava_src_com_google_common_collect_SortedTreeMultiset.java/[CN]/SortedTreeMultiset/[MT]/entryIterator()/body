@@ -1,0 +1,5 @@
+{
+  Node root=rootReference.get();
+  final BstInOrderPath<Node> startingPath=BstRangeOps.furthestPath(range,LEFT,pathFactory,root);
+  return iteratorInDirection(startingPath,RIGHT);
+}

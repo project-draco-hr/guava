@@ -4,7 +4,9 @@
   this.allowNulls=allowNulls;
   if (!allowNulls) {
     for (    Object element : contents) {
-      Helpers.checkNotNull(element);
+      if (element == null) {
+        throw new NullPointerException();
+      }
     }
   }
 }

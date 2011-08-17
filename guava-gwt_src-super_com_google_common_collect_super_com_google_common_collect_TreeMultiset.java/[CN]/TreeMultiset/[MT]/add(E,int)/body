@@ -1,0 +1,6 @@
+{
+  if (element == null) {
+    comparator.compare(element,element);
+  }
+  return super.add(element,occurrences);
+}

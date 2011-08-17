@@ -1,4 +1,9 @@
 {
+  for (  Set<? extends B> set : sets) {
+    if (set.isEmpty()) {
+      return ImmutableSet.of();
+    }
+  }
   CartesianSet<B> cartesianSet=new CartesianSet<B>(sets);
-  return cartesianSet.isEmpty() ? ImmutableSet.<List<B>>of() : cartesianSet;
+  return cartesianSet;
 }

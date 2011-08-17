@@ -1,0 +1,11 @@
+{
+  if (newFromIndex == 0 && newToIndex == entries.size()) {
+    return this;
+  }
+ else   if (newFromIndex >= newToIndex) {
+    return emptyMultiset(comparator());
+  }
+ else {
+    return new RegularImmutableSortedMultiset<E>(comparator(),entries.subList(newFromIndex,newToIndex));
+  }
+}

@@ -1,0 +1,2 @@
+Comparator<? super E> comparator
+ImmutableList<CumulativeCountEntry<E>> entries

@@ -1,0 +1,3 @@
+{
+  return RegularImmutableSortedMultiset.createFromSorted(NATURAL_ORDER,ImmutableList.of(Multisets.immutableEntry(checkNotNull(element),1)));
+}

@@ -1,0 +1,4 @@
+{
+  checkNotNull(lowerBound);
+  return new SortedTreeMultiset<E>(range.intersect(GeneralRange.downTo(comparator,lowerBound,boundType)),rootReference);
+}

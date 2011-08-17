@@ -1,6 +1,8 @@
 {
   if (!allowNulls) {
-    Helpers.checkNotNull(object);
+    if (object == null) {
+      throw new NullPointerException();
+    }
   }
   Platform.checkCast(type,object);
   return Arrays.asList(contents).contains(object);

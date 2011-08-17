@@ -13,7 +13,7 @@
       if (o instanceof Map.Entry<?,?>) {
         Map.Entry<K,V> e=(Map.Entry<K,V>)o;
         e.setValue(value);
-        return Helpers.equal(this.getKey(),e.getKey()) && Helpers.equal(this.getValue(),e.getValue());
+        return equal(this.getKey(),e.getKey()) && equal(this.getValue(),e.getValue());
       }
       return false;
     }

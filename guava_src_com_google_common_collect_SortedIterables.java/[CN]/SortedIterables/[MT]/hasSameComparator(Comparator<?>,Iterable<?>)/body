@@ -1,0 +1,19 @@
+{
+  checkNotNull(comparator);
+  checkNotNull(elements);
+  Comparator<?> comparator2;
+  if (elements instanceof SortedSet) {
+    SortedSet<?> sortedSet=(SortedSet<?>)elements;
+    comparator2=sortedSet.comparator();
+    if (comparator2 == null) {
+      comparator2=(Comparator)Ordering.natural();
+    }
+  }
+ else   if (elements instanceof SortedIterable) {
+    comparator2=((SortedIterable<?>)elements).comparator();
+  }
+ else {
+    comparator2=null;
+  }
+  return comparator.equals(comparator2);
+}

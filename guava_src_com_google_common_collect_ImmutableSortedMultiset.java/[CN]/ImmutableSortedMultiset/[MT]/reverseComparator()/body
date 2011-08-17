@@ -1,0 +1,7 @@
+{
+  Comparator<? super E> result=reverseComparator;
+  if (result == null) {
+    return reverseComparator=Ordering.from(comparator).<E>reverse();
+  }
+  return result;
+}

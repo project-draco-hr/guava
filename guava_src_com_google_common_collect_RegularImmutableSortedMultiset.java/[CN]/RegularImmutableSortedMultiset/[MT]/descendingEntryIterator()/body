@@ -1,0 +1,3 @@
+{
+  return (UnmodifiableIterator)entries.reverse().iterator();
+}

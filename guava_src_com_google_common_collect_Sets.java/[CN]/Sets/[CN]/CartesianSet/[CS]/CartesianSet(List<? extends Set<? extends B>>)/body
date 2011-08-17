@@ -5,6 +5,7 @@
     Axis axis=new Axis(set,(int)dividend);
     builder.add(axis);
     dividend*=axis.size();
+    checkArgument(dividend <= Integer.MAX_VALUE,"cartesian product is too big");
   }
   this.axes=builder.build();
   size=Ints.checkedCast(dividend);

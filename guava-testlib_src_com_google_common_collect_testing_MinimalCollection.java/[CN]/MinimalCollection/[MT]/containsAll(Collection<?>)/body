@@ -1,7 +1,9 @@
 {
   if (!allowNulls) {
     for (    Object object : collection) {
-      Helpers.checkNotNull(object);
+      if (object == null) {
+        throw new NullPointerException();
+      }
     }
   }
   return super.containsAll(collection);

@@ -1,0 +1,8 @@
+{
+  return new TransformedImmutableList<CumulativeCountEntry<E>,E>(entries){
+    @Override E transform(    CumulativeCountEntry<E> entry){
+      return entry.getElement();
+    }
+  }
+;
+}

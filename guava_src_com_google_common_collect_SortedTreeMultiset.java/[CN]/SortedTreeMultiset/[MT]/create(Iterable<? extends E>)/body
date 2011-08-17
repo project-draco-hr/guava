@@ -1,0 +1,5 @@
+{
+  SortedTreeMultiset<E> multiset=create();
+  Iterables.addAll(multiset,elements);
+  return multiset;
+}

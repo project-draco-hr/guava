@@ -1,0 +1,5 @@
+{
+  this.element=element;
+  this.count=count;
+  this.cumulativeCount=count + ((previous == null) ? 0 : previous.cumulativeCount);
+}

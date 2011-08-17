@@ -1,0 +1,5 @@
+{
+  CumulativeCountEntry<E> firstEntry=firstEntry();
+  CumulativeCountEntry<E> lastEntry=lastEntry();
+  return Ints.saturatedCast(lastEntry.cumulativeCount - firstEntry.cumulativeCount + firstEntry.count);
+}

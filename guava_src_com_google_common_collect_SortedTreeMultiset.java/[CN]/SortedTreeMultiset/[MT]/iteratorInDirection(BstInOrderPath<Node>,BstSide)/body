@@ -1,0 +1,28 @@
+{
+  final Iterator<BstInOrderPath<Node>> pathIterator=new AbstractLinkedIterator<BstInOrderPath<Node>>(start){
+    @Override protected BstInOrderPath<Node> computeNext(    BstInOrderPath<Node> previous){
+      if (!previous.hasNext(direction)) {
+        return null;
+      }
+      BstInOrderPath<Node> next=previous.next(direction);
+      return range.contains(next.getTip().getKey()) ? next : null;
+    }
+  }
+;
+  return new Iterator<Entry<E>>(){
+    E toRemove=null;
+    @Override public boolean hasNext(){
+      return pathIterator.hasNext();
+    }
+    @Override public Entry<E> next(){
+      BstInOrderPath<Node> path=pathIterator.next();
+      return Multisets.immutableEntry(toRemove=path.getTip().getKey(),path.getTip().elemOccurrences);
+    }
+    @Override public void remove(){
+      checkState(toRemove != null);
+      setCount(toRemove,0);
+      toRemove=null;
+    }
+  }
+;
+}

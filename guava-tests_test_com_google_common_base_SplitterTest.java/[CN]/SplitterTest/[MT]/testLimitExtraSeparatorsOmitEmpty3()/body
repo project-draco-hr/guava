@@ -1,0 +1,5 @@
+{
+  String text="a,,,b,,c,d";
+  Iterable<String> items=COMMA_SPLITTER.limit(3).omitEmptyStrings().split(text);
+  ASSERT.that(items).hasContentsInOrder("a","b","c,d");
+}
