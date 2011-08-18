@@ -1,7 +1,4 @@
 {
-  if (!elements.hasNext()) {
-    return emptySet(comparator);
-  }
-  ImmutableList<E> list=immutableSortedUniqueCopy(comparator,Lists.newArrayList(elements));
-  return new RegularImmutableSortedSet<E>(list,comparator);
+  ImmutableList<E> list=ImmutableList.copyOf(SortedIterables.sortedUnique(comparator,elements));
+  return list.isEmpty() ? ImmutableSortedSet.<E>emptySet(comparator) : new RegularImmutableSortedSet<E>(list,comparator);
 }

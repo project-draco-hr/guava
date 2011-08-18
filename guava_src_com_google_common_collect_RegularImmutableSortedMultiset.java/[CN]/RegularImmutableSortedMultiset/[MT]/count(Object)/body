@@ -3,7 +3,7 @@
     return 0;
   }
   try {
-    int index=index(element,Relation.EQUAL);
+    int index=SortedLists.binarySearch(elementList(),(E)element,comparator(),ANY_PRESENT,INVERTED_INSERTION_INDEX);
     return (index >= 0) ? entries.get(index).getCount() : 0;
   }
  catch (  ClassCastException e) {

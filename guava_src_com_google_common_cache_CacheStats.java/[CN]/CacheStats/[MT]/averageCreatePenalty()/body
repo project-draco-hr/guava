@@ -1,4 +1,0 @@
-{
-  long totalCreateCount=createSuccessCount + createExceptionCount;
-  return (totalCreateCount == 0) ? 0.0 : (double)totalCreateTime / totalCreateCount;
-}

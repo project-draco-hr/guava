@@ -1,0 +1,5 @@
+{
+  missCount.incrementAndGet();
+  loadExceptionCount.incrementAndGet();
+  totalLoadTime.addAndGet(loadTime);
+}

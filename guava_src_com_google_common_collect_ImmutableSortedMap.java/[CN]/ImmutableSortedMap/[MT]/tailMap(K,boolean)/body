@@ -1,5 +1,10 @@
 {
-  checkNotNull(fromKey);
-  int index=index(fromKey,inclusive ? Relation.LOWER : Relation.FLOOR);
-  return createSubmap(index + 1,size());
+  int index;
+  if (inclusive) {
+    index=index(fromKey,ANY_PRESENT,NEXT_HIGHER);
+  }
+ else {
+    index=index(fromKey,ANY_PRESENT,NEXT_LOWER) + 1;
+  }
+  return createSubmap(index,size());
 }

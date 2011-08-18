@@ -1,4 +1,14 @@
 {
-  int index=index(checkNotNull(upperBound),checkNotNull(boundType) == BoundType.CLOSED ? Relation.FLOOR : Relation.LOWER);
-  return createSubMultiset(0,index + 1);
+  int index;
+switch (boundType) {
+case OPEN:
+    index=SortedLists.binarySearch(elementList(),checkNotNull(upperBound),comparator(),ANY_PRESENT,NEXT_HIGHER);
+  break;
+case CLOSED:
+index=SortedLists.binarySearch(elementList(),checkNotNull(upperBound),comparator(),ANY_PRESENT,NEXT_LOWER) + 1;
+break;
+default :
+throw new AssertionError();
+}
+return createSubMultiset(0,index);
 }

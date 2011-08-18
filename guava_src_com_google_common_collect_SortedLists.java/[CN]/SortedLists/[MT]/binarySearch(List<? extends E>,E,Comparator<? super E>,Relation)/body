@@ -1,3 +1,0 @@
-{
-  return binarySearch(list,e,comparator,relation,true);
-}

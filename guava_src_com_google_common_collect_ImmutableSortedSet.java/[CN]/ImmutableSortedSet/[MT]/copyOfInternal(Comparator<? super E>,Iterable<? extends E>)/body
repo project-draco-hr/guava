@@ -1,0 +1,11 @@
+{
+  boolean hasSameComparator=SortedIterables.hasSameComparator(comparator,elements);
+  if (hasSameComparator && (elements instanceof ImmutableSortedSet)) {
+    @SuppressWarnings("unchecked") ImmutableSortedSet<E> original=(ImmutableSortedSet<E>)elements;
+    if (!original.isPartialView()) {
+      return original;
+    }
+  }
+  ImmutableList<E> list=ImmutableList.copyOf(SortedIterables.sortedUnique(comparator,elements));
+  return list.isEmpty() ? ImmutableSortedSet.<E>emptySet(comparator) : new RegularImmutableSortedSet<E>(list,comparator);
+}

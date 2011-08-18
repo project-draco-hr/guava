@@ -3,5 +3,5 @@
   if (comparator == null) {
     comparator=(Comparator<? super E>)NATURAL_ORDER;
   }
-  return copyOfInternal(comparator,sortedSet,true);
+  return copyOfInternal(comparator,sortedSet);
 }

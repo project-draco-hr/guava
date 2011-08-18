@@ -1,4 +1,0 @@
-List<? extends E> list
-E e
-Comparator<? super E> comparator
-Relation relation

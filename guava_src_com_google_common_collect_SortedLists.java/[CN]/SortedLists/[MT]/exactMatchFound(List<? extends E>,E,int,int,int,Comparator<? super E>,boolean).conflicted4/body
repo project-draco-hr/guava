@@ -1,3 +1,0 @@
-{
-  return CEILING.exactMatchFound(list,e,lower,index,upper,comparator,worryAboutDuplicates) + 1;
-}

@@ -1,3 +1,0 @@
-{
-  return binarySearch(list,keyFunction,key,Ordering.natural(),relation);
-}

@@ -1,4 +1,0 @@
-List<? extends E> list
-E e
-int higherIndex
-Comparator<? super E> comparator

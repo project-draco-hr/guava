@@ -4,7 +4,7 @@
   }
   int i;
   try {
-    i=index(key,Relation.EQUAL);
+    i=index(key,ANY_PRESENT,INVERTED_INSERTION_INDEX);
   }
  catch (  ClassCastException e) {
     return null;

@@ -1,3 +1,0 @@
-{
-  return SortedLists.binarySearch(keyList(),key,unsafeComparator(),relation,false);
-}

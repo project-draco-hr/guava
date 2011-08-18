@@ -1,5 +1,5 @@
 {
-  if (!hasSameComparator(targets,comparator()) || (targets.size() <= 1)) {
+  if (!SortedIterables.hasSameComparator(comparator(),targets) || (targets.size() <= 1)) {
     return super.containsAll(targets);
   }
   Iterator<E> thisIterator=iterator();

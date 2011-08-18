@@ -4,7 +4,7 @@
   }
   int position;
   try {
-    position=index(target,Relation.EQUAL);
+    position=SortedLists.binarySearch(elements,(E)target,comparator(),ANY_PRESENT,INVERTED_INSERTION_INDEX);
   }
  catch (  ClassCastException e) {
     return -1;

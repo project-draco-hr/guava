@@ -1,4 +1,10 @@
 {
-  int index=index(toElement,inclusive ? Relation.HIGHER : Relation.CEILING);
+  int index;
+  if (inclusive) {
+    index=SortedLists.binarySearch(elements,checkNotNull(toElement),comparator(),FIRST_AFTER,NEXT_HIGHER);
+  }
+ else {
+    index=SortedLists.binarySearch(elements,checkNotNull(toElement),comparator(),FIRST_PRESENT,NEXT_HIGHER);
+  }
   return createSubset(0,index);
 }
