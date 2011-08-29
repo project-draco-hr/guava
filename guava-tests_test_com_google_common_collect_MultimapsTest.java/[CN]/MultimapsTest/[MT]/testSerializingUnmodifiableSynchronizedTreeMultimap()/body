@@ -1,0 +1,7 @@
+{
+  TreeMultimap<String,Integer> delegate=TreeMultimap.create(Ordering.<String>natural(),INT_COMPARATOR);
+  SortedSetMultimap<String,Integer> multimap=Multimaps.synchronizedSortedSetMultimap(delegate);
+  Multimap<String,Integer> unmodifiable=prepareUnmodifiableTests(multimap,false,"null",42);
+  SerializableTester.reserializeAndAssert(unmodifiable);
+  assertSame(INT_COMPARATOR,multimap.valueComparator());
+}

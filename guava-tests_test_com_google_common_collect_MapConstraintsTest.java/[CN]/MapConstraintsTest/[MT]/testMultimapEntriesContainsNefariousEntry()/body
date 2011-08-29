@@ -1,0 +1,11 @@
+{
+  Multimap<String,Integer> multimap=LinkedListMultimap.create();
+  Multimap<String,Integer> constrained=MapConstraints.constrainedMultimap(multimap,TEST_CONSTRAINT);
+  multimap.put("foo",1);
+  Map.Entry<String,Integer> nefariousEntry=nefariousMapEntry(TEST_KEY,TEST_VALUE);
+  Collection<Map.Entry<String,Integer>> entries=constrained.entries();
+  assertFalse(entries.contains(nefariousEntry));
+  assertFalse(multimap.containsValue(TEST_VALUE));
+  assertFalse(entries.containsAll(Collections.singleton(nefariousEntry)));
+  assertFalse(multimap.containsValue(TEST_VALUE));
+}

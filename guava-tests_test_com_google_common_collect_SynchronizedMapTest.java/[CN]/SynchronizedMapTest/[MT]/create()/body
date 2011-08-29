@@ -1,0 +1,5 @@
+{
+  TestMap<K,V> inner=new TestMap<K,V>(new HashMap<K,V>(),mutex);
+  Map<K,V> outer=Synchronized.map(inner,mutex);
+  return outer;
+}

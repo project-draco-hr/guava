@@ -1,0 +1,20 @@
+{
+  List<Entry<String,Integer>> addItems=ImmutableList.of(Maps.immutableEntry("foo",99),Maps.immutableEntry("foo",88),Maps.immutableEntry("bar",77));
+  for (  final int startIndex : new int[]{0,3,5}) {
+    List<Entry<String,Integer>> list=Lists.newArrayList(Maps.immutableEntry("foo",2),Maps.immutableEntry("foo",3),Maps.immutableEntry("bar",4),Maps.immutableEntry("bar",5),Maps.immutableEntry("foo",6));
+    new ListIteratorTester<Entry<String,Integer>>(3,addItems,ImmutableList.of(SUPPORTS_REMOVE),list,startIndex){
+      private LinkedListMultimap<String,Integer> multimap;
+      @Override protected ListIterator<Entry<String,Integer>> newTargetIterator(){
+        multimap=create();
+        multimap.putAll("foo",asList(2,3));
+        multimap.putAll("bar",asList(4,5));
+        multimap.put("foo",6);
+        return multimap.entries().listIterator(startIndex);
+      }
+      @Override protected void verify(      List<Entry<String,Integer>> elements){
+        assertEquals(elements,multimap.entries());
+      }
+    }
+.test();
+  }
+}

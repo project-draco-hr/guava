@@ -1,0 +1,10 @@
+{
+  for (  Cache<Key,String> cache : caches()) {
+    Key key=new Key(1);
+    String value=key.toString();
+    assertSame(value,cache.getUnchecked(key));
+    assertTrue(cache.asMap().containsKey(key));
+    assertTrue(cache.asMap().containsValue(value));
+    assertEquals(1,cache.size());
+  }
+}

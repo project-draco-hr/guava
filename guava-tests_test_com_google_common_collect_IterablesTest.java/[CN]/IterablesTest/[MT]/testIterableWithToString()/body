@@ -1,0 +1,6 @@
+{
+  assertEquals("[]",create().toString());
+  assertEquals("[a]",create("a").toString());
+  assertEquals("[a, b, c]",create("a","b","c").toString());
+  assertEquals("[c, a, a]",create("c","a","a").toString());
+}

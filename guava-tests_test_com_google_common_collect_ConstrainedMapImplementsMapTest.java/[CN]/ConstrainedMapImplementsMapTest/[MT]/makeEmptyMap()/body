@@ -1,0 +1,3 @@
+{
+  return MapConstraints.constrainedMap(new HashMap<String,Integer>(),MapConstraintsTest.TEST_CONSTRAINT);
+}

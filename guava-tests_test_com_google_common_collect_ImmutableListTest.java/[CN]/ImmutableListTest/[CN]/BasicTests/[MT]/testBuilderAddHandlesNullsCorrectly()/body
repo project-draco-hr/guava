@@ -1,0 +1,21 @@
+{
+  ImmutableList.Builder<String> builder=ImmutableList.builder();
+  try {
+    builder.add((String)null);
+    fail("expected NullPointerException");
+  }
+ catch (  NullPointerException expected) {
+  }
+  try {
+    builder.add((String[])null);
+    fail("expected NullPointerException");
+  }
+ catch (  NullPointerException expected) {
+  }
+  try {
+    builder.add("a",null,"b");
+    fail("expected NullPointerException");
+  }
+ catch (  NullPointerException expected) {
+  }
+}

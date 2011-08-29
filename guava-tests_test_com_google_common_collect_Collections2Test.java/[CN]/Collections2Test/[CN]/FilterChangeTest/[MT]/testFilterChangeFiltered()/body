@@ -1,0 +1,15 @@
+{
+  List<String> unfiltered=newList();
+  Collection<String> filtered=Collections2.filter(unfiltered,NOT_YYY_ZZZ);
+  unfiltered.add("a");
+  unfiltered.add("yyy");
+  filtered.add("b");
+  ASSERT.that(unfiltered).hasContentsInOrder("a","yyy","b");
+  ASSERT.that(filtered).hasContentsInOrder("a","b");
+  filtered.remove("a");
+  ASSERT.that(unfiltered).hasContentsInOrder("yyy","b");
+  ASSERT.that(filtered).hasContentsInOrder("b");
+  filtered.clear();
+  ASSERT.that(unfiltered).hasContentsInOrder("yyy");
+  ASSERT.that(filtered);
+}

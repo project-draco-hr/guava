@@ -1,0 +1,6 @@
+{
+  MapMaker mapMaker=new MapMaker();
+  multiset=ConcurrentHashMultiset.create(mapMaker);
+  multiset.addAll(ImmutableList.of("a","a","b","c","d","b"));
+  reserializeAndAssert(multiset);
+}

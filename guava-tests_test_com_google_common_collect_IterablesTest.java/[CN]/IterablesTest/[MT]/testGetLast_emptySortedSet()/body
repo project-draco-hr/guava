@@ -1,0 +1,9 @@
+{
+  SortedSet<String> sortedSet=ImmutableSortedSet.of();
+  try {
+    Iterables.getLast(sortedSet);
+    fail();
+  }
+ catch (  NoSuchElementException e) {
+  }
+}

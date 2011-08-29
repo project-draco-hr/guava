@@ -1,0 +1,7 @@
+{
+  for (  long x : VALUES) {
+    for (    long y : VALUES) {
+      assertEquals(x + ", " + y,Long.valueOf(x).compareTo(y),Longs.compare(x,y));
+    }
+  }
+}

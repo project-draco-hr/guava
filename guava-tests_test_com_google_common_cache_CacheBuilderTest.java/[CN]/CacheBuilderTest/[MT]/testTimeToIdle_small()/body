@@ -1,0 +1,3 @@
+{
+  CacheBuilder.newBuilder().expireAfterAccess(1,NANOSECONDS).build(identityLoader());
+}

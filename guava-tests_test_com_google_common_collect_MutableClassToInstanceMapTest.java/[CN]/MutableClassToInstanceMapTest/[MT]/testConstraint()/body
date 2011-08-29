@@ -1,0 +1,9 @@
+{
+  map.put(Integer.class,new Integer(5));
+  try {
+    map.put(Double.class,new Long(42));
+    fail();
+  }
+ catch (  ClassCastException expected) {
+  }
+}

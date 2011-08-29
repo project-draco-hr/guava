@@ -1,0 +1,5 @@
+{
+  MapMaker mapMaker=new MapMaker();
+  mapMaker.useCustomMap=true;
+  testAddAndRemove(mapMaker.<String,AtomicInteger>makeMap());
+}

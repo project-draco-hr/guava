@@ -1,0 +1,10 @@
+{
+  new PeekingIteratorTester<T>(list).test();
+  new IteratorTester<T>(list.size() * 2 + 2,UNMODIFIABLE,list,IteratorTester.KnownOrder.KNOWN_ORDER){
+    @Override protected Iterator<T> newTargetIterator(){
+      Iterator<T> iterator=Collections.unmodifiableList(list).iterator();
+      return Iterators.peekingIterator(iterator);
+    }
+  }
+.test();
+}

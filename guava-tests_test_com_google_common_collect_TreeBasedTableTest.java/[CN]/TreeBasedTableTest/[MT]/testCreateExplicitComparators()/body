@@ -1,0 +1,9 @@
+{
+  table=TreeBasedTable.create(Collections.reverseOrder(),Ordering.usingToString());
+  table.put("foo",3,'a');
+  table.put("foo",12,'b');
+  table.put("bar",5,'c');
+  table.put("cat",8,'d');
+  ASSERT.that(table.rowKeySet()).hasContentsInOrder("foo","cat","bar");
+  ASSERT.that(table.row("foo").keySet()).hasContentsInOrder(12,3);
+}

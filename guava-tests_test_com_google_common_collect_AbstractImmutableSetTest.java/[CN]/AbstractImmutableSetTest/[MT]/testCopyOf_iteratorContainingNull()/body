@@ -1,0 +1,9 @@
+{
+  Iterator<String> c=Iterators.forArray("a",null,"b");
+  try {
+    copyOf(c);
+    fail();
+  }
+ catch (  NullPointerException expected) {
+  }
+}

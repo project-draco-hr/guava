@@ -1,0 +1,8 @@
+{
+  if (TEST_KEY.equals(key)) {
+    throw new TestKeyException();
+  }
+  if (TEST_VALUE.equals(value)) {
+    throw new TestValueException();
+  }
+}

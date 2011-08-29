@@ -1,11 +1,4 @@
 {
-  try {
-    return unbox(countMap.get(element));
-  }
- catch (  NullPointerException e) {
-    return 0;
-  }
-catch (  ClassCastException e) {
-    return 0;
-  }
+  AtomicInteger existingCounter=safeGet(element);
+  return (existingCounter == null) ? 0 : existingCounter.get();
 }

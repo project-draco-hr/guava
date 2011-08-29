@@ -1,0 +1,12 @@
+{
+  assertNull(table.put("foo",1,'a'));
+  assertNull(table.put("bar",1,'b'));
+  assertNull(table.put("foo",3,'c'));
+  assertEquals((Character)'a',table.put("foo",1,'d'));
+  assertEquals((Character)'d',table.get("foo",1));
+  assertEquals((Character)'b',table.get("bar",1));
+  assertSize(3);
+  assertEquals((Character)'d',table.put("foo",1,'d'));
+  assertEquals((Character)'d',table.get("foo",1));
+  assertSize(3);
+}

@@ -1,0 +1,27 @@
+{
+  assertFalse(entrySet.contains(Maps.immutableEntry(1,"one")));
+  bimap.put(1,"one");
+  assertTrue(entrySet.contains(Maps.immutableEntry(1,"one")));
+  assertFalse(entrySet.contains(Maps.immutableEntry(1,"")));
+  assertFalse(entrySet.contains(Maps.immutableEntry(0,"one")));
+  assertFalse(entrySet.contains(Maps.immutableEntry(1,null)));
+  assertFalse(entrySet.contains(Maps.immutableEntry(null,"one")));
+  assertFalse(entrySet.contains(Maps.immutableEntry(null,null)));
+  bimap.put(null,null);
+  assertTrue(entrySet.contains(Maps.immutableEntry(1,"one")));
+  assertTrue(entrySet.contains(Maps.immutableEntry(null,null)));
+  assertFalse(entrySet.contains(Maps.immutableEntry(1,"")));
+  assertFalse(entrySet.contains(Maps.immutableEntry(0,"one")));
+  assertFalse(entrySet.contains(Maps.immutableEntry(1,null)));
+  assertFalse(entrySet.contains(Maps.immutableEntry(null,"one")));
+  bimap.put(null,"null");
+  bimap.put(0,null);
+  assertTrue(entrySet.contains(Maps.immutableEntry(1,"one")));
+  assertTrue(entrySet.contains(Maps.immutableEntry(null,"null")));
+  assertTrue(entrySet.contains(Maps.immutableEntry(0,null)));
+  assertFalse(entrySet.contains(Maps.immutableEntry(1,"")));
+  assertFalse(entrySet.contains(Maps.immutableEntry(0,"one")));
+  assertFalse(entrySet.contains(Maps.immutableEntry(1,null)));
+  assertFalse(entrySet.contains(Maps.immutableEntry(null,"one")));
+  assertFalse(entrySet.contains(Maps.immutableEntry(null,null)));
+}

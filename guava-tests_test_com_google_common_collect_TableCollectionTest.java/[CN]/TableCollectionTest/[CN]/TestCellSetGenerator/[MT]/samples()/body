@@ -1,0 +1,3 @@
+{
+  return new SampleElements<Cell<String,Integer,Character>>(Tables.immutableCell("bar",1,'a'),Tables.immutableCell("bar",2,'b'),Tables.immutableCell("foo",3,'c'),Tables.immutableCell("bar",1,'b'),Tables.immutableCell("cat",2,'b'));
+}

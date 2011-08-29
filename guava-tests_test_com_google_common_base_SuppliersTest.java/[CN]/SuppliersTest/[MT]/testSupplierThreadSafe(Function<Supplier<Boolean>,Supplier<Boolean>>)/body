@@ -3,7 +3,7 @@
   final AtomicReference<Throwable> thrown=new AtomicReference<Throwable>(null);
   final int numThreads=3;
   final Thread[] threads=new Thread[numThreads];
-  final long timeout=TimeUnit.MINUTES.toNanos(1);
+  final long timeout=TimeUnit.SECONDS.toNanos(60);
   final Supplier<Boolean> supplier=new Supplier<Boolean>(){
     boolean isWaiting(    Thread thread){
 switch (thread.getState()) {

@@ -1,0 +1,9 @@
+{
+  Table<String,Integer,Character> original=HashBasedTable.create();
+  try {
+    ArrayTable.create(original);
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}

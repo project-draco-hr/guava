@@ -1,0 +1,5 @@
+{
+  Future<?> nullFuture=Futures.immediateFuture(null);
+  Future<?> transformedFuture=Futures.transform(nullFuture,Functions.constant(null));
+  assertNull(transformedFuture.get());
+}

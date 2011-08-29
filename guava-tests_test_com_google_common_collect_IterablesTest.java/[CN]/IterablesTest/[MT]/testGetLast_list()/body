@@ -1,0 +1,4 @@
+{
+  List<String> list=newArrayList("a","b","c");
+  assertEquals("c",Iterables.getLast(list));
+}

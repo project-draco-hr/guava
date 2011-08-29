@@ -1,0 +1,9 @@
+{
+  try {
+    getUnchecked(FAILED_FUTURE_ERROR);
+    fail();
+  }
+ catch (  ExecutionError expected) {
+    assertEquals(ERROR,expected.getCause());
+  }
+}

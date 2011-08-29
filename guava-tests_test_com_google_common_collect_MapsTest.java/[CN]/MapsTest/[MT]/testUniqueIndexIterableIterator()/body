@@ -1,0 +1,10 @@
+{
+  ImmutableMap<Integer,String> outputMap=Maps.uniqueIndex(new IterableIterator<String>(){
+    private final Iterator<String> iterator=INT_TO_STRING_MAP.values().iterator();
+    public Iterator<String> delegate(){
+      return iterator;
+    }
+  }
+,Functions.forMap(INT_TO_STRING_MAP.inverse()));
+  assertEquals(INT_TO_STRING_MAP,outputMap);
+}

@@ -1,0 +1,8 @@
+{
+  parameterSignatures=transform(Arrays.asList(parameters),new Function<TypeVariable<?>,TypeParameterSignature>(){
+    @Override public TypeParameterSignature apply(    TypeVariable<?> from){
+      return new TypeParameterSignature(from);
+    }
+  }
+);
+}

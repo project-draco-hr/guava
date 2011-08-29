@@ -1,0 +1,7 @@
+{
+  byte[] out=new byte[to - from];
+  for (int i=0; i < to - from; i++) {
+    out[i]=in[from + i];
+  }
+  return out;
+}

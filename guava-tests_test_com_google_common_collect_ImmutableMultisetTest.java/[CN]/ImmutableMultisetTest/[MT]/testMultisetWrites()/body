@@ -1,0 +1,4 @@
+{
+  Multiset<String> multiset=ImmutableMultiset.of("a","b","a");
+  UnmodifiableCollectionTests.assertMultisetIsUnmodifiable(multiset,"test");
+}

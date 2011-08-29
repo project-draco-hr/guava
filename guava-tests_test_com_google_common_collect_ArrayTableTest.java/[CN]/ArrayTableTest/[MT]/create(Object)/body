@@ -1,0 +1,5 @@
+{
+  ArrayTable<String,Integer,Character> table=ArrayTable.create(asList("foo","bar","cat"),asList(1,2,3));
+  populate(table,data);
+  return table;
+}

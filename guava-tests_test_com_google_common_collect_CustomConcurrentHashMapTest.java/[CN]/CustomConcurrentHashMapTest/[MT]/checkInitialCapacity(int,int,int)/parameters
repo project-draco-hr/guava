@@ -1,0 +1,3 @@
+int concurrencyLevel
+int initialCapacity
+int segmentSize

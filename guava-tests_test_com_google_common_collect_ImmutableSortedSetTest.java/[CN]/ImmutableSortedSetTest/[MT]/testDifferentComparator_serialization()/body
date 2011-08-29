@@ -1,0 +1,7 @@
+{
+  Comparator<Comparable<?>> comparator=Collections.reverseOrder();
+  SortedSet<String> set=new ImmutableSortedSet.Builder<String>(comparator).add("a","b","c").build();
+  SortedSet<String> copy=SerializableTester.reserializeAndAssert(set);
+  assertTrue(Iterables.elementsEqual(set,copy));
+  assertEquals(set.comparator(),copy.comparator());
+}

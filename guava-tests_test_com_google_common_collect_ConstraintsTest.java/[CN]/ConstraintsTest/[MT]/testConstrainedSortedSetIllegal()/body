@@ -1,0 +1,36 @@
+{
+  SortedSet<String> sortedSet=Sets.newTreeSet(asList("foo","bar"));
+  SortedSet<String> constrained=Constraints.constrainedSortedSet(sortedSet,TEST_CONSTRAINT);
+  try {
+    constrained.add(TEST_ELEMENT);
+    fail("TestElementException expected");
+  }
+ catch (  TestElementException expected) {
+  }
+  try {
+    constrained.subSet("bar","foo").add(TEST_ELEMENT);
+    fail("TestElementException expected");
+  }
+ catch (  TestElementException expected) {
+  }
+  try {
+    constrained.headSet("bar").add(TEST_ELEMENT);
+    fail("TestElementException expected");
+  }
+ catch (  TestElementException expected) {
+  }
+  try {
+    constrained.tailSet("foo").add(TEST_ELEMENT);
+    fail("TestElementException expected");
+  }
+ catch (  TestElementException expected) {
+  }
+  try {
+    constrained.addAll(asList("baz",TEST_ELEMENT));
+    fail("TestElementException expected");
+  }
+ catch (  TestElementException expected) {
+  }
+  ASSERT.that(constrained).hasContentsInOrder("bar","foo");
+  ASSERT.that(sortedSet).hasContentsInOrder("bar","foo");
+}

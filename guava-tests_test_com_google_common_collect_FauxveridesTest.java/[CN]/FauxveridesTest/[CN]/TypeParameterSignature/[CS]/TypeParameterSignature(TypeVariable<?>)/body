@@ -1,0 +1,4 @@
+{
+  name=typeParameter.getName();
+  bounds=Arrays.asList(typeParameter.getBounds());
+}

@@ -1,0 +1,8 @@
+{
+  TreeMultimap<String,Integer> multimap=createPopulate();
+  TreeMultimap<String,Integer> copy=SerializableTester.reserializeAndAssert(multimap);
+  ASSERT.that(copy.values()).hasContentsInOrder(7,3,1,null,0,6,2);
+  ASSERT.that(copy.keySet()).hasContentsInOrder(null,"tree","google");
+  assertEquals(multimap.keyComparator(),copy.keyComparator());
+  assertEquals(multimap.valueComparator(),copy.valueComparator());
+}

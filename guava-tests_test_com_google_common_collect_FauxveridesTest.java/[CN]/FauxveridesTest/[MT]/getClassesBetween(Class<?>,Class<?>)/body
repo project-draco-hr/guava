@@ -1,0 +1,8 @@
+{
+  Set<Class<?>> classes=newHashSet();
+  while (!descendant.equals(ancestor)) {
+    classes.add(descendant);
+    descendant=descendant.getSuperclass();
+  }
+  return classes;
+}

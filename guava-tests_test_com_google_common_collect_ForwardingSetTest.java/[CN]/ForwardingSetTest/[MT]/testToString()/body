@@ -1,0 +1,4 @@
+{
+  forward().toString();
+  assertEquals("[toString]",getCalls());
+}

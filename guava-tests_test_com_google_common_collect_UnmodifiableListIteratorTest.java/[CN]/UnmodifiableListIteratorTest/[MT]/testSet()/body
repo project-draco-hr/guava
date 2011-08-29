@@ -1,0 +1,13 @@
+{
+  ListIterator<String> iterator=create();
+  assertTrue(iterator.hasNext());
+  assertEquals("a",iterator.next());
+  assertEquals("b",iterator.next());
+  assertEquals("b",iterator.previous());
+  try {
+    iterator.set("c");
+    fail();
+  }
+ catch (  UnsupportedOperationException expected) {
+  }
+}

@@ -1,0 +1,6 @@
+{
+  while (!elements.isEmpty()) {
+    int selectedIndex=random.nextInt(elements.size());
+    q.offer(elements.remove(selectedIndex));
+  }
+}

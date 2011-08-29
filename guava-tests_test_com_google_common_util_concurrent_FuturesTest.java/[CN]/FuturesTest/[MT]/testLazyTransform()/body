@@ -1,0 +1,10 @@
+{
+  FunctionSpy<Object,String> spy=new FunctionSpy<Object,String>(Functions.constant("bar"));
+  Future<String> input=Futures.immediateFuture("foo");
+  Future<String> transformed=Futures.lazyTransform(input,spy);
+  assertEquals(0,spy.getApplyCount());
+  assertEquals("bar",transformed.get());
+  assertEquals(1,spy.getApplyCount());
+  assertEquals("bar",transformed.get());
+  assertEquals(2,spy.getApplyCount());
+}

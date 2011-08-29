@@ -1,0 +1,13 @@
+{
+  bimap.put(1,null);
+  Entry<Integer,String> entry=bimap.entrySet().iterator().next();
+  bimap.clear();
+  try {
+    entry.setValue("b");
+    fail();
+  }
+ catch (  IllegalStateException expected) {
+  }
+  assertEquals(0,bimap.size());
+  assertEquals(0,bimap.inverse().size());
+}

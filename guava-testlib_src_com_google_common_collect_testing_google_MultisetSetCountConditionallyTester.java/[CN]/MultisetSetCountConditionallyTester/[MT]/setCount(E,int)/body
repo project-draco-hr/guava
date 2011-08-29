@@ -1,0 +1,3 @@
+{
+  return getMultiset().setCount(element,getMultiset().count(element),count);
+}

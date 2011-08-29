@@ -1,0 +1,3 @@
+{
+  return Arrays.asList(getMethod("testSetCount_threeToThree_removeSupported"),getMethod("testSetCount_threeToZero_supported"),getMethod("testSetCount_threeToOne_supported"));
+}

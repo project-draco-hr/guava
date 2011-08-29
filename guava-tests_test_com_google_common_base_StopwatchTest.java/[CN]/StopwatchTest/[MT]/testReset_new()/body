@@ -1,0 +1,10 @@
+{
+  ticker.advance(1);
+  stopwatch.reset();
+  assertFalse(stopwatch.isRunning());
+  ticker.advance(2);
+  assertEquals(0,stopwatch.elapsedTime(NANOSECONDS));
+  stopwatch.start();
+  ticker.advance(3);
+  assertEquals(3,stopwatch.elapsedTime(NANOSECONDS));
+}

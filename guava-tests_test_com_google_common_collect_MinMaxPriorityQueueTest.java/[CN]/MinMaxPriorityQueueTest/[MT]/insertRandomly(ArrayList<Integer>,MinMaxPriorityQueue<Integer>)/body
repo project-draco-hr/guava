@@ -1,0 +1,6 @@
+{
+  long seed=new Random().nextLong();
+  Random random=new Random(seed);
+  insertRandomly(elements,q,random);
+  return seed;
+}

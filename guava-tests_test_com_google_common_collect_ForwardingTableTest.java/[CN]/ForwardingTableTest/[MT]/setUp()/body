@@ -1,0 +1,10 @@
+{
+  super.setUp();
+  @SuppressWarnings("unchecked") final Table<String,Integer,Boolean> table=createProxyInstance(Table.class);
+  forward=new ForwardingTable<String,Integer,Boolean>(){
+    @Override protected Table<String,Integer,Boolean> delegate(){
+      return table;
+    }
+  }
+;
+}

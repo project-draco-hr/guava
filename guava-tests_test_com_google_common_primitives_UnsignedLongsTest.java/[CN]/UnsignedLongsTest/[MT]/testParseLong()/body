@@ -1,0 +1,20 @@
+{
+  try {
+    assertEquals(0xffffffffffffffffL,UnsignedLongs.parseUnsignedLong("18446744073709551615"));
+    assertEquals(0x7fffffffffffffffL,UnsignedLongs.parseUnsignedLong("9223372036854775807"));
+    assertEquals(0xff1a618b7f65ea12L,UnsignedLongs.parseUnsignedLong("18382112080831834642"));
+    assertEquals(0x5a4316b8c153ac4dL,UnsignedLongs.parseUnsignedLong("6504067269626408013"));
+    assertEquals(0x6cf78a4b139a4e2aL,UnsignedLongs.parseUnsignedLong("7851896530399809066"));
+  }
+ catch (  NumberFormatException e) {
+    fail(e.getMessage());
+  }
+  boolean overflowCaught=false;
+  try {
+    UnsignedLongs.parseUnsignedLong("18446744073709551616");
+  }
+ catch (  NumberFormatException e) {
+    overflowCaught=true;
+  }
+  assertTrue(overflowCaught);
+}

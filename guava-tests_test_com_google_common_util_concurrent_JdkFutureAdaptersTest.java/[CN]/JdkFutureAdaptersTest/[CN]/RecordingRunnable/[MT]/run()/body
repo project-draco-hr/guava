@@ -1,0 +1,4 @@
+{
+  checkState(wasRun.getCount() > 0);
+  wasRun.countDown();
+}

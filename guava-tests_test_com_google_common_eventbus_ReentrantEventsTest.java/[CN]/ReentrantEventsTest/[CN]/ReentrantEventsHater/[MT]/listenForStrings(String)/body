@@ -1,0 +1,10 @@
+{
+  eventsReceived.add(event);
+  ready=false;
+  try {
+    bus.post(SECOND);
+  }
+  finally {
+    ready=true;
+  }
+}

@@ -1,0 +1,4 @@
+{
+  forward.remove("asdf",false);
+  assertEquals("[remove(Object,Object)]",getCalls());
+}

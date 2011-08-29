@@ -1,0 +1,13 @@
+{
+  int i=0;
+  while (expectedIterator.hasNext()) {
+    Object expected=expectedIterator.next();
+    assertTrue("index " + i + " expected <"+ expected+ "., actual is exhausted",actualIterator.hasNext());
+    Object actual=actualIterator.next();
+    assertEquals("index " + i,expected,actual);
+    i++;
+  }
+  if (actualIterator.hasNext()) {
+    fail("index " + i + ", expected is exhausted, actual <"+ actualIterator.next()+ ">");
+  }
+}

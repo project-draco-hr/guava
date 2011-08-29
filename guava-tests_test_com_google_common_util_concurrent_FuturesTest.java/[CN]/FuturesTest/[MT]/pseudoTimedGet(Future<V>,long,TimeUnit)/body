@@ -1,0 +1,23 @@
+{
+  ExecutorService executor=newSingleThreadExecutor();
+  Future<V> waiter=executor.submit(new Callable<V>(){
+    @Override public V call() throws Exception {
+      return input.get();
+    }
+  }
+);
+  try {
+    return waiter.get(timeout,unit);
+  }
+ catch (  ExecutionException e) {
+    propagateIfInstanceOf(e.getCause(),ExecutionException.class);
+    propagateIfInstanceOf(e.getCause(),CancellationException.class);
+    AssertionFailedError error=new AssertionFailedError("Unexpected exception");
+    error.initCause(e);
+    throw error;
+  }
+ finally {
+    executor.shutdownNow();
+    assertTrue(executor.awaitTermination(10,SECONDS));
+  }
+}

@@ -1,0 +1,4 @@
+{
+  HashSet<Integer> set=Sets.newHashSet(0,1,1);
+  verifySetContents(set,Arrays.asList(0,1));
+}

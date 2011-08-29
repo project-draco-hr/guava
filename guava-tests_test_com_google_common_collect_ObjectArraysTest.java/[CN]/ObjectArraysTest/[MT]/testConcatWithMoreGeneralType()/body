@@ -1,0 +1,4 @@
+{
+  Serializable[] result=ObjectArrays.concat(new String[0],new String[0],Serializable.class);
+  assertEquals(Serializable[].class,result.getClass());
+}

@@ -1,0 +1,5 @@
+{
+  byte[] bytes="a\nb\nc".getBytes(Charsets.UTF_8.name());
+  List<String> lines=CharStreams.readLines(new InputStreamReader(new ByteArrayInputStream(bytes),Charsets.UTF_8));
+  assertEquals(ImmutableList.of("a","b","c"),lines);
+}

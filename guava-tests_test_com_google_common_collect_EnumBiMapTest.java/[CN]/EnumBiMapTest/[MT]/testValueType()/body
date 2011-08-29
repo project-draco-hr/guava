@@ -1,0 +1,4 @@
+{
+  EnumBiMap<Currency,Country> bimap=EnumBiMap.create(Currency.class,Country.class);
+  assertEquals(Country.class,bimap.valueType());
+}

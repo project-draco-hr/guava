@@ -1,0 +1,11 @@
+{
+  TreeBasedTable<String,Integer,Character> original=TreeBasedTable.create(Collections.reverseOrder(),Ordering.usingToString());
+  original.put("foo",3,'a');
+  original.put("foo",12,'b');
+  original.put("bar",5,'c');
+  original.put("cat",8,'d');
+  table=TreeBasedTable.create(original);
+  ASSERT.that(table.rowKeySet()).hasContentsInOrder("foo","cat","bar");
+  ASSERT.that(table.row("foo").keySet()).hasContentsInOrder(12,3);
+  assertEquals(original,table);
+}

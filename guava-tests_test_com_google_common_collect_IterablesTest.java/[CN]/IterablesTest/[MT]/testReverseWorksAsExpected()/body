@@ -1,0 +1,17 @@
+{
+  String[] testStrs=new String[]{"foo","bar","baz"};
+  String[] expected=new String[]{"baz","bar","foo"};
+  List<String> stuff=ImmutableList.copyOf(testStrs);
+  Iterable<String> reversed=Iterables.reverse(stuff);
+  ASSERT.that(reversed).hasContentsInOrder(expected);
+  assertEquals("[baz, bar, foo]",reversed.toString());
+  List<String> removable=newArrayList("foo","bar","bad","baz");
+  reversed=Iterables.reverse(removable);
+  ASSERT.that(reversed).hasContentsInOrder("baz","bad","bar","foo");
+  Iterator<String> reverseIter=reversed.iterator();
+  assertEquals("baz",reverseIter.next());
+  assertEquals("bad",reverseIter.next());
+  reverseIter.remove();
+  ASSERT.that(reversed).hasContentsInOrder(expected);
+  ASSERT.that(reversed).hasContentsInOrder(expected);
+}

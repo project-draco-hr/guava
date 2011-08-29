@@ -1,0 +1,8 @@
+{
+  assertEquals(0,cache.size());
+  assertFalse(cache.asMap().containsKey(null));
+  assertFalse(cache.asMap().containsKey(6));
+  assertFalse(cache.asMap().containsValue(null));
+  assertFalse(cache.asMap().containsValue(6));
+  checkEmpty(cache.asMap());
+}

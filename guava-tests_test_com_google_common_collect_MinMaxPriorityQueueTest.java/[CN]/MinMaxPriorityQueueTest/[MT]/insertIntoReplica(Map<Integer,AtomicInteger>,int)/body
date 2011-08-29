@@ -1,0 +1,8 @@
+{
+  if (replica.containsKey(newValue)) {
+    replica.get(newValue).incrementAndGet();
+  }
+ else {
+    replica.put(newValue,new AtomicInteger(1));
+  }
+}

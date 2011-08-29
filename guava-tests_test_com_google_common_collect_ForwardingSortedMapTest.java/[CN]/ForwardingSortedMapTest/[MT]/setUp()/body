@@ -1,0 +1,10 @@
+{
+  super.setUp();
+  @SuppressWarnings("unchecked") final SortedMap<String,Boolean> sortedMap=createProxyInstance(SortedMap.class);
+  forward=new ForwardingSortedMap<String,Boolean>(){
+    @Override protected SortedMap<String,Boolean> delegate(){
+      return sortedMap;
+    }
+  }
+;
+}

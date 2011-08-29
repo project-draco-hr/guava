@@ -1,0 +1,9 @@
+{
+  segment.lock();
+  try {
+    segment.runCleanup();
+  }
+  finally {
+    segment.unlock();
+  }
+}

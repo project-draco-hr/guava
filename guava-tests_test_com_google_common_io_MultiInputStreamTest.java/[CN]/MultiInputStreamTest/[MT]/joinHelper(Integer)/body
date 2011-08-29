@@ -1,0 +1,10 @@
+{
+  List<InputSupplier<InputStream>> suppliers=Lists.newArrayList();
+  int start=0;
+  for (  Integer span : spans) {
+    suppliers.add(newByteSupplier(start,span));
+    start+=span;
+  }
+  InputSupplier<InputStream> joined=ByteStreams.join(suppliers);
+  assertTrue(ByteStreams.equal(newByteSupplier(0,start),joined));
+}

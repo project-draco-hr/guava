@@ -1,0 +1,7 @@
+{
+  String[] suffix={"f","g"};
+  String[] all=new String[elements.length + suffix.length];
+  System.arraycopy(elements,0,all,0,elements.length);
+  System.arraycopy(suffix,0,all,elements.length,suffix.length);
+  return ImmutableList.copyOf(all).subList(0,elements.length);
+}

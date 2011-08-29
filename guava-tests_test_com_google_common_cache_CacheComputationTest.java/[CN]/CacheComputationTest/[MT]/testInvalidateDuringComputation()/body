@@ -1,0 +1,28 @@
+{
+  final CountDownLatch computationStarted=new CountDownLatch(1);
+  final CountDownLatch letGetFinishSignal=new CountDownLatch(1);
+  final CountDownLatch getFinishedSignal=new CountDownLatch(1);
+  final String singleKey="bar";
+  CacheLoader<String,String> computeFunction=new CacheLoader<String,String>(){
+    @Override public String load(    String key) throws InterruptedException {
+      computationStarted.countDown();
+      letGetFinishSignal.await();
+      return key + "foo";
+    }
+  }
+;
+  final Cache<String,String> cache=CacheBuilder.newBuilder().build(computeFunction);
+  new Thread(){
+    @Override public void run(){
+      cache.getUnchecked(singleKey);
+      getFinishedSignal.countDown();
+    }
+  }
+.start();
+  computationStarted.await();
+  cache.invalidate(singleKey);
+  letGetFinishSignal.countDown();
+  getFinishedSignal.await();
+  assertEquals("barfoo",cache.getUnchecked(singleKey));
+  assertEquals(1,cache.size());
+}

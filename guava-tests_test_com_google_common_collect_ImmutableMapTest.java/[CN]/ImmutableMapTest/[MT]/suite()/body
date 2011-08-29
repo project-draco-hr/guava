@@ -1,0 +1,13 @@
+{
+  TestSuite suite=new TestSuite();
+  suite.addTestSuite(ImmutableMapTest.class);
+  suite.addTest(SetTestSuiteBuilder.using(new ImmutableMapKeySetGenerator()).withFeatures(CollectionSize.ANY,CollectionFeature.KNOWN_ORDER,CollectionFeature.REJECTS_DUPLICATES_AT_CREATION,CollectionFeature.ALLOWS_NULL_QUERIES).named("ImmutableMap.keySet").createTestSuite());
+  suite.addTest(SetTestSuiteBuilder.using(new ImmutableMapEntrySetGenerator()).withFeatures(CollectionSize.ANY,CollectionFeature.KNOWN_ORDER,CollectionFeature.REJECTS_DUPLICATES_AT_CREATION,CollectionFeature.ALLOWS_NULL_QUERIES).named("ImmutableMap.entrySet").createTestSuite());
+  suite.addTest(CollectionTestSuiteBuilder.using(new ImmutableMapValuesGenerator()).withFeatures(CollectionSize.ANY,CollectionFeature.KNOWN_ORDER,CollectionFeature.ALLOWS_NULL_QUERIES).named("ImmutableMap.values").createTestSuite());
+  suite.addTest(SetTestSuiteBuilder.using(ReserializingTestSetGenerator.newInstance(new ImmutableMapKeySetGenerator())).withFeatures(CollectionSize.ANY,CollectionFeature.KNOWN_ORDER,CollectionFeature.REJECTS_DUPLICATES_AT_CREATION,CollectionFeature.ALLOWS_NULL_QUERIES).named("ImmutableMap.keySet, reserialized").createTestSuite());
+  suite.addTest(SetTestSuiteBuilder.using(ReserializingTestSetGenerator.newInstance(new ImmutableMapKeySetGenerator())).withFeatures(CollectionSize.ANY,CollectionFeature.KNOWN_ORDER,CollectionFeature.REJECTS_DUPLICATES_AT_CREATION,CollectionFeature.ALLOWS_NULL_QUERIES).named("ImmutableMap.entrySet, reserialized").createTestSuite());
+  suite.addTest(CollectionTestSuiteBuilder.using(ReserializingTestCollectionGenerator.newInstance(new ImmutableMapValuesGenerator())).withFeatures(CollectionSize.ANY,CollectionFeature.KNOWN_ORDER,CollectionFeature.ALLOWS_NULL_QUERIES).named("ImmutableMap.values, reserialized").createTestSuite());
+  suite.addTest(CollectionTestSuiteBuilder.using(new ImmutableMapUnhashableValuesGenerator()).withFeatures(CollectionSize.ANY,CollectionFeature.KNOWN_ORDER,CollectionFeature.ALLOWS_NULL_QUERIES).named("ImmutableMap.values, unhashable").createTestSuite());
+  suite.addTest(ListTestSuiteBuilder.using(new ImmutableMapValueListGenerator()).named("ImmutableMap.values.asList").withFeatures(CollectionSize.ANY,CollectionFeature.ALLOWS_NULL_QUERIES).createTestSuite());
+  return suite;
+}

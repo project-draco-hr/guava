@@ -1,0 +1,6 @@
+{
+  if (shouldWait.get()) {
+    delayLatch.await();
+  }
+  return key;
+}

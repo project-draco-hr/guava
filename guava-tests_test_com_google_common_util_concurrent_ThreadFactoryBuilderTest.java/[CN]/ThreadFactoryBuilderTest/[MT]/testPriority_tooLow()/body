@@ -1,0 +1,8 @@
+{
+  try {
+    builder.setPriority(Thread.MIN_PRIORITY - 1);
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}

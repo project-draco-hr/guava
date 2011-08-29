@@ -1,0 +1,9 @@
+{
+  final List<Integer> list=Lists.newArrayList(1,2,3,4,5);
+  new IteratorTester<Integer>(5,MODIFIABLE,newArrayList(1,2,3),IteratorTester.KnownOrder.KNOWN_ORDER){
+    @Override protected Iterator<Integer> newTargetIterator(){
+      return Iterators.limit(Lists.newArrayList(list).iterator(),3);
+    }
+  }
+.test();
+}

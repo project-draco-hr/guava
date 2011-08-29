@@ -1,0 +1,54 @@
+{
+  byte[] b=new byte[10];
+  try {
+    ByteStreams.readFully(newTestStream(10),null,0,10);
+    fail("expected exception");
+  }
+ catch (  NullPointerException e) {
+  }
+  try {
+    ByteStreams.readFully(null,b,0,10);
+    fail("expected exception");
+  }
+ catch (  NullPointerException e) {
+  }
+  try {
+    ByteStreams.readFully(newTestStream(10),b,-1,10);
+    fail("expected exception");
+  }
+ catch (  IndexOutOfBoundsException e) {
+  }
+  try {
+    ByteStreams.readFully(newTestStream(10),b,0,-1);
+    fail("expected exception");
+  }
+ catch (  IndexOutOfBoundsException e) {
+  }
+  try {
+    ByteStreams.readFully(newTestStream(10),b,0,-1);
+    fail("expected exception");
+  }
+ catch (  IndexOutOfBoundsException e) {
+  }
+  try {
+    ByteStreams.readFully(newTestStream(10),b,2,10);
+    fail("expected exception");
+  }
+ catch (  IndexOutOfBoundsException e) {
+  }
+  try {
+    ByteStreams.readFully(newTestStream(5),b,0,10);
+    fail("expected exception");
+  }
+ catch (  EOFException e) {
+  }
+  Arrays.fill(b,(byte)0);
+  ByteStreams.readFully(newTestStream(10),b,0,0);
+  assertTrue(Arrays.equals(new byte[10],b));
+  Arrays.fill(b,(byte)0);
+  ByteStreams.readFully(newTestStream(10),b,0,10);
+  assertTrue(Arrays.equals(newPreFilledByteArray(10),b));
+  Arrays.fill(b,(byte)0);
+  ByteStreams.readFully(newTestStream(10),b,0,5);
+  assertTrue(Arrays.equals(new byte[]{0,1,2,3,4,0,0,0,0,0},b));
+}

@@ -1,0 +1,4 @@
+{
+  multimap.put("foo",1);
+  assertEquals("{foo=[1]}",multimap.asMap().toString());
+}

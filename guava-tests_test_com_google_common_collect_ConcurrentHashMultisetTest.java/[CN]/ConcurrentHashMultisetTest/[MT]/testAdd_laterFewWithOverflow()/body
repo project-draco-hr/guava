@@ -1,0 +1,13 @@
+{
+  final int INITIAL_COUNT=92384930;
+  final int COUNT_TO_ADD=Integer.MAX_VALUE - INITIAL_COUNT + 1;
+  expect(backingMap.get(KEY)).andReturn(new AtomicInteger(INITIAL_COUNT));
+  replay();
+  try {
+    multiset.add(KEY,COUNT_TO_ADD);
+    fail("Must reject arguments that would cause counter overflow.");
+  }
+ catch (  IllegalArgumentException e) {
+  }
+  verify();
+}

@@ -1,0 +1,11 @@
+{
+  while (iterator.hasNext()) {
+    iterator.next();
+    try {
+      iterator.remove();
+      fail("Remove on unmodifiable iterator succeeded");
+    }
+ catch (    UnsupportedOperationException expected) {
+    }
+  }
+}

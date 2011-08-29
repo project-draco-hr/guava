@@ -1,0 +1,25 @@
+{
+  int initialSize=cache.size();
+  assertTrue(initialSize == 1 || initialSize == 2);
+  byte[] filler=new byte[1024];
+  for (int i=0; i < 500; i++) {
+    System.gc();
+    CacheTesting.drainReferenceQueues(cache);
+    if (cache.size() == 1) {
+      break;
+    }
+    try {
+      Thread.sleep(10);
+    }
+ catch (    InterruptedException e) {
+    }
+    try {
+      filler=new byte[Math.max(filler.length,filler.length * 2)];
+    }
+ catch (    OutOfMemoryError e) {
+    }
+  }
+  CacheTesting.processPendingNotifications(cache);
+  assertEquals(1,cache.size());
+  assertEquals(1,removalListener.getCount());
+}

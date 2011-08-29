@@ -1,0 +1,4 @@
+{
+  assertEquals("../..",Files.simplifyPath("a/../../.."));
+  assertEquals("../../..",Files.simplifyPath("a/../../../.."));
+}

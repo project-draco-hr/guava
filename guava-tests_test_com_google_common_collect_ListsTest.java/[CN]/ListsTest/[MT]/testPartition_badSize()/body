@@ -1,0 +1,9 @@
+{
+  List<Integer> source=Collections.singletonList(1);
+  try {
+    Lists.partition(source,0);
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}

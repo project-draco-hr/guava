@@ -1,0 +1,16 @@
+{
+  for (  Cache<Object,Object> cache : caches()) {
+    cache.getUnchecked(1);
+    cache.getUnchecked(2);
+    Set<Entry<Object,Object>> entrySet=cache.asMap().entrySet();
+    entrySet.remove(entryOf(1,1));
+    entrySet.remove(entryOf(2,2));
+    assertFalse(entrySet.remove(null));
+    assertFalse(entrySet.remove(entryOf(1,1)));
+    assertFalse(entrySet.remove(entryOf(6,6)));
+    assertFalse(entrySet.removeAll(asList(null,entryOf(1,1),entryOf(15,15))));
+    assertFalse(entrySet.retainAll(asList(null,entryOf(1,1),entryOf(15,15))));
+    checkEmpty(entrySet);
+    checkEmpty(cache);
+  }
+}

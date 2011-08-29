@@ -1,0 +1,9 @@
+{
+  MinMaxPriorityQueue<Integer> q=MinMaxPriorityQueue.create(ImmutableList.of(3,5,1,4,7));
+  List<Integer> expected=ImmutableList.of(1,3,4,5,7);
+  List<Integer> actual=new ArrayList<Integer>(5);
+  for (int i=0; i < expected.size(); i++) {
+    actual.add(q.pollFirst());
+  }
+  assertEquals(expected,actual);
+}

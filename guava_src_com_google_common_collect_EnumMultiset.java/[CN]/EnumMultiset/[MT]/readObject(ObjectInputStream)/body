@@ -2,6 +2,6 @@
   stream.defaultReadObject();
   @SuppressWarnings("unchecked") Class<E> localType=(Class<E>)stream.readObject();
   type=localType;
-  setBackingMap(WellBehavedMap.wrap(new EnumMap<E,AtomicInteger>(type)));
+  setBackingMap(WellBehavedMap.wrap(new EnumMap<E,Count>(type)));
   Serialization.populateMultiset(this,stream);
 }

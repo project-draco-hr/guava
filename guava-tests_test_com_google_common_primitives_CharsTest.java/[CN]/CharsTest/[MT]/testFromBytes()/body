@@ -1,0 +1,4 @@
+{
+  assertEquals('\u2345',Chars.fromBytes((byte)0x23,(byte)0x45));
+  assertEquals('\uFEDC',Chars.fromBytes((byte)0xFE,(byte)0xDC));
+}

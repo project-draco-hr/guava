@@ -1,0 +1,4 @@
+{
+  assertTrue("I received an event when I wasn't ready!",ready);
+  eventsReceived.add(event);
+}

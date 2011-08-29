@@ -1,0 +1,5 @@
+{
+  this.countDownLatch=new CountDownLatch(1);
+  this.future=future;
+  future.addListener(this,MoreExecutors.sameThreadExecutor());
+}

@@ -1,0 +1,5 @@
+{
+  doTestToArrayImpl1(Lists.<Integer>newArrayList());
+  doTestToArrayImpl1(Lists.newArrayList(1));
+  doTestToArrayImpl1(Lists.newArrayList(1,null,3));
+}

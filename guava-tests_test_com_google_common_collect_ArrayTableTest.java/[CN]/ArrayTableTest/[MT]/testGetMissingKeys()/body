@@ -1,0 +1,5 @@
+{
+  table=create("foo",1,'a',"bar",1,'b',"foo",3,'c');
+  assertNull(table.get("dog",1));
+  assertNull(table.get("foo",4));
+}

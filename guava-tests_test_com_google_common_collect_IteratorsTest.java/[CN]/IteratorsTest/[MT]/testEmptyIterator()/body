@@ -1,0 +1,16 @@
+{
+  Iterator<String> iterator=Iterators.emptyIterator();
+  assertFalse(iterator.hasNext());
+  try {
+    iterator.next();
+    fail("no exception thrown");
+  }
+ catch (  NoSuchElementException expected) {
+  }
+  try {
+    iterator.remove();
+    fail("no exception thrown");
+  }
+ catch (  UnsupportedOperationException expected) {
+  }
+}

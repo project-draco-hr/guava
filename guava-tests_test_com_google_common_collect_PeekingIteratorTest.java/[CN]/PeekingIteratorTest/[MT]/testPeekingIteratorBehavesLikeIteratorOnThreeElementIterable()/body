@@ -1,0 +1,3 @@
+{
+  actsLikeIteratorHelper(Lists.newArrayList("A","B","C"));
+}

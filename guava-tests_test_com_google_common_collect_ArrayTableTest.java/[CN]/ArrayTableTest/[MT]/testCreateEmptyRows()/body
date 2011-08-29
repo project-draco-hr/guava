@@ -1,0 +1,8 @@
+{
+  try {
+    ArrayTable.create(Arrays.<String>asList(),asList(1,2,3));
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}

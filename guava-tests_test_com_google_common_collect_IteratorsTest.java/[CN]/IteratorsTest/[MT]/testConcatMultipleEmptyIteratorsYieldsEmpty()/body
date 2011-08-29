@@ -1,0 +1,8 @@
+{
+  new EmptyIteratorTester(){
+    @Override protected Iterator<Integer> newTargetIterator(){
+      return Iterators.concat(iterateOver(),iterateOver());
+    }
+  }
+.test();
+}

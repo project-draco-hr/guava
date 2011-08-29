@@ -1,0 +1,5 @@
+{
+  SortedSet<String> set=of("e");
+  SortedSet<String> copy=SerializableTester.reserializeAndAssert(set);
+  assertEquals(set.comparator(),copy.comparator());
+}

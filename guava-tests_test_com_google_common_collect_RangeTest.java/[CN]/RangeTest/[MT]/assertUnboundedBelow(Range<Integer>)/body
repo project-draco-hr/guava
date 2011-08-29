@@ -1,0 +1,15 @@
+{
+  assertFalse(range.hasLowerBound());
+  try {
+    range.lowerEndpoint();
+    fail();
+  }
+ catch (  IllegalStateException expected) {
+  }
+  try {
+    range.lowerBoundType();
+    fail();
+  }
+ catch (  IllegalStateException expected) {
+  }
+}

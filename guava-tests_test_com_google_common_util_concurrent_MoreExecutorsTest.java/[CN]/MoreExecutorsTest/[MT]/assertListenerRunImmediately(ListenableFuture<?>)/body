@@ -1,0 +1,5 @@
+{
+  CountingRunnable listener=new CountingRunnable();
+  future.addListener(listener,sameThreadExecutor());
+  assertEquals(1,listener.count);
+}

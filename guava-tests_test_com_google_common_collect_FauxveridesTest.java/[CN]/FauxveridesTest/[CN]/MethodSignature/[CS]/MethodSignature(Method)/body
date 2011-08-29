@@ -1,0 +1,5 @@
+{
+  name=method.getName();
+  parameterTypes=Arrays.asList(method.getParameterTypes());
+  typeSignature=new TypeSignature(method.getTypeParameters());
+}

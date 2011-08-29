@@ -1,0 +1,5 @@
+{
+  NullPointerTester tester=new NullPointerTester();
+  Function<Object,Object> computingFunction=new IdentityLoader<Object>();
+  tester.testAllPublicInstanceMethods(makeComputingMap(createMapMaker(),computingFunction));
+}

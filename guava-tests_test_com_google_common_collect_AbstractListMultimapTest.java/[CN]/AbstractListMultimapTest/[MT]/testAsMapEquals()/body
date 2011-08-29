@@ -1,0 +1,18 @@
+{
+  Multimap<String,Integer> multimap=getMultimap();
+  multimap.put("foo",1);
+  multimap.put("foo",nullValue());
+  multimap.put(nullKey(),3);
+  Map<String,Collection<Integer>> map=multimap.asMap();
+  Map<String,Collection<Integer>> equalMap=Maps.newHashMap();
+  equalMap.put("foo",asList(1,nullValue()));
+  equalMap.put(nullKey(),asList(3));
+  assertEquals(map,equalMap);
+  assertEquals(equalMap,map);
+  assertEquals(equalMap.hashCode(),multimap.hashCode());
+  Map<String,Collection<Integer>> unequalMap=Maps.newHashMap();
+  equalMap.put("foo",asList(3,nullValue()));
+  equalMap.put(nullKey(),asList(1));
+  assertFalse(map.equals(unequalMap));
+  assertFalse(unequalMap.equals(map));
+}

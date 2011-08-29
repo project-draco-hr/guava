@@ -1,0 +1,6 @@
+{
+  ReentrantEventsHater hater=new ReentrantEventsHater();
+  bus.register(hater);
+  bus.post(FIRST);
+  assertEquals("ReentrantEventHater expected 2 events",Lists.<Object>newArrayList(FIRST,SECOND),hater.eventsReceived);
+}

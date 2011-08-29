@@ -1,0 +1,4 @@
+Multimap<String,Integer> multimap
+boolean permitsDuplicates
+String nullKey
+Integer nullValue

@@ -1,0 +1,4 @@
+{
+  assertEquals(Ranges.closed(0,0),Ranges.singleton(0));
+  assertEquals(Ranges.closed(9,9),Ranges.singleton(9));
+}

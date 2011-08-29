@@ -1,0 +1,4 @@
+{
+  Iterator<String> iterator=Collections.singletonList("foo").iterator();
+  assertEquals("foo",Iterators.getOnlyElement(iterator,"bar"));
+}

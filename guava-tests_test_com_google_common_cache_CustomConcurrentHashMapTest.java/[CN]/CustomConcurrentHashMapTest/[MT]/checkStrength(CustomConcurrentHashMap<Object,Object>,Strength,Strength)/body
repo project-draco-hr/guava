@@ -1,0 +1,6 @@
+{
+  assertSame(keyStrength,map.keyStrength);
+  assertSame(valueStrength,map.valueStrength);
+  assertSame(keyStrength.defaultEquivalence(),map.keyEquivalence);
+  assertSame(valueStrength.defaultEquivalence(),map.valueEquivalence);
+}

@@ -1,0 +1,6 @@
+{
+  BiMap<String,Integer> map=create();
+  Set<Integer> values=map.values();
+  assertTrue(values instanceof SynchronizedSet);
+  assertSame(mutex,((SynchronizedSet<?>)values).mutex);
+}

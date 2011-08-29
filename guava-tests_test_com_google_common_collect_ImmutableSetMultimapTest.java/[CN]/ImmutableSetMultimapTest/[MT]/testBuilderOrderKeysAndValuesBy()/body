@@ -1,0 +1,22 @@
+{
+  ImmutableSetMultimap.Builder<String,Integer> builder=ImmutableSetMultimap.builder();
+  builder.put("b",3);
+  builder.put("d",2);
+  builder.put("a",5);
+  builder.orderKeysBy(Collections.reverseOrder());
+  builder.orderValuesBy(Collections.reverseOrder());
+  builder.put("c",4);
+  builder.put("a",2);
+  builder.put("b",6);
+  ImmutableSetMultimap<String,Integer> multimap=builder.build();
+  ASSERT.that(multimap.keySet()).hasContentsInOrder("d","c","b","a");
+  ASSERT.that(multimap.values()).hasContentsInOrder(2,4,6,3,5,2);
+  ASSERT.that(multimap.get("a")).hasContentsInOrder(5,2);
+  ASSERT.that(multimap.get("b")).hasContentsInOrder(6,3);
+  assertTrue(multimap.get("a") instanceof ImmutableSortedSet);
+  assertEquals(Collections.reverseOrder(),((ImmutableSortedSet<Integer>)multimap.get("a")).comparator());
+  assertTrue(multimap.get("x") instanceof ImmutableSortedSet);
+  assertEquals(Collections.reverseOrder(),((ImmutableSortedSet<Integer>)multimap.get("x")).comparator());
+  assertTrue(multimap.asMap().get("a") instanceof ImmutableSortedSet);
+  assertEquals(Collections.reverseOrder(),((ImmutableSortedSet<Integer>)multimap.asMap().get("a")).comparator());
+}

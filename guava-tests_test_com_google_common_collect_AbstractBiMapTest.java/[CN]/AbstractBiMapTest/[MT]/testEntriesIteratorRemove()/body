@@ -1,0 +1,8 @@
+{
+  putOneTwoThree();
+  Iterator<Entry<Integer,String>> iterator=bimap.entrySet().iterator();
+  iterator.next();
+  iterator.remove();
+  assertEquals(2,bimap.size());
+  assertEquals(2,bimap.inverse().size());
+}

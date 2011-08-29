@@ -1,0 +1,9 @@
+{
+  ImmutableMultiset.Builder<String> builder=ImmutableMultiset.builder();
+  try {
+    builder.setCount(null,2);
+    fail("expected NullPointerException");
+  }
+ catch (  NullPointerException expected) {
+  }
+}

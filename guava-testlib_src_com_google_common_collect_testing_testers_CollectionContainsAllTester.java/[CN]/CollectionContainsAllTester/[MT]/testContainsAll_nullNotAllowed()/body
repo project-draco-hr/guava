@@ -1,0 +1,7 @@
+{
+  try {
+    assertFalse(collection.containsAll(MinimalCollection.of((E)null)));
+  }
+ catch (  NullPointerException tolerated) {
+  }
+}

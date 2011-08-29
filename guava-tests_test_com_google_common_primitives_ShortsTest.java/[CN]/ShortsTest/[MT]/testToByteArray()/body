@@ -1,0 +1,4 @@
+{
+  assertTrue(Arrays.equals(new byte[]{0x23,0x45},Shorts.toByteArray((short)0x2345)));
+  assertTrue(Arrays.equals(new byte[]{(byte)0xFE,(byte)0xDC},Shorts.toByteArray((short)0xFEDC)));
+}

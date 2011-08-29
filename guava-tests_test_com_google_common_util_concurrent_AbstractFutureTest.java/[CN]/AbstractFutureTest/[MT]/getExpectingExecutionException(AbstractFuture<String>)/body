@@ -1,0 +1,10 @@
+{
+  try {
+    String got=future.get();
+    fail("Expected exception but got " + got);
+  }
+ catch (  ExecutionException e) {
+    return e;
+  }
+  return null;
+}

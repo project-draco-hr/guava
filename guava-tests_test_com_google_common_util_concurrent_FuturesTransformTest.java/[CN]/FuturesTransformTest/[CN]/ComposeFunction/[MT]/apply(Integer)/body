@@ -1,0 +1,8 @@
+{
+  if (input.intValue() == VALID_INPUT_DATA) {
+    return RESULT_DATA;
+  }
+ else {
+    throw new UndeclaredThrowableException(EXCEPTION);
+  }
+}

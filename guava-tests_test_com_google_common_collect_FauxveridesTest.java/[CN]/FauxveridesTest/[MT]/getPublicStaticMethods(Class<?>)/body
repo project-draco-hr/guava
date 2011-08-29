@@ -1,0 +1,10 @@
+{
+  Set<MethodSignature> publicStaticMethods=newHashSet();
+  for (  Method method : clazz.getDeclaredMethods()) {
+    int modifiers=method.getModifiers();
+    if (isPublic(modifiers) && isStatic(modifiers)) {
+      publicStaticMethods.add(new MethodSignature(method));
+    }
+  }
+  return publicStaticMethods;
+}

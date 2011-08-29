@@ -1,0 +1,6 @@
+{
+  byte[] array={(byte)0,(byte)1,(byte)2,(byte)3};
+  List<Byte> list=Bytes.asList(array);
+  assertTrue(Arrays.equals(new byte[]{(byte)1,(byte)2},Bytes.toArray(list.subList(1,3))));
+  assertTrue(Arrays.equals(new byte[]{},Bytes.toArray(list.subList(2,2))));
+}

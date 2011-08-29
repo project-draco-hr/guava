@@ -1,0 +1,13 @@
+{
+  Range<Integer> range=Ranges.atMost(4);
+  assertTrue(range.contains(Integer.MIN_VALUE));
+  assertTrue(range.contains(4));
+  assertFalse(range.contains(5));
+  assertUnboundedBelow(range);
+  assertTrue(range.hasUpperBound());
+  assertEquals(4,(int)range.upperEndpoint());
+  assertEquals(CLOSED,range.upperBoundType());
+  assertFalse(range.isEmpty());
+  assertEquals("(-\u221e\u20254]",range.toString());
+  reserializeAndAssertUnlessGwt(range);
+}

@@ -1,0 +1,12 @@
+{
+  ListMultimap<String,Integer> multimap=ImmutableListMultimap.of("a",1,"a",4,"b",6,"a",4);
+  EntryTransformer<String,Integer,String> transformer=new EntryTransformer<String,Integer,String>(){
+    @Override public String transformEntry(    String key,    Integer value){
+      return key + value;
+    }
+  }
+;
+  ListMultimap<String,String> transformed=Multimaps.transformEntries(multimap,transformer);
+  assertEquals(ImmutableListMultimap.of("a","a1","a","a4","a","a4","b","b6"),transformed);
+  assertEquals("{a=[a1, a4, a4], b=[b6]}",transformed.toString());
+}

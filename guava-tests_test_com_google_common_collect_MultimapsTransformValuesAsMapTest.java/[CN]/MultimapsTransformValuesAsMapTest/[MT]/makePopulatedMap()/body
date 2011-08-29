@@ -1,0 +1,5 @@
+{
+  ListMultimap<String,Integer> delegate=ArrayListMultimap.create();
+  populate(delegate);
+  return Multimaps.transformValues(delegate,Functions.<Integer>identity()).asMap();
+}

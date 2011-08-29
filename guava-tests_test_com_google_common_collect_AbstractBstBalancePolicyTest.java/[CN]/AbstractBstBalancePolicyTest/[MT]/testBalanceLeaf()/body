@@ -1,0 +1,4 @@
+{
+  SimpleNode a=new SimpleNode('a',null,null);
+  assertInOrderTraversalIs(getBalancePolicy().balance(nodeFactory,a,null,null),"a");
+}

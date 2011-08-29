@@ -1,0 +1,5 @@
+{
+  ByteArrayDataOutput out=ByteStreams.newDataOutput();
+  out.writeShort(0x1234);
+  assertTrue(Arrays.equals(new byte[]{0x12,0x34},out.toByteArray()));
+}

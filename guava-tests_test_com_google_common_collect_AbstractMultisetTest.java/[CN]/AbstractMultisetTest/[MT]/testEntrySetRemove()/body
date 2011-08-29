@@ -1,0 +1,12 @@
+{
+  ms.add("a",3);
+  Set<Entry<String>> es=ms.entrySet();
+  assertFalse(es.remove(null));
+  assertFalse(es.remove(Maps.immutableEntry("a",3)));
+  assertFalse(es.remove(Multisets.immutableEntry("a",2)));
+  assertFalse(es.remove(Multisets.immutableEntry("b",3)));
+  assertFalse(es.remove(Multisets.immutableEntry("b",0)));
+  assertEquals(3,ms.count("a"));
+  assertTrue(es.remove(Multisets.immutableEntry("a",3)));
+  assertEquals(0,ms.count("a"));
+}

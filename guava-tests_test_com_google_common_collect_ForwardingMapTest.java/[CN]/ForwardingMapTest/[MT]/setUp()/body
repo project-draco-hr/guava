@@ -1,0 +1,10 @@
+{
+  super.setUp();
+  @SuppressWarnings("unchecked") final Map<String,Boolean> map=createProxyInstance(Map.class);
+  forward=new ForwardingMap<String,Boolean>(){
+    @Override protected Map<String,Boolean> delegate(){
+      return map;
+    }
+  }
+;
+}

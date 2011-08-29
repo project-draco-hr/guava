@@ -1,0 +1,10 @@
+{
+  assertTrue(Arrays.equals(EMPTY,Longs.concat()));
+  assertTrue(Arrays.equals(EMPTY,Longs.concat(EMPTY)));
+  assertTrue(Arrays.equals(EMPTY,Longs.concat(EMPTY,EMPTY,EMPTY)));
+  assertTrue(Arrays.equals(ARRAY1,Longs.concat(ARRAY1)));
+  assertNotSame(ARRAY1,Longs.concat(ARRAY1));
+  assertTrue(Arrays.equals(ARRAY1,Longs.concat(EMPTY,ARRAY1,EMPTY)));
+  assertTrue(Arrays.equals(new long[]{(long)1,(long)1,(long)1},Longs.concat(ARRAY1,ARRAY1,ARRAY1)));
+  assertTrue(Arrays.equals(new long[]{(long)1,(long)2,(long)3,(long)4},Longs.concat(ARRAY1,ARRAY234)));
+}

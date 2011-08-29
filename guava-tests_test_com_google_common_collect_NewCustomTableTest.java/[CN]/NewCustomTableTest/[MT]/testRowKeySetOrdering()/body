@@ -1,0 +1,4 @@
+{
+  table=create("foo",3,'a',"bar",1,'b',"foo",2,'c');
+  ASSERT.that(table.rowKeySet()).hasContentsInOrder("foo","bar");
+}

@@ -1,0 +1,12 @@
+{
+  for (  Cache<Object,Object> cache : caches()) {
+    Set<Object> keys=cache.asMap().keySet();
+    try {
+      keys.toArray(null);
+      fail();
+    }
+ catch (    NullPointerException e) {
+    }
+    checkEmpty(cache);
+  }
+}

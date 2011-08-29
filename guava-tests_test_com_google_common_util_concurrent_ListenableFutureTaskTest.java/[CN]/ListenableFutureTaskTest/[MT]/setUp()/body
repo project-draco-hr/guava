@@ -1,0 +1,10 @@
+{
+  super.setUp();
+  exec=Executors.newCachedThreadPool();
+  task.addListener(new Runnable(){
+    @Override public void run(){
+      listenerLatch.countDown();
+    }
+  }
+,MoreExecutors.sameThreadExecutor());
+}

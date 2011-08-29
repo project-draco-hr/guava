@@ -1,0 +1,6 @@
+{
+  Set<E> copy=reserialize(original);
+  assertEquals(original,copy);
+  assertTrue(copy instanceof ImmutableSet);
+  return copy;
+}

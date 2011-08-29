@@ -1,0 +1,6 @@
+{
+  ImmutableClassToInstanceMap<Number> ictim=new ImmutableClassToInstanceMap.Builder<Number>().put(Integer.class,0).put(int.class,1).build();
+  assertEquals(2,ictim.size());
+  assertEquals(0,(int)ictim.getInstance(Integer.class));
+  assertEquals(1,(int)ictim.getInstance(int.class));
+}

@@ -1,0 +1,5 @@
+{
+  HostSpecifier.fromValid(spec);
+  HostSpecifier.from(spec);
+  assertTrue(HostSpecifier.isValid(spec));
+}

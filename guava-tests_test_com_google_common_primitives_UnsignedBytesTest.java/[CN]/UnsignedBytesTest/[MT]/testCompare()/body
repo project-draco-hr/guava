@@ -1,0 +1,9 @@
+{
+  for (int i=0; i < VALUES.length; i++) {
+    for (int j=0; j < VALUES.length; j++) {
+      byte x=VALUES[i];
+      byte y=VALUES[j];
+      assertEquals(x + ", " + y,Math.signum(UnsignedBytes.compare(x,y)),Math.signum(Ints.compare(i,j)));
+    }
+  }
+}

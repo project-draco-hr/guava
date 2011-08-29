@@ -1,0 +1,13 @@
+{
+  Iterable<String> list=newArrayList("cool","pants");
+  assertEquals("cool",Iterables.find(list,Predicates.equalTo("cool")));
+  assertEquals("pants",Iterables.find(list,Predicates.equalTo("pants")));
+  try {
+    Iterables.find(list,Predicates.alwaysFalse());
+    fail();
+  }
+ catch (  NoSuchElementException e) {
+  }
+  assertEquals("cool",Iterables.find(list,Predicates.alwaysTrue()));
+  assertCanIterateAgain(list);
+}

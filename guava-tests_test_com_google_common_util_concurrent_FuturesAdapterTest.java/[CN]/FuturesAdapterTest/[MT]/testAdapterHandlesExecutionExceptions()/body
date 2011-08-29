@@ -1,0 +1,4 @@
+{
+  delegate.setException(new Exception("failed"));
+  tester.testFailedFuture("failed");
+}

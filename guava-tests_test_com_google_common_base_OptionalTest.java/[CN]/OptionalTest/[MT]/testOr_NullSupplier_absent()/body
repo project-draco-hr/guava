@@ -1,0 +1,3 @@
+{
+  assertEquals(null,Optional.absent().or(Suppliers.ofInstance(null)));
+}

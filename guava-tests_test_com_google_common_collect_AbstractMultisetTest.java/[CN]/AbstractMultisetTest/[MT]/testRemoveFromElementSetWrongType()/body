@@ -1,0 +1,3 @@
+{
+  assertEquals(false,ms.elementSet().remove(new WrongType()));
+}

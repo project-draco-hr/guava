@@ -1,0 +1,8 @@
+{
+  Multimap<String,Integer> multimap=createMultimap();
+  for (  Object element : elements) {
+    @SuppressWarnings("unchecked") Entry<String,Integer> entry=(Entry<String,Integer>)element;
+    multimap.put(entry.getKey(),entry.getValue());
+  }
+  return multimap.entries();
+}

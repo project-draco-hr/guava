@@ -1,5 +1,5 @@
 {
-  for (  AtomicInteger frequency : backingMap.values()) {
+  for (  Count frequency : backingMap.values()) {
     frequency.set(0);
   }
   backingMap.clear();

@@ -1,0 +1,8 @@
+{
+  Multiset<MultisetHolder> multiset=HashMultiset.create();
+  MultisetHolder holder=new MultisetHolder(multiset);
+  multiset.add(holder,2);
+  Multiset<MultisetHolder> copy=SerializableTester.reserialize(multiset);
+  assertEquals(2,copy.size());
+  assertSame(copy,copy.iterator().next().member);
+}

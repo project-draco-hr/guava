@@ -1,0 +1,14 @@
+{
+  checkArgument(occurrences >= 0);
+  Integer count=backingMap.get(element);
+  if (count == null) {
+    return 0;
+  }
+ else   if (count > occurrences) {
+    backingMap.put((E)element,count - occurrences);
+    return count;
+  }
+ else {
+    return backingMap.remove(element);
+  }
+}

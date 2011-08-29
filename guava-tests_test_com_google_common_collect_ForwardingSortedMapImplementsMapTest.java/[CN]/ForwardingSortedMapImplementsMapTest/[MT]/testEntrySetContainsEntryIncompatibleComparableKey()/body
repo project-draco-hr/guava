@@ -1,0 +1,7 @@
+{
+  try {
+    super.testEntrySetContainsEntryIncompatibleComparableKey();
+  }
+ catch (  ClassCastException tolerated) {
+  }
+}

@@ -1,0 +1,19 @@
+{
+  Multiset<String> multiset=HashMultiset.create(asList("foo","bar"));
+  Multiset<String> constrained=Constraints.constrainedMultiset(multiset,TEST_CONSTRAINT);
+  multiset.add(TEST_ELEMENT);
+  constrained.add("qux");
+  constrained.addAll(asList("cat","dog"));
+  constrained.add("cow",2);
+  assertTrue(multiset.equals(constrained));
+  assertTrue(constrained.equals(multiset));
+  assertEquals(multiset.toString(),constrained.toString());
+  assertEquals(multiset.hashCode(),constrained.hashCode());
+  ASSERT.that(multiset).hasContentsAnyOrder("foo","bar",TEST_ELEMENT,"qux","cat","dog","cow","cow");
+  ASSERT.that(constrained).hasContentsAnyOrder("foo","bar",TEST_ELEMENT,"qux","cat","dog","cow","cow");
+  assertEquals(1,constrained.count("foo"));
+  assertEquals(1,constrained.remove("foo",3));
+  assertEquals(2,constrained.setCount("cow",0));
+  ASSERT.that(multiset).hasContentsAnyOrder("bar",TEST_ELEMENT,"qux","cat","dog");
+  ASSERT.that(constrained).hasContentsAnyOrder("bar",TEST_ELEMENT,"qux","cat","dog");
+}

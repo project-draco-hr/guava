@@ -1,0 +1,9 @@
+{
+  for (  byte value : VALUES) {
+    assertEquals(value,UnsignedBytes.saturatedCast(UnsignedBytes.toInt(value)));
+  }
+  assertEquals(GREATEST,UnsignedBytes.saturatedCast(256L));
+  assertEquals(LEAST,UnsignedBytes.saturatedCast(-1L));
+  assertEquals(GREATEST,UnsignedBytes.saturatedCast(Long.MAX_VALUE));
+  assertEquals(LEAST,UnsignedBytes.saturatedCast(Long.MIN_VALUE));
+}

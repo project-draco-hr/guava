@@ -1,0 +1,4 @@
+{
+  this.everyMillis=everyMillis;
+  this.interruptee=interruptee;
+}

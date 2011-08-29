@@ -1,0 +1,3 @@
+{
+  defaultNullPointerTester().testAllPublicStaticMethods(BstOperations.class);
+}

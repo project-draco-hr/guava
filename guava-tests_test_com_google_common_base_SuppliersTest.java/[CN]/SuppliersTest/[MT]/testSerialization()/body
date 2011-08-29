@@ -2,6 +2,6 @@
   assertEquals(Integer.valueOf(5),reserialize(Suppliers.ofInstance(5)).get());
   assertEquals(Integer.valueOf(5),reserialize(Suppliers.compose(Functions.identity(),Suppliers.ofInstance(5))).get());
   assertEquals(Integer.valueOf(5),reserialize(Suppliers.memoize(Suppliers.ofInstance(5))).get());
-  assertEquals(Integer.valueOf(5),reserialize(Suppliers.memoizeWithExpiration(Suppliers.ofInstance(5),30,TimeUnit.MINUTES)).get());
+  assertEquals(Integer.valueOf(5),reserialize(Suppliers.memoizeWithExpiration(Suppliers.ofInstance(5),30,TimeUnit.SECONDS)).get());
   assertEquals(Integer.valueOf(5),reserialize(Suppliers.synchronizedSupplier(Suppliers.ofInstance(5))).get());
 }

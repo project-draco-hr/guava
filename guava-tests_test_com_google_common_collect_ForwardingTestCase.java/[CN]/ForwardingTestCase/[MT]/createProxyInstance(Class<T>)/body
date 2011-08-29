@@ -1,0 +1,10 @@
+{
+  InvocationHandler handler=new InvocationHandler(){
+    @Override public Object invoke(    Object proxy,    Method method,    Object[] args) throws Throwable {
+      called(asString(method));
+      return getDefaultValue(method.getReturnType());
+    }
+  }
+;
+  return (T)Proxy.newProxyInstance(c.getClassLoader(),new Class[]{c},handler);
+}

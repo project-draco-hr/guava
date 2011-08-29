@@ -1,0 +1,9 @@
+{
+  SortedMap<Integer,Integer> map=Maps.newTreeMap();
+  map.put(5,10);
+  map.put(3,20);
+  map.put(1,30);
+  TreeMap<Integer,Integer> copy=Maps.newTreeMap(map);
+  assertEquals(copy,map);
+  assertSame(copy.comparator(),map.comparator());
+}

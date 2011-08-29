@@ -1,0 +1,7 @@
+{
+  if (methodCalled == true) {
+    throw new IllegalStateException("Method called more than once.");
+  }
+  methodCalled=true;
+  methodArgument=arg;
+}

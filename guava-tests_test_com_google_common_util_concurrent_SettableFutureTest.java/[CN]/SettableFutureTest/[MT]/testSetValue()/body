@@ -1,0 +1,4 @@
+{
+  assertTrue(future.set("value"));
+  tester.testCompletedFuture("value");
+}

@@ -1,0 +1,4 @@
+{
+  ArrayTable<String,Integer,Character> table=create("foo",1,'a',"bar",1,'b',"foo",3,'c');
+  ASSERT.that(table.columnKeyList()).hasContentsInOrder(1,2,3);
+}

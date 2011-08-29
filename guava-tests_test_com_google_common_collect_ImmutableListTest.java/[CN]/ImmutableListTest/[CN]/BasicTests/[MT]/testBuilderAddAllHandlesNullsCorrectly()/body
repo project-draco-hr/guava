@@ -1,0 +1,38 @@
+{
+  ImmutableList.Builder<String> builder=ImmutableList.builder();
+  try {
+    builder.addAll((Iterable<String>)null);
+    fail("expected NullPointerException");
+  }
+ catch (  NullPointerException expected) {
+  }
+  try {
+    builder.addAll((Iterator<String>)null);
+    fail("expected NullPointerException");
+  }
+ catch (  NullPointerException expected) {
+  }
+  builder=ImmutableList.builder();
+  List<String> listWithNulls=asList("a",null,"b");
+  try {
+    builder.addAll(listWithNulls);
+    fail("expected NullPointerException");
+  }
+ catch (  NullPointerException expected) {
+  }
+  builder=ImmutableList.builder();
+  Iterator<String> iteratorWithNulls=asList("a",null,"b").iterator();
+  try {
+    builder.addAll(iteratorWithNulls);
+    fail("expected NullPointerException");
+  }
+ catch (  NullPointerException expected) {
+  }
+  Iterable<String> iterableWithNulls=MinimalIterable.of("a",null,"b");
+  try {
+    builder.addAll(iterableWithNulls);
+    fail("expected NullPointerException");
+  }
+ catch (  NullPointerException expected) {
+  }
+}

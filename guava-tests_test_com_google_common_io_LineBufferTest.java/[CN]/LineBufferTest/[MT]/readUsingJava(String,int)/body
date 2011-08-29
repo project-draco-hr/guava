@@ -1,0 +1,10 @@
+{
+  BufferedReader r=new BufferedReader(getChunkedReader(input,chunk));
+  List<String> lines=Lists.newArrayList();
+  String line;
+  while ((line=r.readLine()) != null) {
+    lines.add(line);
+  }
+  r.close();
+  return lines;
+}

@@ -1,0 +1,10 @@
+{
+  TreeMultimap<String,Integer> multimap=createPopulate();
+  SortedSet<String> keySet=multimap.keySet();
+  assertEquals(null,keySet.first());
+  assertEquals("google",keySet.last());
+  assertEquals(StringLength.COMPARATOR,keySet.comparator());
+  assertEquals(Sets.newHashSet(null,"tree"),keySet.headSet("yahoo"));
+  assertEquals(Sets.newHashSet("google"),keySet.tailSet("yahoo"));
+  assertEquals(Sets.newHashSet("tree"),keySet.subSet("ask","yahoo"));
+}

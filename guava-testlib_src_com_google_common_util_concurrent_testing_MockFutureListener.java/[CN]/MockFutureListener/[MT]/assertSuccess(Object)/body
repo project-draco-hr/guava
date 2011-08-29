@@ -1,0 +1,9 @@
+{
+  Assert.assertTrue(countDownLatch.await(1L,TimeUnit.SECONDS));
+  try {
+    Assert.assertEquals(expectedData,future.get());
+  }
+ catch (  ExecutionException e) {
+    throw e.getCause();
+  }
+}

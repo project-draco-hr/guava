@@ -1,0 +1,5 @@
+{
+  for (  String spec : GOOD_DOMAINS) {
+    assertGood(spec);
+  }
+}

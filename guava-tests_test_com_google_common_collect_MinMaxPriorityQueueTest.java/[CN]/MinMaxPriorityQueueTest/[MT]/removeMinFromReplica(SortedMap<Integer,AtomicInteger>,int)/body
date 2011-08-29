@@ -1,0 +1,5 @@
+{
+  Integer replicatedMinValue=replica.firstKey();
+  assertEquals(replicatedMinValue,(Integer)minValue);
+  removeFromReplica(replica,replicatedMinValue);
+}

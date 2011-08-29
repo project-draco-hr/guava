@@ -1,0 +1,31 @@
+{
+  SettableFuture<String> future=SettableFuture.create();
+  CheckedFuture<String,TestException> checked=Futures.makeChecked(future,mapper);
+  assertTrue(future.cancel(true));
+  try {
+    checked.get();
+    fail();
+  }
+ catch (  CancellationException expected) {
+  }
+  try {
+    checked.get(5,TimeUnit.SECONDS);
+    fail();
+  }
+ catch (  CancellationException expected) {
+  }
+  try {
+    checked.checkedGet();
+    fail();
+  }
+ catch (  TestException expected) {
+    assertTrue(expected.getCause() instanceof CancellationException);
+  }
+  try {
+    checked.checkedGet(5,TimeUnit.SECONDS);
+    fail();
+  }
+ catch (  TestException expected) {
+    assertTrue(expected.getCause() instanceof CancellationException);
+  }
+}

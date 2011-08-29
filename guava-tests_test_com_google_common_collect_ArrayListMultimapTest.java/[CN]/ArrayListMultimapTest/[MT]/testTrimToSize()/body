@@ -1,0 +1,10 @@
+{
+  ArrayListMultimap<String,Integer> multimap=ArrayListMultimap.create();
+  multimap.put("foo",1);
+  multimap.put("foo",2);
+  multimap.put("bar",3);
+  multimap.trimToSize();
+  assertEquals(3,multimap.size());
+  ASSERT.that(multimap.get("foo")).hasContentsInOrder(1,2);
+  ASSERT.that(multimap.get("bar")).hasContentsInOrder(3);
+}

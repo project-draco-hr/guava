@@ -1,0 +1,12 @@
+{
+  return new TestStringMultisetGenerator(){
+    @Override protected Multiset<String> create(    String[] elements){
+      return Multisets.unmodifiableMultiset(TreeMultiset.create(asList(elements)));
+    }
+    @Override public List<String> order(    List<String> insertionOrder){
+      Collections.sort(insertionOrder);
+      return insertionOrder;
+    }
+  }
+;
+}

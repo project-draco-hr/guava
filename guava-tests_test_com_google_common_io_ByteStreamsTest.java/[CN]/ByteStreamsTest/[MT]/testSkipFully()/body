@@ -1,0 +1,14 @@
+{
+  byte[] bytes=newPreFilledByteArray(100);
+  skipHelper(0,0,new ByteArrayInputStream(bytes));
+  skipHelper(50,50,new ByteArrayInputStream(bytes));
+  skipHelper(50,50,new SlowSkipper(new ByteArrayInputStream(bytes),1));
+  skipHelper(50,50,new SlowSkipper(new ByteArrayInputStream(bytes),0));
+  skipHelper(100,-1,new ByteArrayInputStream(bytes));
+  try {
+    skipHelper(101,0,new ByteArrayInputStream(bytes));
+    fail("expected exception");
+  }
+ catch (  EOFException e) {
+  }
+}

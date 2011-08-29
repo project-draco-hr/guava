@@ -1,0 +1,12 @@
+{
+  return CollectionTestSuiteBuilder.using(new TestStringCollectionGenerator(){
+    @Override public Collection<String> create(    String[] elements){
+      List<String> list=newArrayList();
+      for (      String element : elements) {
+        list.add((element == null) ? null : "q" + element);
+      }
+      return Collections2.transform(list,REMOVE_FIRST_CHAR);
+    }
+  }
+).named("Collections2.transform").withFeatures(CollectionFeature.REMOVE_OPERATIONS,CollectionFeature.ALLOWS_NULL_VALUES,CollectionFeature.KNOWN_ORDER,CollectionSize.ANY).createTestSuite();
+}

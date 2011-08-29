@@ -1,0 +1,4 @@
+{
+  super.setUp();
+  counter=new CountingInputStream(new ByteArrayInputStream(new byte[20]));
+}

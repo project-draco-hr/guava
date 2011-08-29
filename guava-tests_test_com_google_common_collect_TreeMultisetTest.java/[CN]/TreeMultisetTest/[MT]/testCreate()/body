@@ -1,0 +1,9 @@
+{
+  TreeMultiset<String> multiset=TreeMultiset.create();
+  multiset.add("foo",2);
+  multiset.add("bar");
+  assertEquals(3,multiset.size());
+  assertEquals(2,multiset.count("foo"));
+  assertEquals(Ordering.natural(),multiset.comparator());
+  assertEquals("[bar, foo x 2]",multiset.toString());
+}

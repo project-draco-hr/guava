@@ -1,0 +1,6 @@
+{
+  ExecutorService e=new DirectExecutorService();
+  Future<?> future=e.submit(new NoOpRunnable());
+  future.get();
+  assertTrue(future.isDone());
+}

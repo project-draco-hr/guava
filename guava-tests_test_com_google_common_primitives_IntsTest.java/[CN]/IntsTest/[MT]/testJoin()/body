@@ -1,0 +1,6 @@
+{
+  assertEquals("",Ints.join(",",EMPTY));
+  assertEquals("1",Ints.join(",",ARRAY1));
+  assertEquals("1,2",Ints.join(",",(int)1,(int)2));
+  assertEquals("123",Ints.join("",(int)1,(int)2,(int)3));
+}

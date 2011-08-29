@@ -1,0 +1,5 @@
+{
+  Multimap<String,Integer> delegate=LinkedHashMultimap.create();
+  populate(delegate);
+  return Multimaps.unmodifiableMultimap(delegate).asMap();
+}

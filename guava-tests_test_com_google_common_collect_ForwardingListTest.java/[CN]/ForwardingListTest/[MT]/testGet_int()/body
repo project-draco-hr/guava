@@ -1,0 +1,4 @@
+{
+  forward.get(0);
+  assertEquals("[get(int)]",getCalls());
+}

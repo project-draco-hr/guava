@@ -1,0 +1,8 @@
+{
+  ThrowOnRunService service=new ThrowOnRunService();
+  service.start().get();
+  executionThread.join();
+  assertTrue(service.shutDownCalled);
+  assertEquals(Service.State.FAILED,service.state());
+  assertEquals("kaboom!",thrownByExecutionThread.getMessage());
+}

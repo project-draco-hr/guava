@@ -1,0 +1,6 @@
+{
+  Iterable<Integer> source=Collections.singleton(1);
+  Iterable<List<Integer>> partitions=Iterables.partition(source,1);
+  assertEquals(1,Iterables.size(partitions));
+  assertEquals(Collections.singletonList(1),partitions.iterator().next());
+}

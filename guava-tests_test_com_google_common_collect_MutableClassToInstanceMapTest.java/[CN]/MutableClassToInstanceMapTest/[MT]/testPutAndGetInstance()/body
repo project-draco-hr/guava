@@ -1,0 +1,7 @@
+{
+  assertNull(map.putInstance(Integer.class,new Integer(5)));
+  Integer oldValue=map.putInstance(Integer.class,new Integer(7));
+  assertEquals(5,(int)oldValue);
+  Integer newValue=map.getInstance(Integer.class);
+  assertEquals(7,(int)newValue);
+}

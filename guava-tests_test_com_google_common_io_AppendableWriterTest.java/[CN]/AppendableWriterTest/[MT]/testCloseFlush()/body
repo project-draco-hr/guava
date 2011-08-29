@@ -1,0 +1,13 @@
+{
+  SpyAppendable spy=new SpyAppendable();
+  Writer writer=new AppendableWriter(spy);
+  writer.write("Hello");
+  assertFalse(spy.flushed);
+  assertFalse(spy.closed);
+  writer.flush();
+  assertTrue(spy.flushed);
+  assertFalse(spy.closed);
+  writer.close();
+  assertTrue(spy.flushed);
+  assertTrue(spy.closed);
+}

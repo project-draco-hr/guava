@@ -1,0 +1,5 @@
+{
+  Integer replicatedMaxValue=replica.lastKey();
+  assertTrue("maxValue is incorrect",replicatedMaxValue == maxValue);
+  removeFromReplica(replica,replicatedMaxValue);
+}

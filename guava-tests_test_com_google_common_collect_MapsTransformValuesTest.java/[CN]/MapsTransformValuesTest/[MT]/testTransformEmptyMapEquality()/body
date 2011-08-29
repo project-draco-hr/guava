@@ -1,0 +1,4 @@
+{
+  Map<String,String> map=Maps.transformValues(ImmutableMap.<String,Integer>of(),Functions.toStringFunction());
+  assertMapsEqual(Maps.newHashMap(),map);
+}

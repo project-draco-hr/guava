@@ -1,0 +1,15 @@
+{
+  StatsCounter counter=new SimpleStatsCounter();
+  CacheStats stats=counter.snapshot();
+  assertEquals(0,stats.requestCount());
+  assertEquals(0,stats.hitCount());
+  assertEquals(1.0,stats.hitRate());
+  assertEquals(0,stats.missCount());
+  assertEquals(0.0,stats.missRate());
+  assertEquals(0,stats.loadSuccessCount());
+  assertEquals(0,stats.loadExceptionCount());
+  assertEquals(0,stats.loadCount());
+  assertEquals(0,stats.totalLoadTime());
+  assertEquals(0.0,stats.averageLoadPenalty());
+  assertEquals(0,stats.evictionCount());
+}

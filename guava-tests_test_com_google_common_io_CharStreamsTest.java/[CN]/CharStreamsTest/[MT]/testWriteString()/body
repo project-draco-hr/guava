@@ -1,0 +1,11 @@
+{
+  final StringWriter sw=new StringWriter();
+  String expected="foo";
+  CharStreams.write(expected,new OutputSupplier<Writer>(){
+    @Override public Writer getOutput(){
+      return sw;
+    }
+  }
+);
+  assertEquals(expected,sw.toString());
+}

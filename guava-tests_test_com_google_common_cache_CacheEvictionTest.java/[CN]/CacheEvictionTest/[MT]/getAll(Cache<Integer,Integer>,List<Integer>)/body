@@ -1,0 +1,6 @@
+{
+  for (  int i : keys) {
+    cache.getUnchecked(i);
+  }
+  CacheTesting.drainRecencyQueues(cache);
+}

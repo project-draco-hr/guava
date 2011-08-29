@@ -1,0 +1,4 @@
+{
+  forward.listIterator(0);
+  assertEquals("[listIterator(int)]",getCalls());
+}

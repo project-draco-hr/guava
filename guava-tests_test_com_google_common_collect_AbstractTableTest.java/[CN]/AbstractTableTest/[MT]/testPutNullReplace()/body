@@ -1,0 +1,15 @@
+{
+  table=create("foo",1,'a',"bar",1,'b',"foo",3,'c');
+  if (supportsNullValues()) {
+    assertEquals((Character)'b',table.put("bar",1,null));
+    assertNull(table.get("bar",1));
+  }
+ else {
+    try {
+      table.put("bar",1,null);
+      fail();
+    }
+ catch (    NullPointerException expected) {
+    }
+  }
+}

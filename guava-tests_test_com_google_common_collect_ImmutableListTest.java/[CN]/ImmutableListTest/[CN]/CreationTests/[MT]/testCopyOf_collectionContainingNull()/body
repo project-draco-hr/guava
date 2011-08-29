@@ -1,0 +1,9 @@
+{
+  Collection<String> c=MinimalCollection.of("a",null,"b");
+  try {
+    ImmutableList.copyOf(c);
+    fail();
+  }
+ catch (  NullPointerException expected) {
+  }
+}

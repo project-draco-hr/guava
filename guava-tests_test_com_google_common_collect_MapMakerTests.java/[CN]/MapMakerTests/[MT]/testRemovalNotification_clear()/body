@@ -1,0 +1,38 @@
+{
+  final CountDownLatch computingLatch=new CountDownLatch(1);
+  Function<String,String> computingFunction=new Function<String,String>(){
+    @Override public String apply(    String key){
+      try {
+        computingLatch.await();
+      }
+ catch (      InterruptedException e) {
+        Thread.currentThread().interrupt();
+      }
+      return key;
+    }
+  }
+;
+  QueuingRemovalListener<String,String> listener=new QueuingRemovalListener<String,String>();
+  final ConcurrentMap<String,String> map=new MapMaker().concurrencyLevel(1).removalListener(listener).makeComputingMap(computingFunction);
+  map.put("a","a");
+  final CountDownLatch computationStarted=new CountDownLatch(1);
+  final CountDownLatch computationComplete=new CountDownLatch(1);
+  new Thread(new Runnable(){
+    @Override public void run(){
+      computationStarted.countDown();
+      map.get("b");
+      computationComplete.countDown();
+    }
+  }
+).start();
+  computationStarted.await();
+  map.clear();
+  computingLatch.countDown();
+  computationComplete.await();
+  assertEquals(1,listener.size());
+  RemovalNotification<String,String> notification=listener.remove();
+  assertEquals("a",notification.getKey());
+  assertEquals("a",notification.getValue());
+  assertEquals(1,map.size());
+  assertEquals("b",map.get("b"));
+}

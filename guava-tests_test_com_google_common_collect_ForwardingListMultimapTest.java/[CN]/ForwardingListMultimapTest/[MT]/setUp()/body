@@ -1,0 +1,10 @@
+{
+  super.setUp();
+  @SuppressWarnings("unchecked") final ListMultimap<String,Boolean> multimap=createProxyInstance(ListMultimap.class);
+  forward=new ForwardingListMultimap<String,Boolean>(){
+    @Override protected ListMultimap<String,Boolean> delegate(){
+      return multimap;
+    }
+  }
+;
+}

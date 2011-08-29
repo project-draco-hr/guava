@@ -1,0 +1,13 @@
+{
+  Range<Integer> range=Ranges.open(4,8);
+  checkContains(range);
+  assertTrue(range.hasLowerBound());
+  assertEquals(4,(int)range.lowerEndpoint());
+  assertEquals(OPEN,range.lowerBoundType());
+  assertTrue(range.hasUpperBound());
+  assertEquals(8,(int)range.upperEndpoint());
+  assertEquals(OPEN,range.upperBoundType());
+  assertFalse(range.isEmpty());
+  assertEquals("(4\u20258)",range.toString());
+  reserializeAndAssertUnlessGwt(range);
+}

@@ -1,0 +1,3 @@
+{
+  return HashMultiset.create(Collections.nCopies(count,element)).entrySet().iterator().next();
+}

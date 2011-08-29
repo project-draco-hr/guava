@@ -1,0 +1,8 @@
+{
+  long[] array={(long)0,(long)1};
+  List<Long> list=Longs.asList(array);
+  list.set(0,(long)2);
+  assertTrue(Arrays.equals(new long[]{(long)2,(long)1},array));
+  array[1]=(long)3;
+  assertEquals(Arrays.asList((long)2,(long)3),list);
+}

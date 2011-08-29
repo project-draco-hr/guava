@@ -1,0 +1,16 @@
+{
+  byte[] data=newPreFilledByteArray(100);
+  FileBackedOutputStream out=new FileBackedOutputStream(50);
+  InputSupplier<InputStream> supplier=out.getSupplier();
+  out.write(data);
+  assertTrue(Arrays.equals(data,ByteStreams.toByteArray(supplier)));
+  out.close();
+  try {
+    out.write(42);
+    fail("expected exception");
+  }
+ catch (  IOException expected) {
+  }
+  assertTrue(Arrays.equals(data,ByteStreams.toByteArray(supplier)));
+  out.reset();
+}

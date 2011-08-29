@@ -1,0 +1,7 @@
+{
+  Builder<String,Integer> builder=ImmutableSortedMap.naturalOrder();
+  for (  String key : elements) {
+    builder.put(key,4);
+  }
+  return builder.build().keySet();
+}

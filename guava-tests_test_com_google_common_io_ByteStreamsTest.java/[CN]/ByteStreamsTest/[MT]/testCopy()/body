@@ -1,0 +1,7 @@
+{
+  ByteArrayOutputStream out=new ByteArrayOutputStream();
+  byte[] expected=newPreFilledByteArray(100);
+  long num=ByteStreams.copy(new ByteArrayInputStream(expected),out);
+  assertEquals(100,num);
+  assertTrue(Arrays.equals(expected,out.toByteArray()));
+}

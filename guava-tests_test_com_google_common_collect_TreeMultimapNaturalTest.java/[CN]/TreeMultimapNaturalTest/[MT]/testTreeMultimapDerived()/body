@@ -1,0 +1,15 @@
+{
+  TreeMultimap<DerivedComparable,DerivedComparable> multimap=TreeMultimap.create();
+  assertEquals(ImmutableMultimap.of(),multimap);
+  multimap.put(new DerivedComparable("foo"),new DerivedComparable("f"));
+  multimap.put(new DerivedComparable("foo"),new DerivedComparable("o"));
+  multimap.put(new DerivedComparable("foo"),new DerivedComparable("o"));
+  multimap.put(new DerivedComparable("bar"),new DerivedComparable("b"));
+  multimap.put(new DerivedComparable("bar"),new DerivedComparable("a"));
+  multimap.put(new DerivedComparable("bar"),new DerivedComparable("r"));
+  ASSERT.that(multimap.keySet()).hasContentsInOrder(new DerivedComparable("bar"),new DerivedComparable("foo"));
+  ASSERT.that(multimap.values()).hasContentsInOrder(new DerivedComparable("a"),new DerivedComparable("b"),new DerivedComparable("r"),new DerivedComparable("f"),new DerivedComparable("o"));
+  assertEquals(Ordering.natural(),multimap.keyComparator());
+  assertEquals(Ordering.natural(),multimap.valueComparator());
+  SerializableTester.reserializeAndAssert(multimap);
+}

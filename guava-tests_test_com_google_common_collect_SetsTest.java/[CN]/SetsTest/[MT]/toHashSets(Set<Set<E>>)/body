@@ -1,0 +1,7 @@
+{
+  Set<Set<E>> result=newHashSet();
+  for (  Set<E> subset : powerSet) {
+    result.add(new HashSet<E>(subset));
+  }
+  return result;
+}

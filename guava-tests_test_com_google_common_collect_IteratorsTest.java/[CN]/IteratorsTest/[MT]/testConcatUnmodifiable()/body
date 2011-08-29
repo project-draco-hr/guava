@@ -1,0 +1,8 @@
+{
+  new IteratorTester<Integer>(5,UNMODIFIABLE,asList(1,2),IteratorTester.KnownOrder.KNOWN_ORDER){
+    @Override protected Iterator<Integer> newTargetIterator(){
+      return Iterators.concat(asList(1).iterator(),Arrays.<Integer>asList().iterator(),asList(2).iterator());
+    }
+  }
+.test();
+}

@@ -1,0 +1,5 @@
+{
+  assertEquals(LEAST,Shorts.min(LEAST));
+  assertEquals(GREATEST,Shorts.min(GREATEST));
+  assertEquals((short)0,Shorts.min((short)8,(short)6,(short)7,(short)5,(short)3,(short)0,(short)9));
+}

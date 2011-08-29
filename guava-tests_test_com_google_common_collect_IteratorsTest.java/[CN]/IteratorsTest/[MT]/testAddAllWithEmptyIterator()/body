@@ -1,0 +1,6 @@
+{
+  List<String> alreadyThere=Lists.newArrayList("already","there");
+  boolean changed=Iterators.addAll(alreadyThere,Iterators.<String>emptyIterator());
+  ASSERT.that(alreadyThere).hasContentsInOrder("already","there");
+  assertFalse(changed);
+}

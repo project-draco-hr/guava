@@ -1,0 +1,8 @@
+{
+  Builder<String,Integer> builder=ImmutableSortedMap.naturalOrder();
+  builder.put(SampleElements.Strings.AFTER_LAST,-1);
+  for (  String key : elements) {
+    builder.put(key,4);
+  }
+  return builder.build().headMap(SampleElements.Strings.AFTER_LAST).keySet();
+}

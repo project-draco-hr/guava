@@ -1,0 +1,12 @@
+{
+  Future<FooChild> future=Futures.immediateFuture(null);
+  final BarChild barChild=new BarChild();
+  Function<Foo,BarChild> function=new Function<Foo,BarChild>(){
+    @Override public BarChild apply(    Foo unused){
+      return barChild;
+    }
+  }
+;
+  Bar bar=Futures.transform(future,function).get();
+  assertSame(barChild,bar);
+}

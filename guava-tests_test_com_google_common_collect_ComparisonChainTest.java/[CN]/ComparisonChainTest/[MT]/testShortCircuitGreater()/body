@@ -1,0 +1,3 @@
+{
+  assertTrue(ComparisonChain.start().compare("b","a").compare(DONT_COMPARE_ME,DONT_COMPARE_ME).result() > 0);
+}

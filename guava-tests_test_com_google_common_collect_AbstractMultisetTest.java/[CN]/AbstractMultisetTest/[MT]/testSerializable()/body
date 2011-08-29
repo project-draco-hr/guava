@@ -1,0 +1,5 @@
+{
+  ms=createSample();
+  assertEquals(ms,SerializableTester.reserialize(ms));
+  assertSize();
+}

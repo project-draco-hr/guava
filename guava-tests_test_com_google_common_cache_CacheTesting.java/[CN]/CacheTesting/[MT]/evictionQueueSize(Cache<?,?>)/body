@@ -1,0 +1,8 @@
+{
+  CustomConcurrentHashMap<?,?> cchm=toCustomConcurrentHashMap(cache);
+  int size=0;
+  for (  Segment<?,?> segment : cchm.segments) {
+    size+=evictionQueueSize(segment);
+  }
+  return size;
+}

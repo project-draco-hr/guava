@@ -1,0 +1,4 @@
+{
+  assertEquals("foo",entry("foo",1).toString());
+  assertEquals("bar x 2",entry("bar",2).toString());
+}

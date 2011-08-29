@@ -1,0 +1,8 @@
+{
+  String[] array=new String[elements.length];
+  int i=0;
+  for (  Object e : elements) {
+    array[i++]=(String)e;
+  }
+  return create(array);
+}

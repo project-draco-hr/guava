@@ -1,0 +1,3 @@
+{
+  assertCollectionIsUnmodifiable(set,sampleElement);
+}

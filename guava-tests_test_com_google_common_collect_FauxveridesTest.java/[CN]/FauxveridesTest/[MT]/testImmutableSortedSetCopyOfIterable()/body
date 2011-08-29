@@ -1,0 +1,9 @@
+{
+  Set<Object> original=ImmutableSet.of(new Object(),new Object());
+  try {
+    ImmutableSortedSet.copyOf(original);
+    fail();
+  }
+ catch (  ClassCastException expected) {
+  }
+}

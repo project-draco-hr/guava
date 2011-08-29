@@ -1,0 +1,7 @@
+{
+  MinMaxPriorityQueue<String> mmHeap=MinMaxPriorityQueue.orderedBy(Ordering.natural().reverse()).create();
+  Collections.addAll(mmHeap,"foo","bar","foobar","barfoo","larry","sergey","eric");
+  assertTrue("Heap is not intact initially",mmHeap.isIntact());
+  assertEquals("sergey",mmHeap.peek());
+  assertEquals("bar",mmHeap.peekLast());
+}

@@ -1,0 +1,4 @@
+{
+  forward().remove("asd",23);
+  assertEquals("[remove(Object,int)]",getCalls());
+}

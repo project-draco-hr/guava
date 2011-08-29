@@ -1,0 +1,4 @@
+{
+  long value=new Stopwatch().start().elapsedTime(NANOSECONDS);
+  assertTrue(value > 0);
+}

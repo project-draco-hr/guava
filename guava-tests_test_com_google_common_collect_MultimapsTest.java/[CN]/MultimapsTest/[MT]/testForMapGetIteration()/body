@@ -1,0 +1,18 @@
+{
+  IteratorTester<Integer> tester=new IteratorTester<Integer>(4,MODIFIABLE,newHashSet(1),IteratorTester.KnownOrder.KNOWN_ORDER){
+    private Multimap<String,Integer> multimap;
+    @Override protected Iterator<Integer> newTargetIterator(){
+      Map<String,Integer> map=Maps.newHashMap();
+      map.put("foo",1);
+      map.put("bar",2);
+      multimap=Multimaps.forMap(map);
+      return multimap.get("foo").iterator();
+    }
+    @Override protected void verify(    List<Integer> elements){
+      assertEquals(newHashSet(elements),multimap.get("foo"));
+    }
+  }
+;
+  tester.ignoreSunJavaBug6529795();
+  tester.test();
+}

@@ -1,0 +1,14 @@
+{
+  try {
+    HashMultimap.create(-20,15);
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+  try {
+    HashMultimap.create(20,-15);
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}

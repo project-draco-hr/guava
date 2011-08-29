@@ -1,0 +1,6 @@
+{
+  ms.add("a",1);
+  Set<String> elementSet=ms.elementSet();
+  assertFalse(elementSet.remove("b"));
+  assertContents("a");
+}

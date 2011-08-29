@@ -1,0 +1,14 @@
+{
+  try {
+    LinkedHashMultimap.create(-20,15);
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+  try {
+    LinkedHashMultimap.create(20,-15);
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}

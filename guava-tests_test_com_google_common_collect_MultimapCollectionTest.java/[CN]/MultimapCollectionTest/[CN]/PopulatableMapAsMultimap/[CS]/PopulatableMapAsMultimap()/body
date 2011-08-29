@@ -1,0 +1,9 @@
+{
+  this.map=newHashMap();
+  this.unusableDelegate=(SetMultimap<K,V>)newProxyInstance(SetMultimap.class.getClassLoader(),new Class<?>[]{SetMultimap.class},new InvocationHandler(){
+    @Override public Object invoke(    Object proxy,    Method method,    Object[] args) throws Throwable {
+      throw new UnsupportedOperationException();
+    }
+  }
+);
+}

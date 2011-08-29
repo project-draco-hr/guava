@@ -1,0 +1,6 @@
+{
+  long duration=42;
+  TimeUnit unit=SECONDS;
+  CustomConcurrentHashMap<Object,Object> map=makeMap(createMapMaker().expireAfterAccess(duration,unit));
+  assertEquals(unit.toNanos(duration),map.expireAfterAccessNanos);
+}

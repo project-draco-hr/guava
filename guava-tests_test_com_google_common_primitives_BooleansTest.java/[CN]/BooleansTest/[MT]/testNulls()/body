@@ -1,0 +1,5 @@
+{
+  NullPointerTester tester=new NullPointerTester();
+  tester.setDefault(boolean[].class,new boolean[0]);
+  tester.testAllPublicStaticMethods(Booleans.class);
+}

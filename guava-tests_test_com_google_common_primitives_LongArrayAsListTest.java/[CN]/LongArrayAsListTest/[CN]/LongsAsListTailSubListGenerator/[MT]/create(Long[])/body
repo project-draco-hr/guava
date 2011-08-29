@@ -1,0 +1,5 @@
+{
+  Long[] prefix={(long)86,(long)99};
+  Long[] all=concat(prefix,elements);
+  return asList(all).subList(2,elements.length + 2);
+}

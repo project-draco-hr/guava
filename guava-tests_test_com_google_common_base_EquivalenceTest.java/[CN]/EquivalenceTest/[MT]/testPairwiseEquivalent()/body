@@ -1,0 +1,3 @@
+{
+  EquivalenceTester.of(Equivalences.equals().<String>pairwise()).addEquivalenceGroup(ImmutableList.<String>of()).addEquivalenceGroup(ImmutableList.of("a")).addEquivalenceGroup(ImmutableList.of("b")).addEquivalenceGroup(ImmutableList.of("a","b"),ImmutableList.of("a","b")).test();
+}

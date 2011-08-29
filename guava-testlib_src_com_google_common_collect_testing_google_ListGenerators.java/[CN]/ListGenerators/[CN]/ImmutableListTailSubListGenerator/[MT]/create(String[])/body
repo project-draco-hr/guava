@@ -1,0 +1,7 @@
+{
+  String[] prefix={"f","g"};
+  String[] all=new String[elements.length + prefix.length];
+  System.arraycopy(prefix,0,all,0,2);
+  System.arraycopy(elements,0,all,2,elements.length);
+  return ImmutableList.copyOf(all).subList(2,elements.length + 2);
+}

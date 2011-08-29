@@ -1,0 +1,8 @@
+{
+  return new ListFrobber(){
+    @Override public void perform(    List<Integer> list){
+      list.add(0,element);
+    }
+  }
+;
+}

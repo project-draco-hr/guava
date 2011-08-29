@@ -1,0 +1,10 @@
+{
+  ListeningExecutorService service=listeningDecorator(MoreExecutors.sameThreadExecutor());
+  assertSame(service,listeningDecorator(service));
+  List<Callable<String>> callables=ImmutableList.of(Callables.returning("x"));
+  List<Future<String>> results;
+  results=service.invokeAll(callables);
+  ASSERT.that(getOnlyElement(results)).isA(ListenableFutureTask.class);
+  results=service.invokeAll(callables,1,SECONDS);
+  ASSERT.that(getOnlyElement(results)).isA(ListenableFutureTask.class);
+}

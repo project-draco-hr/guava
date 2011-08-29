@@ -1,0 +1,3 @@
+{
+  return getPublicStaticMethodsBetween(ancestor,Object.class);
+}

@@ -1,0 +1,12 @@
+{
+  table=create("foo",1,'a',"bar",1,'b',"foo",3,'c');
+  assertTrue(table.contains("foo",1));
+  assertTrue(table.contains("bar",1));
+  assertTrue(table.contains("foo",3));
+  assertFalse(table.contains("foo",2));
+  assertFalse(table.contains("bar",3));
+  assertFalse(table.contains("cat",1));
+  assertFalse(table.contains("foo",null));
+  assertFalse(table.contains(null,1));
+  assertFalse(table.contains(null,null));
+}

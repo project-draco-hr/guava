@@ -1,0 +1,6 @@
+{
+  List<T> shuffledList=Lists.newArrayList(strictlyOrderedList);
+  Collections.shuffle(shuffledList,new Random(5));
+  assertEquals(strictlyOrderedList.get(0),ordering.min(shuffledList));
+  assertEquals(strictlyOrderedList.get(strictlyOrderedList.size() - 1),ordering.max(shuffledList));
+}

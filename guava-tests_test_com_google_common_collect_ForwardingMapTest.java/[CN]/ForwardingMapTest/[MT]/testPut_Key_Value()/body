@@ -1,0 +1,4 @@
+{
+  forward().put("key",false);
+  assertEquals("[put(Object,Object)]",getCalls());
+}

@@ -1,0 +1,4 @@
+{
+  Function<String,TestEnum> function=Enums.valueOfFunction(TestEnum.class);
+  SerializableTester.reserializeAndAssert(function);
+}

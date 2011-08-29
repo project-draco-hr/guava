@@ -1,0 +1,29 @@
+{
+  String mappedStr="::ffff:192.168.0.1";
+  assertTrue(InetAddresses.isMappedIPv4Address(mappedStr));
+  InetAddress mapped=InetAddresses.forString(mappedStr);
+  assertFalse(mapped instanceof Inet6Address);
+  assertEquals(InetAddress.getByName("192.168.0.1"),mapped);
+  mappedStr="::FFFF:192.168.0.1";
+  assertTrue(InetAddresses.isMappedIPv4Address(mappedStr));
+  mapped=InetAddresses.forString(mappedStr);
+  assertFalse(mapped instanceof Inet6Address);
+  assertEquals(InetAddress.getByName("192.168.0.1"),mapped);
+  mappedStr="0:00:000:0000:0:ffff:1.2.3.4";
+  assertTrue(InetAddresses.isMappedIPv4Address(mappedStr));
+  mapped=InetAddresses.forString(mappedStr);
+  assertFalse(mapped instanceof Inet6Address);
+  assertEquals(InetAddress.getByName("1.2.3.4"),mapped);
+  mappedStr="::ffff:0102:0304";
+  assertTrue(InetAddresses.isMappedIPv4Address(mappedStr));
+  mapped=InetAddresses.forString(mappedStr);
+  assertFalse(mapped instanceof Inet6Address);
+  assertEquals(InetAddress.getByName("1.2.3.4"),mapped);
+  assertFalse(InetAddresses.isMappedIPv4Address("::"));
+  assertFalse(InetAddresses.isMappedIPv4Address("::ffff"));
+  assertFalse(InetAddresses.isMappedIPv4Address("::ffff:0"));
+  assertFalse(InetAddresses.isMappedIPv4Address("::fffe:0:0"));
+  assertFalse(InetAddresses.isMappedIPv4Address("::1:ffff:0:0"));
+  assertFalse(InetAddresses.isMappedIPv4Address("foo"));
+  assertFalse(InetAddresses.isMappedIPv4Address("192.0.2.1"));
+}

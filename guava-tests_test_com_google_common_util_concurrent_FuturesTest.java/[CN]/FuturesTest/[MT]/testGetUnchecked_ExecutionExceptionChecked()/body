@@ -1,0 +1,9 @@
+{
+  try {
+    getUnchecked(FAILED_FUTURE_CHECKED_EXCEPTION);
+    fail();
+  }
+ catch (  UncheckedExecutionException expected) {
+    assertEquals(CHECKED_EXCEPTION,expected.getCause());
+  }
+}

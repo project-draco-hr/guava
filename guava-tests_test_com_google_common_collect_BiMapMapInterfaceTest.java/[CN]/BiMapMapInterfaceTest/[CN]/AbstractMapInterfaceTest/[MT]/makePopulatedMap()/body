@@ -1,0 +1,6 @@
+{
+  Map<String,Integer> map=makeEmptyMap();
+  map.put("foo",1);
+  map.put("bar",2);
+  return map;
+}

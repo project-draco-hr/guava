@@ -1,0 +1,8 @@
+{
+  multimap.put(nullKey(),nullValue());
+  multimap.put(nullKey(),3);
+  Collection<Integer> values=multimap.get(nullKey());
+  assertEquals(2,values.size());
+  assertTrue(values.contains(nullValue()));
+  assertTrue(values.contains(3));
+}

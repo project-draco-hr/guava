@@ -1,0 +1,9 @@
+{
+  new IteratorTester<List<Integer>>(5,IteratorFeature.UNMODIFIABLE,ImmutableList.of(asList(1,2,3),asList(4,5,6),asList(7,null,null)),IteratorTester.KnownOrder.KNOWN_ORDER){
+    @Override protected Iterator<List<Integer>> newTargetIterator(){
+      Iterator<Integer> source=Iterators.forArray(1,2,3,4,5,6,7);
+      return Iterators.paddedPartition(source,3);
+    }
+  }
+.test();
+}

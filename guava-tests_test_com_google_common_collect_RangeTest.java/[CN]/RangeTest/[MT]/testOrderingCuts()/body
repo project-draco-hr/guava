@@ -1,0 +1,9 @@
+{
+  Cut<Integer> a=Ranges.lessThan(0).lowerBound;
+  Cut<Integer> b=Ranges.atLeast(0).lowerBound;
+  Cut<Integer> c=Ranges.greaterThan(0).lowerBound;
+  Cut<Integer> d=Ranges.atLeast(1).lowerBound;
+  Cut<Integer> e=Ranges.greaterThan(1).lowerBound;
+  Cut<Integer> f=Ranges.greaterThan(1).upperBound;
+  Helpers.testCompareToAndEquals(ImmutableList.of(a,b,c,d,e,f));
+}

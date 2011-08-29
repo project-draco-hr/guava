@@ -1,0 +1,4 @@
+{
+  assertEquals(null,Atomics.newReference(null).get());
+  assertEquals(OBJECT,Atomics.newReference(OBJECT).get());
+}

@@ -1,0 +1,5 @@
+{
+  assertEquals(1,Ranges.closed(1,3).asSet(integers()).first().intValue());
+  assertEquals(1,Ranges.open(0,4).asSet(integers()).first().intValue());
+  assertEquals(Integer.MIN_VALUE,Ranges.<Integer>all().asSet(integers()).first().intValue());
+}

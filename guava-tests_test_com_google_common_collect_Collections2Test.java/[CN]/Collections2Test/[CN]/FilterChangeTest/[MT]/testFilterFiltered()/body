@@ -1,0 +1,28 @@
+{
+  List<String> unfiltered=newList();
+  Collection<String> filtered=Collections2.filter(Collections2.filter(unfiltered,LENGTH_1),STARTS_WITH_VOWEL);
+  unfiltered.add("a");
+  unfiltered.add("b");
+  unfiltered.add("apple");
+  unfiltered.add("banana");
+  unfiltered.add("e");
+  ASSERT.that(filtered).hasContentsInOrder("a","e");
+  ASSERT.that(unfiltered).hasContentsInOrder("a","b","apple","banana","e");
+  try {
+    filtered.add("d");
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+  try {
+    filtered.add("egg");
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+  ASSERT.that(filtered).hasContentsInOrder("a","e");
+  ASSERT.that(unfiltered).hasContentsInOrder("a","b","apple","banana","e");
+  filtered.clear();
+  ASSERT.that(filtered).isEmpty();
+  ASSERT.that(unfiltered).hasContentsInOrder("b","apple","banana");
+}

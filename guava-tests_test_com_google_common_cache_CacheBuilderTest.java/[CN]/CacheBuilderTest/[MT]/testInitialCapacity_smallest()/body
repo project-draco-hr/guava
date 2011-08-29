@@ -1,0 +1,9 @@
+{
+  Cache<?,?> cache=CacheBuilder.newBuilder().initialCapacity(0).build(identityLoader());
+  CustomConcurrentHashMap<?,?> map=CacheTesting.toCustomConcurrentHashMap(cache);
+  assertEquals(4,map.segments.length);
+  assertEquals(1,map.segments[0].table.length());
+  assertEquals(1,map.segments[1].table.length());
+  assertEquals(1,map.segments[2].table.length());
+  assertEquals(1,map.segments[3].table.length());
+}

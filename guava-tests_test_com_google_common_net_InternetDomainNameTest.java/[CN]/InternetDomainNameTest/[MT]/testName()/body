@@ -1,0 +1,11 @@
+{
+  for (  String inputName : SOMEWHERE_UNDER_PS) {
+    InternetDomainName domain=InternetDomainName.from(inputName);
+    String expectedName=inputName.toLowerCase(Locale.ENGLISH);
+    expectedName=expectedName.replaceAll("[\u3002\uFF0E\uFF61]",".");
+    if (expectedName.endsWith(".")) {
+      expectedName=expectedName.substring(0,expectedName.length() - 1);
+    }
+    assertEquals(expectedName,domain.name());
+  }
+}

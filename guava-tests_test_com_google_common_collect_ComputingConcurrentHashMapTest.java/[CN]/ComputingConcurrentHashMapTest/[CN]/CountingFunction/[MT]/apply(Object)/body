@@ -1,0 +1,4 @@
+{
+  count.incrementAndGet();
+  return new Object();
+}

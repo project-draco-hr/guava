@@ -1,0 +1,3 @@
+{
+  testExhaustively(Ordering.usingToString(),Arrays.asList(1,12,2));
+}

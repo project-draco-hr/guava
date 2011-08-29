@@ -1,0 +1,16 @@
+{
+  fromList.set(0,5);
+  assertEquals(asList("5","2","3","4"),toList);
+  fromList.add(6);
+  assertEquals(asList("5","2","3","4","6"),toList);
+  fromList.remove(Integer.valueOf(2));
+  assertEquals(asList("5","3","4","6"),toList);
+  fromList.remove(2);
+  assertEquals(asList("5","3","6"),toList);
+  toList.remove(2);
+  assertEquals(asList(5,3),fromList);
+  toList.remove("5");
+  assertEquals(asList(3),fromList);
+  toList.clear();
+  assertEquals(Collections.emptyList(),fromList);
+}

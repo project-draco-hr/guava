@@ -1,0 +1,16 @@
+{
+  Set<List<Integer>> degenerate=Sets.cartesianProduct();
+  checkHashCode(degenerate);
+  checkHashCode(Sets.cartesianProduct(set(1,2)));
+  int num=Integer.MAX_VALUE / 3 * 2;
+  checkHashCode(Sets.cartesianProduct(set(1,2,num)));
+  Set<Integer> mt=emptySet();
+  checkHashCode(Sets.cartesianProduct(mt,mt));
+  checkHashCode(Sets.cartesianProduct(mt,set(num)));
+  checkHashCode(Sets.cartesianProduct(set(num),mt));
+  checkHashCode(Sets.cartesianProduct(set(num),set(1)));
+  checkHashCode(Sets.cartesianProduct(set(1),set(2,num)));
+  checkHashCode(Sets.cartesianProduct(set(1,num),set(2,num - 1)));
+  checkHashCode(Sets.cartesianProduct(set(1,num),set(2,num - 1),set(3,num + 1)));
+  checkHashCode(Sets.cartesianProduct(set(1,num,num + 1),set(2),set(3,num + 2),set(4,5,6,7,8)));
+}

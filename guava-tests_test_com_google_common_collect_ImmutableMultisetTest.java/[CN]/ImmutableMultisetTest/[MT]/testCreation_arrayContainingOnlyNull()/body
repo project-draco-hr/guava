@@ -1,0 +1,9 @@
+{
+  String[] array=new String[]{null};
+  try {
+    ImmutableMultiset.copyOf(array);
+    fail();
+  }
+ catch (  NullPointerException expected) {
+  }
+}

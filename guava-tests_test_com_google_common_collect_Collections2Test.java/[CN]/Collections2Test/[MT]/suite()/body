@@ -1,0 +1,11 @@
+{
+  TestSuite suite=new TestSuite(Collections2Test.class.getSimpleName());
+  suite.addTest(testsForFilter());
+  suite.addTest(testsForFilterAll());
+  suite.addTest(testsForFilterLinkedList());
+  suite.addTest(testsForFilterNoNulls());
+  suite.addTest(testsForFilterFiltered());
+  suite.addTest(testsForTransform());
+  suite.addTestSuite(Collections2Test.class);
+  return suite;
+}

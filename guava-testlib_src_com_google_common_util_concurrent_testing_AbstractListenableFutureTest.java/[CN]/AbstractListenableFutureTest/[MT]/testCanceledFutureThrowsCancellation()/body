@@ -1,0 +1,25 @@
+{
+  assertFalse(future.isDone());
+  assertFalse(future.isCancelled());
+  final CountDownLatch successLatch=new CountDownLatch(1);
+  new Thread(new Runnable(){
+    @Override public void run(){
+      try {
+        future.get();
+      }
+ catch (      CancellationException expected) {
+        successLatch.countDown();
+      }
+catch (      Exception ignored) {
+      }
+    }
+  }
+).start();
+  assertFalse(future.isDone());
+  assertFalse(future.isCancelled());
+  future.cancel(true);
+  assertTrue(future.isDone());
+  assertTrue(future.isCancelled());
+  assertTrue(successLatch.await(200,TimeUnit.MILLISECONDS));
+  latch.countDown();
+}

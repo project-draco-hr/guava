@@ -1,0 +1,4 @@
+{
+  Set<String> set=ImmutableSet.of(new String[]{"one","two","three"});
+  assertEquals(of("one","two","three"),set);
+}

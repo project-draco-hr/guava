@@ -1,0 +1,21 @@
+{
+  SimpleNode a=new SimpleNode('a',null,null);
+  SimpleNode b=new SimpleNode('b',a,null);
+  SimpleNode e=new SimpleNode('e',null,null);
+  SimpleNode g=new SimpleNode('g',null,null);
+  SimpleNode f=new SimpleNode('f',e,g);
+  SimpleNode d=new SimpleNode('d',b,f);
+  assertInOrderTraversalIs(d,"abdefg");
+  GeneralRange<Character> range1=GeneralRange.upTo(Ordering.natural(),'f',CLOSED);
+  testTraversalAfterClearingRangeIs(d,range1,"g");
+  GeneralRange<Character> range2=GeneralRange.upTo(Ordering.natural(),'f',OPEN);
+  testTraversalAfterClearingRangeIs(d,range2,"fg");
+  GeneralRange<Character> range3=GeneralRange.upTo(Ordering.natural(),'a',CLOSED);
+  testTraversalAfterClearingRangeIs(d,range3,"bdefg");
+  GeneralRange<Character> range4=GeneralRange.upTo(Ordering.natural(),'a',OPEN);
+  testTraversalAfterClearingRangeIs(d,range4,"abdefg");
+  GeneralRange<Character> range5=GeneralRange.upTo(Ordering.natural(),'c',OPEN);
+  testTraversalAfterClearingRangeIs(d,range5,"defg");
+  GeneralRange<Character> range6=GeneralRange.upTo(Ordering.natural(),'c',CLOSED);
+  testTraversalAfterClearingRangeIs(d,range6,"defg");
+}

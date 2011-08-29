@@ -1,0 +1,16 @@
+{
+  Properties properties=new Properties(){
+    @Override public Enumeration<?> propertyNames(){
+      return Iterators.asEnumeration(Arrays.asList(null,"first","second").iterator());
+    }
+  }
+;
+  properties.setProperty("first","true");
+  properties.setProperty("second","null");
+  try {
+    Maps.fromProperties(properties);
+    fail();
+  }
+ catch (  NullPointerException expected) {
+  }
+}

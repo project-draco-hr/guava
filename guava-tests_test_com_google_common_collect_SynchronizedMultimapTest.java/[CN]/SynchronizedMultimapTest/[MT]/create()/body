@@ -1,0 +1,5 @@
+{
+  TestMultimap<String,Integer> inner=new TestMultimap<String,Integer>();
+  Multimap<String,Integer> outer=Synchronized.multimap(inner,inner.mutex);
+  return outer;
+}

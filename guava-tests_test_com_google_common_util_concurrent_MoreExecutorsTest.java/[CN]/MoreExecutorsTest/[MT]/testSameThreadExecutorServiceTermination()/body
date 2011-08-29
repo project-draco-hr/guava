@@ -1,0 +1,64 @@
+{
+  final ExecutorService executor=MoreExecutors.sameThreadExecutor();
+  final CyclicBarrier barrier=new CyclicBarrier(2);
+  final AtomicReference<Throwable> throwableFromOtherThread=new AtomicReference<Throwable>(null);
+  final Runnable doNothingRunnable=new Runnable(){
+    @Override public void run(){
+    }
+  }
+;
+  Thread otherThread=new Thread(new Runnable(){
+    @Override public void run(){
+      try {
+        Future<?> future=executor.submit(new Callable<Void>(){
+          @Override public Void call() throws Exception {
+            barrier.await(1,TimeUnit.SECONDS);
+            barrier.await(1,TimeUnit.SECONDS);
+            assertTrue(executor.isShutdown());
+            assertFalse(executor.isTerminated());
+            barrier.await(1,TimeUnit.SECONDS);
+            return null;
+          }
+        }
+);
+        assertTrue(future.isDone());
+        assertTrue(executor.isShutdown());
+        assertTrue(executor.isTerminated());
+      }
+ catch (      Throwable Throwable) {
+        throwableFromOtherThread.set(Throwable);
+      }
+    }
+  }
+);
+  otherThread.start();
+  barrier.await(1,TimeUnit.SECONDS);
+  assertFalse(executor.isShutdown());
+  assertFalse(executor.isTerminated());
+  executor.shutdown();
+  assertTrue(executor.isShutdown());
+  try {
+    executor.submit(doNothingRunnable);
+    fail("Should have encountered RejectedExecutionException");
+  }
+ catch (  RejectedExecutionException ex) {
+  }
+  assertFalse(executor.isTerminated());
+  barrier.await(1,TimeUnit.SECONDS);
+  assertFalse(executor.awaitTermination(20,TimeUnit.MILLISECONDS));
+  barrier.await(1,TimeUnit.SECONDS);
+  assertTrue(executor.awaitTermination(1,TimeUnit.SECONDS));
+  assertTrue(executor.awaitTermination(0,TimeUnit.SECONDS));
+  assertTrue(executor.isShutdown());
+  try {
+    executor.submit(doNothingRunnable);
+    fail("Should have encountered RejectedExecutionException");
+  }
+ catch (  RejectedExecutionException ex) {
+  }
+  assertTrue(executor.isTerminated());
+  otherThread.join(1000);
+  assertEquals(Thread.State.TERMINATED,otherThread.getState());
+  Throwable throwable=throwableFromOtherThread.get();
+  assertNull("Throwable from other thread: " + (throwable == null ? null : Throwables.getStackTraceAsString(throwable)),throwableFromOtherThread.get());
+}

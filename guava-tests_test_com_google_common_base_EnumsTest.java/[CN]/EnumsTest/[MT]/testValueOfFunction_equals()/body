@@ -1,0 +1,3 @@
+{
+  new EqualsTester().addEqualityGroup(Enums.valueOfFunction(TestEnum.class),Enums.valueOfFunction(TestEnum.class)).addEqualityGroup(Enums.valueOfFunction(OtherEnum.class)).testEquals();
+}

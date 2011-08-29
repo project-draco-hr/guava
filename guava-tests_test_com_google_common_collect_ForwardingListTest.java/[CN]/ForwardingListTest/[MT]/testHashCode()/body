@@ -1,0 +1,4 @@
+{
+  forward.hashCode();
+  assertEquals("[hashCode]",getCalls());
+}

@@ -1,0 +1,10 @@
+{
+  InternetDomainName domain=InternetDomainName.from("foo.com");
+  assertEquals("www.foo.com",domain.child("www").name());
+  try {
+    domain.child("www.");
+    fail("www..google.com should have been invalid");
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}

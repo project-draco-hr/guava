@@ -1,0 +1,11 @@
+{
+  Multimap<Double,Double> hash=HashMultimap.create();
+  hash.put(1.0,2.0);
+  hash.put(2.0,3.0);
+  hash.put(3.0,4.0);
+  hash.put(4.0,5.0);
+  TreeMultimap<Double,Double> copyFromHash=TreeMultimap.create(hash);
+  assertEquals(hash,copyFromHash);
+  assertEquals(Ordering.natural(),copyFromHash.keyComparator());
+  assertEquals(Ordering.natural(),copyFromHash.valueComparator());
+}

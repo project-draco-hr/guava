@@ -1,0 +1,6 @@
+{
+  AtomicInteger numOccur=replica.get(value);
+  if (numOccur.decrementAndGet() == 0) {
+    replica.remove(value);
+  }
+}

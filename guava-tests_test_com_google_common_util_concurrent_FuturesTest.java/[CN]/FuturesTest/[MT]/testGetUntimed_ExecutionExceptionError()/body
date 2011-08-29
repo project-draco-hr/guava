@@ -1,0 +1,9 @@
+{
+  try {
+    get(FAILED_FUTURE_ERROR,TwoArgConstructorException.class);
+    fail();
+  }
+ catch (  ExecutionError expected) {
+    assertEquals(ERROR,expected.getCause());
+  }
+}

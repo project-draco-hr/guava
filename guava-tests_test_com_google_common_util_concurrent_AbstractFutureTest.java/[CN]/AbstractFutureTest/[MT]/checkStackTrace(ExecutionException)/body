@@ -1,0 +1,5 @@
+{
+  int index=findStackFrame(e,getClass().getName(),"getExpectingExecutionException");
+  ASSERT.that(index).isNotEqualTo(0);
+  ASSERT.that(e.getStackTrace()[index - 1].getMethodName()).isEqualTo("get");
+}

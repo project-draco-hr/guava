@@ -1,0 +1,15 @@
+{
+  multimap.put(nullKey(),1);
+  multimap.put(nullKey(),3);
+  multimap.put(nullKey(),nullValue());
+  assertTrue(multimap.remove(nullKey(),1));
+  assertFalse(multimap.containsEntry(nullKey(),1));
+  assertTrue(multimap.containsEntry(nullKey(),3));
+  assertTrue(multimap.containsEntry(nullKey(),nullValue()));
+  assertSize(2);
+  assertTrue(multimap.remove(nullKey(),nullValue()));
+  assertFalse(multimap.containsEntry(nullKey(),1));
+  assertTrue(multimap.containsEntry(nullKey(),3));
+  assertFalse(multimap.containsEntry(nullKey(),nullValue()));
+  assertSize(1);
+}

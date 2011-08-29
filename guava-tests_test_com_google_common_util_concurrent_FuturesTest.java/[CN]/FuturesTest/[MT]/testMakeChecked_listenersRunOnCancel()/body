@@ -1,0 +1,14 @@
+{
+  SettableFuture<String> future=SettableFuture.create();
+  CheckedFuture<String,TestException> checked=Futures.makeChecked(future,new Function<Exception,TestException>(){
+    @Override public TestException apply(    Exception from){
+      throw new NullPointerException();
+    }
+  }
+);
+  ListenableFutureTester tester=new ListenableFutureTester(checked);
+  tester.setUp();
+  future.cancel(true);
+  tester.testCancelledFuture();
+  tester.tearDown();
+}

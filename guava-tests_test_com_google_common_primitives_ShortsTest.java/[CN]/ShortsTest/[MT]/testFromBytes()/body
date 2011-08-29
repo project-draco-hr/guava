@@ -1,0 +1,4 @@
+{
+  assertEquals((short)0x2345,Shorts.fromBytes((byte)0x23,(byte)0x45));
+  assertEquals((short)0xFEDC,Shorts.fromBytes((byte)0xFE,(byte)0xDC));
+}

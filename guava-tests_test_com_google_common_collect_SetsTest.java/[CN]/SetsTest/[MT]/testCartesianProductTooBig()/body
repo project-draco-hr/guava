@@ -1,0 +1,9 @@
+{
+  Set<Integer> set=Ranges.closed(0,10000).asSet(DiscreteDomains.integers());
+  try {
+    Set<List<Integer>> productSet=Sets.cartesianProduct(set,set,set,set,set);
+    fail("Expected IAE");
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}

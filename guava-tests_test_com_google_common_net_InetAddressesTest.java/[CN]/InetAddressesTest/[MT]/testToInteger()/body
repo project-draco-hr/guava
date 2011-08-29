@@ -1,0 +1,4 @@
+{
+  InetAddress ipv4Addr=InetAddresses.forString("127.0.0.1");
+  assertEquals(0x7f000001,InetAddresses.coerceToInteger(ipv4Addr));
+}

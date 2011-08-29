@@ -1,0 +1,35 @@
+{
+  SettableFuture<String> future=SettableFuture.create();
+  CheckedFuture<String,TestException> checked=Futures.makeChecked(future,mapper);
+  future.setException(new IOException("checked"));
+  assertTrue(checked.isDone());
+  assertFalse(checked.isCancelled());
+  try {
+    checked.get();
+    fail();
+  }
+ catch (  ExecutionException e) {
+    assertTrue(e.getCause() instanceof IOException);
+  }
+  try {
+    checked.get(5,TimeUnit.SECONDS);
+    fail();
+  }
+ catch (  ExecutionException e) {
+    assertTrue(e.getCause() instanceof IOException);
+  }
+  try {
+    checked.checkedGet();
+    fail();
+  }
+ catch (  TestException e) {
+    assertTrue(e.getCause() instanceof IOException);
+  }
+  try {
+    checked.checkedGet(5,TimeUnit.SECONDS);
+    fail();
+  }
+ catch (  TestException e) {
+    assertTrue(e.getCause() instanceof IOException);
+  }
+}

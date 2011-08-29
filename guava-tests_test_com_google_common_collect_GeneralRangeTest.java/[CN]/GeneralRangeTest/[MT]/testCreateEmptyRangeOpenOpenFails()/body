@@ -1,0 +1,10 @@
+{
+  for (int i=1; i <= 5; i++) {
+    try {
+      GeneralRange<Integer> range=GeneralRange.range(Ordering.natural(),i,OPEN,i,OPEN);
+      fail("Expected IAE");
+    }
+ catch (    IllegalArgumentException expected) {
+    }
+  }
+}

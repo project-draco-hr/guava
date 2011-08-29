@@ -1,0 +1,7 @@
+{
+  for (  char x : VALUES) {
+    for (    char y : VALUES) {
+      assertEquals(x + ", " + y,Character.valueOf(x).compareTo(y),Chars.compare(x,y));
+    }
+  }
+}

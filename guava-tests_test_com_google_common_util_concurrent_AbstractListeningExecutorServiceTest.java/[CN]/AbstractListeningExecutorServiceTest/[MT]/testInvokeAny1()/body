@@ -1,0 +1,12 @@
+{
+  ExecutorService e=new DirectExecutorService();
+  try {
+    e.invokeAny(null);
+    shouldThrow();
+  }
+ catch (  NullPointerException success) {
+  }
+ finally {
+    joinPool(e);
+  }
+}

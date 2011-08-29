@@ -1,0 +1,4 @@
+{
+  forward.hasNext();
+  assertEquals("[hasNext]",getCalls());
+}

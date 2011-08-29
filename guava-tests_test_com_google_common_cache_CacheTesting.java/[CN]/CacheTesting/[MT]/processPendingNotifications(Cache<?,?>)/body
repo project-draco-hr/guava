@@ -1,0 +1,6 @@
+{
+  if (hasCustomConcurrentHashMap(cache)) {
+    CustomConcurrentHashMap<?,?> cchm=toCustomConcurrentHashMap(cache);
+    cchm.processPendingNotifications();
+  }
+}

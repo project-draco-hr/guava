@@ -3,21 +3,21 @@
     return true;
   }
   checkArgument(occurrences > 0,"Invalid occurrences: %s",occurrences);
+  AtomicInteger existingCounter=safeGet(element);
+  if (existingCounter == null) {
+    return false;
+  }
   while (true) {
-    int current=count(element);
-    if (occurrences > current) {
+    int oldValue=existingCounter.get();
+    if (oldValue < occurrences) {
       return false;
     }
-    if (occurrences == current) {
-      if (countMap.remove(element,occurrences)) {
-        return true;
+    int newValue=oldValue - occurrences;
+    if (existingCounter.compareAndSet(oldValue,newValue)) {
+      if (newValue == 0) {
+        countMap.remove(element,existingCounter);
       }
-    }
- else {
-      @SuppressWarnings("unchecked") E casted=(E)element;
-      if (countMap.replace(casted,current,current - occurrences)) {
-        return true;
-      }
+      return true;
     }
   }
 }

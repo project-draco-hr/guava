@@ -1,0 +1,2 @@
+Ordering<? super T> ordering
+List<T> list

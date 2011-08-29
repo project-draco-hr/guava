@@ -1,0 +1,4 @@
+{
+  Iterator<String> set=asList("a","b").iterator();
+  assertFalse(Iterators.contains(set,"c"));
+}

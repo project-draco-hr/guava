@@ -1,0 +1,14 @@
+{
+  try {
+    ArrayListMultimap.create(15,-2);
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+  try {
+    ArrayListMultimap.create(-15,2);
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}

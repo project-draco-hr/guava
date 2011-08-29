@@ -1,0 +1,4 @@
+{
+  forward.remove("asfd",Collections.<Boolean>emptyList());
+  assertEquals("[remove(Object,Object)]",getCalls());
+}

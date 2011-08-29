@@ -1,0 +1,6 @@
+{
+  setupFlushable(false);
+  doFlush(mockFlushable,false,false);
+  setupFlushable(false);
+  doFlush(mockFlushable,true,false);
+}

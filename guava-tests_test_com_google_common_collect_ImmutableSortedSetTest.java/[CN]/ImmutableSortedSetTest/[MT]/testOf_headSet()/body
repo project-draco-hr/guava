@@ -1,0 +1,8 @@
+{
+  SortedSet<String> set=of("e","f","b","d","c");
+  assertTrue(set.headSet("e") instanceof ImmutableSortedSet);
+  ASSERT.that(set.headSet("e")).hasContentsInOrder("b","c","d");
+  ASSERT.that(set.headSet("g")).hasContentsInOrder("b","c","d","e","f");
+  assertSame(of(),set.headSet("a"));
+  assertSame(of(),set.headSet("b"));
+}

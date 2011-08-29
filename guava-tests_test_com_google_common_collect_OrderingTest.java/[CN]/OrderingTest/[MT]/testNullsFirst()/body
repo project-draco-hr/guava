@@ -1,0 +1,4 @@
+{
+  Ordering<Integer> ordering=Ordering.natural().nullsFirst();
+  Helpers.testComparator(ordering,null,Integer.MIN_VALUE,0,1);
+}

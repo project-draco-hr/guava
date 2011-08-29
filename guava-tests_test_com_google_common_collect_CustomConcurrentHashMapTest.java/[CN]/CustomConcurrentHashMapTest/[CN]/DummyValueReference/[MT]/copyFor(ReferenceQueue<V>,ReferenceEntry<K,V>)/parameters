@@ -1,0 +1,2 @@
+ReferenceQueue<V> queue
+ReferenceEntry<K,V> entry

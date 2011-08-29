@@ -1,0 +1,18 @@
+{
+  final List<String> lines=Lists.newArrayList();
+  LineBuffer lineBuf=new LineBuffer(){
+    @Override protected void handleLine(    String line,    String end){
+      lines.add(line + end);
+    }
+  }
+;
+  char[] chars=input.toCharArray();
+  int off=0;
+  while (off < chars.length) {
+    int len=Math.min(chars.length,off + chunk) - off;
+    lineBuf.add(chars,off,len);
+    off+=len;
+  }
+  lineBuf.finish();
+  return lines;
+}

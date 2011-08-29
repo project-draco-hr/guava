@@ -1,0 +1,10 @@
+{
+  executionThread=new Thread(runnable);
+  executionThread.setUncaughtExceptionHandler(new UncaughtExceptionHandler(){
+    @Override public void uncaughtException(    Thread thread,    Throwable e){
+      thrownByExecutionThread=e;
+    }
+  }
+);
+  executionThread.start();
+}

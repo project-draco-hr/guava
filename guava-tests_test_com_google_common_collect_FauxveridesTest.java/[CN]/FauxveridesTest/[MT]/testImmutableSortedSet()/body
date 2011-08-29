@@ -1,0 +1,3 @@
+{
+  doHasAllFauxveridesTest(ImmutableSortedSet.class,ImmutableSet.class);
+}

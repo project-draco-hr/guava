@@ -1,0 +1,11 @@
+{
+  SimpleNode c=new SimpleNode('c',null,null);
+  SimpleNode b=new SimpleNode('b',null,c);
+  SimpleNode e=new SimpleNode('e',null,null);
+  SimpleNode g=new SimpleNode('g',null,null);
+  SimpleNode f=new SimpleNode('f',e,g);
+  SimpleNode d=new SimpleNode('d',b,f);
+  GeneralRange<Character> range1=GeneralRange.all(Ordering.natural());
+  ASSERT.that(pathToList(BstRangeOps.furthestPath(range1,RIGHT,pathFactory,d))).hasContentsInOrder(g,f,d);
+  assertNull(BstRangeOps.furthestPath(range1,RIGHT,pathFactory,null));
+}

@@ -1,0 +1,5 @@
+{
+  SimpleNode leaf=new SimpleNode('a',null,null);
+  testLacksChild(leaf,LEFT);
+  testLacksChild(leaf,RIGHT);
+}

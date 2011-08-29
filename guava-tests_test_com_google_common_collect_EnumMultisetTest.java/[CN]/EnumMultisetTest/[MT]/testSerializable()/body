@@ -1,0 +1,4 @@
+{
+  Multiset<Color> ms=EnumMultiset.create(asList(Color.RED,Color.YELLOW,Color.RED));
+  assertEquals(ms,SerializableTester.reserialize(ms));
+}

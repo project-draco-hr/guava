@@ -1,0 +1,11 @@
+{
+  try {
+    future.get(20,TimeUnit.MILLISECONDS);
+    fail("Should have timed out trying to get the value.");
+  }
+ catch (  TimeoutException expected) {
+  }
+ finally {
+    latch.countDown();
+  }
+}

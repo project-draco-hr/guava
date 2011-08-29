@@ -1,0 +1,19 @@
+{
+  TestSuite suite=new TestSuite();
+  suite.addTestSuite(TreeBasedTableTest.class);
+  suite.addTestSuite(TreeRowTest.class);
+  suite.addTest(MapTestSuiteBuilder.using(new TestStringMapGenerator(){
+    @Override protected Map<String,String> create(    Entry<String,String>[] entries){
+      TreeBasedTable<String,String,String> table=TreeBasedTable.create();
+      table.put("a","b","c");
+      table.put("c","b","a");
+      table.put("a","a","d");
+      for (      Entry<String,String> entry : entries) {
+        table.put("b",entry.getKey(),entry.getValue());
+      }
+      return table.row("b");
+    }
+  }
+).withFeatures(MapFeature.GENERAL_PURPOSE,CollectionSize.ANY).named("RowMapTestSuite").createTestSuite());
+  return suite;
+}

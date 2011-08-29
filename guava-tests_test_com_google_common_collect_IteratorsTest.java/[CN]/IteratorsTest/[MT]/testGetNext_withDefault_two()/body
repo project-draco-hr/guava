@@ -1,0 +1,4 @@
+{
+  Iterator<String> iterator=asList("foo","bar").iterator();
+  assertEquals("foo",Iterators.getNext(iterator,"x"));
+}

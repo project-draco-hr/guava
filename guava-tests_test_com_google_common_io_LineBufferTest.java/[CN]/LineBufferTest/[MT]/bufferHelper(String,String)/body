@@ -1,0 +1,16 @@
+{
+  List<String> expectProcess=Arrays.asList(expect);
+  List<String> expectRead=Lists.transform(expectProcess,new Function<String,String>(){
+    @Override public String apply(    String value){
+      return value.replaceAll("[\\r\\n]","");
+    }
+  }
+);
+  for (  int chunk : CHUNK_SIZES) {
+    chunk=Math.max(1,Math.min(chunk,input.length()));
+    assertEquals(expectProcess,bufferHelper(input,chunk));
+    assertEquals(expectRead,readUsingJava(input,chunk));
+    assertEquals(expectRead,readUsingReader(input,chunk,true));
+    assertEquals(expectRead,readUsingReader(input,chunk,false));
+  }
+}

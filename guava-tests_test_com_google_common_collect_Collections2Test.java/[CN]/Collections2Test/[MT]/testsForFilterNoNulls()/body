@@ -1,0 +1,12 @@
+{
+  return CollectionTestSuiteBuilder.using(new TestStringCollectionGenerator(){
+    @Override public Collection<String> create(    String[] elements){
+      List<String> unfiltered=newArrayList();
+      unfiltered.add("yyy");
+      unfiltered.addAll(ImmutableList.copyOf(elements));
+      unfiltered.add("zzz");
+      return Collections2.filter(unfiltered,LENGTH_1);
+    }
+  }
+).named("Collections2.filter, no nulls").withFeatures(CollectionFeature.GENERAL_PURPOSE,CollectionFeature.ALLOWS_NULL_QUERIES,CollectionFeature.KNOWN_ORDER,CollectionSize.ANY).suppressing(getIteratorKnownOrderRemoveSupportedMethod()).createTestSuite();
+}

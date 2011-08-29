@@ -1,0 +1,9 @@
+{
+  List<byte[]> ordered=Arrays.asList(new byte[]{},new byte[]{LEAST},new byte[]{LEAST,LEAST},new byte[]{LEAST,(byte)1},new byte[]{(byte)1},new byte[]{(byte)1,LEAST},new byte[]{GREATEST,GREATEST - (byte)1},new byte[]{GREATEST,GREATEST},new byte[]{GREATEST,GREATEST,GREATEST});
+  Comparator<byte[]> comparator=UnsignedBytes.lexicographicalComparator();
+  Helpers.testComparator(comparator,ordered);
+  assertSame(comparator,SerializableTester.reserialize(comparator));
+  Comparator<byte[]> javaImpl=UnsignedBytes.lexicographicalComparatorJavaImpl();
+  Helpers.testComparator(javaImpl,ordered);
+  assertSame(javaImpl,SerializableTester.reserialize(javaImpl));
+}

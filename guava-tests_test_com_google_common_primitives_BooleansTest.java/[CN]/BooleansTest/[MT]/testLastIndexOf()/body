@@ -1,0 +1,9 @@
+{
+  assertEquals(-1,Booleans.lastIndexOf(EMPTY,false));
+  assertEquals(-1,Booleans.lastIndexOf(ARRAY_FALSE,true));
+  assertEquals(-1,Booleans.lastIndexOf(ARRAY_FALSE_FALSE,true));
+  assertEquals(0,Booleans.lastIndexOf(ARRAY_FALSE,false));
+  assertEquals(0,Booleans.lastIndexOf(ARRAY_FALSE_TRUE,false));
+  assertEquals(1,Booleans.lastIndexOf(ARRAY_FALSE_TRUE,true));
+  assertEquals(2,Booleans.lastIndexOf(new boolean[]{false,true,true},true));
+}

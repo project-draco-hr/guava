@@ -1,0 +1,14 @@
+{
+  String begin="abcde";
+  String end="fghij";
+  @SuppressWarnings("unchecked") Reader joinedReader=CharStreams.join(newReader(begin),newReader(end)).getInput();
+  String expected=begin + end;
+  assertEquals(expected.charAt(0),joinedReader.read());
+  CharStreams.skipFully(joinedReader,1);
+  assertEquals(expected.charAt(2),joinedReader.read());
+  CharStreams.skipFully(joinedReader,4);
+  assertEquals(expected.charAt(7),joinedReader.read());
+  CharStreams.skipFully(joinedReader,1);
+  assertEquals(expected.charAt(9),joinedReader.read());
+  assertEquals(-1,joinedReader.read());
+}

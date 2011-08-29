@@ -1,0 +1,5 @@
+{
+  assertSame(int.class,Primitives.unwrap(Integer.class));
+  assertSame(int.class,Primitives.unwrap(int.class));
+  assertSame(String.class,Primitives.unwrap(String.class));
+}

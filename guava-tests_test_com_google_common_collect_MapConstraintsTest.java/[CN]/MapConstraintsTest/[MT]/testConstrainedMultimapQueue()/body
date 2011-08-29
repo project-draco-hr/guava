@@ -1,0 +1,33 @@
+{
+  Multimap<String,Integer> multimap=Multimaps.newMultimap(new HashMap<String,Collection<Integer>>(),new QueueSupplier());
+  Multimap<String,Integer> constrained=MapConstraints.constrainedMultimap(multimap,TEST_CONSTRAINT);
+  constrained.put("foo",1);
+  assertTrue(constrained.get("foo").contains(1));
+  assertTrue(multimap.get("foo").contains(1));
+  try {
+    constrained.put(TEST_KEY,1);
+    fail("TestKeyException expected");
+  }
+ catch (  TestKeyException expected) {
+  }
+  try {
+    constrained.put("foo",TEST_VALUE);
+    fail("TestValueException expected");
+  }
+ catch (  TestValueException expected) {
+  }
+  try {
+    constrained.get("foo").add(TEST_VALUE);
+    fail("TestKeyException expected");
+  }
+ catch (  TestValueException expected) {
+  }
+  try {
+    constrained.get(TEST_KEY).add(1);
+    fail("TestValueException expected");
+  }
+ catch (  TestKeyException expected) {
+  }
+  assertEquals(1,constrained.size());
+  assertEquals(1,multimap.size());
+}

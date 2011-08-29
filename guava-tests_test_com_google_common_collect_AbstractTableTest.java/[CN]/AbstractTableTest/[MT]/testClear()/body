@@ -1,0 +1,16 @@
+{
+  table=create("foo",1,'a',"bar",1,'b',"foo",3,'c');
+  if (supportsRemove()) {
+    table.clear();
+    assertEquals(0,table.size());
+    assertFalse(table.containsRow("foo"));
+  }
+ else {
+    try {
+      table.clear();
+      fail();
+    }
+ catch (    UnsupportedOperationException expected) {
+    }
+  }
+}

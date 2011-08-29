@@ -3,4 +3,5 @@
   Preconditions.checkNotNull(method,"EventHandler method cannot be null.");
   this.target=target;
   this.method=method;
+  method.setAccessible(true);
 }

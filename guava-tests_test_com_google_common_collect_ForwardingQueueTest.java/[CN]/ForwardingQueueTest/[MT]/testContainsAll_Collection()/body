@@ -1,0 +1,4 @@
+{
+  forward.containsAll(Collections.singleton("asdf"));
+  assertEquals("[containsAll(Collection)]",getCalls());
+}

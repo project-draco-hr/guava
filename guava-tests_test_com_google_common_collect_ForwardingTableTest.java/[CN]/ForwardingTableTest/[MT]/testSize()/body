@@ -1,0 +1,4 @@
+{
+  forward.size();
+  assertEquals("[size]",getCalls());
+}

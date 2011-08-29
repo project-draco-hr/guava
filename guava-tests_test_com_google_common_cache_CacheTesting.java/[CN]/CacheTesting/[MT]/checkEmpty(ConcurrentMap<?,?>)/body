@@ -1,0 +1,20 @@
+{
+  checkEmpty(map.keySet());
+  checkEmpty(map.values());
+  checkEmpty(map.entrySet());
+  assertEquals(ImmutableMap.of(),map);
+  assertEquals(ImmutableMap.of().hashCode(),map.hashCode());
+  assertEquals(ImmutableMap.of().toString(),map.toString());
+  if (map instanceof CustomConcurrentHashMap) {
+    CustomConcurrentHashMap<?,?> cchm=(CustomConcurrentHashMap<?,?>)map;
+    checkValidState(cchm);
+    assertTrue(cchm.isEmpty());
+    assertEquals(0,cchm.size());
+    for (    CustomConcurrentHashMap.Segment segment : cchm.segments) {
+      assertEquals(0,segment.count);
+      assertEquals(0,segmentSize(segment));
+      assertTrue(segment.expirationQueue.isEmpty());
+      assertTrue(segment.evictionQueue.isEmpty());
+    }
+  }
+}

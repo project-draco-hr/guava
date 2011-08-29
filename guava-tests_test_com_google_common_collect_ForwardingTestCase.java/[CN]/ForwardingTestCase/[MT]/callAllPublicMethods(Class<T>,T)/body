@@ -1,0 +1,24 @@
+{
+  for (  Method method : theClass.getMethods()) {
+    Class<?>[] parameterTypes=method.getParameterTypes();
+    Object[] parameters=new Object[parameterTypes.length];
+    for (int i=0; i < parameterTypes.length; i++) {
+      parameters[i]=getDefaultValue(parameterTypes[i]);
+    }
+    try {
+      try {
+        method.invoke(object,parameters);
+      }
+ catch (      InvocationTargetException ex) {
+        try {
+          throw ex.getCause();
+        }
+ catch (        UnsupportedOperationException unsupported) {
+        }
+      }
+    }
+ catch (    Throwable cause) {
+      throw new InvocationTargetException(cause,method.toString() + " with args: " + Arrays.toString(parameters));
+    }
+  }
+}

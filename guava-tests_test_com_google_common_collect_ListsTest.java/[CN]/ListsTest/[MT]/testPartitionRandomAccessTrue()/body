@@ -1,0 +1,7 @@
+{
+  List<Integer> source=asList(1,2,3);
+  List<List<Integer>> partitions=Lists.partition(source,2);
+  assertTrue("partition should be RandomAccess, but not: " + partitions.getClass(),partitions instanceof RandomAccess);
+  assertTrue("partition[0] should be RandomAccess, but not: " + partitions.get(0).getClass(),partitions.get(0) instanceof RandomAccess);
+  assertTrue("partition[1] should be RandomAccess, but not: " + partitions.get(1).getClass(),partitions.get(1) instanceof RandomAccess);
+}

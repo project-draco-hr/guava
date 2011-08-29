@@ -1,0 +1,4 @@
+{
+  delegate.cancel(true);
+  tester.testCancelledFuture();
+}

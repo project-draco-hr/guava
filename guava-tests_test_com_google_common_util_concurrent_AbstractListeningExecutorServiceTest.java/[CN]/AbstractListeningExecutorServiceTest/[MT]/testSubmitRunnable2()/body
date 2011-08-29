@@ -1,0 +1,6 @@
+{
+  ExecutorService e=new DirectExecutorService();
+  Future<String> future=e.submit(new NoOpRunnable(),TEST_STRING);
+  String result=future.get();
+  assertSame(TEST_STRING,result);
+}

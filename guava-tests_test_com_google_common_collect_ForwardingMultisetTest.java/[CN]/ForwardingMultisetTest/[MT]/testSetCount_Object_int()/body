@@ -1,0 +1,4 @@
+{
+  forward().setCount("asdf",233);
+  assertEquals("[setCount(Object,int)]",getCalls());
+}

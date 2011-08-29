@@ -1,0 +1,9 @@
+{
+  CountDownLatch countDownLatch=new CountDownLatch(3);
+  list.add(new MockRunnable(countDownLatch),exec);
+  list.add(new MockRunnable(countDownLatch),exec);
+  list.add(new MockRunnable(countDownLatch),exec);
+  assertEquals(countDownLatch.getCount(),3L);
+  list.execute();
+  assertTrue(countDownLatch.await(1L,TimeUnit.SECONDS));
+}

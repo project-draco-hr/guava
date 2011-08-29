@@ -1,0 +1,14 @@
+{
+  putOneTwoThree();
+  assertTrue(bimap.containsKey(1));
+  assertTrue(bimap.containsValue("one"));
+  assertTrue(entrySet.remove(Maps.immutableEntry(1,"one")));
+  assertFalse(bimap.containsKey(1));
+  assertFalse(bimap.containsValue("one"));
+  assertEquals(2,bimap.size());
+  assertEquals(2,bimap.inverse().size());
+  assertFalse(entrySet.remove(Maps.immutableEntry(2,"three")));
+  assertFalse(entrySet.remove(3));
+  assertEquals(2,bimap.size());
+  assertEquals(2,bimap.inverse().size());
+}

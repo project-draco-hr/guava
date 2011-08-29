@@ -1,0 +1,4 @@
+{
+  assertEquals(10,counter.read(new byte[10]));
+  assertEquals(10,counter.getCount());
+}

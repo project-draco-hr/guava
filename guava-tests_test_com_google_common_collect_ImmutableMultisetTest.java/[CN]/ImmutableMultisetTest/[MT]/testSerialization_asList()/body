@@ -1,0 +1,4 @@
+{
+  ImmutableMultiset<String> multiset=ImmutableMultiset.of("a","a","b","b","b");
+  SerializableTester.reserializeAndAssert(multiset.asList());
+}

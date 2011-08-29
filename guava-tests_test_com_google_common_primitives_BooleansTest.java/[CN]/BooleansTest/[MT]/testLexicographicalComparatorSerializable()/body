@@ -1,0 +1,4 @@
+{
+  Comparator<boolean[]> comparator=Booleans.lexicographicalComparator();
+  assertSame(comparator,SerializableTester.reserialize(comparator));
+}

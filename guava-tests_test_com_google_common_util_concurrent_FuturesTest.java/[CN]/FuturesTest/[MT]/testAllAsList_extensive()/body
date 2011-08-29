@@ -1,0 +1,3 @@
+{
+  runExtensiveMergerTest(Merger.allMerger);
+}

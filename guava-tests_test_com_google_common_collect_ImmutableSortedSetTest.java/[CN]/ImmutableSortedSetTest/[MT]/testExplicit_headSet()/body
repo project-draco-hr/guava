@@ -1,0 +1,9 @@
+{
+  SortedSet<String> set=ImmutableSortedSet.orderedBy(STRING_LENGTH).add("in","the","quick","jumped","over","a").build();
+  assertTrue(set.headSet("a") instanceof ImmutableSortedSet);
+  assertTrue(set.headSet("fish") instanceof ImmutableSortedSet);
+  ASSERT.that(set.headSet("fish")).hasContentsInOrder("a","in","the");
+  ASSERT.that(set.headSet("california")).hasContentsInOrder("a","in","the","over","quick","jumped");
+  assertTrue(set.headSet("a").isEmpty());
+  assertTrue(set.headSet("").isEmpty());
+}

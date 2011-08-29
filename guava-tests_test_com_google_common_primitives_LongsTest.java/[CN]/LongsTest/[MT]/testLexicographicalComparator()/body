@@ -1,0 +1,5 @@
+{
+  List<long[]> ordered=Arrays.asList(new long[]{},new long[]{LEAST},new long[]{LEAST,LEAST},new long[]{LEAST,(long)1},new long[]{(long)1},new long[]{(long)1,LEAST},new long[]{GREATEST,GREATEST - (long)1},new long[]{GREATEST,GREATEST},new long[]{GREATEST,GREATEST,GREATEST});
+  Comparator<long[]> comparator=Longs.lexicographicalComparator();
+  Helpers.testComparator(comparator,ordered);
+}

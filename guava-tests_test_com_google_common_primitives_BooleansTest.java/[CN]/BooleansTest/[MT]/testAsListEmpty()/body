@@ -1,0 +1,3 @@
+{
+  assertSame(Collections.emptyList(),Booleans.asList(EMPTY));
+}

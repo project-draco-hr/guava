@@ -1,0 +1,10 @@
+{
+  Assert.assertTrue(countDownLatch.await(1L,TimeUnit.SECONDS));
+  try {
+    future.get();
+    Assert.fail("This call was supposed to throw an ExecutionException");
+  }
+ catch (  ExecutionException expected) {
+    Assert.assertSame(expectedCause,expected.getCause());
+  }
+}

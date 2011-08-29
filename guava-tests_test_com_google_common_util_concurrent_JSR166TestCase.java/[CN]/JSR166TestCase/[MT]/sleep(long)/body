@@ -1,0 +1,10 @@
+{
+  try {
+    Thread.sleep(millis);
+  }
+ catch (  InterruptedException ie) {
+    AssertionFailedError afe=new AssertionFailedError("Unexpected InterruptedException");
+    afe.initCause(ie);
+    throw afe;
+  }
+}

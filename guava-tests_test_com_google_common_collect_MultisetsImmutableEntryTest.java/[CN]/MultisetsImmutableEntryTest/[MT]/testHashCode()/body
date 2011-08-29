@@ -1,0 +1,4 @@
+{
+  assertEquals(control("foo",1).hashCode(),entry("foo",1).hashCode());
+  assertEquals(control("bar",2).hashCode(),entry("bar",2).hashCode());
+}

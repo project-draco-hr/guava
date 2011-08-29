@@ -1,0 +1,8 @@
+{
+  backingMap=EasyMock.createMock(ConcurrentMap.class);
+  expect(backingMap.isEmpty()).andReturn(true);
+  replay();
+  multiset=new ConcurrentHashMultiset<String>(backingMap);
+  verify();
+  reset();
+}

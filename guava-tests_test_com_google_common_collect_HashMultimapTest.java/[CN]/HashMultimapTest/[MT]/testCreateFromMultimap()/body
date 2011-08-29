@@ -1,0 +1,6 @@
+{
+  Multimap<String,Integer> multimap=createSample();
+  HashMultimap<String,Integer> copy=HashMultimap.create(multimap);
+  assertEquals(multimap,copy);
+  assertEquals(8,copy.expectedValuesPerKey);
+}

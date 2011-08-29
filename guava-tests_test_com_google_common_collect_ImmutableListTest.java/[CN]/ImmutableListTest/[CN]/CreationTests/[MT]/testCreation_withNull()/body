@@ -1,0 +1,8 @@
+{
+  try {
+    ImmutableList.of("a",null,"b");
+    fail();
+  }
+ catch (  NullPointerException expected) {
+  }
+}

@@ -1,0 +1,13 @@
+{
+  String[] array={"foo","bar","baz"};
+  AtomicReferenceArray<String> refArray=Atomics.newReferenceArray(array);
+  for (int i=0; i < array.length; ++i) {
+    assertEquals(array[i],refArray.get(i));
+  }
+  try {
+    refArray.get(array.length);
+    fail();
+  }
+ catch (  IndexOutOfBoundsException expected) {
+  }
+}

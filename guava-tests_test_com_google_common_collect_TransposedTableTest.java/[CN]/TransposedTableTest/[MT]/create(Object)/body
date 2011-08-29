@@ -1,0 +1,7 @@
+{
+  Table<Integer,String,Character> original=HashBasedTable.create();
+  Table<String,Integer,Character> table=Tables.transpose(original);
+  table.clear();
+  populate(table,data);
+  return table;
+}

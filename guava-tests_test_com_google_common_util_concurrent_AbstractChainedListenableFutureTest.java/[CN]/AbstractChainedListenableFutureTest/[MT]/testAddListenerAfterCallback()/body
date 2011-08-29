@@ -1,0 +1,4 @@
+{
+  inputFuture.set(VALID_INPUT_DATA);
+  listener.assertSuccess(getSuccessfulResult());
+}

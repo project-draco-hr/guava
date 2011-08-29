@@ -1,0 +1,4 @@
+{
+  setupFlushable(true);
+  Flushables.flushQuietly(mockFlushable);
+}

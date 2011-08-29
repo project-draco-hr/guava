@@ -1,0 +1,20 @@
+{
+  ImmutableSet<Integer> elements=ImmutableSet.of(1,2,3);
+  Set<Set<Integer>> powerSet=powerSet(elements);
+  Iterator<Set<Integer>> i=powerSet.iterator();
+  assertEquals(ImmutableSet.of(),i.next());
+  assertEquals(ImmutableSet.of(1),i.next());
+  assertEquals(ImmutableSet.of(2),i.next());
+  assertEquals(ImmutableSet.of(2,1),i.next());
+  assertEquals(ImmutableSet.of(3),i.next());
+  assertEquals(ImmutableSet.of(3,1),i.next());
+  assertEquals(ImmutableSet.of(3,2),i.next());
+  assertEquals(ImmutableSet.of(3,2,1),i.next());
+  assertFalse(i.hasNext());
+  try {
+    i.next();
+    fail();
+  }
+ catch (  NoSuchElementException expected) {
+  }
+}

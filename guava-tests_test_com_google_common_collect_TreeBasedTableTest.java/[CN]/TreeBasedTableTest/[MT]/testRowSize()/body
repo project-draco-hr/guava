@@ -1,0 +1,6 @@
+{
+  table=sortedTable=create("a",2,'X',"a",2,'X',"b",3,'X',"b",2,'X',"c",10,'X',"c",10,'X',"c",20,'X',"d",15,'X',"d",20,'X',"d",1,'X',"e",5,'X');
+  SortedMap<Integer,Character> row=sortedTable.row("c");
+  assertEquals(row.size(),2);
+  assertEquals(row.tailMap(15).size(),1);
+}

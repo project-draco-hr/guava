@@ -1,0 +1,4 @@
+{
+  SortedSet<String> set=ImmutableSortedSet.copyOf(STRING_LENGTH,asIterator("in","the","quick","jumped","over","a"));
+  assertSame(STRING_LENGTH,set.comparator());
+}

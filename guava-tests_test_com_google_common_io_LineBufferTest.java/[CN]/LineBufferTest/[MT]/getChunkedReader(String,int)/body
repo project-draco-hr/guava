@@ -1,0 +1,8 @@
+{
+  return new FilterReader(new StringReader(input)){
+    @Override public int read(    char[] cbuf,    int off,    int len) throws IOException {
+      return super.read(cbuf,off,Math.min(chunk,len));
+    }
+  }
+;
+}

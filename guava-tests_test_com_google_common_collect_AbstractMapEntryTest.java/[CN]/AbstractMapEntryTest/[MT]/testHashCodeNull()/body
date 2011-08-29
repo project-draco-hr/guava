@@ -1,0 +1,5 @@
+{
+  assertEquals(control(NK,1).hashCode(),entry(NK,1).hashCode());
+  assertEquals(control("bar",NV).hashCode(),entry("bar",NV).hashCode());
+  assertEquals(control(NK,NV).hashCode(),entry(NK,NV).hashCode());
+}

@@ -1,0 +1,10 @@
+{
+  CountingFunction computingFunction=new CountingFunction();
+  ComputingConcurrentHashMap<Object,Object> map=makeComputingMap(createMapMaker(),computingFunction);
+  assertEquals(0,computingFunction.getCount());
+  Object key=new Object();
+  Object value=new Object();
+  map.put(key,value);
+  assertEquals(value,map.getOrCompute(key));
+  assertEquals(0,computingFunction.getCount());
+}

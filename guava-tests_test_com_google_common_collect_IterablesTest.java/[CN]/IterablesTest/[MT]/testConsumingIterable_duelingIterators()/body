@@ -1,0 +1,12 @@
+{
+  List<String> list=Lists.newArrayList(asList("a","b"));
+  Iterator<String> i1=Iterables.consumingIterable(list).iterator();
+  Iterator<String> i2=Iterables.consumingIterable(list).iterator();
+  i1.next();
+  try {
+    i2.next();
+    fail("Concurrent modification should throw an exception.");
+  }
+ catch (  ConcurrentModificationException cme) {
+  }
+}

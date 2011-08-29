@@ -1,0 +1,26 @@
+{
+  final CheckedFuture<Boolean,?> future=createCheckedFuture(Boolean.TRUE,null,latch);
+  final CountDownLatch startingGate=new CountDownLatch(1);
+  final CountDownLatch successLatch=new CountDownLatch(1);
+  assertFalse(future.isDone());
+  assertFalse(future.isCancelled());
+  Thread getThread=new Thread(new Runnable(){
+    @Override public void run(){
+      startingGate.countDown();
+      try {
+        future.checkedGet();
+      }
+ catch (      Exception e) {
+        checkInterruptedException(e);
+        successLatch.countDown();
+      }
+    }
+  }
+);
+  getThread.start();
+  assertTrue(startingGate.await(500,TimeUnit.MILLISECONDS));
+  getThread.interrupt();
+  assertTrue(successLatch.await(500,TimeUnit.MILLISECONDS));
+  assertFalse(future.isDone());
+  assertFalse(future.isCancelled());
+}

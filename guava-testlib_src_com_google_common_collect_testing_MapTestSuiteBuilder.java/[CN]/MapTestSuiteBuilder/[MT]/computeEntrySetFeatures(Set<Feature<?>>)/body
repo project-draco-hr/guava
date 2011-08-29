@@ -1,3 +1,5 @@
 {
-  return computeCommonDerivedCollectionFeatures(mapFeatures);
+  Set<Feature<?>> entrySetFeatures=computeCommonDerivedCollectionFeatures(mapFeatures);
+  entrySetFeatures.add(CollectionFeature.ALLOWS_NULL_QUERIES);
+  return entrySetFeatures;
 }

@@ -1,0 +1,11 @@
+{
+  ImmutableSet<SomeEnum> original=Sets.immutableEnumSet(SomeEnum.A,SomeEnum.B);
+  int handleOffset=6;
+  byte[] serializedForm=serializeWithBackReference(original,handleOffset);
+  ObjectInputStream in=new ObjectInputStream(new ByteArrayInputStream(serializedForm));
+  ImmutableSet<?> deserialized=(ImmutableSet<?>)in.readObject();
+  EnumSet<?> delegate=(EnumSet<?>)in.readObject();
+  assertEquals(original,deserialized);
+  assertTrue(delegate.remove(SomeEnum.A));
+  assertTrue(deserialized.contains(SomeEnum.A));
+}

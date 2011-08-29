@@ -1,0 +1,3 @@
+{
+  assertTrue(thread.getName().matches("^pool-\\d+-thread-" + threadId + "$"));
+}

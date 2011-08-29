@@ -1,0 +1,7 @@
+{
+  if (obj instanceof SimpleNode) {
+    SimpleNode node=(SimpleNode)obj;
+    return getKey().equals(node.getKey()) && Objects.equal(childOrNull(LEFT),node.childOrNull(LEFT)) && Objects.equal(childOrNull(RIGHT),node.childOrNull(RIGHT));
+  }
+  return false;
+}

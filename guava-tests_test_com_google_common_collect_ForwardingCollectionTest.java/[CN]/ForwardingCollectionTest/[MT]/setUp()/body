@@ -1,0 +1,10 @@
+{
+  super.setUp();
+  @SuppressWarnings("unchecked") final Collection<String> list=createProxyInstance(Collection.class);
+  forward=new ForwardingCollection<String>(){
+    @Override protected Collection<String> delegate(){
+      return list;
+    }
+  }
+;
+}

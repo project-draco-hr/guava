@@ -1,0 +1,3 @@
+{
+  doClose(closeable,swallowException,!swallowException);
+}

@@ -1,0 +1,8 @@
+{
+  Map<String,Integer> map=ImmutableMap.of("one",1,"two",2,"three",3);
+  LenientSerializableTester.reserializeAndAssertLenient(map.entrySet());
+  LenientSerializableTester.reserializeAndAssertLenient(map.keySet());
+  Collection<Integer> reserializedValues=reserialize(map.values());
+  assertEquals(Lists.newArrayList(map.values()),Lists.newArrayList(reserializedValues));
+  assertTrue(reserializedValues instanceof ImmutableCollection);
+}

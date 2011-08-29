@@ -1,0 +1,6 @@
+{
+  ByteArrayOutputStream out=new ByteArrayOutputStream();
+  URL resource=getClass().getResource("testdata/i18n.txt");
+  Resources.copy(resource,out);
+  assertEquals(I18N,out.toString("UTF-8"));
+}

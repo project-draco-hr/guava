@@ -1,0 +1,3 @@
+{
+  assertTrue("Service thread hasn't finished its checks. " + "Exception status (possibly stale): " + thrownByExecutionThread,hasConfirmedIsRunning.await(10,SECONDS));
+}

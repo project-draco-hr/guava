@@ -1,0 +1,4 @@
+{
+  forward().retainAll(EMPTY_COLLECTION);
+  assertEquals("[retainAll(Collection)]",getCalls());
+}

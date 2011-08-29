@@ -1,0 +1,6 @@
+{
+  SortedSet<String> set=ImmutableSortedSet.orderedBy(STRING_LENGTH).add("in","the","quick","jumped","over","a").build();
+  SortedSet<String> copy=SerializableTester.reserializeAndAssert(set);
+  assertTrue(Iterables.elementsEqual(set,copy));
+  assertSame(set.comparator(),copy.comparator());
+}

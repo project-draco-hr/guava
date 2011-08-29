@@ -1,0 +1,8 @@
+{
+  ImmutableSet<SomeEnum> none=Sets.immutableEnumSet(MinimalIterable.<SomeEnum>of());
+  ASSERT.that(none).hasContentsInOrder();
+  ImmutableSet<SomeEnum> one=Sets.immutableEnumSet(MinimalIterable.of(SomeEnum.B));
+  ASSERT.that(one).hasContentsInOrder(SomeEnum.B);
+  ImmutableSet<SomeEnum> two=Sets.immutableEnumSet(MinimalIterable.of(SomeEnum.D,SomeEnum.B));
+  ASSERT.that(two).hasContentsInOrder(SomeEnum.B,SomeEnum.D);
+}

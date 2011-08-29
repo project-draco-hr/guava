@@ -1,0 +1,8 @@
+{
+  table=create("foo",1,'a',"bar",1,'b',"foo",3,'c');
+  Map<Integer,Character> expected=Maps.newHashMap();
+  expected.put(1,'a');
+  expected.put(3,'c');
+  expected.put(2,null);
+  assertEquals(expected,table.row("foo"));
+}

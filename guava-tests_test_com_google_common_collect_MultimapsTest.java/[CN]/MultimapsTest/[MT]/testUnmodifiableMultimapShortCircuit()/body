@@ -1,0 +1,9 @@
+{
+  Multimap<String,Integer> mod=HashMultimap.create();
+  Multimap<String,Integer> unmod=Multimaps.unmodifiableMultimap(mod);
+  assertNotSame(mod,unmod);
+  assertSame(unmod,Multimaps.unmodifiableMultimap(unmod));
+  ImmutableMultimap<String,Integer> immutable=ImmutableMultimap.of("a",1,"b",2,"a",3);
+  assertSame(immutable,Multimaps.unmodifiableMultimap(immutable));
+  assertSame(immutable,Multimaps.unmodifiableMultimap((Multimap<String,Integer>)immutable));
+}

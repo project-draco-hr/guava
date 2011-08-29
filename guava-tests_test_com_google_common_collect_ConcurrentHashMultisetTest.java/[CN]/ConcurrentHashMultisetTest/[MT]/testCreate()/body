@@ -1,0 +1,5 @@
+{
+  ConcurrentHashMultiset<Integer> multiset=ConcurrentHashMultiset.create();
+  assertTrue(multiset.isEmpty());
+  reserializeAndAssert(multiset);
+}

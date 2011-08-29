@@ -1,0 +1,4 @@
+{
+  Cell<String,Integer,Character> entry=Tables.immutableCell("foo",1,'a');
+  SerializableTester.reserializeAndAssert(entry);
+}

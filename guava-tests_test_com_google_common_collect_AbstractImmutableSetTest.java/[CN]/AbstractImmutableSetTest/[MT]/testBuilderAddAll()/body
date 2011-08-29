@@ -1,0 +1,6 @@
+{
+  List<String> a=asList("a","b","c");
+  List<String> b=asList("c","d","e");
+  ImmutableSet<String> set=this.<String>builder().addAll(a).addAll(b).build();
+  ASSERT.that(set).hasContentsInOrder("a","b","c","d","e");
+}

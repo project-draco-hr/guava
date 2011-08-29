@@ -1,0 +1,4 @@
+{
+  forward().add("asd",23);
+  assertEquals("[add(Object,int)]",getCalls());
+}

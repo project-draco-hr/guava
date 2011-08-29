@@ -1,0 +1,4 @@
+{
+  forward.element();
+  assertEquals("[element]",getCalls());
+}

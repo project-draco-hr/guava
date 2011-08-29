@@ -1,0 +1,8 @@
+{
+  if (map.evictsBySize()) {
+    assertSame(two,one.getNextEvictable());
+  }
+  if (map.expires()) {
+    assertSame(two,one.getNextExpirable());
+  }
+}

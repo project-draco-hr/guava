@@ -1,0 +1,5 @@
+{
+  ImmutableBiMap<String,Integer> copy=ImmutableBiMap.copyOf(Collections.singletonMap("one",1));
+  assertMapEquals(copy,"one",1);
+  assertSame(copy,ImmutableBiMap.copyOf(copy));
+}

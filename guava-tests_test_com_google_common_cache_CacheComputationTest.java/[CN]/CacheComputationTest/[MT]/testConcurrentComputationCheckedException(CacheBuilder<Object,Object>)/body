@@ -1,0 +1,33 @@
+{
+  int count=10;
+  final AtomicInteger callCount=new AtomicInteger();
+  final CountDownLatch startSignal=new CountDownLatch(count);
+  final IOException e=new IOException();
+  Cache<String,String> cache=builder.build(new CacheLoader<String,String>(){
+    @Override public String load(    String key) throws IOException, InterruptedException {
+      callCount.incrementAndGet();
+      startSignal.await();
+      throw e;
+    }
+  }
+);
+  List<Object> result=doConcurrentGet(cache,"bar",count,startSignal);
+  assertEquals(1,callCount.get());
+  for (int i=0; i < count; i++) {
+    if (i % 2 == 0) {
+      assertTrue(result.get(i) instanceof UncheckedExecutionException);
+      assertSame(e,((UncheckedExecutionException)result.get(i)).getCause());
+    }
+ else {
+      assertTrue(result.get(i) instanceof ExecutionException);
+      assertSame(e,((ExecutionException)result.get(i)).getCause());
+    }
+  }
+  try {
+    cache.getUnchecked("bar");
+    fail();
+  }
+ catch (  UncheckedExecutionException expected) {
+  }
+  assertEquals(2,callCount.get());
+}

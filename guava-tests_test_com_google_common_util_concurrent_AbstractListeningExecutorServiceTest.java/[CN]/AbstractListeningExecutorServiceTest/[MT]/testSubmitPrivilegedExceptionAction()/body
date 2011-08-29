@@ -1,0 +1,16 @@
+{
+  Runnable r=new CheckedRunnable(){
+    @Override public void realRun() throws Exception {
+      ExecutorService e=new DirectExecutorService();
+      Future future=e.submit(Executors.callable(new PrivilegedExceptionAction(){
+        public Object run(){
+          return TEST_STRING;
+        }
+      }
+));
+      assertSame(TEST_STRING,future.get());
+    }
+  }
+;
+  runWithPermissions(r);
+}

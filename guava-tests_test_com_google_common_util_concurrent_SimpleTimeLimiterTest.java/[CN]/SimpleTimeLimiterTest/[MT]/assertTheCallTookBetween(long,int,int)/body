@@ -1,0 +1,5 @@
+{
+  long nanos=System.nanoTime() - startNanos;
+  assertTrue(nanos >= atLeastMillis * 1000000);
+  assertTrue(nanos <= atMostMillis * 1000000);
+}

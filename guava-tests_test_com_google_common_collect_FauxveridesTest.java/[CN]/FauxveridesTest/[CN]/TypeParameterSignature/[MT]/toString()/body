@@ -1,0 +1,3 @@
+{
+  return (bounds.equals(ImmutableList.of(Object.class))) ? name : name + " extends " + getTypesString(bounds);
+}

@@ -1,0 +1,29 @@
+{
+  table=create("foo",1,'a',"bar",1,'b',"foo",3,'c');
+  assertSize(3);
+  try {
+    table.put(null,2,'d');
+    fail();
+  }
+ catch (  NullPointerException expected) {
+  }
+  try {
+    table.put("cat",null,'d');
+    fail();
+  }
+ catch (  NullPointerException expected) {
+  }
+  if (supportsNullValues()) {
+    assertNull(table.put("cat",2,null));
+    assertTrue(table.contains("cat",2));
+  }
+ else {
+    try {
+      table.put("cat",2,null);
+      fail();
+    }
+ catch (    NullPointerException expected) {
+    }
+  }
+  assertSize(3);
+}

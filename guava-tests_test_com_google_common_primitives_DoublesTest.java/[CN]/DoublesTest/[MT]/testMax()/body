@@ -1,0 +1,9 @@
+{
+  assertEquals(LEAST,Doubles.max(LEAST));
+  assertEquals(GREATEST,Doubles.max(GREATEST));
+  assertEquals((double)9,Doubles.max((double)8,(double)6,(double)7,(double)5,(double)3,(double)0,(double)9));
+  assertEquals(0.0,Doubles.max(-0.0,0.0));
+  assertEquals(0.0,Doubles.max(0.0,-0.0));
+  assertEquals(GREATEST,Doubles.max(NUMBERS));
+  assertTrue(Double.isNaN(Doubles.max(VALUES)));
+}

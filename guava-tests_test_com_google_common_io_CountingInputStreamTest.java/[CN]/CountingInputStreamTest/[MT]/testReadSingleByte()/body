@@ -1,0 +1,5 @@
+{
+  assertEquals(0,counter.getCount());
+  assertEquals(0,counter.read());
+  assertEquals(1,counter.getCount());
+}

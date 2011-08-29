@@ -1,0 +1,14 @@
+{
+  return new CheckCloseSupplier.Input<InputStream>(delegate){
+    @Override protected InputStream wrap(    InputStream object,    final Callback callback){
+      return new FilterInputStream(object){
+        @Override public void close() throws IOException {
+          callback.delegateClosed();
+          super.close();
+        }
+      }
+;
+    }
+  }
+;
+}

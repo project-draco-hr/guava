@@ -1,0 +1,10 @@
+{
+  Set<Class<?>> primitives=Primitives.allPrimitiveTypes();
+  assertEquals(ImmutableSet.<Object>of(boolean.class,byte.class,char.class,double.class,float.class,int.class,long.class,short.class,void.class),primitives);
+  try {
+    primitives.remove(boolean.class);
+    fail();
+  }
+ catch (  UnsupportedOperationException expected) {
+  }
+}

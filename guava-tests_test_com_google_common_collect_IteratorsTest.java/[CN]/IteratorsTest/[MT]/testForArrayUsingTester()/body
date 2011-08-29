@@ -1,0 +1,8 @@
+{
+  new IteratorTester<Integer>(6,UNMODIFIABLE,asList(1,2,3),IteratorTester.KnownOrder.KNOWN_ORDER){
+    @Override protected Iterator<Integer> newTargetIterator(){
+      return Iterators.forArray(1,2,3);
+    }
+  }
+.test();
+}

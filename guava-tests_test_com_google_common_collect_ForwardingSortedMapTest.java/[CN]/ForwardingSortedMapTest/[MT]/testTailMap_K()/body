@@ -1,0 +1,4 @@
+{
+  forward().tailMap("last");
+  assertEquals("[tailMap(Object)]",getCalls());
+}

@@ -1,0 +1,24 @@
+{
+  Multiset<String> multiset=HashMultiset.create(asList("foo","bar"));
+  Multiset<String> constrained=Constraints.constrainedMultiset(multiset,TEST_CONSTRAINT);
+  try {
+    constrained.add(TEST_ELEMENT);
+    fail("TestElementException expected");
+  }
+ catch (  TestElementException expected) {
+  }
+  try {
+    constrained.add(TEST_ELEMENT,2);
+    fail("TestElementException expected");
+  }
+ catch (  TestElementException expected) {
+  }
+  try {
+    constrained.addAll(asList("baz",TEST_ELEMENT));
+    fail("TestElementException expected");
+  }
+ catch (  TestElementException expected) {
+  }
+  ASSERT.that(constrained).hasContentsAnyOrder("foo","bar");
+  ASSERT.that(multiset).hasContentsAnyOrder("foo","bar");
+}

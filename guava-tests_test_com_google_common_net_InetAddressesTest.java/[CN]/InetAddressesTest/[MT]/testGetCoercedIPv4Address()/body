@@ -1,0 +1,16 @@
+{
+  InetAddress localHost4=InetAddresses.forString("127.0.0.1");
+  assertEquals(localHost4,InetAddresses.getCoercedIPv4Address(localHost4));
+  assertEquals(localHost4,InetAddresses.getCoercedIPv4Address(InetAddresses.forString("::1")));
+  assertEquals(InetAddresses.forString("0.0.0.0"),InetAddresses.getCoercedIPv4Address(InetAddresses.forString("::")));
+  assertTrue(InetAddresses.forString("1.2.3.4") != InetAddresses.getCoercedIPv4Address(InetAddresses.forString("::1.2.3.4")));
+  assertTrue(InetAddresses.forString("1.2.3.4") != InetAddresses.getCoercedIPv4Address(InetAddresses.forString("2002:0102:0304::1")));
+  assertTrue(InetAddresses.getCoercedIPv4Address(InetAddresses.forString("2002:0102:0304::1")) != InetAddresses.getCoercedIPv4Address(InetAddresses.forString("2002:0506:0708::1")));
+  assertTrue(InetAddresses.getCoercedIPv4Address(InetAddresses.forString("2002:0102:0304::1")) != InetAddresses.getCoercedIPv4Address(InetAddresses.forString("2002:0102:0304::2")));
+  assertTrue(InetAddresses.forString("192.0.2.45") != InetAddresses.getCoercedIPv4Address(InetAddresses.forString("2001:0000:4136:e378:8000:63bf:3fff:fdd2")));
+  assertTrue(InetAddresses.getCoercedIPv4Address(InetAddresses.forString("2001:0000:4136:e378:8000:63bf:3fff:fdd2")) != InetAddresses.getCoercedIPv4Address(InetAddresses.forString("2001:0000:4136:e379:8000:63bf:3fff:fdd2")));
+  assertEquals(InetAddresses.getCoercedIPv4Address(InetAddresses.forString("2001:0000:4136:e378:8000:63bf:3fff:fdd2")),InetAddresses.getCoercedIPv4Address(InetAddresses.forString("2001:0000:4136:e378:9000:63bf:3fff:fdd2")));
+  InetAddress coerced=InetAddresses.getCoercedIPv4Address(InetAddresses.forString("2001:4860::1"));
+  assertTrue(0xe0000000 <= InetAddresses.coerceToInteger(coerced));
+  assertTrue(InetAddresses.coerceToInteger(coerced) <= 0xfffffffe);
+}

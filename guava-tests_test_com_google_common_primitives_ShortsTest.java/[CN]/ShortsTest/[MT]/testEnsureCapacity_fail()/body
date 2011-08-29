@@ -1,0 +1,14 @@
+{
+  try {
+    Shorts.ensureCapacity(ARRAY1,-1,1);
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+  try {
+    Shorts.ensureCapacity(ARRAY1,1,-1);
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}

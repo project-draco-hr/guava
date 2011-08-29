@@ -1,0 +1,17 @@
+{
+  Integer canonical=new Integer(5);
+  Integer not=new Integer(5);
+  Interner<Integer> pool=Interners.newWeakInterner();
+  assertSame(canonical,pool.intern(canonical));
+  WeakReference<Integer> signal=new WeakReference<Integer>(canonical);
+  canonical=null;
+  for (int i=0; i < 3000; i++) {
+    System.gc();
+    if (signal.get() == null) {
+      assertSame(not,pool.intern(not));
+      return;
+    }
+    Thread.sleep(1);
+  }
+  fail("reference didn't get cleaned up");
+}

@@ -1,0 +1,5 @@
+{
+  TestBiMap<Integer,String> inner=new TestBiMap<Integer,String>(HashBiMap.<Integer,String>create(),mutex);
+  BiMap<Integer,String> outer=Synchronized.biMap(inner,mutex);
+  return outer;
+}

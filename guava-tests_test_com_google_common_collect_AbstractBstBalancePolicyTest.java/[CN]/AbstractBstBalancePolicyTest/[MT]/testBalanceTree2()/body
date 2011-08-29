@@ -1,0 +1,5 @@
+{
+  SimpleNode a=balanceNew('a',null,null);
+  SimpleNode b=balanceNew('b',a,null);
+  assertInOrderTraversalIs(b,"ab");
+}

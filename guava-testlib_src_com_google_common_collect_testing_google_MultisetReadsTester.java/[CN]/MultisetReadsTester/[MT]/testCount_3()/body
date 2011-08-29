@@ -1,0 +1,4 @@
+{
+  initThreeCopies();
+  assertEquals("multiset.count(thriceContained) didn't return 3",3,getMultiset().count(samples.e0));
+}

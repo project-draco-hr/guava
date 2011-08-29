@@ -1,0 +1,11 @@
+{
+  final Foo foo1=new Foo();
+  MockRequiresGetCallFuture<Foo> foo1Future=new MockRequiresGetCallFuture<Foo>(foo1);
+  final Foo foo2=new Foo();
+  MockRequiresGetCallFuture<Foo> foo2Future=new MockRequiresGetCallFuture<Foo>(foo2);
+  @SuppressWarnings("unchecked") ListenableFuture<List<Foo>> compound=Futures.allAsList(foo1Future,foo2Future);
+  assertFalse(compound.isDone());
+  ASSERT.that(compound.get()).hasContentsAnyOrder(foo1,foo2);
+  assertTrue(foo1Future.getWasGetCalled());
+  assertTrue(foo2Future.getWasGetCalled());
+}

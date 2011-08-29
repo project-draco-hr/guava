@@ -1,0 +1,6 @@
+{
+  ListMultimap<String,Integer> multimap=create();
+  multimap.putAll("foo",asList(1,2,2,3,3,3));
+  multimap.get("foo").retainAll(asList(1,2,4));
+  ASSERT.that(multimap.get("foo")).hasContentsInOrder(1,2,2);
+}

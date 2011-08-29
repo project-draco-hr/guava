@@ -1,0 +1,4 @@
+{
+  ListenableFuture<String> listenableFuture=immediateFuture(DATA1);
+  assertSame(listenableFuture,listenInPoolThread(listenableFuture));
+}

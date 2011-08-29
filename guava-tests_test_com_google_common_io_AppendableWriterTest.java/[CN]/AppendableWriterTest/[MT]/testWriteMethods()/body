@@ -1,0 +1,11 @@
+{
+  StringBuilder builder=new StringBuilder();
+  Writer writer=new AppendableWriter(builder);
+  writer.write("Hello".toCharArray());
+  writer.write(',');
+  writer.write(0xBEEF0020);
+  writer.write("Wo");
+  writer.write("Whirled".toCharArray(),3,2);
+  writer.write("Mad! Mad, I say",2,2);
+  assertEquals("Hello, World!",builder.toString());
+}

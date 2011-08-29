@@ -1,0 +1,10 @@
+{
+  int INITIAL_COUNT=32;
+  int COUNT_TO_ADD=400;
+  AtomicInteger initial=new AtomicInteger(INITIAL_COUNT);
+  expect(backingMap.get(KEY)).andReturn(initial);
+  replay();
+  assertEquals(INITIAL_COUNT,multiset.add(KEY,COUNT_TO_ADD));
+  assertEquals(INITIAL_COUNT + COUNT_TO_ADD,initial.get());
+  verify();
+}

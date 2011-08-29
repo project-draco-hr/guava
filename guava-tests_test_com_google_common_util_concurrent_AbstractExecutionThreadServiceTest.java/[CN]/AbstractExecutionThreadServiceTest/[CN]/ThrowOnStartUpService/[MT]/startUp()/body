@@ -1,0 +1,4 @@
+{
+  startUpCalled=true;
+  throw new UnsupportedOperationException("kaboom!");
+}

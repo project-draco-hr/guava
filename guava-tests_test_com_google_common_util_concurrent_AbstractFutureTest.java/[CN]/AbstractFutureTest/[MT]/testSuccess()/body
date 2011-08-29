@@ -1,0 +1,9 @@
+{
+  final Object value=new Object();
+  assertSame(value,new AbstractFuture<Object>(){
+{
+      set(value);
+    }
+  }
+.get());
+}

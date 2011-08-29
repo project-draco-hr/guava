@@ -1,0 +1,12 @@
+{
+  MapMaker maker=createMapMaker().expireAfterWrite(1,TimeUnit.NANOSECONDS);
+  CountingFunction computingFunction=new CountingFunction();
+  ComputingConcurrentHashMap<Object,Object> map=makeComputingMap(maker,computingFunction);
+  assertEquals(0,computingFunction.getCount());
+  Object key=new Object();
+  Object one=map.getOrCompute(key);
+  assertEquals(1,computingFunction.getCount());
+  Object two=map.getOrCompute(key);
+  assertNotSame(one,two);
+  assertEquals(2,computingFunction.getCount());
+}

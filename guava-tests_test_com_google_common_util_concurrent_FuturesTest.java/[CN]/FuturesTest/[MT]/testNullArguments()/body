@@ -1,0 +1,9 @@
+{
+  NullPointerTester tester=new NullPointerTester();
+  tester.setDefault(ListenableFuture.class,Futures.immediateFuture(DATA1));
+  tester.setDefault(ListenableFuture[].class,new ListenableFuture[]{Futures.immediateFuture(DATA1)});
+  tester.setDefault(Future.class,Futures.immediateFuture(DATA1));
+  tester.setDefault(Executor.class,MoreExecutors.sameThreadExecutor());
+  tester.setDefault(Callable.class,Callables.returning(null));
+  tester.testAllPublicStaticMethods(Futures.class);
+}

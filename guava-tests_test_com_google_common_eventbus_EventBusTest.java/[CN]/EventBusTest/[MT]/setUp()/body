@@ -1,0 +1,4 @@
+{
+  super.setUp();
+  bus=new EventBus(BUS_IDENTIFIER);
+}

@@ -1,0 +1,17 @@
+{
+  List<String> list=Lists.asList("foo","bar",new String[0]);
+  ASSERT.that(list).hasContentsInOrder("foo","bar");
+  assertEquals(2,list.size());
+  assertIndexIsOutOfBounds(list,-1);
+  assertEquals("foo",list.get(0));
+  assertEquals("bar",list.get(1));
+  assertIndexIsOutOfBounds(list,2);
+  SerializableTester.reserializeAndAssert(list);
+  assertTrue(list instanceof RandomAccess);
+  new IteratorTester<String>(5,UNMODIFIABLE,asList("foo","bar"),IteratorTester.KnownOrder.KNOWN_ORDER){
+    @Override protected Iterator<String> newTargetIterator(){
+      return Lists.asList("foo","bar",new String[0]).iterator();
+    }
+  }
+.test();
+}

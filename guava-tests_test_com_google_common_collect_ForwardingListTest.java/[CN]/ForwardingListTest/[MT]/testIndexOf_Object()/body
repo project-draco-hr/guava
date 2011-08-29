@@ -1,0 +1,4 @@
+{
+  forward.indexOf(null);
+  assertEquals("[indexOf(Object)]",getCalls());
+}

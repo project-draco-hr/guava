@@ -1,0 +1,4 @@
+{
+  SerializableTester.reserializeAndAssert(Optional.absent());
+  SerializableTester.reserializeAndAssert(Optional.of("foo"));
+}

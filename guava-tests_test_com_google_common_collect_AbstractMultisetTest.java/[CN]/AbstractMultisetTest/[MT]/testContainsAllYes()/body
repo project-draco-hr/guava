@@ -1,0 +1,7 @@
+{
+  ms.add("a",2);
+  ms.add("b",3);
+  ms.add("c",4);
+  assertTrue(ms.containsAll(asList("a","c")));
+  assertSize();
+}

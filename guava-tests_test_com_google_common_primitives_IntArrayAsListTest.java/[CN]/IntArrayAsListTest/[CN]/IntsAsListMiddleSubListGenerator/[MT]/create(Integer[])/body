@@ -1,0 +1,6 @@
+{
+  Integer[] prefix={Integer.MIN_VALUE,Integer.MAX_VALUE};
+  Integer[] suffix={(int)86,(int)99};
+  Integer[] all=concat(concat(prefix,elements),suffix);
+  return asList(all).subList(2,elements.length + 2);
+}

@@ -1,0 +1,13 @@
+{
+  try {
+    T result=realCall();
+    threadShouldThrow("InterruptedException");
+    return result;
+  }
+ catch (  InterruptedException success) {
+  }
+catch (  Throwable t) {
+    threadUnexpectedException(t);
+  }
+  return null;
+}

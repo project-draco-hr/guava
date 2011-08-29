@@ -1,0 +1,11 @@
+{
+  final ByteArrayOutputStream out=new ByteArrayOutputStream();
+  byte[] expected=newPreFilledByteArray(100);
+  ByteStreams.write(expected,new OutputSupplier<OutputStream>(){
+    @Override public OutputStream getOutput(){
+      return out;
+    }
+  }
+);
+  assertTrue(Arrays.equals(expected,out.toByteArray()));
+}

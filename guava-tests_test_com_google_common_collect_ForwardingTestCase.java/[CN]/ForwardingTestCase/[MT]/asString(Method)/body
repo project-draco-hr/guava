@@ -1,0 +1,14 @@
+{
+  String methodName=method.getName();
+  Class<?>[] parameterTypes=method.getParameterTypes();
+  if (parameterTypes.length == 0) {
+    return methodName;
+  }
+  Iterable<String> parameterNames=Iterables.transform(Arrays.asList(parameterTypes),new Function<Class<?>,String>(){
+    @Override public String apply(    Class<?> from){
+      return from.getSimpleName();
+    }
+  }
+);
+  return methodName + "(" + COMMA_JOINER.join(parameterNames)+ ")";
+}

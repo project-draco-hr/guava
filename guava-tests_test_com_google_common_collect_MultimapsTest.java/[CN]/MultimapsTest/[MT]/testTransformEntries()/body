@@ -1,0 +1,11 @@
+{
+  SetMultimap<String,Integer> multimap=ImmutableSetMultimap.of("a",1,"a",4,"b",-6);
+  EntryTransformer<String,Integer,String> transformer=new EntryTransformer<String,Integer,String>(){
+    @Override public String transformEntry(    String key,    Integer value){
+      return (value >= 0) ? key : "no" + key;
+    }
+  }
+;
+  Multimap<String,String> transformed=Multimaps.transformEntries(multimap,transformer);
+  ASSERT.that(transformed.entries()).hasContentsInOrder(immutableEntry("a","a"),immutableEntry("a","a"),immutableEntry("b","nob"));
+}

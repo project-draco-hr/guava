@@ -1,0 +1,15 @@
+{
+  ExecutorService e=new DirectExecutorService();
+  List<Callable<String>> l=new ArrayList<Callable<String>>();
+  l.add(new NPETask());
+  try {
+    e.invokeAny(l);
+    shouldThrow();
+  }
+ catch (  ExecutionException success) {
+    assertTrue(success.getCause() instanceof NullPointerException);
+  }
+ finally {
+    joinPool(e);
+  }
+}

@@ -1,0 +1,4 @@
+{
+  forward().tailSet("last");
+  assertEquals("[tailSet(Object)]",getCalls());
+}

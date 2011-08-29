@@ -1,0 +1,5 @@
+{
+  Integer[] suffix={Integer.MIN_VALUE,Integer.MAX_VALUE};
+  Integer[] all=concat(elements,suffix);
+  return asList(all).subList(0,elements.length);
+}

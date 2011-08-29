@@ -1,0 +1,3 @@
+{
+  assertEquals(2,Lists.partition(Collections.nCopies(0x40000001,1),0x40000000).size());
+}

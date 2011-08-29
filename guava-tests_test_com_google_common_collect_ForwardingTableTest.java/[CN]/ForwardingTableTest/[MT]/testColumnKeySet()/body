@@ -1,0 +1,4 @@
+{
+  forward.columnKeySet();
+  assertEquals("[columnKeySet]",getCalls());
+}

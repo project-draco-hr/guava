@@ -1,0 +1,13 @@
+{
+  assertFalse(Doubles.contains(EMPTY,(double)1));
+  assertFalse(Doubles.contains(ARRAY1,(double)2));
+  assertFalse(Doubles.contains(ARRAY234,(double)1));
+  assertTrue(Doubles.contains(new double[]{(double)-1},(double)-1));
+  assertTrue(Doubles.contains(ARRAY234,(double)2));
+  assertTrue(Doubles.contains(ARRAY234,(double)3));
+  assertTrue(Doubles.contains(ARRAY234,(double)4));
+  for (  double value : NUMBERS) {
+    assertTrue("" + value,Doubles.contains(new double[]{5.0,value},value));
+  }
+  assertFalse(Doubles.contains(new double[]{5.0,NaN},NaN));
+}

@@ -1,0 +1,4 @@
+{
+  forward.lastIndexOf("asdf");
+  assertEquals("[lastIndexOf(Object)]",getCalls());
+}

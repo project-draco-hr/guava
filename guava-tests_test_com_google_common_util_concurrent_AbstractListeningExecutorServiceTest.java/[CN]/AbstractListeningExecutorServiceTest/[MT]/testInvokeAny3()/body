@@ -1,0 +1,20 @@
+{
+  ExecutorService e=new DirectExecutorService();
+  List<Callable<Integer>> l=new ArrayList<Callable<Integer>>();
+  l.add(new Callable<Integer>(){
+    public Integer call(){
+      return 5 / 0;
+    }
+  }
+);
+  l.add(null);
+  try {
+    e.invokeAny(l);
+    shouldThrow();
+  }
+ catch (  NullPointerException success) {
+  }
+ finally {
+    joinPool(e);
+  }
+}

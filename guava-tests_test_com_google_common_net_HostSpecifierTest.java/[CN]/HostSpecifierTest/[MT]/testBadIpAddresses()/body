@@ -1,0 +1,5 @@
+{
+  for (  String spec : BAD_IPS) {
+    assertBad(spec);
+  }
+}

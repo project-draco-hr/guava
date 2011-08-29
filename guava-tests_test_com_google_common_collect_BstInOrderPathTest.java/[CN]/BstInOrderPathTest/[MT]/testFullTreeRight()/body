@@ -1,0 +1,19 @@
+{
+  SimpleNode a=new SimpleNode('a',null,null);
+  SimpleNode c=new SimpleNode('c',null,null);
+  SimpleNode b=new SimpleNode('b',a,c);
+  SimpleNode e=new SimpleNode('e',null,null);
+  SimpleNode g=new SimpleNode('g',null,null);
+  SimpleNode f=new SimpleNode('f',e,g);
+  SimpleNode d=new SimpleNode('d',b,f);
+  BstPathFactory<SimpleNode,BstInOrderPath<SimpleNode>> factory=BstInOrderPath.inOrderFactory();
+  BstInOrderPath<SimpleNode> path=extension(factory,d,LEFT,LEFT);
+  ASSERT.that(pathToList(path)).hasContentsInOrder(a,b,d);
+  path=testNextPathIs(path,b,d);
+  path=testNextPathIs(path,c,b,d);
+  path=testNextPathIs(path,d);
+  path=testNextPathIs(path,e,f,d);
+  path=testNextPathIs(path,f,d);
+  path=testNextPathIs(path,g,f,d);
+  assertFalse(path.hasNext(RIGHT));
+}

@@ -1,0 +1,3 @@
+{
+  doHasAllFauxveridesTest(ImmutableBiMap.class,ImmutableMap.class);
+}

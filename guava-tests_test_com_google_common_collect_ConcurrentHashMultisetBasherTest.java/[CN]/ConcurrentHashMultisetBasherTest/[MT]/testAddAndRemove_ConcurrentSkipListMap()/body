@@ -1,0 +1,3 @@
+{
+  testAddAndRemove(new ConcurrentSkipListMap<String,AtomicInteger>());
+}

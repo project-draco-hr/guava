@@ -1,0 +1,4 @@
+{
+  SortedSet<Integer> set=new ImmutableSortedSet.Builder<Integer>(TO_STRING).add(3,12,101,44).build();
+  ASSERT.that(set).hasContentsInOrder(101,12,3,44);
+}

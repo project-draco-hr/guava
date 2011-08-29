@@ -1,0 +1,10 @@
+{
+  Comparator<String> comparator=createExplicitComparator(elements);
+  ImmutableSortedSet.Builder<String> builder=ImmutableSortedSet.orderedBy(comparator);
+  builder.add(BEFORE_FIRST);
+  builder.add(BEFORE_FIRST_2);
+  builder.add(elements);
+  builder.add(AFTER_LAST);
+  builder.add(AFTER_LAST_2);
+  return builder.build().subSet(BEFORE_FIRST_2,AFTER_LAST_2).asList().subList(1,elements.length + 1);
+}

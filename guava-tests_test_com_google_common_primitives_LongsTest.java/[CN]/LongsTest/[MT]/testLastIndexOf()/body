@@ -1,0 +1,10 @@
+{
+  assertEquals(-1,Longs.lastIndexOf(EMPTY,(long)1));
+  assertEquals(-1,Longs.lastIndexOf(ARRAY1,(long)2));
+  assertEquals(-1,Longs.lastIndexOf(ARRAY234,(long)1));
+  assertEquals(0,Longs.lastIndexOf(new long[]{(long)-1},(long)-1));
+  assertEquals(0,Longs.lastIndexOf(ARRAY234,(long)2));
+  assertEquals(1,Longs.lastIndexOf(ARRAY234,(long)3));
+  assertEquals(2,Longs.lastIndexOf(ARRAY234,(long)4));
+  assertEquals(3,Longs.lastIndexOf(new long[]{(long)2,(long)3,(long)2,(long)3},(long)3));
+}

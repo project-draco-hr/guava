@@ -1,0 +1,33 @@
+{
+  Multiset<E> copy=LinkedHashMultiset.create(multiset);
+  assertCollectionsAreEquivalent(multiset,copy);
+  assertCollectionIsUnmodifiable(multiset,sampleElement);
+  assertCollectionsAreEquivalent(multiset,copy);
+  try {
+    multiset.add(sampleElement,2);
+    fail("add(Object, int) succeeded on unmodifiable collection");
+  }
+ catch (  UnsupportedOperationException expected) {
+  }
+  assertCollectionsAreEquivalent(multiset,copy);
+  try {
+    multiset.remove(sampleElement,2);
+    fail("remove(Object, int) succeeded on unmodifiable collection");
+  }
+ catch (  UnsupportedOperationException expected) {
+  }
+  assertCollectionsAreEquivalent(multiset,copy);
+  assertCollectionsAreEquivalent(multiset,copy);
+  assertSetIsUnmodifiable(multiset.elementSet(),sampleElement);
+  assertCollectionsAreEquivalent(multiset,copy);
+  assertSetIsUnmodifiable(multiset.entrySet(),new Multiset.Entry<E>(){
+    @Override public int getCount(){
+      return 1;
+    }
+    @Override public E getElement(){
+      return sampleElement;
+    }
+  }
+);
+  assertCollectionsAreEquivalent(multiset,copy);
+}

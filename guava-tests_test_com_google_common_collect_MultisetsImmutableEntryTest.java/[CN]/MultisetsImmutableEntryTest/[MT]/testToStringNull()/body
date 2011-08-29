@@ -1,0 +1,4 @@
+{
+  assertEquals("null",entry(NE,1).toString());
+  assertEquals("null x 2",entry(NE,2).toString());
+}

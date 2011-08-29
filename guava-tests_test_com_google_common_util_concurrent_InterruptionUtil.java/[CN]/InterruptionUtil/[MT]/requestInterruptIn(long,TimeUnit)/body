@@ -1,0 +1,15 @@
+{
+  final Thread interruptee=Thread.currentThread();
+  new Thread(new Runnable(){
+    @Override public void run(){
+      try {
+        unit.sleep(time);
+      }
+ catch (      InterruptedException wontHappen) {
+        throw new AssertionError(wontHappen);
+      }
+      interruptee.interrupt();
+    }
+  }
+).start();
+}

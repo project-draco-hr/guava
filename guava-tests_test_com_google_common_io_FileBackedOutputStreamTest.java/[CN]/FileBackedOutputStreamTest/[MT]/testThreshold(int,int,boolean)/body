@@ -1,0 +1,25 @@
+{
+  byte[] data=newPreFilledByteArray(dataSize);
+  FileBackedOutputStream out=new FileBackedOutputStream(fileThreshold);
+  InputSupplier<InputStream> supplier=out.getSupplier();
+  int chunk1=Math.min(dataSize,fileThreshold);
+  int chunk2=dataSize - chunk1;
+  if (chunk1 > 0) {
+    write(out,data,0,chunk1,singleByte);
+    assertTrue(ByteStreams.equal(ByteStreams.newInputStreamSupplier(data,0,chunk1),supplier));
+  }
+  File file=out.getFile();
+  assertNull(file);
+  if (chunk2 > 0) {
+    write(out,data,chunk1,chunk2,singleByte);
+    file=out.getFile();
+    assertEquals(dataSize,file.length());
+    assertTrue(file.exists());
+  }
+  out.close();
+  assertTrue(Arrays.equals(data,ByteStreams.toByteArray(supplier)));
+  out.reset();
+  if (file != null) {
+    assertFalse(file.exists());
+  }
+}

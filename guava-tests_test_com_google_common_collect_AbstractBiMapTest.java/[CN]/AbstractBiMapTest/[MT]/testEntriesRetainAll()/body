@@ -1,0 +1,8 @@
+{
+  putOneTwoThree();
+  Set<Map.Entry<Integer,String>> entries=bimap.entrySet();
+  Map.Entry<Integer,String> entry=Maps.immutableEntry(2,"two");
+  assertTrue(entries.retainAll(Collections.singleton(entry)));
+  assertEquals(1,bimap.size());
+  assertTrue(bimap.containsKey(2));
+}

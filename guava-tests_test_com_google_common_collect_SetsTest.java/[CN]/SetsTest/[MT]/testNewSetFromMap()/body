@@ -1,0 +1,5 @@
+{
+  Set<Integer> set=Sets.newSetFromMap(new HashMap<Integer,Boolean>());
+  set.addAll(SOME_COLLECTION);
+  verifySetContents(set,SOME_COLLECTION);
+}

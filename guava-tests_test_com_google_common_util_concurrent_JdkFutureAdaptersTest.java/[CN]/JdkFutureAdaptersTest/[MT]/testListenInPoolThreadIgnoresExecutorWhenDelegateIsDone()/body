@@ -1,0 +1,16 @@
+{
+  NonListenableSettableFuture<String> abstractFuture=NonListenableSettableFuture.create();
+  abstractFuture.set(DATA1);
+  ExecutorSpy spy=new ExecutorSpy(sameThreadExecutor());
+  ListenableFuture<String> listenableFuture=listenInPoolThread(abstractFuture,spy);
+  SingleCallListener singleCallListener=new SingleCallListener();
+  singleCallListener.expectCall();
+  assertFalse(spy.wasExecuted);
+  assertFalse(singleCallListener.wasCalled());
+  assertTrue(listenableFuture.isDone());
+  listenableFuture.addListener(singleCallListener,sameThreadExecutor());
+  assertEquals(DATA1,listenableFuture.get());
+  assertFalse(spy.wasExecuted);
+  assertTrue(singleCallListener.wasCalled());
+  assertTrue(listenableFuture.isDone());
+}

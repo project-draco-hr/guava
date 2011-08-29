@@ -1,0 +1,6 @@
+{
+  assertEquals(GeneralRange.all(Ordering.natural().reverse()),GeneralRange.all(Ordering.natural()).reverse());
+  assertEquals(GeneralRange.downTo(Ordering.natural().reverse(),3,CLOSED),GeneralRange.upTo(Ordering.natural(),3,CLOSED).reverse());
+  assertEquals(GeneralRange.upTo(Ordering.natural().reverse(),3,OPEN),GeneralRange.downTo(Ordering.natural(),3,OPEN).reverse());
+  assertEquals(GeneralRange.range(Ordering.natural().reverse(),5,OPEN,3,CLOSED),GeneralRange.range(Ordering.natural(),3,CLOSED,5,OPEN).reverse());
+}

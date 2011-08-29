@@ -1,0 +1,8 @@
+{
+  try {
+    Optional.of(null);
+    fail();
+  }
+ catch (  NullPointerException expected) {
+  }
+}

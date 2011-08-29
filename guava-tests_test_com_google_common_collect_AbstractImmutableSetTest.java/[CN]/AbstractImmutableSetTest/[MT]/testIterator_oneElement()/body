@@ -1,0 +1,8 @@
+{
+  new IteratorTester<String>(5,UNMODIFIABLE,Collections.singleton("a"),IteratorTester.KnownOrder.KNOWN_ORDER){
+    @Override protected Iterator<String> newTargetIterator(){
+      return of("a").iterator();
+    }
+  }
+.test();
+}

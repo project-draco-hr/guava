@@ -1,0 +1,7 @@
+{
+  for (  BoundType lowerType : BoundType.values()) {
+    for (    BoundType upperType : BoundType.values()) {
+      assertEquals(GeneralRange.range(Ordering.natural(),3,lowerType,4,upperType),GeneralRange.from(Ranges.range(3,lowerType,4,upperType)));
+    }
+  }
+}

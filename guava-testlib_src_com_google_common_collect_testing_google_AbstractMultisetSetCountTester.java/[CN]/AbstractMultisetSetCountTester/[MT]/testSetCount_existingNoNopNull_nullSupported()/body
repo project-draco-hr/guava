@@ -1,0 +1,8 @@
+{
+  initCollectionWithNullElement();
+  try {
+    assertSetCount(null,1);
+  }
+ catch (  UnsupportedOperationException tolerated) {
+  }
+}

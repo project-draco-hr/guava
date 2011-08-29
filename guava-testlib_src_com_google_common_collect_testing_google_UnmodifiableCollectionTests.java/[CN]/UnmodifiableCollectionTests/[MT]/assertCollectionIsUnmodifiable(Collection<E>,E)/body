@@ -1,0 +1,50 @@
+{
+  Collection<E> siblingCollection=new ArrayList<E>();
+  siblingCollection.add(sampleElement);
+  Collection<E> copy=new ArrayList<E>();
+  copy.addAll(collection);
+  try {
+    collection.add(sampleElement);
+    fail("add succeeded on unmodifiable collection");
+  }
+ catch (  UnsupportedOperationException expected) {
+  }
+  assertCollectionsAreEquivalent(copy,collection);
+  try {
+    collection.addAll(siblingCollection);
+    fail("addAll succeeded on unmodifiable collection");
+  }
+ catch (  UnsupportedOperationException expected) {
+  }
+  assertCollectionsAreEquivalent(copy,collection);
+  try {
+    collection.clear();
+    fail("clear succeeded on unmodifiable collection");
+  }
+ catch (  UnsupportedOperationException expected) {
+  }
+  assertCollectionsAreEquivalent(copy,collection);
+  assertIteratorIsUnmodifiable(collection.iterator());
+  assertCollectionsAreEquivalent(copy,collection);
+  try {
+    collection.remove(sampleElement);
+    fail("remove succeeded on unmodifiable collection");
+  }
+ catch (  UnsupportedOperationException expected) {
+  }
+  assertCollectionsAreEquivalent(copy,collection);
+  try {
+    collection.removeAll(siblingCollection);
+    fail("removeAll succeeded on unmodifiable collection");
+  }
+ catch (  UnsupportedOperationException expected) {
+  }
+  assertCollectionsAreEquivalent(copy,collection);
+  try {
+    collection.retainAll(siblingCollection);
+    fail("retainAll succeeded on unmodifiable collection");
+  }
+ catch (  UnsupportedOperationException expected) {
+  }
+  assertCollectionsAreEquivalent(copy,collection);
+}

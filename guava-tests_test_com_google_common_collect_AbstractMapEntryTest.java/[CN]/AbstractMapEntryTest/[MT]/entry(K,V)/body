@@ -1,0 +1,11 @@
+{
+  return new AbstractMapEntry<K,V>(){
+    @Override public K getKey(){
+      return key;
+    }
+    @Override public V getValue(){
+      return value;
+    }
+  }
+;
+}

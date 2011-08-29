@@ -1,0 +1,4 @@
+{
+  SortedSet<String> set=copyOf(asList("e","a","e","f","b","b","d","a","c"));
+  ASSERT.that(set).hasContentsInOrder("a","b","c","d","e","f");
+}

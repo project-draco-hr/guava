@@ -1,0 +1,10 @@
+{
+  super.setUp();
+  queue=createProxyInstance(Queue.class);
+  forward=new ForwardingQueue<String>(){
+    @Override protected Queue<String> delegate(){
+      return queue;
+    }
+  }
+;
+}

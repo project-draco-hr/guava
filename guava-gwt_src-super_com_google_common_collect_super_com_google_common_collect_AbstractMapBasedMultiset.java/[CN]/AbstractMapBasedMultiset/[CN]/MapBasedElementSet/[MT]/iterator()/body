@@ -1,7 +1,7 @@
 {
-  final Iterator<Map.Entry<E,AtomicInteger>> entries=map.entrySet().iterator();
+  final Iterator<Map.Entry<E,Count>> entries=map.entrySet().iterator();
   return new Iterator<E>(){
-    Map.Entry<E,AtomicInteger> toRemove;
+    Map.Entry<E,Count> toRemove;
     @Override public boolean hasNext(){
       return entries.hasNext();
     }

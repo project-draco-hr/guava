@@ -1,0 +1,7 @@
+{
+  if (obj instanceof TypeParameterSignature) {
+    TypeParameterSignature other=(TypeParameterSignature)obj;
+    return bounds.equals(other.bounds);
+  }
+  return false;
+}

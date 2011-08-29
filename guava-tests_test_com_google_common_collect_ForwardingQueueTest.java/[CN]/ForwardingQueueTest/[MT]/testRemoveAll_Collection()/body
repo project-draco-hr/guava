@@ -1,0 +1,4 @@
+{
+  forward.removeAll(Collections.singleton("asdf"));
+  assertEquals("[removeAll(Collection)]",getCalls());
+}

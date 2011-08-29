@@ -1,0 +1,15 @@
+{
+  CacheStats stats=new CacheStats(11,13,17,19,23,27);
+  assertEquals(24,stats.requestCount());
+  assertEquals(11,stats.hitCount());
+  assertEquals(11.0 / 24,stats.hitRate());
+  assertEquals(13,stats.missCount());
+  assertEquals(13.0 / 24,stats.missRate());
+  assertEquals(17,stats.loadSuccessCount());
+  assertEquals(19,stats.loadExceptionCount());
+  assertEquals(19.0 / 36,stats.loadExceptionRate());
+  assertEquals(17 + 19,stats.loadCount());
+  assertEquals(23,stats.totalLoadTime());
+  assertEquals(23.0 / (17 + 19),stats.averageLoadPenalty());
+  assertEquals(27,stats.evictionCount());
+}

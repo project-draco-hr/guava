@@ -1,0 +1,21 @@
+{
+  Set<String> friends=Sets.newHashSet("Tom","Joe","Dave");
+  Set<String> enemies=Sets.newHashSet("Dick","Harry","Tom");
+  Set<String> symmetricDifferenceFriendsFirst=Sets.symmetricDifference(friends,enemies);
+  assertEquals(4,symmetricDifferenceFriendsFirst.size());
+  Set<String> symmetricDifferenceEnemiesFirst=Sets.symmetricDifference(enemies,friends);
+  assertEquals(4,symmetricDifferenceEnemiesFirst.size());
+  assertEquals(symmetricDifferenceFriendsFirst,symmetricDifferenceEnemiesFirst);
+  ImmutableSet<String> immut=Sets.symmetricDifference(friends,enemies).immutableCopy();
+  HashSet<String> mut=Sets.symmetricDifference(friends,enemies).copyInto(new HashSet<String>());
+  enemies.add("Dave");
+  assertEquals(3,symmetricDifferenceFriendsFirst.size());
+  assertEquals(4,immut.size());
+  assertEquals(4,mut.size());
+  immut=Sets.symmetricDifference(enemies,friends).immutableCopy();
+  mut=Sets.symmetricDifference(enemies,friends).copyInto(new HashSet<String>());
+  friends.add("Harry");
+  assertEquals(2,symmetricDifferenceEnemiesFirst.size());
+  assertEquals(3,immut.size());
+  assertEquals(3,mut.size());
+}

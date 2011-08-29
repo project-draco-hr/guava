@@ -1,0 +1,3 @@
+{
+  assertSame(Collections.emptyList(),Bytes.asList(EMPTY));
+}

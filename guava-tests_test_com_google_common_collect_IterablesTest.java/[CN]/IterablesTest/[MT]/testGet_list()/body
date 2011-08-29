@@ -1,0 +1,3 @@
+{
+  testGetOnAbc(newArrayList("a","b","c"));
+}

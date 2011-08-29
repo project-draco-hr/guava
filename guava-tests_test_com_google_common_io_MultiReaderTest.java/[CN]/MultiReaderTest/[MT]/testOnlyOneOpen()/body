@@ -1,0 +1,23 @@
+{
+  String testString="abcdefgh";
+  final InputSupplier<Reader> supplier=newReader(testString);
+  final int[] counter=new int[1];
+  InputSupplier<Reader> reader=new InputSupplier<Reader>(){
+    @Override public Reader getInput() throws IOException {
+      if (counter[0]++ != 0) {
+        throw new IllegalStateException("More than one supplier open");
+      }
+      return new FilterReader(supplier.getInput()){
+        @Override public void close() throws IOException {
+          super.close();
+          counter[0]--;
+        }
+      }
+;
+    }
+  }
+;
+  @SuppressWarnings("unchecked") Reader joinedReader=CharStreams.join(reader,reader,reader).getInput();
+  String result=CharStreams.toString(joinedReader);
+  assertEquals(testString.length() * 3,result.length());
+}

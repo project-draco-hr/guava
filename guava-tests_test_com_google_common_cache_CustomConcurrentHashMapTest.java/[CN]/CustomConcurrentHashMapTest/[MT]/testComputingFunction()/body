@@ -1,0 +1,10 @@
+{
+  CacheLoader<Object,Object> loader=new CacheLoader<Object,Object>(){
+    @Override public Object load(    Object from){
+      return from;
+    }
+  }
+;
+  CustomConcurrentHashMap<Object,Object> map=makeComputingMap(createCacheBuilder(),loader);
+  assertSame(loader,map.loader);
+}

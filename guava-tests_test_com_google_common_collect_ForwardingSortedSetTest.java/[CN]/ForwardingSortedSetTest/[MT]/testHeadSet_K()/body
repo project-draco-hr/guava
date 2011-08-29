@@ -1,0 +1,4 @@
+{
+  forward().headSet("asdf");
+  assertEquals("[headSet(Object)]",getCalls());
+}

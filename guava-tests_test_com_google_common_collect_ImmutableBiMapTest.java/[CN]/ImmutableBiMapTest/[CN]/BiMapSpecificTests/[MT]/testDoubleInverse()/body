@@ -1,0 +1,4 @@
+{
+  ImmutableBiMap<String,Integer> bimap=ImmutableBiMap.copyOf(ImmutableMap.of("one",1,"two",2));
+  assertSame(bimap,bimap.inverse().inverse());
+}

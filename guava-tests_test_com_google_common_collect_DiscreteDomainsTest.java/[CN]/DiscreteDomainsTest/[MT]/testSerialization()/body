@@ -1,0 +1,5 @@
+{
+  reserializeAndAssert(DiscreteDomains.integers());
+  reserializeAndAssert(DiscreteDomains.longs());
+  reserializeAndAssert(DiscreteDomains.bigIntegers());
+}

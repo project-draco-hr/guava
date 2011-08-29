@@ -1,8 +1,0 @@
-{
-  Set<EventHandler> handlers=getHandlersForEventType(type);
-  if (handlers == null) {
-    handlersByType.putIfAbsent(type,newHandlerSet());
-    handlers=getHandlersForEventType(type);
-  }
-  return handlers;
-}

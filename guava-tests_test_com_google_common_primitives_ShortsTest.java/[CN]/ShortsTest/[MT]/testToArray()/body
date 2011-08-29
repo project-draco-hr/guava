@@ -1,0 +1,10 @@
+{
+  List<Short> none=Arrays.<Short>asList();
+  assertTrue(Arrays.equals(EMPTY,Shorts.toArray(none)));
+  List<Short> one=Arrays.asList((short)1);
+  assertTrue(Arrays.equals(ARRAY1,Shorts.toArray(one)));
+  short[] array={(short)0,(short)1,(short)3};
+  List<Short> three=Arrays.asList((short)0,(short)1,(short)3);
+  assertTrue(Arrays.equals(array,Shorts.toArray(three)));
+  assertTrue(Arrays.equals(array,Shorts.toArray(Shorts.asList(array))));
+}

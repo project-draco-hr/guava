@@ -1,0 +1,4 @@
+{
+  forward.putAll(ArrayListMultimap.<String,Boolean>create());
+  assertEquals("[putAll(Multimap)]",getCalls());
+}

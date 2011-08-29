@@ -1,0 +1,15 @@
+{
+  final List<Integer> list=asList(1,2,3,4,5);
+  final Predicate<Integer> isEven=new Predicate<Integer>(){
+    @Override public boolean apply(    Integer integer){
+      return integer % 2 == 0;
+    }
+  }
+;
+  new IteratorTester<Integer>(5,UNMODIFIABLE,asList(2,4),IteratorTester.KnownOrder.KNOWN_ORDER){
+    @Override protected Iterator<Integer> newTargetIterator(){
+      return Iterators.filter(list.iterator(),isEven);
+    }
+  }
+.test();
+}

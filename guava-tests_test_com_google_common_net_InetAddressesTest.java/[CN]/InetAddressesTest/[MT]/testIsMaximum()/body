@@ -1,0 +1,10 @@
+{
+  InetAddress address=InetAddress.getByName("255.255.255.254");
+  assertFalse(InetAddresses.isMaximum(address));
+  address=InetAddress.getByName("255.255.255.255");
+  assertTrue(InetAddresses.isMaximum(address));
+  address=InetAddress.getByName("ffff:ffff:ffff:ffff:ffff:ffff:ffff:fffe");
+  assertFalse(InetAddresses.isMaximum(address));
+  address=InetAddress.getByName("ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff");
+  assertTrue(InetAddresses.isMaximum(address));
+}

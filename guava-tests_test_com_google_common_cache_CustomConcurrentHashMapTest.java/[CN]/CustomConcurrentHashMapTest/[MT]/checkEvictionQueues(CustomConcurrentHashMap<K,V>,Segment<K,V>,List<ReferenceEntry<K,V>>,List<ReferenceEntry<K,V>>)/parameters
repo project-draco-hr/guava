@@ -1,0 +1,4 @@
+CustomConcurrentHashMap<K,V> map
+Segment<K,V> segment
+List<ReferenceEntry<K,V>> readOrder
+List<ReferenceEntry<K,V>> writeOrder

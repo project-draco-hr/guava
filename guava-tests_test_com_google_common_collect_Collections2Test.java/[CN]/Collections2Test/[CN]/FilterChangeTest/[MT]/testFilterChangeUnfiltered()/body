@@ -1,0 +1,38 @@
+{
+  List<String> unfiltered=newList();
+  Collection<String> filtered=Collections2.filter(unfiltered,NOT_YYY_ZZZ);
+  unfiltered.add("a");
+  unfiltered.add("yyy");
+  unfiltered.add("b");
+  ASSERT.that(unfiltered).hasContentsInOrder("a","yyy","b");
+  ASSERT.that(filtered).hasContentsInOrder("a","b");
+  unfiltered.remove("a");
+  ASSERT.that(unfiltered).hasContentsInOrder("yyy","b");
+  ASSERT.that(filtered).hasContentsInOrder("b");
+  unfiltered.clear();
+  ASSERT.that(unfiltered).isEmpty();
+  ASSERT.that(filtered).isEmpty();
+  unfiltered.add("yyy");
+  ASSERT.that(unfiltered).hasContentsInOrder("yyy");
+  ASSERT.that(filtered).isEmpty();
+  filtered.clear();
+  ASSERT.that(unfiltered).hasContentsInOrder("yyy");
+  ASSERT.that(filtered).isEmpty();
+  unfiltered.clear();
+  filtered.clear();
+  ASSERT.that(unfiltered).isEmpty();
+  ASSERT.that(filtered).isEmpty();
+  unfiltered.add("a");
+  ASSERT.that(unfiltered).hasContentsInOrder("a");
+  ASSERT.that(filtered).hasContentsInOrder("a");
+  filtered.clear();
+  ASSERT.that(unfiltered).isEmpty();
+  ASSERT.that(filtered).isEmpty();
+  unfiltered.clear();
+  Collections.addAll(unfiltered,"a","b","yyy","zzz","c","d","yyy","zzz");
+  ASSERT.that(unfiltered).hasContentsInOrder("a","b","yyy","zzz","c","d","yyy","zzz");
+  ASSERT.that(filtered).hasContentsInOrder("a","b","c","d");
+  filtered.clear();
+  ASSERT.that(unfiltered).hasContentsInOrder("yyy","zzz","yyy","zzz");
+  ASSERT.that(filtered).isEmpty();
+}

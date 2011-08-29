@@ -1,0 +1,8 @@
+{
+  try {
+    getMultiset().remove(samples.e0,-1);
+    fail("multiset.remove(E, -1) didn't throw an exception");
+  }
+ catch (  IllegalArgumentException required) {
+  }
+}

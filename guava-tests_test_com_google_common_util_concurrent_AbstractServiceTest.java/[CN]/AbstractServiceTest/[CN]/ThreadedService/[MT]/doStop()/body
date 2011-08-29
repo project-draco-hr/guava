@@ -1,0 +1,11 @@
+{
+  assertEquals(State.STOPPING,state());
+  invokeOnExecutionThreadForTest(new Runnable(){
+    @Override public void run(){
+      assertEquals(State.STOPPING,state());
+      notifyStopped();
+      assertEquals(State.TERMINATED,state());
+    }
+  }
+);
+}

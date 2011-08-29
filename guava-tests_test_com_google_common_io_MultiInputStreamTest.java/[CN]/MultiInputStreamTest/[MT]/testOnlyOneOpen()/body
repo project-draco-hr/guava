@@ -1,0 +1,21 @@
+{
+  final InputSupplier<InputStream> supplier=newByteSupplier(0,50);
+  final int[] counter=new int[1];
+  InputSupplier<InputStream> checker=new InputSupplier<InputStream>(){
+    @Override public InputStream getInput() throws IOException {
+      if (counter[0]++ != 0) {
+        throw new IllegalStateException("More than one supplier open");
+      }
+      return new FilterInputStream(supplier.getInput()){
+        @Override public void close() throws IOException {
+          super.close();
+          counter[0]--;
+        }
+      }
+;
+    }
+  }
+;
+  @SuppressWarnings("unchecked") byte[] result=ByteStreams.toByteArray(ByteStreams.join(checker,checker,checker));
+  assertEquals(150,result.length);
+}

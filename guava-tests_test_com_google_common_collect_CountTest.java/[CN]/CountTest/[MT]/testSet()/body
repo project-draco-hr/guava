@@ -1,0 +1,5 @@
+{
+  Count holder=new Count(10);
+  holder.set(20);
+  assertEquals(20,holder.get());
+}

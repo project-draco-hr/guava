@@ -1,0 +1,11 @@
+{
+  SetMultimap<String,Integer> multimap=ImmutableSetMultimap.of("a",2,"b",-3,"b",3,"a",4,"c",6);
+  Function<Integer,Integer> square=new Function<Integer,Integer>(){
+    @Override public Integer apply(    Integer in){
+      return in * in;
+    }
+  }
+;
+  Multimap<String,Integer> transformed=Multimaps.transformValues(multimap,square);
+  ASSERT.that(transformed.entries()).hasContentsInOrder(immutableEntry("a",4),immutableEntry("a",16),immutableEntry("b",9),immutableEntry("b",9),immutableEntry("c",36));
+}

@@ -1,0 +1,7 @@
+{
+  TreeMultiset<DerivedComparable> set=TreeMultiset.create();
+  assertTrue(set.isEmpty());
+  set.add(new DerivedComparable("foo"),2);
+  set.add(new DerivedComparable("bar"),3);
+  ASSERT.that(set).hasContentsInOrder(new DerivedComparable("bar"),new DerivedComparable("bar"),new DerivedComparable("bar"),new DerivedComparable("foo"),new DerivedComparable("foo"));
+}

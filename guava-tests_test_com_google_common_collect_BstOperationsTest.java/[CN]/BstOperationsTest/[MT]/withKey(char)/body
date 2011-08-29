@@ -1,0 +1,12 @@
+{
+  reportMatcher(new IArgumentMatcher(){
+    @Override public void appendTo(    StringBuffer buffer){
+      buffer.append("Expected BstNode with key ").append(c);
+    }
+    @Override public boolean matches(    Object argument){
+      return argument instanceof SimpleNode && ((SimpleNode)argument).getKey().charValue() == c;
+    }
+  }
+);
+  return null;
+}

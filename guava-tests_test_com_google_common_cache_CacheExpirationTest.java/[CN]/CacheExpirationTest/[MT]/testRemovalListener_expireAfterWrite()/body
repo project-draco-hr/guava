@@ -1,0 +1,30 @@
+{
+  FakeTicker ticker=new FakeTicker();
+  final AtomicInteger evictionCount=new AtomicInteger();
+  final AtomicInteger applyCount=new AtomicInteger();
+  final AtomicInteger totalSum=new AtomicInteger();
+  RemovalListener<Integer,AtomicInteger> removalListener=new RemovalListener<Integer,AtomicInteger>(){
+    @Override public void onRemoval(    RemovalNotification<Integer,AtomicInteger> notification){
+      if (notification.wasEvicted()) {
+        evictionCount.incrementAndGet();
+        totalSum.addAndGet(notification.getValue().get());
+      }
+    }
+  }
+;
+  CacheLoader<Integer,AtomicInteger> loader=new CacheLoader<Integer,AtomicInteger>(){
+    @Override public AtomicInteger load(    Integer key){
+      applyCount.incrementAndGet();
+      return new AtomicInteger();
+    }
+  }
+;
+  Cache<Integer,AtomicInteger> cache=CacheBuilder.newBuilder().removalListener(removalListener).expireAfterWrite(10,TimeUnit.MILLISECONDS).ticker(ticker).build(loader);
+  for (int i=0; i < 100; ++i) {
+    cache.getUnchecked(10).incrementAndGet();
+    ticker.advance(1,TimeUnit.MILLISECONDS);
+  }
+  assertEquals(evictionCount.get() + 1,applyCount.get());
+  int remaining=cache.getUnchecked(10).get();
+  assertEquals(100,totalSum.get() + remaining);
+}

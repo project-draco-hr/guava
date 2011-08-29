@@ -1,0 +1,6 @@
+{
+  CustomConcurrentHashMap<K,V> map=toCustomConcurrentHashMap(cache);
+  int hash=map.hash(key);
+  Segment<K,V> segment=map.segmentFor(hash);
+  segment.expand();
+}

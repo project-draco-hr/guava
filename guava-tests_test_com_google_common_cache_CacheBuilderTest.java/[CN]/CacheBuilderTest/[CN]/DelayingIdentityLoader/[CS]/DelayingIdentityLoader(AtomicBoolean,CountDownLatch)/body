@@ -1,0 +1,4 @@
+{
+  this.shouldWait=shouldWait;
+  this.delayLatch=delayLatch;
+}

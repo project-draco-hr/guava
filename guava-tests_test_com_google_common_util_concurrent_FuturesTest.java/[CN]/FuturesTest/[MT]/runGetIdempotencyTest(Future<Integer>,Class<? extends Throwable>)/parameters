@@ -1,0 +1,2 @@
+Future<Integer> transformedFuture
+Class<? extends Throwable> expectedExceptionClass

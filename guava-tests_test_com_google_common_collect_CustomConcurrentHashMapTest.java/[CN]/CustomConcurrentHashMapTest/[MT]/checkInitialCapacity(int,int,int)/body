@@ -1,0 +1,6 @@
+{
+  CustomConcurrentHashMap<Object,Object> map=makeMap(createMapMaker().concurrencyLevel(concurrencyLevel).initialCapacity(initialCapacity));
+  for (int i=0; i < map.segments.length; i++) {
+    assertEquals(segmentSize,map.segments[i].table.length());
+  }
+}

@@ -1,0 +1,6 @@
+{
+  if (builder.nullRemovalCause == null) {
+    builder.nullRemovalCause=RemovalCause.SIZE;
+  }
+  return new NullCache<K,V>(builder,CacheBuilder.CACHE_STATS_COUNTER,loader);
+}

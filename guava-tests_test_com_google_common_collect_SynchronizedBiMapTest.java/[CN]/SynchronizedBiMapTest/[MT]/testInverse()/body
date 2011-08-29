@@ -1,0 +1,7 @@
+{
+  BiMap<String,Integer> bimap=create();
+  BiMap<Integer,String> inverse=bimap.inverse();
+  assertSame(bimap,inverse.inverse());
+  assertTrue(inverse instanceof SynchronizedBiMap);
+  assertSame(mutex,((SynchronizedBiMap<?,?>)inverse).mutex);
+}

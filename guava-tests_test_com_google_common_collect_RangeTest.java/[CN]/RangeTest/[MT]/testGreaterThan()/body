@@ -1,0 +1,13 @@
+{
+  Range<Integer> range=Ranges.greaterThan(5);
+  assertFalse(range.contains(5));
+  assertTrue(range.contains(6));
+  assertTrue(range.contains(Integer.MAX_VALUE));
+  assertTrue(range.hasLowerBound());
+  assertEquals(5,(int)range.lowerEndpoint());
+  assertEquals(OPEN,range.lowerBoundType());
+  assertUnboundedAbove(range);
+  assertFalse(range.isEmpty());
+  assertEquals("(5\u2025+\u221e)",range.toString());
+  reserializeAndAssertUnlessGwt(range);
+}

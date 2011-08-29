@@ -1,16 +1,38 @@
 {
-  checkNonnegative(oldCount,"oldCount");
+  checkNonnegative(expectedOldCount,"oldCount");
   checkNonnegative(newCount,"newCount");
-  if (newCount == 0) {
-    if (oldCount == 0) {
-      return !countMap.containsKey(element);
+  AtomicInteger existingCounter=safeGet(element);
+  if (existingCounter == null) {
+    if (expectedOldCount != 0) {
+      return false;
+    }
+ else     if (newCount == 0) {
+      return true;
     }
  else {
-      return countMap.remove(element,oldCount);
+      return countMap.putIfAbsent(element,new AtomicInteger(newCount)) == null;
     }
   }
-  if (oldCount == 0) {
-    return countMap.putIfAbsent(element,newCount) == null;
+  int oldValue=existingCounter.get();
+  if (oldValue == expectedOldCount) {
+    if (oldValue == 0) {
+      if (newCount == 0) {
+        countMap.remove(element,existingCounter);
+        return true;
+      }
+ else {
+        AtomicInteger newCounter=new AtomicInteger(newCount);
+        return (countMap.putIfAbsent(element,newCounter) == null) || countMap.replace(element,existingCounter,newCounter);
+      }
+    }
+ else {
+      if (existingCounter.compareAndSet(oldValue,newCount)) {
+        if (newCount == 0) {
+          countMap.remove(element,existingCounter);
+        }
+        return true;
+      }
+    }
   }
-  return countMap.replace(element,oldCount,newCount);
+  return false;
 }

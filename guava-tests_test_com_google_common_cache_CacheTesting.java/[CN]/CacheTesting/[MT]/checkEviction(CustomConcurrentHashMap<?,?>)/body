@@ -1,0 +1,23 @@
+{
+  if (map.evictsBySize()) {
+    for (    Segment<?,?> segment : map.segments) {
+      drainRecencyQueue(segment);
+      assertEquals(0,segment.recencyQueue.size());
+      assertEquals(0,segment.readCount.get());
+      ReferenceEntry<?,?> prev=null;
+      for (      ReferenceEntry<?,?> current : segment.evictionQueue) {
+        if (prev != null) {
+          assertSame(prev,current.getPreviousEvictable());
+          assertSame(prev.getNextEvictable(),current);
+        }
+        assertSame(current,segment.getEntry(current.getKey(),current.getHash()));
+        prev=current;
+      }
+    }
+  }
+ else {
+    for (    Segment segment : map.segments) {
+      assertEquals(0,segment.recencyQueue.size());
+    }
+  }
+}

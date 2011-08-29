@@ -1,0 +1,4 @@
+{
+  ImmutableBiMap<String,Integer> bimap=ImmutableBiMap.of();
+  assertSame(bimap,SerializableTester.reserializeAndAssert(bimap));
+}

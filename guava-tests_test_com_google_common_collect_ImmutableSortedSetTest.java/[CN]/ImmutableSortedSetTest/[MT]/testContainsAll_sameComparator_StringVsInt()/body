@@ -1,0 +1,6 @@
+{
+  SortedSet<String> set=of("a","b","f");
+  SortedSet<Integer> unexpected=Sets.newTreeSet(Ordering.natural());
+  unexpected.addAll(asList(1,2,3));
+  assertFalse(set.containsAll(unexpected));
+}

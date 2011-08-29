@@ -1,0 +1,8 @@
+{
+  assertTrue(c.add("a"));
+  assertTrue(c.add("b"));
+  c.add("a");
+  c.add("b");
+  assertTrue(c.contains("a"));
+  assertTrue(c.contains("b"));
+}

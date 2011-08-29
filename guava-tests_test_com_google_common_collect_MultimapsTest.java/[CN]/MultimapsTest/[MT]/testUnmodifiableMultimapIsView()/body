@@ -1,0 +1,8 @@
+{
+  Multimap<String,Integer> mod=HashMultimap.create();
+  Multimap<String,Integer> unmod=Multimaps.unmodifiableMultimap(mod);
+  assertEquals(mod,unmod);
+  mod.put("foo",1);
+  assertTrue(unmod.containsEntry("foo",1));
+  assertEquals(mod,unmod);
+}

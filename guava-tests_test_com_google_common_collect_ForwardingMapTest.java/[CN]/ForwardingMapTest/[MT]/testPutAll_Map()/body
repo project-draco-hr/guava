@@ -1,0 +1,4 @@
+{
+  forward().putAll(new HashMap<String,Boolean>());
+  assertEquals("[putAll(Map)]",getCalls());
+}

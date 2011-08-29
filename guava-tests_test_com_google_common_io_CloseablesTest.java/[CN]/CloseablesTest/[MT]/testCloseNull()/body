@@ -1,0 +1,5 @@
+{
+  Closeables.close(null,true);
+  Closeables.close(null,false);
+  Closeables.closeQuietly(null);
+}

@@ -1,0 +1,4 @@
+{
+  assertEquals(10,counter.skip(10));
+  assertEquals(10,counter.getCount());
+}

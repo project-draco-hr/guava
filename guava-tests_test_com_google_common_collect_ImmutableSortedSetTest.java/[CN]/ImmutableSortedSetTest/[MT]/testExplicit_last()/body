@@ -1,0 +1,4 @@
+{
+  SortedSet<String> set=ImmutableSortedSet.orderedBy(STRING_LENGTH).add("in","the","quick","jumped","over","a").build();
+  assertEquals("jumped",set.last());
+}

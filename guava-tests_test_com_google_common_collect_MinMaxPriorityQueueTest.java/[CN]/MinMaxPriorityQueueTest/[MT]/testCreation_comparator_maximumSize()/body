@@ -1,0 +1,6 @@
+{
+  MinMaxPriorityQueue<Integer> queue=MinMaxPriorityQueue.orderedBy(SOME_COMPARATOR).maximumSize(42).create();
+  assertEquals(11,queue.capacity());
+  assertEquals(42,queue.maximumSize);
+  assertSame(SOME_COMPARATOR,queue.comparator());
+}

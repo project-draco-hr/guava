@@ -1,0 +1,9 @@
+{
+  try {
+    getUnchecked(FAILED_FUTURE_OTHER_THROWABLE);
+    fail();
+  }
+ catch (  UncheckedExecutionException expected) {
+    assertEquals(OTHER_THROWABLE,expected.getCause());
+  }
+}

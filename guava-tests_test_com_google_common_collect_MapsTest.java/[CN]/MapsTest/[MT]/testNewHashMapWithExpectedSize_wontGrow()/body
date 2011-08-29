@@ -1,0 +1,13 @@
+{
+  for (int size=0; size < 200; size++) {
+    HashMap<Integer,Void> map1=Maps.newHashMapWithExpectedSize(size);
+    int startSize=sizeOf(map1);
+    for (int i=0; i < size; i++) {
+      map1.put(i,null);
+    }
+    assertEquals("table size after adding " + size + "elements",startSize,sizeOf(map1));
+    HashMap<Integer,Void> map2=Maps.newHashMapWithExpectedSize(size);
+    map2.putAll(map1);
+    assertEquals("table size after adding " + size + "elements",startSize,sizeOf(map2));
+  }
+}

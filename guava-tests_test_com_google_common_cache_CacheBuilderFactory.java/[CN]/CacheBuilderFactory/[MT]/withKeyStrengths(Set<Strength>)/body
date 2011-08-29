@@ -1,0 +1,5 @@
+{
+  this.keyStrengths=Sets.newLinkedHashSet(keyStrengths);
+  Preconditions.checkArgument(!this.keyStrengths.contains(Strength.SOFT));
+  return this;
+}

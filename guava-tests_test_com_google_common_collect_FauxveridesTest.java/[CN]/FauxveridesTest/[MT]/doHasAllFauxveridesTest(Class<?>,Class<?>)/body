@@ -1,0 +1,6 @@
+{
+  Set<MethodSignature> required=getAllRequiredToFauxveride(descendant,ancestor);
+  Set<MethodSignature> found=getAllFauxveridden(descendant,ancestor);
+  required.removeAll(found);
+  assertEquals("Must hide public static methods from ancestor classes",Collections.emptySet(),newTreeSet(required));
+}

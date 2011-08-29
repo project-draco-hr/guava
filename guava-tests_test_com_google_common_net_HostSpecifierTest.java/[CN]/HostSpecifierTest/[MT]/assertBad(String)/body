@@ -1,0 +1,16 @@
+{
+  try {
+    HostSpecifier.fromValid(spec);
+    fail("Should have thrown IllegalArgumentException: " + spec);
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+  try {
+    HostSpecifier.from(spec);
+    fail("Should have thrown ParseException: " + spec);
+  }
+ catch (  ParseException expected) {
+    assertTrue(expected.getCause() instanceof IllegalArgumentException);
+  }
+  assertFalse(HostSpecifier.isValid(spec));
+}

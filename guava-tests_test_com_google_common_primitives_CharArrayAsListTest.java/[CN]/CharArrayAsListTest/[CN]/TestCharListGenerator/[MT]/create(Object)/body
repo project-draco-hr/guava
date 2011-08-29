@@ -1,0 +1,8 @@
+{
+  Character[] array=new Character[elements.length];
+  int i=0;
+  for (  Object e : elements) {
+    array[i++]=(Character)e;
+  }
+  return create(array);
+}

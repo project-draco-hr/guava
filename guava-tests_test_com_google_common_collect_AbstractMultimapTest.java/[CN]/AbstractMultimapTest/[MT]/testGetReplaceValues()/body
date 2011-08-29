@@ -1,0 +1,11 @@
+{
+  multimap.put("foo",1);
+  multimap.put("foo",3);
+  Collection<Integer> values=multimap.get("foo");
+  multimap.replaceValues("foo",asList(1,5));
+  ASSERT.that(values).hasContentsAnyOrder(1,5);
+  multimap.replaceValues("foo",new ArrayList<Integer>());
+  assertTrue(multimap.isEmpty());
+  assertSize(0);
+  assertTrue(values.isEmpty());
+}

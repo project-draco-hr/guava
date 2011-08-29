@@ -1,0 +1,13 @@
+{
+  for (int attempts=0; attempts < 5000; attempts++) {
+    int size=new Random().nextInt(256) + 16;
+    ArrayList<Integer> elements=createOrderedList(size);
+    List<Integer> expected=ImmutableList.copyOf(elements);
+    MinMaxPriorityQueue<Integer> q=MinMaxPriorityQueue.create();
+    long seed=insertRandomly(elements,q);
+    while (!q.isEmpty()) {
+      elements.add(q.pollFirst());
+    }
+    assertEquals("Using seed " + seed,expected,elements);
+  }
+}

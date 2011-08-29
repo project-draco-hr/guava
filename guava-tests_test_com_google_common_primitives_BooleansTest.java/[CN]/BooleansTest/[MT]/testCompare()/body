@@ -1,0 +1,7 @@
+{
+  for (  boolean x : VALUES) {
+    for (    boolean y : VALUES) {
+      assertEquals(x + ", " + y,Boolean.valueOf(x).compareTo(y),Booleans.compare(x,y));
+    }
+  }
+}

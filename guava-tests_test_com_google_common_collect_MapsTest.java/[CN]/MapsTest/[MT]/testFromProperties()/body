@@ -1,0 +1,33 @@
+{
+  Properties testProp=new Properties();
+  Map<String,String> result=Maps.fromProperties(testProp);
+  assertTrue(result.isEmpty());
+  testProp.setProperty("first","true");
+  result=Maps.fromProperties(testProp);
+  assertEquals("true",result.get("first"));
+  assertEquals(1,result.size());
+  testProp.setProperty("second","null");
+  result=Maps.fromProperties(testProp);
+  assertEquals("true",result.get("first"));
+  assertEquals("null",result.get("second"));
+  assertEquals(2,result.size());
+  String props="test\n second = 2\n Third item :   a short  phrase   ";
+  testProp.load(new java.io.StringBufferInputStream(props));
+  result=Maps.fromProperties(testProp);
+  assertEquals(4,result.size());
+  assertEquals("true",result.get("first"));
+  assertEquals("",result.get("test"));
+  assertEquals("2",result.get("second"));
+  assertEquals("item :   a short  phrase   ",result.get("Third"));
+  assertFalse(result.containsKey("not here"));
+  result=Maps.fromProperties(System.getProperties());
+  assertTrue(result.containsKey("java.version"));
+  testProp=new Properties(System.getProperties());
+  String override="test\njava.version : hidden";
+  testProp.load(new java.io.StringBufferInputStream(override));
+  result=Maps.fromProperties(testProp);
+  assertTrue(result.size() > 2);
+  assertEquals("",result.get("test"));
+  assertEquals("hidden",result.get("java.version"));
+  assertNotSame(System.getProperty("java.version"),result.get("java.version"));
+}

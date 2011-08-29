@@ -1,0 +1,4 @@
+{
+  forward().subMap("first","last");
+  assertEquals("[subMap(Object,Object)]",getCalls());
+}

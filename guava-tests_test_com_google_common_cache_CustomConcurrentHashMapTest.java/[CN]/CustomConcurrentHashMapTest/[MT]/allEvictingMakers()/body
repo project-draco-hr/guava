@@ -1,0 +1,3 @@
+{
+  return ImmutableList.of(createCacheBuilder().maximumSize(SMALL_MAX_SIZE),createCacheBuilder().expireAfterAccess(99999,SECONDS),createCacheBuilder().expireAfterWrite(99999,SECONDS),createCacheBuilder().maximumSize(SMALL_MAX_SIZE).expireAfterAccess(SMALL_MAX_SIZE,TimeUnit.SECONDS),createCacheBuilder().maximumSize(SMALL_MAX_SIZE).expireAfterWrite(SMALL_MAX_SIZE,TimeUnit.SECONDS));
+}

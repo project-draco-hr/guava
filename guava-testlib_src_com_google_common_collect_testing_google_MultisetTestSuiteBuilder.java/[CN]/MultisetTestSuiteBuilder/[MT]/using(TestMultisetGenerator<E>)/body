@@ -1,0 +1,3 @@
+{
+  return new MultisetTestSuiteBuilder<E>().usingGenerator(generator);
+}

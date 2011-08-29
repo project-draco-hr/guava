@@ -1,0 +1,27 @@
+{
+  String chars="abcdefg";
+  for (int i=0; i < chars.length(); i++) {
+    for (    BoundType lb : BoundType.values()) {
+      for (int j=i; j < chars.length(); j++) {
+        for (        BoundType ub : BoundType.values()) {
+          if (i == j && lb == BoundType.OPEN && ub == BoundType.OPEN) {
+            continue;
+          }
+          int count=BstRangeOps.totalInRange(countAggregate,GeneralRange.range(Ordering.natural(),chars.charAt(i),lb,chars.charAt(j),ub),ROOT);
+          char lo=chars.charAt(i);
+          if (lb == BoundType.OPEN) {
+            lo++;
+          }
+          char hi=chars.charAt(j);
+          if (ub == BoundType.CLOSED) {
+            hi++;
+          }
+          if (lo > hi) {
+            lo=hi;
+          }
+          assertEquals(MODEL.subSet(lo,hi).size(),count);
+        }
+      }
+    }
+  }
+}

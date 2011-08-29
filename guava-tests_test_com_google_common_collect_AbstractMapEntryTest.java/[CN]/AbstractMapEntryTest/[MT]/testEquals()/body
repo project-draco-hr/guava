@@ -1,0 +1,10 @@
+{
+  Entry<String,Integer> foo1=entry("foo",1);
+  assertEquals(foo1,foo1);
+  assertEquals(control("foo",1),foo1);
+  assertEquals(control("bar",2),entry("bar",2));
+  assertFalse(control("foo",1).equals(entry("foo",2)));
+  assertFalse(foo1.equals(control("bar",1)));
+  assertFalse(foo1.equals(new Object()));
+  assertFalse(foo1.equals(null));
+}

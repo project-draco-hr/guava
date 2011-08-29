@@ -1,0 +1,5 @@
+{
+  Set<SomeEnum> units=Sets.newHashSet(SomeEnum.B,SomeEnum.D);
+  EnumSet<SomeEnum> otherUnits=Sets.complementOf(units,SomeEnum.class);
+  verifySetContents(otherUnits,EnumSet.of(SomeEnum.A,SomeEnum.C));
+}

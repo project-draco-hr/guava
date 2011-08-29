@@ -1,12 +1,7 @@
 {
   checkNotNull(iterable);
-  return new Iterable<T>(){
-    @Override public Iterator<T> iterator(){
-      return Iterators.unmodifiableIterator(iterable.iterator());
-    }
-    @Override public String toString(){
-      return iterable.toString();
-    }
+  if (iterable instanceof UnmodifiableIterable || iterable instanceof ImmutableCollection) {
+    return iterable;
   }
-;
+  return new UnmodifiableIterable<T>(iterable);
 }

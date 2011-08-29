@@ -1,0 +1,22 @@
+{
+  CacheLoader<Integer,String> failOnceFunction=new CacheLoader<Integer,String>(){
+    private final AtomicInteger count=new AtomicInteger();
+    @Override public String load(    Integer key){
+      if (count.getAndIncrement() == 0) {
+        throw new IllegalStateException("exception to trigger failure on first load()");
+      }
+      return key.toString();
+    }
+  }
+;
+  CountingRemovalListener<Integer,String> removalListener=countingRemovalListener();
+  Cache<Integer,String> cache=CacheBuilder.newBuilder().weakValues().removalListener(removalListener).build(failOnceFunction);
+  try {
+    cache.getUnchecked(1);
+    fail();
+  }
+ catch (  UncheckedExecutionException e) {
+  }
+  assertEquals("1",cache.getUnchecked(1));
+  assertEquals(0,removalListener.getCount());
+}

@@ -1,0 +1,9 @@
+{
+  try {
+    Resources.getResource(getClass(),"com/google/common/io/testdata/i18n.txt");
+    fail();
+  }
+ catch (  IllegalArgumentException e) {
+    assertEquals("resource com/google/common/io/testdata/i18n.txt" + " relative to com.google.common.io.ResourcesTest not found.",e.getMessage());
+  }
+}

@@ -1,0 +1,10 @@
+{
+  super.setUp();
+  @SuppressWarnings("unchecked") final ListIterator<String> li=createProxyInstance(ListIterator.class);
+  forward=new ForwardingListIterator<String>(){
+    @Override protected ListIterator<String> delegate(){
+      return li;
+    }
+  }
+;
+}

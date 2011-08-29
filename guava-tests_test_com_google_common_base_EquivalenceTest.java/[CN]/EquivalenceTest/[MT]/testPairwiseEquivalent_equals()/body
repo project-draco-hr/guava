@@ -1,0 +1,3 @@
+{
+  new EqualsTester().addEqualityGroup(Equivalences.equals().pairwise(),Equivalences.equals().pairwise()).addEqualityGroup(Equivalences.identity().pairwise()).testEquals();
+}

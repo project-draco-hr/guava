@@ -1,0 +1,5 @@
+{
+  Collection<String> c=MinimalCollection.of("a");
+  List<String> list=ImmutableList.copyOf(c);
+  assertEquals(Collections.singletonList("a"),list);
+}

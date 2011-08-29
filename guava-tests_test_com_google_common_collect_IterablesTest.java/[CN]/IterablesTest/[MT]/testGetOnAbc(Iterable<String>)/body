@@ -1,0 +1,23 @@
+{
+  try {
+    Iterables.get(iterable,-1);
+    fail();
+  }
+ catch (  IndexOutOfBoundsException expected) {
+  }
+  assertEquals("a",Iterables.get(iterable,0));
+  assertEquals("b",Iterables.get(iterable,1));
+  assertEquals("c",Iterables.get(iterable,2));
+  try {
+    Iterables.get(iterable,3);
+    fail();
+  }
+ catch (  IndexOutOfBoundsException nsee) {
+  }
+  try {
+    Iterables.get(iterable,4);
+    fail();
+  }
+ catch (  IndexOutOfBoundsException nsee) {
+  }
+}

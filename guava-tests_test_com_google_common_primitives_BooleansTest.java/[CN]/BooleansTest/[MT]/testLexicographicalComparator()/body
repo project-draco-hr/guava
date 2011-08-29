@@ -1,0 +1,5 @@
+{
+  List<boolean[]> ordered=Arrays.asList(new boolean[]{},new boolean[]{false},new boolean[]{false,false},new boolean[]{false,true},new boolean[]{true},new boolean[]{true,false},new boolean[]{true,true},new boolean[]{true,true,true});
+  Comparator<boolean[]> comparator=Booleans.lexicographicalComparator();
+  Helpers.testComparator(comparator,ordered);
+}

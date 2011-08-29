@@ -1,0 +1,9 @@
+{
+  ImmutableMap<Class<? extends Number>,? extends Number> in=ImmutableMap.of(Number.class,0,Double.class,Math.PI);
+  ClassToInstanceMap<Number> map=ImmutableClassToInstanceMap.copyOf(in);
+  assertEquals(2,map.size());
+  Number zero=map.getInstance(Number.class);
+  assertEquals(0,zero);
+  Double pi=map.getInstance(Double.class);
+  assertEquals(Math.PI,pi,0.0);
+}

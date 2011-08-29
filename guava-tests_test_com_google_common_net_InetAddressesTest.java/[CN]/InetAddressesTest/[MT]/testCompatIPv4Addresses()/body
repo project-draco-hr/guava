@@ -1,0 +1,22 @@
+{
+  String[] nonCompatAddresses={"3ffe::1","::","::1"};
+  for (int i=0; i < nonCompatAddresses.length; i++) {
+    InetAddress ip=InetAddresses.forString(nonCompatAddresses[i]);
+    assertFalse(InetAddresses.isCompatIPv4Address((Inet6Address)ip));
+    try {
+      InetAddresses.getCompatIPv4Address((Inet6Address)ip);
+      fail("IllegalArgumentException expected for '" + nonCompatAddresses[i] + "'");
+    }
+ catch (    IllegalArgumentException expected) {
+    }
+  }
+  String[] validCompatAddresses={"::1.2.3.4","::102:304"};
+  String compatStr="1.2.3.4";
+  InetAddress compat=InetAddresses.forString(compatStr);
+  for (int i=0; i < validCompatAddresses.length; i++) {
+    InetAddress ip=InetAddresses.forString(validCompatAddresses[i]);
+    assertTrue("checking '" + validCompatAddresses[i] + "'",ip instanceof Inet6Address);
+    assertTrue("checking '" + validCompatAddresses[i] + "'",InetAddresses.isCompatIPv4Address((Inet6Address)ip));
+    assertEquals("checking '" + validCompatAddresses[i] + "'",compat,InetAddresses.getCompatIPv4Address((Inet6Address)ip));
+  }
+}

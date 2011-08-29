@@ -1,0 +1,8 @@
+{
+  ImmutableSetMultimap.Builder<String,Integer> builder=ImmutableSetMultimap.builder();
+  builder.putAll("foo",1,2,3);
+  builder.putAll("bar",4,5);
+  builder.put("foo",1);
+  ImmutableSetMultimap<String,Integer> multimap=builder.build();
+  assertEquals(5,multimap.size());
+}

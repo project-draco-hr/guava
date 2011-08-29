@@ -1,0 +1,4 @@
+{
+  forward.iterator();
+  assertEquals("[iterator]",getCalls());
+}

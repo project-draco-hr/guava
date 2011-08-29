@@ -1,0 +1,8 @@
+{
+  new DoubletonIteratorTester(){
+    @Override protected Iterator<Integer> newTargetIterator(){
+      return Iterators.concat(iterateOver(1),iterateOver(2));
+    }
+  }
+.test();
+}

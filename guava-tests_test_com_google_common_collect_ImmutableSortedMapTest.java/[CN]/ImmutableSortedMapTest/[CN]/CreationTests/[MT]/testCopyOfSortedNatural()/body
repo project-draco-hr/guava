@@ -1,0 +1,10 @@
+{
+  SortedMap<String,Integer> original=Maps.newTreeMap();
+  original.put("one",1);
+  original.put("two",2);
+  original.put("three",3);
+  ImmutableSortedMap<String,Integer> copy=ImmutableSortedMap.copyOfSorted(original);
+  assertMapEquals(copy,"one",1,"three",3,"two",2);
+  assertSame(copy,ImmutableSortedMap.copyOfSorted(copy));
+  assertSame(Ordering.natural(),copy.comparator());
+}

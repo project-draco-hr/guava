@@ -1,0 +1,7 @@
+{
+  return new Executor(){
+    @Override public void execute(    Runnable command){
+    }
+  }
+;
+}

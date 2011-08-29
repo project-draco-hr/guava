@@ -1,0 +1,3 @@
+{
+  Assert.fail("Event bus must not call methods without @Subscribe!");
+}

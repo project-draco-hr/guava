@@ -1,0 +1,4 @@
+{
+  Set<SomeEnum> set=ImmutableSet.of(SomeEnum.B,SomeEnum.C);
+  assertEquals(set,newEnumSet(set,SomeEnum.class));
+}

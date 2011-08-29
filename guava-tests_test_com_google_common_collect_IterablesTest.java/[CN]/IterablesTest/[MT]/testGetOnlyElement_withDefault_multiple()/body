@@ -1,0 +1,9 @@
+{
+  Iterable<String> iterable=asList("foo","bar");
+  try {
+    Iterables.getOnlyElement(iterable,"x");
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}

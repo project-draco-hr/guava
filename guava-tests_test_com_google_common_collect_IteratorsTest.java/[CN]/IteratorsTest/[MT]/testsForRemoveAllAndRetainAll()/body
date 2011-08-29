@@ -1,0 +1,20 @@
+{
+  return ListTestSuiteBuilder.using(new TestStringListGenerator(){
+    @Override public List<String> create(    final String[] elements){
+      final List<String> delegate=newArrayList(elements);
+      return new ForwardingList<String>(){
+        @Override protected List<String> delegate(){
+          return delegate;
+        }
+        @Override public boolean removeAll(        Collection<?> c){
+          return Iterators.removeAll(iterator(),c);
+        }
+        @Override public boolean retainAll(        Collection<?> c){
+          return Iterators.retainAll(iterator(),c);
+        }
+      }
+;
+    }
+  }
+).named("ArrayList with Iterators.removeAll and retainAll").withFeatures(ListFeature.GENERAL_PURPOSE,CollectionFeature.ALLOWS_NULL_VALUES,CollectionSize.ANY).createTestSuite();
+}

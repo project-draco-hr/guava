@@ -1,0 +1,16 @@
+{
+  if (hasCustomConcurrentHashMap(cache)) {
+    warmUp(cache,0,2 * maxSize);
+    CustomConcurrentHashMap<Integer,Integer> cchm=toCustomConcurrentHashMap(cache);
+    Segment<?,?> segment=cchm.segments[0];
+    drainRecencyQueue(segment);
+    assertEquals(maxSize,evictionQueueSize(cache));
+    assertEquals(maxSize,cache.size());
+    ReferenceEntry<?,?> originalHead=segment.evictionQueue.peek();
+    @SuppressWarnings("unchecked") ReferenceEntry<Integer,Integer> entry=(ReferenceEntry)originalHead;
+    operation.accept(entry);
+    drainRecencyQueue(segment);
+    assertNotSame(originalHead,segment.evictionQueue.peek());
+    assertEquals(cache.size(),evictionQueueSize(cache));
+  }
+}

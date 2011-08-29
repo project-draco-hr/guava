@@ -1,0 +1,8 @@
+{
+  new IteratorTester<Integer>(5,MODIFIABLE,newArrayList(2,4,6,8),IteratorTester.KnownOrder.KNOWN_ORDER){
+    @Override protected Iterator<Integer> newTargetIterator(){
+      return Iterables.reverse(newArrayList(8,6,4,2)).iterator();
+    }
+  }
+.test();
+}

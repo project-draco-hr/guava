@@ -1,0 +1,4 @@
+{
+  forward.column(1);
+  assertEquals("[column(Object)]",getCalls());
+}

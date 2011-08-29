@@ -1,0 +1,7 @@
+{
+  String testString="abcdefgh";
+  InputSupplier<Reader> supplier=newReader(testString);
+  @SuppressWarnings("unchecked") Reader joinedReader=CharStreams.join(supplier,supplier).getInput();
+  String expectedString=testString + testString;
+  assertEquals(expectedString,CharStreams.toString(joinedReader));
+}

@@ -1,0 +1,13 @@
+{
+  for (int i=0; i < 5; i++) {
+    try {
+      transformedFuture.get();
+      fail();
+    }
+ catch (    ExecutionException expected) {
+      if (!expectedExceptionClass.isInstance(expected.getCause())) {
+        throw expected.getCause();
+      }
+    }
+  }
+}

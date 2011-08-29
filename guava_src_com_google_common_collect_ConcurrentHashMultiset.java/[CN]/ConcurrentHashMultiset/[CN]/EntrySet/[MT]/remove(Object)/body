@@ -3,7 +3,10 @@
     Multiset.Entry<?> entry=(Multiset.Entry<?>)object;
     Object element=entry.getElement();
     int entryCount=entry.getCount();
-    return countMap.remove(element,entryCount);
+    if (entryCount != 0) {
+      @SuppressWarnings("unchecked") Multiset<Object> multiset=(Multiset)multiset();
+      return multiset.setCount(element,entryCount,0);
+    }
   }
   return false;
 }

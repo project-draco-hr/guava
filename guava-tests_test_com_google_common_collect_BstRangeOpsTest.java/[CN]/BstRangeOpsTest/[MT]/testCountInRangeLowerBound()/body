@@ -1,0 +1,12 @@
+{
+  for (  char c : "abcdefg".toCharArray()) {
+    for (    BoundType type : BoundType.values()) {
+      int count=BstRangeOps.totalInRange(countAggregate,GeneralRange.downTo(Ordering.natural(),c,type),ROOT);
+      char d=c;
+      if (type == BoundType.OPEN) {
+        d++;
+      }
+      assertEquals(MODEL.tailSet(d).size(),count);
+    }
+  }
+}

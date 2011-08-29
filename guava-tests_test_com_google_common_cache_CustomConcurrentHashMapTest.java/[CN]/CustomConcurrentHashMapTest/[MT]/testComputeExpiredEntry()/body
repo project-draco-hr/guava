@@ -1,0 +1,12 @@
+{
+  CacheBuilder<Object,Object> builder=createCacheBuilder().expireAfterWrite(1,TimeUnit.NANOSECONDS);
+  CountingLoader loader=new CountingLoader();
+  CustomConcurrentHashMap<Object,Object> map=makeComputingMap(builder,loader);
+  assertEquals(0,loader.getCount());
+  Object key=new Object();
+  Object one=map.getOrCompute(key);
+  assertEquals(1,loader.getCount());
+  Object two=map.getOrCompute(key);
+  assertNotSame(one,two);
+  assertEquals(2,loader.getCount());
+}

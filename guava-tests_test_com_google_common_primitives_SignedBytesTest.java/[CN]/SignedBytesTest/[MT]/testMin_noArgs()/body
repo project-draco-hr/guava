@@ -1,0 +1,8 @@
+{
+  try {
+    SignedBytes.min();
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}

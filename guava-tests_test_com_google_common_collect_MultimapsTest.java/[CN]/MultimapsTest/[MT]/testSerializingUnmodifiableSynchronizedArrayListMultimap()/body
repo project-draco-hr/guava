@@ -1,0 +1,4 @@
+{
+  Multimap<String,Integer> unmodifiable=prepareUnmodifiableTests(Multimaps.synchronizedListMultimap(ArrayListMultimap.<String,Integer>create()),true,null,null);
+  SerializableTester.reserializeAndAssert(unmodifiable);
+}

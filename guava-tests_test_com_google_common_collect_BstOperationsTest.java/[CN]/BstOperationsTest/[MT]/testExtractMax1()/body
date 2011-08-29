@@ -1,0 +1,13 @@
+{
+  SimpleNode c=new SimpleNode('c',null,null);
+  SimpleNode b=new SimpleNode('b',null,c);
+  SimpleNode g=new SimpleNode('g',null,null);
+  SimpleNode f=new SimpleNode('f',null,g);
+  SimpleNode d=new SimpleNode('d',b,f);
+  BstMutationResult<Character,SimpleNode> extractMax=BstOperations.extractMax(d,nodeFactory,balancePolicy);
+  assertEquals('g',extractMax.getTargetKey().charValue());
+  assertEquals(d,extractMax.getOriginalRoot());
+  assertEquals(g,extractMax.getOriginalTarget());
+  assertNull(extractMax.getChangedTarget());
+  assertInOrderTraversalIs(extractMax.getChangedRoot(),"bcdf");
+}

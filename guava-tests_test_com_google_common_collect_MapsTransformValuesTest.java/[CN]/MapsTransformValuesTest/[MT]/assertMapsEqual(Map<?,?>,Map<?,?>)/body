@@ -1,0 +1,10 @@
+{
+  assertEquals(expected,map);
+  assertEquals(expected.hashCode(),map.hashCode());
+  assertEquals(expected.entrySet(),map.entrySet());
+  Collection<?> expectedValues=expected.values();
+  Collection<?> mapValues=map.values();
+  assertEquals(expectedValues.size(),mapValues.size());
+  assertTrue(expectedValues.containsAll(mapValues));
+  assertTrue(mapValues.containsAll(expectedValues));
+}

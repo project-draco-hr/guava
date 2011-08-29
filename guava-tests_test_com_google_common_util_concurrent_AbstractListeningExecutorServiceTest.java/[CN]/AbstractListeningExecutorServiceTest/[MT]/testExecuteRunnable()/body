@@ -1,0 +1,8 @@
+{
+  ExecutorService e=new DirectExecutorService();
+  TrackedShortRunnable task=new TrackedShortRunnable();
+  assertFalse(task.done);
+  Future<?> future=e.submit(task);
+  future.get();
+  assertTrue(task.done);
+}

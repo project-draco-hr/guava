@@ -1,0 +1,17 @@
+{
+  return new ForwardingSet<Entry<K,V>>(){
+    @Override protected Set<Entry<K,V>> delegate(){
+      return delegate.entrySet();
+    }
+    @Override public Iterator<Entry<K,V>> iterator(){
+      return Iterators.unmodifiableIterator(delegate.entrySet().iterator());
+    }
+    @Override public boolean removeAll(    Collection<?> c){
+      return delegate.entrySet().removeAll(c);
+    }
+    @Override public boolean retainAll(    Collection<?> c){
+      return delegate.entrySet().retainAll(c);
+    }
+  }
+;
+}

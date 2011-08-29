@@ -1,0 +1,6 @@
+{
+  InternetDomainName domain=InternetDomainName.from("foo.nhs.uk");
+  assertTrue(domain.hasPublicSuffix());
+  assertEquals("uk",domain.publicSuffix().name());
+  assertFalse(domain.publicSuffix().isPublicSuffix());
+}

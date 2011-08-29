@@ -1,0 +1,6 @@
+{
+  Iterator<Integer> iterator=newArrayList(1,2,3).iterator();
+  PeekingIterator<Number> first=Iterators.<Number>peekingIterator(iterator);
+  PeekingIterator<Number> second=Iterators.peekingIterator(first);
+  assertSame("Should not rewrap iterator returned by peekingIterator()",first,second);
+}

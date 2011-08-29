@@ -1,0 +1,25 @@
+{
+  Range<Integer> range=Ranges.closed(4,8);
+  assertEquals(Ranges.closed(0,8),range.span(Ranges.closed(0,2)));
+  assertEquals(Ranges.atMost(8),range.span(Ranges.atMost(2)));
+  assertEquals(Ranges.closed(2,8),range.span(Ranges.closedOpen(2,4)));
+  assertEquals(Ranges.atMost(8),range.span(Ranges.lessThan(4)));
+  assertEquals(Ranges.closed(2,8),range.span(Ranges.closed(2,6)));
+  assertEquals(Ranges.atMost(8),range.span(Ranges.atMost(6)));
+  assertEquals(range,range.span(Ranges.closed(4,6)));
+  assertEquals(range,range.span(Ranges.closed(5,7)));
+  assertEquals(range,range.span(Ranges.closed(6,8)));
+  assertEquals(range,range.span(range));
+  assertEquals(Ranges.closed(4,10),range.span(Ranges.closed(4,10)));
+  assertEquals(Ranges.atLeast(4),range.span(Ranges.atLeast(4)));
+  assertEquals(Ranges.closed(2,8),range.span(Ranges.closed(2,8)));
+  assertEquals(Ranges.atMost(8),range.span(Ranges.atMost(8)));
+  assertEquals(Ranges.closed(2,10),range.span(Ranges.closed(2,10)));
+  assertEquals(Ranges.<Integer>all(),range.span(Ranges.<Integer>all()));
+  assertEquals(Ranges.closed(4,10),range.span(Ranges.closed(6,10)));
+  assertEquals(Ranges.atLeast(4),range.span(Ranges.atLeast(6)));
+  assertEquals(Ranges.closed(4,10),range.span(Ranges.openClosed(8,10)));
+  assertEquals(Ranges.atLeast(4),range.span(Ranges.greaterThan(8)));
+  assertEquals(Ranges.closed(4,12),range.span(Ranges.closed(10,12)));
+  assertEquals(Ranges.atLeast(4),range.span(Ranges.atLeast(10)));
+}

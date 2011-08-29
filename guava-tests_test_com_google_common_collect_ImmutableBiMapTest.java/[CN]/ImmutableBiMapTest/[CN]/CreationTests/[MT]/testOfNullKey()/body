@@ -1,0 +1,14 @@
+{
+  try {
+    ImmutableBiMap.of(null,1);
+    fail();
+  }
+ catch (  NullPointerException expected) {
+  }
+  try {
+    ImmutableBiMap.of("one",1,null,2);
+    fail();
+  }
+ catch (  NullPointerException expected) {
+  }
+}

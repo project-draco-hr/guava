@@ -1,0 +1,9 @@
+{
+  CacheBuilder<Object,Object> builder=new CacheBuilder<Object,Object>().concurrencyLevel(16);
+  try {
+    builder.concurrencyLevel(16);
+    fail();
+  }
+ catch (  IllegalStateException expected) {
+  }
+}

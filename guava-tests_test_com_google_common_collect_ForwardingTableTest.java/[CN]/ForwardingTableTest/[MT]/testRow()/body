@@ -1,0 +1,4 @@
+{
+  forward.row("String");
+  assertEquals("[row(Object)]",getCalls());
+}

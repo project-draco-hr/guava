@@ -1,0 +1,3 @@
+ArrayList<Integer> elements
+MinMaxPriorityQueue<Integer> q
+Random random

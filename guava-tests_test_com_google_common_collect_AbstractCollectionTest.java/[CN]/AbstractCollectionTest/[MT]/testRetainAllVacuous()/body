@@ -1,0 +1,4 @@
+{
+  assertFalse(c.retainAll(asList("a")));
+  assertContents();
+}

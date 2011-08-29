@@ -1,0 +1,15 @@
+{
+  ms.add("a");
+  ms.add("b");
+  ms.add("c");
+  Iterator<String> iterator=ms.iterator();
+  iterator.next();
+  iterator.remove();
+  try {
+    iterator.remove();
+    fail();
+  }
+ catch (  IllegalStateException expected) {
+  }
+  assertSize();
+}

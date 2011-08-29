@@ -1,0 +1,11 @@
+{
+  if (map.evictsBySize()) {
+    assertSameEntries(readOrder,ImmutableList.copyOf(segment.evictionQueue));
+  }
+  if (map.expiresAfterAccess()) {
+    assertSameEntries(readOrder,ImmutableList.copyOf(segment.expirationQueue));
+  }
+  if (map.expiresAfterWrite()) {
+    assertSameEntries(writeOrder,ImmutableList.copyOf(segment.expirationQueue));
+  }
+}

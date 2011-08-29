@@ -1,0 +1,13 @@
+{
+  assertTrue(future.isDone());
+  assertTrue(future.isCancelled());
+  assertTrue(latch.await(5,TimeUnit.SECONDS));
+  assertTrue(future.isDone());
+  assertTrue(future.isCancelled());
+  try {
+    future.get();
+    fail("Future should throw CancellationException on cancel.");
+  }
+ catch (  CancellationException expected) {
+  }
+}

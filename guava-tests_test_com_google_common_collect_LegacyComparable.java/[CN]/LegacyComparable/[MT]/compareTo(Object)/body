@@ -1,0 +1,4 @@
+{
+  LegacyComparable that=(LegacyComparable)object;
+  return this.value.compareTo(that.value);
+}

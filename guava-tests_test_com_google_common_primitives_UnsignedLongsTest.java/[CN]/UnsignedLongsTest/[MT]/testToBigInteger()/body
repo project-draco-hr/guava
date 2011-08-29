@@ -1,0 +1,7 @@
+{
+  assertEquals(ZERO,UnsignedLongs.toBigInteger(0));
+  assertEquals(ONE,UnsignedLongs.toBigInteger(1));
+  assertEquals(valueOf(Long.MAX_VALUE),UnsignedLongs.toBigInteger(Long.MAX_VALUE));
+  assertEquals(ONE.shiftLeft(63),UnsignedLongs.toBigInteger(Long.MIN_VALUE));
+  assertEquals(ONE.shiftLeft(64).subtract(ONE),UnsignedLongs.toBigInteger(-1L));
+}

@@ -1,0 +1,10 @@
+{
+  CountingLoader countingLoader=new CountingLoader();
+  Cache<Object,Object> cache=CacheBuilder.newBuilder().concurrencyLevel(1).weakValues().build(countingLoader);
+  Object key=new Object();
+  assertNotNull(cache.getUnchecked(key));
+  CacheTesting.simulateValueReclamation(cache,key);
+  assertNotNull(cache.getUnchecked(key));
+  assertEquals(1,cache.size());
+  assertEquals(2,countingLoader.getCount());
+}

@@ -1,0 +1,6 @@
+{
+  sortedTable=TreeBasedTable.create();
+  assertSame(Ordering.natural(),sortedTable.rowKeySet().comparator());
+  sortedTable=TreeBasedTable.create(Collections.reverseOrder(),Ordering.usingToString());
+  assertSame(Collections.reverseOrder(),sortedTable.rowKeySet().comparator());
+}

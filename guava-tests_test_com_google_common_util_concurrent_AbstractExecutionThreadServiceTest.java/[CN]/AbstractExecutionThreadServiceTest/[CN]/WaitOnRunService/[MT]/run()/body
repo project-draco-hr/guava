@@ -1,0 +1,14 @@
+{
+  assertTrue(startUpCalled);
+  assertFalse(runCalled);
+  assertFalse(shutDownCalled);
+  runCalled=true;
+  assertEquals(State.RUNNING,state());
+  enterRun.countDown();
+  try {
+    exitRun.await();
+  }
+ catch (  InterruptedException e) {
+    throw Throwables.propagate(e);
+  }
+}

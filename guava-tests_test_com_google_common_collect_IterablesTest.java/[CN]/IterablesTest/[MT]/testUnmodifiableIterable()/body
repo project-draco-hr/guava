@@ -1,0 +1,13 @@
+{
+  List<String> list=newArrayList("a","b","c");
+  Iterable<String> iterable=Iterables.unmodifiableIterable(list);
+  Iterator<String> iterator=iterable.iterator();
+  iterator.next();
+  try {
+    iterator.remove();
+    fail();
+  }
+ catch (  UnsupportedOperationException expected) {
+  }
+  assertEquals("[a, b, c]",iterable.toString());
+}

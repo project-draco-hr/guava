@@ -1,0 +1,16 @@
+{
+  for (  Cache<Object,Object> cache : caches()) {
+    cache.getUnchecked(1);
+    cache.getUnchecked(2);
+    Collection<Object> values=cache.asMap().keySet();
+    values.remove(1);
+    values.remove(2);
+    assertFalse(values.remove(null));
+    assertFalse(values.remove(6));
+    assertFalse(values.remove(-6));
+    assertFalse(values.removeAll(asList(null,0,15,1500)));
+    assertFalse(values.retainAll(asList(null,0,15,1500)));
+    checkEmpty(values);
+    checkEmpty(cache);
+  }
+}

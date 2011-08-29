@@ -1,0 +1,5 @@
+{
+  final NullPointerTester tester=new NullPointerTester();
+  tester.testAllPublicStaticMethods(HostSpecifier.class);
+  tester.testAllPublicInstanceMethods(HostSpecifier.fromValid("google.com"));
+}

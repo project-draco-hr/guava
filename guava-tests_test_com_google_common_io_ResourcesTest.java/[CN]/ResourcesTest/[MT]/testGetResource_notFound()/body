@@ -1,0 +1,9 @@
+{
+  try {
+    Resources.getResource("no such resource");
+    fail();
+  }
+ catch (  IllegalArgumentException e) {
+    assertEquals("resource no such resource not found.",e.getMessage());
+  }
+}

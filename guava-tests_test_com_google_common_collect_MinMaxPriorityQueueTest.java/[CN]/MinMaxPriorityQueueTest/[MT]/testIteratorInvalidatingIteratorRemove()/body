@@ -1,0 +1,28 @@
+{
+  MinMaxPriorityQueue<Integer> mmHeap=MinMaxPriorityQueue.create();
+  mmHeap.addAll(Lists.newArrayList(1,20,100,2,3,30,40));
+  assertEquals(7,mmHeap.size());
+  assertTrue("Heap is not intact initially",mmHeap.isIntact());
+  Iterator<Integer> it=mmHeap.iterator();
+  assertEquals((Integer)1,it.next());
+  assertEquals((Integer)20,it.next());
+  assertEquals((Integer)100,it.next());
+  assertEquals((Integer)2,it.next());
+  it.remove();
+  assertFalse(mmHeap.contains(2));
+  assertTrue(it.hasNext());
+  assertEquals((Integer)3,it.next());
+  assertTrue(it.hasNext());
+  assertEquals((Integer)30,it.next());
+  assertTrue(it.hasNext());
+  assertEquals((Integer)40,it.next());
+  assertFalse(it.hasNext());
+  assertEquals(6,mmHeap.size());
+  assertTrue("Heap is not intact after remove()",mmHeap.isIntact());
+  assertFalse(mmHeap.contains(2));
+  Integer lastItem=0;
+  for (  Integer tmp : mmHeap) {
+    lastItem=tmp;
+  }
+  assertEquals((Integer)30,lastItem);
+}

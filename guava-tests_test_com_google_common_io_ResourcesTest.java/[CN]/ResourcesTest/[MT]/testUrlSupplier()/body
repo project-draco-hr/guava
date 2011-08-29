@@ -1,0 +1,11 @@
+{
+  try {
+    Resources.newInputStreamSupplier(null);
+    fail("expected NPE");
+  }
+ catch (  NullPointerException expected) {
+  }
+  URL url=getClass().getResource("/com/google/common/io/Resources.class");
+  byte[] data=ByteStreams.toByteArray(Resources.newInputStreamSupplier(url));
+  assertEquals(0xCAFEBABE,new DataInputStream(new ByteArrayInputStream(data)).readInt());
+}

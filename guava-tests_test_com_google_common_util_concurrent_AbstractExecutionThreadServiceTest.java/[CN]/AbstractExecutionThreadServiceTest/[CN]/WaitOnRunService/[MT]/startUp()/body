@@ -1,0 +1,7 @@
+{
+  assertFalse(startUpCalled);
+  assertFalse(runCalled);
+  assertFalse(shutDownCalled);
+  startUpCalled=true;
+  assertEquals(State.STARTING,state());
+}

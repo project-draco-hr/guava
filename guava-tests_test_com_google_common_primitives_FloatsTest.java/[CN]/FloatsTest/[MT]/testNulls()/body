@@ -1,0 +1,5 @@
+{
+  NullPointerTester tester=new NullPointerTester();
+  tester.setDefault(float[].class,new float[0]);
+  tester.testAllPublicStaticMethods(Floats.class);
+}

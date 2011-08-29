@@ -1,0 +1,6 @@
+{
+  String[] sourceArray=new String[]{"a","b","c"};
+  Iterable<String> iterable=asList(sourceArray);
+  String[] newArray=Iterables.toArray(iterable,String.class);
+  assertTrue(Arrays.equals(sourceArray,newArray));
+}

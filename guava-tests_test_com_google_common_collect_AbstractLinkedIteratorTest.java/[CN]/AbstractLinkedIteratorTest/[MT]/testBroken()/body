@@ -1,0 +1,16 @@
+{
+  Iterator<Object> broken=newBroken();
+  assertTrue(broken.hasNext());
+  try {
+    broken.next();
+    fail();
+  }
+ catch (  MyException expected) {
+  }
+  try {
+    broken.next();
+    fail();
+  }
+ catch (  MyException expected) {
+  }
+}

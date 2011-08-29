@@ -1,0 +1,16 @@
+{
+  for (  Segment<?,?> segment : cchm.segments) {
+    segment.runCleanup();
+    assertEquals(segment.count,segmentSize(segment));
+    assertFalse(segment.isLocked());
+    Map<?,?> table=segmentTable(segment);
+    assertEquals(segment.count,table.size());
+    for (    Entry entry : table.entrySet()) {
+      assertNotNull(entry.getKey());
+      assertNotNull(entry.getValue());
+      assertSame(entry.getValue(),cchm.get(entry.getKey()));
+    }
+  }
+  checkEviction(cchm);
+  checkExpiration(cchm);
+}

@@ -1,0 +1,9 @@
+{
+  try {
+    ms.remove("a",-1);
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+  assertSize();
+}

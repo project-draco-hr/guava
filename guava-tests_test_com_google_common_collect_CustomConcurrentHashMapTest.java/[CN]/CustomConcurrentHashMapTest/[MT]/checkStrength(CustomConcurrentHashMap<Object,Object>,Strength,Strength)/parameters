@@ -1,0 +1,3 @@
+CustomConcurrentHashMap<Object,Object> map
+Strength keyStrength
+Strength valueStrength

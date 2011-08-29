@@ -1,0 +1,8 @@
+{
+  return new Function<Composite<T>,T>(){
+    @Override public T apply(    Composite<T> from){
+      return from.value;
+    }
+  }
+;
+}

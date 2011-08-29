@@ -1,0 +1,40 @@
+{
+  Random random=new Random(0);
+  int heapSize=999;
+  int numberOfModifications=500;
+  MinMaxPriorityQueue<Integer> mmHeap=MinMaxPriorityQueue.expectedSize(heapSize).create();
+  SortedMap<Integer,AtomicInteger> replica=Maps.newTreeMap();
+  assertTrue("Empty heap should be OK",mmHeap.isIntact());
+  for (int i=0; i < heapSize; i++) {
+    int randomInt=random.nextInt();
+    mmHeap.offer(randomInt);
+    insertIntoReplica(replica,randomInt);
+  }
+  assertTrue("MinMaxHeap not intact after " + heapSize + " insertions",mmHeap.isIntact());
+  assertEquals(heapSize,mmHeap.size());
+  int currentHeapSize=heapSize;
+  for (int i=0; i < numberOfModifications; i++) {
+    if (random.nextBoolean()) {
+      int randomInt=random.nextInt();
+      mmHeap.offer(randomInt);
+      insertIntoReplica(replica,randomInt);
+      currentHeapSize++;
+    }
+ else {
+      if (random.nextBoolean()) {
+        removeMinFromReplica(replica,mmHeap.poll());
+      }
+ else {
+        removeMaxFromReplica(replica,mmHeap.pollLast());
+      }
+      for (      Integer v : replica.keySet()) {
+        assertTrue("MinMax queue has lost " + v,mmHeap.contains(v));
+      }
+      assertTrue(mmHeap.isIntact());
+      currentHeapSize--;
+      assertEquals(currentHeapSize,mmHeap.size());
+    }
+  }
+  assertEquals(currentHeapSize,mmHeap.size());
+  assertTrue("Heap not intact after " + numberOfModifications + " random mixture of operations",mmHeap.isIntact());
+}

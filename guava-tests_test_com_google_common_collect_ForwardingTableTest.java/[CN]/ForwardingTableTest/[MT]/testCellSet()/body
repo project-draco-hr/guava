@@ -1,0 +1,4 @@
+{
+  forward.cellSet();
+  assertEquals("[cellSet]",getCalls());
+}

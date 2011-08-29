@@ -1,0 +1,15 @@
+{
+  TreeMultimap<LegacyComparable,LegacyComparable> multimap=TreeMultimap.create();
+  assertEquals(ImmutableMultimap.of(),multimap);
+  multimap.put(new LegacyComparable("foo"),new LegacyComparable("f"));
+  multimap.put(new LegacyComparable("foo"),new LegacyComparable("o"));
+  multimap.put(new LegacyComparable("foo"),new LegacyComparable("o"));
+  multimap.put(new LegacyComparable("bar"),new LegacyComparable("b"));
+  multimap.put(new LegacyComparable("bar"),new LegacyComparable("a"));
+  multimap.put(new LegacyComparable("bar"),new LegacyComparable("r"));
+  ASSERT.that(multimap.keySet()).hasContentsInOrder(new LegacyComparable("bar"),new LegacyComparable("foo"));
+  ASSERT.that(multimap.values()).hasContentsInOrder(new LegacyComparable("a"),new LegacyComparable("b"),new LegacyComparable("r"),new LegacyComparable("f"),new LegacyComparable("o"));
+  assertEquals(Ordering.natural(),multimap.keyComparator());
+  assertEquals(Ordering.natural(),multimap.valueComparator());
+  SerializableTester.reserializeAndAssert(multimap);
+}

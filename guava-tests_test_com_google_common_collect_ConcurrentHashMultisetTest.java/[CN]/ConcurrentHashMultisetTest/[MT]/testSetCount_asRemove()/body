@@ -1,0 +1,10 @@
+{
+  int countToRemove=40;
+  AtomicInteger current=new AtomicInteger(countToRemove);
+  expect(backingMap.get(KEY)).andReturn(current);
+  expect(backingMap.remove(KEY,current)).andReturn(true);
+  replay();
+  assertEquals(countToRemove,multiset.setCount(KEY,0));
+  assertEquals(0,current.get());
+  verify();
+}

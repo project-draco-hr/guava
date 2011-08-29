@@ -1,0 +1,9 @@
+{
+  try {
+    ExecutorService e=new DirectExecutorService();
+    e.submit((Callable<?>)null);
+    shouldThrow();
+  }
+ catch (  NullPointerException success) {
+  }
+}

@@ -1,0 +1,5 @@
+{
+  ThreadFactory factory=builder.setDaemon(false).build();
+  Thread thread=factory.newThread(monitoredRunnable);
+  assertFalse(thread.isDaemon());
+}

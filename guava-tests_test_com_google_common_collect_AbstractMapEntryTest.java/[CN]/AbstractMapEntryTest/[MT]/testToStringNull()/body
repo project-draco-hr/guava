@@ -1,0 +1,5 @@
+{
+  assertEquals("null=1",entry(NK,1).toString());
+  assertEquals("foo=null",entry("foo",NV).toString());
+  assertEquals("null=null",entry(NK,NV).toString());
+}

@@ -1,0 +1,5 @@
+{
+  int oldCount=getMultiset().count(samples.e0);
+  assertEquals("multiset.add(E, int) should return the old count",oldCount,getMultiset().add(samples.e0,2));
+  assertEquals("multiset.count() incorrect after add(E, int)",oldCount + 2,getMultiset().count(samples.e0));
+}

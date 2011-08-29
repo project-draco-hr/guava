@@ -1,0 +1,6 @@
+{
+  super.setUp();
+  delegate=SettableFuture.create();
+  tester=new ListenableFutureTester(Futures.makeListenable(delegate));
+  tester.setUp();
+}

@@ -1,0 +1,5 @@
+{
+  super.setUp();
+  methodCalled=false;
+  methodArgument=null;
+}

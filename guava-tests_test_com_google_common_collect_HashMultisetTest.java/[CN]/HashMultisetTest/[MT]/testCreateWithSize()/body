@@ -1,0 +1,7 @@
+{
+  Multiset<String> multiset=HashMultiset.create(50);
+  multiset.add("foo",2);
+  multiset.add("bar");
+  assertEquals(3,multiset.size());
+  assertEquals(2,multiset.count("foo"));
+}

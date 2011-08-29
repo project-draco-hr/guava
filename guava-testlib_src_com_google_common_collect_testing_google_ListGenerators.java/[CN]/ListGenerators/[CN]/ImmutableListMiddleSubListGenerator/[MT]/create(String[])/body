@@ -1,0 +1,9 @@
+{
+  String[] prefix={"f","g"};
+  String[] suffix={"h","i"};
+  String[] all=new String[2 + elements.length + 2];
+  System.arraycopy(prefix,0,all,0,2);
+  System.arraycopy(elements,0,all,2,elements.length);
+  System.arraycopy(suffix,0,all,2 + elements.length,2);
+  return ImmutableList.copyOf(all).subList(2,elements.length + 2);
+}

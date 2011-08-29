@@ -1,0 +1,7 @@
+{
+  Map<String,Integer> map=Maps.newHashMap();
+  map.put("foo",1);
+  map.put("bar",2);
+  map.put("cow",3);
+  return Multimaps.forMap(map).asMap();
+}

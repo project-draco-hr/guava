@@ -1,0 +1,4 @@
+{
+  SortedSet<String> set=of("e","a","f","b","d","c");
+  ASSERT.that(set).hasContentsInOrder("a","b","c","d","e","f");
+}

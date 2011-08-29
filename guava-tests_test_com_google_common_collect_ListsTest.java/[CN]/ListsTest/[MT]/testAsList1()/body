@@ -1,0 +1,12 @@
+{
+  List<String> list=Lists.asList("foo",new String[]{"bar","baz"});
+  checkFooBarBazList(list);
+  SerializableTester.reserializeAndAssert(list);
+  assertTrue(list instanceof RandomAccess);
+  new IteratorTester<String>(5,UNMODIFIABLE,asList("foo","bar","baz"),IteratorTester.KnownOrder.KNOWN_ORDER){
+    @Override protected Iterator<String> newTargetIterator(){
+      return Lists.asList("foo",new String[]{"bar","baz"}).iterator();
+    }
+  }
+.test();
+}

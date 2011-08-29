@@ -1,0 +1,6 @@
+{
+  TestSuite suite=new TestSuite(IteratorsTest.class.getSimpleName());
+  suite.addTest(testsForRemoveAllAndRetainAll());
+  suite.addTestSuite(IteratorsTest.class);
+  return suite;
+}

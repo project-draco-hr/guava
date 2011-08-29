@@ -1,0 +1,3 @@
+{
+  assertEquals(expect,ByteStreams.equal(ByteStreams.newInputStreamSupplier(a),ByteStreams.newInputStreamSupplier(b)));
+}

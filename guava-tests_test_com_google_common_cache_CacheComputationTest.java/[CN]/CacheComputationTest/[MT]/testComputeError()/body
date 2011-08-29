@@ -1,0 +1,31 @@
+{
+  Error e=new Error();
+  CacheLoader<Object,Object> loader=errorLoader(e);
+  Cache<Object,Object> cache=CacheBuilder.newBuilder().build(loader);
+  CacheStats stats=cache.stats();
+  assertEquals(0,stats.missCount());
+  assertEquals(0,stats.loadSuccessCount());
+  assertEquals(0,stats.loadExceptionCount());
+  try {
+    cache.get(new Object());
+    fail();
+  }
+ catch (  ExecutionError expected) {
+    assertSame(e,expected.getCause());
+  }
+  stats=cache.stats();
+  assertEquals(1,stats.missCount());
+  assertEquals(0,stats.loadSuccessCount());
+  assertEquals(1,stats.loadExceptionCount());
+  try {
+    cache.getUnchecked(new Object());
+    fail();
+  }
+ catch (  ExecutionError expected) {
+    assertSame(e,expected.getCause());
+  }
+  stats=cache.stats();
+  assertEquals(2,stats.missCount());
+  assertEquals(0,stats.loadSuccessCount());
+  assertEquals(2,stats.loadExceptionCount());
+}

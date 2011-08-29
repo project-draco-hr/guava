@@ -1,0 +1,4 @@
+{
+  Iterable<V> valuesIterable=checkNotNull(values);
+  return uniqueIndex(valuesIterable,keyFunction);
+}

@@ -1,0 +1,17 @@
+{
+  for (  Cache<Key,String> cache : caches()) {
+    Key key1=new Key(1);
+    String value1=key1.toString();
+    Key key2=new Key(2);
+    String value2=key2.toString();
+    assertSame(value1,cache.getUnchecked(key1));
+    assertSame(value2,cache.getUnchecked(key2));
+    cache.invalidate(key1);
+    assertFalse(cache.asMap().containsKey(key1));
+    assertTrue(cache.asMap().containsKey(key2));
+    assertEquals(1,cache.size());
+    assertEquals(ImmutableSet.of(key2),cache.asMap().keySet());
+    ASSERT.that(cache.asMap().values()).hasContentsAnyOrder(value2);
+    assertEquals(ImmutableSet.of(immutableEntry(key2,value2)),cache.asMap().entrySet());
+  }
+}

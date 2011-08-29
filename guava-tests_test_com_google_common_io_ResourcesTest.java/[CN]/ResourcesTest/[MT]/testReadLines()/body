@@ -1,0 +1,4 @@
+{
+  URL resource=getClass().getResource("testdata/i18n.txt");
+  assertEquals(ImmutableList.of(I18N),Resources.readLines(resource,Charsets.UTF_8));
+}

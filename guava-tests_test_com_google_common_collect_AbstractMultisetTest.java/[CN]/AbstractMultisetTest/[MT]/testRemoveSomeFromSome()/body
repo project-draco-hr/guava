@@ -1,0 +1,5 @@
+{
+  ms.add("a",5);
+  assertEquals(5,ms.remove("a",3));
+  assertContents("a","a");
+}

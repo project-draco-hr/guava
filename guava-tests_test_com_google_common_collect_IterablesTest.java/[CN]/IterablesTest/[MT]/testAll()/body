@@ -1,0 +1,9 @@
+{
+  List<String> list=newArrayList();
+  Predicate<String> predicate=Predicates.equalTo("cool");
+  assertTrue(Iterables.all(list,predicate));
+  list.add("cool");
+  assertTrue(Iterables.all(list,predicate));
+  list.add("pants");
+  assertFalse(Iterables.all(list,predicate));
+}

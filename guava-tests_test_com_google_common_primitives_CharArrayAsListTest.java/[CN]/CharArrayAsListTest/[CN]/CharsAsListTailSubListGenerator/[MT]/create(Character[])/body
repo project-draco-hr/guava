@@ -1,0 +1,5 @@
+{
+  Character[] prefix={(char)86,(char)99};
+  Character[] all=concat(prefix,elements);
+  return asList(all).subList(2,elements.length + 2);
+}

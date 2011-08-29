@@ -1,0 +1,34 @@
+{
+  final ConcurrentHashMultiset<String> multiset=new ConcurrentHashMultiset<String>(map);
+  int nThreads=20;
+  int tasksPerThread=10;
+  int nTasks=nThreads * tasksPerThread;
+  ExecutorService pool=Executors.newFixedThreadPool(nThreads);
+  ImmutableList<String> keys=ImmutableList.of("a","b","c");
+  try {
+    List<Future<int[]>> futures=Lists.newArrayListWithExpectedSize(nTasks);
+    for (int i=0; i < nTasks; i++) {
+      futures.add(pool.submit(new MutateTask(multiset,keys)));
+    }
+    int[] deltas=new int[3];
+    for (    Future<int[]> future : futures) {
+      int[] taskDeltas=future.get();
+      for (int i=0; i < deltas.length; i++) {
+        deltas[i]+=taskDeltas[i];
+      }
+    }
+    List<Integer> actualCounts=Lists.transform(keys,new Function<String,Integer>(){
+      @Override public Integer apply(      String key){
+        return multiset.count(key);
+      }
+    }
+);
+    assertEquals("Counts not as expected",Ints.asList(deltas),actualCounts);
+  }
+  finally {
+    pool.shutdownNow();
+  }
+  for (  AtomicInteger value : map.values()) {
+    assertTrue("map should not contain a zero",value.get() != 0);
+  }
+}

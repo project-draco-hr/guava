@@ -1,0 +1,8 @@
+{
+  try {
+    resultFuture.get(1L,TimeUnit.MILLISECONDS);
+    fail("The data is not yet ready, so a TimeoutException is expected");
+  }
+ catch (  TimeoutException expected) {
+  }
+}

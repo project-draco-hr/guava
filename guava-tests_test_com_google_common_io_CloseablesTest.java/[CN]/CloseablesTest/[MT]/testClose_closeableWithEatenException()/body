@@ -1,0 +1,4 @@
+{
+  setupCloseable(true);
+  doClose(mockCloseable,true);
+}

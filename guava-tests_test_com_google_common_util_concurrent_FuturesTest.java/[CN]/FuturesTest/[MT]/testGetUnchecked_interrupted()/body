@@ -1,0 +1,10 @@
+{
+  Thread.currentThread().interrupt();
+  try {
+    assertEquals("foo",getUnchecked(immediateFuture("foo")));
+    assertTrue(Thread.currentThread().isInterrupted());
+  }
+  finally {
+    Thread.interrupted();
+  }
+}

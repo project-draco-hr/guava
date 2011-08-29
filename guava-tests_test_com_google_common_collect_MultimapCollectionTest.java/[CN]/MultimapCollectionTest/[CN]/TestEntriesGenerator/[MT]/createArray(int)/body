@@ -1,0 +1,3 @@
+{
+  return (Entry<String,Integer>[])new Entry<?,?>[length];
+}

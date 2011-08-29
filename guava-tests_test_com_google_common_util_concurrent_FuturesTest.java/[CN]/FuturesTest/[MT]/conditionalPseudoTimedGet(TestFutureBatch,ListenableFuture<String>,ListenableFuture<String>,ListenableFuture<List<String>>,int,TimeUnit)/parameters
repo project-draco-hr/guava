@@ -1,0 +1,6 @@
+TestFutureBatch inputs
+ListenableFuture<String> iFuture
+ListenableFuture<String> jFuture
+ListenableFuture<List<String>> future
+int timeout
+TimeUnit unit

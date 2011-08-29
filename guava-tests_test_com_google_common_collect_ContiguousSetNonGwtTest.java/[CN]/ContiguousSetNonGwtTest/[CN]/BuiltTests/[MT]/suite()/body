@@ -1,0 +1,13 @@
+{
+  TestSuite suite=new TestSuite();
+  suite.addTest(SetTestSuiteBuilder.using(new TestIntegerSetGenerator(){
+    @Override protected Set<Integer> create(    Integer[] elements){
+      SortedSet<Integer> set=new TreeSet<Integer>();
+      Collections.addAll(set,elements);
+      checkArgument(set.size() == elements.length);
+      return Ranges.closed(set.first(),set.last()).asSet(integers());
+    }
+  }
+).withFeatures(CollectionSize.ONE,CollectionSize.SEVERAL,CollectionFeature.KNOWN_ORDER,CollectionFeature.ALLOWS_NULL_QUERIES,CollectionFeature.NON_STANDARD_TOSTRING,CollectionFeature.RESTRICTS_ELEMENTS,CollectionFeature.REJECTS_DUPLICATES_AT_CREATION).suppressing(SetHashCodeTester.getHashCodeMethods()).named("DiscreteRange.asSet, closed").createTestSuite());
+  return suite;
+}

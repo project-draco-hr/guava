@@ -1,0 +1,3 @@
+{
+  assertNotNull(Resources.getResource(getClass(),"testdata/i18n.txt"));
+}

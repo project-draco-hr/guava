@@ -1,0 +1,20 @@
+{
+  char c=0;
+  for (int hi=0; hi < 256; hi++) {
+    for (int lo=0; lo < 256; lo++) {
+      char result=Chars.fromByteArray(new byte[]{(byte)hi,(byte)lo});
+      assertEquals(String.format("hi=%s, lo=%s, expected=%s, result=%s",hi,lo,(int)c,(int)result),c,result);
+      byte[] bytes=Chars.toByteArray(c);
+      assertEquals((byte)hi,bytes[0]);
+      assertEquals((byte)lo,bytes[1]);
+      c++;
+    }
+  }
+  assertEquals((char)0,c);
+  try {
+    Chars.fromByteArray(new byte[]{0x11});
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}

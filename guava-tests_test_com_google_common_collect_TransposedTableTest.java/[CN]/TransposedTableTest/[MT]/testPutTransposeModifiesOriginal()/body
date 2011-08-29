@@ -1,0 +1,6 @@
+{
+  Table<Integer,String,Character> original=HashBasedTable.create();
+  Table<String,Integer,Character> transpose=Tables.transpose(original);
+  transpose.put("foo",1,'a');
+  assertEquals((Character)'a',original.get(1,"foo"));
+}

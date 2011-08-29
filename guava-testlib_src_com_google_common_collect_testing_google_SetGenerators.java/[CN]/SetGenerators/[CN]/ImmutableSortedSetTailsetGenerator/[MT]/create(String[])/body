@@ -1,0 +1,5 @@
+{
+  List<String> list=Lists.newArrayList(elements);
+  list.add("\0");
+  return ImmutableSortedSet.copyOf(list).tailSet("\0\0");
+}

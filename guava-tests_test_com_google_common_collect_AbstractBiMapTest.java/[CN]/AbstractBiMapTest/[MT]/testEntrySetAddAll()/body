@@ -1,0 +1,8 @@
+{
+  try {
+    entrySet.addAll(Collections.singleton(Maps.immutableEntry(1,"one")));
+    fail();
+  }
+ catch (  UnsupportedOperationException expected) {
+  }
+}

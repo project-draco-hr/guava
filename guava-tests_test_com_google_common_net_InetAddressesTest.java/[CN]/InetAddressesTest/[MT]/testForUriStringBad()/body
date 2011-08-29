@@ -1,0 +1,56 @@
+{
+  try {
+    InetAddresses.forUriString("");
+    fail("expected IllegalArgumentException");
+  }
+ catch (  IllegalArgumentException e) {
+  }
+  try {
+    InetAddresses.forUriString("192.168.999.888");
+    fail("expected IllegalArgumentException");
+  }
+ catch (  IllegalArgumentException e) {
+  }
+  try {
+    InetAddresses.forUriString("www.google.com");
+    fail("expected IllegalArgumentException");
+  }
+ catch (  IllegalArgumentException e) {
+  }
+  try {
+    InetAddresses.forUriString("[1:2e]");
+    fail("expected IllegalArgumentException");
+  }
+ catch (  IllegalArgumentException e) {
+  }
+  try {
+    InetAddresses.forUriString("[192.168.1.1]");
+    fail("expected IllegalArgumentException");
+  }
+ catch (  IllegalArgumentException e) {
+  }
+  try {
+    InetAddresses.forUriString("192.168.1.1]");
+    fail("expected IllegalArgumentException");
+  }
+ catch (  IllegalArgumentException e) {
+  }
+  try {
+    InetAddresses.forUriString("[192.168.1.1");
+    fail("expected IllegalArgumentException");
+  }
+ catch (  IllegalArgumentException e) {
+  }
+  try {
+    InetAddresses.forUriString("[3ffe:0:0:0:0:0:0:1");
+    fail("expected IllegalArgumentException");
+  }
+ catch (  IllegalArgumentException e) {
+  }
+  try {
+    InetAddresses.forUriString("3ffe:0:0:0:0:0:0:1]");
+    fail("expected IllegalArgumentException");
+  }
+ catch (  IllegalArgumentException e) {
+  }
+}

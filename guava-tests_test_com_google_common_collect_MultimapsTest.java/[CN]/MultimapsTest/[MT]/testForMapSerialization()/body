@@ -1,0 +1,7 @@
+{
+  Map<String,Integer> map=Maps.newHashMap();
+  map.put("foo",1);
+  map.put("bar",2);
+  Multimap<String,Integer> multimapView=Multimaps.forMap(map);
+  SerializableTester.reserializeAndAssert(multimapView);
+}

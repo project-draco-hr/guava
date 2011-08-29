@@ -1,0 +1,4 @@
+{
+  Table<Integer,String,Character> original=HashBasedTable.create();
+  assertSame(original,Tables.transpose(Tables.transpose(original)));
+}

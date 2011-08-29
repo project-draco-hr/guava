@@ -1,0 +1,5 @@
+{
+  TestSuite suite=new TestSuite(SynchronizedBiMapTest.class);
+  suite.addTestSuite(AbstractBiMapTests.class);
+  return suite;
+}

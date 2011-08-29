@@ -1,0 +1,14 @@
+{
+  multiset=ConcurrentHashMultiset.create();
+  multiset.add(KEY);
+  multiset.add(KEY + "_2");
+  multiset.add(KEY);
+  int mutations=0;
+  for (Iterator<String> it=multiset.iterator(); it.hasNext(); ) {
+    it.next();
+    it.remove();
+    mutations++;
+  }
+  assertTrue(multiset.isEmpty());
+  assertEquals(3,mutations);
+}

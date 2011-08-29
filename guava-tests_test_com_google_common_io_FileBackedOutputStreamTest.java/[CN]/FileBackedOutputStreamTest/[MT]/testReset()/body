@@ -1,0 +1,12 @@
+{
+  byte[] data=newPreFilledByteArray(100);
+  FileBackedOutputStream out=new FileBackedOutputStream(Integer.MAX_VALUE);
+  InputSupplier<InputStream> supplier=out.getSupplier();
+  out.write(data);
+  assertTrue(Arrays.equals(data,ByteStreams.toByteArray(supplier)));
+  out.reset();
+  assertTrue(Arrays.equals(new byte[0],ByteStreams.toByteArray(supplier)));
+  out.write(data);
+  assertTrue(Arrays.equals(data,ByteStreams.toByteArray(supplier)));
+  out.close();
+}

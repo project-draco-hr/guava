@@ -1,0 +1,7 @@
+{
+  final String NAME_FORMAT="super duper thread #%s";
+  ThreadFactory factory=builder.setNameFormat(NAME_FORMAT).build();
+  for (int i=0; i < 10; i++) {
+    assertEquals(String.format(NAME_FORMAT,i),factory.newThread(monitoredRunnable).getName());
+  }
+}

@@ -1,0 +1,5 @@
+{
+  MapMaker maker=new MapMaker();
+  maker.useCustomMap=true;
+  return maker;
+}

@@ -1,0 +1,11 @@
+{
+  TreeMultimap<String,Integer> multimap=createPopulate();
+  Set<Integer> fooSet=multimap.get("foo").tailSet(2);
+  assertEquals(Sets.newHashSet(3,7),fooSet);
+  Set<Integer> missingSet=multimap.get("missing").tailSet(4);
+  assertEquals(Sets.newHashSet(),missingSet);
+  multimap.put("foo",6);
+  assertEquals(Sets.newHashSet(3,6,7),fooSet);
+  missingSet.add(9);
+  assertEquals(Sets.newHashSet(9),multimap.get("missing"));
+}

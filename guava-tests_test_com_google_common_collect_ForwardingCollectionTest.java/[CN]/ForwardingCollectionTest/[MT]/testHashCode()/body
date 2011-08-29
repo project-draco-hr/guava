@@ -1,0 +1,4 @@
+{
+  forward.hashCode();
+  assertFalse("hashCode() should not be forwarded.",isCalled());
+}

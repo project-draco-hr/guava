@@ -1,0 +1,6 @@
+{
+  Map<Currency,Country> map=ImmutableMap.of(Currency.DOLLAR,Country.CANADA,Currency.PESO,Country.CHILE,Currency.FRANC,Country.SWITZERLAND);
+  EnumBiMap<Currency,Country> bimap=EnumBiMap.create(map);
+  BiMap<Currency,Country> copy=SerializableTester.reserializeAndAssert(bimap);
+  assertEquals(bimap.inverse(),copy.inverse());
+}

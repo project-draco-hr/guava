@@ -1,0 +1,9 @@
+{
+  try {
+    assertSetCount(null,0);
+  }
+ catch (  NullPointerException tolerated) {
+  }
+catch (  UnsupportedOperationException tolerated) {
+  }
+}

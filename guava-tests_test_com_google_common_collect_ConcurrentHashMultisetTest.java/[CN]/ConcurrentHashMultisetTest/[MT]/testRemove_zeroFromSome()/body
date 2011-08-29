@@ -1,0 +1,7 @@
+{
+  final int INITIAL_COUNT=14;
+  expect(backingMap.get(KEY)).andReturn(new AtomicInteger(INITIAL_COUNT));
+  replay();
+  assertEquals(INITIAL_COUNT,multiset.remove(KEY,0));
+  verify();
+}

@@ -1,0 +1,11 @@
+{
+  try {
+    realRun();
+    threadShouldThrow("InterruptedException");
+  }
+ catch (  InterruptedException success) {
+  }
+catch (  Throwable t) {
+    threadUnexpectedException(t);
+  }
+}

@@ -1,0 +1,12 @@
+{
+  String s;
+  if (toString != null) {
+    s=toString.get();
+    if (s != null) {
+      return s;
+    }
+  }
+  s=Integer.toString(value);
+  toString=new WeakReference<String>(s);
+  return s;
+}

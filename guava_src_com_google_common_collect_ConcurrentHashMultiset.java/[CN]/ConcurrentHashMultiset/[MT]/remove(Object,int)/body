@@ -3,21 +3,23 @@
     return count(element);
   }
   checkArgument(occurrences > 0,"Invalid occurrences: %s",occurrences);
+  AtomicInteger existingCounter=safeGet(element);
+  if (existingCounter == null) {
+    return 0;
+  }
   while (true) {
-    int current=count(element);
-    if (current == 0) {
-      return 0;
-    }
-    if (occurrences >= current) {
-      if (countMap.remove(element,current)) {
-        return current;
+    int oldValue=existingCounter.get();
+    if (oldValue != 0) {
+      int newValue=Math.max(0,oldValue - occurrences);
+      if (existingCounter.compareAndSet(oldValue,newValue)) {
+        if (newValue == 0) {
+          countMap.remove(element,existingCounter);
+        }
+        return oldValue;
       }
     }
  else {
-      @SuppressWarnings("unchecked") E casted=(E)element;
-      if (countMap.replace(casted,current,current - occurrences)) {
-        return current;
-      }
+      return 0;
     }
   }
 }

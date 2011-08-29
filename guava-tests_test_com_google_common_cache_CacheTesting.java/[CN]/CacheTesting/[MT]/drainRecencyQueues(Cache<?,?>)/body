@@ -1,0 +1,8 @@
+{
+  if (hasCustomConcurrentHashMap(cache)) {
+    CustomConcurrentHashMap<?,?> map=toCustomConcurrentHashMap(cache);
+    for (    Segment segment : map.segments) {
+      drainRecencyQueue(segment);
+    }
+  }
+}

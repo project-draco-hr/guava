@@ -1,0 +1,5 @@
+{
+  SortedSet<String> diesOnIteratorSortedSet=new DiesOnIteratorTreeSet();
+  diesOnIteratorSortedSet.add("bar");
+  assertEquals("bar",Iterables.getLast(diesOnIteratorSortedSet,"qux"));
+}

@@ -1,0 +1,6 @@
+{
+  if (map.evictsBySize() || map.expiresAfterAccess()) {
+    assertSameEntries(reads,ImmutableList.copyOf(segment.recencyQueue));
+  }
+  segment.drainRecencyQueue();
+}

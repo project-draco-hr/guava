@@ -1,0 +1,27 @@
+{
+  String[] nonTeredoAddresses={"::1.2.3.4","3ffe::1","::","::1"};
+  for (int i=0; i < nonTeredoAddresses.length; i++) {
+    InetAddress ip=InetAddresses.forString(nonTeredoAddresses[i]);
+    assertFalse(InetAddresses.isTeredoAddress((Inet6Address)ip));
+    try {
+      InetAddresses.getTeredoInfo((Inet6Address)ip);
+      fail("IllegalArgumentException expected for '" + nonTeredoAddresses[i] + "'");
+    }
+ catch (    IllegalArgumentException expected) {
+    }
+  }
+  String validTeredoAddress="2001:0000:4136:e378:8000:63bf:3fff:fdd2";
+  String serverStr="65.54.227.120";
+  String clientStr="192.0.2.45";
+  int port=40000;
+  int flags=0x8000;
+  InetAddress ip=InetAddresses.forString(validTeredoAddress);
+  assertTrue(InetAddresses.isTeredoAddress((Inet6Address)ip));
+  InetAddresses.TeredoInfo teredo=InetAddresses.getTeredoInfo((Inet6Address)ip);
+  InetAddress server=InetAddresses.forString(serverStr);
+  assertEquals(server,teredo.getServer());
+  InetAddress client=InetAddresses.forString(clientStr);
+  assertEquals(client,teredo.getClient());
+  assertEquals(port,teredo.getPort());
+  assertEquals(flags,teredo.getFlags());
+}

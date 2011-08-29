@@ -1,0 +1,3 @@
+BstPathFactory<N,P> factory
+N root
+BstSide sides

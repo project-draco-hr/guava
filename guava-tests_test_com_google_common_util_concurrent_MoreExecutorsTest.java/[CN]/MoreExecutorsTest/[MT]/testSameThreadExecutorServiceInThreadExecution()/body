@@ -1,0 +1,38 @@
+{
+  final ListeningExecutorService executor=MoreExecutors.sameThreadExecutor();
+  final ThreadLocal<Integer> threadLocalCount=new ThreadLocal<Integer>(){
+    @Override protected Integer initialValue(){
+      return 0;
+    }
+  }
+;
+  final AtomicReference<Throwable> throwableFromOtherThread=new AtomicReference<Throwable>(null);
+  final Runnable incrementTask=new Runnable(){
+    @Override public void run(){
+      threadLocalCount.set(threadLocalCount.get() + 1);
+    }
+  }
+;
+  Thread otherThread=new Thread(new Runnable(){
+    @Override public void run(){
+      try {
+        Future<?> future=executor.submit(incrementTask);
+        assertTrue(future.isDone());
+        assertEquals(1,threadLocalCount.get().intValue());
+      }
+ catch (      Throwable Throwable) {
+        throwableFromOtherThread.set(Throwable);
+      }
+    }
+  }
+);
+  otherThread.start();
+  ListenableFuture<?> future=executor.submit(incrementTask);
+  assertTrue(future.isDone());
+  assertListenerRunImmediately(future);
+  assertEquals(1,threadLocalCount.get().intValue());
+  otherThread.join(1000);
+  assertEquals(Thread.State.TERMINATED,otherThread.getState());
+  Throwable throwable=throwableFromOtherThread.get();
+  assertNull("Throwable from other thread: " + (throwable == null ? null : Throwables.getStackTraceAsString(throwable)),throwableFromOtherThread.get());
+}

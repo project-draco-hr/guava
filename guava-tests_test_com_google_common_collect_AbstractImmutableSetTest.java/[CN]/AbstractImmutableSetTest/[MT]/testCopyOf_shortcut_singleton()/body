@@ -1,0 +1,5 @@
+{
+  Collection<String> c=of("a");
+  assertEquals(Collections.singleton("a"),copyOf(c));
+  assertSame(c,copyOf(c));
+}

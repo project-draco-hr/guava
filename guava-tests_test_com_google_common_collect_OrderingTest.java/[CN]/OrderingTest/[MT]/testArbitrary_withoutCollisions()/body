@@ -1,0 +1,10 @@
+{
+  List<Object> list=Lists.newArrayList();
+  for (int i=0; i < 50; i++) {
+    list.add(new Object());
+  }
+  Ordering<Object> arbitrary=Ordering.arbitrary();
+  Collections.sort(list,arbitrary);
+  Helpers.testComparator(arbitrary,list);
+  assertEquals("Ordering.arbitrary()",arbitrary.toString());
+}

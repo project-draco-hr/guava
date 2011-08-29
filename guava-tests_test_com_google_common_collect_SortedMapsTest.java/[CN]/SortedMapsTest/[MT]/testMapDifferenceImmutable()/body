@@ -1,0 +1,29 @@
+{
+  SortedMap<Integer,String> left=Maps.newTreeMap(ImmutableSortedMap.of(1,"a",2,"b",3,"c",4,"d",5,"e"));
+  SortedMap<Integer,String> right=Maps.newTreeMap(ImmutableSortedMap.of(1,"a",3,"f",5,"g",6,"z"));
+  SortedMapDifference<Integer,String> diff1=SortedMaps.difference(left,right);
+  left.put(6,"z");
+  assertFalse(diff1.areEqual());
+  ASSERT.that(diff1.entriesOnlyOnLeft().entrySet()).hasContentsInOrder(Maps.immutableEntry(2,"b"),Maps.immutableEntry(4,"d"));
+  ASSERT.that(diff1.entriesOnlyOnRight().entrySet()).hasContentsInOrder(Maps.immutableEntry(6,"z"));
+  ASSERT.that(diff1.entriesInCommon().entrySet()).hasContentsInOrder(Maps.immutableEntry(1,"a"));
+  ASSERT.that(diff1.entriesDiffering().entrySet()).hasContentsInOrder(Maps.immutableEntry(3,ValueDifferenceImpl.create("c","f")),Maps.immutableEntry(5,ValueDifferenceImpl.create("e","g")));
+  try {
+    diff1.entriesInCommon().put(7,"x");
+    fail();
+  }
+ catch (  UnsupportedOperationException expected) {
+  }
+  try {
+    diff1.entriesOnlyOnLeft().put(7,"x");
+    fail();
+  }
+ catch (  UnsupportedOperationException expected) {
+  }
+  try {
+    diff1.entriesOnlyOnRight().put(7,"x");
+    fail();
+  }
+ catch (  UnsupportedOperationException expected) {
+  }
+}

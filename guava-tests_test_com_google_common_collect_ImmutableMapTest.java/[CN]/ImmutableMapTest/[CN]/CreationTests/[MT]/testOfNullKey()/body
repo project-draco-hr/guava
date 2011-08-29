@@ -1,0 +1,14 @@
+{
+  try {
+    ImmutableMap.of(null,1);
+    fail();
+  }
+ catch (  NullPointerException expected) {
+  }
+  try {
+    ImmutableMap.of("one",1,null,2);
+    fail();
+  }
+ catch (  NullPointerException expected) {
+  }
+}

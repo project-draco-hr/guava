@@ -1,0 +1,11 @@
+{
+  ImmutableSortedSet<Integer> set=Ranges.closed(1,3).asSet(integers());
+  ASSERT.that(set.tailSet(Integer.MIN_VALUE)).hasContentsInOrder(1,2,3);
+  ASSERT.that(set.tailSet(1)).hasContentsInOrder(1,2,3);
+  ASSERT.that(set.tailSet(2)).hasContentsInOrder(2,3);
+  ASSERT.that(set.tailSet(3)).hasContentsInOrder(3);
+  ASSERT.that(set.tailSet(Integer.MIN_VALUE,false)).hasContentsInOrder(1,2,3);
+  ASSERT.that(set.tailSet(1,false)).hasContentsInOrder(2,3);
+  ASSERT.that(set.tailSet(2,false)).hasContentsInOrder(3);
+  ASSERT.that(set.tailSet(3,false)).isEmpty();
+}

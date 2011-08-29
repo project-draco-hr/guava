@@ -1,0 +1,8 @@
+{
+  try {
+    TimeUnit.MILLISECONDS.sleep(DELAY_MS);
+  }
+ catch (  InterruptedException e) {
+  }
+  throw new SampleException();
+}

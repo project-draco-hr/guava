@@ -1,0 +1,12 @@
+{
+  for (  BoundType lboundType : BoundType.values()) {
+    for (    BoundType uboundType : BoundType.values()) {
+      try {
+        GeneralRange<Integer> range=GeneralRange.range(Ordering.natural(),4,lboundType,2,uboundType);
+        fail("Expected IAE");
+      }
+ catch (      IllegalArgumentException expected) {
+      }
+    }
+  }
+}

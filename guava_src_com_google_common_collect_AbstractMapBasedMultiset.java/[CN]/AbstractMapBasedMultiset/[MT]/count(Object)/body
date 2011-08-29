@@ -1,6 +1,6 @@
 {
   try {
-    AtomicInteger frequency=backingMap.get(element);
+    Count frequency=backingMap.get(element);
     return (frequency == null) ? 0 : frequency.get();
   }
  catch (  NullPointerException e) {

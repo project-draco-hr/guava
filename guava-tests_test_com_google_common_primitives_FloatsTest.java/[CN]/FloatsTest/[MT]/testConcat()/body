@@ -1,0 +1,10 @@
+{
+  assertTrue(Arrays.equals(EMPTY,Floats.concat()));
+  assertTrue(Arrays.equals(EMPTY,Floats.concat(EMPTY)));
+  assertTrue(Arrays.equals(EMPTY,Floats.concat(EMPTY,EMPTY,EMPTY)));
+  assertTrue(Arrays.equals(ARRAY1,Floats.concat(ARRAY1)));
+  assertNotSame(ARRAY1,Floats.concat(ARRAY1));
+  assertTrue(Arrays.equals(ARRAY1,Floats.concat(EMPTY,ARRAY1,EMPTY)));
+  assertTrue(Arrays.equals(new float[]{(float)1,(float)1,(float)1},Floats.concat(ARRAY1,ARRAY1,ARRAY1)));
+  assertTrue(Arrays.equals(new float[]{(float)1,(float)2,(float)3,(float)4},Floats.concat(ARRAY1,ARRAY234)));
+}

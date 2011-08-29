@@ -1,0 +1,37 @@
+{
+  final AtomicBoolean shouldWait=new AtomicBoolean(false);
+  final CountDownLatch computingLatch=new CountDownLatch(1);
+  CacheLoader<String,String> computingFunction=new CacheLoader<String,String>(){
+    @Override public String load(    String key) throws InterruptedException {
+      if (shouldWait.get()) {
+        computingLatch.await();
+      }
+      return key;
+    }
+  }
+;
+  QueuingRemovalListener<String,String> listener=queuingRemovalListener();
+  final Cache<String,String> cache=CacheBuilder.newBuilder().concurrencyLevel(1).removalListener(listener).build(computingFunction);
+  cache.getUnchecked("a");
+  shouldWait.set(true);
+  final CountDownLatch computationStarted=new CountDownLatch(1);
+  final CountDownLatch computationComplete=new CountDownLatch(1);
+  new Thread(new Runnable(){
+    @Override public void run(){
+      computationStarted.countDown();
+      cache.getUnchecked("b");
+      computationComplete.countDown();
+    }
+  }
+).start();
+  computationStarted.await();
+  cache.asMap().clear();
+  computingLatch.countDown();
+  computationComplete.await();
+  assertEquals(1,listener.size());
+  RemovalNotification<String,String> notification=listener.remove();
+  assertEquals("a",notification.getKey());
+  assertEquals("a",notification.getValue());
+  assertEquals(1,cache.size());
+  assertEquals("b",cache.getUnchecked("b"));
+}

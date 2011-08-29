@@ -1,0 +1,12 @@
+{
+  return new Function<Integer,Integer>(){
+    int calls=0;
+    @Override public Integer apply(    Integer from){
+      if (++calls > 1) {
+        fail();
+      }
+      throw new MyError();
+    }
+  }
+;
+}

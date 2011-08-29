@@ -1,0 +1,4 @@
+{
+  inputFuture.setException(EXCEPTION);
+  listener.assertException(EXCEPTION);
+}

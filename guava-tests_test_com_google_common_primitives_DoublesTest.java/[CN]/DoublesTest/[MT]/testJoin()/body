@@ -1,0 +1,6 @@
+{
+  assertEquals("",Doubles.join(",",EMPTY));
+  assertEquals("1.0",Doubles.join(",",ARRAY1));
+  assertEquals("1.0,2.0",Doubles.join(",",(double)1,(double)2));
+  assertEquals("1.02.03.0",Doubles.join("",(double)1,(double)2,(double)3));
+}

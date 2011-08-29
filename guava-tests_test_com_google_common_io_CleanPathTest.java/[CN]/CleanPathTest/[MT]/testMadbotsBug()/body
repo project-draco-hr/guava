@@ -1,0 +1,4 @@
+{
+  assertEquals("../this",Files.simplifyPath("../this"));
+  assertEquals("../this/is/ok",Files.simplifyPath("../this/is/ok"));
+}

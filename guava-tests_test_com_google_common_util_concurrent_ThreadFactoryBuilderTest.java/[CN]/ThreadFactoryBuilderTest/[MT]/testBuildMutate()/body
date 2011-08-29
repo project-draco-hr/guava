@@ -1,0 +1,6 @@
+{
+  ThreadFactory factory1=builder.setPriority(1).build();
+  assertEquals(1,factory1.newThread(monitoredRunnable).getPriority());
+  builder.setPriority(2);
+  assertEquals(1,factory1.newThread(monitoredRunnable).getPriority());
+}

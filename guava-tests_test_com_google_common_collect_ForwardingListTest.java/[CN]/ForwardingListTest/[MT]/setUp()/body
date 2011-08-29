@@ -1,0 +1,10 @@
+{
+  super.setUp();
+  @SuppressWarnings("unchecked") final List<String> list=createProxyInstance(List.class);
+  forward=new ForwardingList<String>(){
+    @Override protected List<String> delegate(){
+      return list;
+    }
+  }
+;
+}

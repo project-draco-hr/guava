@@ -1,0 +1,4 @@
+{
+  UnmodifiableCollectionTests.assertIteratorIsUnmodifiable(unmodifiable.iterator());
+  UnmodifiableCollectionTests.assertIteratorsInOrder(unmodifiable.iterator(),modifiable.iterator());
+}

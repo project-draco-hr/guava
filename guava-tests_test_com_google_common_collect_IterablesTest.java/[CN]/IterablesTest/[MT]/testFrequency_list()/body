@@ -1,0 +1,9 @@
+{
+  List<String> list=newArrayList("a","b","a","c","b","a");
+  assertEquals(3,Iterables.frequency(list,"a"));
+  assertEquals(2,Iterables.frequency(list,"b"));
+  assertEquals(1,Iterables.frequency(list,"c"));
+  assertEquals(0,Iterables.frequency(list,"d"));
+  assertEquals(0,Iterables.frequency(list,4.2));
+  assertEquals(0,Iterables.frequency(list,null));
+}

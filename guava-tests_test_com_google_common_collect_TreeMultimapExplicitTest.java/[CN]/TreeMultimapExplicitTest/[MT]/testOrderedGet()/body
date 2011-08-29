@@ -1,0 +1,6 @@
+{
+  TreeMultimap<String,Integer> multimap=createPopulate();
+  ASSERT.that(multimap.get(null)).hasContentsInOrder(7,3,1);
+  ASSERT.that(multimap.get("google")).hasContentsInOrder(6,2);
+  ASSERT.that(multimap.get("tree")).hasContentsInOrder(null,0);
+}

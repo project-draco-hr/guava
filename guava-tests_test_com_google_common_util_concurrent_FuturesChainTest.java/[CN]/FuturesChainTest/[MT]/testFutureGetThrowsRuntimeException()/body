@@ -1,0 +1,11 @@
+{
+  BadFuture badInput=new BadFuture(Futures.immediateFuture(20));
+  ListenableFuture<String> chain=buildChainingFuture(badInput);
+  try {
+    chain.get();
+    fail("Future.get must throw an exception when the input future fails.");
+  }
+ catch (  ExecutionException e) {
+    assertSame(RuntimeException.class,e.getCause().getClass());
+  }
+}

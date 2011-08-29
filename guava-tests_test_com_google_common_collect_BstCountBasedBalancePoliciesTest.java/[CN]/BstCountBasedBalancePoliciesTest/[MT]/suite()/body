@@ -1,0 +1,7 @@
+{
+  TestSuite suite=new TestSuite();
+  suite.addTestSuite(NoRebalanceTest.class);
+  suite.addTestSuite(SingleRebalanceTest.class);
+  suite.addTestSuite(FullRebalanceTest.class);
+  return suite;
+}

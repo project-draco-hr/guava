@@ -1,0 +1,7 @@
+{
+  Builder<Object,String> builder=ImmutableMap.builder();
+  for (  Object key : elements) {
+    builder.put(key,String.valueOf(key));
+  }
+  return builder.build().values();
+}

@@ -1,0 +1,11 @@
+{
+  future.addListener(new Runnable(){
+    @Override public void run(){
+      latch.countDown();
+    }
+  }
+,exec);
+  assertEquals(1,latch.getCount());
+  assertFalse(future.isDone());
+  assertFalse(future.isCancelled());
+}

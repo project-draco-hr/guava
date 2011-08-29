@@ -1,0 +1,4 @@
+{
+  sortedTable=create("foo",1,'a',"bar",1,'b',"foo",3,'c',"dog",2,'d');
+  assertTrue(sortedTable.rowMap().get("foo") instanceof SortedMap);
+}

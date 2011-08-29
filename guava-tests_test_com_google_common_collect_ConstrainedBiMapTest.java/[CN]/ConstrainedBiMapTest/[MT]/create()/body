@@ -1,0 +1,3 @@
+{
+  return MapConstraints.constrainedBiMap(HashBiMap.<Integer,String>create(),TEST_CONSTRAINT);
+}

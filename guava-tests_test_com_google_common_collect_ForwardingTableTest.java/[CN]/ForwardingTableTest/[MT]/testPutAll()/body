@@ -1,0 +1,4 @@
+{
+  forward.putAll(HashBasedTable.<String,Integer,Boolean>create());
+  assertEquals("[putAll(Table)]",getCalls());
+}

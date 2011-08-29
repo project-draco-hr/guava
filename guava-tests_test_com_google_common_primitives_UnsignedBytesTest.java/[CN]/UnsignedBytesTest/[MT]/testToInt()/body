@@ -1,0 +1,8 @@
+{
+  assertEquals(0,UnsignedBytes.toInt((byte)0));
+  assertEquals(1,UnsignedBytes.toInt((byte)1));
+  assertEquals(127,UnsignedBytes.toInt((byte)127));
+  assertEquals(128,UnsignedBytes.toInt((byte)-128));
+  assertEquals(129,UnsignedBytes.toInt((byte)-127));
+  assertEquals(255,UnsignedBytes.toInt((byte)-1));
+}

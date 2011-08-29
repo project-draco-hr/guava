@@ -1,0 +1,9 @@
+{
+  SortedMapDifference<Integer,Integer> diff=SortedMaps.difference(EMPTY,SINGLETON);
+  assertFalse(diff.areEqual());
+  assertEquals(EMPTY,diff.entriesOnlyOnLeft());
+  assertEquals(SINGLETON,diff.entriesOnlyOnRight());
+  assertEquals(EMPTY,diff.entriesInCommon());
+  assertEquals(EMPTY,diff.entriesDiffering());
+  assertEquals("not equal: only on right={1=2}",diff.toString());
+}

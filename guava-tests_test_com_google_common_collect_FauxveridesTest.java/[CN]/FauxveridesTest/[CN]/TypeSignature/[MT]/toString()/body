@@ -1,0 +1,3 @@
+{
+  return (parameterSignatures.isEmpty()) ? "" : "<" + Joiner.on(", ").join(parameterSignatures) + "> ";
+}

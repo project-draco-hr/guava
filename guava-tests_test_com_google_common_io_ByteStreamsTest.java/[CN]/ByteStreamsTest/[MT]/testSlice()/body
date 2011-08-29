@@ -1,0 +1,35 @@
+{
+  InputSupplier<? extends InputStream> supplier=ByteStreams.newInputStreamSupplier(newPreFilledByteArray(100));
+  try {
+    ByteStreams.slice(supplier,-1,10);
+    fail("expected exception");
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+  try {
+    ByteStreams.slice(supplier,0,-1);
+    fail("expected exception");
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+  try {
+    ByteStreams.slice(null,0,10);
+    fail("expected exception");
+  }
+ catch (  NullPointerException expected) {
+  }
+  sliceHelper(0,0,0,0);
+  sliceHelper(0,0,1,0);
+  sliceHelper(100,0,10,10);
+  sliceHelper(100,0,100,100);
+  sliceHelper(100,5,10,10);
+  sliceHelper(100,5,100,95);
+  sliceHelper(100,100,0,0);
+  sliceHelper(100,100,10,0);
+  try {
+    sliceHelper(100,101,10,0);
+    fail("expected exception");
+  }
+ catch (  EOFException expected) {
+  }
+}

@@ -1,0 +1,12 @@
+{
+  assertEquals(Ranges.closedOpen(1,5),Ranges.closed(1,4).canonical(integers()));
+  assertEquals(Ranges.closedOpen(1,5),Ranges.open(0,5).canonical(integers()));
+  assertEquals(Ranges.closedOpen(1,5),Ranges.closedOpen(1,5).canonical(integers()));
+  assertEquals(Ranges.closedOpen(1,5),Ranges.openClosed(0,4).canonical(integers()));
+  assertEquals(Ranges.closedOpen(Integer.MIN_VALUE,0),Ranges.closedOpen(Integer.MIN_VALUE,0).canonical(integers()));
+  assertEquals(Ranges.closedOpen(Integer.MIN_VALUE,0),Ranges.lessThan(0).canonical(integers()));
+  assertEquals(Ranges.closedOpen(Integer.MIN_VALUE,1),Ranges.atMost(0).canonical(integers()));
+  assertEquals(Ranges.atLeast(0),Ranges.atLeast(0).canonical(integers()));
+  assertEquals(Ranges.atLeast(1),Ranges.greaterThan(0).canonical(integers()));
+  assertEquals(Ranges.atLeast(Integer.MIN_VALUE),Ranges.<Integer>all().canonical(integers()));
+}

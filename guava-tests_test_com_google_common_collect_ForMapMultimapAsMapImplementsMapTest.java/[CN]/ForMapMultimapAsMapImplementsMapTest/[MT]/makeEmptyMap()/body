@@ -1,0 +1,4 @@
+{
+  Map<String,Integer> map=Maps.newHashMap();
+  return Multimaps.forMap(map).asMap();
+}

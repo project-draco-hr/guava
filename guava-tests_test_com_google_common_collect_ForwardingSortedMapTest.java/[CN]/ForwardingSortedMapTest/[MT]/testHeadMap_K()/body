@@ -1,0 +1,4 @@
+{
+  forward().headMap("asdf");
+  assertEquals("[headMap(Object)]",getCalls());
+}

@@ -1,0 +1,5 @@
+{
+  NullPointerTester tester=new NullPointerTester();
+  tester.testAllPublicStaticMethods(ImmutableList.class);
+  tester.testAllPublicInstanceMethods(ImmutableList.of(1,2,3));
+}

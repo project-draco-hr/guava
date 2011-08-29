@@ -1,0 +1,9 @@
+{
+  ListMultimap<String,Integer> mod=ArrayListMultimap.create();
+  ListMultimap<String,Integer> unmod=Multimaps.unmodifiableListMultimap(mod);
+  assertNotSame(mod,unmod);
+  assertSame(unmod,Multimaps.unmodifiableListMultimap(unmod));
+  ImmutableListMultimap<String,Integer> immutable=ImmutableListMultimap.of("a",1,"b",2,"a",3);
+  assertSame(immutable,Multimaps.unmodifiableListMultimap(immutable));
+  assertSame(immutable,Multimaps.unmodifiableListMultimap((ListMultimap<String,Integer>)immutable));
+}

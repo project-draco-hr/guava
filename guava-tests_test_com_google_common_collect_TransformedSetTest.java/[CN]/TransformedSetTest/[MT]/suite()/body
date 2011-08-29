@@ -1,0 +1,5 @@
+{
+  TestSuite suite=new TestSuite();
+  suite.addTest(SetTestSuiteBuilder.using(new TransformedIntegerSetGenerator()).named("TransformedSet").withFeatures(SetFeature.GENERAL_PURPOSE,CollectionFeature.ALLOWS_NULL_VALUES,CollectionSize.SEVERAL).createTestSuite());
+  return suite;
+}

@@ -1,0 +1,9 @@
+{
+  segment.lock();
+  try {
+    segment.drainReferenceQueues();
+  }
+  finally {
+    segment.unlock();
+  }
+}

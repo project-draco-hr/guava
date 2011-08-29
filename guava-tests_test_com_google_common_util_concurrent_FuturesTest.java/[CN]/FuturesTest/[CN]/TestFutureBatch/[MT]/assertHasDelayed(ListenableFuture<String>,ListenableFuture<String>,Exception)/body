@@ -1,0 +1,4 @@
+{
+  ImmutableSet<ListenableFuture<String>> inputs=ImmutableSet.of(a,b);
+  smartAssertTrue(inputs,e,hasDelayed(a,b));
+}

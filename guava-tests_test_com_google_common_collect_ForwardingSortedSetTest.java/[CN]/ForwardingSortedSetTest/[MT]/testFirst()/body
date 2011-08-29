@@ -1,0 +1,4 @@
+{
+  forward().first();
+  assertEquals("[first]",getCalls());
+}

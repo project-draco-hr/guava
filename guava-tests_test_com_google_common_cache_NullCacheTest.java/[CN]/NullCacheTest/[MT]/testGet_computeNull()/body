@@ -1,0 +1,11 @@
+{
+  Cache<Object,Object> cache=CacheBuilder.newBuilder().maximumSize(0).removalListener(listener).build(constantLoader(null));
+  try {
+    cache.getUnchecked(new Object());
+    fail();
+  }
+ catch (  NullPointerException e) {
+  }
+  assertEquals(0,listener.getCount());
+  checkEmpty(cache);
+}

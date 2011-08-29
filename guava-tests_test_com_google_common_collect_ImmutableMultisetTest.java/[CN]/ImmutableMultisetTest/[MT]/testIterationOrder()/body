@@ -1,0 +1,4 @@
+{
+  Collection<String> c=ImmutableMultiset.of("a","b","a");
+  ASSERT.that(c).hasContentsInOrder("a","a","b");
+}

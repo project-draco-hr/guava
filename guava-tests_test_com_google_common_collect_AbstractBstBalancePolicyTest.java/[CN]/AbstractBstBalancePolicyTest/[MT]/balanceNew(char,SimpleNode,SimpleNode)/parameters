@@ -1,0 +1,3 @@
+char c
+SimpleNode left
+SimpleNode right

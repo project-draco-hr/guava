@@ -1,0 +1,6 @@
+{
+  testConcurrentComputationDefault(builder);
+  testConcurrentComputationNull(builder);
+  testConcurrentComputationUncheckedException(builder);
+  testConcurrentComputationCheckedException(builder);
+}

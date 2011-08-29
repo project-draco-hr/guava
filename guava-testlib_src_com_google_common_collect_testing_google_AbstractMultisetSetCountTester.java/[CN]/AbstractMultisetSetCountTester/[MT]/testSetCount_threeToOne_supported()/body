@@ -1,0 +1,4 @@
+{
+  initThreeCopies();
+  assertSetCount(samples.e0,1);
+}

@@ -1,0 +1,6 @@
+{
+  ms.add("a",2);
+  ms.add("b");
+  assertTrue(ms.elementSet().removeAll(asList("a","c")));
+  assertContents("b");
+}

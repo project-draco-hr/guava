@@ -1,0 +1,4 @@
+{
+  ListenableFuture<String> future=Futures.immediateFuture(DATA1);
+  assertSame(DATA1,future.get(0L,TimeUnit.MILLISECONDS));
+}

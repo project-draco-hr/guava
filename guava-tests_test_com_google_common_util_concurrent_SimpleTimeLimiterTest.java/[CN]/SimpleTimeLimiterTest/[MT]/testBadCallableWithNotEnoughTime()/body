@@ -1,0 +1,15 @@
+{
+  long start=System.nanoTime();
+  try {
+    service.callWithTimeout(new Callable<String>(){
+      @Override public String call() throws SampleException, InterruptedException {
+        return someBadStaticMethod();
+      }
+    }
+,NOT_ENOUGH_MS,TimeUnit.MILLISECONDS,true);
+    fail("no exception thrown");
+  }
+ catch (  UncheckedTimeoutException expected) {
+  }
+  assertTheCallTookBetween(start,NOT_ENOUGH_MS,DELAY_MS);
+}

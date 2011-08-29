@@ -1,0 +1,10 @@
+{
+  CountingLoader loader=new CountingLoader();
+  CustomConcurrentHashMap<Object,Object> map=makeComputingMap(createCacheBuilder(),loader);
+  assertEquals(0,loader.getCount());
+  Object key=new Object();
+  Object value=new Object();
+  map.put(key,value);
+  assertEquals(value,map.getOrCompute(key));
+  assertEquals(0,loader.getCount());
+}

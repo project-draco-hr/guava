@@ -1,0 +1,7 @@
+{
+  Object computed=new Object();
+  Cache<Object,Object> cache=CacheBuilder.newBuilder().maximumSize(0).removalListener(listener).build(constantLoader(computed));
+  assertSame(computed,cache.getUnchecked(new Object()));
+  assertEquals(1,listener.getCount());
+  checkEmpty(cache);
+}

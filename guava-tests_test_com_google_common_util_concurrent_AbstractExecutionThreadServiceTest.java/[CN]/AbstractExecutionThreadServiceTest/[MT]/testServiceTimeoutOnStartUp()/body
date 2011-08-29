@@ -1,0 +1,10 @@
+{
+  TimeoutOnStartUp service=new TimeoutOnStartUp();
+  try {
+    service.start().get(1,TimeUnit.MILLISECONDS);
+    fail();
+  }
+ catch (  TimeoutException e) {
+    assertTrue(e.getMessage().contains(Service.State.STARTING.toString()));
+  }
+}

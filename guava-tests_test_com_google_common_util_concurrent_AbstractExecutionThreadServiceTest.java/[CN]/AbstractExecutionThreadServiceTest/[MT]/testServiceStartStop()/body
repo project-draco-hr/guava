@@ -1,0 +1,13 @@
+{
+  WaitOnRunService service=new WaitOnRunService();
+  assertFalse(service.startUpCalled);
+  service.start().get();
+  assertTrue(service.startUpCalled);
+  assertEquals(Service.State.RUNNING,service.state());
+  enterRun.await();
+  service.stop().get();
+  assertTrue(service.shutDownCalled);
+  assertEquals(Service.State.TERMINATED,service.state());
+  executionThread.join();
+  assertNull(thrownByExecutionThread);
+}

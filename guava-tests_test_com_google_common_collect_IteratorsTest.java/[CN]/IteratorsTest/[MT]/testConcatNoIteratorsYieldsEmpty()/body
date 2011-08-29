@@ -1,0 +1,8 @@
+{
+  new EmptyIteratorTester(){
+    @SuppressWarnings("unchecked") @Override protected Iterator<Integer> newTargetIterator(){
+      return Iterators.concat();
+    }
+  }
+.test();
+}

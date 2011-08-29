@@ -1,0 +1,10 @@
+{
+  TreeMultimap<String,Integer> multimap=createPopulate();
+  assertEquals(Integer.valueOf(1),multimap.get("foo").first());
+  try {
+    multimap.get("missing").first();
+    fail("Expected NoSuchElementException");
+  }
+ catch (  NoSuchElementException expected) {
+  }
+}

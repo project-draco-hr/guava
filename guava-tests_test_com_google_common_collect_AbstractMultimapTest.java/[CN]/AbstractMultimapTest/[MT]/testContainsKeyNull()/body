@@ -1,0 +1,4 @@
+{
+  multimap.put(nullKey(),1);
+  assertTrue(multimap.containsKey(nullKey()));
+}

@@ -1,0 +1,11 @@
+{
+  Iterator<Integer> iter=ImmutableList.of(1,2,3).iterator();
+  Enumeration<Integer> enumer=Iterators.asEnumeration(iter);
+  assertTrue(enumer.hasMoreElements());
+  assertEquals(1,(int)enumer.nextElement());
+  assertTrue(enumer.hasMoreElements());
+  assertEquals(2,(int)enumer.nextElement());
+  assertTrue(enumer.hasMoreElements());
+  assertEquals(3,(int)enumer.nextElement());
+  assertFalse(enumer.hasMoreElements());
+}

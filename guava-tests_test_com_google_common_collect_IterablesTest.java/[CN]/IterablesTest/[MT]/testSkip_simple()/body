@@ -1,0 +1,5 @@
+{
+  Collection<String> set=ImmutableSet.of("a","b","c","d","e");
+  assertEquals(newArrayList("c","d","e"),newArrayList(skip(set,2)));
+  assertEquals("[c, d, e]",skip(set,2).toString());
+}

@@ -1,0 +1,10 @@
+{
+  assertEquals(0x12131415,Ints.fromByteArray(new byte[]{0x12,0x13,0x14,0x15,0x33}));
+  assertEquals(0xFFEEDDCC,Ints.fromByteArray(new byte[]{(byte)0xFF,(byte)0xEE,(byte)0xDD,(byte)0xCC}));
+  try {
+    Ints.fromByteArray(new byte[Ints.BYTES - 1]);
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}

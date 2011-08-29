@@ -1,0 +1,4 @@
+{
+  forward.equals("asdf");
+  assertFalse("equals() should not be forwarded.",isCalled());
+}

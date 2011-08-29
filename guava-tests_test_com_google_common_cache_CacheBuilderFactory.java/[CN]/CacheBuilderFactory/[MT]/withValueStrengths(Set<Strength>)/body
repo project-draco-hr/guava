@@ -1,0 +1,4 @@
+{
+  this.valueStrengths=Sets.newLinkedHashSet(valueStrengths);
+  return this;
+}

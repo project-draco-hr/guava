@@ -1,0 +1,5 @@
+{
+  SortedSet<String> set=ImmutableSortedSet.<String>reverseOrder().add("a","b","c").build();
+  ASSERT.that(set).hasContentsInOrder("c","b","a");
+  assertEquals(Ordering.natural().reverse(),set.comparator());
+}

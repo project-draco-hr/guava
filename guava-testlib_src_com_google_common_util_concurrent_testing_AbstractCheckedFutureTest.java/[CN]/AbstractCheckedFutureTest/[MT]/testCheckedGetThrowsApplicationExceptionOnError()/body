@@ -1,0 +1,20 @@
+{
+  final CheckedFuture<Boolean,?> future=createCheckedFuture(Boolean.TRUE,new Exception("Error"),latch);
+  assertFalse(future.isDone());
+  assertFalse(future.isCancelled());
+  new Thread(new Runnable(){
+    @Override public void run(){
+      latch.countDown();
+    }
+  }
+).start();
+  try {
+    future.checkedGet();
+    fail();
+  }
+ catch (  Exception e) {
+    checkExecutionException(e);
+  }
+  assertTrue(future.isDone());
+  assertFalse(future.isCancelled());
+}

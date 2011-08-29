@@ -1,0 +1,16 @@
+{
+  IteratorTester<T> tester=new IteratorTester<T>(steps,IteratorFeature.MODIFIABLE,Lists.newLinkedList(values),IteratorTester.KnownOrder.UNKNOWN_ORDER){
+    private MinMaxPriorityQueue<T> mmHeap;
+    @Override protected Iterator<T> newTargetIterator(){
+      mmHeap=MinMaxPriorityQueue.create(values);
+      return mmHeap.iterator();
+    }
+    @Override protected void verify(    List<T> elements){
+      assertEquals(Sets.newHashSet(elements),Sets.newHashSet(mmHeap.iterator()));
+      assertTrue("Invalid MinMaxHeap: " + mmHeap.toString(),mmHeap.isIntact());
+    }
+  }
+;
+  tester.ignoreSunJavaBug6529795();
+  tester.test();
+}

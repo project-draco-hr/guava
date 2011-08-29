@@ -1,0 +1,4 @@
+{
+  forward().entrySet();
+  assertEquals("[entrySet]",getCalls());
+}

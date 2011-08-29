@@ -1,0 +1,9 @@
+{
+  for (  byte value : VALUES) {
+    assertEquals(value,UnsignedBytes.checkedCast(UnsignedBytes.toInt(value)));
+  }
+  assertCastFails(256L);
+  assertCastFails(-1L);
+  assertCastFails(Long.MAX_VALUE);
+  assertCastFails(Long.MIN_VALUE);
+}

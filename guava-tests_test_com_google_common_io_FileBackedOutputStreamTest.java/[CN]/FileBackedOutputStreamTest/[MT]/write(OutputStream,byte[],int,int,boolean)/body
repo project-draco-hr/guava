@@ -1,0 +1,11 @@
+{
+  if (singleByte) {
+    for (int i=off; i < off + len; i++) {
+      out.write(b[i]);
+    }
+  }
+ else {
+    out.write(b,off,len);
+  }
+  out.flush();
+}

@@ -1,0 +1,7 @@
+{
+  ListMultimap<String,Integer> multimap=create();
+  multimap.put("bar",11);
+  multimap.put("bar",12);
+  multimap.get("bar").add(0,13);
+  ASSERT.that(multimap.get("bar")).hasContentsInOrder(13,11,12);
+}

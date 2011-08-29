@@ -1,0 +1,9 @@
+{
+  Reader reader=new StringReader("abcde");
+  try {
+    CharStreams.skipFully(reader,6);
+    fail("expected EOFException");
+  }
+ catch (  EOFException e) {
+  }
+}

@@ -1,0 +1,8 @@
+{
+  NullPointerTester tester=new NullPointerTester();
+  tester.setDefault(Multimap.class,ImmutableMultimap.of());
+  tester.setDefault(ListMultimap.class,ImmutableListMultimap.of());
+  tester.setDefault(EntryTransformer.class,ALWAYS_NULL);
+  tester.ignore(Multimaps.class.getDeclaredMethod("index",Object.class,Function.class));
+  tester.testAllPublicStaticMethods(Multimaps.class);
+}

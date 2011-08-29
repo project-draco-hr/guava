@@ -1,0 +1,5 @@
+{
+  TestBiMap<K,V> inner=new TestBiMap<K,V>(HashBiMap.<K,V>create(),mutex);
+  BiMap<K,V> outer=Synchronized.biMap(inner,mutex);
+  return outer;
+}

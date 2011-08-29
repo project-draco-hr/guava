@@ -1,0 +1,11 @@
+{
+  long start=System.nanoTime();
+  String result=service.callWithTimeout(new Callable<String>(){
+    @Override public String call() throws InterruptedException {
+      return someGoodStaticMethod();
+    }
+  }
+,ENOUGH_MS,TimeUnit.MILLISECONDS,true);
+  assertEquals("yes",result);
+  assertTheCallTookBetween(start,DELAY_MS,ENOUGH_MS);
+}

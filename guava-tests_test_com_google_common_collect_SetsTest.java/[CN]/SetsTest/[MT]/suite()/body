@@ -1,0 +1,44 @@
+{
+  TestSuite suite=new TestSuite();
+  suite.addTestSuite(SetsTest.class);
+  suite.addTest(SetTestSuiteBuilder.using(new TestStringSetGenerator(){
+    @Override protected Set<String> create(    String[] elements){
+      int size=elements.length;
+      Set<String> set1=(size > 1) ? Sets.newHashSet(Arrays.asList(elements).subList(0,size - 1)) : Sets.newHashSet(elements);
+      Set<String> set2=(size > 0) ? Sets.newHashSet(Arrays.asList(elements).subList(1,size)) : Sets.<String>newHashSet();
+      return Sets.union(set1,set2);
+    }
+  }
+).named("Sets.union").withFeatures(CollectionSize.ANY,CollectionFeature.ALLOWS_NULL_VALUES).createTestSuite());
+  suite.addTest(SetTestSuiteBuilder.using(new TestStringSetGenerator(){
+    @Override protected Set<String> create(    String[] elements){
+      Set<String> set1=Sets.newHashSet(elements);
+      set1.add(samples().e3);
+      Set<String> set2=Sets.newHashSet(elements);
+      set2.add(samples().e4);
+      return Sets.intersection(set1,set2);
+    }
+  }
+).named("Sets.intersection").withFeatures(CollectionSize.ANY,CollectionFeature.ALLOWS_NULL_VALUES).createTestSuite());
+  suite.addTest(SetTestSuiteBuilder.using(new TestStringSetGenerator(){
+    @Override protected Set<String> create(    String[] elements){
+      Set<String> set1=Sets.newHashSet(elements);
+      set1.add(samples().e3);
+      Set<String> set2=Sets.newHashSet(samples().e3);
+      return Sets.difference(set1,set2);
+    }
+  }
+).named("Sets.difference").withFeatures(CollectionSize.ANY,CollectionFeature.ALLOWS_NULL_VALUES).createTestSuite());
+  suite.addTest(SetTestSuiteBuilder.using(new TestEnumSetGenerator(){
+    @Override protected Set<AnEnum> create(    AnEnum[] elements){
+      AnEnum[] otherElements=new AnEnum[elements.length - 1];
+      System.arraycopy(elements,1,otherElements,0,otherElements.length);
+      return Sets.immutableEnumSet(elements[0],otherElements);
+    }
+  }
+).named("Sets.immutableEnumSet").withFeatures(CollectionSize.ONE,CollectionSize.SEVERAL,CollectionFeature.ALLOWS_NULL_QUERIES).createTestSuite());
+  suite.addTest(testsForFilter());
+  suite.addTest(testsForFilterNoNulls());
+  suite.addTest(testsForFilterFiltered());
+  return suite;
+}

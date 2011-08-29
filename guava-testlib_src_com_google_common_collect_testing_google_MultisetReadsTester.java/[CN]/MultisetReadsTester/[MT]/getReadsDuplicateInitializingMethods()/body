@@ -1,0 +1,3 @@
+{
+  return Arrays.asList(Platform.getMethod(MultisetReadsTester.class,"testCount_3"));
+}

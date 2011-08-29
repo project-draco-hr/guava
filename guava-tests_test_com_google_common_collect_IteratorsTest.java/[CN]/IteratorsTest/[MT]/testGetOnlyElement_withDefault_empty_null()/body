@@ -1,0 +1,4 @@
+{
+  Iterator<String> iterator=Iterators.emptyIterator();
+  assertNull(Iterators.getOnlyElement(iterator,null));
+}

@@ -1,0 +1,9 @@
+{
+  Interner<String> pool=Interners.newWeakInterner();
+  try {
+    pool.intern(null);
+    fail();
+  }
+ catch (  NullPointerException ok) {
+  }
+}

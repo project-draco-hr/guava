@@ -1,0 +1,4 @@
+{
+  Multimap<String,Integer> unmodifiable=prepareUnmodifiableTests(TreeMultimap.<String,Integer>create(),false,"null",42);
+  SerializableTester.reserializeAndAssert(unmodifiable);
+}

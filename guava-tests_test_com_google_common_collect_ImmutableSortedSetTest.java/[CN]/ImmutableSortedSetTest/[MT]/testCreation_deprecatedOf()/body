@@ -1,0 +1,4 @@
+{
+  ImmutableSortedSet<String> set=ImmutableSortedSet.of(new String[]{"c","b","a"});
+  ASSERT.that(set).hasContentsInOrder("a","b","c");
+}

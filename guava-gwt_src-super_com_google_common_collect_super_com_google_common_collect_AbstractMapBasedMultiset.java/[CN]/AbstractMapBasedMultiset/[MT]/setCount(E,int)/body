@@ -1,6 +1,6 @@
 {
   checkNonnegative(count,"count");
-  AtomicInteger existingCounter;
+  Count existingCounter;
   int oldCount;
   if (count == 0) {
     existingCounter=backingMap.remove(element);
@@ -10,7 +10,7 @@
     existingCounter=backingMap.get(element);
     oldCount=getAndSet(existingCounter,count);
     if (existingCounter == null) {
-      backingMap.put(element,new AtomicInteger(count));
+      backingMap.put(element,new Count(count));
     }
   }
   size+=(count - oldCount);

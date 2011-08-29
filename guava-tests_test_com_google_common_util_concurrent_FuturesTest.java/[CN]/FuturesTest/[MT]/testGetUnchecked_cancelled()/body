@@ -1,0 +1,10 @@
+{
+  SettableFuture<String> future=SettableFuture.create();
+  future.cancel(true);
+  try {
+    getUnchecked(future);
+    fail();
+  }
+ catch (  CancellationException expected) {
+  }
+}

@@ -1,0 +1,66 @@
+{
+  List<String> list=Lists.newArrayList("foo","bar");
+  List<String> constrained=Constraints.constrainedList(list,TEST_CONSTRAINT);
+  try {
+    constrained.add(TEST_ELEMENT);
+    fail("TestElementException expected");
+  }
+ catch (  TestElementException expected) {
+  }
+  try {
+    constrained.listIterator().add(TEST_ELEMENT);
+    fail("TestElementException expected");
+  }
+ catch (  TestElementException expected) {
+  }
+  try {
+    constrained.listIterator(1).add(TEST_ELEMENT);
+    fail("TestElementException expected");
+  }
+ catch (  TestElementException expected) {
+  }
+  try {
+    constrained.listIterator().set(TEST_ELEMENT);
+    fail("TestElementException expected");
+  }
+ catch (  TestElementException expected) {
+  }
+  try {
+    constrained.listIterator(1).set(TEST_ELEMENT);
+    fail("TestElementException expected");
+  }
+ catch (  TestElementException expected) {
+  }
+  try {
+    constrained.subList(0,1).add(TEST_ELEMENT);
+    fail("TestElementException expected");
+  }
+ catch (  TestElementException expected) {
+  }
+  try {
+    constrained.add(1,TEST_ELEMENT);
+    fail("TestElementException expected");
+  }
+ catch (  TestElementException expected) {
+  }
+  try {
+    constrained.set(1,TEST_ELEMENT);
+    fail("TestElementException expected");
+  }
+ catch (  TestElementException expected) {
+  }
+  try {
+    constrained.addAll(asList("baz",TEST_ELEMENT));
+    fail("TestElementException expected");
+  }
+ catch (  TestElementException expected) {
+  }
+  try {
+    constrained.addAll(1,asList("baz",TEST_ELEMENT));
+    fail("TestElementException expected");
+  }
+ catch (  TestElementException expected) {
+  }
+  ASSERT.that(constrained).hasContentsInOrder("foo","bar");
+  ASSERT.that(list).hasContentsInOrder("foo","bar");
+}

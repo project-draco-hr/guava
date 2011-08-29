@@ -1,0 +1,6 @@
+{
+  Map<String,Integer> map=create();
+  Set<Map.Entry<String,Integer>> entrySet=map.entrySet();
+  assertTrue(entrySet instanceof SynchronizedSet);
+  assertSame(mutex,((SynchronizedSet<?>)entrySet).mutex);
+}

@@ -1,0 +1,15 @@
+{
+  IdentityLoader<Integer> loader=identityLoader();
+  Cache<Integer,Integer> cache=CacheBuilder.newBuilder().concurrencyLevel(1).maximumSize(10).build(loader);
+  CacheTesting.warmUp(cache,0,10);
+  Set<Integer> keySet=cache.asMap().keySet();
+  ASSERT.that(keySet).hasContentsAnyOrder(0,1,2,3,4,5,6,7,8,9);
+  getAll(cache,asList(0,1,2));
+  ASSERT.that(keySet).hasContentsAnyOrder(3,4,5,6,7,8,9,0,1,2);
+  getAll(cache,asList(10,11,12));
+  ASSERT.that(keySet).hasContentsAnyOrder(6,7,8,9,0,1,2,10,11,12);
+  getAll(cache,asList(6,7,8));
+  ASSERT.that(keySet).hasContentsAnyOrder(9,0,1,2,10,11,12,6,7,8);
+  getAll(cache,asList(13,14,15));
+  ASSERT.that(keySet).hasContentsAnyOrder(2,10,11,12,6,7,8,13,14,15);
+}

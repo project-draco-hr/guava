@@ -1,0 +1,16 @@
+{
+  SortedSet<String> set=ImmutableSortedSet.orderedBy(STRING_LENGTH).add("in","the","quick","jumped","over","a").build();
+  assertTrue(set.subSet("the","quick") instanceof ImmutableSortedSet);
+  assertTrue(set.subSet("","b") instanceof ImmutableSortedSet);
+  ASSERT.that(set.subSet("the","quick")).hasContentsInOrder("the","over");
+  ASSERT.that(set.subSet("a","california")).hasContentsInOrder("a","in","the","over","quick","jumped");
+  assertTrue(set.subSet("","b").isEmpty());
+  assertTrue(set.subSet("vermont","california").isEmpty());
+  assertTrue(set.subSet("aaa","zzz").isEmpty());
+  try {
+    set.subSet("quick","the");
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}

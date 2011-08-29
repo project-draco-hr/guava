@@ -1,0 +1,19 @@
+{
+  int count=10;
+  final AtomicInteger callCount=new AtomicInteger();
+  final CountDownLatch startSignal=new CountDownLatch(count);
+  final Object result=new Object();
+  Cache<String,Object> cache=builder.build(new CacheLoader<String,Object>(){
+    @Override public Object load(    String key) throws InterruptedException {
+      callCount.incrementAndGet();
+      startSignal.await();
+      return result;
+    }
+  }
+);
+  List<Object> resultArray=doConcurrentGet(cache,"bar",count,startSignal);
+  assertEquals(1,callCount.get());
+  for (int i=0; i < count; i++) {
+    assertSame("result(" + i + ") didn't match expected",result,resultArray.get(i));
+  }
+}

@@ -1,0 +1,7 @@
+{
+  Map<String,Integer> underlying=Maps.newHashMap();
+  underlying.put("a",1);
+  Map<String,String> map=Maps.transformValues(underlying,Functions.toStringFunction());
+  assertEquals("1",map.remove("a"));
+  assertNull(map.remove("b"));
+}

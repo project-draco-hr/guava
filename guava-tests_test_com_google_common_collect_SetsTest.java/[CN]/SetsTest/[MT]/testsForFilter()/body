@@ -1,0 +1,12 @@
+{
+  return SetTestSuiteBuilder.using(new TestStringSetGenerator(){
+    @Override public Set<String> create(    String[] elements){
+      Set<String> unfiltered=Sets.newLinkedHashSet();
+      unfiltered.add("yyy");
+      unfiltered.addAll(Arrays.asList(elements));
+      unfiltered.add("zzz");
+      return Sets.filter(unfiltered,Collections2Test.NOT_YYY_ZZZ);
+    }
+  }
+).named("Sets.filter").withFeatures(SetFeature.GENERAL_PURPOSE,CollectionFeature.ALLOWS_NULL_VALUES,CollectionFeature.KNOWN_ORDER,CollectionSize.ANY).suppressing(getIteratorKnownOrderRemoveSupportedMethod()).createTestSuite();
+}

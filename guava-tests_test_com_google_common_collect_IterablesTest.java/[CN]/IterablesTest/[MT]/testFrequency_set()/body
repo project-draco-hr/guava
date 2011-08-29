@@ -1,0 +1,9 @@
+{
+  Set<String> set=Sets.newHashSet("a","b","c");
+  assertEquals(1,Iterables.frequency(set,"a"));
+  assertEquals(1,Iterables.frequency(set,"b"));
+  assertEquals(1,Iterables.frequency(set,"c"));
+  assertEquals(0,Iterables.frequency(set,"d"));
+  assertEquals(0,Iterables.frequency(set,4.2));
+  assertEquals(0,Iterables.frequency(set,null));
+}

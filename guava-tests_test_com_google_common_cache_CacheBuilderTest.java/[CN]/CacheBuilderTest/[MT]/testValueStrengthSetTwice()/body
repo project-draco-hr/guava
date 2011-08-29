@@ -1,0 +1,23 @@
+{
+  CacheBuilder<Object,Object> builder1=new CacheBuilder<Object,Object>().weakValues();
+  try {
+    builder1.weakValues();
+    fail();
+  }
+ catch (  IllegalStateException expected) {
+  }
+  CacheBuilder<Object,Object> builder2=new CacheBuilder<Object,Object>().softValues();
+  try {
+    builder2.softValues();
+    fail();
+  }
+ catch (  IllegalStateException expected) {
+  }
+  CacheBuilder<Object,Object> builder3=new CacheBuilder<Object,Object>().weakValues();
+  try {
+    builder3.softValues();
+    fail();
+  }
+ catch (  IllegalStateException expected) {
+  }
+}

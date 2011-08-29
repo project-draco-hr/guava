@@ -1,0 +1,6 @@
+{
+  NullPointerTester tester=new NullPointerTester();
+  tester.setDefault(Comparator.class,Ordering.arbitrary());
+  tester.setDefault(BoundType.class,BoundType.CLOSED);
+  tester.testAllPublicStaticMethods(GeneralRange.class);
+}

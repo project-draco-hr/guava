@@ -1,0 +1,5 @@
+{
+  NullPointerTester tester=new NullPointerTester();
+  CacheBuilder<Object,Object> builder=new CacheBuilder<Object,Object>();
+  tester.testAllPublicInstanceMethods(builder);
+}

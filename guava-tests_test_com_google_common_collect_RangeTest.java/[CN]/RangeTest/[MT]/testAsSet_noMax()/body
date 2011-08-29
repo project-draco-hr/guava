@@ -1,0 +1,9 @@
+{
+  Range<Integer> range=Ranges.greaterThan(0);
+  try {
+    range.asSet(UNBOUNDED_DOMAIN);
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}

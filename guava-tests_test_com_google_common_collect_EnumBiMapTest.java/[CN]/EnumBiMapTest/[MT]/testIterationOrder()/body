@@ -1,0 +1,8 @@
+{
+  Map<Currency,Country> map=ImmutableMap.of(Currency.DOLLAR,Country.CANADA,Currency.PESO,Country.CHILE,Currency.FRANC,Country.SWITZERLAND);
+  EnumBiMap<Currency,Country> bimap=EnumBiMap.create(map);
+  ASSERT.that(bimap.keySet()).hasContentsInOrder(Currency.DOLLAR,Currency.FRANC,Currency.PESO);
+  ASSERT.that(bimap.values()).hasContentsInOrder(Country.CANADA,Country.SWITZERLAND,Country.CHILE);
+  ASSERT.that(bimap.inverse().keySet()).hasContentsInOrder(Country.CANADA,Country.CHILE,Country.SWITZERLAND);
+  ASSERT.that(bimap.inverse().values()).hasContentsInOrder(Currency.DOLLAR,Currency.PESO,Currency.FRANC);
+}

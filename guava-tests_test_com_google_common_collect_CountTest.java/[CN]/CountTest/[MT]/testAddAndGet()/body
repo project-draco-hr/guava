@@ -1,0 +1,4 @@
+{
+  Count holder=new Count(20);
+  assertEquals(21,holder.addAndGet(1));
+}

@@ -1,0 +1,4 @@
+{
+  forward().subSet("first","last");
+  assertEquals("[subSet(Object,Object)]",getCalls());
+}

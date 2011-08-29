@@ -1,0 +1,5 @@
+{
+  CustomConcurrentHashMap<Object,Object> map=makeMap(createMapMaker().softValues());
+  checkStrength(map,Strength.STRONG,Strength.SOFT);
+  assertSame(EntryFactory.STRONG,map.entryFactory);
+}

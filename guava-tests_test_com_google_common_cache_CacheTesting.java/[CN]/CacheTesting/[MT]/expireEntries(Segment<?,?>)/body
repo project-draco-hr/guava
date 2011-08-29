@@ -1,0 +1,10 @@
+{
+  segment.lock();
+  try {
+    segment.expireEntries();
+    segment.runCleanup();
+  }
+  finally {
+    segment.unlock();
+  }
+}

@@ -1,0 +1,4 @@
+{
+  IdentityHashMap<Integer,Integer> map=Maps.newIdentityHashMap();
+  assertEquals(Collections.emptyMap(),map);
+}

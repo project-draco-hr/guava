@@ -1,0 +1,10 @@
+{
+  try {
+    TimeUnit.MILLISECONDS.sleep(DELAY_MS);
+    finished=true;
+    return input;
+  }
+ catch (  InterruptedException e) {
+    return null;
+  }
+}

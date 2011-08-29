@@ -1,0 +1,16 @@
+{
+  multimap.put("foo",1);
+  Multiset<String> multiset=multimap.keys();
+  try {
+    multiset.add("bar");
+    fail();
+  }
+ catch (  UnsupportedOperationException expected) {
+  }
+  try {
+    multiset.add("bar",2);
+    fail();
+  }
+ catch (  UnsupportedOperationException expected) {
+  }
+}

@@ -1,0 +1,3 @@
+{
+  create().equals(new HashMap<String,Integer>());
+}

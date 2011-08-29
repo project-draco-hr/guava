@@ -1,0 +1,7 @@
+{
+  Iterator<String> unfiltered=Lists.newArrayList("foo","bar").iterator();
+  Iterator<String> filtered=Iterators.filter(unfiltered,Predicates.alwaysFalse());
+  List<String> expected=Collections.emptyList();
+  List<String> actual=Lists.newArrayList(filtered);
+  assertEquals(expected,actual);
+}

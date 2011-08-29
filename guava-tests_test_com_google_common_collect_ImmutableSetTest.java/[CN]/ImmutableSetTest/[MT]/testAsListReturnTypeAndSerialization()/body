@@ -1,0 +1,7 @@
+{
+  ImmutableSet<String> set=ImmutableSet.of("a","b","c","d","e");
+  ImmutableList<String> list=set.asList();
+  assertTrue(list instanceof ImmutableAsList);
+  ImmutableList<String> copy=SerializableTester.reserializeAndAssert(list);
+  assertTrue(copy instanceof ImmutableAsList);
+}

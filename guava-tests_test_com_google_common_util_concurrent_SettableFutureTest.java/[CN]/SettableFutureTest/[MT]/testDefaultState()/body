@@ -1,0 +1,8 @@
+{
+  try {
+    future.get(5,TimeUnit.MILLISECONDS);
+    fail();
+  }
+ catch (  TimeoutException expected) {
+  }
+}

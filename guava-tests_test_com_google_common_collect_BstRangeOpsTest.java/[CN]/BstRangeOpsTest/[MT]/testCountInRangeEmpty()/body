@@ -1,0 +1,5 @@
+{
+  SimpleNode empty=null;
+  GeneralRange<Character> range=GeneralRange.all(Ordering.natural());
+  assertEquals(0,BstRangeOps.totalInRange(countAggregate,range,empty));
+}

@@ -1,0 +1,14 @@
+{
+  NoOpService service=new NoOpService();
+  Assert.assertEquals(Service.State.NEW,service.state());
+  assertFalse(service.isRunning());
+  assertFalse(service.running);
+  service.start();
+  assertEquals(Service.State.RUNNING,service.state());
+  assertTrue(service.isRunning());
+  assertTrue(service.running);
+  service.stop();
+  assertEquals(Service.State.TERMINATED,service.state());
+  assertFalse(service.isRunning());
+  assertFalse(service.running);
+}

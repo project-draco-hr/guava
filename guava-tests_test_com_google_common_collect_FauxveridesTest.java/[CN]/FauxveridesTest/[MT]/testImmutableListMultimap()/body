@@ -1,0 +1,3 @@
+{
+  doHasAllFauxveridesTest(ImmutableListMultimap.class,ImmutableMultimap.class);
+}

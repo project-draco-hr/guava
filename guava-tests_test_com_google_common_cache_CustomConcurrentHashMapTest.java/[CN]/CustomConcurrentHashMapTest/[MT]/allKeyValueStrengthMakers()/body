@@ -1,0 +1,3 @@
+{
+  return ImmutableList.of(createCacheBuilder(),createCacheBuilder().weakValues(),createCacheBuilder().softValues(),createCacheBuilder().weakKeys(),createCacheBuilder().weakKeys().weakValues(),createCacheBuilder().weakKeys().softValues());
+}

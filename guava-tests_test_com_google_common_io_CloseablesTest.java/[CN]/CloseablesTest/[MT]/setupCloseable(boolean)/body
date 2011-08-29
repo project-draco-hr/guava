@@ -1,0 +1,8 @@
+{
+  reset(mockCloseable);
+  mockCloseable.close();
+  if (shouldThrow) {
+    expectThrown();
+  }
+  replay(mockCloseable);
+}

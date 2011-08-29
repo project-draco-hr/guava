@@ -1,0 +1,4 @@
+{
+  ImmutableSortedSet<LegacyComparable> set=ImmutableSortedSet.copyOf(LegacyComparable.VALUES_BACKWARD);
+  assertTrue(Iterables.elementsEqual(LegacyComparable.VALUES_FORWARD,set));
+}

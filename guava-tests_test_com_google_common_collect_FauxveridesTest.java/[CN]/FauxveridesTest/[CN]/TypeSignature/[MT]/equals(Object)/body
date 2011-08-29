@@ -1,0 +1,7 @@
+{
+  if (obj instanceof TypeSignature) {
+    TypeSignature other=(TypeSignature)obj;
+    return parameterSignatures.equals(other.parameterSignatures);
+  }
+  return false;
+}

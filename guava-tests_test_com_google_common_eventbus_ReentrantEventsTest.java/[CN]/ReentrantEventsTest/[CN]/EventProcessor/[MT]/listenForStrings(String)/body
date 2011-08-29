@@ -1,0 +1,3 @@
+{
+  bus.post(SECOND);
+}

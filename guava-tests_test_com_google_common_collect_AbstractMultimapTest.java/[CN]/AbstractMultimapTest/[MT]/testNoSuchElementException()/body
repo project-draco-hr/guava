@@ -1,0 +1,9 @@
+{
+  Iterator<Entry<String,Integer>> entries=multimap.entries().iterator();
+  try {
+    entries.next();
+    fail();
+  }
+ catch (  NoSuchElementException expected) {
+  }
+}

@@ -1,0 +1,15 @@
+{
+  Comparator<String> comparator=Ordering.<String>natural().nullsFirst();
+  TreeMultiset<String> ms=TreeMultiset.create(comparator);
+  ms.add("b");
+  ms.add(null);
+  ms.add("a");
+  ms.add("b");
+  ms.add(null,2);
+  ASSERT.that(ms).hasContentsInOrder(null,null,null,"a","b","b");
+  assertEquals(3,ms.count(null));
+  SortedSet<String> elementSet=ms.elementSet();
+  assertEquals(null,elementSet.first());
+  assertEquals("b",elementSet.last());
+  assertEquals(comparator,elementSet.comparator());
+}

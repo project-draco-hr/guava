@@ -1,0 +1,5 @@
+{
+  List<String> list=asList(elements);
+  Collections.reverse(list);
+  return ImmutableList.copyOf(list).reverse();
+}

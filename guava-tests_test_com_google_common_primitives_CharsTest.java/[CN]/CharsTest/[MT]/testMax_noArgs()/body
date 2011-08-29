@@ -1,0 +1,8 @@
+{
+  try {
+    Chars.max();
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}

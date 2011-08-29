@@ -1,0 +1,14 @@
+{
+  Multimap<String,Integer> multimap=createMultimap();
+  assertTrue(multimap.containsKey("foo"));
+  assertFalse(multimap.containsKey("cat"));
+  assertTrue(multimap.containsValue(1));
+  assertFalse(multimap.containsValue(5));
+  assertTrue(multimap.containsEntry("foo",1));
+  assertFalse(multimap.containsEntry("cat",1));
+  assertFalse(multimap.containsEntry("foo",5));
+  assertFalse(multimap.entries().isEmpty());
+  assertEquals(3,multimap.size());
+  assertFalse(multimap.isEmpty());
+  assertEquals("{foo=[1, 3], bar=[2]}",multimap.toString());
+}

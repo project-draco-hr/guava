@@ -1,0 +1,8 @@
+{
+  try {
+    Ranges.closed(4,3);
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}

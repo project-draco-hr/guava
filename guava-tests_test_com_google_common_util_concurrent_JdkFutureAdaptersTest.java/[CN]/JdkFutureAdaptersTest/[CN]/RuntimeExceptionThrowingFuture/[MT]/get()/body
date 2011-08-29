@@ -1,0 +1,4 @@
+{
+  allowGetToComplete.await(1,SECONDS);
+  throw new RuntimeException("expected, should be caught");
+}

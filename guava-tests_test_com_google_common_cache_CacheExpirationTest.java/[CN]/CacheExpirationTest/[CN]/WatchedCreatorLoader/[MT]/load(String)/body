@@ -1,0 +1,4 @@
+{
+  wasCalled=true;
+  return valuePrefix + Integer.parseInt(key.substring(keyPrefix.length()));
+}

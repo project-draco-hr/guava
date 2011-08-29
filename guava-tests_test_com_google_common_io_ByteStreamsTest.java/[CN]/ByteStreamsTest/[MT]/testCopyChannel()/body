@@ -1,0 +1,8 @@
+{
+  byte[] expected=newPreFilledByteArray(100);
+  ByteArrayOutputStream out=new ByteArrayOutputStream();
+  WritableByteChannel outChannel=Channels.newChannel(out);
+  ReadableByteChannel inChannel=Channels.newChannel(new ByteArrayInputStream(expected));
+  ByteStreams.copy(inChannel,outChannel);
+  assertTrue(Arrays.equals(expected,out.toByteArray()));
+}

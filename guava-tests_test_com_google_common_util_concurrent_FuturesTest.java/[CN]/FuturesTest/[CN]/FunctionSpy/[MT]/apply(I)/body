@@ -1,0 +1,4 @@
+{
+  applyCount++;
+  return delegate.apply(input);
+}

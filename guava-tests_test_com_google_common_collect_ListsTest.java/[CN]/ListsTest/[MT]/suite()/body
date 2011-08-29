@@ -1,0 +1,129 @@
+{
+  TestSuite suite=new TestSuite();
+  suite.addTestSuite(ListsTest.class);
+  suite.addTest(ListTestSuiteBuilder.using(new TestStringListGenerator(){
+    @Override protected List<String> create(    String[] elements){
+      String[] rest=new String[elements.length - 1];
+      Platform.unsafeArrayCopy(elements,1,rest,0,elements.length - 1);
+      return Lists.asList(elements[0],rest);
+    }
+  }
+).named("Lists.asList, 2 parameter").withFeatures(CollectionSize.SEVERAL,CollectionSize.ONE,CollectionFeature.ALLOWS_NULL_VALUES).createTestSuite());
+  suite.addTest(ListTestSuiteBuilder.using(new TestStringListGenerator(){
+    @Override protected List<String> create(    String[] elements){
+      String[] rest=new String[elements.length - 2];
+      Platform.unsafeArrayCopy(elements,2,rest,0,elements.length - 2);
+      return Lists.asList(elements[0],elements[1],rest);
+    }
+  }
+).named("Lists.asList, 3 parameter").withFeatures(CollectionSize.SEVERAL,CollectionFeature.ALLOWS_NULL_VALUES).createTestSuite());
+  final Function<String,String> removeFirst=new Function<String,String>(){
+    @Override public String apply(    String from){
+      return (from.length() == 0) ? from : from.substring(1);
+    }
+  }
+;
+  suite.addTest(ListTestSuiteBuilder.using(new TestStringListGenerator(){
+    @Override protected List<String> create(    String[] elements){
+      List<String> fromList=Lists.newArrayList();
+      for (      String element : elements) {
+        fromList.add("q" + checkNotNull(element));
+      }
+      return Lists.transform(fromList,removeFirst);
+    }
+  }
+).named("Lists.transform, random access, no nulls").withFeatures(CollectionSize.ANY,ListFeature.REMOVE_OPERATIONS,CollectionFeature.ALLOWS_NULL_QUERIES).createTestSuite());
+  suite.addTest(ListTestSuiteBuilder.using(new TestStringListGenerator(){
+    @Override protected List<String> create(    String[] elements){
+      List<String> fromList=Lists.newLinkedList();
+      for (      String element : elements) {
+        fromList.add("q" + checkNotNull(element));
+      }
+      return Lists.transform(fromList,removeFirst);
+    }
+  }
+).named("Lists.transform, sequential access, no nulls").withFeatures(CollectionSize.ANY,ListFeature.REMOVE_OPERATIONS,CollectionFeature.ALLOWS_NULL_QUERIES).createTestSuite());
+  suite.addTest(ListTestSuiteBuilder.using(new TestStringListGenerator(){
+    @Override protected List<String> create(    String[] elements){
+      List<String> fromList=Lists.newArrayList(elements);
+      return Lists.transform(fromList,Functions.<String>identity());
+    }
+  }
+).named("Lists.transform, random access, nulls").withFeatures(CollectionSize.ANY,ListFeature.REMOVE_OPERATIONS,CollectionFeature.ALLOWS_NULL_VALUES).createTestSuite());
+  suite.addTest(ListTestSuiteBuilder.using(new TestStringListGenerator(){
+    @Override protected List<String> create(    String[] elements){
+      List<String> fromList=Lists.newLinkedList(asList(elements));
+      return Lists.transform(fromList,Functions.<String>identity());
+    }
+  }
+).named("Lists.transform, sequential access, nulls").withFeatures(CollectionSize.ANY,ListFeature.REMOVE_OPERATIONS,CollectionFeature.ALLOWS_NULL_VALUES).createTestSuite());
+  suite.addTest(ListTestSuiteBuilder.using(new TestStringListGenerator(){
+    @Override protected List<String> create(    String[] elements){
+      List<String> list=Lists.newArrayList();
+      for (int i=elements.length - 1; i >= 0; i--)       list.add(elements[i]);
+      return Lists.reverse(list);
+    }
+  }
+).named("Lists.reverse[ArrayList]").withFeatures(CollectionSize.ANY,CollectionFeature.ALLOWS_NULL_VALUES,ListFeature.GENERAL_PURPOSE).createTestSuite());
+  suite.addTest(ListTestSuiteBuilder.using(new TestStringListGenerator(){
+    @Override protected List<String> create(    String[] elements){
+      String[] reverseElements=new String[elements.length];
+      for (int i=elements.length - 1, j=0; i >= 0; i--, j++)       reverseElements[j]=elements[i];
+      return Lists.reverse(asList(reverseElements));
+    }
+  }
+).named("Lists.reverse[Arrays.asList]").withFeatures(CollectionSize.ANY,CollectionFeature.ALLOWS_NULL_VALUES,ListFeature.SUPPORTS_SET).createTestSuite());
+  suite.addTest(ListTestSuiteBuilder.using(new TestStringListGenerator(){
+    @Override protected List<String> create(    String[] elements){
+      List<String> list=Lists.newLinkedList();
+      for (int i=elements.length - 1; i >= 0; i--)       list.add(elements[i]);
+      return Lists.reverse(list);
+    }
+  }
+).named("Lists.reverse[LinkedList]").withFeatures(CollectionSize.ANY,CollectionFeature.ALLOWS_NULL_VALUES,ListFeature.GENERAL_PURPOSE).createTestSuite());
+  suite.addTest(ListTestSuiteBuilder.using(new TestStringListGenerator(){
+    @Override protected List<String> create(    String[] elements){
+      ImmutableList.Builder<String> builder=ImmutableList.builder();
+      for (int i=elements.length - 1; i >= 0; i--)       builder.add(elements[i]);
+      return Lists.reverse(builder.build());
+    }
+  }
+).named("Lists.reverse[ImmutableList]").withFeatures(CollectionSize.ANY,CollectionFeature.ALLOWS_NULL_QUERIES).createTestSuite());
+  suite.addTest(ListTestSuiteBuilder.using(new TestListGenerator<Character>(){
+    @Override public List<Character> create(    Object... elements){
+      char[] chars=new char[elements.length];
+      for (int i=0; i < elements.length; i++)       chars[i]=(Character)elements[i];
+      return Lists.charactersOf(String.copyValueOf(chars));
+    }
+    @Override public Character[] createArray(    int length){
+      return new Character[length];
+    }
+    @Override public Iterable<Character> order(    List<Character> insertionOrder){
+      return ImmutableList.copyOf(insertionOrder);
+    }
+    @Override public SampleElements<Character> samples(){
+      return new SampleElements<Character>('a','b','c','d','e');
+    }
+  }
+).named("Lists.charactersOf[String]").withFeatures(CollectionSize.ANY,CollectionFeature.ALLOWS_NULL_QUERIES).createTestSuite());
+  suite.addTest(ListTestSuiteBuilder.using(new TestListGenerator<Character>(){
+    @Override public List<Character> create(    Object... elements){
+      char[] chars=new char[elements.length];
+      for (int i=0; i < elements.length; i++)       chars[i]=(Character)elements[i];
+      StringBuilder str=new StringBuilder();
+      str.append(chars);
+      return Lists.charactersOf(str);
+    }
+    @Override public Character[] createArray(    int length){
+      return new Character[length];
+    }
+    @Override public Iterable<Character> order(    List<Character> insertionOrder){
+      return ImmutableList.copyOf(insertionOrder);
+    }
+    @Override public SampleElements<Character> samples(){
+      return new SampleElements<Character>('a','b','c','d','e');
+    }
+  }
+).named("Lists.charactersOf[CharSequence]").withFeatures(CollectionSize.ANY,CollectionFeature.ALLOWS_NULL_QUERIES).createTestSuite());
+  return suite;
+}

@@ -1,0 +1,9 @@
+{
+  multimap.put("foo",1);
+  multimap.put("foo",5);
+  multimap.put("foo",nullValue());
+  multimap.put(nullKey(),3);
+  Multiset<String> multiset=multimap.keys();
+  assertTrue(multiset.containsAll(asList("foo",nullKey())));
+  assertFalse(multiset.containsAll(asList("foo","bar")));
+}

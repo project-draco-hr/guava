@@ -1,0 +1,29 @@
+{
+  int size=8;
+  List<Integer> expected=createOrderedList(size);
+  MinMaxPriorityQueue<Integer> q=MinMaxPriorityQueue.create(expected);
+  List<Integer> contents=Lists.newArrayList(expected);
+  List<Integer> elements=Lists.newArrayListWithCapacity(size);
+  while (!q.isEmpty()) {
+    ASSERT.that(q).hasContentsAnyOrder(contents.toArray(new Integer[0]));
+    Integer next=q.pollFirst();
+    contents.remove(next);
+    ASSERT.that(q).hasContentsAnyOrder(contents.toArray(new Integer[0]));
+    for (int i=0; i <= size; i++) {
+      q.add(i);
+      contents.add(i);
+      ASSERT.that(q).hasContentsAnyOrder(contents.toArray(new Integer[0]));
+      q.add(next);
+      contents.add(next);
+      ASSERT.that(q).hasContentsAnyOrder(contents.toArray(new Integer[0]));
+      q.remove(i);
+      assertTrue(contents.remove(Integer.valueOf(i)));
+      ASSERT.that(q).hasContentsAnyOrder(contents.toArray(new Integer[0]));
+      assertEquals(next,q.poll());
+      contents.remove(next);
+      ASSERT.that(q).hasContentsAnyOrder(contents.toArray(new Integer[0]));
+    }
+    elements.add(next);
+  }
+  assertEquals(expected,elements);
+}

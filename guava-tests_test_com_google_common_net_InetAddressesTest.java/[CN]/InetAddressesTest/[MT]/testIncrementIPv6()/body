@@ -1,0 +1,20 @@
+{
+  InetAddress addressV6_66_0=InetAddress.getByName("2001:db8::6600");
+  InetAddress addressV6_66_ff=InetAddress.getByName("2001:db8::66ff");
+  InetAddress addressV6_67_0=InetAddress.getByName("2001:db8::6700");
+  InetAddress address=addressV6_66_0;
+  for (int i=0; i < 255; i++) {
+    address=InetAddresses.increment(address);
+  }
+  assertEquals(addressV6_66_ff,address);
+  address=InetAddresses.increment(address);
+  assertEquals(addressV6_67_0,address);
+  InetAddress addressV6_ffffff=InetAddress.getByName("ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff");
+  address=addressV6_ffffff;
+  try {
+    address=InetAddresses.increment(address);
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}

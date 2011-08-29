@@ -1,0 +1,5 @@
+{
+  ByteArrayDataOutput out=ByteStreams.newDataOutput();
+  out.write(BYTES);
+  assertTrue(Arrays.equals(BYTES,out.toByteArray()));
+}

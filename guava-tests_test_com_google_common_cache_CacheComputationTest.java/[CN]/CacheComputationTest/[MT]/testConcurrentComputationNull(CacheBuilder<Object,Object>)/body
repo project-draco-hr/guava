@@ -1,0 +1,25 @@
+{
+  int count=10;
+  final AtomicInteger callCount=new AtomicInteger();
+  final CountDownLatch startSignal=new CountDownLatch(count);
+  Cache<String,String> cache=builder.build(new CacheLoader<String,String>(){
+    @Override public String load(    String key) throws InterruptedException {
+      callCount.incrementAndGet();
+      startSignal.await();
+      return null;
+    }
+  }
+);
+  List<Object> result=doConcurrentGet(cache,"bar",count,startSignal);
+  assertEquals(1,callCount.get());
+  for (int i=0; i < count; i++) {
+    assertTrue(result.get(i) instanceof NullPointerException);
+  }
+  try {
+    cache.getUnchecked("bar");
+    fail();
+  }
+ catch (  NullPointerException expected) {
+  }
+  assertEquals(2,callCount.get());
+}

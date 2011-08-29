@@ -1,0 +1,7 @@
+{
+  P path=factory.initialPath(root);
+  for (  BstSide side : sides) {
+    path=factory.extension(path,side);
+  }
+  return path;
+}

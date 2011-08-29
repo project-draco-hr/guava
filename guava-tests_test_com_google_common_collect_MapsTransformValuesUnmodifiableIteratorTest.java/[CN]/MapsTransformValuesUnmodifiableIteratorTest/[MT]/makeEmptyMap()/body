@@ -1,0 +1,4 @@
+{
+  Map<String,Integer> underlying=Maps.newHashMap();
+  return Maps.transformValues(new UnmodifiableIteratorMap<String,Integer>(underlying),Functions.toStringFunction());
+}

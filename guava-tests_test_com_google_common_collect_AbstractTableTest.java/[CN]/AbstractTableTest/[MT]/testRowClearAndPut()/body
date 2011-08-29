@@ -1,0 +1,17 @@
+{
+  if (supportsRemove()) {
+    table=create("foo",1,'a',"bar",1,'b',"foo",3,'c');
+    Map<Integer,Character> row=table.row("foo");
+    assertEquals(ImmutableMap.of(1,'a',3,'c'),row);
+    table.remove("foo",3);
+    assertEquals(ImmutableMap.of(1,'a'),row);
+    table.remove("foo",1);
+    assertEquals(ImmutableMap.of(),row);
+    table.put("foo",2,'b');
+    assertEquals(ImmutableMap.of(2,'b'),row);
+    row.clear();
+    assertEquals(ImmutableMap.of(),row);
+    table.put("foo",5,'x');
+    assertEquals(ImmutableMap.of(5,'x'),row);
+  }
+}

@@ -1,0 +1,4 @@
+{
+  assertTrue(Thread.holdsLock(mutex));
+  return super.putAll(key,values);
+}

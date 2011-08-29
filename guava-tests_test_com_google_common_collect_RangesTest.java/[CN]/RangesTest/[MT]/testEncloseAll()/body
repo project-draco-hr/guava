@@ -1,0 +1,5 @@
+{
+  assertEquals(Ranges.closed(0,0),Ranges.encloseAll(Arrays.asList(0)));
+  assertEquals(Ranges.closed(-3,5),Ranges.encloseAll(Arrays.asList(5,-3)));
+  assertEquals(Ranges.closed(-3,5),Ranges.encloseAll(Arrays.asList(1,2,2,2,5,-3,0,-1)));
+}

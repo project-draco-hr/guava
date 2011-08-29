@@ -1,0 +1,10 @@
+{
+  assertEquals(0,UnsignedLongs.saturatedCast(ZERO));
+  assertEquals(1,UnsignedLongs.saturatedCast(ONE));
+  assertEquals(Long.MAX_VALUE,UnsignedLongs.saturatedCast(valueOf(Long.MAX_VALUE)));
+  assertEquals(Long.MIN_VALUE,UnsignedLongs.saturatedCast(ONE.shiftLeft(63)));
+  assertEquals(-1L,UnsignedLongs.saturatedCast(ONE.shiftLeft(64).subtract(ONE)));
+  assertEquals(-1L,UnsignedLongs.saturatedCast(ONE.shiftLeft(64)));
+  assertEquals(0,UnsignedLongs.saturatedCast(ONE.negate()));
+  assertEquals(-1L,UnsignedLongs.saturatedCast(ONE.shiftLeft(100)));
+}

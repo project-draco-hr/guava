@@ -1,0 +1,7 @@
+{
+  try {
+    assertSetCountNegativeOldCount();
+  }
+ catch (  UnsupportedOperationException tolerated) {
+  }
+}

@@ -1,0 +1,10 @@
+{
+  Ordering<String> ordering=Ordering.natural();
+  Ordering<Iterable<String>> lexy=ordering.lexicographical();
+  ImmutableList<String> empty=ImmutableList.of();
+  ImmutableList<String> a=ImmutableList.of("a");
+  ImmutableList<String> aa=ImmutableList.of("a","a");
+  ImmutableList<String> ab=ImmutableList.of("a","b");
+  ImmutableList<String> b=ImmutableList.of("b");
+  Helpers.testComparator(lexy,empty,a,aa,ab,b);
+}

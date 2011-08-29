@@ -1,4 +1,4 @@
 {
-  super(new TreeMap<E,AtomicInteger>(checkNotNull(comparator)));
+  super(new TreeMap<E,Count>(checkNotNull(comparator)));
   this.comparator=comparator;
 }

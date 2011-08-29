@@ -1,0 +1,23 @@
+{
+  SimpleNode a=new SimpleNode('a',null,null);
+  SimpleNode b=new SimpleNode('b',a,null);
+  SimpleNode g=new SimpleNode('g',null,null);
+  SimpleNode f=new SimpleNode('f',null,g);
+  SimpleNode d=new SimpleNode('d',b,f);
+  BstNodeFactory<SimpleNode> nodeFactory=EasyMock.createStrictMock(BstNodeFactory.class);
+  BstBalancePolicy<SimpleNode> balancePolicy=EasyMock.createStrictMock(BstBalancePolicy.class);
+  BstModifier<Character,SimpleNode> modifier=EasyMock.createStrictMock(BstModifier.class);
+  expectPossibleEntryfication(nodeFactory,a);
+  expect(modifier.modify(eq('a'),withKey('a'))).andReturn(BstModificationResult.identity(a));
+  replay(nodeFactory,balancePolicy,modifier);
+  BstInOrderPath<SimpleNode> path=extension(pathFactory,d,LEFT,LEFT);
+  BstMutationRule<Character,SimpleNode> mutationRule=BstMutationRule.createRule(modifier,balancePolicy,nodeFactory);
+  BstMutationResult<Character,SimpleNode> mutationResult=BstOperations.mutate(path,mutationRule);
+  assertEquals('a',mutationResult.getTargetKey().charValue());
+  assertSame(a,mutationResult.getOriginalTarget());
+  assertSame(a,mutationResult.getChangedTarget());
+  assertSame(d,mutationResult.getOriginalRoot());
+  assertSame(d,mutationResult.getChangedRoot());
+  assertEquals(ModificationType.IDENTITY,mutationResult.modificationType());
+  verify(nodeFactory,balancePolicy,modifier);
+}

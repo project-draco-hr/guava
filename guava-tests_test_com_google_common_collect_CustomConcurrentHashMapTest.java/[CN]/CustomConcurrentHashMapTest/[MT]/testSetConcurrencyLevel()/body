@@ -1,0 +1,10 @@
+{
+  checkConcurrencyLevel(1,1);
+  checkConcurrencyLevel(2,2);
+  checkConcurrencyLevel(3,4);
+  checkConcurrencyLevel(4,4);
+  checkConcurrencyLevel(5,8);
+  checkConcurrencyLevel(6,8);
+  checkConcurrencyLevel(7,8);
+  checkConcurrencyLevel(8,8);
+}

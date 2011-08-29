@@ -1,0 +1,5 @@
+{
+  Iterator<Integer> source=Iterators.emptyIterator();
+  Iterator<List<Integer>> partitions=Iterators.paddedPartition(source,1);
+  assertFalse(partitions.hasNext());
+}

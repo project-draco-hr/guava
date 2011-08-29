@@ -1,0 +1,4 @@
+{
+  this.ordering=ordering;
+  this.strictlyOrderedList=strictlyOrderedList;
+}

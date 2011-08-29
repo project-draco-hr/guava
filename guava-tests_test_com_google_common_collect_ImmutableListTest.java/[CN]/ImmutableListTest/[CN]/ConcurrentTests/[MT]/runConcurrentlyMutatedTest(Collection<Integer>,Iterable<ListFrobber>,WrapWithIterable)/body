@@ -1,0 +1,7 @@
+{
+  ConcurrentlyMutatedList<Integer> concurrentlyMutatedList=newConcurrentlyMutatedList(initialContents,actionsToPerformConcurrently);
+  Iterable<Integer> iterableToCopy=wrap == WrapWithIterable.WRAP ? unmodifiableIterable(concurrentlyMutatedList) : concurrentlyMutatedList;
+  ImmutableList<Integer> copyOfIterable=ImmutableList.copyOf(iterableToCopy);
+  assertTrue(concurrentlyMutatedList.getAllStates().contains(copyOfIterable));
+  assertEquals(copyOfIterable.size() == 0,copyOfIterable.isEmpty());
+}

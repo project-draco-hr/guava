@@ -1,0 +1,17 @@
+{
+  return new ForwardingCollection<V>(){
+    @Override protected Collection<V> delegate(){
+      return delegate.values();
+    }
+    @Override public Iterator<V> iterator(){
+      return Iterators.unmodifiableIterator(delegate.values().iterator());
+    }
+    @Override public boolean removeAll(    Collection<?> c){
+      return delegate.values().removeAll(c);
+    }
+    @Override public boolean retainAll(    Collection<?> c){
+      return delegate.values().retainAll(c);
+    }
+  }
+;
+}

@@ -1,0 +1,8 @@
+{
+  float[] array={(float)0,(float)1};
+  List<Float> list=Floats.asList(array);
+  list.set(0,(float)2);
+  assertTrue(Arrays.equals(new float[]{(float)2,(float)1},array));
+  array[1]=(float)3;
+  ASSERT.that(list).hasContentsInOrder((float)2,(float)3);
+}

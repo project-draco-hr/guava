@@ -1,0 +1,4 @@
+{
+  Comparator<int[]> comparator=Ints.lexicographicalComparator();
+  assertSame(comparator,SerializableTester.reserialize(comparator));
+}

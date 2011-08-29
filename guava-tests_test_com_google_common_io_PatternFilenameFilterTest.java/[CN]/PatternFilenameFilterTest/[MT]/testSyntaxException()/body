@@ -1,0 +1,8 @@
+{
+  try {
+    new PatternFilenameFilter("(");
+    fail("expected exception");
+  }
+ catch (  PatternSyntaxException e) {
+  }
+}

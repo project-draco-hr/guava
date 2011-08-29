@@ -1,0 +1,16 @@
+{
+  assertNull(bimap.get(1));
+  assertNull(bimap.get(null));
+  assertNull(bimap.get("bad"));
+  bimap.put(1,"one");
+  bimap.put(0,null);
+  bimap.put(null,"nothing");
+  assertEquals("one",bimap.get(1));
+  assertNull(bimap.get(0));
+  assertEquals("nothing",bimap.get(null));
+  assertNull(bimap.get("bad"));
+  bimap.forcePut(null,null);
+  assertNull(bimap.get(null));
+  bimap.remove(null);
+  assertNull(bimap.get(null));
+}

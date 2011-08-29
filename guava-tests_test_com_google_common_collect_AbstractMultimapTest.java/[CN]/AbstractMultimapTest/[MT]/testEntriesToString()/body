@@ -1,0 +1,5 @@
+{
+  multimap.put("foo",3);
+  Collection<Entry<String,Integer>> entries=multimap.entries();
+  assertEquals("[foo=3]",entries.toString());
+}

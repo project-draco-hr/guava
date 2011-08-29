@@ -1,0 +1,9 @@
+{
+  for (  Cache<Object,Object> cache : caches()) {
+    warmUp(cache,0,100);
+    Set<Object> keys=cache.asMap().keySet();
+    keys.clear();
+    checkEmpty(keys);
+    checkEmpty(cache);
+  }
+}

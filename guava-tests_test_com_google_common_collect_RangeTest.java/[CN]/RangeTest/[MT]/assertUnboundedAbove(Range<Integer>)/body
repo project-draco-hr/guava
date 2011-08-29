@@ -1,0 +1,15 @@
+{
+  assertFalse(range.hasUpperBound());
+  try {
+    range.upperEndpoint();
+    fail();
+  }
+ catch (  IllegalStateException expected) {
+  }
+  try {
+    range.upperBoundType();
+    fail();
+  }
+ catch (  IllegalStateException expected) {
+  }
+}

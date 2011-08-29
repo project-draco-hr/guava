@@ -1,0 +1,14 @@
+{
+  Properties properties=new Properties(){
+    @Override public Enumeration<?> propertyNames(){
+      return Iterators.asEnumeration(Arrays.<Object>asList(Integer.valueOf(123),"first").iterator());
+    }
+  }
+;
+  try {
+    Maps.fromProperties(properties);
+    fail();
+  }
+ catch (  ClassCastException expected) {
+  }
+}

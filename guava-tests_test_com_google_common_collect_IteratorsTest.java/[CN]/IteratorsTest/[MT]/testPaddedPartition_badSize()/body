@@ -1,0 +1,9 @@
+{
+  Iterator<Integer> source=Iterators.singletonIterator(1);
+  try {
+    Iterators.paddedPartition(source,0);
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}

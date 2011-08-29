@@ -1,0 +1,18 @@
+{
+  ExecutorService executorService=newCachedThreadPool(new ThreadFactoryBuilder().setDaemon(true).build());
+  NonListenableSettableFuture<String> abstractFuture=NonListenableSettableFuture.create();
+  ExecutorSpy spy=new ExecutorSpy(executorService);
+  ListenableFuture<String> listenableFuture=listenInPoolThread(abstractFuture,spy);
+  SingleCallListener singleCallListener=new SingleCallListener();
+  singleCallListener.expectCall();
+  assertFalse(spy.wasExecuted);
+  assertFalse(singleCallListener.wasCalled());
+  assertFalse(listenableFuture.isDone());
+  listenableFuture.addListener(singleCallListener,executorService);
+  abstractFuture.set(DATA1);
+  assertEquals(DATA1,listenableFuture.get());
+  singleCallListener.waitForCall();
+  assertTrue(spy.wasExecuted);
+  assertTrue(singleCallListener.wasCalled());
+  assertTrue(listenableFuture.isDone());
+}

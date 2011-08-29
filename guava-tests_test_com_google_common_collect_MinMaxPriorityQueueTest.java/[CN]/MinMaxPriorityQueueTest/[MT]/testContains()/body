@@ -1,0 +1,19 @@
+{
+  MinMaxPriorityQueue<Integer> mmHeap=MinMaxPriorityQueue.create();
+  mmHeap.addAll(Lists.newArrayList(1,1,2));
+  assertEquals(3,mmHeap.size());
+  assertFalse("Heap does not contain null",mmHeap.contains(null));
+  assertFalse("Heap does not contain 3",mmHeap.contains(3));
+  assertFalse("Heap does not contain 3",mmHeap.remove(3));
+  assertEquals(3,mmHeap.size());
+  assertTrue("Heap is not intact after remove()",mmHeap.isIntact());
+  assertTrue("Heap contains two 1's",mmHeap.contains(1));
+  assertTrue("Heap contains two 1's",mmHeap.remove(1));
+  assertTrue("Heap contains 1",mmHeap.contains(1));
+  assertTrue("Heap contains 1",mmHeap.remove(1));
+  assertFalse("Heap does not contain 1",mmHeap.contains(1));
+  assertTrue("Heap contains 2",mmHeap.remove(2));
+  assertEquals(0,mmHeap.size());
+  assertFalse("Heap does not contain anything",mmHeap.contains(1));
+  assertFalse("Heap does not contain anything",mmHeap.remove(2));
+}

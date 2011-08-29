@@ -1,0 +1,6 @@
+{
+  GeneralRange<Integer> range=GeneralRange.range(Ordering.natural(),3,CLOSED,3,CLOSED);
+  for (int i=1; i <= 5; i++) {
+    assertEquals(i == 3,range.contains(i));
+  }
+}

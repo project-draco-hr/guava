@@ -1,0 +1,6 @@
+{
+  assertEquals(532412650,InetAddresses.hash64To32(-1));
+  assertEquals(720020139,InetAddresses.hash64To32(0));
+  assertEquals(357654460,InetAddresses.hash64To32(1));
+  assertEquals(-1977349188,InetAddresses.hash64To32(0x7fffffffffffffffL));
+}

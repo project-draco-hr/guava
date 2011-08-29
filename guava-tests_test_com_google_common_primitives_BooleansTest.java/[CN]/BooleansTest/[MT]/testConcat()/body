@@ -1,0 +1,10 @@
+{
+  assertTrue(Arrays.equals(EMPTY,Booleans.concat()));
+  assertTrue(Arrays.equals(EMPTY,Booleans.concat(EMPTY)));
+  assertTrue(Arrays.equals(EMPTY,Booleans.concat(EMPTY,EMPTY,EMPTY)));
+  assertTrue(Arrays.equals(ARRAY_FALSE,Booleans.concat(ARRAY_FALSE)));
+  assertNotSame(ARRAY_FALSE,Booleans.concat(ARRAY_FALSE));
+  assertTrue(Arrays.equals(ARRAY_FALSE,Booleans.concat(EMPTY,ARRAY_FALSE,EMPTY)));
+  assertTrue(Arrays.equals(new boolean[]{false,false,false},Booleans.concat(ARRAY_FALSE,ARRAY_FALSE,ARRAY_FALSE)));
+  assertTrue(Arrays.equals(new boolean[]{false,false,true},Booleans.concat(ARRAY_FALSE,ARRAY_FALSE_TRUE)));
+}

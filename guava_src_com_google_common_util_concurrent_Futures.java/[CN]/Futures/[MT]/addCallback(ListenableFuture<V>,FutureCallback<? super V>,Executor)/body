@@ -1,0 +1,22 @@
+{
+  Preconditions.checkNotNull(callback);
+  Runnable callbackListener=new Runnable(){
+    @Override public void run(){
+      try {
+        V value=getUninterruptibly(future);
+        callback.onSuccess(value);
+      }
+ catch (      ExecutionException e) {
+        callback.onFailure(e.getCause());
+      }
+catch (      RuntimeException e) {
+        callback.onFailure(e);
+      }
+catch (      Error e) {
+        callback.onFailure(e);
+      }
+    }
+  }
+;
+  future.addListener(callbackListener,executor);
+}

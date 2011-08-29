@@ -1,0 +1,4 @@
+{
+  forward.entries();
+  assertEquals("[entries]",getCalls());
+}

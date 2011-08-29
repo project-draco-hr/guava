@@ -1,0 +1,16 @@
+{
+  long seed=new Random().nextLong();
+  Random random=new Random(seed);
+  int heapSize=999;
+  int numberOfModifications=500;
+  MinMaxPriorityQueue<Integer> mmHeap=MinMaxPriorityQueue.expectedSize(heapSize).create();
+  for (int i=0; i < heapSize; i++) {
+    mmHeap.add(random.nextInt());
+  }
+  for (int i=0; i < numberOfModifications; i++) {
+    mmHeap.removeAt(random.nextInt(mmHeap.size()));
+    assertTrue("Modification " + i + " of seed "+ seed,mmHeap.isIntact());
+    mmHeap.add(random.nextInt());
+    assertTrue("Modification " + i + " of seed "+ seed,mmHeap.isIntact());
+  }
+}

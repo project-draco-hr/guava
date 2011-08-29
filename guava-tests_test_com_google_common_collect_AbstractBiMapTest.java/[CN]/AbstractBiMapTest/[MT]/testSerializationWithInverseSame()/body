@@ -1,0 +1,10 @@
+{
+  bimap.put(1,"one");
+  bimap.put(2,"two");
+  bimap.put(3,"three");
+  bimap.put(null,null);
+  BiMapPair pair=new BiMapPair(bimap);
+  BiMapPair copy=SerializableTester.reserialize(pair);
+  assertSame(copy.backward,copy.forward.inverse());
+  assertSame(copy.forward,copy.backward.inverse());
+}

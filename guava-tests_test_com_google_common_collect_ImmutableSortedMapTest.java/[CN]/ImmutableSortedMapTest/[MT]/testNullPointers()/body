@@ -1,0 +1,8 @@
+{
+  NullPointerTester tester=new NullPointerTester();
+  tester.testAllPublicStaticMethods(ImmutableSortedMap.class);
+  tester.testAllPublicInstanceMethods(ImmutableSortedMap.<String,Integer>naturalOrder());
+  tester.testAllPublicInstanceMethods(ImmutableSortedMap.of());
+  tester.testAllPublicInstanceMethods(ImmutableSortedMap.of("one",1));
+  tester.testAllPublicInstanceMethods(ImmutableSortedMap.of("one",1,"two",2,"three",3));
+}

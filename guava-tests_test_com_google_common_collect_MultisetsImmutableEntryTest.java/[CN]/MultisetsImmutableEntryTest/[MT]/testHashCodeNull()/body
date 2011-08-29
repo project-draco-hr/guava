@@ -1,0 +1,3 @@
+{
+  assertEquals(control(NE,1).hashCode(),entry(NE,1).hashCode());
+}

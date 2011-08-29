@@ -1,0 +1,5 @@
+{
+  for (  Cache<Object,Object> cache : caches()) {
+    checkEmpty(cache);
+  }
+}

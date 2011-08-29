@@ -1,0 +1,25 @@
+{
+  for (  MapMaker maker : allKeyValueStrengthMakers()) {
+    CustomConcurrentHashMap<Object,Object> map=makeMap(maker.concurrencyLevel(1));
+    if (map.usesValueReferences()) {
+      Segment<Object,Object> segment=map.segments[0];
+      Object keyOne=new Object();
+      int hashOne=map.hash(keyOne);
+      Object valueOne=new Object();
+      Object keyTwo=new Object();
+      map.put(keyOne,valueOne);
+      ReferenceEntry<Object,Object> entry=segment.getEntry(keyOne,hashOne);
+      ValueReference<Object,Object> valueReference=entry.getValueReference();
+      @SuppressWarnings("unchecked") Reference<Object> reference=(Reference)valueReference;
+      reference.enqueue();
+      for (int i=0; i < SMALL_MAX_SIZE; i++) {
+        map.get(keyTwo);
+      }
+      assertFalse(map.containsKey(keyOne));
+      assertFalse(map.containsValue(valueOne));
+      assertNull(map.get(keyOne));
+      assertEquals(0,map.size());
+      assertNull(segment.valueReferenceQueue.poll());
+    }
+  }
+}

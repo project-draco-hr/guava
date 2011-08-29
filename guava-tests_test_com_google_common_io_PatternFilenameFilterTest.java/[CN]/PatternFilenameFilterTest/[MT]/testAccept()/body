@@ -1,0 +1,8 @@
+{
+  File dir=new File("foo");
+  FilenameFilter filter=new PatternFilenameFilter("a+");
+  assertTrue(filter.accept(dir,"a"));
+  assertTrue(filter.accept(dir,"aaaa"));
+  assertFalse(filter.accept(dir,"b"));
+  assertTrue(filter.accept(null,"a"));
+}

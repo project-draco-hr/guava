@@ -1,0 +1,16 @@
+{
+  final Throwable failure=new Throwable();
+  AbstractFuture<String> future=new AbstractFuture<String>(){
+{
+      setException(failure);
+    }
+  }
+;
+  ExecutionException ee1=getExpectingExecutionException(future);
+  ExecutionException ee2=getExpectingExecutionException(future);
+  assertNotSame(ee1,ee2);
+  assertSame(failure,ee1.getCause());
+  assertSame(failure,ee2.getCause());
+  checkStackTrace(ee1);
+  checkStackTrace(ee2);
+}

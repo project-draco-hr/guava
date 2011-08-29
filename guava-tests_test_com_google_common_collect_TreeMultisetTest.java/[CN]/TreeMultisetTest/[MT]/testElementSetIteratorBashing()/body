@@ -1,0 +1,19 @@
+{
+  IteratorTester<String> tester=new IteratorTester<String>(5,MODIFIABLE,newArrayList("a","b","c"),IteratorTester.KnownOrder.KNOWN_ORDER){
+    private Set<String> targetSet;
+    @Override protected Iterator<String> newTargetIterator(){
+      Multiset<String> multiset=create();
+      multiset.add("a",3);
+      multiset.add("c",1);
+      multiset.add("b",2);
+      targetSet=multiset.elementSet();
+      return targetSet.iterator();
+    }
+    @Override protected void verify(    List<String> elements){
+      assertEquals(elements,Lists.newArrayList(targetSet));
+    }
+  }
+;
+  tester.ignoreSunJavaBug6529795();
+  tester.test();
+}

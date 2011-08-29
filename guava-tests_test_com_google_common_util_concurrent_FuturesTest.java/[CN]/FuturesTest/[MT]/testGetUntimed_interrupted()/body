@@ -1,0 +1,14 @@
+{
+  Thread.currentThread().interrupt();
+  try {
+    get(immediateFuture("foo"),TwoArgConstructorException.class);
+    fail();
+  }
+ catch (  TwoArgConstructorException expected) {
+    assertTrue(expected.getCause() instanceof InterruptedException);
+    assertTrue(Thread.currentThread().isInterrupted());
+  }
+ finally {
+    Thread.interrupted();
+  }
+}

@@ -1,0 +1,3 @@
+{
+  assertEquals(MODEL.size(),BstRangeOps.totalInRange(countAggregate,GeneralRange.<Character>all(Ordering.natural()),ROOT));
+}

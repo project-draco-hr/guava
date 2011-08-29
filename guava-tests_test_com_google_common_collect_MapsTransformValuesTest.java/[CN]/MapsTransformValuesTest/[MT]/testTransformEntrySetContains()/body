@@ -1,0 +1,18 @@
+{
+  Map<String,Boolean> underlying=Maps.newHashMap();
+  underlying.put("a",null);
+  underlying.put("b",true);
+  underlying.put(null,true);
+  Map<String,Boolean> map=Maps.transformValues(underlying,new Function<Boolean,Boolean>(){
+    @Override public Boolean apply(    @Nullable Boolean from){
+      return (from == null) ? true : null;
+    }
+  }
+);
+  Set<Map.Entry<String,Boolean>> entries=map.entrySet();
+  assertTrue(entries.contains(Maps.immutableEntry("a",true)));
+  assertTrue(entries.contains(Maps.immutableEntry("b",(Boolean)null)));
+  assertTrue(entries.contains(Maps.immutableEntry((String)null,(Boolean)null)));
+  assertFalse(entries.contains(Maps.immutableEntry("c",(Boolean)null)));
+  assertFalse(entries.contains(Maps.immutableEntry((String)null,true)));
+}

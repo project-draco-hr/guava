@@ -1,0 +1,18 @@
+{
+  Collection<String> collection=Lists.newArrayList("foo","bar");
+  Collection<String> constrained=Constraints.constrainedCollection(collection,TEST_CONSTRAINT);
+  try {
+    constrained.add(TEST_ELEMENT);
+    fail("TestElementException expected");
+  }
+ catch (  TestElementException expected) {
+  }
+  try {
+    constrained.addAll(asList("baz",TEST_ELEMENT));
+    fail("TestElementException expected");
+  }
+ catch (  TestElementException expected) {
+  }
+  ASSERT.that(constrained).hasContentsInOrder("foo","bar");
+  ASSERT.that(collection).hasContentsInOrder("foo","bar");
+}

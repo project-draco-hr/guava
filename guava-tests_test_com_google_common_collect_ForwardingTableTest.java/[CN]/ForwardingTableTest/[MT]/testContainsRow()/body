@@ -1,0 +1,4 @@
+{
+  forward.containsRow("blah");
+  assertEquals("[containsRow(Object)]",getCalls());
+}

@@ -1,0 +1,8 @@
+{
+  new IteratorTester<Integer>(5,MODIFIABLE,newArrayList(2,3),IteratorTester.KnownOrder.KNOWN_ORDER){
+    @Override protected Iterator<Integer> newTargetIterator(){
+      return skip(newArrayList(1,2,3),1).iterator();
+    }
+  }
+.test();
+}

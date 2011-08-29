@@ -1,0 +1,24 @@
+{
+  final ExecutorService executor=MoreExecutors.sameThreadExecutor();
+  final ThreadLocal<Integer> threadLocalCount=new ThreadLocal<Integer>(){
+    @Override protected Integer initialValue(){
+      return 0;
+    }
+  }
+;
+  final Callable<Integer> incrementTask=new Callable<Integer>(){
+    @Override public Integer call(){
+      int i=threadLocalCount.get();
+      threadLocalCount.set(i + 1);
+      return i;
+    }
+  }
+;
+  List<Future<Integer>> futures=executor.invokeAll(Collections.nCopies(10,incrementTask));
+  for (int i=0; i < 10; i++) {
+    Future<Integer> future=futures.get(i);
+    assertTrue("Task should have been run before being returned",future.isDone());
+    assertEquals(i,future.get().intValue());
+  }
+  assertEquals(10,threadLocalCount.get().intValue());
+}

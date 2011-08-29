@@ -1,0 +1,16 @@
+{
+  Map<String,Integer> underlying=ImmutableMap.of("a",0,"b",1,"c",2);
+  Map<String,Integer> expected=Maps.transformValues(underlying,Functions.<Integer>identity());
+  assertMapsEqual(expected,expected);
+  Map<String,Integer> equalToUnderlying=Maps.newTreeMap();
+  equalToUnderlying.putAll(underlying);
+  Map<String,Integer> map=Maps.transformValues(equalToUnderlying,Functions.<Integer>identity());
+  assertMapsEqual(expected,map);
+  map=Maps.transformValues(ImmutableMap.of("a",1,"b",2,"c",3),new Function<Integer,Integer>(){
+    @Override public Integer apply(    Integer from){
+      return from - 1;
+    }
+  }
+);
+  assertMapsEqual(expected,map);
+}

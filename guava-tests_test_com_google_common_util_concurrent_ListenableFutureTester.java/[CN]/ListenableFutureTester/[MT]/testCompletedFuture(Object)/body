@@ -1,0 +1,8 @@
+{
+  assertTrue(future.isDone());
+  assertFalse(future.isCancelled());
+  assertTrue(latch.await(5,TimeUnit.SECONDS));
+  assertTrue(future.isDone());
+  assertFalse(future.isCancelled());
+  assertEquals(expectedValue,future.get());
+}

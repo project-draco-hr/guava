@@ -1,0 +1,11 @@
+{
+  assertEquals("com",InternetDomainName.from("google.com").parent().name());
+  assertEquals("uk",InternetDomainName.from("co.uk").parent().name());
+  assertEquals("google.com",InternetDomainName.from("www.google.com").parent().name());
+  try {
+    InternetDomainName.from("com").parent();
+    fail("'com' should throw ISE on .parent() call");
+  }
+ catch (  IllegalStateException expected) {
+  }
+}

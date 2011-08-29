@@ -1,0 +1,4 @@
+{
+  ByteArrayDataOutput out=ByteStreams.newDataOutput();
+  assertEquals(0,out.toByteArray().length);
+}

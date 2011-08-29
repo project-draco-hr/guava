@@ -1,0 +1,16 @@
+{
+  new IteratorTester<Integer>(6,MODIFIABLE,newArrayList(4,5,2,3,6),IteratorTester.KnownOrder.KNOWN_ORDER){
+    private Multimap<String,Integer> multimap;
+    @Override protected Iterator<Integer> newTargetIterator(){
+      multimap=create();
+      multimap.putAll("foo",asList(2,3));
+      multimap.putAll("bar",asList(4,5));
+      multimap.putAll("foo",asList(6));
+      return multimap.values().iterator();
+    }
+    @Override protected void verify(    List<Integer> elements){
+      assertEquals(elements,Lists.newArrayList(multimap.values()));
+    }
+  }
+.test();
+}

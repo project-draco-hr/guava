@@ -1,0 +1,52 @@
+{
+  int iterations=100000;
+  int nKeys=keys.size();
+  int[] deltas=new int[nKeys];
+  Operation[] operations=Operation.values();
+  for (int i=0; i < iterations; i++) {
+    int keyIndex=random.nextInt(nKeys);
+    String key=keys.get(keyIndex);
+    Operation op=operations[random.nextInt(operations.length)];
+switch (op) {
+case ADD:
+{
+        int delta=random.nextInt(10);
+        multiset.add(key,delta);
+        deltas[keyIndex]+=delta;
+        break;
+      }
+case SET_COUNT:
+{
+      int newValue=random.nextInt(3);
+      int oldValue=multiset.setCount(key,newValue);
+      deltas[keyIndex]+=(newValue - oldValue);
+      break;
+    }
+case SET_COUNT_IF:
+{
+    int newValue=random.nextInt(3);
+    int oldValue=multiset.count(key);
+    if (multiset.setCount(key,oldValue,newValue)) {
+      deltas[keyIndex]+=(newValue - oldValue);
+    }
+    break;
+  }
+case REMOVE:
+{
+  int delta=random.nextInt(6);
+  int oldValue=multiset.remove(key,delta);
+  deltas[keyIndex]-=Math.min(delta,oldValue);
+  break;
+}
+case REMOVE_EXACTLY:
+{
+int delta=random.nextInt(5);
+if (multiset.removeExactly(key,delta)) {
+  deltas[keyIndex]-=delta;
+}
+break;
+}
+}
+}
+return deltas;
+}

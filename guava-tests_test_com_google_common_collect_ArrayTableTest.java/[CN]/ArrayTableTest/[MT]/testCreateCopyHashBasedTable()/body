@@ -1,0 +1,17 @@
+{
+  Table<String,Integer,Character> original=HashBasedTable.create();
+  original.put("foo",1,'a');
+  original.put("bar",1,'b');
+  original.put("foo",3,'c');
+  Table<String,Integer,Character> copy=ArrayTable.create(original);
+  assertEquals(4,copy.size());
+  assertEquals((Character)'a',copy.get("foo",1));
+  assertEquals((Character)'b',copy.get("bar",1));
+  assertEquals((Character)'c',copy.get("foo",3));
+  assertNull(copy.get("bar",3));
+  original.put("foo",1,'d');
+  assertEquals((Character)'d',original.get("foo",1));
+  assertEquals((Character)'a',copy.get("foo",1));
+  assertEquals(copy.rowKeySet(),ImmutableSet.of("foo","bar"));
+  assertEquals(copy.columnKeySet(),ImmutableSet.of(1,3));
+}

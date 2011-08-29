@@ -1,0 +1,6 @@
+{
+  Map<String,Integer> map=create();
+  Collection<Integer> values=map.values();
+  assertTrue(values instanceof SynchronizedCollection);
+  assertSame(mutex,((SynchronizedCollection<?>)values).mutex);
+}

@@ -1,0 +1,8 @@
+{
+  try {
+    enterRun.await();
+  }
+ catch (  InterruptedException e) {
+    throw Throwables.propagate(e);
+  }
+}

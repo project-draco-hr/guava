@@ -1,0 +1,19 @@
+{
+  TreeMultiset<String> ms=TreeMultiset.create(DEGENERATE_COMPARATOR);
+  ms.add("foo");
+  ms.add("a");
+  ms.add("bar");
+  ms.add("b");
+  ms.add("c");
+  assertEquals(2,ms.count("bar"));
+  assertEquals(3,ms.count("b"));
+  Multiset<String> ms2=TreeMultiset.create(DEGENERATE_COMPARATOR);
+  ms2.add("cat",2);
+  ms2.add("x",3);
+  assertEquals(ms,ms2);
+  assertEquals(ms2,ms);
+  SortedSet<String> elementSet=ms.elementSet();
+  assertEquals("a",elementSet.first());
+  assertEquals("foo",elementSet.last());
+  assertEquals(DEGENERATE_COMPARATOR,elementSet.comparator());
+}

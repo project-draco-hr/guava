@@ -1,8 +1,3 @@
 {
-  checkNotNull(keyFunction);
-  ImmutableMap.Builder<K,V> builder=ImmutableMap.builder();
-  for (  V value : values) {
-    builder.put(keyFunction.apply(value),value);
-  }
-  return builder.build();
+  return uniqueIndex(values.iterator(),keyFunction);
 }

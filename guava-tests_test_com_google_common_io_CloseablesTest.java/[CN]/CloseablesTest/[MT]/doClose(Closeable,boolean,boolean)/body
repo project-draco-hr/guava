@@ -1,0 +1,14 @@
+{
+  try {
+    Closeables.close(closeable,swallowException);
+    if (expectThrown) {
+      fail("Didn't throw exception.");
+    }
+  }
+ catch (  IOException e) {
+    if (!expectThrown) {
+      fail("Threw exception");
+    }
+  }
+  verify(closeable);
+}

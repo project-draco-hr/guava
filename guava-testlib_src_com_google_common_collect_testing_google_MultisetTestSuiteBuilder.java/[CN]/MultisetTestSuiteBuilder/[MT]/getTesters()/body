@@ -1,0 +1,9 @@
+{
+  List<Class<? extends AbstractTester>> testers=Helpers.copyToList(super.getTesters());
+  testers.add(MultisetReadsTester.class);
+  testers.add(MultisetSetCountConditionallyTester.class);
+  testers.add(MultisetSetCountUnconditionallyTester.class);
+  testers.add(MultisetWritesTester.class);
+  testers.add(MultisetIteratorTester.class);
+  return testers;
+}

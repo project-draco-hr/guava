@@ -1,0 +1,10 @@
+{
+  String testString="abcdef";
+  Reader reader=new StringReader(testString);
+  assertEquals(testString.charAt(0),reader.read());
+  CharStreams.skipFully(reader,1);
+  assertEquals(testString.charAt(2),reader.read());
+  CharStreams.skipFully(reader,2);
+  assertEquals(testString.charAt(5),reader.read());
+  assertEquals(-1,reader.read());
+}

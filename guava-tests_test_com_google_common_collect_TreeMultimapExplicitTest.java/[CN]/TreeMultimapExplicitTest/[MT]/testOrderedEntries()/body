@@ -1,0 +1,4 @@
+{
+  TreeMultimap<String,Integer> multimap=createPopulate();
+  ASSERT.that(multimap.entries()).hasContentsInOrder(Maps.immutableEntry((String)null,7),Maps.immutableEntry((String)null,3),Maps.immutableEntry((String)null,1),Maps.immutableEntry("tree",(Integer)null),Maps.immutableEntry("tree",0),Maps.immutableEntry("google",6),Maps.immutableEntry("google",2));
+}

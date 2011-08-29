@@ -1,0 +1,10 @@
+{
+  Set<Class<?>> wrappers=Primitives.allWrapperTypes();
+  assertEquals(ImmutableSet.<Object>of(Boolean.class,Byte.class,Character.class,Double.class,Float.class,Integer.class,Long.class,Short.class,Void.class),wrappers);
+  try {
+    wrappers.remove(Boolean.class);
+    fail();
+  }
+ catch (  UnsupportedOperationException expected) {
+  }
+}

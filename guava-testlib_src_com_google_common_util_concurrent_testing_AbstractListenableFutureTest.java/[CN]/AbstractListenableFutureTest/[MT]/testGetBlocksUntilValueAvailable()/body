@@ -1,0 +1,26 @@
+{
+  assertFalse(future.isDone());
+  assertFalse(future.isCancelled());
+  final CountDownLatch successLatch=new CountDownLatch(1);
+  final Throwable[] badness=new Throwable[1];
+  new Thread(new Runnable(){
+    @Override public void run(){
+      try {
+        assertSame(Boolean.TRUE,future.get());
+        successLatch.countDown();
+      }
+ catch (      Throwable t) {
+        t.printStackTrace();
+        badness[0]=t;
+      }
+    }
+  }
+).start();
+  latch.countDown();
+  assertTrue(successLatch.await(10,TimeUnit.SECONDS));
+  if (badness[0] != null) {
+    throw badness[0];
+  }
+  assertTrue(future.isDone());
+  assertFalse(future.isCancelled());
+}

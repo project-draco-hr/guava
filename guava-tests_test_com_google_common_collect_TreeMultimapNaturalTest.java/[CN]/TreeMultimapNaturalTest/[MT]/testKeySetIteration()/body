@@ -1,0 +1,20 @@
+{
+  new IteratorTester<String>(6,MODIFIABLE,Sets.newTreeSet(asList("bar","baz","cat","dog","foo")),IteratorTester.KnownOrder.KNOWN_ORDER){
+    private Multimap<String,Integer> multimap;
+    @Override protected Iterator<String> newTargetIterator(){
+      multimap=create();
+      multimap.putAll("foo",asList(2,3));
+      multimap.putAll("bar",asList(4,5));
+      multimap.putAll("foo",asList(6));
+      multimap.putAll("baz",asList(7,8));
+      multimap.putAll("dog",asList(9));
+      multimap.putAll("bar",asList(10,11));
+      multimap.putAll("cat",asList(12,13,14));
+      return multimap.keySet().iterator();
+    }
+    @Override protected void verify(    List<String> elements){
+      assertEquals(newHashSet(elements),multimap.keySet());
+    }
+  }
+.test();
+}

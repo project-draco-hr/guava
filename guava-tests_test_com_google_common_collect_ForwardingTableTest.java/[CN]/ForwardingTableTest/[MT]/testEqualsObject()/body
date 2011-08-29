@@ -1,0 +1,4 @@
+{
+  forward.equals(null);
+  assertEquals("[equals(Object)]",getCalls());
+}

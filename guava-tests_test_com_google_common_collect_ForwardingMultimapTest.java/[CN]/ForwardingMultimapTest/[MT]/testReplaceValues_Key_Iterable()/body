@@ -1,0 +1,4 @@
+{
+  forward.replaceValues("key",Collections.<Boolean>emptyList());
+  assertEquals("[replaceValues(Object,Iterable)]",getCalls());
+}

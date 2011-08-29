@@ -1,0 +1,8 @@
+{
+  Iterator<Integer> source=Iterators.singletonIterator(1);
+  Iterator<List<Integer>> partitions=Iterators.paddedPartition(source,1);
+  assertTrue(partitions.hasNext());
+  assertTrue(partitions.hasNext());
+  assertEquals(ImmutableList.of(1),partitions.next());
+  assertFalse(partitions.hasNext());
+}

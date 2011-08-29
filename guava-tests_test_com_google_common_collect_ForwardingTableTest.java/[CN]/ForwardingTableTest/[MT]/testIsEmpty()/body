@@ -1,0 +1,4 @@
+{
+  forward.isEmpty();
+  assertEquals("[isEmpty]",getCalls());
+}

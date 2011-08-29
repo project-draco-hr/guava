@@ -1,0 +1,5 @@
+{
+  Iterator<String> iterator=Collections.<String>emptyList().iterator();
+  String[] array=Iterators.toArray(iterator,String.class);
+  assertTrue(Arrays.equals(new String[0],array));
+}

@@ -1,0 +1,3 @@
+{
+  new EqualsTester().addEqualityGroup(LENGTH_EQUIVALENCE.wrap("hello"),LENGTH_EQUIVALENCE.wrap("hello"),LENGTH_EQUIVALENCE.wrap("world")).addEqualityGroup(LENGTH_EQUIVALENCE.wrap("hi"),LENGTH_EQUIVALENCE.wrap("yo")).addEqualityGroup(LENGTH_EQUIVALENCE.wrap(null),LENGTH_EQUIVALENCE.wrap(null)).addEqualityGroup(Equivalences.equals().wrap("hello")).addEqualityGroup(Equivalences.equals().wrap(null)).testEquals();
+}

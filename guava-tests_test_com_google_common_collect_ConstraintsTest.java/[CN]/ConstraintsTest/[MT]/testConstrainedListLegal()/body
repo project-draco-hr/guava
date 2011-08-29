@@ -1,0 +1,23 @@
+{
+  List<String> list=Lists.newArrayList("foo","bar");
+  List<String> constrained=Constraints.constrainedList(list,TEST_CONSTRAINT);
+  list.add(TEST_ELEMENT);
+  constrained.add("qux");
+  constrained.addAll(asList("cat","dog"));
+  constrained.add(1,"cow");
+  constrained.addAll(4,asList("box","fan"));
+  constrained.set(2,"baz");
+  assertTrue(list.equals(constrained));
+  assertTrue(constrained.equals(list));
+  assertEquals(list.toString(),constrained.toString());
+  assertEquals(list.hashCode(),constrained.hashCode());
+  ASSERT.that(list).hasContentsInOrder("foo","cow","baz",TEST_ELEMENT,"box","fan","qux","cat","dog");
+  ASSERT.that(constrained).hasContentsInOrder("foo","cow","baz",TEST_ELEMENT,"box","fan","qux","cat","dog");
+  ListIterator<String> iterator=constrained.listIterator();
+  iterator.next();
+  iterator.set("sun");
+  constrained.listIterator(2).add("sky");
+  ASSERT.that(list).hasContentsInOrder("sun","cow","sky","baz",TEST_ELEMENT,"box","fan","qux","cat","dog");
+  ASSERT.that(constrained).hasContentsInOrder("sun","cow","sky","baz",TEST_ELEMENT,"box","fan","qux","cat","dog");
+  assertTrue(constrained instanceof RandomAccess);
+}

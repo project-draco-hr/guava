@@ -1,0 +1,11 @@
+{
+  Map<String,Integer> map=ImmutableMap.of("a",4,"b",9);
+  Function<Integer,Double> sqrt=new Function<Integer,Double>(){
+    @Override public Double apply(    Integer in){
+      return Math.sqrt(in);
+    }
+  }
+;
+  Map<String,Double> transformed=Maps.transformValues(map,sqrt);
+  assertEquals(ImmutableMap.of("a",2.0,"b",3.0),transformed);
+}

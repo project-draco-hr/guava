@@ -1,0 +1,14 @@
+{
+  CountingRemovalListener<Integer,Integer> removalListener=countingRemovalListener();
+  IdentityLoader<Integer> loader=identityLoader();
+  Cache<Integer,Integer> cache=CacheBuilder.newBuilder().maximumSize(MAX_SIZE).removalListener(removalListener).build(loader);
+  for (int i=0; i < 2 * MAX_SIZE; i++) {
+    cache.getUnchecked(i);
+    assertTrue(cache.size() <= MAX_SIZE);
+  }
+  assertEquals(MAX_SIZE,CacheTesting.evictionQueueSize(cache));
+  assertEquals(MAX_SIZE,cache.size());
+  CacheTesting.processPendingNotifications(cache);
+  assertEquals(MAX_SIZE,removalListener.getCount());
+  CacheTesting.checkValidState(cache);
+}

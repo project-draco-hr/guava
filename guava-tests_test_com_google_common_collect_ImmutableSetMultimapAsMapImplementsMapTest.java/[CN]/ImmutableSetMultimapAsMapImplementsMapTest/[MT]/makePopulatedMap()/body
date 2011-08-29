@@ -1,0 +1,5 @@
+{
+  Multimap<String,Integer> delegate=HashMultimap.create();
+  populate(delegate);
+  return ImmutableSetMultimap.copyOf(delegate).asMap();
+}

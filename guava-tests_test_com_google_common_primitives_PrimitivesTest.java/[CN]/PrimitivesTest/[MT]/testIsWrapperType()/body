@@ -1,0 +1,4 @@
+{
+  assertTrue(Primitives.isWrapperType(Void.class));
+  assertFalse(Primitives.isWrapperType(void.class));
+}

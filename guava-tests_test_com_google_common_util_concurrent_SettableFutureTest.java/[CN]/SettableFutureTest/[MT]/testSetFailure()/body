@@ -1,0 +1,4 @@
+{
+  assertTrue(future.setException(new Exception("failure")));
+  tester.testFailedFuture("failure");
+}

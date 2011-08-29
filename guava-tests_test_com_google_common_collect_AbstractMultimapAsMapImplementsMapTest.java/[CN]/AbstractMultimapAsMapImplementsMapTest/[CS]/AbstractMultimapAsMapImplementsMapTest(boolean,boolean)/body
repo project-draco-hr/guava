@@ -1,0 +1,3 @@
+{
+  super(allowsNulls,allowsNulls,false,modifiable,modifiable);
+}

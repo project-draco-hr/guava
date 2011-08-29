@@ -1,0 +1,3 @@
+Collection<Integer> initialContents
+Iterable<ListFrobber> actionsToPerformConcurrently
+WrapWithIterable wrap

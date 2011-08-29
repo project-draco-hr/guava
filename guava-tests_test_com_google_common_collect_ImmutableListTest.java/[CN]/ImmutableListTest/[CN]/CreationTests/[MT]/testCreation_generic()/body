@@ -1,0 +1,4 @@
+{
+  List<String> a=ImmutableList.of("a");
+  ImmutableList.of(a,a);
+}

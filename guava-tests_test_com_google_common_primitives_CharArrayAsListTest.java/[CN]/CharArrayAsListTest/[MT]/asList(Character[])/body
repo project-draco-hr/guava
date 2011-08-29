@@ -1,0 +1,7 @@
+{
+  char[] temp=new char[values.length];
+  for (int i=0; i < values.length; i++) {
+    temp[i]=checkNotNull(values[i]);
+  }
+  return Chars.asList(temp);
+}

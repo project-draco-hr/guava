@@ -1,0 +1,10 @@
+{
+  Range<Integer> range=Ranges.all();
+  assertTrue(range.contains(Integer.MIN_VALUE));
+  assertTrue(range.contains(Integer.MAX_VALUE));
+  assertUnboundedBelow(range);
+  assertUnboundedAbove(range);
+  assertFalse(range.isEmpty());
+  assertEquals("(-\u221e\u2025+\u221e)",range.toString());
+  reserializeAndAssertUnlessGwt(range);
+}

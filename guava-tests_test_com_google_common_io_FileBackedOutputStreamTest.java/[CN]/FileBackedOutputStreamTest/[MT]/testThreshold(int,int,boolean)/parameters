@@ -1,0 +1,3 @@
+int fileThreshold
+int dataSize
+boolean singleByte

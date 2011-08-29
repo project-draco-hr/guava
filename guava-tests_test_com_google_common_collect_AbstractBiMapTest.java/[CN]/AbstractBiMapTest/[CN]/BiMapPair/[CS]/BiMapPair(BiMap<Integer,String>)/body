@@ -1,0 +1,4 @@
+{
+  this.forward=original;
+  this.backward=original.inverse();
+}

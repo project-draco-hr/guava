@@ -1,0 +1,6 @@
+{
+  if (cache instanceof ComputingCache) {
+    return ((ComputingCache<K,V>)cache).map;
+  }
+  throw new IllegalArgumentException("Cache of type " + cache.getClass() + " doesn't have a CustomConcurrentHashMap.");
+}

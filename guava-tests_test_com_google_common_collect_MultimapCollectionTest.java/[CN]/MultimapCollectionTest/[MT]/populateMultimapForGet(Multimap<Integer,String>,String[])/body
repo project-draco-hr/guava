@@ -1,0 +1,6 @@
+{
+  multimap.put(2,"foo");
+  for (  String element : elements) {
+    multimap.put(3,element);
+  }
+}

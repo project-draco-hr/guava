@@ -1,0 +1,5 @@
+{
+  Iterable<LegacyComparable> iterable=Arrays.asList(new LegacyComparable("foo"),new LegacyComparable("bar"));
+  TreeSet<LegacyComparable> set=Sets.newTreeSet(iterable);
+  ASSERT.that(set).hasContentsInOrder(new LegacyComparable("bar"),new LegacyComparable("foo"));
+}

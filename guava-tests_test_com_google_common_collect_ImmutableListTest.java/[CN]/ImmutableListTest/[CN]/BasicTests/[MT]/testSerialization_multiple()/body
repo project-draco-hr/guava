@@ -1,0 +1,4 @@
+{
+  Collection<String> c=ImmutableList.of("a","b","c");
+  SerializableTester.reserializeAndAssert(c);
+}

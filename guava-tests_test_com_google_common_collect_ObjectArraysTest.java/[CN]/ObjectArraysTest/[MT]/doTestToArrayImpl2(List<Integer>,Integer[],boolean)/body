@@ -1,0 +1,13 @@
+{
+  Integer[] starting=Platform.clone(array1);
+  Integer[] array2=Platform.clone(array1);
+  Object[] reference=list.toArray(array1);
+  Object[] target=ObjectArrays.toArrayImpl(list,array2);
+  assertEquals(reference.getClass(),target.getClass());
+  assertTrue(Arrays.equals(reference,target));
+  assertTrue(Arrays.equals(reference,target));
+  Object[] expectedArray1=expectModify ? reference : starting;
+  Object[] expectedArray2=expectModify ? target : starting;
+  assertTrue(Arrays.equals(expectedArray1,array1));
+  assertTrue(Arrays.equals(expectedArray2,array2));
+}

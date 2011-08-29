@@ -1,0 +1,57 @@
+{
+  CacheBuilder<Object,Object> builder=createCacheBuilder();
+  ComputingCache<Object,Object> cache=makeCache(builder,identityLoader());
+  assertEquals(EMPTY_STATS,cache.stats());
+  Object one=new Object();
+  Object two=new Object();
+  Object three=new Object();
+  ConcurrentMap<Object,Object> map=cache.asMap();
+  try {
+    map.put(one,two);
+  }
+ catch (  UnsupportedOperationException expected) {
+  }
+  try {
+    Map<Object,Object> newMap=ImmutableMap.of(one,two);
+    map.putAll(newMap);
+  }
+ catch (  UnsupportedOperationException expected) {
+  }
+  try {
+    map.putIfAbsent(one,two);
+  }
+ catch (  UnsupportedOperationException expected) {
+  }
+  try {
+    map.replace(one,two);
+  }
+ catch (  UnsupportedOperationException expected) {
+  }
+  try {
+    map.replace(one,two,three);
+  }
+ catch (  UnsupportedOperationException expected) {
+  }
+  assertTrue(map.isEmpty());
+  assertEquals(0,map.size());
+  cache.getUnchecked(one);
+  assertEquals(1,map.size());
+  assertSame(one,map.get(one));
+  assertTrue(map.containsKey(one));
+  assertTrue(map.containsValue(one));
+  assertSame(one,map.remove(one));
+  assertEquals(0,map.size());
+  cache.getUnchecked(one);
+  assertEquals(1,map.size());
+  assertFalse(map.remove(one,two));
+  assertTrue(map.remove(one,one));
+  assertEquals(0,map.size());
+  cache.getUnchecked(one);
+  Map<Object,Object> newMap=ImmutableMap.of(one,one);
+  assertEquals(newMap,map);
+  assertEquals(newMap.entrySet(),map.entrySet());
+  assertEquals(newMap.keySet(),map.keySet());
+  Set<Object> expectedValues=ImmutableSet.of(one);
+  Set<Object> actualValues=ImmutableSet.copyOf(map.values());
+  assertEquals(expectedValues,actualValues);
+}

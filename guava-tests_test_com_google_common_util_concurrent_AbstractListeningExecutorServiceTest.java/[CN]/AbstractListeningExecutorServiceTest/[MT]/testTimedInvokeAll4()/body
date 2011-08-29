@@ -1,0 +1,19 @@
+{
+  ExecutorService e=new DirectExecutorService();
+  try {
+    List<Callable<String>> l=new ArrayList<Callable<String>>();
+    l.add(new NPETask());
+    List<Future<String>> futures=e.invokeAll(l,MEDIUM_DELAY_MS,MILLISECONDS);
+    assertEquals(1,futures.size());
+    try {
+      futures.get(0).get();
+      shouldThrow();
+    }
+ catch (    ExecutionException success) {
+      assertTrue(success.getCause() instanceof NullPointerException);
+    }
+  }
+  finally {
+    joinPool(e);
+  }
+}

@@ -1,0 +1,152 @@
+{
+  byte[] range=newPreFilledByteArray(100);
+  CheckCloseSupplier.Input<InputStream> okRead=newCheckInput(ByteStreams.newInputStreamSupplier(range));
+  CheckCloseSupplier.Output<OutputStream> okWrite=newCheckOutput(new OutputSupplier<OutputStream>(){
+    @Override public OutputStream getOutput(){
+      return new ByteArrayOutputStream();
+    }
+  }
+);
+  CheckCloseSupplier.Input<InputStream> brokenRead=newCheckInput(BROKEN_READ);
+  CheckCloseSupplier.Output<OutputStream> brokenWrite=newCheckOutput(BROKEN_WRITE);
+  ByteStreams.copy(okRead,okWrite);
+  assertTrue(okRead.areClosed());
+  assertTrue(okWrite.areClosed());
+  try {
+    ByteStreams.copy(okRead,brokenWrite);
+    fail("expected exception");
+  }
+ catch (  Exception e) {
+    assertEquals("broken write",e.getMessage());
+  }
+  assertTrue(okRead.areClosed());
+  assertTrue(brokenWrite.areClosed());
+  try {
+    ByteStreams.copy(brokenRead,okWrite);
+    fail("expected exception");
+  }
+ catch (  Exception e) {
+    assertEquals("broken read",e.getMessage());
+  }
+  assertTrue(brokenRead.areClosed());
+  assertTrue(okWrite.areClosed());
+  try {
+    ByteStreams.copy(brokenRead,brokenWrite);
+    fail("expected exception");
+  }
+ catch (  Exception e) {
+    assertEquals("broken read",e.getMessage());
+  }
+  assertTrue(brokenRead.areClosed());
+  assertTrue(brokenWrite.areClosed());
+  OutputStream out=okWrite.getOutput();
+  ByteStreams.copy(okRead,out);
+  assertTrue(okRead.areClosed());
+  assertFalse(okWrite.areClosed());
+  out.close();
+  out=brokenWrite.getOutput();
+  try {
+    ByteStreams.copy(okRead,out);
+    fail("expected exception");
+  }
+ catch (  Exception e) {
+    assertEquals("broken write",e.getMessage());
+  }
+  assertTrue(okRead.areClosed());
+  assertFalse(brokenWrite.areClosed());
+  out.close();
+  out=okWrite.getOutput();
+  try {
+    ByteStreams.copy(brokenRead,out);
+    fail("expected exception");
+  }
+ catch (  Exception e) {
+    assertEquals("broken read",e.getMessage());
+  }
+  assertTrue(brokenRead.areClosed());
+  assertFalse(okWrite.areClosed());
+  out.close();
+  out=brokenWrite.getOutput();
+  try {
+    ByteStreams.copy(brokenRead,out);
+    fail("expected exception");
+  }
+ catch (  Exception e) {
+    assertEquals("broken read",e.getMessage());
+  }
+  assertTrue(brokenRead.areClosed());
+  assertFalse(brokenWrite.areClosed());
+  out.close();
+  InputStream in=okRead.getInput();
+  ByteStreams.copy(in,okWrite);
+  assertFalse(okRead.areClosed());
+  assertTrue(okWrite.areClosed());
+  in.close();
+  in=okRead.getInput();
+  try {
+    ByteStreams.copy(in,brokenWrite);
+    fail("expected exception");
+  }
+ catch (  Exception e) {
+    assertEquals("broken write",e.getMessage());
+  }
+  assertFalse(okRead.areClosed());
+  assertTrue(brokenWrite.areClosed());
+  in.close();
+  in=brokenRead.getInput();
+  try {
+    ByteStreams.copy(in,okWrite);
+    fail("expected exception");
+  }
+ catch (  Exception e) {
+    assertEquals("broken read",e.getMessage());
+  }
+  assertFalse(brokenRead.areClosed());
+  assertTrue(okWrite.areClosed());
+  in.close();
+  in=brokenRead.getInput();
+  try {
+    ByteStreams.copy(in,brokenWrite);
+    fail("expected exception");
+  }
+ catch (  Exception e) {
+    assertEquals("broken read",e.getMessage());
+  }
+  assertFalse(brokenRead.areClosed());
+  assertTrue(brokenWrite.areClosed());
+  in.close();
+  assertTrue(Arrays.equals(range,ByteStreams.toByteArray(okRead)));
+  assertTrue(okRead.areClosed());
+  try {
+    ByteStreams.toByteArray(brokenRead);
+    fail("expected exception");
+  }
+ catch (  Exception e) {
+    assertEquals("broken read",e.getMessage());
+  }
+  assertTrue(brokenRead.areClosed());
+  try {
+    ByteStreams.equal(brokenRead,okRead);
+    fail("expected exception");
+  }
+ catch (  Exception e) {
+    assertEquals("broken read",e.getMessage());
+  }
+  assertTrue(brokenRead.areClosed());
+  try {
+    ByteStreams.equal(okRead,brokenRead);
+    fail("expected exception");
+  }
+ catch (  Exception e) {
+    assertEquals("broken read",e.getMessage());
+  }
+  assertTrue(brokenRead.areClosed());
+  try {
+    ByteStreams.write(new byte[10],brokenWrite);
+    fail("expected exception");
+  }
+ catch (  Exception e) {
+    assertEquals("broken write",e.getMessage());
+  }
+  assertTrue(brokenWrite.areClosed());
+}

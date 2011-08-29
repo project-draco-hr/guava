@@ -1,0 +1,8 @@
+{
+  ms.add("a",3);
+  Multiset.Entry<String> entry=ms.entrySet().iterator().next();
+  ms.clear();
+  assertEquals(0,entry.getCount());
+  ms.add("a",5);
+  assertEquals(5,entry.getCount());
+}

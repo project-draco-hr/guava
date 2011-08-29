@@ -1,0 +1,6 @@
+{
+  super.setUp();
+  inputFuture=SettableFuture.create();
+  resultFuture=buildChainingFuture(inputFuture);
+  listener=new MockFutureListener(resultFuture);
+}

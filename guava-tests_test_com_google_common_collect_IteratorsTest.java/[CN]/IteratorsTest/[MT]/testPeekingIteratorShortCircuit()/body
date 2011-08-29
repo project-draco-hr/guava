@@ -1,0 +1,7 @@
+{
+  Iterator<String> nonpeek=Lists.newArrayList("a","b","c").iterator();
+  PeekingIterator<String> peek=Iterators.peekingIterator(nonpeek);
+  assertNotSame(peek,nonpeek);
+  assertSame(peek,Iterators.peekingIterator(peek));
+  assertSame(peek,Iterators.peekingIterator((Iterator<String>)peek));
+}

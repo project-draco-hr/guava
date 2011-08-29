@@ -1,0 +1,5 @@
+{
+  ImmutableSortedSet<String> sortedSet=ImmutableSortedSet.of("a");
+  ImmutableSet<String> copy=ImmutableSet.copyOf(sortedSet);
+  assertNotSame(sortedSet,copy);
+}

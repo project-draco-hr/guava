@@ -1,0 +1,14 @@
+{
+  WellBehavedMap<Foo,Integer> map=WellBehavedMap.wrap(new EnumMap<Foo,Integer>(Foo.class));
+  map.putAll(ImmutableMap.of(Foo.X,1));
+  Map.Entry<Foo,Integer> entry1=Iterables.getOnlyElement(map.entrySet());
+  Map.Entry<Foo,Integer> entry2=Iterables.getOnlyElement(map.entrySet());
+  assertNotSame(entry1,entry2);
+  Set<Map.Entry<Foo,Integer>> entrySet=map.entrySet();
+  assertTrue(entrySet.contains(entry1));
+  assertTrue(entrySet.contains(entry2));
+  entry1.setValue(2);
+  assertEquals(entry1.getValue(),entry2.getValue());
+  assertTrue(entrySet.contains(entry1));
+  assertTrue(entrySet.contains(entry2));
+}

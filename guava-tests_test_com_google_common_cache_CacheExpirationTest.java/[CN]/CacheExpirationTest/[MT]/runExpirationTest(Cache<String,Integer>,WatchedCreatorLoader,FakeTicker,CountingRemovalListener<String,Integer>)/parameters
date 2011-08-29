@@ -1,0 +1,4 @@
+Cache<String,Integer> cache
+WatchedCreatorLoader loader
+FakeTicker ticker
+CountingRemovalListener<String,Integer> removalListener

@@ -1,0 +1,11 @@
+{
+  try {
+    future.setException(null);
+    fail();
+  }
+ catch (  NullPointerException expected) {
+  }
+  assertFalse(future.isDone());
+  assertTrue(future.setException(new Exception("failure")));
+  tester.testFailedFuture("failure");
+}

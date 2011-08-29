@@ -1,0 +1,9 @@
+{
+  Iterable<Integer> iterable=new Iterable<Integer>(){
+    @Override public Iterator<Integer> iterator(){
+      return asList(0,1).iterator();
+    }
+  }
+;
+  assertEquals(2,Iterables.size(iterable));
+}

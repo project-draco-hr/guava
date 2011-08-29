@@ -1,0 +1,7 @@
+{
+  String canonical="a";
+  String not=new String("a");
+  Interner<String> pool=Interners.newWeakInterner();
+  assertSame(canonical,pool.intern(canonical));
+  assertSame(canonical,pool.intern(not));
+}

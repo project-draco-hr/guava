@@ -1,0 +1,6 @@
+{
+  assertEquals(Ranges.closed(Integer.MIN_VALUE,Integer.MAX_VALUE),Ranges.<Integer>all().asSet(integers()).range());
+  assertEquals(Ranges.atLeast(Integer.MIN_VALUE),Ranges.<Integer>all().asSet(integers()).range(CLOSED,OPEN));
+  assertEquals(Ranges.all(),Ranges.<Integer>all().asSet(integers()).range(OPEN,OPEN));
+  assertEquals(Ranges.atMost(Integer.MAX_VALUE),Ranges.<Integer>all().asSet(integers()).range(OPEN,CLOSED));
+}

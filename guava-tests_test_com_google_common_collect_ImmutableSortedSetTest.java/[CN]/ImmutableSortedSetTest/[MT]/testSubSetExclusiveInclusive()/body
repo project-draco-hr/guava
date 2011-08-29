@@ -1,0 +1,10 @@
+{
+  String[] strings=NUMBER_NAMES.toArray(new String[0]);
+  ImmutableSortedSet<String> set=ImmutableSortedSet.copyOf(strings);
+  Arrays.sort(strings);
+  for (int i=0; i < strings.length; i++) {
+    for (int j=i; j < strings.length; j++) {
+      ASSERT.that(set.subSet(strings[i],false,strings[j],true)).hasContentsInOrder(sortedNumberNames(i + 1,j + 1));
+    }
+  }
+}

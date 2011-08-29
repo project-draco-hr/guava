@@ -1,0 +1,19 @@
+{
+  Map<String,String> underlying=Maps.newHashMap();
+  underlying.put("a",null);
+  underlying.put("b","");
+  Map<String,Boolean> map=Maps.transformValues(underlying,new Function<String,Boolean>(){
+    @Override public Boolean apply(    @Nullable String from){
+      return from == null;
+    }
+  }
+);
+  Map<String,Boolean> expected=ImmutableMap.of("a",true,"b",false);
+  assertMapsEqual(expected,map);
+  assertEquals(expected.get("a"),map.get("a"));
+  assertEquals(expected.containsKey("a"),map.containsKey("a"));
+  assertEquals(expected.get("b"),map.get("b"));
+  assertEquals(expected.containsKey("b"),map.containsKey("b"));
+  assertEquals(expected.get("c"),map.get("c"));
+  assertEquals(expected.containsKey("c"),map.containsKey("c"));
+}

@@ -1,0 +1,7 @@
+{
+  try {
+    multimap.keySet().retainAll(null);
+  }
+ catch (  NullPointerException expected) {
+  }
+}

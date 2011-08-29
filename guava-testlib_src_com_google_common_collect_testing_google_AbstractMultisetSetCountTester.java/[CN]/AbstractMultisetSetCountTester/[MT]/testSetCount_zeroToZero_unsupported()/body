@@ -1,0 +1,7 @@
+{
+  try {
+    assertZeroToZero();
+  }
+ catch (  UnsupportedOperationException tolerated) {
+  }
+}

@@ -1,0 +1,8 @@
+{
+  try {
+    entry.setValue(null);
+    fail("setValue on unmodifiable Map.Entry succeeded");
+  }
+ catch (  UnsupportedOperationException expected) {
+  }
+}

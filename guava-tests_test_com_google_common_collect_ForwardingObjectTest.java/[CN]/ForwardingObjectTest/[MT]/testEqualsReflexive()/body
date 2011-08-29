@@ -1,0 +1,10 @@
+{
+  final Object delegate=new Object();
+  ForwardingObject forward=new ForwardingObject(){
+    @Override protected Object delegate(){
+      return delegate;
+    }
+  }
+;
+  assertTrue(forward.equals(forward));
+}

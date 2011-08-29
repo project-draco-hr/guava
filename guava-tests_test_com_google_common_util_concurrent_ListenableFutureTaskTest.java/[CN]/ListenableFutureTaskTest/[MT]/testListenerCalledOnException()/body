@@ -1,0 +1,16 @@
+{
+  throwException=true;
+  exec.execute(task);
+  runLatch.await();
+  taskLatch.countDown();
+  try {
+    task.get(5,TimeUnit.SECONDS);
+    fail("Should have propagated the failure.");
+  }
+ catch (  ExecutionException e) {
+    assertEquals(IllegalStateException.class,e.getCause().getClass());
+  }
+  assertTrue(listenerLatch.await(5,TimeUnit.SECONDS));
+  assertTrue(task.isDone());
+  assertFalse(task.isCancelled());
+}

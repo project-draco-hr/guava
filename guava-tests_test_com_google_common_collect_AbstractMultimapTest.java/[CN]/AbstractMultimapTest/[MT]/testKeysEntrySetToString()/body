@@ -1,0 +1,5 @@
+{
+  multimap.put("foo",7);
+  multimap.put("foo",8);
+  assertEquals("[foo x 2]",multimap.keys().entrySet().toString());
+}

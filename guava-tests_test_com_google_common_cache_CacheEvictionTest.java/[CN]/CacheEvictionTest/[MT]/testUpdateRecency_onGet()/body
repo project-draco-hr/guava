@@ -1,0 +1,10 @@
+{
+  IdentityLoader<Integer> loader=identityLoader();
+  final Cache<Integer,Integer> cache=CacheBuilder.newBuilder().maximumSize(MAX_SIZE).build(loader);
+  CacheTesting.checkRecency(cache,MAX_SIZE,new Receiver<ReferenceEntry<Integer,Integer>>(){
+    @Override public void accept(    ReferenceEntry<Integer,Integer> entry){
+      cache.getUnchecked(entry.getKey());
+    }
+  }
+);
+}

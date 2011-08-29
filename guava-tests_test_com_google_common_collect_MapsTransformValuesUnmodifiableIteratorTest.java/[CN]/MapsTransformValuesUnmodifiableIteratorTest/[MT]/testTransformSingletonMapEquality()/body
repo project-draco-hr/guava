@@ -1,0 +1,6 @@
+{
+  Map<String,String> map=Maps.transformValues(ImmutableMap.of("a",1),Functions.toStringFunction());
+  Map<String,String> expected=ImmutableMap.of("a","1");
+  assertMapsEqual(expected,map);
+  assertEquals(expected.get("a"),map.get("a"));
+}

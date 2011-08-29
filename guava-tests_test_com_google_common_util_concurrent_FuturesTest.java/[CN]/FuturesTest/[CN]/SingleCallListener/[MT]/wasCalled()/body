@@ -1,0 +1,3 @@
+{
+  return calledCountDown.getCount() == 0;
+}

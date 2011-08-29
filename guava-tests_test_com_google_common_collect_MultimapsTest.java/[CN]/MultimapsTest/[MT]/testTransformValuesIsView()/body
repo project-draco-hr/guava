@@ -1,0 +1,13 @@
+{
+  Multimap<String,String> multimap=LinkedListMultimap.create();
+  multimap.put("a","a");
+  Multimap<String,Integer> transformed=Multimaps.transformValues(multimap,new Function<String,Integer>(){
+    @Override public Integer apply(    String str){
+      return str.length();
+    }
+  }
+);
+  Entry<String,String> entry=multimap.entries().iterator().next();
+  entry.setValue("bbb");
+  ASSERT.that(transformed.entries()).hasContentsInOrder(immutableEntry("a",3));
+}

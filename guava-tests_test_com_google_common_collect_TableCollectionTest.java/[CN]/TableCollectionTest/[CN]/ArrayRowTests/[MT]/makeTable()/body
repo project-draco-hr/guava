@@ -1,0 +1,3 @@
+{
+  return ArrayTable.create(Arrays.asList('a','b','c'),Arrays.asList("one","two","three","four"));
+}

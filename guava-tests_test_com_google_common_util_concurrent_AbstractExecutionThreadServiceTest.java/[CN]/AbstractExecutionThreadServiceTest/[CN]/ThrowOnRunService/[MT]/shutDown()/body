@@ -1,0 +1,6 @@
+{
+  shutDownCalled=true;
+  if (throwOnShutDown) {
+    throw new UnsupportedOperationException("double kaboom!");
+  }
+}

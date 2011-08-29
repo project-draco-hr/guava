@@ -1,0 +1,12 @@
+{
+  Throwable exception=new Throwable("failed");
+  ListenableFuture<String> future=Futures.immediateFailedFuture(exception);
+  ListenableFuture<List<String>> compound=Futures.allAsList(ImmutableList.of(future));
+  try {
+    compound.get();
+    fail("Expected exception not thrown");
+  }
+ catch (  ExecutionException e) {
+    assertSame(exception,e.getCause());
+  }
+}

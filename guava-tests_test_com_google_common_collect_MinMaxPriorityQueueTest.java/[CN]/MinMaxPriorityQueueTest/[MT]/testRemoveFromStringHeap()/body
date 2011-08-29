@@ -1,0 +1,15 @@
+{
+  MinMaxPriorityQueue<String> mmHeap=MinMaxPriorityQueue.expectedSize(5).create();
+  Collections.addAll(mmHeap,"foo","bar","foobar","barfoo","larry","sergey","eric");
+  assertTrue("Heap is not intact initially",mmHeap.isIntact());
+  assertEquals("bar",mmHeap.peek());
+  assertEquals("sergey",mmHeap.peekLast());
+  assertEquals(7,mmHeap.size());
+  assertTrue("Could not remove larry",mmHeap.remove("larry"));
+  assertEquals(6,mmHeap.size());
+  assertFalse("heap contains larry which has been removed",mmHeap.contains("larry"));
+  assertTrue("heap does not contain sergey",mmHeap.contains("sergey"));
+  assertTrue("Could not remove larry",mmHeap.removeAll(Lists.newArrayList("sergey","eric")));
+  assertFalse("Could remove nikesh which is not in the heap",mmHeap.remove("nikesh"));
+  assertEquals(4,mmHeap.size());
+}

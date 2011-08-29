@@ -1,0 +1,5 @@
+{
+  Comparator<byte[]> defaultComparator=UnsignedBytes.lexicographicalComparator();
+  Comparator<byte[]> unsafeComparator=UnsignedBytes.LexicographicalComparatorHolder.UnsafeComparator.INSTANCE;
+  assertSame(defaultComparator,unsafeComparator);
+}

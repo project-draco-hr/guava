@@ -1,0 +1,8 @@
+{
+  ReferenceEntry<K,V> entry=getReferenceEntry(cache,key);
+  Preconditions.checkState(entry instanceof Reference);
+  Reference<?> ref=(Reference<?>)entry;
+  if (ref != null) {
+    ref.clear();
+  }
+}

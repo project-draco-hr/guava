@@ -1,0 +1,29 @@
+{
+  int shift1=10 + VALUE_PREFIX;
+  loader.setValuePrefix(shift1);
+  for (int i=0; i < 10; i++) {
+    assertEquals(Integer.valueOf(i + shift1),cache.getUnchecked(keyPrefix + i));
+  }
+  assertEquals(10,CacheTesting.expirationQueueSize(cache));
+  assertEquals(0,removalListener.getCount());
+  ticker.advance(ttl * 2 / 3,TimeUnit.MILLISECONDS);
+  assertEquals(10,CacheTesting.expirationQueueSize(cache));
+  assertEquals(0,removalListener.getCount());
+  int shift2=shift1 + 10;
+  loader.setValuePrefix(shift2);
+  for (int i=0; i < 10; i++) {
+    cache.invalidate(keyPrefix + i);
+    assertEquals("key: " + keyPrefix + i,Integer.valueOf(i + shift2),cache.getUnchecked(keyPrefix + i));
+  }
+  assertEquals(10,CacheTesting.expirationQueueSize(cache));
+  assertEquals(10,removalListener.getCount());
+  ticker.advance(ttl * 2 / 3,TimeUnit.MILLISECONDS);
+  assertEquals(10,CacheTesting.expirationQueueSize(cache));
+  assertEquals(10,removalListener.getCount());
+  for (int i=0; i < 10; i++) {
+    loader.reset();
+    assertEquals(Integer.valueOf(i + shift2),cache.getUnchecked(keyPrefix + i));
+    assertFalse("Creator should NOT have been called @#" + i,loader.wasCalled());
+  }
+  assertEquals(10,removalListener.getCount());
+}

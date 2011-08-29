@@ -1,0 +1,13 @@
+{
+  Multimap<String,Integer> multimap=create();
+  assertTrue(multimap.putAll("foo",asList(1,2,3)));
+  assertTrue(multimap.put("foo",1));
+  assertTrue(multimap.putAll("foo",asList(1,2,3)));
+  assertTrue(multimap.putAll("foo",asList(1,3)));
+  Multimap<String,Integer> other=create();
+  other.putAll("foo",asList(1,2));
+  assertTrue(multimap.putAll(other));
+  other.putAll("bar",asList(1,2));
+  assertTrue(multimap.putAll(other));
+  assertTrue(other.putAll(multimap));
+}

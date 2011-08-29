@@ -1,0 +1,11 @@
+{
+  Map<String,Integer> toPut=new LinkedHashMap<String,Integer>();
+  toPut.put("one",1);
+  toPut.put("two",2);
+  toPut.put("three",3);
+  Map<String,Integer> moreToPut=new LinkedHashMap<String,Integer>();
+  moreToPut.put("four",4);
+  moreToPut.put("five",5);
+  ImmutableSortedMap<String,Integer> map=ImmutableSortedMap.<String,Integer>naturalOrder().putAll(toPut).putAll(moreToPut).build();
+  assertMapEquals(map,"five",5,"four",4,"one",1,"three",3,"two",2);
+}

@@ -1,0 +1,4 @@
+{
+  forward.columnMap();
+  assertEquals("[columnMap]",getCalls());
+}

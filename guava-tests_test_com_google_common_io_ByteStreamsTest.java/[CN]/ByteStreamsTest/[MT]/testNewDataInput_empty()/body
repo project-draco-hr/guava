@@ -1,0 +1,10 @@
+{
+  byte[] b=new byte[0];
+  ByteArrayDataInput in=ByteStreams.newDataInput(b);
+  try {
+    in.readInt();
+    fail();
+  }
+ catch (  IllegalStateException expected) {
+  }
+}

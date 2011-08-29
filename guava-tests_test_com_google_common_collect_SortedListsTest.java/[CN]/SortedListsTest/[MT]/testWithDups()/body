@@ -1,0 +1,9 @@
+{
+  for (  KeyPresentBehavior presentBehavior : KeyPresentBehavior.values()) {
+    for (    KeyAbsentBehavior absentBehavior : KeyAbsentBehavior.values()) {
+      for (int key=0; key <= 10; key++) {
+        assertModelAgrees(LIST_WITH_DUPS,key,SortedLists.binarySearch(LIST_WITH_DUPS,key,presentBehavior,absentBehavior),presentBehavior,absentBehavior);
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  SettableFuture<String> future1=SettableFuture.create();
+  SettableFuture<String> future2=SettableFuture.create();
+  SettableFuture<String> future3=SettableFuture.create();
+  future1.set(DATA1);
+  future2.set(DATA2);
+  future3.set(DATA3);
+  @SuppressWarnings("unchecked") ListenableFuture<List<String>> compound=Futures.allAsList(future1,future2,future3);
+  SingleCallListener listener=new SingleCallListener();
+  listener.expectCall();
+  compound.addListener(listener,MoreExecutors.sameThreadExecutor());
+  assertTrue(compound.isDone());
+  assertTrue(listener.wasCalled());
+  List<String> results=compound.get();
+  ASSERT.that(results).hasContentsInOrder(DATA1,DATA2,DATA3);
+}

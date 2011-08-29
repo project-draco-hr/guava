@@ -1,0 +1,3 @@
+{
+  assertEquals("/x",Files.simplifyPath("//a//../x//"));
+}

@@ -1,0 +1,3 @@
+{
+  return ArrayTable.create(Arrays.asList("foo","bar","dog"),Arrays.asList(1,2,3));
+}

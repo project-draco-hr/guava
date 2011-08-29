@@ -1,0 +1,55 @@
+{
+  final CountDownLatch startSignal=new CountDownLatch(1);
+  final CountDownLatch computingSignal=new CountDownLatch(1);
+  final CountDownLatch doneSignal=new CountDownLatch(1);
+  final Object computedObject=new Object();
+  Function<Object,Object> computingFunction=new Function<Object,Object>(){
+    @Override public Object apply(    Object key){
+      computingSignal.countDown();
+      try {
+        startSignal.await();
+      }
+ catch (      InterruptedException e) {
+        throw new RuntimeException(e);
+      }
+      return computedObject;
+    }
+  }
+;
+  QueuingRemovalListener<Object,Object> listener=new QueuingRemovalListener<Object,Object>();
+  MapMaker maker=(MapMaker)createMapMaker().removalListener(listener);
+  final ComputingConcurrentHashMap<Object,Object> map=makeComputingMap(maker,computingFunction);
+  assertTrue(listener.isEmpty());
+  final Object one=new Object();
+  final Object two=new Object();
+  final Object three=new Object();
+  new Thread(){
+    @Override public void run(){
+      try {
+        map.getOrCompute(one);
+      }
+ catch (      ExecutionException e) {
+        throw new RuntimeException(e);
+      }
+      doneSignal.countDown();
+    }
+  }
+.start();
+  try {
+    computingSignal.await();
+  }
+ catch (  InterruptedException e) {
+    throw new RuntimeException(e);
+  }
+  map.put(one,two);
+  startSignal.countDown();
+  try {
+    doneSignal.await();
+  }
+ catch (  InterruptedException e) {
+    throw new RuntimeException(e);
+  }
+  assertNotNull(map.putIfAbsent(one,three));
+  assertNotified(listener,one,computedObject,RemovalCause.REPLACED);
+  assertTrue(listener.isEmpty());
+}

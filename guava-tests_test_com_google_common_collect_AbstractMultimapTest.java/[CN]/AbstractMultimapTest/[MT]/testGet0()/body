@@ -1,0 +1,5 @@
+{
+  multimap.put("foo",1);
+  Collection<Integer> values=multimap.get("bar");
+  assertEquals(0,values.size());
+}

@@ -1,0 +1,7 @@
+{
+  Set<Integer> zeroToTwentyNine=newHashSet();
+  for (int i=0; i < 30; i++) {
+    zeroToTwentyNine.add(i);
+  }
+  return zeroToTwentyNine;
+}

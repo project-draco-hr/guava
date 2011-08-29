@@ -1,0 +1,4 @@
+{
+  assertEquals(0x12131415,Ints.fromBytes((byte)0x12,(byte)0x13,(byte)0x14,(byte)0x15));
+  assertEquals(0xFFEEDDCC,Ints.fromBytes((byte)0xFF,(byte)0xEE,(byte)0xDD,(byte)0xCC));
+}

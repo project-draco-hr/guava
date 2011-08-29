@@ -1,0 +1,3 @@
+{
+  return Multimaps.transformValues(ArrayListMultimap.<String,Integer>create(),Functions.<Integer>identity()).asMap();
+}

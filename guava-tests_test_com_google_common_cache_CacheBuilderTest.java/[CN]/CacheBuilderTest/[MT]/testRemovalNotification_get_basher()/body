@@ -1,0 +1,60 @@
+{
+  int nTasks=3000;
+  int nThreads=100;
+  final int getsPerTask=1000;
+  final int nUniqueKeys=10000;
+  final Random random=new Random();
+  QueuingRemovalListener<String,String> removalListener=queuingRemovalListener();
+  final AtomicInteger computeCount=new AtomicInteger();
+  final AtomicInteger exceptionCount=new AtomicInteger();
+  final AtomicInteger computeNullCount=new AtomicInteger();
+  CacheLoader<String,String> countingIdentityLoader=new CacheLoader<String,String>(){
+    @Override public String load(    String key) throws InterruptedException {
+      int behavior=random.nextInt(4);
+      if (behavior == 0) {
+        exceptionCount.incrementAndGet();
+        throw new RuntimeException("fake exception for test");
+      }
+ else       if (behavior == 1) {
+        computeNullCount.incrementAndGet();
+        return null;
+      }
+ else       if (behavior == 2) {
+        Thread.sleep(5);
+        computeCount.incrementAndGet();
+        return key;
+      }
+ else {
+        computeCount.incrementAndGet();
+        return key;
+      }
+    }
+  }
+;
+  final Cache<String,String> cache=CacheBuilder.newBuilder().concurrencyLevel(2).expireAfterWrite(100,TimeUnit.MILLISECONDS).removalListener(removalListener).maximumSize(5000).build(countingIdentityLoader);
+  ExecutorService threadPool=Executors.newFixedThreadPool(nThreads);
+  for (int i=0; i < nTasks; i++) {
+    threadPool.submit(new Runnable(){
+      @Override public void run(){
+        for (int j=0; j < getsPerTask; j++) {
+          try {
+            cache.getUnchecked("key" + random.nextInt(nUniqueKeys));
+          }
+ catch (          RuntimeException e) {
+          }
+        }
+      }
+    }
+);
+  }
+  threadPool.shutdown();
+  threadPool.awaitTermination(300,TimeUnit.SECONDS);
+  for (  RemovalNotification<String,String> notification : removalListener) {
+    assertEquals("Invalid removal notification",notification.getKey(),notification.getValue());
+  }
+  CacheStats stats=cache.stats();
+  assertEquals(removalListener.size(),stats.evictionCount());
+  assertEquals(computeCount.get(),stats.loadSuccessCount());
+  assertEquals(exceptionCount.get() + computeNullCount.get(),stats.loadExceptionCount());
+  assertEquals(computeCount.get(),cache.size() + removalListener.size());
+}

@@ -1,0 +1,14 @@
+{
+  try {
+    HashBasedTable.create(100,-5);
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+  try {
+    HashBasedTable.create(-5,20);
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}

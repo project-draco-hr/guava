@@ -1,0 +1,24 @@
+{
+  CacheBuilder<Object,Object> builder=createCacheBuilder().concurrencyLevel(1);
+  CountingLoader loader=new CountingLoader();
+  CustomConcurrentHashMap<Object,Object> map=makeComputingMap(builder,loader);
+  Segment<Object,Object> segment=map.segments[0];
+  AtomicReferenceArray<ReferenceEntry<Object,Object>> table=segment.table;
+  assertEquals(0,loader.getCount());
+  Object key=new Object();
+  int hash=map.hash(key);
+  Object value=new Object();
+  int index=hash & (table.length() - 1);
+  DummyEntry<Object,Object> entry=DummyEntry.create(key,hash,null);
+  DummyValueReference<Object,Object> valueRef=DummyValueReference.create(value,entry);
+  entry.setValueReference(valueRef);
+  table.set(index,entry);
+  segment.count++;
+  assertSame(value,map.getOrCompute(key));
+  assertEquals(0,loader.getCount());
+  assertEquals(1,segment.count);
+  valueRef.clear();
+  assertNotSame(value,map.getOrCompute(key));
+  assertEquals(1,loader.getCount());
+  assertEquals(1,segment.count);
+}

@@ -1,0 +1,7 @@
+{
+  BiMap<String,Integer> inverse=bimap.inverse();
+  bimap.put(1,"one");
+  bimap.inverse().put("two",2);
+  assertEquals(ImmutableMap.of("one",1,"two",2),inverse);
+  assertEquals(ImmutableMap.of(1,"one",2,"two"),bimap);
+}

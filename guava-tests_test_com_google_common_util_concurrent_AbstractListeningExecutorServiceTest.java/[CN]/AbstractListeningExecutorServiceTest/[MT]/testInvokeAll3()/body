@@ -1,0 +1,15 @@
+{
+  ExecutorService e=new DirectExecutorService();
+  List<Callable<String>> l=new ArrayList<Callable<String>>();
+  l.add(new StringTask());
+  l.add(null);
+  try {
+    e.invokeAll(l);
+    shouldThrow();
+  }
+ catch (  NullPointerException success) {
+  }
+ finally {
+    joinPool(e);
+  }
+}

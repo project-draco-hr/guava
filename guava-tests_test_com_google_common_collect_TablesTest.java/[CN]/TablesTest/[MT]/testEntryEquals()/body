@@ -1,0 +1,4 @@
+{
+  Cell<String,Integer,Character> entry=Tables.immutableCell("foo",1,'a');
+  new EqualsTester().addEqualityGroup(entry,Tables.immutableCell("foo",1,'a')).addEqualityGroup(Tables.immutableCell("bar",1,'a')).addEqualityGroup(Tables.immutableCell("foo",2,'a')).addEqualityGroup(Tables.immutableCell("foo",1,'b')).addEqualityGroup(Tables.immutableCell(null,null,null)).testEquals();
+}

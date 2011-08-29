@@ -1,0 +1,14 @@
+{
+  MinMaxPriorityQueue<Integer> mmHeap=MinMaxPriorityQueue.create();
+  mmHeap.addAll(Lists.newArrayList(1,2));
+  Iterator<Integer> it=mmHeap.iterator();
+  assertTrue("Iterator has reached end prematurely",it.hasNext());
+  it.next();
+  it.next();
+  try {
+    it.next();
+    fail("No exception thrown when iterating past end of heap");
+  }
+ catch (  NoSuchElementException e) {
+  }
+}

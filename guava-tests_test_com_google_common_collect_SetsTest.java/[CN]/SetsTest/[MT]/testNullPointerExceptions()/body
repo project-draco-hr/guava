@@ -1,0 +1,8 @@
+{
+  NullPointerTester tester=new NullPointerTester();
+  tester.setDefault(Enum.class,SomeEnum.A);
+  tester.setDefault(Collection[].class,new Collection[0]);
+  tester.setDefault(Enum[].class,new Enum[0]);
+  tester.setDefault(Set[].class,new Set[0]);
+  tester.testAllPublicStaticMethods(Sets.class);
+}

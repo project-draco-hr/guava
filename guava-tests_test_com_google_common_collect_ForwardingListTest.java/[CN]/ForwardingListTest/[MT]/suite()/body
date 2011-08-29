@@ -1,0 +1,17 @@
+{
+  TestSuite suite=new TestSuite();
+  suite.addTestSuite(ForwardingListTest.class);
+  suite.addTest(ListTestSuiteBuilder.using(new TestStringListGenerator(){
+    @Override protected List<String> create(    String[] elements){
+      return new StandardImplForwardingList<String>(Lists.newArrayList(elements));
+    }
+  }
+).named("ForwardingList[ArrayList] with standard implementations").withFeatures(CollectionSize.ANY,CollectionFeature.ALLOWS_NULL_VALUES,ListFeature.GENERAL_PURPOSE).createTestSuite());
+  suite.addTest(ListTestSuiteBuilder.using(new TestStringListGenerator(){
+    @Override protected List<String> create(    String[] elements){
+      return new StandardImplForwardingList<String>(ImmutableList.copyOf(elements));
+    }
+  }
+).named("ForwardingList[ImmutableList] with standard implementations").withFeatures(CollectionSize.ANY,CollectionFeature.ALLOWS_NULL_QUERIES).createTestSuite());
+  return suite;
+}

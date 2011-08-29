@@ -1,0 +1,9 @@
+{
+  Iterable<String> iterable=Lists.newArrayList("a");
+  Iterator<String> cycle=Iterators.cycle(iterable);
+  assertTrue(cycle.hasNext());
+  assertEquals("a",cycle.next());
+  cycle.remove();
+  assertEquals(Collections.emptyList(),iterable);
+  assertFalse(cycle.hasNext());
+}

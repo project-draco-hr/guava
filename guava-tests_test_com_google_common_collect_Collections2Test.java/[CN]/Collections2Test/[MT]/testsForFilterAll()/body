@@ -1,0 +1,10 @@
+{
+  return CollectionTestSuiteBuilder.using(new TestStringCollectionGenerator(){
+    @Override public Collection<String> create(    String[] elements){
+      List<String> unfiltered=newArrayList();
+      unfiltered.addAll(asList(elements));
+      return Collections2.filter(unfiltered,NOT_YYY_ZZZ);
+    }
+  }
+).named("Collections2.filter").withFeatures(CollectionFeature.GENERAL_PURPOSE,CollectionFeature.ALLOWS_NULL_VALUES,CollectionFeature.KNOWN_ORDER,CollectionSize.ANY).suppressing(getIteratorKnownOrderRemoveSupportedMethod()).createTestSuite();
+}

@@ -1,0 +1,4 @@
+{
+  result.append(csq);
+  return this;
+}

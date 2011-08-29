@@ -1,0 +1,3 @@
+{
+  assertEquals("foo=1",entry("foo",1).toString());
+}

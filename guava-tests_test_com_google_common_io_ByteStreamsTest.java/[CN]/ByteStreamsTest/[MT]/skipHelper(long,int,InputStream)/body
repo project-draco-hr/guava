@@ -1,0 +1,5 @@
+{
+  ByteStreams.skipFully(in,n);
+  assertEquals(expect,in.read());
+  in.close();
+}

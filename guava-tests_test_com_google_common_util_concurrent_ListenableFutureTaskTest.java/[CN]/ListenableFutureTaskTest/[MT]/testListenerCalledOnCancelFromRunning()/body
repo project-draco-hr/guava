@@ -1,0 +1,12 @@
+{
+  exec.execute(task);
+  runLatch.await();
+  task.cancel(true);
+  assertTrue(task.isDone());
+  assertTrue(task.isCancelled());
+  assertEquals(1,taskLatch.getCount());
+  listenerLatch.await(5,TimeUnit.SECONDS);
+  assertTrue(task.isDone());
+  assertTrue(task.isCancelled());
+  assertEquals(1,taskLatch.getCount());
+}

@@ -1,0 +1,20 @@
+{
+  TreeMultimap<String,Integer> multimap=createPopulate();
+  SortedSet<String> keySet=multimap.keySet();
+  SortedSet<String> subSet=keySet.subSet("gap","hi");
+  assertEquals(1,subSet.size());
+  assertTrue(subSet.contains("google"));
+  assertFalse(subSet.contains("foo"));
+  assertTrue(subSet.containsAll(Collections.singleton("google")));
+  assertFalse(subSet.containsAll(Collections.singleton("foo")));
+  Iterator<String> iterator=subSet.iterator();
+  assertTrue(iterator.hasNext());
+  assertEquals("google",iterator.next());
+  assertFalse(iterator.hasNext());
+  assertFalse(subSet.remove("foo"));
+  assertTrue(multimap.containsKey("foo"));
+  assertEquals(7,multimap.size());
+  assertTrue(subSet.remove("google"));
+  assertFalse(multimap.containsKey("google"));
+  assertEquals(5,multimap.size());
+}

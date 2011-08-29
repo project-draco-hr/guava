@@ -1,0 +1,8 @@
+{
+  try {
+    Iterables.get(newArrayList("a","b","c"),-1,"d");
+    fail();
+  }
+ catch (  IndexOutOfBoundsException expected) {
+  }
+}

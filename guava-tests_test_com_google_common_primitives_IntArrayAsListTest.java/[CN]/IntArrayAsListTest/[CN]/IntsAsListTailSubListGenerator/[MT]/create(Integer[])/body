@@ -1,0 +1,5 @@
+{
+  Integer[] prefix={(int)86,(int)99};
+  Integer[] all=concat(prefix,elements);
+  return asList(all).subList(2,elements.length + 2);
+}

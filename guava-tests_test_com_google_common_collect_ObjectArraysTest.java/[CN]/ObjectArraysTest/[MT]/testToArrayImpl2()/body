@@ -1,0 +1,10 @@
+{
+  doTestToArrayImpl2(Lists.<Integer>newArrayList(),new Integer[0],false);
+  doTestToArrayImpl2(Lists.<Integer>newArrayList(),new Integer[1],true);
+  doTestToArrayImpl2(Lists.newArrayList(1),new Integer[0],false);
+  doTestToArrayImpl2(Lists.newArrayList(1),new Integer[1],true);
+  doTestToArrayImpl2(Lists.newArrayList(1),new Integer[]{2,3},true);
+  doTestToArrayImpl2(Lists.newArrayList(1,null,3),new Integer[0],false);
+  doTestToArrayImpl2(Lists.newArrayList(1,null,3),new Integer[2],false);
+  doTestToArrayImpl2(Lists.newArrayList(1,null,3),new Integer[3],true);
+}

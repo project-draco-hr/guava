@@ -1,0 +1,7 @@
+{
+  if (obj instanceof MethodSignature) {
+    MethodSignature other=(MethodSignature)obj;
+    return name.equals(other.name) && parameterTypes.equals(other.parameterTypes) && typeSignature.equals(other.typeSignature);
+  }
+  return false;
+}

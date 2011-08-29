@@ -1,0 +1,8 @@
+{
+  TreeMultimap<String,Integer> multimap=createMultimap();
+  multimap.put("f",1);
+  multimap.put("f",2);
+  multimap.put("g",3);
+  multimap.put("h",4);
+  return multimap.asMap().subMap("e","p");
+}

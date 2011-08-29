@@ -1,0 +1,8 @@
+{
+  reset(mockFlushable);
+  mockFlushable.flush();
+  if (shouldThrowOnFlush) {
+    expectThrown();
+  }
+  replay(mockFlushable);
+}

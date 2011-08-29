@@ -1,0 +1,18 @@
+{
+  Range<Integer> range=Ranges.open(3,4);
+  assertEquals(range,range.intersection(range));
+  assertEquals(Ranges.openClosed(3,3),range.intersection(Ranges.atMost(3)));
+  assertEquals(Ranges.closedOpen(4,4),range.intersection(Ranges.atLeast(4)));
+  try {
+    range.intersection(Ranges.lessThan(3));
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+  try {
+    range.intersection(Ranges.greaterThan(4));
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}

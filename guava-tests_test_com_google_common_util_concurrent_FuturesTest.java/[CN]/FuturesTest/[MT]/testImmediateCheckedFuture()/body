@@ -1,0 +1,5 @@
+{
+  CheckedFuture<String,MyException> future=Futures.immediateCheckedFuture(DATA1);
+  assertSame(DATA1,future.get(0L,TimeUnit.MILLISECONDS));
+  assertSame(DATA1,future.checkedGet(0L,TimeUnit.MILLISECONDS));
+}

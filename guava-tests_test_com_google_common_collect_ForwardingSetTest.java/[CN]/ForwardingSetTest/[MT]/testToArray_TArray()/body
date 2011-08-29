@@ -1,0 +1,4 @@
+{
+  forward().toArray(new String[0]);
+  assertEquals("[toArray(Object[])]",getCalls());
+}

@@ -1,0 +1,4 @@
+{
+  assertEquals(TEXT,CharStreams.toString(new StringReader(TEXT)));
+  assertEquals(TEXT,CharStreams.toString(CharStreams.newReaderSupplier(TEXT)));
+}

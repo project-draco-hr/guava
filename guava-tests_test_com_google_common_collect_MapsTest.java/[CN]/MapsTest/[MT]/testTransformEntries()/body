@@ -1,0 +1,11 @@
+{
+  Map<String,String> map=ImmutableMap.of("a","4","b","9");
+  EntryTransformer<String,String,String> concat=new EntryTransformer<String,String,String>(){
+    @Override public String transformEntry(    String key,    String value){
+      return key + value;
+    }
+  }
+;
+  Map<String,String> transformed=Maps.transformEntries(map,concat);
+  assertEquals(ImmutableMap.of("a","a4","b","b9"),transformed);
+}

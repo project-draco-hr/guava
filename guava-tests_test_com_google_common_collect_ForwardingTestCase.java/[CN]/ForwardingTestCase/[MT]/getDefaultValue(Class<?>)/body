@@ -1,0 +1,20 @@
+{
+  if (returnType == boolean.class || returnType == Boolean.class) {
+    return Boolean.FALSE;
+  }
+ else   if (returnType == int.class || returnType == Integer.class) {
+    return 0;
+  }
+ else   if ((returnType == Set.class) || (returnType == Collection.class)) {
+    return Collections.emptySet();
+  }
+ else   if (returnType == Iterator.class) {
+    return Iterators.emptyModifiableIterator();
+  }
+ else   if (returnType.isArray()) {
+    return Array.newInstance(returnType.getComponentType(),0);
+  }
+ else {
+    return null;
+  }
+}

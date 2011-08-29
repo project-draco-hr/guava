@@ -1,0 +1,10 @@
+{
+  Function<Object,Object> computingFunction=new Function<Object,Object>(){
+    @Override public Object apply(    Object from){
+      return from;
+    }
+  }
+;
+  ComputingConcurrentHashMap<Object,Object> map=makeComputingMap(createMapMaker(),computingFunction);
+  assertSame(computingFunction,map.computingFunction);
+}

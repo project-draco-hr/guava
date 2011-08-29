@@ -1,0 +1,4 @@
+{
+  Map<?,?> map=segmentTable(segment);
+  return map.size();
+}

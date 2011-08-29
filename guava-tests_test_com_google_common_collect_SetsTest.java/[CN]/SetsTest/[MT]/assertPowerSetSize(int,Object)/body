@@ -1,0 +1,3 @@
+{
+  assertEquals(i,powerSet(newHashSet(elements)).size());
+}

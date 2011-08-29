@@ -1,0 +1,35 @@
+{
+  InvocationHandler invocationHandler=new InvocationHandler(){
+    final CopyOnWriteArrayList<Integer> delegate=new CopyOnWriteArrayList<Integer>(initialContents);
+    final Method getAllStatesMethod=getOnlyElement(asList(ConcurrentlyMutatedList.class.getDeclaredMethods()));
+    final Iterator<ListFrobber> remainingActions=actionsToPerformConcurrently.iterator();
+    final Set<List<Integer>> allStates=newHashSet();
+    @Override public Object invoke(    Object proxy,    Method method,    Object[] args) throws Throwable {
+      return method.equals(getAllStatesMethod) ? getAllStates() : invokeListMethod(method,args);
+    }
+    private Set<List<Integer>> getAllStates(){
+      return allStates;
+    }
+    private Object invokeListMethod(    Method method,    Object[] args) throws Throwable {
+      try {
+        Object returnValue=method.invoke(delegate,args);
+        mutateDelegate();
+        return returnValue;
+      }
+ catch (      InvocationTargetException e) {
+        throw e.getCause();
+      }
+catch (      IllegalAccessException e) {
+        throw new AssertionError(e);
+      }
+    }
+    private void mutateDelegate(){
+      allStates.add(ImmutableList.copyOf(delegate));
+      remainingActions.next().perform(delegate);
+      allStates.add(ImmutableList.copyOf(delegate));
+    }
+  }
+;
+  @SuppressWarnings("unchecked") ConcurrentlyMutatedList<Integer> list=(ConcurrentlyMutatedList<Integer>)newProxyInstance(ImmutableListTest.CreationTests.class.getClassLoader(),new Class[]{ConcurrentlyMutatedList.class},invocationHandler);
+  return list;
+}

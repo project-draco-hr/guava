@@ -1,0 +1,4 @@
+QueuingRemovalListener<K,V> listener
+K key
+V value
+RemovalCause cause

@@ -1,0 +1,17 @@
+{
+  Set<Entry<String,Integer>> set=Sets.newLinkedHashSet(asList(Maps.immutableEntry("bar",4),Maps.immutableEntry("bar",5),Maps.immutableEntry("foo",2),Maps.immutableEntry("foo",3),Maps.immutableEntry("foo",6)));
+  new IteratorTester<Entry<String,Integer>>(6,MODIFIABLE,set,IteratorTester.KnownOrder.KNOWN_ORDER){
+    private Multimap<String,Integer> multimap;
+    @Override protected Iterator<Entry<String,Integer>> newTargetIterator(){
+      multimap=create();
+      multimap.putAll("foo",asList(6,3));
+      multimap.putAll("bar",asList(4,5));
+      multimap.putAll("foo",asList(2));
+      return multimap.entries().iterator();
+    }
+    @Override protected void verify(    List<Entry<String,Integer>> elements){
+      assertEquals(newHashSet(elements),multimap.entries());
+    }
+  }
+.test();
+}

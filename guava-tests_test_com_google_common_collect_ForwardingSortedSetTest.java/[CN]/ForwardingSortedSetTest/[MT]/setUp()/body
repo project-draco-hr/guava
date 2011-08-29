@@ -1,0 +1,10 @@
+{
+  super.setUp();
+  @SuppressWarnings("unchecked") final SortedSet<String> sortedSet=createProxyInstance(SortedSet.class);
+  forward=new ForwardingSortedSet<String>(){
+    @Override protected SortedSet<String> delegate(){
+      return sortedSet;
+    }
+  }
+;
+}

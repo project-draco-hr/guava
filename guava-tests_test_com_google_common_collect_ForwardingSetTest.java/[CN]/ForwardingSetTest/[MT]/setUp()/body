@@ -1,0 +1,10 @@
+{
+  super.setUp();
+  @SuppressWarnings("unchecked") final Set<String> set=createProxyInstance(Set.class);
+  forward=new ForwardingSet<String>(){
+    @Override protected Set<String> delegate(){
+      return set;
+    }
+  }
+;
+}

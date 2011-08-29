@@ -1,0 +1,5 @@
+{
+  Iterator<String> iterator=Iterators.emptyIterator();
+  List<String> list=ImmutableList.copyOf(iterator);
+  assertEquals(Collections.emptyList(),list);
+}

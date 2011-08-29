@@ -1,0 +1,7 @@
+{
+  SimpleNode left=new SimpleNode('a',null,null);
+  SimpleNode right=new SimpleNode('c',null,null);
+  SimpleNode node=new SimpleNode('b',left,right);
+  testChildIs(node,LEFT,left);
+  testChildIs(node,RIGHT,right);
+}

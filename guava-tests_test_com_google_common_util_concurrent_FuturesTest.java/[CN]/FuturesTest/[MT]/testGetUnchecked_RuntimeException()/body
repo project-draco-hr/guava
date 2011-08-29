@@ -1,0 +1,9 @@
+{
+  try {
+    getUnchecked(RUNTIME_EXCEPTION_FUTURE);
+    fail();
+  }
+ catch (  RuntimeException expected) {
+    assertEquals(RUNTIME_EXCEPTION,expected);
+  }
+}

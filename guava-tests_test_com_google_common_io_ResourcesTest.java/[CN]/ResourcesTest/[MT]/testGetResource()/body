@@ -1,0 +1,3 @@
+{
+  assertNotNull(Resources.getResource("com/google/common/io/testdata/i18n.txt"));
+}

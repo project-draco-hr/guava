@@ -1,0 +1,9 @@
+{
+  List<Byte> list=Arrays.asList((byte)0,(byte)1,null);
+  try {
+    Bytes.toArray(list);
+    fail();
+  }
+ catch (  NullPointerException expected) {
+  }
+}

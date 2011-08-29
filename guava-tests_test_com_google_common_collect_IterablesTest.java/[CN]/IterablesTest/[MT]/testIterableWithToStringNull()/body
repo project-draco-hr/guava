@@ -1,0 +1,5 @@
+{
+  assertEquals("[null]",create((String)null).toString());
+  assertEquals("[null, null]",create(null,null).toString());
+  assertEquals("[, null, a]",create("",null,"a").toString());
+}

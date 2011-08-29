@@ -1,0 +1,4 @@
+{
+  forward.rowMap();
+  assertEquals("[rowMap]",getCalls());
+}

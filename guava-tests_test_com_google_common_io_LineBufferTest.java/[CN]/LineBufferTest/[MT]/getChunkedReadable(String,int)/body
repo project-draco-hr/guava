@@ -1,0 +1,9 @@
+{
+  final Reader reader=getChunkedReader(input,chunk);
+  return new Readable(){
+    @Override public int read(    CharBuffer cbuf) throws IOException {
+      return reader.read(cbuf);
+    }
+  }
+;
+}

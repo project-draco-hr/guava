@@ -1,0 +1,10 @@
+{
+  ExecutorService e=new DirectExecutorService();
+  try {
+    List<Future<String>> r=e.invokeAll(new ArrayList<Callable<String>>());
+    assertTrue(r.isEmpty());
+  }
+  finally {
+    joinPool(e);
+  }
+}

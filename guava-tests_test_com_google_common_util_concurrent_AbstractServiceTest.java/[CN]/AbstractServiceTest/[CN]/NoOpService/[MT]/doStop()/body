@@ -1,0 +1,5 @@
+{
+  assertTrue(running);
+  running=false;
+  notifyStopped();
+}

@@ -1,0 +1,5 @@
+{
+  for (  CacheBuilder<Object,Object> builder : cacheFactory().buildAllPermutations()) {
+    new EqualsTester().addEqualityGroup(builder.build(identityLoader())).addEqualityGroup(builder.build(identityLoader())).addEqualityGroup(builder.build(identityLoader())).testEquals();
+  }
+}

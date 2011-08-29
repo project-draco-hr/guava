@@ -1,0 +1,71 @@
+{
+  Map<String,Integer> map=Maps.newHashMap();
+  map.put("foo",1);
+  map.put("bar",2);
+  Multimap<String,Integer> multimap=HashMultimap.create();
+  multimap.put("foo",1);
+  multimap.put("bar",2);
+  Multimap<String,Integer> multimapView=Multimaps.forMap(map);
+  assertTrue(multimap.equals(multimapView));
+  assertTrue(multimapView.equals(multimap));
+  assertTrue(multimapView.equals(multimapView));
+  assertFalse(multimapView.equals(map));
+  Multimap<String,Integer> multimap2=HashMultimap.create();
+  multimap2.put("foo",1);
+  assertFalse(multimapView.equals(multimap2));
+  multimap2.put("bar",1);
+  assertFalse(multimapView.equals(multimap2));
+  ListMultimap<String,Integer> listMultimap=new ImmutableListMultimap.Builder<String,Integer>().put("foo",1).put("bar",2).build();
+  assertFalse("SetMultimap equals ListMultimap",multimapView.equals(listMultimap));
+  assertEquals(multimap.toString(),multimapView.toString());
+  assertEquals(multimap.hashCode(),multimapView.hashCode());
+  assertEquals(multimap.size(),multimapView.size());
+  assertTrue(multimapView.containsKey("foo"));
+  assertTrue(multimapView.containsValue(1));
+  assertTrue(multimapView.containsEntry("bar",2));
+  assertEquals(Collections.singleton(1),multimapView.get("foo"));
+  assertEquals(Collections.singleton(2),multimapView.get("bar"));
+  try {
+    multimapView.put("baz",3);
+    fail("UnsupportedOperationException expected");
+  }
+ catch (  UnsupportedOperationException expected) {
+  }
+  try {
+    multimapView.putAll("baz",Collections.singleton(3));
+    fail("UnsupportedOperationException expected");
+  }
+ catch (  UnsupportedOperationException expected) {
+  }
+  try {
+    multimapView.putAll(multimap);
+    fail("UnsupportedOperationException expected");
+  }
+ catch (  UnsupportedOperationException expected) {
+  }
+  try {
+    multimapView.replaceValues("foo",Collections.<Integer>emptySet());
+    fail("UnsupportedOperationException expected");
+  }
+ catch (  UnsupportedOperationException expected) {
+  }
+  multimapView.remove("bar",2);
+  assertFalse(multimapView.containsKey("bar"));
+  assertFalse(map.containsKey("bar"));
+  assertEquals(map.keySet(),multimapView.keySet());
+  assertEquals(map.keySet(),multimapView.keys().elementSet());
+  ASSERT.that(multimapView.keys()).hasContentsAnyOrder("foo");
+  ASSERT.that(multimapView.values()).hasContentsAnyOrder(1);
+  ASSERT.that(multimapView.entries()).hasContentsAnyOrder(Maps.immutableEntry("foo",1));
+  ASSERT.that(multimapView.asMap().entrySet()).hasContentsAnyOrder(Maps.immutableEntry("foo",(Collection<Integer>)Collections.singleton(1)));
+  multimapView.clear();
+  assertFalse(multimapView.containsKey("foo"));
+  assertFalse(map.containsKey("foo"));
+  assertTrue(map.isEmpty());
+  assertTrue(multimapView.isEmpty());
+  multimap.clear();
+  assertEquals(multimap.toString(),multimapView.toString());
+  assertEquals(multimap.hashCode(),multimapView.hashCode());
+  assertEquals(multimap.size(),multimapView.size());
+  assertEquals(multimapView,ArrayListMultimap.create());
+}

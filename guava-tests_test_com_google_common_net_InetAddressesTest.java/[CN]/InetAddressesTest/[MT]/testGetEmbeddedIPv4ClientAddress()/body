@@ -1,0 +1,19 @@
+{
+  Inet6Address testIp;
+  testIp=(Inet6Address)InetAddresses.forString("2001:db8::1");
+  assertFalse(InetAddresses.hasEmbeddedIPv4ClientAddress(testIp));
+  testIp=(Inet6Address)InetAddresses.forString("2001:db8::5efe:102:304");
+  assertFalse(InetAddresses.hasEmbeddedIPv4ClientAddress(testIp));
+  testIp=(Inet6Address)InetAddresses.forString("::1.2.3.4");
+  assertTrue(InetAddresses.hasEmbeddedIPv4ClientAddress(testIp));
+  InetAddress ipv4=InetAddresses.forString("1.2.3.4");
+  assertEquals(ipv4,InetAddresses.getEmbeddedIPv4ClientAddress(testIp));
+  testIp=(Inet6Address)InetAddresses.forString("2002:0102:0304::1");
+  assertTrue(InetAddresses.hasEmbeddedIPv4ClientAddress(testIp));
+  ipv4=InetAddresses.forString("1.2.3.4");
+  assertEquals(ipv4,InetAddresses.getEmbeddedIPv4ClientAddress(testIp));
+  testIp=(Inet6Address)InetAddresses.forString("2001:0000:4136:e378:8000:63bf:3fff:fdd2");
+  assertTrue(InetAddresses.hasEmbeddedIPv4ClientAddress(testIp));
+  ipv4=InetAddresses.forString("192.0.2.45");
+  assertEquals(ipv4,InetAddresses.getEmbeddedIPv4ClientAddress(testIp));
+}

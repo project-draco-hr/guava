@@ -1,0 +1,5 @@
+{
+  Callback callback=new Callback();
+  open.add(callback);
+  return callback;
+}

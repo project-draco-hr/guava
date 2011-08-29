@@ -1,0 +1,4 @@
+{
+  List<String> names=transform(types,SIMPLE_NAME_GETTER);
+  return Joiner.on(", ").join(names);
+}

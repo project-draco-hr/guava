@@ -1,0 +1,4 @@
+{
+  Iterator<Integer> iterator=Collections.singleton(0).iterator();
+  assertEquals(1,Iterators.size(iterator));
+}

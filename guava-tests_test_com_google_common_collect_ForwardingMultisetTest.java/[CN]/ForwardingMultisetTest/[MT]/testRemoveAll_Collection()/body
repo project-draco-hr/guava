@@ -1,0 +1,4 @@
+{
+  forward().removeAll(EMPTY_COLLECTION);
+  assertEquals("[removeAll(Collection)]",getCalls());
+}

@@ -1,0 +1,13 @@
+{
+  SimpleNode c=new SimpleNode('c',null,null);
+  SimpleNode b=new SimpleNode('b',null,c);
+  SimpleNode g=new SimpleNode('g',null,null);
+  SimpleNode f=new SimpleNode('f',null,g);
+  SimpleNode d=new SimpleNode('d',b,f);
+  BstMutationResult<Character,SimpleNode> extractMin=BstOperations.extractMin(d,nodeFactory,balancePolicy);
+  assertEquals('b',extractMin.getTargetKey().charValue());
+  assertEquals(d,extractMin.getOriginalRoot());
+  assertEquals(b,extractMin.getOriginalTarget());
+  assertNull(extractMin.getChangedTarget());
+  assertInOrderTraversalIs(extractMin.getChangedRoot(),"cdfg");
+}

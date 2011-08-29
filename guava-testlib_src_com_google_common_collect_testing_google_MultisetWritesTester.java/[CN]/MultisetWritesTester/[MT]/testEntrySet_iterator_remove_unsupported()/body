@@ -1,0 +1,10 @@
+{
+  Iterator<Multiset.Entry<E>> iterator=getMultiset().entrySet().iterator();
+  assertTrue("non-empty multiset.entrySet() iterator.hasNext() returned false",iterator.hasNext());
+  try {
+    iterator.remove();
+    fail("multiset.entrySet() iterator.remove() didn't throw an exception");
+  }
+ catch (  UnsupportedOperationException expected) {
+  }
+}

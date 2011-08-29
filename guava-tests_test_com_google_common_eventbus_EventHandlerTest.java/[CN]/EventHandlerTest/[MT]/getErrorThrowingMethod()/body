@@ -1,0 +1,13 @@
+{
+  Method method;
+  try {
+    method=getClass().getMethod("errorThrowingMethod",Object.class);
+  }
+ catch (  SecurityException e) {
+    throw new IllegalStateException("This test needs access to reflection.");
+  }
+catch (  NoSuchMethodException e) {
+    throw new AssertionError("Someone changed EventHandlerTest#errorThrowingMethod's " + "visibility, signature, or removed it entirely.  (Must be public.)");
+  }
+  return method;
+}

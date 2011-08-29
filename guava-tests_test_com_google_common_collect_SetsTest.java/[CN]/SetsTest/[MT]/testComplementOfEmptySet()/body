@@ -1,0 +1,5 @@
+{
+  Set<SomeEnum> noUnits=Collections.emptySet();
+  EnumSet<SomeEnum> allUnits=Sets.complementOf(noUnits,SomeEnum.class);
+  verifySetContents(EnumSet.allOf(SomeEnum.class),allUnits);
+}

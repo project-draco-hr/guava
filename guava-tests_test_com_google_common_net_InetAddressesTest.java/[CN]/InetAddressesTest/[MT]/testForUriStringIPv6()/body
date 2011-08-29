@@ -1,0 +1,4 @@
+{
+  Inet6Address expected=(Inet6Address)InetAddresses.forString("3ffe:0:0:0:0:0:0:1");
+  assertEquals(expected,InetAddresses.forUriString("[3ffe:0:0:0:0:0:0:1]"));
+}

@@ -1,0 +1,12 @@
+{
+  final Multimap<String,Object> stringToObject=new ImmutableMultimap.Builder<String,Object>().put("1",1).put("1",1L).put("1","1").put("2",2).put("2",2L).build();
+  IterableIterator<Object> iterIter=new IterableIterator<Object>(){
+    private final Iterator<Object> iterator=stringToObject.values().iterator();
+    public Iterator<Object> delegate(){
+      return iterator;
+    }
+  }
+;
+  ImmutableMultimap<String,Object> outputMap=Multimaps.index(iterIter,Functions.toStringFunction());
+  assertEquals(stringToObject,outputMap);
+}

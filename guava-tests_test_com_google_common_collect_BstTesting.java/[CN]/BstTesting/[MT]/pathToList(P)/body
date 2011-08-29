@@ -1,0 +1,7 @@
+{
+  List<SimpleNode> list=Lists.newArrayList();
+  for (; path != null; path=path.prefixOrNull()) {
+    list.add(path.getTip());
+  }
+  return list;
+}

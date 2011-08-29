@@ -1,0 +1,11 @@
+{
+  ByteArrayDataInput in=ByteStreams.newDataInput(BYTES);
+  assertEquals(0x12345678,in.readInt());
+  assertEquals(0x76543210,in.readInt());
+  try {
+    in.readInt();
+    fail();
+  }
+ catch (  IllegalStateException expected) {
+  }
+}

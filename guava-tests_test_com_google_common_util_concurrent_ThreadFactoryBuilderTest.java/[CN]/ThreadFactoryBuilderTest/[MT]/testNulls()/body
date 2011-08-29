@@ -1,0 +1,6 @@
+{
+  NullPointerTester npTester=new NullPointerTester();
+  npTester.testAllPublicConstructors(ThreadFactoryBuilder.class);
+  npTester.testAllPublicStaticMethods(ThreadFactoryBuilder.class);
+  npTester.testAllPublicInstanceMethods(builder);
+}

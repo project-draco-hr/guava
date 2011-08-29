@@ -1,0 +1,5 @@
+{
+  for (  byte value : VALUES) {
+    assertEquals(((Byte)value).hashCode(),Bytes.hashCode(value));
+  }
+}

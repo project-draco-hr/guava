@@ -1,0 +1,7 @@
+{
+  InterruptibleFuture future=new InterruptibleFuture();
+  assertTrue(future.cancel(true));
+  assertTrue(future.isCancelled());
+  assertTrue(future.isDone());
+  assertTrue(future.wasInterrupted);
+}

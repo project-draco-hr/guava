@@ -1,0 +1,19 @@
+{
+  Service service=new NullService(){
+    @Override protected Executor executor(    Service.State state){
+      return new Executor(){
+        @Override public void execute(        Runnable command){
+        }
+      }
+;
+    }
+  }
+;
+  try {
+    service.start().get(1,TimeUnit.MILLISECONDS);
+    fail("Expected timeout");
+  }
+ catch (  TimeoutException e) {
+    assertTrue(e.getMessage().contains(State.STARTING.toString()));
+  }
+}

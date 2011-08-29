@@ -1,0 +1,10 @@
+{
+  List<Integer> randomAccessList=Lists.newArrayList(SOME_SEQUENTIAL_LIST);
+  ListIterator<Integer> sampleListIterator=SOME_SEQUENTIAL_LIST.listIterator();
+  List<Integer> listMock=EasyMock.createMock(IntegerList.class);
+  EasyMock.expect(listMock.listIterator(0)).andReturn(sampleListIterator);
+  EasyMock.replay(listMock);
+  List<String> transform=Lists.transform(listMock,SOME_FUNCTION);
+  assertTrue(Iterables.elementsEqual(transform,Lists.transform(randomAccessList,SOME_FUNCTION)));
+  EasyMock.verify(listMock);
+}

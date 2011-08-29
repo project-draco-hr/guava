@@ -1,0 +1,3 @@
+{
+  assertEquals(InetAddresses.fromInteger(0x7f000001),InetAddresses.forString("127.0.0.1"));
+}

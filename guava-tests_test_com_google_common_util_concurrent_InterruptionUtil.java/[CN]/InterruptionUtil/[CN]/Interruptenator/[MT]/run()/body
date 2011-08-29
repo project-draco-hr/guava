@@ -1,0 +1,13 @@
+{
+  while (true) {
+    try {
+      Thread.sleep(everyMillis);
+    }
+ catch (    InterruptedException e) {
+    }
+    if (shouldStop) {
+      break;
+    }
+    interruptee.interrupt();
+  }
+}

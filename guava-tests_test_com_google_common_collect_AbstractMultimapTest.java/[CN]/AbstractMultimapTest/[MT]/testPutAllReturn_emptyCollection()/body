@@ -1,0 +1,4 @@
+{
+  assertFalse(multimap.putAll("foo",new ArrayList<Integer>()));
+  assertFalse(multimap.putAll(create()));
+}

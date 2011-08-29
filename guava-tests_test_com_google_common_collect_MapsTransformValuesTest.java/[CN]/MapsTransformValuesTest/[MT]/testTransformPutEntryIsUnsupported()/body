@@ -1,0 +1,21 @@
+{
+  Map<String,String> map=Maps.transformValues(ImmutableMap.of("a",1),Functions.toStringFunction());
+  try {
+    map.put("b","2");
+    fail();
+  }
+ catch (  UnsupportedOperationException expected) {
+  }
+  try {
+    map.putAll(ImmutableMap.of("b","2"));
+    fail();
+  }
+ catch (  UnsupportedOperationException expected) {
+  }
+  try {
+    map.entrySet().iterator().next().setValue("one");
+    fail();
+  }
+ catch (  UnsupportedOperationException expected) {
+  }
+}

@@ -1,0 +1,5 @@
+{
+  SortedSet<String> set=of("in","the","a");
+  assertFalse(set.equals(Sets.newTreeSet(asList(4,5,6))));
+  assertNotEqualLenient(Sets.newTreeSet(asList(4,5,6)),set);
+}

@@ -1,0 +1,18 @@
+{
+  MultiInputStream multi=new MultiInputStream(Collections.singleton(new InputSupplier<InputStream>(){
+    @Override public InputStream getInput(){
+      return new ByteArrayInputStream(newPreFilledByteArray(0,50)){
+        @Override public long skip(        long n){
+          return 0;
+        }
+      }
+;
+    }
+  }
+).iterator());
+  multi.skip(-1);
+  multi.skip(-1);
+  multi.skip(0);
+  ByteStreams.skipFully(multi,20);
+  assertEquals(20,multi.read());
+}

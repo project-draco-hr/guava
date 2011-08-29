@@ -1,0 +1,6 @@
+{
+  Field tableField=HashMap.class.getDeclaredField("table");
+  tableField.setAccessible(true);
+  Object[] table=(Object[])tableField.get(hashMap);
+  return table.length;
+}

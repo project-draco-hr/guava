@@ -3,11 +3,11 @@
     return count(element);
   }
   checkArgument(occurrences > 0,"occurrences cannot be negative: %s",occurrences);
-  AtomicInteger frequency=backingMap.get(element);
+  Count frequency=backingMap.get(element);
   int oldCount;
   if (frequency == null) {
     oldCount=0;
-    backingMap.put(element,new AtomicInteger(occurrences));
+    backingMap.put(element,new Count(occurrences));
   }
  else {
     oldCount=frequency.get();

@@ -1,0 +1,7 @@
+{
+  try {
+    super.testEntrySetRemoveAllNullFromEmpty();
+  }
+ catch (  RuntimeException tolerated) {
+  }
+}

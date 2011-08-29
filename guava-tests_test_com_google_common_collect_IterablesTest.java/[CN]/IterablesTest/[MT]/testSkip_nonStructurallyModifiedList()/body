@@ -1,0 +1,9 @@
+{
+  List<String> list=newArrayList("a","b","c");
+  Iterable<String> tail=skip(list,1);
+  Iterator<String> tailIterator=tail.iterator();
+  list.set(2,"C");
+  assertEquals("b",tailIterator.next());
+  assertEquals("C",tailIterator.next());
+  assertFalse(tailIterator.hasNext());
+}

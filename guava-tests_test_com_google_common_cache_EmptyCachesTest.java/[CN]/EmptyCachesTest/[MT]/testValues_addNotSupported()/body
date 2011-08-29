@@ -1,0 +1,16 @@
+{
+  for (  Cache<Object,Object> cache : caches()) {
+    try {
+      cache.asMap().values().add(1);
+      fail();
+    }
+ catch (    UnsupportedOperationException e) {
+    }
+    try {
+      cache.asMap().values().addAll(asList(1,2));
+      fail();
+    }
+ catch (    UnsupportedOperationException e) {
+    }
+  }
+}

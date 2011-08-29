@@ -1,0 +1,14 @@
+{
+  return new CheckCloseSupplier.Output<Writer>(delegate){
+    @Override protected Writer wrap(    Writer object,    final Callback callback){
+      return new FilterWriter(object){
+        @Override public void close() throws IOException {
+          callback.delegateClosed();
+          super.close();
+        }
+      }
+;
+    }
+  }
+;
+}

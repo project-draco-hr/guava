@@ -1,0 +1,4 @@
+{
+  BiMap<String,Integer> inverse=HashBiMap.create();
+  return inverse.inverse();
+}

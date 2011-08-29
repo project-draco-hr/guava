@@ -1,0 +1,20 @@
+{
+  ConcurrentHashMultiset<String> cms=ConcurrentHashMultiset.create();
+  cms.add("a",2);
+  cms.add("b",3);
+  try {
+    cms.removeExactly("a",-2);
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+  assertTrue(cms.removeExactly("a",0));
+  assertEquals(2,cms.count("a"));
+  assertTrue(cms.removeExactly("c",0));
+  assertEquals(0,cms.count("c"));
+  assertFalse(cms.removeExactly("a",4));
+  assertEquals(2,cms.count("a"));
+  assertTrue(cms.removeExactly("a",2));
+  assertEquals(0,cms.count("a"));
+  assertTrue(cms.removeExactly("b",2));
+  assertEquals(1,cms.count("b"));
+}

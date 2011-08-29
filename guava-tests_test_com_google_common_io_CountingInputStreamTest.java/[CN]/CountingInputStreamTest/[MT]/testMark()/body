@@ -1,0 +1,12 @@
+{
+  assertTrue(counter.markSupported());
+  assertEquals(10,counter.read(new byte[10]));
+  assertEquals(10,counter.getCount());
+  counter.mark(5);
+  counter.read();
+  assertEquals(11,counter.getCount());
+  counter.reset();
+  assertEquals(10,counter.getCount());
+  assertEquals(10,counter.skip(100));
+  assertEquals(20,counter.getCount());
+}

@@ -1,0 +1,3 @@
+{
+  checkUnmodifiableMultimap(Multimaps.synchronizedListMultimap(ArrayListMultimap.<String,Integer>create()),true);
+}

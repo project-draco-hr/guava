@@ -1,0 +1,17 @@
+{
+  assertEquals(0xffffffffffffffffL,UnsignedLongs.parseUnsignedLong("ffffffffffffffff",16));
+  assertEquals(0x1234567890abcdefL,UnsignedLongs.parseUnsignedLong("1234567890abcdef",16));
+  BigInteger max=BigInteger.ZERO.setBit(64).subtract(ONE);
+  for (int radix=Character.MIN_RADIX; radix <= Character.MAX_RADIX; radix++) {
+    String maxAsString=max.toString(radix);
+    assertEquals(max.longValue(),UnsignedLongs.parseUnsignedLong(maxAsString,radix));
+    try {
+      BigInteger overflow=max.add(ONE);
+      String overflowAsString=overflow.toString(radix);
+      UnsignedLongs.parseUnsignedLong(overflowAsString,radix);
+      fail();
+    }
+ catch (    NumberFormatException nfe) {
+    }
+  }
+}

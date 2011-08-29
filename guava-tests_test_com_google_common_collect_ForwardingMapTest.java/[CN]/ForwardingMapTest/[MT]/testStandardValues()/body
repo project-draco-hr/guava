@@ -1,0 +1,23 @@
+{
+  @SuppressWarnings("unchecked") Set<Entry<String,Boolean>> entrySet=createMock(Set.class);
+  expect(entrySet.iterator()).andReturn(Iterators.<Entry<String,Boolean>>emptyIterator()).anyTimes();
+  @SuppressWarnings("unchecked") final Map<String,Boolean> map=createMock(Map.class);
+  expect(map.containsValue(anyObject())).andReturn(false).anyTimes();
+  expect(map.isEmpty()).andReturn(true).anyTimes();
+  expect(map.size()).andReturn(0).anyTimes();
+  expect(map.entrySet()).andReturn(entrySet).anyTimes();
+  map.clear();
+  expectLastCall().anyTimes();
+  replay(entrySet,map);
+  Map<String,Boolean> forward=new ForwardingMap<String,Boolean>(){
+    @Override protected Map<String,Boolean> delegate(){
+      return map;
+    }
+    @Override public Collection<Boolean> values(){
+      return new StandardValues();
+    }
+  }
+;
+  callAllPublicMethods(Collection.class,forward.values());
+  verify(entrySet,map);
+}

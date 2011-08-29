@@ -1,0 +1,12 @@
+{
+  assertEquals(State.STARTING,state());
+  invokeOnExecutionThreadForTest(new Runnable(){
+    @Override public void run(){
+      assertEquals(State.STARTING,state());
+      notifyStarted();
+      assertEquals(State.RUNNING,state());
+      hasConfirmedIsRunning.countDown();
+    }
+  }
+);
+}

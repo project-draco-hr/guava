@@ -1,0 +1,5 @@
+{
+  this.exec=Executors.newCachedThreadPool();
+  this.future=future;
+  this.latch=new CountDownLatch(1);
+}

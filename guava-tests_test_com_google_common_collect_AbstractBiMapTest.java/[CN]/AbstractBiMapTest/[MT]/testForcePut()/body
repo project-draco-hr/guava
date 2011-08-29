@@ -1,0 +1,14 @@
+{
+  assertNull(bimap.forcePut(1,"one"));
+  assertEquals(ImmutableMap.of(1,"one"),bimap);
+  assertEquals("one",bimap.forcePut(1,"one"));
+  assertEquals(ImmutableMap.of(1,"one"),bimap);
+  assertEquals("one",bimap.forcePut(1,"ONE"));
+  assertEquals(ImmutableMap.of(1,"ONE"),bimap);
+  assertNull(bimap.forcePut(-1,"ONE"));
+  assertEquals(ImmutableMap.of(-1,"ONE"),bimap);
+  assertNull(bimap.forcePut(2,"two"));
+  assertEquals(ImmutableMap.of(-1,"ONE",2,"two"),bimap);
+  assertEquals("two",bimap.forcePut(2,"ONE"));
+  assertEquals(ImmutableMap.of(2,"ONE"),bimap);
+}

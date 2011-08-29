@@ -1,0 +1,6 @@
+{
+  Iterator<String> iterator=Iterators.emptyIterator();
+  Set<String> set=copyOf(iterator);
+  assertEquals(Collections.<String>emptySet(),set);
+  assertSame(of(),set);
+}

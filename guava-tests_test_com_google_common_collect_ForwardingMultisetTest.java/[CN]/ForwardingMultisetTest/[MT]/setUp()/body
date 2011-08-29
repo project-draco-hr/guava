@@ -1,0 +1,10 @@
+{
+  super.setUp();
+  @SuppressWarnings("unchecked") final Multiset<String> multiset=createProxyInstance(Multiset.class);
+  forward=new ForwardingMultiset<String>(){
+    @Override protected Multiset<String> delegate(){
+      return multiset;
+    }
+  }
+;
+}

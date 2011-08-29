@@ -1,0 +1,8 @@
+{
+  WellBehavedMap<Foo,Integer> map=WellBehavedMap.wrap(new EnumMap<Foo,Integer>(Foo.class));
+  map.putAll(ImmutableMap.of(Foo.X,1,Foo.Y,2,Foo.Z,3));
+  for (  Map.Entry<Foo,Integer> entry : map.entrySet()) {
+    entry.setValue(entry.getValue() + 5);
+  }
+  assertEquals(ImmutableMap.of(Foo.X,6,Foo.Y,7,Foo.Z,8),map);
+}

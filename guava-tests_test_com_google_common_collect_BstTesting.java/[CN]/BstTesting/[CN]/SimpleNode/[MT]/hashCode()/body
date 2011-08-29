@@ -1,0 +1,3 @@
+{
+  return Objects.hashCode(getKey(),childOrNull(LEFT),childOrNull(RIGHT));
+}

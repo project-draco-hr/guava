@@ -1,0 +1,6 @@
+{
+  assertSame(EMPTY,Shorts.ensureCapacity(EMPTY,0,1));
+  assertSame(ARRAY1,Shorts.ensureCapacity(ARRAY1,0,1));
+  assertSame(ARRAY1,Shorts.ensureCapacity(ARRAY1,1,1));
+  assertTrue(Arrays.equals(new short[]{(short)1,(short)0,(short)0},Shorts.ensureCapacity(ARRAY1,2,1)));
+}

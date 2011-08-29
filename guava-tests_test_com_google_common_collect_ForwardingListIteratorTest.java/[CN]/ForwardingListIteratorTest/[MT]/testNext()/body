@@ -1,0 +1,4 @@
+{
+  forward.next();
+  assertEquals("[next]",getCalls());
+}

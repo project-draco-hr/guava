@@ -1,0 +1,3 @@
+{
+  checkUnmodifiableMultimap(Multimaps.synchronizedSetMultimap(HashMultimap.<String,Integer>create()),false);
+}

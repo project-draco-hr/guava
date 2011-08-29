@@ -1,0 +1,14 @@
+{
+  bimap=new AbstractBiMap<Integer,String>(new IdentityHashMap<Integer,String>(),new IdentityHashMap<String,Integer>()){
+  }
+;
+  putOneTwoThree();
+  Iterator<Integer> iterator=bimap.keySet().iterator();
+  iterator.next();
+  iterator.next();
+  iterator.remove();
+  iterator.next();
+  iterator.remove();
+  assertEquals(1,bimap.size());
+  assertEquals(1,bimap.inverse().size());
+}

@@ -1,0 +1,4 @@
+{
+  Collection<String> c=ImmutableList.of();
+  assertSame(c,SerializableTester.reserialize(c));
+}

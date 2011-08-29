@@ -1,0 +1,7 @@
+{
+  Table<String,Integer,String> table=HashBasedTable.create();
+  table.put("foo",1,"apple");
+  table.put("bar",1,"banana");
+  table.put("foo",3,"cat");
+  return Tables.transformValues(table,FIRST_CHARACTER).rowMap();
+}

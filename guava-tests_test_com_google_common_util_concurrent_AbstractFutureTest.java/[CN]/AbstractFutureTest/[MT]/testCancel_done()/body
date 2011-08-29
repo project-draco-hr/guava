@@ -1,0 +1,11 @@
+{
+  AbstractFuture<String> future=new AbstractFuture<String>(){
+{
+      set("foo");
+    }
+  }
+;
+  assertFalse(future.cancel(true));
+  assertFalse(future.isCancelled());
+  assertTrue(future.isDone());
+}

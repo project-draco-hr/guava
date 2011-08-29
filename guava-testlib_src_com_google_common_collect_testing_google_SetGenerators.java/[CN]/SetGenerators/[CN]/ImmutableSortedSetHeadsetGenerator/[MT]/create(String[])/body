@@ -1,0 +1,5 @@
+{
+  List<String> list=Lists.newArrayList(elements);
+  list.add("zzz");
+  return ImmutableSortedSet.copyOf(list).headSet("zzy");
+}

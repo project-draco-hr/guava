@@ -1,0 +1,6 @@
+{
+  runtimeMock.exit(1);
+  replay(runtimeMock);
+  new Exiter(runtimeMock).uncaughtException(new Thread(),new Exception());
+  verify(runtimeMock);
+}

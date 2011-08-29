@@ -1,0 +1,3 @@
+{
+  return new SampleElements<Entry<String,Integer>>(Maps.immutableEntry("bar",1),Maps.immutableEntry("bar",2),Maps.immutableEntry("foo",3),Maps.immutableEntry("bar",3),Maps.immutableEntry("cat",2));
+}

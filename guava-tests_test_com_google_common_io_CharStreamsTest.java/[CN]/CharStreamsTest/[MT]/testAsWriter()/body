@@ -1,0 +1,9 @@
+{
+  Appendable plainAppendable=new StringBuilder();
+  Writer result=CharStreams.asWriter(plainAppendable);
+  assertNotSame(plainAppendable,result);
+  assertNotNull(result);
+  Appendable secretlyAWriter=new StringWriter();
+  result=CharStreams.asWriter(secretlyAWriter);
+  assertSame(secretlyAWriter,result);
+}

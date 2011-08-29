@@ -1,0 +1,5 @@
+{
+  TreeMultimap<String,Integer> multimap=TreeMultimap.create();
+  assertEquals(Ordering.natural(),multimap.keyComparator());
+  assertEquals(Ordering.natural(),multimap.valueComparator());
+}

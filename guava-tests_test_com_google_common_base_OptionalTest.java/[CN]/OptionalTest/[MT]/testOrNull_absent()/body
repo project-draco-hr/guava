@@ -1,0 +1,3 @@
+{
+  assertNull(Optional.absent().orNull());
+}

@@ -1,0 +1,19 @@
+{
+  StringBuilder builder=new StringBuilder();
+  Writer writer=new AppendableWriter(builder);
+  writer.write("Hi");
+  writer.close();
+  try {
+    writer.write(" Greg");
+    fail("Should have thrown IOException due to writer already closed");
+  }
+ catch (  IOException es) {
+  }
+  try {
+    writer.flush();
+    fail("Should have thrown IOException due to writer already closed");
+  }
+ catch (  IOException es) {
+  }
+  writer.close();
+}

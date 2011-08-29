@@ -1,0 +1,4 @@
+{
+  Iterable<String> inputNames=Iterables.transform(inputs,nameGetter);
+  return Joiner.on(", ").join(inputNames);
+}

@@ -1,0 +1,8 @@
+{
+  EventProcessor processor=new EventProcessor();
+  bus.register(processor);
+  EventRecorder recorder=new EventRecorder();
+  bus.register(recorder);
+  bus.post(FIRST);
+  assertEquals("EventRecorder expected events in order",Lists.<Object>newArrayList(FIRST,SECOND),recorder.eventsReceived);
+}

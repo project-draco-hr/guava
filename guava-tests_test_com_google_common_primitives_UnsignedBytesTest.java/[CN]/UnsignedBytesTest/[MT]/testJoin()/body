@@ -1,0 +1,7 @@
+{
+  assertEquals("",UnsignedBytes.join(",",new byte[]{}));
+  assertEquals("1",UnsignedBytes.join(",",new byte[]{(byte)1}));
+  assertEquals("1,2",UnsignedBytes.join(",",(byte)1,(byte)2));
+  assertEquals("123",UnsignedBytes.join("",(byte)1,(byte)2,(byte)3));
+  assertEquals("128,255",UnsignedBytes.join(",",(byte)128,(byte)-1));
+}

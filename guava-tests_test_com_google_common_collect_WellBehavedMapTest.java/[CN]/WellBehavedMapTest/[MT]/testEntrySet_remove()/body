@@ -1,0 +1,12 @@
+{
+  WellBehavedMap<Foo,Integer> map=WellBehavedMap.wrap(new EnumMap<Foo,Integer>(Foo.class));
+  map.putAll(ImmutableMap.of(Foo.X,1,Foo.Y,2,Foo.Z,3));
+  Set<Map.Entry<Foo,Integer>> entrySet=map.entrySet();
+  Map.Entry<Foo,Integer> entry=Maps.immutableEntry(Foo.Y,2);
+  assertTrue(entrySet.remove(entry));
+  assertFalse(map.containsKey(Foo.Y));
+  assertNull(map.get(Foo.Y));
+  assertFalse(entrySet.contains(entry));
+  assertFalse(entrySet.remove(Maps.immutableEntry(Foo.T,4)));
+  assertFalse(entrySet.remove(Maps.immutableEntry(Foo.Z,5)));
+}

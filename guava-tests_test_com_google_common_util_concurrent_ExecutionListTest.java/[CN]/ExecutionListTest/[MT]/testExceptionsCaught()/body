@@ -1,0 +1,6 @@
+{
+  ExecutionList list=new ExecutionList();
+  list.add(THROWING_RUNNABLE,sameThreadExecutor());
+  list.execute();
+  list.add(THROWING_RUNNABLE,sameThreadExecutor());
+}

@@ -1,0 +1,4 @@
+{
+  forward().count(null);
+  assertEquals("[count(Object)]",getCalls());
+}

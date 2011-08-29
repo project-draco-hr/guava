@@ -1,0 +1,6 @@
+{
+  assertEquals(20,counter.read(new byte[30]));
+  assertEquals(20,counter.getCount());
+  assertEquals(-1,counter.read(new byte[30]));
+  assertEquals(20,counter.getCount());
+}

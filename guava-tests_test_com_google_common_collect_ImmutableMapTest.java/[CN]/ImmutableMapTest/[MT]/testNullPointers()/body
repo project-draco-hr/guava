@@ -1,0 +1,8 @@
+{
+  NullPointerTester tester=new NullPointerTester();
+  tester.testAllPublicStaticMethods(ImmutableMap.class);
+  tester.testAllPublicInstanceMethods(new ImmutableMap.Builder<Object,Object>());
+  tester.testAllPublicInstanceMethods(ImmutableMap.of());
+  tester.testAllPublicInstanceMethods(ImmutableMap.of("one",1));
+  tester.testAllPublicInstanceMethods(ImmutableMap.of("one",1,"two",2,"three",3));
+}

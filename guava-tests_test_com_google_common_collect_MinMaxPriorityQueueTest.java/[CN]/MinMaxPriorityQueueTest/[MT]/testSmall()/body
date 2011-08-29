@@ -1,0 +1,19 @@
+{
+  MinMaxPriorityQueue<Integer> mmHeap=MinMaxPriorityQueue.create();
+  mmHeap.add(1);
+  mmHeap.add(4);
+  mmHeap.add(2);
+  mmHeap.add(3);
+  assertEquals(4,(int)mmHeap.pollLast());
+  assertEquals(3,(int)mmHeap.peekLast());
+  assertEquals(3,(int)mmHeap.pollLast());
+  assertEquals(1,(int)mmHeap.peek());
+  assertEquals(2,(int)mmHeap.peekLast());
+  assertEquals(2,(int)mmHeap.pollLast());
+  assertEquals(1,(int)mmHeap.peek());
+  assertEquals(1,(int)mmHeap.peekLast());
+  assertEquals(1,(int)mmHeap.pollLast());
+  assertNull(mmHeap.peek());
+  assertNull(mmHeap.peekLast());
+  assertNull(mmHeap.pollLast());
+}

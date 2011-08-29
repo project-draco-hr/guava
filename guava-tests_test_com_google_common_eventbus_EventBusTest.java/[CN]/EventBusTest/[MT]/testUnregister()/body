@@ -1,0 +1,33 @@
+{
+  StringCatcher catcher1=new StringCatcher();
+  StringCatcher catcher2=new StringCatcher();
+  try {
+    bus.unregister(catcher1);
+    fail("Attempting to unregister an unregistered object succeeded");
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+  bus.register(catcher1);
+  bus.post(EVENT);
+  bus.register(catcher2);
+  bus.post(EVENT);
+  List<String> expectedEvents=Lists.newArrayList();
+  expectedEvents.add(EVENT);
+  expectedEvents.add(EVENT);
+  assertEquals("Two correct events should be delivered.",expectedEvents,catcher1.getEvents());
+  assertEquals("One correct event should be delivered.",Lists.newArrayList(EVENT),catcher2.getEvents());
+  bus.unregister(catcher1);
+  bus.post(EVENT);
+  assertEquals("Shouldn't catch any more events when unregistered.",expectedEvents,catcher1.getEvents());
+  assertEquals("Two correct events should be delivered.",expectedEvents,catcher2.getEvents());
+  try {
+    bus.unregister(catcher1);
+    fail("Attempting to unregister an unregistered object succeeded");
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+  bus.unregister(catcher2);
+  bus.post(EVENT);
+  assertEquals("Shouldn't catch any more events when unregistered.",expectedEvents,catcher1.getEvents());
+  assertEquals("Shouldn't catch any more events when unregistered.",expectedEvents,catcher2.getEvents());
+}

@@ -1,0 +1,22 @@
+{
+  ListMultimap<String,Integer> multimap=create();
+  multimap.put("foo",1);
+  multimap.put("foo",3);
+  multimap.put("foo",5);
+  List<Integer> list=multimap.get("foo");
+  list.add(1,2);
+  assertEquals(4,multimap.size());
+  ASSERT.that(multimap.get("foo")).hasContentsInOrder(1,2,3,5);
+  list.addAll(3,asList(4,8));
+  assertEquals(6,multimap.size());
+  ASSERT.that(multimap.get("foo")).hasContentsInOrder(1,2,3,4,8,5);
+  assertEquals(8,list.get(4).intValue());
+  assertEquals(4,list.indexOf(8));
+  assertEquals(4,list.lastIndexOf(8));
+  list.remove(4);
+  assertEquals(5,multimap.size());
+  ASSERT.that(multimap.get("foo")).hasContentsInOrder(1,2,3,4,5);
+  list.set(4,10);
+  assertEquals(5,multimap.size());
+  ASSERT.that(multimap.get("foo")).hasContentsInOrder(1,2,3,4,10);
+}

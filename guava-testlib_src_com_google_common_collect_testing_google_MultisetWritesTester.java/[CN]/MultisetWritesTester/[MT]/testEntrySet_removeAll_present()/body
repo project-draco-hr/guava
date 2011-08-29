@@ -1,0 +1,4 @@
+{
+  assertTrue("multiset.entrySet.removeAll(presentEntry) returned false",getMultiset().entrySet().removeAll(Collections.singleton(Multisets.immutableEntry(samples.e0,1))));
+  assertFalse("multiset contains element after removing its entry",getMultiset().contains(samples.e0));
+}

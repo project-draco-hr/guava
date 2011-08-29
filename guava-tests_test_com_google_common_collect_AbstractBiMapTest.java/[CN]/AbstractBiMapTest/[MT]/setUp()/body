@@ -1,0 +1,5 @@
+{
+  super.setUp();
+  bimap=create();
+  entrySet=bimap.entrySet();
+}

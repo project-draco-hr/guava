@@ -1,0 +1,5 @@
+{
+  checkNotNull(mutex);
+  this.delegate=delegate;
+  this.mutex=mutex;
+}

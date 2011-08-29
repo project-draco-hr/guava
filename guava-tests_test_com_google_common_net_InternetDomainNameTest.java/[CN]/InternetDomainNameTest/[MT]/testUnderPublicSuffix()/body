@@ -1,0 +1,8 @@
+{
+  for (  String name : SOMEWHERE_UNDER_PS) {
+    final InternetDomainName domain=InternetDomainName.from(name);
+    assertFalse(name,domain.isPublicSuffix());
+    assertTrue(name,domain.hasPublicSuffix());
+    assertTrue(name,domain.isUnderPublicSuffix());
+  }
+}

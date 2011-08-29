@@ -1,0 +1,6 @@
+{
+  Function<String,TestEnum> function=Enums.valueOfFunction(TestEnum.class);
+  assertNull(function.apply("cHEETO"));
+  assertNull(function.apply("Honda"));
+  assertNull(function.apply("poodlE"));
+}

@@ -1,0 +1,18 @@
+{
+  final ArrayList<Integer> initial=Lists.newArrayList(1,15,13,8,9,10,11,14);
+  MinMaxPriorityQueue<Integer> q=MinMaxPriorityQueue.create(initial);
+  assertTrue("State " + Arrays.toString(q.toArray()),q.isIntact());
+  q.remove(9);
+  q.remove(11);
+  q.remove(10);
+  List<Integer> result=Lists.newArrayListWithCapacity(initial.size());
+  for (Iterator<Integer> iter=q.iterator(); iter.hasNext(); ) {
+    Integer value=iter.next();
+    result.add(value);
+    if (value == 8) {
+      iter.remove();
+    }
+  }
+  assertTrue(q.isIntact());
+  ASSERT.that(result).hasContentsAnyOrder(1,15,13,8,14);
+}

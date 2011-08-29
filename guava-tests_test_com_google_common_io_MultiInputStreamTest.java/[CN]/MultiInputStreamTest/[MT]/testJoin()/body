@@ -1,0 +1,12 @@
+{
+  joinHelper(0);
+  joinHelper(1);
+  joinHelper(0,0,0);
+  joinHelper(10,20);
+  joinHelper(10,0,20);
+  joinHelper(0,10,20);
+  joinHelper(10,20,0);
+  joinHelper(10,20,1);
+  joinHelper(1,1,1,1,1,1,1,1);
+  joinHelper(1,0,1,0,1,0,1,0);
+}

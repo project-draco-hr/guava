@@ -1,0 +1,14 @@
+{
+  Table<Integer,String,Character> original=HashBasedTable.create();
+  Table<String,Integer,Character> transpose=Tables.transpose(original);
+  original.put(1,"foo",'a');
+  assertSame(original.columnKeySet(),transpose.rowKeySet());
+  assertSame(original.rowKeySet(),transpose.columnKeySet());
+  assertSame(original.columnMap(),transpose.rowMap());
+  assertSame(original.rowMap(),transpose.columnMap());
+  assertSame(original.values(),transpose.values());
+  assertEquals(original.row(1),transpose.column(1));
+  assertEquals(original.row(2),transpose.column(2));
+  assertEquals(original.column("foo"),transpose.row("foo"));
+  assertEquals(original.column("bar"),transpose.row("bar"));
+}

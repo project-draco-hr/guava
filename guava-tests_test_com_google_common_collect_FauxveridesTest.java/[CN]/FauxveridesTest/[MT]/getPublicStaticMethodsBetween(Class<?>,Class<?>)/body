@@ -1,0 +1,7 @@
+{
+  Set<MethodSignature> methods=newHashSet();
+  for (  Class<?> clazz : getClassesBetween(descendant,ancestor)) {
+    methods.addAll(getPublicStaticMethods(clazz));
+  }
+  return methods;
+}

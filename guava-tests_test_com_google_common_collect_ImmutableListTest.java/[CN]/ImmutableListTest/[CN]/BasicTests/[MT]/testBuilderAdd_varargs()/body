@@ -1,0 +1,4 @@
+{
+  ImmutableList<String> list=new ImmutableList.Builder<String>().add("a","b","a","c").build();
+  assertEquals(asList("a","b","a","c"),list);
+}

@@ -1,0 +1,15 @@
+{
+  Map<String,Integer> unfiltered=Maps.newHashMap();
+  Map<String,Integer> filtered=Maps.filterValues(unfiltered,EVEN);
+  filtered.put("a",2);
+  filtered.put("b",4);
+  assertEquals(ImmutableMap.of("a",2,"b",4),filtered);
+  Entry<String,Integer> entry=filtered.entrySet().iterator().next();
+  try {
+    entry.setValue(5);
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+  assertEquals(ImmutableMap.of("a",2,"b",4),filtered);
+}

@@ -1,0 +1,9 @@
+{
+  ImmutableSortedSet<Integer> set=Ranges.closed(1,3).asSet(integers());
+  try {
+    set.subSet(-1,0);
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}

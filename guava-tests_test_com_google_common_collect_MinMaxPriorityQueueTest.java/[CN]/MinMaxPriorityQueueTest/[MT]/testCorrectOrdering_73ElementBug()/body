@@ -1,0 +1,14 @@
+{
+  int size=73;
+  long seed=7522346378524621981L;
+  ArrayList<Integer> elements=createOrderedList(size);
+  List<Integer> expected=ImmutableList.copyOf(elements);
+  MinMaxPriorityQueue<Integer> q=MinMaxPriorityQueue.create();
+  insertRandomly(elements,q,new Random(seed));
+  assertTrue(q.isIntact());
+  while (!q.isEmpty()) {
+    elements.add(q.pollFirst());
+    assertTrue("State " + Arrays.toString(q.toArray()),q.isIntact());
+  }
+  assertEquals("Using seed " + seed,expected,elements);
+}

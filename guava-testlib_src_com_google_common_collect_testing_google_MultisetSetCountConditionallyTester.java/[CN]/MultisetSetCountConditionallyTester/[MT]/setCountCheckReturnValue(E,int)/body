@@ -1,0 +1,3 @@
+{
+  assertTrue("setCount() with the correct expected present count should return true",setCount(element,count));
+}

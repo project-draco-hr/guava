@@ -1,0 +1,4 @@
+{
+  Comparator<byte[]> comparator=SignedBytes.lexicographicalComparator();
+  assertSame(comparator,SerializableTester.reserialize(comparator));
+}

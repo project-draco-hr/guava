@@ -1,0 +1,3 @@
+Multimap<K,V> multimap
+K sampleKey
+V sampleValue

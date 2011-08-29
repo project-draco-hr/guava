@@ -1,0 +1,3 @@
+{
+  assertEquals(UNCAUGHT_EXCEPTION_HANDLER,builder.setUncaughtExceptionHandler(UNCAUGHT_EXCEPTION_HANDLER).build().newThread(monitoredRunnable).getUncaughtExceptionHandler());
+}

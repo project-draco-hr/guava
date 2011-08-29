@@ -1,0 +1,3 @@
+{
+  return MapConstraints.<String,Integer>constrainedSetMultimap(HashMultimap.<String,Integer>create(),MapConstraintsTest.TEST_CONSTRAINT);
+}

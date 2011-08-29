@@ -1,0 +1,4 @@
+CustomConcurrentHashMap<K,V> map
+K key
+V value
+int hash

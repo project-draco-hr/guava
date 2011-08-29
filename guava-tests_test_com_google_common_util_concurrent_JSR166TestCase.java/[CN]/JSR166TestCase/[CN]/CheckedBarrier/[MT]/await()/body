@@ -1,0 +1,10 @@
+{
+  try {
+    return super.await();
+  }
+ catch (  Exception e) {
+    AssertionFailedError afe=new AssertionFailedError("Unexpected exception: " + e);
+    afe.initCause(e);
+    throw afe;
+  }
+}

@@ -1,0 +1,7 @@
+{
+  Iterable<Integer> source=Lists.newLinkedList(asList(1,2,3));
+  Iterable<List<Integer>> partitions=Iterables.paddedPartition(source,2);
+  Iterator<List<Integer>> iterator=partitions.iterator();
+  assertTrue(iterator.next() instanceof RandomAccess);
+  assertTrue(iterator.next() instanceof RandomAccess);
+}

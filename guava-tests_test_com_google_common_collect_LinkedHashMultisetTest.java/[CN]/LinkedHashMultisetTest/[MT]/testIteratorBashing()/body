@@ -1,0 +1,10 @@
+{
+  ms=createSample();
+  IteratorTester<String> tester=new IteratorTester<String>(6,MODIFIABLE,newArrayList(ms),IteratorTester.KnownOrder.KNOWN_ORDER){
+    @Override protected Iterator<String> newTargetIterator(){
+      return createSample().iterator();
+    }
+  }
+;
+  tester.test();
+}

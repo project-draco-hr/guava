@@ -1,0 +1,9 @@
+{
+  Map<Object,Object> original=ImmutableMap.of(new Object(),new Object(),new Object(),new Object());
+  try {
+    ImmutableSortedMap.copyOf(original);
+    fail();
+  }
+ catch (  ClassCastException expected) {
+  }
+}

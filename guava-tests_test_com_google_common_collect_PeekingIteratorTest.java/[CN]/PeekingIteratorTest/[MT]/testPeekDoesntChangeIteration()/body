@@ -1,0 +1,32 @@
+{
+  List<?> list=Lists.newArrayList("A","B","C");
+  Iterator<?> iterator=list.iterator();
+  PeekingIterator<?> peekingIterator=Iterators.peekingIterator(iterator);
+  assertEquals("Should be able to peek() at first element","A",peekingIterator.peek());
+  assertEquals("Should be able to peek() first element multiple times","A",peekingIterator.peek());
+  assertEquals("next() should still return first element after peeking","A",peekingIterator.next());
+  assertEquals("Should be able to peek() at middle element","B",peekingIterator.peek());
+  assertEquals("Should be able to peek() middle element multiple times","B",peekingIterator.peek());
+  assertEquals("next() should still return middle element after peeking","B",peekingIterator.next());
+  assertEquals("Should be able to peek() at last element","C",peekingIterator.peek());
+  assertEquals("Should be able to peek() last element multiple times","C",peekingIterator.peek());
+  assertEquals("next() should still return last element after peeking","C",peekingIterator.next());
+  try {
+    peekingIterator.peek();
+    fail("Should throw exception if no next to peek()");
+  }
+ catch (  NoSuchElementException e) {
+  }
+  try {
+    peekingIterator.peek();
+    fail("Should continue to throw exception if no next to peek()");
+  }
+ catch (  NoSuchElementException e) {
+  }
+  try {
+    peekingIterator.next();
+    fail("next() should still throw exception after the end of iteration");
+  }
+ catch (  NoSuchElementException e) {
+  }
+}

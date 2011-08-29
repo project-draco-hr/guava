@@ -1,0 +1,14 @@
+{
+  TestSuite suite=new TestSuite();
+  suite.addTestSuite(ForwardingSortedSetTest.class);
+  suite.addTest(SetTestSuiteBuilder.using(new TestStringSetGenerator(){
+    @Override protected Set<String> create(    String[] elements){
+      return new StandardImplForwardingSortedSet<String>(new SafeTreeSet<String>(Arrays.asList(elements)));
+    }
+    @Override public List<String> order(    List<String> insertionOrder){
+      return Lists.newArrayList(Sets.newTreeSet(insertionOrder));
+    }
+  }
+).named("ForwardingSortedSet[SafeTreeSet] with standard implementations").withFeatures(CollectionSize.ANY,CollectionFeature.KNOWN_ORDER,CollectionFeature.GENERAL_PURPOSE).createTestSuite());
+  return suite;
+}

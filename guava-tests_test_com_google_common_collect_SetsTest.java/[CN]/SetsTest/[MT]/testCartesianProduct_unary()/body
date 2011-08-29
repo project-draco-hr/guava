@@ -1,0 +1,3 @@
+{
+  ASSERT.that(Sets.cartesianProduct(set(1,2))).hasContentsAnyOrder(list(1),list(2));
+}

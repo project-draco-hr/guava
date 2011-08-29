@@ -1,0 +1,5 @@
+{
+  List<Integer> fromList=Lists.newArrayList(SOME_LIST);
+  List<String> toList=Lists.transform(fromList,SOME_FUNCTION);
+  assertTransformView(fromList,toList);
+}

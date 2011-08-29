@@ -1,0 +1,11 @@
+{
+  scenario.testCompareTo();
+  scenario.testIsOrdered();
+  scenario.testMinAndMax();
+  scenario.testBinarySearch();
+  if (level < RECURSE_DEPTH) {
+    for (    OrderingMutation alteration : OrderingMutation.values()) {
+      verifyScenario(alteration.mutate(scenario),level + 1);
+    }
+  }
+}

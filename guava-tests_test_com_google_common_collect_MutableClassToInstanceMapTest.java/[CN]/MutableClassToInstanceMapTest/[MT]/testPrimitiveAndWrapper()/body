@@ -1,0 +1,14 @@
+{
+  assertNull(map.getInstance(int.class));
+  assertNull(map.getInstance(Integer.class));
+  assertNull(map.putInstance(int.class,0));
+  assertNull(map.putInstance(Integer.class,1));
+  assertEquals(2,map.size());
+  assertEquals(0,(int)map.getInstance(int.class));
+  assertEquals(1,(int)map.getInstance(Integer.class));
+  assertEquals(0,(int)map.putInstance(int.class,null));
+  assertEquals(1,(int)map.putInstance(Integer.class,null));
+  assertNull(map.getInstance(int.class));
+  assertNull(map.getInstance(Integer.class));
+  assertEquals(2,map.size());
+}

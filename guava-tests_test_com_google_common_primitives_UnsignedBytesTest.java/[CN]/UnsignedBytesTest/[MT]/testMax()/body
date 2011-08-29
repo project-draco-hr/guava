@@ -1,0 +1,5 @@
+{
+  assertEquals(LEAST,UnsignedBytes.max(LEAST));
+  assertEquals(GREATEST,UnsignedBytes.max(GREATEST));
+  assertEquals((byte)255,UnsignedBytes.max((byte)0,(byte)-128,(byte)-1,(byte)127,(byte)1));
+}

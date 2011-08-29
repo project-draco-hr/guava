@@ -1,0 +1,4 @@
+{
+  forward.containsColumn(1);
+  assertEquals("[containsColumn(Object)]",getCalls());
+}

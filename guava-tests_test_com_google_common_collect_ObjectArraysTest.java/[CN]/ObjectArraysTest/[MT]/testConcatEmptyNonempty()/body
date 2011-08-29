@@ -1,0 +1,5 @@
+{
+  String[] result=ObjectArrays.concat(new String[0],new String[]{"a","b"},String.class);
+  assertEquals(String[].class,result.getClass());
+  ASSERT.that(result).hasContentsInOrder("a","b");
+}

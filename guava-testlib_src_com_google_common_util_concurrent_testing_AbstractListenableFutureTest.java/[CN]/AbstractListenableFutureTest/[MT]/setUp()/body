@@ -1,0 +1,4 @@
+{
+  latch=new CountDownLatch(1);
+  future=createListenableFuture(Boolean.TRUE,null,latch);
+}

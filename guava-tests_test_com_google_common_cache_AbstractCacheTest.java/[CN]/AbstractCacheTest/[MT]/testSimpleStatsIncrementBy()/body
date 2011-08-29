@@ -1,0 +1,41 @@
+{
+  long totalLoadTime=0;
+  SimpleStatsCounter counter1=new SimpleStatsCounter();
+  for (int i=0; i < 11; i++) {
+    counter1.recordHit();
+  }
+  for (int i=0; i < 13; i++) {
+    counter1.recordLoadSuccess(i);
+    totalLoadTime+=i;
+  }
+  for (int i=0; i < 17; i++) {
+    counter1.recordLoadException(i);
+    totalLoadTime+=i;
+  }
+  for (int i=0; i < 19; i++) {
+    counter1.recordConcurrentMiss();
+  }
+  for (int i=0; i < 23; i++) {
+    counter1.recordEviction();
+  }
+  SimpleStatsCounter counter2=new SimpleStatsCounter();
+  for (int i=0; i < 27; i++) {
+    counter2.recordHit();
+  }
+  for (int i=0; i < 31; i++) {
+    counter2.recordLoadSuccess(i);
+    totalLoadTime+=i;
+  }
+  for (int i=0; i < 37; i++) {
+    counter2.recordLoadException(i);
+    totalLoadTime+=i;
+  }
+  for (int i=0; i < 41; i++) {
+    counter2.recordConcurrentMiss();
+  }
+  for (int i=0; i < 43; i++) {
+    counter2.recordEviction();
+  }
+  counter1.incrementBy(counter2);
+  assertEquals(new CacheStats(38,60 + 44 + 54,44,54,totalLoadTime,66),counter1.snapshot());
+}

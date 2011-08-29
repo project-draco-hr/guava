@@ -1,0 +1,42 @@
+{
+  InputSupplier<StringReader> r=CharStreams.newReaderSupplier("a\nb\nc");
+  LineProcessor<Integer> alwaysFalse=new LineProcessor<Integer>(){
+    int seen;
+    @Override public boolean processLine(    String line){
+      seen++;
+      return false;
+    }
+    @Override public Integer getResult(){
+      return seen;
+    }
+  }
+;
+  assertEquals("processLine was called more than once",1,CharStreams.readLines(r,alwaysFalse).intValue());
+  LineProcessor<Integer> alwaysTrue=new LineProcessor<Integer>(){
+    int seen;
+    @Override public boolean processLine(    String line){
+      seen++;
+      return true;
+    }
+    @Override public Integer getResult(){
+      return seen;
+    }
+  }
+;
+  assertEquals("processLine was not called for all the lines",3,CharStreams.readLines(r,alwaysTrue).intValue());
+  final StringBuilder sb=new StringBuilder();
+  LineProcessor<Integer> conditional=new LineProcessor<Integer>(){
+    int seen;
+    @Override public boolean processLine(    String line){
+      seen++;
+      sb.append(line);
+      return seen < 2;
+    }
+    @Override public Integer getResult(){
+      return seen;
+    }
+  }
+;
+  assertEquals(2,CharStreams.readLines(r,conditional).intValue());
+  assertEquals("ab",sb.toString());
+}

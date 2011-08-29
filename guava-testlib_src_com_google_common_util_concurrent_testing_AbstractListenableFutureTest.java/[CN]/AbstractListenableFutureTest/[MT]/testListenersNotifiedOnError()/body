@@ -1,0 +1,32 @@
+{
+  final CountDownLatch successLatch=new CountDownLatch(1);
+  final CountDownLatch listenerLatch=new CountDownLatch(1);
+  ExecutorService exec=Executors.newCachedThreadPool();
+  future.addListener(new Runnable(){
+    @Override public void run(){
+      listenerLatch.countDown();
+    }
+  }
+,exec);
+  new Thread(new Runnable(){
+    @Override public void run(){
+      try {
+        future.get();
+      }
+ catch (      CancellationException expected) {
+        successLatch.countDown();
+      }
+catch (      Exception ignored) {
+      }
+    }
+  }
+).start();
+  future.cancel(true);
+  assertTrue(future.isCancelled());
+  assertTrue(future.isDone());
+  assertTrue(successLatch.await(200,TimeUnit.MILLISECONDS));
+  assertTrue(listenerLatch.await(200,TimeUnit.MILLISECONDS));
+  latch.countDown();
+  exec.shutdown();
+  exec.awaitTermination(100,TimeUnit.MILLISECONDS);
+}

@@ -1,0 +1,7 @@
+{
+  assertEquals(Ranges.lessThan(0),Ranges.lessThan(0).canonical(UNBOUNDED_DOMAIN));
+  assertEquals(Ranges.lessThan(1),Ranges.atMost(0).canonical(UNBOUNDED_DOMAIN));
+  assertEquals(Ranges.atLeast(0),Ranges.atLeast(0).canonical(UNBOUNDED_DOMAIN));
+  assertEquals(Ranges.atLeast(1),Ranges.greaterThan(0).canonical(UNBOUNDED_DOMAIN));
+  assertEquals(Ranges.all(),Ranges.<Integer>all().canonical(UNBOUNDED_DOMAIN));
+}

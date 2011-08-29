@@ -1,0 +1,5 @@
+{
+  Collection<String> list=newArrayList("a","b","c","d","e");
+  assertEquals(newArrayList("c","d","e"),newArrayList(skip(list,2)));
+  assertEquals("[c, d, e]",skip(list,2).toString());
+}

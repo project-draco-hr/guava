@@ -1,0 +1,10 @@
+{
+  HashMultimap<String,Integer> input=HashMultimap.create();
+  input.put(null,1);
+  try {
+    ImmutableSetMultimap.copyOf(input);
+    fail();
+  }
+ catch (  NullPointerException expected) {
+  }
+}

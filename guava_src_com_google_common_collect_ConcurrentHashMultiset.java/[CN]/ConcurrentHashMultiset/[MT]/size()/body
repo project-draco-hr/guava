@@ -1,7 +1,7 @@
 {
   long sum=0L;
-  for (  Integer value : countMap.values()) {
-    sum+=value;
+  for (  AtomicInteger value : countMap.values()) {
+    sum+=value.get();
   }
   return Ints.saturatedCast(sum);
 }

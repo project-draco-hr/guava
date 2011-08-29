@@ -1,0 +1,6 @@
+{
+  float[] array={(float)0,(float)1,(float)2,(float)3};
+  List<Float> list=Floats.asList(array);
+  assertTrue(Arrays.equals(new float[]{(float)1,(float)2},Floats.toArray(list.subList(1,3))));
+  assertTrue(Arrays.equals(new float[]{},Floats.toArray(list.subList(2,2))));
+}

@@ -1,0 +1,4 @@
+{
+  forward.removeAll("key");
+  assertEquals("[removeAll(Object)]",getCalls());
+}

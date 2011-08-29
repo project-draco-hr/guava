@@ -1,0 +1,9 @@
+{
+  for (  Cache<Object,Object> cache : caches()) {
+    cache.getUnchecked("a");
+    cache.getUnchecked("b");
+    cache.getUnchecked("c");
+    cache.invalidateAll();
+    checkEmpty(cache);
+  }
+}

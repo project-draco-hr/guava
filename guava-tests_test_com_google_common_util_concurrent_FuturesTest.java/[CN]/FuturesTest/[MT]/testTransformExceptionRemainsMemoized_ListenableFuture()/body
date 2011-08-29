@@ -1,0 +1,21 @@
+{
+  SettableFuture<Integer> input=SettableFuture.create();
+  ListenableFuture<Integer> exceptionComposedFuture=Futures.transform(input,newOneTimeExceptionThrower());
+  ListenableFuture<Integer> errorComposedFuture=Futures.transform(input,newOneTimeErrorThrower());
+  try {
+    input.set(0);
+    fail();
+  }
+ catch (  MyError expected) {
+  }
+  runGetIdempotencyTest(exceptionComposedFuture,MyRuntimeException.class);
+  runGetIdempotencyTest(errorComposedFuture,MyError.class);
+  exceptionComposedFuture=Futures.transform(input,newOneTimeExceptionThrower());
+  runGetIdempotencyTest(exceptionComposedFuture,MyRuntimeException.class);
+  try {
+    Futures.transform(input,newOneTimeErrorThrower());
+    fail();
+  }
+ catch (  MyError expected) {
+  }
+}

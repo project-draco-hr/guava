@@ -1,0 +1,6 @@
+{
+  assertFalse(range.contains(4));
+  assertTrue(range.contains(5));
+  assertTrue(range.contains(7));
+  assertFalse(range.contains(8));
+}

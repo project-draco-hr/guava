@@ -1,0 +1,3 @@
+{
+  assertSame(Ordering.natural(),queue.comparator());
+}

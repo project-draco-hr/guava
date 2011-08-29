@@ -1,0 +1,57 @@
+{
+  int inputCount=new TestFutureBatch().allFutures.size();
+  for (int i=0; i < inputCount; i++) {
+    for (int j=0; j < inputCount; j++) {
+      for (      boolean iBeforeJ : new boolean[]{true,false}) {
+        TestFutureBatch inputs=new TestFutureBatch();
+        ListenableFuture<String> iFuture=inputs.allFutures.get(i).future;
+        ListenableFuture<String> jFuture=inputs.allFutures.get(j).future;
+        ListenableFuture<List<String>> future=merger.merged(iFuture,jFuture);
+        try {
+          List<String> result=future.get(0,MILLISECONDS);
+          assertTrue("Got " + result,Arrays.asList("a",null).containsAll(result));
+        }
+ catch (        CancellationException e) {
+          assertTrue(merger == Merger.allMerger);
+          inputs.assertHasImmediateCancel(iFuture,jFuture,e);
+        }
+catch (        ExecutionException e) {
+          assertTrue(merger == Merger.allMerger);
+          inputs.assertHasImmediateFailure(iFuture,jFuture,e);
+        }
+catch (        TimeoutException e) {
+          inputs.assertHasDelayed(iFuture,jFuture,e);
+        }
+        try {
+          List<String> result=conditionalPseudoTimedGet(inputs,iFuture,jFuture,future,20,MILLISECONDS);
+          assertTrue("Got " + result,Arrays.asList("a",null).containsAll(result));
+        }
+ catch (        CancellationException e) {
+          assertTrue(merger == Merger.allMerger);
+          inputs.assertHasImmediateCancel(iFuture,jFuture,e);
+        }
+catch (        ExecutionException e) {
+          assertTrue(merger == Merger.allMerger);
+          inputs.assertHasImmediateFailure(iFuture,jFuture,e);
+        }
+catch (        TimeoutException e) {
+          inputs.assertHasDelayed(iFuture,jFuture,e);
+        }
+        inputs.allFutures.get(iBeforeJ ? i : j).finisher.run();
+        inputs.allFutures.get(iBeforeJ ? j : i).finisher.run();
+        try {
+          List<String> result=future.get();
+          assertTrue("Got " + result,Arrays.asList("a","b",null).containsAll(result));
+        }
+ catch (        CancellationException e) {
+          assertTrue(merger == Merger.allMerger);
+          inputs.assertHasCancel(iFuture,jFuture,e);
+        }
+catch (        ExecutionException e) {
+          assertTrue(merger == Merger.allMerger);
+          inputs.assertHasFailure(iFuture,jFuture,e);
+        }
+      }
+    }
+  }
+}

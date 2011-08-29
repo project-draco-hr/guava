@@ -1,0 +1,5 @@
+{
+  ImmutableSet<String> set=ImmutableSet.of("a","b","c","d","e");
+  ImmutableList<String> list=set.asList();
+  assertEquals(ImmutableList.of("a","b","c","d","e"),list);
+}

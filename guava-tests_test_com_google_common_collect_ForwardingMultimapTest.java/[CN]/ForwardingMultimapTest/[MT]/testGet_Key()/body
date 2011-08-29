@@ -1,0 +1,4 @@
+{
+  forward.get(null);
+  assertEquals("[get(Object)]",getCalls());
+}

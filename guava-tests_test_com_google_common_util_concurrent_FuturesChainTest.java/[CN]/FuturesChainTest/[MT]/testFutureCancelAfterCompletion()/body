@@ -1,0 +1,8 @@
+{
+  inputFuture.set(VALID_INPUT_DATA);
+  assertFalse(resultFuture.cancel(true));
+  assertFalse(resultFuture.isCancelled());
+  assertFalse(inputFuture.isCancelled());
+  assertFalse(outputFuture.isCancelled());
+  assertEquals(RESULT_DATA,resultFuture.get());
+}

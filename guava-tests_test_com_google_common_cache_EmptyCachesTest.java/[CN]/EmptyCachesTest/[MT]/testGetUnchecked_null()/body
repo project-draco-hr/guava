@@ -1,0 +1,11 @@
+{
+  for (  Cache<Object,Object> cache : caches()) {
+    try {
+      cache.getUnchecked(null);
+      fail("Expected NullPointerException");
+    }
+ catch (    NullPointerException e) {
+    }
+    checkEmpty(cache);
+  }
+}

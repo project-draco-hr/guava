@@ -1,0 +1,4 @@
+{
+  result.append(c);
+  return this;
+}

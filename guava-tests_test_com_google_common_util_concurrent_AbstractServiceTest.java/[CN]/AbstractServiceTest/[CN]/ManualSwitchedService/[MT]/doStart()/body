@@ -1,0 +1,4 @@
+{
+  assertFalse(doStartCalled);
+  doStartCalled=true;
+}

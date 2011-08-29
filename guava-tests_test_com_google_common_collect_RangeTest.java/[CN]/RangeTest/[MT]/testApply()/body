@@ -1,0 +1,7 @@
+{
+  Predicate<Integer> predicate=Ranges.closed(2,3);
+  assertFalse(predicate.apply(1));
+  assertTrue(predicate.apply(2));
+  assertTrue(predicate.apply(3));
+  assertFalse(predicate.apply(4));
+}

@@ -1,0 +1,7 @@
+{
+  assertEquals(control(NE,1),entry(NE,1));
+  assertFalse(control(NE,1).equals(entry(NE,2)));
+  assertFalse(entry(NE,1).equals(control("bar",1)));
+  assertFalse(entry(NE,1).equals(new Object()));
+  assertFalse(entry(NE,1).equals(null));
+}

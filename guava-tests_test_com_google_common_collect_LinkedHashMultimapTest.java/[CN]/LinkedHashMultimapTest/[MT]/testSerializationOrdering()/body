@@ -1,0 +1,5 @@
+{
+  Multimap<String,Integer> multimap=initializeMultimap5();
+  Multimap<String,Integer> copy=SerializableTester.reserializeAndAssert(multimap);
+  assertOrderingReadOnly(copy);
+}

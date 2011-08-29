@@ -1,0 +1,4 @@
+{
+  Map<String,Integer> map=ImmutableSortedMap.of("one",1,"two",2,"three",3).tailMap("three",true);
+  ASSERT.that(map.entrySet()).hasContentsInOrder(Maps.immutableEntry("three",3),Maps.immutableEntry("two",2));
+}

@@ -1,0 +1,8 @@
+{
+  List<String> list=newArrayList();
+  list.add("a");
+  list.add("b");
+  Iterator<String> iterator=list.iterator();
+  assertEquals("b",get(iterator,1));
+  assertFalse(iterator.hasNext());
+}

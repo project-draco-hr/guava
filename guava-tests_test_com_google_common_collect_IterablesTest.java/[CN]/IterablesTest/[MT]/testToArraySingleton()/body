@@ -1,0 +1,5 @@
+{
+  Iterable<String> iterable=Collections.singletonList("a");
+  String[] array=Iterables.toArray(iterable,String.class);
+  assertTrue(Arrays.equals(new String[]{"a"},array));
+}

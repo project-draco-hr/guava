@@ -1,0 +1,29 @@
+{
+  CacheBuilder<Object,Object> builder=createCacheBuilder();
+  NullCache<Object,Object> cache=makeNullCache(builder,identityLoader());
+  assertEquals(EMPTY_STATS,cache.stats());
+  Object one=new Object();
+  cache.getUnchecked(one);
+  CacheStats stats=cache.stats();
+  assertEquals(1,stats.requestCount());
+  assertEquals(0,stats.hitCount());
+  assertEquals(0.0,stats.hitRate());
+  assertEquals(1,stats.missCount());
+  assertEquals(1.0,stats.missRate());
+  assertEquals(1,stats.loadCount());
+  long totalLoadTime=stats.totalLoadTime();
+  assertTrue(totalLoadTime > 0);
+  assertTrue(stats.averageLoadPenalty() > 0.0);
+  assertEquals(1,stats.evictionCount());
+  cache.getUnchecked(one);
+  stats=cache.stats();
+  assertEquals(2,stats.requestCount());
+  assertEquals(0,stats.hitCount());
+  assertEquals(0.0,stats.hitRate());
+  assertEquals(2,stats.missCount());
+  assertEquals(1.0,stats.missRate());
+  assertEquals(2,stats.loadCount());
+  assertTrue(stats.totalLoadTime() > totalLoadTime);
+  totalLoadTime=stats.totalLoadTime();
+  assertEquals(2,stats.evictionCount());
+}

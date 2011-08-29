@@ -1,0 +1,4 @@
+{
+  this.maximumSizes=Sets.newLinkedHashSet(maximumSizes);
+  return this;
+}

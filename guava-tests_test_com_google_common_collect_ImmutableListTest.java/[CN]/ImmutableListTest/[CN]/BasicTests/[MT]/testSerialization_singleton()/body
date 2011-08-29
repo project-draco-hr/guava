@@ -1,0 +1,4 @@
+{
+  Collection<String> c=ImmutableList.of("a");
+  ImmutableList<String> copy=(SingletonImmutableList<String>)SerializableTester.reserializeAndAssert(c);
+}

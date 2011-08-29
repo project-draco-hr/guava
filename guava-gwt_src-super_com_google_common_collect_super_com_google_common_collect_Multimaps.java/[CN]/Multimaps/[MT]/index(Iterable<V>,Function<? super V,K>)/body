@@ -1,9 +1,3 @@
 {
-  checkNotNull(keyFunction);
-  ImmutableListMultimap.Builder<K,V> builder=ImmutableListMultimap.builder();
-  for (  V value : values) {
-    checkNotNull(value,values);
-    builder.put(keyFunction.apply(value),value);
-  }
-  return builder.build();
+  return index(values.iterator(),keyFunction);
 }

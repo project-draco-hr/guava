@@ -1,0 +1,6 @@
+{
+  Short[] prefix={Short.MIN_VALUE,Short.MAX_VALUE};
+  Short[] suffix={(short)86,(short)99};
+  Short[] all=concat(concat(prefix,elements),suffix);
+  return asList(all).subList(2,elements.length + 2);
+}

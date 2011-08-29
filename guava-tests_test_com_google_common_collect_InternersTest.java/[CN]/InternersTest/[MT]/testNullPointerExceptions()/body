@@ -1,0 +1,3 @@
+{
+  new NullPointerTester().testAllPublicStaticMethods(Interners.class);
+}

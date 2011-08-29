@@ -1,0 +1,16 @@
+{
+  ThrowOnStartUpService service=new ThrowOnStartUpService();
+  assertFalse(service.startUpCalled);
+  Future<Service.State> startupFuture=service.start();
+  try {
+    startupFuture.get();
+    fail();
+  }
+ catch (  ExecutionException expected) {
+    assertEquals("kaboom!",expected.getCause().getMessage());
+  }
+  executionThread.join();
+  assertTrue(service.startUpCalled);
+  assertEquals(Service.State.FAILED,service.state());
+  assertTrue(thrownByExecutionThread.getMessage().equals("kaboom!"));
+}

@@ -1,0 +1,9 @@
+{
+  @SuppressWarnings("unchecked") Iterable<List<Object>> combinations=buildCartesianProduct(concurrencyLevels,initialCapacities,maximumSizes,expirations,keyStrengths,valueStrengths);
+  return Iterables.transform(combinations,new Function<List<Object>,CacheBuilder<Object,Object>>(){
+    @Override public CacheBuilder<Object,Object> apply(    List<Object> combination){
+      return createCacheBuilder((Integer)combination.get(0),(Integer)combination.get(1),(Integer)combination.get(2),(ExpirationSpec)combination.get(3),(Strength)combination.get(4),(Strength)combination.get(5));
+    }
+  }
+);
+}

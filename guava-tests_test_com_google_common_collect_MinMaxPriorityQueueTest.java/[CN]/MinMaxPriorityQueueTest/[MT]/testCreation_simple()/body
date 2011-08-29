@@ -1,0 +1,6 @@
+{
+  MinMaxPriorityQueue<Integer> queue=MinMaxPriorityQueue.create();
+  assertEquals(11,queue.capacity());
+  checkUnbounded(queue);
+  checkNatural(queue);
+}

@@ -1,0 +1,5 @@
+{
+  NullPointerTester tester=new NullPointerTester();
+  tester.setDefault(Comparable[].class,new Comparable[]{0});
+  tester.testAllPublicStaticMethods(ImmutableSortedSet.class);
+}

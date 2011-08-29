@@ -1,0 +1,6 @@
+{
+  ImmutableBiMap<String,Integer> bimap=ImmutableBiMap.copyOf(ImmutableMap.of("one",1,"two",2,"three",3,"four",4));
+  Set<Integer> values=bimap.values();
+  assertEquals(Sets.newHashSet(1,2,3,4),values);
+  ASSERT.that(values).hasContentsInOrder(1,2,3,4);
+}

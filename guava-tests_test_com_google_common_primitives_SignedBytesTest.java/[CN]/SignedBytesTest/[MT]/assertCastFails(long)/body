@@ -1,0 +1,9 @@
+{
+  try {
+    SignedBytes.checkedCast(value);
+    fail("Cast to byte should have failed: " + value);
+  }
+ catch (  IllegalArgumentException ex) {
+    assertTrue(value + " not found in exception text: " + ex.getMessage(),ex.getMessage().contains(String.valueOf(value)));
+  }
+}

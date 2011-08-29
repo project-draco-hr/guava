@@ -1,0 +1,4 @@
+{
+  Comparator<String> comparator=byCharAt(1).compound(byCharAt(0));
+  Helpers.testComparator(comparator,ImmutableList.of("red","yellow","violet","blue","indigo","green","orange"));
+}

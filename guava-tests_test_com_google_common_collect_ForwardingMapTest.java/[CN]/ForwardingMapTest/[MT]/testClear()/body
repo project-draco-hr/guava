@@ -1,0 +1,4 @@
+{
+  forward().clear();
+  assertEquals("[clear]",getCalls());
+}

@@ -1,0 +1,4 @@
+{
+  TreeSet<Integer> set=Sets.newTreeSet(SOME_ITERABLE);
+  verifySortedSetContents(set,SOME_ITERABLE,null);
+}

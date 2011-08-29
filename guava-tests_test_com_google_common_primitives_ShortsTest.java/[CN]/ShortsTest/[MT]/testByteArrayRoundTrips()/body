@@ -1,0 +1,10 @@
+{
+  Random r=new Random(5);
+  byte[] b=new byte[Shorts.BYTES];
+  for (int i=0; i < 10000; i++) {
+    short num=(short)r.nextInt();
+    assertEquals(num,Shorts.fromByteArray(Shorts.toByteArray(num)));
+    r.nextBytes(b);
+    assertTrue(Arrays.equals(b,Shorts.toByteArray(Shorts.fromByteArray(b))));
+  }
+}
