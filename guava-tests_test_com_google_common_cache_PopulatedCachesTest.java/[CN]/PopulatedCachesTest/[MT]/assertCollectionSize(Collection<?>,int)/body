@@ -1,0 +1,11 @@
+{
+  assertEquals(size,collection.size());
+  if (size > 0) {
+    assertFalse(collection.isEmpty());
+  }
+ else {
+    assertTrue(collection.isEmpty());
+  }
+  assertEquals(size,Iterables.size(collection));
+  assertEquals(size,Iterators.size(collection.iterator()));
+}

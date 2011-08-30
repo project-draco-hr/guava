@@ -1,0 +1,12 @@
+{
+  for (  Cache<Object,Object> cache : caches()) {
+    List<Entry<Object,Object>> warmed=warmUp(cache);
+    try {
+      cache.asMap().put(-1,-1);
+      fail("asMap().put() should have triggered UnsupportedOperationException");
+    }
+ catch (    UnsupportedOperationException expected) {
+    }
+    checkValidState(cache);
+  }
+}

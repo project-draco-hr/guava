@@ -1,0 +1,12 @@
+{
+  for (  Cache<Object,Object> cache : caches()) {
+    List<Entry<Object,Object>> warmed=warmUp(cache);
+    try {
+      cache.asMap().putAll(ImmutableMap.of());
+      fail("asMap().putAll() should have triggered UnsupportedOperationException");
+    }
+ catch (    UnsupportedOperationException expected) {
+    }
+    checkValidState(cache);
+  }
+}

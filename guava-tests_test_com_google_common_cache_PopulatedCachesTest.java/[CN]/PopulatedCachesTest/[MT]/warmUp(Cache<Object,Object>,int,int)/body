@@ -1,0 +1,9 @@
+{
+  List<Map.Entry<Object,Object>> entries=Lists.newArrayList();
+  for (int i=minimum; i < maximum; i++) {
+    Object key=i;
+    Object value=cache.getUnchecked(key);
+    entries.add(entryOf(key,value));
+  }
+  return entries;
+}

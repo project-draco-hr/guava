@@ -1,0 +1,8 @@
+{
+  for (  Cache<Object,Object> cache : caches()) {
+    List<Entry<Object,Object>> warmed=warmUp(cache);
+    assertEquals(WARMUP_SIZE,cache.size());
+    assertMapSize(cache.asMap(),WARMUP_SIZE);
+    checkValidState(cache);
+  }
+}

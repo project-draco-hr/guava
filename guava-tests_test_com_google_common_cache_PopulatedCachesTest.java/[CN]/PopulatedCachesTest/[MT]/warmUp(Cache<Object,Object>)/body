@@ -1,0 +1,3 @@
+{
+  return warmUp(cache,WARMUP_MIN,WARMUP_MAX);
+}

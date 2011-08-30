@@ -1,0 +1,21 @@
+{
+  for (  Cache<Object,Object> cache : caches()) {
+    Set<Object> keys=cache.asMap().keySet();
+    List<Entry<Object,Object>> warmed=warmUp(cache);
+    Object[] expectedArray=Maps.newHashMap(cache.asMap()).keySet().toArray(new Object[0]);
+    ASSERT.that(keys).hasContentsAnyOrder(expectedArray);
+    ASSERT.that(asList(keys.toArray())).hasContentsAnyOrder(expectedArray);
+    ASSERT.that(asList(keys.toArray(new Object[cache.size()]))).hasContentsAnyOrder(expectedArray);
+    new EqualsTester().addEqualityGroup(cache.asMap().keySet(),keys).addEqualityGroup(ImmutableSet.of()).testEquals();
+    assertEquals(WARMUP_SIZE,keys.size());
+    for (int i=WARMUP_MIN; i < WARMUP_MAX; i++) {
+      Object key=warmed.get(i - WARMUP_MIN).getKey();
+      assertTrue(keys.contains(key));
+      assertTrue(keys.remove(key));
+      assertFalse(keys.remove(key));
+      assertFalse(keys.contains(key));
+    }
+    checkEmpty(keys);
+    checkEmpty(cache);
+  }
+}

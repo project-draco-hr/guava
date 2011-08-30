@@ -1,6 +1,6 @@
 {
   for (  Segment<?,?> segment : cchm.segments) {
-    if (cchm.expiresAfterWrite()) {
+    if (cchm.expires()) {
       Set<ReferenceEntry<?,?>> expirables=Sets.newIdentityHashSet();
       ReferenceEntry<?,?> prev=null;
       for (      ReferenceEntry<?,?> current : segment.expirationQueue) {
@@ -8,7 +8,7 @@
         if (prev != null) {
           assertSame(prev,current.getPreviousExpirable());
           assertSame(prev.getNextExpirable(),current);
-          assertTrue(prev.getExpirationTime() > current.getExpirationTime());
+          assertTrue(prev.getExpirationTime() <= current.getExpirationTime());
         }
         assertSame(current,segment.getEntry(current.getKey(),current.getHash()));
         prev=current;

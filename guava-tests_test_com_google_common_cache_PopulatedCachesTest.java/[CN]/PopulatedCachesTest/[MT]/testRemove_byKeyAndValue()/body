@@ -1,0 +1,14 @@
+{
+  for (  Cache<Object,Object> cache : caches()) {
+    List<Entry<Object,Object>> warmed=warmUp(cache);
+    for (int i=WARMUP_MIN; i < WARMUP_MAX; i++) {
+      Object key=warmed.get(i - WARMUP_MIN).getKey();
+      Object value=warmed.get(i - WARMUP_MIN).getValue();
+      assertFalse(cache.asMap().remove(key,-1));
+      assertTrue(cache.asMap().remove(key,value));
+      assertFalse(cache.asMap().remove(key,-1));
+      assertFalse(cache.asMap().containsKey(key));
+    }
+    checkEmpty(cache);
+  }
+}

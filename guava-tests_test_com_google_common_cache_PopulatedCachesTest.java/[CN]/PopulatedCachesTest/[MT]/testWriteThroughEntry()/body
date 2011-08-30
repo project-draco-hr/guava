@@ -1,0 +1,19 @@
+{
+  for (  Cache<Object,Object> cache : caches()) {
+    cache.getUnchecked(1);
+    Entry<Object,Object> entry=Iterables.getOnlyElement(cache.asMap().entrySet());
+    try {
+      entry.setValue(3);
+      fail("expected entry.setValue to throw UnsupportedOperationException");
+    }
+ catch (    UnsupportedOperationException expected) {
+    }
+    try {
+      entry.setValue(null);
+      fail("expected entry.setValue(null) to throw UnsupportedOperationException");
+    }
+ catch (    UnsupportedOperationException expected) {
+    }
+    checkValidState(cache);
+  }
+}
