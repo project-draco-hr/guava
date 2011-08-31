@@ -6,7 +6,7 @@
     }
   }
 ;
-  GenericMapMaker<String,Number> mapMaker=new MapMaker().concurrencyLevel(1).maximumSize(1).removalListener(removalListener);
+  @SuppressWarnings("deprecation") GenericMapMaker<String,Number> mapMaker=new MapMaker().concurrencyLevel(1).maximumSize(1).removalListener(removalListener);
   ConcurrentHashMultiset<String> multiset=ConcurrentHashMultiset.create(mapMaker);
   multiset.add("a",5);
   assertTrue(multiset.contains("a"));

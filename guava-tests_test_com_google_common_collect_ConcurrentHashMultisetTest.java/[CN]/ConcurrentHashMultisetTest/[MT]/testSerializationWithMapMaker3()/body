@@ -1,5 +1,5 @@
 {
-  MapMaker mapMaker=new MapMaker().maximumSize(99999999);
+  MapMaker mapMaker=new MapMaker().expireAfterWrite(1,TimeUnit.SECONDS);
   multiset=ConcurrentHashMultiset.create(mapMaker);
   multiset.addAll(ImmutableList.of("a","a","b","c","d","b"));
   reserializeAndAssert(multiset);

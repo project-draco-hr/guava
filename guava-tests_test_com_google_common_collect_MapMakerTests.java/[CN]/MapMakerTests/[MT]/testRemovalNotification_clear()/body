@@ -13,7 +13,7 @@
   }
 ;
   QueuingRemovalListener<String,String> listener=new QueuingRemovalListener<String,String>();
-  final ConcurrentMap<String,String> map=new MapMaker().concurrencyLevel(1).removalListener(listener).makeComputingMap(computingFunction);
+  @SuppressWarnings("deprecation") final ConcurrentMap<String,String> map=new MapMaker().concurrencyLevel(1).removalListener(listener).makeComputingMap(computingFunction);
   map.put("a","a");
   final CountDownLatch computationStarted=new CountDownLatch(1);
   final CountDownLatch computationComplete=new CountDownLatch(1);

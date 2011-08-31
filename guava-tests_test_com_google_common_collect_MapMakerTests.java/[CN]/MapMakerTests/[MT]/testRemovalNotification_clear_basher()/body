@@ -1,7 +1,7 @@
 {
   CountDownLatch computationLatch=new CountDownLatch(1);
   QueuingRemovalListener<String,String> listener=new QueuingRemovalListener<String,String>();
-  final Map<String,String> map=new MapMaker().removalListener(listener).concurrencyLevel(20).makeComputingMap(new DelayingIdentityLoader<String>(computationLatch));
+  @SuppressWarnings("deprecation") final Map<String,String> map=new MapMaker().removalListener(listener).concurrencyLevel(20).makeComputingMap(new DelayingIdentityLoader<String>(computationLatch));
   int nThreads=100;
   int nTasks=1000;
   int nSeededEntries=100;

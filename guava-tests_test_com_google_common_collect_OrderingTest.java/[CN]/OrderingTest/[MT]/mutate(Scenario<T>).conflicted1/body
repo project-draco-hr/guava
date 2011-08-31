@@ -1,10 +1,13 @@
 {
-  List<T> newList=Lists.newArrayList();
-  for (  T t : scenario.strictlyOrderedList) {
-    if (t != null) {
-      newList.add(t);
+  Ordering<Integer> ordering=scenario.ordering.onResultOf(new Function<Integer,T>(){
+    @Override public T apply(    @Nullable Integer from){
+      return scenario.strictlyOrderedList.get(from);
     }
   }
-  newList.add(null);
-  return new Scenario<T>(scenario.ordering.nullsLast(),newList);
+);
+  List<Integer> list=Lists.newArrayList();
+  for (int i=0; i < scenario.strictlyOrderedList.size(); i++) {
+    list.add(i);
+  }
+  return new Scenario<Integer>(ordering,list);
 }
