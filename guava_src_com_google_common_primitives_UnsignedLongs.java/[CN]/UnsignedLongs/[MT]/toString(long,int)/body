@@ -1,4 +1,7 @@
 {
+  if (radix < Character.MIN_RADIX | radix > Character.MAX_RADIX) {
+    radix=10;
+  }
   if (x == 0) {
     return "0";
   }

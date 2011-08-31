@@ -3,7 +3,7 @@
   final CountDownLatch gettersComplete=new CountDownLatch(nThreads);
   for (int i=0; i < nThreads; i++) {
     final int index=i;
-    new Thread(new Runnable(){
+    Thread thread=new Thread(new Runnable(){
       @Override public void run(){
         gettersStartedSignal.countDown();
         Object value=null;
@@ -22,8 +22,13 @@
         gettersComplete.countDown();
       }
     }
-).start();
+);
+    thread.start();
+    while (thread.isAlive() && thread.getState() != Thread.State.WAITING) {
+      Thread.yield();
+    }
   }
+  gettersStartedSignal.countDown();
   gettersComplete.await();
   List<Object> resultList=Lists.newArrayListWithExpectedSize(nThreads);
   for (int i=0; i < nThreads; i++) {
