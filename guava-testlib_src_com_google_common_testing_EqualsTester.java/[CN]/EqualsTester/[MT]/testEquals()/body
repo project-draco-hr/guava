@@ -11,9 +11,6 @@
     }
   }
 );
-  if (!defaultEqualObjects.isEmpty()) {
-    delegate.addRelatedGroup(defaultEqualObjects);
-  }
   for (  List<Object> group : equalityGroups) {
     delegate.addRelatedGroup(group);
   }
