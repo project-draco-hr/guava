@@ -13,7 +13,7 @@
             return method.invoke(target,args);
           }
  catch (          InvocationTargetException e) {
-            Throwables.throwCause(e,false);
+            throwCause(e,false);
             throw new AssertionError("can't get here");
           }
         }

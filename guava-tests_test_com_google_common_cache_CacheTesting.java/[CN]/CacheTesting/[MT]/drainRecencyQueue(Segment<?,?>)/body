@@ -1,7 +1,7 @@
 {
   segment.lock();
   try {
-    segment.runCleanup();
+    segment.cleanUp();
   }
   finally {
     segment.unlock();

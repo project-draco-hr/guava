@@ -2,7 +2,7 @@
   segment.lock();
   try {
     segment.expireEntries();
-    segment.runCleanup();
+    segment.cleanUp();
   }
   finally {
     segment.unlock();
