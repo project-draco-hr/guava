@@ -14,12 +14,7 @@ catch (    ExecutionException e) {
     }
     final ListenableFuture<? extends O> outputFuture=this.outputFuture=function.apply(sourceResult);
     if (isCancelled()) {
-      try {
-        outputFuture.cancel(mayInterruptIfRunningChannel.take());
-      }
- catch (      InterruptedException ignored) {
-        Thread.currentThread().interrupt();
-      }
+      outputFuture.cancel(takeUninterruptibly(mayInterruptIfRunningChannel));
       this.outputFuture=null;
       return;
     }

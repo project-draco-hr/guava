@@ -1,11 +1,6 @@
 {
   if (super.cancel(mayInterruptIfRunning)) {
-    try {
-      mayInterruptIfRunningChannel.put(mayInterruptIfRunning);
-    }
- catch (    InterruptedException ignored) {
-      Thread.currentThread().interrupt();
-    }
+    putUninterruptibly(mayInterruptIfRunningChannel,mayInterruptIfRunning);
     cancel(inputFuture,mayInterruptIfRunning);
     cancel(outputFuture,mayInterruptIfRunning);
     return true;

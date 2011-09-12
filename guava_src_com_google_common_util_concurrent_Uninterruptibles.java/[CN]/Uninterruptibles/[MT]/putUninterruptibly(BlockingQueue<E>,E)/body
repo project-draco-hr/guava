@@ -3,7 +3,8 @@
   try {
     while (true) {
       try {
-        return future.get();
+        queue.put(element);
+        return;
       }
  catch (      InterruptedException e) {
         interrupted=true;
