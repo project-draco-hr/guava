@@ -1,0 +1,3 @@
+{
+  super(allowsNullKeys,allowsNullValues,supportsPut,supportsRemove,supportsClear,supportsRemove);
+}

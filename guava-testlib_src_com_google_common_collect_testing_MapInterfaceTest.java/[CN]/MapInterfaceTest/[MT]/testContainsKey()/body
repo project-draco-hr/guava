@@ -9,7 +9,11 @@
     return;
   }
   assertFalse(map.containsKey(unmappedKey));
-  assertFalse(map.containsKey(new IncompatibleKeyType()));
+  try {
+    assertFalse(map.containsKey(new IncompatibleKeyType()));
+  }
+ catch (  ClassCastException tolerated) {
+  }
   assertTrue(map.containsKey(map.keySet().iterator().next()));
   if (allowsNullKeys) {
     map.containsKey(null);

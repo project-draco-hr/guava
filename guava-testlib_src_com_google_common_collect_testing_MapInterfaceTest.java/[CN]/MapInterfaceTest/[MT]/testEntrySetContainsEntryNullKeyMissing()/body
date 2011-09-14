@@ -17,6 +17,16 @@
     return;
   }
   Entry<K,V> entry=mapEntry(null,unmappedValue);
-  assertFalse(entrySet.contains(entry));
-  assertFalse(entrySet.contains(mapEntry(null,null)));
+  try {
+    assertFalse(entrySet.contains(entry));
+  }
+ catch (  NullPointerException e) {
+    assertFalse(allowsNullKeys);
+  }
+  try {
+    assertFalse(entrySet.contains(mapEntry(null,null)));
+  }
+ catch (  NullPointerException e) {
+    assertFalse(allowsNullKeys && allowsNullValues);
+  }
 }

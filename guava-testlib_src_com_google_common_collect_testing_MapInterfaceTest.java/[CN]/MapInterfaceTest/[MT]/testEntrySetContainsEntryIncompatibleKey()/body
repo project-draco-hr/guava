@@ -17,5 +17,9 @@
     return;
   }
   Entry<IncompatibleKeyType,V> entry=mapEntry(new IncompatibleKeyType(),unmappedValue);
-  assertFalse(entrySet.contains(entry));
+  try {
+    assertFalse(entrySet.contains(entry));
+  }
+ catch (  ClassCastException tolerated) {
+  }
 }

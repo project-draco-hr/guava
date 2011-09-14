@@ -10,8 +10,13 @@
   Entry<K,V> entry=mapEntry(null,getValueNotInPopulatedMap());
   int initialSize=map.size();
   if (supportsRemove) {
-    boolean didRemove=entrySet.remove(entry);
-    assertFalse(didRemove);
+    try {
+      boolean didRemove=entrySet.remove(entry);
+      assertFalse(didRemove);
+    }
+ catch (    NullPointerException e) {
+      assertFalse(allowsNullKeys);
+    }
   }
  else {
     try {

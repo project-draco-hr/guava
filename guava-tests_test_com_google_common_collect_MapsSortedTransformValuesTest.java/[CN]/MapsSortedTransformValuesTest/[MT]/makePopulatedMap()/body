@@ -1,0 +1,7 @@
+{
+  SortedMap<String,Integer> underlying=Maps.newTreeMap();
+  underlying.put("a",1);
+  underlying.put("b",2);
+  underlying.put("c",3);
+  return Maps.transformValues(underlying,Functions.toStringFunction());
+}
