@@ -1,8 +1,0 @@
-{
-  try {
-    UnsignedLongs.checkedCast(value);
-    fail("Cast to long should have failed: " + value);
-  }
- catch (  IllegalArgumentException expected) {
-  }
-}
