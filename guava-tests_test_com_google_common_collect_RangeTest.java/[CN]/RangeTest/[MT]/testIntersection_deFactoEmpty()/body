@@ -15,4 +15,6 @@
   }
  catch (  IllegalArgumentException expected) {
   }
+  range=Ranges.closed(3,4);
+  assertEquals(Ranges.openClosed(4,4),range.intersection(Ranges.greaterThan(4)));
 }

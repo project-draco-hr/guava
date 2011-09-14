@@ -1,0 +1,9 @@
+{
+  assertTrue(Ranges.closed(3,5).isConnected(Ranges.open(5,6)));
+  assertTrue(Ranges.closed(3,5).isConnected(Ranges.openClosed(5,5)));
+  assertTrue(Ranges.open(3,5).isConnected(Ranges.closed(5,6)));
+  assertTrue(Ranges.closed(3,7).isConnected(Ranges.open(6,8)));
+  assertTrue(Ranges.open(3,7).isConnected(Ranges.closed(5,6)));
+  assertFalse(Ranges.closed(3,5).isConnected(Ranges.closed(7,8)));
+  assertFalse(Ranges.closed(3,5).isConnected(Ranges.closedOpen(7,7)));
+}
