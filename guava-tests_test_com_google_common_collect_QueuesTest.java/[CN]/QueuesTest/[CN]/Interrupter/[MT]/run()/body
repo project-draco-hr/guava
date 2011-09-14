@@ -1,0 +1,11 @@
+{
+  try {
+    Thread.sleep(100);
+  }
+ catch (  InterruptedException e) {
+    throw new AssertionError();
+  }
+ finally {
+    threadToInterrupt.interrupt();
+  }
+}

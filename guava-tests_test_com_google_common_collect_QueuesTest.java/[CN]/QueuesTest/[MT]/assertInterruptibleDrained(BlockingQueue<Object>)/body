@@ -1,0 +1,15 @@
+{
+  try {
+    assertEquals(0,Queues.drain(q,ImmutableList.of(),0,10,TimeUnit.MILLISECONDS));
+  }
+ catch (  InterruptedException e) {
+    throw new AssertionError();
+  }
+  threadPool.submit(new Interrupter(Thread.currentThread()));
+  try {
+    Queues.drain(q,Lists.newArrayList(),1,Long.MAX_VALUE,TimeUnit.NANOSECONDS);
+    fail();
+  }
+ catch (  InterruptedException ok) {
+  }
+}

@@ -1,0 +1,5 @@
+{
+  assertNull(q.peek());
+  assertInterruptibleDrained(q);
+  assertUninterruptibleDrained(q);
+}
