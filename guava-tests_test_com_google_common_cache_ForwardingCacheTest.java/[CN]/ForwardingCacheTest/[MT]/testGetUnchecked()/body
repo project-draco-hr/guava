@@ -1,0 +1,6 @@
+{
+  expect(mock.getUnchecked("key")).andReturn(Boolean.TRUE);
+  replay(mock);
+  assertSame(Boolean.TRUE,forward.getUnchecked("key"));
+  verify(mock);
+}

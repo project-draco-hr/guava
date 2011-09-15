@@ -1,0 +1,6 @@
+{
+  expect(mock.apply("key")).andReturn(Boolean.TRUE);
+  replay(mock);
+  assertSame(Boolean.TRUE,forward.apply("key"));
+  verify(mock);
+}
