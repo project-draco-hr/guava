@@ -1,5 +1,0 @@
-{
-  for (  BlockingQueue<Object> q : blockingQueues()) {
-    testDrainUninterruptibly_doesNotThrow(q);
-  }
-}

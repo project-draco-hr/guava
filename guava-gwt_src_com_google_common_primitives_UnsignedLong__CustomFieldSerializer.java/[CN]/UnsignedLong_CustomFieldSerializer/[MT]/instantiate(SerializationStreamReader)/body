@@ -1,3 +1,0 @@
-{
-  return UnsignedLong.asUnsigned(reader.readLong());
-}

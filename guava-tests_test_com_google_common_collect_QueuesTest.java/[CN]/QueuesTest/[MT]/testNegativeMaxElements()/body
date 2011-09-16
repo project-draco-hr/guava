@@ -1,5 +1,0 @@
-{
-  for (  BlockingQueue<Object> q : blockingQueues()) {
-    testNegativeMaxElements(q);
-  }
-}

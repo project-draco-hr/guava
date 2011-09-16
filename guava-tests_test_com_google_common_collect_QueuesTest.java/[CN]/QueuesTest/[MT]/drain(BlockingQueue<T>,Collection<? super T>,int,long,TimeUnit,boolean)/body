@@ -1,3 +1,0 @@
-{
-  return interruptibly ? Queues.drain(q,buffer,maxElements,timeout,unit) : Queues.drainUninterruptibly(q,buffer,maxElements,timeout,unit);
-}

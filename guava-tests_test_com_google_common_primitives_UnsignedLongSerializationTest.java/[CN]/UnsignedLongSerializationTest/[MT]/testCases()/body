@@ -1,5 +1,0 @@
-{
-  for (  UnsignedLong x : TEST_CASES) {
-    doTest(x);
-  }
-}

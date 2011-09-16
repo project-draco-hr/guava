@@ -1,9 +1,0 @@
-{
-  threadPool.submit(new Interrupter(Thread.currentThread()));
-  try {
-    Queues.drain(q,ImmutableList.of(),100,Long.MAX_VALUE,TimeUnit.NANOSECONDS);
-    fail();
-  }
- catch (  InterruptedException ok) {
-  }
-}
