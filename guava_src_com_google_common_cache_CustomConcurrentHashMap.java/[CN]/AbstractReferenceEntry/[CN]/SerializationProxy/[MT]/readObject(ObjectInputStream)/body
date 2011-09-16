@@ -1,0 +1,18 @@
+{
+  in.defaultReadObject();
+  CacheBuilder<Object,Object> builder=CacheBuilder.newBuilder().setKeyStrength(keyStrength).setValueStrength(valueStrength).keyEquivalence(keyEquivalence).valueEquivalence(valueEquivalence).concurrencyLevel(concurrencyLevel);
+  builder.removalListener(removalListener);
+  if (expireAfterWriteNanos > 0) {
+    builder.expireAfterWrite(expireAfterWriteNanos,TimeUnit.NANOSECONDS);
+  }
+  if (expireAfterAccessNanos > 0) {
+    builder.expireAfterAccess(expireAfterAccessNanos,TimeUnit.NANOSECONDS);
+  }
+  if (maximumSize != UNSET_INT) {
+    builder.maximumSize(maximumSize);
+  }
+  if (ticker != Ticker.systemTicker()) {
+    builder.ticker(ticker);
+  }
+  this.delegate=builder.build(loader);
+}

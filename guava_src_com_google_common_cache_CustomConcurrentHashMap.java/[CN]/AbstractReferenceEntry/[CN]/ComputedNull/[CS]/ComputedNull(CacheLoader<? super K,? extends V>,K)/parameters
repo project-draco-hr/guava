@@ -1,2 +1,0 @@
-CacheLoader<? super K,? extends V> loader
-K key
