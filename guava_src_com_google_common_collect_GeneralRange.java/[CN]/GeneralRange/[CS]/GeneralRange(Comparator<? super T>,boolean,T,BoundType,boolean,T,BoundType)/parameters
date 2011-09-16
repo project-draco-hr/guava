@@ -1,5 +1,7 @@
 Comparator<? super T> comparator
-Optional<T> lowerEndpoint
+boolean hasLowerBound
+T lowerEndpoint
 BoundType lowerBoundType
-Optional<T> upperEndpoint
+boolean hasUpperBound
+T upperEndpoint
 BoundType upperBoundType

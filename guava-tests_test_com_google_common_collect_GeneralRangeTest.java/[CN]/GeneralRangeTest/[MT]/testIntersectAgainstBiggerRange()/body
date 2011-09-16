@@ -1,6 +1,6 @@
 {
-  GeneralRange<Integer> range=GeneralRange.range(Ordering.natural(),2,CLOSED,4,OPEN);
-  assertEquals(GeneralRange.range(Ordering.natural(),2,CLOSED,4,OPEN),range.intersect(GeneralRange.range(Ordering.natural(),1,OPEN,5,CLOSED)));
-  assertEquals(GeneralRange.range(Ordering.natural(),2,OPEN,4,OPEN),range.intersect(GeneralRange.range(Ordering.natural(),2,OPEN,5,CLOSED)));
-  assertEquals(GeneralRange.range(Ordering.natural(),2,CLOSED,4,OPEN),range.intersect(GeneralRange.range(Ordering.natural(),1,OPEN,4,OPEN)));
+  GeneralRange<Integer> range=GeneralRange.range(ORDERING,2,CLOSED,4,OPEN);
+  assertEquals(GeneralRange.range(ORDERING,2,CLOSED,4,OPEN),range.intersect(GeneralRange.range(ORDERING,null,OPEN,5,CLOSED)));
+  assertEquals(GeneralRange.range(ORDERING,2,OPEN,4,OPEN),range.intersect(GeneralRange.range(ORDERING,2,OPEN,5,CLOSED)));
+  assertEquals(GeneralRange.range(ORDERING,2,CLOSED,4,OPEN),range.intersect(GeneralRange.range(ORDERING,1,OPEN,4,OPEN)));
 }

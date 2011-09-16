@@ -10,14 +10,14 @@ builder.append('(');
 break;
 }
 if (hasLowerBound()) {
-builder.append(lowerEndpoint.get());
+builder.append(lowerEndpoint);
 }
  else {
 builder.append("-\u221e");
 }
 builder.append(',');
 if (hasUpperBound()) {
-builder.append(upperEndpoint.get());
+builder.append(upperEndpoint);
 }
  else {
 builder.append("\u221e");

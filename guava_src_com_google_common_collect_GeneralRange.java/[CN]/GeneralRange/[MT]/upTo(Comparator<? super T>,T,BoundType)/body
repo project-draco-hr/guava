@@ -1,3 +1,3 @@
 {
-  return new GeneralRange<T>(comparator,Optional.<T>absent(),OPEN,Optional.of(endpoint),boundType);
+  return new GeneralRange<T>(comparator,false,null,OPEN,true,endpoint,boundType);
 }
