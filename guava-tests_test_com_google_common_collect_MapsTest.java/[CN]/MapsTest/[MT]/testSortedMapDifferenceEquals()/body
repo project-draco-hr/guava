@@ -2,9 +2,9 @@
   SortedMap<Integer,String> left=ImmutableSortedMap.of(1,"a",2,"b",3,"c",4,"d",5,"e");
   SortedMap<Integer,String> right=ImmutableSortedMap.of(1,"a",3,"f",5,"g",6,"z");
   SortedMap<Integer,String> right2=ImmutableSortedMap.of(1,"a",3,"h",5,"g",6,"z");
-  SortedMapDifference<Integer,String> original=SortedMaps.difference(left,right);
-  SortedMapDifference<Integer,String> same=SortedMaps.difference(left,right);
-  SortedMapDifference<Integer,String> reverse=SortedMaps.difference(right,left);
-  SortedMapDifference<Integer,String> diff2=SortedMaps.difference(left,right2);
+  SortedMapDifference<Integer,String> original=Maps.difference(left,right);
+  SortedMapDifference<Integer,String> same=Maps.difference(left,right);
+  SortedMapDifference<Integer,String> reverse=Maps.difference(right,left);
+  SortedMapDifference<Integer,String> diff2=Maps.difference(left,right2);
   new EqualsTester().addEqualityGroup(original,same).addEqualityGroup(reverse).addEqualityGroup(diff2).testEquals();
 }

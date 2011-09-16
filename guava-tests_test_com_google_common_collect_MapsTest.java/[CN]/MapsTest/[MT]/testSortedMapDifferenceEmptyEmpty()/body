@@ -1,0 +1,9 @@
+{
+  SortedMapDifference<Integer,Integer> diff=Maps.difference(SORTED_EMPTY,SORTED_EMPTY);
+  assertTrue(diff.areEqual());
+  assertEquals(SORTED_EMPTY,diff.entriesOnlyOnLeft());
+  assertEquals(SORTED_EMPTY,diff.entriesOnlyOnRight());
+  assertEquals(SORTED_EMPTY,diff.entriesInCommon());
+  assertEquals(SORTED_EMPTY,diff.entriesDiffering());
+  assertEquals("equal",diff.toString());
+}
