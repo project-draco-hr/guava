@@ -1,5 +1,5 @@
 {
-  this.targetKey=checkNotNull(targetKey);
+  this.targetKey=targetKey;
   this.originalRoot=originalRoot;
   this.changedRoot=changedRoot;
   this.modificationResult=checkNotNull(modificationResult);

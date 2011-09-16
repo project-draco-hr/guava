@@ -1,7 +1,6 @@
 {
   checkNotNull(comparator);
   checkNotNull(mutationRule);
-  checkNotNull(key);
   if (tree != null) {
     int cmp=comparator.compare(key,tree.getKey());
     if (cmp != 0) {
