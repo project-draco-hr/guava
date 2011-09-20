@@ -1,7 +1,7 @@
 {
   long size=0;
   ImmutableMap.Builder<E,Integer> builder=ImmutableMap.builder();
-  for (  Entry<E2> entry : entries) {
+  for (  Entry<? extends E> entry : entries) {
     int count=entry.getCount();
     if (count > 0) {
       builder.put(entry.getElement(),count);
