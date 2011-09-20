@@ -1,0 +1,11 @@
+{
+  for (  Cache<Object,Object> cache : caches()) {
+    List<Entry<Object,Object>> warmed=warmUp(cache);
+    Object newKey=new Object();
+    Object newValue=new Object();
+    cache.asMap().putAll(ImmutableMap.of(newKey,newValue));
+    assertEquals(newValue,cache.getUnchecked(newKey));
+    assertEquals(WARMUP_SIZE,cache.stats().missCount());
+    checkValidState(cache);
+  }
+}

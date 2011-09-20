@@ -1,0 +1,16 @@
+{
+  for (  Cache<Object,Object> cache : caches()) {
+    List<Entry<Object,Object>> warmed=warmUp(cache);
+    for (int i=WARMUP_MIN; i < WARMUP_MAX; i++) {
+      Entry<Object,Object> entry=warmed.get(i - WARMUP_MIN);
+      Object newValue=new Object();
+      assertSame(entry.getValue(),cache.asMap().putIfAbsent(entry.getKey(),newValue));
+      Object newKey=new Object();
+      assertNull(cache.asMap().putIfAbsent(newKey,entry.getValue()));
+      assertEquals(entry.getValue(),cache.getUnchecked(entry.getKey()));
+      assertEquals(entry.getValue(),cache.getUnchecked(newKey));
+    }
+    assertEquals(WARMUP_SIZE,cache.stats().missCount());
+    checkValidState(cache);
+  }
+}
