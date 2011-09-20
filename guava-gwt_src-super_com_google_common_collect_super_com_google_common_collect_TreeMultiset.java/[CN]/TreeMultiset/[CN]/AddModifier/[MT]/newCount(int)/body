@@ -1,0 +1,4 @@
+{
+  checkArgument(countToAdd <= Integer.MAX_VALUE - oldCount,"Cannot add this many elements");
+  return oldCount + countToAdd;
+}

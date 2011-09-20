@@ -1,0 +1,5 @@
+{
+  checkElement(element);
+  checkArgument(range.contains(element));
+  return mutate(element,new SetCountModifier(count));
+}

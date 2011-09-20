@@ -1,0 +1,4 @@
+{
+  checkArgument(countToAdd > 0);
+  this.countToAdd=countToAdd;
+}

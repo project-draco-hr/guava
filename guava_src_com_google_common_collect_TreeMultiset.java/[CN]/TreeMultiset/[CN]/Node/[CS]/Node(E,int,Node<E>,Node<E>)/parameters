@@ -1,0 +1,4 @@
+E key
+int elemCount
+Node<E> left
+Node<E> right

@@ -1,6 +1,8 @@
 {
   stream.defaultReadObject();
   @SuppressWarnings("unchecked") Comparator<? super E> comparator=(Comparator<? super E>)stream.readObject();
-  setBackingMap(new TreeMap<E,Count>(comparator));
+  Serialization.getFieldSetter(AbstractSortedMultiset.class,"comparator").set(this,comparator);
+  Serialization.getFieldSetter(TreeMultiset.class,"range").set(this,GeneralRange.all(comparator));
+  Serialization.getFieldSetter(TreeMultiset.class,"rootReference").set(this,new Reference<Node<E>>());
   Serialization.populateMultiset(this,stream);
 }

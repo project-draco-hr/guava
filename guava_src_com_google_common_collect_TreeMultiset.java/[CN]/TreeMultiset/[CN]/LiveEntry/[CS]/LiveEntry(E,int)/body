@@ -1,0 +1,5 @@
+{
+  this.expectedRoot=rootReference.get();
+  this.element=element;
+  this.count=count;
+}

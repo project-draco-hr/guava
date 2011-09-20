@@ -1,6 +1,5 @@
 {
   checkNotNull(range);
-  checkNotNull(key);
 switch (side) {
 case LEFT:
     return range.tooLow(key);

@@ -1,11 +1,16 @@
 {
   try {
-    return super.count(element);
-  }
- catch (  NullPointerException e) {
+    E e=checkElement(element);
+    if (range.contains(e)) {
+      Node<E> node=BstOperations.seek(comparator(),rootReference.get(),e);
+      return (node == null) ? 0 : node.elemOccurrences;
+    }
     return 0;
   }
-catch (  ClassCastException e) {
+ catch (  ClassCastException e) {
+    return 0;
+  }
+catch (  NullPointerException e) {
     return 0;
   }
 }

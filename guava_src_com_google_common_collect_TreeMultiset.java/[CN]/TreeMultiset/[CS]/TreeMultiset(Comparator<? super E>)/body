@@ -1,4 +1,5 @@
 {
-  super(new TreeMap<E,Count>(checkNotNull(comparator)));
-  this.comparator=comparator;
+  super(comparator);
+  this.range=GeneralRange.all(comparator);
+  this.rootReference=new Reference<Node<E>>();
 }

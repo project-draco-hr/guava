@@ -1,0 +1,3 @@
+{
+  return (BstAggregate)DISTINCT_AGGREGATE;
+}

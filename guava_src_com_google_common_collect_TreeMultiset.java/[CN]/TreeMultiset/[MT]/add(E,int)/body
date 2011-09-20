@@ -1,6 +1,8 @@
 {
-  if (element == null) {
-    comparator.compare(element,element);
+  checkElement(element);
+  if (occurrences == 0) {
+    return count(element);
   }
-  return super.add(element,occurrences);
+  checkArgument(range.contains(element));
+  return mutate(element,new AddModifier(occurrences));
 }

@@ -2,6 +2,26 @@
   TestSuite suite=new TestSuite();
   suite.addTest(MultisetTestSuiteBuilder.using(hashMultisetGenerator()).withFeatures(CollectionSize.ANY,CollectionFeature.ALLOWS_NULL_VALUES,CollectionFeature.GENERAL_PURPOSE).named("HashMultiset").createTestSuite());
   suite.addTest(MultisetTestSuiteBuilder.using(unmodifiableMultisetGenerator()).withFeatures(CollectionSize.ANY,CollectionFeature.KNOWN_ORDER,CollectionFeature.ALLOWS_NULL_QUERIES).named("UnmodifiableTreeMultiset").createTestSuite());
+  suite.addTest(SortedMultisetTestSuiteBuilder.using(new TestStringMultisetGenerator(){
+    @Override protected Multiset<String> create(    String[] elements){
+      return TreeMultiset.create(Arrays.asList(elements));
+    }
+    @Override public List<String> order(    List<String> insertionOrder){
+      return Ordering.natural().sortedCopy(insertionOrder);
+    }
+  }
+).withFeatures(CollectionSize.ANY,CollectionFeature.KNOWN_ORDER,CollectionFeature.GENERAL_PURPOSE,CollectionFeature.ALLOWS_NULL_QUERIES).named("TreeMultiset, Ordering.natural").createTestSuite());
+  suite.addTest(SortedMultisetTestSuiteBuilder.using(new TestStringMultisetGenerator(){
+    @Override protected Multiset<String> create(    String[] elements){
+      Multiset<String> result=TreeMultiset.create(Ordering.natural().nullsFirst());
+      result.addAll(Arrays.asList(elements));
+      return result;
+    }
+    @Override public List<String> order(    List<String> insertionOrder){
+      return Ordering.natural().nullsFirst().sortedCopy(insertionOrder);
+    }
+  }
+).withFeatures(CollectionSize.ANY,CollectionFeature.KNOWN_ORDER,CollectionFeature.GENERAL_PURPOSE,CollectionFeature.ALLOWS_NULL_VALUES).named("TreeMultiset, Ordering.natural.nullsFirst").createTestSuite());
   suite.addTest(MultisetTestSuiteBuilder.using(forSetGenerator()).withFeatures(CollectionSize.ANY,CollectionFeature.ALLOWS_NULL_VALUES,CollectionFeature.REMOVE_OPERATIONS).suppressing(getReadsDuplicateInitializingMethods()).suppressing(getSetCountDuplicateInitializingMethods()).suppressing(getIteratorDuplicateInitializingMethods()).named("ForSetMultiset").createTestSuite());
   suite.addTest(MultisetTestSuiteBuilder.using(concurrentMultisetGenerator()).withFeatures(CollectionSize.ANY,CollectionFeature.GENERAL_PURPOSE,CollectionFeature.ALLOWS_NULL_QUERIES).named("ConcurrentHashMultiset").createTestSuite());
   suite.addTest(MultisetTestSuiteBuilder.using(enumMultisetGenerator()).withFeatures(CollectionSize.ANY,CollectionFeature.KNOWN_ORDER,CollectionFeature.GENERAL_PURPOSE,CollectionFeature.ALLOWS_NULL_QUERIES).named("EnumMultiset").createTestSuite());

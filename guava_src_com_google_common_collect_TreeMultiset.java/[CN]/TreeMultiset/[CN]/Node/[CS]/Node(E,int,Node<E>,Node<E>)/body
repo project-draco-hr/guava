@@ -1,0 +1,8 @@
+{
+  super(key,left,right);
+  checkArgument(elemCount > 0);
+  this.elemOccurrences=elemCount;
+  long totalSize=(long)elemCount + sizeOrZero(left) + sizeOrZero(right);
+  this.size=Ints.saturatedCast(totalSize);
+  this.distinct=1 + distinctOrZero(left) + distinctOrZero(right);
+}

@@ -1,0 +1,5 @@
+{
+  checkArgument(setCount >= 0 & expectedCount >= 0);
+  this.expectedCount=expectedCount;
+  this.setCount=setCount;
+}

@@ -1,0 +1,4 @@
+{
+  Node<E> root=rootReference.get();
+  return BstRangeOps.totalInRange(distinctAggregate(),range,root);
+}

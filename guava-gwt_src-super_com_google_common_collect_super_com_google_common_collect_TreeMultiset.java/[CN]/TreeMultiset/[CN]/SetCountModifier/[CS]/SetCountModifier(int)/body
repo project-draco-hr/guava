@@ -1,0 +1,4 @@
+{
+  checkArgument(countToSet >= 0);
+  this.countToSet=countToSet;
+}
