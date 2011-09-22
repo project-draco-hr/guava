@@ -1,0 +1,13 @@
+{
+  for (  long x : POSITIVE_LONG_CANDIDATES) {
+    int floor=LongMath.log10(x,FLOOR);
+    boolean expectSuccess=LongMath.pow(10,floor) == x;
+    try {
+      assertEquals(floor,LongMath.log10(x,UNNECESSARY));
+      assertTrue(expectSuccess);
+    }
+ catch (    ArithmeticException e) {
+      assertFalse(expectSuccess);
+    }
+  }
+}

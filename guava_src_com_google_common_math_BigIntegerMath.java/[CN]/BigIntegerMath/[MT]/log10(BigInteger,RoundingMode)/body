@@ -1,0 +1,41 @@
+{
+  checkPositive("x",x);
+  if (fitsInLong(x)) {
+    return LongMath.log10(x.longValue(),mode);
+  }
+  List<BigInteger> powersOf10=new ArrayList<BigInteger>(10);
+  BigInteger powerOf10=BigInteger.TEN;
+  while (x.compareTo(powerOf10) >= 0) {
+    powersOf10.add(powerOf10);
+    powerOf10=powerOf10.pow(2);
+  }
+  BigInteger floorPow=BigInteger.ONE;
+  int floorLog=0;
+  for (int i=powersOf10.size() - 1; i >= 0; i--) {
+    BigInteger powOf10=powersOf10.get(i);
+    floorLog*=2;
+    BigInteger tenPow=powOf10.multiply(floorPow);
+    if (x.compareTo(tenPow) >= 0) {
+      floorPow=tenPow;
+      floorLog++;
+    }
+  }
+switch (mode) {
+case UNNECESSARY:
+    checkRoundingUnnecessary(floorPow.equals(x));
+case FLOOR:
+case DOWN:
+  return floorLog;
+case CEILING:
+case UP:
+return floorPow.equals(x) ? floorLog : floorLog + 1;
+case HALF_DOWN:
+case HALF_UP:
+case HALF_EVEN:
+BigInteger x2=x.pow(2);
+BigInteger halfPowerSquared=floorPow.pow(2).multiply(BigInteger.TEN);
+return (x2.compareTo(halfPowerSquared) <= 0) ? floorLog : floorLog + 1;
+default :
+throw new AssertionError();
+}
+}

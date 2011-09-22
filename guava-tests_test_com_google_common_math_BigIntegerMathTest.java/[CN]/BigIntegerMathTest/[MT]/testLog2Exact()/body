@@ -1,0 +1,12 @@
+{
+  for (  BigInteger x : POSITIVE_BIGINTEGER_CANDIDATES) {
+    boolean isPowerOf2=BigIntegerMath.isPowerOfTwo(x);
+    try {
+      assertEquals(x,ZERO.setBit(BigIntegerMath.log2(x,UNNECESSARY)));
+      assertTrue(isPowerOf2);
+    }
+ catch (    ArithmeticException e) {
+      assertFalse(isPowerOf2);
+    }
+  }
+}

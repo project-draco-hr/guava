@@ -1,0 +1,7 @@
+{
+  for (  int a : POSITIVE_INTEGER_CANDIDATES) {
+    for (    int b : POSITIVE_INTEGER_CANDIDATES) {
+      assertEquals(valueOf(a).gcd(valueOf(b)),valueOf(IntMath.gcd(a,b)));
+    }
+  }
+}

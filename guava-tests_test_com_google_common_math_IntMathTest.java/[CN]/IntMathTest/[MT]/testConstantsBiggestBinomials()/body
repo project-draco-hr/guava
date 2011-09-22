@@ -1,0 +1,7 @@
+{
+  for (int k=0; k < IntMath.BIGGEST_BINOMIALS.length; k++) {
+    assertTrue(fitsInInt(BigIntegerMath.binomial(IntMath.BIGGEST_BINOMIALS[k],k)));
+    assertTrue(IntMath.BIGGEST_BINOMIALS[k] == Integer.MAX_VALUE || !fitsInInt(BigIntegerMath.binomial(IntMath.BIGGEST_BINOMIALS[k] + 1,k)));
+  }
+  assertFalse(fitsInInt(BigIntegerMath.binomial(2 * IntMath.BIGGEST_BINOMIALS.length,IntMath.BIGGEST_BINOMIALS.length)));
+}

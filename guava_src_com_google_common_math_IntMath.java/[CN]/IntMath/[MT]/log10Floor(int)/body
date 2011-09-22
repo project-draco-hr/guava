@@ -1,0 +1,8 @@
+{
+  for (int i=1; i < POWERS_OF_10.length; i++) {
+    if (x < POWERS_OF_10[i]) {
+      return i - 1;
+    }
+  }
+  return POWERS_OF_10.length - 1;
+}

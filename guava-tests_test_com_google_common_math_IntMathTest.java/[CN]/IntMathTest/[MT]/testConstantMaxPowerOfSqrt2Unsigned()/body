@@ -1,0 +1,3 @@
+{
+  assertEquals(BigIntegerMath.sqrt(BigInteger.ZERO.setBit(2 * Integer.SIZE - 1),FLOOR).intValue(),IntMath.MAX_POWER_OF_SQRT2_UNSIGNED);
+}

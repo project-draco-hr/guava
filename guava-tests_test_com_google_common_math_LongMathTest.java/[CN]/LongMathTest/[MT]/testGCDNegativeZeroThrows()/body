@@ -1,0 +1,16 @@
+{
+  for (  long a : NEGATIVE_LONG_CANDIDATES) {
+    try {
+      LongMath.gcd(a,0);
+      fail("Expected IllegalArgumentException");
+    }
+ catch (    IllegalArgumentException expected) {
+    }
+    try {
+      LongMath.gcd(0,a);
+      fail("Expected IllegalArgumentException");
+    }
+ catch (    IllegalArgumentException expected) {
+    }
+  }
+}

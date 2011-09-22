@@ -1,0 +1,7 @@
+{
+  for (  long a : POSITIVE_LONG_CANDIDATES) {
+    assertEquals(a,LongMath.gcd(a,0));
+    assertEquals(a,LongMath.gcd(0,a));
+  }
+  assertEquals(0,LongMath.gcd(0,0));
+}

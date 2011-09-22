@@ -1,0 +1,14 @@
+{
+  for (  int p : NONZERO_INTEGER_CANDIDATES) {
+    for (    int q : NONZERO_INTEGER_CANDIDATES) {
+      boolean dividesEvenly=(p % q) == 0;
+      try {
+        assertEquals(p,IntMath.divide(p,q,UNNECESSARY) * q);
+        assertTrue(dividesEvenly);
+      }
+ catch (      ArithmeticException e) {
+        assertFalse(dividesEvenly);
+      }
+    }
+  }
+}

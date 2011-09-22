@@ -1,0 +1,6 @@
+{
+  int x=1000000;
+  for (  RoundingMode mode : ALL_ROUNDING_MODES) {
+    assertEquals(6,IntMath.log10(x,mode));
+  }
+}

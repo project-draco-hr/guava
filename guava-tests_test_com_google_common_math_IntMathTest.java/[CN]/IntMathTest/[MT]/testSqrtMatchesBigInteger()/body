@@ -1,0 +1,7 @@
+{
+  for (  int x : POSITIVE_INTEGER_CANDIDATES) {
+    for (    RoundingMode mode : ALL_SAFE_ROUNDING_MODES) {
+      assertEquals(BigIntegerMath.sqrt(valueOf(x),mode),valueOf(IntMath.sqrt(x,mode)));
+    }
+  }
+}

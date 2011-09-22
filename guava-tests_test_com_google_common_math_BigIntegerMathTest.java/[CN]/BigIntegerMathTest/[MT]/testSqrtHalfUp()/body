@@ -1,0 +1,10 @@
+{
+  for (  BigInteger x : POSITIVE_BIGINTEGER_CANDIDATES) {
+    BigInteger result=BigIntegerMath.sqrt(x,HALF_UP);
+    BigInteger plusHalfSquared=result.pow(2).add(result).shiftLeft(2).add(ONE);
+    BigInteger x4=x.shiftLeft(2);
+    assertTrue(x4.compareTo(plusHalfSquared) < 0);
+    BigInteger minusHalfSquared=result.pow(2).subtract(result).shiftLeft(2).add(ONE);
+    assertTrue(result.equals(ZERO) || x4.compareTo(minusHalfSquared) >= 0);
+  }
+}

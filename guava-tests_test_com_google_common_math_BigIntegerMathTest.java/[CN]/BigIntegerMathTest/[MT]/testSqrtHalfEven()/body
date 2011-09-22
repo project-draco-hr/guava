@@ -1,0 +1,7 @@
+{
+  for (  BigInteger x : POSITIVE_BIGINTEGER_CANDIDATES) {
+    BigInteger halfEven=BigIntegerMath.sqrt(x,HALF_EVEN);
+    boolean floorWasOdd=BigIntegerMath.sqrt(x,FLOOR).testBit(0);
+    assertEquals(BigIntegerMath.sqrt(x,floorWasOdd ? HALF_UP : HALF_DOWN),halfEven);
+  }
+}

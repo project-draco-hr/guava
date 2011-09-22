@@ -1,0 +1,13 @@
+{
+  long sqrt0=(long)Math.sqrt(x);
+  long sqrt1=(sqrt0 + (x / sqrt0)) >> 1;
+  if (sqrt1 == sqrt0) {
+    return sqrt0;
+  }
+  do {
+    sqrt0=sqrt1;
+    sqrt1=(sqrt0 + (x / sqrt0)) >> 1;
+  }
+ while (sqrt1 < sqrt0);
+  return sqrt0;
+}

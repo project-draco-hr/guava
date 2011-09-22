@@ -1,0 +1,12 @@
+{
+  for (  BigInteger p : ALL_BIGINTEGER_CANDIDATES) {
+    for (    RoundingMode mode : ALL_ROUNDING_MODES) {
+      try {
+        BigIntegerMath.divide(p,ZERO,mode);
+        fail("Expected ArithmeticException");
+      }
+ catch (      ArithmeticException expected) {
+      }
+    }
+  }
+}

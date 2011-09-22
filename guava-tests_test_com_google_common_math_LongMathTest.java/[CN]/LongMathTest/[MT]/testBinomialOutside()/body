@@ -1,0 +1,16 @@
+{
+  for (int n=0; n <= 50; n++) {
+    try {
+      LongMath.binomial(n,-1);
+      fail("Expected IllegalArgumentException");
+    }
+ catch (    IllegalArgumentException expected) {
+    }
+    try {
+      LongMath.binomial(n,n + 1);
+      fail("Expected IllegalArgumentException");
+    }
+ catch (    IllegalArgumentException expected) {
+    }
+  }
+}

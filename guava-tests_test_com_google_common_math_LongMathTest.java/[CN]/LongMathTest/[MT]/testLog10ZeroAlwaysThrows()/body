@@ -1,0 +1,10 @@
+{
+  for (  RoundingMode mode : ALL_ROUNDING_MODES) {
+    try {
+      LongMath.log10(0L,mode);
+      fail("Expected IllegalArgumentException");
+    }
+ catch (    IllegalArgumentException expected) {
+    }
+  }
+}

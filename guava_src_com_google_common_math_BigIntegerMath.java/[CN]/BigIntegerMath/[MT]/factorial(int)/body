@@ -1,0 +1,10 @@
+{
+  checkNonNegative("n",n);
+  if (n < LongMath.FACTORIALS.length) {
+    return BigInteger.valueOf(LongMath.factorial(n));
+  }
+ else {
+    int k=LongMath.FACTORIALS.length - 1;
+    return BigInteger.valueOf(LongMath.factorial(k)).multiply(factorial(k,n));
+  }
+}

@@ -1,0 +1,7 @@
+{
+  for (  long i : ALL_LONG_CANDIDATES) {
+    for (    int exp : EXPONENTS) {
+      assertEquals(LongMath.pow(i,exp),valueOf(i).pow(exp).longValue());
+    }
+  }
+}

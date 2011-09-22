@@ -1,0 +1,24 @@
+{
+  checkPositive("x",x);
+  if (fitsInInt(x)) {
+    return IntMath.log10((int)x,mode);
+  }
+  int logFloor=log10Floor(x);
+  long floorPow=POWERS_OF_10[logFloor];
+switch (mode) {
+case UNNECESSARY:
+    checkRoundingUnnecessary(x == floorPow);
+case FLOOR:
+case DOWN:
+  return logFloor;
+case CEILING:
+case UP:
+return (x == floorPow) ? logFloor : logFloor + 1;
+case HALF_DOWN:
+case HALF_UP:
+case HALF_EVEN:
+return (x <= HALF_POWERS_OF_10[logFloor]) ? logFloor : logFloor + 1;
+default :
+throw new AssertionError();
+}
+}

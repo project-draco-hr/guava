@@ -1,0 +1,7 @@
+{
+  for (  long x : ALL_LONG_CANDIDATES) {
+    for (    int m : POSITIVE_INTEGER_CANDIDATES) {
+      assertEquals(valueOf(x).mod(valueOf(m)).intValue(),LongMath.mod(x,m));
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  for (  BigInteger x : POSITIVE_BIGINTEGER_CANDIDATES) {
+    BigInteger floor=BigIntegerMath.sqrt(x,FLOOR);
+    boolean isPerfectSquare=floor.pow(2).equals(x);
+    try {
+      assertEquals(floor,BigIntegerMath.sqrt(x,UNNECESSARY));
+      assertTrue(isPerfectSquare);
+    }
+ catch (    ArithmeticException e) {
+      assertFalse(isPerfectSquare);
+    }
+  }
+}

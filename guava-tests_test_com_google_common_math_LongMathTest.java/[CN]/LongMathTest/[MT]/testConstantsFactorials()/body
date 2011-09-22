@@ -1,0 +1,12 @@
+{
+  long expected=1;
+  for (int i=0; i < LongMath.FACTORIALS.length; i++, expected*=i) {
+    assertEquals(expected,LongMath.FACTORIALS[i]);
+  }
+  try {
+    LongMath.checkedMultiply(LongMath.FACTORIALS[LongMath.FACTORIALS.length - 1],LongMath.FACTORIALS.length);
+    fail("Expected ArithmeticException");
+  }
+ catch (  ArithmeticException expect) {
+  }
+}

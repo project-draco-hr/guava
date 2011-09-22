@@ -1,0 +1,12 @@
+{
+  for (  int x : NEGATIVE_INTEGER_CANDIDATES) {
+    for (    RoundingMode mode : RoundingMode.values()) {
+      try {
+        IntMath.sqrt(x,mode);
+        fail("Expected IllegalArgumentException");
+      }
+ catch (      IllegalArgumentException expected) {
+      }
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  for (int i=0; i < LongMath.HALF_POWERS_OF_10.length; i++) {
+    assertEquals(BigIntegerMath.sqrt(BigInteger.TEN.pow(2 * i + 1),FLOOR),BigInteger.valueOf(LongMath.HALF_POWERS_OF_10[i]));
+  }
+  BigInteger nextBigger=BigIntegerMath.sqrt(BigInteger.TEN.pow(2 * LongMath.HALF_POWERS_OF_10.length + 1),FLOOR);
+  assertTrue(nextBigger.compareTo(BigInteger.valueOf(Long.MAX_VALUE)) > 0);
+}

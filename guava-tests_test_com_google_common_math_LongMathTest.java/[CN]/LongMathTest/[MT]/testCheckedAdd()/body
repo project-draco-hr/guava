@@ -1,0 +1,15 @@
+{
+  for (  long a : ALL_INTEGER_CANDIDATES) {
+    for (    long b : ALL_INTEGER_CANDIDATES) {
+      BigInteger expectedResult=valueOf(a).add(valueOf(b));
+      boolean expectedSuccess=fitsInLong(expectedResult);
+      try {
+        assertEquals(a + b,LongMath.checkedAdd(a,b));
+        assertTrue(expectedSuccess);
+      }
+ catch (      ArithmeticException e) {
+        assertFalse(expectedSuccess);
+      }
+    }
+  }
+}

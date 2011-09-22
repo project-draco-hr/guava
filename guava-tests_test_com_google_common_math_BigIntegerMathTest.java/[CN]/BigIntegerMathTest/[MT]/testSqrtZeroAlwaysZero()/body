@@ -1,0 +1,5 @@
+{
+  for (  RoundingMode mode : ALL_ROUNDING_MODES) {
+    assertEquals(ZERO,BigIntegerMath.sqrt(ZERO,mode));
+  }
+}

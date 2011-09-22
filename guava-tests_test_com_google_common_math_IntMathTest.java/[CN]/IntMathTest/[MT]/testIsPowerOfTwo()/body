@@ -1,0 +1,6 @@
+{
+  for (  int x : ALL_INTEGER_CANDIDATES) {
+    boolean expected=x > 0 & (x & (x - 1)) == 0;
+    assertEquals(expected,IntMath.isPowerOfTwo(x));
+  }
+}

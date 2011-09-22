@@ -1,0 +1,3 @@
+{
+  assertEquals(IntMath.sqrt(Integer.MAX_VALUE,FLOOR),IntMath.FLOOR_SQRT_MAX_INT);
+}

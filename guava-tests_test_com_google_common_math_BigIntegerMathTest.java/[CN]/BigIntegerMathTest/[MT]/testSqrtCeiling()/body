@@ -1,0 +1,10 @@
+{
+  for (  BigInteger x : POSITIVE_BIGINTEGER_CANDIDATES) {
+    for (    RoundingMode mode : asList(CEILING,UP)) {
+      BigInteger result=BigIntegerMath.sqrt(x,mode);
+      assertTrue(result.compareTo(ZERO) > 0);
+      assertTrue(result.pow(2).compareTo(x) >= 0);
+      assertTrue(result.signum() == 0 || result.subtract(ONE).pow(2).compareTo(x) < 0);
+    }
+  }
+}

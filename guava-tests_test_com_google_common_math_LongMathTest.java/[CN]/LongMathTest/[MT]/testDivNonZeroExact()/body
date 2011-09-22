@@ -1,0 +1,14 @@
+{
+  for (  long p : NONZERO_LONG_CANDIDATES) {
+    for (    long q : NONZERO_LONG_CANDIDATES) {
+      boolean dividesEvenly=(p % q) == 0L;
+      try {
+        assertEquals(p,LongMath.divide(p,q,UNNECESSARY) * q);
+        assertTrue(dividesEvenly);
+      }
+ catch (      ArithmeticException e) {
+        assertFalse(dividesEvenly);
+      }
+    }
+  }
+}

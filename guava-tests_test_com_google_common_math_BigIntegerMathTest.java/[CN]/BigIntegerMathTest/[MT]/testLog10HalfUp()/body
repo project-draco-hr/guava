@@ -1,0 +1,8 @@
+{
+  for (  BigInteger x : POSITIVE_BIGINTEGER_CANDIDATES) {
+    int result=BigIntegerMath.log10(x,HALF_UP);
+    BigInteger x2=x.pow(2);
+    assertTrue(TEN.pow(2 * result + 1).compareTo(x2) > 0);
+    assertTrue(result == 0 || TEN.pow(2 * result - 1).compareTo(x2) <= 0);
+  }
+}

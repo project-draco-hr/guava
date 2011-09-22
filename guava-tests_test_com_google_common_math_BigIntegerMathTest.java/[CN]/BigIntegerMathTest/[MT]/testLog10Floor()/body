@@ -1,0 +1,9 @@
+{
+  for (  BigInteger x : POSITIVE_BIGINTEGER_CANDIDATES) {
+    for (    RoundingMode mode : asList(FLOOR,DOWN)) {
+      int result=BigIntegerMath.log10(x,mode);
+      assertTrue(TEN.pow(result).compareTo(x) <= 0);
+      assertTrue(TEN.pow(result + 1).compareTo(x) > 0);
+    }
+  }
+}

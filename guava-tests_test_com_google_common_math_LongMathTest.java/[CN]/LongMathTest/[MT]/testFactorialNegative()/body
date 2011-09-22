@@ -1,0 +1,10 @@
+{
+  for (  int n : NEGATIVE_INTEGER_CANDIDATES) {
+    try {
+      LongMath.factorial(n);
+      fail("Expected IllegalArgumentException");
+    }
+ catch (    IllegalArgumentException expected) {
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  for (  long x : ALL_LONG_CANDIDATES) {
+    for (    int m : NEGATIVE_INTEGER_CANDIDATES) {
+      try {
+        LongMath.mod(x,m);
+        fail("Expected ArithmeticException");
+      }
+ catch (      ArithmeticException expected) {
+      }
+    }
+  }
+}

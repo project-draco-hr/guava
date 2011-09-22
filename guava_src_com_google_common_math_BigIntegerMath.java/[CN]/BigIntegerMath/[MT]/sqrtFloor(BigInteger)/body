@@ -1,0 +1,10 @@
+{
+  int s=(log2(x,CEILING) + 1) >> 1;
+  BigInteger sqrt0=BigInteger.ZERO.setBit(s);
+  BigInteger sqrt1=sqrt0.add(x.shiftRight(s)).shiftRight(1);
+  while (sqrt1.compareTo(sqrt0) < 0) {
+    sqrt0=sqrt1;
+    sqrt1=sqrt0.add(x.divide(sqrt0)).shiftRight(1);
+  }
+  return sqrt0;
+}

@@ -1,0 +1,7 @@
+{
+  for (  BigInteger q : NONZERO_BIGINTEGER_CANDIDATES) {
+    for (    RoundingMode mode : ALL_ROUNDING_MODES) {
+      assertEquals(ZERO,BigIntegerMath.divide(ZERO,q,mode));
+    }
+  }
+}

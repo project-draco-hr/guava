@@ -1,0 +1,13 @@
+{
+  for (  BigInteger x : POSITIVE_BIGINTEGER_CANDIDATES) {
+    int logFloor=BigIntegerMath.log10(x,FLOOR);
+    boolean expectSuccess=TEN.pow(logFloor).equals(x);
+    try {
+      assertEquals(logFloor,BigIntegerMath.log10(x,UNNECESSARY));
+      assertTrue(expectSuccess);
+    }
+ catch (    ArithmeticException e) {
+      assertFalse(expectSuccess);
+    }
+  }
+}

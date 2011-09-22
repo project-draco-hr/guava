@@ -1,0 +1,12 @@
+{
+  for (  BigInteger x : POSITIVE_BIGINTEGER_CANDIDATES) {
+    for (    RoundingMode mode : ALL_ROUNDING_MODES) {
+      try {
+        BigIntegerMath.log2(x.negate(),mode);
+        fail("Expected IllegalArgumentException");
+      }
+ catch (      IllegalArgumentException expected) {
+      }
+    }
+  }
+}

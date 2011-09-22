@@ -1,0 +1,8 @@
+{
+  long accum=1;
+  for (int i=0; i < k; i++) {
+    accum=LongMath.checkedMultiply(accum,n - i);
+    accum/=i + 1;
+  }
+  return accum;
+}

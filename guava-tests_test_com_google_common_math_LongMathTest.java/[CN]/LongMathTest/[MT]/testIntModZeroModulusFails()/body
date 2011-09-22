@@ -1,0 +1,10 @@
+{
+  for (  long x : ALL_LONG_CANDIDATES) {
+    try {
+      LongMath.mod(x,0);
+      fail("Expected AE");
+    }
+ catch (    ArithmeticException expected) {
+    }
+  }
+}

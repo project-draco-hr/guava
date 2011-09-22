@@ -1,0 +1,21 @@
+{
+  checkNonNegative("x",x);
+  int sqrtFloor=sqrtFloor(x);
+switch (mode) {
+case UNNECESSARY:
+    checkRoundingUnnecessary(sqrtFloor * sqrtFloor == x);
+case FLOOR:
+case DOWN:
+  return sqrtFloor;
+case CEILING:
+case UP:
+return (sqrtFloor * sqrtFloor == x) ? sqrtFloor : sqrtFloor + 1;
+case HALF_DOWN:
+case HALF_UP:
+case HALF_EVEN:
+int halfSquare=sqrtFloor * sqrtFloor + sqrtFloor;
+return (x <= halfSquare | halfSquare < 0) ? sqrtFloor : sqrtFloor + 1;
+default :
+throw new AssertionError();
+}
+}

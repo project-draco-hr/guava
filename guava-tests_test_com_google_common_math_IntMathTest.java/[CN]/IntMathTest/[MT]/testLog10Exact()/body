@@ -1,0 +1,13 @@
+{
+  for (  int x : POSITIVE_INTEGER_CANDIDATES) {
+    int floor=IntMath.log10(x,FLOOR);
+    boolean expectSuccess=IntMath.pow(10,floor) == x;
+    try {
+      assertEquals(floor,IntMath.log10(x,UNNECESSARY));
+      assertTrue(expectSuccess);
+    }
+ catch (    ArithmeticException e) {
+      assertFalse(expectSuccess);
+    }
+  }
+}

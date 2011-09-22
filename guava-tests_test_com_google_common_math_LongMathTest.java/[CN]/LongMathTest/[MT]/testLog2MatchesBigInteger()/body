@@ -1,0 +1,7 @@
+{
+  for (  long x : POSITIVE_LONG_CANDIDATES) {
+    for (    RoundingMode mode : ALL_SAFE_ROUNDING_MODES) {
+      assertEquals(BigIntegerMath.log2(valueOf(x),mode),LongMath.log2(x,mode));
+    }
+  }
+}

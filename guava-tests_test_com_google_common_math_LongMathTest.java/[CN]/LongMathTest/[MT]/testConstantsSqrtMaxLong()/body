@@ -1,0 +1,3 @@
+{
+  assertEquals(LongMath.sqrt(Long.MAX_VALUE,FLOOR),LongMath.FLOOR_SQRT_MAX_LONG);
+}

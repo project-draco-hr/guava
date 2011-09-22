@@ -1,0 +1,7 @@
+{
+  for (int n=0; n <= 50; n++) {
+    BigInteger expectedBig=BigIntegerMath.factorial(n);
+    long expectedLong=fitsInLong(expectedBig) ? expectedBig.longValue() : Long.MAX_VALUE;
+    assertEquals(expectedLong,LongMath.factorial(n));
+  }
+}

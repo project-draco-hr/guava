@@ -1,0 +1,14 @@
+{
+  for (  BigInteger p : NONZERO_BIGINTEGER_CANDIDATES) {
+    for (    BigInteger q : NONZERO_BIGINTEGER_CANDIDATES) {
+      boolean dividesEvenly=p.remainder(q).equals(ZERO);
+      try {
+        assertEquals(p,BigIntegerMath.divide(p,q,UNNECESSARY).multiply(q));
+        assertTrue(dividesEvenly);
+      }
+ catch (      ArithmeticException e) {
+        assertFalse(dividesEvenly);
+      }
+    }
+  }
+}

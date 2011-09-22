@@ -1,0 +1,6 @@
+{
+  BigInteger x=BigInteger.TEN.pow(100);
+  for (  RoundingMode mode : ALL_ROUNDING_MODES) {
+    assertEquals(100,BigIntegerMath.log10(x,mode));
+  }
+}

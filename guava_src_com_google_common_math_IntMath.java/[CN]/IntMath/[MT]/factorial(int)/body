@@ -1,0 +1,4 @@
+{
+  checkNonNegative("n",n);
+  return (n < FACTORIALS.length) ? FACTORIALS[n] : Integer.MAX_VALUE;
+}

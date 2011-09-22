@@ -1,0 +1,7 @@
+{
+  for (  int x : POSITIVE_INTEGER_CANDIDATES) {
+    for (    RoundingMode mode : ALL_SAFE_ROUNDING_MODES) {
+      assertEquals(BigIntegerMath.log2(valueOf(x),mode),IntMath.log2(x,mode));
+    }
+  }
+}

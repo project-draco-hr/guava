@@ -1,0 +1,10 @@
+{
+  for (  BigInteger p : NONZERO_BIGINTEGER_CANDIDATES) {
+    for (    BigInteger q : NONZERO_BIGINTEGER_CANDIDATES) {
+      for (      RoundingMode mode : ALL_SAFE_ROUNDING_MODES) {
+        BigInteger expected=new BigDecimal(p).divide(new BigDecimal(q),0,mode).toBigIntegerExact();
+        assertEquals(expected,BigIntegerMath.divide(p,q,mode));
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  for (  long b : ALL_INTEGER_CANDIDATES) {
+    for (    int exp : EXPONENTS) {
+      BigInteger expectedResult=valueOf(b).pow(exp);
+      boolean expectedSuccess=fitsInLong(expectedResult);
+      try {
+        assertEquals(expectedResult.longValue(),LongMath.checkedPow(b,exp));
+        assertTrue(expectedSuccess);
+      }
+ catch (      ArithmeticException e) {
+        assertFalse(expectedSuccess);
+      }
+    }
+  }
+}
