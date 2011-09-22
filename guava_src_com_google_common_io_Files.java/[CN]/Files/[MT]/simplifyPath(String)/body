@@ -31,7 +31,7 @@
       }
     }
  else {
-      if (name[q] != name[firstNonSlash] || name[q] == '.') {
+      if (name[q] != name[firstNonSlash] || (name[q] == '.' && q != 0 && (sep(name,q + 1) || sep(name,q + 2)))) {
         name[q++]='/';
       }
       while ((q < name.length && p < name.length) && (name[q]=name[p]) != '/') {
