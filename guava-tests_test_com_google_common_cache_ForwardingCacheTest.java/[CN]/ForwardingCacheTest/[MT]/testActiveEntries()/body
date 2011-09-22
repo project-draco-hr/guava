@@ -1,6 +1,0 @@
-{
-  expect(mock.activeEntries(10)).andReturn(null);
-  replay(mock);
-  assertNull(forward.activeEntries(10));
-  verify(mock);
-}

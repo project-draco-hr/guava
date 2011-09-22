@@ -1,7 +1,6 @@
 {
   for (  Segment<?,?> segment : cchm.segments) {
     segment.cleanUp();
-    assertEquals(segment.count,segmentSize(segment));
     assertFalse(segment.isLocked());
     Map<?,?> table=segmentTable(segment);
     assertEquals(segment.count,table.size());
