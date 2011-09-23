@@ -1,0 +1,11 @@
+{
+  Splitter splitter=Splitter.on(CharMatcher.WHITESPACE);
+  URL url=getClass().getResource("testdata/realpathtests.txt");
+  for (  String line : Resources.readLines(url,UTF_8)) {
+    Iterator<String> iterator=splitter.split(line).iterator();
+    String input=iterator.next();
+    String expectedOutput=iterator.next();
+    assertFalse(iterator.hasNext());
+    assertEquals(expectedOutput,simplifyPath(input));
+  }
+}
