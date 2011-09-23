@@ -1,0 +1,19 @@
+{
+  assertEquals("/a/b/c/g",simplifyPath("/a/b/c/g"));
+  assertEquals("/a/b/c/g",simplifyPath("/a/b/c/./g"));
+  assertEquals("/a/b/c/g",simplifyPath("/a/b/c/g/"));
+  assertEquals("/a/b/c/g?y",simplifyPath("/a/b/c/g?y"));
+  assertEquals("/a/b/c/g#s",simplifyPath("/a/b/c/g#s"));
+  assertEquals("/a/b/c/g?y#s",simplifyPath("/a/b/c/g?y#s"));
+  assertEquals("/a/b/c/;x",simplifyPath("/a/b/c/;x"));
+  assertEquals("/a/b/c/g;x",simplifyPath("/a/b/c/g;x"));
+  assertEquals("/a/b/c/g;x?y#s",simplifyPath("/a/b/c/g;x?y#s"));
+  assertEquals("/a/b/c",simplifyPath("/a/b/c/."));
+  assertEquals("/a/b/c",simplifyPath("/a/b/c/./"));
+  assertEquals("/a/b",simplifyPath("/a/b/c/.."));
+  assertEquals("/a/b",simplifyPath("/a/b/c/../"));
+  assertEquals("/a/b/g",simplifyPath("/a/b/c/../g"));
+  assertEquals("/a",simplifyPath("/a/b/c/../.."));
+  assertEquals("/a",simplifyPath("/a/b/c/../../"));
+  assertEquals("/a/g",simplifyPath("/a/b/c/../../g"));
+}

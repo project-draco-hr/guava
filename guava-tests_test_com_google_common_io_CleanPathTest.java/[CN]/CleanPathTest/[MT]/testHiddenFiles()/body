@@ -1,6 +1,6 @@
 {
-  assertEquals(".b",Files.simplifyPath(".b"));
-  assertEquals(".b",Files.simplifyPath("./.b"));
-  assertEquals(".metadata/b",Files.simplifyPath(".metadata/b"));
-  assertEquals(".metadata/b",Files.simplifyPath("./.metadata/b"));
+  assertEquals(".b",simplifyPath(".b"));
+  assertEquals(".b",simplifyPath("./.b"));
+  assertEquals(".metadata/b",simplifyPath(".metadata/b"));
+  assertEquals(".metadata/b",simplifyPath("./.metadata/b"));
 }

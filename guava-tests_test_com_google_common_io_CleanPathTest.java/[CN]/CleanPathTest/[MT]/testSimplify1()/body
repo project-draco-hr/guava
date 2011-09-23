@@ -1,4 +1,4 @@
 {
-  assertEquals(".",Files.simplifyPath(""));
-  assertEquals(" ",Files.simplifyPath(" "));
+  assertEquals(".",simplifyPath(""));
+  assertEquals(" ",simplifyPath(" "));
 }

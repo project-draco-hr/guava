@@ -1,7 +1,7 @@
 {
-  assertEquals("b",Files.simplifyPath("./b"));
-  assertEquals("b",Files.simplifyPath("./b/."));
-  assertEquals("b",Files.simplifyPath("././b/./."));
-  assertEquals("b",Files.simplifyPath("././b"));
-  assertEquals("a/b",Files.simplifyPath("./a/b"));
+  assertEquals("b",simplifyPath("./b"));
+  assertEquals("b",simplifyPath("./b/."));
+  assertEquals("b",simplifyPath("././b/./."));
+  assertEquals("b",simplifyPath("././b"));
+  assertEquals("a/b",simplifyPath("./a/b"));
 }
