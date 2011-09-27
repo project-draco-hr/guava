@@ -5,7 +5,7 @@
     Object valueOne=new Object();
     int hashOne=map.hash(keyOne);
     ReferenceEntry<Object,Object> entryOne=map.newEntry(keyOne,hashOne,null);
-    ValueReference<Object,Object> valueRefOne=map.newValueReference(entryOne,valueOne);
+    ValueReference<Object,Object> valueRefOne=map.newValueReference(entryOne,valueOne,1);
     assertSame(valueOne,valueRefOne.get());
     entryOne.setValueReference(valueRefOne);
     assertSame(keyOne,entryOne.getKey());
@@ -16,7 +16,7 @@
     Object valueTwo=new Object();
     int hashTwo=map.hash(keyTwo);
     ReferenceEntry<Object,Object> entryTwo=map.newEntry(keyTwo,hashTwo,entryOne);
-    ValueReference<Object,Object> valueRefTwo=map.newValueReference(entryTwo,valueTwo);
+    ValueReference<Object,Object> valueRefTwo=map.newValueReference(entryTwo,valueTwo,1);
     assertSame(valueTwo,valueRefTwo.get());
     entryTwo.setValueReference(valueRefTwo);
     assertSame(keyTwo,entryTwo.getKey());

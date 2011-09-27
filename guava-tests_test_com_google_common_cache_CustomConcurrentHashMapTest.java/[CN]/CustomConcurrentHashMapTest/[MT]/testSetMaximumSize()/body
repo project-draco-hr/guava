@@ -5,10 +5,10 @@
     checkMaximumSize(4,8,maxSize);
     checkMaximumSize(8,8,maxSize);
   }
-  checkMaximumSize(1,8,Integer.MAX_VALUE);
-  checkMaximumSize(2,8,Integer.MAX_VALUE);
-  checkMaximumSize(4,8,Integer.MAX_VALUE);
-  checkMaximumSize(8,8,Integer.MAX_VALUE);
+  checkMaximumSize(1,8,Long.MAX_VALUE);
+  checkMaximumSize(2,8,Long.MAX_VALUE);
+  checkMaximumSize(4,8,Long.MAX_VALUE);
+  checkMaximumSize(8,8,Long.MAX_VALUE);
   for (int capacity=0; capacity < 8; capacity++) {
     checkMaximumSize(1,capacity,4);
     checkMaximumSize(2,capacity,4);

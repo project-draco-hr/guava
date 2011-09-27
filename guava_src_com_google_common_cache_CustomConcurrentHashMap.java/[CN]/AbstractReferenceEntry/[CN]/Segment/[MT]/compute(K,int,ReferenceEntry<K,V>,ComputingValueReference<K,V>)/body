@@ -9,7 +9,8 @@ synchronized (e) {
     statsCounter.recordLoadSuccess(end - start);
     V oldValue=put(key,hash,value,true);
     if (oldValue != null) {
-      enqueueNotification(key,hash,value,RemovalCause.REPLACED);
+      ValueReference<K,V> valueReference=map.valueStrength.referenceValue(this,e,value,0);
+      enqueueNotification(key,hash,valueReference,RemovalCause.REPLACED);
     }
     return value;
   }

@@ -5,12 +5,12 @@
     Object valueOne=new Object();
     int hashOne=map.hash(keyOne);
     ReferenceEntry<Object,Object> entryOne=map.newEntry(keyOne,hashOne,null);
-    entryOne.setValueReference(map.newValueReference(entryOne,valueOne));
+    entryOne.setValueReference(map.newValueReference(entryOne,valueOne,1));
     Object keyTwo=new Object();
     Object valueTwo=new Object();
     int hashTwo=map.hash(keyTwo);
     ReferenceEntry<Object,Object> entryTwo=map.newEntry(keyTwo,hashTwo,entryOne);
-    entryTwo.setValueReference(map.newValueReference(entryTwo,valueTwo));
+    entryTwo.setValueReference(map.newValueReference(entryTwo,valueTwo,1));
     if (map.evictsBySize()) {
       CustomConcurrentHashMap.connectEvictables(entryOne,entryTwo);
     }

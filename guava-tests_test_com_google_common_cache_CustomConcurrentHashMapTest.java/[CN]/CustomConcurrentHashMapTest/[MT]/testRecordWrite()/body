@@ -8,7 +8,7 @@
       int hash=map.hash(key);
       Object value=new Object();
       ReferenceEntry<Object,Object> entry=createDummyEntry(key,hash,value,null);
-      segment.recordWrite(entry);
+      segment.recordWrite(entry,1);
       writeOrder.add(entry);
     }
     checkEvictionQueues(map,segment,writeOrder,writeOrder);
@@ -19,7 +19,7 @@
     while (i.hasNext()) {
       ReferenceEntry<Object,Object> entry=i.next();
       if (random.nextBoolean()) {
-        segment.recordWrite(entry);
+        segment.recordWrite(entry,1);
         writes.add(entry);
         i.remove();
       }

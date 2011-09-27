@@ -1,6 +1,6 @@
 {
   in.defaultReadObject();
-  CacheBuilder<Object,Object> builder=CacheBuilder.newBuilder().setKeyStrength(keyStrength).setValueStrength(valueStrength).keyEquivalence(keyEquivalence).valueEquivalence(valueEquivalence).concurrencyLevel(concurrencyLevel);
+  CacheBuilder<Object,Object> builder=CacheBuilder.newLenientBuilder().setKeyStrength(keyStrength).setValueStrength(valueStrength).keyEquivalence(keyEquivalence).valueEquivalence(valueEquivalence).concurrencyLevel(concurrencyLevel);
   builder.removalListener(removalListener);
   if (expireAfterWriteNanos > 0) {
     builder.expireAfterWrite(expireAfterWriteNanos,TimeUnit.NANOSECONDS);
@@ -8,8 +8,16 @@
   if (expireAfterAccessNanos > 0) {
     builder.expireAfterAccess(expireAfterAccessNanos,TimeUnit.NANOSECONDS);
   }
-  if (maximumSize != UNSET_INT) {
-    builder.maximumSize(maximumSize);
+  if (weigher != OneWeigher.INSTANCE) {
+    builder.weigher(weigher);
+    if (maxWeight != UNSET_INT) {
+      builder.maximumWeight(maxWeight);
+    }
+  }
+ else {
+    if (maxWeight != UNSET_INT) {
+      builder.maximumSize(maxWeight);
+    }
   }
   if (ticker != Ticker.systemTicker()) {
     builder.ticker(ticker);

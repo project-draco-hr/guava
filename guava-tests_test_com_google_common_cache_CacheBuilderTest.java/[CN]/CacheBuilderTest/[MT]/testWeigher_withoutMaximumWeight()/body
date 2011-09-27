@@ -1,0 +1,9 @@
+{
+  CacheBuilder<Object,Object> builder=new CacheBuilder<Object,Object>().weigher(constantWeigher(42));
+  try {
+    builder.build(identityLoader());
+    fail();
+  }
+ catch (  IllegalStateException expected) {
+  }
+}

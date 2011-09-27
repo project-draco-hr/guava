@@ -8,7 +8,7 @@
   int hash=map.hash(key);
   DummyEntry<Object,Object> entry=createDummyEntry(key,hash,value,null);
   assertFalse(segment.removeEntry(entry,hash,RemovalCause.COLLECTED));
-  segment.recordWrite(entry);
+  segment.recordWrite(entry,1);
   table.set(0,entry);
   segment.count=1;
   assertTrue(segment.removeEntry(entry,hash,RemovalCause.COLLECTED));

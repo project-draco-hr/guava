@@ -1,0 +1,4 @@
+CustomConcurrentHashMap<K,V> map
+int initialCapacity
+long maxSegmentWeight
+StatsCounter statsCounter

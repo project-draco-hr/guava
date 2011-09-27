@@ -5,7 +5,8 @@
   valueStrength=builder.getValueStrength();
   keyEquivalence=builder.getKeyEquivalence();
   valueEquivalence=builder.getValueEquivalence();
-  maximumSize=builder.maximumSize;
+  maxWeight=builder.getMaximumWeight();
+  weigher=builder.getWeigher();
   expireAfterAccessNanos=builder.getExpireAfterAccessNanos();
   expireAfterWriteNanos=builder.getExpireAfterWriteNanos();
   entryFactory=EntryFactory.getFactory(keyStrength,expires(),evictsBySize());
@@ -13,12 +14,12 @@
   removalListener=builder.getRemovalListener();
   removalNotificationQueue=(removalListener == NullListener.INSTANCE) ? CustomConcurrentHashMap.<RemovalNotification<K,V>>discardingQueue() : new ConcurrentLinkedQueue<RemovalNotification<K,V>>();
   int initialCapacity=Math.min(builder.getInitialCapacity(),MAXIMUM_CAPACITY);
-  if (evictsBySize()) {
-    initialCapacity=Math.min(initialCapacity,maximumSize);
+  if (evictsBySize() && !customWeigher()) {
+    initialCapacity=Math.min(initialCapacity,(int)maxWeight);
   }
   int segmentShift=0;
   int segmentCount=1;
-  while (segmentCount < concurrencyLevel && (!evictsBySize() || segmentCount * 2 <= maximumSize)) {
+  while (segmentCount < concurrencyLevel && (!evictsBySize() || customWeigher() || segmentCount * 2 <= maxWeight)) {
     ++segmentShift;
     segmentCount<<=1;
   }
@@ -34,13 +35,13 @@
     segmentSize<<=1;
   }
   if (evictsBySize()) {
-    int maximumSegmentSize=maximumSize / segmentCount + 1;
-    int remainder=maximumSize % segmentCount;
+    long maxSegmentWeight=maxWeight / segmentCount + 1;
+    long remainder=maxWeight % segmentCount;
     for (int i=0; i < this.segments.length; ++i) {
       if (i == remainder) {
-        maximumSegmentSize--;
+        maxSegmentWeight--;
       }
-      this.segments[i]=createSegment(segmentSize,maximumSegmentSize,statsCounterSupplier.get());
+      this.segments[i]=createSegment(segmentSize,maxSegmentWeight,statsCounterSupplier.get());
     }
   }
  else {

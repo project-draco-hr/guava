@@ -1,0 +1,7 @@
+{
+  IdentityLoader<Object> loader=identityLoader();
+  for (int i=1; i < 1000; i++) {
+    Cache<Object,Object> cache=CacheBuilder.newBuilder().maximumWeight(i).weigher(constantWeigher(1)).build(loader);
+    assertEquals(i,CacheTesting.getTotalSegmentSize(cache));
+  }
+}

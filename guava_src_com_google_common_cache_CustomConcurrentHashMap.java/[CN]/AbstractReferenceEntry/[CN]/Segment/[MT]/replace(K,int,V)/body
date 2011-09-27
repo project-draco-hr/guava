@@ -14,7 +14,7 @@
           if (isCollected(valueReference)) {
             int newCount=this.count - 1;
             ++modCount;
-            enqueueNotification(entryKey,hash,entryValue,RemovalCause.COLLECTED);
+            enqueueNotification(entryKey,hash,valueReference,RemovalCause.COLLECTED);
             ReferenceEntry<K,V> newFirst=removeFromChain(first,e);
             newCount=this.count - 1;
             table.set(index,newFirst);
@@ -23,8 +23,9 @@
           return null;
         }
         ++modCount;
-        enqueueNotification(key,hash,entryValue,RemovalCause.REPLACED);
-        setValue(e,newValue);
+        enqueueNotification(key,hash,valueReference,RemovalCause.REPLACED);
+        setValue(e,key,newValue);
+        evictEntries();
         return entryValue;
       }
     }

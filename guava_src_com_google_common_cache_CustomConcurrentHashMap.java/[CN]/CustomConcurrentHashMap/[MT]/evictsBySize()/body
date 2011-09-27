@@ -1,3 +1,3 @@
 {
-  return maximumSize != UNSET_INT;
+  return maxWeight != UNSET_INT;
 }

@@ -6,7 +6,7 @@
   for (ReferenceEntry<K,V> e=first; e != null; e=e.getNext()) {
     if (e == entry) {
       ++modCount;
-      enqueueNotification(e.getKey(),hash,e.getValueReference().get(),cause);
+      enqueueNotification(e.getKey(),hash,e.getValueReference(),cause);
       ReferenceEntry<K,V> newFirst=removeFromChain(first,e);
       newCount=this.count - 1;
       table.set(index,newFirst);

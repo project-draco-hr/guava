@@ -10,7 +10,7 @@
   DummyValueReference<Object,Object> valueRef=DummyValueReference.create(value,entry);
   entry.setValueReference(valueRef);
   assertFalse(segment.clearValue(key,hash,valueRef));
-  segment.recordWrite(entry);
+  segment.recordWrite(entry,1);
   table.set(0,entry);
   assertTrue(segment.clearValue(key,hash,valueRef));
   assertTrue(map.removalNotificationQueue.isEmpty());

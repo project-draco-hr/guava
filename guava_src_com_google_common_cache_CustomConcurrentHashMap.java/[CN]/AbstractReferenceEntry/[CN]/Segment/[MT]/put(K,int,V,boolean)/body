@@ -17,15 +17,17 @@
         V entryValue=valueReference.get();
         if (entryValue == null) {
           ++modCount;
-          setValue(e,value);
           if (!valueReference.isComputingReference()) {
-            enqueueNotification(key,hash,entryValue,RemovalCause.COLLECTED);
+            enqueueNotification(key,hash,valueReference,RemovalCause.COLLECTED);
+            setValue(e,key,value);
             newCount=this.count;
           }
- else           if (evictEntries()) {
+ else {
+            setValue(e,key,value);
             newCount=this.count + 1;
           }
           this.count=newCount;
+          evictEntries();
           return null;
         }
  else         if (onlyIfAbsent) {
@@ -34,20 +36,20 @@
         }
  else {
           ++modCount;
-          enqueueNotification(key,hash,entryValue,RemovalCause.REPLACED);
-          setValue(e,value);
+          enqueueNotification(key,hash,valueReference,RemovalCause.REPLACED);
+          setValue(e,key,value);
+          evictEntries();
           return entryValue;
         }
       }
     }
     ++modCount;
     ReferenceEntry<K,V> newEntry=newEntry(key,hash,first);
-    setValue(newEntry,value);
+    setValue(newEntry,key,value);
     table.set(index,newEntry);
-    if (evictEntries()) {
-      newCount=this.count + 1;
-    }
+    newCount=this.count + 1;
     this.count=newCount;
+    evictEntries();
     return null;
   }
   finally {

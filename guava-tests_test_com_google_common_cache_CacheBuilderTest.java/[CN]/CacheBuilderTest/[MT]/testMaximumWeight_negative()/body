@@ -1,0 +1,9 @@
+{
+  CacheBuilder<Object,Object> builder=new CacheBuilder<Object,Object>();
+  try {
+    builder.maximumWeight(-1);
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}

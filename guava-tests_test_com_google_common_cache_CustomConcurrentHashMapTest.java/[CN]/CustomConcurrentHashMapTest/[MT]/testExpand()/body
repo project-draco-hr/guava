@@ -9,7 +9,7 @@
     Object value=new Object();
     int hash=map.hash(key);
     entry=map.newEntry(key,hash,entry);
-    ValueReference<Object,Object> valueRef=map.newValueReference(entry,value);
+    ValueReference<Object,Object> valueRef=map.newValueReference(entry,value,1);
     entry.setValueReference(valueRef);
   }
   segment.table.set(0,entry);

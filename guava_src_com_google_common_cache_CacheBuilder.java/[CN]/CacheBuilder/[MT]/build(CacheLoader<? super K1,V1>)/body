@@ -1,3 +1,23 @@
 {
+  if (strictParsing) {
+    if (weigher == null) {
+      checkState(maximumWeight == UNSET_INT,"maximumWeight requires weigher");
+    }
+ else {
+      checkState(maximumWeight != UNSET_INT,"weigher requires maximumWeight");
+    }
+  }
+ else {
+    if (weigher == null) {
+      if (maximumWeight != UNSET_INT) {
+        logger.log(Level.WARNING,"ignoring CacheBuilder.maximumWeight specified without CacheBuilder.weigher");
+      }
+    }
+ else {
+      if (maximumWeight == UNSET_INT) {
+        logger.log(Level.WARNING,"ignoring CacheBuilder.weigher specified without CacheBuilder.maximumWeight");
+      }
+    }
+  }
   return useNullCache() ? new ComputingCache<K1,V1>(this,CACHE_STATS_COUNTER,loader) : new NullCache<K1,V1>(this,CACHE_STATS_COUNTER,loader);
 }

@@ -6,4 +6,10 @@
   }
  catch (  IllegalStateException expected) {
   }
+  try {
+    builder.maximumWeight(16);
+    fail();
+  }
+ catch (  IllegalStateException expected) {
+  }
 }

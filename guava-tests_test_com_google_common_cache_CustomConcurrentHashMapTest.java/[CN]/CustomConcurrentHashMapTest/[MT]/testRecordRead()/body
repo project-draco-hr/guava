@@ -9,7 +9,7 @@
       int hash=map.hash(key);
       Object value=new Object();
       ReferenceEntry<Object,Object> entry=createDummyEntry(key,hash,value,null);
-      segment.recordWrite(entry);
+      segment.recordWrite(entry,1);
       writeOrder.add(entry);
       readOrder.add(entry);
     }

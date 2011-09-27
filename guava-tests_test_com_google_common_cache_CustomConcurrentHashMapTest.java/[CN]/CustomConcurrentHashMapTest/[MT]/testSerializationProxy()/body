@@ -1,8 +1,9 @@
 {
   CacheLoader<Object,Object> loader=new SerializableCacheLoader();
   RemovalListener<Object,Object> listener=new SerializableRemovalListener<Object,Object>();
+  SerializableWeigher<Object,Object> weigher=new SerializableWeigher<Object,Object>();
   Ticker ticker=new SerializableTicker();
-  ComputingCache<Object,Object> one=(ComputingCache)CacheBuilder.newBuilder().weakKeys().softValues().expireAfterAccess(123,NANOSECONDS).maximumSize(789).concurrencyLevel(12).removalListener(listener).ticker(ticker).build(loader);
+  ComputingCache<Object,Object> one=(ComputingCache)CacheBuilder.newBuilder().weakKeys().softValues().expireAfterAccess(123,NANOSECONDS).maximumWeight(789).weigher(weigher).concurrencyLevel(12).removalListener(listener).ticker(ticker).build(loader);
   one.getUnchecked(new Object());
   assertEquals(1,one.size());
   assertFalse(one.asMap().isEmpty());
@@ -16,7 +17,8 @@
   assertEquals(mapOne.keyStrength,mapTwo.keyStrength);
   assertEquals(mapOne.valueEquivalence,mapTwo.valueEquivalence);
   assertEquals(mapOne.valueEquivalence,mapTwo.valueEquivalence);
-  assertEquals(mapOne.maximumSize,mapTwo.maximumSize);
+  assertEquals(mapOne.maxWeight,mapTwo.maxWeight);
+  assertEquals(mapOne.weigher,mapTwo.weigher);
   assertEquals(mapOne.expireAfterAccessNanos,mapTwo.expireAfterAccessNanos);
   assertEquals(mapOne.expireAfterWriteNanos,mapTwo.expireAfterWriteNanos);
   assertEquals(mapOne.removalListener,mapTwo.removalListener);

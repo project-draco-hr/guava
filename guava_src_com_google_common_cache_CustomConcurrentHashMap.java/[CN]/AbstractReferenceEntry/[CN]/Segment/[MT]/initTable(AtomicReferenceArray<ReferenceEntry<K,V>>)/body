@@ -1,6 +1,6 @@
 {
   this.threshold=newTable.length() * 3 / 4;
-  if (this.threshold == maxSegmentSize) {
+  if (!map.customWeigher() && this.threshold == maxSegmentWeight) {
     this.threshold++;
   }
   this.table=newTable;

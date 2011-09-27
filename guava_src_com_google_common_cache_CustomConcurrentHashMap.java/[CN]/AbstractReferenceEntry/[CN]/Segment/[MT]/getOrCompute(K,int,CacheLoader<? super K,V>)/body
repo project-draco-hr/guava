@@ -31,12 +31,12 @@
                 createNewEntry=false;
               }
  else {
-                V value=e.getValueReference().get();
+                V value=valueReference.get();
                 if (value == null) {
-                  enqueueNotification(entryKey,hash,value,RemovalCause.COLLECTED);
+                  enqueueNotification(entryKey,hash,valueReference,RemovalCause.COLLECTED);
                 }
  else                 if (map.expires() && map.isExpired(e)) {
-                  enqueueNotification(entryKey,hash,value,RemovalCause.EXPIRED);
+                  enqueueNotification(entryKey,hash,valueReference,RemovalCause.EXPIRED);
                 }
  else {
                   recordLockedRead(e);
