@@ -1,0 +1,16 @@
+{
+  for (  RoundingMode mode : ALL_ROUNDING_MODES) {
+    try {
+      DoubleMath.roundToInt(Double.POSITIVE_INFINITY,mode);
+      fail("Expected ArithmeticException");
+    }
+ catch (    ArithmeticException expected) {
+    }
+    try {
+      DoubleMath.roundToInt(Double.NEGATIVE_INFINITY,mode);
+      fail("Expected ArithmeticException");
+    }
+ catch (    ArithmeticException expected) {
+    }
+  }
+}

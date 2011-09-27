@@ -1,0 +1,12 @@
+{
+  for (  RoundingMode mode : ALL_ROUNDING_MODES) {
+    for (    double d : POSITIVE_FINITE_DOUBLE_CANDIDATES) {
+      try {
+        DoubleMath.log2(-d,mode);
+        fail("Expected IllegalArgumentException");
+      }
+ catch (      IllegalArgumentException e) {
+      }
+    }
+  }
+}

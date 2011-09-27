@@ -1,0 +1,5 @@
+{
+  for (  double d : INTEGRAL_DOUBLE_CANDIDATES) {
+    assertTrue(DoubleMath.isMathematicalInteger(d));
+  }
+}

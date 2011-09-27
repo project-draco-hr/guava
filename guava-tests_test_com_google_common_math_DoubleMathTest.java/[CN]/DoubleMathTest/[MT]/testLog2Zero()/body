@@ -1,0 +1,4 @@
+{
+  assertEquals(Double.NEGATIVE_INFINITY,DoubleMath.log2(0.0));
+  assertEquals(Double.NEGATIVE_INFINITY,DoubleMath.log2(-0.0));
+}

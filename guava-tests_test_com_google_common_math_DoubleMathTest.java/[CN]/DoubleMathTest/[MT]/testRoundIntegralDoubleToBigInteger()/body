@@ -1,0 +1,8 @@
+{
+  for (  double d : INTEGRAL_DOUBLE_CANDIDATES) {
+    for (    RoundingMode mode : ALL_SAFE_ROUNDING_MODES) {
+      BigDecimal expected=new BigDecimal(d).setScale(0,mode);
+      assertEquals(expected.toBigInteger(),DoubleMath.roundToBigInteger(d,mode));
+    }
+  }
+}

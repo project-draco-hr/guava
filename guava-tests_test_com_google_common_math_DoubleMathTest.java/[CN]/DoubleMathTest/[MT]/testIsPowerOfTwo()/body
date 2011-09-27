@@ -1,0 +1,6 @@
+{
+  for (  double x : ALL_DOUBLE_CANDIDATES) {
+    boolean expected=x > 0 && !Double.isInfinite(x) && !Double.isNaN(x) && StrictMath.pow(2.0,DoubleMath.log2(x,FLOOR)) == x;
+    assertEquals(expected,DoubleMath.isPowerOfTwo(x));
+  }
+}

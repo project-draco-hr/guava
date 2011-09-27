@@ -1,0 +1,5 @@
+{
+  for (  double d : Arrays.asList(Double.POSITIVE_INFINITY,Double.NEGATIVE_INFINITY,Double.NaN)) {
+    assertFalse(DoubleMath.isMathematicalInteger(d));
+  }
+}

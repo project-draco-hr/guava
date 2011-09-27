@@ -1,0 +1,7 @@
+{
+  for (  double d : POSITIVE_FINITE_DOUBLE_CANDIDATES) {
+    int log2=DoubleMath.log2(d,FLOOR);
+    assertTrue(StrictMath.pow(2.0,log2) <= d);
+    assertTrue(StrictMath.pow(2.0,log2 + 1) > d);
+  }
+}

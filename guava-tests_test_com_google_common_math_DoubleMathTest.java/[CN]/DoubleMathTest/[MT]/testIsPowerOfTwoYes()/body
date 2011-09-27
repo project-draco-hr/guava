@@ -1,0 +1,5 @@
+{
+  for (int i=-1074; i <= 1023; i++) {
+    assertTrue(DoubleMath.isPowerOfTwo(StrictMath.pow(2.0,i)));
+  }
+}

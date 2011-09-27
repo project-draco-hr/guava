@@ -1,0 +1,7 @@
+{
+  for (int i=0; i <= DoubleMath.MAX_FACTORIAL; i++) {
+    double actual=BigIntegerMath.factorial(i).doubleValue();
+    double result=DoubleMath.factorial(i);
+    assertEquals(actual,result,Math.ulp(actual));
+  }
+}

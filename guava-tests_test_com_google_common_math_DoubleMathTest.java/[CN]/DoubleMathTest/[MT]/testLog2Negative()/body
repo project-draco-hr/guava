@@ -1,0 +1,5 @@
+{
+  for (  double d : POSITIVE_FINITE_DOUBLE_CANDIDATES) {
+    assertTrue(Double.isNaN(DoubleMath.log2(-d)));
+  }
+}

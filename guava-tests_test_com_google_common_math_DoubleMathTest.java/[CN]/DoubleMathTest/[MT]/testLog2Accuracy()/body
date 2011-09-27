@@ -1,0 +1,7 @@
+{
+  for (  double d : POSITIVE_FINITE_DOUBLE_CANDIDATES) {
+    double dmLog2=DoubleMath.log2(d);
+    double trueLog2=trueLog2(d);
+    assertTrue(Math.abs(dmLog2 - trueLog2) <= Math.ulp(trueLog2));
+  }
+}

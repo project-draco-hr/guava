@@ -1,0 +1,5 @@
+{
+  for (  double d : POSITIVE_FINITE_DOUBLE_CANDIDATES) {
+    assertTrue(DoubleMath.log2(d + 0.01) >= DoubleMath.log2(d));
+  }
+}

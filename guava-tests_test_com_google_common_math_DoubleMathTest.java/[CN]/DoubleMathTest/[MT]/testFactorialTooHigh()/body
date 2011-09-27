@@ -1,0 +1,4 @@
+{
+  assertEquals(Double.POSITIVE_INFINITY,DoubleMath.factorial(DoubleMath.MAX_FACTORIAL + 1));
+  assertEquals(Double.POSITIVE_INFINITY,DoubleMath.factorial(DoubleMath.MAX_FACTORIAL + 20));
+}

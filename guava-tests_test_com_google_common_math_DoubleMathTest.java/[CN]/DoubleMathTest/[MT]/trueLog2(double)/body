@@ -1,0 +1,13 @@
+{
+  double trueLog2=StrictMath.log(d) / StrictMath.log(2);
+  while (StrictMath.pow(2.0,trueLog2) < d) {
+    trueLog2=StrictMath.nextUp(trueLog2);
+  }
+  while (StrictMath.pow(2.0,trueLog2) > d) {
+    trueLog2=StrictMath.nextAfter(trueLog2,Double.NEGATIVE_INFINITY);
+  }
+  if (StrictMath.abs(StrictMath.pow(2.0,trueLog2) - d) > StrictMath.abs(StrictMath.pow(2.0,StrictMath.nextUp(trueLog2)) - d)) {
+    trueLog2=StrictMath.nextUp(trueLog2);
+  }
+  return trueLog2;
+}

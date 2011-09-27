@@ -1,0 +1,5 @@
+{
+  for (  double d : FRACTIONAL_DOUBLE_CANDIDATES) {
+    assertFalse(DoubleMath.isMathematicalInteger(d));
+  }
+}

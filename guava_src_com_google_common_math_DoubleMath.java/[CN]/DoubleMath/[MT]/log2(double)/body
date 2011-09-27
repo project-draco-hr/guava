@@ -1,0 +1,3 @@
+{
+  return Math.log(x) / LN_2;
+}

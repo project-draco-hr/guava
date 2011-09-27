@@ -1,0 +1,5 @@
+{
+  assertEquals(Double.POSITIVE_INFINITY,DoubleMath.log2(Double.POSITIVE_INFINITY));
+  assertTrue(Double.isNaN(DoubleMath.log2(Double.NEGATIVE_INFINITY)));
+  assertTrue(Double.isNaN(DoubleMath.log2(Double.NaN)));
+}

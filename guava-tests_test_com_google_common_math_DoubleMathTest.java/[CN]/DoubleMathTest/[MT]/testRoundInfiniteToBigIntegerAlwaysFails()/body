@@ -1,0 +1,16 @@
+{
+  for (  RoundingMode mode : ALL_ROUNDING_MODES) {
+    try {
+      DoubleMath.roundToBigInteger(Double.POSITIVE_INFINITY,mode);
+      fail("Expected ArithmeticException");
+    }
+ catch (    ArithmeticException expected) {
+    }
+    try {
+      DoubleMath.roundToBigInteger(Double.NEGATIVE_INFINITY,mode);
+      fail("Expected ArithmeticException");
+    }
+ catch (    ArithmeticException expected) {
+    }
+  }
+}

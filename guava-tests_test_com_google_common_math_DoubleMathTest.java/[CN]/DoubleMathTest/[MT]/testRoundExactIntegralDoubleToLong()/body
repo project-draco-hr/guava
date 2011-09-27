@@ -1,0 +1,13 @@
+{
+  for (  double d : INTEGRAL_DOUBLE_CANDIDATES) {
+    BigDecimal expected=new BigDecimal(d).setScale(0,UNNECESSARY);
+    boolean isInBounds=expected.compareTo(MAX_LONG_AS_BIG_DECIMAL) <= 0 & expected.compareTo(MIN_LONG_AS_BIG_DECIMAL) >= 0;
+    try {
+      assertEquals(expected.longValue(),DoubleMath.roundToLong(d,UNNECESSARY));
+      assertTrue(isInBounds);
+    }
+ catch (    ArithmeticException e) {
+      assertFalse(isInBounds);
+    }
+  }
+}

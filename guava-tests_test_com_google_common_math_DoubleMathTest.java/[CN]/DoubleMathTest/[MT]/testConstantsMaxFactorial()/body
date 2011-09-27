@@ -1,0 +1,5 @@
+{
+  BigInteger MAX_DOUBLE_VALUE=BigDecimal.valueOf(Double.MAX_VALUE).toBigInteger();
+  assertTrue(BigIntegerMath.factorial(DoubleMath.MAX_FACTORIAL).compareTo(MAX_DOUBLE_VALUE) <= 0);
+  assertTrue(BigIntegerMath.factorial(DoubleMath.MAX_FACTORIAL + 1).compareTo(MAX_DOUBLE_VALUE) > 0);
+}

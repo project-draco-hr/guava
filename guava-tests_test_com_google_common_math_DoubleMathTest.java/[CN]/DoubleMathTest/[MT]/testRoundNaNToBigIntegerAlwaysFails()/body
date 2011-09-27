@@ -1,0 +1,10 @@
+{
+  for (  RoundingMode mode : ALL_ROUNDING_MODES) {
+    try {
+      DoubleMath.roundToBigInteger(Double.NaN,mode);
+      fail("Expected ArithmeticException");
+    }
+ catch (    ArithmeticException expected) {
+    }
+  }
+}

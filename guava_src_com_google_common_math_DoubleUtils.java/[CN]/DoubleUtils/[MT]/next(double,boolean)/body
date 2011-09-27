@@ -1,0 +1,13 @@
+{
+  if (x == 0.0) {
+    return up ? Double.MIN_VALUE : -Double.MIN_VALUE;
+  }
+  long bits=Double.doubleToRawLongBits(x);
+  if ((x < 0.0) == up) {
+    bits--;
+  }
+ else {
+    bits++;
+  }
+  return Double.longBitsToDouble(bits);
+}

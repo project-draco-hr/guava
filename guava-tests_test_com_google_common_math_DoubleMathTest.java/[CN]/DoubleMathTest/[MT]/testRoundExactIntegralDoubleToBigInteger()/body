@@ -1,0 +1,6 @@
+{
+  for (  double d : INTEGRAL_DOUBLE_CANDIDATES) {
+    BigDecimal expected=new BigDecimal(d).setScale(0,UNNECESSARY);
+    assertEquals(expected.toBigInteger(),DoubleMath.roundToBigInteger(d,UNNECESSARY));
+  }
+}

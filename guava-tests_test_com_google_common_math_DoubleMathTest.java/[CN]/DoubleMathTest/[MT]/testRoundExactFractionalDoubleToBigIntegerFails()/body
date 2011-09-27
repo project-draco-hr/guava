@@ -1,0 +1,10 @@
+{
+  for (  double d : FRACTIONAL_DOUBLE_CANDIDATES) {
+    try {
+      DoubleMath.roundToBigInteger(d,UNNECESSARY);
+      fail("Expected ArithmeticException");
+    }
+ catch (    ArithmeticException expected) {
+    }
+  }
+}
