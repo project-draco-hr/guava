@@ -14,10 +14,14 @@
     while (true) {
       int oldValue=existingCounter.get();
       if (oldValue != 0) {
-        checkArgument(occurrences <= Integer.MAX_VALUE - oldValue,"Overflow adding %s occurrences to a count of %s",occurrences,oldValue);
-        int newValue=oldValue + occurrences;
-        if (existingCounter.compareAndSet(oldValue,newValue)) {
-          return oldValue;
+        try {
+          int newValue=IntMath.checkedAdd(oldValue,occurrences);
+          if (existingCounter.compareAndSet(oldValue,newValue)) {
+            return oldValue;
+          }
+        }
+ catch (        ArithmeticException overflow) {
+          throw new IllegalArgumentException("Overflow adding " + occurrences + " occurrences to a count of "+ oldValue);
         }
       }
  else {

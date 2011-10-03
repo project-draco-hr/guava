@@ -1,8 +1,5 @@
 {
   int oldCapacity=queue.length;
-  int newCapacity=(oldCapacity < 64) ? (oldCapacity + 1) * 2 : (oldCapacity / 2) * 3;
-  if (newCapacity < 0) {
-    newCapacity=Integer.MAX_VALUE;
-  }
+  int newCapacity=(oldCapacity < 64) ? (oldCapacity + 1) * 2 : IntMath.checkedMultiply(oldCapacity / 2,3);
   return capAtMaximumSize(newCapacity,maximumSize);
 }
