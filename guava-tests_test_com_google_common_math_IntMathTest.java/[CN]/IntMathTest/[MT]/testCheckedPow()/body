@@ -4,11 +4,11 @@
       BigInteger expectedResult=valueOf(b).pow(k);
       boolean expectedSuccess=fitsInInt(expectedResult);
       try {
-        assertEquals(expectedResult.intValue(),IntMath.checkedPow(b,k));
-        assertTrue(expectedSuccess);
+        assertEquals(b + "^" + k,expectedResult.intValue(),IntMath.checkedPow(b,k));
+        assertTrue(b + "^" + k+ " should have succeeded",expectedSuccess);
       }
  catch (      ArithmeticException e) {
-        assertFalse(expectedSuccess);
+        assertFalse(b + "^" + k+ " should have failed",expectedSuccess);
       }
     }
   }

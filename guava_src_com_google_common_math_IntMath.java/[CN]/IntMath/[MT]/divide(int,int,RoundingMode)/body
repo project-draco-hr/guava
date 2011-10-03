@@ -1,5 +1,8 @@
 {
   checkNotNull(mode);
+  if (q == 0) {
+    throw new ArithmeticException("/ by zero");
+  }
   int div=p / q;
   int rem=p - q * div;
   if (rem == 0) {

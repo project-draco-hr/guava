@@ -1,7 +1,7 @@
 {
   for (  int i : ALL_INTEGER_CANDIDATES) {
     for (    int pow : EXPONENTS) {
-      assertEquals(IntMath.pow(i,pow),BigInteger.valueOf(i).pow(pow).intValue());
+      assertEquals(i + "^" + pow,BigInteger.valueOf(i).pow(pow).intValue(),IntMath.pow(i,pow));
     }
   }
 }

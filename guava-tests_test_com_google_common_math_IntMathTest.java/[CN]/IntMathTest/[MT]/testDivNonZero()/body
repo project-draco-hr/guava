@@ -3,7 +3,7 @@
     for (    int q : NONZERO_INTEGER_CANDIDATES) {
       for (      RoundingMode mode : ALL_SAFE_ROUNDING_MODES) {
         int expected=new BigDecimal(valueOf(p)).divide(new BigDecimal(valueOf(q)),0,mode).intValue();
-        assertEquals(expected,IntMath.divide(p,q,mode));
+        assertEquals(p + "/" + q,expected,IntMath.divide(p,q,mode));
       }
     }
   }
