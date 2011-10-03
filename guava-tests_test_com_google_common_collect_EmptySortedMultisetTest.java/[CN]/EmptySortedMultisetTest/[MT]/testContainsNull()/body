@@ -1,3 +1,0 @@
-{
-  assertFalse(EmptySortedMultiset.natural().contains(null));
-}

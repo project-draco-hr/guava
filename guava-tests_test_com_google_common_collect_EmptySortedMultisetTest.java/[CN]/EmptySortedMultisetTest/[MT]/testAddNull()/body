@@ -1,8 +1,0 @@
-{
-  try {
-    EmptySortedMultiset.natural().add(null);
-    fail("Expected NullPointerException");
-  }
- catch (  NullPointerException expected) {
-  }
-}

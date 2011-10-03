@@ -1,0 +1,7 @@
+{
+  TestSuite suite=super.createTestSuite();
+  for (  TestSuite subSuite : createDerivedSuites(this)) {
+    suite.addTest(subSuite);
+  }
+  return suite;
+}

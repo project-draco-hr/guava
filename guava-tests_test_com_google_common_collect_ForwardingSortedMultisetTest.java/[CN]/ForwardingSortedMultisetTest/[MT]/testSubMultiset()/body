@@ -1,4 +1,0 @@
-{
-  forward().subMultiset("abcd",CLOSED,"dcba",OPEN);
-  assertEquals("[subMultiset(Object,BoundType,Object,BoundType)]",getCalls());
-}

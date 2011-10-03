@@ -1,4 +1,0 @@
-{
-  forward().headMultiset("abcd",CLOSED);
-  assertEquals("[headMultiset(Object,BoundType)]",getCalls());
-}

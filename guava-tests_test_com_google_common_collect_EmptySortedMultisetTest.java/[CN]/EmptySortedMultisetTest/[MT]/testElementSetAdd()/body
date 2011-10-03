@@ -1,8 +1,0 @@
-{
-  try {
-    EmptySortedMultiset.natural().elementSet().add("abc");
-    fail("Expected UnsupportedOperationException");
-  }
- catch (  UnsupportedOperationException expected) {
-  }
-}

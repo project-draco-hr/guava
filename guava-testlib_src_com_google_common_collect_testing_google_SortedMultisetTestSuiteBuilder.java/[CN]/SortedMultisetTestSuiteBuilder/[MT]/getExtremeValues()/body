@@ -1,0 +1,8 @@
+{
+  List<String> result=new ArrayList<String>();
+  result.add("!! a");
+  result.add("!! b");
+  result.add("~~ y");
+  result.add("~~ z");
+  return result;
+}

@@ -1,0 +1,5 @@
+{
+  SortedMultisetTestSuiteBuilder<E> result=new SortedMultisetTestSuiteBuilder<E>();
+  result.usingGenerator(generator);
+  return result;
+}

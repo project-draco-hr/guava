@@ -1,0 +1,15 @@
+{
+  final TestMultisetGenerator<E> delegate=(TestMultisetGenerator<E>)parentBuilder.getSubjectGenerator();
+  List<Feature<?>> features=new ArrayList<Feature<?>>();
+  features.add(NoRecurse.DESCENDING);
+  features.addAll(parentBuilder.getFeatures());
+  return SortedMultisetTestSuiteBuilder.using(new ForwardingTestMultisetGenerator<E>(delegate){
+    @Override public SortedMultiset<E> create(    Object... entries){
+      return ((SortedMultiset<E>)super.create(entries)).descendingMultiset();
+    }
+    @Override public Iterable<E> order(    List<E> insertionOrder){
+      return ImmutableList.copyOf(super.order(insertionOrder)).reverse();
+    }
+  }
+).named(parentBuilder.getName() + " descending").withFeatures(features).suppressing(parentBuilder.getSuppressedTests()).createTestSuite();
+}

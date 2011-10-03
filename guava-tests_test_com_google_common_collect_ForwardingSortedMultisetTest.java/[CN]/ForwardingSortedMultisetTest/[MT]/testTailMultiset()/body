@@ -1,4 +1,0 @@
-{
-  forward().tailMultiset("last",OPEN);
-  assertEquals("[tailMultiset(Object,BoundType)]",getCalls());
-}

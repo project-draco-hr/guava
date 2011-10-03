@@ -1,4 +1,0 @@
-{
-  forward().firstEntry();
-  assertEquals("[firstEntry]",getCalls());
-}
