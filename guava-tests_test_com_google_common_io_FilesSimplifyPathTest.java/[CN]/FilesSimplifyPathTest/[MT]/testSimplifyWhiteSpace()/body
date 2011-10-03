@@ -1,4 +1,3 @@
 {
-  assertEquals(".",simplifyPath(""));
   assertEquals(" ",simplifyPath(" "));
 }
