@@ -1,5 +1,5 @@
 {
-  if (getExponent(x) == MAX_DOUBLE_EXPONENT + 1) {
+  if (!isFinite(x)) {
     throw new ArithmeticException("input is infinite or NaN");
   }
 switch (mode) {
