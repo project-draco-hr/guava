@@ -1,0 +1,4 @@
+{
+  assertEquals("/",simplifyPath("/../../.."));
+  assertEquals("/",simplifyPath("/../../../"));
+}

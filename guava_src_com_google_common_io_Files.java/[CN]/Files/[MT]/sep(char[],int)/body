@@ -1,3 +1,0 @@
-{
-  return (pos >= a.length) || (a[pos] == '/');
-}

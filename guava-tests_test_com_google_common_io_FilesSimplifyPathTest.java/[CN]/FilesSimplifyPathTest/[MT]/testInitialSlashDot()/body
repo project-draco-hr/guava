@@ -1,0 +1,4 @@
+{
+  assertEquals("/a",simplifyPath("/./a"));
+  assertEquals("/.a",simplifyPath("/.a/a/.."));
+}
