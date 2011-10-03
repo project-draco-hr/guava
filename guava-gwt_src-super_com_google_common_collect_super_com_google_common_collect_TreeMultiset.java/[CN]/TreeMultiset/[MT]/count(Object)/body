@@ -3,7 +3,7 @@
     E e=checkElement(element);
     if (range.contains(e)) {
       Node<E> node=BstOperations.seek(comparator(),rootReference.get(),e);
-      return (node == null) ? 0 : node.elemOccurrences;
+      return countOrZero(node);
     }
     return 0;
   }

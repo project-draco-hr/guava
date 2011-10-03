@@ -2,8 +2,8 @@
   checkNotNull(countAggregate);
   return new BstBalancePolicy<N>(){
     @Override public N balance(    BstNodeFactory<N> nodeFactory,    N source,    @Nullable N left,    @Nullable N right){
-      int countL=countAggregate.treeValue(left);
-      int countR=countAggregate.treeValue(right);
+      long countL=countAggregate.treeValue(left);
+      long countR=countAggregate.treeValue(right);
       if (countL + countR > 1) {
         if (countR >= SINGLE_ROTATE_RATIO * countL) {
           return rotateL(nodeFactory,source,left,right);

@@ -1,4 +1,0 @@
-{
-  Node root=rootReference.get();
-  return BstRangeOps.totalInRange(sizeAggregate,range,root);
-}

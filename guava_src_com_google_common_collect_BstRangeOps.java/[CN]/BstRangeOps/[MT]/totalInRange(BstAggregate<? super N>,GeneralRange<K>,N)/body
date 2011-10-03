@@ -4,7 +4,7 @@
   if (root == null || range.isEmpty()) {
     return 0;
   }
-  int total=aggregate.treeValue(root);
+  long total=aggregate.treeValue(root);
   if (range.hasLowerBound()) {
     total-=totalBeyondRangeToSide(aggregate,range,LEFT,root);
   }

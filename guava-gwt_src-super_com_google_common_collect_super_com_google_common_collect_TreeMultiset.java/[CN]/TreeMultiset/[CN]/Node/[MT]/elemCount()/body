@@ -1,0 +1,4 @@
+{
+  long result=size - sizeOrZero(childOrNull(LEFT)) - sizeOrZero(childOrNull(RIGHT));
+  return Ints.checkedCast(result);
+}

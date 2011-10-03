@@ -1,3 +1,0 @@
-{
-  return new SortedTreeMultiset<E>(Ordering.natural());
-}

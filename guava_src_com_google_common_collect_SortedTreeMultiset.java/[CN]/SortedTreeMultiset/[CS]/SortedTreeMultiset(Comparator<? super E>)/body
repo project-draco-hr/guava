@@ -1,5 +1,0 @@
-{
-  super(comparator);
-  this.range=GeneralRange.all(comparator);
-  this.rootReference=new AtomicReference<Node>();
-}

@@ -1,7 +1,7 @@
 {
   for (  char c : "abcdefg".toCharArray()) {
     for (    BoundType type : BoundType.values()) {
-      int count=BstRangeOps.totalInRange(countAggregate,GeneralRange.upTo(Ordering.natural(),c,type),ROOT);
+      long count=BstRangeOps.totalInRange(countAggregate,GeneralRange.upTo(Ordering.natural(),c,type),ROOT);
       char d=c;
       if (type == BoundType.CLOSED) {
         d++;

@@ -1,5 +1,5 @@
 {
-  int accum=0;
+  long accum=0;
   while (root != null) {
     if (beyond(range,root.getKey(),side)) {
       accum+=aggregate.entryValue(root);

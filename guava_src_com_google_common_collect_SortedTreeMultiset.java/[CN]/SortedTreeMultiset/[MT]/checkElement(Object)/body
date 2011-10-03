@@ -1,4 +1,0 @@
-{
-  checkNotNull(o);
-  return (E)o;
-}

@@ -5,5 +5,5 @@
     throw new ConcurrentModificationException();
   }
   Node<E> original=mutationResult.getOriginalTarget();
-  return (original == null) ? 0 : original.elemOccurrences;
+  return countOrZero(original);
 }

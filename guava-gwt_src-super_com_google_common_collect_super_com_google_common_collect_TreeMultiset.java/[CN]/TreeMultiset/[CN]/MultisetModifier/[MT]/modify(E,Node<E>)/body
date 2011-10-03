@@ -1,5 +1,5 @@
 {
-  int oldCount=(originalEntry == null) ? 0 : originalEntry.elemOccurrences;
+  int oldCount=countOrZero(originalEntry);
   int newCount=newCount(oldCount);
   if (oldCount == newCount) {
     return BstModificationResult.identity(originalEntry);

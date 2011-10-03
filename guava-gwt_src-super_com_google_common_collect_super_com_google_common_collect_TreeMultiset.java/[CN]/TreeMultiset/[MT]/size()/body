@@ -1,4 +1,4 @@
 {
   Node<E> root=rootReference.get();
-  return BstRangeOps.totalInRange(sizeAggregate(),range,root);
+  return Ints.saturatedCast(BstRangeOps.totalInRange(sizeAggregate(),range,root));
 }

@@ -7,7 +7,7 @@
           if (i == j && lb == BoundType.OPEN && ub == BoundType.OPEN) {
             continue;
           }
-          int count=BstRangeOps.totalInRange(countAggregate,GeneralRange.range(Ordering.natural(),chars.charAt(i),lb,chars.charAt(j),ub),ROOT);
+          long count=BstRangeOps.totalInRange(countAggregate,GeneralRange.range(Ordering.natural(),chars.charAt(i),lb,chars.charAt(j),ub),ROOT);
           char lo=chars.charAt(i);
           if (lb == BoundType.OPEN) {
             lo++;

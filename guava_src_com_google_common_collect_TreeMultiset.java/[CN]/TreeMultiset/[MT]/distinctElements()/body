@@ -1,4 +1,4 @@
 {
   Node<E> root=rootReference.get();
-  return BstRangeOps.totalInRange(distinctAggregate(),range,root);
+  return Ints.checkedCast(BstRangeOps.totalInRange(distinctAggregate(),range,root));
 }

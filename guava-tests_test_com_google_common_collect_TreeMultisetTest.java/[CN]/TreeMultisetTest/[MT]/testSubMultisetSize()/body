@@ -1,0 +1,15 @@
+{
+  TreeMultiset<String> ms=TreeMultiset.create();
+  ms.add("a",Integer.MAX_VALUE);
+  ms.add("b",Integer.MAX_VALUE);
+  ms.add("c",3);
+  assertEquals(Integer.MAX_VALUE,ms.count("a"));
+  assertEquals(Integer.MAX_VALUE,ms.count("b"));
+  assertEquals(3,ms.count("c"));
+  assertEquals(Integer.MAX_VALUE,ms.headMultiset("c",CLOSED).size());
+  assertEquals(Integer.MAX_VALUE,ms.headMultiset("b",CLOSED).size());
+  assertEquals(Integer.MAX_VALUE,ms.headMultiset("a",CLOSED).size());
+  assertEquals(3,ms.tailMultiset("c",CLOSED).size());
+  assertEquals(Integer.MAX_VALUE,ms.tailMultiset("b",CLOSED).size());
+  assertEquals(Integer.MAX_VALUE,ms.tailMultiset("a",CLOSED).size());
+}

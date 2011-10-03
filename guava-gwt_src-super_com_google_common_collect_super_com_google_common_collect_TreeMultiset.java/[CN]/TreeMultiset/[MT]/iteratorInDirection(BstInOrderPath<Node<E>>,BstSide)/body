@@ -16,7 +16,7 @@
     }
     @Override public Entry<E> next(){
       BstInOrderPath<Node<E>> path=pathIterator.next();
-      return new LiveEntry(toRemove=path.getTip().getKey(),path.getTip().elemOccurrences);
+      return new LiveEntry(toRemove=path.getTip().getKey(),path.getTip().elemCount());
     }
     @Override public void remove(){
       checkState(toRemove != null);

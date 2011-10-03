@@ -1,7 +1,0 @@
-{
-  Node root=rootReference.get();
-  Node cleared=BstRangeOps.minusRange(range,BstCountBasedBalancePolicies.<E,Node>fullRebalancePolicy(distinctAggregate),nodeFactory,root);
-  if (!rootReference.compareAndSet(root,cleared)) {
-    throw new ConcurrentModificationException();
-  }
-}

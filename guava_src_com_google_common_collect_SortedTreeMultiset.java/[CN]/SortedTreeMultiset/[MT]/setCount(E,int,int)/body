@@ -1,5 +1,0 @@
-{
-  checkNotNull(element);
-  checkArgument(range.contains(element));
-  return mutate(element,new ConditionalSetCountModifier(oldCount,newCount)) == oldCount;
-}

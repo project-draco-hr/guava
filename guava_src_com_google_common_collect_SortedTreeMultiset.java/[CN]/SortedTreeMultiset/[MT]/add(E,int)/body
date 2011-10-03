@@ -1,8 +1,0 @@
-{
-  checkNotNull(element);
-  if (occurrences == 0) {
-    return count(element);
-  }
-  checkArgument(range.contains(element));
-  return mutate(element,new AddModifier(occurrences));
-}

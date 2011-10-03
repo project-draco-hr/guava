@@ -1,9 +1,0 @@
-{
-  BstMutationRule<E,Node> mutationRule=BstMutationRule.createRule(modifier,BstCountBasedBalancePolicies.<E,Node>singleRebalancePolicy(distinctAggregate),nodeFactory);
-  BstMutationResult<E,Node> mutationResult=BstOperations.mutate(comparator(),mutationRule,rootReference.get(),e);
-  if (!rootReference.compareAndSet(mutationResult.getOriginalRoot(),mutationResult.getChangedRoot())) {
-    throw new ConcurrentModificationException();
-  }
-  Node original=mutationResult.getOriginalTarget();
-  return (original == null) ? 0 : original.elemOccurrences;
-}
