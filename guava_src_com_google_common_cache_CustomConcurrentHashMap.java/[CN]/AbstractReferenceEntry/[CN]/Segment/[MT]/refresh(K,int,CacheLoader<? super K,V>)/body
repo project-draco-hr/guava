@@ -1,0 +1,40 @@
+{
+  ReferenceEntry<K,V> e=null;
+  LoadingValueReference<K,V> loadingValueReference=null;
+  lock();
+  try {
+    preWriteCleanup();
+    AtomicReferenceArray<ReferenceEntry<K,V>> table=this.table;
+    int index=hash & (table.length() - 1);
+    ReferenceEntry<K,V> first=table.get(index);
+    for (e=first; e != null; e=e.getNext()) {
+      K entryKey=e.getKey();
+      if (e.getHash() == hash && entryKey != null && map.keyEquivalence.equivalent(key,entryKey)) {
+        ValueReference<K,V> valueReference=e.getValueReference();
+        if (valueReference.isLoading()) {
+          return false;
+        }
+        loadingValueReference=new LoadingValueReference<K,V>(valueReference);
+        break;
+      }
+    }
+    ++modCount;
+    if (loadingValueReference == null) {
+      loadingValueReference=new LoadingValueReference<K,V>();
+    }
+    if (e == null) {
+      e=newEntry(key,hash,first);
+      e.setValueReference(loadingValueReference);
+      table.set(index,e);
+    }
+ else {
+      e.setValueReference(loadingValueReference);
+    }
+  }
+  finally {
+    unlock();
+    postWriteCleanup();
+  }
+  load(key,hash,e,loadingValueReference,loader);
+  return true;
+}

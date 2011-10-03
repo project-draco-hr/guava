@@ -1,0 +1,12 @@
+{
+  enqueueNotification(key,hash,valueReference,cause);
+  evictionQueue.remove(entry);
+  expirationQueue.remove(entry);
+  if (valueReference.isLoading()) {
+    valueReference.notifyNewValue(null);
+    return first;
+  }
+ else {
+    return removeEntryFromChain(first,entry);
+  }
+}

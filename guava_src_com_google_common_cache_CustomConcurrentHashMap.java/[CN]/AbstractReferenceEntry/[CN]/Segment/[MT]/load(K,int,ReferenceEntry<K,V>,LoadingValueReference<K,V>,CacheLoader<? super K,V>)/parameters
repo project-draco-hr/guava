@@ -1,0 +1,5 @@
+K key
+int hash
+ReferenceEntry<K,V> entry
+LoadingValueReference<K,V> loadingValueReference
+CacheLoader<? super K,V> loader

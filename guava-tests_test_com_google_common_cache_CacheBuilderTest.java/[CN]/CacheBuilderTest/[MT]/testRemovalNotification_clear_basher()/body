@@ -32,7 +32,7 @@
   while (computedCount.get() < nThreads) {
     Thread.yield();
   }
-  cache.asMap().clear();
+  cache.invalidateAll();
   tasksFinished.await();
   Map<String,String> removalNotifications=Maps.newHashMap();
   for (  RemovalNotification<String,String> notification : listener) {

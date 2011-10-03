@@ -17,7 +17,7 @@
         V entryValue=valueReference.get();
         if (entryValue == null) {
           ++modCount;
-          if (!valueReference.isLoading()) {
+          if (valueReference.isActive()) {
             enqueueNotification(key,hash,valueReference,RemovalCause.COLLECTED);
             setValue(e,key,value);
             newCount=this.count;

@@ -1,6 +1,0 @@
-{
-  if (valueReference.isLoading()) {
-    return false;
-  }
-  return (valueReference.get() == null);
-}

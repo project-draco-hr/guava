@@ -16,6 +16,7 @@ catch (  Error e) {
   }
  finally {
     long elapsed=System.nanoTime() - start;
+    statsCounter.recordMiss();
     if (value == null) {
       statsCounter.recordLoadException(elapsed);
     }

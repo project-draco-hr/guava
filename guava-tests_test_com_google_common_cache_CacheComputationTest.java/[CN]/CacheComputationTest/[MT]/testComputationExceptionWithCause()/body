@@ -5,13 +5,6 @@
   Cache<Object,Object> cacheUnchecked=CacheBuilder.newBuilder().build(exceptionLoader(uee));
   Cache<Object,Object> cacheChecked=CacheBuilder.newBuilder().build(exceptionLoader(ee));
   try {
-    cacheUnchecked.getUnchecked(new Object());
-    fail();
-  }
- catch (  UncheckedExecutionException caughtUee) {
-    assertSame(uee,caughtUee.getCause());
-  }
-  try {
     cacheUnchecked.get(new Object());
     fail();
   }
@@ -22,6 +15,30 @@ catch (  UncheckedExecutionException caughtEe) {
     assertSame(uee,caughtEe.getCause());
   }
   try {
+    cacheUnchecked.getUnchecked(new Object());
+    fail();
+  }
+ catch (  UncheckedExecutionException caughtUee) {
+    assertSame(uee,caughtUee.getCause());
+  }
+  try {
+    cacheUnchecked.refresh(new Object());
+    fail();
+  }
+ catch (  ExecutionException e) {
+    fail();
+  }
+catch (  UncheckedExecutionException caughtEe) {
+    assertSame(uee,caughtEe.getCause());
+  }
+  try {
+    cacheChecked.get(new Object());
+    fail();
+  }
+ catch (  ExecutionException caughtEe) {
+    assertSame(ee,caughtEe.getCause());
+  }
+  try {
     cacheChecked.getUnchecked(new Object());
     fail();
   }
@@ -29,7 +46,7 @@ catch (  UncheckedExecutionException caughtEe) {
     assertSame(ee,caughtUee.getCause());
   }
   try {
-    cacheChecked.get(new Object());
+    cacheChecked.refresh(new Object());
     fail();
   }
  catch (  ExecutionException caughtEe) {

@@ -1,0 +1,15 @@
+{
+  int newCount=count;
+  ReferenceEntry<K,V> newFirst=entry.getNext();
+  for (ReferenceEntry<K,V> e=first; e != entry; e=e.getNext()) {
+    if (isCollected(e)) {
+      removeCollectedEntry(e);
+      newCount--;
+    }
+ else {
+      newFirst=copyEntry(e,newFirst);
+    }
+  }
+  this.count=newCount;
+  return newFirst;
+}

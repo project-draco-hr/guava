@@ -2,5 +2,6 @@
   if (entry.getKey() == null) {
     return true;
   }
-  return isCollected(entry.getValueReference());
+  ValueReference<K,V> valueReference=entry.getValueReference();
+  return (valueReference.get() == null) && valueReference.isActive();
 }

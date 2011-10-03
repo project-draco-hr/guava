@@ -1,7 +1,7 @@
 {
 synchronized (this) {
-    if (this.loadedValue == null) {
-      this.loadedValue=newValue;
+    if (loadedValue == null) {
+      loadedValue=newValue;
       notifyAll();
     }
   }

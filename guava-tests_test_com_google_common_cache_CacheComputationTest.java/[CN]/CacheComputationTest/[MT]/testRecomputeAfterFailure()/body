@@ -1,6 +1,6 @@
 {
+  final AtomicInteger count=new AtomicInteger();
   CacheLoader<Integer,String> failOnceFunction=new CacheLoader<Integer,String>(){
-    private final AtomicInteger count=new AtomicInteger();
     @Override public String load(    Integer key){
       if (count.getAndIncrement() == 0) {
         throw new IllegalStateException("exception to trigger failure on first load()");
@@ -18,5 +18,14 @@
  catch (  UncheckedExecutionException e) {
   }
   assertEquals("1",cache.getUnchecked(1));
+  assertEquals(0,removalListener.getCount());
+  count.set(0);
+  try {
+    cache.refresh(2);
+    fail();
+  }
+ catch (  UncheckedExecutionException e) {
+  }
+  assertEquals("2",cache.getUnchecked(2));
   assertEquals(0,removalListener.getCount());
 }

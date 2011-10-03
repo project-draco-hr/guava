@@ -1,0 +1,62 @@
+{
+  final AtomicInteger callCount=new AtomicInteger();
+  final CountDownLatch computeSignal=new CountDownLatch(1);
+  final CountDownLatch secondSignal=new CountDownLatch(1);
+  final CountDownLatch thirdSignal=new CountDownLatch(1);
+  final CountDownLatch fourthSignal=new CountDownLatch(1);
+  final CountDownLatch doneSignal=new CountDownLatch(3);
+  final String suffix="Suffix";
+  CacheLoader<String,String> computeFunction=new CacheLoader<String,String>(){
+    @Override public String load(    String key) throws InterruptedException {
+      callCount.incrementAndGet();
+      secondSignal.countDown();
+      computeSignal.await();
+      return key + suffix;
+    }
+  }
+;
+  final AtomicReferenceArray<String> result=new AtomicReferenceArray<String>(2);
+  final Cache<String,String> cache=CacheBuilder.newBuilder().build(computeFunction);
+  final String key="bar";
+  cache.asMap().put(key,key);
+  new Thread(){
+    @Override public void run(){
+      try {
+        cache.refresh(key);
+      }
+ catch (      ExecutionException e) {
+        throw new UncheckedExecutionException(e);
+      }
+      doneSignal.countDown();
+    }
+  }
+.start();
+  secondSignal.await();
+  new Thread(){
+    @Override public void run(){
+      thirdSignal.countDown();
+      result.set(0,cache.getUnchecked(key));
+      doneSignal.countDown();
+    }
+  }
+.start();
+  thirdSignal.await();
+  Thread.yield();
+  CacheTesting.forceExpandSegment(cache,key);
+  new Thread(){
+    @Override public void run(){
+      fourthSignal.countDown();
+      result.set(1,cache.getUnchecked(key));
+      doneSignal.countDown();
+    }
+  }
+.start();
+  fourthSignal.await();
+  Thread.yield();
+  computeSignal.countDown();
+  doneSignal.await();
+  assertTrue(callCount.get() == 1);
+  assertEquals(key,result.get(0));
+  assertEquals(key,result.get(1));
+  assertEquals(key + suffix,cache.getUnchecked(key));
+}

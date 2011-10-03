@@ -7,4 +7,8 @@
   assertNotNull(cache.getUnchecked(key));
   assertEquals(1,cache.size());
   assertEquals(2,countingLoader.getCount());
+  CacheTesting.simulateValueReclamation(cache,key);
+  cache.refresh(key);
+  assertEquals(1,cache.size());
+  assertEquals(3,countingLoader.getCount());
 }

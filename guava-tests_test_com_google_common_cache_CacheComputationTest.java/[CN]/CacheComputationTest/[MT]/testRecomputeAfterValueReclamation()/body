@@ -1,6 +1,7 @@
 {
   CountingLoader countingLoader=new CountingLoader();
   Cache<Object,Object> cache=CacheBuilder.newBuilder().weakValues().build(countingLoader);
+  ConcurrentMap<Object,Object> map=cache.asMap();
   int iterations=10;
   WeakReference<Object> ref=new WeakReference<Object>(null);
   int expectedComputations=0;
@@ -10,6 +11,18 @@
       expectedComputations++;
     }
     ref=new WeakReference<Object>(cache.getUnchecked(1));
+    oldValue=null;
+    Thread.sleep(i);
+    System.gc();
+  }
+  assertEquals(expectedComputations,countingLoader.getCount());
+  for (int i=0; i < iterations; i++) {
+    Object oldValue=ref.get();
+    if (oldValue == null) {
+      expectedComputations++;
+    }
+    cache.refresh(1);
+    ref=new WeakReference<Object>(map.get(1));
     oldValue=null;
     Thread.sleep(i);
     System.gc();

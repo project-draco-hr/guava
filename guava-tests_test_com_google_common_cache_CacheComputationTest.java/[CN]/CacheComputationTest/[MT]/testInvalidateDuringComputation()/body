@@ -1,28 +1,48 @@
 {
-  final CountDownLatch computationStarted=new CountDownLatch(1);
+  final CountDownLatch computationStarted=new CountDownLatch(2);
   final CountDownLatch letGetFinishSignal=new CountDownLatch(1);
-  final CountDownLatch getFinishedSignal=new CountDownLatch(1);
-  final String singleKey="bar";
+  final CountDownLatch getFinishedSignal=new CountDownLatch(2);
+  final String getKey="get";
+  final String refreshKey="refresh";
+  final String suffix="Suffix";
   CacheLoader<String,String> computeFunction=new CacheLoader<String,String>(){
     @Override public String load(    String key) throws InterruptedException {
       computationStarted.countDown();
       letGetFinishSignal.await();
-      return key + "foo";
+      return key + suffix;
     }
   }
 ;
   final Cache<String,String> cache=CacheBuilder.newBuilder().build(computeFunction);
+  ConcurrentMap<String,String> map=cache.asMap();
+  map.put(refreshKey,refreshKey);
   new Thread(){
     @Override public void run(){
-      cache.getUnchecked(singleKey);
+      cache.getUnchecked(getKey);
+      getFinishedSignal.countDown();
+    }
+  }
+.start();
+  new Thread(){
+    @Override public void run(){
+      try {
+        cache.refresh(refreshKey);
+      }
+ catch (      ExecutionException e) {
+        throw new UncheckedExecutionException(e);
+      }
       getFinishedSignal.countDown();
     }
   }
 .start();
   computationStarted.await();
-  cache.invalidate(singleKey);
+  cache.invalidate(getKey);
+  cache.invalidate(refreshKey);
+  assertFalse(map.containsKey(getKey));
+  assertFalse(map.containsKey(refreshKey));
   letGetFinishSignal.countDown();
   getFinishedSignal.await();
-  assertEquals("barfoo",cache.getUnchecked(singleKey));
-  assertEquals(1,cache.size());
+  assertEquals(2,cache.size());
+  assertEquals(getKey + suffix,map.get(getKey));
+  assertEquals(refreshKey + suffix,map.get(refreshKey));
 }

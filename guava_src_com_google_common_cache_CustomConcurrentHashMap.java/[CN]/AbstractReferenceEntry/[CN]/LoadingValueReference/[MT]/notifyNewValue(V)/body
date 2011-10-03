@@ -1,3 +1,8 @@
 {
-  setLoadedValue(new LoadedReference<V>(newValue));
+  if (newValue != null) {
+    setLoadedValue(new LoadedReference<V>(newValue));
+  }
+ else {
+    oldValue=unset();
+  }
 }

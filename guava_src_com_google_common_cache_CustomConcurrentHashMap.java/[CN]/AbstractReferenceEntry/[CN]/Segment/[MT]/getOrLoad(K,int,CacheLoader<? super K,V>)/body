@@ -51,7 +51,7 @@
             }
           }
           if (createNewEntry) {
-            loadingValueReference=new LoadingValueReference<K,V>(loader);
+            loadingValueReference=new LoadingValueReference<K,V>();
             if (e == null) {
               e=newEntry(key,hash,first);
               e.setValueReference(loadingValueReference);
@@ -67,17 +67,23 @@
           postWriteCleanup();
         }
         if (createNewEntry) {
-          return load(key,hash,e,loadingValueReference);
+          try {
+            return load(key,hash,e,loadingValueReference,loader);
+          }
+  finally {
+            statsCounter.recordMiss();
+          }
         }
       }
       checkState(!Thread.holdsLock(e),"Recursive load");
-      V value=e.getValueReference().waitForValue();
-      if (value != null) {
+      try {
+        V value=e.getValueReference().waitForValue();
         recordRead(e);
-        statsCounter.recordConcurrentMiss();
         return value;
       }
-      continue outer;
+  finally {
+        statsCounter.recordMiss();
+      }
     }
   }
   finally {

@@ -10,17 +10,17 @@
     counter.recordLoadException(i);
   }
   for (int i=0; i < 23; i++) {
-    counter.recordConcurrentMiss();
+    counter.recordMiss();
   }
   for (int i=0; i < 27; i++) {
     counter.recordEviction();
   }
   CacheStats stats=counter.snapshot();
-  int requestCount=11 + 13 + 17+ 23;
+  int requestCount=11 + 23;
   assertEquals(requestCount,stats.requestCount());
   assertEquals(11,stats.hitCount());
   assertEquals(11.0 / requestCount,stats.hitRate());
-  int missCount=13 + 17 + 23;
+  int missCount=23;
   assertEquals(missCount,stats.missCount());
   assertEquals(((double)missCount) / requestCount,stats.missRate());
   assertEquals(13,stats.loadSuccessCount());

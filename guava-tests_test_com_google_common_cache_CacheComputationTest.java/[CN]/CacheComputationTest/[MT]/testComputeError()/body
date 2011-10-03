@@ -28,4 +28,15 @@
   assertEquals(2,stats.missCount());
   assertEquals(0,stats.loadSuccessCount());
   assertEquals(2,stats.loadExceptionCount());
+  try {
+    cache.refresh(new Object());
+    fail();
+  }
+ catch (  ExecutionError expected) {
+    assertSame(e,expected.getCause());
+  }
+  stats=cache.stats();
+  assertEquals(2,stats.missCount());
+  assertEquals(0,stats.loadSuccessCount());
+  assertEquals(3,stats.loadExceptionCount());
 }
