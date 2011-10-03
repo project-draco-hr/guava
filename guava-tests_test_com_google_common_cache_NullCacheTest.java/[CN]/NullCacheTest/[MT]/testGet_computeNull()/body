@@ -6,6 +6,6 @@
   }
  catch (  NullPointerException e) {
   }
-  assertEquals(0,listener.getCount());
+  assertTrue(listener.isEmpty());
   checkEmpty(cache);
 }

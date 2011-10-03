@@ -8,5 +8,6 @@
  catch (  UncheckedExecutionException uee) {
     assertSame(e,uee.getCause());
   }
+  assertTrue(listener.isEmpty());
   checkEmpty(map);
 }
