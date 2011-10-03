@@ -1,0 +1,8 @@
+{
+  assertTrue(startUpCalled);
+  assertFalse(shutDownCalled);
+  shutDownCalled=true;
+  if (shutDownException != null) {
+    throw shutDownException;
+  }
+}

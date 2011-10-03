@@ -1,0 +1,29 @@
+{
+  final CyclicBarrier firstBarrier=new CyclicBarrier(2);
+  final CyclicBarrier secondBarrier=new CyclicBarrier(2);
+  final AtomicBoolean shouldWait=new AtomicBoolean(true);
+  Runnable task=new Runnable(){
+    @Override public void run(){
+      try {
+        if (shouldWait.get()) {
+          firstBarrier.await();
+          secondBarrier.await();
+        }
+      }
+ catch (      Exception e) {
+        throw new RuntimeException(e);
+      }
+    }
+  }
+;
+  TestCustomScheduler scheduler=new TestCustomScheduler();
+  Future<?> future=scheduler.schedule(Executors.newScheduledThreadPool(10),task);
+  firstBarrier.await();
+  assertEquals(1,scheduler.scheduleCounter.get());
+  secondBarrier.await();
+  firstBarrier.await();
+  assertEquals(2,scheduler.scheduleCounter.get());
+  shouldWait.set(false);
+  secondBarrier.await();
+  future.cancel(false);
+}

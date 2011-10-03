@@ -1,0 +1,15 @@
+{
+  TestService service=new TestService();
+  service.runException=new Exception();
+  service.startAndWait();
+  service.runFirstBarrier.await();
+  service.runSecondBarrier.await();
+  try {
+    future.get();
+    fail();
+  }
+ catch (  ExecutionException e) {
+    assertEquals(service.runException,e.getCause().getCause());
+  }
+  assertEquals(service.state(),Service.State.FAILED);
+}

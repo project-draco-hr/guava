@@ -1,0 +1,11 @@
+{
+  lock.lock();
+  try {
+    if (currentFuture == null || !currentFuture.isCancelled()) {
+      currentFuture=CustomScheduler.this.scheduleNextIteration(service,this);
+    }
+  }
+  finally {
+    lock.unlock();
+  }
+}

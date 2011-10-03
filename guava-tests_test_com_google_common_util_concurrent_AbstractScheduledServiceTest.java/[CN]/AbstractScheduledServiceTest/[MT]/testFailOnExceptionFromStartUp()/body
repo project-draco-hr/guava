@@ -1,0 +1,13 @@
+{
+  TestService service=new TestService();
+  service.startUpException=new Exception();
+  try {
+    service.startAndWait();
+    fail();
+  }
+ catch (  UncheckedExecutionException e) {
+    assertEquals(service.startUpException,e.getCause());
+  }
+  assertEquals(0,service.numberOfTimesRunCalled.get());
+  assertEquals(Service.State.FAILED,service.state());
+}

@@ -1,0 +1,15 @@
+{
+  TestService service=new TestService();
+  service.startAndWait();
+  assertEquals(1,service.numberOfTimesSchedulerCalled.get());
+  for (int i=1; i < 10; i++) {
+    service.runFirstBarrier.await();
+    assertEquals(i,service.numberOfTimesRunCalled.get());
+    service.runSecondBarrier.await();
+  }
+  service.runFirstBarrier.await();
+  service.stop();
+  service.runSecondBarrier.await();
+  service.stopAndWait();
+  assertEquals(1,service.numberOfTimesSchedulerCalled.get());
+}

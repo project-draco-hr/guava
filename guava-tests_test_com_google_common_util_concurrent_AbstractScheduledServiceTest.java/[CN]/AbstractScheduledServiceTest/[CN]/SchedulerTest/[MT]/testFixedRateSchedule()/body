@@ -1,0 +1,11 @@
+{
+  Scheduler schedule=Scheduler.newFixedRateSchedule(initialDelay,delay,unit);
+  schedule.schedule(new ScheduledThreadPoolExecutor(1){
+    @Override public ScheduledFuture<?> scheduleAtFixedRate(    Runnable command,    long initialDelay,    long period,    TimeUnit unit){
+      assertSingleCallWithCorrectParameters(command,initialDelay,delay,unit);
+      return null;
+    }
+  }
+,testRunnable);
+  assertTrue(called);
+}

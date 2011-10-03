@@ -1,0 +1,16 @@
+{
+  TestService service=new TestService();
+  service.shutDownException=new Exception();
+  service.startAndWait();
+  service.runFirstBarrier.await();
+  ListenableFuture<Service.State> stopHandle=service.stop();
+  service.runSecondBarrier.await();
+  try {
+    stopHandle.get();
+    fail();
+  }
+ catch (  ExecutionException e) {
+    assertEquals(service.shutDownException,e.getCause());
+  }
+  assertEquals(Service.State.FAILED,service.state());
+}

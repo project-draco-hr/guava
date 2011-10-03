@@ -1,0 +1,4 @@
+{
+  this.wrappedRunnable=runnable;
+  this.service=service;
+}

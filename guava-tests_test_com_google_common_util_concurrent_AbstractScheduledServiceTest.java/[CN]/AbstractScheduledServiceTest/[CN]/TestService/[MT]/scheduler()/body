@@ -1,0 +1,4 @@
+{
+  numberOfTimesSchedulerCalled.incrementAndGet();
+  return configuration;
+}

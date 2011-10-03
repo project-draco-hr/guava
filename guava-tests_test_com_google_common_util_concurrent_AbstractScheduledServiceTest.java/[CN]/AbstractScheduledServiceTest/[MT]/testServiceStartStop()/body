@@ -1,0 +1,7 @@
+{
+  NullService service=new NullService();
+  service.startAndWait();
+  assertFalse(future.isDone());
+  service.stopAndWait();
+  assertTrue(future.isCancelled());
+}

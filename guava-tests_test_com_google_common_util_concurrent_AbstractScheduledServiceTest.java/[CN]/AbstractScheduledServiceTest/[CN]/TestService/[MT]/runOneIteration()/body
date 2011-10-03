@@ -1,0 +1,11 @@
+{
+  assertTrue(startUpCalled);
+  assertFalse(shutDownCalled);
+  numberOfTimesRunCalled.incrementAndGet();
+  assertEquals(State.RUNNING,state());
+  runFirstBarrier.await();
+  runSecondBarrier.await();
+  if (runException != null) {
+    throw runException;
+  }
+}

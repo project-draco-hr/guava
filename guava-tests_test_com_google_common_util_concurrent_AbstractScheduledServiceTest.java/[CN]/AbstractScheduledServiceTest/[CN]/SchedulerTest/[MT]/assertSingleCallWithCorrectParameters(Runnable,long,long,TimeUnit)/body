@@ -1,0 +1,8 @@
+{
+  assertFalse(called);
+  called=true;
+  assertEquals(SchedulerTest.initialDelay,initialDelay);
+  assertEquals(SchedulerTest.delay,delay);
+  assertEquals(SchedulerTest.unit,unit);
+  assertEquals(testRunnable,command);
+}

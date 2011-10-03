@@ -1,0 +1,25 @@
+{
+  TestAbstractScheduledCustomService service=new TestAbstractScheduledCustomService(){
+    @Override protected Scheduler scheduler(){
+      return new AbstractScheduledService.CustomScheduler(){
+        @Override protected Future<Void> scheduleNextIteration(        ScheduledExecutorService service,        Callable<Void> callable){
+          final ScheduledFuture<Void> future=service.schedule(callable,0,TimeUnit.SECONDS);
+          Thread.yield();
+          return future;
+        }
+      }
+;
+    }
+  }
+;
+  service.useBarriers=false;
+  service.startAndWait();
+  Thread.sleep(50);
+  service.useBarriers=true;
+  service.firstBarrier.await();
+  int numIterations=service.numIterations.get();
+  service.stop();
+  service.secondBarrier.await();
+  service.stopAndWait();
+  assertEquals(numIterations,service.numIterations.get());
+}
