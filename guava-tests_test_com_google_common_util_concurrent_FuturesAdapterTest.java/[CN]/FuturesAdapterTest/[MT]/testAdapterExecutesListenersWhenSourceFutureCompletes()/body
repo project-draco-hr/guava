@@ -1,4 +1,0 @@
-{
-  delegate.set("foo");
-  tester.testCompletedFuture("foo");
-}

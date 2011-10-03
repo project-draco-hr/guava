@@ -1,0 +1,9 @@
+{
+  NullPointerTester tester=new NullPointerTester();
+  tester.setDefault(Comparator.class,Ordering.natural());
+  tester.setDefault(Comparable.class,"");
+  tester.setDefault(Iterator.class,Iterators.emptyIterator());
+  tester.setDefault(Iterable.class,Collections.emptySet());
+  tester.setDefault(Comparable[].class,new Comparable[0]);
+  tester.testAllPublicStaticMethods(ImmutableSortedMultiset.class);
+}

@@ -1,0 +1,4 @@
+{
+  checkNotNull(val);
+  return asUnsigned(this.value - val.value);
+}

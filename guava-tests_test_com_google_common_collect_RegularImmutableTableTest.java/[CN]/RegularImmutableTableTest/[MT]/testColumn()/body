@@ -1,0 +1,7 @@
+{
+  for (  ImmutableTable<Character,Integer,String> testInstance : getTestInstances()) {
+    assertEquals(ImmutableMap.of('a',"foo",'b',"bar"),testInstance.column(1));
+    assertEquals(ImmutableMap.of('a',"baz"),testInstance.column(2));
+    assertEquals(ImmutableMap.of(),testInstance.column(3));
+  }
+}

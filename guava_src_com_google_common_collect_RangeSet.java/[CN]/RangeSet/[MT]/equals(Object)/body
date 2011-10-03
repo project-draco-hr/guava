@@ -1,0 +1,7 @@
+{
+  if (obj instanceof RangeSet) {
+    RangeSet<?> other=(RangeSet<?>)obj;
+    return this.asRanges().equals(other.asRanges());
+  }
+  return false;
+}

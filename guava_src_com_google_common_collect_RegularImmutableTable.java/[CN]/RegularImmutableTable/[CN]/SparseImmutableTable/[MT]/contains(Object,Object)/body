@@ -1,0 +1,4 @@
+{
+  Map<C,V> row=rowMap.get(rowKey);
+  return (row != null) && row.containsKey(columnKey);
+}

@@ -1,0 +1,3 @@
+{
+  return unmodifiableSortedMultiset(delegate().subMultiset(lowerBound,lowerBoundType,upperBound,upperBoundType));
+}

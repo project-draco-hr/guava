@@ -1,0 +1,3 @@
+{
+  return ImmutableList.<ImmutableTable<Character,Integer,String>>of(SPARSE,DENSE);
+}

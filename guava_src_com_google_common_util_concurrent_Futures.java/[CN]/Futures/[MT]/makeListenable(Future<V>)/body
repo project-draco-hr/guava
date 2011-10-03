@@ -1,3 +1,0 @@
-{
-  return JdkFutureAdapters.listenInPoolThread(future);
-}

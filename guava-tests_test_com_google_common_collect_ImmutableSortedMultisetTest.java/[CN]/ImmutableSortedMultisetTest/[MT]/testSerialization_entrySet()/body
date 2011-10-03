@@ -1,0 +1,4 @@
+{
+  Multiset<String> c=ImmutableSortedMultiset.of("a","b","c");
+  SerializableTester.reserializeAndAssert(c.entrySet());
+}

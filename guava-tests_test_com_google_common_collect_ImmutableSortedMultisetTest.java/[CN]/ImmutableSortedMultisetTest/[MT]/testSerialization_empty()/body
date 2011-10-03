@@ -1,0 +1,4 @@
+{
+  Collection<String> c=ImmutableSortedMultiset.of();
+  assertSame(c,SerializableTester.reserialize(c));
+}

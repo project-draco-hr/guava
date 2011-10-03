@@ -1,0 +1,7 @@
+{
+  ImmutableMap<C,Map<R,V>> result=columnMap;
+  if (result == null) {
+    columnMap=result=makeColumnMap();
+  }
+  return result;
+}

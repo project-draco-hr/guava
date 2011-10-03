@@ -1,0 +1,8 @@
+{
+  return new StandardDescendingMultiset(){
+    @Override Iterator<Entry<E>> entryIterator(){
+      return backingMultiset.descendingMultiset().entrySet().iterator();
+    }
+  }
+;
+}

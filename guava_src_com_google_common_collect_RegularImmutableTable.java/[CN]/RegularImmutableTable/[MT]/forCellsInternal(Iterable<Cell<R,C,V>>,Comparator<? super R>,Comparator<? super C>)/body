@@ -1,0 +1,24 @@
+{
+  ImmutableSet.Builder<Cell<R,C,V>> cellSetBuilder=ImmutableSet.builder();
+  ImmutableSet.Builder<R> rowSpaceBuilder=ImmutableSet.builder();
+  ImmutableSet.Builder<C> columnSpaceBuilder=ImmutableSet.builder();
+  for (  Cell<R,C,V> cell : cells) {
+    cellSetBuilder.add(cell);
+    rowSpaceBuilder.add(cell.getRowKey());
+    columnSpaceBuilder.add(cell.getColumnKey());
+  }
+  ImmutableSet<Cell<R,C,V>> cellSet=cellSetBuilder.build();
+  ImmutableSet<R> rowSpace=rowSpaceBuilder.build();
+  if (rowComparator != null) {
+    List<R> rowList=Lists.newArrayList(rowSpace);
+    Collections.sort(rowList,rowComparator);
+    rowSpace=ImmutableSet.copyOf(rowList);
+  }
+  ImmutableSet<C> columnSpace=columnSpaceBuilder.build();
+  if (columnComparator != null) {
+    List<C> columnList=Lists.newArrayList(columnSpace);
+    Collections.sort(columnList,columnComparator);
+    columnSpace=ImmutableSet.copyOf(columnList);
+  }
+  return (cellSet.size() > ((rowSpace.size() * columnSpace.size()) / 2)) ? new DenseImmutableTable<R,C,V>(cellSet,rowSpace,columnSpace) : new SparseImmutableTable<R,C,V>(cellSet,rowSpace,columnSpace);
+}

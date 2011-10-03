@@ -1,0 +1,3 @@
+{
+  assertEquals(ImmutableMap.of('a',ImmutableMap.of(1,"blah")),testTable.rowMap());
+}

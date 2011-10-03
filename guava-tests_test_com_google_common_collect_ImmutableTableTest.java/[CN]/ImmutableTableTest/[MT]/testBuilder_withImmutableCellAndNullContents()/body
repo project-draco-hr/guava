@@ -1,0 +1,21 @@
+{
+  ImmutableTable.Builder<Character,Integer,String> builder=new ImmutableTable.Builder<Character,Integer,String>();
+  try {
+    builder.put(Tables.immutableCell((Character)null,1,"foo"));
+    fail();
+  }
+ catch (  NullPointerException e) {
+  }
+  try {
+    builder.put(Tables.immutableCell('a',(Integer)null,"foo"));
+    fail();
+  }
+ catch (  NullPointerException e) {
+  }
+  try {
+    builder.put(Tables.immutableCell('a',1,(String)null));
+    fail();
+  }
+ catch (  NullPointerException e) {
+  }
+}

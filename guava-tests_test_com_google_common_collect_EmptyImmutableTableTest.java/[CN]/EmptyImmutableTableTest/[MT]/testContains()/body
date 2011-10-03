@@ -1,0 +1,3 @@
+{
+  assertFalse(INSTANCE.contains('a',1));
+}

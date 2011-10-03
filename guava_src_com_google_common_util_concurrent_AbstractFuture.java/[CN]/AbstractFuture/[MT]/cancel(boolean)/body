@@ -2,7 +2,7 @@
   if (!sync.cancel()) {
     return false;
   }
-  done();
+  executionList.execute();
   if (mayInterruptIfRunning) {
     interruptTask();
   }

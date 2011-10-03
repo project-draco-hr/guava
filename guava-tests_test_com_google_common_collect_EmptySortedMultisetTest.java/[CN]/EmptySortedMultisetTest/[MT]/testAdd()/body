@@ -1,0 +1,8 @@
+{
+  try {
+    EmptySortedMultiset.natural().add("abc");
+    fail("Expected IllegalArgumentException");
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}

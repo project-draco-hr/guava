@@ -1,0 +1,7 @@
+{
+  Map<A,ImmutableMap.Builder<B,V>> indexBuilder=Maps.newLinkedHashMap();
+  for (  A key : keySpace) {
+    indexBuilder.put(key,ImmutableMap.<B,V>builder());
+  }
+  return indexBuilder;
+}

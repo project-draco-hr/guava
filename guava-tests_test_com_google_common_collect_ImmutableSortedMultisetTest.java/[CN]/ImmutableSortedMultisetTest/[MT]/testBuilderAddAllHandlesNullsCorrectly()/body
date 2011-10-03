@@ -1,0 +1,25 @@
+{
+  ImmutableSortedMultiset.Builder<String> builder=ImmutableSortedMultiset.naturalOrder();
+  try {
+    builder.addAll((Collection<String>)null);
+    fail("expected NullPointerException");
+  }
+ catch (  NullPointerException expected) {
+  }
+  builder=ImmutableSortedMultiset.naturalOrder();
+  List<String> listWithNulls=asList("a",null,"b");
+  try {
+    builder.addAll(listWithNulls);
+    fail("expected NullPointerException");
+  }
+ catch (  NullPointerException expected) {
+  }
+  builder=ImmutableSortedMultiset.naturalOrder();
+  Multiset<String> multisetWithNull=LinkedHashMultiset.create(asList("a",null,"b"));
+  try {
+    builder.addAll(multisetWithNull);
+    fail("expected NullPointerException");
+  }
+ catch (  NullPointerException expected) {
+  }
+}

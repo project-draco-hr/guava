@@ -1,0 +1,4 @@
+{
+  assertTrue(RegularImmutableTable.forCells(CELLS) instanceof DenseImmutableTable<?,?,?>);
+  assertTrue(RegularImmutableTable.forCells(ImmutableSet.of(Tables.immutableCell('a',1,"blah"),Tables.immutableCell('b',2,"blah"),Tables.immutableCell('c',3,"blah"))) instanceof SparseImmutableTable<?,?,?>);
+}

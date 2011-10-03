@@ -1,0 +1,10 @@
+{
+  for (  ImmutableTable<Character,Integer,String> testInstance : getTestInstances()) {
+    try {
+      testInstance.putAll(ImmutableTable.of('a',1,"blah"));
+      fail();
+    }
+ catch (    UnsupportedOperationException e) {
+    }
+  }
+}

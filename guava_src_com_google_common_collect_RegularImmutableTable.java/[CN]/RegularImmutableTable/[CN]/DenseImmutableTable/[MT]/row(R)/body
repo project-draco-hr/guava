@@ -1,0 +1,18 @@
+{
+  checkNotNull(rowKey);
+  Integer rowIndex=rowKeyToIndex.get(rowKey);
+  if (rowIndex == null) {
+    return ImmutableMap.of();
+  }
+ else {
+    ImmutableMap.Builder<C,V> rowBuilder=ImmutableMap.builder();
+    V[] row=values[rowIndex];
+    for (int r=0; r < row.length; r++) {
+      V value=row[r];
+      if (value != null) {
+        rowBuilder.put(columnKeyToIndex.inverse().get(r),value);
+      }
+    }
+    return rowBuilder.build();
+  }
+}

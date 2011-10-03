@@ -1,0 +1,11 @@
+{
+  for (  long a : TEST_LONGS) {
+    for (    long b : TEST_LONGS) {
+      UnsignedLong aUnsigned=UnsignedLong.asUnsigned(a);
+      UnsignedLong bUnsigned=UnsignedLong.asUnsigned(b);
+      long expected=aUnsigned.bigIntegerValue().multiply(bUnsigned.bigIntegerValue()).longValue();
+      UnsignedLong unsignedMul=aUnsigned.multiply(bUnsigned);
+      assertEquals(expected,unsignedMul.longValue());
+    }
+  }
+}

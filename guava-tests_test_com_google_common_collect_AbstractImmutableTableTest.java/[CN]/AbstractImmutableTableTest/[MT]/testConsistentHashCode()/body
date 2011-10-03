@@ -1,0 +1,5 @@
+{
+  for (  ImmutableTable<Character,Integer,String> testInstance : getTestInstances()) {
+    assertEquals(testInstance.cellSet().hashCode(),testInstance.hashCode());
+  }
+}

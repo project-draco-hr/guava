@@ -1,0 +1,3 @@
+{
+  assertEquals(EmptySortedMultiset.natural().count(null),0);
+}

@@ -1,0 +1,10 @@
+{
+  for (  int a : TEST_INTS) {
+    try {
+      UnsignedInteger.asUnsigned(a).remainder(UnsignedInteger.ZERO);
+      fail("Expected ArithmeticException");
+    }
+ catch (    ArithmeticException expected) {
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  Table<Character,Integer,String> table=TreeBasedTable.create();
+  table.put('x',2,"foo");
+  table.put('r',1,"bar");
+  table.put('c',3,"baz");
+  table.put('b',7,"cat");
+  table.put('e',5,"dog");
+  table.put('c',0,"axe");
+  table.put('e',3,"tub");
+  table.put('r',4,"foo");
+  table.put('x',5,"bar");
+  validateTableCopies(table);
+}

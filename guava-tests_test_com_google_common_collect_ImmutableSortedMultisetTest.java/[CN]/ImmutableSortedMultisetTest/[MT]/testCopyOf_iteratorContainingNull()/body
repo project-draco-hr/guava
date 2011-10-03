@@ -1,0 +1,9 @@
+{
+  Iterator<String> iterator=asList("a",null,"b").iterator();
+  try {
+    ImmutableSortedMultiset.copyOf(iterator);
+    fail();
+  }
+ catch (  NullPointerException expected) {
+  }
+}

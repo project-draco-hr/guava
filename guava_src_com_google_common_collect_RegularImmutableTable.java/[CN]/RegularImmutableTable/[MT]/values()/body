@@ -1,0 +1,7 @@
+{
+  ImmutableList<V> result=valueList;
+  if (result == null) {
+    valueList=result=ImmutableList.copyOf(Iterables.transform(cellSet(),getValueFunction()));
+  }
+  return result;
+}

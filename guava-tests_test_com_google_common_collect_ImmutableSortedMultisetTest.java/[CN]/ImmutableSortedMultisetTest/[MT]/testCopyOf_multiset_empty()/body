@@ -1,0 +1,5 @@
+{
+  Multiset<String> c=HashMultiset.create();
+  Multiset<String> multiset=ImmutableSortedMultiset.copyOf(c);
+  assertTrue(multiset.isEmpty());
+}

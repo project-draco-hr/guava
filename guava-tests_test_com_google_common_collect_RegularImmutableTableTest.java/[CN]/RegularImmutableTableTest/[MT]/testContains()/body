@@ -1,0 +1,9 @@
+{
+  for (  ImmutableTable<Character,Integer,String> testInstance : getTestInstances()) {
+    assertTrue(testInstance.contains('a',1));
+    assertTrue(testInstance.contains('b',1));
+    assertTrue(testInstance.contains('a',2));
+    assertFalse(testInstance.contains('b',2));
+    assertFalse(testInstance.contains('c',3));
+  }
+}

@@ -1,0 +1,3 @@
+{
+  return Objects.hashCode(singleRowKey,singleColumnKey,singleValue);
+}

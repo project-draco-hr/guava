@@ -1,0 +1,5 @@
+{
+  for (  int a : TEST_INTS) {
+    SerializableTester.reserializeAndAssert(UnsignedInteger.asUnsigned(a));
+  }
+}

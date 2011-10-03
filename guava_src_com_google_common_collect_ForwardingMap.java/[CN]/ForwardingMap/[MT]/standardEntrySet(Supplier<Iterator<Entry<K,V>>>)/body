@@ -1,8 +1,0 @@
-{
-  return new StandardEntrySet(){
-    @Override public Iterator<Map.Entry<K,V>> iterator(){
-      return entryIteratorSupplier.get();
-    }
-  }
-;
-}

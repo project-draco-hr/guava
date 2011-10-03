@@ -1,0 +1,9 @@
+{
+  Multiset<String> c=HashMultiset.create(asList("a",null,"b"));
+  try {
+    ImmutableSortedMultiset.copyOf(c);
+    fail();
+  }
+ catch (  NullPointerException expected) {
+  }
+}

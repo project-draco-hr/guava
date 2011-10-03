@@ -1,0 +1,9 @@
+{
+  ImmutableSortedMultiset.Builder<String> builder=new ImmutableSortedMultiset.Builder<String>(Ordering.natural().nullsFirst());
+  try {
+    builder.setCount(null,2);
+    fail("expected NullPointerException");
+  }
+ catch (  NullPointerException expected) {
+  }
+}

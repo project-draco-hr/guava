@@ -1,0 +1,5 @@
+{
+  Collection<String> c=MinimalCollection.of("a","b","a");
+  Multiset<String> multiset=ImmutableSortedMultiset.copyOf(c);
+  assertEquals(HashMultiset.create(asList("a","b","a")),multiset);
+}

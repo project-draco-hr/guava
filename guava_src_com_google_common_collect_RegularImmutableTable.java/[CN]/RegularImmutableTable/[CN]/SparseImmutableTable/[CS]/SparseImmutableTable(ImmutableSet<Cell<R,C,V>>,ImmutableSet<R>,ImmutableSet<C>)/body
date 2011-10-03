@@ -1,0 +1,14 @@
+{
+  super(cellSet);
+  Map<R,ImmutableMap.Builder<C,V>> rowIndexBuilder=makeIndexBuilder(rowSpace);
+  Map<C,ImmutableMap.Builder<R,V>> columnIndexBuilder=makeIndexBuilder(columnSpace);
+  for (  Cell<R,C,V> cell : cellSet) {
+    R rowKey=cell.getRowKey();
+    C columnKey=cell.getColumnKey();
+    V value=cell.getValue();
+    rowIndexBuilder.get(rowKey).put(columnKey,value);
+    columnIndexBuilder.get(columnKey).put(rowKey,value);
+  }
+  this.rowMap=buildIndex(rowIndexBuilder);
+  this.columnMap=buildIndex(columnIndexBuilder);
+}

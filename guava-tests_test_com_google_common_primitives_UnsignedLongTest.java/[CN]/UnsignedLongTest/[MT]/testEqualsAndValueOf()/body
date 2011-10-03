@@ -1,0 +1,8 @@
+{
+  EqualsTester equalsTester=new EqualsTester();
+  for (  long a : TEST_LONGS) {
+    BigInteger big=(a >= 0) ? BigInteger.valueOf(a) : BigInteger.valueOf(a).add(BigInteger.ZERO.setBit(64));
+    equalsTester.addEqualityGroup(UnsignedLong.asUnsigned(a),UnsignedLong.valueOf(big),UnsignedLong.valueOf(big.toString()),UnsignedLong.valueOf(big.toString(16),16));
+  }
+  equalsTester.testEquals();
+}

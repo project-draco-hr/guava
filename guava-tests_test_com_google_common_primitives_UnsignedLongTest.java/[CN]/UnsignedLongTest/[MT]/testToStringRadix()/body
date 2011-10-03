@@ -1,0 +1,8 @@
+{
+  for (int radix=Character.MIN_RADIX; radix <= Character.MAX_RADIX; radix++) {
+    for (    long l : TEST_LONGS) {
+      UnsignedLong value=UnsignedLong.asUnsigned(l);
+      assertEquals(value.bigIntegerValue().toString(radix),value.toString(radix));
+    }
+  }
+}

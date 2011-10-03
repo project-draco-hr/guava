@@ -1,0 +1,5 @@
+{
+  String[] array=new String[0];
+  Multiset<String> multiset=ImmutableSortedMultiset.copyOf(array);
+  assertTrue(multiset.isEmpty());
+}

@@ -1,0 +1,16 @@
+{
+  super(cellSet);
+  @SuppressWarnings("unchecked") V[][] array=(V[][])new Object[rowSpace.size()][columnSpace.size()];
+  this.values=array;
+  this.rowKeyToIndex=makeIndex(rowSpace);
+  this.columnKeyToIndex=makeIndex(columnSpace);
+  for (  Cell<R,C,V> cell : cellSet) {
+    R rowKey=cell.getRowKey();
+    C columnKey=cell.getColumnKey();
+    int rowIndex=rowKeyToIndex.get(rowKey);
+    int columnIndex=columnKeyToIndex.get(columnKey);
+    V existingValue=values[rowIndex][columnIndex];
+    checkArgument(existingValue == null,"duplicate key: (%s, %s)",rowKey,columnKey);
+    values[rowIndex][columnIndex]=cell.getValue();
+  }
+}

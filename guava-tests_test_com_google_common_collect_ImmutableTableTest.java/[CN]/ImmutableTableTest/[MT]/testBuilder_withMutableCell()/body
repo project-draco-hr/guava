@@ -1,0 +1,20 @@
+{
+  ImmutableTable.Builder<Character,Integer,String> builder=new ImmutableTable.Builder<Character,Integer,String>();
+  final StringHolder holder=new StringHolder();
+  holder.string="foo";
+  Table.Cell<Character,Integer,String> mutableCell=new Tables.AbstractCell<Character,Integer,String>(){
+    @Override public Character getRowKey(){
+      return 'K';
+    }
+    @Override public Integer getColumnKey(){
+      return 42;
+    }
+    @Override public String getValue(){
+      return holder.string;
+    }
+  }
+;
+  builder.put(mutableCell);
+  holder.string="bar";
+  assertEquals(ImmutableTable.of('K',42,"foo"),builder.build());
+}

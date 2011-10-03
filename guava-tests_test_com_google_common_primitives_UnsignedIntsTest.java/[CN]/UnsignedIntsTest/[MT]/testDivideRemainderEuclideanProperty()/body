@@ -1,0 +1,8 @@
+{
+  Random r=new Random(0L);
+  for (int i=0; i < 1000000; i++) {
+    int dividend=r.nextInt();
+    int divisor=r.nextInt();
+    assertTrue(dividend - (divisor * UnsignedInts.divide(dividend,divisor) + UnsignedInts.remainder(dividend,divisor)) == 0);
+  }
+}

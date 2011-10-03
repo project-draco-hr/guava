@@ -1,0 +1,3 @@
+{
+  return new StringBuilder().append('{').append(singleRowKey).append("={").append(singleColumnKey).append('=').append(singleValue).append("}}").toString();
+}

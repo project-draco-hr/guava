@@ -1,0 +1,9 @@
+{
+  ImmutableSortedMultiset.Builder<String> builder=ImmutableSortedMultiset.naturalOrder();
+  try {
+    builder.setCount("a",-2);
+    fail("expected IllegalArgumentException");
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}

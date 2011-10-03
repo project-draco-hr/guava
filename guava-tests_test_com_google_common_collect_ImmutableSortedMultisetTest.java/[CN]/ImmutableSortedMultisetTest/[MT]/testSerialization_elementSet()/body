@@ -1,0 +1,5 @@
+{
+  Multiset<String> c=ImmutableSortedMultiset.of("a","b","a");
+  Collection<String> copy=SerializableTester.reserializeAndAssert(c.elementSet());
+  ASSERT.that(copy).hasContentsInOrder("a","b");
+}

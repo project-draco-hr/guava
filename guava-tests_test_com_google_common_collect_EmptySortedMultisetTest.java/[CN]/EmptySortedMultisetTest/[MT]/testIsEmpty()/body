@@ -1,0 +1,6 @@
+{
+  assertTrue(EmptySortedMultiset.natural().isEmpty());
+  assertEquals(0,EmptySortedMultiset.natural().size());
+  assertEquals(0,EmptySortedMultiset.natural().entrySet().size());
+  assertEquals(0,EmptySortedMultiset.natural().elementSet().size());
+}

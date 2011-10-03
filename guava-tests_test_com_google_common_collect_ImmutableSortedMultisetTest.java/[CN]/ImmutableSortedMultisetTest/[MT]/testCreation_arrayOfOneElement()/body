@@ -1,0 +1,5 @@
+{
+  String[] array=new String[]{"a"};
+  Multiset<String> multiset=ImmutableSortedMultiset.copyOf(array);
+  assertEquals(HashMultiset.create(asList("a")),multiset);
+}

@@ -1,0 +1,10 @@
+{
+  for (  ImmutableTable<Character,Integer,String> testInstance : getTestInstances()) {
+    try {
+      testInstance.clear();
+      fail();
+    }
+ catch (    UnsupportedOperationException e) {
+    }
+  }
+}

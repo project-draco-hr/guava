@@ -1,0 +1,4 @@
+{
+  Collection<String> c=ImmutableSortedMultiset.of("a");
+  assertSame(c,ImmutableSortedMultiset.copyOf(c));
+}

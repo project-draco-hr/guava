@@ -1,0 +1,13 @@
+{
+  if (obj == this) {
+    return true;
+  }
+ else   if (obj instanceof Table<?,?,?>) {
+    Table<?,?,?> that=(Table<?,?,?>)obj;
+    if (that.size() == 1) {
+      Cell<?,?,?> thatCell=that.cellSet().iterator().next();
+      return Objects.equal(this.singleRowKey,thatCell.getRowKey()) && Objects.equal(this.singleColumnKey,thatCell.getColumnKey()) && Objects.equal(this.singleValue,thatCell.getValue());
+    }
+  }
+  return false;
+}

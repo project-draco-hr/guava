@@ -1,0 +1,5 @@
+{
+  for (  ImmutableTable<Character,Integer,String> testInstance : getTestInstances()) {
+    ASSERT.that(testInstance.values()).hasContentsInOrder("foo","bar","baz");
+  }
+}

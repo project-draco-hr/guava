@@ -1,0 +1,9 @@
+{
+  int[] radices={2,3,5,7,10,12,16,21,31,36};
+  for (  int radix : radices) {
+    for (    int l : TEST_INTS) {
+      UnsignedInteger value=UnsignedInteger.asUnsigned(l);
+      assertEquals(value.bigIntegerValue().toString(radix),value.toString(radix));
+    }
+  }
+}

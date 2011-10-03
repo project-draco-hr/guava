@@ -1,0 +1,11 @@
+{
+  for (  int a : TEST_INTS) {
+    for (    int b : TEST_INTS) {
+      UnsignedInteger aUnsigned=UnsignedInteger.asUnsigned(a);
+      UnsignedInteger bUnsigned=UnsignedInteger.asUnsigned(b);
+      int expected=aUnsigned.bigIntegerValue().add(bUnsigned.bigIntegerValue()).intValue();
+      UnsignedInteger unsignedSum=aUnsigned.add(bUnsigned);
+      assertEquals(expected,unsignedSum.intValue());
+    }
+  }
+}

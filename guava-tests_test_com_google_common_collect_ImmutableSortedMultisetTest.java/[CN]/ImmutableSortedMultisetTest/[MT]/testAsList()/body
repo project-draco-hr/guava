@@ -1,0 +1,10 @@
+{
+  ImmutableSortedMultiset<String> multiset=ImmutableSortedMultiset.of("a","a","b","b","b");
+  ImmutableList<String> list=multiset.asList();
+  assertEquals(ImmutableList.of("a","a","b","b","b"),list);
+  assertTrue(list instanceof ImmutableAsList);
+  ImmutableList<String> copy=SerializableTester.reserializeAndAssert(list);
+  assertTrue(copy instanceof ImmutableAsList);
+  assertEquals(2,list.indexOf("b"));
+  assertEquals(4,list.lastIndexOf("b"));
+}

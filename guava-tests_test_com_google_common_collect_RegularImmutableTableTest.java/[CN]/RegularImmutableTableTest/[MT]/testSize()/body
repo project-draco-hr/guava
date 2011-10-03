@@ -1,0 +1,5 @@
+{
+  for (  ImmutableTable<Character,Integer,String> testInstance : getTestInstances()) {
+    assertEquals(3,testInstance.size());
+  }
+}

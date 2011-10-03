@@ -1,0 +1,10 @@
+{
+  for (  long a : TEST_LONGS) {
+    try {
+      UnsignedLong.asUnsigned(a).divide(UnsignedLong.ZERO);
+      fail("Expected ArithmeticException");
+    }
+ catch (    ArithmeticException expected) {
+    }
+  }
+}

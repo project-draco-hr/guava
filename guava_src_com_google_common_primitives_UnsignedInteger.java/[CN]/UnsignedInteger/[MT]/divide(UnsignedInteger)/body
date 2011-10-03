@@ -1,0 +1,4 @@
+{
+  checkNotNull(val);
+  return asUnsigned(UnsignedInts.divide(value,val.value));
+}

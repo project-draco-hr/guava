@@ -1,0 +1,6 @@
+{
+  List<String> a=asList("a","b");
+  List<String> b=asList("c","d");
+  ImmutableSortedMultiset<String> multiset=ImmutableSortedMultiset.<String>naturalOrder().addAll(a).addAll(b).build();
+  assertEquals(HashMultiset.create(asList("a","b","c","d")),multiset);
+}

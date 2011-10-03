@@ -1,0 +1,19 @@
+{
+  ImmutableTable.Builder<Character,Integer,String> builder=ImmutableTable.builder();
+  builder.orderRowsBy(Ordering.natural());
+  builder.orderColumnsBy(Ordering.natural());
+  builder.put('c',3,"foo");
+  builder.put('c',2,"bar");
+  builder.put('c',1,"baz");
+  builder.put('b',3,"cat");
+  builder.put('b',1,"dog");
+  builder.put('a',3,"foo");
+  builder.put('a',2,"bar");
+  builder.put('a',1,"baz");
+  Table<Character,Integer,String> table=builder.build();
+  ASSERT.that(table.rowKeySet()).hasContentsInOrder('a','b','c');
+  ASSERT.that(table.columnKeySet()).hasContentsInOrder(1,2,3);
+  ASSERT.that(table.values()).hasContentsInOrder("baz","bar","foo","dog","cat","baz","bar","foo");
+  ASSERT.that(table.row('c').keySet()).hasContentsInOrder(1,2,3);
+  ASSERT.that(table.column(1).keySet()).hasContentsInOrder('a','b','c');
+}

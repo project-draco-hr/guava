@@ -1,0 +1,8 @@
+{
+  EqualsTester equalsTester=new EqualsTester();
+  for (  int a : TEST_INTS) {
+    long value=a & 0xffffffffL;
+    equalsTester.addEqualityGroup(UnsignedInteger.asUnsigned(a),UnsignedInteger.valueOf(value),UnsignedInteger.valueOf(Long.toString(value)),UnsignedInteger.valueOf(Long.toString(value,16),16));
+  }
+  equalsTester.testEquals();
+}

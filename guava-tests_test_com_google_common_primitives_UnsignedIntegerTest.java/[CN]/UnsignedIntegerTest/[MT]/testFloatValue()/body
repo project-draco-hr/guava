@@ -1,0 +1,6 @@
+{
+  for (  int value : TEST_INTS) {
+    UnsignedInteger unsignedValue=UnsignedInteger.asUnsigned(value);
+    assertEquals(unsignedValue.bigIntegerValue().floatValue(),unsignedValue.floatValue());
+  }
+}

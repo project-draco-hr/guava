@@ -1,0 +1,9 @@
+{
+  StringBuilder builder=new StringBuilder();
+  builder.append('{');
+  for (  Range<C> range : asRanges()) {
+    builder.append(range);
+  }
+  builder.append('}');
+  return builder.toString();
+}

@@ -1,0 +1,13 @@
+{
+  Comparator<String[]> comparator=Ordering.natural().lexicographical().onResultOf(new Function<String[],Iterable<Comparable>>(){
+    @Override public Iterable<Comparable> apply(    String[] input){
+      return Arrays.<Comparable>asList(input);
+    }
+  }
+);
+  String[] array=new String[]{"a"};
+  Multiset<String[]> multiset=ImmutableSortedMultiset.orderedBy(comparator).add(array).build();
+  Multiset<String[]> expected=HashMultiset.create();
+  expected.add(array);
+  assertEquals(expected,multiset);
+}

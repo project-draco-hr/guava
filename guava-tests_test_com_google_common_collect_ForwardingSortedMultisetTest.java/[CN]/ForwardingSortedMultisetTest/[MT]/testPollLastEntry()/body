@@ -1,0 +1,4 @@
+{
+  forward().pollLastEntry();
+  assertEquals("[pollLastEntry]",getCalls());
+}

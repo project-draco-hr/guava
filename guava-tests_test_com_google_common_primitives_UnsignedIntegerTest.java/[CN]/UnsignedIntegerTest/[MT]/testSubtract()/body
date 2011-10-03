@@ -1,0 +1,11 @@
+{
+  for (  int a : TEST_INTS) {
+    for (    int b : TEST_INTS) {
+      UnsignedInteger aUnsigned=UnsignedInteger.asUnsigned(a);
+      UnsignedInteger bUnsigned=UnsignedInteger.asUnsigned(b);
+      int expected=force32(aUnsigned.bigIntegerValue().subtract(bUnsigned.bigIntegerValue()).intValue());
+      UnsignedInteger unsignedSub=aUnsigned.subtract(bUnsigned);
+      assertEquals(expected,unsignedSub.intValue());
+    }
+  }
+}
