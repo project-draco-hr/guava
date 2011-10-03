@@ -1,5 +1,0 @@
-{
-  this.map=new NullConcurrentMap<K,V>(builder);
-  this.statsCounter=statsCounterSupplier.get();
-  this.loader=checkNotNull(loader);
-}

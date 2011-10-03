@@ -4,8 +4,5 @@
   checkState(this.weigher == null,"maximum size can not be combined with weigher");
   checkArgument(size >= 0,"maximum size must not be negative");
   this.maximumSize=size;
-  if (maximumSize == 0) {
-    this.nullRemovalCause=RemovalCause.SIZE;
-  }
   return this;
 }

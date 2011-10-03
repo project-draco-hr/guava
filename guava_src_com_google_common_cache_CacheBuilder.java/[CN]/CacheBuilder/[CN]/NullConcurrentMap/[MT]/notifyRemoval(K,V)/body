@@ -1,4 +1,0 @@
-{
-  RemovalNotification<K,V> notification=new RemovalNotification<K,V>(key,value,removalCause);
-  removalListener.onRemoval(notification);
-}

@@ -1,5 +1,0 @@
-{
-  V value=compute(key);
-  map.notifyRemoval(key,value);
-  return value;
-}

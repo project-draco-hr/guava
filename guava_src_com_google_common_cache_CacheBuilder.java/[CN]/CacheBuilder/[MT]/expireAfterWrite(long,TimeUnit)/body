@@ -1,8 +1,5 @@
 {
   checkExpiration(duration,unit);
   this.expireAfterWriteNanos=unit.toNanos(duration);
-  if (duration == 0 && this.nullRemovalCause == null) {
-    this.nullRemovalCause=RemovalCause.EXPIRED;
-  }
   return this;
 }

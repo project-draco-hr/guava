@@ -1,5 +1,0 @@
-{
-  checkNotNull(key);
-  checkNotNull(value);
-  return null;
-}
