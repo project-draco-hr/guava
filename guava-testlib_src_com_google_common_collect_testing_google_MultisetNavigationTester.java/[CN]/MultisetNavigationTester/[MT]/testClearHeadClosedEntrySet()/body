@@ -1,0 +1,5 @@
+{
+  List<Entry<E>> expected=copyToList(sortedMultiset.tailMultiset(b.getElement(),OPEN).entrySet());
+  sortedMultiset.headMultiset(b.getElement(),CLOSED).entrySet().clear();
+  assertEquals(expected,copyToList(sortedMultiset.entrySet()));
+}

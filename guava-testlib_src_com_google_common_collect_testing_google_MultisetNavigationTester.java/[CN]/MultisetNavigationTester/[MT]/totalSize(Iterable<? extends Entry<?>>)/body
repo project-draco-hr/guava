@@ -1,0 +1,7 @@
+{
+  int sum=0;
+  for (  Entry<?> entry : entries) {
+    sum+=entry.getCount();
+  }
+  return sum;
+}

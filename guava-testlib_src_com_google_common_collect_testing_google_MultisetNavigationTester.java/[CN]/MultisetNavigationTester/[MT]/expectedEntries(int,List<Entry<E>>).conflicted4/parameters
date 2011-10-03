@@ -1,0 +1,2 @@
+int targetEntry
+List<Entry<E>> entries

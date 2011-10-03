@@ -1,0 +1,3 @@
+{
+  expectAddFailure(sortedMultiset.headMultiset(a.getElement(),OPEN),a);
+}

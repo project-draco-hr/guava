@@ -1,0 +1,3 @@
+{
+  expectSetCountFailure(sortedMultiset.tailMultiset(a.getElement(),OPEN),a);
+}

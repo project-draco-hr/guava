@@ -1,0 +1,3 @@
+{
+  testSubMultisetSize(SubMultisetSpec.TAIL_OPEN);
+}

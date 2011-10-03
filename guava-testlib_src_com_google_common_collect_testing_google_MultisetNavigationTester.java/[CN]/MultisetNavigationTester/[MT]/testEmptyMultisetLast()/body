@@ -1,0 +1,9 @@
+{
+  assertNull(sortedMultiset.lastEntry());
+  try {
+    assertNull(sortedMultiset.elementSet().last());
+    fail();
+  }
+ catch (  NoSuchElementException e) {
+  }
+}

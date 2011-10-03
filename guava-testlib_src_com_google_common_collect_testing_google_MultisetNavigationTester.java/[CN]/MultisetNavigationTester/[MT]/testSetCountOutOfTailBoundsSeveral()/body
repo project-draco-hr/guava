@@ -1,0 +1,11 @@
+{
+  expectSetCountFailure(sortedMultiset.tailMultiset(a.getElement(),OPEN),a);
+  expectSetCountFailure(sortedMultiset.tailMultiset(b.getElement(),CLOSED),a);
+  expectSetCountFailure(sortedMultiset.tailMultiset(b.getElement(),OPEN),a);
+  expectSetCountFailure(sortedMultiset.tailMultiset(b.getElement(),OPEN),b);
+  expectSetCountFailure(sortedMultiset.tailMultiset(c.getElement(),CLOSED),a);
+  expectSetCountFailure(sortedMultiset.tailMultiset(c.getElement(),CLOSED),b);
+  expectSetCountFailure(sortedMultiset.tailMultiset(c.getElement(),OPEN),a);
+  expectSetCountFailure(sortedMultiset.tailMultiset(c.getElement(),OPEN),b);
+  expectSetCountFailure(sortedMultiset.tailMultiset(c.getElement(),OPEN),c);
+}

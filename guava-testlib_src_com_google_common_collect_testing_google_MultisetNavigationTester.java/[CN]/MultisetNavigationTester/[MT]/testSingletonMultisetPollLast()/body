@@ -1,0 +1,4 @@
+{
+  assertEquals(a,sortedMultiset.pollLastEntry());
+  assertTrue(sortedMultiset.isEmpty());
+}

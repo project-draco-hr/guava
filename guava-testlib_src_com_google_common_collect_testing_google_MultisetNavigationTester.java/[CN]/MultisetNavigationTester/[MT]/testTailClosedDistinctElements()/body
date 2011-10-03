@@ -1,0 +1,3 @@
+{
+  testSubMultisetDistinctElements(SubMultisetSpec.TAIL_CLOSED);
+}

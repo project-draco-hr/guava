@@ -1,0 +1,5 @@
+{
+  assertEquals(0,multiset.remove(entry.getElement(),entry.getCount()));
+  assertFalse(multiset.remove(entry.getElement()));
+  assertFalse(multiset.elementSet().remove(entry.getElement()));
+}

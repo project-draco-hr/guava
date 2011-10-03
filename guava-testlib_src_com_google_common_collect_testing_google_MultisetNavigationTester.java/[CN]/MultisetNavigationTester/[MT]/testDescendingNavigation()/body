@@ -1,0 +1,8 @@
+{
+  List<Entry<E>> ascending=new ArrayList<Entry<E>>();
+  Iterators.addAll(ascending,sortedMultiset.entrySet().iterator());
+  List<Entry<E>> descending=new ArrayList<Entry<E>>();
+  Iterators.addAll(descending,sortedMultiset.descendingMultiset().entrySet().iterator());
+  Collections.reverse(descending);
+  assertEquals(ascending,descending);
+}

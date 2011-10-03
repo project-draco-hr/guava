@@ -1,0 +1,3 @@
+SortedMultiset<E> multiset
+List<Entry<E>> entries
+int targetEntry

@@ -1,0 +1,3 @@
+{
+  expectRemoveZero(sortedMultiset.headMultiset(a.getElement(),OPEN),a);
+}

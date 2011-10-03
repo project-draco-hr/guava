@@ -1,0 +1,20 @@
+{
+  try {
+    multiset.add(entry.getElement(),entry.getCount());
+    fail("Expected IllegalArgumentException");
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+  try {
+    multiset.add(entry.getElement());
+    fail("Expected IllegalArgumentException");
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+  try {
+    multiset.addAll(Collections.singletonList(entry.getElement()));
+    fail("Expected IllegalArgumentException");
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}

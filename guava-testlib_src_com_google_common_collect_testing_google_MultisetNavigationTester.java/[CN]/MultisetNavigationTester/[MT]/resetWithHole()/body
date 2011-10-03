@@ -1,0 +1,7 @@
+{
+  List<E> container=new ArrayList<E>();
+  container.addAll(Collections.nCopies(a.getCount(),a.getElement()));
+  container.addAll(Collections.nCopies(c.getCount(),c.getElement()));
+  super.resetContainer(getSubjectGenerator().create(container.toArray()));
+  sortedMultiset=(SortedMultiset<E>)getMultiset();
+}

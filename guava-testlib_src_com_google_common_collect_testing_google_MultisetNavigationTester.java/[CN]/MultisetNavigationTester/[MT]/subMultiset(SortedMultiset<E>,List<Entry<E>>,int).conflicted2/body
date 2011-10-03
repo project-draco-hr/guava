@@ -1,0 +1,3 @@
+{
+  return multiset.tailMultiset(entries.get(targetEntry).getElement(),CLOSED);
+}

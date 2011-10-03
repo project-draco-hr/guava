@@ -1,0 +1,11 @@
+{
+  expectRemoveZero(sortedMultiset.headMultiset(c.getElement(),OPEN),c);
+  expectRemoveZero(sortedMultiset.headMultiset(b.getElement(),CLOSED),c);
+  expectRemoveZero(sortedMultiset.headMultiset(b.getElement(),OPEN),c);
+  expectRemoveZero(sortedMultiset.headMultiset(b.getElement(),OPEN),b);
+  expectRemoveZero(sortedMultiset.headMultiset(a.getElement(),CLOSED),c);
+  expectRemoveZero(sortedMultiset.headMultiset(a.getElement(),CLOSED),b);
+  expectRemoveZero(sortedMultiset.headMultiset(a.getElement(),OPEN),c);
+  expectRemoveZero(sortedMultiset.headMultiset(a.getElement(),OPEN),b);
+  expectRemoveZero(sortedMultiset.headMultiset(a.getElement(),OPEN),a);
+}

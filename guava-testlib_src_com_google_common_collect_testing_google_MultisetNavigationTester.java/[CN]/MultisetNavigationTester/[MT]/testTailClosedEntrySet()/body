@@ -1,0 +1,3 @@
+{
+  testSubMultisetEntrySet(SubMultisetSpec.TAIL_CLOSED);
+}

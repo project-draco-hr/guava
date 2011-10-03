@@ -1,0 +1,5 @@
+{
+  for (  Entry<E> entry : Arrays.asList(a,b,c)) {
+    expectAddFailure(multiset,entry);
+  }
+}

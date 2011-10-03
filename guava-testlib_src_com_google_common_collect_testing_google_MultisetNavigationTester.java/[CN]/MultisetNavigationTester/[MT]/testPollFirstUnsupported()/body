@@ -1,0 +1,8 @@
+{
+  try {
+    sortedMultiset.pollFirstEntry();
+    fail();
+  }
+ catch (  UnsupportedOperationException e) {
+  }
+}

@@ -1,0 +1,8 @@
+{
+  testEmptyRangeSubMultiset(sortedMultiset.subMultiset(a.getElement(),CLOSED,a.getElement(),OPEN));
+  testEmptyRangeSubMultiset(sortedMultiset.subMultiset(a.getElement(),OPEN,a.getElement(),OPEN));
+  testEmptyRangeSubMultiset(sortedMultiset.subMultiset(a.getElement(),OPEN,a.getElement(),CLOSED));
+  testEmptyRangeSubMultiset(sortedMultiset.subMultiset(b.getElement(),CLOSED,a.getElement(),CLOSED));
+  testEmptyRangeSubMultiset(sortedMultiset.subMultiset(b.getElement(),CLOSED,a.getElement(),OPEN));
+  testEmptyRangeSubMultiset(sortedMultiset.subMultiset(b.getElement(),OPEN,a.getElement(),OPEN));
+}

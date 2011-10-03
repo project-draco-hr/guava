@@ -1,0 +1,9 @@
+{
+  List<Entry<E>> entries=copyToList(sortedMultiset.entrySet());
+  for (int i=0; i < entries.size(); i++) {
+    List<Entry<E>> expected=spec.expectedEntries(i,entries);
+    SortedMultiset<E> subMultiset=spec.subMultiset(sortedMultiset,entries,i);
+    assertEquals(expected.size(),subMultiset.entrySet().size());
+    assertEquals(expected.size(),subMultiset.elementSet().size());
+  }
+}

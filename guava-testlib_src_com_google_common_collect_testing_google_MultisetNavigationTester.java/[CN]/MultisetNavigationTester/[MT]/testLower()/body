@@ -1,0 +1,6 @@
+{
+  resetWithHole();
+  assertEquals(null,sortedMultiset.headMultiset(a.getElement(),OPEN).lastEntry());
+  assertEquals(a,sortedMultiset.headMultiset(b.getElement(),OPEN).lastEntry());
+  assertEquals(a,sortedMultiset.headMultiset(c.getElement(),OPEN).lastEntry());
+}

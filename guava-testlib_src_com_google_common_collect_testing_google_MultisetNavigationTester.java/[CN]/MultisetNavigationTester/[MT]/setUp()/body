@@ -1,0 +1,13 @@
+{
+  super.setUp();
+  sortedMultiset=cast(getMultiset());
+  entries=copyToList(getSubjectGenerator().getSampleElements(getSubjectGenerator().getCollectionSize().getNumElements()));
+  Collections.sort(entries,sortedMultiset.comparator());
+  if (entries.size() >= 1) {
+    a=Multisets.immutableEntry(entries.get(0),sortedMultiset.count(entries.get(0)));
+    if (entries.size() >= 3) {
+      b=Multisets.immutableEntry(entries.get(1),sortedMultiset.count(entries.get(1)));
+      c=Multisets.immutableEntry(entries.get(2),sortedMultiset.count(entries.get(2)));
+    }
+  }
+}

@@ -1,0 +1,4 @@
+{
+  assertEquals(a,sortedMultiset.pollFirstEntry());
+  assertEquals(Arrays.asList(b,c),copyToList(sortedMultiset.entrySet()));
+}
