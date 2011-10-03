@@ -1,0 +1,9 @@
+{
+  final int len=string.length();
+  final int size=len * count;
+  char[] array=new char[size];
+  for (int i=0; i < size; i+=len) {
+    string.getChars(0,len,array,i);
+  }
+  return new String(array);
+}
