@@ -1,0 +1,23 @@
+{
+  if (loadedValue == null) {
+    boolean interrupted=false;
+    try {
+synchronized (this) {
+        while (loadedValue == null) {
+          try {
+            wait();
+          }
+ catch (          InterruptedException ie) {
+            interrupted=true;
+          }
+        }
+      }
+    }
+  finally {
+      if (interrupted) {
+        Thread.currentThread().interrupt();
+      }
+    }
+  }
+  return loadedValue.get();
+}

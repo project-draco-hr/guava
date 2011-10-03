@@ -20,7 +20,7 @@
   new Thread(){
     @Override public void run(){
       try {
-        map.getOrCompute(one);
+        map.getOrLoad(one);
       }
  catch (      ExecutionException e) {
         throw new RuntimeException(e);

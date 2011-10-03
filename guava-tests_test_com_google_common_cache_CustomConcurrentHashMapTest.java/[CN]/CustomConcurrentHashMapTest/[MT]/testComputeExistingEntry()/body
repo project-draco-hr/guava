@@ -5,6 +5,6 @@
   Object key=new Object();
   Object value=new Object();
   map.put(key,value);
-  assertEquals(value,map.getOrCompute(key));
+  assertEquals(value,map.getOrLoad(key));
   assertEquals(0,loader.getCount());
 }

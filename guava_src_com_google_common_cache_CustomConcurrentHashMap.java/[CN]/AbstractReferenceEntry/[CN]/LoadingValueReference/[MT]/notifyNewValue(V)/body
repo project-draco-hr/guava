@@ -1,0 +1,3 @@
+{
+  setLoadedValue(new LoadedReference<V>(newValue));
+}

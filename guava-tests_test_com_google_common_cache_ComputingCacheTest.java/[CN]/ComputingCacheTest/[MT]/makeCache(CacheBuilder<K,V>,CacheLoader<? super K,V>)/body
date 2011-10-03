@@ -1,3 +1,0 @@
-{
-  return new ComputingCache<K,V>(builder,CacheBuilder.CACHE_STATS_COUNTER,loader);
-}

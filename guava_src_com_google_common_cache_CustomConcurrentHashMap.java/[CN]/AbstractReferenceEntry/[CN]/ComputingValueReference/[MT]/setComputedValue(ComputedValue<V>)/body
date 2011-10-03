@@ -1,8 +1,0 @@
-{
-synchronized (this) {
-    if (this.computedValue == null) {
-      this.computedValue=newValue;
-      notifyAll();
-    }
-  }
-}

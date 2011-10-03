@@ -14,11 +14,11 @@
   entry.setValueReference(valueRef);
   table.set(index,entry);
   segment.count++;
-  assertSame(value,map.getOrCompute(key));
+  assertSame(value,map.getOrLoad(key));
   assertEquals(0,loader.getCount());
   assertEquals(1,segment.count);
   valueRef.clear();
-  assertNotSame(value,map.getOrCompute(key));
+  assertNotSame(value,map.getOrLoad(key));
   assertEquals(1,loader.getCount());
   assertEquals(1,segment.count);
 }

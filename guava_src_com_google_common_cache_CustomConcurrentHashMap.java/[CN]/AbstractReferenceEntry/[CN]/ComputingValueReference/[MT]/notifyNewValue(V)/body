@@ -1,3 +1,0 @@
-{
-  setComputedValue(new ComputedReference<V>(newValue));
-}

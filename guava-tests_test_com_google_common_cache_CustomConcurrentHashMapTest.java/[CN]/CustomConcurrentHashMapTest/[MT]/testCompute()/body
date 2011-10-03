@@ -3,8 +3,8 @@
   CustomConcurrentHashMap<Object,Object> map=makeComputingMap(createCacheBuilder(),loader);
   assertEquals(0,loader.getCount());
   Object key=new Object();
-  Object value=map.getOrCompute(key);
+  Object value=map.getOrLoad(key);
   assertEquals(1,loader.getCount());
-  assertEquals(value,map.getOrCompute(key));
+  assertEquals(value,map.getOrLoad(key));
   assertEquals(1,loader.getCount());
 }

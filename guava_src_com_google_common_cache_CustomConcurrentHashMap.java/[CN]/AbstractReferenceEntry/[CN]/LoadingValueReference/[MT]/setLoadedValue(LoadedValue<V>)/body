@@ -1,0 +1,8 @@
+{
+synchronized (this) {
+    if (this.loadedValue == null) {
+      this.loadedValue=newValue;
+      notifyAll();
+    }
+  }
+}

@@ -8,7 +8,7 @@
     for (int i=0; i < SMALL_MAX_SIZE; i++) {
       Object key=new Object();
       int hash=map.hash(key);
-      map.getOrCompute(key);
+      map.getOrLoad(key);
       ReferenceEntry<Object,Object> entry=segment.getEntry(key,hash);
       writeOrder.add(entry);
       readOrder.add(entry);
@@ -22,7 +22,7 @@
     while (i.hasNext()) {
       ReferenceEntry<Object,Object> entry=i.next();
       if (random.nextBoolean()) {
-        map.getOrCompute(entry.getKey());
+        map.getOrLoad(entry.getKey());
         reads.add(entry);
         i.remove();
         assertTrue(segment.recencyQueue.size() <= DRAIN_THRESHOLD);
