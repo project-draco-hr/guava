@@ -9,6 +9,7 @@
       assertNull(cache.asMap().putIfAbsent(newKey,entry.getValue()));
       assertEquals(entry.getValue(),cache.getUnchecked(entry.getKey()));
       assertEquals(entry.getValue(),cache.getUnchecked(newKey));
+      warmed.add(entryOf(newKey,entry.getValue()));
     }
     assertEquals(WARMUP_SIZE,cache.stats().missCount());
     checkValidState(cache);

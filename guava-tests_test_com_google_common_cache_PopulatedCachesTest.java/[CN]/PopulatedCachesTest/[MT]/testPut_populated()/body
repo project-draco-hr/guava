@@ -5,10 +5,12 @@
       Entry<Object,Object> entry=warmed.get(i - WARMUP_MIN);
       Object newValue=new Object();
       assertSame(entry.getValue(),cache.asMap().put(entry.getKey(),newValue));
+      warmed.add(entryOf(entry.getKey(),newValue));
       Object newKey=new Object();
       assertNull(cache.asMap().put(newKey,entry.getValue()));
       assertEquals(newValue,cache.getUnchecked(entry.getKey()));
       assertEquals(entry.getValue(),cache.getUnchecked(newKey));
+      warmed.add(entryOf(newKey,entry.getValue()));
     }
     assertEquals(WARMUP_SIZE,cache.stats().missCount());
     checkValidState(cache);
