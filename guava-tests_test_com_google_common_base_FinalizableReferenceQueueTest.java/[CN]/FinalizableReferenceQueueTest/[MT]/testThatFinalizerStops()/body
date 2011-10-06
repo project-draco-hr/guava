@@ -1,0 +1,15 @@
+{
+  weaklyReferenceQueue();
+  for (int i=0; i < 500; i++) {
+    if (queueReference.get() == null) {
+      return;
+    }
+    try {
+      System.gc();
+      Thread.sleep(10);
+    }
+ catch (    InterruptedException e) {
+    }
+  }
+  fail();
+}
