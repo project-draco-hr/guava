@@ -1,0 +1,4 @@
+{
+  checkNotNull(name);
+  return maybeAppendSeparator().append(name).append('=');
+}

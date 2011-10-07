@@ -1,0 +1,4 @@
+{
+  maybeAppendSeparator().append(value);
+  return this;
+}

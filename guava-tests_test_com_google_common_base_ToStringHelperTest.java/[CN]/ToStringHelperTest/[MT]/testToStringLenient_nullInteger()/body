@@ -1,0 +1,4 @@
+{
+  String toTest=Objects.toStringHelper(new TestClass()).add("field1",(Integer)null).toString();
+  assertTrue(toTest,toTest.matches(".*\\{field1\\=null\\}"));
+}
