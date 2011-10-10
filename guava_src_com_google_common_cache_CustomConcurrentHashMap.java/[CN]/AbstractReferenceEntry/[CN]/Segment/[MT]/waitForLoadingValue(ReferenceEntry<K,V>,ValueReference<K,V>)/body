@@ -1,0 +1,14 @@
+{
+  if (!valueReference.isLoading()) {
+    throw new AssertionError();
+  }
+  checkState(!Thread.holdsLock(e),"Recursive load");
+  try {
+    V value=valueReference.waitForValue();
+    recordRead(e);
+    return value;
+  }
+  finally {
+    statsCounter.recordMiss();
+  }
+}
