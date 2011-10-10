@@ -39,4 +39,16 @@
   assertEquals(2,stats.missCount());
   assertEquals(0,stats.loadSuccessCount());
   assertEquals(3,stats.loadExceptionCount());
+  Exception callableException=new RuntimeException();
+  try {
+    cache.get(new Object(),Callables.throwing(callableException));
+    fail();
+  }
+ catch (  UncheckedExecutionException expected) {
+    assertSame(callableException,expected.getCause());
+  }
+  stats=cache.stats();
+  assertEquals(3,stats.missCount());
+  assertEquals(0,stats.loadSuccessCount());
+  assertEquals(4,stats.loadExceptionCount());
 }

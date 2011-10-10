@@ -1,4 +1,3 @@
 {
-  int hash=hash(checkNotNull(key));
-  return segmentFor(hash).getOrLoad(key,hash,loader);
+  return getOrLoad(key,defaultLoader);
 }

@@ -12,7 +12,7 @@
   assertTrue(two.asMap().isEmpty());
   CustomConcurrentHashMap<Object,Object> mapOne=one.map;
   CustomConcurrentHashMap<Object,Object> mapTwo=two.map;
-  assertEquals(mapOne.loader,mapTwo.loader);
+  assertEquals(mapOne.defaultLoader,mapTwo.defaultLoader);
   assertEquals(mapOne.keyStrength,mapTwo.keyStrength);
   assertEquals(mapOne.keyStrength,mapTwo.keyStrength);
   assertEquals(mapOne.valueEquivalence,mapTwo.valueEquivalence);

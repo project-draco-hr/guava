@@ -6,5 +6,5 @@
   }
 ;
   CustomConcurrentHashMap<Object,Object> map=makeComputingMap(createCacheBuilder(),loader);
-  assertSame(loader,map.loader);
+  assertSame(loader,map.defaultLoader);
 }

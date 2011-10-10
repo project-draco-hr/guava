@@ -30,4 +30,13 @@
   stats=cache.stats();
   assertEquals(2,stats.missCount());
   assertEquals(3,stats.loadCount());
+  try {
+    cache.get(new Object(),Callables.returning(null));
+    fail();
+  }
+ catch (  NullPointerException expected) {
+  }
+  stats=cache.stats();
+  assertEquals(3,stats.missCount());
+  assertEquals(4,stats.loadCount());
 }

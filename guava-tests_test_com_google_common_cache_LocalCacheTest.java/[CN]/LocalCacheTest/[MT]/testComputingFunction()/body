@@ -6,5 +6,5 @@
   }
 ;
   LocalCache<Object,Object> cache=makeCache(createCacheBuilder(),loader);
-  assertSame(loader,cache.map.loader);
+  assertSame(loader,cache.map.defaultLoader);
 }

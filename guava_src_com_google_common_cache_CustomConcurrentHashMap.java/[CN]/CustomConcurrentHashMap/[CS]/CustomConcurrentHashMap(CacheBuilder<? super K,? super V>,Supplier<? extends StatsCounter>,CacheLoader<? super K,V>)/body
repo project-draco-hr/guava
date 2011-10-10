@@ -1,5 +1,5 @@
 {
-  this.loader=checkNotNull(loader);
+  this.defaultLoader=checkNotNull(loader);
   concurrencyLevel=Math.min(builder.getConcurrencyLevel(),MAX_SEGMENTS);
   keyStrength=builder.getKeyStrength();
   valueStrength=builder.getValueStrength();

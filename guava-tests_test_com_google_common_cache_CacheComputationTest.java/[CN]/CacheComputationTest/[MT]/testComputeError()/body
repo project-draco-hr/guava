@@ -39,4 +39,21 @@
   assertEquals(2,stats.missCount());
   assertEquals(0,stats.loadSuccessCount());
   assertEquals(3,stats.loadExceptionCount());
+  final Error callableError=new Error();
+  try {
+    cache.get(new Object(),new Callable<Object>(){
+      @Override public Object call(){
+        throw callableError;
+      }
+    }
+);
+    fail();
+  }
+ catch (  ExecutionError expected) {
+    assertSame(callableError,expected.getCause());
+  }
+  stats=cache.stats();
+  assertEquals(3,stats.missCount());
+  assertEquals(0,stats.loadSuccessCount());
+  assertEquals(4,stats.loadExceptionCount());
 }
