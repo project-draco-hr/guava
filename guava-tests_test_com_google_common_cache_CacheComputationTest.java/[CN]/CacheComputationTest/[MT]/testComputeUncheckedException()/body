@@ -41,7 +41,7 @@
   assertEquals(3,stats.loadExceptionCount());
   Exception callableException=new RuntimeException();
   try {
-    cache.get(new Object(),Callables.throwing(callableException));
+    cache.get(new Object(),throwing(callableException));
     fail();
   }
  catch (  UncheckedExecutionException expected) {

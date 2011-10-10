@@ -28,7 +28,7 @@
   assertEquals(3,stats.loadCount());
   assertEquals(1,stats.hitCount());
   Object value=new Object();
-  assertSame(key,cache.get(key,Callables.throwing(new Exception())));
+  assertSame(key,cache.get(key,throwing(new Exception())));
   stats=cache.stats();
   assertEquals(2,stats.missCount());
   assertEquals(3,stats.loadCount());
