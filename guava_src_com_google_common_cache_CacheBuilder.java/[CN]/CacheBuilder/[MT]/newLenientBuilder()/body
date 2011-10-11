@@ -1,5 +1,0 @@
-{
-  CacheBuilder<Object,Object> builder=newBuilder();
-  builder.strictParsing=false;
-  return builder;
-}
