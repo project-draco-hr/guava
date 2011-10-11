@@ -5,4 +5,5 @@
   assertEquals("woot",Iterables.find(list,Predicates.alwaysFalse(),"woot"));
   assertNull(Iterables.find(list,Predicates.alwaysFalse(),null));
   assertEquals("cool",Iterables.find(list,Predicates.alwaysTrue(),"woot"));
+  assertCanIterateAgain(list);
 }
