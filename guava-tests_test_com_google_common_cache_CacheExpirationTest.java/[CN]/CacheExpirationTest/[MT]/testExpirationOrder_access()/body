@@ -1,0 +1,32 @@
+{
+  FakeTicker ticker=new FakeTicker();
+  IdentityLoader<Integer> loader=identityLoader();
+  Cache<Integer,Integer> cache=CacheBuilder.newBuilder().concurrencyLevel(1).expireAfterAccess(10,MILLISECONDS).ticker(ticker).build(loader);
+  for (int i=0; i < 10; i++) {
+    cache.getUnchecked(i);
+    ticker.advance(1,MILLISECONDS);
+  }
+  Set<Integer> keySet=cache.asMap().keySet();
+  ASSERT.that(keySet).hasContentsAnyOrder(0,1,2,3,4,5,6,7,8,9);
+  ticker.advance(1,MILLISECONDS);
+  ASSERT.that(keySet).hasContentsAnyOrder(1,2,3,4,5,6,7,8,9);
+  getAll(cache,asList(0,1,2));
+  CacheTesting.drainRecencyQueues(cache);
+  ticker.advance(2,MILLISECONDS);
+  ASSERT.that(keySet).hasContentsAnyOrder(3,4,5,6,7,8,9,0,1,2);
+  ticker.advance(1,MILLISECONDS);
+  ASSERT.that(keySet).hasContentsAnyOrder(4,5,6,7,8,9,0,1,2);
+  getAll(cache,asList(5,7,9));
+  CacheTesting.drainRecencyQueues(cache);
+  ASSERT.that(keySet).hasContentsAnyOrder(4,6,8,0,1,2,5,7,9);
+  ticker.advance(1,MILLISECONDS);
+  ASSERT.that(keySet).hasContentsAnyOrder(6,8,0,1,2,5,7,9);
+  ticker.advance(1,MILLISECONDS);
+  ASSERT.that(keySet).hasContentsAnyOrder(6,8,0,1,2,5,7,9);
+  ticker.advance(1,MILLISECONDS);
+  ASSERT.that(keySet).hasContentsAnyOrder(8,0,1,2,5,7,9);
+  ticker.advance(1,MILLISECONDS);
+  ASSERT.that(keySet).hasContentsAnyOrder(8,0,1,2,5,7,9);
+  ticker.advance(1,MILLISECONDS);
+  ASSERT.that(keySet).hasContentsAnyOrder(0,1,2,5,7,9);
+}

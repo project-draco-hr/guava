@@ -2,6 +2,6 @@
   FakeTicker ticker=new FakeTicker();
   CountingRemovalListener<String,Integer> removalListener=countingRemovalListener();
   WatchedCreatorLoader loader=new WatchedCreatorLoader();
-  Cache<String,Integer> cache=CacheBuilder.newBuilder().expireAfterWrite(EXPIRING_TIME,TimeUnit.MILLISECONDS).removalListener(removalListener).ticker(ticker).build(loader);
+  Cache<String,Integer> cache=CacheBuilder.newBuilder().expireAfterWrite(EXPIRING_TIME,MILLISECONDS).removalListener(removalListener).ticker(ticker).build(loader);
   runExpirationTest(cache,loader,ticker,removalListener);
 }

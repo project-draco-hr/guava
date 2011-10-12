@@ -7,7 +7,7 @@
     assertEquals(Integer.valueOf(VALUE_PREFIX + i),cache.getUnchecked(KEY_PREFIX + i));
     assertFalse("Loader should NOT have been called @#" + i,loader.wasCalled());
   }
-  ticker.advance(EXPIRING_TIME * 10,TimeUnit.MILLISECONDS);
+  ticker.advance(EXPIRING_TIME * 10,MILLISECONDS);
   cache.getUnchecked(KEY_PREFIX + 11);
   assertEquals(1,Iterators.size(cache.asMap().entrySet().iterator()));
   assertEquals(1,Iterators.size(cache.asMap().keySet().iterator()));

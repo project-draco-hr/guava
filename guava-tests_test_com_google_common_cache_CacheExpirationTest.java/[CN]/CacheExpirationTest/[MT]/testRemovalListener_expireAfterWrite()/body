@@ -19,10 +19,10 @@
     }
   }
 ;
-  Cache<Integer,AtomicInteger> cache=CacheBuilder.newBuilder().removalListener(removalListener).expireAfterWrite(10,TimeUnit.MILLISECONDS).ticker(ticker).build(loader);
+  Cache<Integer,AtomicInteger> cache=CacheBuilder.newBuilder().removalListener(removalListener).expireAfterWrite(10,MILLISECONDS).ticker(ticker).build(loader);
   for (int i=0; i < 100; ++i) {
     cache.getUnchecked(10).incrementAndGet();
-    ticker.advance(1,TimeUnit.MILLISECONDS);
+    ticker.advance(1,MILLISECONDS);
   }
   assertEquals(evictionCount.get() + 1,applyCount.get());
   int remaining=cache.getUnchecked(10).get();

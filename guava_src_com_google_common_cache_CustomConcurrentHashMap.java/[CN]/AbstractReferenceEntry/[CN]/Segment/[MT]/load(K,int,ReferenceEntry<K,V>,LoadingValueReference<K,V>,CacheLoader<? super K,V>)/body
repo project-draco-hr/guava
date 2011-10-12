@@ -5,6 +5,9 @@
 synchronized (entry) {
       value=loadingValueReference.load(key,hash,loader);
     }
+    if (value == null) {
+      throw new AssertionError();
+    }
     long end=System.nanoTime();
     statsCounter.recordLoadSuccess(end - start);
     storeLoadedValue(key,hash,loadingValueReference,value);

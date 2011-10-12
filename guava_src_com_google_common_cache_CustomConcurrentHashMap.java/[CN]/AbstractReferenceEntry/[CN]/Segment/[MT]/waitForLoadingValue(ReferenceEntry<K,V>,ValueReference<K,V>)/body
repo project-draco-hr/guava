@@ -5,6 +5,9 @@
   checkState(!Thread.holdsLock(e),"Recursive load");
   try {
     V value=valueReference.waitForValue();
+    if (value == null) {
+      throw new AssertionError();
+    }
     recordRead(e);
     return value;
   }

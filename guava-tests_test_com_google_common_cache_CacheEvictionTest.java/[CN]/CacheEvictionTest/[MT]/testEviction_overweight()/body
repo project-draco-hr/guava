@@ -5,7 +5,9 @@
   Set<Integer> keySet=cache.asMap().keySet();
   ASSERT.that(keySet).hasContentsAnyOrder(0,1,2,3,4,5,6,7,8,9);
   getAll(cache,asList(45));
+  CacheTesting.drainRecencyQueues(cache);
   ASSERT.that(keySet).hasContentsAnyOrder(0,45);
   getAll(cache,asList(46));
+  CacheTesting.drainRecencyQueues(cache);
   ASSERT.that(keySet).hasContentsAnyOrder(0);
 }
