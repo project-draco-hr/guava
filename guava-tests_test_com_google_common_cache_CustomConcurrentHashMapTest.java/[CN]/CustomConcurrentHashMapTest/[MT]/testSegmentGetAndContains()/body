@@ -1,5 +1,5 @@
 {
-  CustomConcurrentHashMap<Object,Object> map=makeMap(createCacheBuilder().concurrencyLevel(1).expireAfterAccess(99999,SECONDS));
+  CustomConcurrentHashMap<Object,Object> map=makeMap(createCacheBuilder().concurrencyLevel(1).expireAfterAccess(1,HOURS));
   Segment<Object,Object> segment=map.segments[0];
   Object key=new Object();
   int hash=map.hash(key);
@@ -46,7 +46,7 @@
   assertTrue(segment.containsKey(key,hash));
   assertTrue(segment.containsValue(value));
   assertTrue(segment.containsValue(dummyValue));
-  dummy.setExpirationTime(0);
+  dummy.setAccessTime(0);
   assertNull(segment.get(key,hash));
   assertFalse(segment.containsKey(key,hash));
   assertTrue(segment.containsValue(value));

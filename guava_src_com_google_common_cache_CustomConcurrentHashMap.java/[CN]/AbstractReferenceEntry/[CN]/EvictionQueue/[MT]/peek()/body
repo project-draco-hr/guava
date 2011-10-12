@@ -1,4 +1,0 @@
-{
-  ReferenceEntry<K,V> next=head.getNextEvictable();
-  return (next == head) ? null : next;
-}

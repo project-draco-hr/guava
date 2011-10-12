@@ -1,4 +1,0 @@
-{
-  ReferenceEntry<K,V> next=head.getNextExpirable();
-  return (next == head) ? null : next;
-}

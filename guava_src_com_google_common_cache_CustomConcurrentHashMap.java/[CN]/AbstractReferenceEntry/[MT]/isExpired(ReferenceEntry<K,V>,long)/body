@@ -1,3 +1,9 @@
 {
-  return now - entry.getExpirationTime() > 0;
+  if (expiresAfterAccess() && (now - entry.getAccessTime() > expireAfterAccessNanos)) {
+    return true;
+  }
+  if (expiresAfterWrite() && (now - entry.getWriteTime() > expireAfterWriteNanos)) {
+    return true;
+  }
+  return false;
 }

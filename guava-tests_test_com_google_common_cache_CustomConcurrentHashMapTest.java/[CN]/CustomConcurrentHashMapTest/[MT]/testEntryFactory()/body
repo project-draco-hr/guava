@@ -1,0 +1,10 @@
+{
+  assertSame(EntryFactory.STRONG,EntryFactory.getFactory(Strength.STRONG,false,false));
+  assertSame(EntryFactory.STRONG_ACCESS,EntryFactory.getFactory(Strength.STRONG,true,false));
+  assertSame(EntryFactory.STRONG_WRITE,EntryFactory.getFactory(Strength.STRONG,false,true));
+  assertSame(EntryFactory.STRONG_ACCESS_WRITE,EntryFactory.getFactory(Strength.STRONG,true,true));
+  assertSame(EntryFactory.WEAK,EntryFactory.getFactory(Strength.WEAK,false,false));
+  assertSame(EntryFactory.WEAK_ACCESS,EntryFactory.getFactory(Strength.WEAK,true,false));
+  assertSame(EntryFactory.WEAK_WRITE,EntryFactory.getFactory(Strength.WEAK,false,true));
+  assertSame(EntryFactory.WEAK_ACCESS_WRITE,EntryFactory.getFactory(Strength.WEAK,true,true));
+}

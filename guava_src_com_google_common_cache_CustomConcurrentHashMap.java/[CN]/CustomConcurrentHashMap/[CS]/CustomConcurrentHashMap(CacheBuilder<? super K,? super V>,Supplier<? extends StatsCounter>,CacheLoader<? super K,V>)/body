@@ -9,7 +9,7 @@
   weigher=builder.getWeigher();
   expireAfterAccessNanos=builder.getExpireAfterAccessNanos();
   expireAfterWriteNanos=builder.getExpireAfterWriteNanos();
-  entryFactory=EntryFactory.getFactory(keyStrength,expires(),evictsBySize());
+  entryFactory=EntryFactory.getFactory(keyStrength,usesAccessQueue(),usesWriteQueue());
   ticker=builder.getTicker();
   removalListener=builder.getRemovalListener();
   removalNotificationQueue=(removalListener == NullListener.INSTANCE) ? CustomConcurrentHashMap.<RemovalNotification<K,V>>discardingQueue() : new ConcurrentLinkedQueue<RemovalNotification<K,V>>();

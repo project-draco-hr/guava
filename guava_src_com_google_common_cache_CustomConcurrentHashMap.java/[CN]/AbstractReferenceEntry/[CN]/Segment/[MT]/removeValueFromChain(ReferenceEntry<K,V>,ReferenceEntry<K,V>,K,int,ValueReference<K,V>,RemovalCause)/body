@@ -1,7 +1,7 @@
 {
   enqueueNotification(key,hash,valueReference,cause);
-  evictionQueue.remove(entry);
-  expirationQueue.remove(entry);
+  writeQueue.remove(entry);
+  accessQueue.remove(entry);
   if (valueReference.isLoading()) {
     valueReference.notifyNewValue(null);
     return first;

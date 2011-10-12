@@ -5,7 +5,7 @@
   initTable(newEntryArray(initialCapacity));
   keyReferenceQueue=map.usesKeyReferences() ? new ReferenceQueue<K>() : null;
   valueReferenceQueue=map.usesValueReferences() ? new ReferenceQueue<V>() : null;
-  recencyQueue=(map.evictsBySize() || map.expiresAfterAccess()) ? new ConcurrentLinkedQueue<ReferenceEntry<K,V>>() : CustomConcurrentHashMap.<ReferenceEntry<K,V>>discardingQueue();
-  evictionQueue=map.evictsBySize() ? new EvictionQueue<K,V>() : CustomConcurrentHashMap.<ReferenceEntry<K,V>>discardingQueue();
-  expirationQueue=map.expires() ? new ExpirationQueue<K,V>() : CustomConcurrentHashMap.<ReferenceEntry<K,V>>discardingQueue();
+  recencyQueue=map.usesAccessQueue() ? new ConcurrentLinkedQueue<ReferenceEntry<K,V>>() : CustomConcurrentHashMap.<ReferenceEntry<K,V>>discardingQueue();
+  writeQueue=map.usesWriteQueue() ? new WriteQueue<K,V>() : CustomConcurrentHashMap.<ReferenceEntry<K,V>>discardingQueue();
+  accessQueue=map.usesAccessQueue() ? new AccessQueue<K,V>() : CustomConcurrentHashMap.<ReferenceEntry<K,V>>discardingQueue();
 }

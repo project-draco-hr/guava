@@ -6,7 +6,7 @@
   if (value == null) {
     return null;
   }
-  if (expires() && isExpired(entry)) {
+  if (isExpired(entry)) {
     return null;
   }
   return value;

@@ -1,8 +1,8 @@
 {
-  if (map.evictsBySize()) {
-    assertSame(two,one.getNextEvictable());
+  if (map.usesWriteQueue()) {
+    assertSame(two,one.getNextInWriteQueue());
   }
-  if (map.expires()) {
-    assertSame(two,one.getNextExpirable());
+  if (map.usesAccessQueue()) {
+    assertSame(two,one.getNextInAccessQueue());
   }
 }

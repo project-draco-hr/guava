@@ -3,17 +3,27 @@
     return;
   }
   for (  Segment<K,V> segment : map.segments) {
-    long lastExpirationTime=0;
+    long lastAccessTime=0;
+    long lastWriteTime=0;
     for (    ReferenceEntry<K,V> e : segment.recencyQueue) {
-      long expirationTime=e.getExpirationTime();
-      assertTrue(expirationTime >= lastExpirationTime);
-      lastExpirationTime=expirationTime;
+      long accessTime=e.getAccessTime();
+      assertTrue(accessTime >= lastAccessTime);
+      lastAccessTime=accessTime;
+      long writeTime=e.getWriteTime();
+      assertTrue(writeTime >= lastWriteTime);
+      lastWriteTime=writeTime;
     }
-    lastExpirationTime=0;
-    for (    ReferenceEntry<K,V> e : segment.expirationQueue) {
-      long expirationTime=e.getExpirationTime();
-      assertTrue(expirationTime >= lastExpirationTime);
-      lastExpirationTime=expirationTime;
+    lastAccessTime=0;
+    lastWriteTime=0;
+    for (    ReferenceEntry<K,V> e : segment.accessQueue) {
+      long accessTime=e.getAccessTime();
+      assertTrue(accessTime >= lastAccessTime);
+      lastAccessTime=accessTime;
+    }
+    for (    ReferenceEntry<K,V> e : segment.writeQueue) {
+      long writeTime=e.getWriteTime();
+      assertTrue(writeTime >= lastWriteTime);
+      lastWriteTime=writeTime;
     }
   }
 }

@@ -11,11 +11,11 @@
     int hashTwo=map.hash(keyTwo);
     ReferenceEntry<Object,Object> entryTwo=map.newEntry(keyTwo,hashTwo,entryOne);
     entryTwo.setValueReference(map.newValueReference(entryTwo,valueTwo,1));
-    if (map.evictsBySize()) {
-      CustomConcurrentHashMap.connectEvictables(entryOne,entryTwo);
+    if (map.usesAccessQueue()) {
+      CustomConcurrentHashMap.connectAccessOrder(entryOne,entryTwo);
     }
-    if (map.expires()) {
-      CustomConcurrentHashMap.connectExpirables(entryOne,entryTwo);
+    if (map.usesWriteQueue()) {
+      CustomConcurrentHashMap.connectWriteOrder(entryOne,entryTwo);
     }
     assertConnected(map,entryOne,entryTwo);
     ReferenceEntry<Object,Object> copyOne=map.copyEntry(entryOne,null);

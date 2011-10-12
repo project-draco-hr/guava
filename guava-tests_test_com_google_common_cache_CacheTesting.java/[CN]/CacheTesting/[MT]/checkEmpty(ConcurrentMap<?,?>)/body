@@ -13,8 +13,8 @@
     for (    CustomConcurrentHashMap.Segment segment : cchm.segments) {
       assertEquals(0,segment.count);
       assertEquals(0,segmentSize(segment));
-      assertTrue(segment.expirationQueue.isEmpty());
-      assertTrue(segment.evictionQueue.isEmpty());
+      assertTrue(segment.writeQueue.isEmpty());
+      assertTrue(segment.accessQueue.isEmpty());
     }
   }
 }

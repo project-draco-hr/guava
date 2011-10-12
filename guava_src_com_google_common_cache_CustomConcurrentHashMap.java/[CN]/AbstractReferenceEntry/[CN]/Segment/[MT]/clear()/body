@@ -16,8 +16,8 @@
         table.set(i,null);
       }
       clearReferenceQueues();
-      evictionQueue.clear();
-      expirationQueue.clear();
+      writeQueue.clear();
+      accessQueue.clear();
       readCount.set(0);
       ++modCount;
       count=0;

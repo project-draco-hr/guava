@@ -1,3 +1,0 @@
-{
-  return new StrongExpirableEntry<K,V>(key,hash,next);
-}

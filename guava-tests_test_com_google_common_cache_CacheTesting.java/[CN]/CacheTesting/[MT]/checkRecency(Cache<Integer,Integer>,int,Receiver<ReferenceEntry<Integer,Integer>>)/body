@@ -4,13 +4,13 @@
     CustomConcurrentHashMap<Integer,Integer> cchm=toCustomConcurrentHashMap(cache);
     Segment<?,?> segment=cchm.segments[0];
     drainRecencyQueue(segment);
-    assertEquals(maxSize,evictionQueueSize(cache));
+    assertEquals(maxSize,accessQueueSize(cache));
     assertEquals(maxSize,cache.size());
-    ReferenceEntry<?,?> originalHead=segment.evictionQueue.peek();
+    ReferenceEntry<?,?> originalHead=segment.accessQueue.peek();
     @SuppressWarnings("unchecked") ReferenceEntry<Integer,Integer> entry=(ReferenceEntry)originalHead;
     operation.accept(entry);
     drainRecencyQueue(segment);
-    assertNotSame(originalHead,segment.evictionQueue.peek());
-    assertEquals(cache.size(),evictionQueueSize(cache));
+    assertNotSame(originalHead,segment.accessQueue.peek());
+    assertEquals(cache.size(),accessQueueSize(cache));
   }
 }

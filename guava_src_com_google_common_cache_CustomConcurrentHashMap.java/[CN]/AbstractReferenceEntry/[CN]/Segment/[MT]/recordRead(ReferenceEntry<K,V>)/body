@@ -1,6 +1,6 @@
 {
   if (map.expiresAfterAccess()) {
-    recordExpirationTime(entry,map.expireAfterAccessNanos);
+    entry.setAccessTime(map.ticker.read());
   }
   recencyQueue.add(entry);
 }

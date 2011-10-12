@@ -7,7 +7,7 @@
  catch (  IllegalStateException expected) {
   }
   try {
-    builder.expireAfterWrite(3600,SECONDS);
+    builder.expireAfterAccess(3600,SECONDS);
     fail();
   }
  catch (  IllegalStateException expected) {

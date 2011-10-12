@@ -1,8 +1,3 @@
 {
-  CustomConcurrentHashMap<?,?> cchm=toCustomConcurrentHashMap(cache);
-  int size=0;
-  for (  Segment<?,?> segment : cchm.segments) {
-    size+=expirationQueueSize(segment);
-  }
-  return size;
+  return Math.max(accessQueueSize(cache),writeQueueSize(cache));
 }

@@ -5,7 +5,8 @@
   ticker.advance(2 * expiringTime,TimeUnit.MILLISECONDS);
   for (  Segment<?,?> segment : cchm.segments) {
     expireEntries(segment);
-    assertEquals("Expiration queue must be empty by now",0,expirationQueueSize(segment));
+    assertEquals("Expiration queue must be empty by now",0,writeQueueSize(segment));
+    assertEquals("Expiration queue must be empty by now",0,accessQueueSize(segment));
     assertEquals("Segments must be empty by now",0,segmentSize(segment));
   }
   cchm.processPendingNotifications();

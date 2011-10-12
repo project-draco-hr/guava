@@ -1,12 +1,15 @@
 {
   drainRecencyQueue();
-  if (weight > 0) {
-    totalWeight+=weight;
-    evictionQueue.add(entry);
-  }
+  totalWeight+=weight;
   if (map.expires()) {
-    long expiration=map.expiresAfterAccess() ? map.expireAfterAccessNanos : map.expireAfterWriteNanos;
-    recordExpirationTime(entry,expiration);
-    expirationQueue.add(entry);
+    long time=map.ticker.read();
+    if (map.expiresAfterAccess()) {
+      entry.setAccessTime(time);
+    }
+    if (map.expiresAfterWrite()) {
+      entry.setWriteTime(time);
+    }
   }
+  accessQueue.add(entry);
+  writeQueue.add(entry);
 }

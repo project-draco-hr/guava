@@ -1,3 +1,0 @@
-{
-  entry.setExpirationTime(map.ticker.read() + expirationNanos);
-}

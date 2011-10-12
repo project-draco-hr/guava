@@ -1,5 +1,0 @@
-{
-  ReferenceEntry<K,V> nullEntry=nullEntry();
-  nulled.setNextExpirable(nullEntry);
-  nulled.setPreviousExpirable(nullEntry);
-}

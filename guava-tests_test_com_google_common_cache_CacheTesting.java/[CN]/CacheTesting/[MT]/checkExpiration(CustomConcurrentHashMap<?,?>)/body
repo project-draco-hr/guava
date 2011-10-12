@@ -1,22 +1,40 @@
 {
   for (  Segment<?,?> segment : cchm.segments) {
-    if (cchm.expires()) {
-      Set<ReferenceEntry<?,?>> expirables=Sets.newIdentityHashSet();
+    if (cchm.usesWriteQueue()) {
+      Set<ReferenceEntry<?,?>> entries=Sets.newIdentityHashSet();
       ReferenceEntry<?,?> prev=null;
-      for (      ReferenceEntry<?,?> current : segment.expirationQueue) {
-        assertTrue(expirables.add(current));
+      for (      ReferenceEntry<?,?> current : segment.writeQueue) {
+        assertTrue(entries.add(current));
         if (prev != null) {
-          assertSame(prev,current.getPreviousExpirable());
-          assertSame(prev.getNextExpirable(),current);
-          assertTrue(prev.getExpirationTime() <= current.getExpirationTime());
+          assertSame(prev,current.getPreviousInWriteQueue());
+          assertSame(prev.getNextInWriteQueue(),current);
+          assertTrue(prev.getWriteTime() <= current.getWriteTime());
         }
         assertSame(current,segment.getEntry(current.getKey(),current.getHash()));
         prev=current;
       }
-      assertEquals(segment.count,expirables.size());
+      assertEquals(segment.count,entries.size());
     }
  else {
-      assertTrue(segment.expirationQueue.isEmpty());
+      assertTrue(segment.writeQueue.isEmpty());
+    }
+    if (cchm.usesAccessQueue()) {
+      Set<ReferenceEntry<?,?>> entries=Sets.newIdentityHashSet();
+      ReferenceEntry<?,?> prev=null;
+      for (      ReferenceEntry<?,?> current : segment.accessQueue) {
+        assertTrue(entries.add(current));
+        if (prev != null) {
+          assertSame(prev,current.getPreviousInAccessQueue());
+          assertSame(prev.getNextInAccessQueue(),current);
+          assertTrue(prev.getAccessTime() <= current.getAccessTime());
+        }
+        assertSame(current,segment.getEntry(current.getKey(),current.getHash()));
+        prev=current;
+      }
+      assertEquals(segment.count,entries.size());
+    }
+ else {
+      assertTrue(segment.accessQueue.isEmpty());
     }
   }
 }

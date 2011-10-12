@@ -32,8 +32,8 @@
   assertSame(keyOne,listener.getLastEvictedKey());
   assertSame(valueOne,listener.getLastEvictedValue());
   assertTrue(map.removalNotificationQueue.isEmpty());
-  assertFalse(segment.evictionQueue.contains(entryOne));
-  assertFalse(segment.expirationQueue.contains(entryOne));
+  assertFalse(segment.accessQueue.contains(entryOne));
+  assertFalse(segment.writeQueue.contains(entryOne));
   assertEquals(0,segment.count);
   assertNull(table.get(0));
 }

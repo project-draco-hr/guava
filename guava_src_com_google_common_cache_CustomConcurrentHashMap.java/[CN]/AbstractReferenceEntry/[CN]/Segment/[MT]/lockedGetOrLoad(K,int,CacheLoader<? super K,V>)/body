@@ -30,8 +30,8 @@
             statsCounter.recordHit();
             return value;
           }
-          evictionQueue.remove(e);
-          expirationQueue.remove(e);
+          writeQueue.remove(e);
+          accessQueue.remove(e);
           this.count=newCount;
         }
         break;
