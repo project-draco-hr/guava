@@ -1,0 +1,36 @@
+{
+  if (constantName.equals("TE")) {
+    return "TE";
+  }
+ else   if (constantName.equals("CONTENT_MD5")) {
+    return "Content-MD5";
+  }
+ else   if (constantName.equals("ETAG")) {
+    return "ETag";
+  }
+ else   if (constantName.equals("P3P")) {
+    return "P3P";
+  }
+ else   if (constantName.equals("WWW_AUTHENTICATE")) {
+    return "WWW-Authenticate";
+  }
+ else   if (constantName.equals("X_XSS_PROTECTION")) {
+    return "X-XSS-Protection";
+  }
+ else   if (constantName.equals("X_USER_IP")) {
+    return "X-User-IP";
+  }
+ else   if (constantName.equals("DNT")) {
+    return "DNT";
+  }
+ else   if (constantName.equals("LAST_EVENT_ID")) {
+    return "Last-Event-ID";
+  }
+  boolean toLower=false;
+  StringBuilder builder=new StringBuilder(constantName.length());
+  for (  char c : constantName.replace('_','-').toCharArray()) {
+    builder.append(toLower ? Ascii.toLowerCase(c) : c);
+    toLower=(c != '-');
+  }
+  return builder.toString();
+}

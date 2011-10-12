@@ -1,0 +1,7 @@
+{
+  for (  Field field : HttpHeaders.class.getDeclaredFields()) {
+    if (!field.isSynthetic()) {
+      assertEquals(upperToHttpHeaderName(field.getName()),field.get(null));
+    }
+  }
+}
