@@ -1,0 +1,21 @@
+{
+  int unitsIndex;
+  if (value < 10000) {
+    unitsIndex=(value < 1000) ? 4 : 5;
+  }
+ else   if (value < 1000000) {
+    unitsIndex=(value < 100000) ? 6 : 7;
+  }
+ else {
+    unitsIndex=8;
+  }
+  char[] result=new char[unitsIndex + 2];
+  result[0]='&';
+  result[1]='#';
+  result[unitsIndex + 1]=';';
+  for (; unitsIndex > 1; unitsIndex--) {
+    result[unitsIndex]=(char)('0' + (value % 10));
+    value/=10;
+  }
+  return result;
+}

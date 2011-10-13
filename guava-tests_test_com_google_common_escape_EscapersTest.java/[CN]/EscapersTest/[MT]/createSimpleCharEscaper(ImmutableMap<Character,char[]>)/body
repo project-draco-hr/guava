@@ -1,0 +1,8 @@
+{
+  return new CharEscaper(){
+    @Override protected char[] escape(    char c){
+      return replacementMap.get(c);
+    }
+  }
+;
+}

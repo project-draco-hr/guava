@@ -1,0 +1,7 @@
+{
+  map.put(c,r);
+  if (c > max) {
+    max=c;
+  }
+  return this;
+}

@@ -1,0 +1,5 @@
+{
+  UnicodeEscaper e=SIMPLE_ESCAPER;
+  String expected="[0]abyz[128][256][2048][4096]ABYZ[65535]" + "[" + Character.MIN_SUPPLEMENTARY_CODE_POINT + "]"+ "0189["+ Character.MAX_CODE_POINT+ "]";
+  assertEquals(expected,escapeAsString(e,TEST_STRING));
+}

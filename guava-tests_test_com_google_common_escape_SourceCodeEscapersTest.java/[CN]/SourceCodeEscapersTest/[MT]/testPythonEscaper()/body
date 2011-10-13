@@ -1,0 +1,9 @@
+{
+  UnicodeEscaper e=SourceCodeEscapers.pythonEscaper();
+  assertEquals("a normal ascii string",e.escape("a normal ascii string"));
+  assertEquals("\\\\",e.escape("\\"));
+  assertEquals("\\'\\\"\\n\\r\\t",e.escape("'\"\n\r\t"));
+  assertEquals("\\x08\\x0c",e.escape("\b\f"));
+  assertEquals("\\U00010000",e.escape("\uD800\uDC00"));
+  assertEquals("\\U0010ffff",e.escape("\uDBFF\uDFFF"));
+}

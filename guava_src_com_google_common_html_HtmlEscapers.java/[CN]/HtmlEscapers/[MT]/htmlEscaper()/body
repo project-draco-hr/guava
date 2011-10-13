@@ -1,0 +1,3 @@
+{
+  return HtmlEscaperHolder.HTML_UNICODE_ESCAPER;
+}

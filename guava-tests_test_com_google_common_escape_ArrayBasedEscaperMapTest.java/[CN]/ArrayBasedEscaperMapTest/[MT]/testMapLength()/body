@@ -1,0 +1,5 @@
+{
+  Map<Character,String> map=ImmutableMap.of('a',"first",'z',"last");
+  ArrayBasedEscaperMap fem=ArrayBasedEscaperMap.create(map);
+  assertEquals('z' + 1,fem.getReplacementArray().length);
+}

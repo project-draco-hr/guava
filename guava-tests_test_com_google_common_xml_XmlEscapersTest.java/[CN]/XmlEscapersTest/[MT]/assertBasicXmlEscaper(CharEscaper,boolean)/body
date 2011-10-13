@@ -1,0 +1,41 @@
+{
+  assertEquals("xxx",xmlEscaper.escape("xxx"));
+  assertEquals("test &amp; test &amp; test",xmlEscaper.escape("test & test & test"));
+  assertEquals("test &lt;&lt; 1",xmlEscaper.escape("test << 1"));
+  assertEquals("test &gt;&gt; 1",xmlEscaper.escape("test >> 1"));
+  assertEquals("&lt;tab&gt;",xmlEscaper.escape("<tab>"));
+  String s="!@#$%^*()_+=-/?\\|]}[{,.;:" + "abcdefghijklmnopqrstuvwxyz" + "ABCDEFGHIJKLMNOPQRSTUVWXYZ"+ "1234567890";
+  assertEquals(s,xmlEscaper.escape(s));
+  for (char ch=0; ch < 0x20; ch++) {
+    if (ch == '\t' || ch == '\n' || ch == '\r') {
+      assertUnescaped(xmlEscaper,ch);
+    }
+ else {
+      assertEscaping(xmlEscaper,"",ch);
+    }
+  }
+  for (char ch=0x20; ch <= 0xFFFD; ch++) {
+    if (ch == '&') {
+      assertEscaping(xmlEscaper,"&amp;",ch);
+    }
+ else     if (ch == '<') {
+      assertEscaping(xmlEscaper,"&lt;",ch);
+    }
+ else     if (ch == '>') {
+      assertEscaping(xmlEscaper,"&gt;",ch);
+    }
+ else     if (shouldEscapeQuotes && ch == '\'') {
+      assertEscaping(xmlEscaper,"&apos;",ch);
+    }
+ else     if (shouldEscapeQuotes && ch == '"') {
+      assertEscaping(xmlEscaper,"&quot;",ch);
+    }
+ else {
+      String input=String.valueOf(ch);
+      String escaped=xmlEscaper.escape(input);
+      assertEquals("char 0x" + Integer.toString(ch,16) + " should not be escaped",input,escaped);
+    }
+  }
+  assertUnescaped(xmlEscaper,'\uFFFE');
+  assertUnescaped(xmlEscaper,'\uFFFF');
+}

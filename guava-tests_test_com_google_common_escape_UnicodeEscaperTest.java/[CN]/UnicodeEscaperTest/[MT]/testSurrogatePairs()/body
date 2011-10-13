@@ -1,0 +1,20 @@
+{
+  UnicodeEscaper e=SIMPLE_ESCAPER;
+  final int min=Character.MIN_SUPPLEMENTARY_CODE_POINT;
+  final int max=Character.MAX_CODE_POINT;
+  final int range=max - min;
+  final int s1=min + (1 * range) / 4;
+  final int s2=min + (2 * range) / 4;
+  final int s3=min + (3 * range) / 4;
+  final char[] dst=new char[12];
+  dst[0]='x';
+  Character.toChars(min,dst,1);
+  Character.toChars(s1,dst,3);
+  Character.toChars(s2,dst,5);
+  Character.toChars(s3,dst,7);
+  Character.toChars(max,dst,9);
+  dst[11]='x';
+  String test=new String(dst);
+  String expected="x[" + min + "]["+ s1+ "]["+ s2+ "]["+ s3+ "]["+ max+ "]x";
+  assertEquals(expected,escapeAsString(e,test));
+}
