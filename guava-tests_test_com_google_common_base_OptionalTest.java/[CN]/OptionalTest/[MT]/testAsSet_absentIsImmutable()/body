@@ -1,0 +1,9 @@
+{
+  Set<Object> absentAsSet=Optional.absent().asSet();
+  try {
+    absentAsSet.add("foo");
+    fail();
+  }
+ catch (  UnsupportedOperationException expected) {
+  }
+}

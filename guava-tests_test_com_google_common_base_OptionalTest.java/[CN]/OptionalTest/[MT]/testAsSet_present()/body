@@ -1,0 +1,4 @@
+{
+  Set<String> expected=Collections.singleton("a");
+  assertEquals(expected,Optional.of("a").asSet());
+}
