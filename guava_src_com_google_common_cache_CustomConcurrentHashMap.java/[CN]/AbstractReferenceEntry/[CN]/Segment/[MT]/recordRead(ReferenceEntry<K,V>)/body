@@ -1,6 +1,0 @@
-{
-  if (map.expiresAfterAccess()) {
-    entry.setAccessTime(map.ticker.read());
-  }
-  recencyQueue.add(entry);
-}

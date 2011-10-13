@@ -1,13 +1,14 @@
 {
   try {
     if (count != 0) {
-      ReferenceEntry<K,V> e=getLiveEntry(key,hash);
+      long now=map.ticker.read();
+      ReferenceEntry<K,V> e=getLiveEntry(key,hash,now);
       if (e == null) {
         return null;
       }
       V value=e.getValueReference().get();
       if (value != null) {
-        recordRead(e);
+        recordRead(e,now);
       }
  else {
         tryDrainReferenceQueues();

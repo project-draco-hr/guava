@@ -15,7 +15,7 @@
     entry=map.newEntry(key,hash,first);
     ValueReference<Object,Object> valueRef=map.newValueReference(entry,value,1);
     entry.setValueReference(valueRef);
-    segment.recordWrite(entry,1);
+    segment.recordWrite(entry,1,map.ticker.read());
     table.set(index,entry);
     originalMap.put(key,value);
   }

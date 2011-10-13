@@ -8,7 +8,8 @@
     if (value == null) {
       throw new AssertionError();
     }
-    recordRead(e);
+    long now=map.ticker.read();
+    recordRead(e,now);
     return value;
   }
   finally {

@@ -3,9 +3,10 @@
     if (count != 0) {
       ReferenceEntry<K,V> e=getEntry(key,hash);
       if (e != null) {
-        V value=getLiveValue(e);
+        long now=map.ticker.read();
+        V value=getLiveValue(e,now);
         if (value != null) {
-          recordRead(e);
+          recordRead(e,now);
           statsCounter.recordHit();
           return value;
         }

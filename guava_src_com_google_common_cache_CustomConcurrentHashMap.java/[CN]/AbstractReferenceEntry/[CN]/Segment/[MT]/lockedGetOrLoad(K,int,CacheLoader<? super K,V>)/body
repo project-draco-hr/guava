@@ -5,7 +5,8 @@
   boolean createNewEntry=true;
   lock();
   try {
-    preWriteCleanup();
+    long now=map.ticker.read();
+    preWriteCleanup(now);
     int newCount=this.count - 1;
     AtomicReferenceArray<ReferenceEntry<K,V>> table=this.table;
     int index=hash & (table.length() - 1);
@@ -22,11 +23,11 @@
           if (value == null) {
             enqueueNotification(entryKey,hash,valueReference,RemovalCause.COLLECTED);
           }
- else           if (map.expires() && map.isExpired(e)) {
+ else           if (map.isExpired(e,now)) {
             enqueueNotification(entryKey,hash,valueReference,RemovalCause.EXPIRED);
           }
  else {
-            recordLockedRead(e);
+            recordLockedRead(e,now);
             statsCounter.recordHit();
             return value;
           }

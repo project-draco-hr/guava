@@ -1,3 +1,0 @@
-{
-  return segmentFor(entry.getHash()).getLiveValue(entry) != null;
-}

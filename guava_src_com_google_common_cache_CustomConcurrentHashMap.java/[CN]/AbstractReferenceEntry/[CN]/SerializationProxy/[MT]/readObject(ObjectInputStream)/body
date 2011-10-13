@@ -20,7 +20,7 @@
       builder.maximumSize(maxWeight);
     }
   }
-  if (ticker != Ticker.systemTicker()) {
+  if (ticker != null) {
     builder.ticker(ticker);
   }
   this.delegate=builder.build(loader);

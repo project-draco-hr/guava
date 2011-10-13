@@ -10,7 +10,7 @@
   expireAfterAccessNanos=builder.getExpireAfterAccessNanos();
   expireAfterWriteNanos=builder.getExpireAfterWriteNanos();
   entryFactory=EntryFactory.getFactory(keyStrength,usesAccessQueue(),usesWriteQueue());
-  ticker=builder.getTicker();
+  ticker=builder.getTicker(recordsTime());
   removalListener=builder.getRemovalListener();
   removalNotificationQueue=(removalListener == NullListener.INSTANCE) ? CustomConcurrentHashMap.<RemovalNotification<K,V>>discardingQueue() : new ConcurrentLinkedQueue<RemovalNotification<K,V>>();
   int initialCapacity=Math.min(builder.getInitialCapacity(),MAXIMUM_CAPACITY);

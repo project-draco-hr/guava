@@ -1,0 +1,2 @@
+CustomConcurrentHashMap<K,V> map
+long now

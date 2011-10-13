@@ -10,7 +10,7 @@
   assertSame(EntryFactory.STRONG,map.entryFactory);
   assertSame(CacheBuilder.NullListener.INSTANCE,map.removalListener);
   assertSame(DISCARDING_QUEUE,map.removalNotificationQueue);
-  assertSame(Ticker.systemTicker(),map.ticker);
+  assertSame(NULL_TICKER,map.ticker);
   assertEquals(4,map.concurrencyLevel);
   assertEquals(4,map.segments.length);
   assertEquals(16 / map.segments.length,map.segments[0].table.length());

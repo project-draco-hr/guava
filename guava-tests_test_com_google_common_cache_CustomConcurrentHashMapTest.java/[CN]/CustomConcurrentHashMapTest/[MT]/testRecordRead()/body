@@ -9,7 +9,7 @@
       int hash=map.hash(key);
       Object value=new Object();
       ReferenceEntry<Object,Object> entry=createDummyEntry(key,hash,value,null);
-      segment.recordWrite(entry,1);
+      segment.recordWrite(entry,1,map.ticker.read());
       writeOrder.add(entry);
       readOrder.add(entry);
     }
@@ -21,7 +21,7 @@
     while (i.hasNext()) {
       ReferenceEntry<Object,Object> entry=i.next();
       if (random.nextBoolean()) {
-        segment.recordRead(entry);
+        segment.recordRead(entry,map.ticker.read());
         reads.add(entry);
         i.remove();
       }

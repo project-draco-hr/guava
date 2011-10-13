@@ -1,7 +1,8 @@
 {
   lock();
   try {
-    preWriteCleanup();
+    long now=map.ticker.read();
+    preWriteCleanup(now);
     int newCount=this.count - 1;
     AtomicReferenceArray<ReferenceEntry<K,V>> table=this.table;
     int index=hash & (table.length() - 1);

@@ -1,0 +1,14 @@
+{
+  int result=0;
+  for (  Segment<K,V> segment : map.segments) {
+    AtomicReferenceArray<ReferenceEntry<K,V>> table=segment.table;
+    for (int i=0; i < table.length(); i++) {
+      for (ReferenceEntry<K,V> e=table.get(i); e != null; e=e.getNext()) {
+        if (map.isLive(e,now)) {
+          result++;
+        }
+      }
+    }
+  }
+  return result;
+}

@@ -1,7 +1,8 @@
 {
   lock();
   try {
-    preWriteCleanup();
+    long now=map.ticker.read();
+    preWriteCleanup(now);
     AtomicReferenceArray<ReferenceEntry<K,V>> table=this.table;
     int index=hash & (table.length() - 1);
     ReferenceEntry<K,V> first=table.get(index);
@@ -23,7 +24,7 @@
         }
         ++modCount;
         enqueueNotification(key,hash,valueReference,RemovalCause.REPLACED);
-        setValue(e,key,newValue);
+        setValue(e,key,newValue,now);
         evictEntries();
         return entryValue;
       }

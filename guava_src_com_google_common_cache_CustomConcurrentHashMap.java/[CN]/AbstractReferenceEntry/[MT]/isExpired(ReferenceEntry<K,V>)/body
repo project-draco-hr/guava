@@ -1,6 +1,0 @@
-{
-  if (!expires()) {
-    return false;
-  }
-  return isExpired(entry,ticker.read());
-}

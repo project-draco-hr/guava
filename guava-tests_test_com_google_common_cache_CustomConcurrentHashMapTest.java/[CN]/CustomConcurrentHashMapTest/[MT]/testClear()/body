@@ -7,7 +7,7 @@
   Object value=new Object();
   int hash=map.hash(key);
   DummyEntry<Object,Object> entry=createDummyEntry(key,hash,value,null);
-  segment.recordWrite(entry,1);
+  segment.recordWrite(entry,1,map.ticker.read());
   segment.table.set(0,entry);
   segment.readCount.incrementAndGet();
   segment.count=1;

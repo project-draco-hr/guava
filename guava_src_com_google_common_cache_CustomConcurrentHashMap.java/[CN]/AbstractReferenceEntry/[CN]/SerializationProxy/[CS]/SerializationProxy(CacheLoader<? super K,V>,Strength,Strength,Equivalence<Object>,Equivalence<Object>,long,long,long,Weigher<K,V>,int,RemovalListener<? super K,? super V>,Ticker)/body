@@ -10,5 +10,5 @@
   this.weigher=weigher;
   this.concurrencyLevel=concurrencyLevel;
   this.removalListener=removalListener;
-  this.ticker=ticker;
+  this.ticker=(ticker == Ticker.systemTicker() || ticker == NULL_TICKER) ? null : ticker;
 }

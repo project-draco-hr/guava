@@ -1,7 +1,8 @@
 {
   lock();
   try {
-    preWriteCleanup();
+    long now=map.ticker.read();
+    preWriteCleanup(now);
     int newCount=this.count + 1;
     if (newCount > this.threshold) {
       expand();
@@ -19,11 +20,11 @@
           ++modCount;
           if (valueReference.isActive()) {
             enqueueNotification(key,hash,valueReference,RemovalCause.COLLECTED);
-            setValue(e,key,value);
+            setValue(e,key,value,now);
             newCount=this.count;
           }
  else {
-            setValue(e,key,value);
+            setValue(e,key,value,now);
             newCount=this.count + 1;
           }
           this.count=newCount;
@@ -31,13 +32,13 @@
           return null;
         }
  else         if (onlyIfAbsent) {
-          recordLockedRead(e);
+          recordLockedRead(e,now);
           return entryValue;
         }
  else {
           ++modCount;
           enqueueNotification(key,hash,valueReference,RemovalCause.REPLACED);
-          setValue(e,key,value);
+          setValue(e,key,value,now);
           evictEntries();
           return entryValue;
         }
@@ -45,7 +46,7 @@
     }
     ++modCount;
     ReferenceEntry<K,V> newEntry=newEntry(key,hash,first);
-    setValue(newEntry,key,value);
+    setValue(newEntry,key,value,now);
     table.set(index,newEntry);
     newCount=this.count + 1;
     this.count=newCount;

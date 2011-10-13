@@ -11,7 +11,7 @@
   DummyValueReference<Object,Object> valueRef=DummyValueReference.create(value,entry);
   entry.setValueReference(valueRef);
   assertFalse(segment.reclaimValue(key,hash,valueRef));
-  segment.recordWrite(entry,1);
+  segment.recordWrite(entry,1,map.ticker.read());
   table.set(0,entry);
   segment.count=1;
   assertTrue(segment.reclaimValue(key,hash,valueRef));
