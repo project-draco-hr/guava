@@ -1,0 +1,13 @@
+{
+  final SettableFuture<Void> future=SettableFuture.create();
+  Object x=new Object(){
+    protected void finalize(){
+      future.set(null);
+    }
+  }
+;
+  x=null;
+  GcFinalization.awaitDone(future);
+  assertTrue(future.isDone());
+  assertFalse(future.isCancelled());
+}

@@ -1,0 +1,5 @@
+{
+  final WeakReference<Object> ref=new WeakReference<Object>(new Object());
+  GcFinalization.awaitClear(ref);
+  assertNull(ref.get());
+}

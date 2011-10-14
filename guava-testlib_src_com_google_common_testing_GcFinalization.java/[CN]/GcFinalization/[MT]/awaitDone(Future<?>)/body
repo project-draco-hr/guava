@@ -1,0 +1,27 @@
+{
+  if (future.isDone()) {
+    return;
+  }
+  final long deadline=System.nanoTime() + timeoutNanos();
+  do {
+    System.runFinalization();
+    if (future.isDone()) {
+      return;
+    }
+    System.gc();
+    try {
+      future.get(1L,SECONDS);
+      return;
+    }
+ catch (    CancellationException ok) {
+      return;
+    }
+catch (    ExecutionException ok) {
+      return;
+    }
+catch (    TimeoutException tryHarder) {
+    }
+  }
+ while (System.nanoTime() - deadline < 0);
+  throw new TimeoutException("Future not done within timeout");
+}

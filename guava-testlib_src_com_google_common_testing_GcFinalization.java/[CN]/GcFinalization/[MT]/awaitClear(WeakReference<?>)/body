@@ -1,0 +1,8 @@
+{
+  awaitDone(new FinalizationPredicate(){
+    public boolean isDone(){
+      return ref.get() == null;
+    }
+  }
+);
+}

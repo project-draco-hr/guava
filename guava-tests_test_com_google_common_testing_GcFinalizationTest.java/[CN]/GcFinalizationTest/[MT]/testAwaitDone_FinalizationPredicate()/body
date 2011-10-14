@@ -1,0 +1,11 @@
+{
+  final WeakHashMap<Object,Object> map=new WeakHashMap<Object,Object>();
+  map.put(new Object(),Boolean.TRUE);
+  GcFinalization.awaitDone(new FinalizationPredicate(){
+    public boolean isDone(){
+      return map.isEmpty();
+    }
+  }
+);
+  assertTrue(map.isEmpty());
+}
