@@ -1,0 +1,23 @@
+{
+  final FakeTicker ticker=new FakeTicker();
+  int numberOfThreads=64;
+  ExecutorService executorService=Executors.newFixedThreadPool(numberOfThreads);
+  final CountDownLatch startLatch=new CountDownLatch(numberOfThreads);
+  final CountDownLatch doneLatch=new CountDownLatch(numberOfThreads);
+  for (int i=numberOfThreads; i > 0; i--) {
+    executorService.submit(new Callable<Void>(){
+      @Override public Void call() throws Exception {
+        startLatch.countDown();
+        startLatch.await();
+        ticker.advance(1L);
+        Thread.sleep(10);
+        ticker.advance(1L);
+        doneLatch.countDown();
+        return null;
+      }
+    }
+);
+  }
+  doneLatch.await();
+  assertEquals(numberOfThreads * 2,ticker.read());
+}

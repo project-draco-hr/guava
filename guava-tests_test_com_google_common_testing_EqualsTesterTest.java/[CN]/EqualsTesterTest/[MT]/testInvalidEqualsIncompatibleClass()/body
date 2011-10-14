@@ -1,0 +1,12 @@
+{
+  Object obj=new InvalidEqualsIncompatibleClassObject();
+  equalsTester.addEqualityGroup(obj);
+  try {
+    equalsTester.testEquals();
+  }
+ catch (  TestAssertionFailure e) {
+    assertErrorMessage(e,obj + " must be unequal to an arbitrary object of another class");
+    return;
+  }
+  fail("Should get equal to incompatible class error");
+}

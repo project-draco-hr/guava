@@ -1,0 +1,8 @@
+{
+  try {
+    EquivalenceTester.of(null);
+    fail("Should fail on null reference");
+  }
+ catch (  NullPointerException expected) {
+  }
+}

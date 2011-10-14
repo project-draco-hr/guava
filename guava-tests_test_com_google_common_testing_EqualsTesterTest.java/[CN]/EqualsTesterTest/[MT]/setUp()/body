@@ -1,0 +1,9 @@
+{
+  super.setUp();
+  reference=new ValidTestObject(1,2);
+  equalsTester=new EqualsTester();
+  equalObject1=new ValidTestObject(1,2);
+  equalObject2=new ValidTestObject(1,2);
+  notEqualObject1=new ValidTestObject(0,2);
+  notEqualObject2=new ValidTestObject(1,0);
+}

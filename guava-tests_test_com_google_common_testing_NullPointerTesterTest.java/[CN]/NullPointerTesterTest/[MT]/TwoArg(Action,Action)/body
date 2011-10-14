@@ -1,0 +1,4 @@
+{
+  this.actionWhenFirstParamIsNull=actionWhenFirstParamIsNull;
+  this.actionWhenSecondParamIsNull=actionWhenSecondParamIsNull;
+}

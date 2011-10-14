@@ -1,0 +1,12 @@
+{
+  ClassWhichDoesNotImplementEquals orig=new ClassWhichDoesNotImplementEquals();
+  boolean errorNotThrown=false;
+  try {
+    SerializableTester.reserializeAndAssert(orig);
+    errorNotThrown=true;
+  }
+ catch (  TestAssertionFailure error) {
+    assertContains("Equals/Hashcode mismatch.  original=",error.getMessage());
+  }
+  assertFalse(errorNotThrown);
+}

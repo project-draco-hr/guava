@@ -1,0 +1,21 @@
+{
+  final TearDownStack stack=buildTearDownStack();
+  final ThrowingTearDown tearDownOne=new ThrowingTearDown("one");
+  stack.addTearDown(tearDownOne);
+  final ThrowingTearDown tearDownTwo=new ThrowingTearDown("two");
+  stack.addTearDown(tearDownTwo);
+  assertEquals(false,tearDownOne.ran);
+  assertEquals(false,tearDownTwo.ran);
+  try {
+    stack.runTearDown();
+    fail("runTearDown should have thrown an exception");
+  }
+ catch (  ClusterException expected) {
+    assertEquals("two",expected.getCause().getMessage());
+  }
+catch (  RuntimeException e) {
+    throw new RuntimeException("A ClusterException should have been thrown, rather than a " + e.getClass().getName(),e);
+  }
+  assertEquals(true,tearDownOne.ran);
+  assertEquals(true,tearDownTwo.ran);
+}

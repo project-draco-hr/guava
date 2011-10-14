@@ -1,0 +1,9 @@
+{
+  Method method=TwoArg.class.getMethod("nullableNullable",String.class,Integer.class);
+  for (  TwoArg.Action first : TwoArg.Action.values()) {
+    for (    TwoArg.Action second : TwoArg.Action.values()) {
+      TwoArg bar=new TwoArg(first,second);
+      verifyBarPass(method,bar);
+    }
+  }
+}

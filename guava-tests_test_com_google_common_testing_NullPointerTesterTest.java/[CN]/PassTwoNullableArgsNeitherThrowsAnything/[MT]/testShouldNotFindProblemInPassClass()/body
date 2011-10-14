@@ -1,0 +1,11 @@
+{
+  for (  Class<?> passClass : passClasses) {
+    Object instance=passClass.newInstance();
+    try {
+      tester.testAllPublicInstanceMethods(instance);
+    }
+ catch (    TestAssertionFailure e) {
+      assertNull("Should not detect problem in " + passClass.getSimpleName(),e);
+    }
+  }
+}

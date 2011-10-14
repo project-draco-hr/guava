@@ -1,0 +1,8 @@
+{
+  try {
+    equalsTester.addEqualityGroup((Object)null);
+    fail("Should fail on null reference");
+  }
+ catch (  NullPointerException e) {
+  }
+}

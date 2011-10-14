@@ -1,0 +1,5 @@
+{
+  if (!e.getMessage().contains(message)) {
+    fail("expected <" + e.getMessage() + "> to contain <"+ message+ ">");
+  }
+}

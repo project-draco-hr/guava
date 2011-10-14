@@ -1,0 +1,6 @@
+{
+  String original="hello world";
+  String copy=SerializableTester.reserializeAndAssert(original);
+  assertEquals(original,copy);
+  assertNotSame(original,copy);
+}

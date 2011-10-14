@@ -1,0 +1,14 @@
+{
+  Method method=TwoArg.class.getMethod("normalNormal",String.class,Integer.class);
+  for (  TwoArg.Action first : TwoArg.Action.values()) {
+    for (    TwoArg.Action second : TwoArg.Action.values()) {
+      TwoArg bar=new TwoArg(first,second);
+      if (first.equals(TwoArg.Action.THROW_A_NPE) && second.equals(TwoArg.Action.THROW_A_NPE)) {
+        verifyBarPass(method,bar);
+      }
+ else {
+        verifyBarFail(method,bar);
+      }
+    }
+  }
+}

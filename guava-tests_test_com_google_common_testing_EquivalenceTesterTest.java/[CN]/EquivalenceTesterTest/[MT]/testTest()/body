@@ -1,0 +1,24 @@
+{
+  Object group1Item1=new TestObject(1,1);
+  Object group1Item2=new TestObject(1,2);
+  Object group2Item1=new TestObject(2,1);
+  Object group2Item2=new TestObject(2,2);
+  equivalenceMock.expectEquivalent(group1Item1,group1Item2);
+  equivalenceMock.expectDistinct(group1Item1,group2Item1);
+  equivalenceMock.expectDistinct(group1Item1,group2Item2);
+  equivalenceMock.expectEquivalent(group1Item2,group1Item1);
+  equivalenceMock.expectDistinct(group1Item2,group2Item1);
+  equivalenceMock.expectDistinct(group1Item2,group2Item2);
+  equivalenceMock.expectDistinct(group2Item1,group1Item1);
+  equivalenceMock.expectDistinct(group2Item1,group1Item2);
+  equivalenceMock.expectEquivalent(group2Item1,group2Item2);
+  equivalenceMock.expectDistinct(group2Item2,group1Item1);
+  equivalenceMock.expectDistinct(group2Item2,group1Item2);
+  equivalenceMock.expectEquivalent(group2Item2,group2Item1);
+  equivalenceMock.expectHash(group1Item1,1);
+  equivalenceMock.expectHash(group1Item2,1);
+  equivalenceMock.expectHash(group2Item1,2);
+  equivalenceMock.expectHash(group2Item2,2);
+  equivalenceMock.replay();
+  tester.addEquivalenceGroup(group1Item1,group1Item2).addEquivalenceGroup(group2Item1,group2Item2).test();
+}

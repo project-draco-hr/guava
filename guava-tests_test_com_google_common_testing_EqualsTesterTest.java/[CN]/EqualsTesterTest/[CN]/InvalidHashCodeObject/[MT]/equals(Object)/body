@@ -1,0 +1,13 @@
+{
+  if (!(o instanceof InvalidHashCodeObject)) {
+    return false;
+  }
+  InvalidHashCodeObject other=(InvalidHashCodeObject)o;
+  if (aspect1 != other.aspect1) {
+    return false;
+  }
+  if (aspect2 != other.aspect2) {
+    return false;
+  }
+  return true;
+}

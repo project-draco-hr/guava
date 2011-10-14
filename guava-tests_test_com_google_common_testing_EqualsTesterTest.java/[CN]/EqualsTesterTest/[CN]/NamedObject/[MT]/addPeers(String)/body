@@ -1,0 +1,4 @@
+{
+  peerNames.addAll(ImmutableList.copyOf(names));
+  return this;
+}

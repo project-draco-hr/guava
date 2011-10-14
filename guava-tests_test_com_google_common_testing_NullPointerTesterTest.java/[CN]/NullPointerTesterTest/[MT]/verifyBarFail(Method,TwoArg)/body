@@ -1,0 +1,10 @@
+{
+  try {
+    tester.testMethod(bar,method);
+  }
+ catch (  TestAssertionFailure expected) {
+    return;
+  }
+  String errorMessage=String.format("Should have flagged method %s for %s",method.getName(),bar);
+  fail(errorMessage);
+}

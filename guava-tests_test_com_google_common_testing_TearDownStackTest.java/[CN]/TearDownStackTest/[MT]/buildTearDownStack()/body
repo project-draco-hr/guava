@@ -1,0 +1,10 @@
+{
+  final TearDownStack result=new TearDownStack();
+  tearDownStack.addTearDown(new TearDown(){
+    @Override public void tearDown() throws Exception {
+      assertEquals("The test should have cleared the stack (say, by virtue of running runTearDown)",0,result.stack.size());
+    }
+  }
+);
+  return result;
+}

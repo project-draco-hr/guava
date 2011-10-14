@@ -1,0 +1,20 @@
+{
+  Object group1Item1=new TestObject(1,1);
+  Object group1Item2=new TestObject(1,2);
+  equivalenceMock.expectEquivalent(group1Item1,group1Item2);
+  equivalenceMock.expectEquivalent(group1Item2,group1Item1);
+  equivalenceMock.expectHash(group1Item1,1);
+  equivalenceMock.expectHash(group1Item2,2);
+  equivalenceMock.replay();
+  try {
+    tester.addEquivalenceGroup(group1Item1,group1Item2).test();
+  }
+ catch (  TestAssertionFailure expected) {
+    String expectedMessage="the hash (1) of TestObject{group=1, item=1} [group 1, item 1] must be " + "equal to the hash (2) of TestObject{group=1, item=2} [group 1, item 2]";
+    if (!expected.getMessage().contains(expectedMessage)) {
+      fail("<" + expected.getMessage() + "> expected to contain <"+ expectedMessage+ ">");
+    }
+    return;
+  }
+  fail();
+}

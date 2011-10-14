@@ -1,0 +1,13 @@
+{
+  for (  Class<?> failClass : failClasses) {
+    Object instance=failClass.newInstance();
+    boolean foundProblem=false;
+    try {
+      tester.testAllPublicInstanceMethods(instance);
+    }
+ catch (    TestAssertionFailure e) {
+      foundProblem=true;
+    }
+    assertTrue("Should detect problem in " + failClass.getSimpleName(),foundProblem);
+  }
+}

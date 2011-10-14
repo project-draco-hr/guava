@@ -1,0 +1,8 @@
+{
+  if (first == null) {
+    actionWhenFirstParamIsNull.act();
+  }
+  if (second == null) {
+    actionWhenSecondParamIsNull.act();
+  }
+}

@@ -1,0 +1,8 @@
+{
+  final TearDownStack stack=buildTearDownStack();
+  final SimpleTearDown tearDown=new SimpleTearDown();
+  stack.addTearDown(tearDown);
+  assertEquals(false,tearDown.ran);
+  stack.runTearDown();
+  assertEquals("tearDown should have run",true,tearDown.ran);
+}

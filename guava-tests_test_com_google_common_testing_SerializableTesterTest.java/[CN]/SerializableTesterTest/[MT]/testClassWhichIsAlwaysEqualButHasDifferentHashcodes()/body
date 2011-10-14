@@ -1,0 +1,12 @@
+{
+  ClassWhichIsAlwaysEqualButHasDifferentHashcodes orig=new ClassWhichIsAlwaysEqualButHasDifferentHashcodes();
+  boolean errorNotThrown=false;
+  try {
+    SerializableTester.reserializeAndAssert(orig);
+    errorNotThrown=true;
+  }
+ catch (  TestAssertionFailure error) {
+    assertContains("Equals/Hashcode mismatch.  original=",error.getMessage());
+  }
+  assertFalse(errorNotThrown);
+}

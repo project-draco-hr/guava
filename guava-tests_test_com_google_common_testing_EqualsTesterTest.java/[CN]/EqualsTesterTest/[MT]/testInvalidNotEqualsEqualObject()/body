@@ -1,0 +1,12 @@
+{
+  equalsTester.addEqualityGroup(reference,notEqualObject1);
+  try {
+    equalsTester.testEquals();
+  }
+ catch (  TestAssertionFailure e) {
+    assertErrorMessage(e,reference.toString() + " [group 1, item 1]");
+    assertErrorMessage(e,notEqualObject1.toString() + " [group 1, item 2]");
+    return;
+  }
+  fail("Should get not equal to equal object error");
+}

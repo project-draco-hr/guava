@@ -1,0 +1,6 @@
+{
+  if (callback != null) {
+    callback.run();
+  }
+  ran=true;
+}

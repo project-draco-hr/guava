@@ -1,0 +1,12 @@
+{
+  Object obj=new NonReflexiveObject();
+  equalsTester.addEqualityGroup(obj);
+  try {
+    equalsTester.testEquals();
+  }
+ catch (  TestAssertionFailure e) {
+    assertErrorMessage(e,obj + " must be equal to itself");
+    return;
+  }
+  fail("Should get non-reflexive error");
+}

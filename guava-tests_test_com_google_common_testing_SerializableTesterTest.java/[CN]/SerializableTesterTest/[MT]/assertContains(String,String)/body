@@ -1,0 +1,5 @@
+{
+  if (!actual.contains(expectedSubstring)) {
+    fail("expected <" + actual + "> to contain <"+ expectedSubstring+ ">");
+  }
+}

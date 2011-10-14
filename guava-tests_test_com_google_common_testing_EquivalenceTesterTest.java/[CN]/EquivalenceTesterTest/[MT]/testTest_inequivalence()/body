@@ -1,0 +1,17 @@
+{
+  Object group1Item1=new TestObject(1,1);
+  Object group2Item1=new TestObject(2,1);
+  equivalenceMock.expectEquivalent(group1Item1,group2Item1);
+  equivalenceMock.expectDistinct(group2Item1,group1Item1);
+  equivalenceMock.expectHash(group1Item1,1);
+  equivalenceMock.expectHash(group2Item1,2);
+  equivalenceMock.replay();
+  try {
+    tester.addEquivalenceGroup(group1Item1).addEquivalenceGroup(group2Item1).test();
+  }
+ catch (  TestAssertionFailure expected) {
+    assertEquals("TestObject{group=1, item=1} [group 1, item 1] must be inequivalent to " + "TestObject{group=2, item=1} [group 2, item 1]",expected.getMessage());
+    return;
+  }
+  fail();
+}

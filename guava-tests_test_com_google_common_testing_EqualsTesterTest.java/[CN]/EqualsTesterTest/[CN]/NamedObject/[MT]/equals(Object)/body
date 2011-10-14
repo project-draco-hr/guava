@@ -1,0 +1,7 @@
+{
+  if (obj instanceof NamedObject) {
+    NamedObject that=(NamedObject)obj;
+    return name.equals(that.name) || peerNames.contains(that.name);
+  }
+  return false;
+}

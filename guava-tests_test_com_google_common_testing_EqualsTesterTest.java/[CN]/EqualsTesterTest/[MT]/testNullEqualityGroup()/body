@@ -1,0 +1,9 @@
+{
+  EqualsTester tester=new EqualsTester();
+  try {
+    tester.addEqualityGroup((Object[])null);
+    fail();
+  }
+ catch (  NullPointerException e) {
+  }
+}

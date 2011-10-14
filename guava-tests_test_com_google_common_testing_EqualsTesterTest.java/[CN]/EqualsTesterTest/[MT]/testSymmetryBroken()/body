@@ -1,0 +1,11 @@
+{
+  EqualsTester tester=new EqualsTester().addEqualityGroup(named("foo").addPeers("bar"),named("bar"));
+  try {
+    tester.testEquals();
+  }
+ catch (  TestAssertionFailure e) {
+    assertErrorMessage(e,"bar [group 1, item 2] must be equal to foo [group 1, item 1]");
+    return;
+  }
+  fail("should failed because symmetry is broken");
+}

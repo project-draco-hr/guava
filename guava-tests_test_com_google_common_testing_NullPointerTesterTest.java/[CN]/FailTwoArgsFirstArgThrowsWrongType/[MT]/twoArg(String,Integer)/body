@@ -1,0 +1,4 @@
+{
+  doThrow(s);
+  i.intValue();
+}

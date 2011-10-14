@@ -1,0 +1,10 @@
+{
+  EqualsTester tester=new EqualsTester();
+  try {
+    tester.addEqualityGroup(1,null,3);
+    fail();
+  }
+ catch (  NullPointerException e) {
+    assertErrorMessage(e,"at index 1");
+  }
+}

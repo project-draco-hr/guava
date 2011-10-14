@@ -1,0 +1,4 @@
+{
+  checkRecording();
+  hashExpectationsBuilder.put(object,hash);
+}

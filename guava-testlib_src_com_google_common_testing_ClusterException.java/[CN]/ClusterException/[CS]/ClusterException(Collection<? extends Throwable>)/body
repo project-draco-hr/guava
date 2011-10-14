@@ -1,5 +1,5 @@
 {
-  super(String.format("%d exceptions were thrown. The first exception is listed as a cause.",exceptions.size()),exceptions.iterator().next());
+  super(exceptions.size() + " exceptions were thrown. The first exception is listed as a cause.",exceptions.iterator().next());
   ArrayList<Throwable> temp=new ArrayList<Throwable>();
   temp.addAll(exceptions);
   this.exceptions=Collections.unmodifiableCollection(temp);

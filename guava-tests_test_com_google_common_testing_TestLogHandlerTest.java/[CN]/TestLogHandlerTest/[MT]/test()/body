@@ -1,0 +1,8 @@
+{
+  assertTrue(handler.getStoredLogRecords().isEmpty());
+  ExampleClassUnderTest.foo();
+  LogRecord record=handler.getStoredLogRecords().iterator().next();
+  assertEquals(Level.INFO,record.getLevel());
+  assertEquals("message",record.getMessage());
+  assertSame(EXCEPTION,record.getThrown());
+}

@@ -1,0 +1,8 @@
+{
+  Set<Class<?>> set=Sets.newHashSet(classes);
+  for (  Class<?> clazz : classes) {
+    if (!set.remove(clazz)) {
+      fail(String.format("%s: %s appears twice. Typo?",message,clazz.getSimpleName()));
+    }
+  }
+}

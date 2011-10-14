@@ -1,0 +1,4 @@
+{
+  this.aspect1=aspect1;
+  this.aspect2=aspect2;
+}

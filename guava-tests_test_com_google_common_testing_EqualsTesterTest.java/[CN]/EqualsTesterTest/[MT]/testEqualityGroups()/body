@@ -1,0 +1,3 @@
+{
+  new EqualsTester().addEqualityGroup(named("foo").addPeers("bar"),named("bar").addPeers("foo")).addEqualityGroup(named("baz"),named("baz")).testEquals();
+}

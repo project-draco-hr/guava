@@ -1,0 +1,4 @@
+{
+  checkRecording();
+  equivalentExpectationsBuilder.put(a,b,true);
+}

@@ -1,0 +1,18 @@
+{
+  final TearDownStack stack=buildTearDownStack();
+  final SimpleTearDown tearDownOne=new SimpleTearDown();
+  stack.addTearDown(tearDownOne);
+  final Callback callback=new Callback(){
+    @Override public void run(){
+      assertEquals("tearDownTwo should have been run before tearDownOne",false,tearDownOne.ran);
+    }
+  }
+;
+  final SimpleTearDown tearDownTwo=new SimpleTearDown(callback);
+  stack.addTearDown(tearDownTwo);
+  assertEquals(false,tearDownOne.ran);
+  assertEquals(false,tearDownTwo.ran);
+  stack.runTearDown();
+  assertEquals("tearDownOne should have run",true,tearDownOne.ran);
+  assertEquals("tearDownTwo should have run",true,tearDownTwo.ran);
+}

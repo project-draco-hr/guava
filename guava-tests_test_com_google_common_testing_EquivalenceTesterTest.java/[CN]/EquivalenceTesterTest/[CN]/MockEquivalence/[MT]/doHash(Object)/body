@@ -1,0 +1,3 @@
+{
+  return hashExpectations.get(object);
+}

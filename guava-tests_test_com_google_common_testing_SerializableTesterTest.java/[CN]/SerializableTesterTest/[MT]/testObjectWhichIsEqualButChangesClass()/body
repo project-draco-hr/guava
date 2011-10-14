@@ -1,0 +1,12 @@
+{
+  ObjectWhichIsEqualButChangesClass orig=new ObjectWhichIsEqualButChangesClass();
+  boolean errorNotThrown=false;
+  try {
+    SerializableTester.reserializeAndAssert(orig);
+    errorNotThrown=true;
+  }
+ catch (  TestAssertionFailure error) {
+    assertContains("Expected 'class ",error.getMessage());
+  }
+  assertFalse(errorNotThrown);
+}

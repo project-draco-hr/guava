@@ -1,0 +1,6 @@
+{
+  NullPointerTester tester=new NullPointerTester();
+  for (  Constructor<?> constructor : PrivateClassWithPrivateConstructor.class.getDeclaredConstructors()) {
+    tester.testConstructor(constructor);
+  }
+}

@@ -1,0 +1,3 @@
+{
+  return Objects.toStringHelper("TestObject").add("group",group).add("item",item).toString();
+}

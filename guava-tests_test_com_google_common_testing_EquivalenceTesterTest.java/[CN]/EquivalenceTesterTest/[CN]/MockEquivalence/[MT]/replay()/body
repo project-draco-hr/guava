@@ -1,0 +1,5 @@
+{
+  checkRecording();
+  equivalentExpectations=equivalentExpectationsBuilder.build();
+  hashExpectations=hashExpectationsBuilder.build();
+}

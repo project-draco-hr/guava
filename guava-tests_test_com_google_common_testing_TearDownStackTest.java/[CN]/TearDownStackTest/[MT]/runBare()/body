@@ -1,0 +1,9 @@
+{
+  try {
+    setUp();
+    runTest();
+  }
+  finally {
+    tearDown();
+  }
+}

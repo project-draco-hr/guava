@@ -1,0 +1,3 @@
+{
+  new NullPointerTester().testAllPublicInstanceMethods(new StringFoo());
+}

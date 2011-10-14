@@ -1,0 +1,11 @@
+{
+  EqualsTester tester=new EqualsTester().addEqualityGroup(named("foo"),named("bar"));
+  try {
+    tester.testEquals();
+  }
+ catch (  TestAssertionFailure e) {
+    assertErrorMessage(e,"foo [group 1, item 1] must be equal to bar [group 1, item 2]");
+    return;
+  }
+  fail("should failed because of unequal objects in the same equality group");
+}

@@ -1,0 +1,8 @@
+{
+  assertTrue(handler.getStoredLogRecords().isEmpty());
+  ExampleClassUnderTest.foo();
+  ExampleClassUnderTest.foo();
+  for (  LogRecord record : handler.getStoredLogRecords()) {
+    ExampleClassUnderTest.foo();
+  }
+}

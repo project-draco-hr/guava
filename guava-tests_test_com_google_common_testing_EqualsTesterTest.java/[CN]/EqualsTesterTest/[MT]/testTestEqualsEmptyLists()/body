@@ -1,0 +1,4 @@
+{
+  equalsTester.addEqualityGroup(reference);
+  equalsTester.testEquals();
+}

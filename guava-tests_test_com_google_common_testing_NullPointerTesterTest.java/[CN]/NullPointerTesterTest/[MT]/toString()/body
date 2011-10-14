@@ -1,0 +1,3 @@
+{
+  return String.format("Bar(%s, %s)",actionWhenFirstParamIsNull,actionWhenSecondParamIsNull);
+}

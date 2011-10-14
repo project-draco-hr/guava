@@ -1,0 +1,13 @@
+{
+  for (  String methodName : STATIC_ONE_ARG_METHODS_SHOULD_FAIL) {
+    Method method=OneArg.class.getMethod(methodName,String.class);
+    boolean foundProblem=false;
+    try {
+      tester.testMethodParameter(OneArg.class,method,0);
+    }
+ catch (    TestAssertionFailure expected) {
+      foundProblem=true;
+    }
+    assertTrue("Should report error in method " + methodName,foundProblem);
+  }
+}

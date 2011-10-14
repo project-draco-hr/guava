@@ -1,0 +1,6 @@
+{
+  int result=17;
+  result=37 * result + aspect1;
+  result=37 * result + aspect2;
+  return result;
+}
