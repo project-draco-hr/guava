@@ -19,7 +19,7 @@
             prevCut=posInfinity;
             return result;
           }
-          return null;
+          return endOfData();
         }
       }
 ;
