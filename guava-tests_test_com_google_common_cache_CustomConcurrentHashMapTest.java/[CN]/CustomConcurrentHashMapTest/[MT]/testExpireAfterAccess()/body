@@ -1,6 +1,6 @@
 {
   FakeTicker ticker=new FakeTicker();
-  CustomConcurrentHashMap<Object,Object> map=makeMap(createCacheBuilder().concurrencyLevel(1).ticker(ticker).expireAfterAccess(1,TimeUnit.NANOSECONDS));
+  CustomConcurrentHashMap<Object,Object> map=makeMap(createCacheBuilder().concurrencyLevel(1).ticker(ticker).expireAfterAccess(1,NANOSECONDS));
   Segment<Object,Object> segment=map.segments[0];
   Object key=new Object();
   Object value=new Object();

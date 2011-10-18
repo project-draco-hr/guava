@@ -1,5 +1,5 @@
 {
-  CacheBuilder<Object,Object> builder=createCacheBuilder().expireAfterWrite(1,TimeUnit.NANOSECONDS);
+  CacheBuilder<Object,Object> builder=createCacheBuilder().expireAfterWrite(1,NANOSECONDS);
   CountingLoader loader=new CountingLoader();
   CustomConcurrentHashMap<Object,Object> map=makeComputingMap(builder,loader);
   assertEquals(0,loader.getCount());
