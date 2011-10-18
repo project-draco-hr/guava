@@ -1,11 +1,11 @@
 {
-  Preconditions.checkNotNull(hostPortString);
+  checkNotNull(hostPortString);
   String host;
   String portString=null;
   boolean hasBracketlessColons=false;
   if (hostPortString.startsWith("[")) {
     Matcher matcher=BRACKET_PATTERN.matcher(hostPortString);
-    Preconditions.checkArgument(matcher.matches(),"Invalid bracketed host/port: %s",hostPortString);
+    checkArgument(matcher.matches(),"Invalid bracketed host/port: %s",hostPortString);
     host=matcher.group(1);
     portString=matcher.group(2);
   }
@@ -22,13 +22,14 @@
   }
   int port=NO_PORT;
   if (portString != null) {
+    checkArgument(!portString.startsWith("+"),"Unparseable port number: %s",hostPortString);
     try {
       port=Integer.parseInt(portString);
     }
  catch (    NumberFormatException e) {
       throw new IllegalArgumentException("Unparseable port number: " + hostPortString);
     }
-    Preconditions.checkArgument(isValidPort(port),"Port number out of range: %s",hostPortString);
+    checkArgument(isValidPort(port),"Port number out of range: %s",hostPortString);
   }
   return new HostAndPort(host,port,hasBracketlessColons);
 }

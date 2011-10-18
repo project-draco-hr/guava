@@ -1,4 +1,4 @@
 {
-  Preconditions.checkArgument(!hasBracketlessColons,"Possible bracketless IPv6 literal: %s",host);
+  checkArgument(!hasBracketlessColons,"Possible bracketless IPv6 literal: %s",host);
   return this;
 }
