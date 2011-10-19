@@ -7,7 +7,7 @@
   }
 ;
   queue=new PriorityQueue<PeekingIterator<T>>(Math.max(1,Iterables.size(iterators)),heapComparator);
-  for (  Iterator<T> iterator : iterators) {
+  for (  Iterator<? extends T> iterator : iterators) {
     if (iterator.hasNext()) {
       queue.add(Iterators.peekingIterator(iterator));
     }

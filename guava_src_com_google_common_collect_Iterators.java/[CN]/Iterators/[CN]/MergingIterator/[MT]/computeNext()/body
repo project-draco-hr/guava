@@ -1,0 +1,11 @@
+{
+  if (queue.isEmpty()) {
+    return endOfData();
+  }
+  PeekingIterator<T> nextIter=queue.poll();
+  T next=nextIter.next();
+  if (nextIter.hasNext()) {
+    queue.add(nextIter);
+  }
+  return next;
+}
