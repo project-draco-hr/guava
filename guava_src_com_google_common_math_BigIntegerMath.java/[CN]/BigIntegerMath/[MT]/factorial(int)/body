@@ -1,10 +1,36 @@
 {
   checkNonNegative("n",n);
   if (n < LongMath.FACTORIALS.length) {
-    return BigInteger.valueOf(LongMath.factorial(n));
+    return BigInteger.valueOf(LongMath.FACTORIALS[n]);
   }
- else {
-    int k=LongMath.FACTORIALS.length - 1;
-    return BigInteger.valueOf(LongMath.factorial(k)).multiply(factorial(k,n));
+  double approxSize=n * Math.log(n) / Math.log(2.0) / Long.SIZE;
+  ArrayList<BigInteger> bignums=new ArrayList<BigInteger>((int)Math.ceil(approxSize));
+  int startingNumber=LongMath.FACTORIALS.length;
+  long product=LongMath.FACTORIALS[startingNumber - 1];
+  int shift=Long.numberOfTrailingZeros(product);
+  product>>=shift;
+  int productBits=Long.SIZE - Long.numberOfLeadingZeros(product);
+  int bits=Long.SIZE - Long.numberOfLeadingZeros(startingNumber);
+  int nextPowerOfTwo=1 << (bits - 1);
+  for (long num=startingNumber; num <= n; num++) {
+    if ((num & nextPowerOfTwo) != 0) {
+      nextPowerOfTwo<<=1;
+      bits++;
+    }
+    int tz=Long.numberOfTrailingZeros(num);
+    long normalizedNum=num >> tz;
+    shift+=tz;
+    int normalizedBits=bits - tz;
+    if (normalizedBits + productBits >= Long.SIZE) {
+      bignums.add(BigInteger.valueOf(product));
+      product=1;
+      productBits=0;
+    }
+    product*=normalizedNum;
+    productBits=Long.SIZE - Long.numberOfLeadingZeros(product);
   }
+  if (product > 1) {
+    bignums.add(BigInteger.valueOf(product));
+  }
+  return listProduct(bignums).shiftLeft(shift);
 }
