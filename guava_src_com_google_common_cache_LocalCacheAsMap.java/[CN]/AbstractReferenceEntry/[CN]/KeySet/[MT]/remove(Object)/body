@@ -1,0 +1,3 @@
+{
+  return LocalCacheAsMap.this.remove(o) != null;
+}

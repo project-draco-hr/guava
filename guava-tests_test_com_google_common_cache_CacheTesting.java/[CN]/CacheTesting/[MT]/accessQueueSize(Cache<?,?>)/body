@@ -1,5 +1,5 @@
 {
-  CustomConcurrentHashMap<?,?> cchm=toCustomConcurrentHashMap(cache);
+  LocalCacheAsMap<?,?> cchm=toLocalCacheAsMap(cache);
   int size=0;
   for (  Segment<?,?> segment : cchm.segments) {
     size+=accessQueueSize(segment);

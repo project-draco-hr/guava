@@ -1,5 +1,0 @@
-{
-  for (  CustomConcurrentHashMap.Segment segment : cchm.segments) {
-    drainReferenceQueue(segment);
-  }
-}

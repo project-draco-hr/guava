@@ -1,0 +1,3 @@
+LocalCacheAsMap<?,?> cchm
+long expiringTime
+FakeTicker ticker

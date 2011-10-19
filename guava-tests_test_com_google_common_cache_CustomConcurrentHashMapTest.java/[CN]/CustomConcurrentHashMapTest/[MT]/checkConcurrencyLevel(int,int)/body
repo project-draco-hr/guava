@@ -1,4 +1,0 @@
-{
-  CustomConcurrentHashMap<Object,Object> map=makeMap(createCacheBuilder().concurrencyLevel(concurrencyLevel));
-  assertEquals(segmentCount,map.segments.length);
-}

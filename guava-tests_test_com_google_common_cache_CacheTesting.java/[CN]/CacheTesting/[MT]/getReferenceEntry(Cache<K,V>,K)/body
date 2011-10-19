@@ -1,4 +1,4 @@
 {
-  CustomConcurrentHashMap<K,V> map=toCustomConcurrentHashMap(cache);
+  LocalCacheAsMap<K,V> map=toLocalCacheAsMap(cache);
   return map.getEntry(key);
 }

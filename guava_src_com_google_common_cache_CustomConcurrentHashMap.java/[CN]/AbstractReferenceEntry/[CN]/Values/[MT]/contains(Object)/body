@@ -1,3 +1,0 @@
-{
-  return CustomConcurrentHashMap.this.containsValue(o);
-}

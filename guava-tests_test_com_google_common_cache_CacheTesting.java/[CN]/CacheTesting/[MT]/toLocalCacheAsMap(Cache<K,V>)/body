@@ -1,0 +1,6 @@
+{
+  if (cache instanceof LocalCache) {
+    return ((LocalCache<K,V>)cache).map;
+  }
+  throw new IllegalArgumentException("Cache of type " + cache.getClass() + " doesn't have a LocalCacheAsMap.");
+}

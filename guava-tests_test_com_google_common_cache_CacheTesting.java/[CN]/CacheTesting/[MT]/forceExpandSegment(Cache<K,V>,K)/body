@@ -1,5 +1,5 @@
 {
-  CustomConcurrentHashMap<K,V> map=toCustomConcurrentHashMap(cache);
+  LocalCacheAsMap<K,V> map=toLocalCacheAsMap(cache);
   int hash=map.hash(key);
   Segment<K,V> segment=map.segmentFor(hash);
   segment.expand();

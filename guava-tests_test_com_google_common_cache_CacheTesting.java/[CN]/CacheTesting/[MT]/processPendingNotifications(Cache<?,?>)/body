@@ -1,6 +1,6 @@
 {
-  if (hasCustomConcurrentHashMap(cache)) {
-    CustomConcurrentHashMap<?,?> cchm=toCustomConcurrentHashMap(cache);
+  if (hasLocalCacheAsMap(cache)) {
+    LocalCacheAsMap<?,?> cchm=toLocalCacheAsMap(cache);
     cchm.processPendingNotifications();
   }
 }

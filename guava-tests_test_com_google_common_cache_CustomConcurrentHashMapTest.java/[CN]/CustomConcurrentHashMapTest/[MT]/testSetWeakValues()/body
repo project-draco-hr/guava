@@ -1,5 +1,0 @@
-{
-  CustomConcurrentHashMap<Object,Object> map=makeMap(createCacheBuilder().weakValues());
-  checkStrength(map,Strength.STRONG,Strength.WEAK);
-  assertSame(EntryFactory.STRONG,map.entryFactory);
-}

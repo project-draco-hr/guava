@@ -1,0 +1,33 @@
+{
+  QueuingRemovalListener<Object,Object> listener=queuingRemovalListener();
+  LocalCacheAsMap<Object,Object> map=makeMap(createCacheBuilder().removalListener(listener));
+  assertTrue(listener.isEmpty());
+  Object one=new Object();
+  Object two=new Object();
+  Object three=new Object();
+  Object four=new Object();
+  Object five=new Object();
+  Object six=new Object();
+  map.put(one,two);
+  map.remove(one);
+  assertNotified(listener,one,two,RemovalCause.EXPLICIT);
+  map.put(two,three);
+  map.remove(two,three);
+  assertNotified(listener,two,three,RemovalCause.EXPLICIT);
+  map.put(three,four);
+  Iterator<?> i=map.entrySet().iterator();
+  i.next();
+  i.remove();
+  assertNotified(listener,three,four,RemovalCause.EXPLICIT);
+  map.put(four,five);
+  i=map.keySet().iterator();
+  i.next();
+  i.remove();
+  assertNotified(listener,four,five,RemovalCause.EXPLICIT);
+  map.put(five,six);
+  i=map.values().iterator();
+  i.next();
+  i.remove();
+  assertNotified(listener,five,six,RemovalCause.EXPLICIT);
+  assertTrue(listener.isEmpty());
+}

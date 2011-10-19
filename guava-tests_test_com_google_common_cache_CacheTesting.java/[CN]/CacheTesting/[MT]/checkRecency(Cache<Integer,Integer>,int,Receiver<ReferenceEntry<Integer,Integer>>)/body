@@ -1,7 +1,7 @@
 {
-  if (hasCustomConcurrentHashMap(cache)) {
+  if (hasLocalCacheAsMap(cache)) {
     warmUp(cache,0,2 * maxSize);
-    CustomConcurrentHashMap<Integer,Integer> cchm=toCustomConcurrentHashMap(cache);
+    LocalCacheAsMap<Integer,Integer> cchm=toLocalCacheAsMap(cache);
     Segment<?,?> segment=cchm.segments[0];
     drainRecencyQueue(segment);
     assertEquals(maxSize,accessQueueSize(cache));

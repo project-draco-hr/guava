@@ -1,5 +1,5 @@
 {
-  if (hasCustomConcurrentHashMap(cache)) {
-    drainReferenceQueues(toCustomConcurrentHashMap(cache));
+  if (hasLocalCacheAsMap(cache)) {
+    drainReferenceQueues(toLocalCacheAsMap(cache));
   }
 }

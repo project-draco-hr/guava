@@ -1,0 +1,37 @@
+{
+  for (  CacheBuilder<Object,Object> builder : allEvictingMakers()) {
+    LocalCacheAsMap<Object,Object> map=makeMap(builder.concurrencyLevel(1));
+    Segment<Object,Object> segment=map.segments[0];
+    List<ReferenceEntry<Object,Object>> writeOrder=Lists.newLinkedList();
+    List<ReferenceEntry<Object,Object>> readOrder=Lists.newLinkedList();
+    for (int i=0; i < DRAIN_THRESHOLD * 2; i++) {
+      Object key=new Object();
+      int hash=map.hash(key);
+      Object value=new Object();
+      map.put(key,value);
+      ReferenceEntry<Object,Object> entry=segment.getEntry(key,hash);
+      writeOrder.add(entry);
+      readOrder.add(entry);
+    }
+    checkEvictionQueues(map,segment,readOrder,writeOrder);
+    checkExpirationTimes(map);
+    assertTrue(segment.recencyQueue.isEmpty());
+    Random random=new Random();
+    List<ReferenceEntry<Object,Object>> reads=Lists.newArrayList();
+    Iterator<ReferenceEntry<Object,Object>> i=readOrder.iterator();
+    while (i.hasNext()) {
+      ReferenceEntry<Object,Object> entry=i.next();
+      if (random.nextBoolean()) {
+        map.get(entry.getKey());
+        reads.add(entry);
+        i.remove();
+        assertTrue(segment.recencyQueue.size() <= DRAIN_THRESHOLD);
+      }
+    }
+    int undrainedIndex=reads.size() - segment.recencyQueue.size();
+    checkAndDrainRecencyQueue(map,segment,reads.subList(undrainedIndex,reads.size()));
+    readOrder.addAll(reads);
+    checkEvictionQueues(map,segment,readOrder,writeOrder);
+    checkExpirationTimes(map);
+  }
+}

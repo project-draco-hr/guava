@@ -1,5 +1,0 @@
-{
-  RemovalListener<Object,Object> testListener=TestingRemovalListeners.nullRemovalListener();
-  CustomConcurrentHashMap<Object,Object> map=makeMap(createCacheBuilder().removalListener(testListener));
-  assertSame(testListener,map.removalListener);
-}

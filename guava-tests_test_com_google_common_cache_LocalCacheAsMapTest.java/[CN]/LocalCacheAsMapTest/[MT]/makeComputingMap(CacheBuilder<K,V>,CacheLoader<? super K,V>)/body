@@ -1,0 +1,3 @@
+{
+  return new LocalCacheAsMap<K,V>(builder,CacheBuilder.DEFAULT_STATS_COUNTER,loader);
+}

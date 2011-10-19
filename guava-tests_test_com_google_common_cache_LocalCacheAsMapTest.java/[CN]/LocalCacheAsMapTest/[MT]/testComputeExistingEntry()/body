@@ -1,0 +1,10 @@
+{
+  CountingLoader loader=new CountingLoader();
+  LocalCacheAsMap<Object,Object> map=makeComputingMap(createCacheBuilder(),loader);
+  assertEquals(0,loader.getCount());
+  Object key=new Object();
+  Object value=new Object();
+  map.put(key,value);
+  assertEquals(value,map.getOrLoad(key));
+  assertEquals(0,loader.getCount());
+}

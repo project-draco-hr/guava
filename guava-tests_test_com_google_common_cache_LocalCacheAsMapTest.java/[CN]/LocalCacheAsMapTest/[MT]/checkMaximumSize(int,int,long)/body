@@ -1,0 +1,14 @@
+{
+  LocalCacheAsMap<Object,Object> map=makeMap(createCacheBuilder().concurrencyLevel(concurrencyLevel).initialCapacity(initialCapacity).maximumSize(maxSize));
+  long totalCapacity=0;
+  for (int i=0; i < map.segments.length; i++) {
+    totalCapacity+=map.segments[i].maxSegmentWeight;
+  }
+  assertTrue("totalCapacity=" + totalCapacity + ", maxSize="+ maxSize,totalCapacity == maxSize);
+  map=makeMap(createCacheBuilder().concurrencyLevel(concurrencyLevel).initialCapacity(initialCapacity).maximumWeight(maxSize).weigher(constantWeigher(1)));
+  totalCapacity=0;
+  for (int i=0; i < map.segments.length; i++) {
+    totalCapacity+=map.segments[i].maxSegmentWeight;
+  }
+  assertTrue("totalCapacity=" + totalCapacity + ", maxSize="+ maxSize,totalCapacity == maxSize);
+}

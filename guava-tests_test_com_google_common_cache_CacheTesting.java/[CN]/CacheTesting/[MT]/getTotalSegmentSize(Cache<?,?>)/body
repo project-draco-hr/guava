@@ -1,5 +1,5 @@
 {
-  CustomConcurrentHashMap<?,?> map=toCustomConcurrentHashMap(cache);
+  LocalCacheAsMap<?,?> map=toLocalCacheAsMap(cache);
   int totalSize=0;
   for (  Segment<?,?> segment : map.segments) {
     totalSize+=segment.maxSegmentWeight;
