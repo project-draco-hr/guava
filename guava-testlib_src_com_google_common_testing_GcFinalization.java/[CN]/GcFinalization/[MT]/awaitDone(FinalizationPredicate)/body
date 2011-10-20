@@ -2,7 +2,8 @@
   if (predicate.isDone()) {
     return;
   }
-  final long deadline=System.nanoTime() + timeoutNanos();
+  final long timeoutSeconds=timeoutSeconds();
+  final long deadline=System.nanoTime() + SECONDS.toNanos(timeoutSeconds);
   do {
     System.runFinalization();
     if (predicate.isDone()) {
@@ -16,5 +17,5 @@
     }
   }
  while (System.nanoTime() - deadline < 0);
-  throw new TimeoutException("Predicate did not become true within timeout");
+  throw new TimeoutException(String.format("Predicate did not become true within timeout of %d seconds",timeoutSeconds));
 }

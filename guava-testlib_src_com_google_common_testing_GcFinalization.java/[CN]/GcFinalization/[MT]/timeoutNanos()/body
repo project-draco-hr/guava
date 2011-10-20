@@ -1,4 +1,0 @@
-{
-  long seconds=Math.max(10L,Runtime.getRuntime().totalMemory() / (32L * 1024L * 1024L));
-  return NANOSECONDS.convert(seconds,SECONDS);
-}

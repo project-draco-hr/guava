@@ -2,7 +2,8 @@
   if (latch.getCount() == 0) {
     return;
   }
-  final long deadline=System.nanoTime() + timeoutNanos();
+  final long timeoutSeconds=timeoutSeconds();
+  final long deadline=System.nanoTime() + SECONDS.toNanos(timeoutSeconds);
   do {
     System.runFinalization();
     if (latch.getCount() == 0) {
@@ -14,5 +15,5 @@
     }
   }
  while (System.nanoTime() - deadline < 0);
-  throw new TimeoutException("CountDownLatch failed to count down within timeout");
+  throw new TimeoutException(String.format("CountDownLatch failed to count down within timeout of %d seconds",timeoutSeconds));
 }
