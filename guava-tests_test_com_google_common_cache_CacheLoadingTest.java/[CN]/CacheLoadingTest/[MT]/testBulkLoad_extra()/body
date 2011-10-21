@@ -1,0 +1,29 @@
+{
+  CacheLoader<Object,Object> loader=new CacheLoader<Object,Object>(){
+    @Override public Object load(    Object key) throws Exception {
+      return new Object();
+    }
+    @Override public Map<Object,Object> loadAll(    Iterable<? extends Object> keys) throws Exception {
+      Map<Object,Object> result=Maps.newHashMap();
+      for (      Object key : keys) {
+        Object value=new Object();
+        result.put(key,value);
+        result.put(value,key);
+      }
+      return result;
+    }
+  }
+;
+  Cache<Object,Object> cache=CacheBuilder.newBuilder().build(loader);
+  Object[] lookupKeys=new Object[]{new Object(),new Object(),new Object()};
+  Map<Object,Object> result=cache.getAll(asList(lookupKeys));
+  ASSERT.that(result.keySet()).hasContentsAnyOrder(lookupKeys);
+  for (  Map.Entry<Object,Object> entry : result.entrySet()) {
+    Object key=entry.getKey();
+    Object value=entry.getValue();
+    assertSame(value,result.get(key));
+    assertNull(result.get(value));
+    assertSame(value,cache.asMap().get(key));
+    assertSame(key,cache.asMap().get(value));
+  }
+}

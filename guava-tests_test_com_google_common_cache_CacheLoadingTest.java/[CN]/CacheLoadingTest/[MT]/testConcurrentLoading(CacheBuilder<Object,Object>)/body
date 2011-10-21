@@ -1,0 +1,6 @@
+{
+  testConcurrentLoadingDefault(builder);
+  testConcurrentLoadingNull(builder);
+  testConcurrentLoadingUncheckedException(builder);
+  testConcurrentLoadingCheckedException(builder);
+}

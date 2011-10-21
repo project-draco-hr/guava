@@ -1,0 +1,15 @@
+{
+  return new CacheLoader<K,V>(){
+    @Override public V load(    K key) throws Exception {
+      return loader.load(key);
+    }
+    @Override public Map<K,V> loadAll(    Iterable<? extends K> keys) throws Exception {
+      Map<K,V> result=Maps.newHashMap();
+      for (      K key : keys) {
+        result.put(key,load(key));
+      }
+      return result;
+    }
+  }
+;
+}

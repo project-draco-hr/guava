@@ -36,6 +36,6 @@
     unlock();
     postWriteCleanup();
   }
-  load(key,hash,e,loadingValueReference,loader);
+  loadEntry(key,hash,e,loadingValueReference,loader);
   return true;
 }

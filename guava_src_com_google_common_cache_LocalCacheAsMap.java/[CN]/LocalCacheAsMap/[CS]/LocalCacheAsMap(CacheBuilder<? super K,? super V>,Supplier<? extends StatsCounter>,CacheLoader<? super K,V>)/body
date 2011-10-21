@@ -13,6 +13,7 @@
   ticker=builder.getTicker(recordsTime());
   removalListener=builder.getRemovalListener();
   removalNotificationQueue=(removalListener == NullListener.INSTANCE) ? LocalCacheAsMap.<RemovalNotification<K,V>>discardingQueue() : new ConcurrentLinkedQueue<RemovalNotification<K,V>>();
+  globalStatsCounter=statsCounterSupplier.get();
   int initialCapacity=Math.min(builder.getInitialCapacity(),MAXIMUM_CAPACITY);
   if (evictsBySize() && !customWeigher()) {
     initialCapacity=Math.min(initialCapacity,(int)maxWeight);

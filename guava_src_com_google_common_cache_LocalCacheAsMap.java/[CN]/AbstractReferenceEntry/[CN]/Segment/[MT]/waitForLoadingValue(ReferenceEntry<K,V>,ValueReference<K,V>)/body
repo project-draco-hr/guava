@@ -13,6 +13,6 @@
     return value;
   }
   finally {
-    statsCounter.recordMiss();
+    statsCounter.recordMisses(1);
   }
 }

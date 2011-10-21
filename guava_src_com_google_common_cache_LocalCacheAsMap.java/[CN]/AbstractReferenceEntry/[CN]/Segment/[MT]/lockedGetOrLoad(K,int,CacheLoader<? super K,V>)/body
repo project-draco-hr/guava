@@ -28,7 +28,7 @@
           }
  else {
             recordLockedRead(e,now);
-            statsCounter.recordHit();
+            statsCounter.recordHits(1);
             return value;
           }
           writeQueue.remove(e);
@@ -56,10 +56,10 @@
   }
   if (createNewEntry) {
     try {
-      return load(key,hash,e,loadingValueReference,loader);
+      return loadEntry(key,hash,e,loadingValueReference,loader);
     }
   finally {
-      statsCounter.recordMiss();
+      statsCounter.recordMisses(1);
     }
   }
  else {

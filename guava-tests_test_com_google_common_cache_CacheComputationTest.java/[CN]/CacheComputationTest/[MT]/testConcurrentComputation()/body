@@ -1,3 +1,0 @@
-{
-  testConcurrentComputation(CacheBuilder.newBuilder());
-}

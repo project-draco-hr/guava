@@ -1,0 +1,19 @@
+{
+  Cache<Object,Object> cache=CacheBuilder.newBuilder().build(bulkLoader(constantLoader(null)));
+  CacheStats stats=cache.stats();
+  assertEquals(0,stats.missCount());
+  assertEquals(0,stats.loadSuccessCount());
+  assertEquals(0,stats.loadExceptionCount());
+  assertEquals(0,stats.hitCount());
+  try {
+    cache.getAll(asList(new Object()));
+    fail();
+  }
+ catch (  InvalidCacheLoadException expected) {
+  }
+  stats=cache.stats();
+  assertEquals(1,stats.missCount());
+  assertEquals(0,stats.loadSuccessCount());
+  assertEquals(1,stats.loadExceptionCount());
+  assertEquals(0,stats.hitCount());
+}

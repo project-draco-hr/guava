@@ -7,7 +7,7 @@
         V value=getLiveValue(e,now);
         if (value != null) {
           recordRead(e,now);
-          statsCounter.recordHit();
+          statsCounter.recordHits(1);
           return value;
         }
         ValueReference<K,V> valueReference=e.getValueReference();

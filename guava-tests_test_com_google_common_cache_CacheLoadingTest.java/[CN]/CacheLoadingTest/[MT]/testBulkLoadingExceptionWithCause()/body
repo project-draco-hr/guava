@@ -1,0 +1,24 @@
+{
+  final Exception cause=new Exception();
+  final UncheckedExecutionException uee=new UncheckedExecutionException(cause);
+  final ExecutionException ee=new ExecutionException(cause);
+  Cache<Object,Object> cacheUnchecked=CacheBuilder.newBuilder().build(bulkLoader(exceptionLoader(uee)));
+  Cache<Object,Object> cacheChecked=CacheBuilder.newBuilder().build(bulkLoader(exceptionLoader(ee)));
+  try {
+    cacheUnchecked.getAll(asList(new Object()));
+    fail();
+  }
+ catch (  ExecutionException e) {
+    fail();
+  }
+catch (  UncheckedExecutionException caughtEe) {
+    assertSame(uee,caughtEe.getCause());
+  }
+  try {
+    cacheChecked.getAll(asList(new Object()));
+    fail();
+  }
+ catch (  ExecutionException caughtEe) {
+    assertSame(ee,caughtEe.getCause());
+  }
+}
