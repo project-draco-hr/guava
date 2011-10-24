@@ -1,0 +1,3 @@
+LocalCacheInternalMap<K,V> map
+ReferenceEntry<K,V> one
+ReferenceEntry<K,V> two

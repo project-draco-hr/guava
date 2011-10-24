@@ -1,0 +1,3 @@
+LocalCacheInternalMap<K,V> map
+Segment<K,V> segment
+List<ReferenceEntry<K,V>> reads

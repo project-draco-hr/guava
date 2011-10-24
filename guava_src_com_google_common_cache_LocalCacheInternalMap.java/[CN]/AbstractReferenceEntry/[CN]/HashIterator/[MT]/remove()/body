@@ -1,0 +1,5 @@
+{
+  checkState(lastReturned != null);
+  LocalCacheInternalMap.this.remove(lastReturned.getKey());
+  lastReturned=null;
+}

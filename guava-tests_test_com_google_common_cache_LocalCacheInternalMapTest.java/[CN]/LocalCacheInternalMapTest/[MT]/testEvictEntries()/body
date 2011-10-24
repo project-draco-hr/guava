@@ -1,0 +1,34 @@
+{
+  int maxSize=10;
+  LocalCacheInternalMap<Object,Object> map=makeMap(createCacheBuilder().concurrencyLevel(1).maximumSize(maxSize));
+  Segment<Object,Object> segment=map.segments[0];
+  int originalCount=1024;
+  ReferenceEntry<Object,Object> entry=null;
+  LinkedHashMap<Object,Object> originalMap=Maps.newLinkedHashMap();
+  for (int i=0; i < originalCount; i++) {
+    Object key=new Object();
+    Object value=new Object();
+    AtomicReferenceArray<ReferenceEntry<Object,Object>> table=segment.table;
+    int hash=map.hash(key);
+    int index=hash & (table.length() - 1);
+    ReferenceEntry<Object,Object> first=table.get(index);
+    entry=map.newEntry(key,hash,first);
+    ValueReference<Object,Object> valueRef=map.newValueReference(entry,value,1);
+    entry.setValueReference(valueRef);
+    segment.recordWrite(entry,1,map.ticker.read());
+    table.set(index,entry);
+    originalMap.put(key,value);
+  }
+  segment.count=originalCount;
+  segment.totalWeight=originalCount;
+  assertEquals(originalCount,map.size());
+  assertEquals(originalMap,map);
+  Iterator<Object> it=originalMap.keySet().iterator();
+  for (int i=0; i < originalCount - maxSize; i++) {
+    it.next();
+    it.remove();
+  }
+  segment.evictEntries();
+  assertEquals(maxSize,map.size());
+  assertEquals(originalMap,map);
+}

@@ -1,0 +1,5 @@
+{
+  MapMakerInternalMap<Object,Object> map=makeMap(createMapMaker().weakValues());
+  checkStrength(map,Strength.STRONG,Strength.WEAK);
+  assertSame(EntryFactory.STRONG,map.entryFactory);
+}

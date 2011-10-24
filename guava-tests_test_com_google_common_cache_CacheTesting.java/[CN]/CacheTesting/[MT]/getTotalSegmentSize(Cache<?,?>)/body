@@ -1,5 +1,5 @@
 {
-  LocalCacheAsMap<?,?> map=toLocalCacheAsMap(cache);
+  LocalCacheInternalMap<?,?> map=toLocalCacheInternalMap(cache);
   int totalSize=0;
   for (  Segment<?,?> segment : map.segments) {
     totalSize+=segment.maxSegmentWeight;

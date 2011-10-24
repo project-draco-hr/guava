@@ -1,6 +1,6 @@
 {
-  if (hasLocalCacheAsMap(cache)) {
-    LocalCacheAsMap<?,?> map=toLocalCacheAsMap(cache);
+  if (hasLocalCacheInternalMap(cache)) {
+    LocalCacheInternalMap<?,?> map=toLocalCacheInternalMap(cache);
     for (    Segment segment : map.segments) {
       drainRecencyQueue(segment);
     }

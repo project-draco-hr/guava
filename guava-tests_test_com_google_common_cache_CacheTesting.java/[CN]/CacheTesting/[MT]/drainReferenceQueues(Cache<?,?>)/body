@@ -1,5 +1,5 @@
 {
-  if (hasLocalCacheAsMap(cache)) {
-    drainReferenceQueues(toLocalCacheAsMap(cache));
+  if (hasLocalCacheInternalMap(cache)) {
+    drainReferenceQueues(toLocalCacheInternalMap(cache));
   }
 }

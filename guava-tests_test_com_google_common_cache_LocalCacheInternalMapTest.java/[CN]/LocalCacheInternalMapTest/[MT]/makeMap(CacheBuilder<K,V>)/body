@@ -1,0 +1,3 @@
+{
+  return new LocalCacheInternalMap<K,V>(builder,CacheBuilder.DEFAULT_STATS_COUNTER,CacheLoader.from(Suppliers.<V>ofInstance(null)));
+}

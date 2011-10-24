@@ -1,0 +1,3 @@
+{
+  return LocalCacheInternalMap.this.containsKey(o);
+}

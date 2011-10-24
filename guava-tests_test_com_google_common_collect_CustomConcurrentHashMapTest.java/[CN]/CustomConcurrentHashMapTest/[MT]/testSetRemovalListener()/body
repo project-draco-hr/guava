@@ -1,9 +1,0 @@
-{
-  RemovalListener<Object,Object> testListener=new RemovalListener<Object,Object>(){
-    @Override public void onRemoval(    RemovalNotification<Object,Object> notification){
-    }
-  }
-;
-  CustomConcurrentHashMap<Object,Object> map=makeMap(createMapMaker().removalListener(testListener));
-  assertSame(testListener,map.removalListener);
-}

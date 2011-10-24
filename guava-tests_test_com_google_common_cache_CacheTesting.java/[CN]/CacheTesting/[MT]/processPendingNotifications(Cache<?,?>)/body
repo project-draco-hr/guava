@@ -1,6 +1,6 @@
 {
-  if (hasLocalCacheAsMap(cache)) {
-    LocalCacheAsMap<?,?> cchm=toLocalCacheAsMap(cache);
+  if (hasLocalCacheInternalMap(cache)) {
+    LocalCacheInternalMap<?,?> cchm=toLocalCacheInternalMap(cache);
     cchm.processPendingNotifications();
   }
 }

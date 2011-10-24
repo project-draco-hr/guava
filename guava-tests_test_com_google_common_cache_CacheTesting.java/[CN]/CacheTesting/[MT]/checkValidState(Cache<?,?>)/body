@@ -1,5 +1,5 @@
 {
-  if (hasLocalCacheAsMap(cache)) {
-    checkValidState(toLocalCacheAsMap(cache));
+  if (hasLocalCacheInternalMap(cache)) {
+    checkValidState(toLocalCacheInternalMap(cache));
   }
 }

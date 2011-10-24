@@ -1,5 +1,5 @@
 {
   Cache<?,?> cache=CacheBuilder.newBuilder().concurrencyLevel(1).build(identityLoader());
-  LocalCacheAsMap<?,?> map=CacheTesting.toLocalCacheAsMap(cache);
+  LocalCacheInternalMap<?,?> map=CacheTesting.toLocalCacheInternalMap(cache);
   assertEquals(1,map.segments.length);
 }

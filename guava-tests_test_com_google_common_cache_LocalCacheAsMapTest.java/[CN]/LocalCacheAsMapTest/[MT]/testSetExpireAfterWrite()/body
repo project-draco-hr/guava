@@ -1,6 +1,0 @@
-{
-  long duration=42;
-  TimeUnit unit=TimeUnit.SECONDS;
-  LocalCacheAsMap<Object,Object> map=makeMap(createCacheBuilder().expireAfterWrite(duration,unit));
-  assertEquals(unit.toNanos(duration),map.expireAfterWriteNanos);
-}

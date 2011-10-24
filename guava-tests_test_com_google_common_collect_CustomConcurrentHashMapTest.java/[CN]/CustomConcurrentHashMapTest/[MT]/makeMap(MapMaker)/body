@@ -1,3 +1,0 @@
-{
-  return new CustomConcurrentHashMap<K,V>(maker);
-}

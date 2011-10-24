@@ -1,0 +1,31 @@
+{
+  for (  CacheBuilder<Object,Object> builder : allEvictingMakers()) {
+    LocalCacheInternalMap<Object,Object> map=makeMap(builder.concurrencyLevel(1));
+    Segment<Object,Object> segment=map.segments[0];
+    List<ReferenceEntry<Object,Object>> writeOrder=Lists.newLinkedList();
+    for (int i=0; i < DRAIN_THRESHOLD * 2; i++) {
+      Object key=new Object();
+      int hash=map.hash(key);
+      Object value=new Object();
+      ReferenceEntry<Object,Object> entry=createDummyEntry(key,hash,value,null);
+      segment.recordWrite(entry,1,map.ticker.read());
+      writeOrder.add(entry);
+    }
+    checkEvictionQueues(map,segment,writeOrder,writeOrder);
+    checkExpirationTimes(map);
+    Random random=new Random();
+    List<ReferenceEntry<Object,Object>> writes=Lists.newArrayList();
+    Iterator<ReferenceEntry<Object,Object>> i=writeOrder.iterator();
+    while (i.hasNext()) {
+      ReferenceEntry<Object,Object> entry=i.next();
+      if (random.nextBoolean()) {
+        segment.recordWrite(entry,1,map.ticker.read());
+        writes.add(entry);
+        i.remove();
+      }
+    }
+    writeOrder.addAll(writes);
+    checkEvictionQueues(map,segment,writeOrder,writeOrder);
+    checkExpirationTimes(map);
+  }
+}

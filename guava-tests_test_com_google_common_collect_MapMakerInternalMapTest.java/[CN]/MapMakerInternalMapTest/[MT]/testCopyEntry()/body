@@ -1,0 +1,34 @@
+{
+  for (  MapMaker maker : allEntryTypeMakers()) {
+    MapMakerInternalMap<Object,Object> map=makeMap(maker);
+    Object keyOne=new Object();
+    Object valueOne=new Object();
+    int hashOne=map.hash(keyOne);
+    ReferenceEntry<Object,Object> entryOne=map.newEntry(keyOne,hashOne,null);
+    entryOne.setValueReference(map.newValueReference(entryOne,valueOne));
+    Object keyTwo=new Object();
+    Object valueTwo=new Object();
+    int hashTwo=map.hash(keyTwo);
+    ReferenceEntry<Object,Object> entryTwo=map.newEntry(keyTwo,hashTwo,entryOne);
+    entryTwo.setValueReference(map.newValueReference(entryTwo,valueTwo));
+    if (map.evictsBySize()) {
+      MapMakerInternalMap.connectEvictables(entryOne,entryTwo);
+    }
+    if (map.expires()) {
+      MapMakerInternalMap.connectExpirables(entryOne,entryTwo);
+    }
+    assertConnected(map,entryOne,entryTwo);
+    ReferenceEntry<Object,Object> copyOne=map.copyEntry(entryOne,null);
+    assertSame(keyOne,entryOne.getKey());
+    assertEquals(hashOne,entryOne.getHash());
+    assertNull(entryOne.getNext());
+    assertSame(valueOne,copyOne.getValueReference().get());
+    assertConnected(map,copyOne,entryTwo);
+    ReferenceEntry<Object,Object> copyTwo=map.copyEntry(entryTwo,copyOne);
+    assertSame(keyTwo,copyTwo.getKey());
+    assertEquals(hashTwo,copyTwo.getHash());
+    assertSame(copyOne,copyTwo.getNext());
+    assertSame(valueTwo,copyTwo.getValueReference().get());
+    assertConnected(map,copyOne,copyTwo);
+  }
+}

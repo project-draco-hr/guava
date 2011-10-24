@@ -5,12 +5,12 @@
   assertEquals(ImmutableMap.of(),map);
   assertEquals(ImmutableMap.of().hashCode(),map.hashCode());
   assertEquals(ImmutableMap.of().toString(),map.toString());
-  if (map instanceof LocalCacheAsMap) {
-    LocalCacheAsMap<?,?> cchm=(LocalCacheAsMap<?,?>)map;
+  if (map instanceof LocalCacheInternalMap) {
+    LocalCacheInternalMap<?,?> cchm=(LocalCacheInternalMap<?,?>)map;
     checkValidState(cchm);
     assertTrue(cchm.isEmpty());
     assertEquals(0,cchm.size());
-    for (    LocalCacheAsMap.Segment segment : cchm.segments) {
+    for (    LocalCacheInternalMap.Segment segment : cchm.segments) {
       assertEquals(0,segment.count);
       assertEquals(0,segmentSize(segment));
       assertTrue(segment.writeQueue.isEmpty());

@@ -1,5 +1,0 @@
-{
-  checkState(lastReturned != null);
-  LocalCacheAsMap.this.remove(lastReturned.getKey());
-  lastReturned=null;
-}

@@ -1,3 +1,0 @@
-{
-  CustomConcurrentHashMap.this.clear();
-}

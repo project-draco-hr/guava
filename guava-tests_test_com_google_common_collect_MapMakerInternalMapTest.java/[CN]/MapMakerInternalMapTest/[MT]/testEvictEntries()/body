@@ -1,0 +1,33 @@
+{
+  int maxSize=10;
+  MapMakerInternalMap<Object,Object> map=makeMap(createMapMaker().concurrencyLevel(1).maximumSize(maxSize));
+  Segment<Object,Object> segment=map.segments[0];
+  int originalCount=1024;
+  ReferenceEntry<Object,Object> entry=null;
+  LinkedHashMap<Object,Object> originalMap=Maps.newLinkedHashMap();
+  for (int i=0; i < originalCount; i++) {
+    Object key=new Object();
+    Object value=new Object();
+    AtomicReferenceArray<ReferenceEntry<Object,Object>> table=segment.table;
+    int hash=map.hash(key);
+    int index=hash & (table.length() - 1);
+    ReferenceEntry<Object,Object> first=table.get(index);
+    entry=map.newEntry(key,hash,first);
+    ValueReference<Object,Object> valueRef=map.newValueReference(entry,value);
+    entry.setValueReference(valueRef);
+    segment.recordWrite(entry);
+    table.set(index,entry);
+    originalMap.put(key,value);
+  }
+  segment.count=originalCount;
+  assertEquals(originalCount,originalMap.size());
+  assertEquals(originalMap,map);
+  for (int i=maxSize - 1; i < originalCount; i++) {
+    assertTrue(segment.evictEntries());
+    Iterator<Object> it=originalMap.keySet().iterator();
+    it.next();
+    it.remove();
+    assertEquals(originalMap,map);
+  }
+  assertFalse(segment.evictEntries());
+}

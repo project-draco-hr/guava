@@ -1,5 +1,0 @@
-{
-  for (  LocalCacheAsMap.Segment segment : cchm.segments) {
-    drainReferenceQueue(segment);
-  }
-}

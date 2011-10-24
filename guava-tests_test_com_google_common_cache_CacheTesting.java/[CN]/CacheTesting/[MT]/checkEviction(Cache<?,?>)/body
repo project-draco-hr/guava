@@ -1,5 +1,5 @@
 {
-  if (hasLocalCacheAsMap(cache)) {
-    checkEviction(toLocalCacheAsMap(cache));
+  if (hasLocalCacheInternalMap(cache)) {
+    checkEviction(toLocalCacheInternalMap(cache));
   }
 }

@@ -1,0 +1,27 @@
+{
+  MapMakerInternalMap<Object,Object> map=makeMap(createMapMaker().concurrencyLevel(1).initialCapacity(1).maximumSize(SMALL_MAX_SIZE).expireAfterWrite(99999,SECONDS).removalListener(new CountingRemovalListener<Object,Object>()));
+  Segment<Object,Object> segment=map.segments[0];
+  AtomicReferenceArray<ReferenceEntry<Object,Object>> table=segment.table;
+  assertEquals(1,table.length());
+  Object key=new Object();
+  Object value=new Object();
+  int hash=map.hash(key);
+  DummyEntry<Object,Object> entry=DummyEntry.create(key,hash,null);
+  DummyValueReference<Object,Object> valueRef=DummyValueReference.create(value,entry);
+  entry.setValueReference(valueRef);
+  assertFalse(segment.clearValue(key,hash,valueRef));
+  segment.recordWrite(entry);
+  table.set(0,entry);
+  assertTrue(segment.clearValue(key,hash,valueRef));
+  assertTrue(map.removalNotificationQueue.isEmpty());
+  assertFalse(segment.evictionQueue.contains(entry));
+  assertFalse(segment.expirationQueue.contains(entry));
+  assertEquals(0,segment.count);
+  assertNull(table.get(0));
+  table.set(0,entry);
+  DummyValueReference<Object,Object> otherValueRef=DummyValueReference.create(value,entry);
+  entry.setValueReference(otherValueRef);
+  assertFalse(segment.clearValue(key,hash,valueRef));
+  entry.setValueReference(valueRef);
+  assertTrue(segment.clearValue(key,hash,valueRef));
+}

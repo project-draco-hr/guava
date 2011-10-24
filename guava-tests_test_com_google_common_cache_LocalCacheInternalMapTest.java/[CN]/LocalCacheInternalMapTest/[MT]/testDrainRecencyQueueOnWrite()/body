@@ -1,0 +1,20 @@
+{
+  for (  CacheBuilder<Object,Object> builder : allEvictingMakers()) {
+    LocalCacheInternalMap<Object,Object> map=makeMap(builder.concurrencyLevel(1));
+    Segment<Object,Object> segment=map.segments[0];
+    if (segment.recencyQueue != DISCARDING_QUEUE) {
+      Object keyOne=new Object();
+      Object valueOne=new Object();
+      Object keyTwo=new Object();
+      Object valueTwo=new Object();
+      map.put(keyOne,valueOne);
+      assertTrue(segment.recencyQueue.isEmpty());
+      for (int i=0; i < DRAIN_THRESHOLD / 2; i++) {
+        map.get(keyOne);
+      }
+      assertFalse(segment.recencyQueue.isEmpty());
+      map.put(keyTwo,valueTwo);
+      assertTrue(segment.recencyQueue.isEmpty());
+    }
+  }
+}
