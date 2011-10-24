@@ -1,4 +1,0 @@
-{
-  List<String> list=ImmutableList.of(new String[]{"1","2","3"});
-  assertEquals(asList("1","2","3"),list);
-}
