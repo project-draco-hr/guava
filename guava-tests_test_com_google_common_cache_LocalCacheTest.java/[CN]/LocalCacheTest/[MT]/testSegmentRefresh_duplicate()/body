@@ -1,0 +1,14 @@
+{
+  LocalCache<Object,Object> map=makeMap(createCacheBuilder().concurrencyLevel(1));
+  Segment<Object,Object> segment=map.segments[0];
+  Object key=new Object();
+  int hash=map.hash(key);
+  AtomicReferenceArray<ReferenceEntry<Object,Object>> table=segment.table;
+  int index=hash & (table.length() - 1);
+  DummyEntry<Object,Object> entry=DummyEntry.create(key,hash,null);
+  DummyValueReference<Object,Object> valueRef=DummyValueReference.create(null,entry);
+  valueRef.setComputing(true);
+  entry.setValueReference(valueRef);
+  table.set(index,entry);
+  assertFalse(segment.refresh(key,hash,null));
+}

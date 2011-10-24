@@ -1,0 +1,3 @@
+{
+  return LocalCache.this.containsValue(o);
+}

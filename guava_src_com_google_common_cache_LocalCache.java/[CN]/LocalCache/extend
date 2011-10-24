@@ -1,1 +1,1 @@
-AbstractCache<K,V>
+AbstractMap<K,V>

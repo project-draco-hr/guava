@@ -1,0 +1,6 @@
+{
+  if (cache instanceof AutoLocalCache) {
+    return ((AutoLocalCache<K,V>)cache).map;
+  }
+  throw new IllegalArgumentException("Cache of type " + cache.getClass() + " doesn't have a LocalCache.");
+}

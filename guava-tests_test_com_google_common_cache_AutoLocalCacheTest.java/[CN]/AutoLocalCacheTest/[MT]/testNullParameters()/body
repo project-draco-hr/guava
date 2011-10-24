@@ -1,0 +1,6 @@
+{
+  NullPointerTester tester=new NullPointerTester();
+  tester.setDefault(Callable.class,Callables.returning(null));
+  CacheLoader<Object,Object> loader=identityLoader();
+  tester.testAllPublicInstanceMethods(makeCache(createCacheBuilder(),loader));
+}

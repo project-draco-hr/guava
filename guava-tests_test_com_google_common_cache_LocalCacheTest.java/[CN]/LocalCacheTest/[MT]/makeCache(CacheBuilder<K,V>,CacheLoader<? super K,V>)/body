@@ -1,3 +1,0 @@
-{
-  return new LocalCache<K,V>(builder,CacheBuilder.CACHE_STATS_COUNTER,loader);
-}

@@ -1,4 +1,4 @@
 {
-  LocalCacheInternalMap<K,V> map=toLocalCacheInternalMap(cache);
+  LocalCache<K,V> map=toLocalCache(cache);
   return map.getEntry(key);
 }

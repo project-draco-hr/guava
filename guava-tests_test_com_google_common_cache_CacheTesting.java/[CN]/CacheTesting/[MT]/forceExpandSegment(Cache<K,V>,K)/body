@@ -1,5 +1,5 @@
 {
-  LocalCacheInternalMap<K,V> map=toLocalCacheInternalMap(cache);
+  LocalCache<K,V> map=toLocalCache(cache);
   int hash=map.hash(key);
   Segment<K,V> segment=map.segmentFor(hash);
   segment.expand();

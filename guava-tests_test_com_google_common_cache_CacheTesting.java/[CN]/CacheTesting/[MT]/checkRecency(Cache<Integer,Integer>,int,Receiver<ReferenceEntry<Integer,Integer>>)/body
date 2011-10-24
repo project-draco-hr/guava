@@ -1,7 +1,7 @@
 {
-  if (hasLocalCacheInternalMap(cache)) {
+  if (hasLocalCache(cache)) {
     warmUp(cache,0,2 * maxSize);
-    LocalCacheInternalMap<Integer,Integer> cchm=toLocalCacheInternalMap(cache);
+    LocalCache<Integer,Integer> cchm=toLocalCache(cache);
     Segment<?,?> segment=cchm.segments[0];
     drainRecencyQueue(segment);
     assertEquals(maxSize,accessQueueSize(cache));

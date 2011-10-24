@@ -1,5 +1,5 @@
 {
-  if (hasLocalCacheInternalMap(cache)) {
-    checkExpiration(toLocalCacheInternalMap(cache));
+  if (hasLocalCache(cache)) {
+    checkExpiration(toLocalCache(cache));
   }
 }

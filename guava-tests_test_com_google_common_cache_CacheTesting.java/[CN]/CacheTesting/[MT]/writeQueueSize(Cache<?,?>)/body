@@ -1,5 +1,5 @@
 {
-  LocalCacheInternalMap<?,?> cchm=toLocalCacheInternalMap(cache);
+  LocalCache<?,?> cchm=toLocalCache(cache);
   int size=0;
   for (  Segment<?,?> segment : cchm.segments) {
     size+=writeQueueSize(segment);

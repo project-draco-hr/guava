@@ -1,10 +1,10 @@
 {
   CacheLoader<Object,Object> loader=new CacheLoader<Object,Object>(){
     @Override public Object load(    Object from){
-      return new Object();
+      return from;
     }
   }
 ;
-  LocalCache<Object,Object> cache=makeCache(createCacheBuilder(),loader);
-  assertSame(loader,cache.map.defaultLoader);
+  LocalCache<Object,Object> map=makeComputingMap(createCacheBuilder(),loader);
+  assertSame(loader,map.defaultLoader);
 }

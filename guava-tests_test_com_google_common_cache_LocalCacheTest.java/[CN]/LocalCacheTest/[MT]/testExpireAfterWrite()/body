@@ -1,0 +1,30 @@
+{
+  FakeTicker ticker=new FakeTicker();
+  LocalCache<Object,Object> map=makeMap(createCacheBuilder().concurrencyLevel(1).ticker(ticker).expireAfterWrite(1,TimeUnit.NANOSECONDS));
+  Segment<Object,Object> segment=map.segments[0];
+  Object key=new Object();
+  Object value=new Object();
+  map.put(key,value);
+  ReferenceEntry<Object,Object> entry=map.getEntry(key);
+  assertTrue(map.isLive(entry,ticker.read()));
+  segment.writeQueue.add(entry);
+  assertSame(value,map.get(key));
+  assertSame(entry,segment.writeQueue.peek());
+  assertEquals(1,segment.writeQueue.size());
+  segment.recordRead(entry,ticker.read());
+  segment.expireEntries(ticker.read());
+  assertSame(value,map.get(key));
+  assertSame(entry,segment.writeQueue.peek());
+  assertEquals(1,segment.writeQueue.size());
+  ticker.advance(1);
+  segment.recordRead(entry,ticker.read());
+  segment.expireEntries(ticker.read());
+  assertSame(value,map.get(key));
+  assertSame(entry,segment.writeQueue.peek());
+  assertEquals(1,segment.writeQueue.size());
+  ticker.advance(1);
+  assertNull(map.get(key));
+  segment.expireEntries(ticker.read());
+  assertNull(map.get(key));
+  assertTrue(segment.writeQueue.isEmpty());
+}
