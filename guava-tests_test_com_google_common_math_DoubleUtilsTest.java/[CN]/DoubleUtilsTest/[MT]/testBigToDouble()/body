@@ -1,0 +1,5 @@
+{
+  for (  BigInteger b : ALL_BIGINTEGER_CANDIDATES) {
+    assertEquals(b.doubleValue(),DoubleUtils.bigToDouble(b));
+  }
+}
