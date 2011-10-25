@@ -13,7 +13,7 @@
   ticker=builder.getTicker(recordsTime());
   removalListener=builder.getRemovalListener();
   removalNotificationQueue=(removalListener == NullListener.INSTANCE) ? LocalCache.<RemovalNotification<K,V>>discardingQueue() : new ConcurrentLinkedQueue<RemovalNotification<K,V>>();
-  globalStatsCounter=statsCounterSupplier.get();
+  globalStatsCounter=builder.getStatsCounterSupplier().get();
   int initialCapacity=Math.min(builder.getInitialCapacity(),MAXIMUM_CAPACITY);
   if (evictsBySize() && !customWeigher()) {
     initialCapacity=Math.min(initialCapacity,(int)maxWeight);
@@ -42,12 +42,12 @@
       if (i == remainder) {
         maxSegmentWeight--;
       }
-      this.segments[i]=createSegment(segmentSize,maxSegmentWeight,statsCounterSupplier.get());
+      this.segments[i]=createSegment(segmentSize,maxSegmentWeight,builder.getStatsCounterSupplier().get());
     }
   }
  else {
     for (int i=0; i < this.segments.length; ++i) {
-      this.segments[i]=createSegment(segmentSize,UNSET_INT,statsCounterSupplier.get());
+      this.segments[i]=createSegment(segmentSize,UNSET_INT,builder.getStatsCounterSupplier().get());
     }
   }
 }
