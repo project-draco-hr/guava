@@ -5,6 +5,6 @@
     }
   }
 ;
-  LocalCache<Object,Object> map=makeMap(createCacheBuilder().ticker(testTicker));
+  LocalCache<Object,Object> map=makeLocalCache(createCacheBuilder().ticker(testTicker));
   assertSame(testTicker,map.ticker);
 }

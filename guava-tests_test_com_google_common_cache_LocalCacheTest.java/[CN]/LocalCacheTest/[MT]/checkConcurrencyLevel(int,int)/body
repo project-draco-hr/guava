@@ -1,4 +1,4 @@
 {
-  LocalCache<Object,Object> map=makeMap(createCacheBuilder().concurrencyLevel(concurrencyLevel));
+  LocalCache<Object,Object> map=makeLocalCache(createCacheBuilder().concurrencyLevel(concurrencyLevel));
   assertEquals(segmentCount,map.segments.length);
 }

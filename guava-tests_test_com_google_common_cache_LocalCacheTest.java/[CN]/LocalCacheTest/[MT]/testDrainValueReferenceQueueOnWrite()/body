@@ -1,6 +1,6 @@
 {
   for (  CacheBuilder<Object,Object> builder : allKeyValueStrengthMakers()) {
-    LocalCache<Object,Object> map=makeMap(builder.concurrencyLevel(1));
+    LocalCache<Object,Object> map=makeLocalCache(builder.concurrencyLevel(1));
     if (map.usesValueReferences()) {
       Segment<Object,Object> segment=map.segments[0];
       Object keyOne=new Object();

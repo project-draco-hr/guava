@@ -1,9 +1,0 @@
-{
-  checkNotNull(valueLoader);
-  return map.getOrLoad(key,new CacheLoader<Object,V>(){
-    @Override public V load(    Object key) throws Exception {
-      return valueLoader.call();
-    }
-  }
-);
-}

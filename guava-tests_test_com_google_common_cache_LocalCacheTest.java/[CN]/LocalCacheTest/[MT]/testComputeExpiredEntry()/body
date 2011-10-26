@@ -1,12 +1,12 @@
 {
   CacheBuilder<Object,Object> builder=createCacheBuilder().expireAfterWrite(1,TimeUnit.NANOSECONDS);
   CountingLoader loader=new CountingLoader();
-  LocalCache<Object,Object> map=makeComputingMap(builder,loader);
+  LocalCache<Object,Object> map=makeLocalCache(builder);
   assertEquals(0,loader.getCount());
   Object key=new Object();
-  Object one=map.getOrLoad(key);
+  Object one=map.get(key,loader);
   assertEquals(1,loader.getCount());
-  Object two=map.getOrLoad(key);
+  Object two=map.get(key,loader);
   assertNotSame(one,two);
   assertEquals(2,loader.getCount());
 }

@@ -1,6 +1,6 @@
 {
   QueuingRemovalListener<Object,Object> listener=queuingRemovalListener();
-  LocalCache<Object,Object> map=makeMap(createCacheBuilder().concurrencyLevel(1).softValues().removalListener(listener));
+  LocalCache<Object,Object> map=makeLocalCache(createCacheBuilder().concurrencyLevel(1).softValues().removalListener(listener));
   Segment<Object,Object> segment=map.segments[0];
   assertTrue(listener.isEmpty());
   Object one=new Object();

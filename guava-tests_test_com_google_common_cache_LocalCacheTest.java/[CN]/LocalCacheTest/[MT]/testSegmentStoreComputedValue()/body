@@ -1,6 +1,6 @@
 {
   QueuingRemovalListener<Object,Object> listener=queuingRemovalListener();
-  LocalCache<Object,Object> map=makeMap(createCacheBuilder().concurrencyLevel(1).removalListener(listener));
+  LocalCache<Object,Object> map=makeLocalCache(createCacheBuilder().concurrencyLevel(1).removalListener(listener));
   Segment<Object,Object> segment=map.segments[0];
   Object key=new Object();
   int hash=map.hash(key);

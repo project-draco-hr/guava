@@ -1,6 +1,6 @@
 {
   for (  CacheBuilder<Object,Object> builder : allEvictingMakers()) {
-    LocalCache<Object,Object> map=makeMap(builder.concurrencyLevel(1));
+    LocalCache<Object,Object> map=makeLocalCache(builder.concurrencyLevel(1));
     Segment<Object,Object> segment=map.segments[0];
     List<ReferenceEntry<Object,Object>> writeOrder=Lists.newLinkedList();
     for (int i=0; i < DRAIN_THRESHOLD * 2; i++) {

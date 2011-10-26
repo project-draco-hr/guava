@@ -1,5 +1,5 @@
 {
-  LocalCache<Object,Object> map=makeMap(createCacheBuilder());
+  LocalCache<Object,Object> map=makeLocalCache(createCacheBuilder());
   assertSame(Strength.STRONG,map.keyStrength);
   assertSame(Strength.STRONG,map.valueStrength);
   assertSame(map.keyStrength.defaultEquivalence(),map.keyEquivalence);

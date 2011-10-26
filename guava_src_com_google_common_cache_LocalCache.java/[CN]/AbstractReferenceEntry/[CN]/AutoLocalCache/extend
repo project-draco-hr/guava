@@ -1,1 +1,1 @@
-AbstractCache<K,V>
+ManualLocalCache<K,V>

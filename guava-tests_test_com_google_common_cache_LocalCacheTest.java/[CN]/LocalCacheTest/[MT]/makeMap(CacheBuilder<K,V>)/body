@@ -1,3 +1,0 @@
-{
-  return new LocalCache<K,V>(builder,CacheLoader.from(Suppliers.<V>ofInstance(null)));
-}

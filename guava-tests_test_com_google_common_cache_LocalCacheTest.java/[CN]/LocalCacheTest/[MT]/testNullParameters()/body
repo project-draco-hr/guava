@@ -1,6 +1,6 @@
 {
   NullPointerTester tester=new NullPointerTester();
-  tester.testAllPublicInstanceMethods(makeMap(createCacheBuilder()));
+  tester.testAllPublicInstanceMethods(makeLocalCache(createCacheBuilder()));
   CacheLoader<Object,Object> loader=identityLoader();
-  tester.testAllPublicInstanceMethods(makeComputingMap(createCacheBuilder(),loader));
+  tester.testAllPublicInstanceMethods(makeLocalCache(createCacheBuilder()));
 }

@@ -23,5 +23,10 @@
   if (ticker != null) {
     builder.ticker(ticker);
   }
-  this.delegate=builder.build(loader);
+  if (loader == null) {
+    this.delegate=builder.build();
+  }
+ else {
+    this.delegate=builder.build(loader);
+  }
 }

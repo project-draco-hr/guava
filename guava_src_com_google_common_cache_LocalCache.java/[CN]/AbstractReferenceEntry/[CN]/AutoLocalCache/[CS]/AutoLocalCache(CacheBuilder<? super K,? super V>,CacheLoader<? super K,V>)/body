@@ -1,3 +1,4 @@
 {
-  this.map=new LocalCache<K,V>(builder,loader);
+  super(builder);
+  this.loader=checkNotNull(loader);
 }

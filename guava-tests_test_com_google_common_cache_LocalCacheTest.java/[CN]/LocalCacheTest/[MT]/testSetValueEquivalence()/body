@@ -8,7 +8,7 @@
     }
   }
 ;
-  LocalCache<Object,Object> map=makeMap(createCacheBuilder().valueEquivalence(testEquivalence));
+  LocalCache<Object,Object> map=makeLocalCache(createCacheBuilder().valueEquivalence(testEquivalence));
   assertSame(testEquivalence,map.valueEquivalence);
   assertSame(map.keyStrength.defaultEquivalence(),map.keyEquivalence);
 }

@@ -1,6 +1,6 @@
 {
   for (  CacheBuilder<Object,Object> builder : allEntryTypeMakers()) {
-    LocalCache<Object,Object> map=makeMap(builder);
+    LocalCache<Object,Object> map=makeLocalCache(builder);
     Object keyOne=new Object();
     Object valueOne=new Object();
     int hashOne=map.hash(keyOne);

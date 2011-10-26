@@ -3,7 +3,7 @@
   final CountDownLatch computingSignal=new CountDownLatch(1);
   final CountDownLatch doneSignal=new CountDownLatch(1);
   final Object computedObject=new Object();
-  CacheLoader<Object,Object> loader=new CacheLoader<Object,Object>(){
+  final CacheLoader<Object,Object> loader=new CacheLoader<Object,Object>(){
     @Override public Object load(    Object key) throws Exception {
       computingSignal.countDown();
       startSignal.await();
@@ -13,14 +13,14 @@
 ;
   QueuingRemovalListener<Object,Object> listener=queuingRemovalListener();
   CacheBuilder<Object,Object> builder=createCacheBuilder().removalListener(listener);
-  final LocalCache<Object,Object> map=makeComputingMap(builder,loader);
+  final LocalCache<Object,Object> map=makeLocalCache(builder);
   assertTrue(listener.isEmpty());
   final Object one=new Object();
   final Object two=new Object();
   new Thread(){
     @Override public void run(){
       try {
-        map.getOrLoad(one);
+        map.get(one,loader);
       }
  catch (      ExecutionException e) {
         throw new RuntimeException(e);

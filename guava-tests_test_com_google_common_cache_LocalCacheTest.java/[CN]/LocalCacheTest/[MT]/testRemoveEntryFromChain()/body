@@ -1,5 +1,5 @@
 {
-  LocalCache<Object,Object> map=makeMap(createCacheBuilder().concurrencyLevel(1));
+  LocalCache<Object,Object> map=makeLocalCache(createCacheBuilder().concurrencyLevel(1));
   Segment<Object,Object> segment=map.segments[0];
   Object keyOne=new Object();
   Object valueOne=new Object();

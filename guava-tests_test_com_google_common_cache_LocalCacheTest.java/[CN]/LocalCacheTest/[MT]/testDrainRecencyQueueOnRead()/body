@@ -1,6 +1,6 @@
 {
   for (  CacheBuilder<Object,Object> builder : allEvictingMakers()) {
-    LocalCache<Object,Object> map=makeMap(builder.concurrencyLevel(1));
+    LocalCache<Object,Object> map=makeLocalCache(builder.concurrencyLevel(1));
     Segment<Object,Object> segment=map.segments[0];
     if (segment.recencyQueue != DISCARDING_QUEUE) {
       Object keyOne=new Object();

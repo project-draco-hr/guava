@@ -1,0 +1,18 @@
+{
+  int hits=0;
+  int misses=0;
+  Map<K,V> result=Maps.newLinkedHashMap();
+  for (  K key : keys) {
+    V value=get(key);
+    if (value == null) {
+      misses++;
+    }
+ else {
+      result.put(key,value);
+      hits++;
+    }
+  }
+  globalStatsCounter.recordHits(hits);
+  globalStatsCounter.recordMisses(misses);
+  return ImmutableMap.copyOf(result);
+}

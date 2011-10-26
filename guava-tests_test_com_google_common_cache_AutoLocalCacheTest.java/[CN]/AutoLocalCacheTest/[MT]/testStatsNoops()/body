@@ -1,7 +1,7 @@
 {
   CacheBuilder<Object,Object> builder=createCacheBuilder().concurrencyLevel(1);
   AutoLocalCache<Object,Object> cache=makeCache(builder,identityLoader());
-  ConcurrentMap<Object,Object> map=cache.map;
+  ConcurrentMap<Object,Object> map=cache.localCache;
   assertEquals(EMPTY_STATS,cache.stats());
   Object one=new Object();
   assertNull(map.put(one,one));

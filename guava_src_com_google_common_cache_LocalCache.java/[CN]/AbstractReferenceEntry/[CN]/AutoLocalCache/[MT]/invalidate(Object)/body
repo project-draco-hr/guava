@@ -1,4 +1,0 @@
-{
-  checkNotNull(key);
-  map.remove(key);
-}

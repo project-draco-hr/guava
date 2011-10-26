@@ -1,5 +1,5 @@
 {
-  LocalCache<Object,Object> map=makeMap(createCacheBuilder().concurrencyLevel(1).initialCapacity(1).maximumSize(SMALL_MAX_SIZE).expireAfterWrite(99999,SECONDS));
+  LocalCache<Object,Object> map=makeLocalCache(createCacheBuilder().concurrencyLevel(1).initialCapacity(1).maximumSize(SMALL_MAX_SIZE).expireAfterWrite(99999,SECONDS));
   Segment<Object,Object> segment=map.segments[0];
   AtomicReferenceArray<ReferenceEntry<Object,Object>> table=segment.table;
   assertEquals(1,table.length());

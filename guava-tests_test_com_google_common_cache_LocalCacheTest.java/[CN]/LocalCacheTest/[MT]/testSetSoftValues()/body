@@ -1,5 +1,5 @@
 {
-  LocalCache<Object,Object> map=makeMap(createCacheBuilder().softValues());
+  LocalCache<Object,Object> map=makeLocalCache(createCacheBuilder().softValues());
   checkStrength(map,Strength.STRONG,Strength.SOFT);
   assertSame(EntryFactory.STRONG,map.entryFactory);
 }

@@ -1,6 +1,6 @@
 {
   int maxSize=10;
-  LocalCache<Object,Object> map=makeMap(createCacheBuilder().concurrencyLevel(1).maximumSize(maxSize));
+  LocalCache<Object,Object> map=makeLocalCache(createCacheBuilder().concurrencyLevel(1).maximumSize(maxSize));
   Segment<Object,Object> segment=map.segments[0];
   int originalCount=1024;
   ReferenceEntry<Object,Object> entry=null;

@@ -1,6 +1,6 @@
 {
   QueuingRemovalListener<Object,Object> listener=queuingRemovalListener();
-  LocalCache<Object,Object> map=makeMap(createCacheBuilder().concurrencyLevel(1).maximumSize(2).removalListener(listener));
+  LocalCache<Object,Object> map=makeLocalCache(createCacheBuilder().concurrencyLevel(1).maximumSize(2).removalListener(listener));
   assertTrue(listener.isEmpty());
   Object one=new Object();
   Object two=new Object();

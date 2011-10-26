@@ -1,5 +1,5 @@
 {
-  LocalCache<Object,Object> map=makeMap(createCacheBuilder().concurrencyLevel(1).initialCapacity(1));
+  LocalCache<Object,Object> map=makeLocalCache(createCacheBuilder().concurrencyLevel(1).initialCapacity(1));
   Segment<Object,Object> segment=map.segments[0];
   assertEquals(1,segment.table.length());
   int originalCount=1024;
