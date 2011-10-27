@@ -1,6 +1,6 @@
 {
   try {
-    Thread.sleep(SMALL_DELAY_MS);
+    delay(SMALL_DELAY_MS);
   }
  catch (  InterruptedException ok) {
   }

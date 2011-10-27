@@ -6,7 +6,7 @@
     threadUnexpectedException(ie);
   }
  finally {
-    if (t.isAlive()) {
+    if (t.getState() != Thread.State.TERMINATED) {
       t.interrupt();
       fail("Test timed out");
     }

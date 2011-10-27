@@ -1,0 +1,4 @@
+{
+  AtomicDouble a=new AtomicDouble();
+  assertBitEquals(0.0,a.get());
+}

@@ -1,6 +1,6 @@
 {
   return new CheckedCallable<String>(){
-    @Override protected String realCall(){
+    protected String realCall(){
       try {
         latch.await();
       }

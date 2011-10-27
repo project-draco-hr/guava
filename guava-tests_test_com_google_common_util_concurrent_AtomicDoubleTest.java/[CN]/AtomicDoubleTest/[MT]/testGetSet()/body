@@ -1,0 +1,8 @@
+{
+  AtomicDouble at=new AtomicDouble(1.0);
+  assertBitEquals(1.0,at.get());
+  for (  double x : VALUES) {
+    at.set(x);
+    assertBitEquals(x,at.get());
+  }
+}

@@ -1,0 +1,10 @@
+{
+  for (  double x : VALUES) {
+    for (    double y : VALUES) {
+      AtomicDouble a=new AtomicDouble(x);
+      double z=a.getAndAdd(y);
+      assertBitEquals(x,z);
+      assertBitEquals(x + y,a.get());
+    }
+  }
+}

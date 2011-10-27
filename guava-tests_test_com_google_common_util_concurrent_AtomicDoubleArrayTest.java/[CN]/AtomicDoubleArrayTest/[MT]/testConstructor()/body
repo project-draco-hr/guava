@@ -1,0 +1,6 @@
+{
+  AtomicDoubleArray aa=new AtomicDoubleArray(SIZE);
+  for (int i=0; i < SIZE; i++) {
+    assertBitEquals(0.0,aa.get(i));
+  }
+}

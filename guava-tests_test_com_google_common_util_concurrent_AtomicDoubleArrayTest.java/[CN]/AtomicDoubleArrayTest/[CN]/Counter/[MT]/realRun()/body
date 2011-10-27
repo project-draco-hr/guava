@@ -1,0 +1,18 @@
+{
+  for (; ; ) {
+    boolean done=true;
+    for (int i=0; i < aa.length(); i++) {
+      double v=aa.get(i);
+      assertTrue(v >= 0);
+      if (v != 0) {
+        done=false;
+        if (aa.compareAndSet(i,v,v - 1.0)) {
+          ++counts;
+        }
+      }
+    }
+    if (done) {
+      break;
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  AtomicDoubleArray aa=new AtomicDoubleArray(SIZE);
+  for (  int i : new int[]{0,SIZE - 1}) {
+    for (    double x : VALUES) {
+      for (      double y : VALUES) {
+        aa.set(i,x);
+        double z=aa.getAndAdd(i,y);
+        assertBitEquals(x,z);
+        assertBitEquals(x + y,aa.get(i));
+      }
+    }
+  }
+}

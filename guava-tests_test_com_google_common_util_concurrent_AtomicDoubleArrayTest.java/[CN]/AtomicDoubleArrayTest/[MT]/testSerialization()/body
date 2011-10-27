@@ -1,0 +1,20 @@
+{
+  AtomicDoubleArray x=new AtomicDoubleArray(SIZE);
+  for (int i=0; i < SIZE; i++) {
+    x.set(i,(double)-i);
+  }
+  AtomicDoubleArray y=serialClone(x);
+  assertTrue(x != y);
+  assertEquals(x.length(),y.length());
+  for (int i=0; i < SIZE; i++) {
+    assertBitEquals(x.get(i),y.get(i));
+  }
+  AtomicDoubleArray a=new AtomicDoubleArray(VALUES);
+  AtomicDoubleArray b=serialClone(a);
+  assertFalse(a.equals(b));
+  assertFalse(b.equals(a));
+  assertEquals(a.length(),b.length());
+  for (int i=0; i < VALUES.length; i++) {
+    assertBitEquals(a.get(i),b.get(i));
+  }
+}

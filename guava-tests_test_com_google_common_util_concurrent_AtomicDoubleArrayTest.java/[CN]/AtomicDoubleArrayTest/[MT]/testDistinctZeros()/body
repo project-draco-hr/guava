@@ -1,0 +1,13 @@
+{
+  AtomicDoubleArray aa=new AtomicDoubleArray(SIZE);
+  for (  int i : new int[]{0,SIZE - 1}) {
+    assertFalse(aa.compareAndSet(i,-0.0,7.0));
+    assertFalse(aa.weakCompareAndSet(i,-0.0,7.0));
+    assertBitEquals(+0.0,aa.get(i));
+    assertTrue(aa.compareAndSet(i,+0.0,-0.0));
+    assertBitEquals(-0.0,aa.get(i));
+    assertFalse(aa.compareAndSet(i,+0.0,7.0));
+    assertFalse(aa.weakCompareAndSet(i,+0.0,7.0));
+    assertBitEquals(-0.0,aa.get(i));
+  }
+}

@@ -1,0 +1,8 @@
+{
+  AtomicDouble at=new AtomicDouble();
+  assertEquals("0.0",at.toString());
+  for (  double x : VALUES) {
+    at.set(x);
+    assertEquals(Double.toString(x),at.toString());
+  }
+}

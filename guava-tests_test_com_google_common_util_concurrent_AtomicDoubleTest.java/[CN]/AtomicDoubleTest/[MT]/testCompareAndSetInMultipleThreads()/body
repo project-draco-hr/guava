@@ -1,0 +1,14 @@
+{
+  final AtomicDouble at=new AtomicDouble(1.0);
+  Thread t=newStartedThread(new CheckedRunnable(){
+    public void realRun(){
+      while (!at.compareAndSet(2.0,3.0)) {
+        Thread.yield();
+      }
+    }
+  }
+);
+  assertTrue(at.compareAndSet(1.0,2.0));
+  awaitTermination(t);
+  assertBitEquals(3.0,at.get());
+}

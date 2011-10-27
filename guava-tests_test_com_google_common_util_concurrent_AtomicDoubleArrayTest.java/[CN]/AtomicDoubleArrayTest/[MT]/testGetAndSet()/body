@@ -1,0 +1,10 @@
+{
+  AtomicDoubleArray aa=new AtomicDoubleArray(SIZE);
+  for (  int i : new int[]{0,SIZE - 1}) {
+    double prev=0.0;
+    for (    double x : VALUES) {
+      assertBitEquals(prev,aa.getAndSet(i,x));
+      prev=x;
+    }
+  }
+}

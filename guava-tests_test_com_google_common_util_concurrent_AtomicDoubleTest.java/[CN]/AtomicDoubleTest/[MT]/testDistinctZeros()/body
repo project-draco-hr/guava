@@ -1,0 +1,11 @@
+{
+  AtomicDouble at=new AtomicDouble(+0.0);
+  assertFalse(at.compareAndSet(-0.0,7.0));
+  assertFalse(at.weakCompareAndSet(-0.0,7.0));
+  assertBitEquals(+0.0,at.get());
+  assertTrue(at.compareAndSet(+0.0,-0.0));
+  assertBitEquals(-0.0,at.get());
+  assertFalse(at.compareAndSet(+0.0,7.0));
+  assertFalse(at.weakCompareAndSet(+0.0,7.0));
+  assertBitEquals(-0.0,at.get());
+}

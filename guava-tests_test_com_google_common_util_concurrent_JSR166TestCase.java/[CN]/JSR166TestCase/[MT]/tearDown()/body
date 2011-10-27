@@ -10,4 +10,5 @@
       throw afe;
     }
   }
+  if (Thread.interrupted())   throw new AssertionFailedError("interrupt status set in main thread");
 }

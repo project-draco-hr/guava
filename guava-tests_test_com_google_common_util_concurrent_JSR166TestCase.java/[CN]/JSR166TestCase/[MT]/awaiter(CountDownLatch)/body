@@ -1,7 +1,7 @@
 {
   return new CheckedRunnable(){
-    @Override public void realRun() throws InterruptedException {
-      latch.await();
+    public void realRun() throws InterruptedException {
+      await(latch);
     }
   }
 ;

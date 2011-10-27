@@ -1,0 +1,10 @@
+{
+  AtomicDoubleArray aa=new AtomicDoubleArray(new double[0]);
+  assertEquals(0,aa.length());
+  try {
+    aa.get(0);
+    shouldThrow();
+  }
+ catch (  IndexOutOfBoundsException success) {
+  }
+}

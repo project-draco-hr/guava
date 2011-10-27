@@ -1,0 +1,13 @@
+{
+  double prev=Math.E;
+  double unused=Math.E + Math.PI;
+  AtomicDouble at=new AtomicDouble(prev);
+  for (  double x : VALUES) {
+    assertBitEquals(prev,at.get());
+    assertFalse(at.compareAndSet(unused,x));
+    assertBitEquals(prev,at.get());
+    assertTrue(at.compareAndSet(prev,x));
+    assertBitEquals(x,at.get());
+    prev=x;
+  }
+}

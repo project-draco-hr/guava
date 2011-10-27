@@ -1,0 +1,8 @@
+{
+  double prev=Math.E;
+  AtomicDouble at=new AtomicDouble(prev);
+  for (  double x : VALUES) {
+    assertBitEquals(prev,at.getAndSet(x));
+    prev=x;
+  }
+}

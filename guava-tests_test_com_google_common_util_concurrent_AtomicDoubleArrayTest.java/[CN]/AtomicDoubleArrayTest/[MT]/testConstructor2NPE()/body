@@ -1,0 +1,9 @@
+{
+  try {
+    double[] a=null;
+    AtomicDoubleArray aa=new AtomicDoubleArray(a);
+    shouldThrow();
+  }
+ catch (  NullPointerException success) {
+  }
+}

@@ -1,0 +1,3 @@
+{
+  assertEquals(Double.doubleToRawLongBits(x),Double.doubleToRawLongBits(y));
+}

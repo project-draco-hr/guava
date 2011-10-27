@@ -1,0 +1,14 @@
+{
+  AtomicDouble a=new AtomicDouble();
+  AtomicDouble b=serialClone(a);
+  assertTrue(a != b);
+  a.set(-22.0);
+  AtomicDouble c=serialClone(a);
+  assertBitEquals(-22.0,a.get());
+  assertBitEquals(0.0,b.get());
+  assertBitEquals(-22.0,c.get());
+  for (  double x : VALUES) {
+    AtomicDouble d=new AtomicDouble(x);
+    assertBitEquals(serialClone(d).get(),d.get());
+  }
+}

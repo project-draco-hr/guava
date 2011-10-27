@@ -1,0 +1,15 @@
+{
+  AtomicDoubleArray aa=new AtomicDoubleArray(SIZE);
+  for (  int i : new int[]{0,SIZE - 1}) {
+    double prev=0.0;
+    double unused=Math.E + Math.PI;
+    for (    double x : VALUES) {
+      assertBitEquals(prev,aa.get(i));
+      assertFalse(aa.compareAndSet(i,unused,x));
+      assertBitEquals(prev,aa.get(i));
+      assertTrue(aa.compareAndSet(i,prev,x));
+      assertBitEquals(x,aa.get(i));
+      prev=x;
+    }
+  }
+}

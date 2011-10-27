@@ -1,6 +1,6 @@
 {
   try {
-    Thread.sleep(millis);
+    delay(millis);
   }
  catch (  InterruptedException ie) {
     AssertionFailedError afe=new AssertionFailedError("Unexpected InterruptedException");

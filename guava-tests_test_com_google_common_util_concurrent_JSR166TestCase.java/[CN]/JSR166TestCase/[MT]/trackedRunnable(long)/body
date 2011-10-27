@@ -6,7 +6,7 @@
     }
     public void run(){
       try {
-        Thread.sleep(timeoutMillis);
+        delay(timeoutMillis);
         done=true;
       }
  catch (      InterruptedException ok) {
