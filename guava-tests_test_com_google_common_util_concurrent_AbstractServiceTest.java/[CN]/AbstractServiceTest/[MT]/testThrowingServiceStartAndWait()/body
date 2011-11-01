@@ -2,6 +2,7 @@
   StartThrowingService service=new StartThrowingService();
   try {
     service.startAndWait();
+    fail();
   }
  catch (  UncheckedExecutionException e) {
     assertEquals(EXCEPTION,e.getCause());

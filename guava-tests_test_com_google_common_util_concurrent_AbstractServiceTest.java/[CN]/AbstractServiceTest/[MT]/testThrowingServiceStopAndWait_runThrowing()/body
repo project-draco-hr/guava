@@ -1,0 +1,11 @@
+{
+  RunThrowingService service=new RunThrowingService();
+  service.startAndWait();
+  try {
+    service.stopAndWait();
+    fail();
+  }
+ catch (  UncheckedExecutionException e) {
+    assertEquals(EXCEPTION,e.getCause().getCause());
+  }
+}
