@@ -3,14 +3,14 @@
   if (n < LongMath.FACTORIALS.length) {
     return BigInteger.valueOf(LongMath.FACTORIALS[n]);
   }
-  double approxSize=n * Math.log(n) / Math.log(2.0) / Long.SIZE;
-  ArrayList<BigInteger> bignums=new ArrayList<BigInteger>((int)Math.ceil(approxSize));
+  int approxSize=IntMath.divide(n * IntMath.log2(n,CEILING),Long.SIZE,CEILING);
+  ArrayList<BigInteger> bignums=new ArrayList<BigInteger>(approxSize);
   int startingNumber=LongMath.FACTORIALS.length;
   long product=LongMath.FACTORIALS[startingNumber - 1];
   int shift=Long.numberOfTrailingZeros(product);
   product>>=shift;
-  int productBits=Long.SIZE - Long.numberOfLeadingZeros(product);
-  int bits=Long.SIZE - Long.numberOfLeadingZeros(startingNumber);
+  int productBits=LongMath.log2(product,FLOOR) + 1;
+  int bits=LongMath.log2(startingNumber,FLOOR) + 1;
   int nextPowerOfTwo=1 << (bits - 1);
   for (long num=startingNumber; num <= n; num++) {
     if ((num & nextPowerOfTwo) != 0) {
@@ -27,7 +27,7 @@
       productBits=0;
     }
     product*=normalizedNum;
-    productBits=Long.SIZE - Long.numberOfLeadingZeros(product);
+    productBits=LongMath.log2(product,FLOOR) + 1;
   }
   if (product > 1) {
     bignums.add(BigInteger.valueOf(product));
