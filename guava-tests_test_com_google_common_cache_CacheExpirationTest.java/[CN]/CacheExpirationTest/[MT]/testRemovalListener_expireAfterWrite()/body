@@ -19,7 +19,7 @@
     }
   }
 ;
-  Cache<Integer,AtomicInteger> cache=CacheBuilder.newBuilder().removalListener(removalListener).expireAfterWrite(10,MILLISECONDS).ticker(ticker).build(loader);
+  LoadingCache<Integer,AtomicInteger> cache=CacheBuilder.newBuilder().removalListener(removalListener).expireAfterWrite(10,MILLISECONDS).ticker(ticker).build(loader);
   for (int i=0; i < 100; ++i) {
     cache.getUnchecked(10).incrementAndGet();
     ticker.advance(1,MILLISECONDS);

@@ -1,0 +1,6 @@
+{
+  expect(mock.size()).andReturn(0L);
+  replay(mock);
+  forward.size();
+  verify(mock);
+}

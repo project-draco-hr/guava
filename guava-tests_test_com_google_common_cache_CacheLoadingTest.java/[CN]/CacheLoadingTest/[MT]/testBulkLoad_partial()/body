@@ -12,7 +12,7 @@
     }
   }
 ;
-  Cache<Object,Object> cache=CacheBuilder.newBuilder().build(loader);
+  LoadingCache<Object,Object> cache=CacheBuilder.newBuilder().build(loader);
   Object[] lookupKeys=new Object[]{new Object(),new Object(),new Object()};
   try {
     cache.getAll(asList(lookupKeys));

@@ -13,7 +13,7 @@
     }
   }
 ;
-  final Cache<String,String> cache=CacheBuilder.newBuilder().build(computeFunction);
+  final LoadingCache<String,String> cache=CacheBuilder.newBuilder().build(computeFunction);
   ConcurrentMap<String,String> map=cache.asMap();
   map.put(refreshKey,refreshKey);
   assertEquals(1,map.size());

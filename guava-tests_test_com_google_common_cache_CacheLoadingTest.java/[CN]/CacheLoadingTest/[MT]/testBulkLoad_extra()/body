@@ -14,7 +14,7 @@
     }
   }
 ;
-  Cache<Object,Object> cache=CacheBuilder.newBuilder().build(loader);
+  LoadingCache<Object,Object> cache=CacheBuilder.newBuilder().build(loader);
   Object[] lookupKeys=new Object[]{new Object(),new Object(),new Object()};
   Map<Object,Object> result=cache.getAll(asList(lookupKeys));
   ASSERT.that(result.keySet()).hasContentsAnyOrder(lookupKeys);

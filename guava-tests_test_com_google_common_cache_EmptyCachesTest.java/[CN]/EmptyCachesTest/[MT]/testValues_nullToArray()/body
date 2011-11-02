@@ -1,5 +1,5 @@
 {
-  for (  Cache<Object,Object> cache : caches()) {
+  for (  LoadingCache<Object,Object> cache : caches()) {
     Collection<Object> values=cache.asMap().values();
     try {
       values.toArray(null);

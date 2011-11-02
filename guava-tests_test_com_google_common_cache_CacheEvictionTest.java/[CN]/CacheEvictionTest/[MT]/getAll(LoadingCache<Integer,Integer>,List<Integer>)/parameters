@@ -1,0 +1,2 @@
+LoadingCache<Integer,Integer> cache
+List<Integer> keys

@@ -1,5 +1,5 @@
 {
-  for (  Cache<Object,Object> cache : caches()) {
+  for (  LoadingCache<Object,Object> cache : caches()) {
     try {
       cache.asMap().keySet().add(1);
       fail();

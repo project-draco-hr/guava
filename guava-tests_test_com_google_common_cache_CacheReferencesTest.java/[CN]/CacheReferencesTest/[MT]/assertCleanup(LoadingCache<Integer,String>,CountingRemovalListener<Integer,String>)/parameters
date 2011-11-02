@@ -1,0 +1,2 @@
+LoadingCache<Integer,String> cache
+CountingRemovalListener<Integer,String> removalListener

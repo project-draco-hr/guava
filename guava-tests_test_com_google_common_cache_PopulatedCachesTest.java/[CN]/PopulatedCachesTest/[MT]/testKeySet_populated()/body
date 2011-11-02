@@ -1,5 +1,5 @@
 {
-  for (  Cache<Object,Object> cache : caches()) {
+  for (  LoadingCache<Object,Object> cache : caches()) {
     Set<Object> keys=cache.asMap().keySet();
     List<Entry<Object,Object>> warmed=warmUp(cache);
     Object[] expectedArray=Maps.newHashMap(cache.asMap()).keySet().toArray(new Object[0]);

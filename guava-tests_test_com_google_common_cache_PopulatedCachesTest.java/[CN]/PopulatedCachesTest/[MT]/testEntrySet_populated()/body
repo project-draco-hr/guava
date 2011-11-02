@@ -1,5 +1,5 @@
 {
-  for (  Cache<Object,Object> cache : caches()) {
+  for (  LoadingCache<Object,Object> cache : caches()) {
     Set<Entry<Object,Object>> entries=cache.asMap().entrySet();
     List<Entry<Object,Object>> warmed=warmUp(cache,WARMUP_MIN,WARMUP_MAX);
     Set<Entry<Object,Object>> entrySet=Maps.newHashMap(cache.asMap()).entrySet();

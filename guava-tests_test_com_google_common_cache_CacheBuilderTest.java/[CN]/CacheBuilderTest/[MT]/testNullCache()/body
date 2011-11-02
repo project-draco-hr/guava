@@ -1,6 +1,6 @@
 {
   CountingRemovalListener<Object,Object> listener=countingRemovalListener();
-  Cache<Object,Object> nullCache=new CacheBuilder<Object,Object>().maximumSize(0).removalListener(listener).build(identityLoader());
+  LoadingCache<Object,Object> nullCache=new CacheBuilder<Object,Object>().maximumSize(0).removalListener(listener).build(identityLoader());
   assertEquals(0,nullCache.size());
   Object key=new Object();
   assertSame(key,nullCache.getUnchecked(key));

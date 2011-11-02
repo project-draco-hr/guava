@@ -1,7 +1,7 @@
 {
   FakeTicker ticker=new FakeTicker();
   IdentityLoader<Integer> loader=identityLoader();
-  Cache<Integer,Integer> cache=CacheBuilder.newBuilder().concurrencyLevel(1).expireAfterWrite(10,MILLISECONDS).ticker(ticker).build(loader);
+  LoadingCache<Integer,Integer> cache=CacheBuilder.newBuilder().concurrencyLevel(1).expireAfterWrite(10,MILLISECONDS).ticker(ticker).build(loader);
   for (int i=0; i < 10; i++) {
     cache.getUnchecked(i);
     ticker.advance(1,MILLISECONDS);

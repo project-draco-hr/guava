@@ -1,6 +1,6 @@
 {
   CountingLoader countingLoader=new CountingLoader();
-  Cache<Object,Object> cache=CacheBuilder.newBuilder().concurrencyLevel(1).weakValues().build(countingLoader);
+  LoadingCache<Object,Object> cache=CacheBuilder.newBuilder().concurrencyLevel(1).weakValues().build(countingLoader);
   Object key=new Object();
   assertNotNull(cache.getUnchecked(key));
   CacheTesting.simulateValueReclamation(cache,key);

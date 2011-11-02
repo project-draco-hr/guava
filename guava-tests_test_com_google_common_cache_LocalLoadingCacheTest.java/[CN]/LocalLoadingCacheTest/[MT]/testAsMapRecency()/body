@@ -1,0 +1,13 @@
+{
+  CacheBuilder<Object,Object> builder=createCacheBuilder().concurrencyLevel(1).maximumSize(SMALL_MAX_SIZE);
+  LocalLoadingCache<Object,Object> cache=makeCache(builder,identityLoader());
+  Segment<Object,Object> segment=cache.localCache.segments[0];
+  ConcurrentMap<Object,Object> map=cache.asMap();
+  Object one=new Object();
+  assertSame(one,cache.getUnchecked(one));
+  assertTrue(segment.recencyQueue.isEmpty());
+  assertSame(one,map.get(one));
+  assertSame(one,segment.recencyQueue.peek().getKey());
+  assertSame(one,cache.getUnchecked(one));
+  assertFalse(segment.recencyQueue.isEmpty());
+}

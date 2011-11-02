@@ -1,7 +1,7 @@
 {
   CountingRemovalListener<Integer,Integer> removalListener=countingRemovalListener();
   IdentityLoader<Integer> loader=identityLoader();
-  Cache<Integer,Integer> cache=CacheBuilder.newBuilder().maximumSize(MAX_SIZE).removalListener(removalListener).build(loader);
+  LoadingCache<Integer,Integer> cache=CacheBuilder.newBuilder().maximumSize(MAX_SIZE).removalListener(removalListener).build(loader);
   for (int i=0; i < 2 * MAX_SIZE; i++) {
     cache.getUnchecked(i);
     assertTrue(cache.size() <= MAX_SIZE);

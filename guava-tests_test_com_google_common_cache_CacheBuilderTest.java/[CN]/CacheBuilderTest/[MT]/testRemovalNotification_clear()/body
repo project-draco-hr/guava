@@ -11,7 +11,7 @@
   }
 ;
   QueuingRemovalListener<String,String> listener=queuingRemovalListener();
-  final Cache<String,String> cache=CacheBuilder.newBuilder().concurrencyLevel(1).removalListener(listener).build(computingFunction);
+  final LoadingCache<String,String> cache=CacheBuilder.newBuilder().concurrencyLevel(1).removalListener(listener).build(computingFunction);
   cache.getUnchecked("a");
   shouldWait.set(true);
   final CountDownLatch computationStarted=new CountDownLatch(1);

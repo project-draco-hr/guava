@@ -1,5 +1,5 @@
 {
-  for (  Cache<Object,Object> cache : caches()) {
+  for (  LoadingCache<Object,Object> cache : caches()) {
     warmUp(cache,0,100);
     Set<Entry<Object,Object>> entrySet=cache.asMap().entrySet();
     entrySet.clear();

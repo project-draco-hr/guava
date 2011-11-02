@@ -1,0 +1,5 @@
+{
+  in.defaultReadObject();
+  CacheBuilder<Object,Object> builder=recreateCacheBuilder();
+  this.autoDelegate=builder.build(loader);
+}

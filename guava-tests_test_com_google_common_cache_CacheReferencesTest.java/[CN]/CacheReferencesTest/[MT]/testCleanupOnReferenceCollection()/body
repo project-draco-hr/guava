@@ -10,7 +10,7 @@
       }
     }
 ;
-    Cache<Integer,String> cache=builder.removalListener(removalListener).build(toStringLoader);
+    LoadingCache<Integer,String> cache=builder.removalListener(removalListener).build(toStringLoader);
     Integer key1=1001;
     Integer key2=1002;
     String value1=cache.getUnchecked(key1);

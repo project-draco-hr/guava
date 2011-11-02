@@ -1,5 +1,5 @@
 {
-  Cache<?,?> cache=CacheBuilder.newBuilder().initialCapacity(5).build(identityLoader());
+  LoadingCache<?,?> cache=CacheBuilder.newBuilder().initialCapacity(5).build(identityLoader());
   LocalCache<?,?> map=CacheTesting.toLocalCache(cache);
   assertEquals(4,map.segments.length);
   assertEquals(2,map.segments[0].table.length());

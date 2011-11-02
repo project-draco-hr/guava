@@ -1,5 +1,5 @@
 {
-  for (  Cache<Object,Object> cache : caches()) {
+  for (  LoadingCache<Object,Object> cache : caches()) {
     Set<Object> keys=cache.asMap().keySet();
     assertFalse(keys.remove(null));
     assertFalse(keys.remove(6));

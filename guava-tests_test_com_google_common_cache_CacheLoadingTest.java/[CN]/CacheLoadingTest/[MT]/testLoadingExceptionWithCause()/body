@@ -2,8 +2,8 @@
   final Exception cause=new Exception();
   final UncheckedExecutionException uee=new UncheckedExecutionException(cause);
   final ExecutionException ee=new ExecutionException(cause);
-  Cache<Object,Object> cacheUnchecked=CacheBuilder.newBuilder().build(exceptionLoader(uee));
-  Cache<Object,Object> cacheChecked=CacheBuilder.newBuilder().build(exceptionLoader(ee));
+  LoadingCache<Object,Object> cacheUnchecked=CacheBuilder.newBuilder().build(exceptionLoader(uee));
+  LoadingCache<Object,Object> cacheChecked=CacheBuilder.newBuilder().build(exceptionLoader(ee));
   try {
     cacheUnchecked.get(new Object());
     fail();

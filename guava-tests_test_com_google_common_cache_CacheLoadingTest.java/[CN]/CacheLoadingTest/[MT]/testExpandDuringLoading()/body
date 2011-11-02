@@ -15,7 +15,7 @@
     }
   }
 ;
-  final Cache<String,String> cache=CacheBuilder.newBuilder().weakKeys().build(computeFunction);
+  final LoadingCache<String,String> cache=CacheBuilder.newBuilder().weakKeys().build(computeFunction);
   final AtomicReferenceArray<String> result=new AtomicReferenceArray<String>(count);
   final String key="bar";
   new Thread(){

@@ -1,0 +1,3 @@
+LoadingCache<Integer,Integer> cache
+int maxSize
+Receiver<ReferenceEntry<Integer,Integer>> operation

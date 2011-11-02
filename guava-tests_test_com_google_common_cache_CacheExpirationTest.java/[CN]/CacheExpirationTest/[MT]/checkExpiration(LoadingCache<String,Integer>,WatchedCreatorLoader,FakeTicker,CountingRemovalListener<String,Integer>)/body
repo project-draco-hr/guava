@@ -1,0 +1,15 @@
+{
+  for (int i=0; i < 10; i++) {
+    assertEquals(Integer.valueOf(VALUE_PREFIX + i),cache.getUnchecked(KEY_PREFIX + i));
+  }
+  for (int i=0; i < 10; i++) {
+    loader.reset();
+    assertEquals(Integer.valueOf(VALUE_PREFIX + i),cache.getUnchecked(KEY_PREFIX + i));
+    assertFalse("Creator should not have been called @#" + i,loader.wasCalled());
+  }
+  CacheTesting.expireEntries((LoadingCache<?,?>)cache,EXPIRING_TIME,ticker);
+  assertEquals("Map must be empty by now",0,cache.size());
+  assertEquals("Eviction notifications must be received",10,removalListener.getCount());
+  CacheTesting.expireEntries((LoadingCache<?,?>)cache,EXPIRING_TIME,ticker);
+  assertEquals("Eviction notifications must be received",10,removalListener.getCount());
+}

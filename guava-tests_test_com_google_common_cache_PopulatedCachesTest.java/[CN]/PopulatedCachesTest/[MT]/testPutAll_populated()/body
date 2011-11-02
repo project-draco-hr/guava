@@ -1,5 +1,5 @@
 {
-  for (  Cache<Object,Object> cache : caches()) {
+  for (  LoadingCache<Object,Object> cache : caches()) {
     List<Entry<Object,Object>> warmed=warmUp(cache);
     Object newKey=new Object();
     Object newValue=new Object();

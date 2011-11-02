@@ -1,0 +1,6 @@
+{
+  mock.cleanUp();
+  replay(mock);
+  forward.cleanUp();
+  verify(mock);
+}

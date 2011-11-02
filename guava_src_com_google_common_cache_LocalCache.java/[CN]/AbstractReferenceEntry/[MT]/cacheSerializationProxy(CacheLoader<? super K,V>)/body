@@ -1,3 +1,0 @@
-{
-  return new SerializationProxy<K,V>(loader,keyStrength,valueStrength,keyEquivalence,valueEquivalence,expireAfterWriteNanos,expireAfterAccessNanos,maxWeight,weigher,concurrencyLevel,removalListener,ticker);
-}

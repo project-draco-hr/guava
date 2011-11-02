@@ -1,5 +1,5 @@
 {
-  for (  Cache<Key,String> cache : caches()) {
+  for (  LoadingCache<Key,String> cache : caches()) {
     Key key1=new Key(1);
     String value1=key1.toString();
     Key key2=new Key(2);

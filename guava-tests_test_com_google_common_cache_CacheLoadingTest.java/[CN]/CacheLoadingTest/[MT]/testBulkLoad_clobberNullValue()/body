@@ -17,7 +17,7 @@
     }
   }
 ;
-  Cache<Object,Object> cache=CacheBuilder.newBuilder().build(loader);
+  LoadingCache<Object,Object> cache=CacheBuilder.newBuilder().build(loader);
   cache.asMap().put(extraKey,extraKey);
   assertSame(extraKey,cache.asMap().get(extraKey));
   Object[] lookupKeys=new Object[]{new Object(),new Object(),new Object()};

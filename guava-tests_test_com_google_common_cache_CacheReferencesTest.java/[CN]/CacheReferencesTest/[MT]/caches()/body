@@ -1,7 +1,7 @@
 {
   CacheBuilderFactory factory=factoryWithAllKeyStrengths();
-  return Iterables.transform(factory.buildAllPermutations(),new Function<CacheBuilder<Object,Object>,Cache<Key,String>>(){
-    @Override public Cache<Key,String> apply(    CacheBuilder<Object,Object> builder){
+  return Iterables.transform(factory.buildAllPermutations(),new Function<CacheBuilder<Object,Object>,LoadingCache<Key,String>>(){
+    @Override public LoadingCache<Key,String> apply(    CacheBuilder<Object,Object> builder){
       return builder.build(KEY_TO_STRING_LOADER);
     }
   }

@@ -1,6 +1,6 @@
 {
   CountingLoader countingLoader=new CountingLoader();
-  Cache<Object,Object> cache=CacheBuilder.newBuilder().weakValues().build(countingLoader);
+  LoadingCache<Object,Object> cache=CacheBuilder.newBuilder().weakValues().build(countingLoader);
   ConcurrentMap<Object,Object> map=cache.asMap();
   int iterations=10;
   WeakReference<Object> ref=new WeakReference<Object>(null);

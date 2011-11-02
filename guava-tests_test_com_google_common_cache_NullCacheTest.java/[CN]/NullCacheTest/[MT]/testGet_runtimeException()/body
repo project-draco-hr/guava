@@ -1,6 +1,6 @@
 {
   final RuntimeException e=new RuntimeException();
-  Cache<Object,Object> map=CacheBuilder.newBuilder().maximumSize(0).removalListener(listener).build(exceptionLoader(e));
+  LoadingCache<Object,Object> map=CacheBuilder.newBuilder().maximumSize(0).removalListener(listener).build(exceptionLoader(e));
   try {
     map.getUnchecked(new Object());
     fail();

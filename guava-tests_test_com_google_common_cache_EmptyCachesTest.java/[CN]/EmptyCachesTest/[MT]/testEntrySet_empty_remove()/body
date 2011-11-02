@@ -1,5 +1,5 @@
 {
-  for (  Cache<Object,Object> cache : caches()) {
+  for (  LoadingCache<Object,Object> cache : caches()) {
     Set<Entry<Object,Object>> entrySet=cache.asMap().entrySet();
     assertFalse(entrySet.remove(null));
     assertFalse(entrySet.remove(entryOf(6,6)));

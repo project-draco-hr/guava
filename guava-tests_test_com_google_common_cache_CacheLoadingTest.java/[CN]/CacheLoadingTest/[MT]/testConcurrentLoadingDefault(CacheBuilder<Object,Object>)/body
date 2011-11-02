@@ -3,7 +3,7 @@
   final AtomicInteger callCount=new AtomicInteger();
   final CountDownLatch startSignal=new CountDownLatch(count + 1);
   final Object result=new Object();
-  Cache<String,Object> cache=builder.build(new CacheLoader<String,Object>(){
+  LoadingCache<String,Object> cache=builder.build(new CacheLoader<String,Object>(){
     @Override public Object load(    String key) throws InterruptedException {
       callCount.incrementAndGet();
       startSignal.await();

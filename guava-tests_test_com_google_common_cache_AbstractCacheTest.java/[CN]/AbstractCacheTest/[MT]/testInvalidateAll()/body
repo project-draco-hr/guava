@@ -1,0 +1,15 @@
+{
+  final List<Object> invalidated=Lists.newArrayList();
+  Cache<Integer,Integer> cache=new AbstractCache<Integer,Integer>(){
+    @Override public Integer getIfPresent(    Integer key){
+      throw new UnsupportedOperationException();
+    }
+    @Override public void invalidate(    Object key){
+      invalidated.add(key);
+    }
+  }
+;
+  List<Integer> toInvalidate=ImmutableList.of(1,2,3,4);
+  cache.invalidateAll(toInvalidate);
+  assertEquals(toInvalidate,invalidated);
+}

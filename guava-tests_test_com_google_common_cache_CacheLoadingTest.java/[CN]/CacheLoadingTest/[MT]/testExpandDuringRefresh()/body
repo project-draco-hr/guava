@@ -16,7 +16,7 @@
   }
 ;
   final AtomicReferenceArray<String> result=new AtomicReferenceArray<String>(2);
-  final Cache<String,String> cache=CacheBuilder.newBuilder().build(computeFunction);
+  final LoadingCache<String,String> cache=CacheBuilder.newBuilder().build(computeFunction);
   final String key="bar";
   cache.asMap().put(key,key);
   new Thread(){

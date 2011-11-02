@@ -1,0 +1,13 @@
+{
+  final AtomicReference<Object> valueRef=new AtomicReference<Object>();
+  Cache<Object,Object> cache=new AbstractCache<Object,Object>(){
+    @Override public Object getIfPresent(    Object key){
+      return valueRef.get();
+    }
+  }
+;
+  assertNull(cache.getIfPresent(new Object()));
+  Object newValue=new Object();
+  valueRef.set(newValue);
+  assertSame(newValue,cache.getIfPresent(new Object()));
+}

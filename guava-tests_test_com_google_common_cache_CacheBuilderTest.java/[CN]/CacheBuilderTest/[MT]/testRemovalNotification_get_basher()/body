@@ -31,7 +31,7 @@
     }
   }
 ;
-  final Cache<String,String> cache=CacheBuilder.newBuilder().concurrencyLevel(2).expireAfterWrite(100,TimeUnit.MILLISECONDS).removalListener(removalListener).maximumSize(5000).build(countingIdentityLoader);
+  final LoadingCache<String,String> cache=CacheBuilder.newBuilder().concurrencyLevel(2).expireAfterWrite(100,TimeUnit.MILLISECONDS).removalListener(removalListener).maximumSize(5000).build(countingIdentityLoader);
   ExecutorService threadPool=Executors.newFixedThreadPool(nThreads);
   for (int i=0; i < nTasks; i++) {
     threadPool.submit(new Runnable(){

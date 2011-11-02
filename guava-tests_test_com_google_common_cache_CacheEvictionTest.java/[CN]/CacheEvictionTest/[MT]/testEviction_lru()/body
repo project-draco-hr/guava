@@ -1,6 +1,6 @@
 {
   IdentityLoader<Integer> loader=identityLoader();
-  Cache<Integer,Integer> cache=CacheBuilder.newBuilder().concurrencyLevel(1).maximumSize(10).build(loader);
+  LoadingCache<Integer,Integer> cache=CacheBuilder.newBuilder().concurrencyLevel(1).maximumSize(10).build(loader);
   CacheTesting.warmUp(cache,0,10);
   Set<Integer> keySet=cache.asMap().keySet();
   ASSERT.that(keySet).hasContentsAnyOrder(0,1,2,3,4,5,6,7,8,9);
