@@ -10,10 +10,17 @@
       return;
     }
     System.gc();
-    if (latch.await(1L,SECONDS)) {
-      return;
+    try {
+      if (latch.await(1L,SECONDS)) {
+        return;
+      }
+    }
+ catch (    InterruptedException ie) {
+      RuntimeException ae=new RuntimeException("Unexpected interrupt while waiting for latch");
+      ae.initCause(ie);
+      throw ae;
     }
   }
  while (System.nanoTime() - deadline < 0);
-  throw new TimeoutException(String.format("CountDownLatch failed to count down within timeout of %d seconds",timeoutSeconds));
+  throw new RuntimeException(String.format("Latch failed to count down within %d second timeout",timeoutSeconds));
 }

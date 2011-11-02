@@ -20,9 +20,14 @@
 catch (    ExecutionException ok) {
       return;
     }
+catch (    InterruptedException ie) {
+      RuntimeException ae=new RuntimeException("Unexpected interrupt while waiting for future");
+      ae.initCause(ie);
+      throw ae;
+    }
 catch (    TimeoutException tryHarder) {
     }
   }
  while (System.nanoTime() - deadline < 0);
-  throw new TimeoutException(String.format("Future not done within timeout of %d seconds",timeoutSeconds));
+  throw new RuntimeException(String.format("Future not done within %d second timeout",timeoutSeconds));
 }

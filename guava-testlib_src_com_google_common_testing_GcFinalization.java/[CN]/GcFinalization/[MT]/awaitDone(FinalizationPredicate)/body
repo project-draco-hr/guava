@@ -17,5 +17,5 @@
     }
   }
  while (System.nanoTime() - deadline < 0);
-  throw new TimeoutException(String.format("Predicate did not become true within timeout of %d seconds",timeoutSeconds));
+  throw new RuntimeException(String.format("Predicate did not become true within %d second timeout",timeoutSeconds));
 }
