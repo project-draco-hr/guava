@@ -1,3 +1,0 @@
-{
-  return Objects.toStringHelper(this).add("expireAfterAccessMillis",expireAfterAccessMillis).add("expireAfterWriteMillis",expireAfterWriteMillis).toString();
-}

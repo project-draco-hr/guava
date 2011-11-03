@@ -21,16 +21,8 @@ catch (  UncheckedExecutionException caughtEe) {
  catch (  UncheckedExecutionException caughtUee) {
     assertSame(uee,caughtUee.getCause());
   }
-  try {
-    cacheUnchecked.refresh(new Object());
-    fail();
-  }
- catch (  ExecutionException e) {
-    fail();
-  }
-catch (  UncheckedExecutionException caughtEe) {
-    assertSame(uee,caughtEe.getCause());
-  }
+  cacheUnchecked.refresh(new Object());
+  checkLoggedCause(uee);
   try {
     cacheUnchecked.getAll(asList(new Object()));
     fail();
@@ -55,13 +47,8 @@ catch (  UncheckedExecutionException caughtEe) {
  catch (  UncheckedExecutionException caughtUee) {
     assertSame(ee,caughtUee.getCause());
   }
-  try {
-    cacheChecked.refresh(new Object());
-    fail();
-  }
- catch (  ExecutionException caughtEe) {
-    assertSame(ee,caughtEe.getCause());
-  }
+  cacheChecked.refresh(new Object());
+  checkLoggedCause(ee);
   try {
     cacheChecked.getAll(asList(new Object()));
     fail();

@@ -22,6 +22,7 @@
       expectedComputations++;
     }
     cache.refresh(1);
+    checkNothingLogged();
     ref=new WeakReference<Object>(map.get(1));
     oldValue=null;
     Thread.sleep(i);

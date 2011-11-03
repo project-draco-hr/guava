@@ -1,0 +1,4 @@
+{
+  countReload.incrementAndGet();
+  return oldValue + 1;
+}

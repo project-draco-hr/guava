@@ -1,0 +1,3 @@
+{
+  assertSame(t,popLoggedThrowable().getCause());
+}

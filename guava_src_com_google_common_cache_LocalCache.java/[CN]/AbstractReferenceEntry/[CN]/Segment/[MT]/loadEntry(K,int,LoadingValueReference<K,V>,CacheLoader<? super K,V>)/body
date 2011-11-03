@@ -1,0 +1,19 @@
+{
+  V value=null;
+  Stopwatch stopwatch=new Stopwatch().start();
+  try {
+    value=loadingValueReference.load(key,hash,loader);
+    if (value == null) {
+      throw new AssertionError();
+    }
+    statsCounter.recordLoadSuccess(stopwatch.elapsedTime(NANOSECONDS));
+    storeLoadedValue(key,hash,loadingValueReference,value);
+    return value;
+  }
+  finally {
+    if (value == null) {
+      statsCounter.recordLoadException(stopwatch.elapsedTime(NANOSECONDS));
+      removeLoadingValue(key,hash,loadingValueReference);
+    }
+  }
+}

@@ -21,6 +21,7 @@
   assertEquals(0,stats.hitCount());
   key=new Object();
   cache.refresh(key);
+  checkNothingLogged();
   stats=cache.stats();
   assertEquals(2,stats.missCount());
   assertEquals(3,stats.loadSuccessCount());

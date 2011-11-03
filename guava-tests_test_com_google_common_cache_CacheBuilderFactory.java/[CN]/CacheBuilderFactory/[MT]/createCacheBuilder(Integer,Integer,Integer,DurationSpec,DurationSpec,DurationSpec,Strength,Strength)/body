@@ -1,0 +1,28 @@
+{
+  CacheBuilder<Object,Object> builder=CacheBuilder.newBuilder();
+  if (concurrencyLevel != null) {
+    builder.concurrencyLevel(concurrencyLevel);
+  }
+  if (initialCapacity != null) {
+    builder.initialCapacity(initialCapacity);
+  }
+  if (maximumSize != null) {
+    builder.maximumSize(maximumSize);
+  }
+  if (expireAfterWrite != null) {
+    builder.expireAfterWrite(expireAfterWrite.duration,expireAfterWrite.unit);
+  }
+  if (expireAfterAccess != null) {
+    builder.expireAfterAccess(expireAfterAccess.duration,expireAfterAccess.unit);
+  }
+  if (refresh != null) {
+    builder.refreshInterval(refresh.duration,refresh.unit);
+  }
+  if (keyStrength != null) {
+    builder.setKeyStrength(keyStrength);
+  }
+  if (valueStrength != null) {
+    builder.setValueStrength(valueStrength);
+  }
+  return builder;
+}

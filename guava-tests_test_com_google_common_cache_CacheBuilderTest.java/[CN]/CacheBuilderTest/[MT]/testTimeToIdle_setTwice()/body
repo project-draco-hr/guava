@@ -6,10 +6,4 @@
   }
  catch (  IllegalStateException expected) {
   }
-  try {
-    builder.expireAfterAccess(3600,SECONDS);
-    fail();
-  }
- catch (  IllegalStateException expected) {
-  }
 }

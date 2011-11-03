@@ -21,17 +21,13 @@
   cache.asMap().put(key,key);
   new Thread(){
     @Override public void run(){
-      try {
-        cache.refresh(key);
-      }
- catch (      ExecutionException e) {
-        throw new UncheckedExecutionException(e);
-      }
+      cache.refresh(key);
       doneSignal.countDown();
     }
   }
 .start();
   secondSignal.await();
+  checkNothingLogged();
   new Thread(){
     @Override public void run(){
       thirdSignal.countDown();

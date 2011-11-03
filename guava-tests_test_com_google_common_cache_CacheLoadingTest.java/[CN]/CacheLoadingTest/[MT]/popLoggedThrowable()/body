@@ -1,0 +1,7 @@
+{
+  List<LogRecord> logRecords=logHandler.getStoredLogRecords();
+  assertEquals(1,logRecords.size());
+  LogRecord logRecord=logRecords.get(0);
+  logHandler.clear();
+  return logRecord.getThrown();
+}

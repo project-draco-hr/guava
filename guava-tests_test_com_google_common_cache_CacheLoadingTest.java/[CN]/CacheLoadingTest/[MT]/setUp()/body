@@ -1,0 +1,5 @@
+{
+  super.setUp();
+  logHandler=new TestLogHandler();
+  LocalCache.logger.addHandler(logHandler);
+}

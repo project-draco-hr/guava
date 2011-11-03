@@ -4,7 +4,7 @@
     try {
       removalListener.onRemoval(notification);
     }
- catch (    Exception e) {
+ catch (    Throwable e) {
       logger.log(Level.WARNING,"Exception thrown by removal listener",e);
     }
   }

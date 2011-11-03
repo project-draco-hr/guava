@@ -8,7 +8,7 @@
         if (value != null) {
           recordRead(e,now);
           statsCounter.recordHits(1);
-          return value;
+          return scheduleRefresh(e,key,hash,value,now,loader);
         }
         ValueReference<K,V> valueReference=e.getValueReference();
         if (valueReference.isLoading()) {

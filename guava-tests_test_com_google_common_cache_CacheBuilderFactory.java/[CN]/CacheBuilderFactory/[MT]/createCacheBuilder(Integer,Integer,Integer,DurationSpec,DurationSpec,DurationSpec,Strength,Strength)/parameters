@@ -1,0 +1,8 @@
+Integer concurrencyLevel
+Integer initialCapacity
+Integer maximumSize
+DurationSpec expireAfterWrite
+DurationSpec expireAfterAccess
+DurationSpec refresh
+Strength keyStrength
+Strength valueStrength

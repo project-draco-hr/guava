@@ -1,0 +1,4 @@
+{
+  this.expireAfterWrites=Sets.newLinkedHashSet(durations);
+  return this;
+}

@@ -1,0 +1,7 @@
+{
+  if (o instanceof DurationSpec) {
+    DurationSpec that=(DurationSpec)o;
+    return unit.toNanos(duration) == that.unit.toNanos(that.duration);
+  }
+  return false;
+}

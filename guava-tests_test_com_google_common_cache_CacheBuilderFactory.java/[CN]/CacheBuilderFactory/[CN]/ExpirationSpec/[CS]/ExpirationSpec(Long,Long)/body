@@ -1,5 +1,0 @@
-{
-  Preconditions.checkArgument(expireAfterAccessMillis == null || expireAfterWriteMillis == null);
-  this.expireAfterAccessMillis=expireAfterAccessMillis;
-  this.expireAfterWriteMillis=expireAfterWriteMillis;
-}

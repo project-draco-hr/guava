@@ -10,5 +10,5 @@
   valueRef.setComputing(true);
   entry.setValueReference(valueRef);
   table.set(index,entry);
-  assertFalse(segment.refresh(key,hash,null));
+  assertNull(segment.refresh(key,hash,identityLoader()));
 }

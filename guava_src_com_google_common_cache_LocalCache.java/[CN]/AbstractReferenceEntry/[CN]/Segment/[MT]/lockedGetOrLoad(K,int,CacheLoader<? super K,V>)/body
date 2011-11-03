@@ -56,7 +56,9 @@
   }
   if (createNewEntry) {
     try {
-      return loadEntry(key,hash,e,loadingValueReference,loader);
+synchronized (e) {
+        return loadEntry(key,hash,loadingValueReference,loader);
+      }
     }
   finally {
       statsCounter.recordMisses(1);

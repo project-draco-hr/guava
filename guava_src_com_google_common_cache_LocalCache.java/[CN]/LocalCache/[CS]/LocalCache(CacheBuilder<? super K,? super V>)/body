@@ -8,10 +8,11 @@
   weigher=builder.getWeigher();
   expireAfterAccessNanos=builder.getExpireAfterAccessNanos();
   expireAfterWriteNanos=builder.getExpireAfterWriteNanos();
-  entryFactory=EntryFactory.getFactory(keyStrength,usesAccessQueue(),usesWriteQueue());
-  ticker=builder.getTicker(recordsTime());
+  refreshNanos=builder.getRefreshNanos();
   removalListener=builder.getRemovalListener();
   removalNotificationQueue=(removalListener == NullListener.INSTANCE) ? LocalCache.<RemovalNotification<K,V>>discardingQueue() : new ConcurrentLinkedQueue<RemovalNotification<K,V>>();
+  ticker=builder.getTicker(recordsTime());
+  entryFactory=EntryFactory.getFactory(keyStrength,usesAccessEntries(),usesWriteEntries());
   globalStatsCounter=builder.getStatsCounterSupplier().get();
   int initialCapacity=Math.min(builder.getInitialCapacity(),MAXIMUM_CAPACITY);
   if (evictsBySize() && !customWeigher()) {

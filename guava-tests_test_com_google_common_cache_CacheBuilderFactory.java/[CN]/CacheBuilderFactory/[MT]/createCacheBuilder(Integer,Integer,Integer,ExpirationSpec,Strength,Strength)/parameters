@@ -1,6 +1,0 @@
-Integer concurrencyLevel
-Integer initialCapacity
-Integer maximumSize
-ExpirationSpec expiration
-Strength keyStrength
-Strength valueStrength

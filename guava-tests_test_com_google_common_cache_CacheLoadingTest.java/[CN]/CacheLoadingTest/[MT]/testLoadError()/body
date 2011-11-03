@@ -31,13 +31,8 @@
   assertEquals(0,stats.loadSuccessCount());
   assertEquals(2,stats.loadExceptionCount());
   assertEquals(0,stats.hitCount());
-  try {
-    cache.refresh(new Object());
-    fail();
-  }
- catch (  ExecutionError expected) {
-    assertSame(e,expected.getCause());
-  }
+  cache.refresh(new Object());
+  checkLoggedCause(e);
   stats=cache.stats();
   assertEquals(2,stats.missCount());
   assertEquals(0,stats.loadSuccessCount());

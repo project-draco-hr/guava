@@ -3,7 +3,7 @@
   RemovalListener<Object,Object> listener=new SerializableRemovalListener<Object,Object>();
   SerializableWeigher<Object,Object> weigher=new SerializableWeigher<Object,Object>();
   Ticker ticker=new SerializableTicker();
-  @SuppressWarnings("unchecked") LocalLoadingCache<Object,Object> one=(LocalLoadingCache)CacheBuilder.newBuilder().weakKeys().softValues().expireAfterAccess(123,NANOSECONDS).maximumWeight(789).weigher(weigher).concurrencyLevel(12).removalListener(listener).ticker(ticker).build(loader);
+  @SuppressWarnings("unchecked") LocalLoadingCache<Object,Object> one=(LocalLoadingCache)CacheBuilder.newBuilder().weakKeys().softValues().expireAfterAccess(123,SECONDS).expireAfterWrite(456,MINUTES).maximumWeight(789).weigher(weigher).concurrencyLevel(12).removalListener(listener).ticker(ticker).build(loader);
   one.getUnchecked(new Object());
   assertEquals(1,one.size());
   assertFalse(one.asMap().isEmpty());
@@ -12,7 +12,6 @@
   assertTrue(two.asMap().isEmpty());
   LocalCache<Object,Object> localCacheOne=one.localCache;
   LocalCache<Object,Object> localCacheTwo=two.localCache;
-  assertEquals(one.loader,two.loader);
   assertEquals(localCacheOne.keyStrength,localCacheTwo.keyStrength);
   assertEquals(localCacheOne.keyStrength,localCacheTwo.keyStrength);
   assertEquals(localCacheOne.valueEquivalence,localCacheTwo.valueEquivalence);
@@ -21,6 +20,7 @@
   assertEquals(localCacheOne.weigher,localCacheTwo.weigher);
   assertEquals(localCacheOne.expireAfterAccessNanos,localCacheTwo.expireAfterAccessNanos);
   assertEquals(localCacheOne.expireAfterWriteNanos,localCacheTwo.expireAfterWriteNanos);
+  assertEquals(localCacheOne.refreshNanos,localCacheTwo.refreshNanos);
   assertEquals(localCacheOne.removalListener,localCacheTwo.removalListener);
   assertEquals(localCacheOne.ticker,localCacheTwo.ticker);
   LocalLoadingCache<Object,Object> three=SerializableTester.reserialize(two);

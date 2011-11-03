@@ -1,0 +1,4 @@
+{
+  this.refreshes=Sets.newLinkedHashSet(durations);
+  return this;
+}

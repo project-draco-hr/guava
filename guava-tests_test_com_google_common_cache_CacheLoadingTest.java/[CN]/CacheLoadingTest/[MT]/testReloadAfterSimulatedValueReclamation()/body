@@ -9,6 +9,7 @@
   assertEquals(2,countingLoader.getCount());
   CacheTesting.simulateValueReclamation(cache,key);
   cache.refresh(key);
+  checkNothingLogged();
   assertEquals(1,cache.size());
   assertEquals(3,countingLoader.getCount());
 }

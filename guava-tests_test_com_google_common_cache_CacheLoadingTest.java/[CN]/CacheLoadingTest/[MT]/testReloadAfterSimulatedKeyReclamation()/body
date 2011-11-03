@@ -9,5 +9,6 @@
   assertEquals(2,countingLoader.getCount());
   CacheTesting.simulateKeyReclamation(cache,key);
   cache.refresh(key);
+  checkNothingLogged();
   assertEquals(3,countingLoader.getCount());
 }

@@ -1,7 +1,0 @@
-{
-  if (o instanceof ExpirationSpec) {
-    ExpirationSpec that=(ExpirationSpec)o;
-    return Objects.equal(this.expireAfterAccessMillis,that.expireAfterAccessMillis) && Objects.equal(this.expireAfterWriteMillis,that.expireAfterWriteMillis);
-  }
-  return false;
-}

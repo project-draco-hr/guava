@@ -1,0 +1,10 @@
+{
+  Weigher<Object,Object> testWeigher=new Weigher<Object,Object>(){
+    @Override public int weigh(    Object key,    Object value){
+      return 42;
+    }
+  }
+;
+  LocalCache<Object,Object> map=makeLocalCache(createCacheBuilder().maximumWeight(1).weigher(testWeigher));
+  assertSame(testWeigher,map.weigher);
+}

@@ -6,6 +6,7 @@
   assertSame(map.valueStrength.defaultEquivalence(),map.valueEquivalence);
   assertEquals(0,map.expireAfterAccessNanos);
   assertEquals(0,map.expireAfterWriteNanos);
+  assertEquals(0,map.refreshNanos);
   assertEquals(CacheBuilder.UNSET_INT,map.maxWeight);
   assertSame(EntryFactory.STRONG,map.entryFactory);
   assertSame(CacheBuilder.NullListener.INSTANCE,map.removalListener);
@@ -18,4 +19,5 @@
   assertFalse(map.expires());
   assertFalse(map.expiresAfterWrite());
   assertFalse(map.expiresAfterAccess());
+  assertFalse(map.refreshes());
 }
