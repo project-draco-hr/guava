@@ -2,5 +2,5 @@
   DataInput in=new LittleEndianDataInputStream(new ByteArrayInputStream(data));
   byte[] b=new byte[data.length];
   in.readFully(b);
-  MoreAsserts.assertEquals(data,b);
+  assertEquals(Bytes.asList(data),Bytes.asList(b));
 }
