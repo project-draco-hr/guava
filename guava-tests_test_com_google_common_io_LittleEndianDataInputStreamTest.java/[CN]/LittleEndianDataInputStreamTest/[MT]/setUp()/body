@@ -1,0 +1,7 @@
+{
+  super.setUp();
+  ByteArrayOutputStream baos=new ByteArrayOutputStream();
+  DataOutputStream out=new DataOutputStream(baos);
+  initializeData(out);
+  data=baos.toByteArray();
+}

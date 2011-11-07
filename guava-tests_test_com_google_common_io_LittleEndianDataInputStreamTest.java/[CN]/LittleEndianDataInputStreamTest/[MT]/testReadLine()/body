@@ -1,0 +1,10 @@
+{
+  DataInput in=new LittleEndianDataInputStream(new ByteArrayInputStream(data));
+  try {
+    in.readLine();
+    fail();
+  }
+ catch (  UnsupportedOperationException expected) {
+    assertEquals("readLine is not supported",expected.getMessage());
+  }
+}

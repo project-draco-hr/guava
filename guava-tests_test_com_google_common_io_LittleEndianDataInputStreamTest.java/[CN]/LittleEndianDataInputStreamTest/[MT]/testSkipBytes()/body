@@ -1,0 +1,18 @@
+{
+  ByteArrayOutputStream baos=new ByteArrayOutputStream();
+  DataOutputStream out=new DataOutputStream(baos);
+  out.write(new byte[]{0,1,2,3,4,5,6,7,8,9});
+  initializeData(out);
+  byte[] data=baos.toByteArray();
+  DataInput in=new LittleEndianDataInputStream(new ByteArrayInputStream(data));
+  int bytesSkipped=0;
+  while (bytesSkipped < 10) {
+    bytesSkipped+=in.skipBytes(10 - bytesSkipped);
+  }
+  byte[] b=new byte[2];
+  in.readFully(b);
+  assertEquals(-100,b[0]);
+  assertEquals(100,b[1]);
+  assertTrue(in.readBoolean());
+  assertFalse(in.readBoolean());
+}

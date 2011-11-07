@@ -1,0 +1,10 @@
+{
+  byte[] buf={23};
+  DataInput in=new LittleEndianDataInputStream(new ByteArrayInputStream(buf));
+  try {
+    in.readUnsignedShort();
+    fail();
+  }
+ catch (  EOFException expected) {
+  }
+}

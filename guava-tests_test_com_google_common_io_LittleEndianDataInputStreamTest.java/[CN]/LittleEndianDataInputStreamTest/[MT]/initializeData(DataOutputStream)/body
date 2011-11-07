@@ -1,0 +1,16 @@
+{
+  out.write(new byte[]{-100,100});
+  out.writeBoolean(true);
+  out.writeBoolean(false);
+  out.writeByte(100);
+  out.writeByte(-100);
+  out.writeByte((byte)200);
+  out.writeChar('a');
+  out.writeShort((short)-30000);
+  out.writeShort((short)50000);
+  out.writeInt(0xCAFEBABE);
+  out.writeLong(0xDEADBEEFCAFEBABEL);
+  out.writeUTF("Herby Derby");
+  out.writeFloat(Float.intBitsToFloat(0xCAFEBABE));
+  out.writeDouble(Double.longBitsToDouble(0xDEADBEEFCAFEBABEL));
+}

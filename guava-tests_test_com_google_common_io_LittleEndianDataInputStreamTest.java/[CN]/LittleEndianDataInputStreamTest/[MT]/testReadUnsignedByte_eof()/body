@@ -1,0 +1,9 @@
+{
+  DataInput in=new LittleEndianDataInputStream(new ByteArrayInputStream(new byte[0]));
+  try {
+    in.readUnsignedByte();
+    fail();
+  }
+ catch (  EOFException expected) {
+  }
+}
