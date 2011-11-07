@@ -10,7 +10,10 @@
           assertSame(prev,current.getPreviousInAccessQueue());
           assertSame(prev.getNextInAccessQueue(),current);
         }
-        assertSame(current,segment.getEntry(current.getKey(),current.getHash()));
+        Object key=current.getKey();
+        if (key != null) {
+          assertSame(current,segment.getEntry(key,current.getHash()));
+        }
         prev=current;
       }
     }

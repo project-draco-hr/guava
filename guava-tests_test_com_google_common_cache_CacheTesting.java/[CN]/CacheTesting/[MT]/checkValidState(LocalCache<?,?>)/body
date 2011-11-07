@@ -3,6 +3,7 @@
     segment.cleanUp();
     assertFalse(segment.isLocked());
     Map<?,?> table=segmentTable(segment);
+    segment.cleanUp();
     assertEquals(segment.count,table.size());
     for (    Entry entry : table.entrySet()) {
       assertNotNull(entry.getKey());

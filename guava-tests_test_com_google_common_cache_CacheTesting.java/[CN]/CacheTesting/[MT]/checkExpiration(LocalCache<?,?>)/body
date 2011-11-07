@@ -10,7 +10,10 @@
           assertSame(prev.getNextInWriteQueue(),current);
           assertTrue(prev.getWriteTime() <= current.getWriteTime());
         }
-        assertSame(current,segment.getEntry(current.getKey(),current.getHash()));
+        Object key=current.getKey();
+        if (key != null) {
+          assertSame(current,segment.getEntry(key,current.getHash()));
+        }
         prev=current;
       }
       assertEquals(segment.count,entries.size());
@@ -28,7 +31,10 @@
           assertSame(prev.getNextInAccessQueue(),current);
           assertTrue(prev.getAccessTime() <= current.getAccessTime());
         }
-        assertSame(current,segment.getEntry(current.getKey(),current.getHash()));
+        Object key=current.getKey();
+        if (key != null) {
+          assertSame(current,segment.getEntry(key,current.getHash()));
+        }
         prev=current;
       }
       assertEquals(segment.count,entries.size());
