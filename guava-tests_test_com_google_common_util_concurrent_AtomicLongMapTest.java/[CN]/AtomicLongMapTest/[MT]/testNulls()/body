@@ -1,0 +1,7 @@
+{
+  NullPointerTester tester=new NullPointerTester();
+  tester.testAllPublicConstructors(AtomicLongMap.class);
+  tester.testAllPublicStaticMethods(AtomicLongMap.class);
+  AtomicLongMap<Object> map=AtomicLongMap.create();
+  tester.testAllPublicInstanceMethods(map);
+}

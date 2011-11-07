@@ -1,0 +1,18 @@
+{
+  AtomicLongMap<Object> map=AtomicLongMap.create();
+  Set<Object> nonZeroKeys=Sets.newHashSet();
+  for (int i=0; i < ITERATIONS; i++) {
+    Object key=new Object();
+    long value=i % 2;
+    map.put(key,value);
+    if (value != 0L) {
+      nonZeroKeys.add(key);
+    }
+  }
+  assertEquals(ITERATIONS,map.size());
+  assertTrue(map.asMap().containsValue(0L));
+  map.removeAllZeros();
+  assertFalse(map.asMap().containsValue(0L));
+  assertEquals(ITERATIONS / 2,map.size());
+  assertEquals(nonZeroKeys,map.asMap().keySet());
+}

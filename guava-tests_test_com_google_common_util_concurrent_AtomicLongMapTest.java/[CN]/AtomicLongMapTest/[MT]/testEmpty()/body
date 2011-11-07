@@ -1,0 +1,9 @@
+{
+  AtomicLongMap<String> map=AtomicLongMap.create();
+  assertEquals(0L,map.get("a"));
+  assertEquals(0,map.size());
+  assertTrue(map.isEmpty());
+  assertFalse(map.remove("a",1L));
+  assertFalse(map.remove("a",0L));
+  assertFalse(map.replace("a",1L,0L));
+}

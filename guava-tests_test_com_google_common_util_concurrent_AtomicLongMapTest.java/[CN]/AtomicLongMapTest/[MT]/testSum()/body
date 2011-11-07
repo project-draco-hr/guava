@@ -1,0 +1,10 @@
+{
+  AtomicLongMap<Object> map=AtomicLongMap.create();
+  long sum=0;
+  for (int i=0; i < ITERATIONS; i++) {
+    map.put(new Object(),i);
+    sum+=i;
+  }
+  assertEquals(ITERATIONS,map.size());
+  assertEquals(sum,map.sum());
+}
