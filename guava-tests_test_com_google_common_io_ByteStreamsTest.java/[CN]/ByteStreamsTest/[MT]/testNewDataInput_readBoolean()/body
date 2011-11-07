@@ -1,0 +1,4 @@
+{
+  ByteArrayDataInput in=ByteStreams.newDataInput(BYTES);
+  assertTrue(in.readBoolean());
+}

@@ -1,0 +1,7 @@
+{
+  ByteArrayDataOutput out=ByteStreams.newDataOutput();
+  out.writeBoolean(true);
+  out.writeBoolean(false);
+  byte[] expected={(byte)1,(byte)0};
+  MoreAsserts.assertEquals(expected,out.toByteArray());
+}

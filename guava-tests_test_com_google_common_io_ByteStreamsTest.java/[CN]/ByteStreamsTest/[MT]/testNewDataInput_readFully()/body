@@ -1,0 +1,6 @@
+{
+  ByteArrayDataInput in=ByteStreams.newDataInput(BYTES);
+  byte[] actual=new byte[BYTES.length];
+  in.readFully(actual);
+  MoreAsserts.assertEquals(BYTES,actual);
+}

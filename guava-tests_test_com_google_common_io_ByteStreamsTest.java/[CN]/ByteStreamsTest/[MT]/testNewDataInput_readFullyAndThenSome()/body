@@ -1,0 +1,11 @@
+{
+  ByteArrayDataInput in=ByteStreams.newDataInput(BYTES);
+  byte[] actual=new byte[BYTES.length * 2];
+  try {
+    in.readFully(actual);
+    fail();
+  }
+ catch (  IllegalStateException ex) {
+    assertTrue(ex.getCause() instanceof EOFException);
+  }
+}

@@ -1,0 +1,6 @@
+{
+  ByteArrayDataOutput out=ByteStreams.newDataOutput();
+  out.writeChars("r\u00C9sum\u00C9");
+  byte[] expected=Arrays.copyOfRange("r\u00C9sum\u00C9".getBytes(Charsets.UTF_16),2,14);
+  MoreAsserts.assertEquals(expected,out.toByteArray());
+}
