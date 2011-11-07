@@ -2,7 +2,7 @@
   ThreadPoolExecutor p=new ThreadPoolExecutor(1,1,60,TimeUnit.SECONDS,new ArrayBlockingQueue<Runnable>(10));
   Callable<Object> c=new Callable<Object>(){
     public Object call(){
-      return 5 / 0;
+      throw new ArithmeticException("/ by zero");
     }
   }
 ;

@@ -3,7 +3,7 @@
   List<Callable<Integer>> l=new ArrayList<Callable<Integer>>();
   l.add(new Callable<Integer>(){
     public Integer call(){
-      return 5 / 0;
+      throw new ArithmeticException("/ by zero");
     }
   }
 );
