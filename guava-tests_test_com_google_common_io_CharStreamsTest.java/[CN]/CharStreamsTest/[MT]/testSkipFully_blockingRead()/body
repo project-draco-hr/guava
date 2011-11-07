@@ -1,0 +1,5 @@
+{
+  Reader reader=new NonSkippingReader("abcdef");
+  CharStreams.skipFully(reader,6);
+  assertEquals(-1,reader.read());
+}
