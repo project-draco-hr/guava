@@ -1,0 +1,19 @@
+{
+  out.writeChars("r\u00C9sum\u00C9");
+  byte[] data=baos.toByteArray();
+  DataInput in=new DataInputStream(new ByteArrayInputStream(data));
+  byte[] actual=new byte[12];
+  in.readFully(actual);
+  assertEquals('r',actual[0]);
+  assertEquals(0,actual[1]);
+  assertEquals((byte)0xC9,actual[2]);
+  assertEquals(0,actual[3]);
+  assertEquals('s',actual[4]);
+  assertEquals(0,actual[5]);
+  assertEquals('u',actual[6]);
+  assertEquals(0,actual[7]);
+  assertEquals('m',actual[8]);
+  assertEquals(0,actual[9]);
+  assertEquals((byte)0xC9,actual[10]);
+  assertEquals(0,actual[11]);
+}

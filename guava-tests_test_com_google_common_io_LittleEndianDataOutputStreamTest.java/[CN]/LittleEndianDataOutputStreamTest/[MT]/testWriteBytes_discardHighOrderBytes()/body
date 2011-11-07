@@ -1,0 +1,9 @@
+{
+  out.writeBytes("\uAAAA\uAABB\uAACC");
+  byte[] data=baos.toByteArray();
+  DataInput in=new DataInputStream(new ByteArrayInputStream(data));
+  byte[] b=new byte[3];
+  in.readFully(b);
+  byte[] expected={(byte)0xAA,(byte)0xBB,(byte)0xCC};
+  MoreAsserts.assertEquals(expected,b);
+}

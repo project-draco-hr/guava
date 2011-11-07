@@ -1,6 +1,4 @@
 {
-  ByteArrayOutputStream baos=new ByteArrayOutputStream();
-  LittleEndianDataOutputStream out=new LittleEndianDataOutputStream(baos);
   out.write(new byte[]{-100,100});
   out.writeBoolean(true);
   out.writeBoolean(false);
@@ -16,8 +14,7 @@
   out.writeFloat(Float.intBitsToFloat(0xCAFEBABE));
   out.writeDouble(Double.longBitsToDouble(0xDEADBEEFCAFEBABEL));
   byte[] data=baos.toByteArray();
-  DataInputStream dis=new DataInputStream(new ByteArrayInputStream(data));
-  DataInput in=dis;
+  DataInput in=new DataInputStream(new ByteArrayInputStream(data));
   byte[] b=new byte[2];
   in.readFully(b);
   assertEquals(-100,b[0]);

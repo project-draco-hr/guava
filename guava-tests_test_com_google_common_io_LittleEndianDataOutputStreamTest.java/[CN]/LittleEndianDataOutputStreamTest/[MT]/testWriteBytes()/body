@@ -1,0 +1,8 @@
+{
+  out.writeBytes("r\u00C9sum\u00C9");
+  byte[] data=baos.toByteArray();
+  DataInput in=new DataInputStream(new ByteArrayInputStream(data));
+  byte[] b=new byte[6];
+  in.readFully(b);
+  MoreAsserts.assertEquals("r\u00C9sum\u00C9".getBytes(Charsets.ISO_8859_1),b);
+}
