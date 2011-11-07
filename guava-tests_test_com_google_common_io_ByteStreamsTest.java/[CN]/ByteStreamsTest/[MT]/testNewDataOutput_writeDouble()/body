@@ -1,5 +1,5 @@
 {
   ByteArrayDataOutput out=ByteStreams.newDataOutput();
   out.writeDouble(Double.longBitsToDouble(0x1234567876543210L));
-  MoreAsserts.assertEquals(BYTES,out.toByteArray());
+  assertEquals(BYTES,out.toByteArray());
 }

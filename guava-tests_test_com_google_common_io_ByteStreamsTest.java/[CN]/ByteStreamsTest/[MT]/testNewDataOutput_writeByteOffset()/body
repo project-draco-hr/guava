@@ -2,5 +2,5 @@
   ByteArrayDataOutput out=ByteStreams.newDataOutput();
   out.write(BYTES,4,2);
   byte[] expected={BYTES[4],BYTES[5]};
-  MoreAsserts.assertEquals(expected,out.toByteArray());
+  assertEquals(expected,out.toByteArray());
 }

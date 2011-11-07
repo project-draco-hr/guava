@@ -2,5 +2,5 @@
   ByteArrayDataOutput out=ByteStreams.newDataOutput();
   out.writeFloat(Float.intBitsToFloat(0x12345678));
   out.writeFloat(Float.intBitsToFloat(0x76543210));
-  MoreAsserts.assertEquals(BYTES,out.toByteArray());
+  assertEquals(BYTES,out.toByteArray());
 }

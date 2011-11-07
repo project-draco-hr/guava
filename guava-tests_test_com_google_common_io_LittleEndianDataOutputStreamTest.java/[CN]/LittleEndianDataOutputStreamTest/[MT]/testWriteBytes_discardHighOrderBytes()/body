@@ -5,5 +5,5 @@
   byte[] b=new byte[3];
   in.readFully(b);
   byte[] expected={(byte)0xAA,(byte)0xBB,(byte)0xCC};
-  MoreAsserts.assertEquals(expected,b);
+  assertEquals(expected,b);
 }

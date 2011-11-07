@@ -1,0 +1,20 @@
+{
+  equalHelper(false,0,1);
+  equalHelper(false,400,10000);
+  equalHelper(false,0x2000,0x2001);
+  equalHelper(false,new byte[]{0},new byte[]{1});
+  byte[] mutate=newPreFilledByteArray(10000);
+  mutate[9000]=0;
+  equalHelper(false,mutate,newPreFilledByteArray(10000));
+  equalHelper(true,0,0);
+  equalHelper(true,1,1);
+  equalHelper(true,400,400);
+  final byte[] tenK=newPreFilledByteArray(10000);
+  equalHelper(true,tenK,tenK);
+  assertTrue(ByteStreams.equal(ByteStreams.newInputStreamSupplier(tenK),new InputSupplier<InputStream>(){
+    @Override public InputStream getInput(){
+      return new RandomAmountInputStream(new ByteArrayInputStream(tenK),new Random(301));
+    }
+  }
+));
+}
