@@ -1,0 +1,10 @@
+{
+  counter=new CountingInputStream(new UnmarkableInputStream());
+  try {
+    counter.reset();
+    fail();
+  }
+ catch (  IOException expected) {
+    assertEquals("Mark not supported",expected.getMessage());
+  }
+}
