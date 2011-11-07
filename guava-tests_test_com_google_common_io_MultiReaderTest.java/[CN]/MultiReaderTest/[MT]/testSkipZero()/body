@@ -1,0 +1,7 @@
+{
+  InputSupplier<Reader> supplier=newReader("a");
+  Iterable<? extends InputSupplier<? extends Reader>> list=ImmutableList.of(supplier,supplier);
+  Reader joinedReader=CharStreams.join(list).getInput();
+  assertEquals(0,joinedReader.skip(0));
+  assertEquals('a',joinedReader.read());
+}
