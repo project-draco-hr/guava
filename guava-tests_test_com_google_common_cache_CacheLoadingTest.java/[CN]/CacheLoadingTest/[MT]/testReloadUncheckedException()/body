@@ -5,7 +5,7 @@
     @Override public Object load(    Object key){
       return one;
     }
-    @Override public Object reload(    Object key,    Object oldValue) throws Exception {
+    @Override public ListenableFuture<Object> reload(    Object key,    Object oldValue) throws Exception {
       throw e;
     }
   }

@@ -57,7 +57,7 @@
   if (createNewEntry) {
     try {
 synchronized (e) {
-        return loadEntry(key,hash,loadingValueReference,loader);
+        return loadSync(key,hash,loadingValueReference,loader);
       }
     }
   finally {
@@ -65,6 +65,6 @@ synchronized (e) {
     }
   }
  else {
-    return waitForLoadingValue(e,valueReference);
+    return waitForLoadingValue(e,key,valueReference);
   }
 }

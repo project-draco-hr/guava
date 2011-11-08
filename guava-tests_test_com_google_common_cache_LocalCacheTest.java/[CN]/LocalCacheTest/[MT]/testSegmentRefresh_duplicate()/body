@@ -7,7 +7,7 @@
   int index=hash & (table.length() - 1);
   DummyEntry<Object,Object> entry=DummyEntry.create(key,hash,null);
   DummyValueReference<Object,Object> valueRef=DummyValueReference.create(null,entry);
-  valueRef.setComputing(true);
+  valueRef.setLoading(true);
   entry.setValueReference(valueRef);
   table.set(index,entry);
   assertNull(segment.refresh(key,hash,identityLoader()));

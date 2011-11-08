@@ -1,8 +1,0 @@
-{
-synchronized (this) {
-    if (loadedValue == null) {
-      loadedValue=newValue;
-      notifyAll();
-    }
-  }
-}

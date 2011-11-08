@@ -1,6 +1,6 @@
 {
   if (newValue != null) {
-    setLoadedValue(new LoadedReference<V>(newValue));
+    set(newValue);
   }
  else {
     oldValue=unset();

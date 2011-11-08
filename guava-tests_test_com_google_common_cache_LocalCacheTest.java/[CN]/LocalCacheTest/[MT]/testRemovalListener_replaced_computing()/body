@@ -36,6 +36,7 @@
     throw new RuntimeException(e);
   }
   map.put(one,two);
+  assertSame(two,map.get(one));
   startSignal.countDown();
   try {
     doneSignal.await();
@@ -43,7 +44,7 @@
  catch (  InterruptedException e) {
     throw new RuntimeException(e);
   }
-  assertNotNull(map.putIfAbsent(one,new Object()));
+  map.cleanUp();
   assertNotified(listener,one,computedObject,RemovalCause.REPLACED);
   assertTrue(listener.isEmpty());
 }

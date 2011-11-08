@@ -1,4 +1,4 @@
 {
   countReload.incrementAndGet();
-  return oldValue + 1;
+  return Futures.immediateFuture(oldValue + 1);
 }

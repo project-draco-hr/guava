@@ -1,0 +1,17 @@
+{
+  final ListenableFuture<V> loadingFuture=loadingValueReference.loadFuture(key,loader);
+  loadingFuture.addListener(new Runnable(){
+    @Override public void run(){
+      try {
+        V newValue=getAndRecordStats(key,hash,loadingValueReference,loadingFuture);
+        loadingValueReference.set(newValue);
+      }
+ catch (      Throwable t) {
+        logger.log(Level.WARNING,"Exception thrown during refresh",t);
+        loadingValueReference.setException(t);
+      }
+    }
+  }
+,sameThreadExecutor);
+  return loadingFuture;
+}

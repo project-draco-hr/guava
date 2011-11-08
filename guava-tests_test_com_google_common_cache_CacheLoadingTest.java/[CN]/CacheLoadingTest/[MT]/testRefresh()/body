@@ -6,8 +6,8 @@
     @Override public Object load(    Object key){
       return one;
     }
-    @Override public Object reload(    Object key,    Object oldValue){
-      return two;
+    @Override public ListenableFuture<Object> reload(    Object key,    Object oldValue){
+      return Futures.immediateFuture(two);
     }
   }
 ;

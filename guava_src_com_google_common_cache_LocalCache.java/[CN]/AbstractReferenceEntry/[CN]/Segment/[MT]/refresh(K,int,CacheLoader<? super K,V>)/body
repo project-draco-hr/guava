@@ -3,11 +3,13 @@
   if (loadingValueReference == null) {
     return null;
   }
-  try {
-    return loadEntry(key,hash,loadingValueReference,loader);
+  ListenableFuture<V> result=loadAsync(key,hash,loadingValueReference,loader);
+  if (result.isDone()) {
+    try {
+      return result.get();
+    }
+ catch (    Throwable t) {
+    }
   }
- catch (  Throwable t) {
-    logger.log(Level.WARNING,"Exception thrown during refresh",t);
-    return null;
-  }
+  return null;
 }

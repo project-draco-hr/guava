@@ -12,13 +12,23 @@
         }
         ValueReference<K,V> valueReference=e.getValueReference();
         if (valueReference.isLoading()) {
-          return waitForLoadingValue(e,valueReference);
+          return waitForLoadingValue(e,key,valueReference);
         }
       }
     }
     return lockedGetOrLoad(key,hash,loader);
   }
-  finally {
+ catch (  ExecutionException ee) {
+    Throwable cause=ee.getCause();
+    if (cause instanceof Error) {
+      throw new ExecutionError((Error)cause);
+    }
+ else     if (cause instanceof RuntimeException) {
+      throw new UncheckedExecutionException(cause);
+    }
+    throw ee;
+  }
+ finally {
     postReadCleanup();
   }
 }
