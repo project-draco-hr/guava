@@ -4,7 +4,7 @@
     assertFalse(segment.isLocked());
     Map<?,?> table=segmentTable(segment);
     segment.cleanUp();
-    assertEquals(segment.count,table.size());
+    assertTrue(table.size() <= segment.count);
     for (    Entry entry : table.entrySet()) {
       assertNotNull(entry.getKey());
       assertNotNull(entry.getValue());
