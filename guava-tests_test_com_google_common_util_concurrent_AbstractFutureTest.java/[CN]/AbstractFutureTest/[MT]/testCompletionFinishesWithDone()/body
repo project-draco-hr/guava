@@ -1,0 +1,44 @@
+{
+  ExecutorService executor=Executors.newFixedThreadPool(10);
+  for (int i=0; i < 50000; i++) {
+    final AbstractFuture<String> future=new AbstractFuture<String>(){
+    }
+;
+    final AtomicReference<String> errorMessage=new AtomicReference<String>();
+    executor.execute(new Runnable(){
+      @Override public void run(){
+        future.set("success");
+        if (!future.isDone()) {
+          errorMessage.set("Set call exited before future was complete.");
+        }
+      }
+    }
+);
+    executor.execute(new Runnable(){
+      @Override public void run(){
+        future.setException(new IllegalArgumentException("failure"));
+        if (!future.isDone()) {
+          errorMessage.set("SetException call exited before future was complete.");
+        }
+      }
+    }
+);
+    executor.execute(new Runnable(){
+      @Override public void run(){
+        future.cancel(true);
+        if (!future.isDone()) {
+          errorMessage.set("Cancel call exited before future was complete.");
+        }
+      }
+    }
+);
+    try {
+      future.get();
+    }
+ catch (    Throwable t) {
+    }
+    String error=errorMessage.get();
+    assertNull(error,error);
+  }
+  executor.shutdown();
+}
