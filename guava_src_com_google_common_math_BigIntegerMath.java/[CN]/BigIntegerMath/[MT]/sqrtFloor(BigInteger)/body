@@ -1,18 +1,14 @@
 {
   BigInteger sqrt0;
-  BigInteger sqrt1;
-  double asDouble=DoubleUtils.bigToDouble(x);
-  if (!Double.isInfinite(asDouble)) {
-    double sqrt0Double=Math.sqrt(asDouble);
-    sqrt0=DoubleMath.roundToBigInteger(sqrt0Double,RoundingMode.HALF_EVEN);
-    sqrt1=sqrt0.add(x.divide(sqrt0)).shiftRight(1);
+  int log2=log2(x,FLOOR);
+  if (log2 < DoubleUtils.MAX_DOUBLE_EXPONENT) {
+    sqrt0=sqrtApproxWithDoubles(x);
   }
  else {
-    int logFloor=log2(x,RoundingMode.FLOOR);
-    int halfLogFloor=logFloor >> 1;
-    sqrt0=BigInteger.ZERO.setBit(halfLogFloor);
-    sqrt1=sqrt0.add(x.shiftRight(halfLogFloor)).shiftRight(1);
+    int shift=(log2 - DoubleUtils.SIGNIFICAND_BITS) & ~1;
+    sqrt0=sqrtApproxWithDoubles(x.shiftRight(shift)).shiftLeft(shift >> 1);
   }
+  BigInteger sqrt1=sqrt0.add(x.divide(sqrt0)).shiftRight(1);
   if (sqrt0.equals(sqrt1)) {
     return sqrt0;
   }
