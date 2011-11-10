@@ -1,0 +1,6 @@
+{
+  shutdown.set(true);
+  while (this.isAlive()) {
+    Thread.yield();
+  }
+}

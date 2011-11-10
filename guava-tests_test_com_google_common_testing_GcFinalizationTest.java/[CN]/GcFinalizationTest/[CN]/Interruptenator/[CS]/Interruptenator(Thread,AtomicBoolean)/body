@@ -1,0 +1,13 @@
+{
+  super(new Runnable(){
+    public void run(){
+      while (!shutdown.get()) {
+        interruptee.interrupt();
+        Thread.yield();
+      }
+    }
+  }
+);
+  this.shutdown=shutdown;
+  start();
+}

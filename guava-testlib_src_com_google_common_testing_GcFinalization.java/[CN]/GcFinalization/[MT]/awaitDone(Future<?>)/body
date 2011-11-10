@@ -21,9 +21,7 @@ catch (    ExecutionException ok) {
       return;
     }
 catch (    InterruptedException ie) {
-      RuntimeException ae=new RuntimeException("Unexpected interrupt while waiting for future");
-      ae.initCause(ie);
-      throw ae;
+      throw new RuntimeException("Unexpected interrupt while waiting for future",ie);
     }
 catch (    TimeoutException tryHarder) {
     }

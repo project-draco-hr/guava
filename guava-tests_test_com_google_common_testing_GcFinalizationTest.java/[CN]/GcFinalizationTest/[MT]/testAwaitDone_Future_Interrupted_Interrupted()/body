@@ -1,0 +1,16 @@
+{
+  Interruptenator interruptenator=new Interruptenator(Thread.currentThread());
+  try {
+    final SettableFuture<Void> future=SettableFuture.create();
+    try {
+      GcFinalization.awaitDone(future);
+      fail("should throw");
+    }
+ catch (    RuntimeException expected) {
+      assertWrapsInterruptedException(expected);
+    }
+  }
+  finally {
+    interruptenator.shutdown();
+  }
+}

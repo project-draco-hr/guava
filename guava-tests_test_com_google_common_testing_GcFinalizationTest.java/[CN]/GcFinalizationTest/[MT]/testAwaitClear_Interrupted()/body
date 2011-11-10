@@ -1,0 +1,16 @@
+{
+  Interruptenator interruptenator=new Interruptenator(Thread.currentThread());
+  try {
+    final WeakReference<Object> ref=new WeakReference<Object>(Boolean.TRUE);
+    try {
+      GcFinalization.awaitClear(ref);
+      fail("should throw");
+    }
+ catch (    RuntimeException expected) {
+      assertWrapsInterruptedException(expected);
+    }
+  }
+  finally {
+    interruptenator.shutdown();
+  }
+}

@@ -1,0 +1,20 @@
+{
+  Interruptenator interruptenator=new Interruptenator(Thread.currentThread());
+  try {
+    try {
+      GcFinalization.awaitDone(new FinalizationPredicate(){
+        public boolean isDone(){
+          return false;
+        }
+      }
+);
+      fail("should throw");
+    }
+ catch (    RuntimeException expected) {
+      assertWrapsInterruptedException(expected);
+    }
+  }
+  finally {
+    interruptenator.shutdown();
+  }
+}

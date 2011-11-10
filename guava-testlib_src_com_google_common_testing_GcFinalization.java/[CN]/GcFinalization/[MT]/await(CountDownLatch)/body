@@ -16,9 +16,7 @@
       }
     }
  catch (    InterruptedException ie) {
-      RuntimeException ae=new RuntimeException("Unexpected interrupt while waiting for latch");
-      ae.initCause(ie);
-      throw ae;
+      throw new RuntimeException("Unexpected interrupt while waiting for latch",ie);
     }
   }
  while (System.nanoTime() - deadline < 0);

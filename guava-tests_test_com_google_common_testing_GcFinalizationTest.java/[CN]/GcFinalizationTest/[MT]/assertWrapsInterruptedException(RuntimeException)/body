@@ -1,0 +1,4 @@
+{
+  assertTrue(e.getMessage().contains("Unexpected interrupt"));
+  assertTrue(e.getCause() instanceof InterruptedException);
+}
