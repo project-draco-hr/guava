@@ -6,7 +6,7 @@
     errorNotThrown=true;
   }
  catch (  TestAssertionFailure error) {
-    assertContains("Equals/Hashcode mismatch.  original=",error.getMessage());
+    assertContains("must be equal to the hash",error.getMessage());
   }
   assertFalse(errorNotThrown);
 }
