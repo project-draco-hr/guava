@@ -1,4 +1,7 @@
 {
+  if (unfiltered instanceof SortedMap) {
+    return filterKeys((SortedMap<K,V>)unfiltered,keyPredicate);
+  }
   checkNotNull(keyPredicate);
   Predicate<Entry<K,V>> entryPredicate=new Predicate<Entry<K,V>>(){
     @Override public boolean apply(    Entry<K,V> input){
