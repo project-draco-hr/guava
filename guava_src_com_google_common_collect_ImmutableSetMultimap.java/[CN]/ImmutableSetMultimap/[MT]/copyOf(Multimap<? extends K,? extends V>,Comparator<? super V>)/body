@@ -11,7 +11,7 @@
   }
   ImmutableMap.Builder<K,ImmutableSet<V>> builder=ImmutableMap.builder();
   int size=0;
-  for (  Map.Entry<? extends K,? extends Collection<? extends V>> entry : multimap.asMap().entrySet()) {
+  for (  Entry<? extends K,? extends Collection<? extends V>> entry : multimap.asMap().entrySet()) {
     K key=entry.getKey();
     Collection<? extends V> values=entry.getValue();
     ImmutableSet<V> set=(valueComparator == null) ? ImmutableSet.copyOf(values) : ImmutableSortedSet.copyOf(valueComparator,values);

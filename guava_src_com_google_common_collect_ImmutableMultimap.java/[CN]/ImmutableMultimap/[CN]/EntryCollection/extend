@@ -1,1 +1,1 @@
-ImmutableCollection<Map.Entry<K,V>>
+ImmutableCollection<Entry<K,V>>

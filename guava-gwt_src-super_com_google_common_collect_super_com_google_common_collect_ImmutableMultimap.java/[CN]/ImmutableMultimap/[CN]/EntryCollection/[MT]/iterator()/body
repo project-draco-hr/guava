@@ -1,14 +1,14 @@
 {
-  final Iterator<? extends Map.Entry<K,? extends ImmutableCollection<V>>> mapIterator=this.multimap.map.entrySet().iterator();
-  return new UnmodifiableIterator<Map.Entry<K,V>>(){
+  final Iterator<? extends Entry<K,? extends ImmutableCollection<V>>> mapIterator=this.multimap.map.entrySet().iterator();
+  return new UnmodifiableIterator<Entry<K,V>>(){
     K key;
     Iterator<V> valueIterator;
     @Override public boolean hasNext(){
       return (key != null && valueIterator.hasNext()) || mapIterator.hasNext();
     }
-    @Override public Map.Entry<K,V> next(){
+    @Override public Entry<K,V> next(){
       if (key == null || !valueIterator.hasNext()) {
-        Map.Entry<K,? extends ImmutableCollection<V>> entry=mapIterator.next();
+        Entry<K,? extends ImmutableCollection<V>> entry=mapIterator.next();
         key=entry.getKey();
         valueIterator=entry.getValue().iterator();
       }

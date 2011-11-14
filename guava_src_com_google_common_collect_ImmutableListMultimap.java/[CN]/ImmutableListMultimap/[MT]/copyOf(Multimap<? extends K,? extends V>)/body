@@ -10,7 +10,7 @@
   }
   ImmutableMap.Builder<K,ImmutableList<V>> builder=ImmutableMap.builder();
   int size=0;
-  for (  Map.Entry<? extends K,? extends Collection<? extends V>> entry : multimap.asMap().entrySet()) {
+  for (  Entry<? extends K,? extends Collection<? extends V>> entry : multimap.asMap().entrySet()) {
     ImmutableList<V> list=ImmutableList.copyOf(entry.getValue());
     if (!list.isEmpty()) {
       builder.put(entry.getKey(),list);
