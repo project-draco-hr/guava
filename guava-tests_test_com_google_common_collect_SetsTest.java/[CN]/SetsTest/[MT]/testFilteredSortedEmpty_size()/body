@@ -1,0 +1,3 @@
+{
+  assertEquals("filterEmptySize",0,filteredEmpty.size());
+}

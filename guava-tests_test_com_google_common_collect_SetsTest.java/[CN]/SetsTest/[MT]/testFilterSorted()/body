@@ -1,0 +1,24 @@
+{
+  SortedSet<Long> sorted=Sets.newTreeSet();
+  for (long i=1; i < 11; i++) {
+    sorted.add(i);
+  }
+  SortedSet<Long> filteredEven=Sets.filter(sorted,new Predicate<Long>(){
+    @Override public boolean apply(    Long input){
+      return input % 2 == 0;
+    }
+  }
+);
+  assertEquals("filteredSortedSet",ImmutableSet.of(2L,4L,6L,8L,10L),filteredEven);
+  assertEquals("First",2L,filteredEven.first().longValue());
+  assertEquals("Last",10L,filteredEven.last().longValue());
+  assertEquals("subSet",ImmutableSet.of(4L,6L),filteredEven.subSet(4L,8L));
+  assertEquals("headSet",ImmutableSet.of(2L,4L),filteredEven.headSet(5L));
+  assertEquals("tailSet",ImmutableSet.of(8L,10L),filteredEven.tailSet(7L));
+  assertEquals("comparator",sorted.comparator(),filteredEven.comparator());
+  sorted.add(12L);
+  sorted.add(0L);
+  assertEquals("addingElementsToSet",ImmutableSet.of(0L,2L,4L,6L,8L,10L,12L),filteredEven);
+  assertEquals("FirstOnModifiedSortedSet",0L,filteredEven.first().longValue());
+  assertEquals("LastOnModifiedSortedSet",12L,filteredEven.last().longValue());
+}

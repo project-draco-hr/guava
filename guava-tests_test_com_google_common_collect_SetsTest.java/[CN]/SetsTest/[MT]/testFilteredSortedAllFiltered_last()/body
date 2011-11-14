@@ -1,0 +1,8 @@
+{
+  try {
+    filterAllElements.last();
+    fail("CallLastOnSetWithAllElementsFilteredThrowsException");
+  }
+ catch (  NoSuchElementException expected) {
+  }
+}

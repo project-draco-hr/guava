@@ -1,0 +1,3 @@
+{
+  assertEquals("filterAllElementsSize",0,filterAllElements.size());
+}

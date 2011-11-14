@@ -16,6 +16,7 @@
   setDefault(Pattern.class,Pattern.compile(""));
   setDefault(Predicate.class,Predicates.alwaysTrue());
   setDefault(Set.class,Collections.emptySet());
+  setDefault(SortedSet.class,new TreeSet());
   setDefault(String.class,"");
   setDefault(Supplier.class,Suppliers.ofInstance(1));
   setDefault(Throwable.class,new Exception());
