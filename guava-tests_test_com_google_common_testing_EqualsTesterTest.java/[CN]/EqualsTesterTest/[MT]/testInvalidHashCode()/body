@@ -5,7 +5,7 @@
   try {
     equalsTester.testEquals();
   }
- catch (  TestAssertionFailure e) {
+ catch (  AssertionFailedError e) {
     assertErrorMessage(e,"the hash (" + a.hashCode() + ") of "+ a+ " [group 1, item 1] must be equal to the hash ("+ b.hashCode()+ ") of "+ b);
     return;
   }

@@ -4,7 +4,7 @@
   try {
     assertion.assertUnrelated(item,unrelated);
   }
- catch (  TestAssertionFailure e) {
-    throw new TestAssertionFailure(e.getMessage().replace("$ITEM",itemString(item,groupNumber,itemNumber)).replace("$UNRELATED",itemString(unrelated,unrelatedGroupNumber,unrelatedItemNumber)));
+ catch (  AssertionFailedError e) {
+    throw new AssertionFailedError(e.getMessage().replace("$ITEM",itemString(item,groupNumber,itemNumber)).replace("$UNRELATED",itemString(unrelated,unrelatedGroupNumber,unrelatedItemNumber)));
   }
 }

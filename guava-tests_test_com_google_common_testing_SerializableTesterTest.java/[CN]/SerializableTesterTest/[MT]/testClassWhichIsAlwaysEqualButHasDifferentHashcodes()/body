@@ -5,7 +5,7 @@
     SerializableTester.reserializeAndAssert(orig);
     errorNotThrown=true;
   }
- catch (  TestAssertionFailure error) {
+ catch (  AssertionFailedError error) {
     assertContains("must be equal to the hash",error.getMessage());
   }
   assertFalse(errorNotThrown);

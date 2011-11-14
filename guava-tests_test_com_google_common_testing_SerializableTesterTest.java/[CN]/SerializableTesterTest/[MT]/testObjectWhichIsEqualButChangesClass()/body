@@ -5,7 +5,7 @@
     SerializableTester.reserializeAndAssert(orig);
     errorNotThrown=true;
   }
- catch (  TestAssertionFailure error) {
+ catch (  AssertionFailedError error) {
     assertContains("Expected 'class ",error.getMessage());
   }
   assertFalse(errorNotThrown);

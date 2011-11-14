@@ -3,7 +3,7 @@
   try {
     tester.testEquals();
   }
- catch (  TestAssertionFailure e) {
+ catch (  AssertionFailedError e) {
     assertErrorMessage(e,"bar [group 1, item 2] must be unequal to x [group 2, item 2]");
     return;
   }

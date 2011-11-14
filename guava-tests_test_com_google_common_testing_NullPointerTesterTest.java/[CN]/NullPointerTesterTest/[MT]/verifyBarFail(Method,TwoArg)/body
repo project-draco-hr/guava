@@ -2,7 +2,7 @@
   try {
     tester.testMethod(bar,method);
   }
- catch (  TestAssertionFailure expected) {
+ catch (  AssertionFailedError expected) {
     return;
   }
   String errorMessage=String.format("Should have flagged method %s for %s",method.getName(),bar);

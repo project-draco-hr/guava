@@ -4,7 +4,7 @@
   try {
     equalsTester.testEquals();
   }
- catch (  TestAssertionFailure e) {
+ catch (  AssertionFailedError e) {
     assertErrorMessage(e,obj + " must be equal to itself");
     return;
   }

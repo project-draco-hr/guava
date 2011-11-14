@@ -5,7 +5,7 @@
     try {
       tester.testMethodParameter(OneArg.class,method,0);
     }
- catch (    TestAssertionFailure expected) {
+ catch (    AssertionFailedError expected) {
       foundProblem=true;
     }
     assertTrue("Should report error in method " + methodName,foundProblem);

@@ -5,7 +5,7 @@
     try {
       tester.testAllPublicInstanceMethods(instance);
     }
- catch (    TestAssertionFailure e) {
+ catch (    AssertionFailedError e) {
       foundProblem=true;
     }
     assertTrue("Should detect problem in " + failClass.getSimpleName(),foundProblem);

@@ -4,7 +4,7 @@
     try {
       tester.testAllPublicInstanceMethods(instance);
     }
- catch (    TestAssertionFailure e) {
+ catch (    AssertionFailedError e) {
       assertNull("Should not detect problem in " + passClass.getSimpleName(),e);
     }
   }

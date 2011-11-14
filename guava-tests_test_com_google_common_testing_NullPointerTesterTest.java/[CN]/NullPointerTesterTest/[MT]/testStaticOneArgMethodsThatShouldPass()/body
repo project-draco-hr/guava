@@ -4,7 +4,7 @@
     try {
       tester.testMethodParameter(OneArg.class,method,0);
     }
- catch (    TestAssertionFailure unexpected) {
+ catch (    AssertionFailedError unexpected) {
       fail("Should not have flagged method " + methodName);
     }
   }

@@ -5,7 +5,7 @@
   try {
     assertion.assertRelated(item,related);
   }
- catch (  TestAssertionFailure e) {
-    throw new TestAssertionFailure(e.getMessage().replace("$ITEM",itemString(item,groupNumber,itemNumber)).replace("$RELATED",itemString(related,groupNumber,relatedItemNumber)));
+ catch (  AssertionFailedError e) {
+    throw new AssertionFailedError(e.getMessage().replace("$ITEM",itemString(item,groupNumber,itemNumber)).replace("$RELATED",itemString(related,groupNumber,relatedItemNumber)));
   }
 }

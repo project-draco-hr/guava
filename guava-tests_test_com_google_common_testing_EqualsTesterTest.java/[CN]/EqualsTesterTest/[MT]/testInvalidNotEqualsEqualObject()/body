@@ -3,7 +3,7 @@
   try {
     equalsTester.testEquals();
   }
- catch (  TestAssertionFailure e) {
+ catch (  AssertionFailedError e) {
     assertErrorMessage(e,reference.toString() + " [group 1, item 1]");
     assertErrorMessage(e,notEqualObject1.toString() + " [group 1, item 2]");
     return;

@@ -9,7 +9,7 @@
   try {
     tester.addEquivalenceGroup(group1Item1).addEquivalenceGroup(group2Item1).test();
   }
- catch (  TestAssertionFailure expected) {
+ catch (  AssertionFailedError expected) {
     assertEquals("TestObject{group=1, item=1} [group 1, item 1] must be inequivalent to " + "TestObject{group=2, item=1} [group 2, item 1]",expected.getMessage());
     return;
   }

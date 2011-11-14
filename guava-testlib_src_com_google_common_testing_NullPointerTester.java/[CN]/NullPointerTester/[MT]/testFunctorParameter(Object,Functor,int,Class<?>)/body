@@ -12,7 +12,7 @@
     if (cause instanceof NullPointerException || cause instanceof UnsupportedOperationException) {
       return;
     }
-    TestAssertionFailure error=new TestAssertionFailure("wrong exception thrown from " + func + ": "+ cause);
+    AssertionFailedError error=new AssertionFailedError("wrong exception thrown from " + func + ": "+ cause);
     error.initCause(cause);
     throw error;
   }
