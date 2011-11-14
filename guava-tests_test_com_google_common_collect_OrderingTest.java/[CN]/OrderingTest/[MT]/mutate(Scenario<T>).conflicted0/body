@@ -1,11 +1,9 @@
 {
-  List<Iterable<T>> words=Lists.newArrayList();
-  words.add(Collections.<T>emptyList());
+  @SuppressWarnings("unchecked") List<T> newList=Lists.newArrayList((T)null);
   for (  T t : scenario.strictlyOrderedList) {
-    words.add(Arrays.asList(t));
-    for (    T s : scenario.strictlyOrderedList) {
-      words.add(Arrays.asList(t,s));
+    if (t != null) {
+      newList.add(t);
     }
   }
-  return new Scenario<Iterable<T>>(scenario.ordering.lexicographical(),words);
+  return new Scenario<T>(scenario.ordering.nullsFirst(),newList);
 }

@@ -1,13 +1,5 @@
 {
-  Ordering<Integer> ordering=scenario.ordering.onResultOf(new Function<Integer,T>(){
-    @Override public T apply(    @Nullable Integer from){
-      return scenario.strictlyOrderedList.get(from);
-    }
-  }
-);
-  List<Integer> list=Lists.newArrayList();
-  for (int i=0; i < scenario.strictlyOrderedList.size(); i++) {
-    list.add(i);
-  }
-  return new Scenario<Integer>(ordering,list);
+  List<T> newList=Lists.newArrayList(scenario.strictlyOrderedList);
+  Collections.reverse(newList);
+  return new Scenario<T>(scenario.ordering.reverse(),newList);
 }
