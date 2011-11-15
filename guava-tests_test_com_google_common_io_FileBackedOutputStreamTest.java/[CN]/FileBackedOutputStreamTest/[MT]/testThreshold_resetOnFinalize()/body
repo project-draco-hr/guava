@@ -1,0 +1,10 @@
+{
+  testThreshold(0,100,true,true);
+  testThreshold(10,100,true,true);
+  testThreshold(100,100,true,true);
+  testThreshold(1000,100,true,true);
+  testThreshold(0,100,false,true);
+  testThreshold(10,100,false,true);
+  testThreshold(100,100,false,true);
+  testThreshold(1000,100,false,true);
+}

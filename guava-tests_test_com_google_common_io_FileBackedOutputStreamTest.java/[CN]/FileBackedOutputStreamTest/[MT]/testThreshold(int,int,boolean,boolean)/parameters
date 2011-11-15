@@ -1,3 +1,4 @@
 int fileThreshold
 int dataSize
 boolean singleByte
+boolean resetOnFinalize
