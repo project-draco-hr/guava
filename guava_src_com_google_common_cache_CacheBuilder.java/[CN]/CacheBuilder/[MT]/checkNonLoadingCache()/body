@@ -1,0 +1,3 @@
+{
+  checkState(refreshNanos == UNSET_INT,"refreshInterval requires a LoadingCache");
+}
