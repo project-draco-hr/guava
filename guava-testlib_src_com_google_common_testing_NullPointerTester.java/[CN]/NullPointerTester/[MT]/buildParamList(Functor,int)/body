@@ -5,7 +5,7 @@
     if (i != indexOfParamToSetToNull) {
       params[i]=defaults.get(types[i]);
       if (!parameterIsPrimitiveOrNullable(func,indexOfParamToSetToNull)) {
-        GuavaAsserts.assertTrue("No default value found for " + types[i].getName(),params[i] != null);
+        Assert.assertTrue("No default value found for " + types[i].getName(),params[i] != null);
       }
     }
   }

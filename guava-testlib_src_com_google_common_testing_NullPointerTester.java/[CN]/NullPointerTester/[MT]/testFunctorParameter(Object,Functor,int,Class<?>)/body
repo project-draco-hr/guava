@@ -5,7 +5,7 @@
   Object[] params=buildParamList(func,paramIndex);
   try {
     func.invoke(instance,params);
-    GuavaAsserts.fail("No exception thrown from " + func + Arrays.toString(params)+ " for "+ testedClass);
+    Assert.fail("No exception thrown from " + func + Arrays.toString(params)+ " for "+ testedClass);
   }
  catch (  InvocationTargetException e) {
     Throwable cause=e.getCause();

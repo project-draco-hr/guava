@@ -6,7 +6,7 @@
     errorNotThrown=true;
   }
  catch (  AssertionFailedError error) {
-    assertContains("Expected 'class ",error.getMessage());
+    assertContains("expected:<class ",error.getMessage());
   }
   assertFalse(errorNotThrown);
 }
