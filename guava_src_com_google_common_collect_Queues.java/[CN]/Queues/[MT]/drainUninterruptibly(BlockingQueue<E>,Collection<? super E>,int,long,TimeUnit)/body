@@ -1,0 +1,39 @@
+{
+  Preconditions.checkNotNull(buffer);
+  long remainingNanos=unit.toNanos(timeout);
+  long end=System.nanoTime() + unit.toNanos(timeout);
+  int added=0;
+  boolean interrupted=false;
+  try {
+    while (added < maxElements) {
+      added+=q.drainTo(buffer,maxElements - added);
+      if (added < maxElements) {
+        E e;
+        while (true) {
+          try {
+            e=q.poll(remainingNanos,TimeUnit.NANOSECONDS);
+            break;
+          }
+ catch (          InterruptedException ex) {
+            interrupted=true;
+          }
+        }
+        if (e == null) {
+          break;
+        }
+        buffer.add(e);
+        added++;
+        if (added >= maxElements) {
+          break;
+        }
+        remainingNanos=end - System.nanoTime();
+      }
+    }
+  }
+  finally {
+    if (interrupted) {
+      Thread.currentThread().interrupt();
+    }
+  }
+  return added;
+}

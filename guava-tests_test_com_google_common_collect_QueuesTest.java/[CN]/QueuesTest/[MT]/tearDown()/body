@@ -1,0 +1,4 @@
+{
+  threadPool.shutdown();
+  assertTrue("Some worker didn't finish in time",threadPool.awaitTermination(1,TimeUnit.SECONDS));
+}

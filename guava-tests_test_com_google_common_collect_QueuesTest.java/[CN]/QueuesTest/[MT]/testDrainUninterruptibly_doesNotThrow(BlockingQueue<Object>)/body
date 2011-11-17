@@ -1,0 +1,16 @@
+{
+  final Thread mainThread=Thread.currentThread();
+  threadPool.submit(new Runnable(){
+    public void run(){
+      new Producer(q,50).run();
+      new Interrupter(mainThread).run();
+      new Producer(q,50).run();
+    }
+  }
+);
+  List<Object> buf=Lists.newArrayList();
+  int elements=Queues.drainUninterruptibly(q,buf,100,Long.MAX_VALUE,TimeUnit.NANOSECONDS);
+  assertTrue(Thread.interrupted());
+  assertEquals(100,elements);
+  assertEquals(100,buf.size());
+}

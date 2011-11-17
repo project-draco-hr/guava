@@ -1,0 +1,10 @@
+{
+  try {
+    Queues.newLinkedBlockingQueue(0);
+    fail("Should have thrown IllegalArgumentException");
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+  assertEquals(1,Queues.newLinkedBlockingQueue(1).remainingCapacity());
+  assertEquals(11,Queues.newLinkedBlockingQueue(11).remainingCapacity());
+}
