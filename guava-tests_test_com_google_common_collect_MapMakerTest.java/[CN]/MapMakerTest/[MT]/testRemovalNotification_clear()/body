@@ -1,17 +1,6 @@
 {
   final CountDownLatch computingLatch=new CountDownLatch(1);
-  Function<String,String> computingFunction=new Function<String,String>(){
-    @Override public String apply(    String key){
-      try {
-        computingLatch.await();
-      }
- catch (      InterruptedException e) {
-        Thread.currentThread().interrupt();
-      }
-      return key;
-    }
-  }
-;
+  Function<String,String> computingFunction=new DelayingIdentityLoader(computingLatch);
   QueuingRemovalListener<String,String> listener=new QueuingRemovalListener<String,String>();
   @SuppressWarnings("deprecation") final ConcurrentMap<String,String> map=new MapMaker().concurrencyLevel(1).removalListener(listener).makeComputingMap(computingFunction);
   map.put("a","a");

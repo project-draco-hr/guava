@@ -1,16 +1,4 @@
 {
-  boolean interrupted=false;
-  while (true) {
-    try {
-      delayLatch.await();
-      break;
-    }
- catch (    InterruptedException e) {
-      interrupted=true;
-    }
-  }
-  if (interrupted) {
-    Thread.currentThread().interrupt();
-  }
+  awaitUninterruptibly(delayLatch);
   return key;
 }
