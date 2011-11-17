@@ -12,5 +12,6 @@
   }
   finally {
     interruptenator.shutdown();
+    Thread.interrupted();
   }
 }
