@@ -1,8 +1,0 @@
-{
-  if (elements instanceof Collection) {
-    return new ArrayDeque<E>(Collections2.cast(elements));
-  }
-  ArrayDeque<E> deque=new ArrayDeque<E>();
-  Iterables.addAll(deque,elements);
-  return deque;
-}
