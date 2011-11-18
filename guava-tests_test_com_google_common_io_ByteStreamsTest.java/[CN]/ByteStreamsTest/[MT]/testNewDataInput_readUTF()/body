@@ -1,0 +1,7 @@
+{
+  byte[] data=new byte[17];
+  data[1]=15;
+  System.arraycopy("Kilroy was here".getBytes(Charsets.UTF_8),0,data,2,15);
+  ByteArrayDataInput in=ByteStreams.newDataInput(data);
+  assertEquals("Kilroy was here",in.readUTF());
+}

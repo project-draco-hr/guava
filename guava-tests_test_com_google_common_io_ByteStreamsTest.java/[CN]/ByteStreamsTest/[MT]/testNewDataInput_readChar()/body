@@ -1,0 +1,7 @@
+{
+  byte[] data="qed".getBytes(Charsets.UTF_16BE);
+  ByteArrayDataInput in=ByteStreams.newDataInput(data);
+  assertEquals('q',in.readChar());
+  assertEquals('e',in.readChar());
+  assertEquals('d',in.readChar());
+}

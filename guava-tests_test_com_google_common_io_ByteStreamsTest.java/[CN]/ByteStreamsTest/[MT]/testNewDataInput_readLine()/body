@@ -1,0 +1,7 @@
+{
+  ByteArrayDataInput in=ByteStreams.newDataInput("This is a line\r\nThis too\rand this\nand also this".getBytes(Charsets.UTF_8));
+  assertEquals("This is a line",in.readLine());
+  assertEquals("This too",in.readLine());
+  assertEquals("and this",in.readLine());
+  assertEquals("and also this",in.readLine());
+}
