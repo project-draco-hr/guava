@@ -1,21 +1,16 @@
 {
   Preconditions.checkNotNull(buffer);
-  long remainingNanos=unit.toNanos(timeout);
-  long end=System.nanoTime() + unit.toNanos(timeout);
+  long deadline=System.nanoTime() + unit.toNanos(timeout);
   int added=0;
   while (added < maxElements) {
     added+=q.drainTo(buffer,maxElements - added);
     if (added < maxElements) {
-      E e=q.poll(remainingNanos,TimeUnit.NANOSECONDS);
+      E e=q.poll(deadline - System.nanoTime(),TimeUnit.NANOSECONDS);
       if (e == null) {
         break;
       }
       buffer.add(e);
       added++;
-      if (added >= maxElements) {
-        break;
-      }
-      remainingNanos=end - System.nanoTime();
     }
   }
   return added;
