@@ -1,0 +1,8 @@
+{
+  List<T> mutable=newArrayList(in);
+  List<T> out=newArrayList();
+  while (!mutable.isEmpty()) {
+    out.add(mutable.remove(random.nextInt(mutable.size())));
+  }
+  return out;
+}

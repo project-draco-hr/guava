@@ -9,5 +9,5 @@
   assertUnboundedAbove(range);
   assertFalse(range.isEmpty());
   assertEquals("(5\u2025+\u221e)",range.toString());
-  reserializeAndAssertUnlessGwt(range);
+  reserializeAndAssert(range);
 }

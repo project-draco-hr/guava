@@ -9,7 +9,7 @@
     }
   }
 ;
-  Collections.shuffle(list,new Random(1));
+  list=shuffledCopy(list,new Random(1));
   Collections.sort(list,arbitrary);
   Helpers.testComparator(arbitrary,list);
 }

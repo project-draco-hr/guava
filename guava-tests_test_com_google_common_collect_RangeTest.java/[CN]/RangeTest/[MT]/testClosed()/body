@@ -9,5 +9,5 @@
   assertEquals(CLOSED,range.upperBoundType());
   assertFalse(range.isEmpty());
   assertEquals("[5\u20257]",range.toString());
-  reserializeAndAssertUnlessGwt(range);
+  reserializeAndAssert(range);
 }

@@ -9,5 +9,5 @@
   assertEquals(OPEN,range.upperBoundType());
   assertFalse(range.isEmpty());
   assertEquals("(-\u221e\u20255)",range.toString());
-  reserializeAndAssertUnlessGwt(range);
+  reserializeAndAssert(range);
 }
