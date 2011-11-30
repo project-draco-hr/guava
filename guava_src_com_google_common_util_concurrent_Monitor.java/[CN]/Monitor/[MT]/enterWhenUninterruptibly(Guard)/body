@@ -4,12 +4,15 @@
   }
   final ReentrantLock lock=this.lock;
   boolean reentrant=lock.isHeldByCurrentThread();
+  boolean success=false;
   lock.lock();
   try {
     waitUninterruptibly(guard,reentrant);
+    success=true;
   }
- catch (  Throwable throwable) {
-    lock.unlock();
-    throw Throwables.propagate(throwable);
+  finally {
+    if (!success) {
+      lock.unlock();
+    }
   }
 }

@@ -8,20 +8,15 @@
   if (!lock.tryLock(time,unit)) {
     return false;
   }
-  boolean satisfied;
+  boolean satisfied=false;
   try {
     long remainingNanos=unit.toNanos(time) - (System.nanoTime() - startNanos);
     satisfied=waitInterruptibly(guard,remainingNanos,reentrant);
   }
- catch (  Throwable throwable) {
-    lock.unlock();
-    throw Throwables.propagate(throwable);
+  finally {
+    if (!satisfied) {
+      lock.unlock();
+    }
   }
-  if (satisfied) {
-    return true;
-  }
- else {
-    lock.unlock();
-    return false;
-  }
+  return satisfied;
 }

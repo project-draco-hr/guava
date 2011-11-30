@@ -25,21 +25,16 @@
         remainingNanos=(timeoutNanos - (System.nanoTime() - startNanos));
       }
     }
-    boolean satisfied;
+    boolean satisfied=false;
     try {
       satisfied=waitUninterruptibly(guard,remainingNanos,reentrant);
     }
- catch (    Throwable throwable) {
-      lock.unlock();
-      throw Throwables.propagate(throwable);
+  finally {
+      if (!satisfied) {
+        lock.unlock();
+      }
     }
-    if (satisfied) {
-      return true;
-    }
- else {
-      lock.unlock();
-      return false;
-    }
+    return satisfied;
   }
   finally {
     if (interruptIgnored) {
