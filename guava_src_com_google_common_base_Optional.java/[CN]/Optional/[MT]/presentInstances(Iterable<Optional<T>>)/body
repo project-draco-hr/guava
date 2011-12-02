@@ -1,0 +1,21 @@
+{
+  checkNotNull(optionals);
+  final Iterator<Optional<T>> iterator=checkNotNull(optionals.iterator());
+  return new Iterable<T>(){
+    @Override public Iterator<T> iterator(){
+      return new AbstractIterator<T>(){
+        @Override protected T computeNext(){
+          while (iterator.hasNext()) {
+            Optional<T> optional=iterator.next();
+            if (optional.isPresent()) {
+              return optional.get();
+            }
+          }
+          return endOfData();
+        }
+      }
+;
+    }
+  }
+;
+}

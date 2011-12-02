@@ -1,0 +1,4 @@
+{
+  List<Optional<String>> optionals=ImmutableList.of(Optional.of("a"),Optional.of("b"),Optional.of("c"));
+  ASSERT.that(Optional.presentInstances(optionals)).hasContentsInOrder("a","b","c");
+}
