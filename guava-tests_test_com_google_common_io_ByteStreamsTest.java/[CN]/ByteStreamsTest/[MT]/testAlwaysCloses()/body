@@ -16,7 +16,7 @@
     ByteStreams.copy(okRead,brokenWrite);
     fail("expected exception");
   }
- catch (  Exception e) {
+ catch (  IOException e) {
     assertEquals("broken write",e.getMessage());
   }
   assertTrue(okRead.areClosed());
@@ -25,7 +25,7 @@
     ByteStreams.copy(brokenRead,okWrite);
     fail("expected exception");
   }
- catch (  Exception e) {
+ catch (  IOException e) {
     assertEquals("broken read",e.getMessage());
   }
   assertTrue(brokenRead.areClosed());
@@ -34,7 +34,7 @@
     ByteStreams.copy(brokenRead,brokenWrite);
     fail("expected exception");
   }
- catch (  Exception e) {
+ catch (  IOException e) {
     assertEquals("broken read",e.getMessage());
   }
   assertTrue(brokenRead.areClosed());
@@ -49,7 +49,7 @@
     ByteStreams.copy(okRead,out);
     fail("expected exception");
   }
- catch (  Exception e) {
+ catch (  IOException e) {
     assertEquals("broken write",e.getMessage());
   }
   assertTrue(okRead.areClosed());
@@ -60,7 +60,7 @@
     ByteStreams.copy(brokenRead,out);
     fail("expected exception");
   }
- catch (  Exception e) {
+ catch (  IOException e) {
     assertEquals("broken read",e.getMessage());
   }
   assertTrue(brokenRead.areClosed());
@@ -71,7 +71,7 @@
     ByteStreams.copy(brokenRead,out);
     fail("expected exception");
   }
- catch (  Exception e) {
+ catch (  IOException e) {
     assertEquals("broken read",e.getMessage());
   }
   assertTrue(brokenRead.areClosed());
@@ -87,7 +87,7 @@
     ByteStreams.copy(in,brokenWrite);
     fail("expected exception");
   }
- catch (  Exception e) {
+ catch (  IOException e) {
     assertEquals("broken write",e.getMessage());
   }
   assertFalse(okRead.areClosed());
@@ -98,7 +98,7 @@
     ByteStreams.copy(in,okWrite);
     fail("expected exception");
   }
- catch (  Exception e) {
+ catch (  IOException e) {
     assertEquals("broken read",e.getMessage());
   }
   assertFalse(brokenRead.areClosed());
@@ -109,7 +109,7 @@
     ByteStreams.copy(in,brokenWrite);
     fail("expected exception");
   }
- catch (  Exception e) {
+ catch (  IOException e) {
     assertEquals("broken read",e.getMessage());
   }
   assertFalse(brokenRead.areClosed());
@@ -121,7 +121,7 @@
     ByteStreams.toByteArray(brokenRead);
     fail("expected exception");
   }
- catch (  Exception e) {
+ catch (  IOException e) {
     assertEquals("broken read",e.getMessage());
   }
   assertTrue(brokenRead.areClosed());
@@ -129,7 +129,7 @@
     ByteStreams.equal(brokenRead,okRead);
     fail("expected exception");
   }
- catch (  Exception e) {
+ catch (  IOException e) {
     assertEquals("broken read",e.getMessage());
   }
   assertTrue(brokenRead.areClosed());
@@ -137,7 +137,7 @@
     ByteStreams.equal(okRead,brokenRead);
     fail("expected exception");
   }
- catch (  Exception e) {
+ catch (  IOException e) {
     assertEquals("broken read",e.getMessage());
   }
   assertTrue(brokenRead.areClosed());
@@ -145,7 +145,7 @@
     ByteStreams.write(new byte[10],brokenWrite);
     fail("expected exception");
   }
- catch (  Exception e) {
+ catch (  IOException e) {
     assertEquals("broken write",e.getMessage());
   }
   assertTrue(brokenWrite.areClosed());

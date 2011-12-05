@@ -1,0 +1,5 @@
+{
+  int records=logHandler.getStoredLogRecords().size();
+  logHandler.clear();
+  return records;
+}

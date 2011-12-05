@@ -1,0 +1,8 @@
+{
+  return new OutputSupplier<Writer>(){
+    @Override public Writer getOutput(){
+      return new StringWriter();
+    }
+  }
+;
+}

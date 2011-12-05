@@ -1,0 +1,8 @@
+{
+  return new OutputSupplier<OutputStream>(){
+    @Override public OutputStream getOutput(){
+      return new ByteArrayOutputStream();
+    }
+  }
+;
+}
