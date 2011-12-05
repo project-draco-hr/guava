@@ -14,6 +14,7 @@
   ticker=builder.getTicker(recordsTime());
   entryFactory=EntryFactory.getFactory(keyStrength,usesAccessEntries(),usesWriteEntries());
   globalStatsCounter=builder.getStatsCounterSupplier().get();
+  defaultLoader=loader;
   int initialCapacity=Math.min(builder.getInitialCapacity(),MAXIMUM_CAPACITY);
   if (evictsBySize() && !customWeigher()) {
     initialCapacity=Math.min(initialCapacity,(int)maxWeight);

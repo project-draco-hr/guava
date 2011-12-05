@@ -1,2 +1,0 @@
-LocalCache<K,V> cache
-CacheLoader<? super K,V> loader

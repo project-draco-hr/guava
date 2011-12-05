@@ -9,11 +9,9 @@
       V value=e.getValueReference().get();
       if (value != null) {
         recordRead(e,now);
+        return scheduleRefresh(e,e.getKey(),hash,value,now,map.defaultLoader);
       }
- else {
-        tryDrainReferenceQueues();
-      }
-      return value;
+      tryDrainReferenceQueues();
     }
     return null;
   }

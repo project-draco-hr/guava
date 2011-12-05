@@ -9,3 +9,4 @@ Weigher<K,V> weigher
 int concurrencyLevel
 RemovalListener<? super K,? super V> removalListener
 Ticker ticker
+CacheLoader<? super K,V> loader

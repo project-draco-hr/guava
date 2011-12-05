@@ -10,4 +10,5 @@
   this.concurrencyLevel=concurrencyLevel;
   this.removalListener=removalListener;
   this.ticker=(ticker == Ticker.systemTicker() || ticker == NULL_TICKER) ? null : ticker;
+  this.loader=loader;
 }

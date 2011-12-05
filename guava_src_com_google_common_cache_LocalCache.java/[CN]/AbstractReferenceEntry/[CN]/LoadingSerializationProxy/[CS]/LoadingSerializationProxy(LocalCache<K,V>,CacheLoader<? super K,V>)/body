@@ -1,4 +1,0 @@
-{
-  super(cache);
-  this.loader=loader;
-}

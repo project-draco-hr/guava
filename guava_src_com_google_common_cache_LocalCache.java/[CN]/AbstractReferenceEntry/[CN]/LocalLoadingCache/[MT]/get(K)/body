@@ -1,3 +1,3 @@
 {
-  return localCache.get(key,loader);
+  return localCache.getOrLoad(key);
 }
