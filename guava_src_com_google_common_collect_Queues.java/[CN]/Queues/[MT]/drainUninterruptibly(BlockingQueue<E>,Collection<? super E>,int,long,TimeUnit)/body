@@ -4,9 +4,9 @@
   int added=0;
   boolean interrupted=false;
   try {
-    while (added < maxElements) {
-      added+=q.drainTo(buffer,maxElements - added);
-      if (added < maxElements) {
+    while (added < numElements) {
+      added+=q.drainTo(buffer,numElements - added);
+      if (added < numElements) {
         E e;
         while (true) {
           try {
