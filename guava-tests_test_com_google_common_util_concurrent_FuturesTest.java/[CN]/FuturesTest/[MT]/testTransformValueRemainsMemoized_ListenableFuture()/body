@@ -1,0 +1,25 @@
+{
+class Holder {
+    int value=2;
+  }
+  final Holder holder=new Holder();
+  Function<Integer,Integer> adder=new Function<Integer,Integer>(){
+    @Override public Integer apply(    Integer from){
+      return from + holder.value;
+    }
+  }
+;
+  assertEquals(6,adder.apply(4).intValue());
+  ListenableFuture<Integer> immediateFuture=Futures.immediateFuture(4);
+  Future<Integer> transformedFuture=Futures.transform(immediateFuture,adder);
+  assertEquals(6,transformedFuture.get().intValue());
+  holder.value=3;
+  assertEquals(6,transformedFuture.get().intValue());
+  assertEquals(7,adder.apply(4).intValue());
+  holder.value=4;
+  assertEquals(6,transformedFuture.get().intValue());
+  assertEquals(8,adder.apply(4).intValue());
+  assertEquals(6,transformedFuture.get(1000,TimeUnit.SECONDS).intValue());
+  assertEquals(8,Futures.transform(immediateFuture,adder).get().intValue());
+  assertEquals(8,Futures.transform(immediateFuture,adder).get(1000,TimeUnit.SECONDS).intValue());
+}

@@ -7,5 +7,5 @@
     }
   }
 ;
-  return chain(future,wrapperFunction,exec);
+  return chain(future,wrapperFunction,executor);
 }

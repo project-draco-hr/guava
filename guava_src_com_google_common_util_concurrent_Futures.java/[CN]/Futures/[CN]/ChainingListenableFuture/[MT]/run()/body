@@ -40,7 +40,7 @@ catch (        ExecutionException e) {
  catch (  UndeclaredThrowableException e) {
     setException(e.getCause());
   }
-catch (  RuntimeException e) {
+catch (  Exception e) {
     setException(e);
   }
 catch (  Error e) {

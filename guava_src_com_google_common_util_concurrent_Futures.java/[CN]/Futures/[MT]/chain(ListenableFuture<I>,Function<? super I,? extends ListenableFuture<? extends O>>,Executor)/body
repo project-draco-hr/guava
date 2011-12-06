@@ -1,5 +1,11 @@
 {
-  ChainingListenableFuture<I,O> chain=new ChainingListenableFuture<I,O>(function,input);
-  input.addListener(chain,exec);
+  checkNotNull(function);
+  ChainingListenableFuture<I,O> chain=new ChainingListenableFuture<I,O>(new AsyncFunction<I,O>(){
+    @Override @SuppressWarnings("unchecked") public ListenableFuture<O> apply(    I input){
+      return (ListenableFuture)function.apply(input);
+    }
+  }
+,input);
+  input.addListener(chain,executor);
   return chain;
 }
