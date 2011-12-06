@@ -1,0 +1,5 @@
+{
+  Multimap<String,Integer> multimap=createMultimap();
+  populate(multimap);
+  return multimap.asMap();
+}

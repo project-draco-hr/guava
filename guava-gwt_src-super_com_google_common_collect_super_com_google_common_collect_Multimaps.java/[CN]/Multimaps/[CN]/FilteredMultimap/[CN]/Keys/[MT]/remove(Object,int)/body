@@ -1,0 +1,20 @@
+{
+  checkArgument(occurrences >= 0);
+  Collection<V> values=unfiltered.asMap().get(o);
+  if (values == null) {
+    return 0;
+  }
+  int priorCount=0;
+  int removed=0;
+  Iterator<V> iterator=values.iterator();
+  while (iterator.hasNext()) {
+    if (satisfiesPredicate(o,iterator.next())) {
+      priorCount++;
+      if (removed < occurrences) {
+        iterator.remove();
+        removed++;
+      }
+    }
+  }
+  return priorCount;
+}

@@ -1,0 +1,3 @@
+{
+  return predicate.apply(Maps.immutableEntry((K)key,(V)value));
+}

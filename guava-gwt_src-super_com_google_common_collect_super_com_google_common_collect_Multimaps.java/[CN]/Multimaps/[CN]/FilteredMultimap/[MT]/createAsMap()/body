@@ -1,0 +1,11 @@
+{
+  EntryTransformer<K,Collection<V>,Collection<V>> transformer=new EntryTransformer<K,Collection<V>,Collection<V>>(){
+    @Override public Collection<V> transformEntry(    K key,    Collection<V> collection){
+      return filterCollection(collection,new ValuePredicate(key));
+    }
+  }
+;
+  Map<K,Collection<V>> transformed=Maps.transformEntries(unfiltered.asMap(),transformer);
+  Map<K,Collection<V>> filtered=Maps.filterValues(transformed,NOT_EMPTY);
+  return new AsMap(filtered);
+}

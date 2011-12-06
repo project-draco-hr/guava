@@ -1,0 +1,22 @@
+{
+  Iterator<Map.Entry<K,Collection<V>>> iterator=unfiltered.asMap().entrySet().iterator();
+  boolean changed=false;
+  while (iterator.hasNext()) {
+    Map.Entry<K,Collection<V>> entry=iterator.next();
+    K key=entry.getKey();
+    Collection<V> collection=entry.getValue();
+    Predicate<V> valuePredicate=new ValuePredicate(key);
+    Collection<V> filteredCollection=filterCollection(collection,valuePredicate);
+    Map.Entry<K,Collection<V>> filteredEntry=Maps.immutableEntry(key,filteredCollection);
+    if (removalPredicate.apply(filteredEntry) && !filteredCollection.isEmpty()) {
+      changed=true;
+      if (Iterables.all(collection,valuePredicate)) {
+        iterator.remove();
+      }
+ else {
+        filteredCollection.clear();
+      }
+    }
+  }
+  return changed;
+}

@@ -1,0 +1,6 @@
+{
+  Multimap<String,Integer> unfiltered=HashMultimap.create();
+  unfiltered.put("foo",55556);
+  unfiltered.put("badkey",1);
+  return Multimaps.filterEntries(unfiltered,ENTRY_PREDICATE);
+}

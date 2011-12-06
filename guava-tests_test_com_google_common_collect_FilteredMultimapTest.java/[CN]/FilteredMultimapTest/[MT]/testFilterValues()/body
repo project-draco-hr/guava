@@ -1,0 +1,9 @@
+{
+  Multimap<String,Integer> unfiltered=HashMultimap.create();
+  unfiltered.put("foo",55556);
+  unfiltered.put("badkey",1);
+  Multimap<String,Integer> filtered=Multimaps.filterValues(unfiltered,VALUE_PREDICATE);
+  assertEquals(1,filtered.size());
+  assertFalse(filtered.containsEntry("foo",55556));
+  assertTrue(filtered.containsEntry("badkey",1));
+}

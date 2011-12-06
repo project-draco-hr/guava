@@ -1,0 +1,9 @@
+{
+  for (  Collection<V> collection : this) {
+    if (collection.equals(o)) {
+      collection.clear();
+      return true;
+    }
+  }
+  return false;
+}

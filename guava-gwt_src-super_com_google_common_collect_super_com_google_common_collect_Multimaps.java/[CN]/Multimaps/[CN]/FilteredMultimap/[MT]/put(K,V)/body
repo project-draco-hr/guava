@@ -1,0 +1,4 @@
+{
+  checkArgument(satisfiesPredicate(key,value));
+  return unfiltered.put(key,value);
+}

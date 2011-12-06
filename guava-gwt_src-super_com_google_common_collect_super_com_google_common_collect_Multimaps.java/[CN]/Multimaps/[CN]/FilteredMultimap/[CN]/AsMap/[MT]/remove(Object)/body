@@ -1,0 +1,4 @@
+{
+  Collection<V> output=FilteredMultimap.this.removeAll(o);
+  return output.isEmpty() ? null : output;
+}

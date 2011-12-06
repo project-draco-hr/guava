@@ -1,0 +1,6 @@
+{
+  for (  Entry<? extends K,? extends V> entry : multimap.entries()) {
+    checkArgument(satisfiesPredicate(entry.getKey(),entry.getValue()));
+  }
+  return unfiltered.putAll(multimap);
+}

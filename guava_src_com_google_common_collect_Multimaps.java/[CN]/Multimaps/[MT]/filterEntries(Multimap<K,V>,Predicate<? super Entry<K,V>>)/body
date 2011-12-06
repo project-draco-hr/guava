@@ -1,0 +1,4 @@
+{
+  checkNotNull(entryPredicate);
+  return (unfiltered instanceof FilteredMultimap) ? filterFiltered((FilteredMultimap<K,V>)unfiltered,entryPredicate) : new FilteredMultimap<K,V>(checkNotNull(unfiltered),entryPredicate);
+}

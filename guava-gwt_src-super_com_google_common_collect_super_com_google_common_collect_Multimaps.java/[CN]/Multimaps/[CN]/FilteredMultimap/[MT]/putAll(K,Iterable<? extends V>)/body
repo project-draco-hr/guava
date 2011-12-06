@@ -1,0 +1,6 @@
+{
+  for (  V value : values) {
+    checkArgument(satisfiesPredicate(key,value));
+  }
+  return unfiltered.putAll(key,values);
+}

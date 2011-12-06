@@ -1,0 +1,3 @@
+{
+  return (asMapValues == null) ? asMapValues=new Values() : asMapValues;
+}

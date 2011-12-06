@@ -1,0 +1,3 @@
+{
+  return Platform.getMethod(MultisetWritesTester.class,"testEntrySet_iterator");
+}

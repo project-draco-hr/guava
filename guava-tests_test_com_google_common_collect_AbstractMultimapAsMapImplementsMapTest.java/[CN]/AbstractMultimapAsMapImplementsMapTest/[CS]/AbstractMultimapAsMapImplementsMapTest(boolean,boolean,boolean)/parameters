@@ -1,0 +1,3 @@
+boolean modifiable
+boolean allowsNulls
+boolean supportsIteratorRemove

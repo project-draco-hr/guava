@@ -1,0 +1,8 @@
+{
+  for (  V value : values) {
+    checkArgument(satisfiesPredicate(key,value));
+  }
+  Collection<V> oldValues=removeAll(key);
+  unfiltered.putAll(key,values);
+  return oldValues;
+}

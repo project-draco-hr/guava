@@ -1,0 +1,10 @@
+{
+  if (object == this) {
+    return true;
+  }
+  if (object instanceof Multimap) {
+    Multimap<?,?> that=(Multimap<?,?>)object;
+    return asMap().equals(that.asMap());
+  }
+  return false;
+}
