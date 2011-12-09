@@ -4,22 +4,25 @@
   while (offset < length) {
     int digit=Character.digit(string.charAt(offset++),radix);
     if (digit == -1) {
-      throw new NumberFormatException("unable to parse '" + string + "' as integer");
+      return null;
     }
     if (max > result) {
-      throw new NumberFormatException("unable to parse '" + string + "' as integer");
+      return null;
     }
     int next=result * radix - digit;
     if (next > result) {
-      throw new NumberFormatException("unable to parse '" + string + "' as integer");
+      return null;
     }
     result=next;
   }
   if (!negative) {
     result=-result;
     if (result < 0) {
-      throw new NumberFormatException("unable to parse '" + string + "' as integer");
+      return null;
     }
+  }
+  if (result > Integer.MAX_VALUE || result < Integer.MIN_VALUE) {
+    return null;
   }
   return result;
 }

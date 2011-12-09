@@ -1,0 +1,16 @@
+{
+  tryParseAndAssertEquals(0,"0");
+  tryParseAndAssertEquals(0,"-0");
+  tryParseAndAssertEquals(1,"1");
+  tryParseAndAssertEquals(-1,"-1");
+  tryParseAndAssertEquals(8900,"8900");
+  tryParseAndAssertEquals(-8900,"-8900");
+  tryParseAndAssertEquals(GREATEST,Integer.toString(GREATEST));
+  tryParseAndAssertEquals(LEAST,Integer.toString(LEAST));
+  assertNull(Ints.tryParse(""));
+  assertNull(Ints.tryParse("-"));
+  assertNull(Ints.tryParse("+1"));
+  assertNull(Ints.tryParse("9999999999999999"));
+  assertNull("Max integer + 1",Ints.tryParse(Long.toString(((long)GREATEST) + 1)));
+  assertNull("Min integer - 1",Ints.tryParse(Long.toString(((long)LEAST) - 1)));
+}

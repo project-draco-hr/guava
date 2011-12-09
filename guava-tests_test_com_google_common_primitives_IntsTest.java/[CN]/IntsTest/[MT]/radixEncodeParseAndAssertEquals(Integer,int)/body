@@ -1,0 +1,3 @@
+{
+  assertEquals("Radix: " + radix,value,Ints.tryParse(Integer.toString(value,radix),radix));
+}
