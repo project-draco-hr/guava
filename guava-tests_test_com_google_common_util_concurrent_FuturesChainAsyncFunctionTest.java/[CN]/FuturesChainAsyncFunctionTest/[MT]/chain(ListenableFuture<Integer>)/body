@@ -1,3 +1,0 @@
-{
-  return Futures.transform(inputFuture,new AsyncFunctionFunction());
-}

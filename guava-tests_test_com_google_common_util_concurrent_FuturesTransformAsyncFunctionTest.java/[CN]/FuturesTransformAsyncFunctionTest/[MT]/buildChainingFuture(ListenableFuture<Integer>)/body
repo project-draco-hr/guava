@@ -2,5 +2,5 @@
   outputFuture=SettableFuture.create();
   funcIsWaitingLatch=new CountDownLatch(1);
   funcCompletionLatch=new CountDownLatch(1);
-  return chain(inputFuture);
+  return Futures.transform(inputFuture,new ChainingFunction());
 }

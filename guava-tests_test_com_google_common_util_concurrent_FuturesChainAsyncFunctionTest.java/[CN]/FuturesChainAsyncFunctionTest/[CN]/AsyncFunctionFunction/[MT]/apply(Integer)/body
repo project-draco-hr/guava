@@ -1,3 +1,0 @@
-{
-  return FuturesChainAsyncFunctionTest.this.apply(input);
-}
