@@ -1,0 +1,21 @@
+{
+  V value;
+  try {
+    value=loader.load(key);
+  }
+ catch (  RuntimeException e) {
+    throw new UncheckedExecutionException(e);
+  }
+catch (  Exception e) {
+    throw new ExecutionException(e);
+  }
+catch (  Error e) {
+    throw new ExecutionError(e);
+  }
+  if (value == null) {
+    String message=loader + " returned null for key " + key+ ".";
+    throw new InvalidCacheLoadException(message);
+  }
+  put(key,value);
+  return value;
+}

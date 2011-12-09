@@ -1,0 +1,6 @@
+{
+  checkState(expirationMillis == UNSET_INT,"expireAfterWrite was already set to %s ms",expirationMillis);
+  checkArgument(duration >= 0,"duration cannot be negative: %s %s",duration,unit);
+  this.expirationMillis=unit.toMillis(duration);
+  return this;
+}

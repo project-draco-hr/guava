@@ -1,0 +1,9 @@
+{
+  CacheBuilder<Object,Object> builder=new CacheBuilder<Object,Object>().maximumSize(16);
+  try {
+    builder.maximumWeight(16);
+    fail();
+  }
+ catch (  IllegalStateException expected) {
+  }
+}

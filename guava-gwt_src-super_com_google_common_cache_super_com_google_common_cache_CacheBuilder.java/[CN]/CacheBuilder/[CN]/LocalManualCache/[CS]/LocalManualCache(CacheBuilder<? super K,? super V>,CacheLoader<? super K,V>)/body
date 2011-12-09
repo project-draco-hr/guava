@@ -1,0 +1,3 @@
+{
+  this.localCache=new LocalCache<K,V>(builder,loader);
+}
