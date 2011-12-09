@@ -1,0 +1,4 @@
+{
+  LinkedHashSet<Integer> set=Sets.newLinkedHashSetWithExpectedSize(0);
+  verifySetContents(set,EMPTY_COLLECTION);
+}
