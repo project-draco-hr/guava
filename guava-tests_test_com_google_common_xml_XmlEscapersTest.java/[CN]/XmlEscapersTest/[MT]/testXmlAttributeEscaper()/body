@@ -1,0 +1,8 @@
+{
+  CharEscaper xmlAttributeEscaper=(CharEscaper)XmlEscapers.xmlAttributeEscaper();
+  assertBasicXmlEscaper(xmlAttributeEscaper,true,true);
+  assertEquals("&quot;test&quot;",xmlAttributeEscaper.escape("\"test\""));
+  assertEquals("&apos;test&apos;",xmlAttributeEscaper.escape("\'test'"));
+  assertEquals("a&quot;b&lt;c&gt;d&amp;e&quot;f&apos;",xmlAttributeEscaper.escape("a\"b<c>d&e\"f'"));
+  assertEquals("a&#x9;b&#xA;c&#xD;d",xmlAttributeEscaper.escape("a\tb\nc\rd"));
+}

@@ -8,7 +8,12 @@
   assertEquals(s,xmlEscaper.escape(s));
   for (char ch=0; ch < 0x20; ch++) {
     if (ch == '\t' || ch == '\n' || ch == '\r') {
-      assertUnescaped(xmlEscaper,ch);
+      if (shouldEscapeWhitespaceChars) {
+        assertEscaping(xmlEscaper,"&#x" + Integer.toHexString(ch).toUpperCase() + ";",ch);
+      }
+ else {
+        assertUnescaped(xmlEscaper,ch);
+      }
     }
  else {
       assertEscaping(xmlEscaper,"",ch);
