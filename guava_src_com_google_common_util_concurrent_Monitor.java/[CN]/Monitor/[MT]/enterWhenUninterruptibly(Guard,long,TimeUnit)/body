@@ -4,25 +4,31 @@
   }
   final ReentrantLock lock=this.lock;
   boolean reentrant=lock.isHeldByCurrentThread();
-  long startNanos=System.nanoTime();
-  long timeoutNanos=unit.toNanos(time);
-  long remainingNanos=timeoutNanos;
   boolean interruptIgnored=false;
   try {
-    while (true) {
-      try {
-        if (lock.tryLock(remainingNanos,TimeUnit.NANOSECONDS)) {
-          break;
-        }
+    long remainingNanos;
+    if (!fair && lock.tryLock()) {
+      remainingNanos=unit.toNanos(time);
+    }
  else {
-          return false;
+      long startNanos=System.nanoTime();
+      long timeoutNanos=unit.toNanos(time);
+      remainingNanos=timeoutNanos;
+      while (true) {
+        try {
+          if (lock.tryLock(remainingNanos,TimeUnit.NANOSECONDS)) {
+            break;
+          }
+ else {
+            return false;
+          }
         }
-      }
- catch (      InterruptedException ignored) {
-        interruptIgnored=true;
-      }
+ catch (        InterruptedException ignored) {
+          interruptIgnored=true;
+        }
  finally {
-        remainingNanos=(timeoutNanos - (System.nanoTime() - startNanos));
+          remainingNanos=(timeoutNanos - (System.nanoTime() - startNanos));
+        }
       }
     }
     boolean satisfied=false;

@@ -4,13 +4,19 @@
   }
   final ReentrantLock lock=this.lock;
   boolean reentrant=lock.isHeldByCurrentThread();
-  long startNanos=System.nanoTime();
-  if (!lock.tryLock(time,unit)) {
-    return false;
+  long remainingNanos;
+  if (!fair && lock.tryLock()) {
+    remainingNanos=unit.toNanos(time);
+  }
+ else {
+    long startNanos=System.nanoTime();
+    if (!lock.tryLock(time,unit)) {
+      return false;
+    }
+    remainingNanos=unit.toNanos(time) - (System.nanoTime() - startNanos);
   }
   boolean satisfied=false;
   try {
-    long remainingNanos=unit.toNanos(time) - (System.nanoTime() - startNanos);
     satisfied=waitInterruptibly(guard,remainingNanos,reentrant);
   }
   finally {
