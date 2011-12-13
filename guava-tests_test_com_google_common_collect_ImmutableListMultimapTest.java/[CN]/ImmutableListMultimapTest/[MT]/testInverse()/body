@@ -1,0 +1,7 @@
+{
+  assertEquals(ImmutableListMultimap.<Integer,String>of(),ImmutableListMultimap.<String,Integer>of().inverse());
+  assertEquals(ImmutableListMultimap.of(1,"one"),ImmutableListMultimap.of("one",1).inverse());
+  assertEquals(ImmutableListMultimap.of(1,"one",2,"two"),ImmutableListMultimap.of("one",1,"two",2).inverse());
+  assertEquals(ImmutableListMultimap.of("of",'o',"of",'f',"to",'t',"to",'o').inverse(),ImmutableListMultimap.of('o',"of",'f',"of",'t',"to",'o',"to"));
+  assertEquals(ImmutableListMultimap.of('f',"foo",'o',"foo",'o',"foo"),ImmutableListMultimap.of("foo",'f',"foo",'o',"foo",'o').inverse());
+}
