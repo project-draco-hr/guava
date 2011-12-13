@@ -1,3 +1,0 @@
-{
-  return AndroidInteger.tryParse(string,radix);
-}
