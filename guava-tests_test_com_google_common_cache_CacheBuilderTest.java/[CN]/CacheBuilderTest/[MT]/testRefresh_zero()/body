@@ -1,7 +1,7 @@
 {
   CacheBuilder<Object,Object> builder=new CacheBuilder<Object,Object>();
   try {
-    builder.refreshInterval(0,SECONDS);
+    builder.refreshAfterWrite(0,SECONDS);
     fail();
   }
  catch (  IllegalArgumentException expected) {
