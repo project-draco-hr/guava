@@ -1,3 +1,0 @@
-{
-  return c < replaceLength ? replacements[c] : null;
-}

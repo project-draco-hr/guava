@@ -1,5 +1,0 @@
-{
-  Preconditions.checkArgument(c < 128);
-  String hex="0123456789ABCDEF";
-  return "%" + hex.charAt((c >> 4) & 0xf) + hex.charAt(c & 0xf);
-}

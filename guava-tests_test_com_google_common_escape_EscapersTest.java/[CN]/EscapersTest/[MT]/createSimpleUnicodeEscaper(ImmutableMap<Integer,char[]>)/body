@@ -1,8 +1,0 @@
-{
-  return new UnicodeEscaper(){
-    @Override protected char[] escape(    int cp){
-      return replacementMap.get(cp);
-    }
-  }
-;
-}

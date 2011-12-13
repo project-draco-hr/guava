@@ -1,4 +1,0 @@
-{
-  this.unsafeReplacement=unsafeReplacement;
-  return this;
-}

@@ -1,3 +1,0 @@
-{
-  super(replacementMap,Integer.MIN_VALUE,'~',null);
-}

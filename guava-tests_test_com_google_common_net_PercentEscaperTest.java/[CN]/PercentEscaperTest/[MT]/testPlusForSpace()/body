@@ -1,8 +1,0 @@
-{
-  UnicodeEscaper basicEscaper=new PercentEscaper("",false);
-  UnicodeEscaper plusForSpaceEscaper=new PercentEscaper("",true);
-  UnicodeEscaper spaceEscaper=new PercentEscaper(" ",false);
-  assertEquals("string%20with%20spaces",basicEscaper.escape("string with spaces"));
-  assertEquals("string+with+spaces",plusForSpaceEscaper.escape("string with spaces"));
-  assertEquals("string with spaces",spaceEscaper.escape("string with spaces"));
-}

@@ -1,5 +1,0 @@
-{
-  UnicodeEscaper e=new PercentEscaper("%",false);
-  assertEquals("foo%7Cbar",e.escape("foo|bar"));
-  assertEquals("foo%7Cbar",e.escape("foo%7Cbar"));
-}

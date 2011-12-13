@@ -1,9 +1,0 @@
-{
-  UnicodeEscaper e=SIMPLE_ESCAPER;
-  try {
-    e.escape((String)null);
-    fail("Null string should cause exception");
-  }
- catch (  NullPointerException expected) {
-  }
-}

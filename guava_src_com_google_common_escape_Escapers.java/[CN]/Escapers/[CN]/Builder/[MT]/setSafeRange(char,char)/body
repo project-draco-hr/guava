@@ -1,5 +1,0 @@
-{
-  this.safeMin=safeMin;
-  this.safeMax=safeMax;
-  return this;
-}

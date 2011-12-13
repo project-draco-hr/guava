@@ -1,4 +1,0 @@
-ArrayBasedEscaperMap escaperMap
-int safeMin
-int safeMax
-String unsafeReplacement

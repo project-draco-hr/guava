@@ -1,5 +1,0 @@
-{
-  String escaped=computeReplacement(escaper,c);
-  Assert.assertNotNull(escaped);
-  Assert.assertEquals(expected,escaped);
-}

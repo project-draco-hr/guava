@@ -1,3 +1,0 @@
-{
-  return plusForSpace ? URI_ESCAPER : URI_ESCAPER_NO_PLUS;
-}

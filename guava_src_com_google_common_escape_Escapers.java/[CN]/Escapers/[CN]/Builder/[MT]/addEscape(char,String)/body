@@ -1,5 +1,0 @@
-{
-  checkNotNull(replacement);
-  replacementMap.put(c,replacement);
-  return this;
-}
