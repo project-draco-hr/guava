@@ -1,8 +1,0 @@
-{
-  try {
-    Ints.tryParse("123",Character.MIN_RADIX - 1);
-    fail();
-  }
- catch (  IllegalArgumentException expected) {
-  }
-}
