@@ -1,8 +1,0 @@
-{
-  for (  Range<C> range : asRanges()) {
-    if (range.encloses(otherRange)) {
-      return true;
-    }
-  }
-  return false;
-}

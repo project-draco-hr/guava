@@ -1,5 +1,0 @@
-{
-  Range<C> firstRange=firstRange();
-  Range<C> lastRange=lastRange();
-  return new Range<C>(firstRange.lowerBound,lastRange.upperBound);
-}
