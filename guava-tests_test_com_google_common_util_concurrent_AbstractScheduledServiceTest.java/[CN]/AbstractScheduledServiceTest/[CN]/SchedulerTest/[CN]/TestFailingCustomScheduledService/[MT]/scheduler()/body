@@ -1,6 +1,9 @@
 {
   return new CustomScheduler(){
     @Override protected Schedule getNextSchedule() throws Exception {
+      if (numIterations.get() > 2) {
+        throw new IllegalStateException("Failed");
+      }
       return new Schedule(delay,unit);
     }
   }

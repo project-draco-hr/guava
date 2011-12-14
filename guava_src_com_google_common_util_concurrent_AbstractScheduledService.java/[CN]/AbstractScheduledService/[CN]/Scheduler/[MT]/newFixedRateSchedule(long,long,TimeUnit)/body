@@ -1,7 +1,7 @@
 {
   return new Scheduler(){
-    @Override public Future<?> schedule(    ScheduledExecutorService service,    Runnable task){
-      return service.scheduleAtFixedRate(task,initialDelay,period,unit);
+    @Override public Future<?> schedule(    AbstractService service,    ScheduledExecutorService executor,    Runnable task){
+      return executor.scheduleAtFixedRate(task,initialDelay,period,unit);
     }
   }
 ;

@@ -1,0 +1,5 @@
+{
+  numIterations.incrementAndGet();
+  firstBarrier.await();
+  secondBarrier.await();
+}

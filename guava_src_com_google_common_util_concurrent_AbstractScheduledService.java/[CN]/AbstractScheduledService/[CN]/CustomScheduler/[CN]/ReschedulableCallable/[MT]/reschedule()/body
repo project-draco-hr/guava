@@ -2,10 +2,14 @@
   lock.lock();
   try {
     if (currentFuture == null || !currentFuture.isCancelled()) {
-      currentFuture=CustomScheduler.this.scheduleNextIteration(service,this);
+      final Schedule schedule=CustomScheduler.this.getNextSchedule();
+      currentFuture=executor.schedule(this,schedule.delay,schedule.unit);
     }
   }
-  finally {
+ catch (  Throwable e) {
+    service.notifyFailed(e);
+  }
+ finally {
     lock.unlock();
   }
 }

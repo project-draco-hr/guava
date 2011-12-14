@@ -2,10 +2,9 @@
   TestAbstractScheduledCustomService service=new TestAbstractScheduledCustomService(){
     @Override protected Scheduler scheduler(){
       return new AbstractScheduledService.CustomScheduler(){
-        @Override protected Future<Void> scheduleNextIteration(        ScheduledExecutorService service,        Callable<Void> callable){
-          final ScheduledFuture<Void> future=service.schedule(callable,0,TimeUnit.SECONDS);
+        @Override protected Schedule getNextSchedule() throws Exception {
           Thread.yield();
-          return future;
+          return new Schedule(0,TimeUnit.SECONDS);
         }
       }
 ;

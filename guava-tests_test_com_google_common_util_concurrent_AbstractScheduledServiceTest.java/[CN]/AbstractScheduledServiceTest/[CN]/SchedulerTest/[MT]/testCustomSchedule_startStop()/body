@@ -17,7 +17,7 @@
   }
 ;
   TestCustomScheduler scheduler=new TestCustomScheduler();
-  Future<?> future=scheduler.schedule(Executors.newScheduledThreadPool(10),task);
+  Future<?> future=scheduler.schedule(null,Executors.newScheduledThreadPool(10),task);
   firstBarrier.await();
   assertEquals(1,scheduler.scheduleCounter.get());
   secondBarrier.await();
