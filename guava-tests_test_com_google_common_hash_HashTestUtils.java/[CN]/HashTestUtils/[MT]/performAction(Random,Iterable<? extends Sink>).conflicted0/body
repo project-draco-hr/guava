@@ -1,0 +1,6 @@
+{
+  long value=random.nextLong();
+  for (  Sink sink : sinks) {
+    sink.putLong(value);
+  }
+}

@@ -1,0 +1,6 @@
+{
+  checkNotDone();
+  checkPositionIndexes(off,off + len,bytes.length);
+  digest.update(bytes,off,len);
+  return this;
+}

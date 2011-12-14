@@ -1,0 +1,10 @@
+{
+  BloomFilter<byte[]> bf=BloomFilter.create(Funnels.byteArrayFunnel(),100);
+  for (int i=0; i < 10; i++) {
+    bf.put(Ints.toByteArray(i));
+  }
+  bf=SerializableTester.reserialize(bf);
+  for (int i=0; i < 10; i++) {
+    assertTrue(bf.mightContain(Ints.toByteArray(i)));
+  }
+}

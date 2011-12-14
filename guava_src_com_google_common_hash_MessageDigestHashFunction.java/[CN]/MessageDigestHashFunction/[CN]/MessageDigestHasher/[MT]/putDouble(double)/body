@@ -1,0 +1,7 @@
+{
+  checkNotDone();
+  scratch.putDouble(d);
+  digest.update(scratch.array(),0,8);
+  scratch.clear();
+  return this;
+}

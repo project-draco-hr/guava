@@ -1,0 +1,10 @@
+{
+  int last=0;
+  for (int shards=1; shards <= 100000; shards++) {
+    int b=Hashing.consistentHash(hashCode,shards);
+    if (b != last) {
+      assertEquals(shards - 1,b);
+      last=b;
+    }
+  }
+}

@@ -1,0 +1,5 @@
+{
+  assertMessageDigestHashing(HashTestUtils.ascii(""),"MD5");
+  assertMessageDigestHashing(HashTestUtils.ascii("Z"),"MD5");
+  assertMessageDigestHashing(HashTestUtils.ascii("foobar"),"MD5");
+}

@@ -1,0 +1,7 @@
+{
+  for (int n=1; n < 1000; n++) {
+    for (int m=0; m < 1000; m++) {
+      assertTrue(BloomFilter.optimalK(n,m) > 0);
+    }
+  }
+}

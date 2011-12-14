@@ -1,0 +1,4 @@
+{
+  checkArgument(data.length > 0,"data length is zero!");
+  this.data=data;
+}

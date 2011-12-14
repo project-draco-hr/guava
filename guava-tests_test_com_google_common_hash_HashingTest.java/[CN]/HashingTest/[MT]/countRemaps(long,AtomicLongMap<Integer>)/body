@@ -1,0 +1,10 @@
+{
+  int last=0;
+  for (int shards=2; shards <= MAX_SHARDS; shards++) {
+    int chosen=Hashing.consistentHash(h,shards);
+    if (chosen != last) {
+      map.incrementAndGet(shards);
+      last=chosen;
+    }
+  }
+}

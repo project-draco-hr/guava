@@ -1,0 +1,11 @@
+{
+  HashFn hf=new HashFn(){
+    @Override public byte[] hash(    byte[] input,    int seed){
+      Hasher hasher=murmur3_128(seed).newHasher();
+      Funnels.byteArrayFunnel().funnel(input,hasher);
+      return hasher.hash().asBytes();
+    }
+  }
+;
+  HashTestUtils.verifyHashFunction(hf,128,0x6384BA69);
+}

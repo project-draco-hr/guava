@@ -1,0 +1,5 @@
+{
+  super(16);
+  h1=seed;
+  h2=seed;
+}

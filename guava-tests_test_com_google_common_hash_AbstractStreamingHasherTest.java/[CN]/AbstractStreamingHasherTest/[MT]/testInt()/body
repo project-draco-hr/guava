@@ -1,0 +1,7 @@
+{
+  Sink sink=new Sink(4);
+  sink.putInt(0x04030201);
+  sink.hash();
+  sink.assertInvariants(4);
+  sink.assertBytes(new byte[]{1,2,3,4});
+}

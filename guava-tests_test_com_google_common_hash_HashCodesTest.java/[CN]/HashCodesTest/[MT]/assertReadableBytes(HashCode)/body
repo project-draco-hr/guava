@@ -1,0 +1,10 @@
+{
+  assertTrue(hashCode.bits() >= 32);
+  byte[] hashBytes=hashCode.asBytes();
+  int totalBytes=hashCode.bits() / 8;
+  for (int bytes=0; bytes < totalBytes; bytes++) {
+    byte[] bb=new byte[bytes];
+    hashCode.writeBytesTo(bb,0,bb.length);
+    assertTrue(Arrays.equals(Arrays.copyOf(hashBytes,bytes),bb));
+  }
+}

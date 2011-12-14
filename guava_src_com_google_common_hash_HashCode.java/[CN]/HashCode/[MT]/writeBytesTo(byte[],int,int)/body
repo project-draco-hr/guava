@@ -1,0 +1,7 @@
+{
+  byte[] hash=asBytes();
+  maxLength=Ints.min(maxLength,hash.length);
+  Preconditions.checkPositionIndexes(offset,offset + maxLength,dest.length);
+  System.arraycopy(hash,0,dest,offset,maxLength);
+  return maxLength;
+}

@@ -1,0 +1,17 @@
+{
+  int bits=checkPositiveAndMakeMultipleOf32(minimumBits);
+  if (bits == 32) {
+    return murmur3_32();
+  }
+ else   if (bits <= 128) {
+    return murmur3_128();
+  }
+ else {
+    int hashFunctionsNeeded=(bits + 127) / 128;
+    HashFunction[] hashFunctions=new HashFunction[hashFunctionsNeeded];
+    for (int i=0; i < hashFunctionsNeeded; i++) {
+      hashFunctions[i]=murmur3_128(i * 1500450271);
+    }
+    return new ConcatenatedHashFunction(hashFunctions);
+  }
+}

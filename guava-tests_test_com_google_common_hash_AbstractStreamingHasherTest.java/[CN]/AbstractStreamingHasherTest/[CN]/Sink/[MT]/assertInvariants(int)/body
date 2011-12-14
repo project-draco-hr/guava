@@ -1,0 +1,5 @@
+{
+  assertEquals(out.toByteArray().length,ceilToMultiple(expectedBytes,chunkSize));
+  assertEquals(expectedBytes / chunkSize,processCalled);
+  assertEquals(expectedBytes % chunkSize != 0,remainingCalled);
+}

@@ -1,0 +1,4 @@
+{
+  this.bits=object.bits;
+  this.hashFunction=object.hashFunction;
+}

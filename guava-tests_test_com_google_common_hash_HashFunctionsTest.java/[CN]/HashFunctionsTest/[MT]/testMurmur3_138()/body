@@ -1,0 +1,3 @@
+{
+  assertInvariants(Hashing.murmur3_128());
+}

@@ -1,0 +1,12 @@
+{
+  assertFalse(remainingCalled);
+  remainingCalled=true;
+  assertEquals(ByteOrder.LITTLE_ENDIAN,bb.order());
+  assertTrue(bb.remaining() > 0);
+  assertTrue(bb.remaining() < bufferSize);
+  int before=processCalled;
+  super.processRemaining(bb);
+  int after=processCalled;
+  assertEquals(before + 1,after);
+  processCalled--;
+}

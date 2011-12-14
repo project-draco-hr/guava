@@ -1,0 +1,6 @@
+{
+  byte[] original=hash.asBytes();
+  byte[] mutated=hash.asBytes();
+  mutated[0]++;
+  assertTrue(Arrays.equals(original,hash.asBytes()));
+}

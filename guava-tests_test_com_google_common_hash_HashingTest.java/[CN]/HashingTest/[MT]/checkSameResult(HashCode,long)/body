@@ -1,0 +1,3 @@
+{
+  assertEquals(Hashing.consistentHash(equivLong,5555),Hashing.consistentHash(hashCode,5555));
+}

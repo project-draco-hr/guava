@@ -1,0 +1,3 @@
+HashFn hashFunction
+int hashbits
+int expected

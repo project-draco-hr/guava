@@ -1,0 +1,8 @@
+{
+  try {
+    return putBytes(charSequence.toString().getBytes(charset.name()));
+  }
+ catch (  java.io.UnsupportedEncodingException impossible) {
+    throw new AssertionError(impossible);
+  }
+}

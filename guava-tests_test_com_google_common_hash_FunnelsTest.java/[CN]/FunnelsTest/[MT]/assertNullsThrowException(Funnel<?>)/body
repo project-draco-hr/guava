@@ -1,0 +1,19 @@
+{
+  Sink byteSink=new AbstractStreamingHasher(4,4){
+    @Override HashCode makeHash(){
+      throw new UnsupportedOperationException();
+    }
+    @Override protected void process(    ByteBuffer bb){
+      while (bb.hasRemaining()) {
+        bb.get();
+      }
+    }
+  }
+;
+  try {
+    funnel.funnel(null,byteSink);
+    fail();
+  }
+ catch (  NullPointerException ok) {
+  }
+}

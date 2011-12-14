@@ -1,0 +1,14 @@
+{
+  h1^=len;
+  h2^=len;
+  h1+=h2;
+  h2+=h1;
+  h1=fmix64(h1);
+  h2=fmix64(h2);
+  h1+=h2;
+  h2+=h1;
+  ByteBuffer bb=ByteBuffer.wrap(new byte[16]).order(ByteOrder.LITTLE_ENDIAN);
+  bb.putLong(h1);
+  bb.putLong(h2);
+  return HashCodes.fromBytes(bb.array());
+}

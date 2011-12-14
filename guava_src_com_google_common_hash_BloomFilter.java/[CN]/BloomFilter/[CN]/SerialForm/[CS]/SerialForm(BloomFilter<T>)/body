@@ -1,0 +1,6 @@
+{
+  this.data=bf.bits.data;
+  this.numHashFunctions=bf.numHashFunctions;
+  this.funnel=bf.funnel;
+  this.hashFunction=bf.hashFunction;
+}

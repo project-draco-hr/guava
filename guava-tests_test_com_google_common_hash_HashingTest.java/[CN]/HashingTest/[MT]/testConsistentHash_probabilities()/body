@@ -1,0 +1,10 @@
+{
+  AtomicLongMap<Integer> map=AtomicLongMap.create();
+  Random r=new Random(9);
+  for (int i=0; i < ITERS; i++) {
+    countRemaps(r.nextLong(),map);
+  }
+  for (int shard=2; shard <= MAX_SHARDS; shard++) {
+    assertTrue(map.get(shard) <= 1.2 * ITERS / shard + 20);
+  }
+}

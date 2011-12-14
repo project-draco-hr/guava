@@ -1,0 +1,8 @@
+{
+  HashCode hash31=HashCodes.fromInt(31);
+  HashCode hash32=HashCodes.fromInt(32);
+  assertEquals(hash32,Hashing.combineUnordered(ImmutableList.of(hash32)));
+  assertEquals(HashCodes.fromInt(64),Hashing.combineUnordered(ImmutableList.of(hash32,hash32)));
+  assertEquals(HashCodes.fromInt(96),Hashing.combineUnordered(ImmutableList.of(hash32,hash32,hash32)));
+  assertEquals(Hashing.combineUnordered(ImmutableList.of(hash31,hash32)),Hashing.combineUnordered(ImmutableList.of(hash32,hash31)));
+}

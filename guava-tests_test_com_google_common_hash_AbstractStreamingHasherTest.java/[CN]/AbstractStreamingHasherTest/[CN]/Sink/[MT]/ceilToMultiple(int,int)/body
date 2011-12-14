@@ -1,0 +1,4 @@
+{
+  int remainder=a % b;
+  return remainder == 0 ? a : a + b - remainder;
+}

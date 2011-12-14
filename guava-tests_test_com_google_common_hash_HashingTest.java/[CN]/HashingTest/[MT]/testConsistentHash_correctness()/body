@@ -1,0 +1,10 @@
+{
+  long[] interestingValues={-1,0,1,2,Long.MAX_VALUE,Long.MIN_VALUE};
+  for (  long h : interestingValues) {
+    checkConsistentHashCorrectness(h);
+  }
+  Random r=new Random(7);
+  for (int i=0; i < 20; i++) {
+    checkConsistentHashCorrectness(r.nextLong());
+  }
+}

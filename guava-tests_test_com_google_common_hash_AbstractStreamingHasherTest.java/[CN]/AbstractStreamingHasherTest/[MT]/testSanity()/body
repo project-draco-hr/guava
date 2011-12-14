@@ -1,0 +1,4 @@
+{
+  Sink sink=new Sink(4);
+  assertEquals(0xDeadBeef,sink.makeHash().asInt());
+}

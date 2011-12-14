@@ -1,0 +1,9 @@
+{
+  HashCodeSlicer slicer=HashCodes.slice(hashFunction.newHasher().putObject(instance,funnel).hash(),hashBitsPerSlice);
+  for (int i=0; i < numHashFunctions; i++) {
+    if (!bits.get(slicer.nextSlice())) {
+      return false;
+    }
+  }
+  return true;
+}

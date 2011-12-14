@@ -1,0 +1,5 @@
+{
+  super(chunkSize,bufferSize);
+  this.chunkSize=chunkSize;
+  this.bufferSize=bufferSize;
+}

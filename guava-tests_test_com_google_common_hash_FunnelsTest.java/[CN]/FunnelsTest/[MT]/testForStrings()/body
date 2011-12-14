@@ -1,0 +1,7 @@
+{
+  Sink byteSink=EasyMock.createMock(Sink.class);
+  EasyMock.expect(byteSink.putString("test")).andReturn(byteSink).once();
+  EasyMock.replay(byteSink);
+  Funnels.stringFunnel().funnel("test",byteSink);
+  EasyMock.verify(byteSink);
+}

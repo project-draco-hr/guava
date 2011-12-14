@@ -1,0 +1,3 @@
+{
+  return actions[random.nextInt(actions.length)];
+}

@@ -1,0 +1,21 @@
+{
+  Sink sink=new Sink(4);
+  try {
+    sink.putBytes(new byte[8],-1,4);
+    fail();
+  }
+ catch (  IndexOutOfBoundsException ok) {
+  }
+  try {
+    sink.putBytes(new byte[8],0,16);
+    fail();
+  }
+ catch (  IndexOutOfBoundsException ok) {
+  }
+  try {
+    sink.putBytes(new byte[8],0,-1);
+    fail();
+  }
+ catch (  IndexOutOfBoundsException ok) {
+  }
+}

@@ -1,0 +1,6 @@
+{
+  byte[] got=out.toByteArray();
+  for (int i=0; i < expected.length; i++) {
+    assertEquals(expected[i],got[i]);
+  }
+}

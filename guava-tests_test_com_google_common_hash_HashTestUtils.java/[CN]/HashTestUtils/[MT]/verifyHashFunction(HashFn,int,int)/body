@@ -1,0 +1,16 @@
+{
+  int hashBytes=hashbits / 8;
+  byte[] key=new byte[256];
+  byte[] hashes=new byte[hashBytes * 256];
+  for (int i=0; i < 256; i++) {
+    key[i]=(byte)i;
+    int seed=256 - i;
+    byte[] hash=hashFunction.hash(Arrays.copyOf(key,i),seed);
+    System.arraycopy(hash,0,hashes,i * hashBytes,hash.length);
+  }
+  byte[] result=hashFunction.hash(hashes,0);
+  int verification=Integer.reverseBytes(Ints.fromByteArray(result));
+  if (expected != verification) {
+    throw new AssertionError("Expected: " + Integer.toHexString(expected) + " got: "+ Integer.toHexString(verification));
+  }
+}

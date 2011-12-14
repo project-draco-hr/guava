@@ -1,0 +1,3 @@
+{
+  return hashBytes(Arrays.copyOfRange(input,off,off + len));
+}

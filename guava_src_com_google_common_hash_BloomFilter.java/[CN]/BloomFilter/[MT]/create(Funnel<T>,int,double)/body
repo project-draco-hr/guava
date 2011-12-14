@@ -1,0 +1,10 @@
+{
+  checkNotNull(funnel);
+  checkArgument(expectedInsertions > 0,"Expected insertions must be positive");
+  checkArgument(falsePositiveProbability > 0.0 & falsePositiveProbability < 1.0,"False positive probability in (0.0, 1.0)");
+  int m=optimalM(expectedInsertions,falsePositiveProbability);
+  int k=optimalK(expectedInsertions,m);
+  BitArray bits=new BitArray(1 << log2(max(m,Long.SIZE),CEILING));
+  HashFunction hashFunction=BloomFilterStrategies.From128ToN.withBits(bits.size() * k,Hashing.murmur3_128());
+  return new BloomFilter<T>(bits,k,funnel,hashFunction);
+}

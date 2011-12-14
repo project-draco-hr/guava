@@ -1,0 +1,6 @@
+{
+  this.bytes=bytes;
+  this.asInt=asInt;
+  this.asLong=asLong;
+  this.toString=toString;
+}

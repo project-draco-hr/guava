@@ -1,0 +1,25 @@
+{
+  Random random=new Random(0);
+  for (int totalInsertions=0; totalInsertions < 200; totalInsertions++) {
+    List<Sink> sinks=Lists.newArrayList();
+    for (int chunkSize=4; chunkSize <= 32; chunkSize++) {
+      for (int bufferSize=chunkSize; bufferSize <= chunkSize * 4; bufferSize+=chunkSize) {
+        sinks.add(new Sink(chunkSize,bufferSize));
+      }
+    }
+    Control control=new Control();
+    Hasher controlSink=control.newHasher(1024);
+    Iterable<Hasher> sinksAndControl=Iterables.concat(sinks,Collections.singleton(controlSink));
+    for (int insertion=0; insertion < totalInsertions; insertion++) {
+      RandomHasherAction.pickAtRandom(random).performAction(random,sinksAndControl);
+    }
+    for (    Sink sink : sinks) {
+      sink.hash();
+    }
+    byte[] expected=controlSink.hash().asBytes();
+    for (    Sink sink : sinks) {
+      sink.assertInvariants(expected.length);
+      sink.assertBytes(expected);
+    }
+  }
+}

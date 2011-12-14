@@ -1,0 +1,5 @@
+{
+  checkNotDone();
+  funnel.funnel(instance,this);
+  return this;
+}

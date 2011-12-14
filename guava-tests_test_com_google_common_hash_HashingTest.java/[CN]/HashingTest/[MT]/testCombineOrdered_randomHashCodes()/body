@@ -1,0 +1,11 @@
+{
+  Random random=new Random(7);
+  List<HashCode> hashCodes=Lists.newArrayList();
+  for (int i=0; i < 10; i++) {
+    hashCodes.add(HashCodes.fromLong(random.nextLong()));
+  }
+  HashCode hashCode1=Hashing.combineOrdered(hashCodes);
+  Collections.shuffle(hashCodes,random);
+  HashCode hashCode2=Hashing.combineOrdered(hashCodes);
+  assertFalse(hashCode1.equals(hashCode2));
+}

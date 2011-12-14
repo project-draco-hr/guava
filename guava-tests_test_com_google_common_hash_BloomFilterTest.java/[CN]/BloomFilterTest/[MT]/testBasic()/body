@@ -1,0 +1,7 @@
+{
+  for (double fpr=0.0000001; fpr < 0.1; fpr*=10) {
+    for (int expectedInsertions=1; expectedInsertions <= 10000; expectedInsertions*=10) {
+      checkSanity(BloomFilter.create(HashTestUtils.BAD_FUNNEL,expectedInsertions,fpr));
+    }
+  }
+}

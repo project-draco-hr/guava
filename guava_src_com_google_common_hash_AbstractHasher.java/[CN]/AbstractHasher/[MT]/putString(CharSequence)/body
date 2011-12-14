@@ -1,0 +1,3 @@
+{
+  return putString(charSequence,Charsets.UTF_16LE);
+}

@@ -1,0 +1,5 @@
+{
+  checkSameResult(HashCodes.fromLong(1),1);
+  checkSameResult(HashCodes.fromLong(0x9999999999999999L),0x9999999999999999L);
+  checkSameResult(HashCodes.fromInt(0x99999999),0x0000000099999999L);
+}

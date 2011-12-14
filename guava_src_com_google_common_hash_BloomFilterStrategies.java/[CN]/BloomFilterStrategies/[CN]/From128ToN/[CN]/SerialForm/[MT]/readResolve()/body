@@ -1,0 +1,3 @@
+{
+  return From128ToN.withBits(bits,hashFunction);
+}

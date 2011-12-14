@@ -1,0 +1,5 @@
+{
+  assertMessageDigestHashing(HashTestUtils.ascii(""),"SHA1");
+  assertMessageDigestHashing(HashTestUtils.ascii("Z"),"SHA1");
+  assertMessageDigestHashing(HashTestUtils.ascii("foobar"),"SHA1");
+}
