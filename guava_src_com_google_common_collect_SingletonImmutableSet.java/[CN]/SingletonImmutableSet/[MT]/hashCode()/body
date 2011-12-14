@@ -1,7 +1,7 @@
 {
-  Integer code=cachedHashCode;
-  if (code == null) {
-    return cachedHashCode=element.hashCode();
+  int code=cachedHashCode;
+  if (code == 0) {
+    cachedHashCode=code=element.hashCode();
   }
   return code;
 }
