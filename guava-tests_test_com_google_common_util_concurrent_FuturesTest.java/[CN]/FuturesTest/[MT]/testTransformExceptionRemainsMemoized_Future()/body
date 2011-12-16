@@ -1,9 +1,0 @@
-{
-  FutureTask<Integer> input=new FutureTask<Integer>(Callables.returning(0));
-  input.run();
-  assertFalse(input instanceof ListenableFuture);
-  Future<Integer> exceptionComposedFuture=Futures.transform(input,newOneTimeExceptionThrower());
-  Future<Integer> errorComposedFuture=Futures.transform(input,newOneTimeErrorThrower());
-  runGetIdempotencyTest(exceptionComposedFuture,MyRuntimeException.class);
-  runGetIdempotencyTest(errorComposedFuture,MyError.class);
-}

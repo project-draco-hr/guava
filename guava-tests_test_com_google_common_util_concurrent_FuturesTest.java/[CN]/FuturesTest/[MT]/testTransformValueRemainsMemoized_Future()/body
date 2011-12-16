@@ -1,9 +1,0 @@
-{
-  FutureTask<Integer> input=new FutureTask<Integer>(Callables.returning(0));
-  input.run();
-  assertFalse(input instanceof ListenableFuture);
-  Future<Integer> transformedFuture=Futures.transform(input,newOneTimeValueReturner(99));
-  for (int i=0; i < 5; i++) {
-    assertEquals(99,transformedFuture.get().intValue());
-  }
-}
