@@ -1,15 +1,30 @@
 {
-  Object[] array=Lists.newArrayList(set).toArray(new Integer[0]);
   assertEquals("",joiner.join(set));
+  assertEquals("",joiner.join(set.iterator()));
+  Object[] array=Lists.newArrayList(set).toArray(new Integer[0]);
   assertEquals("",joiner.join(array));
-  StringBuilder sb1=new StringBuilder();
-  assertSame(sb1,joiner.appendTo(sb1,set));
-  assertEquals(0,sb1.length());
+  StringBuilder sb1FromIterable=new StringBuilder();
+  assertSame(sb1FromIterable,joiner.appendTo(sb1FromIterable,set));
+  assertEquals(0,sb1FromIterable.length());
+  StringBuilder sb1FromIterator=new StringBuilder();
+  assertSame(sb1FromIterator,joiner.appendTo(sb1FromIterator,set));
+  assertEquals(0,sb1FromIterator.length());
   StringBuilder sb2=new StringBuilder();
   assertSame(sb2,joiner.appendTo(sb2,array));
   assertEquals(0,sb2.length());
   try {
     joiner.appendTo(NASTY_APPENDABLE,set);
+  }
+ catch (  IOException e) {
+    throw new AssertionError(e);
+  }
+  try {
+    joiner.appendTo(NASTY_APPENDABLE,set.iterator());
+  }
+ catch (  IOException e) {
+    throw new AssertionError(e);
+  }
+  try {
     joiner.appendTo(NASTY_APPENDABLE,array);
   }
  catch (  IOException e) {

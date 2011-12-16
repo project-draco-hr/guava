@@ -15,4 +15,16 @@
   }
  catch (  NullPointerException expected) {
   }
+  try {
+    J.join(ITERABLE_NULL.iterator());
+    fail();
+  }
+ catch (  NullPointerException expected) {
+  }
+  try {
+    J.join(ITERABLE_1_NULL_2.iterator());
+    fail();
+  }
+ catch (  NullPointerException expected) {
+  }
 }
