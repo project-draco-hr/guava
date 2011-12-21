@@ -1,15 +1,9 @@
 {
-  MockReference reference=new MockReference(frq=new FinalizableReferenceQueue());
-  for (int i=0; i < 500; i++) {
-    if (reference.finalizeReferentCalled) {
-      return;
-    }
-    try {
-      System.gc();
-      Thread.sleep(10);
-    }
- catch (    InterruptedException e) {
+  final MockReference reference=new MockReference(frq=new FinalizableReferenceQueue());
+  GcFinalization.awaitDone(new GcFinalization.FinalizationPredicate(){
+    public boolean isDone(){
+      return reference.finalizeReferentCalled;
     }
   }
-  fail();
+);
 }
