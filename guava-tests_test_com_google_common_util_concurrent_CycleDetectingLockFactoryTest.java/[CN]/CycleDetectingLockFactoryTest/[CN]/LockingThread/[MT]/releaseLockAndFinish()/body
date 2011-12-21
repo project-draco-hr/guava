@@ -1,5 +1,0 @@
-{
-  finishLatch.countDown();
-  this.join(10000);
-  assertFalse(this.isAlive());
-}

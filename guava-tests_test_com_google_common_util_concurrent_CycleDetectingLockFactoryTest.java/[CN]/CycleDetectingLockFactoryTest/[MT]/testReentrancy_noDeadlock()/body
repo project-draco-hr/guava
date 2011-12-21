@@ -1,5 +1,0 @@
-{
-  lockA.lock();
-  lockB.lock();
-  lockA.lock();
-}

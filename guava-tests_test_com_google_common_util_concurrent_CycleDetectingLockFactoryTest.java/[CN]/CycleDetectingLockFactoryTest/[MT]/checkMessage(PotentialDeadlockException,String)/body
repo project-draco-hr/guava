@@ -1,4 +1,0 @@
-{
-  String regex=Joiner.on("\\b.*\\b").join(expectedLockCycle);
-  assertContainsRegex(regex,exception.getMessage());
-}

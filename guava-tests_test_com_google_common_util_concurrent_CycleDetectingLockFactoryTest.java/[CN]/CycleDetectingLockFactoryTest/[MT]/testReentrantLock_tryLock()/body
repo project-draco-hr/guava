@@ -1,8 +1,0 @@
-{
-  LockingThread thread=new LockingThread(lockA);
-  thread.start();
-  thread.waitUntilHoldingLock();
-  assertFalse(lockA.tryLock());
-  thread.releaseLockAndFinish();
-  assertTrue(lockA.tryLock());
-}
