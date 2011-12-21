@@ -1,0 +1,10 @@
+{
+  LockingThread thread=new LockingThread(writeLockA);
+  thread.start();
+  thread.waitUntilHoldingLock();
+  assertFalse(writeLockA.tryLock());
+  assertFalse(readLockA.tryLock());
+  thread.releaseLockAndFinish();
+  assertTrue(writeLockA.tryLock());
+  assertTrue(readLockA.tryLock());
+}
