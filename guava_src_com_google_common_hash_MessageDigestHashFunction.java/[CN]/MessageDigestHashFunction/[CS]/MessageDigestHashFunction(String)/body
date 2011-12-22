@@ -1,4 +1,4 @@
 {
-  this.algorithm=getMessageDigest(algorithmName);
-  this.bits=algorithm.getDigestLength() * 8;
+  this.algorithmName=algorithmName;
+  this.bits=getMessageDigest(algorithmName).getDigestLength() * 8;
 }
