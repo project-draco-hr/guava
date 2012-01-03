@@ -1,0 +1,7 @@
+{
+  Hasher hasher=hashFunction.newHasher();
+  for (int i=0; i < numActions; i++) {
+    RandomHasherAction.pickAtRandom(random).performAction(random,ImmutableSet.of(hasher));
+  }
+  return hasher.hash();
+}

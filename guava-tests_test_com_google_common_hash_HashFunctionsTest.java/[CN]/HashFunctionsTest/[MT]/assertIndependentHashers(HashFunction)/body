@@ -1,0 +1,15 @@
+{
+  int numActions=100;
+  HashCode expected1=randomHash(hashFunction,new Random(1L),numActions);
+  HashCode expected2=randomHash(hashFunction,new Random(2L),numActions);
+  Random random1=new Random(1L);
+  Random random2=new Random(2L);
+  Hasher hasher1=hashFunction.newHasher();
+  Hasher hasher2=hashFunction.newHasher();
+  for (int i=0; i < numActions; i++) {
+    RandomHasherAction.pickAtRandom(random1).performAction(random1,ImmutableSet.of(hasher1));
+    RandomHasherAction.pickAtRandom(random2).performAction(random2,ImmutableSet.of(hasher2));
+  }
+  assertEquals(expected1,hasher1.hash());
+  assertEquals(expected2,hasher2.hash());
+}
