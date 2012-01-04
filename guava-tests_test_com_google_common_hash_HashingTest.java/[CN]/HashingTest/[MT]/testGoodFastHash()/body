@@ -1,0 +1,7 @@
+{
+  for (int i=1; i < 200; i+=17) {
+    HashFunction hasher=Hashing.goodFastHash(i);
+    assertTrue(hasher.bits() >= i);
+    HashTestUtils.assertInvariants(hasher);
+  }
+}

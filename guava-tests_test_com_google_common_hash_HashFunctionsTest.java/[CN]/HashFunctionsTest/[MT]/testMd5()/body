@@ -1,3 +1,0 @@
-{
-  assertInvariants(Hashing.md5());
-}

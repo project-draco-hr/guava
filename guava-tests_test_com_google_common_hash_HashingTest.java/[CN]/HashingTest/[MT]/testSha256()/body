@@ -1,0 +1,6 @@
+{
+  HashTestUtils.checkAvalanche(Hashing.sha256(),100,0.4);
+  HashTestUtils.checkNo2BitCharacteristics(Hashing.sha256());
+  HashTestUtils.checkNoFunnels(Hashing.sha256());
+  HashTestUtils.assertInvariants(Hashing.sha256());
+}

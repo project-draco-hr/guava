@@ -1,0 +1,27 @@
+{
+  Random rand=new Random(0);
+  int keyBits=32;
+  for (int i=0; i < keyBits; i++) {
+    for (int j=0; j < keyBits; j++) {
+      if (j <= i)       continue;
+      int count=0;
+      int maxCount=20;
+      boolean diff=false;
+      while (diff == false) {
+        int delta=(1 << i) | (1 << j);
+        int key1=rand.nextInt();
+        int key2=key1 ^ delta;
+        int hash1=function.newHasher().putInt(key1).hash().asInt();
+        int hash2=function.newHasher().putInt(key2).hash().asInt();
+        if ((hash1 ^ hash2) != delta) {
+          diff=true;
+          continue;
+        }
+        count++;
+        if (count > maxCount) {
+          Assert.fail("2-bit delta (" + i + ", "+ j+ ") is likely a "+ "characteristic for this hash. This was "+ "determined after "+ count+ " trials");
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  HashTestUtils.checkAvalanche(Hashing.md5(),100,0.4);
+  HashTestUtils.checkNo2BitCharacteristics(Hashing.md5());
+  HashTestUtils.checkNoFunnels(Hashing.md5());
+  HashTestUtils.assertInvariants(Hashing.md5());
+}

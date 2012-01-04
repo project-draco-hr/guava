@@ -1,0 +1,7 @@
+{
+  HashTestUtils.check2BitAvalanche(Hashing.goodFastHash(256),250,0.20);
+  HashTestUtils.checkAvalanche(Hashing.goodFastHash(256),250,0.17);
+  HashTestUtils.checkNo2BitCharacteristics(Hashing.goodFastHash(256));
+  HashTestUtils.checkNoFunnels(Hashing.goodFastHash(256));
+  HashTestUtils.assertInvariants(Hashing.goodFastHash(256));
+}

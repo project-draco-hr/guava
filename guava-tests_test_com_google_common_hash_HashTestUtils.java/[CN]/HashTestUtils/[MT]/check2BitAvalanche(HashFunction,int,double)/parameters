@@ -1,0 +1,3 @@
+HashFunction function
+int trials
+double epsilon

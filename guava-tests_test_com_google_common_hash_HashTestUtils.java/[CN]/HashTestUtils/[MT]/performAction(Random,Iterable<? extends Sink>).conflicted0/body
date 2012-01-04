@@ -1,6 +1,6 @@
 {
-  long value=random.nextLong();
+  short value=(short)random.nextInt();
   for (  Sink sink : sinks) {
-    sink.putLong(value);
+    sink.putShort(value);
   }
 }

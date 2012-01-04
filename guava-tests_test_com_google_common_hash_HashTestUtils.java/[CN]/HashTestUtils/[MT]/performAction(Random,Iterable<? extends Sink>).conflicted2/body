@@ -1,6 +1,6 @@
 {
-  double value=random.nextDouble();
+  int value=random.nextInt();
   for (  Sink sink : sinks) {
-    sink.putDouble(value);
+    sink.putByte((byte)value);
   }
 }

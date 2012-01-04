@@ -1,6 +1,6 @@
 {
-  int value=random.nextInt();
+  float value=random.nextFloat();
   for (  Sink sink : sinks) {
-    sink.putInt(value);
+    sink.putFloat(value);
   }
 }

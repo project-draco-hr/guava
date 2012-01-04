@@ -1,6 +1,9 @@
 {
-  short value=(short)random.nextInt();
+  byte[] value=new byte[random.nextInt(128)];
+  random.nextBytes(value);
+  int off=random.nextInt(value.length + 1);
+  int len=random.nextInt(value.length - off + 1);
   for (  Sink sink : sinks) {
-    sink.putShort(value);
+    sink.putBytes(value);
   }
 }

@@ -1,0 +1,31 @@
+{
+  Random rand=new Random(0);
+  int keyBits=32;
+  int hashBits=function.bits();
+  for (int bit1=0; bit1 < keyBits; bit1++) {
+    for (int bit2=0; bit2 < keyBits; bit2++) {
+      if (bit2 <= bit1)       continue;
+      int delta=(1 << bit1) | (1 << bit2);
+      int[] same=new int[hashBits];
+      int[] diff=new int[hashBits];
+      for (int j=0; j < trials; j++) {
+        int key1=rand.nextInt();
+        int key2=key1 ^ delta;
+        int hash1=function.newHasher().putInt(key1).hash().asInt();
+        int hash2=function.newHasher().putInt(key2).hash().asInt();
+        for (int k=0; k < hashBits; k++) {
+          if ((hash1 & (1 << k)) == (hash2 & (1 << k))) {
+            same[k]+=1;
+          }
+ else {
+            diff[k]+=1;
+          }
+        }
+      }
+      for (int j=0; j < hashBits; j++) {
+        double prob=(double)diff[j] / (double)(diff[j] + same[j]);
+        Assert.assertEquals(0.50d,prob,epsilon);
+      }
+    }
+  }
+}

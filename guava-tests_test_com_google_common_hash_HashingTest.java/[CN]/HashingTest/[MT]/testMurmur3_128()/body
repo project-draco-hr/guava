@@ -1,0 +1,7 @@
+{
+  HashTestUtils.check2BitAvalanche(Hashing.murmur3_128(),250,0.20);
+  HashTestUtils.checkAvalanche(Hashing.murmur3_128(),250,0.17);
+  HashTestUtils.checkNo2BitCharacteristics(Hashing.murmur3_128());
+  HashTestUtils.checkNoFunnels(Hashing.murmur3_128());
+  HashTestUtils.assertInvariants(Hashing.murmur3_128());
+}

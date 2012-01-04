@@ -1,3 +1,0 @@
-{
-  assertInvariants(Hashing.murmur3_32());
-}
