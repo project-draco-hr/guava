@@ -1,5 +1,5 @@
 {
   super(hashFunction);
   this.hashFunction=hashFunction;
-  this.bits=longs;
+  this.bits=bits;
 }
