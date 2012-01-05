@@ -1,7 +1,7 @@
 {
   final CountDownLatch latch=new CountDownLatch(1);
   Object x=new Object(){
-    protected void finalize(){
+    @Override protected void finalize(){
       latch.countDown();
     }
   }

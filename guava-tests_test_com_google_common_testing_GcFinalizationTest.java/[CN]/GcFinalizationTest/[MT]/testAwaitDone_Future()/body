@@ -1,7 +1,7 @@
 {
   final SettableFuture<Void> future=SettableFuture.create();
   Object x=new Object(){
-    protected void finalize(){
+    @Override protected void finalize(){
       future.set(null);
     }
   }
