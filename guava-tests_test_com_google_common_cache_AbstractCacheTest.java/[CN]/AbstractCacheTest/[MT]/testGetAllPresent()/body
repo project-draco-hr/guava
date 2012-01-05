@@ -4,9 +4,6 @@
     @Override public Object getIfPresent(    Object key){
       return valueRef.get();
     }
-    @Override public Object get(    Object key) throws ExecutionException {
-      throw new UnsupportedOperationException();
-    }
   }
 ;
   assertNull(cache.getIfPresent(new Object()));

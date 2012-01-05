@@ -4,9 +4,6 @@
     @Override public Integer getIfPresent(    Integer key){
       throw new UnsupportedOperationException();
     }
-    @Override public Integer get(    Integer key) throws ExecutionException {
-      throw new UnsupportedOperationException();
-    }
     @Override public void invalidate(    Object key){
       invalidated.add(key);
     }
