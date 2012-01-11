@@ -1,3 +1,0 @@
-{
-  this.map=mm.strongValues().keyEquivalence(Equivalences.equals()).makeCustomMap();
-}
