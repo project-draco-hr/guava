@@ -1,3 +1,3 @@
 {
-  return HashCodes.fromInt(0xDeadBeef);
+  return HashCodes.fromBytes(out.toByteArray());
 }
