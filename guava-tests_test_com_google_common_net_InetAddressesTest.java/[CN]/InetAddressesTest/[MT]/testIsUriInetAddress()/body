@@ -1,6 +1,7 @@
 {
   assertTrue(InetAddresses.isUriInetAddress("192.168.1.1"));
   assertTrue(InetAddresses.isUriInetAddress("[3ffe:0:0:0:0:0:0:1]"));
+  assertTrue(InetAddresses.isUriInetAddress("[::ffff:192.0.2.1]"));
   assertFalse(InetAddresses.isUriInetAddress("[192.168.1.1"));
   assertFalse(InetAddresses.isUriInetAddress("192.168.1.1]"));
   assertFalse(InetAddresses.isUriInetAddress(""));
@@ -9,4 +10,6 @@
   assertFalse(InetAddresses.isUriInetAddress("1:2e"));
   assertFalse(InetAddresses.isUriInetAddress("[3ffe:0:0:0:0:0:0:1"));
   assertFalse(InetAddresses.isUriInetAddress("3ffe:0:0:0:0:0:0:1]"));
+  assertFalse(InetAddresses.isUriInetAddress("3ffe:0:0:0:0:0:0:1"));
+  assertFalse(InetAddresses.isUriInetAddress("::ffff:192.0.2.1"));
 }

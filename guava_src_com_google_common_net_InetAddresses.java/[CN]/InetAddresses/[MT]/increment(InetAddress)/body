@@ -7,10 +7,5 @@
   }
   Preconditions.checkArgument(i >= 0,"Incrementing %s would wrap.",address);
   addr[i]++;
-  try {
-    return InetAddress.getByAddress(addr);
-  }
- catch (  UnknownHostException e) {
-    throw new AssertionError(e);
-  }
+  return bytesToInetAddress(addr);
 }

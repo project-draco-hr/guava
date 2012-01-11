@@ -53,4 +53,16 @@
   }
  catch (  IllegalArgumentException e) {
   }
+  try {
+    InetAddresses.forUriString("3ffe:0:0:0:0:0:0:1");
+    fail("expected IllegalArgumentException");
+  }
+ catch (  IllegalArgumentException e) {
+  }
+  try {
+    InetAddresses.forUriString("::ffff:192.0.2.1");
+    fail("expected IllegalArgumentException");
+  }
+ catch (  IllegalArgumentException e) {
+  }
 }
