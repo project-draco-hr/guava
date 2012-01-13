@@ -1,0 +1,15 @@
+{
+  assertEquals(0.0,DoubleUtils.ensureNonNegative(0.0));
+  for (  double positiveValue : POSITIVE_FINITE_DOUBLE_CANDIDATES) {
+    assertEquals(positiveValue,DoubleUtils.ensureNonNegative(positiveValue));
+    assertEquals(0.0,DoubleUtils.ensureNonNegative(-positiveValue));
+  }
+  assertEquals(Double.POSITIVE_INFINITY,DoubleUtils.ensureNonNegative(Double.POSITIVE_INFINITY));
+  assertEquals(0.0,DoubleUtils.ensureNonNegative(Double.NEGATIVE_INFINITY));
+  try {
+    DoubleUtils.ensureNonNegative(Double.NaN);
+    fail("Expected IllegalArgumentException from ensureNonNegative(Double.NaN)");
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}
