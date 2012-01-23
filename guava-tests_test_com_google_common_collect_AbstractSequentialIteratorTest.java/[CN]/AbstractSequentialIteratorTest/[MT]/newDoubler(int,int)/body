@@ -1,5 +1,5 @@
 {
-  return new AbstractLinkedIterator<Integer>(first){
+  return new AbstractSequentialIterator<Integer>(first){
     @Override protected Integer computeNext(    Integer previous){
       return (previous == last) ? null : previous * 2;
     }

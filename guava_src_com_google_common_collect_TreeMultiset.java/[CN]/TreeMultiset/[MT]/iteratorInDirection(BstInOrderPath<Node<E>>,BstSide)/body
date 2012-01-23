@@ -1,5 +1,5 @@
 {
-  final Iterator<BstInOrderPath<Node<E>>> pathIterator=new AbstractLinkedIterator<BstInOrderPath<Node<E>>>(start){
+  final Iterator<BstInOrderPath<Node<E>>> pathIterator=new AbstractSequentialIterator<BstInOrderPath<Node<E>>>(start){
     @Override protected BstInOrderPath<Node<E>> computeNext(    BstInOrderPath<Node<E>> previous){
       if (!previous.hasNext(direction)) {
         return null;

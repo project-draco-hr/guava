@@ -1,5 +1,5 @@
 {
-  return new AbstractLinkedIterator<Object>("UNUSED"){
+  return new AbstractSequentialIterator<Object>("UNUSED"){
     @Override protected Object computeNext(    Object previous){
       throw new MyException();
     }

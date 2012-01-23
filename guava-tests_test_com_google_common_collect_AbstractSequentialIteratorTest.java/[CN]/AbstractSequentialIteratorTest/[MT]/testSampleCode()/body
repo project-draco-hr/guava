@@ -1,7 +1,7 @@
 {
   Iterable<Integer> actual=new Iterable<Integer>(){
     @Override public Iterator<Integer> iterator(){
-      Iterator<Integer> powersOfTwo=new AbstractLinkedIterator<Integer>(1){
+      Iterator<Integer> powersOfTwo=new AbstractSequentialIterator<Integer>(1){
         protected Integer computeNext(        Integer previous){
           return (previous == 1 << 30) ? null : previous * 2;
         }
