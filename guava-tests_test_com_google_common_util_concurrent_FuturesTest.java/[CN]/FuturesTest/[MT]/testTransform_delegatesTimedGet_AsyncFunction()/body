@@ -1,3 +1,0 @@
-{
-  performAsyncFunctionTransformedFutureDelgationTest(25,TimeUnit.SECONDS);
-}

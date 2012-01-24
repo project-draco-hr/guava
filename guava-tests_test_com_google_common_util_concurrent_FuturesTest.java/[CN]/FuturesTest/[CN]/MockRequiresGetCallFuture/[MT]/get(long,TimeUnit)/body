@@ -1,5 +1,0 @@
-{
-  set(value);
-  getWasCalled=true;
-  return super.get(timeout,unit);
-}
