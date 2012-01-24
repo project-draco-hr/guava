@@ -1,4 +1,3 @@
 {
-  checkNotNull(className);
-  this.builder=new StringBuilder(32).append(className).append('{');
+  this.className=checkNotNull(className);
 }

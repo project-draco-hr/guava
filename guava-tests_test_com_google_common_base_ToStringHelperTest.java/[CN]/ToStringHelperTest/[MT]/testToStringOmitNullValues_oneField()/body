@@ -1,0 +1,4 @@
+{
+  String toTest=Objects.toStringHelper(new TestClass()).omitNullValues().add("field1",null).toString();
+  assertEquals("TestClass{}",toTest);
+}

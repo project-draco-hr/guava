@@ -1,4 +1,4 @@
 {
-  maybeAppendSeparator().append(value);
+  addHolder().builder.append(value);
   return this;
 }

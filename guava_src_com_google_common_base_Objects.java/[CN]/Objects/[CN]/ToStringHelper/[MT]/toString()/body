@@ -1,8 +1,18 @@
 {
-  try {
-    return builder.append('}').toString();
+  boolean omitNullValuesSnapshot=omitNullValues;
+  boolean needsSeparator=false;
+  StringBuilder builder=new StringBuilder(32).append(className).append('{');
+  for (  ValueHolder valueHolder : valueHolders) {
+    if (!omitNullValuesSnapshot || !valueHolder.isNull) {
+      if (needsSeparator) {
+        builder.append(", ");
+      }
+ else {
+        needsSeparator=true;
+      }
+      CharSequence sequence=valueHolder.builder;
+      builder.append(sequence);
+    }
   }
-  finally {
-    builder.setLength(builder.length() - 1);
-  }
+  return builder.append('}').toString();
 }

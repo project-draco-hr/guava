@@ -1,9 +1,0 @@
-{
-  if (needsSeparator) {
-    return builder.append(", ");
-  }
- else {
-    needsSeparator=true;
-    return builder;
-  }
-}

@@ -1,0 +1,4 @@
+{
+  String toTest=Objects.toStringHelper(new TestClass()).omitNullValues().addValue(null).addValue("Googley").addValue("World").toString();
+  assertEquals("TestClass{Googley, World}",toTest);
+}
