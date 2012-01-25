@@ -1,2 +1,0 @@
-ListenableFuture<I> input
-Function<? super I,? extends ListenableFuture<? extends O>> function

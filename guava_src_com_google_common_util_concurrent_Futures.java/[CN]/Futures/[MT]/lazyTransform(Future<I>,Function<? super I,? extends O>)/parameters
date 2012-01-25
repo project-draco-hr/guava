@@ -1,2 +1,2 @@
-Future<I> future
+Future<I> input
 Function<? super I,? extends O> function

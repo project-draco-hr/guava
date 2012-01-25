@@ -1,21 +1,21 @@
 {
-  checkNotNull(future);
+  checkNotNull(input);
   checkNotNull(function);
   return new Future<O>(){
     @Override public boolean cancel(    boolean mayInterruptIfRunning){
-      return future.cancel(mayInterruptIfRunning);
+      return input.cancel(mayInterruptIfRunning);
     }
     @Override public boolean isCancelled(){
-      return future.isCancelled();
+      return input.isCancelled();
     }
     @Override public boolean isDone(){
-      return future.isDone();
+      return input.isDone();
     }
     @Override public O get() throws InterruptedException, ExecutionException {
-      return applyTransformation(future.get());
+      return applyTransformation(input.get());
     }
     @Override public O get(    long timeout,    TimeUnit unit) throws InterruptedException, ExecutionException, TimeoutException {
-      return applyTransformation(future.get(timeout,unit));
+      return applyTransformation(input.get(timeout,unit));
     }
     private O applyTransformation(    I input) throws ExecutionException {
       try {
