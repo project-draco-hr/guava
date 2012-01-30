@@ -1,0 +1,9 @@
+{
+  K k0=samples.e0.getKey();
+  V v0=samples.e0.getValue();
+  V v1=samples.e1.getValue();
+  getMap().put(k0,v0);
+  getMap().put(k0,v1);
+  Helpers.assertContentsAnyOrder(getMap().entrySet(),Helpers.mapEntry(k0,v1));
+  Helpers.assertContentsAnyOrder(getMap().inverse().entrySet(),Helpers.mapEntry(v1,k0));
+}

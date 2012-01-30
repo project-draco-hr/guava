@@ -1,0 +1,3 @@
+{
+  return Helpers.mapEntry(entry.getValue(),entry.getKey());
+}

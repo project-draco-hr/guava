@@ -1,0 +1,4 @@
+{
+  final V[] vs=((TestBiMapGenerator<K,V>)mapGenerator.getInnerGenerator()).createValueArray(length);
+  return vs;
+}

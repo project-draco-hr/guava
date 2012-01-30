@@ -1,0 +1,6 @@
+{
+  Set<Feature<?>> inverseFeatures=new HashSet<Feature<?>>(mapFeatures);
+  inverseFeatures.add(NoRecurse.INVERSE);
+  inverseFeatures.remove(CollectionFeature.KNOWN_ORDER);
+  return inverseFeatures;
+}

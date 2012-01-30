@@ -1,0 +1,3 @@
+{
+  return new BiMapTestSuiteBuilder<K,V>().usingGenerator(generator);
+}

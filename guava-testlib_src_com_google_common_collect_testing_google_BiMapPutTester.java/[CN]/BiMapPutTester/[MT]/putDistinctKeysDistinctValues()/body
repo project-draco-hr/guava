@@ -1,0 +1,5 @@
+{
+  getMap().put(samples.e0.getKey(),samples.e0.getValue());
+  getMap().put(samples.e1.getKey(),samples.e1.getValue());
+  Helpers.assertContentsAnyOrder(getMap().entrySet(),samples.e0,samples.e1);
+}

@@ -1,0 +1,1 @@
+PerCollectionSizeTestSuiteBuilder<BiMapTestSuiteBuilder<K,V>,TestBiMapGenerator<K,V>,BiMap<K,V>,Map.Entry<K,V>>

@@ -1,24 +1,5 @@
 {
   TestSuite suite=new TestSuite();
-  suite.addTest(SetTestSuiteBuilder.using(new TestStringSetGenerator(){
-    @Override protected Set<String> create(    String[] elements){
-      BiMap<String,Integer> bimap=HashBiMap.create();
-      for (int i=0; i < elements.length; i++) {
-        bimap.put(elements[i],i);
-      }
-      return bimap.keySet();
-    }
-  }
-).named("HashBiMap.keySet").withFeatures(CollectionSize.ANY,CollectionFeature.ALLOWS_NULL_VALUES,CollectionFeature.REMOVE_OPERATIONS).createTestSuite());
-  suite.addTest(SetTestSuiteBuilder.using(new TestStringSetGenerator(){
-    @Override protected Set<String> create(    String[] elements){
-      BiMap<Integer,String> bimap=HashBiMap.create();
-      for (int i=0; i < elements.length; i++) {
-        bimap.put(i,elements[i]);
-      }
-      return bimap.values();
-    }
-  }
-).named("HashBiMap.values").withFeatures(CollectionSize.ANY,CollectionFeature.ALLOWS_NULL_VALUES,CollectionFeature.REMOVE_OPERATIONS,CollectionFeature.REJECTS_DUPLICATES_AT_CREATION).createTestSuite());
+  suite.addTest(BiMapTestSuiteBuilder.using(new HashBiMapGenerator()).named("HashBiMap").withFeatures(CollectionSize.ANY,MapFeature.ALLOWS_NULL_KEYS,MapFeature.ALLOWS_NULL_VALUES,MapFeature.GENERAL_PURPOSE,MapFeature.REJECTS_DUPLICATES_AT_CREATION).createTestSuite());
   return suite;
 }

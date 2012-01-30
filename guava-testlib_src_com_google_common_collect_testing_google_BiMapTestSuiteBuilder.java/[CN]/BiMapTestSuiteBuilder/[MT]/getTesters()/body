@@ -1,0 +1,5 @@
+{
+  List<Class<? extends AbstractTester>> testers=new ArrayList<Class<? extends AbstractTester>>();
+  testers.add(BiMapPutTester.class);
+  return testers;
+}
