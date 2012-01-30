@@ -1,0 +1,10 @@
+{
+  try {
+    Iterator<E> iterator=collection.iterator();
+    collection.clear();
+    iterator.next();
+    fail("Expected ConcurrentModificationException");
+  }
+ catch (  ConcurrentModificationException expected) {
+  }
+}

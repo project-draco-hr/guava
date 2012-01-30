@@ -4,5 +4,5 @@
       return new TreeSet<String>(MinimalCollection.of(elements));
     }
   }
-).named("TreeSet, natural").withFeatures(SetFeature.GENERAL_PURPOSE,CollectionFeature.KNOWN_ORDER,CollectionSize.ANY).suppressing(suppressForTreeSetNatural()).createTestSuite();
+).named("TreeSet, natural").withFeatures(SetFeature.GENERAL_PURPOSE,CollectionFeature.KNOWN_ORDER,CollectionFeature.FAILS_FAST_ON_CONCURRENT_MODIFICATION,CollectionSize.ANY).suppressing(suppressForTreeSetNatural()).createTestSuite();
 }

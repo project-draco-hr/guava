@@ -1,0 +1,10 @@
+{
+  try {
+    Iterator<E> iterator=collection.iterator();
+    assertSetCount(samples.e0,0);
+    iterator.next();
+    fail("Expected ConcurrentModificationException");
+  }
+ catch (  ConcurrentModificationException expected) {
+  }
+}

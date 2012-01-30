@@ -4,5 +4,5 @@
       return new HashSet<String>(MinimalCollection.of(elements));
     }
   }
-).named("HashSet").withFeatures(SetFeature.GENERAL_PURPOSE,CollectionFeature.ALLOWS_NULL_VALUES,CollectionSize.ANY).suppressing(suppressForHashSet()).createTestSuite();
+).named("HashSet").withFeatures(SetFeature.GENERAL_PURPOSE,CollectionFeature.ALLOWS_NULL_VALUES,CollectionFeature.FAILS_FAST_ON_CONCURRENT_MODIFICATION,CollectionSize.ANY).suppressing(suppressForHashSet()).createTestSuite();
 }

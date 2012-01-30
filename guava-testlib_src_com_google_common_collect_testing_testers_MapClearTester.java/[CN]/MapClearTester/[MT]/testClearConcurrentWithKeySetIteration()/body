@@ -1,0 +1,10 @@
+{
+  try {
+    Iterator<K> iterator=getMap().keySet().iterator();
+    getMap().clear();
+    iterator.next();
+    fail("Expected ConcurrentModificationException");
+  }
+ catch (  ConcurrentModificationException expected) {
+  }
+}
