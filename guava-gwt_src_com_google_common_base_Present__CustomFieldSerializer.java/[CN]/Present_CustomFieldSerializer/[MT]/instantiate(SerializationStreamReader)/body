@@ -1,0 +1,3 @@
+{
+  return (Present<Object>)Optional.of(reader.readObject());
+}
