@@ -1,0 +1,4 @@
+{
+  forward().higherKey("key");
+  assertEquals("[higherKey(Object)]",getCalls());
+}

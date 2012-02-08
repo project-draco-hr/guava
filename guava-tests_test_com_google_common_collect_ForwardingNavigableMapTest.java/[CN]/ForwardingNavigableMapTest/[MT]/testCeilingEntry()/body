@@ -1,0 +1,4 @@
+{
+  forward().ceilingEntry("key");
+  assertEquals("[ceilingEntry(Object)]",getCalls());
+}

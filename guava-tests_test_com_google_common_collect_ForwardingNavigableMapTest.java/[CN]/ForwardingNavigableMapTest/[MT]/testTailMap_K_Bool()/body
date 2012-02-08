@@ -1,0 +1,4 @@
+{
+  forward().tailMap("a",false);
+  assertEquals("[tailMap(Object,boolean)]",getCalls());
+}

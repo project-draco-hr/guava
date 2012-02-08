@@ -1,0 +1,4 @@
+{
+  forward().descendingMap();
+  assertEquals("[descendingMap]",getCalls());
+}

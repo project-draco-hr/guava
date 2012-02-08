@@ -1,0 +1,10 @@
+{
+  super.setUp();
+  @SuppressWarnings("unchecked") final NavigableMap<String,Boolean> sortedMap=createProxyInstance(NavigableMap.class);
+  forward=new ForwardingNavigableMap<String,Boolean>(){
+    @Override protected NavigableMap<String,Boolean> delegate(){
+      return sortedMap;
+    }
+  }
+;
+}

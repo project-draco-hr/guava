@@ -1,0 +1,4 @@
+{
+  forward().headMap("a",false);
+  assertEquals("[headMap(Object,boolean)]",getCalls());
+}

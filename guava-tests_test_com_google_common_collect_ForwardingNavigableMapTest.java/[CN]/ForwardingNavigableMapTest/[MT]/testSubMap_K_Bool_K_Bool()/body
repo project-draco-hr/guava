@@ -1,0 +1,4 @@
+{
+  forward().subMap("a",false,"b",true);
+  assertEquals("[subMap(Object,boolean,Object,boolean)]",getCalls());
+}

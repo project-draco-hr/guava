@@ -1,0 +1,8 @@
+{
+  return new Values<K,V>(){
+    @Override Map<K,V> map(){
+      return DescendingMap.this;
+    }
+  }
+;
+}

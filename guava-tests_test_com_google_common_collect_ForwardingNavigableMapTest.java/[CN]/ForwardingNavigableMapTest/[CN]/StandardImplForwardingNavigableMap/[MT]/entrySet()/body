@@ -1,0 +1,8 @@
+{
+  return new StandardEntrySet(){
+    @Override public Iterator<Entry<K,V>> iterator(){
+      return backingMap.entrySet().iterator();
+    }
+  }
+;
+}

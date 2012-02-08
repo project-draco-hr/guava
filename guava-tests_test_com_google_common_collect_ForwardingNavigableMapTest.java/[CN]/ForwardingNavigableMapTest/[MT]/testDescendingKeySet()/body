@@ -1,0 +1,4 @@
+{
+  forward().descendingKeySet();
+  assertEquals("[descendingKeySet]",getCalls());
+}

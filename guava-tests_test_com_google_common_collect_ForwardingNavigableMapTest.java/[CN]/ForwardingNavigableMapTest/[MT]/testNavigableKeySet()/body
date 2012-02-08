@@ -1,0 +1,4 @@
+{
+  forward().navigableKeySet();
+  assertEquals("[navigableKeySet]",getCalls());
+}
