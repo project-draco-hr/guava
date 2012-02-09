@@ -1,5 +1,0 @@
-{
-  for (  double d : ALL_DOUBLE_CANDIDATES) {
-    assertEquals(FpUtils.getExponent(d),DoubleUtils.getExponent(d));
-  }
-}

@@ -3,7 +3,7 @@
   if (MIN_LONG_AS_DOUBLE - x < 1.0 & x < MAX_LONG_AS_DOUBLE_PLUS_ONE) {
     return BigInteger.valueOf((long)x);
   }
-  int exponent=getExponent(x);
+  int exponent=Math.getExponent(x);
   if (exponent < 0) {
     return BigInteger.ZERO;
   }

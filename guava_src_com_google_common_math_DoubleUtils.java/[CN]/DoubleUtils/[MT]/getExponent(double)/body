@@ -1,6 +1,0 @@
-{
-  long bits=Double.doubleToRawLongBits(d);
-  int exponent=(int)((bits & EXPONENT_MASK) >> SIGNIFICAND_BITS);
-  exponent-=EXPONENT_BIAS;
-  return exponent;
-}

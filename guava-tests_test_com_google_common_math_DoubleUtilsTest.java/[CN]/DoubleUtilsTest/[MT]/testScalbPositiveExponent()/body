@@ -1,7 +1,0 @@
-{
-  for (  int k : EXPONENTS) {
-    for (    double d : ALL_DOUBLE_CANDIDATES) {
-      assertEquals(d * StrictMath.pow(2.0,k),DoubleUtils.scalb(d,k));
-    }
-  }
-}

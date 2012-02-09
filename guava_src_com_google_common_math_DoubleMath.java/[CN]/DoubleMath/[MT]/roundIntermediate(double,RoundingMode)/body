@@ -29,11 +29,11 @@ return x;
 }
  else if (x >= 0.0) {
 double z=x + 0.5;
-return (z == x) ? x : next(z,false);
+return (z == x) ? x : DoubleUtils.nextDown(z);
 }
  else {
 double z=x - 0.5;
-return (z == x) ? x : next(z,true);
+return (z == x) ? x : Math.nextUp(z);
 }
 default :
 throw new AssertionError();

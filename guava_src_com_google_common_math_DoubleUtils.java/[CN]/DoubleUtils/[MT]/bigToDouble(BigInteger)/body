@@ -4,7 +4,7 @@
   if (exponent < Long.SIZE - 1) {
     return x.longValue();
   }
- else   if (exponent > MAX_DOUBLE_EXPONENT) {
+ else   if (exponent > Double.MAX_EXPONENT) {
     return x.signum() * Double.POSITIVE_INFINITY;
   }
   int shift=exponent - SIGNIFICAND_BITS - 1;

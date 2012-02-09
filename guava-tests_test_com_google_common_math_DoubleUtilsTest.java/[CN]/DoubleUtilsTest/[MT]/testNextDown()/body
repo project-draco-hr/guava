@@ -1,5 +1,5 @@
 {
   for (  double d : FINITE_DOUBLE_CANDIDATES) {
-    assertEquals(FpUtils.nextDown(d),DoubleUtils.next(d,false));
+    assertEquals(FpUtils.nextDown(d),DoubleUtils.nextDown(d));
   }
 }
