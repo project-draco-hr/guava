@@ -1,0 +1,6 @@
+{
+  BiMap<V,K> inv=getMap().inverse();
+  getMap().values().clear();
+  assertTrue(getMap().isEmpty());
+  assertTrue(inv.isEmpty());
+}

@@ -1,8 +1,0 @@
-{
-  bimap.put(1,"one");
-  String[] array=new String[3];
-  array[1]="garbage";
-  assertSame(array,bimap.values().toArray(array));
-  assertEquals("one",array[0]);
-  assertNull(array[1]);
-}

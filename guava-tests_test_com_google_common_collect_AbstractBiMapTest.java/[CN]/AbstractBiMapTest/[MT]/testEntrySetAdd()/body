@@ -1,8 +1,0 @@
-{
-  try {
-    entrySet.add(Maps.immutableEntry(1,"one"));
-    fail();
-  }
- catch (  UnsupportedOperationException expected) {
-  }
-}

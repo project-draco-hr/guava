@@ -9,6 +9,5 @@
   }
  catch (  IllegalArgumentException expected) {
   }
-  Helpers.assertContentsAnyOrder(getMap().entrySet(),Helpers.mapEntry(k0,v0));
-  Helpers.assertContentsAnyOrder(getMap().inverse().entrySet(),Helpers.mapEntry(v0,k0));
+  expectAdded(samples.e0);
 }

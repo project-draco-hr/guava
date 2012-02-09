@@ -1,0 +1,3 @@
+{
+  return new SampleElements<Entry<Country,Currency>>(Maps.immutableEntry(Country.CANADA,Currency.DOLLAR),Maps.immutableEntry(Country.CHILE,Currency.PESO),Maps.immutableEntry(Country.UK,Currency.POUND),Maps.immutableEntry(Country.JAPAN,Currency.YEN),Maps.immutableEntry(Country.SWITZERLAND,Currency.FRANC));
+}

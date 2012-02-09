@@ -1,6 +1,0 @@
-{
-  bimap.put(-1,null);
-  assertTrue(bimap.containsValue(null));
-  bimap.put(1,"one");
-  assertTrue(bimap.containsValue(null));
-}

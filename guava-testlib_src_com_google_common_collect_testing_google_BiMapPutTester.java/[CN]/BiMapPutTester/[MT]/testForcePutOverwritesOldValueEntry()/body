@@ -4,5 +4,5 @@
   V v0=samples.e0.getValue();
   getMap().put(k0,v0);
   getMap().forcePut(k1,v0);
-  Helpers.assertContentsAnyOrder(getMap().entrySet(),Helpers.mapEntry(k1,v0));
+  expectAdded(Helpers.mapEntry(k1,v0));
 }

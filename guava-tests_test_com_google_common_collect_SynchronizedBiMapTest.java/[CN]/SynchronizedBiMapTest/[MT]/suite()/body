@@ -1,7 +1,6 @@
 {
   TestSuite suite=new TestSuite(SynchronizedBiMapTest.class);
   suite.addTest(BiMapTestSuiteBuilder.using(new SynchTestingBiMapGenerator()).named("Synchronized.biMap[TestBiMap]").withFeatures(CollectionSize.ANY,MapFeature.ALLOWS_NULL_KEYS,MapFeature.ALLOWS_NULL_VALUES,MapFeature.GENERAL_PURPOSE,MapFeature.REJECTS_DUPLICATES_AT_CREATION).createTestSuite());
-  suite.addTest(BiMapTestSuiteBuilder.using(new SynchronizedHashBiMapGenerator()).named("synchronizedBiMap[HashBiMap]").withFeatures(CollectionSize.ANY,MapFeature.ALLOWS_NULL_KEYS,MapFeature.ALLOWS_NULL_VALUES,MapFeature.GENERAL_PURPOSE,MapFeature.REJECTS_DUPLICATES_AT_CREATION,CollectionFeature.SERIALIZABLE).createTestSuite());
-  suite.addTestSuite(AbstractBiMapTests.class);
+  suite.addTest(BiMapTestSuiteBuilder.using(new SynchronizedHashBiMapGenerator()).named("synchronizedBiMap[HashBiMap]").withFeatures(CollectionSize.ANY,MapFeature.ALLOWS_NULL_KEYS,MapFeature.ALLOWS_NULL_VALUES,MapFeature.GENERAL_PURPOSE,MapFeature.REJECTS_DUPLICATES_AT_CREATION,CollectionFeature.SERIALIZABLE).suppressing(BiMapInverseTester.getInverseSameAfterSerializingMethods()).createTestSuite());
   return suite;
 }

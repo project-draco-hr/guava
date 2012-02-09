@@ -1,0 +1,9 @@
+{
+  K k0=samples.e0.getKey();
+  V v0=samples.e0.getValue();
+  K k1=samples.e1.getKey();
+  V v1=samples.e1.getValue();
+  getMap().put(k0,v0);
+  getMap().inverse().put(v1,k1);
+  expectAdded(samples.e0,samples.e1);
+}

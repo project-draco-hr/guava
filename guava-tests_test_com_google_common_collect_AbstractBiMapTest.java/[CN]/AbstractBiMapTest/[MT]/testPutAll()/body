@@ -1,6 +1,0 @@
-{
-  bimap.put(1,"one");
-  Map<Integer,String> newEntries=ImmutableMap.of(2,"two",3,"three");
-  bimap.putAll(newEntries);
-  assertEquals(ImmutableMap.of(1,"one",2,"two",3,"three"),bimap);
-}

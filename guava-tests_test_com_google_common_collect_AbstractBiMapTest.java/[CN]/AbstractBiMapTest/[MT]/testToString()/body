@@ -1,7 +1,0 @@
-{
-  bimap.put(1,"one");
-  bimap.put(2,"two");
-  String string=bimap.toString();
-  String expected=string.startsWith("{1") ? "{1=one, 2=two}" : "{2=two, 1=one}";
-  assertEquals(expected,bimap.toString());
-}

@@ -1,0 +1,11 @@
+{
+  super.expectContents(expected);
+  List<Entry<V,K>> reversedEntries=new ArrayList<Entry<V,K>>();
+  for (  Entry<K,V> entry : expected) {
+    reversedEntries.add(reverseEntry(entry));
+  }
+  Helpers.assertEqualIgnoringOrder(getMap().inverse().entrySet(),reversedEntries);
+  for (  Entry<K,V> entry : expected) {
+    assertEquals("Wrong key for value " + entry.getValue(),entry.getKey(),getMap().inverse().get(entry.getValue()));
+  }
+}

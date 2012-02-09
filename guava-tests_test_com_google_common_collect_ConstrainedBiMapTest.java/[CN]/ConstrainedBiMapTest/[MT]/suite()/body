@@ -1,0 +1,6 @@
+{
+  TestSuite suite=new TestSuite();
+  suite.addTest(BiMapTestSuiteBuilder.using(new ConstrainedBiMapGenerator()).named("Maps.constrainedBiMap[HashBiMap]").withFeatures(CollectionSize.ANY,MapFeature.ALLOWS_NULL_KEYS,MapFeature.ALLOWS_NULL_VALUES,MapFeature.GENERAL_PURPOSE,MapFeature.REJECTS_DUPLICATES_AT_CREATION).createTestSuite());
+  suite.addTestSuite(ConstrainedBiMapTest.class);
+  return suite;
+}

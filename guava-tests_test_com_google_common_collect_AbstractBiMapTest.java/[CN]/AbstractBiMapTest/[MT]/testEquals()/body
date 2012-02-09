@@ -1,7 +1,0 @@
-{
-  BiMap<Integer,String> biMap=create();
-  assertEquals(biMap,biMap);
-  assertEquals(create(),biMap);
-  biMap.put(1,null);
-  assertFalse(create().equals(biMap));
-}

@@ -1,7 +1,0 @@
-{
-  BiMap<String,String> bimap=HashBiMap.create();
-  assertEquals(0,bimap.size());
-  bimap.put("canada","dollar");
-  assertEquals("dollar",bimap.get("canada"));
-  assertEquals("canada",bimap.inverse().get("dollar"));
-}

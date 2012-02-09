@@ -1,8 +1,0 @@
-{
-  bimap.put(1,"one");
-  bimap.put(2,"two");
-  bimap.put(3,"three");
-  bimap.put(null,null);
-  BiMap<Integer,String> copy=SerializableTester.reserializeAndAssert(bimap);
-  assertEquals(bimap.inverse(),copy.inverse());
-}

@@ -1,7 +1,0 @@
-{
-  assertTrue(bimap.isEmpty());
-  bimap.put(1,"one");
-  assertFalse(bimap.isEmpty());
-  bimap.remove(1);
-  assertTrue(bimap.isEmpty());
-}

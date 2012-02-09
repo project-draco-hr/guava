@@ -1,9 +1,0 @@
-{
-  entrySet.clear();
-  assertTrue(entrySet.isEmpty());
-  assertTrue(bimap.isEmpty());
-  putOneTwoThree();
-  entrySet.clear();
-  assertTrue(entrySet.isEmpty());
-  assertTrue(bimap.isEmpty());
-}

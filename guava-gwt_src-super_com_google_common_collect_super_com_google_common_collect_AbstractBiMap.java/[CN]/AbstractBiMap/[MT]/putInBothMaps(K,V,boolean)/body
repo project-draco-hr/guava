@@ -1,4 +1,6 @@
 {
+  checkKey(key);
+  checkValue(value);
   boolean containedKey=containsKey(key);
   if (containedKey && Objects.equal(value,get(key))) {
     return value;

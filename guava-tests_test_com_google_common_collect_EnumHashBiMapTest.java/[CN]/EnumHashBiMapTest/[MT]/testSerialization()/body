@@ -1,6 +1,0 @@
-{
-  Map<Currency,String> map=ImmutableMap.of(Currency.DOLLAR,"dollar",Currency.PESO,"peso",Currency.FRANC,"franc");
-  EnumHashBiMap<Currency,String> bimap=EnumHashBiMap.create(map);
-  BiMap<Currency,String> copy=SerializableTester.reserializeAndAssert(bimap);
-  assertEquals(bimap.inverse(),copy.inverse());
-}
