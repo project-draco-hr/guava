@@ -1,0 +1,4 @@
+{
+  forward().headSet("key",false);
+  assertEquals("[headSet(Object,boolean)]",getCalls());
+}

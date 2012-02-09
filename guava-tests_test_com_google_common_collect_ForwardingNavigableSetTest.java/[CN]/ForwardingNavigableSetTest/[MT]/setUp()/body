@@ -1,0 +1,10 @@
+{
+  super.setUp();
+  @SuppressWarnings("unchecked") final NavigableSet<String> navigableSet=createProxyInstance(NavigableSet.class);
+  forward=new ForwardingNavigableSet<String>(){
+    @Override protected NavigableSet<String> delegate(){
+      return navigableSet;
+    }
+  }
+;
+}

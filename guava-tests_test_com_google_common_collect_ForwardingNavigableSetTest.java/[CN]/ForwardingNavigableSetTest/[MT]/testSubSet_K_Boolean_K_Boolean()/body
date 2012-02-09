@@ -1,0 +1,4 @@
+{
+  forward().subSet("a",true,"b",false);
+  assertEquals("[subSet(Object,boolean,Object,boolean)]",getCalls());
+}

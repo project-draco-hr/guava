@@ -1,0 +1,4 @@
+{
+  forward().tailSet("key",false);
+  assertEquals("[tailSet(Object,boolean)]",getCalls());
+}

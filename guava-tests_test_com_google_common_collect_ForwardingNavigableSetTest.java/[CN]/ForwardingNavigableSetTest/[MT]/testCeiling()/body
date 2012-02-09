@@ -1,0 +1,4 @@
+{
+  forward().ceiling("a");
+  assertEquals("[ceiling(Object)]",getCalls());
+}

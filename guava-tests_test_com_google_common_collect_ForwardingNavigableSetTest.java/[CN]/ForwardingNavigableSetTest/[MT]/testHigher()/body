@@ -1,0 +1,4 @@
+{
+  forward().higher("a");
+  assertEquals("[higher(Object)]",getCalls());
+}

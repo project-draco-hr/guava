@@ -1,0 +1,4 @@
+{
+  forward().floor("a");
+  assertEquals("[floor(Object)]",getCalls());
+}
