@@ -1,0 +1,3 @@
+{
+  runTester().assertNonNullValues(Gender.MALE,Integer.valueOf(0),0,"","",ImmutableList.of(),ImmutableList.of(),ImmutableMap.of(),ImmutableMap.of(),ImmutableSet.of(),ImmutableSet.of(),ImmutableSortedSet.of(),ImmutableSortedSet.of(),ImmutableMultiset.of(),ImmutableMultiset.of(),ImmutableMultimap.of(),ImmutableMultimap.of(),ImmutableTable.of(),ImmutableTable.of());
+}

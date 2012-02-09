@@ -1,0 +1,4 @@
+{
+  new NullPointerTester().testAllPublicInstanceMethods(this);
+  return this;
+}

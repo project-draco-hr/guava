@@ -1,0 +1,3 @@
+{
+  new StringArrayDefaultValueChecker().check();
+}

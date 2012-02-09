@@ -16,4 +16,10 @@
     error.initCause(cause);
     throw error;
   }
+catch (  IllegalAccessException e) {
+    throw new RuntimeException(e);
+  }
+catch (  InstantiationException e) {
+    throw new RuntimeException(e);
+  }
 }

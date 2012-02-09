@@ -1,0 +1,3 @@
+{
+  calledWith(gender,integer,i,string,charSequence,list,immutableList,map,immutableMap,set,immutableSet,sortedSet,immutableSortedSet,multiset,immutableMultiset,multimap,immutableMultimap,table,immutableTable);
+}

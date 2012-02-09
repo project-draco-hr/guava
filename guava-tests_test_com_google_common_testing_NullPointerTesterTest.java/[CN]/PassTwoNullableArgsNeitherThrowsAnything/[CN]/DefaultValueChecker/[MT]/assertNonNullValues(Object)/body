@@ -1,0 +1,6 @@
+{
+  assertEquals(expectedValues.length,arguments.size());
+  for (int i=0; i < expectedValues.length; i++) {
+    assertEquals("Default value for parameter #" + i,expectedValues[i],arguments.get(i));
+  }
+}

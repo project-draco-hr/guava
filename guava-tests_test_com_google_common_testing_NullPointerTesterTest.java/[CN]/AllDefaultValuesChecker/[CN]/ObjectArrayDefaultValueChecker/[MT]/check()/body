@@ -1,0 +1,5 @@
+{
+  runTester();
+  Object[] defaultArray=(Object[])getDefaultParameterValue(0);
+  assertEquals(0,defaultArray.length);
+}

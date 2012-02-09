@@ -1,0 +1,9 @@
+{
+  try {
+    runTester();
+  }
+ catch (  AssertionError expected) {
+    return;
+  }
+  fail("Should have failed because enum has no constant");
+}
