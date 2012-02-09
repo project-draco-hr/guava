@@ -1,0 +1,9 @@
+{
+  if (value == expect) {
+    value=update;
+    return true;
+  }
+ else {
+    return false;
+  }
+}

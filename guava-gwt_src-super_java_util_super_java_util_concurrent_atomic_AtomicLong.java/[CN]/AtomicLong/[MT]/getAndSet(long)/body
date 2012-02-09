@@ -1,0 +1,5 @@
+{
+  long current=value;
+  value=newValue;
+  return current;
+}
