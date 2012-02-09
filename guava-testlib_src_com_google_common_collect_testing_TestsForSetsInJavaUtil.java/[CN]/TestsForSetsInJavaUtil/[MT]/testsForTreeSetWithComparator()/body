@@ -6,5 +6,5 @@
       return set;
     }
   }
-).named("TreeSet, with comparator").withFeatures(SetFeature.GENERAL_PURPOSE,CollectionFeature.ALLOWS_NULL_VALUES,CollectionFeature.KNOWN_ORDER,CollectionFeature.FAILS_FAST_ON_CONCURRENT_MODIFICATION,CollectionSize.ANY).suppressing(suppressForTreeSetWithComparator()).createTestSuite();
+).named("TreeSet, with comparator").withFeatures(SetFeature.GENERAL_PURPOSE,CollectionFeature.SERIALIZABLE,CollectionFeature.ALLOWS_NULL_VALUES,CollectionFeature.KNOWN_ORDER,CollectionFeature.FAILS_FAST_ON_CONCURRENT_MODIFICATION,CollectionSize.ANY).suppressing(suppressForTreeSetWithComparator()).createTestSuite();
 }

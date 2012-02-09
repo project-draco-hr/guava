@@ -1,0 +1,1 @@
+FeatureSpecificTestSuiteBuilder<?,? extends OneSizeTestContainerGenerator<Collection<E>,E>> parentBuilder

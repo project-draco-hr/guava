@@ -1,0 +1,7 @@
+{
+  List<TestSuite> derivedSuites=new ArrayList<TestSuite>(super.createDerivedSuites(parentBuilder));
+  if (parentBuilder.getFeatures().contains(CollectionFeature.SERIALIZABLE)) {
+    derivedSuites.add(MultisetTestSuiteBuilder.using(new ReserializedMultisetGenerator<E>(parentBuilder.getSubjectGenerator())).named(getName() + " reserialized").withFeatures(computeReserializedMultisetFeatures(parentBuilder.getFeatures())).createTestSuite());
+  }
+  return derivedSuites;
+}

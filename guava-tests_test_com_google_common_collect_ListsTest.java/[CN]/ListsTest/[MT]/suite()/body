@@ -8,7 +8,7 @@
       return Lists.asList(elements[0],rest);
     }
   }
-).named("Lists.asList, 2 parameter").withFeatures(CollectionSize.SEVERAL,CollectionSize.ONE,CollectionFeature.ALLOWS_NULL_VALUES).createTestSuite());
+).named("Lists.asList, 2 parameter").withFeatures(CollectionSize.SEVERAL,CollectionSize.ONE,CollectionFeature.SERIALIZABLE,CollectionFeature.ALLOWS_NULL_VALUES).createTestSuite());
   suite.addTest(ListTestSuiteBuilder.using(new TestStringListGenerator(){
     @Override protected List<String> create(    String[] elements){
       String[] rest=new String[elements.length - 2];
@@ -16,13 +16,8 @@
       return Lists.asList(elements[0],elements[1],rest);
     }
   }
-).named("Lists.asList, 3 parameter").withFeatures(CollectionSize.SEVERAL,CollectionFeature.ALLOWS_NULL_VALUES).createTestSuite());
-  final Function<String,String> removeFirst=new Function<String,String>(){
-    @Override public String apply(    String from){
-      return (from.length() == 0) ? from : from.substring(1);
-    }
-  }
-;
+).named("Lists.asList, 3 parameter").withFeatures(CollectionSize.SEVERAL,CollectionFeature.SERIALIZABLE,CollectionFeature.ALLOWS_NULL_VALUES).createTestSuite());
+  final Function<String,String> removeFirst=new RemoveFirstFunction();
   suite.addTest(ListTestSuiteBuilder.using(new TestStringListGenerator(){
     @Override protected List<String> create(    String[] elements){
       List<String> fromList=Lists.newArrayList();
@@ -32,7 +27,7 @@
       return Lists.transform(fromList,removeFirst);
     }
   }
-).named("Lists.transform, random access, no nulls").withFeatures(CollectionSize.ANY,ListFeature.REMOVE_OPERATIONS,CollectionFeature.ALLOWS_NULL_QUERIES).createTestSuite());
+).named("Lists.transform, random access, no nulls").withFeatures(CollectionSize.ANY,ListFeature.REMOVE_OPERATIONS,CollectionFeature.SERIALIZABLE,CollectionFeature.ALLOWS_NULL_QUERIES).createTestSuite());
   suite.addTest(ListTestSuiteBuilder.using(new TestStringListGenerator(){
     @Override protected List<String> create(    String[] elements){
       List<String> fromList=Lists.newLinkedList();
@@ -42,21 +37,21 @@
       return Lists.transform(fromList,removeFirst);
     }
   }
-).named("Lists.transform, sequential access, no nulls").withFeatures(CollectionSize.ANY,ListFeature.REMOVE_OPERATIONS,CollectionFeature.ALLOWS_NULL_QUERIES).createTestSuite());
+).named("Lists.transform, sequential access, no nulls").withFeatures(CollectionSize.ANY,ListFeature.REMOVE_OPERATIONS,CollectionFeature.SERIALIZABLE,CollectionFeature.ALLOWS_NULL_QUERIES).createTestSuite());
   suite.addTest(ListTestSuiteBuilder.using(new TestStringListGenerator(){
     @Override protected List<String> create(    String[] elements){
       List<String> fromList=Lists.newArrayList(elements);
       return Lists.transform(fromList,Functions.<String>identity());
     }
   }
-).named("Lists.transform, random access, nulls").withFeatures(CollectionSize.ANY,ListFeature.REMOVE_OPERATIONS,CollectionFeature.ALLOWS_NULL_VALUES).createTestSuite());
+).named("Lists.transform, random access, nulls").withFeatures(CollectionSize.ANY,ListFeature.REMOVE_OPERATIONS,CollectionFeature.SERIALIZABLE,CollectionFeature.ALLOWS_NULL_VALUES).createTestSuite());
   suite.addTest(ListTestSuiteBuilder.using(new TestStringListGenerator(){
     @Override protected List<String> create(    String[] elements){
       List<String> fromList=Lists.newLinkedList(asList(elements));
       return Lists.transform(fromList,Functions.<String>identity());
     }
   }
-).named("Lists.transform, sequential access, nulls").withFeatures(CollectionSize.ANY,ListFeature.REMOVE_OPERATIONS,CollectionFeature.ALLOWS_NULL_VALUES).createTestSuite());
+).named("Lists.transform, sequential access, nulls").withFeatures(CollectionSize.ANY,ListFeature.REMOVE_OPERATIONS,CollectionFeature.SERIALIZABLE,CollectionFeature.ALLOWS_NULL_VALUES).createTestSuite());
   suite.addTest(ListTestSuiteBuilder.using(new TestStringListGenerator(){
     @Override protected List<String> create(    String[] elements){
       List<String> list=Lists.newArrayList();
@@ -105,7 +100,7 @@
       return new SampleElements<Character>('a','b','c','d','e');
     }
   }
-).named("Lists.charactersOf[String]").withFeatures(CollectionSize.ANY,CollectionFeature.ALLOWS_NULL_QUERIES).createTestSuite());
+).named("Lists.charactersOf[String]").withFeatures(CollectionSize.ANY,CollectionFeature.SERIALIZABLE,CollectionFeature.ALLOWS_NULL_QUERIES).createTestSuite());
   suite.addTest(ListTestSuiteBuilder.using(new TestListGenerator<Character>(){
     @Override public List<Character> create(    Object... elements){
       char[] chars=new char[elements.length];

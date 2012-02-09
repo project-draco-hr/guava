@@ -1,0 +1,7 @@
+{
+  Set<Feature<?>> derivedFeatures=new HashSet<Feature<?>>();
+  derivedFeatures.addAll(features);
+  derivedFeatures.remove(CollectionFeature.SERIALIZABLE);
+  derivedFeatures.remove(CollectionFeature.SERIALIZABLE_INCLUDING_VIEWS);
+  return derivedFeatures;
+}

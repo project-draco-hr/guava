@@ -4,5 +4,5 @@
       return populate(new ConcurrentHashMap<String,String>(),entries);
     }
   }
-).named("ConcurrentHashMap").withFeatures(MapFeature.GENERAL_PURPOSE,CollectionSize.ANY).suppressing(suppressForConcurrentHashMap()).createTestSuite();
+).named("ConcurrentHashMap").withFeatures(MapFeature.GENERAL_PURPOSE,CollectionFeature.SERIALIZABLE,CollectionSize.ANY).suppressing(suppressForConcurrentHashMap()).createTestSuite();
 }

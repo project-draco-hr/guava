@@ -1,5 +1,6 @@
 {
   List<Class<? extends AbstractTester>> testers=Helpers.copyToList(super.getTesters());
+  testers.add(CollectionSerializationEqualTester.class);
   testers.add(SetAddAllTester.class);
   testers.add(SetAddTester.class);
   testers.add(SetCreationTester.class);

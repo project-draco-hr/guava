@@ -4,5 +4,5 @@
       return Collections.singletonMap(entries[0].getKey(),entries[0].getValue());
     }
   }
-).named("singletonMap").withFeatures(MapFeature.ALLOWS_NULL_KEYS,MapFeature.ALLOWS_NULL_VALUES,CollectionSize.ONE).suppressing(suppressForSingletonMap()).createTestSuite();
+).named("singletonMap").withFeatures(MapFeature.ALLOWS_NULL_KEYS,MapFeature.ALLOWS_NULL_VALUES,CollectionFeature.SERIALIZABLE,CollectionSize.ONE).suppressing(suppressForSingletonMap()).createTestSuite();
 }

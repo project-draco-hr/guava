@@ -4,5 +4,5 @@
       return new LinkedList<String>(MinimalCollection.of(elements));
     }
   }
-).named("LinkedList").withFeatures(ListFeature.GENERAL_PURPOSE,CollectionFeature.ALLOWS_NULL_VALUES,CollectionFeature.FAILS_FAST_ON_CONCURRENT_MODIFICATION,CollectionSize.ANY).suppressing(suppressForLinkedList()).createTestSuite();
+).named("LinkedList").withFeatures(ListFeature.GENERAL_PURPOSE,CollectionFeature.SERIALIZABLE,CollectionFeature.ALLOWS_NULL_VALUES,CollectionFeature.FAILS_FAST_ON_CONCURRENT_MODIFICATION,CollectionSize.ANY).suppressing(suppressForLinkedList()).createTestSuite();
 }

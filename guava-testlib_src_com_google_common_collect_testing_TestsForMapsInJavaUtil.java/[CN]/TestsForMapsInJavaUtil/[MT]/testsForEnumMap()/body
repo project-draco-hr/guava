@@ -4,5 +4,5 @@
       return populate(new EnumMap<AnEnum,String>(AnEnum.class),entries);
     }
   }
-).named("EnumMap").withFeatures(MapFeature.GENERAL_PURPOSE,MapFeature.ALLOWS_NULL_VALUES,MapFeature.RESTRICTS_KEYS,CollectionFeature.KNOWN_ORDER,CollectionSize.ANY).suppressing(suppressForEnumMap()).createTestSuite();
+).named("EnumMap").withFeatures(MapFeature.GENERAL_PURPOSE,MapFeature.ALLOWS_NULL_VALUES,MapFeature.RESTRICTS_KEYS,CollectionFeature.KNOWN_ORDER,CollectionFeature.SERIALIZABLE,CollectionSize.ANY).suppressing(suppressForEnumMap()).createTestSuite();
 }

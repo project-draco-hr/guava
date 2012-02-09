@@ -6,5 +6,5 @@
       return Collections.checkedList(innerList,String.class);
     }
   }
-).named("checkedList/ArrayList").withFeatures(ListFeature.GENERAL_PURPOSE,CollectionFeature.RESTRICTS_ELEMENTS,CollectionFeature.ALLOWS_NULL_VALUES,CollectionSize.ANY).suppressing(suppressForCheckedList()).createTestSuite();
+).named("checkedList/ArrayList").withFeatures(ListFeature.GENERAL_PURPOSE,CollectionFeature.SERIALIZABLE,CollectionFeature.RESTRICTS_ELEMENTS,CollectionFeature.ALLOWS_NULL_VALUES,CollectionSize.ANY).suppressing(suppressForCheckedList()).createTestSuite();
 }

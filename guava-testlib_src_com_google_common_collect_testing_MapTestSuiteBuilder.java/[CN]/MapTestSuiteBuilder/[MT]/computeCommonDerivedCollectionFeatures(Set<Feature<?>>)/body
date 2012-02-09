@@ -1,5 +1,8 @@
 {
   Set<Feature<?>> derivedFeatures=new HashSet<Feature<?>>();
+  if (mapFeatures.contains(CollectionFeature.SERIALIZABLE_INCLUDING_VIEWS)) {
+    derivedFeatures.add(CollectionFeature.SERIALIZABLE);
+  }
   if (mapFeatures.contains(MapFeature.SUPPORTS_REMOVE)) {
     derivedFeatures.add(CollectionFeature.SUPPORTS_REMOVE);
     derivedFeatures.add(CollectionFeature.SUPPORTS_REMOVE_ALL);

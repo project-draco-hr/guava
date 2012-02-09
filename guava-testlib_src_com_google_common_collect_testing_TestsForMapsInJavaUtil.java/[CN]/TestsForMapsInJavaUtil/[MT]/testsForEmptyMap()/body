@@ -4,5 +4,5 @@
       return Collections.emptyMap();
     }
   }
-).named("emptyMap").withFeatures(CollectionFeature.NONE,CollectionSize.ZERO).suppressing(suppressForEmptyMap()).createTestSuite();
+).named("emptyMap").withFeatures(CollectionFeature.SERIALIZABLE,CollectionSize.ZERO).suppressing(suppressForEmptyMap()).createTestSuite();
 }

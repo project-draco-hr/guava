@@ -6,18 +6,12 @@
       return ImmutableMultiset.copyOf(elements);
     }
   }
-).named("ImmutableMultiset").withFeatures(CollectionSize.ANY,CollectionFeature.ALLOWS_NULL_QUERIES).createTestSuite());
-  suite.addTest(MultisetTestSuiteBuilder.using(new TestStringMultisetGenerator(){
-    @Override protected Multiset<String> create(    String[] elements){
-      return SerializableTester.reserialize(ImmutableMultiset.copyOf(elements));
-    }
-  }
-).named("ImmutableMultiset, reserialized").withFeatures(CollectionSize.ANY,CollectionFeature.ALLOWS_NULL_QUERIES).createTestSuite());
+).named("ImmutableMultiset").withFeatures(CollectionSize.ANY,CollectionFeature.SERIALIZABLE_INCLUDING_VIEWS,CollectionFeature.ALLOWS_NULL_QUERIES).createTestSuite());
   suite.addTest(SetTestSuiteBuilder.using(new TestStringSetGenerator(){
     @Override protected Set<String> create(    String[] elements){
       return SerializableTester.reserialize(ImmutableMultiset.copyOf(elements).elementSet());
     }
   }
-).named("ImmutableMultiset, element set").withFeatures(CollectionSize.ANY,CollectionFeature.ALLOWS_NULL_QUERIES).createTestSuite());
+).named("ImmutableMultiset, element set").withFeatures(CollectionSize.ANY,CollectionFeature.SERIALIZABLE,CollectionFeature.ALLOWS_NULL_QUERIES).createTestSuite());
   return suite;
 }

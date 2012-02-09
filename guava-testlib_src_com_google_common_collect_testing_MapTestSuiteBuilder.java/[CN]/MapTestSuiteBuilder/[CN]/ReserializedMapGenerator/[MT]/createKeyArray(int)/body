@@ -1,0 +1,3 @@
+{
+  return ((TestMapGenerator<K,V>)mapGenerator.getInnerGenerator()).createKeyArray(length);
+}

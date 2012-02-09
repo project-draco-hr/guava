@@ -4,5 +4,5 @@
       return Arrays.asList(elements.clone());
     }
   }
-).named("Arrays.asList").withFeatures(ListFeature.SUPPORTS_SET,CollectionFeature.ALLOWS_NULL_VALUES,CollectionSize.ANY).suppressing(suppressForArraysAsList()).createTestSuite();
+).named("Arrays.asList").withFeatures(ListFeature.SUPPORTS_SET,CollectionFeature.SERIALIZABLE,CollectionFeature.ALLOWS_NULL_VALUES,CollectionSize.ANY).suppressing(suppressForArraysAsList()).createTestSuite();
 }

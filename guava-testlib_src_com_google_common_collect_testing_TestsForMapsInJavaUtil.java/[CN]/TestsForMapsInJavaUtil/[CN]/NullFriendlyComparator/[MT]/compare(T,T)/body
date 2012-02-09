@@ -1,0 +1,3 @@
+{
+  return String.valueOf(left).compareTo(String.valueOf(right));
+}

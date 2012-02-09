@@ -1,8 +1,11 @@
 {
   final TestMultisetGenerator<E> delegate=(TestMultisetGenerator<E>)parentBuilder.getSubjectGenerator();
-  List<Feature<?>> features=new ArrayList<Feature<?>>();
+  Set<Feature<?>> features=new HashSet<Feature<?>>();
   features.add(NoRecurse.DESCENDING);
   features.addAll(parentBuilder.getFeatures());
+  if (!features.remove(CollectionFeature.SERIALIZABLE_INCLUDING_VIEWS)) {
+    features.remove(CollectionFeature.SERIALIZABLE);
+  }
   return SortedMultisetTestSuiteBuilder.using(new ForwardingTestMultisetGenerator<E>(delegate){
     @Override public SortedMultiset<E> create(    Object... entries){
       return ((SortedMultiset<E>)super.create(entries)).descendingMultiset();

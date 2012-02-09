@@ -1,0 +1,3 @@
+{
+  return SerializableTester.reserialize(gen.create(elements));
+}

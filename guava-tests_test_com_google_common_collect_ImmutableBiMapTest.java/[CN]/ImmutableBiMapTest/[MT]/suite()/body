@@ -4,6 +4,6 @@
   suite.addTestSuite(InverseMapTests.class);
   suite.addTestSuite(CreationTests.class);
   suite.addTestSuite(BiMapSpecificTests.class);
-  suite.addTest(BiMapTestSuiteBuilder.using(new ImmutableBiMapGenerator()).named("ImmutableBiMap").withFeatures(CollectionSize.ANY,MapFeature.REJECTS_DUPLICATES_AT_CREATION).createTestSuite());
+  suite.addTest(BiMapTestSuiteBuilder.using(new ImmutableBiMapGenerator()).named("ImmutableBiMap").withFeatures(CollectionSize.ANY,CollectionFeature.SERIALIZABLE,MapFeature.REJECTS_DUPLICATES_AT_CREATION).createTestSuite());
   return suite;
 }

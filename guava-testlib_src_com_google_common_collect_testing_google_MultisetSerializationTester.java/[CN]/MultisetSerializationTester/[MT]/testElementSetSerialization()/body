@@ -1,0 +1,4 @@
+{
+  Set<E> expected=getMultiset().elementSet();
+  assertEquals(expected,SerializableTester.reserialize(expected));
+}

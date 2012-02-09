@@ -6,5 +6,5 @@
       return Collections.unmodifiableList(innerList);
     }
   }
-).named("unmodifiableList/ArrayList").withFeatures(CollectionFeature.NONE,CollectionFeature.ALLOWS_NULL_VALUES,CollectionSize.ANY).suppressing(suppressForUnmodifiableList()).createTestSuite();
+).named("unmodifiableList/ArrayList").withFeatures(CollectionFeature.SERIALIZABLE,CollectionFeature.ALLOWS_NULL_VALUES,CollectionSize.ANY).suppressing(suppressForUnmodifiableList()).createTestSuite();
 }

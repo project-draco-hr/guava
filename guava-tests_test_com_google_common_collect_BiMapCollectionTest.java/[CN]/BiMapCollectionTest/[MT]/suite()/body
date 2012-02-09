@@ -1,5 +1,5 @@
 {
   TestSuite suite=new TestSuite();
-  suite.addTest(BiMapTestSuiteBuilder.using(new HashBiMapGenerator()).named("HashBiMap").withFeatures(CollectionSize.ANY,MapFeature.ALLOWS_NULL_KEYS,MapFeature.ALLOWS_NULL_VALUES,MapFeature.GENERAL_PURPOSE,MapFeature.REJECTS_DUPLICATES_AT_CREATION).createTestSuite());
+  suite.addTest(BiMapTestSuiteBuilder.using(new HashBiMapGenerator()).named("HashBiMap").withFeatures(CollectionSize.ANY,CollectionFeature.SERIALIZABLE,MapFeature.ALLOWS_NULL_KEYS,MapFeature.ALLOWS_NULL_VALUES,MapFeature.GENERAL_PURPOSE,MapFeature.REJECTS_DUPLICATES_AT_CREATION).createTestSuite());
   return suite;
 }

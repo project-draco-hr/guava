@@ -3,6 +3,9 @@
   if (!parentBuilder.getFeatures().contains(NoRecurse.DESCENDING)) {
     derivedSuites.add(createDescendingSuite(parentBuilder));
   }
+  if (parentBuilder.getFeatures().contains(CollectionFeature.SERIALIZABLE)) {
+    derivedSuites.add(createReserializedSuite(parentBuilder));
+  }
   if (!parentBuilder.getFeatures().contains(NoRecurse.SUBMULTISET)) {
     derivedSuites.add(createSubMultisetSuite(parentBuilder,Bound.NO_BOUND,Bound.EXCLUSIVE));
     derivedSuites.add(createSubMultisetSuite(parentBuilder,Bound.NO_BOUND,Bound.INCLUSIVE));

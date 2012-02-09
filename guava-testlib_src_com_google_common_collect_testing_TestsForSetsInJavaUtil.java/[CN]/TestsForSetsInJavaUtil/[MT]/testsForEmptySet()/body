@@ -4,5 +4,5 @@
       return Collections.emptySet();
     }
   }
-).named("emptySet").withFeatures(CollectionFeature.NONE,CollectionSize.ZERO).suppressing(suppressForEmptySet()).createTestSuite();
+).named("emptySet").withFeatures(CollectionFeature.SERIALIZABLE,CollectionSize.ZERO).suppressing(suppressForEmptySet()).createTestSuite();
 }

@@ -4,5 +4,5 @@
       return Collections.singletonList(elements[0]);
     }
   }
-).named("singletonList").withFeatures(CollectionFeature.NONE,CollectionFeature.ALLOWS_NULL_VALUES,CollectionSize.ONE).suppressing(suppressForSingletonList()).createTestSuite();
+).named("singletonList").withFeatures(CollectionFeature.SERIALIZABLE,CollectionFeature.ALLOWS_NULL_VALUES,CollectionSize.ONE).suppressing(suppressForSingletonList()).createTestSuite();
 }
