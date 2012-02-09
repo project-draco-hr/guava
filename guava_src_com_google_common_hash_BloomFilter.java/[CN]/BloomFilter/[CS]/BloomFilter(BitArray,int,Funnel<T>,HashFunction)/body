@@ -1,8 +1,0 @@
-{
-  Preconditions.checkArgument(numHashFunctions > 0,"numHashFunctions zero or negative");
-  this.bits=checkNotNull(bits);
-  this.numHashFunctions=numHashFunctions;
-  this.funnel=checkNotNull(funnel);
-  this.hashFunction=checkNotNull(hashFunction);
-  this.hashBitsPerSlice=log2(max(bits.size(),Long.SIZE),CEILING);
-}

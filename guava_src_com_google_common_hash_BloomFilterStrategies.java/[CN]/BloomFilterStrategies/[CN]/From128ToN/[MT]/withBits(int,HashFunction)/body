@@ -1,3 +1,0 @@
-{
-  return new From128ToN(checkPositiveAndMakeMultipleOf64(bits),hashFunction);
-}

@@ -1,0 +1,7 @@
+{
+  Preconditions.checkArgument(numHashFunctions > 0,"numHashFunctions zero or negative");
+  this.bits=checkNotNull(bits);
+  this.numHashFunctions=numHashFunctions;
+  this.funnel=checkNotNull(funnel);
+  this.strategy=strategy;
+}

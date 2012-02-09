@@ -1,8 +1,0 @@
-{
-  byte[] bytes=new byte[bits / 8];
-  ByteBuffer buf=ByteBuffer.wrap(bytes);
-  for (long i=1, numLongs=bits / 64; i <= numLongs; i++) {
-    buf.putLong(hash1 + i * hash2);
-  }
-  return HashCodes.fromBytes(bytes);
-}

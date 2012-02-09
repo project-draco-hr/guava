@@ -1,0 +1,3 @@
+{
+  this(new long[IntMath.divide(bits,64,RoundingMode.CEILING)]);
+}
