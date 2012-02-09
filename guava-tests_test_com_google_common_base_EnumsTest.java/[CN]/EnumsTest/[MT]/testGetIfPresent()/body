@@ -1,0 +1,11 @@
+{
+  assertEquals(Optional.of(TestEnum.CHEETO),Enums.getIfPresent(TestEnum.class,"CHEETO"));
+  assertEquals(Optional.of(TestEnum.HONDA),Enums.getIfPresent(TestEnum.class,"HONDA"));
+  assertEquals(Optional.of(TestEnum.POODLE),Enums.getIfPresent(TestEnum.class,"POODLE"));
+  assertTrue(Enums.getIfPresent(TestEnum.class,"CHEETO").isPresent());
+  assertTrue(Enums.getIfPresent(TestEnum.class,"HONDA").isPresent());
+  assertTrue(Enums.getIfPresent(TestEnum.class,"POODLE").isPresent());
+  assertEquals(TestEnum.CHEETO,Enums.getIfPresent(TestEnum.class,"CHEETO").get());
+  assertEquals(TestEnum.HONDA,Enums.getIfPresent(TestEnum.class,"HONDA").get());
+  assertEquals(TestEnum.POODLE,Enums.getIfPresent(TestEnum.class,"POODLE").get());
+}
