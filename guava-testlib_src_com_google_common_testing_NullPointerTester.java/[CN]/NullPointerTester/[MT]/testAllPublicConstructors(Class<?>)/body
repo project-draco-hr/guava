@@ -1,7 +1,3 @@
 {
-  for (  Constructor<?> constructor : c.getDeclaredConstructors()) {
-    if (isPublic(constructor) && !isIgnored(constructor)) {
-      testConstructor(constructor);
-    }
-  }
+  testConstructors(c,Visibility.PUBLIC);
 }

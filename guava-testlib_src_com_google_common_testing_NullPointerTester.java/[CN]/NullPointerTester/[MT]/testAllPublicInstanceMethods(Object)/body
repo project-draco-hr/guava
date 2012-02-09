@@ -1,8 +1,3 @@
 {
-  Class<?> c=instance.getClass();
-  for (  Method method : c.getDeclaredMethods()) {
-    if (isPublic(method) && !isStatic(method) && !isIgnored(method)) {
-      testMethod(instance,method);
-    }
-  }
+  testInstanceMethods(instance,Visibility.PUBLIC);
 }

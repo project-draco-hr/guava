@@ -1,0 +1,7 @@
+{
+  for (  Constructor<?> constructor : c.getDeclaredConstructors()) {
+    if (minimalVisibility.isVisible(constructor) && !isIgnored(constructor)) {
+      testConstructor(constructor);
+    }
+  }
+}

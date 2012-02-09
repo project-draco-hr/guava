@@ -1,0 +1,6 @@
+{
+  assertFalse(Visibility.PACKAGE.isVisible(VisibilityMethods.class.getDeclaredMethod("privateMethod")));
+  assertTrue(Visibility.PACKAGE.isVisible(VisibilityMethods.class.getDeclaredMethod("packagePrivateMethod")));
+  assertTrue(Visibility.PACKAGE.isVisible(VisibilityMethods.class.getDeclaredMethod("protectedMethod")));
+  assertTrue(Visibility.PACKAGE.isVisible(VisibilityMethods.class.getDeclaredMethod("publicMethod")));
+}
