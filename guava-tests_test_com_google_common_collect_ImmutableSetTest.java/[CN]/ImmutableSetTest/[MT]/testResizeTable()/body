@@ -1,8 +1,8 @@
 {
-  verifyTableSize(100,2,8);
-  verifyTableSize(100,5,16);
-  verifyTableSize(100,33,256);
-  verifyTableSize(17,17,64);
-  verifyTableSize(17,16,64);
-  verifyTableSize(17,15,64);
+  verifyTableSize(100,2,4);
+  verifyTableSize(100,5,8);
+  verifyTableSize(100,33,64);
+  verifyTableSize(17,17,32);
+  verifyTableSize(17,16,32);
+  verifyTableSize(17,15,32);
 }

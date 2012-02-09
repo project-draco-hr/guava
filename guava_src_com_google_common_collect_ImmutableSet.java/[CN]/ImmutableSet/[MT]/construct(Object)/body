@@ -35,7 +35,7 @@
     @SuppressWarnings("unchecked") E element=(E)uniqueElements[0];
     return new SingletonImmutableSet<E>(element,hashCode);
   }
- else   if (tableSize > 2 * chooseTableSize(uniqueElements.length)) {
+ else   if (tableSize != chooseTableSize(uniqueElements.length)) {
     return construct(uniqueElements);
   }
  else {
