@@ -1,0 +1,8 @@
+{
+  UnmodifiableNavigableMap<K,V> result=descendingMap;
+  if (result == null) {
+    descendingMap=result=new UnmodifiableNavigableMap<K,V>(delegate.descendingMap());
+    result.descendingMap=this;
+  }
+  return result;
+}

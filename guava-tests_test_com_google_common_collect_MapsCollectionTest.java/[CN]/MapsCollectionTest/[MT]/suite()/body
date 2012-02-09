@@ -1,0 +1,46 @@
+{
+  TestSuite suite=new TestSuite();
+  suite.addTest(NavigableMapTestSuiteBuilder.using(new TestStringMapGenerator(){
+    @Override protected Map<String,String> create(    Entry<String,String>[] entries){
+      SafeTreeMap<String,String> map=new SafeTreeMap<String,String>();
+      for (      Entry<String,String> entry : entries) {
+        map.put(entry.getKey(),entry.getValue());
+      }
+      return Maps.unmodifiableNavigableMap(map);
+    }
+  }
+).named("unmodifiableNavigableMap[SafeTreeMap]").withFeatures(CollectionSize.ANY,MapFeature.ALLOWS_NULL_VALUES).createTestSuite());
+  suite.addTest(NavigableMapTestSuiteBuilder.using(new TestStringMapGenerator(){
+    @Override protected Map<String,String> create(    Entry<String,String>[] entries){
+      SafeTreeMap<String,String> map=new SafeTreeMap<String,String>();
+      for (      Entry<String,String> entry : entries) {
+        map.put(entry.getKey(),entry.getValue());
+      }
+      return SerializableTester.reserialize(Maps.unmodifiableNavigableMap(map));
+    }
+  }
+).named("unmodifiableNavigableMap[SafeTreeMap], reserialized").withFeatures(CollectionSize.ANY,MapFeature.ALLOWS_NULL_VALUES).createTestSuite());
+  suite.addTest(BiMapTestSuiteBuilder.using(new TestStringBiMapGenerator(){
+    @Override protected BiMap<String,String> create(    Entry<String,String>[] entries){
+      BiMap<String,String> bimap=HashBiMap.create(entries.length);
+      for (      Entry<String,String> entry : entries) {
+        checkArgument(!bimap.containsKey(entry.getKey()));
+        bimap.put(entry.getKey(),entry.getValue());
+      }
+      return Maps.unmodifiableBiMap(bimap);
+    }
+  }
+).named("unmodifiableBiMap[HashBiMap]").withFeatures(CollectionSize.ANY,MapFeature.ALLOWS_NULL_VALUES,MapFeature.ALLOWS_NULL_KEYS,MapFeature.REJECTS_DUPLICATES_AT_CREATION).createTestSuite());
+  suite.addTest(BiMapTestSuiteBuilder.using(new TestStringBiMapGenerator(){
+    @Override protected BiMap<String,String> create(    Entry<String,String>[] entries){
+      BiMap<String,String> bimap=HashBiMap.create(entries.length);
+      for (      Entry<String,String> entry : entries) {
+        checkArgument(!bimap.containsKey(entry.getKey()));
+        bimap.put(entry.getKey(),entry.getValue());
+      }
+      return SerializableTester.reserialize(Maps.unmodifiableBiMap(bimap));
+    }
+  }
+).named("unmodifiableBiMap[HashBiMap], reserialized").withFeatures(CollectionSize.ANY,MapFeature.ALLOWS_NULL_VALUES,MapFeature.ALLOWS_NULL_KEYS,MapFeature.REJECTS_DUPLICATES_AT_CREATION).createTestSuite());
+  return suite;
+}
