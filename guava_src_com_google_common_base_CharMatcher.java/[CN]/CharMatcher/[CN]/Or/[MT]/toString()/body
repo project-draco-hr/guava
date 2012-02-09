@@ -1,0 +1,5 @@
+{
+  StringBuilder builder=new StringBuilder("CharMatcher.or(");
+  Joiner.on(", ").appendTo(builder,components);
+  return builder.append(')').toString();
+}

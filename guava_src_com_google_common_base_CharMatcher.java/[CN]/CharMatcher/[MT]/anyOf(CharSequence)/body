@@ -32,6 +32,9 @@ for (char c : chars) {
 table.set(c);
 }
 }
+@Override public String toString(){
+return new StringBuilder("CharMatcher.anyOf(\"").append(chars).append("\")").toString();
+}
 }
 ;
 }

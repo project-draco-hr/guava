@@ -21,6 +21,9 @@
     @Override public CharMatcher precomputed(){
       return this;
     }
+    @Override public String toString(){
+      return new StringBuilder("CharMatcher.is(").append(Integer.toHexString(match)).append(")").toString();
+    }
   }
 ;
 }

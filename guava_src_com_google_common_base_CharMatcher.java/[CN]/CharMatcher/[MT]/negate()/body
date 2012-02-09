@@ -16,6 +16,9 @@
     @Override public CharMatcher negate(){
       return original;
     }
+    @Override public String toString(){
+      return original + ".negate()";
+    }
   }
 ;
 }
