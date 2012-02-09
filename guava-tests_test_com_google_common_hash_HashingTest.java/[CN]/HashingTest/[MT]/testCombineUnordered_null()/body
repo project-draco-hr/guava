@@ -1,8 +1,0 @@
-{
-  try {
-    Hashing.combineUnordered(null);
-    fail();
-  }
- catch (  NullPointerException expected) {
-  }
-}

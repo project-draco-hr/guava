@@ -1,8 +1,0 @@
-{
-  super(functions);
-  int bitSum=0;
-  for (  HashFunction f : this.functions) {
-    bitSum+=f.bits();
-  }
-  this.bits=bitSum;
-}
