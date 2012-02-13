@@ -1,6 +1,0 @@
-{
-  char value=(char)random.nextInt();
-  for (  Sink sink : sinks) {
-    sink.putChar(value);
-  }
-}

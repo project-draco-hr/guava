@@ -1,7 +1,0 @@
-{
-  byte[] value=new byte[random.nextInt(128)];
-  random.nextBytes(value);
-  for (  Sink sink : sinks) {
-    sink.putBytes(value);
-  }
-}

@@ -1,6 +1,0 @@
-{
-  boolean value=random.nextBoolean();
-  for (  Sink sink : sinks) {
-    sink.putBoolean(value);
-  }
-}

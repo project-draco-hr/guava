@@ -1,6 +1,0 @@
-{
-  int value=random.nextInt();
-  for (  Sink sink : sinks) {
-    sink.putByte((byte)value);
-  }
-}
