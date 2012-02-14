@@ -1,16 +1,18 @@
 {
   int bits=checkPositiveAndMakeMultipleOf32(minimumBits);
   if (bits == 32) {
-    return murmur3_32();
+    return murmur3_32(GOOD_FAST_HASH_SEED);
   }
  else   if (bits <= 128) {
-    return murmur3_128();
+    return murmur3_128(GOOD_FAST_HASH_SEED);
   }
  else {
     int hashFunctionsNeeded=(bits + 127) / 128;
     HashFunction[] hashFunctions=new HashFunction[hashFunctionsNeeded];
+    int seed=GOOD_FAST_HASH_SEED;
     for (int i=0; i < hashFunctionsNeeded; i++) {
-      hashFunctions[i]=murmur3_128(i * 1500450271);
+      hashFunctions[i]=murmur3_128(seed);
+      seed+=1500450271;
     }
     return new ConcatenatedHashFunction(hashFunctions);
   }
