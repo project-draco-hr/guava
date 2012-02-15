@@ -1,0 +1,8 @@
+{
+  Field foo=Enums.getField(AnEnum.FOO);
+  assertEquals("FOO",foo.getName());
+  assertTrue(foo.isAnnotationPresent(ExampleAnnotation.class));
+  Field bar=Enums.getField(AnEnum.BAR);
+  assertEquals("BAR",bar.getName());
+  assertFalse(bar.isAnnotationPresent(ExampleAnnotation.class));
+}
