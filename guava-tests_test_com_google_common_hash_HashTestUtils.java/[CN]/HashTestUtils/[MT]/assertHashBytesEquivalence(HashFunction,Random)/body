@@ -1,0 +1,9 @@
+{
+  int size=random.nextInt(2048);
+  byte[] bytes=new byte[size];
+  random.nextBytes(bytes);
+  assertEquals(hashFunction.hashBytes(bytes),hashFunction.newHasher(size).putBytes(bytes).hash());
+  int off=random.nextInt(size);
+  int len=random.nextInt(size - off);
+  assertEquals(hashFunction.hashBytes(bytes,off,len),hashFunction.newHasher(size).putBytes(bytes,off,len).hash());
+}

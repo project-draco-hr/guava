@@ -13,4 +13,5 @@
   Assert.assertTrue(hashcodes.size() > objects * 0.95);
   assertHashBytesThrowsCorrectExceptions(hashFunction);
   assertIndependentHashers(hashFunction);
+  assertShortcutsAreEquivalent(hashFunction,256);
 }

@@ -1,0 +1,9 @@
+{
+  Random random=new Random(42085L);
+  for (int i=0; i < trials; i++) {
+    assertHashBytesEquivalence(hashFunction,random);
+    assertHashIntEquivalence(hashFunction,random);
+    assertHashLongEquivalence(hashFunction,random);
+    assertHashStringEquivalence(hashFunction,random);
+  }
+}

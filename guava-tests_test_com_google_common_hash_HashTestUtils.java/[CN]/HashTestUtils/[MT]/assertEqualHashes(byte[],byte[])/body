@@ -1,5 +1,0 @@
-{
-  if (!Arrays.equals(expectedHash,actualHash)) {
-    Assert.fail(String.format("Should be: %x, was %x",expectedHash,actualHash));
-  }
-}

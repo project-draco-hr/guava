@@ -1,0 +1,4 @@
+{
+  long l=random.nextLong();
+  assertEquals(hashFunction.hashLong(l),hashFunction.newHasher().putLong(l).hash());
+}

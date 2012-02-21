@@ -1,0 +1,4 @@
+{
+  int i=random.nextInt();
+  assertEquals(hashFunction.hashInt(i),hashFunction.newHasher().putInt(i).hash());
+}
