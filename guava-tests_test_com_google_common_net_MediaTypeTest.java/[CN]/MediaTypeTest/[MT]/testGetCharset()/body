@@ -1,0 +1,5 @@
+{
+  assertEquals(Optional.absent(),MediaType.parse("text/plain").charset());
+  assertEquals(Optional.of(UTF_8),MediaType.parse("text/plain; charset=utf-8").charset());
+  assertEquals(Optional.of(UTF_16),MediaType.parse("text/plain; charset=utf-16").charset());
+}

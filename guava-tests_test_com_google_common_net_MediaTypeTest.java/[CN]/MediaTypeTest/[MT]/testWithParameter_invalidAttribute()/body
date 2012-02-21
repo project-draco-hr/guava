@@ -1,0 +1,9 @@
+{
+  MediaType mediaType=MediaType.parse("text/plain");
+  try {
+    mediaType.withParameter("@","2");
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}

@@ -1,0 +1,14 @@
+{
+  checkNotNull(attribute);
+  checkNotNull(value);
+  String normalizedAttribute=normalizeToken(attribute);
+  ImmutableListMultimap.Builder<String,String> builder=ImmutableListMultimap.builder();
+  for (  Entry<String,String> entry : parameters.entries()) {
+    String key=entry.getKey();
+    if (!normalizedAttribute.equals(key)) {
+      builder.put(key,entry.getValue());
+    }
+  }
+  builder.put(normalizedAttribute,normalizeParameterValue(normalizedAttribute,value));
+  return new MediaType(type,subtype,builder.build());
+}

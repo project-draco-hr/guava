@@ -1,0 +1,5 @@
+{
+  MediaType newType=MediaType.createImageType("yams");
+  assertEquals("image",newType.type());
+  assertEquals("yams",newType.subtype());
+}

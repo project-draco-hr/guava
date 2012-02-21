@@ -1,0 +1,5 @@
+{
+  MediaType newType=MediaType.createVideoType("yams");
+  assertEquals("video",newType.type());
+  assertEquals("yams",newType.subtype());
+}

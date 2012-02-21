@@ -1,0 +1,6 @@
+{
+  NullPointerTester tester=new NullPointerTester();
+  tester.testAllPublicConstructors(MediaType.class);
+  tester.testAllPublicStaticMethods(MediaType.class);
+  tester.testAllPublicInstanceMethods(MediaType.parse("text/plain"));
+}

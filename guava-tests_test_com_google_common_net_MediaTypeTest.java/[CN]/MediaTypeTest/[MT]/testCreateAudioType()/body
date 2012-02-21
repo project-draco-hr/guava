@@ -1,0 +1,5 @@
+{
+  MediaType newType=MediaType.createAudioType("yams");
+  assertEquals("audio",newType.type());
+  assertEquals("yams",newType.subtype());
+}
