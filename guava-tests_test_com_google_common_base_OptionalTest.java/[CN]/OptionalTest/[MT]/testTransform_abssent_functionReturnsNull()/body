@@ -1,0 +1,8 @@
+{
+  assertEquals(Optional.absent(),Optional.absent().transform(new Function<Object,Object>(){
+    @Override public Object apply(    Object input){
+      return null;
+    }
+  }
+));
+}

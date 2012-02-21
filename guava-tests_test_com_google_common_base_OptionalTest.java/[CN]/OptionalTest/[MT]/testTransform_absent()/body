@@ -1,0 +1,4 @@
+{
+  assertEquals(Optional.absent(),Optional.absent().transform(Functions.identity()));
+  assertEquals(Optional.absent(),Optional.absent().transform(Functions.toStringFunction()));
+}
