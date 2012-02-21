@@ -1,0 +1,3 @@
+{
+  return plusForSpace ? QUERY_STRING_ESCAPER : QUERY_STRING_ESCAPER_NO_PLUS;
+}

@@ -1,0 +1,7 @@
+{
+  CharEscaper escaper=SourceCodeEscapers.javaCharEscaper();
+  assertEquals(ASCII_CONTROL_ESCAPED,escaper.escape(ASCII_CONTROL_UNESCAPED));
+  assertEquals(SAFE_ASCII,escaper.escape(SAFE_ASCII));
+  assertEquals(ABOVE_ASCII_ESCAPED,escaper.escape(ABOVE_ASCII_UNESCAPED));
+  assertEquals("\\'\\\"\\\\",escaper.escape("'\"\\"));
+}

@@ -1,0 +1,3 @@
+{
+  return URI_PATH_ESCAPER_RFC_COMPLIANT;
+}

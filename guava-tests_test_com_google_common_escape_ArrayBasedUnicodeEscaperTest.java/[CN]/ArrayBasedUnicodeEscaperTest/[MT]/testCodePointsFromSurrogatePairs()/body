@@ -1,0 +1,14 @@
+{
+  UnicodeEscaper surrogateEscaper=new ArrayBasedUnicodeEscaper(NO_REPLACEMENTS,0,0x20000,null){
+    private final char[] escaped=new char[]{'X'};
+    @Override protected char[] escapeUnsafe(    int c){
+      return escaped;
+    }
+  }
+;
+  EscaperAsserts.assertBasic(surrogateEscaper);
+  String safeInput="\uD800\uDC00";
+  assertEquals(safeInput,surrogateEscaper.escape(safeInput));
+  String unsafeInput="\uDBFF\uDFFF";
+  assertEquals("X",surrogateEscaper.escape(unsafeInput));
+}

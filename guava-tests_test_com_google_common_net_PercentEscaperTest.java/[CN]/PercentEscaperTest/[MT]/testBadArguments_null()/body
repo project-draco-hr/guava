@@ -1,0 +1,8 @@
+{
+  try {
+    new PercentEscaper(null,false);
+    fail("Expected null pointer exception for null parameter");
+  }
+ catch (  NullPointerException expected) {
+  }
+}

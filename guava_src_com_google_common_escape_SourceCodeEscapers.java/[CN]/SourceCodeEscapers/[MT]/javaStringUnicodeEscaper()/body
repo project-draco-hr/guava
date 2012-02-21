@@ -1,0 +1,3 @@
+{
+  return JAVA_STRING_UNICODE_ESCAPER;
+}

@@ -1,0 +1,3 @@
+{
+  super(replacements,PRINTABLE_ASCII_MIN,PRINTABLE_ASCII_MAX);
+}

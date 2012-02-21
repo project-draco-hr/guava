@@ -1,0 +1,11 @@
+{
+  CharEscaper deletingEscaper=new ArrayBasedCharEscaper(NO_REPLACEMENTS,' ','~'){
+    private final char[] noChars=new char[0];
+    @Override protected char[] escapeUnsafe(    char c){
+      return noChars;
+    }
+  }
+;
+  EscaperAsserts.assertBasic(deletingEscaper);
+  assertEquals("Everything outside the printable ASCII range is deleted.",deletingEscaper.escape("\tEverything\0 outside the\uD800\uDC00 " + "printable ASCII \uFFFFrange is \u007Fdeleted.\n"));
+}

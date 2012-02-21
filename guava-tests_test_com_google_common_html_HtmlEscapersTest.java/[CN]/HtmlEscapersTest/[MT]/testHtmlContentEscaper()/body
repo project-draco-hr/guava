@@ -1,0 +1,17 @@
+{
+  assertEquals("xxx",HtmlEscapers.htmlContentEscaper().escape("xxx"));
+  assertEquals("&quot;test&quot;",HtmlEscapers.htmlContentEscaper().escape("\"test\""));
+  assertEquals("&#39;test&#39;",HtmlEscapers.htmlContentEscaper().escape("\'test'"));
+  assertEquals("test &amp; test &amp; test",HtmlEscapers.htmlContentEscaper().escape("test & test & test"));
+  assertEquals("test &lt;&lt; 1",HtmlEscapers.htmlContentEscaper().escape("test << 1"));
+  assertEquals("test &gt;&gt; 1",HtmlEscapers.htmlContentEscaper().escape("test >> 1"));
+  assertEquals("&lt;tab&gt;",HtmlEscapers.htmlContentEscaper().escape("<tab>"));
+  assertEquals("foo&amp;bar",HtmlEscapers.htmlContentEscaper().escape("foo&bar"));
+  String s="blah blah farhvergnugen";
+  assertSame(s,HtmlEscapers.htmlContentEscaper().escape(s));
+  assertEquals("&lt;p&gt;",HtmlEscapers.htmlContentEscaper().escape("<p>"));
+  assertEquals("a&quot;b&lt;c&gt;d&amp;",HtmlEscapers.htmlContentEscaper().escape("a\"b<c>d&"));
+  assertEquals("foo&amp;&amp;bar",HtmlEscapers.htmlContentEscaper().escape("foo&&bar"));
+  s="!@#$%^*()_+=-/?\\|]}[{,.;:" + "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ" + "1234567890";
+  assertSame(s,HtmlEscapers.htmlContentEscaper().escape(s));
+}

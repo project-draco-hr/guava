@@ -1,0 +1,15 @@
+{
+  UnicodeEscaper e=new UnicodeEscaper(){
+    @Override protected char[] escape(    int cp){
+      return ('a' <= cp && cp <= 'z') ? new char[]{Character.toUpperCase((char)cp)} : null;
+    }
+    @Override protected int nextEscapeIndex(    CharSequence csq,    int index,    int end){
+      while (index < end && !Character.isLetter(csq.charAt(index))) {
+        index++;
+      }
+      return index;
+    }
+  }
+;
+  assertEquals("\0HELLO \uD800\uDC00 WORLD!\n",e.escape("\0HeLLo \uD800\uDC00 WorlD!\n"));
+}

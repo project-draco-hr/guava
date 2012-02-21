@@ -1,0 +1,8 @@
+{
+  if (c < 0x100) {
+    return asOctalEscape(c);
+  }
+ else {
+    return asUnicodeHexEscape(c);
+  }
+}

@@ -1,0 +1,3 @@
+{
+  return CANONICALIZING_ESCAPER;
+}

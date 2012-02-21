@@ -1,0 +1,10 @@
+{
+  String msg="Alphanumeric characters are always 'safe' " + "and should not be explicitly specified";
+  try {
+    new PercentEscaper("-+#abc.!",false);
+    fail(msg);
+  }
+ catch (  IllegalArgumentException expected) {
+    assertEquals(msg,expected.getMessage());
+  }
+}

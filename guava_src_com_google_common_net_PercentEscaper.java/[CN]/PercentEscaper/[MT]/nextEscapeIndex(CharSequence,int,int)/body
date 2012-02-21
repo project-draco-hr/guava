@@ -1,0 +1,9 @@
+{
+  for (; index < end; index++) {
+    char c=csq.charAt(index);
+    if (c >= safeOctets.length || !safeOctets[c]) {
+      break;
+    }
+  }
+  return index;
+}
