@@ -13,6 +13,10 @@
     for (int insertion=0; insertion < totalInsertions; insertion++) {
       RandomHasherAction.pickAtRandom(random).performAction(random,sinksAndControl);
     }
+    int intToPut=random.nextInt();
+    for (    Hasher hasher : sinksAndControl) {
+      hasher.putInt(intToPut);
+    }
     for (    Sink sink : sinks) {
       sink.hash();
     }

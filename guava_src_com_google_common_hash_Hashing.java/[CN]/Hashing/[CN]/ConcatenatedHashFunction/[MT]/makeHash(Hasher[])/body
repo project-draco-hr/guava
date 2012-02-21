@@ -4,5 +4,5 @@
   for (  Hasher hasher : hashers) {
     buffer.put(hasher.hash().asBytes());
   }
-  return HashCodes.fromBytes(bytes);
+  return HashCodes.fromBytesNoCopy(bytes);
 }

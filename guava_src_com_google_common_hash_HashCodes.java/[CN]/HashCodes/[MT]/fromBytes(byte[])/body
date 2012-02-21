@@ -1,3 +1,4 @@
 {
-  return new BytesHashCode(bytes);
+  checkArgument(bytes.length >= 4,"A HashCode must contain at least 4 bytes.");
+  return fromBytesNoCopy(bytes.clone());
 }

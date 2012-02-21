@@ -1,4 +1,4 @@
 {
   done=true;
-  return HashCodes.fromBytes(digest.digest());
+  return HashCodes.fromBytesNoCopy(digest.digest());
 }

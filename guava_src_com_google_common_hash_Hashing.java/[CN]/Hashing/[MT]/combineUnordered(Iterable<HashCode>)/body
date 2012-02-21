@@ -9,5 +9,5 @@
       resultBytes[i]+=nextBytes[i];
     }
   }
-  return HashCodes.fromBytes(resultBytes);
+  return HashCodes.fromBytesNoCopy(resultBytes);
 }
