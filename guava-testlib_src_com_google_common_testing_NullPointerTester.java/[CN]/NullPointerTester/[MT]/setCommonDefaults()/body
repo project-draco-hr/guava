@@ -1,36 +1,7 @@
 {
-  setDefault(Object.class,new Object());
   setDefault(Appendable.class,new StringBuilder());
-  setDefault(CharSequence.class,"");
-  setDefault(String.class,"");
-  setDefault(Class.class,Class.class);
-  setDefault(Pattern.class,Pattern.compile(""));
-  setDefault(TimeUnit.class,TimeUnit.SECONDS);
   setDefault(Throwable.class,new Exception());
-  setDefault(Collection.class,Collections.emptySet());
-  setDefault(Iterable.class,Collections.emptySet());
-  setDefault(Iterator.class,Iterators.emptyIterator());
-  setDefault(List.class,Collections.emptyList());
-  setDefault(ImmutableList.class,ImmutableList.of());
-  setDefault(Set.class,Collections.emptySet());
-  setDefault(ImmutableSet.class,ImmutableSet.of());
-  setDefault(SortedSet.class,new TreeSet());
-  setDefault(ImmutableSortedSet.class,ImmutableSortedSet.of());
-  setDefault(ImmutableCollection.class,ImmutableList.of());
-  setDefault(Map.class,Collections.emptyMap());
-  setDefault(ImmutableMap.class,ImmutableMap.of());
-  setDefault(SortedMap.class,ImmutableSortedMap.of());
-  setDefault(ImmutableSortedMap.class,ImmutableSortedMap.of());
-  setDefault(Multimap.class,ImmutableMultimap.of());
-  setDefault(ImmutableMultimap.class,ImmutableMultimap.of());
-  setDefault(Multiset.class,ImmutableMultiset.of());
-  setDefault(ImmutableMultiset.class,ImmutableMultiset.of());
-  setDefault(Table.class,ImmutableTable.of());
-  setDefault(ImmutableTable.class,ImmutableTable.of());
-  setDefault(Comparator.class,Collections.reverseOrder());
-  setDefault(Predicate.class,Predicates.alwaysTrue());
-  setDefault(Comparable.class,0);
+  setDefault(Class.class,Class.class);
   setDefault(Function.class,Functions.identity());
   setDefault(Supplier.class,Suppliers.ofInstance(1));
-  setDefault(char.class,'a');
 }

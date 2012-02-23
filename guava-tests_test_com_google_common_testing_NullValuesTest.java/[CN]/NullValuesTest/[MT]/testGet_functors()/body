@@ -1,0 +1,4 @@
+{
+  assertEquals(0,NullValues.get(Comparator.class).compare("abc",123));
+  assertTrue(NullValues.get(Predicate.class).apply("abc"));
+}

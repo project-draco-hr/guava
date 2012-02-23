@@ -1,0 +1,3 @@
+{
+  return (T)Array.newInstance(arrayType.getComponentType(),0);
+}

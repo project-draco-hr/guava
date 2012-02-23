@@ -1,0 +1,8 @@
+{
+  assertEquals(0,NullValues.get(ArrayList.class).size());
+  assertEquals(0,NullValues.get(HashMap.class).size());
+  assertEquals("",NullValues.get(Appendable.class).toString());
+  assertEquals("",NullValues.get(StringBuilder.class).toString());
+  assertEquals("",NullValues.get(StringBuffer.class).toString());
+  assertFreshInstanceReturned(ArrayList.class,HashMap.class,Appendable.class,StringBuilder.class,StringBuffer.class);
+}

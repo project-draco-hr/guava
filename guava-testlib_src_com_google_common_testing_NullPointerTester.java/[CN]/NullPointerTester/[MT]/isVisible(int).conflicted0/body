@@ -1,3 +1,3 @@
 {
-  return !Modifier.isPrivate(modifiers);
+  return Modifier.isPublic(modifiers) || Modifier.isProtected(modifiers);
 }

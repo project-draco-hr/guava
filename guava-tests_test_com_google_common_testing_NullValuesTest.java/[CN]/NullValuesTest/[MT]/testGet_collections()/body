@@ -1,0 +1,23 @@
+{
+  assertEquals(Iterators.emptyIterator(),NullValues.get(Iterator.class));
+  assertFalse(NullValues.get(ListIterator.class).hasNext());
+  assertEquals(ImmutableSet.of(),NullValues.get(Iterable.class));
+  assertEquals(ImmutableSet.of(),NullValues.get(Set.class));
+  assertEquals(ImmutableSet.of(),NullValues.get(ImmutableSet.class));
+  assertEquals(ImmutableSortedSet.of(),NullValues.get(SortedSet.class));
+  assertEquals(ImmutableSortedSet.of(),NullValues.get(ImmutableSortedSet.class));
+  assertEquals(ImmutableList.of(),NullValues.get(Collection.class));
+  assertEquals(ImmutableList.of(),NullValues.get(ImmutableCollection.class));
+  assertEquals(ImmutableList.of(),NullValues.get(List.class));
+  assertEquals(ImmutableList.of(),NullValues.get(ImmutableList.class));
+  assertEquals(ImmutableMap.of(),NullValues.get(Map.class));
+  assertEquals(ImmutableMap.of(),NullValues.get(ImmutableMap.class));
+  assertEquals(ImmutableSortedMap.of(),NullValues.get(SortedMap.class));
+  assertEquals(ImmutableSortedMap.of(),NullValues.get(ImmutableSortedMap.class));
+  assertEquals(ImmutableMultiset.of(),NullValues.get(Multiset.class));
+  assertEquals(ImmutableMultiset.of(),NullValues.get(ImmutableMultiset.class));
+  assertEquals(ImmutableMultimap.of(),NullValues.get(Multimap.class));
+  assertEquals(ImmutableMultimap.of(),NullValues.get(ImmutableMultimap.class));
+  assertEquals(ImmutableTable.of(),NullValues.get(Table.class));
+  assertEquals(ImmutableTable.of(),NullValues.get(ImmutableTable.class));
+}

@@ -1,0 +1,5 @@
+{
+  for (  Class<?> mutableClass : mutableClasses) {
+    assertNotSame(NullValues.get(mutableClass),NullValues.get(mutableClass));
+  }
+}

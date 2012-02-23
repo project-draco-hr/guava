@@ -1,0 +1,26 @@
+{
+  assertNull(NullValues.get(void.class));
+  assertNull(NullValues.get(Void.class));
+  assertEquals(Boolean.FALSE,NullValues.get(boolean.class));
+  assertEquals(Boolean.FALSE,NullValues.get(Boolean.class));
+  assertEquals(Character.valueOf('\0'),NullValues.get(char.class));
+  assertEquals(Character.valueOf('\0'),NullValues.get(Character.class));
+  assertEquals(Byte.valueOf((byte)0),NullValues.get(byte.class));
+  assertEquals(Byte.valueOf((byte)0),NullValues.get(Byte.class));
+  assertEquals(Short.valueOf((short)0),NullValues.get(short.class));
+  assertEquals(Short.valueOf((short)0),NullValues.get(Short.class));
+  assertEquals(Integer.valueOf(0),NullValues.get(int.class));
+  assertEquals(Integer.valueOf(0),NullValues.get(Integer.class));
+  assertEquals(Long.valueOf(0),NullValues.get(long.class));
+  assertEquals(Long.valueOf(0),NullValues.get(Long.class));
+  assertEquals(Float.valueOf(0),NullValues.get(float.class));
+  assertEquals(Float.valueOf(0),NullValues.get(Float.class));
+  assertEquals(Double.valueOf(0),NullValues.get(double.class));
+  assertEquals(Double.valueOf(0),NullValues.get(Double.class));
+  assertEquals("",NullValues.get(String.class));
+  assertEquals("",NullValues.get(CharSequence.class));
+  assertEquals(TimeUnit.SECONDS,NullValues.get(TimeUnit.class));
+  assertNotNull(NullValues.get(Object.class));
+  assertEquals(Pattern.compile("").pattern(),NullValues.get(Pattern.class).pattern());
+  assertEquals(0,NullValues.get(Number.class));
+}
