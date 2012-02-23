@@ -1,7 +1,0 @@
-{
-  checkState(hasMore());
-  int startPosition=position;
-  position=matcher.negate().indexIn(input,startPosition);
-  checkState(position != startPosition);
-  return hasMore() ? input.substring(startPosition,position) : input.substring(startPosition);
-}

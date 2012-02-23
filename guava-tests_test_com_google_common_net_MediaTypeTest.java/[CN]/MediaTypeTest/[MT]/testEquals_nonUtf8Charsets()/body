@@ -1,0 +1,3 @@
+{
+  new EqualsTester().addEqualityGroup(MediaType.create("text","plain")).addEqualityGroup(MediaType.create("text","plain").withCharset(UTF_8)).addEqualityGroup(MediaType.create("text","plain").withCharset(UTF_16)).testEquals();
+}

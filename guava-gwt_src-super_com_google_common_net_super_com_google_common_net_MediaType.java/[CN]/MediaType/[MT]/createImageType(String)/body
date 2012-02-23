@@ -1,3 +1,0 @@
-{
-  return create(IMAGE_TYPE,subtype);
-}

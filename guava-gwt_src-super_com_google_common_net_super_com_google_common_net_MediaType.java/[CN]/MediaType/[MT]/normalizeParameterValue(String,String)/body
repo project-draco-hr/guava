@@ -1,3 +1,0 @@
-{
-  return CHARSET_ATTRIBUTE.equals(attribute) ? Ascii.toLowerCase(value) : value;
-}
