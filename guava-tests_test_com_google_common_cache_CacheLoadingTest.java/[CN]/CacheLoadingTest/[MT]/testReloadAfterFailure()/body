@@ -11,7 +11,7 @@
   }
 ;
   CountingRemovalListener<Integer,String> removalListener=countingRemovalListener();
-  LoadingCache<Integer,String> cache=CacheBuilder.newBuilder().weakValues().removalListener(removalListener).build(failOnceFunction);
+  LoadingCache<Integer,String> cache=CacheBuilder.newBuilder().removalListener(removalListener).build(failOnceFunction);
   try {
     cache.getUnchecked(1);
     fail();
