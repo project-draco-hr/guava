@@ -1,4 +1,0 @@
-{
-  Escaper escaper=Escapers.builder().setSafeRange('a','z').build();
-  assertEquals("The Quick Brown Fox",escaper.escape("The Quick Brown Fox"));
-}

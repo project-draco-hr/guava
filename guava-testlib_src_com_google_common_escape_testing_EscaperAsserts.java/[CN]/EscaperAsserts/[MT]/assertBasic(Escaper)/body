@@ -1,9 +1,0 @@
-{
-  Assert.assertEquals("",escaper.escape(""));
-  try {
-    escaper.escape((String)null);
-    Assert.fail("exception not thrown when escaping a null string");
-  }
- catch (  NullPointerException e) {
-  }
-}

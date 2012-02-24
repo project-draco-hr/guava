@@ -1,4 +1,0 @@
-{
-  Escaper escaper=Escapers.builder().setUnsafeReplacement("X").build();
-  assertEquals("\0\uFFFF",escaper.escape("\0\uFFFF"));
-}

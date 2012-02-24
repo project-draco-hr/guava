@@ -1,4 +1,0 @@
-{
-  UnicodeEscaper e=NOP_ESCAPER;
-  assertEquals(TEST_STRING,escapeAsString(e,TEST_STRING));
-}

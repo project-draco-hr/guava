@@ -1,5 +1,0 @@
-{
-  Map<Character,String> map=ImmutableMap.of();
-  ArrayBasedEscaperMap fem=ArrayBasedEscaperMap.create(map);
-  assertEquals(0,fem.getReplacementArray().length);
-}

@@ -1,6 +1,0 @@
-{
-  int cp=Character.toCodePoint(hi,lo);
-  String escaped=computeReplacement(escaper,cp);
-  Assert.assertNotNull(escaped);
-  Assert.assertEquals(expected,escaped);
-}

@@ -1,8 +1,0 @@
-{
-  try {
-    ArrayBasedEscaperMap.create(null);
-    fail("expected exception did not occur");
-  }
- catch (  NullPointerException e) {
-  }
-}

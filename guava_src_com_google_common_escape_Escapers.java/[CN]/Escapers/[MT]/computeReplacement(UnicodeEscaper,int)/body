@@ -1,3 +1,0 @@
-{
-  return stringOrNull(escaper.escape(cp));
-}
