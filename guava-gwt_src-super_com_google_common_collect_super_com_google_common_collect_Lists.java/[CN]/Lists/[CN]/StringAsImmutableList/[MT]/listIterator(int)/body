@@ -1,0 +1,8 @@
+{
+  return new AbstractIndexedListIterator<Character>(size(),index){
+    @Override protected Character get(    int index){
+      return string.charAt(index);
+    }
+  }
+;
+}

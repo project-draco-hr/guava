@@ -1,0 +1,4 @@
+{
+  CopyOnWriteArrayList<Integer> list=Lists.newCopyOnWriteArrayList(SOME_ITERABLE);
+  assertEquals(SOME_COLLECTION,list);
+}

@@ -1,0 +1,4 @@
+{
+  CopyOnWriteArraySet<Integer> set=Sets.newCopyOnWriteArraySet(SOME_ITERABLE);
+  verifySetContents(set,SOME_COLLECTION);
+}

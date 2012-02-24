@@ -1,0 +1,4 @@
+{
+  Collection<? extends E> elementsCollection=(elements instanceof Collection) ? (Collection<? extends E>)elements : newArrayList(elements);
+  return new CopyOnWriteArrayList<E>(elementsCollection);
+}
