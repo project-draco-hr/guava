@@ -4,7 +4,7 @@
     builder.append("; ");
     Multimap<String,String> quotedParameters=Multimaps.transformValues(parameters,new Function<String,String>(){
       @Override public String apply(      String value){
-        return TOKEN_MATCHER.matchesAllOf(value) ? value : new StringBuilder().append('"').append(VALUE_ESCAPER.escape(value)).append('"').toString();
+        return TOKEN_MATCHER.matchesAllOf(value) ? value : escapeAndQuote(value);
       }
     }
 );
