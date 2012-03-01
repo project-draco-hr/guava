@@ -3,5 +3,5 @@
   if (es != null) {
     return es;
   }
-  return entrySet=Sets.transform(delegate.keySet(),new KeyToEntryConverter<K,V>(this));
+  return entrySet=new EntrySet();
 }

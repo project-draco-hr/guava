@@ -4,5 +4,5 @@
       return (elements.length == 0) ? EnumSet.noneOf(AnEnum.class) : EnumSet.copyOf(MinimalCollection.of(elements));
     }
   }
-).named("EnumSet").withFeatures(SetFeature.GENERAL_PURPOSE,CollectionFeature.SERIALIZABLE,CollectionFeature.KNOWN_ORDER,CollectionFeature.RESTRICTS_ELEMENTS,CollectionFeature.FAILS_FAST_ON_CONCURRENT_MODIFICATION,CollectionSize.ANY).suppressing(suppressForEnumSet()).createTestSuite();
+).named("EnumSet").withFeatures(SetFeature.GENERAL_PURPOSE,CollectionFeature.SERIALIZABLE,CollectionFeature.KNOWN_ORDER,CollectionFeature.RESTRICTS_ELEMENTS,CollectionSize.ANY).suppressing(suppressForEnumSet()).createTestSuite();
 }

@@ -1,5 +1,0 @@
-{
-  B b=(B)o;
-  A a=bijection.invert(b);
-  return delegate.contains(a) && Objects.equal(bijection.apply(a),o);
-}

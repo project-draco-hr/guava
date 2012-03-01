@@ -13,15 +13,15 @@
 ).withFeatures(CollectionSize.ANY,CollectionFeature.KNOWN_ORDER,CollectionFeature.GENERAL_PURPOSE,CollectionFeature.SERIALIZABLE,CollectionFeature.ALLOWS_NULL_QUERIES).named("TreeMultiset, Ordering.natural").createTestSuite());
   suite.addTest(SortedMultisetTestSuiteBuilder.using(new TestStringMultisetGenerator(){
     @Override protected Multiset<String> create(    String[] elements){
-      Multiset<String> result=TreeMultiset.create(Ordering.natural().nullsFirst());
+      Multiset<String> result=TreeMultiset.create(new NullsBeforeB());
       result.addAll(Arrays.asList(elements));
       return result;
     }
     @Override public List<String> order(    List<String> insertionOrder){
-      return Ordering.natural().nullsFirst().sortedCopy(insertionOrder);
+      return new NullsBeforeB().sortedCopy(insertionOrder);
     }
   }
-).withFeatures(CollectionSize.ANY,CollectionFeature.KNOWN_ORDER,CollectionFeature.GENERAL_PURPOSE,CollectionFeature.SERIALIZABLE,CollectionFeature.ALLOWS_NULL_VALUES).named("TreeMultiset, Ordering.natural.nullsFirst").createTestSuite());
+).withFeatures(CollectionSize.ANY,CollectionFeature.KNOWN_ORDER,CollectionFeature.GENERAL_PURPOSE,CollectionFeature.SERIALIZABLE,CollectionFeature.ALLOWS_NULL_VALUES).named("TreeMultiset, NullsBeforeB").createTestSuite());
   suite.addTest(MultisetTestSuiteBuilder.using(forSetGenerator()).withFeatures(CollectionSize.ANY,CollectionFeature.ALLOWS_NULL_VALUES,CollectionFeature.SERIALIZABLE,CollectionFeature.REMOVE_OPERATIONS).suppressing(getReadsDuplicateInitializingMethods()).suppressing(getSetCountDuplicateInitializingMethods()).suppressing(getIteratorDuplicateInitializingMethods()).named("ForSetMultiset").createTestSuite());
   suite.addTest(MultisetTestSuiteBuilder.using(concurrentMultisetGenerator()).withFeatures(CollectionSize.ANY,CollectionFeature.GENERAL_PURPOSE,CollectionFeature.SERIALIZABLE,CollectionFeature.ALLOWS_NULL_QUERIES).named("ConcurrentHashMultiset").createTestSuite());
   suite.addTest(MultisetTestSuiteBuilder.using(enumMultisetGenerator()).withFeatures(CollectionSize.ANY,CollectionFeature.KNOWN_ORDER,CollectionFeature.GENERAL_PURPOSE,CollectionFeature.ALLOWS_NULL_QUERIES).named("EnumMultiset").createTestSuite());

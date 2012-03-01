@@ -1,0 +1,19 @@
+{
+  return transform(keySet().iterator(),new Function<K,Entry<K,V>>(){
+    @Override public Entry<K,V> apply(    final K key){
+      return new AbstractMapEntry<K,V>(){
+        @Override public K getKey(){
+          return key;
+        }
+        @Override public V getValue(){
+          return get(key);
+        }
+        @Override public V setValue(        V value){
+          return put(key,value);
+        }
+      }
+;
+    }
+  }
+);
+}

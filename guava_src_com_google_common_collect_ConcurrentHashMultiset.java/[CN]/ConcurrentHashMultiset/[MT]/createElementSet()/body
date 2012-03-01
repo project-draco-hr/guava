@@ -15,6 +15,9 @@ catch (      ClassCastException e) {
         return false;
       }
     }
+    @Override public boolean removeAll(    Collection<?> c){
+      return standardRemoveAll(c);
+    }
   }
 ;
 }

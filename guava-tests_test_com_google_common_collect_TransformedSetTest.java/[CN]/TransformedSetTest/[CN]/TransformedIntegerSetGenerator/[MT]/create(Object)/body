@@ -1,5 +1,0 @@
-{
-  @SuppressWarnings("unchecked") Iterable<Integer> integers=(Iterable)Arrays.asList(elements);
-  Set<Integer> invertedIntegers=Sets.newHashSet(Iterables.transform(integers,integerBijection.inverse()));
-  return Sets.transform(invertedIntegers,integerBijection);
-}

@@ -1,3 +1,0 @@
-{
-  return contains(o) && delegate.remove(bijection.invert((B)o));
-}

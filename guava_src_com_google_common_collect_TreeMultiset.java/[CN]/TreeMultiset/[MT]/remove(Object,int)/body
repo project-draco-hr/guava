@@ -1,8 +1,5 @@
 {
-  if (element == null) {
-    return 0;
-  }
- else   if (occurrences == 0) {
+  if (occurrences == 0) {
     return count(element);
   }
   try {
@@ -10,6 +7,9 @@
     return range.contains(e) ? mutate(e,new RemoveModifier(occurrences)) : 0;
   }
  catch (  ClassCastException e) {
+    return 0;
+  }
+catch (  NullPointerException e) {
     return 0;
   }
 }

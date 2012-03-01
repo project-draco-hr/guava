@@ -1,0 +1,12 @@
+{
+  NavigableMap<String,Integer> forwarding=new StandardLastEntryForwardingNavigableMap<String,Integer>(new SafeTreeMap<String,Integer>());
+  assertNull(forwarding.lastEntry());
+  forwarding.put("b",2);
+  assertEquals(immutableEntry("b",2),forwarding.lastEntry());
+  forwarding.put("c",3);
+  assertEquals(immutableEntry("c",3),forwarding.lastEntry());
+  forwarding.put("a",1);
+  assertEquals(immutableEntry("c",3),forwarding.lastEntry());
+  forwarding.remove("c");
+  assertEquals(immutableEntry("b",2),forwarding.lastEntry());
+}

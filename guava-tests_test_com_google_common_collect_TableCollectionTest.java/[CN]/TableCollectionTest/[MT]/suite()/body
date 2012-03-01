@@ -287,7 +287,7 @@
       return Tables.transformValues(table,Functions.<Character>identity()).cellSet();
     }
   }
-).named("TransformValues.cellSet").withFeatures(CollectionSize.ANY,CollectionFeature.ALLOWS_NULL_QUERIES).createTestSuite());
+).named("TransformValues.cellSet").withFeatures(CollectionSize.ANY,CollectionFeature.ALLOWS_NULL_QUERIES,CollectionFeature.REMOVE_OPERATIONS).createTestSuite());
   suite.addTest(SetTestSuiteBuilder.using(new TestCellSetGenerator(){
     @Override Table<String,Integer,Character> createTable(){
       return Tables.unmodifiableTable(HashBasedTable.<String,Integer,Character>create());

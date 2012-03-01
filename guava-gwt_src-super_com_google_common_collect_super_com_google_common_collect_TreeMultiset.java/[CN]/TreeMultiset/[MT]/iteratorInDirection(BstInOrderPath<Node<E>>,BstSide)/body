@@ -10,18 +10,16 @@
   }
 ;
   return new Iterator<Entry<E>>(){
-    E toRemove=null;
+    ToRemove<E> toRemove=new ToRemove<E>();
     @Override public boolean hasNext(){
       return pathIterator.hasNext();
     }
     @Override public Entry<E> next(){
       BstInOrderPath<Node<E>> path=pathIterator.next();
-      return new LiveEntry(toRemove=path.getTip().getKey(),path.getTip().elemCount());
+      return new LiveEntry(toRemove.setAndGet(path.getTip().getKey()),path.getTip().elemCount());
     }
     @Override public void remove(){
-      checkState(toRemove != null);
-      setCount(toRemove,0);
-      toRemove=null;
+      setCount(toRemove.getAndClear(),0);
     }
   }
 ;
