@@ -1,3 +1,5 @@
 {
+  boolean wasSet=get(index);
   data[index >> 6]|=(1L << index);
+  return !wasSet;
 }

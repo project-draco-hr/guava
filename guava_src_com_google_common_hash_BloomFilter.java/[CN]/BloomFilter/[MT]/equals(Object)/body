@@ -1,0 +1,7 @@
+{
+  if (o instanceof BloomFilter) {
+    BloomFilter that=(BloomFilter)o;
+    return this.numHashFunctions == that.numHashFunctions && this.bits.equals(that.bits) && this.funnel == that.funnel && this.strategy == that.strategy;
+  }
+  return false;
+}

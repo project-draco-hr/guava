@@ -1,0 +1,11 @@
+{
+  BloomFilter<CharSequence> bf1=BloomFilter.create(Funnels.stringFunnel(),100);
+  bf1.put("1");
+  bf1.put("2");
+  BloomFilter<CharSequence> bf2=BloomFilter.create(Funnels.stringFunnel(),100);
+  bf2.put("1");
+  bf2.put("2");
+  new EqualsTester().addEqualityGroup(bf1,bf2).testEquals();
+  bf2.put("3");
+  new EqualsTester().addEqualityGroup(bf1).addEqualityGroup(bf2).testEquals();
+}
