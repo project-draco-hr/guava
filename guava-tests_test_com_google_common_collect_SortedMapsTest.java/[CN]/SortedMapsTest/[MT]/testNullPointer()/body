@@ -1,6 +1,0 @@
-{
-  NullPointerTester nullPointerTester=new NullPointerTester();
-  nullPointerTester.setDefault(EntryTransformer.class,ALWAYS_NULL);
-  nullPointerTester.setDefault(SortedMap.class,Maps.<String,String>newTreeMap());
-  nullPointerTester.testAllPublicStaticMethods(SortedMaps.class);
-}

@@ -1,0 +1,5 @@
+{
+  checkArgument(n >= 0);
+  checkArgument(n <= 20,"Numeric overflow calculating the factorial of: %d",n);
+  return FACTORIALS[n];
+}

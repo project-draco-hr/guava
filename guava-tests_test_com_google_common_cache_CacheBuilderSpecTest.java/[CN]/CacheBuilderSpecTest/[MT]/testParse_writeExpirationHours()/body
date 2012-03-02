@@ -1,0 +1,6 @@
+{
+  CacheBuilderSpec spec=parse("expireAfterWrite=150h");
+  assertEquals(TimeUnit.HOURS,spec.writeExpirationTimeUnit);
+  assertEquals(150L,spec.writeExpirationDuration);
+  assertCacheBuilderEquivalence(CacheBuilder.newBuilder().expireAfterWrite(150L,TimeUnit.HOURS),CacheBuilder.from(spec));
+}

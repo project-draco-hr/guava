@@ -1,0 +1,8 @@
+{
+  if (first.size() != second.size()) {
+    return false;
+  }
+  Multiset<?> firstSet=HashMultiset.create(first);
+  Multiset<?> secondSet=HashMultiset.create(second);
+  return firstSet.equals(secondSet);
+}

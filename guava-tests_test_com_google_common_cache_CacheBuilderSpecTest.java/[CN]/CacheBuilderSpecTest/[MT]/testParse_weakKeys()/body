@@ -1,0 +1,12 @@
+{
+  CacheBuilderSpec spec=parse("weakKeys");
+  assertNull(spec.initialCapacity);
+  assertNull(spec.maximumSize);
+  assertNull(spec.maximumWeight);
+  assertNull(spec.concurrencyLevel);
+  assertEquals(Strength.WEAK,spec.keyStrength);
+  assertNull(spec.valueStrength);
+  assertNull(spec.writeExpirationTimeUnit);
+  assertNull(spec.accessExpirationTimeUnit);
+  assertCacheBuilderEquivalence(CacheBuilder.newBuilder().weakKeys(),CacheBuilder.from(spec));
+}

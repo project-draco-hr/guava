@@ -1,0 +1,8 @@
+{
+  try {
+    parse("concurrencyLevel=10, concurrencyLevel=20");
+    fail("Expected exception");
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}

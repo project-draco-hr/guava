@@ -1,0 +1,11 @@
+{
+  List<String> list=newArrayList("b","a","c");
+  Iterator<List<String>> permutations=Collections2.orderedPermutations(list).iterator();
+  assertNextPermutation(newArrayList("a","b","c"),permutations);
+  assertNextPermutation(newArrayList("a","c","b"),permutations);
+  assertNextPermutation(newArrayList("b","a","c"),permutations);
+  assertNextPermutation(newArrayList("b","c","a"),permutations);
+  assertNextPermutation(newArrayList("c","a","b"),permutations);
+  assertNextPermutation(newArrayList("c","b","a"),permutations);
+  assertNoMorePermutations(permutations);
+}

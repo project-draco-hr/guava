@@ -1,0 +1,11 @@
+{
+  CacheBuilderSpec spec=parse("maximumWeight=9000");
+  assertNull(spec.initialCapacity);
+  assertEquals(9000,spec.maximumWeight.longValue());
+  assertNull(spec.concurrencyLevel);
+  assertNull(spec.keyStrength);
+  assertNull(spec.valueStrength);
+  assertNull(spec.writeExpirationTimeUnit);
+  assertNull(spec.accessExpirationTimeUnit);
+  assertCacheBuilderEquivalence(CacheBuilder.newBuilder().maximumWeight(9000),CacheBuilder.from(spec));
+}

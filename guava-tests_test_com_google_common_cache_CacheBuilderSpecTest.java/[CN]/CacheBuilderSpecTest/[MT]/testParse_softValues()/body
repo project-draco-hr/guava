@@ -1,0 +1,12 @@
+{
+  CacheBuilderSpec spec=parse("softValues");
+  assertNull(spec.initialCapacity);
+  assertNull(spec.maximumSize);
+  assertNull(spec.maximumWeight);
+  assertNull(spec.concurrencyLevel);
+  assertNull(spec.keyStrength);
+  assertEquals(Strength.SOFT,spec.valueStrength);
+  assertNull(spec.writeExpirationTimeUnit);
+  assertNull(spec.accessExpirationTimeUnit);
+  assertCacheBuilderEquivalence(CacheBuilder.newBuilder().softValues(),CacheBuilder.from(spec));
+}

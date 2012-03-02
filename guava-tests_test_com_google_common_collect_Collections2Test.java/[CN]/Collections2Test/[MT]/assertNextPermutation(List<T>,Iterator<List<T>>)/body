@@ -1,0 +1,4 @@
+{
+  assertTrue("Expected another permutation, but there was none.",permutations.hasNext());
+  assertEquals(expectedPermutation,permutations.next());
+}

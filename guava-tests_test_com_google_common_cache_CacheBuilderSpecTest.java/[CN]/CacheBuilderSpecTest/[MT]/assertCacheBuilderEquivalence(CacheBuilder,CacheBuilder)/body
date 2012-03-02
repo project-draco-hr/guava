@@ -1,0 +1,14 @@
+{
+  for (  Field f : CacheBuilder.class.getFields()) {
+    f.setAccessible(true);
+    try {
+      assertEquals("Field " + f.getName() + " not equal",f.get(a),f.get(b));
+    }
+ catch (    IllegalArgumentException e) {
+      throw new AssertionError(e.getMessage());
+    }
+catch (    IllegalAccessException e) {
+      throw new AssertionError(e.getMessage());
+    }
+  }
+}

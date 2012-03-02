@@ -1,0 +1,8 @@
+{
+  try {
+    parse("maximumWeight=10, maximumWeight=20");
+    fail("Expected exception");
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}

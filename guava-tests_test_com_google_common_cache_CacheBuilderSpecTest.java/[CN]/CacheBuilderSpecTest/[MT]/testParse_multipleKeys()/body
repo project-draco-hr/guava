@@ -1,0 +1,15 @@
+{
+  CacheBuilderSpec spec=parse("initialCapacity=10,maximumSize=20,concurrencyLevel=30," + "weakKeys,weakValues,expireAfterAccess=10m,expireAfterWrite=1h");
+  assertEquals(10,spec.initialCapacity.intValue());
+  assertEquals(20,spec.maximumSize.intValue());
+  assertNull(spec.maximumWeight);
+  assertEquals(30,spec.concurrencyLevel.intValue());
+  assertEquals(Strength.WEAK,spec.keyStrength);
+  assertEquals(Strength.WEAK,spec.valueStrength);
+  assertEquals(TimeUnit.HOURS,spec.writeExpirationTimeUnit);
+  assertEquals(TimeUnit.MINUTES,spec.accessExpirationTimeUnit);
+  assertEquals(1L,spec.writeExpirationDuration);
+  assertEquals(10L,spec.accessExpirationDuration);
+  CacheBuilder expected=CacheBuilder.newBuilder().initialCapacity(10).maximumSize(20).concurrencyLevel(30).weakKeys().weakValues().expireAfterAccess(10L,TimeUnit.MINUTES);
+  assertCacheBuilderEquivalence(expected,CacheBuilder.from(spec));
+}

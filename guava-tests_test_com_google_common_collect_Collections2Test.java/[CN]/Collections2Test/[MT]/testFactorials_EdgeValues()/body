@@ -1,0 +1,15 @@
+{
+  assertEquals(1,factorial(0));
+  try {
+    factorial(-1);
+    fail("Expected IllegalArgumentException.");
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+  try {
+    factorial(21);
+    fail("Expected IllegalArgumentException.");
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}

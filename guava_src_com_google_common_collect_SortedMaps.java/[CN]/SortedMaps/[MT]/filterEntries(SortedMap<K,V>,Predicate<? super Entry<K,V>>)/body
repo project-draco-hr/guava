@@ -1,4 +1,0 @@
-{
-  checkNotNull(entryPredicate);
-  return (unfiltered instanceof FilteredSortedMap) ? filterFiltered((FilteredSortedMap<K,V>)unfiltered,entryPredicate) : new FilteredSortedMap<K,V>(checkNotNull(unfiltered),entryPredicate);
-}

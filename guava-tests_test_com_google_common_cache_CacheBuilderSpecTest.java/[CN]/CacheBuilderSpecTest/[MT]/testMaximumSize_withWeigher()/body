@@ -1,0 +1,4 @@
+{
+  CacheBuilder<Object,Object> builder=CacheBuilder.from(parse("maximumSize=9000"));
+  builder.weigher(constantWeigher(42)).build(CacheLoader.from(Suppliers.ofInstance(null)));
+}

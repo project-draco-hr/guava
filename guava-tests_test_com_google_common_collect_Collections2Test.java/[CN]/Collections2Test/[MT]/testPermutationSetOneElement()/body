@@ -1,0 +1,5 @@
+{
+  Iterator<List<Integer>> permutations=Collections2.permutations(Collections.<Integer>singletonList(1)).iterator();
+  assertNextPermutation(newArrayList(1),permutations);
+  assertNoMorePermutations(permutations);
+}

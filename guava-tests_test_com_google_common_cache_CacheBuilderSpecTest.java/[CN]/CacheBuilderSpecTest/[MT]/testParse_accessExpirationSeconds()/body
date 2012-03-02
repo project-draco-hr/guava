@@ -1,0 +1,6 @@
+{
+  CacheBuilderSpec spec=parse("expireAfterAccess=10s");
+  assertEquals(TimeUnit.SECONDS,spec.accessExpirationTimeUnit);
+  assertEquals(10L,spec.accessExpirationDuration);
+  assertCacheBuilderEquivalence(CacheBuilder.newBuilder().expireAfterAccess(10L,TimeUnit.SECONDS),CacheBuilder.from(spec));
+}

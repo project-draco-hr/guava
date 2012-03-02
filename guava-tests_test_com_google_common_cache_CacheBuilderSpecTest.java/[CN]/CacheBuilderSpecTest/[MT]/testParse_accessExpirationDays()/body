@@ -1,0 +1,13 @@
+{
+  CacheBuilderSpec spec=parse("expireAfterAccess=10d");
+  assertNull(spec.initialCapacity);
+  assertNull(spec.maximumSize);
+  assertNull(spec.maximumWeight);
+  assertNull(spec.concurrencyLevel);
+  assertNull(spec.keyStrength);
+  assertNull(spec.valueStrength);
+  assertNull(spec.writeExpirationTimeUnit);
+  assertEquals(TimeUnit.DAYS,spec.accessExpirationTimeUnit);
+  assertEquals(10L,spec.accessExpirationDuration);
+  assertCacheBuilderEquivalence(CacheBuilder.newBuilder().expireAfterAccess(10L,TimeUnit.DAYS),CacheBuilder.from(spec));
+}

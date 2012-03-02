@@ -1,0 +1,9 @@
+{
+  CacheBuilder<Object,Object> builder=CacheBuilder.from(CacheBuilderSpec.disableCaching());
+  Object key=new Object();
+  Object value=new Object();
+  LoadingCache<Object,Object> cache=builder.build(CacheLoader.from(Suppliers.ofInstance(value)));
+  assertSame(value,cache.getUnchecked(key));
+  assertEquals(0,cache.size());
+  assertFalse(cache.asMap().containsKey(key));
+}

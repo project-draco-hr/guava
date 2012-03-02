@@ -1,0 +1,20 @@
+{
+  try {
+    parse("weakKeys,");
+    fail("Expected exception");
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+  try {
+    parse(",weakKeys");
+    fail("Expected exception");
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+  try {
+    parse("weakKeys,,softValues");
+    fail("Expected exception");
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}

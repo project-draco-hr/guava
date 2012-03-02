@@ -1,0 +1,5 @@
+{
+  List<Integer> list=newArrayList(1,1,1,1,2,2,3);
+  Collection<List<Integer>> permutations=Collections2.orderedPermutations(list,Ordering.natural());
+  assertPermutationsCount(105,permutations);
+}

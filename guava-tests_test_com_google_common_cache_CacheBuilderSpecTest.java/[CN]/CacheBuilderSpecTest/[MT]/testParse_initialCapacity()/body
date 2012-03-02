@@ -1,0 +1,12 @@
+{
+  CacheBuilderSpec spec=parse("initialCapacity=10");
+  assertEquals(10,spec.initialCapacity.intValue());
+  assertNull(spec.maximumSize);
+  assertNull(spec.maximumWeight);
+  assertNull(spec.concurrencyLevel);
+  assertNull(spec.keyStrength);
+  assertNull(spec.valueStrength);
+  assertNull(spec.writeExpirationTimeUnit);
+  assertNull(spec.accessExpirationTimeUnit);
+  assertCacheBuilderEquivalence(CacheBuilder.newBuilder().initialCapacity(10),CacheBuilder.from(spec));
+}
