@@ -1,8 +1,0 @@
-{
-  if (contains(o)) {
-    Entry<?,?> entry=(Entry<?,?>)o;
-    WellBehavedMap.this.remove(entry.getKey());
-    return true;
-  }
-  return false;
-}

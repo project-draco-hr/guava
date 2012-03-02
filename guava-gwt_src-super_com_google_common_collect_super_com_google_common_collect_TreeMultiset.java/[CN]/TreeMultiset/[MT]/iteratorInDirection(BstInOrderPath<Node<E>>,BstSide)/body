@@ -10,7 +10,7 @@
   }
 ;
   return new Iterator<Entry<E>>(){
-    ToRemove<E> toRemove=new ToRemove<E>();
+    final ToRemove<E> toRemove=new ToRemove<E>();
     @Override public boolean hasNext(){
       return pathIterator.hasNext();
     }

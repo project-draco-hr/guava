@@ -1,0 +1,16 @@
+{
+  checkNotNull(collection);
+  if (collection instanceof Multiset) {
+    collection=((Multiset<?>)collection).elementSet();
+  }
+  if (collection.size() < size()) {
+    boolean changed=false;
+    for (    Object o : collection) {
+      changed|=remove(o);
+    }
+    return changed;
+  }
+ else {
+    return Iterators.removeAll(iterator(),collection);
+  }
+}
