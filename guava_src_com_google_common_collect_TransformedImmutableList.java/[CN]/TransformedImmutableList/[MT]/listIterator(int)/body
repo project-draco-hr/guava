@@ -1,8 +1,0 @@
-{
-  return new AbstractIndexedListIterator<E>(size(),index){
-    @Override protected E get(    int index){
-      return TransformedImmutableList.this.get(index);
-    }
-  }
-;
-}

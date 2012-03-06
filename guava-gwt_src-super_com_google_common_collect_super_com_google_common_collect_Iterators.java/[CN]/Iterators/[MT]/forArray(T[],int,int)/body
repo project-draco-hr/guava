@@ -1,11 +1,3 @@
 {
-  checkArgument(length >= 0);
-  int end=offset + length;
-  Preconditions.checkPositionIndexes(offset,end,array.length);
-  return new AbstractIndexedListIterator<T>(length){
-    @Override protected T get(    int index){
-      return array[offset + index];
-    }
-  }
-;
+  return forArray(array,offset,length,0);
 }

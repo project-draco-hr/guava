@@ -1,5 +1,5 @@
 {
-  Preconditions.checkPositionIndex(index,size);
+  checkPositionIndex(index,size);
   final UnmodifiableListIterator<E> forward=forwardList.listIterator(reversePosition(index));
   return new UnmodifiableListIterator<E>(){
     @Override public boolean hasNext(){
