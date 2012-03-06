@@ -7,7 +7,7 @@
     MoveDesc<E> moved=removeAt(cursor);
     if (moved != null) {
       if (forgetMeNot == null) {
-        forgetMeNot=new LinkedList<E>();
+        forgetMeNot=new ArrayDeque<E>();
         skipMe=new ArrayList<E>(3);
       }
       forgetMeNot.add(moved.toTrickle);

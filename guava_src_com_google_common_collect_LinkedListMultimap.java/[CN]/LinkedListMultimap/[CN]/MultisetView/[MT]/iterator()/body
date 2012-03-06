@@ -1,14 +1,7 @@
 {
-  final Iterator<Node<K,V>> nodes=new NodeIterator();
-  return new Iterator<K>(){
-    @Override public boolean hasNext(){
-      return nodes.hasNext();
-    }
-    @Override public K next(){
-      return nodes.next().key;
-    }
-    @Override public void remove(){
-      nodes.remove();
+  return new TransformedIterator<Node<K,V>,K>(new NodeIterator()){
+    @Override K transform(    Node<K,V> node){
+      return node.key;
     }
   }
 ;

@@ -1,16 +1,8 @@
 {
-  checkNotNull(fromIterator);
   checkNotNull(function);
-  return new Iterator<T>(){
-    @Override public boolean hasNext(){
-      return fromIterator.hasNext();
-    }
-    @Override public T next(){
-      F from=fromIterator.next();
+  return new TransformedIterator<F,T>(fromIterator){
+    @Override T transform(    F from){
       return function.apply(from);
-    }
-    @Override public void remove(){
-      fromIterator.remove();
     }
   }
 ;

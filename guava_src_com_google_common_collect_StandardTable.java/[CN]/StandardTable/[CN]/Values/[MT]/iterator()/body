@@ -1,14 +1,7 @@
 {
-  final Iterator<Cell<R,C,V>> cellIterator=cellSet().iterator();
-  return new Iterator<V>(){
-    @Override public boolean hasNext(){
-      return cellIterator.hasNext();
-    }
-    @Override public V next(){
-      return cellIterator.next().getValue();
-    }
-    @Override public void remove(){
-      cellIterator.remove();
+  return new TransformedIterator<Cell<R,C,V>,V>(cellSet().iterator()){
+    @Override V transform(    Cell<R,C,V> cell){
+      return cell.getValue();
     }
   }
 ;

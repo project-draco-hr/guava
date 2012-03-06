@@ -1,15 +1,3 @@
 {
-  final Iterator<Map.Entry<K,V>> backingIterator=multimap().entries().iterator();
-  return new Iterator<V>(){
-    @Override public boolean hasNext(){
-      return backingIterator.hasNext();
-    }
-    @Override public V next(){
-      return backingIterator.next().getValue();
-    }
-    @Override public void remove(){
-      backingIterator.remove();
-    }
-  }
-;
+  return Maps.valueIterator(multimap().entries().iterator());
 }

@@ -1,6 +1,6 @@
 {
-  return transform(keySet().iterator(),new Function<K,Entry<K,V>>(){
-    @Override public Entry<K,V> apply(    final K key){
+  return new TransformedIterator<K,Entry<K,V>>(keySet().iterator()){
+    @Override Entry<K,V> transform(    final K key){
       return new AbstractMapEntry<K,V>(){
         @Override public K getKey(){
           return key;
@@ -15,5 +15,5 @@
 ;
     }
   }
-);
+;
 }

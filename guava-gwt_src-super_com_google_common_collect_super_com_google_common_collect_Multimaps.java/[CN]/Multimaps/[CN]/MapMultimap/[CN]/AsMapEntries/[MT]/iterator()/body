@@ -1,11 +1,6 @@
 {
-  return new Iterator<Entry<K,Collection<V>>>(){
-    final Iterator<K> keys=map.keySet().iterator();
-    @Override public boolean hasNext(){
-      return keys.hasNext();
-    }
-    @Override public Entry<K,Collection<V>> next(){
-      final K key=keys.next();
+  return new TransformedIterator<K,Entry<K,Collection<V>>>(map.keySet().iterator()){
+    @Override Entry<K,Collection<V>> transform(    final K key){
       return new AbstractMapEntry<K,Collection<V>>(){
         @Override public K getKey(){
           return key;
@@ -15,9 +10,6 @@
         }
       }
 ;
-    }
-    @Override public void remove(){
-      keys.remove();
     }
   }
 ;

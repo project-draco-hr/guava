@@ -6,13 +6,20 @@
         return TransformedEntriesMap.this;
       }
       @Override public Iterator<Entry<K,V2>> iterator(){
-        final Iterator<Entry<K,V1>> backingIterator=fromMap.entrySet().iterator();
-        return Iterators.transform(backingIterator,new Function<Entry<K,V1>,Entry<K,V2>>(){
-          @Override public Entry<K,V2> apply(          Entry<K,V1> entry){
-            return immutableEntry(entry.getKey(),transformer.transformEntry(entry.getKey(),entry.getValue()));
+        return new TransformedIterator<Entry<K,V1>,Entry<K,V2>>(fromMap.entrySet().iterator()){
+          @Override Entry<K,V2> transform(          final Entry<K,V1> entry){
+            return new AbstractMapEntry<K,V2>(){
+              @Override public K getKey(){
+                return entry.getKey();
+              }
+              @Override public V2 getValue(){
+                return transformer.transformEntry(entry.getKey(),entry.getValue());
+              }
+            }
+;
           }
         }
-);
+;
       }
     }
 ;

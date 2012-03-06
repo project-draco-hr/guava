@@ -1,3 +1,8 @@
 {
-  return new EntryIterator();
+  return new TransformedIterator<R,Entry<R,Map<C,V>>>(backingMap.keySet().iterator()){
+    @Override Entry<R,Map<C,V>> transform(    R rowKey){
+      return new ImmutableEntry<R,Map<C,V>>(rowKey,row(rowKey));
+    }
+  }
+;
 }

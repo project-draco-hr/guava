@@ -1,20 +1,3 @@
 {
-  final Iterator<Entry<K,V>> iterator=delegate.entrySet().iterator();
-  return new Iterator<K>(){
-    Entry<K,V> entry;
-    @Override public boolean hasNext(){
-      return iterator.hasNext();
-    }
-    @Override public K next(){
-      entry=iterator.next();
-      return entry.getKey();
-    }
-    @Override public void remove(){
-      checkState(entry != null);
-      V value=entry.getValue();
-      iterator.remove();
-      removeFromInverseMap(value);
-    }
-  }
-;
+  return Maps.keyIterator(entrySet().iterator());
 }

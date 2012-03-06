@@ -1,7 +1,0 @@
-{
-  boolean changed=false;
-  for (  Object o : iterable) {
-    changed|=set.remove(o);
-  }
-  return changed;
-}

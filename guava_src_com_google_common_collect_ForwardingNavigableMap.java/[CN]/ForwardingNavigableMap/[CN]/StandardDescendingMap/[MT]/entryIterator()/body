@@ -18,7 +18,7 @@
       }
     }
     @Override public void remove(){
-      checkState(toRemove != null,"Each call to remove() must be preceded by a call to next()");
+      Iterators.checkRemove(toRemove != null);
       forward().remove(toRemove.getKey());
       toRemove=null;
     }

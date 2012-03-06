@@ -5,7 +5,7 @@
       return iterator;
     }
     @Override public Map.Entry<K,Collection<V>> next(){
-      final Map.Entry<K,Collection<V>> entry=iterator.next();
+      final Map.Entry<K,Collection<V>> entry=super.next();
       return new ForwardingMapEntry<K,Collection<V>>(){
         @Override protected Map.Entry<K,Collection<V>> delegate(){
           return entry;

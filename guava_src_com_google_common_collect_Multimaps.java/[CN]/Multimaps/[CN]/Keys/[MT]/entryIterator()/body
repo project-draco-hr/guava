@@ -1,11 +1,6 @@
 {
-  final Iterator<Map.Entry<K,Collection<V>>> backingIterator=multimap().asMap().entrySet().iterator();
-  return new Iterator<Multiset.Entry<K>>(){
-    @Override public boolean hasNext(){
-      return backingIterator.hasNext();
-    }
-    @Override public Multiset.Entry<K> next(){
-      final Map.Entry<K,Collection<V>> backingEntry=backingIterator.next();
+  return new TransformedIterator<Map.Entry<K,Collection<V>>,Multiset.Entry<K>>(multimap().asMap().entrySet().iterator()){
+    @Override Multiset.Entry<K> transform(    final Map.Entry<K,Collection<V>> backingEntry){
       return new Multisets.AbstractEntry<K>(){
         @Override public K getElement(){
           return backingEntry.getKey();
@@ -15,9 +10,6 @@
         }
       }
 ;
-    }
-    @Override public void remove(){
-      backingIterator.remove();
     }
   }
 ;

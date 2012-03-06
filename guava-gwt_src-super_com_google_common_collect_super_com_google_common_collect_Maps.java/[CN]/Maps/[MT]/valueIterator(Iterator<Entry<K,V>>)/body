@@ -1,0 +1,8 @@
+{
+  return new TransformedIterator<Entry<K,V>,V>(entryIterator){
+    @Override V transform(    Entry<K,V> entry){
+      return entry.getValue();
+    }
+  }
+;
+}

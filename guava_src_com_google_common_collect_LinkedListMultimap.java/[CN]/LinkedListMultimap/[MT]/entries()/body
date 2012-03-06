@@ -6,34 +6,9 @@
         return keyCount.size();
       }
       @Override public ListIterator<Entry<K,V>> listIterator(      int index){
-        final ListIterator<Node<K,V>> nodes=new NodeIterator(index);
-        return new ListIterator<Entry<K,V>>(){
-          @Override public boolean hasNext(){
-            return nodes.hasNext();
-          }
-          @Override public Entry<K,V> next(){
-            return createEntry(nodes.next());
-          }
-          @Override public void remove(){
-            nodes.remove();
-          }
-          @Override public boolean hasPrevious(){
-            return nodes.hasPrevious();
-          }
-          @Override public Map.Entry<K,V> previous(){
-            return createEntry(nodes.previous());
-          }
-          @Override public int nextIndex(){
-            return nodes.nextIndex();
-          }
-          @Override public int previousIndex(){
-            return nodes.previousIndex();
-          }
-          @Override public void set(          Map.Entry<K,V> e){
-            throw new UnsupportedOperationException();
-          }
-          @Override public void add(          Map.Entry<K,V> e){
-            throw new UnsupportedOperationException();
+        return new TransformedListIterator<Node<K,V>,Entry<K,V>>(new NodeIterator(index)){
+          @Override Entry<K,V> transform(          Node<K,V> node){
+            return createEntry(node);
           }
         }
 ;

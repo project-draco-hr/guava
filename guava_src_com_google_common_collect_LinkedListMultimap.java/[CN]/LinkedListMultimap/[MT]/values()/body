@@ -7,33 +7,12 @@
       }
       @Override public ListIterator<V> listIterator(      int index){
         final NodeIterator nodes=new NodeIterator(index);
-        return new ListIterator<V>(){
-          @Override public boolean hasNext(){
-            return nodes.hasNext();
+        return new TransformedListIterator<Node<K,V>,V>(nodes){
+          @Override V transform(          Node<K,V> node){
+            return node.value;
           }
-          @Override public V next(){
-            return nodes.next().value;
-          }
-          @Override public boolean hasPrevious(){
-            return nodes.hasPrevious();
-          }
-          @Override public V previous(){
-            return nodes.previous().value;
-          }
-          @Override public int nextIndex(){
-            return nodes.nextIndex();
-          }
-          @Override public int previousIndex(){
-            return nodes.previousIndex();
-          }
-          @Override public void remove(){
-            nodes.remove();
-          }
-          @Override public void set(          V e){
-            nodes.setValue(e);
-          }
-          @Override public void add(          V e){
-            throw new UnsupportedOperationException();
+          @Override public void set(          V value){
+            nodes.setValue(value);
           }
         }
 ;

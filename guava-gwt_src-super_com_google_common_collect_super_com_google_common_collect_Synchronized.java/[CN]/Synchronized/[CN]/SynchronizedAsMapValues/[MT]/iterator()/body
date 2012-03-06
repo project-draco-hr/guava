@@ -5,7 +5,7 @@
       return iterator;
     }
     @Override public Collection<V> next(){
-      return typePreservingCollection(iterator.next(),mutex);
+      return typePreservingCollection(super.next(),mutex);
     }
   }
 ;

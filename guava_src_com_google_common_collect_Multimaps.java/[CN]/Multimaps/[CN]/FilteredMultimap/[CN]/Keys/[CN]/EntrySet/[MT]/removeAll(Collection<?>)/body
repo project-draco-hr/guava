@@ -1,3 +1,3 @@
 {
-  return Sets.removeAllImpl(this,c);
+  return Sets.removeAllImpl(this,c.iterator());
 }

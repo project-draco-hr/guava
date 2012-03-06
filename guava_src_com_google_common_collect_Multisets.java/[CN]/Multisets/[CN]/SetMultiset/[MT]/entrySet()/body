@@ -6,12 +6,12 @@
         return SetMultiset.this;
       }
       @Override public Iterator<Entry<E>> iterator(){
-        return Iterators.transform(delegate.iterator(),new Function<E,Entry<E>>(){
-          @Override public Entry<E> apply(          E elem){
-            return immutableEntry(elem,1);
+        return new TransformedIterator<E,Entry<E>>(delegate.iterator()){
+          @Override Entry<E> transform(          E e){
+            return Multisets.immutableEntry(e,1);
           }
         }
-);
+;
       }
       @Override public int size(){
         return delegate.size();

@@ -1,17 +1,3 @@
 {
-  final Iterator<V> iterator=delegate.values().iterator();
-  return new Iterator<V>(){
-    V valueToRemove;
-    @Override public boolean hasNext(){
-      return iterator.hasNext();
-    }
-    @Override public V next(){
-      return valueToRemove=iterator.next();
-    }
-    @Override public void remove(){
-      iterator.remove();
-      removeFromInverseMap(valueToRemove);
-    }
-  }
-;
+  return Maps.valueIterator(entrySet().iterator());
 }

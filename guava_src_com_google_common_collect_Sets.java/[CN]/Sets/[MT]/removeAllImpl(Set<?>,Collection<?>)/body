@@ -1,0 +1,11 @@
+{
+  if (collection instanceof Multiset) {
+    collection=((Multiset<?>)collection).elementSet();
+  }
+  if (collection.size() < set.size()) {
+    return removeAllImpl(set,collection.iterator());
+  }
+ else {
+    return Iterators.removeAll(set.iterator(),collection);
+  }
+}
