@@ -7,20 +7,14 @@
     char[] buf=new char[64];
     int i=buf.length;
     if (x < 0) {
-      long top=x >>> 32;
-      long bot=(x & 0xffffffffl) + ((top % radix) << 32);
-      top/=radix;
-      while ((bot > 0) || (top > 0)) {
-        buf[--i]=Character.forDigit((int)(bot % radix),radix);
-        bot=(bot / radix) + ((top % radix) << 32);
-        top/=radix;
-      }
+      long quotient=divide(x,radix);
+      long rem=x - quotient * radix;
+      buf[--i]=Character.forDigit((int)rem,radix);
+      x=quotient;
     }
- else {
-      while (x > 0) {
-        buf[--i]=Character.forDigit((int)(x % radix),radix);
-        x/=radix;
-      }
+    while (x > 0) {
+      buf[--i]=Character.forDigit((int)(x % radix),radix);
+      x/=radix;
     }
     return new String(buf,i,buf.length - i);
   }
