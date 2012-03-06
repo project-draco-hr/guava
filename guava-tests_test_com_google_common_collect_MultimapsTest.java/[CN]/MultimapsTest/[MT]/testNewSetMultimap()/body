@@ -1,5 +1,5 @@
 {
-  CountingSupplier<HashSet<Integer>> factory=new SetSupplier();
+  CountingSupplier<Set<Integer>> factory=new SetSupplier();
   Map<Color,Collection<Integer>> map=Maps.newHashMap();
   SetMultimap<Color,Integer> multimap=Multimaps.newSetMultimap(map,factory);
   assertEquals(0,factory.count);

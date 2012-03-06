@@ -1,1 +1,1 @@
-CountingSupplier<HashSet<Integer>>
+CountingSupplier<Set<Integer>>
