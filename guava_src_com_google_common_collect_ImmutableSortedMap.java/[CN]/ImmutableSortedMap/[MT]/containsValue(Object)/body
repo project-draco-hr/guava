@@ -1,6 +1,3 @@
 {
-  if (value == null) {
-    return false;
-  }
-  return Iterators.contains(valueIterator(),value);
+  return value != null && Maps.containsValueImpl(this,value);
 }

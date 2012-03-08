@@ -1,0 +1,8 @@
+{
+  return new TransformedImmutableList<Entry<K,V>,K>(entrySet().asList()){
+    @Override K transform(    Entry<K,V> entry){
+      return entry.getKey();
+    }
+  }
+;
+}

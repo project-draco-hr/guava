@@ -1,1 +1,1 @@
-ArrayImmutableSet<Entry<K,V>>
+ImmutableMap<K,V>.EntrySet

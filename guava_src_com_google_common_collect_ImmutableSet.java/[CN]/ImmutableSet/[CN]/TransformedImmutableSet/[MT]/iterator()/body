@@ -1,7 +1,11 @@
 {
-  return new AbstractIndexedListIterator<E>(source.length){
-    @Override protected E get(    int index){
-      return transform(source[index]);
+  final Iterator<D> backingIterator=source.iterator();
+  return new UnmodifiableIterator<E>(){
+    @Override public boolean hasNext(){
+      return backingIterator.hasNext();
+    }
+    @Override public E next(){
+      return transform(backingIterator.next());
     }
   }
 ;

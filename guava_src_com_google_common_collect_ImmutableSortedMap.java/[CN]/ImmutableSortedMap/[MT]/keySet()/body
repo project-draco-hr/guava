@@ -1,4 +1,3 @@
 {
-  ImmutableSortedSet<K> ks=keySet;
-  return (ks == null) ? (keySet=createKeySet()) : ks;
+  return (ImmutableSortedSet<K>)super.keySet();
 }
