@@ -8,7 +8,7 @@
     ImmutableListMultimap.Builder<String,String> parameters=ImmutableListMultimap.builder();
     while (tokenizer.hasMore()) {
       tokenizer.consumeCharacter(';');
-      tokenizer.consumeCharacter(' ');
+      tokenizer.consumeToken(LINEAR_WHITE_SPACE);
       String attribute=tokenizer.consumeToken(TOKEN_MATCHER);
       tokenizer.consumeCharacter('=');
       final String value;
