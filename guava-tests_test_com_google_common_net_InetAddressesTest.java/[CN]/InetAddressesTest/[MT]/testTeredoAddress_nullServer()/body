@@ -1,0 +1,7 @@
+{
+  InetAddresses.TeredoInfo info=new InetAddresses.TeredoInfo(null,null,80,1000);
+  assertEquals(InetAddresses.forString("0.0.0.0"),info.getServer());
+  assertEquals(InetAddresses.forString("0.0.0.0"),info.getClient());
+  assertEquals(80,info.getPort());
+  assertEquals(1000,info.getFlags());
+}
