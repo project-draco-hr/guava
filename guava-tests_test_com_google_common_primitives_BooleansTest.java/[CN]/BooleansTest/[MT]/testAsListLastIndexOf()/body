@@ -1,0 +1,7 @@
+{
+  assertEquals(-1,Booleans.asList(EMPTY).indexOf("wrong type"));
+  assertEquals(-1,Booleans.asList(EMPTY).indexOf(true));
+  assertEquals(-1,Booleans.asList(ARRAY_FALSE).lastIndexOf(true));
+  assertEquals(1,Booleans.asList(ARRAY_FALSE_TRUE).lastIndexOf(true));
+  assertEquals(1,Booleans.asList(ARRAY_FALSE_FALSE).lastIndexOf(false));
+}

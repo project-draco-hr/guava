@@ -1,0 +1,4 @@
+{
+  assertTrue(Booleans.asList(EMPTY).isEmpty());
+  assertFalse(Booleans.asList(ARRAY_FALSE).isEmpty());
+}

@@ -1,0 +1,11 @@
+{
+  assertEquals(Booleans.asList(EMPTY),Collections.emptyList());
+  assertEquals(Booleans.asList(ARRAY_FALSE),Booleans.asList(ARRAY_FALSE));
+  assertFalse(Booleans.asList(ARRAY_FALSE).equals(ARRAY_FALSE));
+  assertFalse(Booleans.asList(ARRAY_FALSE).equals(null));
+  assertFalse(Booleans.asList(ARRAY_FALSE).equals(Booleans.asList(ARRAY_FALSE_TRUE)));
+  assertFalse(Booleans.asList(ARRAY_FALSE_FALSE).equals(Booleans.asList(ARRAY_FALSE_TRUE)));
+  assertEquals(1,Booleans.asList(ARRAY_FALSE_TRUE).lastIndexOf(true));
+  List<Boolean> reference=Booleans.asList(ARRAY_FALSE);
+  assertEquals(Booleans.asList(ARRAY_FALSE),reference);
+}
