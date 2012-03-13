@@ -1,26 +1,22 @@
 {
-  try {
-    long permutations=1;
-    int n=1;
-    int r=1;
-    for (; n < sortedInputList.size(); n++, r++) {
-      int comparison=comparator.compare(sortedInputList.get(n - 1),sortedInputList.get(n));
-      checkState(comparison <= 0);
-      if (comparison < 0) {
-        permutations*=binomialCoefficient(n,r);
-        r=0;
-        if (!isPositiveInt(permutations)) {
-          return Integer.MAX_VALUE;
-        }
+  long permutations=1;
+  int n=1;
+  int r=1;
+  while (n < sortedInputList.size()) {
+    int comparison=comparator.compare(sortedInputList.get(n - 1),sortedInputList.get(n));
+    if (comparison < 0) {
+      permutations*=binomial(n,r);
+      r=0;
+      if (!isPositiveInt(permutations)) {
+        return Integer.MAX_VALUE;
       }
     }
-    permutations*=binomialCoefficient(n,r);
-    if (!isPositiveInt(permutations)) {
-      return Integer.MAX_VALUE;
-    }
-    return (int)permutations;
+    n++;
+    r++;
   }
- catch (  IllegalArgumentException e) {
+  permutations*=binomial(n,r);
+  if (!isPositiveInt(permutations)) {
     return Integer.MAX_VALUE;
   }
+  return (int)permutations;
 }

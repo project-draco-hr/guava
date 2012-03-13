@@ -1,9 +1,0 @@
-{
-  checkArgument(n >= k);
-  if (k > n - k) {
-    return factorialQuotient(n,k) / factorial(n - k);
-  }
- else {
-    return factorialQuotient(n,n - k) / factorial(k);
-  }
-}
