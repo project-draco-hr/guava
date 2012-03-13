@@ -1,0 +1,9 @@
+{
+  List<String> list=Lists.newArrayList(null,"a","b");
+  try {
+    FluentIterable.from(list).first();
+    fail();
+  }
+ catch (  NullPointerException expected) {
+  }
+}

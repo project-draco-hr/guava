@@ -1,0 +1,3 @@
+{
+  return (iterable instanceof FluentIterable<?>) ? (FluentIterable<E>)iterable : new FluentIterable<E>(iterable);
+}

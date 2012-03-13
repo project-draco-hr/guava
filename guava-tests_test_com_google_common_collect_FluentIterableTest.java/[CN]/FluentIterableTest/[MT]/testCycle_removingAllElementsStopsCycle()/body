@@ -1,0 +1,10 @@
+{
+  FluentIterable<Integer> cycle=fluent(1,2).cycle();
+  Iterator<Integer> iterator=cycle.iterator();
+  iterator.next();
+  iterator.remove();
+  iterator.next();
+  iterator.remove();
+  assertFalse(iterator.hasNext());
+  assertFalse(cycle.iterator().hasNext());
+}

@@ -1,0 +1,3 @@
+{
+  return from(Iterables.paddedPartition(iterable,size)).transform(new FromIterableFunction<E>());
+}

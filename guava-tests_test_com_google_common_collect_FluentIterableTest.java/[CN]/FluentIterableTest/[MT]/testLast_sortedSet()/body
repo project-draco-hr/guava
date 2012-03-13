@@ -1,0 +1,4 @@
+{
+  SortedSet<String> sortedSet=Sets.newTreeSet("b","c","a");
+  assertEquals("c",FluentIterable.from(sortedSet).last().get());
+}

@@ -1,0 +1,4 @@
+{
+  Set<String> set=Sets.newHashSet();
+  assertEquals(Optional.absent(),FluentIterable.from(set).first());
+}

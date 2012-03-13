@@ -1,0 +1,5 @@
+{
+  assertEquals("a",FluentIterable.from(Lists.newArrayList("a","b","c")).get(0));
+  assertEquals("b",FluentIterable.from(Lists.newArrayList("a","b","c")).get(1));
+  assertEquals("c",FluentIterable.from(Lists.newArrayList("a","b","c")).get(2));
+}

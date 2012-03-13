@@ -1,0 +1,7 @@
+{
+  List<String> list=Lists.newArrayList("a","b","c");
+  FluentIterable<String> tail=FluentIterable.from(list).skip(1);
+  list.subList(1,3).clear();
+  list.addAll(0,Lists.newArrayList("X","Y","Z"));
+  ASSERT.that(tail).hasContentsInOrder("Y","Z","a");
+}

@@ -1,0 +1,7 @@
+{
+  Iterable<String> iterable=Lists.newArrayList("foo","bar","baz");
+  FluentIterable<String> limited=FluentIterable.from(iterable).limit(2);
+  assertEquals(ImmutableList.of("foo","bar"),Lists.newArrayList(limited));
+  assertCanIterateAgain(limited);
+  assertEquals("[foo, bar]",limited.toString());
+}

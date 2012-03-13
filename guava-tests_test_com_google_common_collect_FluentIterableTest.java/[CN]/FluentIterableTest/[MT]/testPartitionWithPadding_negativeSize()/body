@@ -1,0 +1,8 @@
+{
+  try {
+    fluent(1,2,3).partitionWithPadding(-1);
+    fail("Invoking partitionWithPadding method with negative value should throw IAE.");
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}

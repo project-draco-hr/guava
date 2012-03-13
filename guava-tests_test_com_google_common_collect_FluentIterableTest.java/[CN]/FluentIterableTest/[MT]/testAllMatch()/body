@@ -1,0 +1,10 @@
+{
+  List<String> list=Lists.newArrayList();
+  FluentIterable<String> iterable=FluentIterable.<String>from(list);
+  Predicate<String> predicate=Predicates.equalTo("cool");
+  assertTrue(iterable.allMatch(predicate));
+  list.add("cool");
+  assertTrue(iterable.allMatch(predicate));
+  list.add("pants");
+  assertFalse(iterable.allMatch(predicate));
+}

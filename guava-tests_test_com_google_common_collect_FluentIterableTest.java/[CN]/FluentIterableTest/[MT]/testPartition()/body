@@ -1,0 +1,8 @@
+{
+  FluentIterable<FluentIterable<Integer>> partitioned=fluent(1,2,3,4,5).partition(3);
+  Iterator<FluentIterable<Integer>> iter=partitioned.iterator();
+  ASSERT.that(iter.next()).hasContentsInOrder(1,2,3);
+  ASSERT.that(iter.next()).hasContentsInOrder(4,5);
+  assertFalse(iter.hasNext());
+  assertEquals("[[1, 2, 3], [4, 5]]",partitioned.toString());
+}

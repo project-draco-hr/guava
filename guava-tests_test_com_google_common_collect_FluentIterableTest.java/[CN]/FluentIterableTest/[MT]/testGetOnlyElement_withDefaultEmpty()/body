@@ -1,0 +1,3 @@
+{
+  assertEquals("bar",FluentIterable.<String>of().getOnlyElement("bar"));
+}

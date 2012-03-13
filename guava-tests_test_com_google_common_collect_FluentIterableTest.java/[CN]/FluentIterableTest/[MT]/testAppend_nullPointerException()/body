@@ -1,0 +1,8 @@
+{
+  try {
+    FluentIterable.<Integer>of().append((List<Integer>)null);
+    fail("Appending null iterable should throw NPE.");
+  }
+ catch (  NullPointerException expected) {
+  }
+}

@@ -1,0 +1,7 @@
+{
+  FluentIterable<String> iterable=FluentIterable.from(Lists.newArrayList("cool","pants"));
+  assertEquals(Optional.of("cool"),iterable.firstMatch(Predicates.equalTo("cool")));
+  assertEquals(Optional.of("pants"),iterable.firstMatch(Predicates.equalTo("pants")));
+  assertEquals(Optional.absent(),iterable.firstMatch(Predicates.alwaysFalse()));
+  assertEquals(Optional.of("cool"),iterable.firstMatch(Predicates.alwaysTrue()));
+}

@@ -1,0 +1,3 @@
+{
+  assertFalse(fluent().partition(1).iterator().hasNext());
+}

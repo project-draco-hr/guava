@@ -1,0 +1,4 @@
+{
+  Iterable<String> set=Sets.newTreeSet("a","b");
+  assertFalse(FluentIterable.from(set).contains(null));
+}

@@ -1,0 +1,8 @@
+{
+  FluentIterable<String> filtered=FluentIterable.from(asList("foo","bar")).filter(Predicates.equalTo("foo"));
+  List<String> expected=Collections.singletonList("foo");
+  List<String> actual=Lists.newArrayList(filtered);
+  assertEquals(expected,actual);
+  assertCanIterateAgain(filtered);
+  assertEquals("[foo]",filtered.toString());
+}

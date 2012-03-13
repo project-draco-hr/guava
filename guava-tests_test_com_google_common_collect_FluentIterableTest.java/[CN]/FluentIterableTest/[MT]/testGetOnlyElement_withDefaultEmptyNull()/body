@@ -1,0 +1,3 @@
+{
+  assertNull(FluentIterable.<String>of().getOnlyElement(null));
+}

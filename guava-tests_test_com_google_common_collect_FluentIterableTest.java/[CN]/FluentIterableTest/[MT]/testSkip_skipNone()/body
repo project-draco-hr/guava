@@ -1,0 +1,4 @@
+{
+  Collection<String> set=Sets.newLinkedHashSet("a","b");
+  assertEquals(Lists.newArrayList("a","b"),Lists.newArrayList(FluentIterable.from(set).skip(0)));
+}

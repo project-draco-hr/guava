@@ -1,0 +1,12 @@
+{
+  List<String> input=asList("1",null,"3");
+  Iterable<Integer> iterable=FluentIterable.from(input).transform(new IntegerValueOfFunction());
+  Iterator<Integer> resultIterator=iterable.iterator();
+  resultIterator.next();
+  try {
+    resultIterator.next();
+    fail("Transforming null to int should throw NumberFormatException");
+  }
+ catch (  NumberFormatException expected) {
+  }
+}

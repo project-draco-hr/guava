@@ -1,0 +1,7 @@
+{
+  List<String> input=asList("1","2","3");
+  Iterable<Integer> iterable=FluentIterable.from(input).transform(new IntegerValueOfFunction());
+  assertEquals(asList(1,2,3),Lists.newArrayList(iterable));
+  assertCanIterateAgain(iterable);
+  assertEquals("[1, 2, 3]",iterable.toString());
+}

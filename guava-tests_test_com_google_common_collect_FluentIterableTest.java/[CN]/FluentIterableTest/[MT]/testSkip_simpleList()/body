@@ -1,0 +1,5 @@
+{
+  Collection<String> list=Lists.newArrayList("a","b","c","d","e");
+  assertEquals(Lists.newArrayList("c","d","e"),Lists.newArrayList(FluentIterable.from(list).skip(2)));
+  assertEquals("[c, d, e]",FluentIterable.from(list).skip(2).toString());
+}

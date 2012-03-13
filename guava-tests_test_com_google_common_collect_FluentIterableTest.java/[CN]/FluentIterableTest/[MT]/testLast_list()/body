@@ -1,0 +1,4 @@
+{
+  List<String> list=Lists.newArrayList("a","b","c");
+  assertEquals("c",FluentIterable.from(list).last().get());
+}

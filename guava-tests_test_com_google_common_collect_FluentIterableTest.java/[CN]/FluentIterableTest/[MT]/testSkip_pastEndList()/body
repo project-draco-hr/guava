@@ -1,0 +1,4 @@
+{
+  Collection<String> list=Lists.newArrayList("a","b");
+  assertEquals(Collections.emptyList(),Lists.newArrayList(FluentIterable.from(list).skip(20)));
+}

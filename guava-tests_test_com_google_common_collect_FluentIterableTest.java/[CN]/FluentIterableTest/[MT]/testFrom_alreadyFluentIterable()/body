@@ -1,0 +1,4 @@
+{
+  FluentIterable<Integer> iterable=FluentIterable.from(asList(1));
+  assertSame(iterable,FluentIterable.from(iterable));
+}

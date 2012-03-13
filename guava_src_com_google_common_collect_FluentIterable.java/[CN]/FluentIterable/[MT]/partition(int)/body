@@ -1,0 +1,3 @@
+{
+  return from(Iterables.partition(iterable,size)).transform(new FromIterableFunction<E>());
+}

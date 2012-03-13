@@ -1,0 +1,4 @@
+{
+  assertTrue(FluentIterable.<String>from(Collections.<String>emptyList()).isEmpty());
+  assertFalse(FluentIterable.<String>from(Lists.newArrayList("foo")).isEmpty());
+}

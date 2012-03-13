@@ -1,0 +1,4 @@
+{
+  Set<String> set=Sets.newLinkedHashSet("a","b","c");
+  assertEquals("a",FluentIterable.from(set).first().get());
+}

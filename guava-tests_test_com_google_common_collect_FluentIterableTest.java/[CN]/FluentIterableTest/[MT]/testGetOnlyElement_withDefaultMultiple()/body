@@ -1,0 +1,8 @@
+{
+  try {
+    FluentIterable.from(asList("foo","bar")).getOnlyElement("x");
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}

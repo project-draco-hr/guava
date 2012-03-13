@@ -1,0 +1,8 @@
+{
+  try {
+    FluentIterable.from(Lists.newArrayList("a","b","c")).limit(-1);
+    fail("Passing negative number to limit(...) method should throw IllegalArgumentException");
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}

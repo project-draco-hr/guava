@@ -1,0 +1,3 @@
+{
+  assertEquals(Lists.newArrayList(1,2,3,4),fluent(1,2,3,4).toImmutableList());
+}

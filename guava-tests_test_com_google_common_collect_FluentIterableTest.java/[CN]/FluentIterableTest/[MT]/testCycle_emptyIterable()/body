@@ -1,0 +1,4 @@
+{
+  FluentIterable<Integer> cycle=FluentIterable.<Integer>of().cycle();
+  assertFalse(cycle.iterator().hasNext());
+}
