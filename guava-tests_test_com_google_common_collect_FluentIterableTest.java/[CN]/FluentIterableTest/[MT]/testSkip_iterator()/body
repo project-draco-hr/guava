@@ -1,7 +1,9 @@
 {
   new IteratorTester<Integer>(5,IteratorFeature.MODIFIABLE,Lists.newArrayList(2,3),IteratorTester.KnownOrder.KNOWN_ORDER){
     @Override protected Iterator<Integer> newTargetIterator(){
-      return FluentIterable.from(Sets.newLinkedHashSet(1,2,3)).skip(1).iterator();
+      Collection<Integer> collection=Sets.newLinkedHashSet();
+      Collections.addAll(collection,1,2,3);
+      return FluentIterable.from(collection).skip(1).iterator();
     }
   }
 .test();

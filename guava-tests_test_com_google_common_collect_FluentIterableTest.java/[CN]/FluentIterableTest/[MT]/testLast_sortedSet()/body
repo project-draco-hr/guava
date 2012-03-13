@@ -1,4 +1,4 @@
 {
-  SortedSet<String> sortedSet=Sets.newTreeSet("b","c","a");
+  SortedSet<String> sortedSet=ImmutableSortedSet.of("b","c","a");
   assertEquals("c",FluentIterable.from(sortedSet).last().get());
 }

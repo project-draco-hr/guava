@@ -1,4 +1,4 @@
 {
-  Iterable<String> set=Sets.newTreeSet("a","b");
+  Iterable<String> set=ImmutableSortedSet.of("a","b");
   assertFalse(FluentIterable.from(set).contains(null));
 }

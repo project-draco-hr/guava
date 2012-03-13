@@ -1,5 +1,6 @@
 {
-  Collection<String> set=Sets.newLinkedHashSet("a","b","c");
+  Collection<String> set=Sets.newLinkedHashSet();
+  Collections.addAll(set,"a","b","c");
   FluentIterable<String> tail=FluentIterable.from(set).skip(2);
   set.remove("a");
   set.remove("b");

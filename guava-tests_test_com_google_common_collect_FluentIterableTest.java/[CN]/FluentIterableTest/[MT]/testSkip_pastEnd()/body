@@ -1,4 +1,4 @@
 {
-  Collection<String> set=Sets.newLinkedHashSet("a","b");
+  Collection<String> set=ImmutableSet.of("a","b");
   assertEquals(Collections.emptyList(),Lists.newArrayList(FluentIterable.from(set).skip(20)));
 }

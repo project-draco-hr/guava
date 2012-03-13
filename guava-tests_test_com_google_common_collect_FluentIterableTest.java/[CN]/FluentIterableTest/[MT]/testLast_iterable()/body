@@ -1,4 +1,4 @@
 {
-  Set<String> set=Sets.newLinkedHashSet("a","b","c");
+  Set<String> set=ImmutableSet.of("a","b","c");
   assertEquals("c",FluentIterable.from(set).last().get());
 }
