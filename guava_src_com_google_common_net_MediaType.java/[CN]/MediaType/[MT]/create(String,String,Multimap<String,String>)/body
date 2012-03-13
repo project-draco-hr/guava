@@ -4,7 +4,8 @@
   checkNotNull(parameters);
   String normalizedType=normalizeToken(type);
   String normalizedSubtype=normalizeToken(subtype);
-  MediaType mediaType;
+  checkArgument(!WILDCARD.equals(normalizedType) || WILDCARD.equals(normalizedSubtype),"A wildcard subtype cannot be used with a non-wildcard type");
+  final MediaType mediaType;
   if (parameters.isEmpty()) {
     mediaType=new MediaType(normalizedType,normalizedSubtype);
   }
