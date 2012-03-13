@@ -4,4 +4,7 @@
   this.numHashFunctions=numHashFunctions;
   this.funnel=checkNotNull(funnel);
   this.strategy=strategy;
+  if (numHashFunctions > 255) {
+    throw new AssertionError("Currently we don't allow BloomFilters that would use more than" + "255 hash functions, please contact the guava team");
+  }
 }
