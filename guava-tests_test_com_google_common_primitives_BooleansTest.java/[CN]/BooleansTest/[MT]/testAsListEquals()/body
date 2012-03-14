@@ -8,4 +8,5 @@
   assertEquals(1,Booleans.asList(ARRAY_FALSE_TRUE).lastIndexOf(true));
   List<Boolean> reference=Booleans.asList(ARRAY_FALSE);
   assertEquals(Booleans.asList(ARRAY_FALSE),reference);
+  assertEquals(reference,reference);
 }
