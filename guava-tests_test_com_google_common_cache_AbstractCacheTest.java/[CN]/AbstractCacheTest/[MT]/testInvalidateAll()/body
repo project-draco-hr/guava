@@ -1,7 +1,7 @@
 {
   final List<Object> invalidated=Lists.newArrayList();
   Cache<Integer,Integer> cache=new AbstractCache<Integer,Integer>(){
-    @Override public Integer getIfPresent(    Integer key){
+    @Override public Integer getIfPresent(    Object key){
       throw new UnsupportedOperationException();
     }
     @Override public void invalidate(    Object key){

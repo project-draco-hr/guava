@@ -2,13 +2,14 @@
   int hits=0;
   int misses=0;
   Map<K,V> result=Maps.newLinkedHashMap();
-  for (  K key : keys) {
+  for (  Object key : keys) {
     V value=get(key);
     if (value == null) {
       misses++;
     }
  else {
-      result.put(key,value);
+      @SuppressWarnings("unchecked") K castKey=(K)key;
+      result.put(castKey,value);
       hits++;
     }
   }
