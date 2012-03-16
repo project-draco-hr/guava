@@ -1,0 +1,8 @@
+{
+  assertEquals(String.class,new StringIntegerFoo(){
+  }
+.getClassA());
+  assertEquals(Integer.class,new StringIntegerFoo(){
+  }
+.getClassB());
+}

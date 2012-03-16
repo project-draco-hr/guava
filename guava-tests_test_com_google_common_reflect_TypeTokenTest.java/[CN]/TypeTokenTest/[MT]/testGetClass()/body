@@ -1,0 +1,6 @@
+{
+  TypeToken<List> token=TypeToken.of(List.class);
+  assertEquals(new TypeToken<List>(){
+  }
+,token);
+}

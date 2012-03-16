@@ -1,0 +1,9 @@
+{
+  Mapping<Integer,String> mapping=new Mapping<Integer,String>();
+  assertEquals(mapping.f,mapping.getFromType());
+  assertEquals(mapping.t,mapping.getToType());
+  assertEquals(mapping.f,mapping.flip().getFromType());
+  assertEquals(mapping.t,mapping.flip().getToType());
+  assertEquals(mapping.f,mapping.selfMapping().getFromType());
+  assertEquals(mapping.t,mapping.selfMapping().getToType());
+}

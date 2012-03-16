@@ -1,0 +1,3 @@
+{
+  assertSubtypeBeforeSupertype(ImmutableList.of(TypeToken.of(String.class),TypeToken.of(CharSequence.class)));
+}

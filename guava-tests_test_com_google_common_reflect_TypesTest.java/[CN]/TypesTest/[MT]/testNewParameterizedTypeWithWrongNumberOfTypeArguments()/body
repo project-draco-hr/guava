@@ -1,0 +1,8 @@
+{
+  try {
+    Types.newParameterizedType(Map.class,String.class,Integer.class,Long.class);
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}

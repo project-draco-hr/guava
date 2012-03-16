@@ -1,0 +1,37 @@
+{
+  new EqualsTester().addEqualityGroup(TypeToken.of(String.class),TypeToken.of(String.class),new Entry<String,Integer>(){
+  }
+.keyType(),new Entry<Integer,String>(){
+  }
+.valueType(),new TypeToken<String>(){
+  }
+,new TypeToken<String>(){
+  }
+).addEqualityGroup(TypeToken.of(Integer.class),new TypeToken<Integer>(){
+  }
+,new Entry<Integer,String>(){
+  }
+.keyType(),new Entry<String,Integer>(){
+  }
+.valueType()).addEqualityGroup(new TypeToken<List<String>>(){
+  }
+,new TypeToken<List<String>>(){
+  }
+).addEqualityGroup(new TypeToken<List<?>>(){
+  }
+,new TypeToken<List<?>>(){
+  }
+).addEqualityGroup(new TypeToken<Map<A,?>>(){
+  }
+,new TypeToken<Map<A,?>>(){
+  }
+).addEqualityGroup(new TypeToken<Map<B,?>>(){
+  }
+).addEqualityGroup(TypeToken.of(new TypeCapture<A>(){
+  }
+.capture()),TypeToken.of(new TypeCapture<A>(){
+  }
+.capture())).addEqualityGroup(TypeToken.of(new TypeCapture<B>(){
+  }
+.capture())).testEquals();
+}

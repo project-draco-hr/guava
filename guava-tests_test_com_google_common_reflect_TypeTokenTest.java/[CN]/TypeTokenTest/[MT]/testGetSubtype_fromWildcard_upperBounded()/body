@@ -1,0 +1,11 @@
+{
+  @SuppressWarnings("unchecked") TypeToken<? extends Iterable<String>> type=(TypeToken<? extends Iterable<String>>)TypeToken.of(Types.subtypeOf(new TypeToken<Iterable<String>>(){
+  }
+.getType()));
+  try {
+    type.getSubtype(Iterable.class);
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}

@@ -1,0 +1,17 @@
+{
+  assertEquals(new TypeToken<ListIterable<String>>(){
+  }
+,new TypeToken<Iterable<List<String>>>(){
+  }
+.getSubtype(ListIterable.class));
+  assertEquals(new TypeToken<ListArrayIterable<String>>(){
+  }
+,new TypeToken<Iterable<List<String>[]>>(){
+  }
+.getSubtype(ListArrayIterable.class));
+  assertEquals(new TypeToken<ListArrayIterable<String>[]>(){
+  }
+,new TypeToken<Iterable<List<String>[]>[]>(){
+  }
+.getSubtype(ListArrayIterable[].class));
+}

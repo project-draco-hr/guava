@@ -1,0 +1,8 @@
+{
+  assertTrue(TypeToken.of(Object.class).isAssignableFrom(TypeToken.of(new TypeCapture<T>(){
+  }
+.capture())));
+  assertFalse(TypeToken.of(int.class).isAssignableFrom(TypeToken.of(new TypeCapture<T>(){
+  }
+.capture())));
+}

@@ -1,0 +1,9 @@
+{
+  return new TypeToken<Map<K,V>>(){
+  }
+.where(new TypeParameter<K>(){
+  }
+,keyType).where(new TypeParameter<V>(){
+  }
+,valueType);
+}

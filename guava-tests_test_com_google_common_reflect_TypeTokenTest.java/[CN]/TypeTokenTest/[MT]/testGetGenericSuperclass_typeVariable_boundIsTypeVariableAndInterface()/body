@@ -1,0 +1,8 @@
+{
+  assertNull(TypeToken.of(new TypeCapture<T1>(){
+  }
+.capture()).getGenericSuperclass());
+  assertEquals(TypeToken.of(Object.class),new TypeToken<T1[]>(){
+  }
+.getGenericSuperclass());
+}

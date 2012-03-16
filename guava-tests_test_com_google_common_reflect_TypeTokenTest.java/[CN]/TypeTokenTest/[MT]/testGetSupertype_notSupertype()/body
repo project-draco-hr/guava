@@ -1,0 +1,10 @@
+{
+  try {
+    new TypeToken<List<String>>(){
+    }
+.getSupertype((Class)String.class);
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}

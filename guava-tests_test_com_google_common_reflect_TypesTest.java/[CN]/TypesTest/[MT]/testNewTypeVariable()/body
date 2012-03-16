@@ -1,0 +1,13 @@
+{
+  TypeVariable<?> noBoundJvmType=WithTypeVariable.getTypeVariable("withoutBound");
+  TypeVariable<?> objectBoundJvmType=WithTypeVariable.getTypeVariable("withObjectBound");
+  TypeVariable<?> upperBoundJvmType=WithTypeVariable.getTypeVariable("withUpperBound");
+  TypeVariable<?> noBound=withBounds(noBoundJvmType);
+  TypeVariable<?> objectBound=withBounds(objectBoundJvmType,Object.class);
+  TypeVariable<?> upperBound=withBounds(upperBoundJvmType,Number.class,CharSequence.class);
+  assertEqualTypeVariable(noBoundJvmType,noBound);
+  assertEqualTypeVariable(noBoundJvmType,withBounds(noBoundJvmType,Object.class));
+  assertEqualTypeVariable(objectBoundJvmType,objectBound);
+  assertEqualTypeVariable(upperBoundJvmType,upperBound);
+  new EqualsTester().addEqualityGroup(noBoundJvmType,noBound).addEqualityGroup(objectBoundJvmType,objectBound).addEqualityGroup(upperBoundJvmType,upperBound,withBounds(upperBoundJvmType,CharSequence.class)).testEquals();
+}

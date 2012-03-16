@@ -1,0 +1,4 @@
+{
+  Type wildcard=Types.subtypeOf(Number.class);
+  assertEquals(Types.subtypeOf(Number[].class),Types.newArrayType(wildcard));
+}

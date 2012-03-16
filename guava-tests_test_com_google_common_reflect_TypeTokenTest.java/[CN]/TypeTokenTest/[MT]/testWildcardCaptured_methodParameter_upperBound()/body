@@ -1,0 +1,10 @@
+{
+  TypeToken<Holder<?>> type=new TypeToken<Holder<?>>(){
+  }
+;
+  TypeToken<?> parameterType=type.resolveType(Holder.class.getDeclaredMethod("setList",List.class).getGenericParameterTypes()[0]);
+  assertEquals(List.class,parameterType.getRawType());
+  assertFalse(parameterType.getType().toString(),parameterType.isAssignableFrom(new TypeToken<List<Integer>>(){
+  }
+));
+}

@@ -1,0 +1,10 @@
+{
+  try {
+    TypeToken.of(new TypeCapture<T>(){
+    }
+.capture()).getSubtype(List.class);
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}

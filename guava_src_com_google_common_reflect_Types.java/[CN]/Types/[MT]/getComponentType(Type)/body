@@ -1,0 +1,18 @@
+{
+  checkNotNull(type);
+  if (type instanceof Class) {
+    return ((Class<?>)type).getComponentType();
+  }
+ else   if (type instanceof GenericArrayType) {
+    return ((GenericArrayType)type).getGenericComponentType();
+  }
+ else   if (type instanceof WildcardType) {
+    return subtypeOfComponentType(((WildcardType)type).getUpperBounds());
+  }
+ else   if (type instanceof TypeVariable) {
+    return subtypeOfComponentType(((TypeVariable<?>)type).getBounds());
+  }
+ else {
+    return null;
+  }
+}

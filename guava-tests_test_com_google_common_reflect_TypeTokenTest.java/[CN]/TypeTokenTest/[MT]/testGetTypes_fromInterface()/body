@@ -1,0 +1,11 @@
+{
+  TypeToken<Interface1>.TypeSet types=new TypeToken<Interface1>(){
+  }
+.getTypes();
+  ASSERT.that(types).hasContentsInOrder(TypeToken.of(Interface1.class));
+  ASSERT.that(types.rawTypes()).hasContentsInOrder(Interface1.class);
+  ASSERT.that(types.interfaces()).hasContentsAnyOrder(TypeToken.of(Interface1.class));
+  ASSERT.that(types.interfaces().rawTypes()).hasContentsAnyOrder(Interface1.class);
+  ASSERT.that(types.classes()).isEmpty();
+  ASSERT.that(types.classes().rawTypes()).isEmpty();
+}

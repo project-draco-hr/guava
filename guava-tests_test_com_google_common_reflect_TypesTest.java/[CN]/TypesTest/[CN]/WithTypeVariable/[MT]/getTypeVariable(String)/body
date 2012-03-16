@@ -1,0 +1,4 @@
+{
+  ParameterizedType parameterType=(ParameterizedType)WithTypeVariable.class.getDeclaredMethod(methodName,List.class).getGenericParameterTypes()[0];
+  return (TypeVariable<?>)parameterType.getActualTypeArguments()[0];
+}

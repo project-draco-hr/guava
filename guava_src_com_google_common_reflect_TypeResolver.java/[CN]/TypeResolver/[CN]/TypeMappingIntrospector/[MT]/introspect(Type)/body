@@ -1,0 +1,11 @@
+{
+  if (!introspectedTypes.add(type)) {
+    return;
+  }
+  if (type instanceof ParameterizedType) {
+    introspectParameterizedType((ParameterizedType)type);
+  }
+ else   if (type instanceof Class<?>) {
+    introspectClass((Class<?>)type);
+  }
+}

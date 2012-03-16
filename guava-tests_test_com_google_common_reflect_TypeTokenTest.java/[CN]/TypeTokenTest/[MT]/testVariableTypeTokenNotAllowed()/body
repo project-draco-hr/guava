@@ -1,0 +1,10 @@
+{
+  try {
+    new TypeToken<T>(){
+    }
+;
+    fail();
+  }
+ catch (  IllegalStateException expected) {
+  }
+}

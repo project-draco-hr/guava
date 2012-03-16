@@ -1,0 +1,7 @@
+{
+  return new TypeToken<T[]>(){
+  }
+.where(new TypeParameter<T>(){
+  }
+,componentType);
+}

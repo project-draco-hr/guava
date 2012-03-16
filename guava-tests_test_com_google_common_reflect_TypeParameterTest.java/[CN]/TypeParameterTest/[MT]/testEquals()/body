@@ -1,0 +1,12 @@
+{
+  Method method=TypeParameterTest.class.getDeclaredMethod("testEquals");
+  TypeVariable<?> a=method.getTypeParameters()[0];
+  TypeVariable<?> b=method.getTypeParameters()[1];
+  new EqualsTester().addEqualityGroup(new TypeParameter<A>(){
+  }
+,new TypeParameter<A>(){
+  }
+,TypeParameter.of(a)).addEqualityGroup(new TypeParameter<B>(){
+  }
+,TypeParameter.of(b)).testEquals();
+}

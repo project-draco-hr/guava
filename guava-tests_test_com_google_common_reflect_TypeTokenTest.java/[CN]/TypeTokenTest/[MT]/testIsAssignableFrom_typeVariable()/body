@@ -1,0 +1,27 @@
+{
+  assertAssignable(TypeToken.of(new TypeCapture<N1>(){
+  }
+.capture()),TypeToken.of(new TypeCapture<N1>(){
+  }
+.capture()));
+  assertNotAssignable(new TypeToken<List<N11>>(){
+  }
+,new TypeToken<List<N1>>(){
+  }
+);
+  assertNotAssignable(new TypeToken<Number>(){
+  }
+,TypeToken.of(new TypeCapture<N1>(){
+  }
+.capture()));
+  assertAssignable(TypeToken.of(new TypeCapture<N11>(){
+  }
+.capture()),TypeToken.of(new TypeCapture<N1>(){
+  }
+.capture()));
+  assertNotAssignable(TypeToken.of(new TypeCapture<N2>(){
+  }
+.capture()),TypeToken.of(new TypeCapture<N1>(){
+  }
+.capture()));
+}

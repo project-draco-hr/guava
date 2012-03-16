@@ -1,0 +1,9 @@
+{
+  TypeToken<List<String>> a=new TypeToken<List<String>>(){
+  }
+;
+  TypeToken<List<String>> b=new TypeToken<List<String>>(){
+  }
+;
+  assertEquals(a,b);
+}

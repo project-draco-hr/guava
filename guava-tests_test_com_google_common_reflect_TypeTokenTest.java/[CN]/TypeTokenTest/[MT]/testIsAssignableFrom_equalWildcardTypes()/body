@@ -1,0 +1,22 @@
+{
+  assertAssignable(new TypeToken<List<? extends N1>>(){
+  }
+,new TypeToken<List<? extends N1>>(){
+  }
+);
+  assertAssignable(new TypeToken<List<? super N1>>(){
+  }
+,new TypeToken<List<? super N1>>(){
+  }
+);
+  assertAssignable(new TypeToken<List<? extends Number>>(){
+  }
+,new TypeToken<List<? extends Number>>(){
+  }
+);
+  assertAssignable(new TypeToken<List<? super Number>>(){
+  }
+,new TypeToken<List<? super Number>>(){
+  }
+);
+}

@@ -1,0 +1,7 @@
+{
+  TypeToken<List<String>[]> tokenL=new TypeToken<List<String>[]>(){
+  }
+;
+  assertTrue(tokenL.isAssignableFrom(StringList[].class));
+  assertFalse(tokenL.isAssignableFrom(List[].class));
+}

@@ -1,0 +1,11 @@
+{
+  Type type=typeTable.get(var);
+  if (type == null) {
+    Type[] bounds=var.getBounds();
+    if (bounds.length == 0) {
+      return var;
+    }
+    return Types.newTypeVariable(var.getGenericDeclaration(),var.getName(),guardedResolver.resolve(bounds));
+  }
+  return guardedResolver.resolve(type);
+}

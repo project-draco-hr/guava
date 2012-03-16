@@ -1,0 +1,18 @@
+{
+  if (type instanceof TypeVariable<?>) {
+    return resolveTypeVariable((TypeVariable<?>)type);
+  }
+ else   if (type instanceof ParameterizedType) {
+    return resolveParameterizedType((ParameterizedType)type);
+  }
+ else   if (type instanceof GenericArrayType) {
+    return resolveGenericArrayType((GenericArrayType)type);
+  }
+ else   if (type instanceof WildcardType) {
+    WildcardType wildcardType=(WildcardType)type;
+    return new Types.WildcardTypeImpl(resolve(wildcardType.getLowerBounds()),resolve(wildcardType.getUpperBounds()));
+  }
+ else {
+    return type;
+  }
+}

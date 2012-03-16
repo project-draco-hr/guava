@@ -1,0 +1,8 @@
+{
+  try {
+    Reflection.newProxy(Object.class,X_RETURNER);
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}

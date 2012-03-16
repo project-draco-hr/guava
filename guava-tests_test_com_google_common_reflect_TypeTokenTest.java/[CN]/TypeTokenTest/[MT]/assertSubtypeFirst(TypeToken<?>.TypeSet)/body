@@ -1,0 +1,8 @@
+{
+  assertSubtypeBeforeSupertype(types);
+  assertSubtypeBeforeSupertype(types.interfaces());
+  assertSubtypeBeforeSupertype(types.classes());
+  assertRawTypesInSameOrder(types);
+  assertRawTypesInSameOrder(types.interfaces());
+  assertRawTypesInSameOrder(types.classes());
+}

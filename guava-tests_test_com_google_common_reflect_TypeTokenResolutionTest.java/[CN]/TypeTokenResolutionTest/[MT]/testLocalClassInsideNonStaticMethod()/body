@@ -1,0 +1,10 @@
+{
+class MyLocalClass<T> {
+    Type getType(){
+      return new TypeToken<T>(getClass()){
+      }
+.getType();
+    }
+  }
+  assertNotNull(new MyLocalClass<String>().getType());
+}

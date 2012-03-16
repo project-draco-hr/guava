@@ -1,0 +1,12 @@
+{
+  assertAssignable(new TypeToken<List<T>>(){
+  }
+,new TypeToken<List<? extends Readable>>(){
+  }
+);
+  assertAssignable(new TypeToken<List<T>>(){
+  }
+,new TypeToken<List<? extends Appendable>>(){
+  }
+);
+}

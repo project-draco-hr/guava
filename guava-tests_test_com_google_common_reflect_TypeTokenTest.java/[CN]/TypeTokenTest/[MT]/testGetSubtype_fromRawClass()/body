@@ -1,0 +1,5 @@
+{
+  assertEquals(List.class,new TypeToken<Iterable>(){
+  }
+.getSubtype(List.class).getType());
+}

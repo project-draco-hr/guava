@@ -1,0 +1,9 @@
+{
+  assertEquals(TypeToken.of(Object.class),TypeToken.of(Types.supertypeOf(String.class)).getGenericSuperclass());
+  assertEquals(new TypeToken<Object>(){
+  }
+,TypeToken.of(Types.supertypeOf(String[].class)).getGenericSuperclass());
+  assertEquals(new TypeToken<Object>(){
+  }
+,TypeToken.of(Types.supertypeOf(CharSequence.class)).getGenericSuperclass());
+}

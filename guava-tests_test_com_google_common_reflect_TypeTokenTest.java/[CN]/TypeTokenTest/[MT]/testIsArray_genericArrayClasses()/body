@@ -1,0 +1,11 @@
+{
+  assertFalse(TypeToken.of(new TypeCapture<T>(){
+  }
+.capture()).isArray());
+  assertTrue(new TypeToken<T[]>(){
+  }
+.isArray());
+  assertTrue(new TypeToken<T[][]>(){
+  }
+.isArray());
+}

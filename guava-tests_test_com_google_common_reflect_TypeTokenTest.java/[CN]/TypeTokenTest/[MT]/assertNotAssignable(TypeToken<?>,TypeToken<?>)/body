@@ -1,0 +1,3 @@
+{
+  assertFalse(from.getType() + " shouldn't be assignable to " + to.getType(),to.isAssignableFrom(from));
+}

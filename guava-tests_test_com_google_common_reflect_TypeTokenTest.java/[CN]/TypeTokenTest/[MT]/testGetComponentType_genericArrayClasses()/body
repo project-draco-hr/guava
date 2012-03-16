@@ -1,0 +1,15 @@
+{
+  assertNull(TypeToken.of(new TypeCapture<T>(){
+  }
+.capture()).getComponentType());
+  assertEquals(TypeToken.of(new TypeCapture<T>(){
+  }
+.capture()),new TypeToken<T[]>(){
+  }
+.getComponentType());
+  assertEquals(new TypeToken<T[]>(){
+  }
+,new TypeToken<T[][]>(){
+  }
+.getComponentType());
+}

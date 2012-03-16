@@ -1,0 +1,8 @@
+{
+  try {
+    Types.newParameterizedTypeWithOwner(Map.class,Map.Entry.class,String.class);
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}

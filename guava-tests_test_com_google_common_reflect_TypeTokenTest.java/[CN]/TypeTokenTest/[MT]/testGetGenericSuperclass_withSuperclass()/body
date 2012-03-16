@@ -1,0 +1,9 @@
+{
+  TypeToken<? super ArrayList<String>> superToken=new TypeToken<ArrayList<String>>(){
+  }
+.getGenericSuperclass();
+  assertEquals(ArrayList.class.getSuperclass(),superToken.getRawType());
+  assertEquals(String.class,((ParameterizedType)superToken.getType()).getActualTypeArguments()[0]);
+  assertEquals(TypeToken.of(Base.class),TypeToken.of(Sub.class).getGenericSuperclass());
+  assertEquals(TypeToken.of(Object.class),TypeToken.of(Sub[].class).getGenericSuperclass());
+}

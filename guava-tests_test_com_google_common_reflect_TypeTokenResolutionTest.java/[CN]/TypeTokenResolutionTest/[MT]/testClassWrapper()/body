@@ -1,0 +1,5 @@
+{
+  TypeToken<String> typeExpression=TypeToken.of(String.class);
+  assertEquals(String.class,typeExpression.getType());
+  assertEquals(String.class,typeExpression.getRawType());
+}

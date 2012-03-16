@@ -1,0 +1,11 @@
+{
+class Local<T> {
+  }
+  TypeToken<Local<String>> type=new TypeToken<Local<String>>(){
+  }
+;
+  assertEquals(Types.newParameterizedType(Local.class,String.class),type.getType());
+  assertEquals(new Local<String>(){
+  }
+.getClass().getGenericSuperclass(),type.getType());
+}

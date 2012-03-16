@@ -1,0 +1,10 @@
+{
+  assertEquals(String.class,new IKnowMyType<String>(){
+  }
+.type().getType());
+  assertEquals(new TypeToken<Map<String,Integer>>(){
+  }
+,new IKnowMyType<Map<String,Integer>>(){
+  }
+.type());
+}

@@ -1,0 +1,9 @@
+{
+  assertEquals(new TypeToken<Map<String,Integer>>(){
+  }
+,mapOf(String.class,Integer.class));
+  assertEquals(new TypeToken<int[]>(){
+  }
+,arrayOf(int.class));
+  assertEquals(int[].class,arrayOf(int.class).getRawType());
+}

@@ -1,0 +1,8 @@
+{
+  GenericArrayType arrayType=(GenericArrayType)new Holder<List<int[][]>[]>(){
+  }
+.getContentType();
+  ParameterizedType listType=(ParameterizedType)arrayType.getGenericComponentType();
+  assertEquals(List.class,listType.getRawType());
+  assertEquals(Types.newArrayType(int[].class),listType.getActualTypeArguments()[0]);
+}

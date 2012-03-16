@@ -1,0 +1,7 @@
+{
+  assertEquals(Types.subtypeOf(Object.class),TypeToken.of(Types.subtypeOf(Object[].class)).getComponentType().getType());
+  assertEquals(Types.subtypeOf(Object[].class),Types.newArrayType(TypeToken.of(Types.subtypeOf(Object[].class)).getComponentType().getType()));
+  assertEquals(int.class,TypeToken.of(Types.subtypeOf(int[].class)).getComponentType().getType());
+  assertNull(TypeToken.of(Types.subtypeOf(Object.class)).getComponentType());
+  assertNull(TypeToken.of(Types.supertypeOf(Object[].class)).getComponentType());
+}

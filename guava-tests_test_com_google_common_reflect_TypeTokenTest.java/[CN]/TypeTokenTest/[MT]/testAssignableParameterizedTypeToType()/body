@@ -1,0 +1,12 @@
+{
+  TypeToken<List<String>> tokenL=new TypeToken<List<String>>(){
+  }
+;
+  assertTrue(tokenL.isAssignableFrom(StringList.class.getGenericInterfaces()[0]));
+  assertFalse(tokenL.isAssignableFrom(IntegerList.class.getGenericInterfaces()[0]));
+  TypeToken<First<String>> tokenF=new TypeToken<First<String>>(){
+  }
+;
+  assertTrue(tokenF.isAssignableFrom(ConcreteIS.class.getGenericSuperclass()));
+  assertFalse(tokenF.isAssignableFrom(ConcreteSI.class.getGenericSuperclass()));
+}

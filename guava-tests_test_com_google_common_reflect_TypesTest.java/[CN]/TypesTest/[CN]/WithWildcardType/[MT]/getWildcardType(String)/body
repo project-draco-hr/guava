@@ -1,0 +1,4 @@
+{
+  ParameterizedType parameterType=(ParameterizedType)WithWildcardType.class.getDeclaredMethod(methodName,List.class).getGenericParameterTypes()[0];
+  return (WildcardType)parameterType.getActualTypeArguments()[0];
+}

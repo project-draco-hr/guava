@@ -1,0 +1,4 @@
+{
+  ParameterizedType expectedType=Types.newParameterizedType(Iterable.class,Types.newParameterizedType(List.class,ListIterable.class.getTypeParameters()[0]));
+  assertEquals(expectedType,TypeToken.of(ListIterable.class).getSupertype(Iterable.class).getType());
+}

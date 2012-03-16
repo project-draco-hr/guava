@@ -1,0 +1,14 @@
+{
+  assertTrue(TypeToken.of(Object[].class).isArray());
+  assertTrue(TypeToken.of(Object[][].class).isArray());
+  assertTrue(TypeToken.of(char[].class).isArray());
+  assertTrue(TypeToken.of(char[][].class).isArray());
+  assertTrue(TypeToken.of(byte[].class).isArray());
+  assertTrue(TypeToken.of(short[].class).isArray());
+  assertTrue(TypeToken.of(int[].class).isArray());
+  assertTrue(TypeToken.of(long[].class).isArray());
+  assertTrue(TypeToken.of(float[].class).isArray());
+  assertTrue(TypeToken.of(double[].class).isArray());
+  assertFalse(TypeToken.of(Object.class).isArray());
+  assertFalse(TypeToken.of(void.class).isArray());
+}

@@ -1,0 +1,3 @@
+{
+  assertEquals(Types.newParameterizedType(Map.Entry.class,String.class,Integer.class),Types.newParameterizedTypeWithOwner(null,Map.Entry.class,String.class,Integer.class));
+}

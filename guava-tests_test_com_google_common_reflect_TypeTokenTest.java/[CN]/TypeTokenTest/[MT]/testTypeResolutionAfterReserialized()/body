@@ -1,0 +1,12 @@
+{
+  reserialize(new TypeToken<String>(){
+  }
+);
+  reserialize(new TypeToken<Map<String,Integer>>(){
+  }
+);
+  TypeToken<Map<String,Integer>> reserialized=reserialize(new TypeToken<Map<String,Integer>>(){
+  }
+);
+  assertEquals(reserialized,substitute(reserialized,String.class));
+}

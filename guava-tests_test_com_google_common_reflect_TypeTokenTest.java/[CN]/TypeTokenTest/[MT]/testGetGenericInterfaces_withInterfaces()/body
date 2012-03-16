@@ -1,0 +1,13 @@
+{
+  Map<Class<?>,Type> interfaceMap=Maps.newHashMap();
+  for (  TypeToken<?> interfaceType : new TypeToken<Implementation<Integer,String>>(){
+  }
+.getGenericInterfaces()) {
+    interfaceMap.put(interfaceType.getRawType(),interfaceType.getType());
+  }
+  assertEquals(ImmutableMap.of(Iterable.class,new TypeToken<Iterable<String>>(){
+  }
+.getType(),Map.class,new TypeToken<Map<Integer,String>>(){
+  }
+.getType()),interfaceMap);
+}

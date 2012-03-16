@@ -1,0 +1,7 @@
+{
+  TypeVariable<?> variable=new TypeParameter<T>(){
+  }
+.typeVariable;
+  TypeVariable<?> expected=TypeParameterTest.class.getDeclaredMethod("testCaptureTypeParameter").getTypeParameters()[0];
+  assertEquals(expected,variable);
+}

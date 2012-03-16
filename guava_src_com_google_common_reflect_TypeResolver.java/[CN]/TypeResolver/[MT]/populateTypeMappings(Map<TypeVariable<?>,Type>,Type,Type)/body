@@ -1,0 +1,16 @@
+{
+  if (from instanceof TypeVariable) {
+    mappings.put((TypeVariable<?>)from,to);
+  }
+ else   if (from instanceof GenericArrayType) {
+    populateTypeMappings(mappings,((GenericArrayType)from).getGenericComponentType(),Types.getComponentType(to));
+  }
+ else   if (from instanceof ParameterizedType) {
+    Type[] fromArgs=((ParameterizedType)from).getActualTypeArguments();
+    Type[] toArgs=((ParameterizedType)to).getActualTypeArguments();
+    checkArgument(fromArgs.length == toArgs.length);
+    for (int i=0; i < fromArgs.length; i++) {
+      populateTypeMappings(mappings,fromArgs[i],toArgs[i]);
+    }
+  }
+}

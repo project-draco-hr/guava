@@ -1,0 +1,12 @@
+{
+  TypeToken<List[]> tokL=new TypeToken<List[]>(){
+  }
+;
+  assertTrue(tokL.isAssignableFrom(List[].class));
+  assertFalse(tokL.isAssignableFrom(List.class));
+  TypeToken<Second[]> tokS=new TypeToken<Second[]>(){
+  }
+;
+  assertTrue(tokS.isAssignableFrom(Second[].class));
+  assertTrue(tokS.isAssignableFrom(Third[].class));
+}

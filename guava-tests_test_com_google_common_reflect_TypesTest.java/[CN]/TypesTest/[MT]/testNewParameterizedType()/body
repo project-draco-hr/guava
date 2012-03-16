@@ -1,0 +1,13 @@
+{
+  ParameterizedType jvmType=(ParameterizedType)new TypeCapture<HashMap<String,int[][]>>(){
+  }
+.capture();
+  ParameterizedType ourType=Types.newParameterizedType(HashMap.class,String.class,int[][].class);
+  new EqualsTester().addEqualityGroup(jvmType,ourType).testEquals();
+  assertEquals(jvmType.toString(),ourType.toString());
+  assertEquals(jvmType.hashCode(),ourType.hashCode());
+  assertEquals(HashMap.class,ourType.getRawType());
+  ASSERT.that(ourType.getActualTypeArguments()).hasContentsInOrder(jvmType.getActualTypeArguments());
+  assertEquals(Arrays.asList(String.class,Types.newArrayType(Types.newArrayType(int.class))),Arrays.asList(ourType.getActualTypeArguments()));
+  assertEquals(null,ourType.getOwnerType());
+}

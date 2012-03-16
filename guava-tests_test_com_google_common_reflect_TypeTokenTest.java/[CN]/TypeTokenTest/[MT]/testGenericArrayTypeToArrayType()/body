@@ -1,0 +1,10 @@
+{
+  TypeToken<List<String>[]> tokL=new TypeToken<List<String>[]>(){
+  }
+;
+  TypeToken<ArrayList<String>[]> token=new TypeToken<ArrayList<String>[]>(){
+  }
+;
+  assertTrue(tokL.isAssignableFrom(tokL.getType()));
+  assertTrue(tokL.isAssignableFrom(token.getType()));
+}

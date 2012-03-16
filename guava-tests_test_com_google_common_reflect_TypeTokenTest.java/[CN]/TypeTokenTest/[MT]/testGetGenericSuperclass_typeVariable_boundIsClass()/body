@@ -1,0 +1,10 @@
+{
+  assertEquals(new TypeToken<ArrayList<String>>(){
+  }
+,TypeToken.of(new TypeCapture<T>(){
+  }
+.capture()).getGenericSuperclass());
+  assertEquals(TypeToken.of(Object.class),new TypeToken<T[]>(){
+  }
+.getGenericSuperclass());
+}

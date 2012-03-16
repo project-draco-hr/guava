@@ -1,0 +1,12 @@
+{
+  assertAssignable(new TypeToken<List<? super N>>(){
+  }
+,new TypeToken<List<?>>(){
+  }
+);
+  assertAssignable(new TypeToken<List<N>>(){
+  }
+,new TypeToken<List<?>>(){
+  }
+);
+}

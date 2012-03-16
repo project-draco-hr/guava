@@ -1,0 +1,11 @@
+{
+  assertEquals(String.class,TypeToken.of(this.getClass()).resolveType(String.class).getType());
+  assertEquals(String.class,TypeToken.of(StringIterable.class).resolveType(Iterable.class.getTypeParameters()[0]).getType());
+  assertEquals(String.class,TypeToken.of(StringIterable.class).resolveType(Iterable.class.getTypeParameters()[0]).getType());
+  try {
+    TypeToken.of(this.getClass()).resolveType(null);
+    fail();
+  }
+ catch (  NullPointerException expected) {
+  }
+}

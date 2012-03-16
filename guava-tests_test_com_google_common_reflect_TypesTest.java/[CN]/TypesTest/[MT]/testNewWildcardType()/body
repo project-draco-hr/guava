@@ -1,0 +1,14 @@
+{
+  WildcardType noBoundJvmType=WithWildcardType.getWildcardType("withoutBound");
+  WildcardType objectBoundJvmType=WithWildcardType.getWildcardType("withObjectBound");
+  WildcardType upperBoundJvmType=WithWildcardType.getWildcardType("withUpperBound");
+  WildcardType lowerBoundJvmType=WithWildcardType.getWildcardType("withLowerBound");
+  WildcardType objectBound=Types.subtypeOf(Object.class);
+  WildcardType upperBound=Types.subtypeOf(int[][].class);
+  WildcardType lowerBound=Types.supertypeOf(String[][].class);
+  assertEqualWildcardType(noBoundJvmType,objectBound);
+  assertEqualWildcardType(objectBoundJvmType,objectBound);
+  assertEqualWildcardType(upperBoundJvmType,upperBound);
+  assertEqualWildcardType(lowerBoundJvmType,lowerBound);
+  new EqualsTester().addEqualityGroup(noBoundJvmType,objectBoundJvmType,objectBound).addEqualityGroup(upperBoundJvmType,upperBound).addEqualityGroup(lowerBoundJvmType,lowerBound).testEquals();
+}

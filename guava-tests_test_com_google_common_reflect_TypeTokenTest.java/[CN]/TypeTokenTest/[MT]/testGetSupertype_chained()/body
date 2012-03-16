@@ -1,0 +1,5 @@
+{
+  @SuppressWarnings("unchecked") TypeToken<ListIterable<String>> listIterableType=(TypeToken<ListIterable<String>>)TypeToken.of(StringListIterable.class).getSupertype(ListIterable.class);
+  ParameterizedType expectedType=Types.newParameterizedType(Iterable.class,Types.newParameterizedType(List.class,String.class));
+  assertEquals(expectedType,listIterableType.getSupertype(Iterable.class).getType());
+}

@@ -1,0 +1,4 @@
+{
+  ASSERT.that(TypeToken.of(Types.supertypeOf(String.class)).getGenericInterfaces()).isEmpty();
+  ASSERT.that(TypeToken.of(Types.supertypeOf(String[].class)).getGenericInterfaces()).isEmpty();
+}

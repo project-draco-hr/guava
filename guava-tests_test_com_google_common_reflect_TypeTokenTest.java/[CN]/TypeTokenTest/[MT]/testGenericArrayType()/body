@@ -1,0 +1,7 @@
+{
+  TypeToken<List<String>[]> token=new TypeToken<List<String>[]>(){
+  }
+;
+  assertEquals(List[].class,token.getRawType());
+  assertTrue(token.getType() instanceof GenericArrayType);
+}

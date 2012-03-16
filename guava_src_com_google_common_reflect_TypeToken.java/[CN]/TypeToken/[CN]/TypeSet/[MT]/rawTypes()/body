@@ -1,0 +1,7 @@
+{
+  ImmutableSet.Builder<Class<? super T>> builder=ImmutableSet.builder();
+  for (  TypeToken<? super T> type : this) {
+    builder.add(type.getRawType());
+  }
+  return builder.build();
+}

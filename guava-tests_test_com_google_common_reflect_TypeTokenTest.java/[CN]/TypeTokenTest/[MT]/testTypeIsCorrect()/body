@@ -1,0 +1,6 @@
+{
+  TypeToken<List<String>> token=new TypeToken<List<String>>(){
+  }
+;
+  assertEquals(StringList.class.getGenericInterfaces()[0],token.getType());
+}

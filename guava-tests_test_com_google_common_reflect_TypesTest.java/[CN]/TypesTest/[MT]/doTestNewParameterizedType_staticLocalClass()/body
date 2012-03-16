@@ -1,0 +1,9 @@
+{
+class LocalClass<T> {
+  }
+  Type jvmType=new LocalClass<String>(){
+  }
+.getClass().getGenericSuperclass();
+  Type ourType=Types.newParameterizedType(LocalClass.class,String.class);
+  assertEquals(jvmType,ourType);
+}

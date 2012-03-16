@@ -1,0 +1,14 @@
+{
+class Context {
+    @SuppressWarnings("unused") Map<String,Integer> returningMap(){
+      throw new AssertionError();
+    }
+  }
+  Type context=Context.class.getDeclaredMethod("returningMap").getGenericReturnType();
+  Type keyType=Map.class.getTypeParameters()[0];
+  Type valueType=Map.class.getTypeParameters()[1];
+  assertEquals(String.class,TypeToken.of(context).resolveType(keyType).getType());
+  assertEquals(Integer.class,TypeToken.of(context).resolveType(valueType).getType());
+  assertEquals(keyType,TypeToken.of(keyType).resolveType(keyType).getType());
+  assertEquals(valueType,TypeToken.of(valueType).resolveType(valueType).getType());
+}

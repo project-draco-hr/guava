@@ -1,0 +1,6 @@
+{
+  TypeVariable<?> typeVariable=(TypeVariable<?>)new WithGenericBound<String>(){
+  }
+.getTargetType("withRecursiveBound");
+  assertEquals(Types.newParameterizedType(Enum.class,typeVariable),typeVariable.getBounds()[0]);
+}

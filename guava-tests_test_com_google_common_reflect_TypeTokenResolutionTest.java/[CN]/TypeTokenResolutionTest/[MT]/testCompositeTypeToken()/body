@@ -1,0 +1,9 @@
+{
+  Foo<String[],List<int[]>> foo=new Foo<String[],List<int[]>>(){
+  }
+;
+  assertEquals(String[].class,foo.getClassA());
+  assertEquals(List.class,foo.getClassB());
+  assertEquals(String[][].class,foo.getArrayClassA());
+  assertEquals(List[].class,foo.getArrayClassB());
+}

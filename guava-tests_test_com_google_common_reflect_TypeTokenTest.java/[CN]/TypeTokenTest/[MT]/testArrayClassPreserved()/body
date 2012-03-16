@@ -1,0 +1,9 @@
+{
+  assertEquals(int[].class,TypeToken.of(int[].class).getType());
+  assertEquals(int[][].class,TypeToken.of(int[][].class).getType());
+  assertEquals(String[].class,TypeToken.of(String[].class).getType());
+  assertEquals(Integer.class,new TypeToken<Integer>(){
+  }
+.getType());
+  assertEquals(Integer.class,TypeToken.of(Integer.class).getType());
+}

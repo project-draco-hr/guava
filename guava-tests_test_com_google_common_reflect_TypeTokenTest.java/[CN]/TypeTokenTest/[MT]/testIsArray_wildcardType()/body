@@ -1,0 +1,6 @@
+{
+  assertTrue(TypeToken.of(Types.subtypeOf(Object[].class)).isArray());
+  assertTrue(TypeToken.of(Types.subtypeOf(int[].class)).isArray());
+  assertFalse(TypeToken.of(Types.subtypeOf(Object.class)).isArray());
+  assertFalse(TypeToken.of(Types.supertypeOf(Object[].class)).isArray());
+}

@@ -1,0 +1,6 @@
+{
+  RawTypeConsistencyTester.verifyConsitentRawType();
+  assertEquals(Object.class,TypeToken.getRawType(Types.subtypeOf(Object.class)));
+  assertEquals(CharSequence.class,TypeToken.getRawType(Types.subtypeOf(CharSequence.class)));
+  assertEquals(Object.class,TypeToken.getRawType(Types.supertypeOf(CharSequence.class)));
+}

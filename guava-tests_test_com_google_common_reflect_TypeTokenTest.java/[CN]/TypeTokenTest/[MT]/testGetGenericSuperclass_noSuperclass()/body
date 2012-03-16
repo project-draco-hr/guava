@@ -1,0 +1,14 @@
+{
+  assertNull(new TypeToken<Object>(){
+  }
+.getGenericSuperclass());
+  assertEquals(TypeToken.of(Object.class),new TypeToken<Object[]>(){
+  }
+.getGenericSuperclass());
+  assertNull(new TypeToken<List<String>>(){
+  }
+.getGenericSuperclass());
+  assertEquals(TypeToken.of(Object.class),new TypeToken<List<String>[]>(){
+  }
+.getGenericSuperclass());
+}

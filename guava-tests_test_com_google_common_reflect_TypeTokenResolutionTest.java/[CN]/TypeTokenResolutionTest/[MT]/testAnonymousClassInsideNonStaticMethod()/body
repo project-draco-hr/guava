@@ -1,0 +1,10 @@
+{
+  assertNotNull(new Object(){
+    Type getType(){
+      return new TypeToken<Object>(){
+      }
+.getType();
+    }
+  }
+.getType());
+}

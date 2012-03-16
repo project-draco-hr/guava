@@ -1,0 +1,10 @@
+{
+  return new Object(){
+    Type getType(){
+      return new TypeToken<T>(getClass()){
+      }
+.getType();
+    }
+  }
+.getType();
+}

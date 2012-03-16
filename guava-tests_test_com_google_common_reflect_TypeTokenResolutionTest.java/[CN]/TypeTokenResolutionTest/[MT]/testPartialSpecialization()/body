@@ -1,0 +1,12 @@
+{
+  StringFoo<Integer> foo=new StringFoo<Integer>(){
+  }
+;
+  assertEquals(String.class,foo.getClassA());
+  assertEquals(Integer.class,foo.getClassB());
+  assertEquals(String[].class,foo.getArrayClassA());
+  assertEquals(Integer[].class,foo.getArrayClassB());
+  assertEquals(new TypeToken<String[]>(){
+  }
+.getType(),foo.getArrayTypeA());
+}

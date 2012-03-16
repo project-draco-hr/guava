@@ -1,0 +1,5 @@
+{
+  assertEquals(TypeToken.of(StringListIterable[].class),TypeToken.of(Iterable[].class).getSubtype(StringListIterable[].class));
+  assertEquals(TypeToken.of(String[].class),TypeToken.of(Object[].class).getSubtype(String[].class));
+  assertEquals(TypeToken.of(int[].class),TypeToken.of(Object.class).getSubtype(int[].class));
+}

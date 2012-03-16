@@ -1,0 +1,10 @@
+{
+  Parameterized<?,?,?> parameterized=new Parameterized<TypeTokenResolutionTest,Bar,String>(){
+  }
+;
+  TypeResolver typeResolver=TypeResolver.accordingTo(parameterized.getClass());
+  ParameterizedType resolved=(ParameterizedType)typeResolver.resolve(parameterized.parameterizedType());
+  assertEquals(TypeTokenResolutionTest.class,resolved.getOwnerType());
+  assertEquals(Bar.class,resolved.getRawType());
+  ASSERT.that(resolved.getActualTypeArguments()).hasContentsInOrder(String.class);
+}

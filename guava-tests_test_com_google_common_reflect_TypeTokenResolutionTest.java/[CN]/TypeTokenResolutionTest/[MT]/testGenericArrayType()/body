@@ -1,0 +1,5 @@
+{
+  GenericArray<?> genericArray=new GenericArray<Integer>();
+  assertEquals(GenericArray.class.getTypeParameters()[0],genericArray.t);
+  assertEquals(Types.newArrayType(genericArray.t),genericArray.array);
+}

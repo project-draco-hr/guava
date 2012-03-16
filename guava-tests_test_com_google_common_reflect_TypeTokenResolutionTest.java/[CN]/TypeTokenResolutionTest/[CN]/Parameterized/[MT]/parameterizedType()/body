@@ -1,0 +1,20 @@
+{
+  return new ParameterizedType(){
+    @Override public Type[] getActualTypeArguments(){
+      return new Type[]{new TypeCapture<P>(){
+      }
+.capture()};
+    }
+    @Override public Type getOwnerType(){
+      return new TypeCapture<O>(){
+      }
+.capture();
+    }
+    @Override public Type getRawType(){
+      return new TypeCapture<T>(){
+      }
+.capture();
+    }
+  }
+;
+}

@@ -1,0 +1,11 @@
+{
+  @SuppressWarnings("unchecked") TypeToken<? super Iterable<String>> type=(TypeToken<? super Iterable<String>>)TypeToken.of(Types.supertypeOf(new TypeToken<ImmutableList<String>>(){
+  }
+.getType()));
+  try {
+    type.getSubtype(List.class);
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}

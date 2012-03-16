@@ -1,0 +1,5 @@
+{
+  SerializableTester.reserialize(TypeToken.of(new TypeCapture<T>(){
+  }
+.capture()));
+}

@@ -1,0 +1,8 @@
+{
+  Type expectedType=new TypeToken<Map<String,List<Object>>>(){
+  }
+.getType();
+  assertEquals(expectedType,new TypeToken<ListMap<String,Object>>(){
+  }
+.getSupertype(Map.class).getType());
+}

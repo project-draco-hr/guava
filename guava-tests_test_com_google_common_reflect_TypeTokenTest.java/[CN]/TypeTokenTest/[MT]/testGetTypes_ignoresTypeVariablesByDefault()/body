@@ -1,0 +1,9 @@
+{
+  TypeToken<?>.TypeSet types=TypeToken.of(new TypeCapture<B>(){
+  }
+.capture()).getTypes();
+  ASSERT.that(types).hasContentsAnyOrder(TypeToken.of(Interface1.class),TypeToken.of(Class1.class),TypeToken.of(Object.class));
+  assertSubtypeFirst(types);
+  ASSERT.that(types.interfaces()).hasContentsInOrder(TypeToken.of(Interface1.class));
+  ASSERT.that(types.classes()).hasContentsInOrder(TypeToken.of(Class1.class),TypeToken.of(Object.class));
+}

@@ -1,0 +1,3 @@
+{
+  doTestNewParameterizedType_staticLocalClass();
+}

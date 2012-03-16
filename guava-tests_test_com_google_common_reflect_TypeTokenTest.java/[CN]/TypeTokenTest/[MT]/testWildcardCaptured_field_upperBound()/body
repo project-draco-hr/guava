@@ -1,0 +1,10 @@
+{
+  TypeToken<Holder<?>> type=new TypeToken<Holder<?>>(){
+  }
+;
+  TypeToken<?> matrixType=type.resolveType(Holder.class.getDeclaredField("matrix").getGenericType());
+  assertEquals(List[].class,matrixType.getRawType());
+  ASSERT.that(matrixType.getType()).isNotEqualTo(new TypeToken<List<?>[]>(){
+  }
+.getType());
+}

@@ -1,0 +1,4 @@
+{
+  Type fieldType=ParameterizedOuter.class.getField("field").getGenericType();
+  assertEquals(fieldType,TypeToken.of(ParameterizedOuter.class).resolveType(fieldType).getType());
+}

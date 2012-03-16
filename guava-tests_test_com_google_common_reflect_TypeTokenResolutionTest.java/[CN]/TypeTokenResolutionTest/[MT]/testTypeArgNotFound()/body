@@ -1,0 +1,7 @@
+{
+  StringFoo<Integer> foo=new StringFoo<Integer>();
+  assertEquals(String.class,foo.getClassA());
+  assertEquals(String[].class,foo.getArrayClassA());
+  assertEquals(Object.class,foo.getClassB());
+  assertEquals(Object[].class,foo.getArrayClassB());
+}

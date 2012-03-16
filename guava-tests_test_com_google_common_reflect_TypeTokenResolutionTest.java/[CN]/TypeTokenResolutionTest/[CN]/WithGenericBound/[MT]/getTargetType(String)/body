@@ -1,0 +1,5 @@
+{
+  ParameterizedType parameterType=(ParameterizedType)WithGenericBound.class.getDeclaredMethod(methodName,List.class).getGenericParameterTypes()[0];
+  parameterType=(ParameterizedType)TypeToken.of(this.getClass()).resolveType(parameterType).getType();
+  return parameterType.getActualTypeArguments()[0];
+}

@@ -1,0 +1,7 @@
+{
+  Method getFromList=List.class.getMethod("get",int.class);
+  TypeToken<?> returnType=new TypeToken<List<String>>(){
+  }
+.resolveType(getFromList.getGenericReturnType());
+  assertEquals(String.class,returnType.getType());
+}

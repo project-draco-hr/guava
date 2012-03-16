@@ -1,0 +1,10 @@
+{
+  assertEquals(new TypeToken<Iterable<List<String>>[]>(){
+  }
+,TypeToken.of(StringListIterable[].class).getSupertype(Iterable[].class));
+  assertEquals(int[].class,TypeToken.of(int[].class).getSupertype(int[].class).getType());
+  assertEquals(Object.class,TypeToken.of(int[].class).getSupertype(Object.class).getType());
+  assertEquals(int[][].class,TypeToken.of(int[][].class).getSupertype(int[][].class).getType());
+  assertEquals(Object[].class,TypeToken.of(String[].class).getSupertype(Object[].class).getType());
+  assertEquals(Object.class,TypeToken.of(String[].class).getSupertype(Object.class).getType());
+}

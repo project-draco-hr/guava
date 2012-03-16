@@ -1,0 +1,12 @@
+{
+  assertAssignable(new TypeToken<NumberList<? extends Number>>(){
+  }
+,new TypeToken<NumberList<?>>(){
+  }
+);
+  assertAssignable(new TypeToken<NumberList<? super Integer>>(){
+  }
+,new TypeToken<NumberList<?>>(){
+  }
+);
+}

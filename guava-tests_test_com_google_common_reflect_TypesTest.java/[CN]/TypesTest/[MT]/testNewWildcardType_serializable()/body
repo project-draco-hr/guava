@@ -1,0 +1,5 @@
+{
+  SerializableTester.reserializeAndAssert(Types.supertypeOf(String.class));
+  SerializableTester.reserializeAndAssert(Types.subtypeOf(String.class));
+  SerializableTester.reserializeAndAssert(Types.subtypeOf(Object.class));
+}

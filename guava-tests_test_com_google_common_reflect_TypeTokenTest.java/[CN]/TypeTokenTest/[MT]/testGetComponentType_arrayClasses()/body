@@ -1,0 +1,14 @@
+{
+  assertEquals(Object.class,TypeToken.of(Object[].class).getComponentType().getType());
+  assertEquals(Object[].class,TypeToken.of(Object[][].class).getComponentType().getType());
+  assertEquals(char.class,TypeToken.of(char[].class).getComponentType().getType());
+  assertEquals(char[].class,TypeToken.of(char[][].class).getComponentType().getType());
+  assertEquals(byte.class,TypeToken.of(byte[].class).getComponentType().getType());
+  assertEquals(short.class,TypeToken.of(short[].class).getComponentType().getType());
+  assertEquals(int.class,TypeToken.of(int[].class).getComponentType().getType());
+  assertEquals(long.class,TypeToken.of(long[].class).getComponentType().getType());
+  assertEquals(float.class,TypeToken.of(float[].class).getComponentType().getType());
+  assertEquals(double.class,TypeToken.of(double[].class).getComponentType().getType());
+  assertNull(TypeToken.of(Object.class).getComponentType());
+  assertNull(TypeToken.of(void.class).getComponentType());
+}

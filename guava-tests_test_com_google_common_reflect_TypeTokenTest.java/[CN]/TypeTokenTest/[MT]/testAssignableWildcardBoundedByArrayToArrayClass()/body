@@ -1,0 +1,7 @@
+{
+  Type wildcardType=Types.subtypeOf(Object[].class);
+  assertTrue(TypeToken.of(Object[].class).isAssignableFrom(wildcardType));
+  assertTrue(TypeToken.of(Object.class).isAssignableFrom(wildcardType));
+  assertTrue(TypeToken.of(wildcardType).isAssignableFrom(wildcardType));
+  assertFalse(TypeToken.of(int[].class).isAssignableFrom(wildcardType));
+}

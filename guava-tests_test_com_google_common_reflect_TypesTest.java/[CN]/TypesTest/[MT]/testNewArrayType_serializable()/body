@@ -1,0 +1,3 @@
+{
+  SerializableTester.reserializeAndAssert(Types.newArrayType(int[].class));
+}

@@ -1,0 +1,6 @@
+{
+  assertNull(TypeToken.of(Types.subtypeOf(CharSequence.class)).getGenericSuperclass());
+  assertEquals(new TypeToken<CharSequence[]>(){
+  }
+,TypeToken.of(Types.subtypeOf(CharSequence[].class)).getGenericSuperclass());
+}

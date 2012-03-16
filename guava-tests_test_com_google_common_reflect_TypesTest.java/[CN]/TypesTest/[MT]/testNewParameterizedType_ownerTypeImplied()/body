@@ -1,0 +1,8 @@
+{
+  ParameterizedType jvmType=(ParameterizedType)new TypeCapture<Map.Entry<String,Integer>>(){
+  }
+.capture();
+  ParameterizedType ourType=Types.newParameterizedType(Map.Entry.class,String.class,Integer.class);
+  assertEquals(jvmType,ourType);
+  assertEquals(Map.class,ourType.getOwnerType());
+}

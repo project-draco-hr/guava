@@ -1,0 +1,11 @@
+{
+  TypeToken<?> upperBounded=TypeToken.of(Types.subtypeOf(Object[].class));
+  TypeToken<?> lowerBounded=TypeToken.of(Types.supertypeOf(Object[].class));
+  assertTrue(upperBounded.isAssignableFrom(Object[].class));
+  assertTrue(upperBounded.isAssignableFrom(Object[][].class));
+  assertTrue(upperBounded.isAssignableFrom(String[].class));
+  assertTrue(lowerBounded.isAssignableFrom(Object[].class));
+  assertTrue(lowerBounded.isAssignableFrom(Object.class));
+  assertFalse(lowerBounded.isAssignableFrom(Object[][].class));
+  assertFalse(lowerBounded.isAssignableFrom(String[].class));
+}

@@ -1,0 +1,9 @@
+{
+  Red<String> redString=new Red<String>();
+  Red<Integer> redInteger=new Red<Integer>();
+  Red<String>.Yellow<Integer> yellowInteger=redString.new Yellow<Integer>(redInteger){
+  }
+;
+  assertEquals(Integer.class,yellowInteger.getClassA());
+  assertEquals(Integer.class,yellowInteger.getClassB());
+}

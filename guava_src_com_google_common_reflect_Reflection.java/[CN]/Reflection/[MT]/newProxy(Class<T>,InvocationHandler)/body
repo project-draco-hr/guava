@@ -1,0 +1,7 @@
+{
+  checkNotNull(interfaceType);
+  checkNotNull(handler);
+  checkArgument(interfaceType.isInterface());
+  Object object=Proxy.newProxyInstance(interfaceType.getClassLoader(),new Class<?>[]{interfaceType},handler);
+  return interfaceType.cast(object);
+}

@@ -1,0 +1,11 @@
+{
+  assertTrue(new Assignability<N11,N1>(){
+  }
+.isAssignable());
+  assertTrue(new Assignability<N11,Number>(){
+  }
+.isAssignable());
+  assertFalse(new Assignability<Number,N11>(){
+  }
+.isAssignable());
+}

@@ -1,0 +1,10 @@
+{
+  try {
+    new TypeParameter<String>(){
+    }
+;
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}

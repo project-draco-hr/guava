@@ -1,0 +1,6 @@
+{
+  WildcardType wildcardType=(WildcardType)new WithGenericBound<String>(){
+  }
+.getTargetType("withWildcardUpperBound");
+  assertEquals(String.class,wildcardType.getUpperBounds()[0]);
+}

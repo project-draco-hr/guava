@@ -1,0 +1,5 @@
+{
+  return new TypeToken<A[]>(getClass()){
+  }
+.getRawType();
+}

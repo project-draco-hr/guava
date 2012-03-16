@@ -1,0 +1,7 @@
+{
+  assertEquals(new TypeToken<Iterable<String>[]>(){
+  }
+,new TypeToken<List<String>[]>(){
+  }
+.getSupertype(Iterable[].class));
+}

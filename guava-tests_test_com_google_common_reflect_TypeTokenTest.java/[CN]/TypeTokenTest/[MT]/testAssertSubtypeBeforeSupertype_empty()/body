@@ -1,0 +1,3 @@
+{
+  assertSubtypeBeforeSupertype(ImmutableList.<TypeToken<?>>of());
+}

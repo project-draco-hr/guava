@@ -1,0 +1,3 @@
+{
+  new NullPointerTester().setDefault(Type[].class,new Type[]{Map.class}).setDefault(Type.class,String.class).setDefault(GenericDeclaration.class,Types.class).testStaticMethods(Types.class,Visibility.PACKAGE);
+}

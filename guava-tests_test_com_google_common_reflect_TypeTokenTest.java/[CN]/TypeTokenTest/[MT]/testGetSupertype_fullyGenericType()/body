@@ -1,0 +1,4 @@
+{
+  ParameterizedType expectedType=Types.newParameterizedType(Map.class,ListMap.class.getTypeParameters()[0],Types.newParameterizedType(List.class,ListMap.class.getTypeParameters()[1]));
+  assertEquals(expectedType,TypeToken.of(ListMap.class).getSupertype(Map.class).getType());
+}

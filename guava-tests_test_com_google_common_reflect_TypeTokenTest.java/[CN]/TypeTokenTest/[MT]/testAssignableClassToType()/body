@@ -1,0 +1,12 @@
+{
+  TypeToken<List<String>> tokenL=new TypeToken<List<String>>(){
+  }
+;
+  assertTrue(tokenL.isAssignableFrom(StringList.class));
+  assertFalse(tokenL.isAssignableFrom(List.class));
+  TypeToken<First<String>> tokenF=new TypeToken<First<String>>(){
+  }
+;
+  assertTrue(tokenF.isAssignableFrom(ConcreteIS.class));
+  assertFalse(tokenF.isAssignableFrom(ConcreteSI.class));
+}

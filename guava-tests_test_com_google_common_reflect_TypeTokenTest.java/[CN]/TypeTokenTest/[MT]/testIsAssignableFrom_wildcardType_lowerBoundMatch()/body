@@ -1,0 +1,42 @@
+{
+  assertAssignable(new TypeToken<List<N1>>(){
+  }
+,new TypeToken<List<? super N11>>(){
+  }
+);
+  assertAssignable(new TypeToken<ArrayList<Number>>(){
+  }
+,new TypeToken<List<? super N1>>(){
+  }
+);
+  assertNotAssignable(new TypeToken<ArrayList<? super N11>>(){
+  }
+,new TypeToken<List<? super Number>>(){
+  }
+);
+  assertAssignable(new TypeToken<ArrayList<? super N1>>(){
+  }
+,new TypeToken<List<? super N11>>(){
+  }
+);
+  assertAssignable(new TypeToken<ArrayList<? super Number>>(){
+  }
+,new TypeToken<List<? super N11>>(){
+  }
+);
+  assertNotAssignable(new TypeToken<ArrayList<N11>>(){
+  }
+,new TypeToken<List<? super Number>>(){
+  }
+);
+  assertAssignable(new TypeToken<ArrayList<Number>>(){
+  }
+,new TypeToken<List<? super Number>>(){
+  }
+);
+  assertAssignable(new TypeToken<ArrayList<Object>>(){
+  }
+,new TypeToken<List<? super Number>>(){
+  }
+);
+}

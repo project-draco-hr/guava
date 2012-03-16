@@ -1,0 +1,10 @@
+{
+  ASSERT.that(TypeToken.of(new TypeCapture<T>(){
+  }
+.capture()).getGenericInterfaces()).hasContentsAnyOrder(TypeToken.of(CharSequence.class),new TypeToken<Iterable<T>>(){
+  }
+);
+  assertHasArrayInterfaces(new TypeToken<T[]>(){
+  }
+);
+}

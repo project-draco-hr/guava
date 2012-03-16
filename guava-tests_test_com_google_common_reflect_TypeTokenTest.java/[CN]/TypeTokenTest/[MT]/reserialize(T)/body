@@ -1,0 +1,5 @@
+{
+  T copy=SerializableTester.reserialize(object);
+  new EqualsTester().addEqualityGroup(object,copy).testEquals();
+  return copy;
+}

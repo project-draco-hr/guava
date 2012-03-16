@@ -1,0 +1,5 @@
+{
+  assertEquals(Types.newParameterizedType(Iterable.class,List.class.getTypeParameters()[0]),new TypeToken<List>(){
+  }
+.getSupertype(Iterable.class).getType());
+}

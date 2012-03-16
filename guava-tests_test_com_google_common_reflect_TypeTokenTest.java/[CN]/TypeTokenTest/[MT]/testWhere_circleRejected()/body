@@ -1,0 +1,15 @@
+{
+  TypeToken<List<T>> type=new TypeToken<List<T>>(){
+  }
+;
+  try {
+    type.where(new TypeParameter<T>(){
+    }
+,(TypeToken<T>)TypeToken.of(new TypeCapture<T>(){
+    }
+.capture()));
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}

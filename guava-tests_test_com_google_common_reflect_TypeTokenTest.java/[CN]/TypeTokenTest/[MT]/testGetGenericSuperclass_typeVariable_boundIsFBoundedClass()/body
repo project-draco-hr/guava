@@ -1,0 +1,10 @@
+{
+  assertEquals(new TypeToken<Enum<T>>(){
+  }
+,TypeToken.of(new TypeCapture<T>(){
+  }
+.capture()).getGenericSuperclass());
+  assertEquals(TypeToken.of(Object.class),new TypeToken<T[]>(){
+  }
+.getGenericSuperclass());
+}

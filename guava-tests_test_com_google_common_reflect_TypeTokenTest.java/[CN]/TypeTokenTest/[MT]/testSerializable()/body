@@ -1,0 +1,29 @@
+{
+  reserialize(TypeToken.of(String.class));
+  reserialize(TypeToken.of(String.class).getTypes());
+  reserialize(TypeToken.of(String.class).getTypes().classes());
+  reserialize(TypeToken.of(String.class).getTypes().interfaces());
+  reserialize(TypeToken.of(String.class).getTypes().rawTypes());
+  reserialize(TypeToken.of(String.class).getTypes().classes().rawTypes());
+  reserialize(TypeToken.of(String.class).getTypes().interfaces().rawTypes());
+  reserialize(new TypeToken<int[]>(){
+  }
+);
+  reserialize(new TypeToken<Map<String,Integer>>(){
+  }
+);
+  reserialize(new IKnowMyType<Map<? super String,? extends int[]>>(){
+  }
+.type());
+  reserialize(TypeToken.of(new TypeCapture<B>(){
+  }
+.capture()).getTypes().rawTypes());
+  try {
+    SerializableTester.reserialize(TypeToken.of(new TypeCapture<B>(){
+    }
+.capture()));
+    fail();
+  }
+ catch (  RuntimeException expected) {
+  }
+}

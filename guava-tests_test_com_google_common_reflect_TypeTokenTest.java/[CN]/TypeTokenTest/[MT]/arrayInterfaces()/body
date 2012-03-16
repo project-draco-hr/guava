@@ -1,0 +1,7 @@
+{
+  ImmutableSet.Builder<TypeToken<?>> builder=ImmutableSet.builder();
+  for (  Class<?> interfaceType : Object[].class.getInterfaces()) {
+    builder.add(TypeToken.of(interfaceType));
+  }
+  return builder.build();
+}

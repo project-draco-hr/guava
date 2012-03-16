@@ -1,0 +1,5 @@
+{
+  Type returnType=genericReturnType(WithFalseRecursiveType.class,"evenSubTypeWorks");
+  TypeToken<?> keyType=TypeToken.of(returnType).resolveType(WithFalseRecursiveType.class.getTypeParameters()[0]);
+  assertEquals("java.util.List<java.util.List<V>>",keyType.getType().toString());
+}

@@ -1,0 +1,9 @@
+{
+  checkNotNull(type);
+  if (type instanceof Class<?> || type instanceof ParameterizedType) {
+    return typeTableCache.getUnchecked(type);
+  }
+ else {
+    return ImmutableMap.of();
+  }
+}

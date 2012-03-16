@@ -1,0 +1,8 @@
+{
+  @SuppressWarnings("unchecked") TypeToken<T> typeVariableToken=(TypeToken<T>)TypeToken.of(new TypeCapture<T>(){
+  }
+.capture());
+  assertEquals(new TypeToken<Iterable<String>>(){
+  }
+,typeVariableToken.getSupertype(Iterable.class));
+}

@@ -1,0 +1,12 @@
+{
+  assertEquals(new TypeToken<int[]>(){
+  }
+.getType(),new Holder<int[]>(){
+  }
+.getContentType());
+  assertEquals(new TypeToken<int[][]>(){
+  }
+.getType(),new Holder<int[][]>(){
+  }
+.getContentType());
+}

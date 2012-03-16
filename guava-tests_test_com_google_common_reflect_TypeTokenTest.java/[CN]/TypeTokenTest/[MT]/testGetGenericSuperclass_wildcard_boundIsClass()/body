@@ -1,0 +1,6 @@
+{
+  assertEquals(TypeToken.of(Object.class),TypeToken.of(Types.subtypeOf(Object.class)).getGenericSuperclass());
+  assertEquals(new TypeToken<Object[]>(){
+  }
+,TypeToken.of(Types.subtypeOf(Object[].class)).getGenericSuperclass());
+}

@@ -1,0 +1,5 @@
+{
+  assertEquals(String.class,new Owner<Integer>().new Inner<String>(){
+  }
+.getTypeArgument());
+}

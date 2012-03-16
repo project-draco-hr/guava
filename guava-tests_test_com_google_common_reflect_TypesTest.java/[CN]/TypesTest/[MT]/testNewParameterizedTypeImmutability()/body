@@ -1,0 +1,11 @@
+{
+  Type[] typesIn={String.class,Integer.class};
+  ParameterizedType parameterizedType=Types.newParameterizedType(Map.class,typesIn);
+  typesIn[0]=null;
+  typesIn[1]=null;
+  Type[] typesOut=parameterizedType.getActualTypeArguments();
+  typesOut[0]=null;
+  typesOut[1]=null;
+  assertEquals(String.class,parameterizedType.getActualTypeArguments()[0]);
+  assertEquals(Integer.class,parameterizedType.getActualTypeArguments()[1]);
+}

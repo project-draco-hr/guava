@@ -1,0 +1,3 @@
+{
+  SerializableTester.reserializeAndAssert(Types.newParameterizedType(Map.Entry.class,String.class,Integer.class));
+}

@@ -1,0 +1,11 @@
+{
+  assertEquals(String.class.getName(),new TypeToken<String>(){
+  }
+.toString());
+  assertEquals("T",TypeToken.of(new TypeCapture<T>(){
+  }
+.capture()).toString());
+  assertEquals("java.lang.String",new Entry<String,Integer>(){
+  }
+.keyType().toString());
+}

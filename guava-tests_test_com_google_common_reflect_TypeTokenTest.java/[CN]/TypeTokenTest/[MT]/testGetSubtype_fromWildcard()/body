@@ -1,0 +1,8 @@
+{
+  @SuppressWarnings("unchecked") TypeToken<? super Iterable<String>> type=(TypeToken<? super Iterable<String>>)TypeToken.of(Types.supertypeOf(new TypeToken<Iterable<String>>(){
+  }
+.getType()));
+  assertEquals(new TypeToken<List<String>>(){
+  }
+,type.getSubtype(List.class));
+}

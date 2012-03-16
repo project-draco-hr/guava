@@ -1,0 +1,5 @@
+{
+  Map<TypeToken<? super T>,Integer> map=Maps.newHashMap();
+  collectTypes(map);
+  return sortKeysByValue(map,Ordering.natural().reverse());
+}

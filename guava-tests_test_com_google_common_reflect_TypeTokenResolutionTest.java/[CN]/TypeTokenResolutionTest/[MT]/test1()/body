@@ -1,0 +1,17 @@
+{
+  Red<String> redString=new Red<String>(){
+  }
+;
+  Red<Integer> redInteger=new Red<Integer>(){
+  }
+;
+  assertEquals(String.class,redString.getClassDirect());
+  assertEquals(Integer.class,redInteger.getClassDirect());
+  Red<String>.Yellow<Integer> yellowInteger=redString.new Yellow<Integer>(redInteger){
+  }
+;
+  assertEquals(Integer.class,yellowInteger.getClassA());
+  assertEquals(Integer.class,yellowInteger.getClassB());
+  assertEquals(String.class,yellowInteger.getA().getClassDirect());
+  assertEquals(Integer.class,yellowInteger.getB().getClassDirect());
+}

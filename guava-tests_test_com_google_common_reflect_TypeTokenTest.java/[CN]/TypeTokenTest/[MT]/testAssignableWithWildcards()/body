@@ -1,0 +1,45 @@
+{
+  TypeToken<?> unboundedToken=new TypeToken<List<?>>(){
+  }
+;
+  TypeToken<?> upperBoundToken=new TypeToken<List<? extends Number>>(){
+  }
+;
+  TypeToken<?> lowerBoundToken=new TypeToken<List<? super Number>>(){
+  }
+;
+  TypeToken<?> concreteToken=new TypeToken<List<Number>>(){
+  }
+;
+  TypeToken<?> subtypeToken=new TypeToken<List<Integer>>(){
+  }
+;
+  TypeToken<?> supertypeToken=new TypeToken<List<Serializable>>(){
+  }
+;
+  List<TypeToken<?>> allTokens=ImmutableList.of(unboundedToken,upperBoundToken,lowerBoundToken,concreteToken,subtypeToken,supertypeToken);
+  for (  TypeToken<?> typeToken : allTokens) {
+    assertTrue(typeToken.toString(),unboundedToken.isAssignableFrom(typeToken));
+  }
+  assertFalse(upperBoundToken.isAssignableFrom(unboundedToken));
+  assertTrue(upperBoundToken.isAssignableFrom(upperBoundToken));
+  assertFalse(upperBoundToken.isAssignableFrom(lowerBoundToken));
+  assertTrue(upperBoundToken.isAssignableFrom(concreteToken));
+  assertTrue(upperBoundToken.isAssignableFrom(subtypeToken));
+  assertFalse(upperBoundToken.isAssignableFrom(supertypeToken));
+  assertFalse(lowerBoundToken.isAssignableFrom(unboundedToken));
+  assertFalse(lowerBoundToken.isAssignableFrom(upperBoundToken));
+  assertTrue(lowerBoundToken.isAssignableFrom(lowerBoundToken));
+  assertTrue(lowerBoundToken.isAssignableFrom(concreteToken));
+  assertFalse(lowerBoundToken.isAssignableFrom(subtypeToken));
+  assertTrue(lowerBoundToken.isAssignableFrom(supertypeToken));
+  for (  TypeToken<?> typeToken : allTokens) {
+    assertEquals(typeToken.toString(),typeToken == concreteToken,concreteToken.isAssignableFrom(typeToken));
+  }
+  for (  TypeToken<?> typeToken : allTokens) {
+    assertEquals(typeToken.toString(),typeToken == subtypeToken,subtypeToken.isAssignableFrom(typeToken));
+  }
+  for (  TypeToken<?> typeToken : allTokens) {
+    assertEquals(typeToken.toString(),typeToken == supertypeToken,supertypeToken.isAssignableFrom(typeToken));
+  }
+}

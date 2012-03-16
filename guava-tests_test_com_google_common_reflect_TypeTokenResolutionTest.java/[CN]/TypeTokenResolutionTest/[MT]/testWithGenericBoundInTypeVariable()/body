@@ -1,0 +1,6 @@
+{
+  TypeVariable<?> typeVariable=(TypeVariable<?>)new WithGenericBound<String>(){
+  }
+.getTargetType("withTypeVariable");
+  assertEquals(String.class,typeVariable.getBounds()[0]);
+}

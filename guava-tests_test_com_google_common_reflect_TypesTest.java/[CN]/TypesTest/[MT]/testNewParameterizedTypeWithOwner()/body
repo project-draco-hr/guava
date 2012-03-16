@@ -1,0 +1,15 @@
+{
+  ParameterizedType jvmType=(ParameterizedType)new TypeCapture<Map.Entry<String,int[][]>>(){
+  }
+.capture();
+  ParameterizedType ourType=Types.newParameterizedTypeWithOwner(Map.class,Map.Entry.class,String.class,int[][].class);
+  new EqualsTester().addEqualityGroup(jvmType,ourType).addEqualityGroup(new TypeCapture<Map.Entry<String,String>>(){
+  }
+.capture()).addEqualityGroup(new TypeCapture<Map<String,Integer>>(){
+  }
+.capture()).testEquals();
+  assertEquals(jvmType.toString(),ourType.toString());
+  assertEquals(Map.class,ourType.getOwnerType());
+  assertEquals(Map.Entry.class,ourType.getRawType());
+  ASSERT.that(ourType.getActualTypeArguments()).hasContentsInOrder(jvmType.getActualTypeArguments());
+}

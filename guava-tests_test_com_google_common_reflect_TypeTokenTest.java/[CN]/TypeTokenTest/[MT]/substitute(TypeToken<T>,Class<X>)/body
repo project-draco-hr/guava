@@ -1,0 +1,5 @@
+{
+  return type.where(new TypeParameter<X>(){
+  }
+,arg);
+}

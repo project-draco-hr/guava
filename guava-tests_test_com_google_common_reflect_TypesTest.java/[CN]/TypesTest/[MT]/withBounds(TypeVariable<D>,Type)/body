@@ -1,0 +1,3 @@
+{
+  return Types.newTypeVariable(typeVariable.getGenericDeclaration(),typeVariable.getName(),bounds);
+}

@@ -1,0 +1,5 @@
+{
+  assertEquals(Integer.class,new Owner<Integer>().new Inner<String>(){
+  }
+.getOwnerType());
+}

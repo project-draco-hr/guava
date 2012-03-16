@@ -1,0 +1,13 @@
+{
+  assertFalse(Assignability.of().isAssignable());
+  assertTrue(new Assignability<Integer,Integer>(){
+  }
+.isAssignable());
+  assertTrue(new Assignability<Integer,Object>(){
+  }
+.isAssignable());
+  assertFalse(new Assignability<Integer,String>(){
+  }
+.isAssignable());
+  TypeTokenTest.<Number,Integer>assignabilityTestWithTypeVariables();
+}

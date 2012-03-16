@@ -1,0 +1,5 @@
+{
+  assertEquals(String.class,TypeToken.of(new TypeToken<ArrayList<String>>(){
+  }
+.getType()).resolveType(List.class.getTypeParameters()[0]).getType());
+}

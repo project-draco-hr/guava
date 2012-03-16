@@ -1,0 +1,8 @@
+{
+  Type jvmType=new TypeCapture<int[][]>(){
+  }
+.capture();
+  Type ourType=Types.newArrayType(int[].class);
+  assertEquals(jvmType.toString(),ourType.toString());
+  new EqualsTester().addEqualityGroup(jvmType,ourType).testEquals();
+}

@@ -1,0 +1,3 @@
+{
+  assertTrue(from.getType() + " is expected to be assignable to " + to.getType(),to.isAssignableFrom(from));
+}

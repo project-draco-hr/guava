@@ -1,0 +1,10 @@
+{
+class MyLocalClass {
+    Type getType(){
+      return new TypeToken<T>(getClass()){
+      }
+.getType();
+    }
+  }
+  return new MyLocalClass().getType();
+}

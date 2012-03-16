@@ -1,0 +1,9 @@
+{
+  ParameterizedType paramType=(ParameterizedType)new WithGenericBound<String>(){
+  }
+.getTargetType("withMutualRecursiveBound");
+  TypeVariable<?> k=(TypeVariable<?>)paramType.getActualTypeArguments()[0];
+  TypeVariable<?> v=(TypeVariable<?>)paramType.getActualTypeArguments()[1];
+  assertEquals(Types.newParameterizedType(List.class,v),k.getBounds()[0]);
+  assertEquals(Types.newParameterizedType(List.class,k),v.getBounds()[0]);
+}
