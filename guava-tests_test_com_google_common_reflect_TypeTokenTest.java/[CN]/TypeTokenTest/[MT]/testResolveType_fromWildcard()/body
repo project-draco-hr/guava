@@ -1,0 +1,7 @@
+{
+  ParameterizedType withWildcardType=(ParameterizedType)new TypeCapture<Comparable<? extends Iterable<String>>>(){
+  }
+.capture();
+  TypeToken<?> wildcardType=TypeToken.of(withWildcardType.getActualTypeArguments()[0]);
+  assertEquals(String.class,wildcardType.resolveType(Iterable.class.getTypeParameters()[0]).getType());
+}

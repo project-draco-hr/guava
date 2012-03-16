@@ -1,0 +1,6 @@
+{
+  TypeToken<?> e=TypeToken.of(new TypeCapture<E>(){
+  }
+.capture());
+  assertEquals(Integer.class,e.resolveType(Iterable.class.getTypeParameters()[0]).getType());
+}

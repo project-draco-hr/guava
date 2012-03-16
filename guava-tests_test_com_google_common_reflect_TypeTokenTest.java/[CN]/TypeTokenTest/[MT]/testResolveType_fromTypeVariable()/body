@@ -1,0 +1,8 @@
+{
+  TypeToken<?> f=TypeToken.of(new TypeCapture<F>(){
+  }
+.capture());
+  assertEquals(String.class,f.resolveType(Function.class.getTypeParameters()[0]).getType());
+  assertEquals(Integer.class,f.resolveType(Function.class.getTypeParameters()[1]).getType());
+  assertEquals(Long.class,f.resolveType(Iterable.class.getTypeParameters()[0]).getType());
+}
