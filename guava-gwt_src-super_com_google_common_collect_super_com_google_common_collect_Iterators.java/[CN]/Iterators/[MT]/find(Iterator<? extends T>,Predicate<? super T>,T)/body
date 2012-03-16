@@ -1,0 +1,4 @@
+{
+  UnmodifiableIterator<? extends T> filteredIterator=filter(iterator,predicate);
+  return filteredIterator.hasNext() ? filteredIterator.next() : defaultValue;
+}
