@@ -1,5 +1,0 @@
-{
-  assertEquals("[]",FluentIterable.from(Collections.emptyList()).toString());
-  assertEquals("[]",FluentIterable.<String>of().toString());
-  assertEquals("[yam, bam, jam, ham]",FluentIterable.from(asList("yam","bam","jam","ham")).toString());
-}

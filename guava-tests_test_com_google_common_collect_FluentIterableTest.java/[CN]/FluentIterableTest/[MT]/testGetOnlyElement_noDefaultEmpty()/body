@@ -1,8 +1,0 @@
-{
-  try {
-    FluentIterable.<String>of().getOnlyElement();
-    fail("Invoking getOnlyElement() on empty FluentIterable should cause exception.");
-  }
- catch (  NoSuchElementException expected) {
-  }
-}
