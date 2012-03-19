@@ -1,0 +1,7 @@
+{
+  SortedSet<E> set=newTreeSet();
+  for (  E element : elements) {
+    set.add(checkNotNull(element));
+  }
+  return set;
+}

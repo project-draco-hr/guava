@@ -1,0 +1,4 @@
+{
+  Comparator<String> comparator=createExplicitComparator(elements).reverse();
+  return ImmutableSortedSet.orderedBy(comparator).add(elements).build().descendingSet().asList();
+}

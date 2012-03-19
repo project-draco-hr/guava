@@ -1,0 +1,5 @@
+{
+  assertEquals(a,navigableSet.floor(a));
+  assertEquals(b,navigableSet.floor(b));
+  assertEquals(c,navigableSet.floor(c));
+}

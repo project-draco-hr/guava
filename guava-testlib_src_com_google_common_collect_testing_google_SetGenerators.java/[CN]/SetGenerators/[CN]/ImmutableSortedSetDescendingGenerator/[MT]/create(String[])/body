@@ -1,0 +1,3 @@
+{
+  return ImmutableSortedSet.<String>reverseOrder().add(elements).build().descendingSet();
+}

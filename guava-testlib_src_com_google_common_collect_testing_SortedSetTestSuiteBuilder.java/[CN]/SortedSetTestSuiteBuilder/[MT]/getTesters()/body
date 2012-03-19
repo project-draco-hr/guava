@@ -1,0 +1,5 @@
+{
+  List<Class<? extends AbstractTester>> testers=Helpers.copyToList(super.getTesters());
+  testers.add(SortedSetNavigationTester.class);
+  return testers;
+}

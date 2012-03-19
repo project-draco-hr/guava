@@ -1,0 +1,8 @@
+{
+  List<Integer> elements=newArrayList(elementsSet);
+  for (int i=0; i < elements.size() - 1; i++) {
+    assertEquals(elements.get(i) + 1,(int)elements.get(i + 1));
+  }
+  Range<Integer> range=(elements.isEmpty()) ? Ranges.closedOpen(0,0) : Ranges.encloseAll(elements);
+  return range.asSet(DiscreteDomains.integers());
+}

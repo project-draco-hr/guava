@@ -1,0 +1,5 @@
+{
+  SortedSetTestSuiteBuilder<E> builder=new SortedSetTestSuiteBuilder<E>();
+  builder.usingGenerator(generator);
+  return builder;
+}

@@ -1,0 +1,3 @@
+{
+  return contains(target) ? (int)domain.distance(last(),(C)target) : -1;
+}

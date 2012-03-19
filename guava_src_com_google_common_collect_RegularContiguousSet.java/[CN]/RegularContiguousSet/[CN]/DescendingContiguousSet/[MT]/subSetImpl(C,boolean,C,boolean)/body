@@ -1,0 +1,3 @@
+{
+  return RegularContiguousSet.this.subSetImpl(toElement,toInclusive,fromElement,fromInclusive).descendingSet();
+}

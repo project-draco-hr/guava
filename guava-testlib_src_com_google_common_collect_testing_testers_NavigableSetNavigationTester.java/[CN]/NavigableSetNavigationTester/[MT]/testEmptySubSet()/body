@@ -1,0 +1,4 @@
+{
+  NavigableSet<E> empty=navigableSet.subSet(samples.e0,false,samples.e0,false);
+  assertEquals(new TreeSet<E>(),empty);
+}

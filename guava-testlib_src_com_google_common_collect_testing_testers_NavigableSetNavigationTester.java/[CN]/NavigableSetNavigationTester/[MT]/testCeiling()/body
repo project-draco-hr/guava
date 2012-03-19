@@ -1,0 +1,5 @@
+{
+  assertEquals(a,navigableSet.ceiling(a));
+  assertEquals(b,navigableSet.ceiling(b));
+  assertEquals(c,navigableSet.ceiling(c));
+}

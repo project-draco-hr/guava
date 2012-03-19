@@ -1,0 +1,5 @@
+{
+  assertEquals(null,navigableSet.lower(a));
+  assertEquals(a,navigableSet.lower(b));
+  assertEquals(b,navigableSet.lower(c));
+}

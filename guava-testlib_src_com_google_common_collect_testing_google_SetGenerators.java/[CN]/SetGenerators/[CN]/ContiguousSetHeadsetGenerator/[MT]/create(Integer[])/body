@@ -1,0 +1,6 @@
+{
+  SortedSet<Integer> set=nullCheckedTreeSet(elements);
+  int tooHigh=(set.isEmpty()) ? 0 : set.last() + 1;
+  set.add(tooHigh);
+  return checkedCreate(set).headSet(tooHigh);
+}
