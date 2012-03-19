@@ -1,0 +1,5 @@
+{
+  runTester();
+  Class<?> defaultClass=(Class<?>)getDefaultParameterValue(0);
+  assertEquals(Object.class,defaultClass);
+}

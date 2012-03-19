@@ -1,0 +1,22 @@
+{
+  @SuppressWarnings("unchecked") T defaultValue=(T)defaults.getInstance(type.getRawType());
+  if (defaultValue != null) {
+    return defaultValue;
+  }
+  @SuppressWarnings("unchecked") T nullValue=(T)NullValues.get(type.getRawType());
+  if (nullValue != null) {
+    return nullValue;
+  }
+  if (type.getRawType() == Class.class) {
+    @SuppressWarnings("unchecked") T defaultClass=(T)getFirstTypeParameter(type.getType()).getRawType();
+    return defaultClass;
+  }
+  if (type.getRawType() == TypeToken.class) {
+    @SuppressWarnings("unchecked") T defaultType=(T)getFirstTypeParameter(type.getType());
+    return defaultType;
+  }
+  if (type.getRawType().isInterface()) {
+    return newDefaultReturningProxy(type);
+  }
+  return null;
+}

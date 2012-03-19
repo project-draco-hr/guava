@@ -1,5 +1,5 @@
 {
-  if (func.getParameterTypes()[paramIndex].isPrimitive()) {
+  if (TypeToken.of(func.getParameterTypes()[paramIndex]).getRawType().isPrimitive()) {
     return true;
   }
   Annotation[] annotations=func.getParameterAnnotations()[paramIndex];

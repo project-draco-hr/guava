@@ -1,0 +1,7 @@
+{
+  runTester();
+  TypeToken<?> defaultType=(TypeToken<?>)getDefaultParameterValue(0);
+  assertEquals(new TypeToken<Object>(){
+  }
+,defaultType);
+}

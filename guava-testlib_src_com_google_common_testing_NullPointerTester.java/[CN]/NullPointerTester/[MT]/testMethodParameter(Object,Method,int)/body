@@ -1,14 +1,14 @@
 {
   method.setAccessible(true);
   testFunctorParameter(instance,new Functor(){
-    @Override public Class<?>[] getParameterTypes(){
-      return method.getParameterTypes();
+    @Override public Type[] getParameterTypes(){
+      return method.getGenericParameterTypes();
     }
     @Override public Annotation[][] getParameterAnnotations(){
       return method.getParameterAnnotations();
     }
-    @Override public void invoke(    Object instance,    Object[] params) throws InvocationTargetException, IllegalAccessException {
-      method.invoke(instance,params);
+    @Override public void invoke(    Object object,    Object[] params) throws InvocationTargetException, IllegalAccessException {
+      method.invoke(object,params);
     }
     @Override public String toString(){
       return method.getName() + "(" + Arrays.toString(getParameterTypes())+ ")";

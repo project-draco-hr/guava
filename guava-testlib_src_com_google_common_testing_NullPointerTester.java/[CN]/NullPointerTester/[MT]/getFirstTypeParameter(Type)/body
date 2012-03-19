@@ -1,0 +1,8 @@
+{
+  if (type instanceof ParameterizedType) {
+    return TypeToken.of(((ParameterizedType)type).getActualTypeArguments()[0]);
+  }
+ else {
+    return TypeToken.of(Object.class);
+  }
+}

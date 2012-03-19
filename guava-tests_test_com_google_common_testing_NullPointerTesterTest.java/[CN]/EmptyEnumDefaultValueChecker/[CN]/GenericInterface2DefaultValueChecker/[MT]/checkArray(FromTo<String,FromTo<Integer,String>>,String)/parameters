@@ -1,0 +1,2 @@
+FromTo<String,FromTo<Integer,String>> f
+String s

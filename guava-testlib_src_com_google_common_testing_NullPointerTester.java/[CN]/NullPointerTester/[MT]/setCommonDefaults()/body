@@ -1,7 +1,4 @@
 {
   setDefault(Appendable.class,new StringBuilder());
   setDefault(Throwable.class,new Exception());
-  setDefault(Class.class,Class.class);
-  setDefault(Function.class,Functions.identity());
-  setDefault(Supplier.class,Suppliers.ofInstance(1));
 }

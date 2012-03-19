@@ -1,0 +1,7 @@
+{
+  runTester();
+  FromTo<?,?> defaultFunction=(FromTo<?,?>)getDefaultParameterValue(0);
+  assertEquals(0,defaultFunction.apply(null));
+  Supplier<?> defaultSupplier=(Supplier<?>)defaultFunction;
+  assertEquals(Long.valueOf(0),defaultSupplier.get());
+}

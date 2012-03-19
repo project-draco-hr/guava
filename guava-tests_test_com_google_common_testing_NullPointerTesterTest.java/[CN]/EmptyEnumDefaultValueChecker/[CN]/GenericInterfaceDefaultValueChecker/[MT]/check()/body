@@ -1,0 +1,5 @@
+{
+  runTester();
+  FromTo<?,?> defaultFunction=(FromTo<?,?>)getDefaultParameterValue(0);
+  assertEquals(0,defaultFunction.apply(null));
+}

@@ -1,8 +1,8 @@
 {
   ctor.setAccessible(true);
   testFunctorParameter(null,new Functor(){
-    @Override public Class<?>[] getParameterTypes(){
-      return ctor.getParameterTypes();
+    @Override public Type[] getParameterTypes(){
+      return ctor.getGenericParameterTypes();
     }
     @Override public Annotation[][] getParameterAnnotations(){
       return ctor.getParameterAnnotations();

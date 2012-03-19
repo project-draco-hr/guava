@@ -1,0 +1,3 @@
+{
+  new GenericClassTypeDefaultValueChecker().check();
+}

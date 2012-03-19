@@ -1,7 +1,0 @@
-{
-  T value=defaults.getInstance(type);
-  if (value != null) {
-    return value;
-  }
-  return NullValues.get(type);
-}
