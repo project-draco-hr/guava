@@ -1,0 +1,11 @@
+{
+  for (  Field field : getConstantFields()) {
+    Optional<Charset> charset=((MediaType)field.get(null)).charset();
+    if (field.getName().endsWith("_UTF_8")) {
+      assertEquals(Optional.of(UTF_8),charset);
+    }
+ else {
+      assertEquals(Optional.absent(),charset);
+    }
+  }
+}

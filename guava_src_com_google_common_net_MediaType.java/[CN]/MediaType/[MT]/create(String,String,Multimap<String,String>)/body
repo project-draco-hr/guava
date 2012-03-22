@@ -5,17 +5,11 @@
   String normalizedType=normalizeToken(type);
   String normalizedSubtype=normalizeToken(subtype);
   checkArgument(!WILDCARD.equals(normalizedType) || WILDCARD.equals(normalizedSubtype),"A wildcard type cannot be used with a non-wildcard subtype");
-  final MediaType mediaType;
-  if (parameters.isEmpty()) {
-    mediaType=new MediaType(normalizedType,normalizedSubtype);
+  ImmutableListMultimap.Builder<String,String> builder=ImmutableListMultimap.builder();
+  for (  Entry<String,String> entry : parameters.entries()) {
+    String attribute=normalizeToken(entry.getKey());
+    builder.put(attribute,normalizeParameterValue(attribute,entry.getValue()));
   }
- else {
-    ImmutableListMultimap.Builder<String,String> builder=ImmutableListMultimap.builder();
-    for (    Entry<String,String> entry : parameters.entries()) {
-      String attribute=normalizeToken(entry.getKey());
-      builder.put(attribute,normalizeParameterValue(attribute,entry.getValue()));
-    }
-    mediaType=new MediaType(normalizedType,normalizedSubtype,builder.build());
-  }
+  MediaType mediaType=new MediaType(normalizedType,normalizedSubtype,builder.build());
   return Objects.firstNonNull(KNOWN_TYPES.get(mediaType),mediaType);
 }

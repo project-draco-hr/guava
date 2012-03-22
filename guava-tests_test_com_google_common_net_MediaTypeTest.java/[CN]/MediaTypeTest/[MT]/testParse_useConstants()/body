@@ -1,0 +1,5 @@
+{
+  for (  MediaType constant : getConstants()) {
+    assertSame(constant,MediaType.parse(constant.toString()));
+  }
+}

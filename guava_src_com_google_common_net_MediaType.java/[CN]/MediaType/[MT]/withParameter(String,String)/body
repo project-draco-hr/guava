@@ -10,5 +10,6 @@
     }
   }
   builder.put(normalizedAttribute,normalizeParameterValue(normalizedAttribute,value));
-  return new MediaType(type,subtype,builder.build());
+  MediaType mediaType=new MediaType(type,subtype,builder.build());
+  return Objects.firstNonNull(KNOWN_TYPES.get(mediaType),mediaType);
 }

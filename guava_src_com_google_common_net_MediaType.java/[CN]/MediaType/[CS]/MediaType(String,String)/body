@@ -1,3 +1,0 @@
-{
-  this(type,subtype,ImmutableListMultimap.<String,String>of());
-}

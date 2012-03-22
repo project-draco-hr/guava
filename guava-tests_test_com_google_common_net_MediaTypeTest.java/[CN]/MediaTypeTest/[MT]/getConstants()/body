@@ -1,0 +1,13 @@
+{
+  return getConstantFields().transform(new Function<Field,MediaType>(){
+    @Override public MediaType apply(    Field input){
+      try {
+        return (MediaType)input.get(null);
+      }
+ catch (      Exception e) {
+        throw Throwables.propagate(e);
+      }
+    }
+  }
+);
+}

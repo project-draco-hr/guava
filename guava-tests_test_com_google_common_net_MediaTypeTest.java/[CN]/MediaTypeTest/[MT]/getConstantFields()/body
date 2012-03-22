@@ -1,0 +1,9 @@
+{
+  return FluentIterable.from(asList(MediaType.class.getDeclaredFields())).filter(new Predicate<Field>(){
+    @Override public boolean apply(    Field input){
+      int modifiers=input.getModifiers();
+      return isPublic(modifiers) && isStatic(modifiers) && isFinal(modifiers)&& MediaType.class.equals(input.getType());
+    }
+  }
+);
+}
