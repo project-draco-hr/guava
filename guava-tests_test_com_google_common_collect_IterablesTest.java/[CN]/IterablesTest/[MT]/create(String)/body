@@ -1,6 +1,6 @@
 {
   final List<String> list=asList(strings);
-  return new Iterables.IterableWithToString<String>(){
+  return new FluentIterable<String>(){
     @Override public Iterator<String> iterator(){
       return list.iterator();
     }

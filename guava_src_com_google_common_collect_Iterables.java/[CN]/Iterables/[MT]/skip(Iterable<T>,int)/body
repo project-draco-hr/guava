@@ -3,14 +3,14 @@
   checkArgument(numberToSkip >= 0,"number to skip cannot be negative");
   if (iterable instanceof List) {
     final List<T> list=(List<T>)iterable;
-    return new IterableWithToString<T>(){
+    return new FluentIterable<T>(){
       @Override public Iterator<T> iterator(){
         return (numberToSkip >= list.size()) ? Iterators.<T>emptyIterator() : list.subList(numberToSkip,list.size()).iterator();
       }
     }
 ;
   }
-  return new IterableWithToString<T>(){
+  return new FluentIterable<T>(){
     @Override public Iterator<T> iterator(){
       final Iterator<T> iterator=iterable.iterator();
       Iterators.skip(iterator,numberToSkip);

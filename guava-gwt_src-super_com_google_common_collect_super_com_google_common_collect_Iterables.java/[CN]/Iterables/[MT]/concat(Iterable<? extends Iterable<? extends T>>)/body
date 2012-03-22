@@ -1,6 +1,6 @@
 {
   checkNotNull(inputs);
-  return new IterableWithToString<T>(){
+  return new FluentIterable<T>(){
     @Override public Iterator<T> iterator(){
       return Iterators.concat(iterators(inputs));
     }

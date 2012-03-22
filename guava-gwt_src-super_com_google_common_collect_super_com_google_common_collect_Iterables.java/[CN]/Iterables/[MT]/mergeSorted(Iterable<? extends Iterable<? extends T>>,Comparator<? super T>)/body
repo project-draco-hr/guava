@@ -1,7 +1,7 @@
 {
   checkNotNull(iterables,"iterables");
   checkNotNull(comparator,"comparator");
-  Iterable<T> iterable=new Iterable<T>(){
+  Iterable<T> iterable=new FluentIterable<T>(){
     @Override public Iterator<T> iterator(){
       return Iterators.mergeSorted(Iterables.transform(iterables,Iterables.<T>toIterator()),comparator);
     }
