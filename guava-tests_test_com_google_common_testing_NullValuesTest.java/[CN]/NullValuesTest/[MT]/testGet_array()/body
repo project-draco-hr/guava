@@ -1,5 +1,0 @@
-{
-  assertEquals(0,NullValues.get(int[].class).length);
-  assertEquals(0,NullValues.get(Object[].class).length);
-  assertEquals(0,NullValues.get(String[].class).length);
-}

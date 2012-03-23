@@ -1,0 +1,45 @@
+{
+  T defaultValue=DEFAULTS.getInstance(type);
+  if (defaultValue != null) {
+    return defaultValue;
+  }
+  Class<? extends T> implementation=getImplementation(type);
+  if (implementation != null) {
+    return get(implementation);
+  }
+  if (type.isEnum()) {
+    T[] enumConstants=type.getEnumConstants();
+    return (enumConstants.length == 0) ? null : enumConstants[0];
+  }
+  if (type.isArray()) {
+    return createEmptyArray(type);
+  }
+  T jvmDefault=Defaults.defaultValue(Primitives.unwrap(type));
+  if (jvmDefault != null) {
+    return jvmDefault;
+  }
+  if (Modifier.isAbstract(type.getModifiers()) || !Modifier.isPublic(type.getModifiers())) {
+    return null;
+  }
+  final Constructor<T> constructor;
+  try {
+    constructor=type.getConstructor();
+  }
+ catch (  NoSuchMethodException e) {
+    return null;
+  }
+  constructor.setAccessible(true);
+  try {
+    return constructor.newInstance();
+  }
+ catch (  InstantiationException impossible) {
+    throw new AssertionError(impossible);
+  }
+catch (  IllegalAccessException impossible) {
+    throw new AssertionError(impossible);
+  }
+catch (  InvocationTargetException e) {
+    logger.log(Level.WARNING,"Exception while invoking default constructor.",e.getCause());
+    return null;
+  }
+}

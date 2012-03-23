@@ -1,0 +1,7 @@
+{
+  for (  Class<?> mutableClass : mutableClasses) {
+    Object instance=ArbitraryInstances.get(mutableClass);
+    assertNotNull("Expected to return non-null for: " + mutableClass,instance);
+    assertNotSame("Expected to return fresh instance for: " + mutableClass,instance,ArbitraryInstances.get(mutableClass));
+  }
+}

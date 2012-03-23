@@ -3,7 +3,7 @@
   if (defaultValue != null) {
     return defaultValue;
   }
-  @SuppressWarnings("unchecked") T nullValue=(T)NullValues.get(type.getRawType());
+  @SuppressWarnings("unchecked") T nullValue=(T)ArbitraryInstances.get(type.getRawType());
   if (nullValue != null) {
     return nullValue;
   }

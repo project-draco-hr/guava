@@ -1,0 +1,7 @@
+{
+  assertNull(ArbitraryInstances.get(SomeAbstractClass.class));
+  assertNull(ArbitraryInstances.get(WithPrivateConstructor.class));
+  assertNull(ArbitraryInstances.get(NoDefaultConstructor.class));
+  assertNull(ArbitraryInstances.get(WithExceptionalConstructor.class));
+  assertNull(ArbitraryInstances.get(NonPublicClass.class));
+}

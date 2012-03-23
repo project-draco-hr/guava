@@ -1,0 +1,30 @@
+{
+  assertNull(ArbitraryInstances.get(void.class));
+  assertNull(ArbitraryInstances.get(Void.class));
+  assertEquals(Boolean.FALSE,ArbitraryInstances.get(boolean.class));
+  assertEquals(Boolean.FALSE,ArbitraryInstances.get(Boolean.class));
+  assertEquals(Character.valueOf('\0'),ArbitraryInstances.get(char.class));
+  assertEquals(Character.valueOf('\0'),ArbitraryInstances.get(Character.class));
+  assertEquals(Byte.valueOf((byte)0),ArbitraryInstances.get(byte.class));
+  assertEquals(Byte.valueOf((byte)0),ArbitraryInstances.get(Byte.class));
+  assertEquals(Short.valueOf((short)0),ArbitraryInstances.get(short.class));
+  assertEquals(Short.valueOf((short)0),ArbitraryInstances.get(Short.class));
+  assertEquals(Integer.valueOf(0),ArbitraryInstances.get(int.class));
+  assertEquals(Integer.valueOf(0),ArbitraryInstances.get(Integer.class));
+  assertEquals(Long.valueOf(0),ArbitraryInstances.get(long.class));
+  assertEquals(Long.valueOf(0),ArbitraryInstances.get(Long.class));
+  assertEquals(Float.valueOf(0),ArbitraryInstances.get(float.class));
+  assertEquals(Float.valueOf(0),ArbitraryInstances.get(Float.class));
+  assertEquals(Double.valueOf(0),ArbitraryInstances.get(double.class));
+  assertEquals(Double.valueOf(0),ArbitraryInstances.get(Double.class));
+  assertEquals(UnsignedInteger.ZERO,ArbitraryInstances.get(UnsignedInteger.class));
+  assertEquals(UnsignedLong.ZERO,ArbitraryInstances.get(UnsignedLong.class));
+  assertEquals(0,ArbitraryInstances.get(BigDecimal.class).intValue());
+  assertEquals(0,ArbitraryInstances.get(BigInteger.class).intValue());
+  assertEquals("",ArbitraryInstances.get(String.class));
+  assertEquals("",ArbitraryInstances.get(CharSequence.class));
+  assertEquals(TimeUnit.SECONDS,ArbitraryInstances.get(TimeUnit.class));
+  assertNotNull(ArbitraryInstances.get(Object.class));
+  assertEquals(0,ArbitraryInstances.get(Number.class));
+  assertEquals(Charsets.UTF_8,ArbitraryInstances.get(Charset.class));
+}

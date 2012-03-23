@@ -1,7 +1,0 @@
-{
-  assertNull(NullValues.get(SomeAbstractClass.class));
-  assertNull(NullValues.get(WithPrivateConstructor.class));
-  assertNull(NullValues.get(NoDefaultConstructor.class));
-  assertNull(NullValues.get(WithExceptionalConstructor.class));
-  assertNull(NullValues.get(NonPublicClass.class));
-}

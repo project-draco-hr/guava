@@ -1,3 +1,0 @@
-{
-  assertNull(NullValues.get(SomeInterface.class));
-}

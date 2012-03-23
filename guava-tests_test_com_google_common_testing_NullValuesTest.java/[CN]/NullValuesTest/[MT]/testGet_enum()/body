@@ -1,4 +1,0 @@
-{
-  assertNull(NullValues.get(EmptyEnum.class));
-  assertEquals(Direction.UP,NullValues.get(Direction.class));
-}

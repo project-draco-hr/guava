@@ -1,0 +1,4 @@
+{
+  assertEquals(Pattern.compile("").pattern(),ArbitraryInstances.get(Pattern.class).pattern());
+  assertEquals(0,ArbitraryInstances.get(MatchResult.class).groupCount());
+}

@@ -1,0 +1,4 @@
+{
+  assertNull(ArbitraryInstances.get(EmptyEnum.class));
+  assertEquals(Direction.UP,ArbitraryInstances.get(Direction.class));
+}

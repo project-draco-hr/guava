@@ -1,0 +1,5 @@
+{
+  checkArgument(type != implementation,"Don't register %s to itself!",type);
+  checkArgument(!DEFAULTS.containsKey(type),"A default value was already registered for %s",type);
+  checkArgument(implementations.put(type,implementation) == null,"Implementation for %s was already registered",type);
+}

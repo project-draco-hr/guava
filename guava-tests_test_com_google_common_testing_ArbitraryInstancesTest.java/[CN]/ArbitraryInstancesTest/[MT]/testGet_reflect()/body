@@ -1,0 +1,5 @@
+{
+  assertNotNull(ArbitraryInstances.get(Type.class));
+  assertNotNull(ArbitraryInstances.get(AnnotatedElement.class));
+  assertNotNull(ArbitraryInstances.get(GenericDeclaration.class));
+}

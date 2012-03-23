@@ -1,0 +1,6 @@
+{
+  assertEquals(0,ArbitraryInstances.get(Comparator.class).compare("abc",123));
+  assertTrue(ArbitraryInstances.get(Predicate.class).apply("abc"));
+  assertTrue(ArbitraryInstances.get(Equivalence.class).equivalent(1,1));
+  assertFalse(ArbitraryInstances.get(Equivalence.class).equivalent(1,2));
+}

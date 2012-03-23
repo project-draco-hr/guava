@@ -1,0 +1,8 @@
+{
+  assertEquals(0,ArbitraryInstances.get(ArrayList.class).size());
+  assertEquals(0,ArbitraryInstances.get(HashMap.class).size());
+  assertEquals("",ArbitraryInstances.get(Appendable.class).toString());
+  assertEquals("",ArbitraryInstances.get(StringBuilder.class).toString());
+  assertEquals("",ArbitraryInstances.get(StringBuffer.class).toString());
+  assertFreshInstanceReturned(ArrayList.class,HashMap.class,Appendable.class,StringBuilder.class,StringBuffer.class,Throwable.class,Exception.class);
+}
