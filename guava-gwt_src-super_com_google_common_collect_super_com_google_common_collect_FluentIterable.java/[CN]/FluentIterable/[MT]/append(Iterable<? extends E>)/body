@@ -1,3 +1,0 @@
-{
-  return from(Iterables.concat(iterable,other));
-}

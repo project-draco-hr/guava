@@ -1,4 +1,0 @@
-{
-  FluentIterable<Integer> result=FluentIterable.<Integer>from(asList(1,2,3)).append(Lists.<Integer>newArrayList());
-  assertEquals(asList(1,2,3),Lists.newArrayList(result));
-}

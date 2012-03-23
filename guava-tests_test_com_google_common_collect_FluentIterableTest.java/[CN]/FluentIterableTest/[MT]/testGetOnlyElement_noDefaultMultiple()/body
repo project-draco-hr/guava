@@ -1,8 +1,0 @@
-{
-  try {
-    FluentIterable.from(asList("foo","bar")).getOnlyElement();
-    fail("Invoking getOnly element on two element FluentIterable should cause exception.");
-  }
- catch (  IllegalArgumentException expected) {
-  }
-}
