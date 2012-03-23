@@ -1,8 +1,0 @@
-{
-  try {
-    return collection.contains(object);
-  }
- catch (  ClassCastException e) {
-    return false;
-  }
-}
