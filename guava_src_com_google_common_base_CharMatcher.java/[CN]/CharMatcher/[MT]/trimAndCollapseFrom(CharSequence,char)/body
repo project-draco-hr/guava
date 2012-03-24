@@ -7,7 +7,7 @@
   boolean inMatchingGroup=false;
   for (int i=first; i < sequence.length(); i++) {
     char c=sequence.charAt(i);
-    if (apply(c)) {
+    if (matches(c)) {
       inMatchingGroup=true;
     }
  else {
