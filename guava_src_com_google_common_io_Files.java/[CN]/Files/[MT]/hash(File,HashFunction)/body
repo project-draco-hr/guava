@@ -1,0 +1,3 @@
+{
+  return ByteStreams.hash(newInputStreamSupplier(file),hashFunction);
+}
