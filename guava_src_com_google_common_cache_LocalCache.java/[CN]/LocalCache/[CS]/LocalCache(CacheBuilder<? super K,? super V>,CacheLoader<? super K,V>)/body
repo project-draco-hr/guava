@@ -21,7 +21,7 @@
   }
   int segmentShift=0;
   int segmentCount=1;
-  while (segmentCount < concurrencyLevel && (!evictsBySize() || customWeigher() || segmentCount * 2 <= maxWeight)) {
+  while (segmentCount < concurrencyLevel && (!evictsBySize() || segmentCount * 20 <= maxWeight)) {
     ++segmentShift;
     segmentCount<<=1;
   }

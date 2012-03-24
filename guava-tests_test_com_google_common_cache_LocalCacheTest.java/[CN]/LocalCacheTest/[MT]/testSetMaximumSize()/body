@@ -1,5 +1,5 @@
 {
-  for (int maxSize=1; maxSize < 8; maxSize++) {
+  for (int maxSize=1; maxSize < 100; maxSize++) {
     checkMaximumSize(1,8,maxSize);
     checkMaximumSize(2,8,maxSize);
     checkMaximumSize(4,8,maxSize);
