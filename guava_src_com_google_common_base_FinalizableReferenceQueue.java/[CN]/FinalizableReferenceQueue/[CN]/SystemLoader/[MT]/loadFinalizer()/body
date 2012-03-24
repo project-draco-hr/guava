@@ -1,4 +1,7 @@
 {
+  if (disabled) {
+    return null;
+  }
   ClassLoader systemLoader;
   try {
     systemLoader=ClassLoader.getSystemClassLoader();

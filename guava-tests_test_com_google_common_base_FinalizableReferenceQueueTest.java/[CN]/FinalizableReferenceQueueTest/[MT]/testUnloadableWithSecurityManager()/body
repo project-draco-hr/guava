@@ -1,0 +1,13 @@
+{
+  Policy oldPolicy=Policy.getPolicy();
+  SecurityManager oldSecurityManager=System.getSecurityManager();
+  try {
+    Policy.setPolicy(new PermissivePolicy());
+    System.setSecurityManager(new SecurityManager());
+    doTestUnloadable();
+  }
+  finally {
+    System.setSecurityManager(oldSecurityManager);
+    Policy.setPolicy(oldPolicy);
+  }
+}

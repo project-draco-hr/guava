@@ -1,0 +1,4 @@
+{
+  WeakReference<ClassLoader> loaderRef=useFrqInSeparateLoader();
+  GcFinalization.awaitClear(loaderRef);
+}

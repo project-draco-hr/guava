@@ -1,0 +1,10 @@
+{
+  SecurityManager oldSecurityManager=System.getSecurityManager();
+  try {
+    System.setSecurityManager(null);
+    doTestUnloadable();
+  }
+  finally {
+    System.setSecurityManager(oldSecurityManager);
+  }
+}

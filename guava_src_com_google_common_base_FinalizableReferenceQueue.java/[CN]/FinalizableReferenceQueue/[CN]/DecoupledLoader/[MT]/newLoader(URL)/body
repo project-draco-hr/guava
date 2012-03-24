@@ -1,3 +1,3 @@
 {
-  return new URLClassLoader(new URL[]{base});
+  return new URLClassLoader(new URL[]{base},null);
 }

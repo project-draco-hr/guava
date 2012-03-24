@@ -1,0 +1,23 @@
+{
+  final URLClassLoader myLoader=(URLClassLoader)getClass().getClassLoader();
+  final URL[] urls=myLoader.getURLs();
+  URLClassLoader sepLoader=new URLClassLoader(urls,myLoader.getParent());
+  Class<?> frqC=FinalizableReferenceQueue.class;
+  Class<?> sepFrqC=sepLoader.loadClass(frqC.getName());
+  assertTrue(sepFrqC != frqC);
+  Class<?> sepFrqSystemLoaderC=sepLoader.loadClass(FinalizableReferenceQueue.SystemLoader.class.getName());
+  Field disabled=sepFrqSystemLoaderC.getDeclaredField("disabled");
+  disabled.setAccessible(true);
+  disabled.set(null,true);
+  AtomicReference<Object> sepFrqA=new AtomicReference<Object>(sepFrqC.newInstance());
+  @SuppressWarnings("unchecked") Class<? extends WeakReference<?>> sepFwrC=(Class<? extends WeakReference<?>>)sepLoader.loadClass(MyFinalizableWeakReference.class.getName());
+  Constructor<? extends WeakReference<?>> sepFwrCons=sepFwrC.getConstructor(Object.class,sepFrqC);
+  Class<?> sepStopwatchC=sepLoader.loadClass(Stopwatch.class.getName());
+  assertSame(sepLoader,sepStopwatchC.getClassLoader());
+  AtomicReference<Object> sepStopwatchA=new AtomicReference<Object>(sepStopwatchC.newInstance());
+  AtomicReference<WeakReference<?>> sepStopwatchRef=new AtomicReference<WeakReference<?>>(sepFwrCons.newInstance(sepStopwatchA.get(),sepFrqA.get()));
+  assertNotNull(sepStopwatchA.get());
+  sepStopwatchA.set(null);
+  GcFinalization.awaitClear(sepStopwatchRef.get());
+  return new WeakReference<ClassLoader>(sepLoader);
+}
