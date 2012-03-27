@@ -3,14 +3,14 @@
   List<Feature<?>> features=new ArrayList<Feature<?>>();
   features.add(NoRecurse.SUBMAP);
   features.addAll(parentBuilder.getFeatures());
-  NavigableMap<K,V> emptyMap=(NavigableMap<K,V>)delegate.create();
+  SortedMap<K,V> emptyMap=(SortedMap<K,V>)delegate.create();
   final Comparator<Entry<K,V>> entryComparator=Helpers.entryComparator(emptyMap.comparator());
   SampleElements<Entry<K,V>> samples=delegate.samples();
   @SuppressWarnings("unchecked") List<Entry<K,V>> samplesList=Arrays.asList(samples.e0,samples.e1,samples.e2,samples.e3,samples.e4);
   Collections.sort(samplesList,entryComparator);
   final K firstInclusive=samplesList.get(0).getKey();
   final K lastInclusive=samplesList.get(samplesList.size() - 1).getKey();
-  return NavigableMapTestSuiteBuilder.using(new ForwardingTestMapGenerator<K,V>(delegate){
+  return newBuilderUsing(new ForwardingTestMapGenerator<K,V>(delegate){
     @Override public Map<K,V> create(    Object... entries){
       @SuppressWarnings("unchecked") List<Entry<K,V>> extremeValues=(List)getExtremeValues();
       @SuppressWarnings("unchecked") List<Entry<K,V>> normalValues=(List)Arrays.asList(entries);
@@ -28,34 +28,8 @@
       List<Entry<K,V>> allEntries=new ArrayList<Entry<K,V>>();
       allEntries.addAll(extremeValues);
       allEntries.addAll(normalValues);
-      NavigableMap<K,V> map=(NavigableMap<K,V>)delegate.create((Object[])allEntries.toArray(new Entry[allEntries.size()]));
-      if (from == Bound.NO_BOUND && to == Bound.EXCLUSIVE) {
-        return map.headMap(lastExclusive);
-      }
- else       if (from == Bound.NO_BOUND && to == Bound.INCLUSIVE) {
-        return map.headMap(lastInclusive,true);
-      }
- else       if (from == Bound.EXCLUSIVE && to == Bound.NO_BOUND) {
-        return map.tailMap(firstExclusive,false);
-      }
- else       if (from == Bound.EXCLUSIVE && to == Bound.EXCLUSIVE) {
-        return map.subMap(firstExclusive,false,lastExclusive,false);
-      }
- else       if (from == Bound.EXCLUSIVE && to == Bound.INCLUSIVE) {
-        return map.subMap(firstExclusive,false,lastInclusive,true);
-      }
- else       if (from == Bound.INCLUSIVE && to == Bound.NO_BOUND) {
-        return map.tailMap(firstInclusive);
-      }
- else       if (from == Bound.INCLUSIVE && to == Bound.EXCLUSIVE) {
-        return map.subMap(firstInclusive,lastExclusive);
-      }
- else       if (from == Bound.INCLUSIVE && to == Bound.INCLUSIVE) {
-        return map.subMap(firstInclusive,true,lastInclusive,true);
-      }
- else {
-        throw new IllegalArgumentException();
-      }
+      SortedMap<K,V> map=(SortedMap<K,V>)delegate.create((Object[])allEntries.toArray(new Entry[allEntries.size()]));
+      return createSubMap(map,firstInclusive,firstExclusive,lastExclusive,lastInclusive,from,to);
     }
   }
 ).named(parentBuilder.getName() + " subMap " + from+ "-"+ to).withFeatures(features).suppressing(parentBuilder.getSuppressedTests()).createTestSuite();

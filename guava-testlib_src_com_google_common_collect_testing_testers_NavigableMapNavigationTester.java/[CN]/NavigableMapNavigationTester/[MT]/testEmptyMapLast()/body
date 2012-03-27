@@ -1,9 +1,3 @@
 {
   assertNull(navigableMap.lastEntry());
-  try {
-    assertNull(navigableMap.lastKey());
-    fail();
-  }
- catch (  NoSuchElementException e) {
-  }
 }

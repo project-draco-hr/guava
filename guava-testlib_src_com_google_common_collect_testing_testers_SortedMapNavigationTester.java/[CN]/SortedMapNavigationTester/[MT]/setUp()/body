@@ -1,0 +1,12 @@
+{
+  super.setUp();
+  navigableMap=(SortedMap<K,V>)getMap();
+  List<Entry<K,V>> entries=Helpers.copyToList(getSubjectGenerator().getSampleElements(getSubjectGenerator().getCollectionSize().getNumElements()));
+  Collections.sort(entries,Helpers.<K,V>entryComparator(navigableMap.comparator()));
+  if (entries.size() >= 1) {
+    a=entries.get(0);
+    if (entries.size() >= 3) {
+      c=entries.get(2);
+    }
+  }
+}

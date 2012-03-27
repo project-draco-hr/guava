@@ -1,1 +1,1 @@
-MapTestSuiteBuilder<K,V>
+SortedMapTestSuiteBuilder<K,V>

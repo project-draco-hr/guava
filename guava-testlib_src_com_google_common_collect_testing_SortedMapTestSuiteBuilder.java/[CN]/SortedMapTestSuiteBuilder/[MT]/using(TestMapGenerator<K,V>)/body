@@ -1,0 +1,5 @@
+{
+  SortedMapTestSuiteBuilder<K,V> result=new SortedMapTestSuiteBuilder<K,V>();
+  result.usingGenerator(generator);
+  return result;
+}

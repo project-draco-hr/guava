@@ -1,0 +1,14 @@
+{
+  if (from == Bound.NO_BOUND && to == Bound.EXCLUSIVE) {
+    return map.headMap(lastExclusive);
+  }
+ else   if (from == Bound.INCLUSIVE && to == Bound.NO_BOUND) {
+    return map.tailMap(firstInclusive);
+  }
+ else   if (from == Bound.INCLUSIVE && to == Bound.EXCLUSIVE) {
+    return map.subMap(firstInclusive,lastExclusive);
+  }
+ else {
+    throw new IllegalArgumentException();
+  }
+}

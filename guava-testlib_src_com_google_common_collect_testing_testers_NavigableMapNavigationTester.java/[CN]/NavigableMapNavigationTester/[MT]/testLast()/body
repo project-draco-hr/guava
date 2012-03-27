@@ -1,4 +1,3 @@
 {
   assertEquals(c,navigableMap.lastEntry());
-  assertEquals(c.getKey(),navigableMap.lastKey());
 }

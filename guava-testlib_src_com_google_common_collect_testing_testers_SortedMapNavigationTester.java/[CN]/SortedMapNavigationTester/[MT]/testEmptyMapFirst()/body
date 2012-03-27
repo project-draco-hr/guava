@@ -1,0 +1,8 @@
+{
+  try {
+    navigableMap.firstKey();
+    fail();
+  }
+ catch (  NoSuchElementException e) {
+  }
+}
