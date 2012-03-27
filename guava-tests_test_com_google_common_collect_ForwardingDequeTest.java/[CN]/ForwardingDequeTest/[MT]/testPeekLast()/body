@@ -1,0 +1,4 @@
+{
+  forward.peekLast();
+  assertEquals("[peekLast]",getCalls());
+}

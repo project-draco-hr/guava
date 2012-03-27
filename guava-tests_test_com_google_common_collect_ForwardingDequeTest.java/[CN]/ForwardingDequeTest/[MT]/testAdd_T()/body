@@ -1,0 +1,4 @@
+{
+  forward.add("asdf");
+  assertEquals("[add(Object)]",getCalls());
+}

@@ -1,0 +1,4 @@
+{
+  forward.removeFirst();
+  assertEquals("[removeFirst]",getCalls());
+}

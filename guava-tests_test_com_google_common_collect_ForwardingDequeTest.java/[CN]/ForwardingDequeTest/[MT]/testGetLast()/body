@@ -1,0 +1,4 @@
+{
+  forward.getLast();
+  assertEquals("[getLast]",getCalls());
+}

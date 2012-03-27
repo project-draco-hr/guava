@@ -1,0 +1,4 @@
+{
+  forward.offerLast("asdf");
+  assertEquals("[offerLast(Object)]",getCalls());
+}

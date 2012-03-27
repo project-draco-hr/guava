@@ -1,0 +1,4 @@
+{
+  forward.contains("asdf");
+  assertEquals("[contains(Object)]",getCalls());
+}

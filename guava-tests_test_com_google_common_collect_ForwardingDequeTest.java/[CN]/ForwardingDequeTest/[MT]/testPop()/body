@@ -1,0 +1,4 @@
+{
+  forward.pop();
+  assertEquals("[pop]",getCalls());
+}

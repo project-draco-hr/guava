@@ -1,0 +1,10 @@
+{
+  super.setUp();
+  final Deque<String> deque=createProxyInstance(Deque.class);
+  forward=new ForwardingDeque<String>(){
+    @Override protected Deque<String> delegate(){
+      return deque;
+    }
+  }
+;
+}
