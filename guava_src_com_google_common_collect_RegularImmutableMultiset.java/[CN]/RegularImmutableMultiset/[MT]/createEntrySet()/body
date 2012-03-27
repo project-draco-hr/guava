@@ -1,0 +1,20 @@
+{
+  return new EntrySet(){
+    @Override public int size(){
+      return map.size();
+    }
+    @Override public UnmodifiableIterator<Entry<E>> iterator(){
+      return asList().iterator();
+    }
+    @Override ImmutableList<Entry<E>> createAsList(){
+      final ImmutableList<Map.Entry<E,Integer>> entryList=map.entrySet().asList();
+      return new TransformedImmutableList<Map.Entry<E,Integer>,Entry<E>>(entryList){
+        @Override Entry<E> transform(        Map.Entry<E,Integer> entry){
+          return entryFromMapEntry(entry);
+        }
+      }
+;
+    }
+  }
+;
+}

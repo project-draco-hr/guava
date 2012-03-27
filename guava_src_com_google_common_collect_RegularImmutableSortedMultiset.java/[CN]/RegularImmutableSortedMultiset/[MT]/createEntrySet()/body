@@ -1,0 +1,14 @@
+{
+  return new EntrySet(){
+    @Override public int size(){
+      return entries.size();
+    }
+    @Override public UnmodifiableIterator<Entry<E>> iterator(){
+      return asList().iterator();
+    }
+    @SuppressWarnings("unchecked") @Override ImmutableList<Entry<E>> createAsList(){
+      return (ImmutableList)entries;
+    }
+  }
+;
+}

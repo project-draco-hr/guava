@@ -10,5 +10,5 @@ break;
 default :
 throw new AssertionError();
 }
-return createSubMultiset(index,distinctElements());
+return createSubMultiset(index,entries.size());
 }

@@ -1,5 +1,5 @@
 {
-  final Iterator<Entry<E>> entryIterator=entryIterator();
+  final Iterator<Entry<E>> entryIterator=entrySet().iterator();
   return new UnmodifiableIterator<E>(){
     int remaining;
     E element;

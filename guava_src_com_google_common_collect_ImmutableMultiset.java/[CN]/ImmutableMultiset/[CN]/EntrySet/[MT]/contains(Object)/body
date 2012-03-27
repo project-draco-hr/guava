@@ -4,7 +4,7 @@
     if (entry.getCount() <= 0) {
       return false;
     }
-    int count=multiset.count(entry.getElement());
+    int count=count(entry.getElement());
     return count == entry.getCount();
   }
   return false;
