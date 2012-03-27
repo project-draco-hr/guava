@@ -1,9 +1,0 @@
-{
-  Iterator<FluentIterable<Integer>> iter=fluent(1,2,3,4,5).partitionWithPadding(3).iterator();
-  Iterable<Integer> innerIterable1=iter.next();
-  ASSERT.that(innerIterable1).hasContentsInOrder(1,2,3);
-  ASSERT.that(innerIterable1).hasContentsInOrder(1,2,3);
-  Iterable<Integer> innerIterable2=iter.next();
-  ASSERT.that(innerIterable2).hasContentsInOrder(4,5,null);
-  ASSERT.that(innerIterable2).hasContentsInOrder(4,5,null);
-}

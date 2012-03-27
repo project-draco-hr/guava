@@ -1,6 +1,0 @@
-{
-  Iterator<FluentIterable<Integer>> iter=fluent(1,2,3,4).partition(2).iterator();
-  ASSERT.that(iter.next()).hasContentsInOrder(1,2);
-  ASSERT.that(iter.next()).hasContentsInOrder(3,4);
-  assertFalse(iter.hasNext());
-}

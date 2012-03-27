@@ -1,8 +1,0 @@
-{
-  try {
-    fluent(1,2,3).partition(0);
-    fail("Invoking partition method with zero value should throw IAE.");
-  }
- catch (  IllegalArgumentException expected) {
-  }
-}
