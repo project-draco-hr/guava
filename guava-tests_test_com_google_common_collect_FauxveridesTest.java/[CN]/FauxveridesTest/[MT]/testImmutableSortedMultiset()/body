@@ -1,0 +1,3 @@
+{
+  doHasAllFauxveridesTest(ImmutableSortedMultiset.class,ImmutableMultiset.class);
+}
