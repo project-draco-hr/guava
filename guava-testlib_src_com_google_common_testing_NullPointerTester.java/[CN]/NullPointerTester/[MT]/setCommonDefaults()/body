@@ -1,4 +1,0 @@
-{
-  setDefault(Appendable.class,new StringBuilder());
-  setDefault(Throwable.class,new Exception());
-}

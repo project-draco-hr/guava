@@ -1,0 +1,3 @@
+{
+  this(method.getName(),ImmutableList.copyOf(method.getParameterTypes()));
+}

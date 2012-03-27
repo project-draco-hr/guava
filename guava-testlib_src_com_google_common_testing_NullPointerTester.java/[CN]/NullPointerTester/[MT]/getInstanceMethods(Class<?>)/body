@@ -1,0 +1,9 @@
+{
+  ConcurrentMap<Signature,Method> map=Maps.newConcurrentMap();
+  for (  Method method : getVisibleMethods(cls)) {
+    if (!isStatic(method)) {
+      map.putIfAbsent(new Signature(method),method);
+    }
+  }
+  return map.values();
+}

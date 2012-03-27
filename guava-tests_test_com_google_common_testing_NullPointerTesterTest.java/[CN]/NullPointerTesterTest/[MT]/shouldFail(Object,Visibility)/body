@@ -1,0 +1,9 @@
+{
+  try {
+    new NullPointerTester().testInstanceMethods(instance,visibility);
+  }
+ catch (  AssertionFailedError expected) {
+    return;
+  }
+  fail("Should detect problem in " + instance.getClass().getSimpleName());
+}

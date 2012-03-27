@@ -4,7 +4,7 @@
     Method method=OneArg.class.getMethod(methodName,String.class);
     boolean foundProblem=false;
     try {
-      tester.testMethodParameter(foo,method,0);
+      new NullPointerTester().testMethodParameter(foo,method,0);
     }
  catch (    AssertionFailedError expected) {
       foundProblem=true;

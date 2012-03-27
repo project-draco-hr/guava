@@ -1,7 +1,7 @@
 {
   Class<?> c=instance.getClass();
-  for (  Method method : c.getDeclaredMethods()) {
-    if (minimalVisibility.isVisible(method) && !isStatic(method) && !isIgnored(method)) {
+  for (  Method method : minimalVisibility.getInstanceMethods(c)) {
+    if (!isIgnored(method)) {
       testMethod(instance,method);
     }
   }

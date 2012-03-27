@@ -2,7 +2,7 @@
   for (  String methodName : STATIC_ONE_ARG_METHODS_SHOULD_PASS) {
     Method method=OneArg.class.getMethod(methodName,String.class);
     try {
-      tester.testMethodParameter(OneArg.class,method,0);
+      new NullPointerTester().testMethodParameter(OneArg.class,method,0);
     }
  catch (    AssertionFailedError unexpected) {
       fail("Should not have flagged method " + methodName);

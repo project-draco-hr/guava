@@ -1,0 +1,3 @@
+{
+  new NullPointerTester().testInstanceMethods(instance,visibility);
+}

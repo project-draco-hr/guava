@@ -1,0 +1,5 @@
+{
+  shouldFail(instance,Visibility.PACKAGE);
+  shouldFail(instance,Visibility.PROTECTED);
+  shouldFail(instance,Visibility.PUBLIC);
+}

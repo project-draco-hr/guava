@@ -1,0 +1,5 @@
+{
+  shouldPass(instance,Visibility.PACKAGE);
+  shouldPass(instance,Visibility.PROTECTED);
+  shouldPass(instance,Visibility.PUBLIC);
+}

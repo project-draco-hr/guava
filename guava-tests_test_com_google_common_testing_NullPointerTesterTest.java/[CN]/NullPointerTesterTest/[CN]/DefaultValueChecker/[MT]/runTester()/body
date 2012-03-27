@@ -1,0 +1,4 @@
+{
+  new NullPointerTester().testInstanceMethods(this,Visibility.PACKAGE);
+  return this;
+}

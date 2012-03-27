@@ -1,7 +1,0 @@
-{
-  checkClasses("passClass",passClasses);
-  checkClasses("failClasses",failClasses);
-  List<Class<?>> allClasses=Lists.newArrayList(passClasses);
-  allClasses.addAll(failClasses);
-  checkClasses("allClasses",allClasses);
-}

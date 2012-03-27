@@ -1,5 +1,5 @@
 {
-  Parameterized<?,?,?> parameterized=new Parameterized<TypeTokenResolutionTest,Bar,String>(){
+  @SuppressWarnings("rawtypes") Parameterized<?,?,?> parameterized=new Parameterized<TypeTokenResolutionTest,Bar,String>(){
   }
 ;
   TypeResolver typeResolver=TypeResolver.accordingTo(parameterized.getClass());

@@ -1,0 +1,9 @@
+{
+  try {
+    new NullPointerTester().testStaticMethods(cls,visibility);
+  }
+ catch (  AssertionFailedError expected) {
+    return;
+  }
+  fail("Should detect problem in " + cls.getSimpleName());
+}

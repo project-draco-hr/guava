@@ -1,0 +1,15 @@
+{
+  String visiblePackage=Reflection.getPackageName(cls);
+  ImmutableList.Builder<Method> builder=ImmutableList.builder();
+  for (  Class<?> type : TypeToken.of(cls).getTypes().classes().rawTypes()) {
+    if (!Reflection.getPackageName(type).equals(visiblePackage)) {
+      break;
+    }
+    for (    Method method : type.getDeclaredMethods()) {
+      if (!method.isSynthetic() && isVisible(method)) {
+        builder.add(method);
+      }
+    }
+  }
+  return builder.build();
+}

@@ -1,0 +1,4 @@
+{
+  runTester();
+  assertEquals("",getDefaultParameterValue(0));
+}

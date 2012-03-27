@@ -1,0 +1,9 @@
+{
+  int lastDot=classFullName.lastIndexOf('.');
+  if (lastDot < 0) {
+    return "";
+  }
+ else {
+    return classFullName.substring(0,lastDot);
+  }
+}

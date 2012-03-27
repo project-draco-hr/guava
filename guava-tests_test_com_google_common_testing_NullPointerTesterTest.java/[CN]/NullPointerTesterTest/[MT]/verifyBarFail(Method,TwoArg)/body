@@ -1,6 +1,6 @@
 {
   try {
-    tester.testMethod(bar,method);
+    new NullPointerTester().testMethod(bar,method);
   }
  catch (  AssertionFailedError expected) {
     return;

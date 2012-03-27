@@ -1,0 +1,7 @@
+{
+  if (obj instanceof Signature) {
+    Signature that=(Signature)obj;
+    return name.equals(that.name) && parameterTypes.equals(that.parameterTypes);
+  }
+  return false;
+}

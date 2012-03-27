@@ -1,0 +1,9 @@
+{
+  ImmutableList.Builder<Method> builder=ImmutableList.builder();
+  for (  Method method : getVisibleMethods(cls)) {
+    if (isStatic(method)) {
+      builder.add(method);
+    }
+  }
+  return builder.build();
+}

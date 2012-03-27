@@ -1,6 +1,0 @@
-{
-  new NullPointerTester().setDefault(Type.class,Void.class).testAllPublicStaticMethods(TypeToken.class);
-  new NullPointerTester().setDefault(Type.class,Void.class).testAllPublicInstanceMethods(new TypeToken<String>(){
-  }
-);
-}
