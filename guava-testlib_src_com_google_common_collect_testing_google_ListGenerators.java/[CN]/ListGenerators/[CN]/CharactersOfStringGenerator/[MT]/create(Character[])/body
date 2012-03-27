@@ -1,0 +1,4 @@
+{
+  char[] chars=Chars.toArray(Arrays.asList(elements));
+  return Lists.charactersOf(String.copyValueOf(chars));
+}

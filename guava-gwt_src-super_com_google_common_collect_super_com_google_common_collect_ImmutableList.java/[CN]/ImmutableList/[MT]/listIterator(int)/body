@@ -1,3 +1,8 @@
 {
-  return delegate.listIterator(index);
+  return new AbstractIndexedListIterator<E>(size(),index){
+    @Override protected E get(    int index){
+      return ImmutableList.this.get(index);
+    }
+  }
+;
 }

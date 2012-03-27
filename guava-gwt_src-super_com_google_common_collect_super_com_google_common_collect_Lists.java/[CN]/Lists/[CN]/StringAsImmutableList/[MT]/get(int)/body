@@ -1,3 +1,4 @@
 {
+  checkElementIndex(index,size());
   return string.charAt(index);
 }
