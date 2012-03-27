@@ -1,3 +1,3 @@
 {
-  assertEquals(0,ComparisonChain.start().compare(1,1).compare(1L,1L).compare(true,true).compare(1.0,1.0).compare(1.0f,1.0f).compare("a","a",Ordering.usingToString()).result());
+  assertEquals(0,ComparisonChain.start().compare(1,1).compare(1L,1L).compareFalseFirst(true,true).compare(1.0,1.0).compare(1.0f,1.0f).compare("a","a",Ordering.usingToString()).result());
 }

@@ -1,0 +1,6 @@
+{
+  assertTrue(ComparisonChain.start().compare(true,true).result() == 0);
+  assertTrue(ComparisonChain.start().compare(true,false).result() > 0);
+  assertTrue(ComparisonChain.start().compare(false,true).result() < 0);
+  assertTrue(ComparisonChain.start().compare(false,false).result() == 0);
+}
