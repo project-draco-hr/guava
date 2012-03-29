@@ -1,5 +1,5 @@
 {
-  return NavigableMapTestSuiteBuilder.using(new TestStringMapGenerator(){
+  return NavigableMapTestSuiteBuilder.using(new TestStringSortedMapGenerator(){
     @Override protected Map<String,String> create(    Entry<String,String>[] entries){
       return populate(new TreeMap<String,String>(arbitraryNullFriendlyComparator()),entries);
     }

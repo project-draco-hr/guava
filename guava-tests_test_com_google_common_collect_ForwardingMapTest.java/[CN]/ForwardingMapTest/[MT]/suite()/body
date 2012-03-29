@@ -10,7 +10,7 @@
       return new StandardImplForwardingMap<String,String>(map);
     }
   }
-).named("ForwardingMap[LinkedHashMap] with standard implementations").withFeatures(CollectionSize.ANY,MapFeature.ALLOWS_NULL_VALUES,MapFeature.ALLOWS_NULL_KEYS,MapFeature.GENERAL_PURPOSE).createTestSuite());
+).named("ForwardingMap[LinkedHashMap] with standard implementations").withFeatures(CollectionSize.ANY,MapFeature.ALLOWS_NULL_VALUES,MapFeature.ALLOWS_NULL_KEYS,MapFeature.GENERAL_PURPOSE,CollectionFeature.KNOWN_ORDER).createTestSuite());
   suite.addTest(MapTestSuiteBuilder.using(new TestStringMapGenerator(){
     @Override protected Map<String,String> create(    Entry<String,String>[] entries){
       ImmutableMap.Builder<String,String> builder=ImmutableMap.builder();
@@ -20,6 +20,6 @@
       return new StandardImplForwardingMap<String,String>(builder.build());
     }
   }
-).named("ForwardingMap[ImmutableMap] with standard implementations").withFeatures(CollectionSize.ANY,MapFeature.REJECTS_DUPLICATES_AT_CREATION,MapFeature.ALLOWS_NULL_QUERIES).createTestSuite());
+).named("ForwardingMap[ImmutableMap] with standard implementations").withFeatures(CollectionSize.ANY,MapFeature.REJECTS_DUPLICATES_AT_CREATION,MapFeature.ALLOWS_NULL_QUERIES,CollectionFeature.KNOWN_ORDER).createTestSuite());
   return suite;
 }

@@ -1,3 +1,11 @@
 {
-  return insertionOrder;
+  List<Entry<K,V>> entries=new ArrayList<Entry<K,V>>();
+  for (  K element : insertionOrder) {
+    entries.add(mapEntry(element,(V)null));
+  }
+  List<K> keys=new ArrayList<K>();
+  for (  Entry<K,V> entry : mapGenerator.order(entries)) {
+    keys.add(entry.getKey());
+  }
+  return keys;
 }

@@ -8,6 +8,11 @@
       NavigableMap<K,V> map=(NavigableMap<K,V>)delegate.create(entries);
       return map.descendingMap();
     }
+    @Override public Iterable<Entry<K,V>> order(    List<Entry<K,V>> insertionOrder){
+      insertionOrder=castOrCopyToList(delegate.order(insertionOrder));
+      reverse(insertionOrder);
+      return insertionOrder;
+    }
   }
 ).named(parentBuilder.getName() + " descending").withFeatures(features).suppressing(parentBuilder.getSuppressedTests()).createTestSuite();
 }

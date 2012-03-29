@@ -1,6 +1,6 @@
 {
   TestSuite suite=new TestSuite();
-  suite.addTest(NavigableMapTestSuiteBuilder.using(new TestStringMapGenerator(){
+  suite.addTest(NavigableMapTestSuiteBuilder.using(new TestStringSortedMapGenerator(){
     @Override protected Map<String,String> create(    Entry<String,String>[] entries){
       SafeTreeMap<String,String> map=new SafeTreeMap<String,String>();
       for (      Entry<String,String> entry : entries) {
@@ -10,7 +10,7 @@
     }
   }
 ).named("unmodifiableNavigableMap[SafeTreeMap]").withFeatures(CollectionSize.ANY,MapFeature.ALLOWS_NULL_VALUES).createTestSuite());
-  suite.addTest(NavigableMapTestSuiteBuilder.using(new TestStringMapGenerator(){
+  suite.addTest(NavigableMapTestSuiteBuilder.using(new TestStringSortedMapGenerator(){
     @Override protected Map<String,String> create(    Entry<String,String>[] entries){
       SafeTreeMap<String,String> map=new SafeTreeMap<String,String>();
       for (      Entry<String,String> entry : entries) {

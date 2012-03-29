@@ -2,7 +2,7 @@
   TestSuite suite=new TestSuite();
   suite.addTestSuite(TreeBasedTableTest.class);
   suite.addTestSuite(TreeRowTest.class);
-  suite.addTest(MapTestSuiteBuilder.using(new TestStringMapGenerator(){
+  suite.addTest(MapTestSuiteBuilder.using(new TestStringSortedMapGenerator(){
     @Override protected Map<String,String> create(    Entry<String,String>[] entries){
       TreeBasedTable<String,String,String> table=TreeBasedTable.create();
       table.put("a","b","c");

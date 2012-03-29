@@ -17,6 +17,9 @@
   if (mapFeatures.contains(MapFeature.FAILS_FAST_ON_CONCURRENT_MODIFICATION)) {
     derivedFeatures.add(CollectionFeature.FAILS_FAST_ON_CONCURRENT_MODIFICATION);
   }
+  if (mapFeatures.contains(CollectionFeature.KNOWN_ORDER)) {
+    derivedFeatures.add(CollectionFeature.KNOWN_ORDER);
+  }
   for (  CollectionSize size : CollectionSize.values()) {
     if (mapFeatures.contains(size)) {
       derivedFeatures.add(size);
