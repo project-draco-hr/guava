@@ -24,7 +24,7 @@
  else {
     addressAsLong=ByteBuffer.wrap(ip6.getAddress(),0,8).getLong();
   }
-  int coercedHash=hash64To32(addressAsLong);
+  int coercedHash=Hashing.murmur3_32().hashLong(addressAsLong).asInt();
   coercedHash|=0xe0000000;
   if (coercedHash == 0xffffffff) {
     coercedHash=0xfffffffe;
