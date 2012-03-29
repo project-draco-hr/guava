@@ -3,16 +3,16 @@
     return 0;
   }
   if (lhs == null) {
-    if (rhs.equals(B)) {
+    if (rhs.equals(justAfterNull)) {
       return -1;
     }
-    return B.compareTo(rhs);
+    return justAfterNull.compareTo(rhs);
   }
   if (rhs == null) {
-    if (lhs.equals(B)) {
+    if (lhs.equals(justAfterNull)) {
       return 1;
     }
-    return lhs.compareTo(B);
+    return lhs.compareTo(justAfterNull);
   }
   return lhs.compareTo(rhs);
 }
