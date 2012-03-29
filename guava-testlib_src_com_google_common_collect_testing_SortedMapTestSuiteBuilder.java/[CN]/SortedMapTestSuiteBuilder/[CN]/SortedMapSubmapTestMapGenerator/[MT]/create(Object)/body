@@ -1,0 +1,20 @@
+{
+  @SuppressWarnings("unchecked") List<Entry<K,V>> extremeValues=(List)getExtremeValues();
+  @SuppressWarnings("unchecked") List<Entry<K,V>> normalValues=(List)Arrays.asList(entries);
+  Collections.sort(extremeValues,entryComparator);
+  K firstExclusive=extremeValues.get(1).getKey();
+  K lastExclusive=extremeValues.get(2).getKey();
+  if (from == Bound.NO_BOUND) {
+    extremeValues.remove(0);
+    extremeValues.remove(0);
+  }
+  if (to == Bound.NO_BOUND) {
+    extremeValues.remove(extremeValues.size() - 1);
+    extremeValues.remove(extremeValues.size() - 1);
+  }
+  List<Entry<K,V>> allEntries=new ArrayList<Entry<K,V>>();
+  allEntries.addAll(extremeValues);
+  allEntries.addAll(normalValues);
+  SortedMap<K,V> map=(SortedMap<K,V>)delegate.create((Object[])allEntries.toArray(new Entry[allEntries.size()]));
+  return createSubMap(map,firstExclusive,lastExclusive);
+}

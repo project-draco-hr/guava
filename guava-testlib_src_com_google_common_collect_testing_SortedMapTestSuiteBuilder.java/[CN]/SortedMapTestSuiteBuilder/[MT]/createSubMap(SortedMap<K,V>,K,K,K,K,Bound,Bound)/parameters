@@ -1,7 +1,0 @@
-SortedMap<K,V> map
-K firstInclusive
-K firstExclusive
-K lastExclusive
-K lastInclusive
-Bound from
-Bound to
