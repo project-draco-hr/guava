@@ -12,7 +12,7 @@
   assertEquals("null",result.get("second"));
   assertEquals(2,result.size());
   String props="test\n second = 2\n Third item :   a short  phrase   ";
-  testProp.load(new java.io.StringBufferInputStream(props));
+  testProp.load(new StringReader(props));
   result=Maps.fromProperties(testProp);
   assertEquals(4,result.size());
   assertEquals("true",result.get("first"));
@@ -24,7 +24,7 @@
   assertTrue(result.containsKey("java.version"));
   testProp=new Properties(System.getProperties());
   String override="test\njava.version : hidden";
-  testProp.load(new java.io.StringBufferInputStream(override));
+  testProp.load(new StringReader(override));
   result=Maps.fromProperties(testProp);
   assertTrue(result.size() > 2);
   assertEquals("",result.get("test"));
