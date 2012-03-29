@@ -1,10 +1,10 @@
 {
   Preconditions.checkArgument(isTeredoAddress(ip),"Address '%s' is not a Teredo address.",toAddrString(ip));
   byte[] bytes=ip.getAddress();
-  Inet4Address server=getInet4Address(copyOfRange(bytes,4,8));
+  Inet4Address server=getInet4Address(Arrays.copyOfRange(bytes,4,8));
   int flags=ByteStreams.newDataInput(bytes,8).readShort() & 0xffff;
   int port=~ByteStreams.newDataInput(bytes,10).readShort() & 0xffff;
-  byte[] clientBytes=copyOfRange(bytes,12,16);
+  byte[] clientBytes=Arrays.copyOfRange(bytes,12,16);
   for (int i=0; i < clientBytes.length; i++) {
     clientBytes[i]=(byte)~clientBytes[i];
   }

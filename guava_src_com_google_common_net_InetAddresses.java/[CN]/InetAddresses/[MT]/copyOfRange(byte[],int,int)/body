@@ -1,7 +1,0 @@
-{
-  Preconditions.checkNotNull(original);
-  int end=Math.min(to,original.length);
-  byte[] result=new byte[to - from];
-  System.arraycopy(original,from,result,0,end - from);
-  return result;
-}
