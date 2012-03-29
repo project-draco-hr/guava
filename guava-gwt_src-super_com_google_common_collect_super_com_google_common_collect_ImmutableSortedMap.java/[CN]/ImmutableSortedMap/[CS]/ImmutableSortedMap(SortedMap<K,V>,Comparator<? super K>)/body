@@ -1,0 +1,5 @@
+{
+  super(delegate);
+  this.comparator=comparator;
+  this.sortedDelegate=delegate;
+}

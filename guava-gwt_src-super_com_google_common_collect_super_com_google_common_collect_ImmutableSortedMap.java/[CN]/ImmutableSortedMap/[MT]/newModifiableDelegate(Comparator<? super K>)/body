@@ -1,0 +1,3 @@
+{
+  return newTreeMap(nullAccepting(comparator));
+}

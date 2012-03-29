@@ -1,4 +1,4 @@
 {
   checkNotNull(fromKey);
-  return new ImmutableSortedMap<K,V>(sortedDelegate.tailMap(fromKey));
+  return newView(sortedDelegate.tailMap(fromKey));
 }

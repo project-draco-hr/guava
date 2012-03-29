@@ -1,3 +1,0 @@
-{
-  super(new SampleElements.Strings(),new SampleElements.Strings());
-}

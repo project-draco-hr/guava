@@ -1,4 +1,0 @@
-{
-  Collections.sort(insertionOrder,ENTRY_COMPARATOR);
-  return insertionOrder;
-}

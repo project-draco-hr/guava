@@ -1,8 +1,0 @@
-{
-  Map<String,String> map=Maps.newLinkedHashMap();
-  for (  Entry<String,String> entry : entries) {
-    checkNotNull(entry);
-    map.put(entry.getValue(),entry.getKey());
-  }
-  return ImmutableBiMap.copyOf(map).inverse().entrySet();
-}

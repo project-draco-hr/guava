@@ -1,0 +1,7 @@
+{
+  ImmutableBiMap.Builder<String,String> builder=ImmutableBiMap.builder();
+  for (  Entry<String,String> entry : entries) {
+    builder.put(entry.getKey(),entry.getValue());
+  }
+  return builder.build();
+}
