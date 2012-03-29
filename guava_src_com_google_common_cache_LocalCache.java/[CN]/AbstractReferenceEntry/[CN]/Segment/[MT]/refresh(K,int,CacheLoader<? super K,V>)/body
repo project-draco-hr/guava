@@ -6,7 +6,7 @@
   ListenableFuture<V> result=loadAsync(key,hash,loadingValueReference,loader);
   if (result.isDone()) {
     try {
-      return result.get();
+      return Uninterruptibles.getUninterruptibly(result);
     }
  catch (    Throwable t) {
     }

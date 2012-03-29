@@ -12,6 +12,9 @@
     }
   }
  catch (  Throwable t) {
+    if (t instanceof InterruptedException) {
+      Thread.currentThread().interrupt();
+    }
     return setException(t) ? futureValue : fullyFailedFuture(t);
   }
 }
