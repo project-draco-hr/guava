@@ -1,6 +1,6 @@
 {
   checkArgument(x > 0.0 && isFinite(x),"x must be positive and finite");
-  int exponent=Math.getExponent(x);
+  int exponent=getExponent(x);
   if (!isNormal(x)) {
     return log2(x * IMPLICIT_BIT,mode) - SIGNIFICAND_BITS;
   }

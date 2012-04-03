@@ -4,8 +4,8 @@
   if (exponent < Long.SIZE - 1) {
     return x.longValue();
   }
- else   if (exponent > Double.MAX_EXPONENT) {
-    return x.signum() * Double.POSITIVE_INFINITY;
+ else   if (exponent > MAX_EXPONENT) {
+    return x.signum() * POSITIVE_INFINITY;
   }
   int shift=exponent - SIGNIFICAND_BITS - 1;
   long twiceSignifFloor=absX.shiftRight(shift).longValue();
@@ -16,5 +16,5 @@
   long bits=(long)((exponent + EXPONENT_BIAS)) << SIGNIFICAND_BITS;
   bits+=signifRounded;
   bits|=x.signum() & SIGN_MASK;
-  return Double.longBitsToDouble(bits);
+  return longBitsToDouble(bits);
 }

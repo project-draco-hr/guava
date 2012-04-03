@@ -1,5 +1,5 @@
 {
-  checkArgument(!Double.isNaN(value));
+  checkArgument(!isNaN(value));
   if (value > 0.0) {
     return value;
   }

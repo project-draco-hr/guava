@@ -7,33 +7,49 @@ case UNNECESSARY:
     checkRoundingUnnecessary(isMathematicalInteger(x));
   return x;
 case FLOOR:
-return (x >= 0.0) ? x : Math.floor(x);
+if (x >= 0.0 || isMathematicalInteger(x)) {
+  return x;
+}
+ else {
+  return x - 1.0;
+}
 case CEILING:
-return (x >= 0.0) ? Math.ceil(x) : x;
+if (x <= 0.0 || isMathematicalInteger(x)) {
+return x;
+}
+ else {
+return x + 1.0;
+}
 case DOWN:
 return x;
 case UP:
-return (x >= 0.0) ? Math.ceil(x) : Math.floor(x);
-case HALF_EVEN:
-return Math.rint(x);
-case HALF_UP:
 if (isMathematicalInteger(x)) {
 return x;
 }
  else {
-return (x >= 0.0) ? x + 0.5 : x - 0.5;
+return x + Math.copySign(1.0,x);
+}
+case HALF_EVEN:
+return rint(x);
+case HALF_UP:
+{
+double z=rint(x);
+if (fastAbs(x - z) == 0.5) {
+return x + copySign(1.0,x);
+}
+ else {
+return z;
+}
 }
 case HALF_DOWN:
-if (isMathematicalInteger(x)) {
+{
+double z=rint(x);
+if (fastAbs(x - z) == 0.5) {
 return x;
 }
- else if (x >= 0.0) {
-double z=x + 0.5;
-return (z == x) ? x : DoubleUtils.nextDown(z);
-}
  else {
-double z=x - 0.5;
-return (z == x) ? x : Math.nextUp(z);
+return z;
+}
 }
 default :
 throw new AssertionError();

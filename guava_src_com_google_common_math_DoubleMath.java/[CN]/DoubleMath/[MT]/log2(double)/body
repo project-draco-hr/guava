@@ -1,3 +1,3 @@
 {
-  return Math.log(x) / LN_2;
+  return log(x) / LN_2;
 }
