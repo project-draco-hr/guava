@@ -1,4 +1,4 @@
 {
-  builderMultimap=new SortedKeyBuilderMultimap<K,V>(checkNotNull(keyComparator),builderMultimap);
+  this.keyComparator=checkNotNull(keyComparator);
   return this;
 }
