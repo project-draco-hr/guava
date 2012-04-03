@@ -1,0 +1,10 @@
+{
+  boolean overflowCaught=false;
+  try {
+    UnsignedBytes.parseUnsignedByte(value);
+  }
+ catch (  NumberFormatException e) {
+    overflowCaught=true;
+  }
+  assertTrue(overflowCaught);
+}

@@ -1,0 +1,20 @@
+{
+  try {
+    UnsignedBytes.parseUnsignedByte("0",Character.MIN_RADIX - 1);
+    fail();
+  }
+ catch (  NumberFormatException nfe) {
+  }
+  try {
+    UnsignedBytes.parseUnsignedByte("0",Character.MAX_RADIX + 1);
+    fail();
+  }
+ catch (  NumberFormatException nfe) {
+  }
+  try {
+    UnsignedBytes.parseUnsignedByte("0",-1);
+    fail();
+  }
+ catch (  NumberFormatException nfe) {
+  }
+}

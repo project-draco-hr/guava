@@ -1,6 +1,6 @@
 {
-  if (value > 255) {
-    return (byte)255;
+  if (value > toInt(MAX_VALUE)) {
+    return MAX_VALUE;
   }
   if (value < 0) {
     return (byte)0;

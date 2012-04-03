@@ -1,0 +1,3 @@
+{
+  assertTrue(UnsignedBytes.compare(UnsignedBytes.MAX_VALUE,(byte)(UnsignedBytes.MAX_VALUE + 1)) > 0);
+}

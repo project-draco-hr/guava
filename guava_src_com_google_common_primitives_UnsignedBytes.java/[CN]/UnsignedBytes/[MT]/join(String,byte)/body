@@ -3,10 +3,10 @@
   if (array.length == 0) {
     return "";
   }
-  StringBuilder builder=new StringBuilder(array.length * 5);
+  StringBuilder builder=new StringBuilder(array.length * (3 + separator.length()));
   builder.append(toInt(array[0]));
   for (int i=1; i < array.length; i++) {
-    builder.append(separator).append(toInt(array[i]));
+    builder.append(separator).append(toString(array[i]));
   }
   return builder.toString();
 }

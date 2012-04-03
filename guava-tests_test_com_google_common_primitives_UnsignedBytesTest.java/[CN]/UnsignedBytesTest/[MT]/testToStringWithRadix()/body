@@ -1,0 +1,7 @@
+{
+  for (int radix=Character.MIN_RADIX; radix <= Character.MAX_RADIX; radix++) {
+    for (int i=0; i <= 0xff; i++) {
+      assertEquals(Integer.toString(i,radix),UnsignedBytes.toString((byte)i,radix));
+    }
+  }
+}

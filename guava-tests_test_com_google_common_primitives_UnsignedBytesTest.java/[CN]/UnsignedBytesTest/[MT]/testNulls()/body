@@ -1,5 +1,7 @@
 {
   NullPointerTester tester=new NullPointerTester();
   tester.setDefault(byte[].class,new byte[0]);
+  tester.setDefault(int.class,5);
+  tester.setDefault(String.class,"5");
   tester.testAllPublicStaticMethods(UnsignedBytes.class);
 }

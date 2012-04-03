@@ -1,0 +1,5 @@
+{
+  for (int i=0; i <= 0xff; i++) {
+    assertEquals(Integer.toString(i),UnsignedBytes.toString((byte)i));
+  }
+}
