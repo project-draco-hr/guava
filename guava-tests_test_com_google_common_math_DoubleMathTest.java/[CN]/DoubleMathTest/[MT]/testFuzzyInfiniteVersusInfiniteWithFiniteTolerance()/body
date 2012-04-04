@@ -1,0 +1,8 @@
+{
+  for (  double inf : INFINITIES) {
+    for (    double tolerance : FINITE_TOLERANCE_CANDIDATES) {
+      assertTrue(DoubleMath.fuzzyEquals(inf,inf,tolerance));
+      assertFalse(DoubleMath.fuzzyEquals(inf,-inf,tolerance));
+    }
+  }
+}

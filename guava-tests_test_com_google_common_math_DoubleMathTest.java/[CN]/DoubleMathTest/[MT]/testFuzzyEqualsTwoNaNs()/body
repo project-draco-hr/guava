@@ -1,0 +1,5 @@
+{
+  for (  double tolerance : TOLERANCE_CANDIDATES) {
+    assertTrue(DoubleMath.fuzzyEquals(Double.NaN,Double.NaN,tolerance));
+  }
+}

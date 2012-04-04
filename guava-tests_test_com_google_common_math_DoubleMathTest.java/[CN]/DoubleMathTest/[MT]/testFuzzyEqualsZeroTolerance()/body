@@ -1,0 +1,9 @@
+{
+  for (  double zero : Doubles.asList(0.0,-0.0)) {
+    for (    double a : ALL_DOUBLE_CANDIDATES) {
+      for (      double b : ALL_DOUBLE_CANDIDATES) {
+        assertEquals(a == b || (Double.isNaN(a) && Double.isNaN(b)),DoubleMath.fuzzyEquals(a,b,zero));
+      }
+    }
+  }
+}

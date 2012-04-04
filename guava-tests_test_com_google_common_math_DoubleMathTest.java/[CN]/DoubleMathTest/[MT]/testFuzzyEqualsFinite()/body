@@ -1,0 +1,9 @@
+{
+  for (  double a : FINITE_DOUBLE_CANDIDATES) {
+    for (    double b : FINITE_DOUBLE_CANDIDATES) {
+      for (      double tolerance : FINITE_TOLERANCE_CANDIDATES) {
+        assertEquals(Math.abs(a - b) <= tolerance,DoubleMath.fuzzyEquals(a,b,tolerance));
+      }
+    }
+  }
+}

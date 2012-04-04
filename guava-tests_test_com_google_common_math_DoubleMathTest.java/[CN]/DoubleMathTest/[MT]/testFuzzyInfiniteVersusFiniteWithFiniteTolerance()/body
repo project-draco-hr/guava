@@ -1,0 +1,10 @@
+{
+  for (  double inf : INFINITIES) {
+    for (    double a : FINITE_DOUBLE_CANDIDATES) {
+      for (      double tolerance : FINITE_TOLERANCE_CANDIDATES) {
+        assertFalse(DoubleMath.fuzzyEquals(a,inf,tolerance));
+        assertFalse(DoubleMath.fuzzyEquals(inf,a,tolerance));
+      }
+    }
+  }
+}

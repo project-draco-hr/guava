@@ -1,0 +1,7 @@
+{
+  for (  double a : DOUBLE_CANDIDATES_EXCEPT_NAN) {
+    for (    double b : DOUBLE_CANDIDATES_EXCEPT_NAN) {
+      assertTrue(DoubleMath.fuzzyEquals(a,b,Double.POSITIVE_INFINITY));
+    }
+  }
+}

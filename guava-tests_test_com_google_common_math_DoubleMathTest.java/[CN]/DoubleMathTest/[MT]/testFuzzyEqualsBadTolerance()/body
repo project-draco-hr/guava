@@ -1,0 +1,10 @@
+{
+  for (  double tolerance : BAD_TOLERANCE_CANDIDATES) {
+    try {
+      DoubleMath.fuzzyEquals(1,2,tolerance);
+      fail("Expected IllegalArgumentException");
+    }
+ catch (    IllegalArgumentException expected) {
+    }
+  }
+}

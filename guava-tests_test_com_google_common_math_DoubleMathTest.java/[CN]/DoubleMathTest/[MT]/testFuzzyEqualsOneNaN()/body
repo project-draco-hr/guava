@@ -1,0 +1,8 @@
+{
+  for (  double a : DOUBLE_CANDIDATES_EXCEPT_NAN) {
+    for (    double tolerance : TOLERANCE_CANDIDATES) {
+      assertFalse(DoubleMath.fuzzyEquals(a,Double.NaN,tolerance));
+      assertFalse(DoubleMath.fuzzyEquals(Double.NaN,a,tolerance));
+    }
+  }
+}
