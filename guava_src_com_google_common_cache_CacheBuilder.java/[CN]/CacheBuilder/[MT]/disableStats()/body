@@ -1,5 +1,0 @@
-{
-  checkState(statsCounterSupplier == CACHE_STATS_COUNTER);
-  statsCounterSupplier=NULL_STATS_COUNTER;
-  return this;
-}
