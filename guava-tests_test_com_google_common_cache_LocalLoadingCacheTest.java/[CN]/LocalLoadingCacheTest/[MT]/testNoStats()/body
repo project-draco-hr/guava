@@ -1,6 +1,5 @@
 {
-  CacheBuilder<Object,Object> builder=createCacheBuilder().concurrencyLevel(1).maximumSize(2);
-  builder.statsCounterSupplier=CacheBuilder.NULL_STATS_COUNTER;
+  CacheBuilder<Object,Object> builder=CacheBuilder.newBuilder().concurrencyLevel(1).maximumSize(2);
   LocalLoadingCache<Object,Object> cache=makeCache(builder,identityLoader());
   assertEquals(EMPTY_STATS,cache.stats());
   Object one=new Object();

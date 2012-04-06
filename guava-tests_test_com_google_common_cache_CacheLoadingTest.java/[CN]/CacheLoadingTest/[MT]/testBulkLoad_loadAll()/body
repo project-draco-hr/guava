@@ -1,7 +1,7 @@
 {
   IdentityLoader<Integer> backingLoader=identityLoader();
   CacheLoader<Integer,Integer> loader=bulkLoader(backingLoader);
-  LoadingCache<Integer,Integer> cache=CacheBuilder.newBuilder().build(loader);
+  LoadingCache<Integer,Integer> cache=CacheBuilder.newBuilder().recordStats().build(loader);
   CacheStats stats=cache.stats();
   assertEquals(0,stats.missCount());
   assertEquals(0,stats.loadSuccessCount());

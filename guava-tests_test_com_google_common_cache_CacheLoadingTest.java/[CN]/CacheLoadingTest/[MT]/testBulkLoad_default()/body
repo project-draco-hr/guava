@@ -1,5 +1,5 @@
 {
-  LoadingCache<Integer,Integer> cache=CacheBuilder.newBuilder().build(TestingCacheLoaders.<Integer>identityLoader());
+  LoadingCache<Integer,Integer> cache=CacheBuilder.newBuilder().recordStats().build(TestingCacheLoaders.<Integer>identityLoader());
   CacheStats stats=cache.stats();
   assertEquals(0,stats.missCount());
   assertEquals(0,stats.loadSuccessCount());

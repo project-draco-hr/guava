@@ -1,7 +1,7 @@
 {
   Exception e=new RuntimeException();
   CacheLoader<Object,Object> loader=exceptionLoader(e);
-  LoadingCache<Object,Object> cache=CacheBuilder.newBuilder().build(bulkLoader(loader));
+  LoadingCache<Object,Object> cache=CacheBuilder.newBuilder().recordStats().build(bulkLoader(loader));
   CacheStats stats=cache.stats();
   assertEquals(0,stats.missCount());
   assertEquals(0,stats.loadSuccessCount());

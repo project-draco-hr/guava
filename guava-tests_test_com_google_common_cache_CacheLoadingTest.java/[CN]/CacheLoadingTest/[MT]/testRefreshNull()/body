@@ -10,7 +10,7 @@
     }
   }
 ;
-  LoadingCache<Object,Object> cache=CacheBuilder.newBuilder().ticker(ticker).refreshAfterWrite(1,MILLISECONDS).build(loader);
+  LoadingCache<Object,Object> cache=CacheBuilder.newBuilder().recordStats().ticker(ticker).refreshAfterWrite(1,MILLISECONDS).build(loader);
   Object key=new Object();
   CacheStats stats=cache.stats();
   assertEquals(0,stats.missCount());

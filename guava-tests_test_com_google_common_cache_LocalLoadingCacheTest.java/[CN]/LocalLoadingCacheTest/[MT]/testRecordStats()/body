@@ -1,0 +1,21 @@
+{
+  CacheBuilder<Object,Object> builder=createCacheBuilder().recordStats().concurrencyLevel(1).maximumSize(2);
+  LocalLoadingCache<Object,Object> cache=makeCache(builder,identityLoader());
+  assertEquals(0,cache.stats().hitCount());
+  assertEquals(0,cache.stats().missCount());
+  Object one=new Object();
+  cache.getUnchecked(one);
+  assertEquals(0,cache.stats().hitCount());
+  assertEquals(1,cache.stats().missCount());
+  cache.getUnchecked(one);
+  assertEquals(1,cache.stats().hitCount());
+  assertEquals(1,cache.stats().missCount());
+  Object two=new Object();
+  cache.getUnchecked(two);
+  assertEquals(1,cache.stats().hitCount());
+  assertEquals(2,cache.stats().missCount());
+  Object three=new Object();
+  cache.getUnchecked(three);
+  assertEquals(1,cache.stats().hitCount());
+  assertEquals(3,cache.stats().missCount());
+}

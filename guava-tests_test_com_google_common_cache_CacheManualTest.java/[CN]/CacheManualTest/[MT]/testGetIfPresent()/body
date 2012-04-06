@@ -1,5 +1,5 @@
 {
-  Cache<Object,Object> cache=CacheBuilder.newBuilder().build();
+  Cache<Object,Object> cache=CacheBuilder.newBuilder().recordStats().build();
   CacheStats stats=cache.stats();
   assertEquals(0,stats.missCount());
   assertEquals(0,stats.loadSuccessCount());
