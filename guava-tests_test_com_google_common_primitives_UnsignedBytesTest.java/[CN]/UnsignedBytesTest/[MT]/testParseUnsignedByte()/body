@@ -5,4 +5,5 @@
   assertParseFails("1000");
   assertParseFails("-1");
   assertParseFails("-128");
+  assertParseFails("256");
 }

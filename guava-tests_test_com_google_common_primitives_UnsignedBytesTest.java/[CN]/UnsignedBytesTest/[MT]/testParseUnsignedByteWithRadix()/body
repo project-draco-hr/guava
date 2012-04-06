@@ -5,5 +5,7 @@
     }
     assertParseFails(Integer.toString(1000,radix),radix);
     assertParseFails(Integer.toString(-1,radix),radix);
+    assertParseFails(Integer.toString(-128,radix),radix);
+    assertParseFails(Integer.toString(256,radix),radix);
   }
 }
