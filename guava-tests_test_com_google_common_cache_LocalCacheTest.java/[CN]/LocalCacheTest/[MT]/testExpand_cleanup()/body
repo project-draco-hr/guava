@@ -12,7 +12,7 @@
       key=null;
     }
     entry=DummyEntry.create(key,hash,entry);
-    ValueReference<Object,Object> valueRef=DummyValueReference.create(value,entry);
+    ValueReference<Object,Object> valueRef=DummyValueReference.create(value);
     entry.setValueReference(valueRef);
   }
   segment.table.set(0,entry);

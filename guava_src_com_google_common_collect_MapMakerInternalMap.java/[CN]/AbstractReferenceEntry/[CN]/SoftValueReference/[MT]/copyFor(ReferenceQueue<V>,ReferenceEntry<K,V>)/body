@@ -1,3 +1,0 @@
-{
-  return new SoftValueReference<K,V>(queue,get(),entry);
-}

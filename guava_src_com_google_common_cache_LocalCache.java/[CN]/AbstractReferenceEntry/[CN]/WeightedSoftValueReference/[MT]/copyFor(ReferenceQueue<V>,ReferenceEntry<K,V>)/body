@@ -1,3 +1,0 @@
-{
-  return new WeightedSoftValueReference<K,V>(queue,get(),entry,weight);
-}

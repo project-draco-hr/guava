@@ -1,3 +1,0 @@
-{
-  return new WeightedWeakValueReference<K,V>(queue,get(),entry,weight);
-}

@@ -8,7 +8,7 @@
   Object value=new Object();
   int hash=map.hash(key);
   DummyEntry<Object,Object> entry=DummyEntry.create(key,hash,null);
-  DummyValueReference<Object,Object> valueRef=DummyValueReference.create(value,entry);
+  DummyValueReference<Object,Object> valueRef=DummyValueReference.create(value);
   entry.setValueReference(valueRef);
   assertFalse(segment.reclaimValue(key,hash,valueRef));
   segment.recordWrite(entry,1,map.ticker.read());
@@ -24,7 +24,7 @@
   assertEquals(0,segment.count);
   assertNull(table.get(0));
   table.set(0,entry);
-  DummyValueReference<Object,Object> otherValueRef=DummyValueReference.create(value,entry);
+  DummyValueReference<Object,Object> otherValueRef=DummyValueReference.create(value);
   entry.setValueReference(otherValueRef);
   assertFalse(segment.reclaimValue(key,hash,valueRef));
   assertEquals(1,listener.getCount());

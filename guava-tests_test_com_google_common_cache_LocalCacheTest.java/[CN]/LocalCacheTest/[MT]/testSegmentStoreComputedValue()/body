@@ -35,7 +35,7 @@
   assertEquals(1,segment.count);
   assertTrue(listener.isEmpty());
   Object value4=new Object();
-  DummyValueReference<Object,Object> value3Ref=DummyValueReference.create(value3,entry);
+  DummyValueReference<Object,Object> value3Ref=DummyValueReference.create(value3);
   valueRef=new LoadingValueReference<Object,Object>(value3Ref);
   entry.setValueReference(valueRef);
   table.set(index,entry);

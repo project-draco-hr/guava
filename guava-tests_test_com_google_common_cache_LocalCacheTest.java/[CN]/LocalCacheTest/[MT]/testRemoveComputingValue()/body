@@ -15,7 +15,7 @@
   assertEquals(0,segment.count);
   assertNull(table.get(0));
   Object value=new Object();
-  DummyValueReference<Object,Object> previousRef=DummyValueReference.create(value,entry);
+  DummyValueReference<Object,Object> previousRef=DummyValueReference.create(value);
   valueRef=new LoadingValueReference<Object,Object>(previousRef);
   entry.setValueReference(valueRef);
   table.set(0,entry);
@@ -24,7 +24,7 @@
   assertSame(entry,table.get(0));
   assertSame(value,segment.get(key,hash));
   table.set(0,entry);
-  DummyValueReference<Object,Object> otherValueRef=DummyValueReference.create(value,entry);
+  DummyValueReference<Object,Object> otherValueRef=DummyValueReference.create(value);
   entry.setValueReference(otherValueRef);
   assertFalse(segment.removeLoadingValue(key,hash,valueRef));
   entry.setValueReference(valueRef);

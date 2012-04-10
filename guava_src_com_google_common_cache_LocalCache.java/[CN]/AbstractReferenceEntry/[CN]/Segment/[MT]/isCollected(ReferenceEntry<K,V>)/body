@@ -1,7 +1,0 @@
-{
-  if (entry.getKey() == null) {
-    return true;
-  }
-  ValueReference<K,V> valueReference=entry.getValueReference();
-  return (valueReference.get() == null) && valueReference.isActive();
-}

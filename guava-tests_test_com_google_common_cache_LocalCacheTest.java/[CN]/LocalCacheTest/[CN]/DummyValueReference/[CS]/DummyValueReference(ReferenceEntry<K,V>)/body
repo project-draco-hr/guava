@@ -1,4 +1,0 @@
-{
-  this(null,entry);
-  this.loading=true;
-}

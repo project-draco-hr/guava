@@ -10,7 +10,7 @@
   Object value=new Object();
   int index=hash & (table.length() - 1);
   DummyEntry<Object,Object> entry=DummyEntry.create(key,hash,null);
-  DummyValueReference<Object,Object> valueRef=DummyValueReference.create(value,entry);
+  DummyValueReference<Object,Object> valueRef=DummyValueReference.create(value);
   entry.setValueReference(valueRef);
   table.set(index,entry);
   segment.count++;

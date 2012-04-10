@@ -28,15 +28,15 @@
         }
         newTable.set(tailIndex,tail);
         for (ReferenceEntry<K,V> e=head; e != tail; e=e.getNext()) {
-          if (isCollected(e)) {
-            removeCollectedEntry(e);
-            newCount--;
+          int newIndex=e.getHash() & newMask;
+          ReferenceEntry<K,V> newNext=newTable.get(newIndex);
+          ReferenceEntry<K,V> newFirst=copyEntry(e,newNext);
+          if (newFirst != null) {
+            newTable.set(newIndex,newFirst);
           }
  else {
-            int newIndex=e.getHash() & newMask;
-            ReferenceEntry<K,V> newNext=newTable.get(newIndex);
-            ReferenceEntry<K,V> newFirst=copyEntry(e,newNext);
-            newTable.set(newIndex,newFirst);
+            removeCollectedEntry(e);
+            newCount--;
           }
         }
       }

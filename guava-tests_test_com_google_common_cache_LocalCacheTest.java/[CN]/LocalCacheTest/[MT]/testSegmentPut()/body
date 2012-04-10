@@ -12,7 +12,7 @@
   assertEquals(1,segment.count);
   assertSame(newValue,segment.get(key,hash));
   ReferenceEntry<Object,Object> entry=segment.getEntry(key,hash);
-  DummyValueReference<Object,Object> oldValueRef=DummyValueReference.create(oldValue,entry);
+  DummyValueReference<Object,Object> oldValueRef=DummyValueReference.create(oldValue);
   entry.setValueReference(oldValueRef);
   assertSame(oldValue,segment.get(key,hash));
   oldValueRef.clear();
