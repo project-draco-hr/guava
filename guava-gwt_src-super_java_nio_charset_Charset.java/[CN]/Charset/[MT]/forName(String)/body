@@ -1,0 +1,21 @@
+{
+  if (charsetName == null) {
+    throw new IllegalArgumentException("Null charset name");
+  }
+  int length=charsetName.length();
+  if (length == 0) {
+    throw new IllegalCharsetNameException(charsetName);
+  }
+  for (int i=0; i < length; i++) {
+    char c=charsetName.charAt(i);
+    if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z') || (c >= '0' && c <= '9')|| (c == '-' && i != 0)|| (c == ':' && i != 0)|| (c == '_' && i != 0)|| (c == '.' && i != 0)) {
+      continue;
+    }
+    throw new IllegalCharsetNameException(charsetName);
+  }
+  Charset charset=AVAILABLE_CHARSETS.get(charsetName.toUpperCase());
+  if (charset != null) {
+    return charset;
+  }
+  throw new UnsupportedCharsetException(charsetName);
+}

@@ -1,0 +1,12 @@
+{
+  if (o == this) {
+    return true;
+  }
+ else   if (o instanceof Charset) {
+    Charset that=(Charset)o;
+    return this.name.equals(that.name);
+  }
+ else {
+    return false;
+  }
+}
