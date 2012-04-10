@@ -5,7 +5,6 @@ case 0:
 case 1:
   return ImmutableList.of(iterator().next());
 default :
-@SuppressWarnings("unchecked") E[] castedArray=(E[])toArray();
-return new ImmutableAsList<E>(Arrays.asList(castedArray));
+return new RegularImmutableAsList<E>(this,toArray());
 }
 }

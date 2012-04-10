@@ -1,7 +1,11 @@
 {
-  return new TransformedImmutableList<Entry<K,V>,V>(entrySet().asList()){
-    @Override V transform(    Entry<K,V> entry){
-      return entry.getValue();
+  final ImmutableList<Entry<K,V>> entryList=entrySet().asList();
+  return new ImmutableAsList<V>(){
+    @Override public V get(    int index){
+      return entryList.get(index).getValue();
+    }
+    @Override ImmutableCollection<V> delegateCollection(){
+      return Values.this;
     }
   }
 ;

@@ -1,11 +1,3 @@
 {
-  int size=size();
-  if (array.length < size) {
-    array=ObjectArrays.newArray(array,size);
-  }
- else   if (array.length > size) {
-    array[size]=null;
-  }
-  System.arraycopy(elements,0,array,0,size);
-  return array;
+  return asList().toArray(array);
 }

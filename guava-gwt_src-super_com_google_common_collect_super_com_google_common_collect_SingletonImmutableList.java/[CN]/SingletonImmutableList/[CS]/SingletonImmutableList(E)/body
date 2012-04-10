@@ -1,4 +1,4 @@
 {
-  super(Collections.singletonList(checkNotNull(element)));
+  this.delegate=singletonList(checkNotNull(element));
   this.element=element;
 }

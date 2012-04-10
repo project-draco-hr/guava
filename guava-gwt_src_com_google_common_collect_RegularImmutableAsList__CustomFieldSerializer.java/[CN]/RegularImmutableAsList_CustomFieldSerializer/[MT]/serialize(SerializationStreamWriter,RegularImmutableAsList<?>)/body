@@ -1,0 +1,4 @@
+{
+  writer.writeObject(instance.delegateCollection());
+  writer.writeObject(instance.delegateList());
+}

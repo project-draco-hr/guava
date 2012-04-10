@@ -1,0 +1,6 @@
+{
+  Multiset<E> copy=reserialize(original);
+  assertEquals(original,copy);
+  assertTrue(copy instanceof ImmutableMultiset);
+  return copy;
+}

@@ -1,0 +1,3 @@
+{
+  return unsafeDelegateList((List)Arrays.asList(elements));
+}

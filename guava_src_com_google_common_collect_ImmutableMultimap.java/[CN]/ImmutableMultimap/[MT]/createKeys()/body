@@ -1,7 +1,3 @@
 {
-  ImmutableMultiset.Builder<K> builder=ImmutableMultiset.builder();
-  for (  Entry<K,? extends ImmutableCollection<V>> entry : map.entrySet()) {
-    builder.addCopies(entry.getKey(),entry.getValue().size());
-  }
-  return builder.build();
+  return new Keys();
 }

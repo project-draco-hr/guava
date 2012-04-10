@@ -1,0 +1,5 @@
+{
+  @SuppressWarnings("unchecked") ImmutableCollection<Object> delegateCollection=(ImmutableCollection)reader.readObject();
+  ImmutableList<?> delegateList=(ImmutableList<?>)reader.readObject();
+  return new RegularImmutableAsList<Object>(delegateCollection,delegateList);
+}

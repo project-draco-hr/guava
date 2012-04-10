@@ -1,3 +1,4 @@
 {
-  return backingSet.indexOf(target);
+  int index=delegateCollection().indexOf(target);
+  return (index >= 0 && get(index).equals(target)) ? index : -1;
 }

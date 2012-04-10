@@ -1,0 +1,13 @@
+{
+  final ImmutableList<? extends Map.Entry<K,? extends Collection<V>>> mapEntries=map.entrySet().asList();
+  return new ImmutableAsList<Entry<K>>(){
+    @Override public Entry<K> get(    int index){
+      Map.Entry<K,? extends Collection<V>> entry=mapEntries.get(index);
+      return Multisets.immutableEntry(entry.getKey(),entry.getValue().size());
+    }
+    @Override ImmutableCollection<Entry<K>> delegateCollection(){
+      return KeysEntrySet.this;
+    }
+  }
+;
+}
