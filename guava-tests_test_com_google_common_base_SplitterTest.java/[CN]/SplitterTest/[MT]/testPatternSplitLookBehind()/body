@@ -1,0 +1,6 @@
+{
+  String toSplit=":foo::barbaz:";
+  String regexPattern="(?<=:)";
+  Iterable<String> split=Splitter.onPattern(regexPattern).split(toSplit);
+  ASSERT.that(split).hasContentsInOrder(":","foo:",":","barbaz:");
+}

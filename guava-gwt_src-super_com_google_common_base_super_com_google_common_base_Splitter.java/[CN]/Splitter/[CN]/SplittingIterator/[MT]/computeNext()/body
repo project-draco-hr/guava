@@ -1,6 +1,7 @@
 {
+  int nextStart=offset;
   while (offset != -1) {
-    int start=offset;
+    int start=nextStart;
     int end;
     int separatorPosition=separatorStart(offset);
     if (separatorPosition == -1) {
@@ -11,6 +12,13 @@
       end=separatorPosition;
       offset=separatorEnd(separatorPosition);
     }
+    if (offset == nextStart) {
+      offset++;
+      if (offset >= toSplit.length()) {
+        offset=-1;
+      }
+      continue;
+    }
     while (start < end && trimmer.matches(toSplit.charAt(start))) {
       start++;
     }
@@ -18,6 +26,7 @@
       end--;
     }
     if (omitEmptyStrings && start == end) {
+      nextStart=offset;
       continue;
     }
     if (limit == 1) {
