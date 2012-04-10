@@ -4,7 +4,7 @@
     return "";
   }
   StringBuilder builder=new StringBuilder(array.length * 5);
-  builder.append(array[0]);
+  builder.append(toString(array[0]));
   for (int i=1; i < array.length; i++) {
     builder.append(separator).append(toString(array[i]));
   }
