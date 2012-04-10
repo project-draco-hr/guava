@@ -1,4 +1,4 @@
 {
-  loadExceptionCount.incrementAndGet();
-  totalLoadTime.addAndGet(loadTime);
+  loadExceptionCount.increment();
+  totalLoadTime.add(loadTime);
 }

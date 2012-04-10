@@ -1,4 +1,4 @@
 {
-  loadSuccessCount.incrementAndGet();
-  totalLoadTime.addAndGet(loadTime);
+  loadSuccessCount.increment();
+  totalLoadTime.add(loadTime);
 }
