@@ -1,0 +1,34 @@
+{
+  checkNotNull(rangeToClear);
+  if (rangeToClear.isEmpty()) {
+    return;
+  }
+  Entry<Cut<K>,RangeValue<K,V>> lowerThanLB=map.lowerEntry(rangeToClear.lowerBound);
+  if (lowerThanLB != null) {
+    RangeValue<K,V> lowerRangeValue=lowerThanLB.getValue();
+    Cut<K> upperCut=lowerRangeValue.getUpperBound();
+    if (upperCut.compareTo(rangeToClear.lowerBound) >= 0) {
+      RangeValue<K,V> replacement=lowerRangeValue.withUpperBound(rangeToClear.lowerBound);
+      if (replacement == null) {
+        removeRange(lowerRangeValue);
+      }
+ else {
+        putRange(replacement);
+      }
+      if (upperCut.compareTo(rangeToClear.upperBound) >= 0) {
+        putRange(lowerRangeValue.withLowerBound(rangeToClear.upperBound));
+        return;
+      }
+    }
+  }
+  Entry<Cut<K>,RangeValue<K,V>> lowerThanUB=map.lowerEntry(rangeToClear.upperBound);
+  if (lowerThanUB != null) {
+    RangeValue<K,V> lowerRangeValue=lowerThanUB.getValue();
+    Cut<K> upperCut=lowerRangeValue.getUpperBound();
+    if (upperCut.compareTo(rangeToClear.upperBound) >= 0) {
+      removeRange(lowerRangeValue);
+      putRange(lowerRangeValue.withLowerBound(rangeToClear.upperBound));
+    }
+  }
+  map.subMap(rangeToClear.lowerBound,rangeToClear.upperBound).clear();
+}

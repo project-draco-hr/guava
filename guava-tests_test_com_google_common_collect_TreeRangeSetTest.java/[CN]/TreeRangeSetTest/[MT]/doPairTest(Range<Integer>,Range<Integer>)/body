@@ -1,0 +1,25 @@
+{
+  TreeRangeSet<Integer> rangeSet=TreeRangeSet.create();
+  rangeSet.add(a);
+  rangeSet.add(b);
+  if (a.isEmpty() && b.isEmpty()) {
+    ASSERT.that(rangeSet.asRanges()).isEmpty();
+  }
+ else   if (a.isEmpty()) {
+    ASSERT.that(rangeSet.asRanges()).hasContentsInOrder(b);
+  }
+ else   if (b.isEmpty()) {
+    ASSERT.that(rangeSet.asRanges()).hasContentsInOrder(a);
+  }
+ else   if (a.isConnected(b)) {
+    ASSERT.that(rangeSet.asRanges()).hasContentsInOrder(a.span(b));
+  }
+ else {
+    if (a.lowerEndpoint() < b.lowerEndpoint()) {
+      ASSERT.that(rangeSet.asRanges()).hasContentsInOrder(a,b);
+    }
+ else {
+      ASSERT.that(rangeSet.asRanges()).hasContentsInOrder(b,a);
+    }
+  }
+}

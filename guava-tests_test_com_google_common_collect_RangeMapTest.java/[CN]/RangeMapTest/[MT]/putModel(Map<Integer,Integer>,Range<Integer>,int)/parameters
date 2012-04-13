@@ -1,0 +1,3 @@
+Map<Integer,Integer> model
+Range<Integer> range
+int value

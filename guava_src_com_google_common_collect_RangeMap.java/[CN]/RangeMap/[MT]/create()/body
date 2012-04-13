@@ -1,0 +1,3 @@
+{
+  return new RangeMap<K,V>(new TreeMap<Cut<K>,RangeValue<K,V>>());
+}

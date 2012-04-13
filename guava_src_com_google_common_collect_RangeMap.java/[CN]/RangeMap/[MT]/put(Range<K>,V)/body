@@ -1,0 +1,9 @@
+{
+  checkNotNull(keyRange);
+  checkNotNull(value);
+  if (keyRange.isEmpty()) {
+    return;
+  }
+  clear(keyRange);
+  putRange(new RangeValue<K,V>(keyRange,value));
+}

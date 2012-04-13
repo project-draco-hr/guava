@@ -1,0 +1,8 @@
+{
+  if (range.isEmpty()) {
+    rangesByLowerCut.remove(range.lowerBound);
+  }
+ else {
+    rangesByLowerCut.put(range.lowerBound,range);
+  }
+}

@@ -1,0 +1,13 @@
+{
+  assertEquals(rangeSet.asRanges().isEmpty(),rangeSet.isEmpty());
+  assertEquals(!rangeSet.asRanges().iterator().hasNext(),rangeSet.isEmpty());
+  List<Range<C>> asRanges=ImmutableList.copyOf(rangeSet.asRanges());
+  for (int i=0; i + 1 < asRanges.size(); i++) {
+    Range<C> range1=asRanges.get(i);
+    Range<C> range2=asRanges.get(i + 1);
+    assertFalse(range1.isConnected(range2));
+  }
+  for (  Range<C> range : asRanges) {
+    assertFalse(range.isEmpty());
+  }
+}

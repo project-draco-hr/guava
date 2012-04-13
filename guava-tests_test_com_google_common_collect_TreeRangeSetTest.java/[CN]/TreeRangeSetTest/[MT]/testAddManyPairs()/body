@@ -1,0 +1,25 @@
+{
+  for (int aLow=0; aLow < 6; aLow++) {
+    for (int aHigh=0; aHigh < 6; aHigh++) {
+      for (      BoundType aLowType : BoundType.values()) {
+        for (        BoundType aHighType : BoundType.values()) {
+          if ((aLow == aHigh && aLowType == OPEN && aHighType == OPEN) || aLow > aHigh) {
+            continue;
+          }
+          for (int bLow=0; bLow < 6; bLow++) {
+            for (int bHigh=0; bHigh < 6; bHigh++) {
+              for (              BoundType bLowType : BoundType.values()) {
+                for (                BoundType bHighType : BoundType.values()) {
+                  if ((bLow == bHigh && bLowType == OPEN && bHighType == OPEN) || bLow > bHigh) {
+                    continue;
+                  }
+                  doPairTest(range(aLow,aLowType,aHigh,aHighType),range(bLow,bLowType,bHigh,bHighType));
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  for (  Range<Integer> range : RANGES) {
+    Map<Integer,Integer> model=Maps.newHashMap();
+    putModel(model,range,1);
+    RangeMap<Integer,Integer> test=RangeMap.create();
+    test.put(range,1);
+    verify(model,test);
+  }
+}

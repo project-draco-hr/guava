@@ -1,0 +1,7 @@
+{
+  for (int i=MIN_BOUND - 1; i <= MAX_BOUND + 1; i++) {
+    if (range.contains(i)) {
+      model.put(i,value);
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  TreeRangeSet<Integer> rangeSet=TreeRangeSet.create();
+  rangeSet.add(Ranges.closed(1,4));
+  rangeSet.add(Ranges.open(2,6));
+  testInvariants(rangeSet);
+  ASSERT.that(rangeSet.asRanges()).hasContentsInOrder(Ranges.closedOpen(1,6));
+  ASSERT.that(rangeSet.complement().asRanges()).hasContentsInOrder(Ranges.lessThan(1),Ranges.atLeast(6));
+}
