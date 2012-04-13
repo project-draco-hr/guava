@@ -4,7 +4,7 @@
       BigInteger expectedResult=valueOf(b).pow(k);
       boolean expectedSuccess=fitsInInt(expectedResult);
       try {
-        assertEquals(b + "^" + k,expectedResult.intValue(),IntMath.checkedPow(b,k));
+        assertEquals(b + "^" + k,force32(expectedResult.intValue()),IntMath.checkedPow(b,k));
         assertTrue(b + "^" + k+ " should have succeeded",expectedSuccess);
       }
  catch (      ArithmeticException e) {
