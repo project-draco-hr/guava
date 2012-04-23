@@ -1,4 +1,0 @@
-{
-  Integer columnIndex=columnKeyToIndex.get(columnKey);
-  return getIndexed(rowIndex,columnIndex);
-}

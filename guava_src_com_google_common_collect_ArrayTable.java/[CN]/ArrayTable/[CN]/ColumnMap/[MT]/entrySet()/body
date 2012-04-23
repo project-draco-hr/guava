@@ -1,4 +1,0 @@
-{
-  ColumnMapEntrySet set=entrySet;
-  return (set == null) ? entrySet=new ColumnMapEntrySet() : set;
-}

@@ -1,4 +1,0 @@
-{
-  Integer rowIndex=rowKeyToIndex.get(rowKey);
-  return (rowIndex == null) ? null : new Row(rowIndex);
-}

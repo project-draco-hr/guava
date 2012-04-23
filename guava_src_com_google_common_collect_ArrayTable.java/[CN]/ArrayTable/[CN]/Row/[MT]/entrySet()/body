@@ -1,4 +1,0 @@
-{
-  RowEntrySet set=entrySet;
-  return (set == null) ? entrySet=new RowEntrySet(rowIndex) : set;
-}

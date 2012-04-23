@@ -1,8 +1,0 @@
-{
-  return new AbstractIndexedListIterator<Entry<C,Map<R,V>>>(size()){
-    @Override protected Entry<C,Map<R,V>> get(    int index){
-      return Maps.<C,Map<R,V>>immutableEntry(columnList.get(index),new Column(index));
-    }
-  }
-;
-}
