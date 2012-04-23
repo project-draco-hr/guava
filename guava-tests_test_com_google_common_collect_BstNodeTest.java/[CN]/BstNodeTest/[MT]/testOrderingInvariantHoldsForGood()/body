@@ -1,7 +1,0 @@
-{
-  for (  SimpleNode left : GOOD_LEFTS) {
-    for (    SimpleNode right : GOOD_RIGHTS) {
-      assertTrue(new SimpleNode(MIDDLE_KEY,left,right).orderingInvariantHolds(Ordering.natural()));
-    }
-  }
-}

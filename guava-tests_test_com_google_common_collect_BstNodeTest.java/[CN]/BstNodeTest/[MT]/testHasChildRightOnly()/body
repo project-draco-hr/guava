@@ -1,6 +1,0 @@
-{
-  SimpleNode leaf=new SimpleNode('c',null,null);
-  SimpleNode node=new SimpleNode('b',null,leaf);
-  testLacksChild(node,LEFT);
-  testChildIs(node,RIGHT,leaf);
-}

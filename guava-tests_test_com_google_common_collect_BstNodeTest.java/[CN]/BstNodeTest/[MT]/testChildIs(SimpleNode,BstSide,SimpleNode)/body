@@ -1,5 +1,0 @@
-{
-  assertEquals(expectedChild,node.childOrNull(side));
-  assertTrue(node.hasChild(side));
-  assertEquals(expectedChild,node.getChild(side));
-}

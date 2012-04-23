@@ -1,5 +1,0 @@
-{
-  this.balancePolicy=checkNotNull(balancePolicy);
-  this.nodeFactory=checkNotNull(nodeFactory);
-  this.modifier=checkNotNull(modifier);
-}

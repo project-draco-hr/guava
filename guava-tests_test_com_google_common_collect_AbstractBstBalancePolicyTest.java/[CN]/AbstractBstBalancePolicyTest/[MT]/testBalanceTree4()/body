@@ -1,9 +1,0 @@
-{
-  SimpleNode f=balanceNew('f',null,null);
-  SimpleNode e=balanceNew('e',null,f);
-  SimpleNode d=balanceNew('d',null,e);
-  SimpleNode c=balanceNew('c',null,d);
-  SimpleNode b=balanceNew('b',null,c);
-  SimpleNode a=balanceNew('a',null,b);
-  assertInOrderTraversalIs(a,"abcdef");
-}

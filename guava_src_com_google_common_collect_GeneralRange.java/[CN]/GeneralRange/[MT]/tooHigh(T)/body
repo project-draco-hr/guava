@@ -2,7 +2,7 @@
   if (!hasUpperBound()) {
     return false;
   }
-  T ubound=upperEndpoint;
+  T ubound=getUpperEndpoint();
   int cmp=comparator.compare(t,ubound);
-  return cmp > 0 | (cmp == 0 & upperBoundType == OPEN);
+  return cmp > 0 | (cmp == 0 & getUpperBoundType() == OPEN);
 }

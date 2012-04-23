@@ -1,3 +1,0 @@
-N root
-BstNodeFactory<N> nodeFactory
-BstBalancePolicy<N> balancePolicy

@@ -1,3 +1,0 @@
-{
-  return (oldCount == expectedCount) ? setCount : oldCount;
-}

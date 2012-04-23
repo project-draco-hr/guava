@@ -1,5 +1,0 @@
-{
-  super(range.comparator());
-  this.range=range;
-  this.rootReference=root;
-}

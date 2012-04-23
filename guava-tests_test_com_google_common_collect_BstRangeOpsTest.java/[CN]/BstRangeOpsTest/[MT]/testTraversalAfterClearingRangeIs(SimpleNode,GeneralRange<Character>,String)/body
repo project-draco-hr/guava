@@ -1,3 +1,0 @@
-{
-  assertInOrderTraversalIs(BstRangeOps.minusRange(range,balancePolicy,nodeFactory,d),expected);
-}

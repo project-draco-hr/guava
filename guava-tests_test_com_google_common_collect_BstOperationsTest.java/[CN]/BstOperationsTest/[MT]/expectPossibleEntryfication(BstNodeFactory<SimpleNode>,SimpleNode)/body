@@ -1,3 +1,0 @@
-{
-  expect(factory.createNode(same(entry),(SimpleNode)isNull(),(SimpleNode)isNull())).andReturn(new SimpleNode(entry.getKey(),null,null)).times(0,1);
-}

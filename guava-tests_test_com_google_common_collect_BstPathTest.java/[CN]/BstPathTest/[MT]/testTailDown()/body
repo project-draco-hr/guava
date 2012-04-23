@@ -1,9 +1,0 @@
-{
-  SimpleNode node=new SimpleNode('a',null,null);
-  SimpleNode root=new SimpleNode('b',node,null);
-  SimplePath rootPath=new SimplePath(root,null);
-  SimplePath nodePath=new SimplePath(node,rootPath);
-  assertTrue(nodePath.hasPrefix());
-  assertEquals(rootPath,nodePath.prefixOrNull());
-  assertEquals(rootPath,nodePath.getPrefix());
-}

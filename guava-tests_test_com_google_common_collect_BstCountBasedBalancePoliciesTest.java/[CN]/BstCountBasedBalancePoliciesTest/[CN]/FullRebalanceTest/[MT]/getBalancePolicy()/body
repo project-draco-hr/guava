@@ -1,3 +1,0 @@
-{
-  return BstCountBasedBalancePolicies.<Character,SimpleNode>fullRebalancePolicy(countAggregate);
-}

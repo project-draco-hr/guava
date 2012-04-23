@@ -1,4 +1,0 @@
-{
-  checkArgument(countToRemove > 0);
-  this.countToRemove=countToRemove;
-}

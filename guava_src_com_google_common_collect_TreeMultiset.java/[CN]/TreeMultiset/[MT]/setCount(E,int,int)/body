@@ -1,5 +1,21 @@
 {
-  checkElement(element);
+  checkArgument(newCount >= 0);
+  checkArgument(oldCount >= 0);
   checkArgument(range.contains(element));
-  return mutate(element,new ConditionalSetCountModifier(oldCount,newCount)) == oldCount;
+  AvlNode<E> root=rootReference.get();
+  if (root == null) {
+    if (oldCount == 0) {
+      if (newCount > 0) {
+        add(element,newCount);
+      }
+      return true;
+    }
+ else {
+      return false;
+    }
+  }
+  int[] result=new int[1];
+  AvlNode<E> newRoot=root.setCount(comparator(),element,oldCount,newCount,result);
+  rootReference.checkAndSet(root,newRoot);
+  return result[0] == oldCount;
 }

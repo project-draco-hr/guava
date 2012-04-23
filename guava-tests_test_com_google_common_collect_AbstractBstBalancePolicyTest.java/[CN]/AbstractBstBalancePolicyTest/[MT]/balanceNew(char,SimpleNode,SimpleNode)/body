@@ -1,3 +1,0 @@
-{
-  return getBalancePolicy().balance(nodeFactory,new SimpleNode(c,null,null),left,right);
-}

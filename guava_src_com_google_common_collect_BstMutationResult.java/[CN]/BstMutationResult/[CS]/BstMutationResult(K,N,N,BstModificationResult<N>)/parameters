@@ -1,4 +1,0 @@
-K targetKey
-N originalRoot
-N changedRoot
-BstModificationResult<N> modificationResult

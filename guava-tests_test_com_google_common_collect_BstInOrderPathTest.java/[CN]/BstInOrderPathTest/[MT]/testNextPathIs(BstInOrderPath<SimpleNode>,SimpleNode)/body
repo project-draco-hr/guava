@@ -1,6 +1,0 @@
-{
-  assertTrue(path.hasNext(RIGHT));
-  path=path.next(RIGHT);
-  ASSERT.that(pathToList(path)).hasContentsInOrder(nodes);
-  return path;
-}

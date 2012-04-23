@@ -1,5 +1,0 @@
-{
-  SimpleNode a=new SimpleNode('a',null,null);
-  SimpleNode newRoot=BstOperations.insertMax(null,a,nodeFactory,balancePolicy);
-  assertInOrderTraversalIs(newRoot,"a");
-}

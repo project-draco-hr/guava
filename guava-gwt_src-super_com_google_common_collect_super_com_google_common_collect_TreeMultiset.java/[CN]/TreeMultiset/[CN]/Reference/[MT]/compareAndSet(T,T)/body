@@ -1,7 +1,0 @@
-{
-  if (value == expected) {
-    value=newValue;
-    return true;
-  }
-  return false;
-}

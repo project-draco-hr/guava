@@ -1,4 +1,0 @@
-{
-  this.tip=checkNotNull(tip);
-  this.prefix=prefix;
-}

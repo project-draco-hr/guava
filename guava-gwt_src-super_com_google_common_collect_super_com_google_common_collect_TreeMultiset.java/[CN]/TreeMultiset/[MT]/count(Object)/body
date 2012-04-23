@@ -1,11 +1,11 @@
 {
   try {
-    E e=checkElement(element);
-    if (range.contains(e)) {
-      Node<E> node=BstOperations.seek(comparator(),rootReference.get(),e);
-      return countOrZero(node);
+    @SuppressWarnings("unchecked") E e=(E)element;
+    AvlNode<E> root=rootReference.get();
+    if (!range.contains(e) || root == null) {
+      return 0;
     }
-    return 0;
+    return root.count(comparator(),e);
   }
  catch (  ClassCastException e) {
     return 0;

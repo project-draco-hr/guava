@@ -1,3 +1,0 @@
-{
-  return (entry == null) ? 0 : entry.elemCount();
-}

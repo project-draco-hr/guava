@@ -1,5 +1,0 @@
-{
-  this.originalTarget=originalTarget;
-  this.changedTarget=changedTarget;
-  this.type=checkNotNull(type);
-}

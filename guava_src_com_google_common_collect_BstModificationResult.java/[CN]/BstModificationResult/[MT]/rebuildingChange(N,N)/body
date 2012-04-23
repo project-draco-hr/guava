@@ -1,3 +1,0 @@
-{
-  return new BstModificationResult<N>(originalTarget,changedTarget,ModificationType.REBUILDING_CHANGE);
-}

@@ -1,4 +1,0 @@
-{
-  this.element=Optional.fromNullable(element);
-  return element;
-}

@@ -1,5 +1,0 @@
-{
-  N child=childOrNull(side);
-  checkState(child != null);
-  return child;
-}

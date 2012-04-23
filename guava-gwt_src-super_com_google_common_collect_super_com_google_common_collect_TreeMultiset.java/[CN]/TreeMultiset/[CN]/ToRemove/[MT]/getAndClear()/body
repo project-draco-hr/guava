@@ -1,6 +1,0 @@
-{
-  checkState(element != null);
-  E returnValue=element.orNull();
-  element=null;
-  return returnValue;
-}

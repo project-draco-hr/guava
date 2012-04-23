@@ -1,9 +1,0 @@
-{
-  if (rootReference.get() == expectedRoot) {
-    return count;
-  }
- else {
-    expectedRoot=rootReference.get();
-    return count=TreeMultiset.this.count(element);
-  }
-}

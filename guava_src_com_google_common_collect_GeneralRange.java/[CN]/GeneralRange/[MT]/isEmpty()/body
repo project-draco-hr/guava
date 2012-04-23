@@ -1,3 +1,3 @@
 {
-  return (hasUpperBound() && tooLow(upperEndpoint)) || (hasLowerBound() && tooHigh(lowerEndpoint));
+  return (hasUpperBound() && tooLow(getUpperEndpoint())) || (hasLowerBound() && tooHigh(getLowerEndpoint()));
 }
