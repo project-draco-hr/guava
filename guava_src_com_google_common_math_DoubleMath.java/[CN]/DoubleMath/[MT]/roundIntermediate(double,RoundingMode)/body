@@ -34,8 +34,8 @@ return rint(x);
 case HALF_UP:
 {
 double z=rint(x);
-if (fastAbs(x - z) == 0.5) {
-return x + copySign(1.0,x);
+if (abs(x - z) == 0.5) {
+return x + copySign(0.5,x);
 }
  else {
 return z;
@@ -44,7 +44,7 @@ return z;
 case HALF_DOWN:
 {
 double z=rint(x);
-if (fastAbs(x - z) == 0.5) {
+if (abs(x - z) == 0.5) {
 return x;
 }
  else {
