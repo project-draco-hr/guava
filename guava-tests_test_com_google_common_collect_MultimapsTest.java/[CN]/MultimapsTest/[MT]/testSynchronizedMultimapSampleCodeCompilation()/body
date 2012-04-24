@@ -1,0 +1,11 @@
+{
+  K key=null;
+  Multimap<K,V> multimap=Multimaps.synchronizedMultimap(HashMultimap.<K,V>create());
+  Collection<V> values=multimap.get(key);
+synchronized (multimap) {
+    Iterator<V> i=values.iterator();
+    while (i.hasNext()) {
+      foo(i.next());
+    }
+  }
+}
