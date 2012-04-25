@@ -1,0 +1,3 @@
+{
+  ASSERT.that(getHandler().subscriberEvents).hasContentsInOrder(EVENT);
+}

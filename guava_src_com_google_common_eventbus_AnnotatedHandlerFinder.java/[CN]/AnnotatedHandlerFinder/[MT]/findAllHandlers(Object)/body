@@ -1,20 +1,25 @@
 {
   Multimap<Class<?>,EventHandler> methodsInListener=HashMultimap.create();
-  Class clazz=listener.getClass();
-  while (clazz != null) {
-    for (    Method method : clazz.getMethods()) {
-      Subscribe annotation=method.getAnnotation(Subscribe.class);
-      if (annotation != null) {
-        Class<?>[] parameterTypes=method.getParameterTypes();
-        if (parameterTypes.length != 1) {
-          throw new IllegalArgumentException("Method " + method + " has @Subscribe annotation, but requires "+ parameterTypes.length+ " arguments.  Event handler methods "+ "must require a single argument.");
+  Class<?> clazz=listener.getClass();
+  Set<Class<?>> supers=getAllSuperclasses(clazz);
+  for (  Method method : clazz.getMethods()) {
+    for (    Class<?> c : supers) {
+      try {
+        Method m=c.getMethod(method.getName(),method.getParameterTypes());
+        if (m.isAnnotationPresent(Subscribe.class)) {
+          Class<?>[] parameterTypes=method.getParameterTypes();
+          if (parameterTypes.length != 1) {
+            throw new IllegalArgumentException("Method " + method + " has @Subscribe annotation, but requires "+ parameterTypes.length+ " arguments.  Event handler methods must require a single argument.");
+          }
+          Class<?> eventType=parameterTypes[0];
+          EventHandler handler=makeHandler(listener,method);
+          methodsInListener.put(eventType,handler);
+          break;
         }
-        Class<?> eventType=parameterTypes[0];
-        EventHandler handler=makeHandler(listener,method);
-        methodsInListener.put(eventType,handler);
+      }
+ catch (      NoSuchMethodException ignored) {
       }
     }
-    clazz=clazz.getSuperclass();
   }
   return methodsInListener;
 }

@@ -1,0 +1,15 @@
+{
+  Queue<Class<?>> queue=Lists.newLinkedList();
+  Set<Class<?>> supers=Sets.newHashSet();
+  queue.add(clazz);
+  while (!queue.isEmpty()) {
+    Class<?> c=queue.poll();
+    if (supers.add(c)) {
+      queue.addAll(Arrays.asList(c.getInterfaces()));
+      if (c.getSuperclass() != null) {
+        queue.add(c.getSuperclass());
+      }
+    }
+  }
+  return supers;
+}

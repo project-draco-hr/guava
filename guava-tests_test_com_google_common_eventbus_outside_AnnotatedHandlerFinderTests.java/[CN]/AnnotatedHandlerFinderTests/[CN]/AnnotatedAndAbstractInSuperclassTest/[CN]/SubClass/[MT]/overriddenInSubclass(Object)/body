@@ -1,0 +1,3 @@
+{
+  overriddenInSubclassEvents.add(o);
+}

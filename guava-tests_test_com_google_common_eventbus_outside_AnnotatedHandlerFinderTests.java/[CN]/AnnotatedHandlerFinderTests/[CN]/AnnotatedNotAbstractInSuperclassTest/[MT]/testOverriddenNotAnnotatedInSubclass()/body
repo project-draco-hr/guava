@@ -1,0 +1,3 @@
+{
+  ASSERT.that(getHandler().overriddenNotAnnotatedInSubclassEvents).hasContentsInOrder(EVENT);
+}

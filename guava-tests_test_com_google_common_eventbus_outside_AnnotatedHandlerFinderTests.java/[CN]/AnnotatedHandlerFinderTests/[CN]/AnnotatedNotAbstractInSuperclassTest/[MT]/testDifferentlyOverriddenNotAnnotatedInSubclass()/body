@@ -1,0 +1,4 @@
+{
+  ASSERT.that(getHandler().differentlyOverriddenNotAnnotatedInSubclassGoodEvents).hasContentsInOrder(EVENT);
+  ASSERT.that(getHandler().differentlyOverriddenNotAnnotatedInSubclassBadEvents).isEmpty();
+}
