@@ -1,24 +1,5 @@
 {
   checkArgument(endInclusive >= startInclusive);
-  return new CharMatcher(){
-    @Override public boolean matches(    char c){
-      return startInclusive <= c && c <= endInclusive;
-    }
-    @Override void setBits(    LookupTable table){
-      char c=startInclusive;
-      while (true) {
-        table.set(c);
-        if (c++ == endInclusive) {
-          break;
-        }
-      }
-    }
-    @Override public CharMatcher precomputed(){
-      return this;
-    }
-    @Override public String toString(){
-      return new StringBuilder("CharMatcher.inRange(").append(Integer.toHexString(startInclusive)).append(", ").append(Integer.toHexString(endInclusive)).append(")").toString();
-    }
-  }
-;
+  String description=new StringBuilder("CharMatcher.inRange(").append(Integer.toHexString(startInclusive)).append(", ").append(Integer.toHexString(endInclusive)).append(")").toString();
+  return inRange(startInclusive,endInclusive,description);
 }

@@ -1,5 +1,6 @@
 {
-  return new CharMatcher(){
+  String description=new StringBuilder("CharMatcher.isNot(").append(Integer.toHexString(match)).append(")").toString();
+  return new CharMatcher(description){
     @Override public boolean matches(    char c){
       return c != match;
     }
@@ -11,9 +12,6 @@
     }
     @Override public CharMatcher negate(){
       return is(match);
-    }
-    @Override public String toString(){
-      return new StringBuilder("CharMatcher.isNot(").append(Integer.toHexString(match)).append(")").toString();
     }
   }
 ;

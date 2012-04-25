@@ -1,0 +1,32 @@
+{
+  CharMatcher len1=MediumCharMatcher.from(new char[]{'#'});
+  CharMatcher len2=MediumCharMatcher.from(new char[]{'a','b'});
+  CharMatcher len3=MediumCharMatcher.from(new char[]{'a','b','c'});
+  CharMatcher len4=MediumCharMatcher.from(new char[]{'a','b','c','d'});
+  assertTrue(len1.matches('#'));
+  assertFalse(len1.matches('!'));
+  assertTrue(len2.matches('a'));
+  assertTrue(len2.matches('b'));
+  for (char c='c'; c < 'z'; c++) {
+    assertFalse(len2.matches(c));
+  }
+  assertTrue(len3.matches('a'));
+  assertTrue(len3.matches('b'));
+  assertTrue(len3.matches('c'));
+  for (char c='d'; c < 'z'; c++) {
+    assertFalse(len3.matches(c));
+  }
+  assertTrue(len4.matches('a'));
+  assertTrue(len4.matches('b'));
+  assertTrue(len4.matches('c'));
+  assertTrue(len4.matches('d'));
+  for (char c='e'; c < 'z'; c++) {
+    assertFalse(len4.matches(c));
+  }
+  Random rand=new Random(1234);
+  for (int testCase=0; testCase < 100; testCase++) {
+    char[] chars=randomChars(rand,rand.nextInt(1023) + 1);
+    CharMatcher m=MediumCharMatcher.from(chars);
+    checkExactMatches(m,chars);
+  }
+}

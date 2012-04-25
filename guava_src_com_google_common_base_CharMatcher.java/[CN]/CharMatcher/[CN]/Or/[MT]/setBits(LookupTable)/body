@@ -1,5 +1,0 @@
-{
-  for (  CharMatcher matcher : components) {
-    matcher.setBits(table);
-  }
-}

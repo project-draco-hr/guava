@@ -1,0 +1,14 @@
+{
+  for (  int i : intValues("0-128,rand(128;65535;200),65536")) {
+    char[] matches=new char[i];
+    for (int j=0; j < i; j++) {
+      matches[j]=(char)j;
+    }
+    CharMatcher m=CharMatcher.anyOf(new String(matches));
+    char[] mchars=m.slowGetChars();
+    assertEquals(matches.length,mchars.length);
+    for (int j=0; j < matches.length; j++) {
+      assertEquals(matches[j],mchars[j]);
+    }
+  }
+}

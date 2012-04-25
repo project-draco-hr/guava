@@ -1,6 +1,6 @@
 {
   final CharMatcher original=this;
-  return new CharMatcher(){
+  return new CharMatcher(original + ".negate()"){
     @Override public boolean matches(    char c){
       return !original.matches(c);
     }
@@ -15,9 +15,6 @@
     }
     @Override public CharMatcher negate(){
       return original;
-    }
-    @Override public String toString(){
-      return original + ".negate()";
     }
   }
 ;

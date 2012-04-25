@@ -1,5 +1,3 @@
 {
-  List<CharMatcher> newComponents=new ArrayList<CharMatcher>(components);
-  newComponents.add(checkNotNull(other));
-  return new Or(newComponents);
+  return new Or(this,checkNotNull(other));
 }

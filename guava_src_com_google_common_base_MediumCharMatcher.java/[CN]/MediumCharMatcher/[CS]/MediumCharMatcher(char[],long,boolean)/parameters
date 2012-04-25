@@ -1,0 +1,3 @@
+char[] table
+long filter
+boolean containsZero

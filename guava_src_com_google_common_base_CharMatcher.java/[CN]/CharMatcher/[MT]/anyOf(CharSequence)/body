@@ -23,17 +23,9 @@ return this;
 }
 final char[] chars=sequence.toString().toCharArray();
 Arrays.sort(chars);
-return new CharMatcher(){
+return new CharMatcher(new StringBuilder("CharMatcher.anyOf(\"").append(chars).append("\")").toString()){
 @Override public boolean matches(char c){
 return Arrays.binarySearch(chars,c) >= 0;
-}
-@Override void setBits(LookupTable table){
-for (char c : chars) {
-table.set(c);
-}
-}
-@Override public String toString(){
-return new StringBuilder("CharMatcher.anyOf(\"").append(chars).append("\")").toString();
 }
 }
 ;
