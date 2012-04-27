@@ -1,0 +1,4 @@
+{
+  numCallsToNewTargetIterator++;
+  return Lists.newArrayList(1).iterator();
+}

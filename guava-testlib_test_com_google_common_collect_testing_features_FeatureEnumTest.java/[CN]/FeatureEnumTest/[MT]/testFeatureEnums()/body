@@ -1,0 +1,7 @@
+{
+  assertGoodFeatureEnum(CollectionFeature.class);
+  assertGoodFeatureEnum(ListFeature.class);
+  assertGoodFeatureEnum(SetFeature.class);
+  assertGoodFeatureEnum(CollectionSize.class);
+  assertGoodFeatureEnum(MapFeature.class);
+}

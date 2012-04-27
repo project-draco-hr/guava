@@ -1,0 +1,7 @@
+{
+  HashMap<String,String> map=Maps.newHashMap();
+  for (  Map.Entry<String,String> entry : entries) {
+    map.put(entry.getKey(),entry.getValue());
+  }
+  return wrap(map);
+}

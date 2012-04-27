@@ -1,0 +1,8 @@
+{
+  TestSuite suite=new TestSuite();
+  suite.addTest(OpenJdk6SetTests.suite());
+  suite.addTest(OpenJdk6ListTests.suite());
+  suite.addTest(OpenJdk6QueueTests.suite());
+  suite.addTest(OpenJdk6MapTests.suite());
+  return suite;
+}

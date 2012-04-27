@@ -1,0 +1,4 @@
+{
+  numCallsToVerify++;
+  super.verify(elements);
+}

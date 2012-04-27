@@ -1,0 +1,6 @@
+{
+  if (nextThrewException) {
+    throw new IllegalStateException();
+  }
+  iterator.remove();
+}

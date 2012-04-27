@@ -1,0 +1,11 @@
+{
+  final Method method=ExampleDerivedInterfaceTester.class.getMethod("testRequiringConflictingFeatures");
+  try {
+    FeatureUtil.buildTesterRequirements(method);
+    fail("Expected ConflictingRequirementsException");
+  }
+ catch (  ConflictingRequirementsException e) {
+    ASSERT.that(e.getConflicts()).hasContentsAnyOrder(ExampleBaseFeature.BASE_FEATURE_1);
+    assertEquals(method,e.getSource());
+  }
+}

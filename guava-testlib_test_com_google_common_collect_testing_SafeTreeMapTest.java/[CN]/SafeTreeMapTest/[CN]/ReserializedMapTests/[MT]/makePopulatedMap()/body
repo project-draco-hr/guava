@@ -1,0 +1,7 @@
+{
+  NavigableMap<String,Integer> map=new SafeTreeMap<String,Integer>();
+  map.put("one",1);
+  map.put("two",2);
+  map.put("three",3);
+  return SerializableTester.reserialize(map);
+}

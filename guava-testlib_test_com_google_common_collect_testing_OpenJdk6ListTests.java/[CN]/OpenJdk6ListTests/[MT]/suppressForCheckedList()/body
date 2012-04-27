@@ -1,0 +1,3 @@
+{
+  return Arrays.asList(CollectionAddTester.getAddNullSupportedMethod(),getAddSupportedNullPresentMethod(),ListAddAtIndexTester.getAddNullSupportedMethod(),getSetNullSupportedMethod());
+}

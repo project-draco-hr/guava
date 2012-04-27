@@ -1,0 +1,17 @@
+{
+  Iterable<String> iterable=MinimalIterable.<String>of();
+  Iterator<String> iterator=iterable.iterator();
+  assertFalse(iterator.hasNext());
+  try {
+    iterator.next();
+    fail();
+  }
+ catch (  NoSuchElementException expected) {
+  }
+  try {
+    iterable.iterator();
+    fail();
+  }
+ catch (  IllegalStateException expected) {
+  }
+}

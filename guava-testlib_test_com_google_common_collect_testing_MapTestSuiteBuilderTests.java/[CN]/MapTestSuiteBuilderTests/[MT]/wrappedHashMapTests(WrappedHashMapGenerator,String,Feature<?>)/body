@@ -1,0 +1,3 @@
+{
+  return MapTestSuiteBuilder.using(generator).named(name).withFeatures(Lists.asList(MapFeature.GENERAL_PURPOSE,CollectionSize.ANY,features)).createTestSuite();
+}

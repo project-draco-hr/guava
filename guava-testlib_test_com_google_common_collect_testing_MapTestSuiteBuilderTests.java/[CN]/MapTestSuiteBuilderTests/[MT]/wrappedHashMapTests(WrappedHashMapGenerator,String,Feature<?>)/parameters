@@ -1,0 +1,3 @@
+WrappedHashMapGenerator generator
+String name
+Feature<?> features

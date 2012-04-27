@@ -1,0 +1,5 @@
+{
+  SortedSet<String> set=new SafeTreeSet<String>();
+  SortedSet<String> copy=SerializableTester.reserializeAndAssert(set);
+  assertEquals(set.comparator(),copy.comparator());
+}

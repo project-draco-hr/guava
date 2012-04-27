@@ -1,0 +1,3 @@
+{
+  fail("Nobody's meant to actually run this!");
+}

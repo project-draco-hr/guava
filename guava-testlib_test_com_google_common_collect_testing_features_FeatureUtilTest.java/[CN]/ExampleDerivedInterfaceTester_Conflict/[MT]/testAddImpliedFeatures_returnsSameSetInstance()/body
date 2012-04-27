@@ -1,0 +1,4 @@
+{
+  Set<Feature<?>> features=Sets.<Feature<?>>newHashSet(ExampleBaseFeature.BASE_FEATURE_1);
+  assertSame(features,FeatureUtil.addImpliedFeatures(features));
+}

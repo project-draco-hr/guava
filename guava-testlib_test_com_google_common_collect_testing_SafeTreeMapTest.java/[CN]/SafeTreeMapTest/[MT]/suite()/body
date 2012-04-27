@@ -1,0 +1,29 @@
+{
+  TestSuite suite=new TestSuite();
+  suite.addTestSuite(SafeTreeMapTest.class);
+  suite.addTest(NavigableMapTestSuiteBuilder.using(new TestStringSortedMapGenerator(){
+    @Override protected Map<String,String> create(    Entry<String,String>[] entries){
+      NavigableMap<String,String> map=new SafeTreeMap<String,String>(Ordering.natural());
+      for (      Entry<String,String> entry : entries) {
+        map.put(entry.getKey(),entry.getValue());
+      }
+      return map;
+    }
+  }
+).withFeatures(CollectionSize.ANY,CollectionFeature.KNOWN_ORDER,MapFeature.ALLOWS_NULL_VALUES,MapFeature.GENERAL_PURPOSE).named("SafeTreeMap with natural comparator").createTestSuite());
+  suite.addTest(NavigableMapTestSuiteBuilder.using(new TestStringSortedMapGenerator(){
+    @Override protected Map<String,String> create(    Entry<String,String>[] entries){
+      NavigableMap<String,String> map=new SafeTreeMap<String,String>(NullsBeforeTwo.INSTANCE);
+      for (      Entry<String,String> entry : entries) {
+        map.put(entry.getKey(),entry.getValue());
+      }
+      return map;
+    }
+    @Override public Iterable<Entry<String,String>> order(    List<Entry<String,String>> insertionOrder){
+      sort(insertionOrder,Helpers.<String,String>entryComparator(NullsBeforeTwo.INSTANCE));
+      return insertionOrder;
+    }
+  }
+).withFeatures(CollectionSize.ANY,CollectionFeature.KNOWN_ORDER,MapFeature.ALLOWS_NULL_KEYS,MapFeature.ALLOWS_NULL_VALUES,MapFeature.GENERAL_PURPOSE).named("SafeTreeMap with null-friendly comparator").createTestSuite());
+  return suite;
+}

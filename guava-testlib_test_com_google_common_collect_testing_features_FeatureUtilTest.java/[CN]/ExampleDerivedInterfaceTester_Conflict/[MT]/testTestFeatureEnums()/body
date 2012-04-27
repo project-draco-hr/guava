@@ -1,0 +1,4 @@
+{
+  FeatureEnumTest.assertGoodFeatureEnum(FeatureUtilTest.ExampleBaseFeature.class);
+  FeatureEnumTest.assertGoodFeatureEnum(FeatureUtilTest.ExampleDerivedFeature.class);
+}

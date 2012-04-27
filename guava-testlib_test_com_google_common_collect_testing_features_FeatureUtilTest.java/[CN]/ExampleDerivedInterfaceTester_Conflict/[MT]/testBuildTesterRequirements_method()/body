@@ -1,0 +1,4 @@
+{
+  assertEquals(FeatureUtil.buildTesterRequirements(ExampleDerivedInterfaceTester.class.getMethod("testRequiringTwoExplicitDerivedFeatures")),new TesterRequirements(Sets.<Feature<?>>newHashSet(ExampleBaseFeature.BASE_FEATURE_1,ExampleDerivedFeature.DERIVED_FEATURE_1,ExampleDerivedFeature.DERIVED_FEATURE_2),Collections.<Feature<?>>emptySet()));
+  assertEquals(FeatureUtil.buildTesterRequirements(ExampleDerivedInterfaceTester.class.getMethod("testRequiringAllThreeDerivedFeatures")),new TesterRequirements(Sets.<Feature<?>>newHashSet(ExampleBaseFeature.BASE_FEATURE_1,ExampleDerivedFeature.DERIVED_FEATURE_1,ExampleDerivedFeature.DERIVED_FEATURE_2,ExampleDerivedFeature.DERIVED_FEATURE_3),Collections.<Feature<?>>emptySet()));
+}

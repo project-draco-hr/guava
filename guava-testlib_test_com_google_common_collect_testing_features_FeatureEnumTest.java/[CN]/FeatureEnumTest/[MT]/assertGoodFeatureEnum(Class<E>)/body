@@ -1,0 +1,15 @@
+{
+  final Class<?>[] classes=featureEnumClass.getDeclaredClasses();
+  for (  Class<?> containedClass : classes) {
+    if (containedClass.getSimpleName().equals("Require")) {
+      if (containedClass.isAnnotation()) {
+        assertGoodTesterAnnotation(asAnnotation(containedClass));
+      }
+ else {
+        fail(String.format("Feature enum %s contains a class named " + "'Require' but it is not an annotation.",featureEnumClass));
+      }
+      return;
+    }
+  }
+  fail(String.format("Feature enum %s should contain an " + "annotation named 'Require'.",featureEnumClass));
+}

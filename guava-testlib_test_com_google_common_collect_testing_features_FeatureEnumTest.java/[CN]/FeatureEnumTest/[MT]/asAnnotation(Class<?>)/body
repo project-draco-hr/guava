@@ -1,0 +1,8 @@
+{
+  if (clazz.isAnnotation()) {
+    return (Class<? extends Annotation>)clazz;
+  }
+ else {
+    throw new IllegalArgumentException(String.format("%s is not an annotation.",clazz));
+  }
+}

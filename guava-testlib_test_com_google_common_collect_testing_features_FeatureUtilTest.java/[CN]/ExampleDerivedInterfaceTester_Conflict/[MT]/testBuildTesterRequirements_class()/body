@@ -1,0 +1,4 @@
+{
+  assertEquals(FeatureUtil.buildTesterRequirements(ExampleBaseInterfaceTester.class),new TesterRequirements(Sets.<Feature<?>>newHashSet(ExampleBaseFeature.BASE_FEATURE_1),Collections.<Feature<?>>emptySet()));
+  assertEquals(FeatureUtil.buildTesterRequirements(ExampleDerivedInterfaceTester.class),new TesterRequirements(Sets.<Feature<?>>newHashSet(ExampleBaseFeature.BASE_FEATURE_1,ExampleDerivedFeature.DERIVED_FEATURE_2),Collections.<Feature<?>>emptySet()));
+}

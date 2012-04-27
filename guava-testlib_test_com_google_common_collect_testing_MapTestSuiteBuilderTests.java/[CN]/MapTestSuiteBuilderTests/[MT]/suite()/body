@@ -1,0 +1,6 @@
+{
+  TestSuite suite=new TestSuite(MapTestSuiteBuilderTests.class.getSimpleName());
+  suite.addTest(testsForHashMapNullKeysForbidden());
+  suite.addTest(testsForHashMapNullValuesForbidden());
+  return suite;
+}

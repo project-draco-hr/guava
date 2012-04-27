@@ -1,0 +1,20 @@
+{
+  return wrappedHashMapTests(new WrappedHashMapGenerator(){
+    @Override Map<String,String> wrap(    final HashMap<String,String> map){
+      if (map.containsValue(null)) {
+        throw new NullPointerException();
+      }
+      return new AbstractMap<String,String>(){
+        @Override public Set<Map.Entry<String,String>> entrySet(){
+          return map.entrySet();
+        }
+        @Override public String put(        String key,        String value){
+          checkNotNull(value);
+          return map.put(key,value);
+        }
+      }
+;
+    }
+  }
+,"HashMap w/out null values",ALLOWS_NULL_KEYS);
+}
