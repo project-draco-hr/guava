@@ -1,5 +1,5 @@
 {
-  if (table instanceof ImmutableTable<?,?,?>) {
+  if (table instanceof ImmutableTable) {
     @SuppressWarnings("unchecked") ImmutableTable<R,C,V> parameterizedTable=(ImmutableTable<R,C,V>)table;
     return parameterizedTable;
   }

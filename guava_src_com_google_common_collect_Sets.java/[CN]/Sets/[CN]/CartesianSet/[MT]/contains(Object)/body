@@ -1,5 +1,5 @@
 {
-  if (!(element instanceof List<?>)) {
+  if (!(element instanceof List)) {
     return false;
   }
   List<?> tuple=(List<?>)element;

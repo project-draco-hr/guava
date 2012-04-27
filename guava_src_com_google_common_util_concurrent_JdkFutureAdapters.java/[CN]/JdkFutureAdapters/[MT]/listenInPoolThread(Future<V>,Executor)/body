@@ -1,6 +1,6 @@
 {
   checkNotNull(executor);
-  if (future instanceof ListenableFuture<?>) {
+  if (future instanceof ListenableFuture) {
     return (ListenableFuture<V>)future;
   }
   return new ListenableFutureAdapter<V>(future,executor);

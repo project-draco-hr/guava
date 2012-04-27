@@ -24,7 +24,7 @@
         current=null;
       }
  else {
-        current=(AvlNode<E>)current.pred;
+        current=current.pred;
       }
       return result;
     }

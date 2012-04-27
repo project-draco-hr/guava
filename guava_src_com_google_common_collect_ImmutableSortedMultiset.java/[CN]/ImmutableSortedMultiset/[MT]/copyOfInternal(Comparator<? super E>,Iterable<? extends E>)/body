@@ -1,5 +1,5 @@
 {
-  if (SortedIterables.hasSameComparator(comparator,iterable) && iterable instanceof ImmutableSortedMultiset<?>) {
+  if (SortedIterables.hasSameComparator(comparator,iterable) && iterable instanceof ImmutableSortedMultiset) {
     ImmutableSortedMultiset<E> multiset=(ImmutableSortedMultiset<E>)iterable;
     if (!multiset.isPartialView()) {
       return (ImmutableSortedMultiset<E>)iterable;

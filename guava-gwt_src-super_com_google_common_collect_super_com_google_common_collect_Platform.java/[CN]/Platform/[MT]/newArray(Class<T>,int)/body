@@ -1,3 +1,0 @@
-{
-  throw new UnsupportedOperationException("Platform.newArray is not supported in GWT yet.");
-}

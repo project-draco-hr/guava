@@ -1,5 +1,5 @@
 {
-  if (type instanceof TypeVariable<?>) {
+  if (type instanceof TypeVariable) {
     return resolveTypeVariable((TypeVariable<?>)type);
   }
  else   if (type instanceof ParameterizedType) {

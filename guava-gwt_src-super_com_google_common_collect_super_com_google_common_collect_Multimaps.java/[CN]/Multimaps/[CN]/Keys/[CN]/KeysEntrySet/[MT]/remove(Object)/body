@@ -1,5 +1,5 @@
 {
-  if (o instanceof Multiset.Entry<?>) {
+  if (o instanceof Multiset.Entry) {
     Multiset.Entry<?> entry=(Multiset.Entry<?>)o;
     Collection<V> collection=multimap().asMap().get(entry.getElement());
     if (collection != null && collection.size() == entry.getCount()) {

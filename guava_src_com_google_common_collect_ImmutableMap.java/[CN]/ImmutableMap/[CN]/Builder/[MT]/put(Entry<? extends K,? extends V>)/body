@@ -1,7 +1,7 @@
 {
   K key=entry.getKey();
   V value=entry.getValue();
-  if (entry instanceof ImmutableEntry<?,?>) {
+  if (entry instanceof ImmutableEntry) {
     checkNotNull(key);
     checkNotNull(value);
     @SuppressWarnings("unchecked") Entry<K,V> immutableEntry=(Entry<K,V>)entry;

@@ -10,7 +10,7 @@
       throw new UnsupportedOperationException();
     }
     @SuppressWarnings("unchecked") @Override public boolean equals(    Object o){
-      if (o instanceof Map.Entry<?,?>) {
+      if (o instanceof Map.Entry) {
         Map.Entry<K,V> e=(Map.Entry<K,V>)o;
         e.setValue(value);
         return equal(this.getKey(),e.getKey()) && equal(this.getValue(),e.getValue());

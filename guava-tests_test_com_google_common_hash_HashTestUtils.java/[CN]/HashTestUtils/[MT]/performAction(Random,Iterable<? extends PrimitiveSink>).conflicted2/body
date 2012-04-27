@@ -1,6 +1,7 @@
 {
-  boolean value=random.nextBoolean();
+  byte[] value=new byte[random.nextInt(128)];
+  random.nextBytes(value);
   for (  PrimitiveSink sink : sinks) {
-    sink.putBoolean(value);
+    sink.putBytes(value);
   }
 }

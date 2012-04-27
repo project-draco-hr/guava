@@ -1,5 +1,5 @@
 {
-  if (o instanceof Map.Entry<?,?>) {
+  if (o instanceof Map.Entry) {
     Map.Entry<?,?> entry=(Map.Entry<?,?>)o;
     return multimap().containsEntry(entry.getKey(),entry.getValue());
   }
