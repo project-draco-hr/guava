@@ -1,0 +1,3 @@
+{
+  this.contents=new ArrayList<E>(capacity);
+}

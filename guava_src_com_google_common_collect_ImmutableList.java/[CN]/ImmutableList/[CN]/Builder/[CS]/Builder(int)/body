@@ -1,0 +1,4 @@
+{
+  this.contents=new Object[capacity];
+  this.size=0;
+}

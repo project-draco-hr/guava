@@ -1,5 +1,8 @@
 {
-  contents.ensureCapacity(contents.size() + elements.length);
-  super.add(elements);
+  ensureCapacity(size + elements.length);
+  for (  E e : elements) {
+    contents[size]=checkNotNull(e);
+    size++;
+  }
   return this;
 }

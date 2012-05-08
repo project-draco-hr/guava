@@ -1,0 +1,4 @@
+{
+  contents.ensureCapacity(minCapacity);
+  return this;
+}

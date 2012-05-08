@@ -1,0 +1,13 @@
+{
+  String[] elements={"a",null,"b"};
+  ImmutableList.Builder<String> builder=ImmutableList.builder();
+  try {
+    builder.add(elements);
+    fail("Expected NullPointerException");
+  }
+ catch (  NullPointerException expected) {
+  }
+  ImmutableList<String> result=builder.build();
+  assertEquals(ImmutableList.of("a"),result);
+  assertEquals(1,result.size());
+}
