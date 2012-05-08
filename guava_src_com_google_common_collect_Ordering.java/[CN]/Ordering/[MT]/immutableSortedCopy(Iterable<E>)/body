@@ -1,3 +1,8 @@
 {
-  return ImmutableList.copyOf(sortedCopy(iterable));
+  @SuppressWarnings("unchecked") E[] elements=(E[])Iterables.toArray(iterable);
+  for (  E e : elements) {
+    checkNotNull(e);
+  }
+  Arrays.sort(elements,this);
+  return ImmutableList.asImmutableList(elements);
 }
