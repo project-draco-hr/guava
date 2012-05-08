@@ -1,0 +1,13 @@
+{
+  Iterator<V> valueIter=((TestMultimapGenerator<K,V,M>)multimapGenerator.getInnerGenerator()).sampleValues().iterator();
+  List<Entry<K,V>> entries=new ArrayList<Entry<K,V>>();
+  for (  K k : insertionOrder) {
+    entries.add(mapEntry(k,valueIter.next()));
+  }
+  Iterable<Entry<K,V>> ordered=multimapGenerator.order(entries);
+  List<K> orderedValues=new ArrayList<K>();
+  for (  Entry<K,V> entry : ordered) {
+    orderedValues.add(entry.getKey());
+  }
+  return orderedValues;
+}

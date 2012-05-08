@@ -1,0 +1,5 @@
+{
+  for (  K k : sampleKeys()) {
+    assertEquals(!multimap().get(k).isEmpty(),multimap().containsKey(k));
+  }
+}

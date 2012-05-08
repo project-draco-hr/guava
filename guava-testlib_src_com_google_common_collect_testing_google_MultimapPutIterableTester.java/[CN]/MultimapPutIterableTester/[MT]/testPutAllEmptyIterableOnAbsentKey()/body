@@ -1,0 +1,5 @@
+{
+  Iterable<V> iterable=Collections.emptyList();
+  multimap().putAll(sampleKeys().e3,iterable);
+  expectUnchanged();
+}

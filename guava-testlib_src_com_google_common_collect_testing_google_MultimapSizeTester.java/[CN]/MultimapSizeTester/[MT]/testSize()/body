@@ -1,0 +1,16 @@
+{
+  int expectedSize=getNumElements();
+  Multimap<K,V> multimap=multimap();
+  assertEquals(expectedSize,multimap.size());
+  int size=0;
+  for (  Entry<K,V> entry : multimap.entries()) {
+    assertTrue(multimap.containsEntry(entry.getKey(),entry.getValue()));
+    size++;
+  }
+  assertEquals(expectedSize,size);
+  int size2=0;
+  for (  Entry<K,Collection<V>> entry2 : multimap.asMap().entrySet()) {
+    size2+=entry2.getValue().size();
+  }
+  assertEquals(expectedSize,size2);
+}

@@ -1,0 +1,5 @@
+{
+  for (  K k : sampleKeys()) {
+    assertEquals(multimap().containsKey(k),multimap().keySet().contains(k));
+  }
+}

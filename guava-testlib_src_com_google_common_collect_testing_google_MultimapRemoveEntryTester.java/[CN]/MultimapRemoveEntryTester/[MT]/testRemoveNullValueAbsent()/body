@@ -1,0 +1,4 @@
+{
+  assertFalse(multimap().remove(sampleKeys().e0,null));
+  expectUnchanged();
+}

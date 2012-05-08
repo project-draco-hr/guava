@@ -1,0 +1,13 @@
+{
+  Set<Feature<?>> derivedFeatures=Helpers.copyToSet(multimapFeatures);
+  for (  Map.Entry<Feature<?>,Feature<?>> entry : GET_FEATURE_MAP.entries()) {
+    if (derivedFeatures.contains(entry.getKey())) {
+      derivedFeatures.add(entry.getValue());
+    }
+  }
+  if (!derivedFeatures.contains(CollectionFeature.SERIALIZABLE_INCLUDING_VIEWS)) {
+    derivedFeatures.remove(CollectionFeature.SERIALIZABLE);
+  }
+  derivedFeatures.removeAll(GET_FEATURE_MAP.keySet());
+  return derivedFeatures;
+}

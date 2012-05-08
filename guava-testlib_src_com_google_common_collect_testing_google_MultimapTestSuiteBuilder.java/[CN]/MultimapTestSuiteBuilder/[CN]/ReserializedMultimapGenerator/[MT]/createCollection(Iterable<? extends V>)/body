@@ -1,0 +1,3 @@
+{
+  return ((TestMultimapGenerator<K,V,M>)multimapGenerator.getInnerGenerator()).createCollection(values);
+}

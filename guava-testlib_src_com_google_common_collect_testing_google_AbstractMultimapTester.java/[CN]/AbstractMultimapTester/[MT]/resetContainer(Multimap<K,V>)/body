@@ -1,0 +1,4 @@
+{
+  multimap=super.resetContainer(newContents);
+  return multimap;
+}

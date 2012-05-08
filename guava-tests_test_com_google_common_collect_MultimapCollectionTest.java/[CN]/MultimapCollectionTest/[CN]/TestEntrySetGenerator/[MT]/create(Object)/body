@@ -1,3 +1,0 @@
-{
-  return (Set<Entry<String,Integer>>)super.create(elements);
-}

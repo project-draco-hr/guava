@@ -1,0 +1,9 @@
+{
+  try {
+    multimap().remove(null,sampleValues().e0);
+    fail("Expected NullPointerException");
+  }
+ catch (  NullPointerException expected) {
+  }
+  expectUnchanged();
+}

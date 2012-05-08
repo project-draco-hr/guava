@@ -1,0 +1,5 @@
+{
+  SetMultimapTestSuiteBuilder<K,V> result=new SetMultimapTestSuiteBuilder<K,V>();
+  result.usingGenerator(generator);
+  return result;
+}

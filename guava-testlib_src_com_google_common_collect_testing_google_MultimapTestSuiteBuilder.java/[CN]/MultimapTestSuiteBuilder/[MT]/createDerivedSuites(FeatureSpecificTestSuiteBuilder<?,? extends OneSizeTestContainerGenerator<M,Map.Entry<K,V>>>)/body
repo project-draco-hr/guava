@@ -1,0 +1,11 @@
+{
+  List<TestSuite> derivedSuites=super.createDerivedSuites(parentBuilder);
+  if (parentBuilder.getFeatures().contains(CollectionFeature.SERIALIZABLE)) {
+    derivedSuites.add(MultimapTestSuiteBuilder.using(new ReserializedMultimapGenerator<K,V,M>(parentBuilder.getSubjectGenerator())).withFeatures(computeReserializedMultimapFeatures(parentBuilder.getFeatures())).named(parentBuilder.getName() + " reserialized").suppressing(parentBuilder.getSuppressedTests()).createTestSuite());
+  }
+  derivedSuites.add(MapTestSuiteBuilder.using(new AsMapGenerator<K,V,M>(parentBuilder.getSubjectGenerator())).withFeatures(computeAsMapFeatures(parentBuilder.getFeatures())).named(parentBuilder.getName() + ".asMap").suppressing(parentBuilder.getSuppressedTests()).createTestSuite());
+  derivedSuites.add(computeEntriesTestSuite(parentBuilder));
+  derivedSuites.add(computeMultimapGetTestSuite(parentBuilder));
+  derivedSuites.add(computeKeysTestSuite(parentBuilder));
+  return derivedSuites;
+}

@@ -1,0 +1,4 @@
+{
+  initMultimapWithNullValue();
+  ASSERT.that(multimap().get(getKeyForNullValue())).hasContentsInOrder((V)null);
+}

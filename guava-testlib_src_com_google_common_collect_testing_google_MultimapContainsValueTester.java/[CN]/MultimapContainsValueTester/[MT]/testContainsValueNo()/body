@@ -1,0 +1,3 @@
+{
+  assertFalse(multimap().containsValue(sampleValues().e3));
+}

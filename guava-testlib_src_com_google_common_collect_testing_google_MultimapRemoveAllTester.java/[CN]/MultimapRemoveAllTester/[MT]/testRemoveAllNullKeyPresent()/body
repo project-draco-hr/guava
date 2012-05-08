@@ -1,0 +1,5 @@
+{
+  initMultimapWithNullKey();
+  ASSERT.that(multimap().removeAll(null)).hasContentsInOrder(getValueForNullKey());
+  expectMissing(Helpers.mapEntry((K)null,getValueForNullKey()));
+}

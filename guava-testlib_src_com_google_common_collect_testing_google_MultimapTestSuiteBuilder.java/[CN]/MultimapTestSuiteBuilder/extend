@@ -1,0 +1,1 @@
+PerCollectionSizeTestSuiteBuilder<MultimapTestSuiteBuilder<K,V,M>,TestMultimapGenerator<K,V,M>,M,Map.Entry<K,V>>

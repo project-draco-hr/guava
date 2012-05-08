@@ -1,0 +1,4 @@
+{
+  multimap=super.resetContainer(getSubjectGenerator().create(newContents));
+  return multimap;
+}

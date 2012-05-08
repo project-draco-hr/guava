@@ -1,0 +1,4 @@
+{
+  ASSERT.that(multimap().removeAll(sampleKeys().e3)).isEmpty();
+  expectUnchanged();
+}

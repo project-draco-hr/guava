@@ -1,0 +1,3 @@
+{
+  resetContainer(getSubjectGenerator().create(createArrayWithNullKeyAndValue()));
+}

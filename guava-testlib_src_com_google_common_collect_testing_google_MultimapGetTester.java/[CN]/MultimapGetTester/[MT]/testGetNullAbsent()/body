@@ -1,0 +1,3 @@
+{
+  ASSERT.that(multimap().get(null)).isEmpty();
+}

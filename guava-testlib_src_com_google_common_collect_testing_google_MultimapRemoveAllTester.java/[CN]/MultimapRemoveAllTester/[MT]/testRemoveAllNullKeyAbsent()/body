@@ -1,0 +1,4 @@
+{
+  ASSERT.that(multimap().removeAll(null)).isEmpty();
+  expectUnchanged();
+}

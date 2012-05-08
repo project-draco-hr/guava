@@ -1,0 +1,5 @@
+{
+  SortedSetMultimapTestSuiteBuilder<K,V> result=new SortedSetMultimapTestSuiteBuilder<K,V>();
+  result.usingGenerator(generator);
+  return result;
+}

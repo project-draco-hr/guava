@@ -1,0 +1,8 @@
+{
+  try {
+    multimap().containsValue(null);
+    fail("Expected NullPointerException");
+  }
+ catch (  NullPointerException expected) {
+  }
+}

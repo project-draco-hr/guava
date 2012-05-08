@@ -1,0 +1,6 @@
+{
+  int size=getNumElements();
+  multimap().put(null,sampleValues().e3);
+  assertGet(null,sampleValues().e3);
+  assertEquals(size + 1,multimap().size());
+}

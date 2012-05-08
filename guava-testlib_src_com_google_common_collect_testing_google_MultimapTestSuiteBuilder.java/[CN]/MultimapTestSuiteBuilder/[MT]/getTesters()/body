@@ -1,0 +1,3 @@
+{
+  return ImmutableList.<Class<? extends AbstractTester>>of(MultimapSizeTester.class,MultimapContainsKeyTester.class,MultimapContainsValueTester.class,MultimapContainsEntryTester.class,MultimapGetTester.class,MultimapPutTester.class,MultimapPutIterableTester.class,MultimapRemoveEntryTester.class,MultimapRemoveAllTester.class);
+}

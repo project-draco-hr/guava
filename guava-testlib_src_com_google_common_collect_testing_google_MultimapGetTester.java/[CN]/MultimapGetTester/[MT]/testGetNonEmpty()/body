@@ -1,0 +1,5 @@
+{
+  Collection<V> result=multimap().get(sampleKeys().e0);
+  assertFalse(result.isEmpty());
+  assertContentsAnyOrder(result,sampleValues().e0);
+}

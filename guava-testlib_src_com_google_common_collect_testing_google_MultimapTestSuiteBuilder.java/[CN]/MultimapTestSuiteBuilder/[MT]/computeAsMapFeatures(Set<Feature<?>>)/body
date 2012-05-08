@@ -1,0 +1,12 @@
+{
+  Set<Feature<?>> derivedFeatures=Helpers.copyToSet(multimapFeatures);
+  derivedFeatures.remove(MapFeature.GENERAL_PURPOSE);
+  derivedFeatures.remove(MapFeature.SUPPORTS_PUT);
+  derivedFeatures.remove(MapFeature.SUPPORTS_PUT_ALL);
+  derivedFeatures.remove(MapFeature.ALLOWS_NULL_VALUES);
+  derivedFeatures.add(MapFeature.REJECTS_DUPLICATES_AT_CREATION);
+  if (!derivedFeatures.contains(CollectionFeature.SERIALIZABLE_INCLUDING_VIEWS)) {
+    derivedFeatures.remove(CollectionFeature.SERIALIZABLE);
+  }
+  return derivedFeatures;
+}

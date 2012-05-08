@@ -1,0 +1,13 @@
+{
+  Set<K> keySet=new HashSet<K>();
+  List<Map.Entry<K,V>> builder=new ArrayList<Entry<K,V>>();
+  for (  Object o : elements) {
+    Map.Entry<K,Collection<V>> entry=(Entry<K,Collection<V>>)o;
+    keySet.add(entry.getKey());
+    for (    V v : entry.getValue()) {
+      builder.add(mapEntry(entry.getKey(),v));
+    }
+  }
+  checkArgument(keySet.size() == elements.length,"Duplicate keys");
+  return multimapGenerator.create(builder.toArray()).asMap();
+}

@@ -1,0 +1,6 @@
+{
+  initMultimapWithNullKey();
+  assertTrue(multimap().remove(null,getValueForNullKey()));
+  expectMissing(Maps.immutableEntry((K)null,getValueForNullKey()));
+  assertGet(getKeyForNullValue(),EMPTY);
+}

@@ -1,0 +1,7 @@
+{
+  Iterator<Entry<K,V>> entries=getSampleElements().iterator();
+  for (int i=0; i < getNullLocation(); i++) {
+    entries.next();
+  }
+  return entries.next();
+}

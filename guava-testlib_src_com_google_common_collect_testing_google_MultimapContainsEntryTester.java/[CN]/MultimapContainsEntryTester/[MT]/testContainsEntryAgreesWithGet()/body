@@ -1,0 +1,7 @@
+{
+  for (  K k : sampleKeys()) {
+    for (    V v : sampleValues()) {
+      assertEquals(multimap().get(k).contains(v),multimap().containsEntry(k,v));
+    }
+  }
+}

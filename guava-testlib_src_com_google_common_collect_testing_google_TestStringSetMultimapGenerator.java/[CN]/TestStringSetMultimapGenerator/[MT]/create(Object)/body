@@ -1,0 +1,9 @@
+{
+  @SuppressWarnings("unchecked") Entry<String,String>[] array=new Entry[entries.length];
+  int i=0;
+  for (  Object o : entries) {
+    @SuppressWarnings("unchecked") Entry<String,String> e=(Entry<String,String>)o;
+    array[i++]=e;
+  }
+  return create(array);
+}

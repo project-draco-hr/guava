@@ -1,0 +1,3 @@
+{
+  return SerializableTester.reserialize(((TestMultimapGenerator<K,V,M>)multimapGenerator.getInnerGenerator()).create(elements));
+}

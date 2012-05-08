@@ -1,0 +1,5 @@
+{
+  Collection<V> result=multimap().get(sampleKeys().e3);
+  assertTrue(result.isEmpty());
+  assertEquals(0,result.size());
+}

@@ -1,0 +1,16 @@
+{
+  Map<K,Collection<V>> map=new HashMap<K,Collection<V>>();
+  List<Map.Entry<K,V>> builder=new ArrayList<Entry<K,V>>();
+  for (  Entry<K,Collection<V>> entry : insertionOrder) {
+    for (    V v : entry.getValue()) {
+      builder.add(mapEntry(entry.getKey(),v));
+    }
+    map.put(entry.getKey(),entry.getValue());
+  }
+  Iterable<Map.Entry<K,V>> ordered=multimapGenerator.order(builder);
+  LinkedHashMap<K,Collection<V>> orderedMap=new LinkedHashMap<K,Collection<V>>();
+  for (  Map.Entry<K,V> entry : ordered) {
+    orderedMap.put(entry.getKey(),map.get(entry.getKey()));
+  }
+  return orderedMap.entrySet();
+}

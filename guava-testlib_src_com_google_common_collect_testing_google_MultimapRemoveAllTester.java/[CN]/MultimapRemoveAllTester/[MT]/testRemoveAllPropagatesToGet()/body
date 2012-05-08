@@ -1,0 +1,6 @@
+{
+  Collection<V> getResult=multimap().get(sampleKeys().e0);
+  multimap().removeAll(sampleKeys().e0);
+  ASSERT.that(getResult).isEmpty();
+  expectMissing(samples.e0);
+}

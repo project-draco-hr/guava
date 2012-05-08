@@ -1,0 +1,3 @@
+{
+  return MultisetTestSuiteBuilder.using(new KeysGenerator<K,V,M>(parentBuilder.getSubjectGenerator())).withFeatures(computeKeysFeatures(parentBuilder.getFeatures())).named(parentBuilder.getName() + ".keys").suppressing(parentBuilder.getSuppressedTests()).createTestSuite();
+}

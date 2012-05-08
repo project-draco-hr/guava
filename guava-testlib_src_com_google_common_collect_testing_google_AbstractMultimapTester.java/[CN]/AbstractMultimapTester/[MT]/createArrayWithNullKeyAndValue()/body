@@ -1,0 +1,6 @@
+{
+  Map.Entry<K,V>[] array=createSamplesArray();
+  final int nullValueLocation=getNullLocation();
+  array[nullValueLocation]=Helpers.mapEntry(null,null);
+  return array;
+}

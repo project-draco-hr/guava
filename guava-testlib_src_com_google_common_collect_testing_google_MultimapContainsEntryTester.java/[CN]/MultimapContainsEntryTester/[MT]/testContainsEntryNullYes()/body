@@ -1,0 +1,4 @@
+{
+  initMultimapWithNullKeyAndValue();
+  assertTrue(multimap().containsEntry(null,null));
+}

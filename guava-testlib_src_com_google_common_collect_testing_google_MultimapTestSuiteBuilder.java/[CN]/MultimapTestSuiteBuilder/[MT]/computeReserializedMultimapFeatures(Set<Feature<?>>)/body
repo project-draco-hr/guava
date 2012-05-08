@@ -1,0 +1,6 @@
+{
+  Set<Feature<?>> derivedFeatures=Helpers.copyToSet(multimapFeatures);
+  derivedFeatures.remove(CollectionFeature.SERIALIZABLE);
+  derivedFeatures.remove(CollectionFeature.SERIALIZABLE_INCLUDING_VIEWS);
+  return derivedFeatures;
+}
