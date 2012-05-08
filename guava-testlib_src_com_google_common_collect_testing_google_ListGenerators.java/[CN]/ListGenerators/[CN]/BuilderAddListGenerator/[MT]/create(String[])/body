@@ -1,5 +1,5 @@
 {
-  Builder<String> builder=ImmutableList.<String>builder();
+  ImmutableList.Builder<String> builder=ImmutableList.<String>builder();
   for (  String element : elements) {
     builder.add(element);
   }

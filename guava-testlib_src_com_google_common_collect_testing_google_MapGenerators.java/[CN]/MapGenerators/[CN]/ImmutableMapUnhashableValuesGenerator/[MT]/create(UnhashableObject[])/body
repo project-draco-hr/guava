@@ -1,5 +1,5 @@
 {
-  Builder<Integer,UnhashableObject> builder=ImmutableMap.builder();
+  ImmutableMap.Builder<Integer,UnhashableObject> builder=ImmutableMap.builder();
   int key=1;
   for (  UnhashableObject value : elements) {
     builder.put(key++,value);

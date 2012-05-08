@@ -1,5 +1,5 @@
 {
-  Builder<String,String> builder=ImmutableMap.builder();
+  ImmutableMap.Builder<String,String> builder=ImmutableMap.builder();
   for (  Entry<String,String> entry : entries) {
     builder.put(entry.getKey(),entry.getValue());
   }
