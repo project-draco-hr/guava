@@ -1,10 +1,11 @@
 {
-  List<T> newList=Lists.newArrayList();
+  List<Iterable<T>> words=Lists.newArrayList();
+  words.add(Collections.<T>emptyList());
   for (  T t : scenario.strictlyOrderedList) {
-    if (t != null) {
-      newList.add(t);
+    words.add(Arrays.asList(t));
+    for (    T s : scenario.strictlyOrderedList) {
+      words.add(Arrays.asList(t,s));
     }
   }
-  newList.add(null);
-  return new Scenario<T>(scenario.ordering.nullsLast(),newList);
+  return new Scenario<Iterable<T>>(scenario.ordering.lexicographical(),words);
 }
