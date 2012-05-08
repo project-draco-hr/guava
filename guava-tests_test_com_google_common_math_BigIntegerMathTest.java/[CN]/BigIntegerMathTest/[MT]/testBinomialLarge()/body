@@ -1,0 +1,3 @@
+{
+  runBinomialTest(31,100);
+}

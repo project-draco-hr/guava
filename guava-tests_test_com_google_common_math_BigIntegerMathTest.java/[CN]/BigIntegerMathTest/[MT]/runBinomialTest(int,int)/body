@@ -1,5 +1,5 @@
 {
-  for (int n=0; n <= 50; n++) {
+  for (int n=firstN; n <= lastN; n++) {
     for (int k=0; k <= n; k++) {
       BigInteger expected=BigIntegerMath.factorial(n).divide(BigIntegerMath.factorial(k)).divide(BigIntegerMath.factorial(n - k));
       assertEquals(expected,BigIntegerMath.binomial(n,k));

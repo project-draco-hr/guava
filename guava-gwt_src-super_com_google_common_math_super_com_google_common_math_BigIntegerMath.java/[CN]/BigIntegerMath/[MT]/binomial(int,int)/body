@@ -8,10 +8,25 @@
   if (k < LongMath.BIGGEST_BINOMIALS.length && n <= LongMath.BIGGEST_BINOMIALS[k]) {
     return BigInteger.valueOf(LongMath.binomial(n,k));
   }
-  BigInteger result=BigInteger.ONE;
-  for (int i=0; i < k; i++) {
-    result=result.multiply(BigInteger.valueOf(n - i));
-    result=result.divide(BigInteger.valueOf(i + 1));
+  BigInteger accum=BigInteger.ONE;
+  long numeratorAccum=n;
+  long denominatorAccum=1;
+  int bits=LongMath.log2(n,RoundingMode.CEILING);
+  int numeratorBits=bits;
+  for (int i=1; i < k; i++) {
+    int p=n - i;
+    int q=i + 1;
+    if (numeratorBits + bits >= Long.SIZE - 1) {
+      accum=accum.multiply(BigInteger.valueOf(numeratorAccum)).divide(BigInteger.valueOf(denominatorAccum));
+      numeratorAccum=p;
+      denominatorAccum=q;
+      numeratorBits=bits;
+    }
+ else {
+      numeratorAccum*=p;
+      denominatorAccum*=q;
+      numeratorBits+=bits;
+    }
   }
-  return result;
+  return accum.multiply(BigInteger.valueOf(numeratorAccum)).divide(BigInteger.valueOf(denominatorAccum));
 }
