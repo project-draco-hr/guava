@@ -1,0 +1,3 @@
+{
+  return hashString(input,Charsets.UTF_16LE);
+}
