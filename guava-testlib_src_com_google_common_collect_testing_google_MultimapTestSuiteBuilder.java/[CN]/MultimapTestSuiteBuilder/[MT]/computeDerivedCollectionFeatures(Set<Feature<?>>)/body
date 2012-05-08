@@ -6,16 +6,8 @@
   if (derivedFeatures.remove(MapFeature.ALLOWS_NULL_QUERIES)) {
     derivedFeatures.add(CollectionFeature.ALLOWS_NULL_QUERIES);
   }
-  if (derivedFeatures.remove(MapFeature.REMOVE_OPERATIONS)) {
-    derivedFeatures.add(CollectionFeature.REMOVE_OPERATIONS);
-  }
- else {
-    if (derivedFeatures.remove(MapFeature.SUPPORTS_REMOVE)) {
-      derivedFeatures.add(CollectionFeature.SUPPORTS_REMOVE);
-    }
-    if (derivedFeatures.remove(MapFeature.SUPPORTS_CLEAR)) {
-      derivedFeatures.add(CollectionFeature.SUPPORTS_CLEAR);
-    }
+  if (derivedFeatures.remove(MapFeature.SUPPORTS_REMOVE)) {
+    derivedFeatures.add(CollectionFeature.SUPPORTS_REMOVE);
   }
   return derivedFeatures;
 }

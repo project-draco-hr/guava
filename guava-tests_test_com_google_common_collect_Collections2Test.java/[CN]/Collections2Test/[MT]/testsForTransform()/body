@@ -8,5 +8,5 @@
       return Collections2.transform(list,REMOVE_FIRST_CHAR);
     }
   }
-).named("Collections2.transform").withFeatures(CollectionFeature.REMOVE_OPERATIONS,CollectionFeature.ALLOWS_NULL_VALUES,CollectionFeature.KNOWN_ORDER,CollectionSize.ANY).createTestSuite();
+).named("Collections2.transform").withFeatures(CollectionFeature.SUPPORTS_REMOVE,CollectionFeature.ALLOWS_NULL_VALUES,CollectionFeature.KNOWN_ORDER,CollectionSize.ANY).createTestSuite();
 }

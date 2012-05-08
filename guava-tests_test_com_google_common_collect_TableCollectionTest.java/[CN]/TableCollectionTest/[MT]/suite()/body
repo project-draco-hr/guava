@@ -260,20 +260,20 @@
       return HashBasedTable.create();
     }
   }
-).named("HashBasedTable.cellSet").withFeatures(CollectionSize.ANY,CollectionFeature.REMOVE_OPERATIONS,CollectionFeature.ALLOWS_NULL_QUERIES).createTestSuite());
+).named("HashBasedTable.cellSet").withFeatures(CollectionSize.ANY,CollectionFeature.SUPPORTS_REMOVE,CollectionFeature.ALLOWS_NULL_QUERIES).createTestSuite());
   suite.addTest(SetTestSuiteBuilder.using(new TestCellSetGenerator(){
     @Override Table<String,Integer,Character> createTable(){
       return TreeBasedTable.create();
     }
   }
-).named("TreeBasedTable.cellSet").withFeatures(CollectionSize.ANY,CollectionFeature.REMOVE_OPERATIONS,CollectionFeature.ALLOWS_NULL_QUERIES).createTestSuite());
+).named("TreeBasedTable.cellSet").withFeatures(CollectionSize.ANY,CollectionFeature.SUPPORTS_REMOVE,CollectionFeature.ALLOWS_NULL_QUERIES).createTestSuite());
   suite.addTest(SetTestSuiteBuilder.using(new TestCellSetGenerator(){
     @Override Table<String,Integer,Character> createTable(){
       Table<Integer,String,Character> original=TreeBasedTable.create();
       return Tables.transpose(original);
     }
   }
-).named("TransposedTable.cellSet").withFeatures(CollectionSize.ANY,CollectionFeature.REMOVE_OPERATIONS,CollectionFeature.ALLOWS_NULL_QUERIES).createTestSuite());
+).named("TransposedTable.cellSet").withFeatures(CollectionSize.ANY,CollectionFeature.SUPPORTS_REMOVE,CollectionFeature.ALLOWS_NULL_QUERIES).createTestSuite());
   suite.addTest(SetTestSuiteBuilder.using(new TestCellSetGenerator(){
     @Override Table<String,Integer,Character> createTable(){
       return HashBasedTable.create();
@@ -287,7 +287,7 @@
       return Tables.transformValues(table,Functions.<Character>identity()).cellSet();
     }
   }
-).named("TransformValues.cellSet").withFeatures(CollectionSize.ANY,CollectionFeature.ALLOWS_NULL_QUERIES,CollectionFeature.REMOVE_OPERATIONS).createTestSuite());
+).named("TransformValues.cellSet").withFeatures(CollectionSize.ANY,CollectionFeature.ALLOWS_NULL_QUERIES,CollectionFeature.SUPPORTS_REMOVE).createTestSuite());
   suite.addTest(SetTestSuiteBuilder.using(new TestCellSetGenerator(){
     @Override Table<String,Integer,Character> createTable(){
       return Tables.unmodifiableTable(HashBasedTable.<String,Integer,Character>create());
