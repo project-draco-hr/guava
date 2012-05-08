@@ -10,5 +10,6 @@
   }
   inverseFeatures.add(NoRecurse.INVERSE);
   inverseFeatures.remove(CollectionFeature.KNOWN_ORDER);
+  inverseFeatures.add(MapFeature.REJECTS_DUPLICATES_AT_CREATION);
   return inverseFeatures;
 }

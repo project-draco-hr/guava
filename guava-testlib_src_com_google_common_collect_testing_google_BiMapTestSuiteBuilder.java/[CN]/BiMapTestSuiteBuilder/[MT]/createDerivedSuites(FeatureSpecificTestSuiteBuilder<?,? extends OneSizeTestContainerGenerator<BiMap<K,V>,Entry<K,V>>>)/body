@@ -1,7 +1,7 @@
 {
   List<TestSuite> derived=super.createDerivedSuites(parentBuilder);
-  derived.add(MapTestSuiteBuilder.using(new MapGenerator<K,V>(parentBuilder.getSubjectGenerator())).withFeatures(parentBuilder.getFeatures()).named(parentBuilder.getName() + " [Map]").suppressing(parentBuilder.getSuppressedTests()).createTestSuite());
-  derived.add(SetTestSuiteBuilder.using(new BiMapValueSetGenerator<K,V>(parentBuilder.getSubjectGenerator())).withFeatures(computeValuesSetFeatures(parentBuilder.getFeatures())).named(parentBuilder.getName() + " values [Set]").suppressing(parentBuilder.getSuppressedTests()).createTestSuite());
+  derived.add(MapTestSuiteBuilder.using(new MapGenerator<K,V>(parentBuilder.getSubjectGenerator())).withFeatures(parentBuilder.getFeatures()).named(parentBuilder.getName() + " [Map]").suppressing(parentBuilder.getSuppressedTests()).suppressing(SetCreationTester.class.getMethods()).createTestSuite());
+  derived.add(SetTestSuiteBuilder.using(new BiMapValueSetGenerator<K,V>(parentBuilder.getSubjectGenerator())).withFeatures(computeValuesSetFeatures(parentBuilder.getFeatures())).named(parentBuilder.getName() + " values [Set]").suppressing(parentBuilder.getSuppressedTests()).suppressing(SetCreationTester.class.getMethods()).createTestSuite());
   if (!parentBuilder.getFeatures().contains(NoRecurse.INVERSE)) {
     derived.add(BiMapTestSuiteBuilder.using(new InverseBiMapGenerator<K,V>(parentBuilder.getSubjectGenerator())).withFeatures(computeInverseFeatures(parentBuilder.getFeatures())).named(parentBuilder.getName() + " inverse").suppressing(parentBuilder.getSuppressedTests()).createTestSuite());
   }

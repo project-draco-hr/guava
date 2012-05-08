@@ -1,7 +1,8 @@
 {
   TestSuite suite=new TestSuite();
-  suite.addTest(BiMapTestSuiteBuilder.using(new HashBiMapGenerator()).named("HashBiMap").withFeatures(CollectionSize.ANY,CollectionFeature.SERIALIZABLE,MapFeature.ALLOWS_NULL_KEYS,MapFeature.ALLOWS_NULL_VALUES,MapFeature.GENERAL_PURPOSE,MapFeature.REJECTS_DUPLICATES_AT_CREATION).createTestSuite());
-  suite.addTest(BiMapTestSuiteBuilder.using(new EnumBiMapGenerator()).named("EnumBiMap").withFeatures(CollectionSize.ANY,CollectionFeature.SERIALIZABLE,MapFeature.GENERAL_PURPOSE,CollectionFeature.KNOWN_ORDER,MapFeature.REJECTS_DUPLICATES_AT_CREATION).createTestSuite());
-  suite.addTest(BiMapTestSuiteBuilder.using(new EnumHashBiMapGenerator()).named("EnumHashBiMap").withFeatures(CollectionSize.ANY,CollectionFeature.SERIALIZABLE,MapFeature.ALLOWS_NULL_VALUES,MapFeature.GENERAL_PURPOSE,CollectionFeature.KNOWN_ORDER,MapFeature.REJECTS_DUPLICATES_AT_CREATION).createTestSuite());
+  suite.addTest(BiMapTestSuiteBuilder.using(new HashBiMapGenerator()).named("HashBiMap").withFeatures(CollectionSize.ANY,CollectionFeature.SERIALIZABLE,MapFeature.ALLOWS_NULL_KEYS,MapFeature.ALLOWS_NULL_VALUES,MapFeature.GENERAL_PURPOSE).createTestSuite());
+  suite.addTest(BiMapTestSuiteBuilder.using(new EnumBiMapGenerator()).named("EnumBiMap").withFeatures(CollectionSize.ANY,CollectionFeature.SERIALIZABLE,MapFeature.GENERAL_PURPOSE,CollectionFeature.KNOWN_ORDER).createTestSuite());
+  suite.addTest(BiMapTestSuiteBuilder.using(new EnumHashBiMapGenerator()).named("EnumHashBiMap").withFeatures(CollectionSize.ANY,CollectionFeature.SERIALIZABLE,MapFeature.ALLOWS_NULL_VALUES,MapFeature.GENERAL_PURPOSE,CollectionFeature.KNOWN_ORDER).createTestSuite());
+  suite.addTest(BiMapTestSuiteBuilder.using(new UnmodifiableBiMapGenerator()).named("unmodifiableBiMap[HashBiMap]").withFeatures(CollectionSize.ANY,CollectionFeature.SERIALIZABLE,MapFeature.ALLOWS_NULL_KEYS,MapFeature.ALLOWS_NULL_VALUES).createTestSuite());
   return suite;
 }

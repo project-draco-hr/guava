@@ -1,3 +1,0 @@
-{
-  return Maps.synchronizedBiMap(HashBiMap.<String,Integer>create());
-}

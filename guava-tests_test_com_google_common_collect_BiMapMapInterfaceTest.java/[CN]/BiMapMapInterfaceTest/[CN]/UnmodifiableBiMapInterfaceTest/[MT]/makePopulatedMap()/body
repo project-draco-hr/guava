@@ -1,6 +1,0 @@
-{
-  BiMap<String,Integer> bimap=HashBiMap.create();
-  bimap.put("foo",1);
-  bimap.put("bar",2);
-  return Maps.unmodifiableBiMap(bimap);
-}
