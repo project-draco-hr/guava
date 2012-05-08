@@ -1,3 +1,2 @@
 {
-  this(Collections.<E>emptySet());
 }

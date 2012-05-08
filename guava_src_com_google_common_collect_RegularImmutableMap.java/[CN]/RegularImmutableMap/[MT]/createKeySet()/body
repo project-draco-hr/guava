@@ -1,3 +1,8 @@
 {
-  return new KeySet(keySetHashCode);
+  return new ImmutableMapKeySet<K,V>(entrySet(),keySetHashCode){
+    @Override ImmutableMap<K,V> map(){
+      return RegularImmutableMap.this;
+    }
+  }
+;
 }

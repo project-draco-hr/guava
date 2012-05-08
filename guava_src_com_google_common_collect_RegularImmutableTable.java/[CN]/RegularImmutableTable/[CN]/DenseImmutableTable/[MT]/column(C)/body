@@ -1,18 +1,9 @@
 {
-  checkNotNull(columnKey);
-  Integer columnIndexInteger=columnKeyToIndex.get(columnKey);
-  if (columnIndexInteger == null) {
+  Integer columnIndex=columnKeyToIndex.get(checkNotNull(columnKey));
+  if (columnIndex == null) {
     return ImmutableMap.of();
   }
  else {
-    int columnIndex=columnIndexInteger;
-    ImmutableMap.Builder<R,V> columnBuilder=ImmutableMap.builder();
-    for (int i=0; i < values.length; i++) {
-      V value=values[i][columnIndex];
-      if (value != null) {
-        columnBuilder.put(rowKeyToIndex.inverse().get(i),value);
-      }
-    }
-    return columnBuilder.build();
+    return new Column(columnIndex);
   }
 }

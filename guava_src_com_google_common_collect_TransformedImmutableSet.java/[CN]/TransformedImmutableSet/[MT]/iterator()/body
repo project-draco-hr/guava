@@ -1,0 +1,12 @@
+{
+  final Iterator<D> backingIterator=source.iterator();
+  return new UnmodifiableIterator<E>(){
+    @Override public boolean hasNext(){
+      return backingIterator.hasNext();
+    }
+    @Override public E next(){
+      return transform(backingIterator.next());
+    }
+  }
+;
+}

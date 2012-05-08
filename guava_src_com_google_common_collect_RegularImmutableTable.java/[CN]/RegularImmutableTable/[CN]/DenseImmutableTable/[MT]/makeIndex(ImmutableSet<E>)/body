@@ -1,5 +1,5 @@
 {
-  ImmutableBiMap.Builder<E,Integer> indexBuilder=ImmutableBiMap.builder();
+  ImmutableMap.Builder<E,Integer> indexBuilder=ImmutableMap.builder();
   int i=0;
   for (  E key : set) {
     indexBuilder.put(key,i);

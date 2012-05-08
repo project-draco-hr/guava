@@ -2,5 +2,5 @@
   if (cachedKeySet != null) {
     return cachedKeySet;
   }
-  return cachedKeySet=ImmutableSet.unsafeDelegate(delegate.keySet());
+  return cachedKeySet=createKeySet();
 }

@@ -1,7 +1,3 @@
 {
-  ImmutableMap<R,Map<C,V>> result=rowMap;
-  if (result == null) {
-    rowMap=result=makeRowMap();
-  }
-  return result;
+  return rowMap;
 }

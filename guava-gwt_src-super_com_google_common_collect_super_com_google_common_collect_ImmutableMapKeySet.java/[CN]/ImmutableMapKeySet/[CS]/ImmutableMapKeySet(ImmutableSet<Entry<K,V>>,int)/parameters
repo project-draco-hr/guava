@@ -1,0 +1,2 @@
+ImmutableSet<Entry<K,V>> entrySet
+int hashCode
