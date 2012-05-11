@@ -1,3 +1,3 @@
 {
-  return ITERATOR;
+  return Iterators.EMPTY_LIST_ITERATOR;
 }

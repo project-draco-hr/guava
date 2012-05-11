@@ -1,4 +1,4 @@
 {
   checkPositionIndex(start,0);
-  return ITERATOR;
+  return Iterators.EMPTY_LIST_ITERATOR;
 }

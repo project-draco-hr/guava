@@ -1,0 +1,37 @@
+{
+  ListIterator<String> iterator=Iterators.emptyListIterator();
+  assertFalse(iterator.hasNext());
+  assertFalse(iterator.hasPrevious());
+  assertEquals(0,iterator.nextIndex());
+  assertEquals(-1,iterator.previousIndex());
+  try {
+    iterator.next();
+    fail("no exception thrown");
+  }
+ catch (  NoSuchElementException expected) {
+  }
+  try {
+    iterator.previous();
+    fail("no exception thrown");
+  }
+ catch (  NoSuchElementException expected) {
+  }
+  try {
+    iterator.remove();
+    fail("no exception thrown");
+  }
+ catch (  UnsupportedOperationException expected) {
+  }
+  try {
+    iterator.set("a");
+    fail("no exception thrown");
+  }
+ catch (  UnsupportedOperationException expected) {
+  }
+  try {
+    iterator.add("a");
+    fail("no exception thrown");
+  }
+ catch (  UnsupportedOperationException expected) {
+  }
+}
