@@ -1,0 +1,5 @@
+{
+  List<Integer> input=asList(1,2,3);
+  Iterable<String> result=FluentIterable.from(input).transformAndConcat(new RepeatedStringValueOfFunction());
+  assertEquals(asList("1","1","2","2","3","3"),Lists.newArrayList(result));
+}
