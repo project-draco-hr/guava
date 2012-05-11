@@ -1,0 +1,4 @@
+{
+  Iterator<String> iterator=Collections.<String>emptyList().iterator();
+  assertEquals("[]",Iterators.toString(iterator));
+}

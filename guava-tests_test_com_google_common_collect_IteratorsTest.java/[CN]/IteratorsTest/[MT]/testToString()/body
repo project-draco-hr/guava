@@ -1,6 +1,4 @@
 {
-  List<String> list=Collections.emptyList();
-  assertEquals("[]",Iterators.toString(list.iterator()));
-  list=Lists.newArrayList("yam","bam","jam","ham");
-  assertEquals("[yam, bam, jam, ham]",Iterators.toString(list.iterator()));
+  Iterator<String> iterator=Lists.newArrayList("yam","bam","jam","ham").iterator();
+  assertEquals("[yam, bam, jam, ham]",Iterators.toString(iterator));
 }
