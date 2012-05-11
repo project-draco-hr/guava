@@ -1,0 +1,9 @@
+{
+  Set<String> elementsPlus=Sets.newLinkedHashSet();
+  elementsPlus.add(BEFORE_FIRST);
+  elementsPlus.add(BEFORE_FIRST_2);
+  elementsPlus.addAll(Arrays.asList(elements));
+  elementsPlus.add(AFTER_LAST);
+  elementsPlus.add(AFTER_LAST_2);
+  return Ordering.explicit(Lists.newArrayList(elementsPlus));
+}

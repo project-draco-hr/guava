@@ -1,0 +1,3 @@
+{
+  return new ImmutableSortedSet.Builder<String>(COMPARABLE_REVERSED).add(elements).build();
+}

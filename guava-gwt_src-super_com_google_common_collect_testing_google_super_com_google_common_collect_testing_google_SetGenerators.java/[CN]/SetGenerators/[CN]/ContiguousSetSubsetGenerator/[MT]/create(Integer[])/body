@@ -1,0 +1,11 @@
+{
+  SortedSet<Integer> set=nullCheckedTreeSet(elements);
+  if (set.isEmpty()) {
+    return Ranges.openClosed(0,1).asSet(DiscreteDomains.integers()).subSet(0,1);
+  }
+  int tooHigh=set.last() + 1;
+  int tooLow=set.first() - 1;
+  set.add(tooHigh);
+  set.add(tooLow);
+  return checkedCreate(set).subSet(tooLow + 1,tooHigh);
+}
