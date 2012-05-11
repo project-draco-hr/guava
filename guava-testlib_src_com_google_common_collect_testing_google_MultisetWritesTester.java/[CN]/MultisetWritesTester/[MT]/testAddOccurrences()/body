@@ -1,5 +1,5 @@
 {
-  int expectedCount=getMultiset().count(samples.e0);
-  assertEquals(expectedCount,getMultiset().add(samples.e0,2));
-  assertEquals(expectedCount + 2,getMultiset().count(samples.e0));
+  int originalCount=getMultiset().count(samples.e0);
+  assertEquals("old count",originalCount,getMultiset().add(samples.e0,2));
+  assertEquals("old count",originalCount + 2,getMultiset().count(samples.e0));
 }
