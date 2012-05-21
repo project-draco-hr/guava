@@ -1,28 +1,28 @@
 {
   int ntasks=tasks.size();
   checkArgument(ntasks > 0);
-  List<Future<T>> futures=new ArrayList<Future<T>>(ntasks);
-  ExecutorCompletionService<T> ecs=new ExecutorCompletionService<T>(this);
+  List<Future<T>> futures=Lists.newArrayListWithCapacity(ntasks);
+  BlockingQueue<Future<T>> futureQueue=Queues.newLinkedBlockingQueue();
   try {
     ExecutionException ee=null;
     long lastTime=timed ? System.nanoTime() : 0;
     Iterator<? extends Callable<T>> it=tasks.iterator();
-    futures.add(ecs.submit(it.next()));
+    futures.add(submitAndAddQueueListener(it.next(),futureQueue));
     --ntasks;
     int active=1;
     for (; ; ) {
-      Future<T> f=ecs.poll();
+      Future<T> f=futureQueue.poll();
       if (f == null) {
         if (ntasks > 0) {
           --ntasks;
-          futures.add(ecs.submit(it.next()));
+          futures.add(submitAndAddQueueListener(it.next(),futureQueue));
           ++active;
         }
  else         if (active == 0) {
           break;
         }
  else         if (timed) {
-          f=ecs.poll(nanos,TimeUnit.NANOSECONDS);
+          f=futureQueue.poll(nanos,TimeUnit.NANOSECONDS);
           if (f == null) {
             throw new TimeoutException();
           }
@@ -31,7 +31,7 @@
           lastTime=now;
         }
  else {
-          f=ecs.take();
+          f=futureQueue.take();
         }
       }
       if (f != null) {
