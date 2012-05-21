@@ -1,7 +1,7 @@
 {
   final CountDownLatch computationStarted=new CountDownLatch(2);
   final CountDownLatch letGetFinishSignal=new CountDownLatch(1);
-  final CountDownLatch getFinishedSignal=new CountDownLatch(2);
+  final CountDownLatch getFinishedSignal=new CountDownLatch(4);
   final String getKey="get";
   final String refreshKey="refresh";
   final String suffix="Suffix";
@@ -35,11 +35,24 @@
   cache.invalidate(refreshKey);
   assertFalse(map.containsKey(getKey));
   assertFalse(map.containsKey(refreshKey));
+  new Thread(){
+    @Override public void run(){
+      cache.getUnchecked(getKey);
+      getFinishedSignal.countDown();
+    }
+  }
+.start();
+  new Thread(){
+    @Override public void run(){
+      cache.refresh(refreshKey);
+      getFinishedSignal.countDown();
+    }
+  }
+.start();
   letGetFinishSignal.countDown();
   getFinishedSignal.await();
   checkNothingLogged();
   assertEquals(2,cache.size());
   assertEquals(getKey + suffix,map.get(getKey));
   assertEquals(refreshKey + suffix,map.get(refreshKey));
-  assertEquals(2,cache.size());
 }
