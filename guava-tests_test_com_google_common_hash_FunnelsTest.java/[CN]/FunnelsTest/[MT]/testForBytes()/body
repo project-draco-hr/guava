@@ -1,7 +1,5 @@
 {
-  PrimitiveSink bytePrimitiveSink=EasyMock.createMock(PrimitiveSink.class);
-  EasyMock.expect(bytePrimitiveSink.putBytes(EasyMock.aryEq(new byte[]{4,3,2,1}))).andReturn(bytePrimitiveSink).once();
-  EasyMock.replay(bytePrimitiveSink);
+  PrimitiveSink bytePrimitiveSink=mock(PrimitiveSink.class);
   Funnels.byteArrayFunnel().funnel(new byte[]{4,3,2,1},bytePrimitiveSink);
-  EasyMock.verify(bytePrimitiveSink);
+  verify(bytePrimitiveSink).putBytes(new byte[]{4,3,2,1});
 }

@@ -1,0 +1,3 @@
+{
+  assertNullsThrowException(Funnels.integerFunnel());
+}
