@@ -1,0 +1,20 @@
+{
+  ListeningExecutorService e=sameThreadExecutor();
+  List<Callable<Integer>> l=new ArrayList<Callable<Integer>>();
+  l.add(new Callable<Integer>(){
+    @Override public Integer call(){
+      throw new ArithmeticException("/ by zero");
+    }
+  }
+);
+  l.add(null);
+  try {
+    invokeAnyImpl(e,l,false,0);
+    shouldThrow();
+  }
+ catch (  NullPointerException success) {
+  }
+ finally {
+    joinPool(e);
+  }
+}

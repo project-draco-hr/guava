@@ -1,0 +1,12 @@
+{
+  ListeningExecutorService e=sameThreadExecutor();
+  try {
+    invokeAnyImpl(e,new ArrayList<Callable<String>>(),false,0);
+    shouldThrow();
+  }
+ catch (  IllegalArgumentException success) {
+  }
+ finally {
+    joinPool(e);
+  }
+}

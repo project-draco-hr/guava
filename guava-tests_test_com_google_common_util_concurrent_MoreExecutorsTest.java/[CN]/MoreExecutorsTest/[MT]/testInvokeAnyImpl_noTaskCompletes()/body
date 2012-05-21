@@ -1,0 +1,15 @@
+{
+  ListeningExecutorService e=sameThreadExecutor();
+  List<Callable<String>> l=new ArrayList<Callable<String>>();
+  l.add(new NPETask());
+  try {
+    invokeAnyImpl(e,l,false,0);
+    shouldThrow();
+  }
+ catch (  ExecutionException success) {
+    assertTrue(success.getCause() instanceof NullPointerException);
+  }
+ finally {
+    joinPool(e);
+  }
+}

@@ -7,7 +7,7 @@
     ExecutionException ee=null;
     long lastTime=timed ? System.nanoTime() : 0;
     Iterator<? extends Callable<T>> it=tasks.iterator();
-    futures.add(submitAndAddQueueListener(it.next(),futureQueue));
+    futures.add(submitAndAddQueueListener(executorService,it.next(),futureQueue));
     --ntasks;
     int active=1;
     for (; ; ) {
@@ -15,7 +15,7 @@
       if (f == null) {
         if (ntasks > 0) {
           --ntasks;
-          futures.add(submitAndAddQueueListener(it.next(),futureQueue));
+          futures.add(submitAndAddQueueListener(executorService,it.next(),futureQueue));
           ++active;
         }
  else         if (active == 0) {

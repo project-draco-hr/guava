@@ -1,6 +1,6 @@
 {
   try {
-    return doInvokeAny(tasks,false,0);
+    return invokeAnyImpl(this,tasks,false,0);
   }
  catch (  TimeoutException cannotHappen) {
     throw new AssertionError();

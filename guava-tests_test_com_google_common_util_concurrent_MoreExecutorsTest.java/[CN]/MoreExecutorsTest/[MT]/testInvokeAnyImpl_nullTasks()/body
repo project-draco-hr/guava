@@ -1,0 +1,12 @@
+{
+  ListeningExecutorService e=sameThreadExecutor();
+  try {
+    invokeAnyImpl(e,null,false,0);
+    shouldThrow();
+  }
+ catch (  NullPointerException success) {
+  }
+ finally {
+    joinPool(e);
+  }
+}
