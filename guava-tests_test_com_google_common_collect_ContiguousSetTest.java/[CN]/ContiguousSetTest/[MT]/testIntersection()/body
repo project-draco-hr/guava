@@ -1,5 +1,5 @@
 {
-  ContiguousSet<Integer> set=Ranges.closed(1,3).asSet(integers());
-  assertEquals(ImmutableSet.of(1,2,3),Ranges.open(-1,4).asSet(integers()).intersection(set));
-  assertEquals(ImmutableSet.of(1,2,3),set.intersection(Ranges.open(-1,4).asSet(integers())));
+  ContiguousSet<Integer> set=ContiguousSet.create(Ranges.closed(1,3),integers());
+  assertEquals(ImmutableSet.of(1,2,3),ContiguousSet.create(Ranges.open(-1,4),integers()).intersection(set));
+  assertEquals(ImmutableSet.of(1,2,3),set.intersection(ContiguousSet.create(Ranges.open(-1,4),integers())));
 }

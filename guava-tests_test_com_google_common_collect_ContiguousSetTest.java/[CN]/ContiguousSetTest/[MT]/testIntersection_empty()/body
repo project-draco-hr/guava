@@ -1,7 +1,7 @@
 {
-  ContiguousSet<Integer> set=Ranges.closed(1,3).asSet(integers());
-  ContiguousSet<Integer> emptySet=Ranges.closedOpen(2,2).asSet(integers());
+  ContiguousSet<Integer> set=ContiguousSet.create(Ranges.closed(1,3),integers());
+  ContiguousSet<Integer> emptySet=ContiguousSet.create(Ranges.closedOpen(2,2),integers());
   assertEquals(ImmutableSet.of(),set.intersection(emptySet));
   assertEquals(ImmutableSet.of(),emptySet.intersection(set));
-  assertEquals(ImmutableSet.of(),Ranges.closed(-5,-1).asSet(integers()).intersection(Ranges.open(3,64).asSet(integers())));
+  assertEquals(ImmutableSet.of(),ContiguousSet.create(Ranges.closed(-5,-1),integers()).intersection(ContiguousSet.create(Ranges.open(3,64),integers())));
 }

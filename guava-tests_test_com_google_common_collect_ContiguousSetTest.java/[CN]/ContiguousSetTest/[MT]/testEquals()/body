@@ -1,6 +1,6 @@
 {
-  new EqualsTester().addEqualityGroup(Ranges.closed(1,3).asSet(integers()),Ranges.closedOpen(1,4).asSet(integers()),Ranges.openClosed(0,3).asSet(integers()),Ranges.open(0,4).asSet(integers()),Ranges.closed(1,3).asSet(NOT_EQUAL_TO_INTEGERS),Ranges.closedOpen(1,4).asSet(NOT_EQUAL_TO_INTEGERS),Ranges.openClosed(0,3).asSet(NOT_EQUAL_TO_INTEGERS),Ranges.open(0,4).asSet(NOT_EQUAL_TO_INTEGERS),ImmutableSortedSet.of(1,2,3)).testEquals();
-  assertEquals(Ranges.closed(Integer.MIN_VALUE,Integer.MAX_VALUE).asSet(integers()),Ranges.<Integer>all().asSet(integers()));
-  assertEquals(Ranges.closed(Integer.MIN_VALUE,Integer.MAX_VALUE).asSet(integers()),Ranges.atLeast(Integer.MIN_VALUE).asSet(integers()));
-  assertEquals(Ranges.closed(Integer.MIN_VALUE,Integer.MAX_VALUE).asSet(integers()),Ranges.atMost(Integer.MAX_VALUE).asSet(integers()));
+  new EqualsTester().addEqualityGroup(ContiguousSet.create(Ranges.closed(1,3),integers()),ContiguousSet.create(Ranges.closedOpen(1,4),integers()),ContiguousSet.create(Ranges.openClosed(0,3),integers()),ContiguousSet.create(Ranges.open(0,4),integers()),ContiguousSet.create(Ranges.closed(1,3),NOT_EQUAL_TO_INTEGERS),ContiguousSet.create(Ranges.closedOpen(1,4),NOT_EQUAL_TO_INTEGERS),ContiguousSet.create(Ranges.openClosed(0,3),NOT_EQUAL_TO_INTEGERS),ContiguousSet.create(Ranges.open(0,4),NOT_EQUAL_TO_INTEGERS),ImmutableSortedSet.of(1,2,3)).testEquals();
+  assertEquals(ContiguousSet.create(Ranges.closed(Integer.MIN_VALUE,Integer.MAX_VALUE),integers()),ContiguousSet.create(Ranges.<Integer>all(),integers()));
+  assertEquals(ContiguousSet.create(Ranges.closed(Integer.MIN_VALUE,Integer.MAX_VALUE),integers()),ContiguousSet.create(Ranges.atLeast(Integer.MIN_VALUE),integers()));
+  assertEquals(ContiguousSet.create(Ranges.closed(Integer.MIN_VALUE,Integer.MAX_VALUE),integers()),ContiguousSet.create(Ranges.atMost(Integer.MAX_VALUE),integers()));
 }

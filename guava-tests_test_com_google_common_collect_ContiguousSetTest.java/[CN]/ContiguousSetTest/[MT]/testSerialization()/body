@@ -1,11 +1,11 @@
 {
-  ContiguousSet<Integer> empty=Ranges.closedOpen(1,1).asSet(integers());
+  ContiguousSet<Integer> empty=ContiguousSet.create(Ranges.closedOpen(1,1),integers());
   assertTrue(empty instanceof EmptyContiguousSet);
   reserializeAndAssert(empty);
-  ContiguousSet<Integer> regular=Ranges.closed(1,3).asSet(integers());
+  ContiguousSet<Integer> regular=ContiguousSet.create(Ranges.closed(1,3),integers());
   assertTrue(regular instanceof RegularContiguousSet);
   reserializeAndAssert(regular);
-  ContiguousSet<Integer> enormous=Ranges.<Integer>all().asSet(integers());
+  ContiguousSet<Integer> enormous=ContiguousSet.create(Ranges.<Integer>all(),integers());
   assertTrue(enormous instanceof RegularContiguousSet);
   ContiguousSet<Integer> enormousReserialized=reserialize(enormous);
   assertEquals(enormous,enormousReserialized);

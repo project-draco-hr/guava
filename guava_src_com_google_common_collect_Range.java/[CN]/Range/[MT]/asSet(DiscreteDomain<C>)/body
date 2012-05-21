@@ -1,17 +1,3 @@
 {
-  checkNotNull(domain);
-  Range<C> effectiveRange=this;
-  try {
-    if (!hasLowerBound()) {
-      effectiveRange=effectiveRange.intersection(Ranges.atLeast(domain.minValue()));
-    }
-    if (!hasUpperBound()) {
-      effectiveRange=effectiveRange.intersection(Ranges.atMost(domain.maxValue()));
-    }
-  }
- catch (  NoSuchElementException e) {
-    throw new IllegalArgumentException(e);
-  }
-  boolean empty=effectiveRange.isEmpty() || compareOrThrow(lowerBound.leastValueAbove(domain),upperBound.greatestValueBelow(domain)) > 0;
-  return empty ? new EmptyContiguousSet<C>(domain) : new RegularContiguousSet<C>(effectiveRange,domain);
+  return ContiguousSet.create(this,domain);
 }
