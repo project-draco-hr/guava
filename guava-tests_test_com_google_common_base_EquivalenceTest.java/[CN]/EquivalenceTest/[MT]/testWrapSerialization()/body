@@ -1,3 +1,0 @@
-{
-  SerializableTester.reserializeAndAssert(LENGTH_EQUIVALENCE.wrap("hello"));
-}

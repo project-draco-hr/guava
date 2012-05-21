@@ -1,0 +1,5 @@
+{
+  SerializableTester.reserializeAndAssert(LENGTH_EQUIVALENCE.wrap("hello"));
+  SerializableTester.reserializeAndAssert(Equivalence.equals());
+  SerializableTester.reserializeAndAssert(Equivalence.identity());
+}

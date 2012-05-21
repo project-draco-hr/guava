@@ -1,3 +1,3 @@
 {
-  EquivalenceTester.of(Equivalences.equals().onResultOf(Functions.toStringFunction())).addEquivalenceGroup(new IntValue(1),new IntValue(1)).addEquivalenceGroup(new IntValue(2)).test();
+  EquivalenceTester.of(Equivalence.equals().onResultOf(Functions.toStringFunction())).addEquivalenceGroup(new IntValue(1),new IntValue(1)).addEquivalenceGroup(new IntValue(2)).test();
 }
