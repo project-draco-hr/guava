@@ -1,0 +1,10 @@
+{
+  SortedMultiset<String> toCopy=EasyMock.createMock(SortedMultiset.class);
+  Set<Entry<String>> entrySet=EasyMock.createMock(Set.class);
+  EasyMock.expect((Comparator<Comparable>)toCopy.comparator()).andReturn(Ordering.natural());
+  EasyMock.expect(toCopy.entrySet()).andReturn(entrySet);
+  EasyMock.expect(entrySet.toArray()).andReturn(new Object[0]);
+  EasyMock.replay(toCopy,entrySet);
+  ImmutableSortedMultiset<String> multiset=ImmutableSortedMultiset.copyOfSorted(toCopy);
+  EasyMock.verify(toCopy,entrySet);
+}

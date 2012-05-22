@@ -1,3 +1,6 @@
 {
-  return RegularImmutableSortedMultiset.createFromSorted(NATURAL_ORDER,ImmutableList.of(Multisets.immutableEntry(checkNotNull(element),1)));
+  RegularImmutableSortedSet<E> elementSet=(RegularImmutableSortedSet<E>)ImmutableSortedSet.of(element);
+  int[] counts={1};
+  long[] cumulativeCounts={0,1};
+  return new RegularImmutableSortedMultiset<E>(elementSet,counts,cumulativeCounts,0,1);
 }

@@ -1,8 +1,0 @@
-{
-  List<CumulativeCountEntry<E>> newEntries=Lists.newArrayListWithCapacity(entries.size());
-  CumulativeCountEntry<E> previous=null;
-  for (  Multiset.Entry<E> entry : entries) {
-    newEntries.add(previous=new CumulativeCountEntry<E>(entry.getElement(),entry.getCount(),previous));
-  }
-  return new RegularImmutableSortedMultiset<E>(comparator,ImmutableList.copyOf(newEntries));
-}

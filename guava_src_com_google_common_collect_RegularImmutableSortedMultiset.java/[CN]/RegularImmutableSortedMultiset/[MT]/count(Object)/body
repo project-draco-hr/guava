@@ -1,12 +1,4 @@
 {
-  if (element == null) {
-    return 0;
-  }
-  try {
-    int index=SortedLists.binarySearch(elementList(),(E)element,comparator(),ANY_PRESENT,INVERTED_INSERTION_INDEX);
-    return (index >= 0) ? entries.get(index).getCount() : 0;
-  }
- catch (  ClassCastException e) {
-    return 0;
-  }
+  int index=elementSet.indexOf(element);
+  return (index == -1) ? 0 : counts[index + offset];
 }

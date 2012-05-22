@@ -1,4 +1,4 @@
 {
   checkNotNull(comparator);
-  return copyOfInternal(comparator,elements);
+  return new Builder<E>(comparator).addAll(elements).build();
 }

@@ -1,0 +1,7 @@
+{
+  @SuppressWarnings("unchecked") Collection<String> toCopy=EasyMock.createMock(Collection.class);
+  EasyMock.expect(toCopy.toArray()).andReturn(new Object[0]);
+  EasyMock.replay(toCopy);
+  ImmutableSortedMultiset<String> multiset=ImmutableSortedMultiset.copyOf(Ordering.natural(),toCopy);
+  EasyMock.verify(toCopy);
+}

@@ -1,5 +1,0 @@
-{
-  for (  Entry<E> entry : entries) {
-    checkNotNull(entry.getElement());
-  }
-}

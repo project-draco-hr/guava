@@ -1,7 +1,0 @@
-{
-  ImmutableSortedSet<E> result=elementSet;
-  if (result == null) {
-    return elementSet=createElementSet();
-  }
-  return result;
-}

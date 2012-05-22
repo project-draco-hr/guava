@@ -1,3 +1,11 @@
 {
-  return new RegularImmutableAsList<Entry<E>>(this,entries);
+  return new ImmutableAsList<Entry<E>>(){
+    @Override public Entry<E> get(    int index){
+      return getEntry(index);
+    }
+    @Override ImmutableCollection<Entry<E>> delegateCollection(){
+      return EntrySet.this;
+    }
+  }
+;
 }

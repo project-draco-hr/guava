@@ -3,5 +3,5 @@
   if (comparator == null) {
     comparator=(Comparator<? super E>)NATURAL_ORDER;
   }
-  return copyOfInternal(comparator,sortedMultiset);
+  return copyOfSortedEntries(comparator,Lists.newArrayList(sortedMultiset.entrySet()));
 }

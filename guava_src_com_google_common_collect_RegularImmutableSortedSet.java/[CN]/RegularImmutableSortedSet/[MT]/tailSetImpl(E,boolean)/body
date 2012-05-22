@@ -1,10 +1,3 @@
 {
-  int index;
-  if (inclusive) {
-    index=SortedLists.binarySearch(elements,checkNotNull(fromElement),comparator(),FIRST_PRESENT,NEXT_HIGHER);
-  }
- else {
-    index=SortedLists.binarySearch(elements,checkNotNull(fromElement),comparator(),FIRST_AFTER,NEXT_HIGHER);
-  }
-  return createSubset(index,size());
+  return getSubSet(tailIndex(fromElement,inclusive),size());
 }

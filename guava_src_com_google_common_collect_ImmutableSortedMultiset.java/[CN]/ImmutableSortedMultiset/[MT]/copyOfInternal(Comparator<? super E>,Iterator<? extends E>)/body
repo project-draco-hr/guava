@@ -1,8 +1,0 @@
-{
-  @SuppressWarnings("unchecked") ImmutableList<Entry<E>> entries=(ImmutableList)ImmutableList.copyOf(SortedIterables.sortedCounts(comparator,iterator));
-  if (entries.isEmpty()) {
-    return emptyMultiset(comparator);
-  }
-  verifyEntries(entries);
-  return RegularImmutableSortedMultiset.createFromSorted(comparator,entries);
-}

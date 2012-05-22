@@ -1,3 +1,0 @@
-{
-  return new RegularImmutableSortedSet<E>(elementList().reverse(),reverseComparator());
-}
