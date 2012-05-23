@@ -1,3 +1,0 @@
-{
-  return Math.pow(1 - Math.exp(-numHashFunctions * ((double)insertions / (bits.size()))),numHashFunctions);
-}

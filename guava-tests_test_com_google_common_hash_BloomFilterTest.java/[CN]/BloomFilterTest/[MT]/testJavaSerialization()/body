@@ -3,8 +3,9 @@
   for (int i=0; i < 10; i++) {
     bf.put(Ints.toByteArray(i));
   }
-  bf=SerializableTester.reserialize(bf);
+  BloomFilter<byte[]> copy=SerializableTester.reserialize(bf);
   for (int i=0; i < 10; i++) {
-    assertTrue(bf.mightContain(Ints.toByteArray(i)));
+    assertTrue(copy.mightContain(Ints.toByteArray(i)));
   }
+  assertEquals(bf.expectedFalsePositiveProbability(),copy.expectedFalsePositiveProbability());
 }

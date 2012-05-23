@@ -1,0 +1,11 @@
+{
+  BloomFilter<Object> bf=BloomFilter.create(HashTestUtils.BAD_FUNNEL,10,0.03);
+  double fpp=bf.expectedFalsePositiveProbability();
+  assertEquals(0.0,fpp);
+  while (fpp != 1.0) {
+    boolean changed=bf.put(new Object());
+    double newFpp=bf.expectedFalsePositiveProbability();
+    assertTrue(changed ? newFpp > fpp : newFpp == fpp);
+    fpp=newFpp;
+  }
+}
