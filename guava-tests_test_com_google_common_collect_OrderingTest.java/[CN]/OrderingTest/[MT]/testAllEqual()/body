@@ -6,4 +6,7 @@
   assertEquals(comparator.compare("apples","oranges"),0);
   assertSame(comparator,reserialize(comparator));
   assertEquals("Ordering.allEqual()",comparator.toString());
+  List<String> strings=ImmutableList.of("b","a","d","c");
+  assertEquals(strings,comparator.sortedCopy(strings));
+  assertEquals(strings,comparator.immutableSortedCopy(strings));
 }

@@ -1,0 +1,7 @@
+{
+  checkArgument(strictlyOrderedElements.length >= 3,"strictlyOrderedElements " + "requires at least 3 elements");
+  List<T> list=Arrays.asList(strictlyOrderedElements);
+  T[] emptyArray=Platform.newArray(strictlyOrderedElements,0);
+  @SuppressWarnings("unchecked") Scenario<T> starter=new Scenario<T>((Ordering)ordering,list,emptyArray);
+  verifyScenario(starter,0);
+}

@@ -1,6 +1,6 @@
 {
   Ordering<Object> arbitrary=Ordering.arbitrary();
-  List<Object> list=Arrays.asList(1,"foo",new Object());
-  Collections.sort(list,arbitrary);
-  testExhaustively(arbitrary,list);
+  Object[] array={1,"foo",new Object()};
+  Arrays.sort(array,arbitrary);
+  testExhaustively(arbitrary,array);
 }

@@ -5,5 +5,5 @@
     composites.add(new Composite<T>(t,2));
   }
   Ordering<Composite<T>> ordering=scenario.ordering.onResultOf(Composite.<T>getValueFunction()).compound(Ordering.natural());
-  return new Scenario<Composite<T>>(ordering,composites);
+  return new Scenario<Composite<T>>(ordering,composites,new Composite[0]);
 }

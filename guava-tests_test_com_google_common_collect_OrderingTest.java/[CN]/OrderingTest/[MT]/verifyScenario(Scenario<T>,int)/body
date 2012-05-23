@@ -3,6 +3,7 @@
   scenario.testIsOrdered();
   scenario.testMinAndMax();
   scenario.testBinarySearch();
+  scenario.testSortedCopy();
   if (level < RECURSE_DEPTH) {
     for (    OrderingMutation alteration : OrderingMutation.values()) {
       verifyScenario(alteration.mutate(scenario),level + 1);

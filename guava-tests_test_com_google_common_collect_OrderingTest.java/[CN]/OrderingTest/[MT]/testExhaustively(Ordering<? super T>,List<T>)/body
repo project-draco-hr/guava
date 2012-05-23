@@ -1,4 +1,0 @@
-{
-  @SuppressWarnings("unchecked") Scenario<T> starter=new Scenario<T>((Ordering)ordering,list);
-  verifyScenario(starter,0);
-}

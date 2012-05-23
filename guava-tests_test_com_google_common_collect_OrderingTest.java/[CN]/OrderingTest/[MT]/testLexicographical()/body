@@ -7,4 +7,5 @@
   ImmutableList<String> ab=ImmutableList.of("a","b");
   ImmutableList<String> b=ImmutableList.of("b");
   Helpers.testComparator(lexy,empty,a,aa,ab,b);
+  new EqualsTester().addEqualityGroup(lexy,ordering.lexicographical()).addEqualityGroup(numberOrdering.lexicographical()).addEqualityGroup(Ordering.natural()).testEquals();
 }

@@ -1,2 +1,2 @@
 Ordering<? super T> ordering
-List<T> list
+T strictlyOrderedElements
