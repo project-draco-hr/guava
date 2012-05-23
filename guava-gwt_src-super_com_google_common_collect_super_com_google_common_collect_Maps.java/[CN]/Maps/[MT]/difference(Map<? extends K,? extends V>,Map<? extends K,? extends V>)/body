@@ -4,5 +4,5 @@
     SortedMapDifference<K,V> result=difference(sortedLeft,right);
     return result;
   }
-  return difference(left,right,Equivalences.equals());
+  return difference(left,right,Equivalence.equals());
 }

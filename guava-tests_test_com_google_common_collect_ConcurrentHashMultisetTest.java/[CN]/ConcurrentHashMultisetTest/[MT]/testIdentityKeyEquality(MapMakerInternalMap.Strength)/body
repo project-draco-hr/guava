@@ -1,5 +1,5 @@
 {
-  MapMaker mapMaker=new MapMaker().setKeyStrength(keyStrength).keyEquivalence(Equivalences.identity());
+  MapMaker mapMaker=new MapMaker().setKeyStrength(keyStrength).keyEquivalence(Equivalence.identity());
   ConcurrentHashMultiset<String> multiset=ConcurrentHashMultiset.create(mapMaker);
   String s1=new String("a");
   String s2=new String("a");

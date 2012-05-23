@@ -2,7 +2,7 @@
   NullPointerTester tester=new NullPointerTester();
   tester.setDefault(BiMap.class,ImmutableBiMap.of());
   tester.setDefault(EntryTransformer.class,ALWAYS_NULL);
-  tester.setDefault(Equivalence.class,Equivalences.equals());
+  tester.setDefault(Equivalence.class,Equivalence.equals());
   tester.setDefault(SortedMap.class,Maps.newTreeMap());
   tester.testAllPublicStaticMethods(Maps.class);
 }
