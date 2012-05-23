@@ -2,5 +2,5 @@
   Multimap<String,Integer> multimap=createSample();
   LinkedHashMultimap<String,Integer> copy=LinkedHashMultimap.create(multimap);
   assertEquals(multimap,copy);
-  assertEquals(8,copy.expectedValuesPerKey);
+  assertEquals(2,copy.expectedValuesPerKey);
 }
