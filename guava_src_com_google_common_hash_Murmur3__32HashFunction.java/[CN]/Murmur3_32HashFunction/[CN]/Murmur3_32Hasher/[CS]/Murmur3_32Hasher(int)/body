@@ -1,4 +1,4 @@
 {
-  super(4);
+  super(CHUNK_SIZE);
   h1=seed;
 }

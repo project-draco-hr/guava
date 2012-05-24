@@ -1,5 +1,5 @@
 {
-  super(16);
+  super(CHUNK_SIZE);
   h1=seed;
   h2=seed;
 }

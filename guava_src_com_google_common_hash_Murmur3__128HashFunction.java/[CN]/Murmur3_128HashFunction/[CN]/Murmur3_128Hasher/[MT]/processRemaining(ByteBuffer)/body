@@ -4,42 +4,42 @@
   len+=bb.remaining();
 switch (bb.remaining()) {
 case 15:
-    k2^=(long)toInt(bb.get(14)) << 48;
+    k2^=(long)UnsignedBytes.toInt(bb.get(14)) << 48;
 case 14:
-  k2^=(long)toInt(bb.get(13)) << 40;
+  k2^=(long)UnsignedBytes.toInt(bb.get(13)) << 40;
 case 13:
-k2^=(long)toInt(bb.get(12)) << 32;
+k2^=(long)UnsignedBytes.toInt(bb.get(12)) << 32;
 case 12:
-k2^=(long)toInt(bb.get(11)) << 24;
+k2^=(long)UnsignedBytes.toInt(bb.get(11)) << 24;
 case 11:
-k2^=(long)toInt(bb.get(10)) << 16;
+k2^=(long)UnsignedBytes.toInt(bb.get(10)) << 16;
 case 10:
-k2^=(long)toInt(bb.get(9)) << 8;
+k2^=(long)UnsignedBytes.toInt(bb.get(9)) << 8;
 case 9:
-k2^=(long)toInt(bb.get(8)) << 0;
-k2*=c2;
+k2^=(long)UnsignedBytes.toInt(bb.get(8)) << 0;
+k2*=C2;
 k2=Long.rotateLeft(k2,33);
-k2*=c1;
+k2*=C1;
 h2^=k2;
 case 8:
-k1^=(long)toInt(bb.get(7)) << 56;
+k1^=(long)UnsignedBytes.toInt(bb.get(7)) << 56;
 case 7:
-k1^=(long)toInt(bb.get(6)) << 48;
+k1^=(long)UnsignedBytes.toInt(bb.get(6)) << 48;
 case 6:
-k1^=(long)toInt(bb.get(5)) << 40;
+k1^=(long)UnsignedBytes.toInt(bb.get(5)) << 40;
 case 5:
-k1^=(long)toInt(bb.get(4)) << 32;
+k1^=(long)UnsignedBytes.toInt(bb.get(4)) << 32;
 case 4:
-k1^=(long)toInt(bb.get(3)) << 24;
+k1^=(long)UnsignedBytes.toInt(bb.get(3)) << 24;
 case 3:
-k1^=(long)toInt(bb.get(2)) << 16;
+k1^=(long)UnsignedBytes.toInt(bb.get(2)) << 16;
 case 2:
-k1^=(long)toInt(bb.get(1)) << 8;
+k1^=(long)UnsignedBytes.toInt(bb.get(1)) << 8;
 case 1:
-k1^=(long)toInt(bb.get(0)) << 0;
-k1*=c1;
+k1^=(long)UnsignedBytes.toInt(bb.get(0)) << 0;
+k1*=C1;
 k1=Long.rotateLeft(k1,31);
-k1*=c2;
+k1*=C2;
 h1^=k1;
 default :
 }

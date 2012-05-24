@@ -9,9 +9,9 @@ case 2:
 case 1:
 k1^=toInt(bb.get(0));
 default :
-k1*=c1;
+k1*=C1;
 k1=Integer.rotateLeft(k1,15);
-k1*=c2;
+k1*=C2;
 h1^=k1;
 }
 }
