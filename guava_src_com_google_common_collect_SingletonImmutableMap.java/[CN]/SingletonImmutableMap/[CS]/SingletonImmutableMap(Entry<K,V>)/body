@@ -1,5 +1,3 @@
 {
-  this.entry=entry;
-  this.singleKey=entry.getKey();
-  this.singleValue=entry.getValue();
+  this(entry.getKey(),entry.getValue());
 }

@@ -4,11 +4,10 @@
   }
   if (object instanceof Map) {
     Map<?,?> that=(Map<?,?>)object;
-    if (that.size() != 1) {
-      return false;
+    if (that.size() == 1) {
+      Entry<?,?> entry=that.entrySet().iterator().next();
+      return singleKey.equals(entry.getKey()) && singleValue.equals(entry.getValue());
     }
-    Entry<?,?> entry=that.entrySet().iterator().next();
-    return singleKey.equals(entry.getKey()) && singleValue.equals(entry.getValue());
   }
   return false;
 }
