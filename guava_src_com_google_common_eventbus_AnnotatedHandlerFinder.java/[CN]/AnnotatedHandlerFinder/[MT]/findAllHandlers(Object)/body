@@ -1,7 +1,7 @@
 {
   Multimap<Class<?>,EventHandler> methodsInListener=HashMultimap.create();
   Class<?> clazz=listener.getClass();
-  Set<Class<?>> supers=getAllSuperclasses(clazz);
+  Set<? extends Class<?>> supers=TypeToken.of(clazz).getTypes().rawTypes();
   for (  Method method : clazz.getMethods()) {
     for (    Class<?> c : supers) {
       try {
