@@ -9,5 +9,5 @@
  catch (  ClassCastException e) {
     return -1;
   }
-  return (position >= 0 && elements.get(position).equals(target)) ? position : -1;
+  return (position >= 0) ? position : -1;
 }
