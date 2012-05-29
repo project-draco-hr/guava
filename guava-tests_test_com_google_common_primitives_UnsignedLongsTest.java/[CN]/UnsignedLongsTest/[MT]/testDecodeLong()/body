@@ -11,6 +11,6 @@
     UnsignedLongs.parseUnsignedLong("0xfffffffffffffffff");
     fail();
   }
- catch (  NumberFormatException e) {
+ catch (  NumberFormatException expected) {
   }
 }

@@ -3,18 +3,18 @@
     UnsignedLongs.parseUnsignedLong("0",Character.MIN_RADIX - 1);
     fail();
   }
- catch (  NumberFormatException nfe) {
+ catch (  NumberFormatException expected) {
   }
   try {
     UnsignedLongs.parseUnsignedLong("0",Character.MAX_RADIX + 1);
     fail();
   }
- catch (  NumberFormatException nfe) {
+ catch (  NumberFormatException expected) {
   }
   try {
     UnsignedLongs.parseUnsignedLong("0",-1);
     fail();
   }
- catch (  NumberFormatException nfe) {
+ catch (  NumberFormatException expected) {
   }
 }

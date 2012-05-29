@@ -3,6 +3,6 @@
   for (int i=0; i < 1000000; i++) {
     long dividend=r.nextLong();
     long divisor=r.nextLong();
-    assertTrue(dividend - (divisor * UnsignedLongs.divide(dividend,divisor) + UnsignedLongs.remainder(dividend,divisor)) == 0);
+    assertEquals(0,dividend - (divisor * UnsignedLongs.divide(dividend,divisor) + UnsignedLongs.remainder(dividend,divisor)));
   }
 }
