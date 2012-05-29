@@ -1,0 +1,7 @@
+{
+  if (object instanceof Map) {
+    Map<?,?> map=(Map<?,?>)object;
+    return map.isEmpty();
+  }
+  return false;
+}

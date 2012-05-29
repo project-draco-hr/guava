@@ -1,6 +1,3 @@
 {
-  if (isEmpty()) {
-    throw new NoSuchElementException();
-  }
-  return entries.get(size() - 1).getKey();
+  return keySet().last();
 }

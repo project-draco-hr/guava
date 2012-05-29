@@ -1,0 +1,12 @@
+{
+  if (entries.isEmpty()) {
+    return emptyMap(comparator);
+  }
+  ImmutableList.Builder<K> keyBuilder=ImmutableList.builder();
+  ImmutableList.Builder<V> valueBuilder=ImmutableList.builder();
+  for (  Entry<? extends K,? extends V> entry : entries) {
+    keyBuilder.add(entry.getKey());
+    valueBuilder.add(entry.getValue());
+  }
+  return new RegularImmutableSortedMap<K,V>(new RegularImmutableSortedSet<K>(keyBuilder.build(),comparator),valueBuilder.build());
+}

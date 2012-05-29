@@ -1,6 +1,0 @@
-{
-  if (comparator == NATURAL_ORDER) {
-    return (ImmutableSortedMap)NATURAL_EMPTY_MAP;
-  }
-  return create(comparator);
-}

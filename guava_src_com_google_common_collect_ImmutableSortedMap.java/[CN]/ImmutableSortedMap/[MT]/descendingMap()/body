@@ -1,8 +1,7 @@
 {
   ImmutableSortedMap<K,V> result=descendingMap;
   if (result == null) {
-    result=descendingMap=new ImmutableSortedMap<K,V>(entries.reverse(),Ordering.from(comparator()).reverse());
-    result.descendingMap=this;
+    result=descendingMap=createDescendingMap();
   }
   return result;
 }

@@ -1,0 +1,2 @@
+Comparator<? super K> comparator
+Collection<? extends Entry<? extends K,? extends V>> entries

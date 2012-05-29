@@ -1,5 +1,5 @@
 {
   sortEntries(entries,comparator);
   validateEntries(entries,comparator);
-  return new ImmutableSortedMap<K,V>(ImmutableList.copyOf(entries),comparator);
+  return fromSortedEntries(comparator,entries);
 }

@@ -1,0 +1,6 @@
+{
+  if (delegate.isEmpty()) {
+    return EmptyImmutableSortedMap.forComparator(comparator);
+  }
+  return new RegularImmutableSortedMap<K,V>(delegate,comparator);
+}

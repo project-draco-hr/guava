@@ -1,2 +1,0 @@
-ImmutableList<Entry<K,V>> entries
-Comparator<? super K> comparator

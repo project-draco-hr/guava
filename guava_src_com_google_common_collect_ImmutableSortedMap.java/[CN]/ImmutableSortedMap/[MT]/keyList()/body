@@ -1,8 +1,0 @@
-{
-  return new TransformedImmutableList<Entry<K,V>,K>(entries){
-    @Override K transform(    Entry<K,V> entry){
-      return entry.getKey();
-    }
-  }
-;
-}

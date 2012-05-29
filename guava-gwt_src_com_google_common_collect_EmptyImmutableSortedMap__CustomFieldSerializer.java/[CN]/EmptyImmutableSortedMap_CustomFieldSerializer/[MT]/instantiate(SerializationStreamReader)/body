@@ -1,0 +1,3 @@
+{
+  return (EmptyImmutableSortedMap<?,?>)ImmutableSortedMap_CustomFieldSerializerBase.instantiate(reader);
+}

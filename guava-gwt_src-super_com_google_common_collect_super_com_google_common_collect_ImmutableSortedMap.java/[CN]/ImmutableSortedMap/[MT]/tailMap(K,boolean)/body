@@ -3,7 +3,7 @@
   if (!inclusive) {
     fromKey=higher(fromKey);
     if (fromKey == null) {
-      return emptyMap(comparator());
+      return EmptyImmutableSortedMap.forComparator(comparator());
     }
   }
   return tailMap(fromKey);
