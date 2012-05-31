@@ -1,0 +1,8 @@
+{
+  multimap.put("foo",1);
+  multimap.put("foo",nullValue());
+  multimap.put(nullKey(),3);
+  Collection<Collection<Integer>> values=multimap.asMap().values();
+  ASSERT.that(values.toArray()).hasContentsAnyOrder(multimap.get("foo"),multimap.get(nullKey()));
+  ASSERT.that(values.toArray(new Collection[2])).hasContentsAnyOrder(multimap.get("foo"),multimap.get(nullKey()));
+}

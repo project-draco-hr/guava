@@ -1,0 +1,8 @@
+{
+  multimap.put("foo",1);
+  multimap.put("foo",5);
+  multimap.put("foo",nullValue());
+  multimap.put(nullKey(),3);
+  ASSERT.that(multimap.keys().toArray()).hasContentsAnyOrder("foo","foo","foo",nullKey());
+  ASSERT.that(multimap.keys().toArray(new String[3])).hasContentsAnyOrder("foo","foo","foo",nullKey());
+}
