@@ -1,0 +1,4 @@
+{
+  checkArgument(!Types.containsTypeVariable(runtimeType),"%s contains a type variable and is not safe for the operation");
+  return this;
+}

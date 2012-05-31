@@ -1,0 +1,8 @@
+{
+  try {
+    map.put(TypeToken.of(Integer.class),new Integer(5));
+    fail();
+  }
+ catch (  UnsupportedOperationException expected) {
+  }
+}

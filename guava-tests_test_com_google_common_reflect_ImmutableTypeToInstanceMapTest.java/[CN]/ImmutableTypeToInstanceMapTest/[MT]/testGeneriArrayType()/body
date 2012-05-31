@@ -1,0 +1,9 @@
+{
+  @SuppressWarnings("unchecked") ImmutableList<Integer>[] array=new ImmutableList[]{ImmutableList.of(1)};
+  TypeToken<ImmutableList<Integer>[]> type=new TypeToken<ImmutableList<Integer>[]>(){
+  }
+;
+  ImmutableTypeToInstanceMap<Iterable<?>[]> map=ImmutableTypeToInstanceMap.<Iterable<?>[]>builder().put(type,array).build();
+  assertEquals(1,map.size());
+  ASSERT.that(map.getInstance(type)).hasContentsInOrder(array[0]);
+}

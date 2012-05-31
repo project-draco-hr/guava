@@ -1,0 +1,9 @@
+{
+  ImmutableTypeToInstanceMap<Iterable<Number>> map=ImmutableTypeToInstanceMap.of();
+  try {
+    map.getInstance(this.<Number>anyIterableType());
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}

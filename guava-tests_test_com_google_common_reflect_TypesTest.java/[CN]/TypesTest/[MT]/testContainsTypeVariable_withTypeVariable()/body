@@ -1,0 +1,20 @@
+{
+  assertTrue(Types.containsTypeVariable(new TypeCapture<T>(){
+  }
+.capture()));
+  assertTrue(Types.containsTypeVariable(new TypeCapture<T[]>(){
+  }
+.capture()));
+  assertTrue(Types.containsTypeVariable(new TypeCapture<Iterable<T>>(){
+  }
+.capture()));
+  assertTrue(Types.containsTypeVariable(new TypeCapture<Map<String,T>>(){
+  }
+.capture()));
+  assertTrue(Types.containsTypeVariable(new TypeCapture<Map<String,? extends T>>(){
+  }
+.capture()));
+  assertTrue(Types.containsTypeVariable(new TypeCapture<Map<String,? super T[]>>(){
+  }
+.capture()));
+}

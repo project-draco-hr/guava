@@ -1,0 +1,23 @@
+{
+  TestSuite suite=new TestSuite();
+  suite.addTestSuite(MutableTypeToInstanceMapTest.class);
+  Method remapTest=null;
+  try {
+    remapTest=MapPutTester.class.getMethod("testPut_replaceNullValueWithNonNullSupported");
+  }
+ catch (  NoSuchMethodException e) {
+    throw new AssertionError();
+  }
+  suite.addTest(MapTestSuiteBuilder.using(new TestTypeToInstanceMapGenerator(){
+    @Override @SuppressWarnings("unchecked") public Map<TypeToken,Object> create(    Object... elements){
+      MutableTypeToInstanceMap<Object> map=new MutableTypeToInstanceMap<Object>();
+      for (      Object object : elements) {
+        Entry<TypeToken,Object> entry=(Entry<TypeToken,Object>)object;
+        map.putInstance(entry.getKey(),entry.getValue());
+      }
+      return (Map)map;
+    }
+  }
+).named("MutableTypeToInstanceMap").withFeatures(MapFeature.SUPPORTS_REMOVE,MapFeature.RESTRICTS_KEYS,MapFeature.ALLOWS_NULL_VALUES,CollectionSize.ANY,MapFeature.ALLOWS_NULL_QUERIES).suppressing(remapTest).createTestSuite());
+  return suite;
+}

@@ -1,0 +1,8 @@
+{
+  assertFalse(Types.containsTypeVariable(new TypeCapture<Iterable<? extends String>>(){
+  }
+.capture()));
+  assertFalse(Types.containsTypeVariable(new TypeCapture<Iterable<? super String>>(){
+  }
+.capture()));
+}

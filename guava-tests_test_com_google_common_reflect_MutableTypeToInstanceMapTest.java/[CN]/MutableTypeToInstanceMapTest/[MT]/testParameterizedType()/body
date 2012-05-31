@@ -1,0 +1,8 @@
+{
+  TypeToken<ImmutableList<Integer>> type=new TypeToken<ImmutableList<Integer>>(){
+  }
+;
+  map.putInstance(type,ImmutableList.of(1));
+  assertEquals(1,map.size());
+  assertEquals(ImmutableList.of(1),map.getInstance(type));
+}

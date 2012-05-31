@@ -1,0 +1,16 @@
+{
+  TestSuite suite=new TestSuite();
+  suite.addTestSuite(ImmutableTypeToInstanceMapTest.class);
+  suite.addTest(MapTestSuiteBuilder.using(new TestTypeToInstanceMapGenerator(){
+    @Override @SuppressWarnings("unchecked") public Map<TypeToken,Object> create(    Object... elements){
+      ImmutableTypeToInstanceMap.Builder<Object> builder=ImmutableTypeToInstanceMap.builder();
+      for (      Object object : elements) {
+        Entry<TypeToken,Object> entry=(Entry<TypeToken,Object>)object;
+        builder.put(entry.getKey(),entry.getValue());
+      }
+      return (Map)builder.build();
+    }
+  }
+).named("ImmutableTypeToInstanceMap").withFeatures(MapFeature.REJECTS_DUPLICATES_AT_CREATION,MapFeature.RESTRICTS_KEYS,CollectionFeature.KNOWN_ORDER,CollectionSize.ANY,MapFeature.ALLOWS_NULL_QUERIES).createTestSuite());
+  return suite;
+}

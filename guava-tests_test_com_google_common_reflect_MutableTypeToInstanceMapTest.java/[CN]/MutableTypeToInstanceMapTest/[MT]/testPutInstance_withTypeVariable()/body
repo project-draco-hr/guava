@@ -1,0 +1,8 @@
+{
+  try {
+    map.putInstance(this.<Integer>anyIterableType(),ImmutableList.of(1));
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}

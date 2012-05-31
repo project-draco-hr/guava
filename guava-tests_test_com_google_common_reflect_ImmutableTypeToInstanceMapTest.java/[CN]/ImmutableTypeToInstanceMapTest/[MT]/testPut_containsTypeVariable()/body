@@ -1,0 +1,9 @@
+{
+  ImmutableTypeToInstanceMap.Builder<Iterable<Integer>> builder=ImmutableTypeToInstanceMap.builder();
+  try {
+    builder.put(this.<Integer>anyIterableType(),ImmutableList.of(1));
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}

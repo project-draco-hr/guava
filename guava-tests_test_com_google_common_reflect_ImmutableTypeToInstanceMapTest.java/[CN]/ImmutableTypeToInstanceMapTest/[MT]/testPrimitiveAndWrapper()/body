@@ -1,0 +1,8 @@
+{
+  ImmutableTypeToInstanceMap<Number> map=ImmutableTypeToInstanceMap.<Number>builder().put(Integer.class,0).put(int.class,1).build();
+  assertEquals(2,map.size());
+  assertEquals(0,(int)map.getInstance(Integer.class));
+  assertEquals(0,(int)map.getInstance(TypeToken.of(Integer.class)));
+  assertEquals(1,(int)map.getInstance(int.class));
+  assertEquals(1,(int)map.getInstance(TypeToken.of(int.class)));
+}
