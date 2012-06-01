@@ -1,7 +1,7 @@
 {
   ImmutableSet<TypeToken<? super T>> filteredTypes=types;
   if (filteredTypes == null) {
-    return (types=ImmutableSet.copyOf(Sets.filter(findAllTypes(),TypeFilter.IGNORE_TYPE_VARIABLE_OR_WILDCARD)));
+    return (types=ImmutableSet.copyOf(Iterables.filter(findAllTypes(),TypeFilter.IGNORE_TYPE_VARIABLE_OR_WILDCARD)));
   }
  else {
     return filteredTypes;

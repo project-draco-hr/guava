@@ -1,9 +1,9 @@
 {
-  Comparator<K> keyComparator=new Comparator<K>(){
+  Ordering<K> keyOrdering=new Ordering<K>(){
     @Override public int compare(    K left,    K right){
       return valueComparator.compare(map.get(left),map.get(right));
     }
   }
 ;
-  return ImmutableSortedSet.copyOf(keyComparator,map.keySet());
+  return keyOrdering.immutableSortedCopy(map.keySet());
 }
