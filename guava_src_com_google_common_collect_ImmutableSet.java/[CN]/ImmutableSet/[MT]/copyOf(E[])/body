@@ -5,6 +5,6 @@ case 0:
 case 1:
   return of(elements[0]);
 default :
-return construct(elements.clone());
+return construct(elements.length,elements.clone());
 }
 }

@@ -1,4 +1,5 @@
 {
-  contents.add(checkNotNull(element));
+  expandFor(1);
+  contents[size++]=checkNotNull(element);
   return this;
 }

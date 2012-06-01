@@ -1,0 +1,6 @@
+{
+  ImmutableSet.Builder<String> builder=this.<String>builder().add("a").add("b");
+  ASSERT.that(builder.build()).hasContentsInOrder("a","b");
+  builder.add("c","d");
+  ASSERT.that(builder.build()).hasContentsInOrder("a","b","c","d");
+}

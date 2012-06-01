@@ -8,6 +8,9 @@
  catch (  NullPointerException expected) {
   }
   ImmutableList<String> result=builder.build();
-  assertEquals(ImmutableList.of("a"),result);
+  if (result.isEmpty()) {
+    return;
+  }
+  assertTrue(ImmutableList.of("a").equals(result));
   assertEquals(1,result.size());
 }

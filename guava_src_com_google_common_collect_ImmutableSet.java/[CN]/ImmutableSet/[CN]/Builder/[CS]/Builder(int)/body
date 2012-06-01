@@ -1,3 +1,5 @@
 {
-  this.contents=new ArrayList<E>(capacity);
+  checkArgument(capacity >= 0,"capacity must be >= 0 but was %s",capacity);
+  this.contents=new Object[capacity];
+  this.size=0;
 }

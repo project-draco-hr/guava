@@ -1,0 +1,7 @@
+{
+  int minCapacity=size + count;
+  if (contents.length < minCapacity) {
+    this.contents=ObjectArrays.arraysCopyOf(this.contents,expandedCapacity(contents.length,minCapacity));
+  }
+  return this;
+}

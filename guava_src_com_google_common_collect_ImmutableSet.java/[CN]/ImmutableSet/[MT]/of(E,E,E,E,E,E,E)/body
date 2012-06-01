@@ -7,8 +7,6 @@
   elements[3]=e4;
   elements[4]=e5;
   elements[5]=e6;
-  for (int i=paramCount; i < elements.length; i++) {
-    elements[i]=others[i - paramCount];
-  }
-  return construct(elements);
+  System.arraycopy(others,0,elements,paramCount,others.length);
+  return construct(elements.length,elements);
 }

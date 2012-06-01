@@ -1,15 +1,8 @@
 {
   if (elements instanceof Collection) {
     Collection<?> collection=(Collection<?>)elements;
-    ensureCapacity(size + collection.size());
-    for (    E e : elements) {
-      contents[size]=checkNotNull(e);
-      size++;
-    }
-    return this;
+    expandFor(collection.size());
   }
- else {
-    super.addAll(elements);
-    return this;
-  }
+  super.addAll(elements);
+  return this;
 }

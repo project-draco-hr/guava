@@ -1,8 +1,9 @@
 {
-  ensureCapacity(size + elements.length);
-  for (  E e : elements) {
-    contents[size]=checkNotNull(e);
-    size++;
+  for (int i=0; i < elements.length; i++) {
+    checkElementNotNull(elements[i],i);
   }
+  expandFor(elements.length);
+  System.arraycopy(elements,0,contents,size,elements.length);
+  size+=elements.length;
   return this;
 }

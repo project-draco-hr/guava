@@ -1,3 +1,5 @@
 {
-  return copyOf(contents);
+  ImmutableSet<E> result=construct(size,contents);
+  size=result.size();
+  return result;
 }

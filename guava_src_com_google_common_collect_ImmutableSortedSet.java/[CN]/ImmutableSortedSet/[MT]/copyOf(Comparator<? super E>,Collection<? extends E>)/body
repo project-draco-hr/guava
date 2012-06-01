@@ -1,4 +1,3 @@
 {
-  checkNotNull(comparator);
-  return copyOfInternal(comparator,elements);
+  return copyOf(comparator,(Iterable<? extends E>)elements);
 }

@@ -1,5 +1,0 @@
-{
-  SortedSet<E> sortedSet=Sets.newTreeSet(comparator);
-  Iterators.addAll(sortedSet,elements);
-  return sortedSet;
-}

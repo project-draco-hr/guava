@@ -3,5 +3,11 @@
   if (comparator == null) {
     comparator=(Comparator<? super E>)NATURAL_ORDER;
   }
-  return copyOfInternal(comparator,sortedSet);
+  E[] elements=(E[])sortedSet.toArray();
+  if (elements.length == 0) {
+    return emptySet(comparator);
+  }
+ else {
+    return new RegularImmutableSortedSet<E>(ImmutableList.<E>asImmutableList(elements),comparator);
+  }
 }

@@ -1,0 +1,10 @@
+{
+  int uniques=sortAndUnique(comparator,n,contents);
+  if (uniques == 0) {
+    return emptySet(comparator);
+  }
+ else   if (uniques < contents.length) {
+    contents=ObjectArrays.arraysCopyOf(contents,uniques);
+  }
+  return new RegularImmutableSortedSet<E>(ImmutableList.<E>asImmutableList(contents),comparator);
+}
