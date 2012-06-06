@@ -1,3 +1,0 @@
-{
-  return (target instanceof Long) && Longs.indexOf(array,(Long)target,start,end) != -1;
-}
