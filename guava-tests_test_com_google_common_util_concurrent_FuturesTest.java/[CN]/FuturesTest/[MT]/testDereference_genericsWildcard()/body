@@ -1,0 +1,6 @@
+{
+  ListenableFuture<?> inner=Futures.immediateFuture(null);
+  ListenableFuture<ListenableFuture<?>> outer=Futures.<ListenableFuture<?>>immediateFuture(inner);
+  ListenableFuture<?> dereferenced=Futures.dereference(outer);
+  assertNull(dereferenced.get());
+}

@@ -1,0 +1,7 @@
+{
+  FooChild fooChild=new FooChild();
+  ListenableFuture<FooChild> inner=Futures.immediateFuture(fooChild);
+  ListenableFuture<ListenableFuture<FooChild>> outer=Futures.immediateFuture(inner);
+  ListenableFuture<Foo> dereferenced=Futures.<Foo>dereference(outer);
+  assertSame(fooChild,dereferenced.get());
+}
