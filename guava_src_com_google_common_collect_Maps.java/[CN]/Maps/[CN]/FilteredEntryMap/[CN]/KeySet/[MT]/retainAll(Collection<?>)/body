@@ -4,7 +4,7 @@
   Iterator<Entry<K,V>> iterator=unfiltered.entrySet().iterator();
   while (iterator.hasNext()) {
     Entry<K,V> entry=iterator.next();
-    if (!collection.contains(entry.getKey()) && predicate.apply(entry)) {
+    if (predicate.apply(entry) && !collection.contains(entry.getKey())) {
       iterator.remove();
       changed=true;
     }

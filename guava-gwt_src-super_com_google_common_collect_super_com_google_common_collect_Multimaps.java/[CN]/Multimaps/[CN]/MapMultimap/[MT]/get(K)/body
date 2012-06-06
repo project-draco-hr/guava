@@ -1,5 +1,5 @@
 {
-  return new AbstractSet<V>(){
+  return new Sets.ImprovedAbstractSet<V>(){
     @Override public Iterator<V> iterator(){
       return new Iterator<V>(){
         int i;

@@ -1,1 +1,1 @@
-AbstractSet<Entry<K,Collection<V>>>
+Sets.ImprovedAbstractSet<Entry<K,Collection<V>>>

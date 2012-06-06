@@ -1,7 +1,0 @@
-{
-  boolean changed=false;
-  for (  Object obj : c) {
-    changed|=remove(obj);
-  }
-  return changed;
-}

@@ -1,7 +1,7 @@
 {
   Set<K> result=keySet;
   if (result == null) {
-    keySet=result=new AbstractSet<K>(){
+    keySet=result=new Sets.ImprovedAbstractSet<K>(){
       @Override public int size(){
         return keyCount.elementSet().size();
       }
@@ -13,10 +13,6 @@
       }
       @Override public boolean remove(      Object o){
         return !LinkedListMultimap.this.removeAll(o).isEmpty();
-      }
-      @Override public boolean removeAll(      Collection<?> c){
-        checkNotNull(c);
-        return super.removeAll(c);
       }
     }
 ;

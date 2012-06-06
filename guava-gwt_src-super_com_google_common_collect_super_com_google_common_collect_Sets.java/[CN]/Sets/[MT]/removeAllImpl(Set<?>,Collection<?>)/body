@@ -1,11 +1,20 @@
 {
+  checkNotNull(collection);
   if (collection instanceof Multiset) {
     collection=((Multiset<?>)collection).elementSet();
   }
-  if (collection.size() < set.size()) {
-    return removeAllImpl(set,collection.iterator());
+  if (collection instanceof Set && collection.size() > set.size()) {
+    Iterator<?> setIterator=set.iterator();
+    boolean changed=false;
+    while (setIterator.hasNext()) {
+      if (collection.contains(setIterator.next())) {
+        changed=true;
+        setIterator.remove();
+      }
+    }
+    return changed;
   }
  else {
-    return Iterators.removeAll(set.iterator(),collection);
+    return removeAllImpl(set,collection.iterator());
   }
 }
