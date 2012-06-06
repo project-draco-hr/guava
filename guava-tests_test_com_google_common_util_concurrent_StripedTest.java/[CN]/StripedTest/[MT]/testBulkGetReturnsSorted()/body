@@ -1,0 +1,18 @@
+{
+  for (  Striped<?> striped : allImplementations()) {
+    Map<Object,Integer> indexByLock=Maps.newHashMap();
+    for (int i=0; i < striped.size(); i++) {
+      indexByLock.put(striped.getAt(i),i);
+    }
+    for (int objectsNum=1; objectsNum <= striped.size() * 2; objectsNum++) {
+      Set<Object> objects=Sets.newHashSetWithExpectedSize(objectsNum);
+      for (int i=0; i < objectsNum; i++) {
+        objects.add(new Object());
+      }
+      Iterable<?> locks=striped.bulkGet(objects);
+      assertTrue(Ordering.natural().onResultOf(Functions.forMap(indexByLock)).isOrdered(locks));
+      Iterable<?> locks2=striped.bulkGet(objects);
+      assertEquals(Lists.newArrayList(locks),Lists.newArrayList(locks2));
+    }
+  }
+}

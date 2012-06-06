@@ -1,0 +1,3 @@
+{
+  return ImmutableList.of(Striped.lazyWeakReadWriteLock(50),Striped.lazyWeakReadWriteLock(64),Striped.lazyWeakLock(50),Striped.lazyWeakLock(64),Striped.lazyWeakSemaphore(50,1),Striped.lazyWeakSemaphore(64,1));
+}

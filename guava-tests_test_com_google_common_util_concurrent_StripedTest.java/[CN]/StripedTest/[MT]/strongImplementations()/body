@@ -1,0 +1,3 @@
+{
+  return ImmutableList.of(Striped.readWriteLock(100),Striped.readWriteLock(256),Striped.lock(100),Striped.lock(256),Striped.semaphore(100,1),Striped.semaphore(256,1));
+}

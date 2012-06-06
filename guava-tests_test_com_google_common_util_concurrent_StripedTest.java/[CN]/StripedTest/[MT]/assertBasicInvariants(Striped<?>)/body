@@ -1,0 +1,25 @@
+{
+  Set<Object> observed=Sets.newIdentityHashSet();
+  for (int i=0; i < striped.size(); i++) {
+    Object object=striped.getAt(i);
+    assertNotNull(object);
+    assertSame(object,striped.getAt(i));
+    observed.add(object);
+  }
+  assertTrue("All stripes observed",observed.size() == striped.size());
+  for (int i=0; i < striped.size() * 100; i++) {
+    assertTrue(observed.contains(striped.get(new Object())));
+  }
+  try {
+    striped.getAt(-1);
+    fail();
+  }
+ catch (  RuntimeException expected) {
+  }
+  try {
+    striped.getAt(striped.size());
+    fail();
+  }
+ catch (  RuntimeException expected) {
+  }
+}

@@ -1,0 +1,5 @@
+{
+  for (  Striped<?> striped : allImplementations()) {
+    new NullPointerTester().testAllPublicInstanceMethods(striped);
+  }
+}

@@ -1,0 +1,6 @@
+{
+  for (  Striped<?> striped : weakImplementations()) {
+    WeakReference<Object> weakRef=new WeakReference<Object>(striped.get(new Object()));
+    GcFinalization.awaitClear(weakRef);
+  }
+}

@@ -1,0 +1,5 @@
+{
+  super(stripes);
+  this.size=(mask == ALL_SET) ? Integer.MAX_VALUE : mask + 1;
+  this.cache=new MapMaker().weakValues().makeComputingMap(Functions.forSupplier(supplier));
+}

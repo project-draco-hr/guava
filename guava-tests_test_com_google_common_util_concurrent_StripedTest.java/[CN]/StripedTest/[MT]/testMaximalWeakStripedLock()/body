@@ -1,0 +1,6 @@
+{
+  Striped<Lock> stripedLock=Striped.lazyWeakLock(Integer.MAX_VALUE);
+  for (int i=0; i < 10000; i++) {
+    stripedLock.get(new Object()).lock();
+  }
+}
