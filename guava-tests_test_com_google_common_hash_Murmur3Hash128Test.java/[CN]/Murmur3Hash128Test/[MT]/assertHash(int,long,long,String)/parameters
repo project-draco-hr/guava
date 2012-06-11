@@ -1,0 +1,4 @@
+int seed
+long expected1
+long expected2
+String stringInput

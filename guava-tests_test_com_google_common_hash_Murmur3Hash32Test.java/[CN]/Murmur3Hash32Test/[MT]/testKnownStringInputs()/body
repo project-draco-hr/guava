@@ -1,0 +1,7 @@
+{
+  assertHash(0,"");
+  assertHash(679745764,"k");
+  assertHash(-675079799,"hello");
+  assertHash(1935035788,"http://www.google.com/");
+  assertHash(-528633700,"The quick brown fox jumps over the lazy dog");
+}

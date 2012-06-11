@@ -1,0 +1,7 @@
+{
+  assertHash(593689054,0);
+  assertHash(-189366624,-42);
+  assertHash(-1134849565,42);
+  assertHash(-1718298732,Integer.MIN_VALUE);
+  assertHash(-1653689534,Integer.MAX_VALUE);
+}

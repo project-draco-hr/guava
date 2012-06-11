@@ -1,0 +1,3 @@
+{
+  HashTestUtils.assertInvariants(murmur3_32());
+}

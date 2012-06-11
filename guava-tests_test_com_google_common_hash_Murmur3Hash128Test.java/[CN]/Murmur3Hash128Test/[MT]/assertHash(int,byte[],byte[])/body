@@ -1,4 +1,0 @@
-{
-  byte[] hash=murmur3_128(seed).newHasher().putBytes(input).hash().asBytes();
-  assertTrue(Arrays.equals(expectedHash,hash));
-}
