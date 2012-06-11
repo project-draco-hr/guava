@@ -1,5 +1,5 @@
 {
-  List<E> list=Lists.newArrayList(iterable);
-  Collections.sort(list,this);
-  return list;
+  @SuppressWarnings("unchecked") E[] array=(E[])Iterables.toArray(iterable);
+  Arrays.sort(array,this);
+  return Lists.newArrayList(Arrays.asList(array));
 }
