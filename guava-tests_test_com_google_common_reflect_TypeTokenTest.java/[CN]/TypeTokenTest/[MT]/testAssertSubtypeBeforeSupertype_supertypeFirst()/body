@@ -1,6 +1,6 @@
 {
   try {
-    assertSubtypeBeforeSupertype(ImmutableList.of(TypeToken.of(CharSequence.class),TypeToken.of(String.class)));
+    assertSubtypeBeforeSupertype(ImmutableList.of(CharSequence.class,String.class));
   }
  catch (  AssertionError expected) {
     return;

@@ -1,8 +1,0 @@
-{
-  TypeToken<?>[] typeArray=types.toArray(new TypeToken<?>[0]);
-  Class<?>[] rawTypeArray=types.rawTypes().toArray(new Class<?>[0]);
-  assertEquals(typeArray.length,rawTypeArray.length);
-  for (int i=0; i < types.size(); i++) {
-    assertEquals(typeArray[i].getRawType(),rawTypeArray[i]);
-  }
-}

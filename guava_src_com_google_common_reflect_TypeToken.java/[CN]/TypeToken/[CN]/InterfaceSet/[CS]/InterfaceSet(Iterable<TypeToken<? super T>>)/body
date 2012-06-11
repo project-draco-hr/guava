@@ -1,3 +1,0 @@
-{
-  this.interfaces=ImmutableSet.copyOf(Iterables.filter(allTypes,TypeFilter.INTERFACE_ONLY));
-}

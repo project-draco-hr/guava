@@ -1,0 +1,13 @@
+{
+  int i=0;
+  for (  Class<?> left : types) {
+    int j=0;
+    for (    Class<?> right : types) {
+      if (left.isAssignableFrom(right)) {
+        assertTrue(left + " should be after " + right,i >= j);
+      }
+      j++;
+    }
+    i++;
+  }
+}

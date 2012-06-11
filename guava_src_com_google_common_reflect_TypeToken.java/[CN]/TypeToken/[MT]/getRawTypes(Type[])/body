@@ -1,0 +1,7 @@
+{
+  ImmutableSet.Builder<Class<?>> builder=ImmutableSet.builder();
+  for (  Type type : types) {
+    builder.addAll(getRawTypes(type));
+  }
+  return builder.build();
+}
