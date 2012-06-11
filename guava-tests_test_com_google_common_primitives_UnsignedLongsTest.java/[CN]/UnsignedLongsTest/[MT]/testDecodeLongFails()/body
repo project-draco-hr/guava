@@ -1,0 +1,26 @@
+{
+  try {
+    UnsignedLongs.decode("0xfffffffffffffffff");
+    fail();
+  }
+ catch (  NumberFormatException expected) {
+  }
+  try {
+    UnsignedLongs.decode("-5");
+    fail();
+  }
+ catch (  NumberFormatException expected) {
+  }
+  try {
+    UnsignedLongs.decode("-0x5");
+    fail();
+  }
+ catch (  NumberFormatException expected) {
+  }
+  try {
+    UnsignedLongs.decode("-05");
+    fail();
+  }
+ catch (  NumberFormatException expected) {
+  }
+}

@@ -1,0 +1,9 @@
+{
+  assertEquals(0xffffffff,UnsignedInts.decode("0xffffffff"));
+  assertEquals(01234567,UnsignedInts.decode("01234567"));
+  assertEquals(0x12345678,UnsignedInts.decode("#12345678"));
+  assertEquals(76543210,UnsignedInts.decode("76543210"));
+  assertEquals(0x13579135,UnsignedInts.decode("0x13579135"));
+  assertEquals(0x13579135,UnsignedInts.decode("0X13579135"));
+  assertEquals(0,UnsignedInts.decode("0"));
+}

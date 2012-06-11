@@ -1,7 +1,7 @@
 {
   ParseRequest request=ParseRequest.fromString(stringValue);
   try {
-    return parseUnsignedLong(request.rawValue,request.radix);
+    return parseUnsignedInt(request.rawValue,request.radix);
   }
  catch (  NumberFormatException e) {
     NumberFormatException decodeException=new NumberFormatException("Error parsing value: " + stringValue);
