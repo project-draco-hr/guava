@@ -1,2 +1,2 @@
-int expectedKeys
-int expectedValuesPerKey
+int keyCapacity
+int valueSetCapacity

@@ -1,0 +1,4 @@
+K key
+V value
+int valueHash
+ValueEntry<K,V> nextInValueSetHashRow

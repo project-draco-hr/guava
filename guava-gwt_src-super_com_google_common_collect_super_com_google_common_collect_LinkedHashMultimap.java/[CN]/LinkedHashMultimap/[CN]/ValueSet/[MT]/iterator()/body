@@ -1,0 +1,51 @@
+{
+  return new Iterator<V>(){
+    ValueSetLink<K,V> nextEntry=firstEntry;
+    ValueEntry<K,V> toRemove;
+    int expectedModCount=modCount;
+    private void checkForComodification(){
+      if (modCount != expectedModCount) {
+        throw new ConcurrentModificationException();
+      }
+    }
+    @Override public boolean hasNext(){
+      checkForComodification();
+      return nextEntry != ValueSet.this;
+    }
+    @Override public V next(){
+      if (!hasNext()) {
+        throw new NoSuchElementException();
+      }
+      ValueEntry<K,V> entry=(ValueEntry<K,V>)nextEntry;
+      V result=entry.getValue();
+      toRemove=entry;
+      nextEntry=entry.getSuccessorInValueSet();
+      return result;
+    }
+    @Override public void remove(){
+      checkForComodification();
+      Iterators.checkRemove(toRemove != null);
+      Object o=toRemove.getValue();
+      int hash=(o == null) ? 0 : o.hashCode();
+      int row=Hashing.smear(hash) & (hashTable.length - 1);
+      ValueEntry<K,V> prev=null;
+      for (ValueEntry<K,V> entry=hashTable[row]; entry != null; prev=entry, entry=entry.nextInValueSetHashRow) {
+        if (entry == toRemove) {
+          if (prev == null) {
+            hashTable[row]=entry.nextInValueSetHashRow;
+          }
+ else {
+            prev.nextInValueSetHashRow=entry.nextInValueSetHashRow;
+          }
+          deleteFromValueSet(toRemove);
+          deleteFromMultimap(toRemove);
+          size--;
+          expectedModCount=++modCount;
+          break;
+        }
+      }
+      toRemove=null;
+    }
+  }
+;
+}

@@ -1,0 +1,10 @@
+{
+  int hash=(o == null) ? 0 : o.hashCode();
+  int row=Hashing.smear(hash) & (hashTable.length - 1);
+  for (ValueEntry<K,V> entry=hashTable[row]; entry != null; entry=entry.nextInValueSetHashRow) {
+    if (hash == entry.valueHash && Objects.equal(o,entry.getValue())) {
+      return true;
+    }
+  }
+  return false;
+}

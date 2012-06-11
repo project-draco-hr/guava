@@ -1,0 +1,20 @@
+{
+  int hash=(value == null) ? 0 : value.hashCode();
+  int row=Hashing.smear(hash) & (hashTable.length - 1);
+  ValueEntry<K,V> rowHead=hashTable[row];
+  for (ValueEntry<K,V> entry=rowHead; entry != null; entry=entry.nextInValueSetHashRow) {
+    if (hash == entry.valueHash && Objects.equal(value,entry.getValue())) {
+      return false;
+    }
+  }
+  ValueEntry<K,V> newEntry=new ValueEntry<K,V>(key,value,hash,rowHead);
+  succeedsInValueSet(lastEntry,newEntry);
+  succeedsInValueSet(newEntry,this);
+  succeedsInMultimap(multimapHeaderEntry.getPredecessorInMultimap(),newEntry);
+  succeedsInMultimap(newEntry,multimapHeaderEntry);
+  hashTable[row]=newEntry;
+  size++;
+  modCount++;
+  rehashIfNecessary();
+  return true;
+}

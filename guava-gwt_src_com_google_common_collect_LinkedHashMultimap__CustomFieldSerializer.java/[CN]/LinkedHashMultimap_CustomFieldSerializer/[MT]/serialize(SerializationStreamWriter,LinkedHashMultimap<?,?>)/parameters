@@ -1,2 +1,2 @@
-SerializationStreamWriter out
+SerializationStreamWriter stream
 LinkedHashMultimap<?,?> multimap

@@ -1,0 +1,14 @@
+{
+  if (size > rehashThreshold && hashTable.length < MAX_VALUE_SET_TABLE_SIZE) {
+    @SuppressWarnings("unchecked") ValueEntry<K,V>[] hashTable=new ValueEntry[this.hashTable.length * 2];
+    this.hashTable=hashTable;
+    int mask=hashTable.length - 1;
+    for (ValueSetLink<K,V> entry=firstEntry; entry != this; entry=entry.getSuccessorInValueSet()) {
+      ValueEntry<K,V> valueEntry=(ValueEntry<K,V>)entry;
+      int row=Hashing.smear(valueEntry.valueHash) & mask;
+      valueEntry.nextInValueSetHashRow=hashTable[row];
+      hashTable[row]=valueEntry;
+    }
+    this.rehashThreshold=(int)(VALUE_SET_LOAD_FACTOR * hashTable.length);
+  }
+}

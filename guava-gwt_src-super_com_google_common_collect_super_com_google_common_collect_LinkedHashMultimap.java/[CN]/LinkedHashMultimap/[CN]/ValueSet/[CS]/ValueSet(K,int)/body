@@ -1,0 +1,15 @@
+{
+  this.key=key;
+  this.firstEntry=this;
+  this.lastEntry=this;
+  int tableSize=Integer.highestOneBit(Math.max(expectedValues,2) - 1) << 1;
+  while (tableSize > 0 && (tableSize * VALUE_SET_LOAD_FACTOR) < expectedValues) {
+    tableSize*=2;
+  }
+  if (tableSize < 0) {
+    tableSize=MAX_VALUE_SET_TABLE_SIZE;
+  }
+  @SuppressWarnings("unchecked") ValueEntry<K,V>[] hashTable=new ValueEntry[tableSize];
+  this.hashTable=hashTable;
+  this.rehashThreshold=(int)(VALUE_SET_LOAD_FACTOR * tableSize);
+}

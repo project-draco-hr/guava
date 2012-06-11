@@ -1,7 +1,12 @@
 {
-  Multimap_CustomFieldSerializerBase.serialize(out,multimap);
+  stream.writeInt(multimap.valueSetCapacity);
+  stream.writeInt(multimap.keySet().size());
+  for (  Object key : multimap.keySet()) {
+    stream.writeObject(key);
+  }
+  stream.writeInt(multimap.size());
   for (  Map.Entry<?,?> entry : multimap.entries()) {
-    out.writeObject(entry.getKey());
-    out.writeObject(entry.getValue());
+    stream.writeObject(entry.getKey());
+    stream.writeObject(entry.getValue());
   }
 }

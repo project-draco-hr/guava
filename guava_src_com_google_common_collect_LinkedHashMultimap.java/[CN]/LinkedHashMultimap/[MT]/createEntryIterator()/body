@@ -1,17 +1,23 @@
 {
-  final Iterator<Map.Entry<K,V>> delegateIterator=linkedEntries.iterator();
   return new Iterator<Map.Entry<K,V>>(){
-    Map.Entry<K,V> entry;
+    ValueEntry<K,V> nextEntry=multimapHeaderEntry.successorInMultimap;
+    ValueEntry<K,V> toRemove;
     @Override public boolean hasNext(){
-      return delegateIterator.hasNext();
+      return nextEntry != multimapHeaderEntry;
     }
     @Override public Map.Entry<K,V> next(){
-      entry=delegateIterator.next();
-      return entry;
+      if (!hasNext()) {
+        throw new NoSuchElementException();
+      }
+      ValueEntry<K,V> result=nextEntry;
+      toRemove=result;
+      nextEntry=nextEntry.successorInMultimap;
+      return result;
     }
     @Override public void remove(){
-      delegateIterator.remove();
-      LinkedHashMultimap.this.remove(entry.getKey(),entry.getValue());
+      Iterators.checkRemove(toRemove != null);
+      LinkedHashMultimap.this.remove(toRemove.getKey(),toRemove.getValue());
+      toRemove=null;
     }
   }
 ;

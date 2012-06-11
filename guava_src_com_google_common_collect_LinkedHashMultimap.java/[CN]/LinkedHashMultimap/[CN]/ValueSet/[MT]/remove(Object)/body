@@ -1,0 +1,21 @@
+{
+  int hash=(o == null) ? 0 : o.hashCode();
+  int row=Hashing.smear(hash) & (hashTable.length - 1);
+  ValueEntry<K,V> prev=null;
+  for (ValueEntry<K,V> entry=hashTable[row]; entry != null; prev=entry, entry=entry.nextInValueSetHashRow) {
+    if (hash == entry.valueHash && Objects.equal(o,entry.getValue())) {
+      if (prev == null) {
+        hashTable[row]=entry.nextInValueSetHashRow;
+      }
+ else {
+        prev.nextInValueSetHashRow=entry.nextInValueSetHashRow;
+      }
+      deleteFromValueSet(entry);
+      deleteFromMultimap(entry);
+      size--;
+      modCount++;
+      return true;
+    }
+  }
+  return false;
+}

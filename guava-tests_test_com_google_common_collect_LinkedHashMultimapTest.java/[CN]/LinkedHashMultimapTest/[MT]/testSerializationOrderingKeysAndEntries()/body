@@ -1,0 +1,11 @@
+{
+  Multimap<String,Integer> multimap=LinkedHashMultimap.create();
+  multimap.put("a",1);
+  multimap.put("b",2);
+  multimap.put("a",3);
+  multimap.put("c",4);
+  multimap.remove("a",1);
+  multimap=SerializableTester.reserializeAndAssert(multimap);
+  ASSERT.that(multimap.keySet()).hasContentsInOrder("a","b","c");
+  ASSERT.that(multimap.entries()).hasContentsInOrder(mapEntry("b",2),mapEntry("a",3),mapEntry("c",4));
+}

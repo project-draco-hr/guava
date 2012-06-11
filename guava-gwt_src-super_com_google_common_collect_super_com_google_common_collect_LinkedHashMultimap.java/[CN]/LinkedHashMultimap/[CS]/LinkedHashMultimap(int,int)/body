@@ -1,6 +1,7 @@
 {
-  super(new LinkedHashMap<K,Collection<V>>(expectedKeys));
-  Preconditions.checkArgument(expectedValuesPerKey >= 0);
-  this.expectedValuesPerKey=expectedValuesPerKey;
-  linkedEntries=new LinkedHashSet<Map.Entry<K,V>>((int)Math.min(Ints.MAX_POWER_OF_TWO,((long)expectedKeys) * expectedValuesPerKey));
+  super(new LinkedHashMap<K,Collection<V>>(keyCapacity));
+  checkArgument(valueSetCapacity >= 0,"expectedValuesPerKey must be >= 0 but was %s",valueSetCapacity);
+  this.valueSetCapacity=valueSetCapacity;
+  this.multimapHeaderEntry=new ValueEntry<K,V>(null,null,0,null);
+  succeedsInMultimap(multimapHeaderEntry,multimapHeaderEntry);
 }
