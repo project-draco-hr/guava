@@ -1,6 +1,7 @@
 {
-  double value=random.nextDouble();
+  byte[] value=new byte[random.nextInt(128)];
+  random.nextBytes(value);
   for (  PrimitiveSink sink : sinks) {
-    sink.putDouble(value);
+    sink.putBytes(value);
   }
 }
