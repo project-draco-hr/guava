@@ -1,0 +1,20 @@
+{
+  final int numHashes=10000;
+  final int numBuckets=30;
+  double[] w1=new double[numBuckets];
+  double[] w2=new double[numBuckets];
+  for (int i=0; i < numBuckets; i++) {
+    double weight=numBuckets / 5 + i;
+    w1[i]=weight;
+    w2[i]=(i % 7 != 0) ? weight : weight / (i + 1);
+  }
+  Random valueGenerator=new Random(RANDOM_SEED);
+  for (int i=0; i < numHashes; i++) {
+    int value=valueGenerator.nextInt();
+    int bucket1=Hashing.weightedConsistentHash(value,w1);
+    int bucket2=Hashing.weightedConsistentHash(value,w2);
+    if (bucket1 % 7 != 0) {
+      assertEquals(bucket1,bucket2);
+    }
+  }
+}

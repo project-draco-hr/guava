@@ -1,0 +1,9 @@
+{
+  try {
+    double[] l={1.0,-0.1,0.8};
+    Hashing.weightedConsistentHash(123,new double[]{1.0,-0.1,0.8});
+    fail("Should have failed with IllegalArgumentException.");
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}

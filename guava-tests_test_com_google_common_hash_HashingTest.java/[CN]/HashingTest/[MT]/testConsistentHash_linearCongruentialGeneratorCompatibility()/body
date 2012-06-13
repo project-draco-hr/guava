@@ -1,0 +1,7 @@
+{
+  assertEquals(55,Hashing.consistentHash(1,100));
+  assertEquals(62,Hashing.consistentHash(2,100));
+  assertEquals(8,Hashing.consistentHash(3,100));
+  assertEquals(45,Hashing.consistentHash(4,100));
+  assertEquals(59,Hashing.consistentHash(5,100));
+}
