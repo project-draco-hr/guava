@@ -1,5 +1,5 @@
 {
-  len+=bb.remaining();
+  length+=bb.remaining();
   int k1=0;
 switch (bb.remaining()) {
 case 3:
@@ -9,9 +9,7 @@ case 2:
 case 1:
 k1^=toInt(bb.get(0));
 default :
-k1*=C1;
-k1=Integer.rotateLeft(k1,15);
-k1*=C2;
+k1=Murmur3_32HashFunction.mixK1(k1);
 h1^=k1;
 }
 }

@@ -1,4 +1,5 @@
 {
   super(CHUNK_SIZE);
-  h1=seed;
+  this.h1=seed;
+  this.length=0;
 }
