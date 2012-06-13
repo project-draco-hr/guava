@@ -2,7 +2,7 @@
   List<String> list=newArrayList("a","b","c");
   Iterator<String> iterator=list.iterator();
   try {
-    skip(iterator,-1);
+    advance(iterator,-1);
     fail();
   }
  catch (  IllegalArgumentException expected) {

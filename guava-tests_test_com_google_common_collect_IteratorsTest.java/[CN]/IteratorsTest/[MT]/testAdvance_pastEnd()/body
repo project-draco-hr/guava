@@ -3,6 +3,6 @@
   list.add("a");
   list.add("b");
   Iterator<String> iterator=list.iterator();
-  skip(iterator,1);
-  assertEquals("b",iterator.next());
+  advance(iterator,5);
+  assertFalse(iterator.hasNext());
 }
