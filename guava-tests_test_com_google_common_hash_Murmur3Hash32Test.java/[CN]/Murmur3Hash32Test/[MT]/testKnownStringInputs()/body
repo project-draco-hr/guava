@@ -1,7 +1,7 @@
 {
-  assertHash(0,"");
-  assertHash(679745764,"k");
-  assertHash(-675079799,"hello");
-  assertHash(1935035788,"http://www.google.com/");
-  assertHash(-528633700,"The quick brown fox jumps over the lazy dog");
+  assertEquals(0,murmur3_32().hashString("").asInt());
+  assertEquals(679745764,murmur3_32().hashString("k").asInt());
+  assertEquals(-675079799,murmur3_32().hashString("hello").asInt());
+  assertEquals(1935035788,murmur3_32().hashString("http://www.google.com/").asInt());
+  assertEquals(-528633700,murmur3_32().hashString("The quick brown fox jumps over the lazy dog").asInt());
 }

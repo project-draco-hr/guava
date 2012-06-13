@@ -1,4 +1,0 @@
-{
-  assertEquals(expected,murmur3_32().hashInt(input).asInt());
-  assertEquals(expected,murmur3_32().newHasher().putInt(input).hash().asInt());
-}
