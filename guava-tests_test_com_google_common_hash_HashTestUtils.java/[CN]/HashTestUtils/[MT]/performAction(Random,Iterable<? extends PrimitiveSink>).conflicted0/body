@@ -1,6 +1,6 @@
 {
-  long value=random.nextLong();
+  boolean value=random.nextBoolean();
   for (  PrimitiveSink sink : sinks) {
-    sink.putLong(value);
+    sink.putBoolean(value);
   }
 }
