@@ -1,7 +1,5 @@
 {
   List<int[]> ordered=Arrays.asList(new int[]{},new int[]{LEAST},new int[]{LEAST,LEAST},new int[]{LEAST,(int)1L},new int[]{(int)1L},new int[]{(int)1L,LEAST},new int[]{GREATEST,(GREATEST - (int)1L)},new int[]{GREATEST,GREATEST},new int[]{GREATEST,GREATEST,GREATEST});
-  System.out.println((UnsignedInts.toString(LEAST)));
-  System.out.println((UnsignedInts.compare(LEAST,GREATEST)));
   Comparator<int[]> comparator=UnsignedInts.lexicographicalComparator();
   Helpers.testComparator(comparator,ordered);
 }
