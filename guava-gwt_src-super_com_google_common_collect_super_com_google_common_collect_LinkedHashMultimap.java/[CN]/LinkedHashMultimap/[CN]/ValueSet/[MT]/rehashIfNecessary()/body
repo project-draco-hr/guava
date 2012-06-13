@@ -1,5 +1,5 @@
 {
-  if (size > rehashThreshold && hashTable.length < MAX_VALUE_SET_TABLE_SIZE) {
+  if (size > hashTable.length && hashTable.length < MAX_VALUE_SET_TABLE_SIZE) {
     @SuppressWarnings("unchecked") ValueEntry<K,V>[] hashTable=new ValueEntry[this.hashTable.length * 2];
     this.hashTable=hashTable;
     int mask=hashTable.length - 1;
@@ -9,6 +9,5 @@
       valueEntry.nextInValueSetHashRow=hashTable[row];
       hashTable[row]=valueEntry;
     }
-    this.rehashThreshold=(int)(VALUE_SET_LOAD_FACTOR * hashTable.length);
   }
 }
