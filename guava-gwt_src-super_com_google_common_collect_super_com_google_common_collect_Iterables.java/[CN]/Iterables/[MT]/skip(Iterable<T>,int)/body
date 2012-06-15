@@ -13,7 +13,7 @@
   return new FluentIterable<T>(){
     @Override public Iterator<T> iterator(){
       final Iterator<T> iterator=iterable.iterator();
-      Iterators.skip(iterator,numberToSkip);
+      Iterators.advance(iterator,numberToSkip);
       return new Iterator<T>(){
         boolean atStart=true;
         @Override public boolean hasNext(){
