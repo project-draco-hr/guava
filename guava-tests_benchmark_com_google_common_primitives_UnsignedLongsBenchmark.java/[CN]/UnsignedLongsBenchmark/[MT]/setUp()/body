@@ -1,0 +1,10 @@
+{
+  for (int i=0; i < ARRAY_SIZE; i++) {
+    longs[i]=random();
+    divisors[i]=randomDivisor(longs[i]);
+    decimalStrings[i]=UnsignedLongs.toString(longs[i]);
+    binaryStrings[i]=UnsignedLongs.toString(longs[i],2);
+    hexStrings[i]=UnsignedLongs.toString(longs[i],16);
+    prefixedHexStrings[i]="0x" + hexStrings[i];
+  }
+}

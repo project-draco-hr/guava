@@ -1,0 +1,12 @@
+{
+  Random r=new Random();
+  ba1=new byte[length];
+  r.nextBytes(ba1);
+  ba2=Arrays.copyOf(ba1,ba1.length);
+  ba3=Arrays.copyOf(ba1,ba1.length);
+  ba4=Arrays.copyOf(ba1,ba1.length);
+  ba3[ba1.length - 1]=(byte)43;
+  ba4[ba1.length - 1]=(byte)42;
+  javaImpl=UnsignedBytes.lexicographicalComparatorJavaImpl();
+  unsafeImpl=UnsignedBytes.LexicographicalComparatorHolder.UnsafeComparator.INSTANCE;
+}

@@ -1,0 +1,9 @@
+{
+  byte result=0x01;
+  for (int i=0; i < reps; i++) {
+    MessageDigest md=MessageDigest.getInstance(algorithm);
+    md.update(testBytes);
+    result^=md.digest()[0];
+  }
+  return result;
+}

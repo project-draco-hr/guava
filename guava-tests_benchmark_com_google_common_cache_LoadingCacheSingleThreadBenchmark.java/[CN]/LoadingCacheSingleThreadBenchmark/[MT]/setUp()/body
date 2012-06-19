@@ -1,0 +1,13 @@
+{
+  max=Ints.checkedCast((long)Math.pow(distinctKeys,concentration));
+  cache=CacheBuilder.newBuilder().concurrencyLevel(segments).maximumSize(maximumSize).build(new CacheLoader<Integer,Integer>(){
+    @Override public Integer load(    Integer from){
+      return (int)misses.incrementAndGet();
+    }
+  }
+);
+  while (cache.getUnchecked(nextRandomKey()) < maximumSize) {
+  }
+  requests.set(0);
+  misses.set(0);
+}

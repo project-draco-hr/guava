@@ -1,0 +1,16 @@
+{
+  hashMultiset=HashMultiset.create(size);
+  linkedHashMultiset=LinkedHashMultiset.create(size);
+  treeMultiset=TreeMultiset.create();
+  Random random=new Random();
+  int sizeRemaining=size;
+  for (int i=0; sizeRemaining > 0; i++) {
+    Integer value=random.nextInt(1000) + 128;
+    int count=Math.min(random.nextInt(10) + 1,sizeRemaining);
+    sizeRemaining-=count;
+    hashMultiset.add(value,count);
+    linkedHashMultiset.add(value,count);
+    treeMultiset.add(value,count);
+  }
+  Preconditions.checkState(hashMultiset.size() == size);
+}

@@ -1,0 +1,7 @@
+{
+  int dummy=0;
+  for (int i=0; i < reps; i++) {
+    dummy+=Objects.hashCode(S0,S1,S2);
+  }
+  return dummy;
+}

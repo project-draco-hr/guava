@@ -1,0 +1,3 @@
+{
+  return RANDOM_SOURCE.nextInt(MAX_EXPONENT + 1);
+}

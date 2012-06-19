@@ -1,0 +1,8 @@
+{
+  String string=noWorkToDo ? testString.toUpperCase(Locale.US) : testString;
+  int dummy=0;
+  for (int i=0; i < reps; i++) {
+    dummy+=string.toUpperCase(Locale.US).length();
+  }
+  return dummy;
+}

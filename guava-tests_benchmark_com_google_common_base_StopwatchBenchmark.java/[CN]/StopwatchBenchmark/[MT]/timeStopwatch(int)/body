@@ -1,0 +1,8 @@
+{
+  long total=0;
+  for (int i=0; i < reps; i++) {
+    Stopwatch s=new Stopwatch().start();
+    total+=s.elapsedTime(TimeUnit.NANOSECONDS);
+  }
+  return total;
+}

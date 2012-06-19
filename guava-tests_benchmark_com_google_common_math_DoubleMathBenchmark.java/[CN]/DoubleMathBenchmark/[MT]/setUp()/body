@@ -1,0 +1,7 @@
+{
+  for (int i=0; i < ARRAY_SIZE; i++) {
+    positiveDoubles[i]=randomPositiveDouble();
+    doubles[i]=randomDouble(Long.SIZE);
+    factorials[i]=RANDOM_SOURCE.nextInt(100);
+  }
+}

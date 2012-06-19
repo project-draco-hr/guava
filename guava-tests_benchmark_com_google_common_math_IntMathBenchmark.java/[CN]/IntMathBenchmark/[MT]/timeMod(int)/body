@@ -1,0 +1,8 @@
+{
+  int tmp=0;
+  for (int i=0; i < reps; i++) {
+    int j=i & ARRAY_MASK;
+    tmp+=IntMath.mod(ints[j],positive[j]);
+  }
+  return tmp;
+}

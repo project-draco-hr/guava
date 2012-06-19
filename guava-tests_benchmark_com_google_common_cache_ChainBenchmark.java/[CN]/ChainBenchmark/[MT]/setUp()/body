@@ -1,0 +1,12 @@
+{
+  LocalCache<Object,Object> cache=new LocalCache<Object,Object>(CacheBuilder.newBuilder().concurrencyLevel(1),null);
+  segment=cache.segments[0];
+  chain=null;
+  for (int i=0; i < length; i++) {
+    Object key=new Object();
+    chain=segment.newEntry(key,cache.hash(key),chain);
+    if (i == 0) {
+      head=chain;
+    }
+  }
+}

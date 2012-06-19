@@ -1,0 +1,7 @@
+{
+  for (int i=0; i < reps; ++i) {
+    if (unsafeImpl.compare(ba3,ba4) == 0) {
+      throw new Error();
+    }
+  }
+}

@@ -1,0 +1,3 @@
+{
+  Runner.main(UnsignedLongsBenchmark.class,args);
+}

@@ -1,0 +1,17 @@
+{
+  Random random=new Random();
+  int nKeys=keys.size();
+  long blah=0;
+  for (int i=0; i < reps; i++) {
+    Integer key=keys.get(random.nextInt(nKeys));
+    int delta=random.nextInt(10) - 5;
+    blah+=delta;
+    if (delta >= 0) {
+      multiset.add(key,delta);
+    }
+ else {
+      multiset.remove(key,-delta);
+    }
+  }
+  return blah;
+}

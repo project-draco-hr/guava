@@ -1,0 +1,7 @@
+{
+  Interner<String> interner=Interners.newStrongInterner();
+  for (int i=0; i < reps; i++) {
+    interner.intern(Double.toHexString(Math.random()));
+  }
+  return reps;
+}

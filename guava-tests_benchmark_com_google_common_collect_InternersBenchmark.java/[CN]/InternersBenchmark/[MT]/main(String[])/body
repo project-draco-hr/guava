@@ -1,0 +1,3 @@
+{
+  Runner.main(InternersBenchmark.class,args);
+}

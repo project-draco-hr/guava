@@ -1,0 +1,10 @@
+{
+  Map<Element,Element> map=mapToTest;
+  Element[] queries=this.queries;
+  int mask=queries.length - 1;
+  boolean dummy=false;
+  for (int i=0; i < reps; i++) {
+    dummy^=map.get(queries[i & mask]) != null;
+  }
+  return dummy;
+}

@@ -1,0 +1,8 @@
+{
+  for (int i=0; i < reps; i++) {
+    queue.clear();
+    for (int j=0; j < size; j++) {
+      queue.add(random.nextInt());
+    }
+  }
+}

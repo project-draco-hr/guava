@@ -1,0 +1,4 @@
+{
+  BigInteger result=randomNonNegativeBigInteger(numBits);
+  return RANDOM_SOURCE.nextBoolean() ? result : result.negate();
+}

@@ -1,0 +1,26 @@
+{
+  if (web) {
+    StringBuilder builder=new StringBuilder(length);
+    CharSamples sampler=new CharSamples(rand);
+    for (int i=0; i < length; i++) {
+      int cp=sampler.nextCodePoint();
+      builder.appendCodePoint(cp);
+    }
+    return builder.toString();
+  }
+  List<Integer> list=Lists.newArrayList();
+  for (int i=0; i < length; i++) {
+    list.add(i);
+  }
+  Collections.shuffle(list,rand);
+  if (forceSlow) {
+    list.set(list.indexOf(0),list.get(0));
+    list.set(0,0);
+  }
+  int threshold=((percent * length) + 99) / 100;
+  StringBuilder builder=new StringBuilder(length);
+  for (int n=0; n < length; n++) {
+    builder.append(randomCharFrom(list.get(n) >= threshold ? NONMATCHING_CHARS : matchingChars,rand));
+  }
+  return builder.toString();
+}

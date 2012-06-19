@@ -1,0 +1,3 @@
+{
+  return Synchronized.multiset(HashMultiset.<Integer>create(),null);
+}

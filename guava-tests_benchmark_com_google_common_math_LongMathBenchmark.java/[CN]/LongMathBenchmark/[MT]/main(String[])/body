@@ -1,0 +1,3 @@
+{
+  Runner.main(LongMathBenchmark.class,args);
+}

@@ -1,0 +1,4 @@
+{
+  int digits=RANDOM_SOURCE.nextInt(numBits) + 1;
+  return new BigInteger(digits,RANDOM_SOURCE).add(BigInteger.ONE);
+}

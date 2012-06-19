@@ -1,0 +1,7 @@
+{
+  for (int i=0; i < ARRAY_SIZE; i++) {
+    positive[i]=randomPositiveBigInteger(1024);
+    nonzero1[i]=randomNonZeroBigInteger(1024);
+    nonzero2[i]=randomNonZeroBigInteger(1024);
+  }
+}

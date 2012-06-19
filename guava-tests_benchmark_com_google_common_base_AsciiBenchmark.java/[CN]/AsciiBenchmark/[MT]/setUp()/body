@@ -1,0 +1,15 @@
+{
+  random=new Random();
+  int nonAlpha=size / nonAlphaRatio;
+  int alpha=size - nonAlpha;
+  List<Character> chars=Lists.newArrayListWithCapacity(size);
+  for (int i=0; i < alpha; i++) {
+    chars.add(randomAlpha());
+  }
+  for (int i=0; i < nonAlpha; i++) {
+    chars.add(randomNonAlpha());
+  }
+  Collections.shuffle(chars,random);
+  char[] array=Chars.toArray(chars);
+  this.testString=new String(array);
+}

@@ -1,0 +1,7 @@
+{
+  for (int i=0; i < ARRAY_SIZE; i++) {
+    doubleInIntRange[i]=randomDouble(Integer.SIZE - 2);
+    doubleInLongRange[i]=randomDouble(Long.SIZE - 2);
+    positiveDoubles[i]=randomPositiveDouble();
+  }
+}

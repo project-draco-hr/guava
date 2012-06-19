@@ -1,0 +1,7 @@
+{
+  Map<Element,Element> map=Maps.newTreeMap();
+  for (  Element element : keys) {
+    map.put(element,element);
+  }
+  return map;
+}

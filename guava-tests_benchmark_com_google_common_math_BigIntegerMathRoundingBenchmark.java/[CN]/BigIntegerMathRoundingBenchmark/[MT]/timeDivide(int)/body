@@ -1,0 +1,8 @@
+{
+  int tmp=0;
+  for (int i=0; i < reps; i++) {
+    int j=i & ARRAY_MASK;
+    tmp+=BigIntegerMath.divide(nonzero1[j],nonzero2[j],mode).intValue();
+  }
+  return tmp;
+}

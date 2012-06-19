@@ -1,0 +1,7 @@
+{
+  for (int i=0; i < ARRAY_SIZE; i++) {
+    positive[i]=randomPositiveBigInteger(Long.SIZE - 2).longValue();
+    nonzero[i]=randomNonZeroBigInteger(Long.SIZE - 2).longValue();
+    longs[i]=RANDOM_SOURCE.nextLong();
+  }
+}

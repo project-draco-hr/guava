@@ -1,0 +1,4 @@
+{
+  testBytes=new byte[size];
+  new Random(RANDOM_SEED).nextBytes(testBytes);
+}

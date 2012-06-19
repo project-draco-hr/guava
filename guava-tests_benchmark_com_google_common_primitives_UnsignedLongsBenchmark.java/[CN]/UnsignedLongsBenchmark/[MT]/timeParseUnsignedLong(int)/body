@@ -1,0 +1,11 @@
+{
+  long tmp=0;
+  int scaledReps=reps / 3 + 1;
+  for (int i=0; i < scaledReps; i++) {
+    int j=i & ARRAY_MASK;
+    tmp+=UnsignedLongs.parseUnsignedLong(decimalStrings[j]);
+    tmp+=UnsignedLongs.parseUnsignedLong(hexStrings[j],16);
+    tmp+=UnsignedLongs.parseUnsignedLong(binaryStrings[j],2);
+  }
+  return tmp;
+}

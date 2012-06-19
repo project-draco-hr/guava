@@ -1,0 +1,7 @@
+{
+  Map<Element,Element> map=new ConcurrentSkipListMap<Element,Element>();
+  for (  Element element : keys) {
+    map.put(element,element);
+  }
+  return map;
+}

@@ -1,0 +1,13 @@
+{
+  CollectionBenchmarkSampleData sampleData=new CollectionBenchmarkSampleData(isUserTypeFast,random,hitRate,size);
+  if (sortedData) {
+    List<Element> valueList=Lists.newArrayList(sampleData.getValuesInSet());
+    Collections.sort(valueList);
+    values=valueList;
+  }
+ else {
+    values=sampleData.getValuesInSet();
+  }
+  this.mapToTest=impl.create(values);
+  this.queries=sampleData.getQueries();
+}

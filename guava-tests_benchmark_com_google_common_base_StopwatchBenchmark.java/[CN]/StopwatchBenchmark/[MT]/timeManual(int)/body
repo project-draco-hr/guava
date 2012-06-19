@@ -1,0 +1,8 @@
+{
+  long total=0;
+  for (int i=0; i < reps; i++) {
+    long start=System.nanoTime();
+    total+=(System.nanoTime() - start);
+  }
+  return total;
+}

@@ -1,0 +1,3 @@
+{
+  mmHeap=MinMaxPriorityQueue.orderedBy(comparator).create();
+}

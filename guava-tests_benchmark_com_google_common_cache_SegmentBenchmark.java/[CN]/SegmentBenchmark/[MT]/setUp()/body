@@ -1,0 +1,10 @@
+{
+  LocalCache<Object,Object> cache=new LocalCache<Object,Object>(CacheBuilder.newBuilder().concurrencyLevel(1).initialCapacity(capacity),null);
+  checkState(cache.segments.length == 1);
+  segment=cache.segments[0];
+  checkState(segment.table.length() == capacity);
+  for (int i=0; i < segment.threshold; i++) {
+    cache.put(new Object(),new Object());
+  }
+  checkState(segment.table.length() == capacity);
+}

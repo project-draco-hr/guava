@@ -1,0 +1,3 @@
+{
+  return NONALPHA.charAt(random.nextInt(NONALPHA.length()));
+}

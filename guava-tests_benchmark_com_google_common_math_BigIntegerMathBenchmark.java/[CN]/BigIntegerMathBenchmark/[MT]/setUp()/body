@@ -1,0 +1,7 @@
+{
+  for (int i=0; i < ARRAY_SIZE; i++) {
+    factorials[i]=RANDOM_SOURCE.nextInt(factorialBound);
+    slowFactorials[i]=RANDOM_SOURCE.nextInt(factorialBound);
+    binomials[i]=RANDOM_SOURCE.nextInt(factorials[i] + 1);
+  }
+}

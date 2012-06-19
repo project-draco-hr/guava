@@ -1,0 +1,10 @@
+{
+  super.setUp();
+  multiset=implSupplier.get();
+  ImmutableList.Builder<Integer> builder=ImmutableList.builder();
+  for (int i=0; i < size; i++) {
+    builder.add(i);
+  }
+  keys=builder.build();
+  threadPool=Executors.newFixedThreadPool(threads,new ThreadFactoryBuilder().setDaemon(true).build());
+}

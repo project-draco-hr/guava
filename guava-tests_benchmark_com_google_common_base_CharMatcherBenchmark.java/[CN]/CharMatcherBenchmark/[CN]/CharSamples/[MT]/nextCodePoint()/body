@@ -1,0 +1,35 @@
+{
+  int needle=random.nextInt(sum);
+  int l=0;
+  int r=prob.length - 1;
+  int c=prob.length / 2;
+  int lv=prob[l];
+  int rv=prob[r];
+  int cv=prob[c];
+  while (true) {
+    if (needle == cv) {
+      return chars[c - 1];
+    }
+ else     if ((lv <= needle) && (needle < cv)) {
+      return chars[l];
+    }
+ else     if (needle == rv) {
+      return chars[r];
+    }
+ else     if (needle < cv) {
+      rv=cv;
+      r=c;
+      c=l + (r - l) / 2;
+      cv=prob[c];
+    }
+ else     if (needle == cv) {
+      return chars[c];
+    }
+ else {
+      lv=cv;
+      l=c;
+      c=l + (r - l) / 2;
+      cv=prob[c];
+    }
+  }
+}

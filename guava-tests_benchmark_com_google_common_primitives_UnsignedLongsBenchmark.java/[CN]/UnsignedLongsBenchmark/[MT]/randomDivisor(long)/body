@@ -1,0 +1,9 @@
+{
+  long r=RANDOM_SOURCE.nextLong();
+  if (dividend == -1) {
+    return r;
+  }
+ else {
+    return UnsignedLongs.remainder(r,dividend + 1);
+  }
+}

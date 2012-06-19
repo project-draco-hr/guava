@@ -1,0 +1,6 @@
+{
+  queue=heap.create(comparator.get());
+  for (int i=0; i < size; i++) {
+    queue.add(random.nextInt());
+  }
+}

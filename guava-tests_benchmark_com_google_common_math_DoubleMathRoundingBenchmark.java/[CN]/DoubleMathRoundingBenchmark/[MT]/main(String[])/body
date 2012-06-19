@@ -1,0 +1,3 @@
+{
+  Runner.main(DoubleMathRoundingBenchmark.class,args);
+}

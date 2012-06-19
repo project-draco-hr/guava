@@ -1,0 +1,5 @@
+{
+  double req=requests.get();
+  double hit=req - misses.get();
+  System.out.println("hit rate: " + hit / req);
+}

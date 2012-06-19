@@ -1,0 +1,8 @@
+{
+  int tmp=0;
+  for (int i=0; i < reps; i++) {
+    int j=i & 0xffff;
+    tmp+=BigIntegerMath.binomial(factorials[j],binomials[j]).intValue();
+  }
+  return tmp;
+}

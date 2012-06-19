@@ -1,0 +1,6 @@
+int length
+int percent
+String matchingChars
+Random rand
+boolean forceSlow
+boolean web

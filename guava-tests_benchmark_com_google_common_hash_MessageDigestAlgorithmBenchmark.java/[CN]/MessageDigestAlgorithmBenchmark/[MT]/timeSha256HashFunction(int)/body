@@ -1,0 +1,3 @@
+{
+  return runHashFunction(reps,Hashing.sha256());
+}

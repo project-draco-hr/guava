@@ -1,0 +1,9 @@
+{
+  if (n <= 20) {
+    return BigInteger.valueOf(LongMath.factorial(n));
+  }
+ else {
+    int k=20;
+    return BigInteger.valueOf(LongMath.factorial(k)).multiply(slowFactorial(k,n));
+  }
+}

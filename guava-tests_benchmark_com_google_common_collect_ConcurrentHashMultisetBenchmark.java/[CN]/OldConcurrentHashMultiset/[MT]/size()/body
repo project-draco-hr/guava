@@ -1,0 +1,7 @@
+{
+  long sum=0L;
+  for (  Integer value : countMap.values()) {
+    sum+=value;
+  }
+  return Ints.saturatedCast(sum);
+}
