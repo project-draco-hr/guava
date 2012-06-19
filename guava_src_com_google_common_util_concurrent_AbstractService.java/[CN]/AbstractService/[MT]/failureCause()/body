@@ -1,0 +1,10 @@
+{
+  lock.lock();
+  try {
+    checkState(state == State.FAILED,"getFailure is only valid if the service has failed, service is %s",state);
+    return failure;
+  }
+  finally {
+    lock.unlock();
+  }
+}

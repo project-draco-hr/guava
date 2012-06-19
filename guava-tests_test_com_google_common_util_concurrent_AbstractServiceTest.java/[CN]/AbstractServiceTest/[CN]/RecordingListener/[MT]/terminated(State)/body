@@ -1,0 +1,4 @@
+{
+  assertEquals(from,Iterables.getLast(stateHistory,State.NEW));
+  stateHistory.add(State.TERMINATED);
+}

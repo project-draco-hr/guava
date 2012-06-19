@@ -6,7 +6,7 @@
       notifyFailed(failure);
       throw failure;
     }
-    state=State.RUNNING;
+    running();
     if (shutdownWhenStartupFinishes) {
       stop();
     }

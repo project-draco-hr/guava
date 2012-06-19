@@ -1,0 +1,8 @@
+{
+  try {
+    executor.execute(runnable);
+  }
+ catch (  Exception e) {
+    logger.log(Level.SEVERE,"Exception while executing listener " + listener + " with executor "+ executor,e);
+  }
+}

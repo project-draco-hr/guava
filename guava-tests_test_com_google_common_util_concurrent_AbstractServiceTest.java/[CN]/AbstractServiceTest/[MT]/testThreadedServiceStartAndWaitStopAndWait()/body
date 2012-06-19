@@ -1,9 +1,12 @@
 {
   ThreadedService service=new ThreadedService();
+  RecordingListener listener=new RecordingListener();
+  service.addListener(listener,MoreExecutors.sameThreadExecutor());
   service.start().get();
-  assertEquals(Service.State.RUNNING,service.state());
+  assertEquals(State.RUNNING,service.state());
   service.awaitRunChecks();
   service.stop().get();
-  assertEquals(Service.State.TERMINATED,service.state());
+  assertEquals(State.TERMINATED,service.state());
   throwIfSet(thrownByExecutionThread);
+  assertEquals(Arrays.asList(State.STARTING,State.RUNNING,State.STOPPING,State.TERMINATED),listener.getStateHistory());
 }

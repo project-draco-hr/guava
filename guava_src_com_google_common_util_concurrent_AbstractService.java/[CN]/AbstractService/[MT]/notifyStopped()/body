@@ -6,7 +6,7 @@
       notifyFailed(failure);
       throw failure;
     }
-    state=State.TERMINATED;
+    terminated(state);
     shutdown.set(State.TERMINATED);
   }
   finally {

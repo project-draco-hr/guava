@@ -2,10 +2,10 @@
   ThreadedService service=new ThreadedService();
   service.start();
   service.start().get();
-  assertEquals(Service.State.RUNNING,service.state());
+  assertEquals(State.RUNNING,service.state());
   service.awaitRunChecks();
   service.stop();
   service.stop().get();
-  assertEquals(Service.State.TERMINATED,service.state());
+  assertEquals(State.TERMINATED,service.state());
   throwIfSet(thrownByExecutionThread);
 }

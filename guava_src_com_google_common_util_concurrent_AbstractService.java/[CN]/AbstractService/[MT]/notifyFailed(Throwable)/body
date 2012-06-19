@@ -15,7 +15,7 @@
  else     if (state == State.NEW || state == State.TERMINATED) {
       throw new IllegalStateException("Failed while in state:" + state,cause);
     }
-    state=State.FAILED;
+    failed(state,cause);
   }
   finally {
     lock.unlock();

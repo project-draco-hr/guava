@@ -1,0 +1,6 @@
+{
+  state=State.STOPPING;
+  for (  Listener listener : listeners) {
+    listener.stopping(from);
+  }
+}

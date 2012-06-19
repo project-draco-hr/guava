@@ -1,0 +1,6 @@
+{
+  state=State.STARTING;
+  for (  Listener listener : listeners) {
+    listener.starting();
+  }
+}

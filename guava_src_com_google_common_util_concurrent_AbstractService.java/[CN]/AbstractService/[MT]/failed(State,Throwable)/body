@@ -1,0 +1,8 @@
+{
+  failure=cause;
+  state=State.FAILED;
+  for (  Listener listener : listeners) {
+    listener.failed(from,cause);
+  }
+  listeners.clear();
+}

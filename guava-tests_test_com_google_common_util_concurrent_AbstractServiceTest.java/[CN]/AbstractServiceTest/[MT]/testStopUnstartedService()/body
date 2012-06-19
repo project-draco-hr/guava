@@ -1,9 +1,12 @@
 {
   NoOpService service=new NoOpService();
-  Future<Service.State> stopResult=service.stop();
-  assertEquals(Service.State.TERMINATED,service.state());
-  assertEquals(Service.State.TERMINATED,stopResult.get());
-  Future<Service.State> startResult=service.start();
-  assertEquals(Service.State.TERMINATED,service.state());
-  assertEquals(Service.State.TERMINATED,startResult.get());
+  RecordingListener listener=new RecordingListener();
+  service.addListener(listener,MoreExecutors.sameThreadExecutor());
+  Future<State> stopResult=service.stop();
+  assertEquals(State.TERMINATED,service.state());
+  assertEquals(State.TERMINATED,stopResult.get());
+  Future<State> startResult=service.start();
+  assertEquals(State.TERMINATED,service.state());
+  assertEquals(State.TERMINATED,startResult.get());
+  assertEquals(State.TERMINATED,Iterables.getOnlyElement(listener.getStateHistory()));
 }

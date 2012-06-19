@@ -1,0 +1,4 @@
+{
+  assertEquals(State.STARTING,Iterables.getOnlyElement(stateHistory));
+  stateHistory.add(State.RUNNING);
+}

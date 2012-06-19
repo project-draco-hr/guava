@@ -2,11 +2,11 @@
   ManualSwitchedService service=new ManualSwitchedService();
   service.start();
   service.notifyStarted();
-  assertEquals(Service.State.RUNNING,service.state());
+  assertEquals(State.RUNNING,service.state());
   assertTrue(service.isRunning());
   assertFalse(service.doStopCalled);
   service.notifyStopped();
-  assertEquals(Service.State.TERMINATED,service.state());
+  assertEquals(State.TERMINATED,service.state());
   assertFalse(service.isRunning());
   assertFalse(service.doStopCalled);
 }

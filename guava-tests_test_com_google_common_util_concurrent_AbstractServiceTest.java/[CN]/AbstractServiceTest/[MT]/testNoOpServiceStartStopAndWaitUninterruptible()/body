@@ -3,9 +3,9 @@
   currentThread().interrupt();
   try {
     service.startAndWait();
-    assertEquals(Service.State.RUNNING,service.state());
+    assertEquals(State.RUNNING,service.state());
     service.stopAndWait();
-    assertEquals(Service.State.TERMINATED,service.state());
+    assertEquals(State.TERMINATED,service.state());
     assertTrue(currentThread().isInterrupted());
   }
   finally {

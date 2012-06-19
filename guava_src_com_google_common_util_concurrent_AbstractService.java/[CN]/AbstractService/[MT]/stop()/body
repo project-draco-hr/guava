@@ -3,6 +3,7 @@
   try {
     if (state == State.NEW) {
       state=State.TERMINATED;
+      terminated(State.NEW);
       startup.set(State.TERMINATED);
       shutdown.set(State.TERMINATED);
     }
@@ -12,6 +13,7 @@
     }
  else     if (state == State.RUNNING) {
       state=State.STOPPING;
+      stopping(State.RUNNING);
       doStop();
     }
   }

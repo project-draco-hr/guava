@@ -1,10 +1,14 @@
 {
   StartThrowingService service=new StartThrowingService();
+  RecordingListener listener=new RecordingListener();
+  service.addListener(listener,MoreExecutors.sameThreadExecutor());
   try {
     service.startAndWait();
     fail();
   }
  catch (  UncheckedExecutionException e) {
+    assertEquals(EXCEPTION,service.failureCause());
     assertEquals(EXCEPTION,e.getCause());
   }
+  assertEquals(Arrays.asList(State.STARTING,State.FAILED),listener.getStateHistory());
 }

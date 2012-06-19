@@ -1,0 +1,4 @@
+{
+  assertTrue(stateHistory.isEmpty());
+  stateHistory.add(State.STARTING);
+}
