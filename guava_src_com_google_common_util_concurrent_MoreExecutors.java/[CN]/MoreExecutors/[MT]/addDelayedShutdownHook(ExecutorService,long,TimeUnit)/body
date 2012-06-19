@@ -9,5 +9,5 @@
       }
     }
   }
-));
+,"DelayedShutdownHook-for-" + service));
 }
