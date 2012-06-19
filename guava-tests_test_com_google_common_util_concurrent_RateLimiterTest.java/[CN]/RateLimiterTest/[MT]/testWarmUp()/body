@@ -1,0 +1,17 @@
+{
+  RateLimiter limiter=RateLimiter.create(ticker,2.0,4000,TimeUnit.MILLISECONDS);
+  for (int i=0; i < 8; i++) {
+    limiter.acquire();
+  }
+  ticker.sleepMillis(500);
+  ticker.sleepMillis(4000);
+  for (int i=0; i < 8; i++) {
+    limiter.acquire();
+  }
+  ticker.sleepMillis(500);
+  ticker.sleepMillis(2000);
+  for (int i=0; i < 8; i++) {
+    limiter.acquire();
+  }
+  assertEvents("R0.00, R1.38, R1.13, R0.88, R0.63, R0.50, R0.50, R0.50","U0.50","U4.00","R0.00, R1.38, R1.13, R0.88, R0.63, R0.50, R0.50, R0.50","U0.50","U2.00","R0.00, R0.50, R0.50, R0.50, R0.50, R0.50, R0.50, R0.50");
+}

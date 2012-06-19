@@ -1,0 +1,5 @@
+{
+  RateLimiter rateLimiter=new Bursty(ticker);
+  rateLimiter.setRate(permitsPerSecond);
+  return rateLimiter;
+}

@@ -1,0 +1,18 @@
+{
+  RateLimiter limiter=RateLimiter.create(5.0,5,TimeUnit.SECONDS);
+  assertEquals(5.0,limiter.getRate());
+  limiter.setRate(10.0);
+  assertEquals(10.0,limiter.getRate());
+  try {
+    limiter.setRate(0.0);
+    fail();
+  }
+ catch (  IllegalArgumentException ok) {
+  }
+  try {
+    limiter.setRate(-10.0);
+    fail();
+  }
+ catch (  IllegalArgumentException ok) {
+  }
+}

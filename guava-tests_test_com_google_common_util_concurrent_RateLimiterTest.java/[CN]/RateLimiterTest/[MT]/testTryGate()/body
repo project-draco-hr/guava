@@ -1,0 +1,8 @@
+{
+  RateLimiter limiter=RateLimiter.create(ticker,5.0);
+  assertTrue(limiter.tryAcquire(0,TimeUnit.SECONDS));
+  assertFalse(limiter.tryAcquire(0,TimeUnit.SECONDS));
+  assertFalse(limiter.tryAcquire(0,TimeUnit.SECONDS));
+  ticker.sleepMillis(100);
+  assertFalse(limiter.tryAcquire(0,TimeUnit.SECONDS));
+}

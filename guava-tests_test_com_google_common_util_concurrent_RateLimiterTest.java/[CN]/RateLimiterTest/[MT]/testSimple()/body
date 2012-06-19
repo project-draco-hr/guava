@@ -1,0 +1,7 @@
+{
+  RateLimiter limiter=RateLimiter.create(ticker,5.0);
+  limiter.acquire();
+  limiter.acquire();
+  limiter.acquire();
+  assertEvents("R0.00","R0.20","R0.20");
+}

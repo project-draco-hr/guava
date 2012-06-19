@@ -1,0 +1,10 @@
+{
+  long startTime=ticker.instant;
+  while (permits > 0) {
+    int nextPermitsToAcquire=Math.max(1,random.nextInt(permits));
+    permits-=nextPermitsToAcquire;
+    rateLimiter.acquire(nextPermitsToAcquire);
+  }
+  rateLimiter.acquire(1);
+  return TimeUnit.NANOSECONDS.toMillis(ticker.instant - startTime);
+}

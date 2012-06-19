@@ -1,0 +1,8 @@
+{
+  ticker.instant=Long.MAX_VALUE - TimeUnit.SECONDS.toNanos(1);
+  RateLimiter limiter=RateLimiter.create(ticker,1.0);
+  for (int i=0; i < 4; i++) {
+    limiter.acquire();
+  }
+  assertEvents("R0.00","R1.00","R1.00","R1.00");
+}

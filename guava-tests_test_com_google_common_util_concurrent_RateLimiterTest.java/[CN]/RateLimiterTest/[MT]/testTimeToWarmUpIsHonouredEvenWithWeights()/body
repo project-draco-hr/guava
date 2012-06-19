@@ -1,0 +1,12 @@
+{
+  Random random=new Random();
+  int maxPermits=10;
+  double[] qpsToTest={4.0,2.0,1.0,0.5,0.1};
+  for (int trial=0; trial < 100; trial++) {
+    for (    double qps : qpsToTest) {
+      long warmupMillis=(long)((2 * maxPermits / qps) * 1000.0);
+      RateLimiter rateLimiter=RateLimiter.create(ticker,qps,warmupMillis,TimeUnit.MILLISECONDS);
+      assertEquals(warmupMillis,measureTotalTimeMillis(rateLimiter,maxPermits,random));
+    }
+  }
+}
