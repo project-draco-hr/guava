@@ -1,0 +1,3 @@
+{
+  return hasSeed ? "(seed:" + seed : "(default seed)";
+}

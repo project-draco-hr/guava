@@ -1,0 +1,8 @@
+{
+  this.isUserTypeFast=isUserTypeFast;
+  this.random=checkNotNull(random);
+  this.hitRate=hitRate;
+  this.size=size;
+  this.valuesInSet=createData();
+  this.queries=createQueries(valuesInSet,1024);
+}

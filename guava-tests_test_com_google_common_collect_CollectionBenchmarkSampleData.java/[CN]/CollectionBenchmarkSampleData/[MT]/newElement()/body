@@ -1,0 +1,4 @@
+{
+  int value=random.nextInt();
+  return isUserTypeFast ? new Element(value) : new SlowElement(value);
+}

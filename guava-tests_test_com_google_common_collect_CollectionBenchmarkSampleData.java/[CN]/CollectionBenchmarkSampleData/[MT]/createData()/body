@@ -1,0 +1,7 @@
+{
+  Set<Element> set=Sets.newHashSetWithExpectedSize(size);
+  while (set.size() < size) {
+    set.add(newElement());
+  }
+  return set;
+}

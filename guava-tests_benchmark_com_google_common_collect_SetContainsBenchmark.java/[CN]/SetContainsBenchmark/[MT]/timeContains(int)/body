@@ -1,0 +1,10 @@
+{
+  Set<Element> set=setToTest;
+  Element[] queries=this.queries;
+  int mask=queries.length - 1;
+  boolean dummy=false;
+  for (int i=0; i < reps; i++) {
+    dummy^=set.contains(queries[i & mask]);
+  }
+  return dummy;
+}

@@ -1,0 +1,4 @@
+boolean isUserTypeFast
+SpecialRandom random
+double hitRate
+int size

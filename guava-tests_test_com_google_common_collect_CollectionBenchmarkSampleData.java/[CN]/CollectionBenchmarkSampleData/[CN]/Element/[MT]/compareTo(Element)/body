@@ -1,0 +1,3 @@
+{
+  return (hash < that.hash) ? -1 : (hash > that.hash) ? 1 : 0;
+}

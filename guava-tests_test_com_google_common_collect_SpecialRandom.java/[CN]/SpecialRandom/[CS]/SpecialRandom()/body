@@ -1,0 +1,4 @@
+{
+  this.hasSeed=false;
+  this.seed=0;
+}

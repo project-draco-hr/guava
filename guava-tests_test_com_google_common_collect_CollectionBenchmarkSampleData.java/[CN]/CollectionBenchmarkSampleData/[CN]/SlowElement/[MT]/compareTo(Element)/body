@@ -1,0 +1,4 @@
+{
+  int x=slowItDown();
+  return x + super.compareTo(e) - x;
+}

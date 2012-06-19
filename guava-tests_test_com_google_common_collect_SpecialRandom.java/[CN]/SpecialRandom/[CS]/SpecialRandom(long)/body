@@ -1,0 +1,5 @@
+{
+  super(seed);
+  this.hasSeed=true;
+  this.seed=seed;
+}

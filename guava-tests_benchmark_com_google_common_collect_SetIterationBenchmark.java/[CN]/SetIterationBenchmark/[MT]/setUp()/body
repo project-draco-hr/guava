@@ -1,0 +1,4 @@
+{
+  CollectionBenchmarkSampleData sampleData=new CollectionBenchmarkSampleData(true,random,0.8,size);
+  setToTest=impl.create(sampleData.getValuesInSet());
+}

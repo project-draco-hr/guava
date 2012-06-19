@@ -1,0 +1,5 @@
+{
+  CollectionBenchmarkSampleData sampleData=new CollectionBenchmarkSampleData(isUserTypeFast,random,hitRate,size);
+  this.setToTest=impl.create(sampleData.getValuesInSet());
+  this.queries=sampleData.getQueries();
+}
