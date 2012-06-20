@@ -1,0 +1,12 @@
+{
+  assertEquals("foo:101","" + HostAndPort.fromString("foo:101"));
+  assertEquals(":102",HostAndPort.fromString(":102").toString());
+  assertEquals("[1::2]:103",HostAndPort.fromParts("1::2",103).toString());
+  assertEquals("[::1]:104",HostAndPort.fromString("[::1]:104").toString());
+  assertEquals("foo","" + HostAndPort.fromString("foo"));
+  assertEquals("",HostAndPort.fromString("").toString());
+  assertEquals("[1::2]",HostAndPort.fromString("1::2").toString());
+  assertEquals("[::1]",HostAndPort.fromString("[::1]").toString());
+  assertEquals("[::]]:107",HostAndPort.fromParts("::]",107).toString());
+  assertEquals("[[:]]:108",HostAndPort.fromString("[[:]]:108").toString());
+}

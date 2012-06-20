@@ -1,0 +1,5 @@
+String hpString
+int defaultPort
+String expectHost
+int expectPort
+boolean expectHasExplicitPort

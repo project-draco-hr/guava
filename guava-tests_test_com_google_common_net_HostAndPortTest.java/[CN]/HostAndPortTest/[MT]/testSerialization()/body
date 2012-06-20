@@ -1,0 +1,7 @@
+{
+  SerializableTester.reserializeAndAssert(HostAndPort.fromParts("host",80));
+  SerializableTester.reserializeAndAssert(HostAndPort.fromString("host"));
+  SerializableTester.reserializeAndAssert(HostAndPort.fromString("host:80"));
+  SerializableTester.reserializeAndAssert(HostAndPort.fromString("[::1]:104"));
+  SerializableTester.reserializeAndAssert(HostAndPort.fromParts("1::2",103));
+}

@@ -1,0 +1,4 @@
+{
+  assertEquals(80,HostAndPort.fromString("host:80").getPortOrDefault(123));
+  assertEquals(123,HostAndPort.fromString("host").getPortOrDefault(123));
+}

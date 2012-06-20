@@ -1,0 +1,45 @@
+{
+  HostAndPort hp;
+  try {
+    hp=HostAndPort.fromString(hpString);
+  }
+ catch (  IllegalArgumentException e) {
+    assertNull(expectHost);
+    return;
+  }
+  assertNotNull(expectHost);
+  final boolean badDefaultPort=(defaultPort < 0 || defaultPort > 65535);
+  HostAndPort hp2=null;
+  try {
+    hp2=hp.withDefaultPort(defaultPort);
+    assertFalse(badDefaultPort);
+  }
+ catch (  IllegalArgumentException e) {
+    assertTrue(badDefaultPort);
+  }
+  if (expectHasExplicitPort) {
+    assertTrue(hp.hasPort());
+    assertEquals(expectPort,hp.getPort());
+  }
+ else {
+    assertFalse(hp.hasPort());
+    try {
+      hp.getPort();
+      fail("Expected IllegalStateException");
+    }
+ catch (    IllegalStateException expected) {
+    }
+  }
+  assertEquals(expectHost,hp.getHostText());
+  if (!badDefaultPort) {
+    try {
+      int port=hp2.getPort();
+      assertTrue(expectPort != -1);
+      assertEquals(expectPort,port);
+    }
+ catch (    IllegalStateException e) {
+      assertEquals(-1,expectPort);
+    }
+    assertEquals(expectHost,hp2.getHostText());
+  }
+}
