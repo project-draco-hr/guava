@@ -1,0 +1,8 @@
+{
+synchronized (mutex) {
+    if (descendingMap == null) {
+      return descendingMap=synchronizedNavigableMap(delegate().descendingMap(),mutex);
+    }
+    return descendingMap;
+  }
+}

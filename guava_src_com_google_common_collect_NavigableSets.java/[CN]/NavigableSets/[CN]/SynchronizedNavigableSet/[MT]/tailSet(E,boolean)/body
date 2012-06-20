@@ -1,0 +1,5 @@
+{
+synchronized (mutex) {
+    return synchronizedNavigableSet(delegate().tailSet(fromElement,inclusive),mutex);
+  }
+}

@@ -1,0 +1,8 @@
+{
+  if (navigableKeySet == null) {
+    NavigableSet<K> nKS=unmodifiableNavigableSet(delegate.navigableKeySet());
+    navigableKeySet=nKS;
+    return nKS;
+  }
+  return navigableKeySet;
+}

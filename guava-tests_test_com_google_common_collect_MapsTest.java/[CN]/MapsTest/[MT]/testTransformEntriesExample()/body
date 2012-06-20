@@ -6,6 +6,6 @@
     }
   }
 ;
-  Map<String,String> transformed=Maps.transformEntries(options,flagPrefixer);
+  Map<String,String> transformed=transformEntries(options,flagPrefixer);
   assertEquals("{verbose=verbose, sort=nosort}",transformed.toString());
 }

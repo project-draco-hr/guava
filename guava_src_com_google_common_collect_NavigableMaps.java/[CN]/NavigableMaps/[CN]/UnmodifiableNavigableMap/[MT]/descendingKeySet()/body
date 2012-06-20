@@ -1,0 +1,8 @@
+{
+  if (descendingKeySet == null) {
+    NavigableSet<K> dKS=unmodifiableNavigableSet(delegate.descendingKeySet());
+    descendingKeySet=dKS;
+    return dKS;
+  }
+  return descendingKeySet;
+}

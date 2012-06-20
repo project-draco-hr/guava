@@ -1,0 +1,8 @@
+{
+  if (entry == null) {
+    return null;
+  }
+  K key=entry.getKey();
+  V2 v2=transformer.transformEntry(key,entry.getValue());
+  return Maps.immutableEntry(key,v2);
+}

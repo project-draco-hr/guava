@@ -1,0 +1,8 @@
+{
+synchronized (mutex) {
+    if (descendingKeySet == null) {
+      return descendingKeySet=synchronizedNavigableSet(delegate().descendingKeySet(),mutex);
+    }
+    return descendingKeySet;
+  }
+}

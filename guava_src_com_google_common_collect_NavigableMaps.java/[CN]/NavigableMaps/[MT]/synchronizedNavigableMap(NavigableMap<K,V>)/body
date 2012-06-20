@@ -1,0 +1,3 @@
+{
+  return synchronizedNavigableMap(navigableMap,null);
+}

@@ -1,0 +1,8 @@
+{
+  if (descendingSet == null) {
+    NavigableSet<E> dS=unmodifiableNavigableSet(navigableSet.descendingSet());
+    descendingSet=dS;
+    return dS;
+  }
+  return descendingSet;
+}

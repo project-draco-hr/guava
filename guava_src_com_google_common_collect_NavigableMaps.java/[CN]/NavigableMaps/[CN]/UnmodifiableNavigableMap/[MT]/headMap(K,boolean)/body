@@ -1,0 +1,3 @@
+{
+  return unmodifiableNavigableMap(delegate.headMap(toKey,inclusive));
+}

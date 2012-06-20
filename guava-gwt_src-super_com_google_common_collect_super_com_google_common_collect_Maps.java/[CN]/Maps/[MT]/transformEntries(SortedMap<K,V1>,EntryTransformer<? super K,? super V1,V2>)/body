@@ -1,3 +1,3 @@
 {
-  return new TransformedEntriesSortedMap<K,V1,V2>(fromMap,transformer);
+  return Platform.mapsTransformEntriesSortedMap(fromMap,transformer);
 }
