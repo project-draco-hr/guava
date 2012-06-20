@@ -1,0 +1,26 @@
+{
+  lock3.lock();
+  try {
+    lock2.lock();
+    fail("Expected PotentialDeadlockException");
+  }
+ catch (  PotentialDeadlockException expected) {
+    checkMessage(expected,"MyOrder.THIRD -> MyOrder.SECOND");
+  }
+  try {
+    lock1.lock();
+    fail("Expected PotentialDeadlockException");
+  }
+ catch (  PotentialDeadlockException expected) {
+    checkMessage(expected,"MyOrder.THIRD -> MyOrder.FIRST");
+  }
+  lock3.unlock();
+  lock2.lock();
+  try {
+    lock1.lock();
+    fail("Expected PotentialDeadlockException");
+  }
+ catch (  PotentialDeadlockException expected) {
+    checkMessage(expected,"MyOrder.SECOND -> MyOrder.FIRST");
+  }
+}

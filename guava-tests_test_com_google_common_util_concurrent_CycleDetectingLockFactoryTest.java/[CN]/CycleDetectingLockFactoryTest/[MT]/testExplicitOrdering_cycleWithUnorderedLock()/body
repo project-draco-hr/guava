@@ -1,0 +1,13 @@
+{
+  Lock myLock=CycleDetectingLockFactory.newInstance(Policies.THROW).newReentrantLock("MyLock");
+  lock03.lock();
+  myLock.lock();
+  lock03.unlock();
+  try {
+    lock01.lock();
+    fail("Expected PotentialDeadlockException");
+  }
+ catch (  PotentialDeadlockException expected) {
+    checkMessage(expected,"MyLock -> OtherOrder.FIRST","OtherOrder.THIRD -> MyLock","OtherOrder.FIRST -> OtherOrder.THIRD");
+  }
+}

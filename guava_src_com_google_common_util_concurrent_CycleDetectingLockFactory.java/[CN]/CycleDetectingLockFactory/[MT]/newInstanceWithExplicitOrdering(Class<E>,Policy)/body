@@ -1,0 +1,4 @@
+{
+  @SuppressWarnings("unchecked") Map<E,LockGraphNode> lockGraphNodes=(Map<E,LockGraphNode>)lockGraphNodesPerType.get(enumClass);
+  return new WithExplicitOrdering<E>(policy,lockGraphNodes);
+}

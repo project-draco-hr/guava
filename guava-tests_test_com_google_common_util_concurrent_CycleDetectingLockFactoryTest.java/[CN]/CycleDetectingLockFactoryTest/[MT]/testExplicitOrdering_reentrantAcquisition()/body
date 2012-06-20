@@ -1,0 +1,13 @@
+{
+  CycleDetectingLockFactory.WithExplicitOrdering<OtherOrder> factory=newInstanceWithExplicitOrdering(OtherOrder.class,Policies.THROW);
+  Lock lockA=factory.newReentrantReadWriteLock(OtherOrder.FIRST).readLock();
+  Lock lockB=factory.newReentrantLock(OtherOrder.SECOND);
+  lockA.lock();
+  lockA.lock();
+  lockB.lock();
+  lockB.lock();
+  lockA.unlock();
+  lockA.unlock();
+  lockB.unlock();
+  lockB.unlock();
+}

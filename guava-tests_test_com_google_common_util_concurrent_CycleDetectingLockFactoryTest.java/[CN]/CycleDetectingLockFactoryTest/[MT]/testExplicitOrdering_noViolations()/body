@@ -1,0 +1,7 @@
+{
+  lock1.lock();
+  lock3.lock();
+  lock3.unlock();
+  lock2.lock();
+  lock3.lock();
+}

@@ -1,0 +1,16 @@
+{
+  CycleDetectingLockFactory otherFactory=CycleDetectingLockFactory.newInstance(Policies.WARN);
+  ReentrantLock lockD=otherFactory.newReentrantLock("LockD");
+  lockA.lock();
+  lockD.lock();
+  lockA.unlock();
+  lockD.unlock();
+  lockD.lock();
+  try {
+    lockA.lock();
+    fail("Expected PotentialDeadlockException");
+  }
+ catch (  PotentialDeadlockException expected) {
+    checkMessage(expected,"LockD -> LockA","LockA -> LockD");
+  }
+}

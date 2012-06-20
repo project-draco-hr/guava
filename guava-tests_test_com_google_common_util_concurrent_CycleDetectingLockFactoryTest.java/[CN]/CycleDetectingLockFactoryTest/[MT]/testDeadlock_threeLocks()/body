@@ -1,0 +1,16 @@
+{
+  lockA.lock();
+  lockB.lock();
+  lockB.unlock();
+  lockA.unlock();
+  lockB.lock();
+  lockC.lock();
+  lockB.unlock();
+  try {
+    lockA.lock();
+    fail("Expected PotentialDeadlockException");
+  }
+ catch (  PotentialDeadlockException expected) {
+    checkMessage(expected,"LockC -> LockA","LockB -> LockC","LockA -> LockB");
+  }
+}

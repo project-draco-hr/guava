@@ -1,0 +1,3 @@
+{
+  lockAndUnlock(factory.newReentrantLock("foo"),reps);
+}

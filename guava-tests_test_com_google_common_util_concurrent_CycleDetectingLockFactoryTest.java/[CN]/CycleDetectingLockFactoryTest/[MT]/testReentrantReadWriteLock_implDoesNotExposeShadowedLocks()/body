@@ -1,0 +1,3 @@
+{
+  assertEquals("Unexpected number of public methods in ReentrantReadWriteLock. " + "The correctness of CycleDetectingReentrantReadWriteLock depends on " + "the fact that the shadowed ReadLock and WriteLock are never used or "+ "exposed by the superclass implementation. If the implementation has "+ "changed, the code must be re-inspected to ensure that the "+ "assumption is still valid.",24,ReentrantReadWriteLock.class.getMethods().length);
+}

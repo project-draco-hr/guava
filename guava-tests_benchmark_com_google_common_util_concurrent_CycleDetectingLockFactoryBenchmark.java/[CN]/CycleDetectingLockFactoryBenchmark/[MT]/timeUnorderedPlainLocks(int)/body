@@ -1,0 +1,3 @@
+{
+  lockAndUnlock(new ReentrantLock(),reps);
+}

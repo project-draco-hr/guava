@@ -1,0 +1,18 @@
+{
+  readLockA.lock();
+  lockB.lock();
+  readLockA.unlock();
+  lockB.unlock();
+  lockB.lock();
+  lockC.lock();
+  lockB.unlock();
+  lockC.unlock();
+  lockC.lock();
+  try {
+    writeLockA.lock();
+    fail("Expected PotentialDeadlockException");
+  }
+ catch (  PotentialDeadlockException expected) {
+    checkMessage(expected,"LockC -> ReadWriteA","LockB -> LockC","ReadWriteA -> LockB");
+  }
+}

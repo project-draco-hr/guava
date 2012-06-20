@@ -1,0 +1,6 @@
+{
+  for (int i=0; i < reps; i++) {
+    lock.lock();
+    lock.unlock();
+  }
+}

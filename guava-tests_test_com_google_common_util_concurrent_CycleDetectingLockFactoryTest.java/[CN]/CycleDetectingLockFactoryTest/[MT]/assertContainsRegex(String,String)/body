@@ -1,0 +1,8 @@
+{
+  Pattern pattern=Pattern.compile(expectedRegex);
+  Matcher matcher=pattern.matcher(actual);
+  if (!matcher.find()) {
+    String actualDesc=(actual == null) ? "null" : ('<' + actual + '>');
+    fail("expected to contain regex:<" + expectedRegex + "> but was:"+ actualDesc);
+  }
+}

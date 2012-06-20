@@ -1,0 +1,14 @@
+{
+  CycleDetectingLockFactory.WithExplicitOrdering<OtherOrder> factory=newInstanceWithExplicitOrdering(OtherOrder.class,Policies.THROW);
+  Lock lockA=factory.newReentrantLock(OtherOrder.FIRST);
+  Lock lockB=factory.newReentrantReadWriteLock(OtherOrder.FIRST).readLock();
+  lockA.lock();
+  try {
+    lockB.lock();
+    fail("Expected IllegalStateException");
+  }
+ catch (  IllegalStateException expected) {
+  }
+  lockA.unlock();
+  lockB.lock();
+}

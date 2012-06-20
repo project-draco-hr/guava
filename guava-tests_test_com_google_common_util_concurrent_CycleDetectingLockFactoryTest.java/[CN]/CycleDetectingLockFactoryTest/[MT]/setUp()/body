@@ -1,0 +1,24 @@
+{
+  super.setUp();
+  CycleDetectingLockFactory factory=CycleDetectingLockFactory.newInstance(Policies.THROW);
+  lockA=factory.newReentrantLock("LockA");
+  lockB=factory.newReentrantLock("LockB");
+  lockC=factory.newReentrantLock("LockC");
+  ReentrantReadWriteLock readWriteLockA=factory.newReentrantReadWriteLock("ReadWriteA");
+  ReentrantReadWriteLock readWriteLockB=factory.newReentrantReadWriteLock("ReadWriteB");
+  ReentrantReadWriteLock readWriteLockC=factory.newReentrantReadWriteLock("ReadWriteC");
+  readLockA=readWriteLockA.readLock();
+  readLockB=readWriteLockB.readLock();
+  readLockC=readWriteLockC.readLock();
+  writeLockA=readWriteLockA.writeLock();
+  writeLockB=readWriteLockB.writeLock();
+  writeLockC=readWriteLockC.writeLock();
+  CycleDetectingLockFactory.WithExplicitOrdering<MyOrder> factory2=newInstanceWithExplicitOrdering(MyOrder.class,Policies.THROW);
+  lock1=factory2.newReentrantLock(MyOrder.FIRST);
+  lock2=factory2.newReentrantLock(MyOrder.SECOND);
+  lock3=factory2.newReentrantLock(MyOrder.THIRD);
+  CycleDetectingLockFactory.WithExplicitOrdering<OtherOrder> factory3=newInstanceWithExplicitOrdering(OtherOrder.class,Policies.THROW);
+  lock01=factory3.newReentrantLock(OtherOrder.FIRST);
+  lock02=factory3.newReentrantLock(OtherOrder.SECOND);
+  lock03=factory3.newReentrantLock(OtherOrder.THIRD);
+}
