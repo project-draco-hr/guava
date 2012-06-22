@@ -1,3 +1,0 @@
-{
-  return unmodifiableNavigableSet(navigableSet.subSet(fromElement,fromInclusive,toElement,toInclusive));
-}

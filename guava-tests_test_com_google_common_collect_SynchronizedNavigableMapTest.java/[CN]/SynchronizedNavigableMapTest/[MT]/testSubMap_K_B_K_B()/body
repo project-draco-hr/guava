@@ -1,0 +1,6 @@
+{
+  NavigableMap<String,Integer> map=create();
+  NavigableMap<String,Integer> subMap=map.subMap("a",true,"b",false);
+  assertTrue(subMap instanceof SynchronizedNavigableMap);
+  assertSame(mutex,((SynchronizedNavigableMap<String,Integer>)subMap).mutex);
+}

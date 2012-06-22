@@ -1,0 +1,6 @@
+{
+  NavigableSet<String> map=create();
+  SortedSet<String> subSet=map.subSet("a","b");
+  assertTrue(subSet instanceof SynchronizedSortedSet);
+  assertSame(mutex,((SynchronizedSortedSet<String>)subSet).mutex);
+}

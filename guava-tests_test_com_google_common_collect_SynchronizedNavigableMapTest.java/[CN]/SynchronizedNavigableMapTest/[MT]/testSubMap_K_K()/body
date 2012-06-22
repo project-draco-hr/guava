@@ -1,0 +1,6 @@
+{
+  NavigableMap<String,Integer> map=create();
+  SortedMap<String,Integer> subMap=map.subMap("a","b");
+  assertTrue(subMap instanceof SynchronizedSortedMap);
+  assertSame(mutex,((SynchronizedSortedMap<String,Integer>)subMap).mutex);
+}

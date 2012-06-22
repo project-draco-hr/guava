@@ -1,0 +1,5 @@
+{
+  NavigableMap<String,Integer> map=create();
+  map.put("a",1);
+  map.firstKey();
+}

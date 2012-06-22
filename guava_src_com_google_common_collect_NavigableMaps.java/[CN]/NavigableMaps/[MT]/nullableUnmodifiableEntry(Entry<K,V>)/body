@@ -1,6 +1,0 @@
-{
-  if (entry == null) {
-    return null;
-  }
-  return Maps.unmodifiableEntry(entry);
-}

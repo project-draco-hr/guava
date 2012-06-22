@@ -1,0 +1,32 @@
+{
+  try {
+    unmod.put(4,"four");
+    fail("UnsupportedOperationException expected");
+  }
+ catch (  UnsupportedOperationException expected) {
+  }
+  try {
+    unmod.putAll(Collections.singletonMap(4,"four"));
+    fail("UnsupportedOperationException expected");
+  }
+ catch (  UnsupportedOperationException expected) {
+  }
+  try {
+    unmod.remove("four");
+    fail("UnsupportedOperationException expected");
+  }
+ catch (  UnsupportedOperationException expected) {
+  }
+  try {
+    unmod.pollFirstEntry();
+    fail("UnsupportedOperationException expected");
+  }
+ catch (  UnsupportedOperationException expected) {
+  }
+  try {
+    unmod.pollLastEntry();
+    fail("UnsupportedOperationException expected");
+  }
+ catch (  UnsupportedOperationException expected) {
+  }
+}

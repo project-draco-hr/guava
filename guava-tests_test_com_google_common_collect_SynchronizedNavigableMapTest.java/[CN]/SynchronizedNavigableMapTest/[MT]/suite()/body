@@ -1,0 +1,18 @@
+{
+  TestSuite suite=new TestSuite();
+  suite.addTestSuite(SynchronizedNavigableMapTest.class);
+  suite.addTest(NavigableMapTestSuiteBuilder.using(new TestStringSortedMapGenerator(){
+    private final Object mutex=new Integer(1);
+    @Override protected Map<String,String> create(    Entry<String,String>[] entries){
+      NavigableMap<String,String> innermost=new SafeTreeMap<String,String>();
+      for (      Entry<String,String> entry : entries) {
+        innermost.put(entry.getKey(),entry.getValue());
+      }
+      TestMap<String,String> inner=new TestMap<String,String>(innermost,mutex);
+      NavigableMap<String,String> outer=Synchronized.navigableMap(inner,mutex);
+      return outer;
+    }
+  }
+).named("Maps.synchronizedNavigableMap[SafeTreeMap]").withFeatures(CollectionSize.ANY,CollectionFeature.KNOWN_ORDER,MapFeature.GENERAL_PURPOSE,MapFeature.ALLOWS_NULL_VALUES).createTestSuite());
+  return suite;
+}

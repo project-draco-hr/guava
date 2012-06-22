@@ -1,4 +1,0 @@
-{
-  this.navigableSet=Preconditions.checkNotNull(navigableSet);
-  this.unmodifiableSortedSet=Collections.unmodifiableSortedSet(navigableSet);
-}

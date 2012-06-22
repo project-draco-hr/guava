@@ -1,8 +1,0 @@
-{
-  if (descendingMap == null) {
-    NavigableMap<K,V> dM=unmodifiableNavigableMap(delegate.descendingMap());
-    descendingMap=dM;
-    return dM;
-  }
-  return descendingMap;
-}

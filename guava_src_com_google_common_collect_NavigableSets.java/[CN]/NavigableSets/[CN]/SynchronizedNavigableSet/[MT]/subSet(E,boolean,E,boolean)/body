@@ -1,5 +1,0 @@
-{
-synchronized (mutex) {
-    return synchronizedNavigableSet(delegate().subSet(fromElement,fromInclusive,toElement,toInclusive),mutex);
-  }
-}

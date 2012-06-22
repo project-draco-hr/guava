@@ -1,0 +1,6 @@
+{
+  @SuppressWarnings("unchecked") NavigableMap<K,V> innermost=new SafeTreeMap<K,V>((Comparator<? super K>)Ordering.natural().nullsFirst());
+  TestMap<K,V> inner=new TestMap<K,V>(innermost,mutex);
+  NavigableMap<K,V> outer=Synchronized.navigableMap(inner,mutex);
+  return outer;
+}

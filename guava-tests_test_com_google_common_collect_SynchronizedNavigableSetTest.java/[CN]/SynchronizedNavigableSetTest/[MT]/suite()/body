@@ -1,0 +1,19 @@
+{
+  TestSuite suite=new TestSuite();
+  suite.addTestSuite(SynchronizedNavigableSetTest.class);
+  suite.addTest(NavigableSetTestSuiteBuilder.using(new TestStringSetGenerator(){
+    private final Object mutex=new Integer(1);
+    @Override protected Set<String> create(    String[] elements){
+      NavigableSet<String> innermost=new SafeTreeSet<String>();
+      innermost.addAll(Arrays.asList(elements));
+      TestSet<String> inner=new TestSet<String>(innermost,mutex);
+      NavigableSet<String> outer=Synchronized.navigableSet(inner,mutex);
+      return outer;
+    }
+    @Override public List<String> order(    List<String> insertionOrder){
+      return Ordering.natural().sortedCopy(insertionOrder);
+    }
+  }
+).named("Sets.synchronizedNavigableSet[SafeTreeSet]").withFeatures(CollectionSize.ANY,CollectionFeature.KNOWN_ORDER,CollectionFeature.GENERAL_PURPOSE).createTestSuite());
+  return suite;
+}

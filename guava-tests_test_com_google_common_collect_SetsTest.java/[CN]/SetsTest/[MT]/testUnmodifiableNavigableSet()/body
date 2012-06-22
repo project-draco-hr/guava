@@ -1,0 +1,37 @@
+{
+  TreeSet<Integer> mod=Sets.newTreeSet();
+  mod.add(1);
+  mod.add(2);
+  mod.add(3);
+  NavigableSet<Integer> unmod=unmodifiableNavigableSet(mod);
+  mod.add(4);
+  assertTrue(unmod.contains(4));
+  assertTrue(unmod.descendingSet().contains(4));
+  ensureNotDirectlyModifiable(unmod);
+  ensureNotDirectlyModifiable(unmod.descendingSet());
+  ensureNotDirectlyModifiable(unmod.headSet(2));
+  ensureNotDirectlyModifiable(unmod.headSet(2,true));
+  ensureNotDirectlyModifiable(unmod.tailSet(2));
+  ensureNotDirectlyModifiable(unmod.tailSet(2,true));
+  ensureNotDirectlyModifiable(unmod.subSet(1,3));
+  ensureNotDirectlyModifiable(unmod.subSet(1,true,3,true));
+  NavigableSet<Integer> reverse=unmod.descendingSet();
+  try {
+    reverse.add(4);
+    fail("UnsupportedOperationException expected");
+  }
+ catch (  UnsupportedOperationException expected) {
+  }
+  try {
+    reverse.addAll(Collections.singleton(4));
+    fail("UnsupportedOperationException expected");
+  }
+ catch (  UnsupportedOperationException expected) {
+  }
+  try {
+    reverse.remove(4);
+    fail("UnsupportedOperationException expected");
+  }
+ catch (  UnsupportedOperationException expected) {
+  }
+}

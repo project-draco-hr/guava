@@ -1,0 +1,6 @@
+{
+  NavigableMap<String,Integer> map=create();
+  NavigableSet<String> descendingKeySet=map.descendingKeySet();
+  assertTrue(descendingKeySet instanceof SynchronizedNavigableSet);
+  assertSame(mutex,((SynchronizedNavigableSet<String>)descendingKeySet).mutex);
+}

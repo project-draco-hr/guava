@@ -1,3 +1,0 @@
-{
-  return unmodifiableNavigableMap(delegate.subMap(fromKey,fromInclusive,toKey,toInclusive));
-}

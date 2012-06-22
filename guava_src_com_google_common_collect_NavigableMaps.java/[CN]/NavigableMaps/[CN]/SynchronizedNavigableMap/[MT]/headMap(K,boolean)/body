@@ -1,5 +1,0 @@
-{
-synchronized (mutex) {
-    return synchronizedNavigableMap(delegate().headMap(toKey,inclusive),mutex);
-  }
-}
