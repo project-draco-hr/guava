@@ -1,0 +1,4 @@
+{
+  checkNotNull(ignored);
+  checkNotNull(required);
+}
