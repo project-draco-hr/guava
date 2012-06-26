@@ -3,26 +3,34 @@
   if (fitsInLong(x)) {
     return LongMath.log10(x.longValue(),mode);
   }
-  List<BigInteger> powersOf10=new ArrayList<BigInteger>(10);
-  BigInteger powerOf10=BigInteger.TEN;
-  while (x.compareTo(powerOf10) >= 0) {
-    powersOf10.add(powerOf10);
-    powerOf10=powerOf10.pow(2);
+  int approxLog10=(int)(log2(x,FLOOR) * LN_2 / LN_10);
+  BigInteger approxPow=BigInteger.TEN.pow(approxLog10);
+  int approxCmp=approxPow.compareTo(x);
+  if (approxCmp > 0) {
+    do {
+      approxLog10--;
+      approxPow=approxPow.divide(BigInteger.TEN);
+      approxCmp=approxPow.compareTo(x);
+    }
+ while (approxCmp > 0);
   }
-  BigInteger floorPow=BigInteger.ONE;
-  int floorLog=0;
-  for (int i=powersOf10.size() - 1; i >= 0; i--) {
-    BigInteger powOf10=powersOf10.get(i);
-    floorLog*=2;
-    BigInteger tenPow=powOf10.multiply(floorPow);
-    if (x.compareTo(tenPow) >= 0) {
-      floorPow=tenPow;
-      floorLog++;
+ else {
+    BigInteger nextPow=BigInteger.TEN.multiply(approxPow);
+    int nextCmp=nextPow.compareTo(x);
+    while (nextCmp <= 0) {
+      approxLog10++;
+      approxPow=nextPow;
+      approxCmp=nextCmp;
+      nextPow=BigInteger.TEN.multiply(approxPow);
+      nextCmp=nextPow.compareTo(x);
     }
   }
+  int floorLog=approxLog10;
+  BigInteger floorPow=approxPow;
+  int floorCmp=approxCmp;
 switch (mode) {
 case UNNECESSARY:
-    checkRoundingUnnecessary(floorPow.equals(x));
+    checkRoundingUnnecessary(floorCmp == 0);
 case FLOOR:
 case DOWN:
   return floorLog;
