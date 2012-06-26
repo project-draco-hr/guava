@@ -1,0 +1,12 @@
+{
+  try {
+    new TypeResolver().where(new TypeCapture<List<? extends T>>(){
+    }
+.capture(),new TypeCapture<List<? super String>>(){
+    }
+.capture());
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}

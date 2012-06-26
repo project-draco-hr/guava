@@ -1,0 +1,5 @@
+{
+  TypeResolver resolver=new TypeResolver();
+  Type t=aTypeVariable();
+  assertEquals(t,resolver.where(t,t).resolveType(t));
+}

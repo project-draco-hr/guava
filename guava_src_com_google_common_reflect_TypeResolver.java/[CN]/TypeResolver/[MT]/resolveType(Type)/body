@@ -10,7 +10,7 @@
   }
  else   if (type instanceof WildcardType) {
     WildcardType wildcardType=(WildcardType)type;
-    return new Types.WildcardTypeImpl(resolve(wildcardType.getLowerBounds()),resolve(wildcardType.getUpperBounds()));
+    return new Types.WildcardTypeImpl(resolveTypes(wildcardType.getLowerBounds()),resolveTypes(wildcardType.getUpperBounds()));
   }
  else {
     return type;

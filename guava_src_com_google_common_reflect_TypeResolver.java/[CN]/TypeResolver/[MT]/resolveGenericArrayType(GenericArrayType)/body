@@ -1,4 +1,4 @@
 {
-  Type componentType=resolve(type.getGenericComponentType());
+  Type componentType=resolveType(type.getGenericComponentType());
   return Types.newArrayType(componentType);
 }

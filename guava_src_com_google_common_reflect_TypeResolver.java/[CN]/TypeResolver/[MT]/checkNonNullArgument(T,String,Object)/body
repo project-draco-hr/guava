@@ -1,0 +1,4 @@
+{
+  checkArgument(arg != null,format,messageParams);
+  return arg;
+}

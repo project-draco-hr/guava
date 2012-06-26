@@ -1,0 +1,8 @@
+{
+  Type t=new TypeCapture<T>(){
+  }
+.capture();
+  assertEquals(int.class,new TypeResolver().where(new TypeCapture<T[]>(){
+  }
+.capture(),int[].class).resolveType(t));
+}

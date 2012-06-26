@@ -1,0 +1,10 @@
+{
+  try {
+    new TypeResolver().where(new TypeCapture<List<String>>(){
+    }
+.capture(),aTypeVariable());
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}

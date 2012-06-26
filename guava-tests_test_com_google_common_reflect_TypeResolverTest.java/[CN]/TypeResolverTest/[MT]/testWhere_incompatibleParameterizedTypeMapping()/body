@@ -1,0 +1,10 @@
+{
+  try {
+    new TypeResolver().where(new TypeCapture<Iterable<T>>(){
+    }
+.capture(),List.class);
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}

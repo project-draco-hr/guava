@@ -1,0 +1,10 @@
+{
+  Type t=aTypeVariable();
+  TypeResolver resolver=new TypeResolver().where(t,String.class);
+  try {
+    resolver.where(t,String.class);
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}

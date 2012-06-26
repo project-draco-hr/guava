@@ -1,0 +1,15 @@
+{
+  Type t=new TypeCapture<T>(){
+  }
+.capture();
+  assertEquals(String.class,new TypeResolver().where(new TypeCapture<List<? extends T>>(){
+  }
+.capture(),new TypeCapture<List<? extends String>>(){
+  }
+.capture()).resolveType(t));
+  assertEquals(String.class,new TypeResolver().where(new TypeCapture<List<? super T>>(){
+  }
+.capture(),new TypeCapture<List<? super String>>(){
+  }
+.capture()).resolveType(t));
+}

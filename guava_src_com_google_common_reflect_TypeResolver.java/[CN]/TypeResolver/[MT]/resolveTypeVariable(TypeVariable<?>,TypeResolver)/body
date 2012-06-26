@@ -5,7 +5,7 @@
     if (bounds.length == 0) {
       return var;
     }
-    return Types.newTypeVariable(var.getGenericDeclaration(),var.getName(),guardedResolver.resolve(bounds));
+    return Types.newTypeVariable(var.getGenericDeclaration(),var.getName(),guardedResolver.resolveTypes(bounds));
   }
-  return guardedResolver.resolve(type);
+  return guardedResolver.resolveType(type);
 }

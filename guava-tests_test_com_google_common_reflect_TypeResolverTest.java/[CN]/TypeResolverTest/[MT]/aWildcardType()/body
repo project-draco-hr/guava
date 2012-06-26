@@ -1,0 +1,6 @@
+{
+  ParameterizedType parameterizedType=(ParameterizedType)new TypeCapture<List<? extends T>>(){
+  }
+.capture();
+  return parameterizedType.getActualTypeArguments()[0];
+}

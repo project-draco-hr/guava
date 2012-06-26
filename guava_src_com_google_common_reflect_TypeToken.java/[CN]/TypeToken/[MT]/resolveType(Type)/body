@@ -4,5 +4,5 @@
   if (resolver == null) {
     resolver=(typeResolver=TypeResolver.accordingTo(runtimeType));
   }
-  return of(resolver.resolve(type));
+  return of(resolver.resolveType(type));
 }

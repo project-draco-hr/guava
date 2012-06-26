@@ -1,0 +1,4 @@
+{
+  TypeResolver resolver=new TypeResolver();
+  assertEquals(String.class,resolver.where(String.class,String.class).resolveType(String.class));
+}

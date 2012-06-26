@@ -1,0 +1,7 @@
+{
+  TypeResolver resolver=new TypeResolver();
+  Type t=new TypeCapture<T[]>(){
+  }
+.capture();
+  assertEquals(t,resolver.where(t,t).resolveType(t));
+}
