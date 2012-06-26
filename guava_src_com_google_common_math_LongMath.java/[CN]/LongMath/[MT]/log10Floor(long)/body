@@ -1,8 +1,5 @@
 {
-  for (int i=1; i < POWERS_OF_10.length; i++) {
-    if (x < POWERS_OF_10[i]) {
-      return i - 1;
-    }
-  }
-  return POWERS_OF_10.length - 1;
+  int y=MAX_LOG10_FOR_LEADING_ZEROS[Long.numberOfLeadingZeros(x)];
+  long sgn=(x - POWERS_OF_10[y]) >>> (Long.SIZE - 1);
+  return y - (int)sgn;
 }
