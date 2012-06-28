@@ -1,0 +1,10 @@
+{
+  InputSupplier<ByteArrayInputStream> asciiBytes=ByteStreams.newInputStreamSupplier(ASCII.getBytes(Charsets.US_ASCII));
+  InputSupplier<ByteArrayInputStream> i18nBytes=ByteStreams.newInputStreamSupplier(I18N.getBytes(Charsets.UTF_8));
+  String init="d41d8cd98f00b204e9800998ecf8427e";
+  assertEquals(init,Hashing.md5().newHasher().hash().toString());
+  String asciiHash="e5df5a39f2b8cb71b24e1d8038f93131";
+  assertEquals(asciiHash,ByteStreams.hash(asciiBytes,Hashing.md5()).toString());
+  String i18nHash="7fa826962ce2079c8334cd4ebf33aea4";
+  assertEquals(i18nHash,ByteStreams.hash(i18nBytes,Hashing.md5()).toString());
+}
