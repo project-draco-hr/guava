@@ -1,0 +1,5 @@
+{
+  map.put(TEST_KEY,TEST_VALUE);
+  cache.put(TEST_KEY,TEST_VALUE);
+  cacheNoStats.put(TEST_KEY,TEST_VALUE);
+}

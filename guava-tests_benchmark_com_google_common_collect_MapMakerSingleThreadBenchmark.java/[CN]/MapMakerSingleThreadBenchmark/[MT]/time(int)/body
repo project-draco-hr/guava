@@ -1,0 +1,8 @@
+{
+  int dummy=0;
+  for (int i=0; i < reps; i++) {
+    dummy+=cache.get(nextRandomKey());
+  }
+  requests.addAndGet(reps);
+  return dummy;
+}

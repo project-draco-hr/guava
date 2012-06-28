@@ -1,0 +1,10 @@
+{
+  int tmp=0;
+  for (int i=0; i < reps; i++) {
+    int j=i & ARRAY_MASK;
+    if (impl.noAddOverflow(longsToAdd[j][0],longsToAdd[j][1])) {
+      tmp++;
+    }
+  }
+  return tmp;
+}

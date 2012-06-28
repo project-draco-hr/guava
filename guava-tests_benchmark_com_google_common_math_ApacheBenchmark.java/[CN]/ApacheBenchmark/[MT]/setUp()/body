@@ -1,0 +1,35 @@
+{
+  for (int i=0; i < ARRAY_SIZE; i++) {
+    factorials[i]=RANDOM_SOURCE.nextInt(200);
+    for (int j=0; j < 2; j++) {
+      nonnegInt[i][j]=randomNonNegativeBigInteger(Integer.SIZE - 2).intValue();
+      nonnegLong[i][j]=randomNonNegativeBigInteger(Long.SIZE - 2).longValue();
+    }
+    do {
+      for (int j=0; j < 2; j++) {
+        intsToAdd[i][j]=randomBigInteger(Integer.SIZE - 2).intValue();
+      }
+    }
+ while (!Impl.GUAVA.noAddOverflow(intsToAdd[i][0],intsToAdd[i][1]));
+    do {
+      for (int j=0; j < 2; j++) {
+        longsToAdd[i][j]=randomBigInteger(Long.SIZE - 2).longValue();
+      }
+    }
+ while (!Impl.GUAVA.noAddOverflow(longsToAdd[i][0],longsToAdd[i][1]));
+    do {
+      for (int j=0; j < 2; j++) {
+        intsToMul[i][j]=randomBigInteger(Integer.SIZE - 2).intValue();
+      }
+    }
+ while (!Impl.GUAVA.noMulOverflow(intsToMul[i][0],intsToMul[i][1]));
+    do {
+      for (int j=0; j < 2; j++) {
+        longsToMul[i][j]=randomBigInteger(Long.SIZE - 2).longValue();
+      }
+    }
+ while (!Impl.GUAVA.noMulOverflow(longsToMul[i][0],longsToMul[i][1]));
+    int k=binomials[i][1]=RANDOM_SOURCE.nextInt(MathBenchmarking.BIGGEST_BINOMIALS.length);
+    binomials[i][0]=RANDOM_SOURCE.nextInt(MathBenchmarking.BIGGEST_BINOMIALS[k] - k) + k;
+  }
+}

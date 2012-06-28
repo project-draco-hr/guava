@@ -1,0 +1,3 @@
+{
+  return Hashing.goodFastHash(64).hashBytes(data).asLong();
+}

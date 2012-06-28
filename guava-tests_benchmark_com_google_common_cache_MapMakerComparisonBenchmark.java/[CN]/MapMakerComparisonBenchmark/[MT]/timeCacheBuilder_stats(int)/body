@@ -1,0 +1,5 @@
+{
+  for (int i=0; i < rep; i++) {
+    cache.getIfPresent(TEST_KEY);
+  }
+}

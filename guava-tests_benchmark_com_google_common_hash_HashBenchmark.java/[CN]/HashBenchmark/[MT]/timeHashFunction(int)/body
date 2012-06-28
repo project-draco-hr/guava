@@ -1,0 +1,7 @@
+{
+  long dummy=0;
+  for (int i=0; i < reps; i++) {
+    dummy^=function.hash(testData);
+  }
+  return (int)dummy;
+}

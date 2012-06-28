@@ -1,0 +1,13 @@
+{
+  max=Ints.checkedCast((long)Math.pow(distinctKeys,concentration));
+  cache=new MapMaker().concurrencyLevel(segments).maximumSize(maximumSize).makeComputingMap(new Function<Integer,Integer>(){
+    @Override public Integer apply(    Integer from){
+      return (int)misses.incrementAndGet();
+    }
+  }
+);
+  while (cache.get(nextRandomKey()) < maximumSize) {
+  }
+  requests.set(0);
+  misses.set(0);
+}

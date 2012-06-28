@@ -1,0 +1,3 @@
+{
+  Runner.main(HashBenchmark.class,args);
+}

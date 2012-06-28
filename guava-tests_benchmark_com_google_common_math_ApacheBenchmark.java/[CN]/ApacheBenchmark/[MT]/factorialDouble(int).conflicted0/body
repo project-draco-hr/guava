@@ -1,0 +1,3 @@
+{
+  return DoubleMath.factorial(n);
+}

@@ -1,0 +1,9 @@
+{
+  try {
+    LongMath.checkedMultiply(a,b);
+    return true;
+  }
+ catch (  ArithmeticException e) {
+    return false;
+  }
+}
