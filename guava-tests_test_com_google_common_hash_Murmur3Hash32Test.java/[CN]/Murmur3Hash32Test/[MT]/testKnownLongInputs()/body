@@ -1,7 +1,7 @@
 {
-  assertEquals(1669671676,murmur3_32().hashLong(0L).asInt());
-  assertEquals(-846261623,murmur3_32().hashLong(-42L).asInt());
-  assertEquals(1871679806,murmur3_32().hashLong(42L).asInt());
-  assertEquals(1366273829,murmur3_32().hashLong(Long.MIN_VALUE).asInt());
-  assertEquals(-2106506049,murmur3_32().hashLong(Long.MAX_VALUE).asInt());
+  assertHash(1669671676,murmur3_32().hashLong(0L));
+  assertHash(-846261623,murmur3_32().hashLong(-42L));
+  assertHash(1871679806,murmur3_32().hashLong(42L));
+  assertHash(1366273829,murmur3_32().hashLong(Long.MIN_VALUE));
+  assertHash(-2106506049,murmur3_32().hashLong(Long.MAX_VALUE));
 }

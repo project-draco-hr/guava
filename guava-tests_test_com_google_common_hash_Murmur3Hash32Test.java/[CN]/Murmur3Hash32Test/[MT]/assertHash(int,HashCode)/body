@@ -1,0 +1,3 @@
+{
+  assertEquals(HashCodes.fromInt(expected),actual);
+}

@@ -1,0 +1,7 @@
+{
+  ByteBuffer bb=ByteBuffer.wrap(new byte[longs.length * 8]).order(ByteOrder.LITTLE_ENDIAN);
+  for (  long x : longs) {
+    bb.putLong(x);
+  }
+  return HashCodes.fromBytes(bb.array());
+}

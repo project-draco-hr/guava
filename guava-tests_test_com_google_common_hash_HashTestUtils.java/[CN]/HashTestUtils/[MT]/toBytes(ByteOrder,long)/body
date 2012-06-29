@@ -1,7 +1,0 @@
-{
-  ByteBuffer bb=ByteBuffer.wrap(new byte[longs.length * 8]).order(bo);
-  for (  long x : longs) {
-    bb.putLong(x);
-  }
-  return bb.array();
-}

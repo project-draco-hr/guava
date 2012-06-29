@@ -1,7 +1,6 @@
 {
   long k1=bb.getLong();
   long k2=bb.getLong();
-  len+=CHUNK_SIZE;
-  ;
   bmix64(k1,k2);
+  length+=CHUNK_SIZE;
 }
