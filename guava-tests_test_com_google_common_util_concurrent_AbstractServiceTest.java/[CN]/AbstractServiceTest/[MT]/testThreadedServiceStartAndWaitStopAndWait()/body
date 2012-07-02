@@ -1,7 +1,6 @@
 {
   ThreadedService service=new ThreadedService();
-  RecordingListener listener=new RecordingListener();
-  service.addListener(listener,MoreExecutors.sameThreadExecutor());
+  RecordingListener listener=RecordingListener.record(service);
   service.start().get();
   assertEquals(State.RUNNING,service.state());
   service.awaitRunChecks();

@@ -1,0 +1,7 @@
+{
+  ManualSwitchedService service=new ManualSwitchedService();
+  RecordingListener listener=RecordingListener.record(service);
+  service.start();
+  service.notifyFailed(EXCEPTION);
+  assertEquals(Arrays.asList(State.STARTING,State.FAILED),listener.getStateHistory());
+}

@@ -1,5 +1,6 @@
 {
   ManualSwitchedService service=new ManualSwitchedService();
+  RecordingListener listener=RecordingListener.record(service);
   service.start();
   assertEquals(State.STARTING,service.state());
   assertFalse(service.isRunning());
@@ -14,4 +15,5 @@
   service.notifyStopped();
   assertEquals(State.TERMINATED,service.state());
   assertFalse(service.isRunning());
+  assertEquals(Arrays.asList(State.STARTING,State.RUNNING,State.STOPPING,State.TERMINATED),listener.getStateHistory());
 }

@@ -2,10 +2,10 @@
   final StartThrowingService service=new StartThrowingService();
   service.start();
   assertEquals(State.FAILED,service.state());
-  service.addListener(new RecordingListener(),MoreExecutors.sameThreadExecutor());
+  service.addListener(new RecordingListener(service),MoreExecutors.sameThreadExecutor());
   Thread thread=new Thread(){
     @Override public void run(){
-      service.state();
+      service.start();
     }
   }
 ;

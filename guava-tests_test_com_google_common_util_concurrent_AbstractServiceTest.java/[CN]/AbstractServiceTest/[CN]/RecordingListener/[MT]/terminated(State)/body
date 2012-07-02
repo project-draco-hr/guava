@@ -1,4 +1,12 @@
 {
   assertEquals(from,Iterables.getLast(stateHistory,State.NEW));
   stateHistory.add(State.TERMINATED);
+  assertEquals(State.TERMINATED,service.state());
+  assertTrue(service.start().isDone());
+  if (from == State.NEW) {
+    assertEquals(State.TERMINATED,service.startAndWait());
+  }
+  assertTrue(service.stop().isDone());
+  assertEquals(State.TERMINATED,service.stopAndWait());
+  completionLatch.countDown();
 }

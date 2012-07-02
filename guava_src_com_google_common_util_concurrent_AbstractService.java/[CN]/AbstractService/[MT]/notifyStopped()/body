@@ -6,8 +6,9 @@
       notifyFailed(failure);
       throw failure;
     }
-    terminated(state);
-    shutdown.set(State.TERMINATED);
+    State previous=state;
+    state=State.TERMINATED;
+    terminated(previous);
   }
   finally {
     lock.unlock();

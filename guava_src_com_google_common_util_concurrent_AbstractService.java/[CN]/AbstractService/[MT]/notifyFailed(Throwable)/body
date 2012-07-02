@@ -2,22 +2,25 @@
   checkNotNull(cause);
   lock.lock();
   try {
-    if (state == State.STARTING) {
-      startup.setException(cause);
-      shutdown.setException(new Exception("Service failed to start.",cause));
-    }
- else     if (state == State.STOPPING) {
-      shutdown.setException(cause);
-    }
- else     if (state == State.RUNNING) {
-      shutdown.setException(new Exception("Service failed while running",cause));
-    }
- else     if (state == State.NEW || state == State.TERMINATED) {
+switch (state) {
+case NEW:
+case TERMINATED:
       throw new IllegalStateException("Failed while in state:" + state,cause);
-    }
-    failed(state,cause);
-  }
+case RUNNING:
+case STARTING:
+case STOPPING:
+    State previous=state;
+  failure=cause;
+state=State.FAILED;
+failed(previous,cause);
+break;
+case FAILED:
+break;
+default :
+throw new AssertionError("Unexpected state: " + state);
+}
+}
   finally {
-    lock.unlock();
-  }
+lock.unlock();
+}
 }

@@ -6,12 +6,13 @@
       notifyFailed(failure);
       throw failure;
     }
-    running();
     if (shutdownWhenStartupFinishes) {
-      stop();
+      state=State.STOPPING;
+      doStop();
     }
  else {
-      startup.set(State.RUNNING);
+      state=State.RUNNING;
+      running();
     }
   }
   finally {

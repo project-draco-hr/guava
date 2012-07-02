@@ -2,6 +2,7 @@
   lock.lock();
   try {
     if (state == State.NEW) {
+      state=State.STARTING;
       starting();
       doStart();
     }

@@ -1,5 +1,4 @@
 {
-  state=State.TERMINATED;
   for (  Listener listener : listeners) {
     listener.terminated(from);
   }

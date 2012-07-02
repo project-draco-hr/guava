@@ -1,4 +1,7 @@
 {
   assertEquals(State.STARTING,Iterables.getOnlyElement(stateHistory));
   stateHistory.add(State.RUNNING);
+  assertEquals(State.RUNNING,service.state());
+  assertTrue(service.start().isDone());
+  assertEquals(State.RUNNING,service.startAndWait());
 }

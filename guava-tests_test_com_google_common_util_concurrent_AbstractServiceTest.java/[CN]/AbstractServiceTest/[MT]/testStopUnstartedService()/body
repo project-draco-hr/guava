@@ -1,7 +1,6 @@
 {
   NoOpService service=new NoOpService();
-  RecordingListener listener=new RecordingListener();
-  service.addListener(listener,MoreExecutors.sameThreadExecutor());
+  RecordingListener listener=RecordingListener.record(service);
   Future<State> stopResult=service.stop();
   assertEquals(State.TERMINATED,service.state());
   assertEquals(State.TERMINATED,stopResult.get());

@@ -1,27 +1,33 @@
 {
   lock.lock();
   try {
-    if (state == State.NEW) {
+switch (state) {
+case NEW:
       state=State.TERMINATED;
-      terminated(State.NEW);
-      startup.set(State.TERMINATED);
-      shutdown.set(State.TERMINATED);
-    }
- else     if (state == State.STARTING) {
-      shutdownWhenStartupFinishes=true;
-      startup.set(State.STOPPING);
-    }
- else     if (state == State.RUNNING) {
-      state=State.STOPPING;
-      stopping(State.RUNNING);
-      doStop();
-    }
-  }
- catch (  Throwable shutdownFailure) {
-    notifyFailed(shutdownFailure);
-  }
+    terminated(State.NEW);
+  break;
+case STARTING:
+shutdownWhenStartupFinishes=true;
+stopping(State.STARTING);
+break;
+case RUNNING:
+state=State.STOPPING;
+stopping(State.RUNNING);
+doStop();
+break;
+case STOPPING:
+case TERMINATED:
+case FAILED:
+break;
+default :
+throw new AssertionError("Unexpected state: " + state);
+}
+}
+ catch (Throwable shutdownFailure) {
+notifyFailed(shutdownFailure);
+}
  finally {
-    lock.unlock();
-  }
-  return shutdown;
+lock.unlock();
+}
+return shutdown;
 }

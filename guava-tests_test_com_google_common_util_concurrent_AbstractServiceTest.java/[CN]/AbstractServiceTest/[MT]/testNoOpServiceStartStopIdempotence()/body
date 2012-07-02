@@ -1,7 +1,6 @@
 {
   NoOpService service=new NoOpService();
-  RecordingListener listener=new RecordingListener();
-  service.addListener(listener,MoreExecutors.sameThreadExecutor());
+  RecordingListener listener=RecordingListener.record(service);
   service.start();
   service.start();
   assertEquals(State.RUNNING,service.state());

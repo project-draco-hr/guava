@@ -1,0 +1,5 @@
+{
+  RecordingListener listener=new RecordingListener(service);
+  service.addListener(listener,MoreExecutors.sameThreadExecutor());
+  return listener;
+}
