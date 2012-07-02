@@ -1,3 +1,0 @@
-{
-  return firstNonNull(valueEquivalence,getValueStrength().defaultEquivalence());
-}
