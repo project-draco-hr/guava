@@ -1,13 +1,13 @@
 {
   lock.lock();
   try {
-    if (state != State.STOPPING && state != State.RUNNING) {
-      IllegalStateException failure=new IllegalStateException("Cannot notifyStopped() when the service is " + state);
+    if (snapshot.state != State.STOPPING && snapshot.state != State.RUNNING) {
+      IllegalStateException failure=new IllegalStateException("Cannot notifyStopped() when the service is " + snapshot.state);
       notifyFailed(failure);
       throw failure;
     }
-    State previous=state;
-    state=State.TERMINATED;
+    State previous=snapshot.state;
+    snapshot=new StateSnapshot(State.TERMINATED);
     terminated(previous);
   }
   finally {

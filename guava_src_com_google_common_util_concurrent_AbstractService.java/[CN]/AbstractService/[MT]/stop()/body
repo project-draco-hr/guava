@@ -1,17 +1,17 @@
 {
   lock.lock();
   try {
-switch (state) {
+switch (snapshot.state) {
 case NEW:
-      state=State.TERMINATED;
+      snapshot=new StateSnapshot(State.TERMINATED);
     terminated(State.NEW);
   break;
 case STARTING:
-shutdownWhenStartupFinishes=true;
+snapshot=new StateSnapshot(State.STARTING,true,null);
 stopping(State.STARTING);
 break;
 case RUNNING:
-state=State.STOPPING;
+snapshot=new StateSnapshot(State.STOPPING);
 stopping(State.RUNNING);
 doStop();
 break;
@@ -20,7 +20,7 @@ case TERMINATED:
 case FAILED:
 break;
 default :
-throw new AssertionError("Unexpected state: " + state);
+throw new AssertionError("Unexpected state: " + snapshot.state);
 }
 }
  catch (Throwable shutdownFailure) {

@@ -1,0 +1,8 @@
+{
+  if (shutdownWhenStartupFinishes && state == State.STARTING) {
+    return State.STOPPING;
+  }
+ else {
+    return state;
+  }
+}

@@ -1,17 +1,17 @@
 {
   lock.lock();
   try {
-    if (state != State.STARTING) {
-      IllegalStateException failure=new IllegalStateException("Cannot notifyStarted() when the service is " + state);
+    if (snapshot.state != State.STARTING) {
+      IllegalStateException failure=new IllegalStateException("Cannot notifyStarted() when the service is " + snapshot.state);
       notifyFailed(failure);
       throw failure;
     }
-    if (shutdownWhenStartupFinishes) {
-      state=State.STOPPING;
+    if (snapshot.shutdownWhenStartupFinishes) {
+      snapshot=new StateSnapshot(State.STOPPING);
       doStop();
     }
  else {
-      state=State.RUNNING;
+      snapshot=new StateSnapshot(State.RUNNING);
       running();
     }
   }

@@ -1,8 +1,8 @@
 {
   lock.lock();
   try {
-    if (state == State.NEW) {
-      state=State.STARTING;
+    if (snapshot.state == State.NEW) {
+      snapshot=new StateSnapshot(State.STARTING);
       starting();
       doStart();
     }
