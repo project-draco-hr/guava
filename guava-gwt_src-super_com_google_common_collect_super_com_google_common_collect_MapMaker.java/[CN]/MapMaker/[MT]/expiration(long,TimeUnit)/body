@@ -1,3 +1,0 @@
-{
-  return expireAfterWrite(duration,unit);
-}
