@@ -5,5 +5,5 @@
     assertTrue(service.start().isDone());
     assertEquals(State.STOPPING,service.startAndWait());
   }
-  MoreAsserts.assertNotEqual(from,service.state());
+  assertNotSame(from,service.state());
 }

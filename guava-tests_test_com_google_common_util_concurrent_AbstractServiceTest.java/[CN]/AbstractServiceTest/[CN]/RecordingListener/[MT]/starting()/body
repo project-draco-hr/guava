@@ -1,5 +1,5 @@
 {
   assertTrue(stateHistory.isEmpty());
-  MoreAsserts.assertNotEqual(State.NEW,service.state());
+  assertNotSame(State.NEW,service.state());
   stateHistory.add(State.STARTING);
 }

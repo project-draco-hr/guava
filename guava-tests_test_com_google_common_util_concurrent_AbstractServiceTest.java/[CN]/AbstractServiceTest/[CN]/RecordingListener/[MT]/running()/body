@@ -3,5 +3,5 @@
   stateHistory.add(State.RUNNING);
   assertTrue(service.start().isDone());
   assertEquals(State.RUNNING,service.startAndWait());
-  MoreAsserts.assertNotEqual(State.STARTING,service.state());
+  assertNotSame(State.STARTING,service.state());
 }
