@@ -2,5 +2,24 @@
   assertEquals(from,Iterables.getLast(stateHistory));
   stateHistory.add(State.FAILED);
   assertEquals(State.FAILED,service.state());
+  if (from == State.STARTING) {
+    try {
+      service.startAndWait();
+    }
+ catch (    UncheckedExecutionException e) {
+      assertEquals(failure,e.getCause());
+    }
+  }
+  try {
+    service.stopAndWait();
+  }
+ catch (  UncheckedExecutionException e) {
+    if (from == State.STOPPING) {
+      assertEquals(failure,e.getCause());
+    }
+ else {
+      assertEquals(failure,e.getCause().getCause());
+    }
+  }
   completionLatch.countDown();
 }

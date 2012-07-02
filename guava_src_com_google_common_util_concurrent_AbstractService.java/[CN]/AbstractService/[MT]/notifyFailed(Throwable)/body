@@ -22,5 +22,6 @@ throw new AssertionError("Unexpected state: " + state);
 }
   finally {
 lock.unlock();
+executeListeners();
 }
 }

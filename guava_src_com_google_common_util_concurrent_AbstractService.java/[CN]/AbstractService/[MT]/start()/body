@@ -12,6 +12,7 @@
   }
  finally {
     lock.unlock();
+    executeListeners();
   }
   return startup;
 }

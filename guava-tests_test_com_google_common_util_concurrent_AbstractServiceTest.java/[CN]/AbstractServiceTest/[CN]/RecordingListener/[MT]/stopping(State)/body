@@ -1,9 +1,9 @@
 {
   assertEquals(from,Iterables.getLast(stateHistory));
   stateHistory.add(State.STOPPING);
-  assertEquals(State.STOPPING,service.state());
   if (from == State.STARTING) {
     assertTrue(service.start().isDone());
     assertEquals(State.STOPPING,service.startAndWait());
   }
+  MoreAsserts.assertNotEqual(from,service.state());
 }

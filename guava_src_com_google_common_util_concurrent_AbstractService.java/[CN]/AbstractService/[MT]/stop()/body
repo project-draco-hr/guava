@@ -28,6 +28,7 @@ notifyFailed(shutdownFailure);
 }
  finally {
 lock.unlock();
+executeListeners();
 }
 return shutdown;
 }
