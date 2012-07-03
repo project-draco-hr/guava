@@ -18,5 +18,5 @@
     table=buildTable(MAX_TABLE_SIZE,chars,true);
     reprobe=true;
   }
-  return new SmallCharMatcher(table,filter,containsZero,reprobe);
+  return new SmallCharMatcher(table,filter,containsZero,reprobe,description);
 }

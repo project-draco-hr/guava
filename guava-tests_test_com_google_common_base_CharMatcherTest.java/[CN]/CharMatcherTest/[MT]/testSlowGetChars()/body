@@ -10,5 +10,6 @@
     for (int j=0; j < matches.length; j++) {
       assertEquals(matches[j],mchars[j]);
     }
+    assertEquals(m.toString(),m.precomputed().toString());
   }
 }

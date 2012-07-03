@@ -17,5 +17,5 @@
       index=(index + 1) & mask;
     }
   }
-  return new MediumCharMatcher(table,filter,containsZero);
+  return new MediumCharMatcher(table,filter,containsZero,description);
 }

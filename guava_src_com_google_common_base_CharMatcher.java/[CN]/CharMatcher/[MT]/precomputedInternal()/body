@@ -8,10 +8,10 @@
     return is(chars[0]);
   }
  else   if (totalCharacters < SmallCharMatcher.MAX_SIZE) {
-    return SmallCharMatcher.from(chars);
+    return SmallCharMatcher.from(chars,toString());
   }
  else   if (totalCharacters < MediumCharMatcher.MAX_SIZE) {
-    return MediumCharMatcher.from(chars);
+    return MediumCharMatcher.from(chars,toString());
   }
   final LookupTable table=new LookupTable();
   setBits(table);
