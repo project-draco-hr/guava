@@ -1,6 +1,7 @@
 {
   for (  int x : ALL_INTEGER_CANDIDATES) {
-    boolean expected=x > 0 & (x & (x - 1)) == 0;
+    BigInteger bigX=BigInteger.valueOf(x);
+    boolean expected=(bigX.signum() > 0) && (bigX.bitCount() == 1);
     assertEquals(expected,IntMath.isPowerOfTwo(x));
   }
 }
