@@ -4,6 +4,10 @@
     long now=map.ticker.read();
     preWriteCleanup(now);
     int newCount=this.count + 1;
+    if (newCount > this.threshold) {
+      expand();
+      newCount=this.count + 1;
+    }
     AtomicReferenceArray<ReferenceEntry<K,V>> table=this.table;
     int index=hash & (table.length() - 1);
     ReferenceEntry<K,V> first=table.get(index);

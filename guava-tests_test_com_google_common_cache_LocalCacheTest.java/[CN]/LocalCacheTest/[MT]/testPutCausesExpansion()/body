@@ -1,0 +1,16 @@
+{
+  for (int count=1; count <= 100; count++) {
+    LocalCache<Object,Object> map=makeLocalCache(createCacheBuilder().concurrencyLevel(1).initialCapacity(1));
+    Segment<Object,Object> segment=map.segments[0];
+    assertEquals(1,segment.table.length());
+    for (int i=0; i < count; i++) {
+      Object key=new Object();
+      Object value=new Object();
+      segment.put(key,key.hashCode(),value,true);
+    }
+    assertEquals(count,segment.count);
+    assertTrue(count <= segment.threshold);
+    assertTrue(count <= (segment.table.length() * 3 / 4));
+    assertTrue(count > (segment.table.length() * 3 / 8));
+  }
+}
