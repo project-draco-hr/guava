@@ -1,3 +1,12 @@
 {
-  return copyFromCollection(Lists.newArrayList(elements));
+  if (!elements.hasNext()) {
+    return of();
+  }
+  E first=elements.next();
+  if (!elements.hasNext()) {
+    return of(first);
+  }
+ else {
+    return new ImmutableList.Builder<E>().add(first).addAll(elements).build();
+  }
 }
