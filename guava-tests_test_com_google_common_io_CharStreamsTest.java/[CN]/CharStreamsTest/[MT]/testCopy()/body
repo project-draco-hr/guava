@@ -1,0 +1,10 @@
+{
+  StringBuilder builder=new StringBuilder();
+  long copied=CharStreams.copy(new StringReader(ASCII),builder);
+  assertEquals(ASCII,builder.toString());
+  assertEquals(ASCII.length(),copied);
+  StringBuilder builder2=new StringBuilder();
+  copied=CharStreams.copy(new StringReader(I18N),builder2);
+  assertEquals(I18N,builder2.toString());
+  assertEquals(I18N.length(),copied);
+}

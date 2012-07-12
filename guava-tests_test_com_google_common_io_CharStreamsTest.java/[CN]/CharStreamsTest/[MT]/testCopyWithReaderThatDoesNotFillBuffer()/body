@@ -1,0 +1,7 @@
+{
+  String string=Strings.repeat("0123456789",100);
+  StringBuilder b=new StringBuilder();
+  long copied=CharStreams.copy(newNonBufferFillingReader(new StringReader(string)),b);
+  assertEquals(string,b.toString());
+  assertEquals(string.length(),copied);
+}

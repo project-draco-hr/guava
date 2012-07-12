@@ -1,0 +1,11 @@
+{
+  return new FilterReader(reader){
+    @Override public int read(    char[] cbuf,    int off,    int len) throws IOException {
+      if (len <= 0) {
+        fail("read called with a len of " + len);
+      }
+      return in.read(cbuf,off,Math.max(len - 1024,0));
+    }
+  }
+;
+}
