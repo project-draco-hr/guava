@@ -1,0 +1,7 @@
+{
+  SortedSet<String> strings=ImmutableSortedSet.of();
+  SortedMap<String,Integer> map=Maps.asMap(strings,LENGTH_FUNCTION);
+  ASSERT.that(map.entrySet()).isEmpty();
+  assertTrue(map.isEmpty());
+  assertNull(map.get("five"));
+}

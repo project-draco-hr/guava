@@ -1,3 +1,8 @@
 {
-  return new AsMapView<K,V>(set,function);
+  if (set instanceof SortedSet) {
+    return asMap((SortedSet<K>)set,function);
+  }
+ else {
+    return new AsMapView<K,V>(set,function);
+  }
 }
