@@ -1,5 +1,5 @@
 {
-  if (size > hashTable.length && hashTable.length < MAX_VALUE_SET_TABLE_SIZE) {
+  if (size > threshold() && hashTable.length < MAX_VALUE_SET_TABLE_SIZE) {
     @SuppressWarnings("unchecked") ValueEntry<K,V>[] hashTable=new ValueEntry[this.hashTable.length * 2];
     this.hashTable=hashTable;
     int mask=hashTable.length - 1;
