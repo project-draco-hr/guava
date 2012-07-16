@@ -1,7 +1,7 @@
 {
   new IteratorTester<Integer>(6,UNMODIFIABLE,asList(1,2,3),IteratorTester.KnownOrder.KNOWN_ORDER){
     @Override protected Iterator<Integer> newTargetIterator(){
-      return Iterators.forArray(new Integer[]{0,1,2,3,4},1,3);
+      return Iterators.forArray(new Integer[]{0,1,2,3,4},1,3,0);
     }
   }
 .test();

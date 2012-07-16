@@ -1,5 +1,0 @@
-{
-  TreeMultiset<E> multiset=TreeMultiset.create(comparator);
-  Iterators.addAll(multiset,elements);
-  return multiset.entrySet();
-}

@@ -1,3 +1,0 @@
-{
-  return forArray(array,offset,length,0);
-}

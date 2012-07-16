@@ -1,0 +1,3 @@
+{
+  assertEquals(Ordering.natural(),SortedIterables.comparator(Sets.newTreeSet()));
+}

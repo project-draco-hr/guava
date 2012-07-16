@@ -1,8 +1,0 @@
-{
-  return Collections2.transform(set,new Function<E,Multiset.Entry<E>>(){
-    @Override public Entry<E> apply(    E elem){
-      return Multisets.immutableEntry(elem,1);
-    }
-  }
-);
-}

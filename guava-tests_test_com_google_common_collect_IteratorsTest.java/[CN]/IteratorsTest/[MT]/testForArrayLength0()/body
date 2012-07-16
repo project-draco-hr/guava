@@ -1,16 +1,16 @@
 {
   String[] array={"foo","bar"};
-  assertFalse(Iterators.forArray(array,0,0).hasNext());
-  assertFalse(Iterators.forArray(array,1,0).hasNext());
-  assertFalse(Iterators.forArray(array,2,0).hasNext());
+  assertFalse(Iterators.forArray(array,0,0,0).hasNext());
+  assertFalse(Iterators.forArray(array,1,0,0).hasNext());
+  assertFalse(Iterators.forArray(array,2,0,0).hasNext());
   try {
-    Iterators.forArray(array,-1,0);
+    Iterators.forArray(array,-1,0,0);
     fail();
   }
  catch (  IndexOutOfBoundsException expected) {
   }
   try {
-    Iterators.forArray(array,3,0);
+    Iterators.forArray(array,3,0,0);
     fail();
   }
  catch (  IndexOutOfBoundsException expected) {

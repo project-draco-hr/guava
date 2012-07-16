@@ -3,7 +3,7 @@
     return false;
   }
   try {
-    return binarySearch(o) >= 0;
+    return unsafeBinarySearch(o) >= 0;
   }
  catch (  ClassCastException e) {
     return false;

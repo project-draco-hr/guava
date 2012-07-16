@@ -1,4 +1,0 @@
-{
-  List<Integer> list=Arrays.asList(3,9,8,4,5,2,2,8);
-  ASSERT.that(SortedIterables.sortedCounts(Ordering.natural(),list)).hasContentsInOrder(Multisets.immutableEntry(2,2),Multisets.immutableEntry(3,1),Multisets.immutableEntry(4,1),Multisets.immutableEntry(5,1),Multisets.immutableEntry(8,2),Multisets.immutableEntry(9,1));
-}
