@@ -1,0 +1,9 @@
+{
+  int size=random.nextInt(8) + 1;
+  char[] chars=new char[size];
+  for (int i=0; i < chars.length; i++) {
+    chars[i]=random.nextBoolean() ? randomLowSurrogate(random) : randomHighSurrogate(random);
+  }
+  String string=new String(chars);
+  assertEquals(hashFunction.hashString(string),hashFunction.newHasher().putString(string).hash());
+}

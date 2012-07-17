@@ -1,3 +1,6 @@
 {
-  return putString(charSequence,Charsets.UTF_16LE);
+  for (int i=0, len=charSequence.length(); i < len; i++) {
+    putChar(charSequence.charAt(i));
+  }
+  return this;
 }

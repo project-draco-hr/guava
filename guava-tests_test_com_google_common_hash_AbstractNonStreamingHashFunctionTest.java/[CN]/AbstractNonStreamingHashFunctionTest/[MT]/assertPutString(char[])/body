@@ -1,0 +1,10 @@
+{
+  Hasher h1=new NonStreamingVersion().newHasher();
+  Hasher h2=new NonStreamingVersion().newHasher();
+  String s=new String(chars);
+  for (int i=0; i < s.length(); i++) {
+    h1.putChar(s.charAt(i));
+  }
+  h2.putString(s);
+  assertEquals(h1.hash(),h2.hash());
+}

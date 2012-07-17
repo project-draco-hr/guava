@@ -5,5 +5,6 @@
     assertHashIntEquivalence(hashFunction,random);
     assertHashLongEquivalence(hashFunction,random);
     assertHashStringEquivalence(hashFunction,random);
+    assertHashStringWithSurrogatesEquivalence(hashFunction,random);
   }
 }

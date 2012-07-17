@@ -1,0 +1,3 @@
+{
+  assertPutString(new char[]{'p',HashTestUtils.randomLowSurrogate(new Random())});
+}
