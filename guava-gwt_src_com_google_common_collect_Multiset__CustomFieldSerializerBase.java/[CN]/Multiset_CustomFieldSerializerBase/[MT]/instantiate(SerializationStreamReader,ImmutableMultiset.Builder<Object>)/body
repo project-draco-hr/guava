@@ -1,9 +1,0 @@
-{
-  int distinctElements=reader.readInt();
-  for (int i=0; i < distinctElements; i++) {
-    Object element=reader.readObject();
-    int count=reader.readInt();
-    builder.addCopies(element,count);
-  }
-  return builder.build();
-}
