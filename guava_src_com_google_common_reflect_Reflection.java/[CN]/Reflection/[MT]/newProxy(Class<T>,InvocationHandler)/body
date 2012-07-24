@@ -1,8 +1,6 @@
 {
   checkNotNull(handler);
-  if (!interfaceType.isInterface()) {
-    throw new IllegalArgumentException(interfaceType + " is not an interface");
-  }
+  checkArgument(interfaceType.isInterface(),"%s is not an interface",interfaceType);
   Object object=Proxy.newProxyInstance(interfaceType.getClassLoader(),new Class<?>[]{interfaceType},handler);
   return interfaceType.cast(object);
 }
