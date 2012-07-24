@@ -1,4 +1,0 @@
-{
-  SerializableTester.reserializeAndAssert(Equivalences.equals());
-  SerializableTester.reserializeAndAssert(Equivalences.identity());
-}
