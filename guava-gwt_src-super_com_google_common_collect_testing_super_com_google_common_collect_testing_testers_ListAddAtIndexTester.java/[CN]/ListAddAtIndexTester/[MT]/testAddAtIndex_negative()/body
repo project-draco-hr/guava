@@ -1,0 +1,10 @@
+{
+  try {
+    getList().add(-1,samples.e3);
+    fail("add(-1, e) should throw");
+  }
+ catch (  IndexOutOfBoundsException expected) {
+  }
+  expectUnchanged();
+  expectMissing(samples.e3);
+}

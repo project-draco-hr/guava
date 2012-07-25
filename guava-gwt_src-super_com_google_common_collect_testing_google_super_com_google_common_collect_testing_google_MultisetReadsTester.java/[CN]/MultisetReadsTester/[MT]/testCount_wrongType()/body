@@ -1,0 +1,3 @@
+{
+  assertEquals("multiset.count(wrongType) didn't return 0",0,getMultiset().count(WrongType.VALUE));
+}

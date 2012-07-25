@@ -1,0 +1,8 @@
+{
+  try {
+    setCountNoCheckReturnValue(element,count);
+    fail("a call to multiset.setCount() to decrease an element's count " + "should throw");
+  }
+ catch (  UnsupportedOperationException expected) {
+  }
+}

@@ -1,0 +1,8 @@
+{
+  return new Comparator<Entry<K,V>>(){
+    @Override public int compare(    Entry<K,V> a,    Entry<K,V> b){
+      return keyComparator.compare(a.getKey(),b.getKey());
+    }
+  }
+;
+}

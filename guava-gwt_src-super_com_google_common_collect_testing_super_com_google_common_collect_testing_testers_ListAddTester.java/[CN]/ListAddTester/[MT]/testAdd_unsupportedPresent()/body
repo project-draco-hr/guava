@@ -1,0 +1,8 @@
+{
+  try {
+    getList().add(samples.e0);
+    fail("add(present) should throw");
+  }
+ catch (  UnsupportedOperationException expected) {
+  }
+}

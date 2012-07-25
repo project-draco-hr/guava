@@ -1,0 +1,5 @@
+{
+  List<E> containsNull=singletonList(null);
+  assertTrue("addAll(containsNull) should return true",collection.addAll(containsNull));
+  expectAdded((E)null);
+}

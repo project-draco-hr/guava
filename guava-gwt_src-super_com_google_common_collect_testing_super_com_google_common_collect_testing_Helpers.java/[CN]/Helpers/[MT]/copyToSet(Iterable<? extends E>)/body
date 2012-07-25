@@ -1,0 +1,5 @@
+{
+  Set<E> set=new LinkedHashSet<E>();
+  addAll(set,elements);
+  return set;
+}

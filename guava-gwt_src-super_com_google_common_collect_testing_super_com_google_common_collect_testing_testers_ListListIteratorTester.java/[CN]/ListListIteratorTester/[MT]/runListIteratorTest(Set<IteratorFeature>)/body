@@ -1,0 +1,15 @@
+{
+  new ListIteratorTester<E>(listListIteratorTesterNumIterations(),singleton(samples.e4),features,Helpers.copyToList(getSampleElements()),0){
+{
+      stopTestingWhenAddThrowsException();
+    }
+    @Override protected ListIterator<E> newTargetIterator(){
+      resetCollection();
+      return getList().listIterator();
+    }
+    @Override protected void verify(    List<E> elements){
+      expectContents(elements);
+    }
+  }
+.test();
+}

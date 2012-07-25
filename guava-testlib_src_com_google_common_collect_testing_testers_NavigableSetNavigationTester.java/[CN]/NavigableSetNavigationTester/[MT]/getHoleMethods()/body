@@ -1,3 +1,3 @@
 {
-  return new Method[]{Platform.getMethod(NavigableSetNavigationTester.class,"testLowerHole"),Platform.getMethod(NavigableSetNavigationTester.class,"testFloorHole"),Platform.getMethod(NavigableSetNavigationTester.class,"testCeilingHole"),Platform.getMethod(NavigableSetNavigationTester.class,"testHigherHole")};
+  return new Method[]{Helpers.getMethod(NavigableSetNavigationTester.class,"testLowerHole"),Helpers.getMethod(NavigableSetNavigationTester.class,"testFloorHole"),Helpers.getMethod(NavigableSetNavigationTester.class,"testCeilingHole"),Helpers.getMethod(NavigableSetNavigationTester.class,"testHigherHole")};
 }

@@ -1,0 +1,4 @@
+{
+  getMultiset().entrySet().clear();
+  assertTrue("multiset not empty after entrySet().clear()",getMultiset().isEmpty());
+}

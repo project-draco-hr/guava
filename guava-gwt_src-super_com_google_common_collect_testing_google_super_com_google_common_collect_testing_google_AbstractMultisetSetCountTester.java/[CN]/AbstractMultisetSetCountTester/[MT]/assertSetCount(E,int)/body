@@ -1,0 +1,9 @@
+{
+  setCountCheckReturnValue(element,count);
+  assertEquals("multiset.count() should return the value passed to setCount()",count,getMultiset().count(element));
+  int size=0;
+  for (  Multiset.Entry<E> entry : getMultiset().entrySet()) {
+    size+=entry.getCount();
+  }
+  assertEquals("multiset.size() should be the sum of the counts of all entries",size,getMultiset().size());
+}

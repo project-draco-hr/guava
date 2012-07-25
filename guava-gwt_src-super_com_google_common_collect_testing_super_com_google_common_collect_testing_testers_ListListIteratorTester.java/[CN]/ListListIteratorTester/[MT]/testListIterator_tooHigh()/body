@@ -1,0 +1,8 @@
+{
+  try {
+    getList().listIterator(getNumElements() + 1);
+    fail();
+  }
+ catch (  IndexOutOfBoundsException expected) {
+  }
+}

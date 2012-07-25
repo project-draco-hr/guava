@@ -1,0 +1,5 @@
+{
+  E[] array=createArrayWithNullElement();
+  collection=getSubjectGenerator().create(array);
+  expectContents(array);
+}

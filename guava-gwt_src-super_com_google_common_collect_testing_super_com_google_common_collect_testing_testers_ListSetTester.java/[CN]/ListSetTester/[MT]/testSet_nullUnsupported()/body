@@ -1,0 +1,9 @@
+{
+  try {
+    getList().set(aValidIndex(),null);
+    fail("set(null) should throw NullPointerException");
+  }
+ catch (  NullPointerException expected) {
+  }
+  expectUnchanged();
+}

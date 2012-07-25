@@ -1,3 +1,3 @@
 {
-  return new Method[]{Platform.getMethod(SetHashCodeTester.class,"testHashCode"),Platform.getMethod(SetHashCodeTester.class,"testHashCode_containingNull")};
+  return new Method[]{Helpers.getMethod(SetHashCodeTester.class,"testHashCode"),Helpers.getMethod(SetHashCodeTester.class,"testHashCode_containingNull")};
 }

@@ -1,0 +1,3 @@
+{
+  assertSetCount(samples.e3,3);
+}

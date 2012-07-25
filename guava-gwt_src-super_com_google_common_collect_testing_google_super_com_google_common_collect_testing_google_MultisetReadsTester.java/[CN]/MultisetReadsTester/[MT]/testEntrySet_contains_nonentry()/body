@@ -1,0 +1,3 @@
+{
+  assertFalse("multiset.entrySet() contains a non-entry",getMultiset().entrySet().contains(samples.e0));
+}

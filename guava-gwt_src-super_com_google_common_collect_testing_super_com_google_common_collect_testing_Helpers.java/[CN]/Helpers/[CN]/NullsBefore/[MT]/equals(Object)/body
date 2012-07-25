@@ -1,0 +1,7 @@
+{
+  if (obj instanceof NullsBefore) {
+    NullsBefore other=(NullsBefore)obj;
+    return justAfterNull.equals(other.justAfterNull);
+  }
+  return false;
+}

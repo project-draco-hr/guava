@@ -1,0 +1,7 @@
+{
+  try {
+    assertSetCount(null,0);
+  }
+ catch (  UnsupportedOperationException tolerated) {
+  }
+}

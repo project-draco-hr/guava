@@ -1,0 +1,8 @@
+{
+  try {
+    getMultiset().add(samples.e0,2);
+    fail("unsupported multiset.add(E, int) didn't throw exception");
+  }
+ catch (  UnsupportedOperationException required) {
+  }
+}

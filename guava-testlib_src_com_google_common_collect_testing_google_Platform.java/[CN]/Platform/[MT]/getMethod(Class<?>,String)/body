@@ -1,8 +1,0 @@
-{
-  try {
-    return clazz.getMethod(name);
-  }
- catch (  Exception e) {
-    throw new RuntimeException(e);
-  }
-}

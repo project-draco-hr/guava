@@ -1,0 +1,8 @@
+{
+  try {
+    getList().subList(0,getNumElements() + 1);
+    fail("subList(0, size + 1) should throw");
+  }
+ catch (  IndexOutOfBoundsException expected) {
+  }
+}

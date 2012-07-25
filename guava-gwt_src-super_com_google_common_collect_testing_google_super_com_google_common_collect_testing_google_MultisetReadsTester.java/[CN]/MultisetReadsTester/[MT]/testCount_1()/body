@@ -1,0 +1,3 @@
+{
+  assertEquals("multiset.count(present) didn't return 1",1,getMultiset().count(samples.e0));
+}

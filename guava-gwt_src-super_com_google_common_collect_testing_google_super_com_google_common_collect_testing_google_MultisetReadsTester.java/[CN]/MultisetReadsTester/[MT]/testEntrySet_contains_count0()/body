@@ -1,0 +1,3 @@
+{
+  assertFalse("multiset.entrySet() contains [missing, 0]",getMultiset().entrySet().contains(Multisets.immutableEntry(samples.e3,0)));
+}

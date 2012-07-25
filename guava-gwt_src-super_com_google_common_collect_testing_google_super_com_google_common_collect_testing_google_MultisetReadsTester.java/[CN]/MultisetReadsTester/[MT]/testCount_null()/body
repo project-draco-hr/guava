@@ -1,0 +1,3 @@
+{
+  assertEquals("multiset.count(null) didn't return 0",0,getMultiset().count(null));
+}

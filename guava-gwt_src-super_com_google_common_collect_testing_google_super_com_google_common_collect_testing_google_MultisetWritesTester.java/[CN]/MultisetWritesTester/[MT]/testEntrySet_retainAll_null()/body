@@ -1,0 +1,7 @@
+{
+  try {
+    getMultiset().entrySet().retainAll(null);
+  }
+ catch (  NullPointerException expected) {
+  }
+}

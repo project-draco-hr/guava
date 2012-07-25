@@ -1,0 +1,8 @@
+{
+  List<E> iteratorElements=new ArrayList<E>();
+  for (  E element : collection) {
+    iteratorElements.add(element);
+  }
+  List<E> expected=Helpers.copyToList(getOrderedElements());
+  assertEquals("Different ordered iteration",expected,iteratorElements);
+}

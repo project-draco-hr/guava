@@ -1,0 +1,4 @@
+{
+  assertTrue("addAll(nonePresent) should return true",collection.addAll(createDisjointCollection()));
+  expectAdded(samples.e3,samples.e4);
+}

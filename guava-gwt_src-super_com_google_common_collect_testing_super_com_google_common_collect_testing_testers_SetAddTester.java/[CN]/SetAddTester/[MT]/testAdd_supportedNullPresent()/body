@@ -1,0 +1,6 @@
+{
+  E[] array=createArrayWithNullElement();
+  collection=getSubjectGenerator().create(array);
+  assertFalse("add(nullPresent) should return false",getSet().add(null));
+  expectContents(array);
+}

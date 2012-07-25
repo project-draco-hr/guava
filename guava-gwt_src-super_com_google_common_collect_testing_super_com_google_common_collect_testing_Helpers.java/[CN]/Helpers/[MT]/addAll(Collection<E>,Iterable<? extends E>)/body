@@ -1,0 +1,7 @@
+{
+  boolean modified=false;
+  for (  E e : elementsToAdd) {
+    modified|=addTo.add(e);
+  }
+  return modified;
+}
