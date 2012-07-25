@@ -1,0 +1,5 @@
+{
+  long expectedMean=computeMeanSafely(x,y);
+  assertEquals(expectedMean,LongMath.mean(x,y));
+  assertEquals("The mean of x and y should equal the mean of y and x",expectedMean,LongMath.mean(y,x));
+}

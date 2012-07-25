@@ -1,0 +1,6 @@
+{
+  BigInteger bigX=BigInteger.valueOf(x);
+  BigInteger bigY=BigInteger.valueOf(y);
+  BigDecimal bigMean=new BigDecimal(bigX.add(bigY)).divide(BigDecimal.valueOf(2),BigDecimal.ROUND_FLOOR);
+  return Long.parseLong(bigMean.toString());
+}
