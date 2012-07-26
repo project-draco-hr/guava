@@ -1,0 +1,27 @@
+{
+  SortedMap<String,Integer> map=Maps.asMap(new NonNavigableSortedSet(),LENGTH_FUNCTION);
+  try {
+    map.subMap("a","z").keySet().add("a");
+    fail();
+  }
+ catch (  UnsupportedOperationException expected) {
+  }
+  try {
+    map.tailMap("a").keySet().add("a");
+    fail();
+  }
+ catch (  UnsupportedOperationException expected) {
+  }
+  try {
+    map.headMap("r").keySet().add("a");
+    fail();
+  }
+ catch (  UnsupportedOperationException expected) {
+  }
+  try {
+    map.headMap("r").tailMap("m").keySet().add("a");
+    fail();
+  }
+ catch (  UnsupportedOperationException expected) {
+  }
+}

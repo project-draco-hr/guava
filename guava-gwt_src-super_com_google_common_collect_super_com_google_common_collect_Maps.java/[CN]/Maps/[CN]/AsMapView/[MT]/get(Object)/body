@@ -1,5 +1,5 @@
 {
-  if (set.contains(key)) {
+  if (backingSet().contains(key)) {
     @SuppressWarnings("unchecked") K k=(K)key;
     return function.apply(k);
   }

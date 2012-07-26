@@ -1,0 +1,4 @@
+{
+  Set<String> set=Sets.newTreeSet();
+  assertTrue(Maps.asMap(set,Functions.identity()) instanceof NavigableMap);
+}

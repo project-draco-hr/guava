@@ -1,14 +1,3 @@
 {
-  return new ForwardingSet<K>(){
-    @Override protected Set<K> delegate(){
-      return set;
-    }
-    @Override public boolean add(    K element){
-      throw new UnsupportedOperationException();
-    }
-    @Override public boolean addAll(    Collection<? extends K> collection){
-      throw new UnsupportedOperationException();
-    }
-  }
-;
+  return removeOnlySet(backingSet());
 }

@@ -4,14 +4,13 @@
       return AsMapView.this;
     }
     @Override public Iterator<Entry<K,V>> iterator(){
-      final Iterator<K> backingIterator=set.iterator();
+      final Iterator<K> backingIterator=backingSet().iterator();
       return new Iterator<Entry<K,V>>(){
         @Override public boolean hasNext(){
           return backingIterator.hasNext();
         }
         @Override public Entry<K,V> next(){
-          K k=backingIterator.next();
-          return Maps.immutableEntry(k,function.apply(k));
+          return entry(backingIterator.next());
         }
         @Override public void remove(){
           backingIterator.remove();

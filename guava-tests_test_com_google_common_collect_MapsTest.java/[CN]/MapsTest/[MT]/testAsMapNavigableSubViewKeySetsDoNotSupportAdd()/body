@@ -1,0 +1,33 @@
+{
+  NavigableMap<String,Integer> map=Maps.asMap(Sets.<String>newTreeSet(),LENGTH_FUNCTION);
+  try {
+    map.descendingKeySet().add("a");
+    fail();
+  }
+ catch (  UnsupportedOperationException expected) {
+  }
+  try {
+    map.subMap("a",true,"z",false).keySet().add("a");
+    fail();
+  }
+ catch (  UnsupportedOperationException expected) {
+  }
+  try {
+    map.tailMap("a",true).keySet().add("a");
+    fail();
+  }
+ catch (  UnsupportedOperationException expected) {
+  }
+  try {
+    map.headMap("r",true).keySet().add("a");
+    fail();
+  }
+ catch (  UnsupportedOperationException expected) {
+  }
+  try {
+    map.headMap("r",false).tailMap("m",true).keySet().add("a");
+    fail();
+  }
+ catch (  UnsupportedOperationException expected) {
+  }
+}

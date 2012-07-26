@@ -1,5 +1,5 @@
 {
-  SortedSet<String> strings=ImmutableSortedSet.of();
+  SortedSet<String> strings=new NonNavigableSortedSet();
   SortedMap<String,Integer> map=Maps.asMap(strings,LENGTH_FUNCTION);
   ASSERT.that(map.entrySet()).isEmpty();
   assertTrue(map.isEmpty());

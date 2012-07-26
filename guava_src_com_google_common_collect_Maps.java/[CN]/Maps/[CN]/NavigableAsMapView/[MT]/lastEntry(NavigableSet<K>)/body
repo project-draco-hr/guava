@@ -1,0 +1,6 @@
+{
+  if (set.isEmpty()) {
+    return null;
+  }
+  return entry(set.last());
+}

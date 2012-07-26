@@ -1,0 +1,7 @@
+{
+  if (!isEmpty()) {
+    K key=backingSet().pollFirst();
+    return entry(key);
+  }
+  return null;
+}
