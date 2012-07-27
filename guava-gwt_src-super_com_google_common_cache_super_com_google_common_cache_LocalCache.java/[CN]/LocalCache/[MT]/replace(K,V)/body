@@ -1,8 +1,0 @@
-{
-  V currentValue=get(key);
-  if (currentValue != null) {
-    alertListenerIfPresent(key,currentValue,RemovalCause.REPLACED);
-    return put(key,value);
-  }
-  return null;
-}

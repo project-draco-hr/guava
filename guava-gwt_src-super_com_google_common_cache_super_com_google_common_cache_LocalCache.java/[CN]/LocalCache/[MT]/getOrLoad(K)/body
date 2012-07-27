@@ -1,7 +1,0 @@
-{
-  V value=get(key);
-  if (value != null) {
-    return value;
-  }
-  return load(key);
-}

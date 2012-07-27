@@ -1,2 +1,0 @@
-K key
-Callable<? extends V> valueLoader

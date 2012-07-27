@@ -1,3 +1,0 @@
-{
-  return firstNonNull(keyStrength,Strength.STRONG);
-}

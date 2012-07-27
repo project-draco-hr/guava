@@ -1,3 +1,0 @@
-{
-  return firstNonNull(keyEquivalence,getKeyStrength().defaultEquivalence());
-}

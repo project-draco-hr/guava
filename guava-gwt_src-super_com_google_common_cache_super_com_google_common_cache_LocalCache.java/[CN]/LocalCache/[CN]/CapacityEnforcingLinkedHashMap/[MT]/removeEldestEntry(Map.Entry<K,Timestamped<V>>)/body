@@ -1,8 +1,0 @@
-{
-  boolean removal=(maximumSize == UNSET_INT) ? false : (size() > maximumSize);
-  if ((removalListener != null) && removal) {
-    removalListener.onRemoval(new RemovalNotification(ignored.getKey(),ignored.getValue().getValue(),RemovalCause.SIZE));
-  }
-  statsCounter.recordEviction();
-  return removal;
-}

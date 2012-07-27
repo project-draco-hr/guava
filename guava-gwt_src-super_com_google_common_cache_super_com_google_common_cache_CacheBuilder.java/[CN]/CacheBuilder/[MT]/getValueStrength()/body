@@ -1,3 +1,0 @@
-{
-  return firstNonNull(valueStrength,Strength.STRONG);
-}

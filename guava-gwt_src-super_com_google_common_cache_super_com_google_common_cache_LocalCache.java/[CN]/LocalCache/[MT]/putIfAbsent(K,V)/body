@@ -1,7 +1,0 @@
-{
-  V currentValue=get(key);
-  if (currentValue != null) {
-    return currentValue;
-  }
-  return put(key,value);
-}

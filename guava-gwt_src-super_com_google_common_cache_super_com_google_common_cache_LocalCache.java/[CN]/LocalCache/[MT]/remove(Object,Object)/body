@@ -1,8 +1,0 @@
-{
-  if (value.equals(get(key))) {
-    alertListenerIfPresent(key,value,RemovalCause.EXPLICIT);
-    remove(key);
-    return true;
-  }
-  return false;
-}

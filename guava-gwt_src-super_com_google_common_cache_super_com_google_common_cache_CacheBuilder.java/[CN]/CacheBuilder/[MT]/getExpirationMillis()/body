@@ -1,0 +1,3 @@
+{
+  return (expirationMillis == UNSET_INT) ? DEFAULT_EXPIRATION_NANOS : expirationMillis;
+}

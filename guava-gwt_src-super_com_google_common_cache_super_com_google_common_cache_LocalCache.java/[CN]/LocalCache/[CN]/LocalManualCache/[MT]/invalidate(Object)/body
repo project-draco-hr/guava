@@ -1,4 +1,0 @@
-{
-  key=checkNotNull(key);
-  localCache.remove(key);
-}

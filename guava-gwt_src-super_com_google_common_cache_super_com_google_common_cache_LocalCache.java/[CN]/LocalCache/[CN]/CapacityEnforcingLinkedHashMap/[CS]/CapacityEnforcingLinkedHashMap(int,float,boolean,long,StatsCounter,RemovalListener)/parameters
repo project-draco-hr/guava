@@ -1,6 +1,0 @@
-int initialCapacity
-float loadFactor
-boolean accessOrder
-long maximumSize
-StatsCounter statsCounter
-RemovalListener removalListener

@@ -1,4 +1,3 @@
 {
-  checkWeightWithWeigher();
-  return new LocalCache.LocalLoadingCache<K1,V1>(this,loader);
+  return new LocalLoadingCache<K1,V1>(this,loader);
 }

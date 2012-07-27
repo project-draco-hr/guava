@@ -1,6 +1,0 @@
-{
-  this.value=checkNotNull(value);
-  this.ticker=checkNotNull(ticker);
-  this.writeTimestamp=ticker.read();
-  this.accessTimestamp=this.writeTimestamp;
-}

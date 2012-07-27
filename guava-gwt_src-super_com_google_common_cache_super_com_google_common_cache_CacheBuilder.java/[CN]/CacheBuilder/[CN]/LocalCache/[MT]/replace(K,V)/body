@@ -1,0 +1,3 @@
+{
+  return containsKey(key) ? put(key,value) : null;
+}

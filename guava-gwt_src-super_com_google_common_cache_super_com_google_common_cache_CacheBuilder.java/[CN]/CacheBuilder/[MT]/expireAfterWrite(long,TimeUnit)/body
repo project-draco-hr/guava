@@ -1,6 +1,6 @@
 {
-  checkState(expireAfterWriteNanos == UNSET_INT,"expireAfterWrite was already set to %s ns",expireAfterWriteNanos);
+  checkState(expirationMillis == UNSET_INT,"expireAfterWrite was already set to %s ms",expirationMillis);
   checkArgument(duration >= 0,"duration cannot be negative: %s %s",duration,unit);
-  this.expireAfterWriteNanos=unit.toNanos(duration);
+  this.expirationMillis=unit.toMillis(duration);
   return this;
 }

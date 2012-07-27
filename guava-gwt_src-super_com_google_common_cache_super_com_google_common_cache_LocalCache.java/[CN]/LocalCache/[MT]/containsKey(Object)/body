@@ -1,3 +1,0 @@
-{
-  return cachingHashMap.containsKey(key) && !isExpired(cachingHashMap.get(key));
-}
