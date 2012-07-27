@@ -1,0 +1,14 @@
+{
+  V value=localCache.get(key);
+  if (value != null) {
+    return value;
+  }
+  try {
+    V newValue=valueLoader.call();
+    localCache.put(key,newValue);
+    return newValue;
+  }
+ catch (  Exception e) {
+    throw new ExecutionException(e);
+  }
+}

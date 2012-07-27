@@ -1,0 +1,8 @@
+{
+  if (oldValue.equals(get(key))) {
+    alertListenerIfPresent(key,oldValue,RemovalCause.REPLACED);
+    put(key,newValue);
+    return true;
+  }
+  return false;
+}

@@ -1,0 +1,10 @@
+{
+  key=checkNotNull(key);
+  value=checkNotNull(value);
+  Timestamped<V> oldValue=cachingHashMap.put(key,new Timestamped<V>(value,ticker));
+  if (oldValue == null) {
+    return null;
+  }
+  alertListenerIfPresent(key,oldValue.getValue(),RemovalCause.REPLACED);
+  return oldValue.getValue();
+}

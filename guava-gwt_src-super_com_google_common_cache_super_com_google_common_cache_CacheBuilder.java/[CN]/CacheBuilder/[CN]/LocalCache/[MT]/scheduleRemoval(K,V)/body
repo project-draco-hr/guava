@@ -1,9 +1,0 @@
-{
-  Timer timer=new Timer(){
-    @Override public void run(){
-      remove(key,value);
-    }
-  }
-;
-  timer.schedule((int)expirationMillis);
-}

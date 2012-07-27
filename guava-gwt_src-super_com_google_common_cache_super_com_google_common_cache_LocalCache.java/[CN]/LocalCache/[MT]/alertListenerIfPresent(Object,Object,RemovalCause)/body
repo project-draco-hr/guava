@@ -1,0 +1,5 @@
+{
+  if (removalListener != null) {
+    removalListener.onRemoval(new RemovalNotification(key,value,cause));
+  }
+}

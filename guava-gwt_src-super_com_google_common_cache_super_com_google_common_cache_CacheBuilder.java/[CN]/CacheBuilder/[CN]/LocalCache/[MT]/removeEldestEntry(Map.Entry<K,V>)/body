@@ -1,3 +1,0 @@
-{
-  return (maximumSize == -1) ? false : size() > maximumSize;
-}

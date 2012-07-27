@@ -1,6 +1,0 @@
-{
-  super(builder.getInitialCapacity(),0.75f,(builder.maximumSize != UNSET_INT));
-  this.loader=loader;
-  this.expirationMillis=builder.getExpirationMillis();
-  this.maximumSize=builder.maximumSize;
-}

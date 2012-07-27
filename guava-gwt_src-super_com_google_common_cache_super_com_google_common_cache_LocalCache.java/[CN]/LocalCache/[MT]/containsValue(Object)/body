@@ -1,0 +1,10 @@
+{
+  for (  Map.Entry<K,Timestamped<V>> entry : cachingHashMap.entrySet()) {
+    if (entry.getValue().equals(value)) {
+      if (value.equals(getIfPresent(entry.getKey()))) {
+        return true;
+      }
+    }
+  }
+  return false;
+}

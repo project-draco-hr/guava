@@ -1,0 +1,6 @@
+{
+  super(initialCapacity,loadFactor,accessOrder);
+  this.maximumSize=maximumSize;
+  this.statsCounter=statsCounter;
+  this.removalListener=removalListener;
+}

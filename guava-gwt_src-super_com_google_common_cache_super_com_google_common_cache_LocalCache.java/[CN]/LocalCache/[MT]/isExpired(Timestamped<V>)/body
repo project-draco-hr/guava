@@ -1,0 +1,14 @@
+{
+  if ((expireAfterAccess == UNSET_INT) && (expireAfterWrite == UNSET_INT)) {
+    return false;
+  }
+  boolean expireWrite=(stamped.getWriteTimestamp() + expireAfterWrite <= currentTimeNanos());
+  boolean expireAccess=(stamped.getAccessTimestamp() + expireAfterAccess <= currentTimeNanos());
+  if (expireAfterAccess == UNSET_INT) {
+    return expireWrite;
+  }
+  if (expireAfterWrite == UNSET_INT) {
+    return expireAccess;
+  }
+  return expireWrite || expireAccess;
+}

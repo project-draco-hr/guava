@@ -1,0 +1,16 @@
+{
+  key=checkNotNull(key);
+  Timestamped<V> value=cachingHashMap.get(key);
+  if (value == null) {
+    return null;
+  }
+ else   if (!isExpired(value)) {
+    value.updateTimestamp();
+    return value.getValue();
+  }
+ else {
+    alertListenerIfPresent(key,value.getValue(),RemovalCause.EXPIRED);
+    cachingHashMap.remove(key);
+    return null;
+  }
+}
