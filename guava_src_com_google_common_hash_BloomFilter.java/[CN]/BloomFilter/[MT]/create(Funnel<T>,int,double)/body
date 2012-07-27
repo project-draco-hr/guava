@@ -1,11 +1,11 @@
 {
   checkNotNull(funnel);
-  checkArgument(expectedInsertions >= 0,"Expected insertions cannot be negative");
-  checkArgument(falsePositiveProbability > 0.0 & falsePositiveProbability < 1.0,"False positive probability in (0.0, 1.0)");
+  checkArgument(expectedInsertions >= 0,"Expected insertions (%s) cannot be negative",expectedInsertions);
+  checkArgument(fpp > 0.0 & fpp < 1.0,"False positive probability (%s) must be in (0.0, 1.0)",fpp);
   if (expectedInsertions == 0) {
     expectedInsertions=1;
   }
-  int numBits=optimalNumOfBits(expectedInsertions,falsePositiveProbability);
+  int numBits=optimalNumOfBits(expectedInsertions,fpp);
   int numHashFunctions=optimalNumOfHashFunctions(expectedInsertions,numBits);
   return new BloomFilter<T>(new BitArray(numBits),numHashFunctions,funnel,BloomFilterStrategies.MURMUR128_MITZ_32);
 }
