@@ -1,0 +1,11 @@
+{
+  return new CharMatcher(description){
+    @Override public boolean matches(    char c){
+      return startInclusive <= c && c <= endInclusive;
+    }
+    @Override public CharMatcher precomputed(){
+      return this;
+    }
+  }
+;
+}

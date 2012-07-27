@@ -1,0 +1,19 @@
+{
+  char[] table=new char[modulus];
+  for (int c=allChars.nextSetBit(0); c != -1; c=allChars.nextSetBit(c + 1)) {
+    int index=c % modulus;
+    if (index < 0) {
+      index+=modulus;
+    }
+    if ((table[index] != 0) && !reprobe) {
+      return null;
+    }
+ else     if (reprobe) {
+      while (table[index] != 0) {
+        index=(index + 1) % modulus;
+      }
+    }
+    table[index]=(char)c;
+  }
+  return table;
+}

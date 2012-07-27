@@ -10,6 +10,10 @@
     @Override public CharMatcher or(    CharMatcher other){
       return other.matches(match) ? ANY : this;
     }
+    @GwtIncompatible("java.util.BitSet") @Override void setBits(    BitSet table,    boolean value){
+      table.set(0,match,value);
+      table.set(match + 1,Character.MAX_VALUE + 1,value);
+    }
     @Override public CharMatcher negate(){
       return is(match);
     }

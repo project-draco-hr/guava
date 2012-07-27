@@ -1,20 +1,19 @@
 {
-  final char[] chars=slowGetChars();
-  int totalCharacters=chars.length;
+  final BitSet table=new BitSet();
+  setBits(table,true);
+  int totalCharacters=table.cardinality();
   if (totalCharacters == 0) {
     return NONE;
   }
  else   if (totalCharacters == 1) {
-    return is(chars[0]);
+    return is((char)table.nextSetBit(0));
   }
  else   if (totalCharacters < SmallCharMatcher.MAX_SIZE) {
-    return SmallCharMatcher.from(chars,toString());
+    return SmallCharMatcher.from(table,toString());
   }
  else   if (totalCharacters < MediumCharMatcher.MAX_SIZE) {
-    return MediumCharMatcher.from(chars,toString());
+    return MediumCharMatcher.from(table,toString());
   }
-  final LookupTable table=new LookupTable();
-  setBits(table);
   final CharMatcher outer=this;
   return new CharMatcher(outer.toString()){
     @Override public boolean matches(    char c){

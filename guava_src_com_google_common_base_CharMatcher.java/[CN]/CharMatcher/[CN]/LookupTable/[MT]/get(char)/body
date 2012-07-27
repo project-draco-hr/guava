@@ -1,3 +1,0 @@
-{
-  return (data[index >> 5] & (1 << index)) != 0;
-}

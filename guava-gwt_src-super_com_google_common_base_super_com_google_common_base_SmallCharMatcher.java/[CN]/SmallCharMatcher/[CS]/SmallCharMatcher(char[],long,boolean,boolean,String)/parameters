@@ -1,0 +1,5 @@
+char[] table
+long filter
+boolean containsZero
+boolean reprobe
+String description

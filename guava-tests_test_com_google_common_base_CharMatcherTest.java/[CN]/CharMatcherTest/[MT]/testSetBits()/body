@@ -1,0 +1,17 @@
+{
+  doTestSetBits(CharMatcher.ANY);
+  doTestSetBits(CharMatcher.NONE);
+  doTestSetBits(is('a'));
+  doTestSetBits(isNot('a'));
+  doTestSetBits(anyOf(""));
+  doTestSetBits(anyOf("x"));
+  doTestSetBits(anyOf("xy"));
+  doTestSetBits(anyOf("CharMatcher"));
+  doTestSetBits(noneOf("CharMatcher"));
+  doTestSetBits(inRange('n','q'));
+  doTestSetBits(forPredicate(Predicates.equalTo('c')));
+  doTestSetBits(CharMatcher.ASCII);
+  doTestSetBits(CharMatcher.DIGIT);
+  doTestSetBits(CharMatcher.INVISIBLE);
+  doTestSetBits(inRange('A','Z').and(inRange('F','K').negate()));
+}

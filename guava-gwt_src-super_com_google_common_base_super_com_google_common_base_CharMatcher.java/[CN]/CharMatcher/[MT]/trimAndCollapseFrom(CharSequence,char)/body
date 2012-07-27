@@ -1,0 +1,22 @@
+{
+  int first=negate().indexIn(sequence);
+  if (first == -1) {
+    return "";
+  }
+  StringBuilder builder=new StringBuilder(sequence.length());
+  boolean inMatchingGroup=false;
+  for (int i=first; i < sequence.length(); i++) {
+    char c=sequence.charAt(i);
+    if (matches(c)) {
+      inMatchingGroup=true;
+    }
+ else {
+      if (inMatchingGroup) {
+        builder.append(replacement);
+        inMatchingGroup=false;
+      }
+      builder.append(c);
+    }
+  }
+  return builder.toString();
+}

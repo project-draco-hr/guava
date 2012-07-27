@@ -1,0 +1,7 @@
+{
+  BitSet tmp=new BitSet();
+  for (int i=0; i < chars.length; i++) {
+    tmp.set(chars[i]);
+  }
+  return tmp;
+}

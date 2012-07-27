@@ -16,8 +16,8 @@
     @Override public CharMatcher negate(){
       return isNot(match);
     }
-    @Override void setBits(    LookupTable table){
-      table.set(match);
+    @GwtIncompatible("java.util.BitSet") @Override void setBits(    BitSet table,    boolean value){
+      table.set(match,value);
     }
     @Override public CharMatcher precomputed(){
       return this;

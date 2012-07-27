@@ -11,9 +11,9 @@ return new CharMatcher(new StringBuilder("CharMatcher.anyOf(\"").append(sequence
 @Override public boolean matches(char c){
 return c == match1 || c == match2;
 }
-@Override void setBits(LookupTable table){
-table.set(match1);
-table.set(match2);
+@GwtIncompatible("java.util.BitSet") @Override void setBits(BitSet table,boolean value){
+table.set(match1,value);
+table.set(match2,value);
 }
 @Override public CharMatcher precomputed(){
 return this;
