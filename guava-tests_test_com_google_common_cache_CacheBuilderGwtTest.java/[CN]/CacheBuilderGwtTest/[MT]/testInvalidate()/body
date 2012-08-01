@@ -1,0 +1,10 @@
+{
+  Cache<Integer,Integer> cache=CacheBuilder.newBuilder().build();
+  cache.put(654,2675);
+  cache.put(2456,56);
+  cache.put(2,15);
+  cache.invalidate(654);
+  assertFalse(cache.asMap().containsKey(654));
+  assertTrue(cache.asMap().containsKey(2456));
+  assertTrue(cache.asMap().containsKey(2));
+}

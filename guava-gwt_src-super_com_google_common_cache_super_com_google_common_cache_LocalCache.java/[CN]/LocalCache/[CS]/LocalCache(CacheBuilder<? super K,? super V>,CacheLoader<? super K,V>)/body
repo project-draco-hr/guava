@@ -1,0 +1,10 @@
+{
+  this.loader=loader;
+  this.removalListener=builder.removalListener;
+  this.expireAfterAccess=builder.expireAfterAccessNanos;
+  this.expireAfterWrite=builder.expireAfterWriteNanos;
+  this.statsCounter=builder.getStatsCounterSupplier().get();
+  final long maximumSize=builder.maximumSize;
+  this.cachingHashMap=new CapacityEnforcingLinkedHashMap<K,V>(builder.getInitialCapacity(),0.75f,(builder.maximumSize != UNSET_INT),builder.maximumSize,statsCounter,removalListener);
+  this.ticker=firstNonNull(builder.ticker,Ticker.systemTicker());
+}

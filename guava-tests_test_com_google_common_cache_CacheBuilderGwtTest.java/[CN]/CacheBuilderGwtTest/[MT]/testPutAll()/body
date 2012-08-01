@@ -1,0 +1,12 @@
+{
+  Cache<Integer,Integer> cache=CacheBuilder.newBuilder().build();
+  cache.putAll(ImmutableMap.of(10,20,30,50,60,90));
+  assertEquals(Integer.valueOf(20),cache.getIfPresent(10));
+  assertEquals(Integer.valueOf(50),cache.getIfPresent(30));
+  assertEquals(Integer.valueOf(90),cache.getIfPresent(60));
+  cache.asMap().putAll(ImmutableMap.of(10,50,30,20,60,70,5,5));
+  assertEquals(Integer.valueOf(50),cache.getIfPresent(10));
+  assertEquals(Integer.valueOf(20),cache.getIfPresent(30));
+  assertEquals(Integer.valueOf(70),cache.getIfPresent(60));
+  assertEquals(Integer.valueOf(5),cache.getIfPresent(5));
+}

@@ -1,0 +1,11 @@
+{
+  final Cache<Integer,Integer> cache=CacheBuilder.newBuilder().expireAfterAccess(1000,TimeUnit.MILLISECONDS).ticker(fakeTicker).build();
+  cache.put(0,10);
+  cache.put(2,30);
+  fakeTicker.advance(999,TimeUnit.MILLISECONDS);
+  assertEquals(Integer.valueOf(30),cache.getIfPresent(2));
+  fakeTicker.advance(1,TimeUnit.MILLISECONDS);
+  assertEquals(Integer.valueOf(30),cache.getIfPresent(2));
+  fakeTicker.advance(1000,TimeUnit.MILLISECONDS);
+  assertEquals(null,cache.getIfPresent(0));
+}

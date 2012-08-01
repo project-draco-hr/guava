@@ -1,0 +1,8 @@
+{
+  if (removalListener != null) {
+    for (    Map.Entry<K,Timestamped<V>> entry : cachingHashMap.entrySet()) {
+      alertListenerIfPresent(entry.getKey(),entry.getValue().getValue(),RemovalCause.EXPLICIT);
+    }
+  }
+  cachingHashMap.clear();
+}

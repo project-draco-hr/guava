@@ -1,0 +1,3 @@
+{
+  this.iterator=LocalCache.this.cachingHashMap.entrySet().iterator();
+}

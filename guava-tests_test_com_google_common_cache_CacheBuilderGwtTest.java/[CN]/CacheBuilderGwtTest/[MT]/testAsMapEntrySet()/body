@@ -1,0 +1,13 @@
+{
+  Cache<Integer,Integer> cache=CacheBuilder.newBuilder().expireAfterWrite(1000,TimeUnit.MILLISECONDS).ticker(fakeTicker).build();
+  cache.put(10,20);
+  fakeTicker.advance(500,TimeUnit.MILLISECONDS);
+  cache.put(20,22);
+  cache.put(5,10);
+  fakeTicker.advance(501,TimeUnit.MILLISECONDS);
+  int sum=0;
+  for (  Entry<Integer,Integer> current : cache.asMap().entrySet()) {
+    sum+=current.getKey() + current.getValue();
+  }
+  assertEquals(57,sum);
+}

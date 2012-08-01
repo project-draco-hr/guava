@@ -1,0 +1,30 @@
+{
+  Cache<Integer,Integer> cache=CacheBuilder.newBuilder().build();
+  ConcurrentMap<Integer,Integer> asMap=cache.asMap();
+  cache.put(10,100);
+  cache.put(2,52);
+  asMap.replace(2,79);
+  asMap.replace(3,60);
+  assertEquals(null,cache.getIfPresent(3));
+  assertEquals(null,asMap.get(3));
+  assertEquals(Integer.valueOf(79),cache.getIfPresent(2));
+  assertEquals(Integer.valueOf(79),asMap.get(2));
+  asMap.replace(10,100,50);
+  asMap.replace(2,52,99);
+  assertEquals(Integer.valueOf(50),cache.getIfPresent(10));
+  assertEquals(Integer.valueOf(50),asMap.get(10));
+  assertEquals(Integer.valueOf(79),cache.getIfPresent(2));
+  assertEquals(Integer.valueOf(79),asMap.get(2));
+  asMap.remove(10,100);
+  asMap.remove(2,79);
+  assertEquals(Integer.valueOf(50),cache.getIfPresent(10));
+  assertEquals(Integer.valueOf(50),asMap.get(10));
+  assertEquals(null,cache.getIfPresent(2));
+  assertEquals(null,asMap.get(2));
+  asMap.putIfAbsent(2,20);
+  asMap.putIfAbsent(10,20);
+  assertEquals(Integer.valueOf(20),cache.getIfPresent(2));
+  assertEquals(Integer.valueOf(20),asMap.get(2));
+  assertEquals(Integer.valueOf(50),cache.getIfPresent(10));
+  assertEquals(Integer.valueOf(50),asMap.get(10));
+}

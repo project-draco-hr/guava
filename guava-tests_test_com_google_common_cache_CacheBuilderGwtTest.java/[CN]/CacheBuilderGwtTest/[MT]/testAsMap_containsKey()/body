@@ -1,0 +1,11 @@
+{
+  Cache<Integer,Integer> cache=CacheBuilder.newBuilder().expireAfterWrite(20000,TimeUnit.MILLISECONDS).ticker(fakeTicker).build();
+  cache.put(654,2675);
+  fakeTicker.advance(10000,TimeUnit.MILLISECONDS);
+  cache.put(2456,56);
+  cache.put(2,15);
+  fakeTicker.advance(10001,TimeUnit.MILLISECONDS);
+  assertTrue(cache.asMap().containsKey(2));
+  assertTrue(cache.asMap().containsKey(2456));
+  assertFalse(cache.asMap().containsKey(654));
+}

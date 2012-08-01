@@ -1,0 +1,13 @@
+{
+  if (nextEntry == null) {
+    while (iterator.hasNext()) {
+      Entry<K,Timestamped<V>> next=iterator.next();
+      if (!isExpired(next.getValue())) {
+        nextEntry=next;
+        return true;
+      }
+    }
+    return false;
+  }
+  return true;
+}

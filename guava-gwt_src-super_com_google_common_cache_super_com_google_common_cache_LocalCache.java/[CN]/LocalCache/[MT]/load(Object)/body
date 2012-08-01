@@ -1,0 +1,27 @@
+{
+  long startTime=ticker.read();
+  V calculatedValue;
+  try {
+    K castKey=(K)key;
+    calculatedValue=loader.load(castKey);
+    put(castKey,calculatedValue);
+  }
+ catch (  RuntimeException e) {
+    statsCounter.recordLoadException(ticker.read() - startTime);
+    throw new UncheckedExecutionException(e);
+  }
+catch (  Exception e) {
+    statsCounter.recordLoadException(ticker.read() - startTime);
+    throw new ExecutionException(e);
+  }
+catch (  Error e) {
+    statsCounter.recordLoadException(ticker.read() - startTime);
+    throw new ExecutionError(e);
+  }
+  if (calculatedValue == null) {
+    String message=loader + " returned null for key " + key+ ".";
+    throw new CacheLoader.InvalidCacheLoadException(message);
+  }
+  statsCounter.recordLoadSuccess(ticker.read() - startTime);
+  return calculatedValue;
+}

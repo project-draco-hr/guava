@@ -1,0 +1,5 @@
+{
+  checkState(lastEntry != null);
+  LocalCache.this.remove(lastEntry.getKey(),lastEntry.getValue());
+  lastEntry=null;
+}

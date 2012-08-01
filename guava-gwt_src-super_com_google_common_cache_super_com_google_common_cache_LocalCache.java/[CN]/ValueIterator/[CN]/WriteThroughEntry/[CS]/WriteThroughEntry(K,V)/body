@@ -1,0 +1,4 @@
+{
+  this.key=checkNotNull(key);
+  this.value=checkNotNull(value);
+}

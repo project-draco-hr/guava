@@ -1,0 +1,7 @@
+{
+  Map<K,V> map=new HashMap<K,V>();
+  for (  K key : keys) {
+    map.put(key,localCache.getOrLoad(key));
+  }
+  return ImmutableMap.copyOf(map);
+}

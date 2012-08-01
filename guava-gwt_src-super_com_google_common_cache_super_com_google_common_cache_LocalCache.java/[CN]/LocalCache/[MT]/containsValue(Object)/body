@@ -1,0 +1,10 @@
+{
+  for (  Timestamped<V> val : cachingHashMap.values()) {
+    if (val.getValue().equals(value)) {
+      if (!isExpired(val)) {
+        return true;
+      }
+    }
+  }
+  return false;
+}

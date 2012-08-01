@@ -1,0 +1,19 @@
+{
+  final Cache<Integer,Integer> cache=CacheBuilder.newBuilder().build();
+  Callable<Integer> loader=new Callable<Integer>(){
+    private int i=0;
+    @Override public Integer call() throws Exception {
+      return ++i;
+    }
+  }
+;
+  cache.put(0,10);
+  assertEquals(Integer.valueOf(10),cache.get(0,loader));
+  assertEquals(Integer.valueOf(1),cache.get(20,loader));
+  assertEquals(Integer.valueOf(2),cache.get(34,loader));
+  cache.invalidate(0);
+  assertEquals(Integer.valueOf(3),cache.get(0,loader));
+  cache.put(0,10);
+  cache.invalidateAll();
+  assertEquals(Integer.valueOf(4),cache.get(0,loader));
+}

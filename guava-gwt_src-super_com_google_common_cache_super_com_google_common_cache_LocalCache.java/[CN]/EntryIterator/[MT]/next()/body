@@ -1,0 +1,11 @@
+{
+  if (nextEntry == null) {
+    hasNext();
+    if (nextEntry == null) {
+      throw new NoSuchElementException();
+    }
+  }
+  lastEntry=nextEntry;
+  nextEntry=null;
+  return new WriteThroughEntry(lastEntry.getKey(),lastEntry.getValue().getValue());
+}

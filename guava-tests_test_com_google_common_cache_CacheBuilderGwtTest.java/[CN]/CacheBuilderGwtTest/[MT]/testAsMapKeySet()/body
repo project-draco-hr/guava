@@ -1,0 +1,13 @@
+{
+  Cache<Integer,Integer> cache=CacheBuilder.newBuilder().expireAfterWrite(1000,TimeUnit.MILLISECONDS).ticker(fakeTicker).build();
+  cache.put(10,20);
+  fakeTicker.advance(500,TimeUnit.MILLISECONDS);
+  cache.put(20,22);
+  cache.put(5,10);
+  fakeTicker.advance(501,TimeUnit.MILLISECONDS);
+  Set<Integer> foundKeys=Sets.newHashSet();
+  for (  Integer current : cache.asMap().keySet()) {
+    foundKeys.add(current);
+  }
+  assertEquals(ImmutableSet.of(20,5),foundKeys);
+}

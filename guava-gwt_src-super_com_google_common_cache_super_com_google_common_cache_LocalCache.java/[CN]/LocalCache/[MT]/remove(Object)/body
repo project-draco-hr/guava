@@ -1,0 +1,12 @@
+{
+  Timestamped<V> stamped=cachingHashMap.remove(key);
+  if (stamped != null) {
+    V value=stamped.getValue();
+    if (!isExpired(stamped)) {
+      alertListenerIfPresent(key,value,RemovalCause.EXPLICIT);
+      return value;
+    }
+    alertListenerIfPresent(key,value,RemovalCause.EXPIRED);
+  }
+  return null;
+}

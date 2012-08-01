@@ -1,0 +1,20 @@
+{
+  CacheLoader<Integer,Integer> loader=new CacheLoader<Integer,Integer>(){
+    int i=0;
+    @Override public Integer load(    Integer key) throws Exception {
+      return i++;
+    }
+  }
+;
+  LoadingCache<Integer,Integer> cache=CacheBuilder.newBuilder().build(loader);
+  cache.put(10,20);
+  Map<Integer,Integer> map=cache.getAll(ImmutableList.of(10,20,30,54,443,1));
+  assertEquals(Integer.valueOf(20),map.get(10));
+  assertEquals(Integer.valueOf(0),map.get(20));
+  assertEquals(Integer.valueOf(1),map.get(30));
+  assertEquals(Integer.valueOf(2),map.get(54));
+  assertEquals(Integer.valueOf(3),map.get(443));
+  assertEquals(Integer.valueOf(4),map.get(1));
+  assertEquals(Integer.valueOf(5),cache.get(6));
+  assertEquals(Integer.valueOf(6),cache.apply(7));
+}

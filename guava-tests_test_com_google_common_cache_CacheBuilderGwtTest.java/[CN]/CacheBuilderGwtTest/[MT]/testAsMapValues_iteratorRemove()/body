@@ -1,0 +1,8 @@
+{
+  Cache<Integer,Integer> cache=CacheBuilder.newBuilder().expireAfterWrite(1000,TimeUnit.MILLISECONDS).ticker(fakeTicker).build();
+  cache.put(10,20);
+  Iterator<Integer> iterator=cache.asMap().values().iterator();
+  iterator.next();
+  iterator.remove();
+  assertEquals(0,cache.size());
+}

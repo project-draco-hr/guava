@@ -1,8 +1,0 @@
-{
-  V result=super.get(k);
-  if (result == null) {
-    @SuppressWarnings("unchecked") K key=(K)k;
-    result=compute(key);
-  }
-  return result;
-}
