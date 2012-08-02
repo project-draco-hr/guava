@@ -1,0 +1,9 @@
+{
+  WeakReference<Object> wr=new FinalizableWeakReference<Object>(new Integer(23),frq){
+    @Override public void finalizeReferent(){
+      finalized.release();
+    }
+  }
+;
+  return wr;
+}

@@ -1,4 +1,5 @@
 {
+  this.queue=queue;
   this.finalizableReferenceClassReference=new WeakReference<Class<?>>(finalizableReferenceClass);
-  this.frqReference=new PhantomReference<Object>(frq,queue);
+  this.frqReference=frqReference;
 }

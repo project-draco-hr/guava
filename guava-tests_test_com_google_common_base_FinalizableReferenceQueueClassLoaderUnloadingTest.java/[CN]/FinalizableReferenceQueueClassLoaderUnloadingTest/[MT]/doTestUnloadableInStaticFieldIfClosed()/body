@@ -1,0 +1,27 @@
+{
+  final URLClassLoader myLoader=(URLClassLoader)getClass().getClassLoader();
+  final URL[] urls=myLoader.getURLs();
+  URLClassLoader sepLoader=new URLClassLoader(urls,myLoader.getParent());
+  Class<?> frqC=FinalizableReferenceQueue.class;
+  Class<?> sepFrqC=sepLoader.loadClass(frqC.getName());
+  assertNotSame(frqC,sepFrqC);
+  Class<?> sepFrqSystemLoaderC=sepLoader.loadClass(FinalizableReferenceQueue.SystemLoader.class.getName());
+  Field disabled=sepFrqSystemLoaderC.getDeclaredField("disabled");
+  disabled.setAccessible(true);
+  disabled.set(null,true);
+  Class<?> frqUserC=FrqUser.class;
+  Class<?> sepFrqUserC=sepLoader.loadClass(frqUserC.getName());
+  assertNotSame(frqUserC,sepFrqUserC);
+  assertSame(sepLoader,sepFrqUserC.getClassLoader());
+  @SuppressWarnings("unchecked") Callable<WeakReference<Object>> sepFrqUser=(Callable<WeakReference<Object>>)sepFrqUserC.newInstance();
+  WeakReference<Object> finalizableWeakReference=sepFrqUser.call();
+  GcFinalization.awaitClear(finalizableWeakReference);
+  Field sepFrqUserFinalizedF=sepFrqUserC.getField("finalized");
+  Semaphore finalizeCount=(Semaphore)sepFrqUserFinalizedF.get(null);
+  boolean finalized=finalizeCount.tryAcquire(5,TimeUnit.SECONDS);
+  assertTrue(finalized);
+  Field sepFrqUserFrqF=sepFrqUserC.getField("frq");
+  Closeable frq=(Closeable)sepFrqUserFrqF.get(null);
+  frq.close();
+  return new WeakReference<ClassLoader>(sepLoader);
+}

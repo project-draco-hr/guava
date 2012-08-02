@@ -4,7 +4,7 @@
   URLClassLoader sepLoader=new URLClassLoader(urls,myLoader.getParent());
   Class<?> frqC=FinalizableReferenceQueue.class;
   Class<?> sepFrqC=sepLoader.loadClass(frqC.getName());
-  assertTrue(sepFrqC != frqC);
+  assertNotSame(frqC,sepFrqC);
   Class<?> sepFrqSystemLoaderC=sepLoader.loadClass(FinalizableReferenceQueue.SystemLoader.class.getName());
   Field disabled=sepFrqSystemLoaderC.getDeclaredField("disabled");
   disabled.setAccessible(true);

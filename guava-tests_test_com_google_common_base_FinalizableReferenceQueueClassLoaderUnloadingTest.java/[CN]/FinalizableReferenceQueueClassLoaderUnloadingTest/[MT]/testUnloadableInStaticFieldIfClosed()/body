@@ -1,0 +1,14 @@
+{
+  Policy oldPolicy=Policy.getPolicy();
+  SecurityManager oldSecurityManager=System.getSecurityManager();
+  try {
+    Policy.setPolicy(new PermissivePolicy());
+    System.setSecurityManager(new SecurityManager());
+    WeakReference<ClassLoader> loaderRef=doTestUnloadableInStaticFieldIfClosed();
+    GcFinalization.awaitClear(loaderRef);
+  }
+  finally {
+    System.setSecurityManager(oldSecurityManager);
+    Policy.setPolicy(oldPolicy);
+  }
+}

@@ -1,6 +1,6 @@
 {
   try {
-    return finalizer.getMethod("startFinalizer",Class.class,Object.class);
+    return finalizer.getMethod("startFinalizer",Class.class,ReferenceQueue.class,PhantomReference.class);
   }
  catch (  NoSuchMethodException e) {
     throw new AssertionError(e);
