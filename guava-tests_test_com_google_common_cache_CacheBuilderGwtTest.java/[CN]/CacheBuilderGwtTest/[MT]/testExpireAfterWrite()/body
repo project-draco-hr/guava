@@ -13,6 +13,6 @@
   assertEquals(null,cache.getIfPresent(4));
   cache.put(10,20);
   assertEquals(Integer.valueOf(20),cache.getIfPresent(10));
-  fakeTicker.advance(1001,TimeUnit.MILLISECONDS);
+  fakeTicker.advance(1000,TimeUnit.MILLISECONDS);
   assertEquals(null,cache.getIfPresent(10));
 }

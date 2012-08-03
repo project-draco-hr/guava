@@ -10,11 +10,11 @@
   assertEquals(Integer.valueOf(100),cache.getIfPresent(10));
   assertEquals(Integer.valueOf(200),cache.getIfPresent(20));
   assertEquals(null,cache.getIfPresent(4));
-  fakeTicker.advance(500,TimeUnit.MILLISECONDS);
+  fakeTicker.advance(499,TimeUnit.MILLISECONDS);
   assertEquals(null,cache.getIfPresent(10));
   assertEquals(null,cache.getIfPresent(20));
   cache.put(10,20);
   assertEquals(Integer.valueOf(20),cache.getIfPresent(10));
-  fakeTicker.advance(501,TimeUnit.MILLISECONDS);
+  fakeTicker.advance(500,TimeUnit.MILLISECONDS);
   assertEquals(null,cache.getIfPresent(10));
 }

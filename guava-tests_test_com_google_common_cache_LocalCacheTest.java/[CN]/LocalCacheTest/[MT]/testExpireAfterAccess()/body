@@ -1,6 +1,6 @@
 {
   FakeTicker ticker=new FakeTicker();
-  LocalCache<Object,Object> map=makeLocalCache(createCacheBuilder().concurrencyLevel(1).ticker(ticker).expireAfterAccess(1,TimeUnit.NANOSECONDS));
+  LocalCache<Object,Object> map=makeLocalCache(createCacheBuilder().concurrencyLevel(1).ticker(ticker).expireAfterAccess(2,TimeUnit.NANOSECONDS));
   Segment<Object,Object> segment=map.segments[0];
   Object key=new Object();
   Object value=new Object();

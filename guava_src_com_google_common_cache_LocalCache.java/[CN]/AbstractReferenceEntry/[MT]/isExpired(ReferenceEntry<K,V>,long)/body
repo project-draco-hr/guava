@@ -1,8 +1,8 @@
 {
-  if (expiresAfterAccess() && (now - entry.getAccessTime() > expireAfterAccessNanos)) {
+  if (expiresAfterAccess() && (now - entry.getAccessTime() >= expireAfterAccessNanos)) {
     return true;
   }
-  if (expiresAfterWrite() && (now - entry.getWriteTime() > expireAfterWriteNanos)) {
+  if (expiresAfterWrite() && (now - entry.getWriteTime() >= expireAfterWriteNanos)) {
     return true;
   }
   return false;
