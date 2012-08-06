@@ -1,5 +1,5 @@
 {
-  Range<Integer> range=Ranges.atMost(4);
+  Range<Integer> range=Range.atMost(4);
   assertTrue(range.contains(Integer.MIN_VALUE));
   assertTrue(range.contains(4));
   assertFalse(range.contains(5));

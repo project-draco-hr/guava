@@ -1,12 +1,12 @@
 {
-  assertEquals(Ranges.closedOpen(1,5),Ranges.closed(1,4).canonical(integers()));
-  assertEquals(Ranges.closedOpen(1,5),Ranges.open(0,5).canonical(integers()));
-  assertEquals(Ranges.closedOpen(1,5),Ranges.closedOpen(1,5).canonical(integers()));
-  assertEquals(Ranges.closedOpen(1,5),Ranges.openClosed(0,4).canonical(integers()));
-  assertEquals(Ranges.closedOpen(Integer.MIN_VALUE,0),Ranges.closedOpen(Integer.MIN_VALUE,0).canonical(integers()));
-  assertEquals(Ranges.closedOpen(Integer.MIN_VALUE,0),Ranges.lessThan(0).canonical(integers()));
-  assertEquals(Ranges.closedOpen(Integer.MIN_VALUE,1),Ranges.atMost(0).canonical(integers()));
-  assertEquals(Ranges.atLeast(0),Ranges.atLeast(0).canonical(integers()));
-  assertEquals(Ranges.atLeast(1),Ranges.greaterThan(0).canonical(integers()));
-  assertEquals(Ranges.atLeast(Integer.MIN_VALUE),Ranges.<Integer>all().canonical(integers()));
+  assertEquals(Range.closedOpen(1,5),Range.closed(1,4).canonical(integers()));
+  assertEquals(Range.closedOpen(1,5),Range.open(0,5).canonical(integers()));
+  assertEquals(Range.closedOpen(1,5),Range.closedOpen(1,5).canonical(integers()));
+  assertEquals(Range.closedOpen(1,5),Range.openClosed(0,4).canonical(integers()));
+  assertEquals(Range.closedOpen(Integer.MIN_VALUE,0),Range.closedOpen(Integer.MIN_VALUE,0).canonical(integers()));
+  assertEquals(Range.closedOpen(Integer.MIN_VALUE,0),Range.lessThan(0).canonical(integers()));
+  assertEquals(Range.closedOpen(Integer.MIN_VALUE,1),Range.atMost(0).canonical(integers()));
+  assertEquals(Range.atLeast(0),Range.atLeast(0).canonical(integers()));
+  assertEquals(Range.atLeast(1),Range.greaterThan(0).canonical(integers()));
+  assertEquals(Range.atLeast(Integer.MIN_VALUE),Range.<Integer>all().canonical(integers()));
 }

@@ -1,15 +1,15 @@
 {
-  Range<Integer> range=Ranges.closed(2,5);
+  Range<Integer> range=Range.closed(2,5);
   assertTrue(range.encloses(range));
-  assertTrue(range.encloses(Ranges.open(2,5)));
-  assertTrue(range.encloses(Ranges.openClosed(2,5)));
-  assertTrue(range.encloses(Ranges.closedOpen(2,5)));
-  assertTrue(range.encloses(Ranges.closed(3,5)));
-  assertTrue(range.encloses(Ranges.closed(2,4)));
-  assertFalse(range.encloses(Ranges.open(1,6)));
-  assertFalse(range.encloses(Ranges.greaterThan(3)));
-  assertFalse(range.encloses(Ranges.lessThan(3)));
-  assertFalse(range.encloses(Ranges.atLeast(3)));
-  assertFalse(range.encloses(Ranges.atMost(3)));
-  assertFalse(range.encloses(Ranges.<Integer>all()));
+  assertTrue(range.encloses(Range.open(2,5)));
+  assertTrue(range.encloses(Range.openClosed(2,5)));
+  assertTrue(range.encloses(Range.closedOpen(2,5)));
+  assertTrue(range.encloses(Range.closed(3,5)));
+  assertTrue(range.encloses(Range.closed(2,4)));
+  assertFalse(range.encloses(Range.open(1,6)));
+  assertFalse(range.encloses(Range.greaterThan(3)));
+  assertFalse(range.encloses(Range.lessThan(3)));
+  assertFalse(range.encloses(Range.atLeast(3)));
+  assertFalse(range.encloses(Range.atMost(3)));
+  assertFalse(range.encloses(Range.<Integer>all()));
 }

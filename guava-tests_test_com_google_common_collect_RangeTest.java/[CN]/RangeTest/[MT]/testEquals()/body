@@ -1,3 +1,3 @@
 {
-  new EqualsTester().addEqualityGroup(Ranges.open(1,5),Ranges.range(1,OPEN,5,OPEN)).addEqualityGroup(Ranges.greaterThan(2),Ranges.greaterThan(2)).addEqualityGroup(Ranges.all(),Ranges.all()).addEqualityGroup("Phil").testEquals();
+  new EqualsTester().addEqualityGroup(Range.open(1,5),Range.range(1,OPEN,5,OPEN)).addEqualityGroup(Range.greaterThan(2),Range.greaterThan(2)).addEqualityGroup(Range.all(),Range.all()).addEqualityGroup("Phil").testEquals();
 }

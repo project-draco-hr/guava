@@ -1,12 +1,12 @@
 {
   try {
-    Ranges.open(4,3);
+    Range.open(4,3);
     fail();
   }
  catch (  IllegalArgumentException expected) {
   }
   try {
-    Ranges.open(3,3);
+    Range.open(3,3);
     fail();
   }
  catch (  IllegalArgumentException expected) {

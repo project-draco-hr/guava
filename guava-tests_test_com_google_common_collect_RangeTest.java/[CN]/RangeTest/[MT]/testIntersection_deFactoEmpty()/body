@@ -1,20 +1,20 @@
 {
-  Range<Integer> range=Ranges.open(3,4);
+  Range<Integer> range=Range.open(3,4);
   assertEquals(range,range.intersection(range));
-  assertEquals(Ranges.openClosed(3,3),range.intersection(Ranges.atMost(3)));
-  assertEquals(Ranges.closedOpen(4,4),range.intersection(Ranges.atLeast(4)));
+  assertEquals(Range.openClosed(3,3),range.intersection(Range.atMost(3)));
+  assertEquals(Range.closedOpen(4,4),range.intersection(Range.atLeast(4)));
   try {
-    range.intersection(Ranges.lessThan(3));
+    range.intersection(Range.lessThan(3));
     fail();
   }
  catch (  IllegalArgumentException expected) {
   }
   try {
-    range.intersection(Ranges.greaterThan(4));
+    range.intersection(Range.greaterThan(4));
     fail();
   }
  catch (  IllegalArgumentException expected) {
   }
-  range=Ranges.closed(3,4);
-  assertEquals(Ranges.openClosed(4,4),range.intersection(Ranges.greaterThan(4)));
+  range=Range.closed(3,4);
+  assertEquals(Range.openClosed(4,4),range.intersection(Range.greaterThan(4)));
 }

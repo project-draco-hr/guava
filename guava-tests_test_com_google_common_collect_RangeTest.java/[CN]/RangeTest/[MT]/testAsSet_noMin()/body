@@ -1,5 +1,5 @@
 {
-  Range<Integer> range=Ranges.lessThan(0);
+  Range<Integer> range=Range.lessThan(0);
   try {
     range.asSet(UNBOUNDED_DOMAIN);
     fail();

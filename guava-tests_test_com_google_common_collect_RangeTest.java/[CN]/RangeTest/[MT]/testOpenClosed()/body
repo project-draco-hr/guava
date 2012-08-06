@@ -1,5 +1,5 @@
 {
-  Range<Integer> range=Ranges.openClosed(4,7);
+  Range<Integer> range=Range.openClosed(4,7);
   checkContains(range);
   assertTrue(range.hasLowerBound());
   assertEquals(4,(int)range.lowerEndpoint());

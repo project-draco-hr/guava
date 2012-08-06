@@ -1,3 +1,3 @@
 {
-  Range<LegacyComparable> range=Ranges.closed(LegacyComparable.X,LegacyComparable.Y);
+  Range<LegacyComparable> range=Range.closed(LegacyComparable.X,LegacyComparable.Y);
 }

@@ -1,0 +1,3 @@
+{
+  new EqualsTester().addEqualityGroup(Range.all()).addEqualityGroup(Range.atLeast(1),Range.downTo(1,CLOSED)).addEqualityGroup(Range.greaterThan(1),Range.downTo(1,OPEN)).addEqualityGroup(Range.atMost(7),Range.upTo(7,CLOSED)).addEqualityGroup(Range.lessThan(7),Range.upTo(7,OPEN)).addEqualityGroup(Range.open(1,7),Range.range(1,OPEN,7,OPEN)).addEqualityGroup(Range.openClosed(1,7),Range.range(1,OPEN,7,CLOSED)).addEqualityGroup(Range.closed(1,7),Range.range(1,CLOSED,7,CLOSED)).addEqualityGroup(Range.closedOpen(1,7),Range.range(1,CLOSED,7,OPEN)).testEquals();
+}

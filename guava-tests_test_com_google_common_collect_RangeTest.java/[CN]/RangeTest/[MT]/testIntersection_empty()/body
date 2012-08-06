@@ -1,14 +1,14 @@
 {
-  Range<Integer> range=Ranges.closedOpen(3,3);
+  Range<Integer> range=Range.closedOpen(3,3);
   assertEquals(range,range.intersection(range));
   try {
-    range.intersection(Ranges.open(3,5));
+    range.intersection(Range.open(3,5));
     fail();
   }
  catch (  IllegalArgumentException expected) {
   }
   try {
-    range.intersection(Ranges.closed(0,2));
+    range.intersection(Range.closed(0,2));
     fail();
   }
  catch (  IllegalArgumentException expected) {

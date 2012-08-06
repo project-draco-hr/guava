@@ -1,24 +1,24 @@
 {
-  Range<Integer> range=Ranges.closed(4,8);
+  Range<Integer> range=Range.closed(4,8);
   try {
-    range.intersection(Ranges.closed(0,2));
+    range.intersection(Range.closed(0,2));
     fail();
   }
  catch (  IllegalArgumentException expected) {
   }
-  assertEquals(Ranges.closedOpen(4,4),range.intersection(Ranges.closedOpen(2,4)));
-  assertEquals(Ranges.closed(4,6),range.intersection(Ranges.closed(2,6)));
-  assertEquals(Ranges.closed(4,6),range.intersection(Ranges.closed(4,6)));
-  assertEquals(Ranges.closed(5,7),range.intersection(Ranges.closed(5,7)));
-  assertEquals(Ranges.closed(6,8),range.intersection(Ranges.closed(6,8)));
+  assertEquals(Range.closedOpen(4,4),range.intersection(Range.closedOpen(2,4)));
+  assertEquals(Range.closed(4,6),range.intersection(Range.closed(2,6)));
+  assertEquals(Range.closed(4,6),range.intersection(Range.closed(4,6)));
+  assertEquals(Range.closed(5,7),range.intersection(Range.closed(5,7)));
+  assertEquals(Range.closed(6,8),range.intersection(Range.closed(6,8)));
   assertEquals(range,range.intersection(range));
-  assertEquals(range,range.intersection(Ranges.closed(4,10)));
-  assertEquals(range,range.intersection(Ranges.closed(2,8)));
-  assertEquals(range,range.intersection(Ranges.closed(2,10)));
-  assertEquals(Ranges.closed(6,8),range.intersection(Ranges.closed(6,10)));
-  assertEquals(Ranges.openClosed(8,8),range.intersection(Ranges.openClosed(8,10)));
+  assertEquals(range,range.intersection(Range.closed(4,10)));
+  assertEquals(range,range.intersection(Range.closed(2,8)));
+  assertEquals(range,range.intersection(Range.closed(2,10)));
+  assertEquals(Range.closed(6,8),range.intersection(Range.closed(6,10)));
+  assertEquals(Range.openClosed(8,8),range.intersection(Range.openClosed(8,10)));
   try {
-    range.intersection(Ranges.closed(10,12));
+    range.intersection(Range.closed(10,12));
     fail();
   }
  catch (  IllegalArgumentException expected) {

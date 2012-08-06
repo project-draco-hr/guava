@@ -1,0 +1,16 @@
+{
+  List<Integer> nullFirst=Lists.newArrayList(null,0);
+  try {
+    Range.encloseAll(nullFirst);
+    fail();
+  }
+ catch (  NullPointerException expected) {
+  }
+  List<Integer> nullNotFirst=Lists.newArrayList(0,null);
+  try {
+    Range.encloseAll(nullNotFirst);
+    fail();
+  }
+ catch (  NullPointerException expected) {
+  }
+}

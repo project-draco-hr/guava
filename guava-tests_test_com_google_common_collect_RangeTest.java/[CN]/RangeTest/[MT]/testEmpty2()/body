@@ -1,5 +1,5 @@
 {
-  Range<Integer> range=Ranges.openClosed(4,4);
+  Range<Integer> range=Range.openClosed(4,4);
   assertFalse(range.contains(3));
   assertFalse(range.contains(4));
   assertFalse(range.contains(5));
