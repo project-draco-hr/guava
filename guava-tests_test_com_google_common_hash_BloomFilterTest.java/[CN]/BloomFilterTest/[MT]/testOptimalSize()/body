@@ -8,5 +8,12 @@
   for (int repeats=0; repeats < 10000; repeats++) {
     assertTrue(BloomFilter.optimalNumOfBits(random.nextInt(1 << 16),random.nextDouble()) >= 0);
   }
-  assertEquals(Integer.MAX_VALUE,BloomFilter.optimalNumOfBits(Integer.MAX_VALUE,Double.MIN_VALUE));
+  assertEquals(3327428144502L,BloomFilter.optimalNumOfBits(Integer.MAX_VALUE,Double.MIN_VALUE));
+  try {
+    BloomFilter.create(HashTestUtils.BAD_FUNNEL,Integer.MAX_VALUE,Double.MIN_VALUE);
+    fail("we can't represent such a large BF!");
+  }
+ catch (  IllegalArgumentException expected) {
+    assertEquals("Could not create BloomFilter of 3327428144502 bits",expected.getMessage());
+  }
 }
