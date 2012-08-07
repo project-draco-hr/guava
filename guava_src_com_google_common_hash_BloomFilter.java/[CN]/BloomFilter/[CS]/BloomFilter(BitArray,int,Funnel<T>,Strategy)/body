@@ -1,10 +1,8 @@
 {
-  Preconditions.checkArgument(numHashFunctions > 0,"numHashFunctions zero or negative");
+  checkArgument(numHashFunctions > 0,"numHashFunctions (%s) must be > 0",numHashFunctions);
+  checkArgument(numHashFunctions <= 255,"numHashFunctions (%s) must be <= 255",numHashFunctions);
   this.bits=checkNotNull(bits);
   this.numHashFunctions=numHashFunctions;
   this.funnel=checkNotNull(funnel);
-  this.strategy=strategy;
-  if (numHashFunctions > 255) {
-    throw new AssertionError("Currently we don't allow BloomFilters that would use more than" + "255 hash functions, please contact the guava team");
-  }
+  this.strategy=checkNotNull(strategy);
 }

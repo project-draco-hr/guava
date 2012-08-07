@@ -1,7 +1,10 @@
 {
-  if (o instanceof BloomFilter) {
-    BloomFilter<?> that=(BloomFilter<?>)o;
-    return this.numHashFunctions == that.numHashFunctions && this.bits.equals(that.bits) && this.funnel == that.funnel && this.strategy == that.strategy;
+  if (object == this) {
+    return true;
+  }
+  if (object instanceof BloomFilter) {
+    BloomFilter<?> that=(BloomFilter<?>)object;
+    return this.numHashFunctions == that.numHashFunctions && this.funnel == that.funnel && this.strategy == that.strategy && this.bits.equals(that.bits);
   }
   return false;
 }

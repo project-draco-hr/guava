@@ -1,0 +1,10 @@
+{
+  try {
+    int n=1000;
+    double p=0.00000000000000000000000000000000000000000000000000000000000000000000000000000001;
+    BloomFilter.create(Funnels.stringFunnel(),n,p);
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}
