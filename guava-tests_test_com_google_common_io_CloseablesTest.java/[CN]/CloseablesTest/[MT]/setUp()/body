@@ -1,4 +1,3 @@
 {
   mockCloseable=createStrictMock(Closeable.class);
-  mockFlushable=createStrictMock(Flushable.class);
 }

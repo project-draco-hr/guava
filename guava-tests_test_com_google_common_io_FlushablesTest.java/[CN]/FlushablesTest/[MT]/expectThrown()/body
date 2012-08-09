@@ -1,0 +1,3 @@
+{
+  expectLastCall().andThrow(new IOException("This should only appear in the " + "logs. It should not be rethrown."));
+}

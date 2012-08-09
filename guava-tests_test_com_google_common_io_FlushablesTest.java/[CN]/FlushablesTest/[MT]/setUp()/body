@@ -1,0 +1,3 @@
+{
+  mockFlushable=createStrictMock(Flushable.class);
+}
