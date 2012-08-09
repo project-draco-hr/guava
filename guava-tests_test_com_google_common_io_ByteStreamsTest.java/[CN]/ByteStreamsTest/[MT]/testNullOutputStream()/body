@@ -1,0 +1,8 @@
+{
+  OutputStream nos=ByteStreams.nullOutputStream();
+  nos.write('n');
+  String test="Test string for NullOutputStream";
+  nos.write(test.getBytes());
+  nos.write(test.getBytes(),2,10);
+  assertSame(ByteStreams.nullOutputStream(),ByteStreams.nullOutputStream());
+}
