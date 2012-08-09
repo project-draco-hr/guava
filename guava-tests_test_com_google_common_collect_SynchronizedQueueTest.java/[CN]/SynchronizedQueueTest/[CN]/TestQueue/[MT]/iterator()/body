@@ -1,0 +1,4 @@
+{
+  assertFalse(Thread.holdsLock(mutex));
+  return delegate.iterator();
+}

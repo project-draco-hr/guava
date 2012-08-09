@@ -1,0 +1,6 @@
+{
+  TestQueue<String> inner=new TestQueue<String>();
+  Queue<String> outer=Synchronized.queue(inner,inner.mutex);
+  outer.add("foo");
+  return outer;
+}
