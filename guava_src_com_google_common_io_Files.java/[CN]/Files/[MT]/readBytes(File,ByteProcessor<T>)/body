@@ -1,3 +1,5 @@
 {
+  checkNotNull(file);
+  checkNotNull(processor);
   return ByteStreams.readBytes(newInputStreamSupplier(file),processor);
 }

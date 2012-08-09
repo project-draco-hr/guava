@@ -1,5 +1,6 @@
 {
-  Preconditions.checkArgument(file.length() <= Integer.MAX_VALUE);
+  checkNotNull(file);
+  checkArgument(file.length() <= Integer.MAX_VALUE);
   if (file.length() == 0) {
     return ByteStreams.toByteArray(newInputStreamSupplier(file));
   }

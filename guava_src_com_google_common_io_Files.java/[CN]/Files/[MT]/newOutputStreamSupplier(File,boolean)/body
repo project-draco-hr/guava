@@ -1,5 +1,5 @@
 {
-  Preconditions.checkNotNull(file);
+  checkNotNull(file);
   return new OutputSupplier<FileOutputStream>(){
     @Override public FileOutputStream getOutput() throws IOException {
       return new FileOutputStream(file,append);

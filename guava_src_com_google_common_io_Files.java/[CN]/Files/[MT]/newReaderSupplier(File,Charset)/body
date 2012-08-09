@@ -1,3 +1,5 @@
 {
+  checkNotNull(file);
+  checkNotNull(charset);
   return CharStreams.newReaderSupplier(newInputStreamSupplier(file),charset);
 }

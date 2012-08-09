@@ -1,3 +1,6 @@
 {
+  checkNotNull(from);
+  checkNotNull(to);
+  checkNotNull(charset);
   CharStreams.copy(from,newWriterSupplier(to,charset));
 }

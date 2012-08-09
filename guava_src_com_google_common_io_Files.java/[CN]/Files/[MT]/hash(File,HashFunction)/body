@@ -1,3 +1,5 @@
 {
+  checkNotNull(file);
+  checkNotNull(hashFunction);
   return ByteStreams.hash(newInputStreamSupplier(file),hashFunction);
 }

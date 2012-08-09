@@ -1,3 +1,5 @@
 {
+  checkNotNull(from);
+  checkNotNull(to);
   ByteStreams.write(from,newOutputStreamSupplier(to));
 }

@@ -1,4 +1,6 @@
 {
+  checkNotNull(file);
+  checkNotNull(mode);
   RandomAccessFile raf=new RandomAccessFile(file,mode == MapMode.READ_ONLY ? "r" : "rw");
   boolean threw=true;
   try {

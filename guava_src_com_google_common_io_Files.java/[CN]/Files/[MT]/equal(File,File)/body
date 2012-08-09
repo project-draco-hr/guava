@@ -1,4 +1,6 @@
 {
+  checkNotNull(file1);
+  checkNotNull(file2);
   if (file1 == file2 || file1.equals(file2)) {
     return true;
   }

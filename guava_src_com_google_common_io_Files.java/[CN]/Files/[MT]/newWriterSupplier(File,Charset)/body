@@ -1,3 +1,5 @@
 {
+  checkNotNull(file);
+  checkNotNull(charset);
   return newWriterSupplier(file,charset,false);
 }

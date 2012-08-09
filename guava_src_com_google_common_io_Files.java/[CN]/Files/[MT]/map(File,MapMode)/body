@@ -1,4 +1,6 @@
 {
+  checkNotNull(file);
+  checkNotNull(mode);
   if (!file.exists()) {
     throw new FileNotFoundException(file.toString());
   }

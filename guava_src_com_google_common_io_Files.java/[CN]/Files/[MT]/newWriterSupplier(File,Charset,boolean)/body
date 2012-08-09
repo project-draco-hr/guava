@@ -1,3 +1,5 @@
 {
+  checkNotNull(file);
+  checkNotNull(charset);
   return CharStreams.newWriterSupplier(newOutputStreamSupplier(file,append),charset);
 }

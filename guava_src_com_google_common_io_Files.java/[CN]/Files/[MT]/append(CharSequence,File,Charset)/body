@@ -1,3 +1,6 @@
 {
+  checkNotNull(from);
+  checkNotNull(to);
+  checkNotNull(charset);
   write(from,to,charset,true);
 }

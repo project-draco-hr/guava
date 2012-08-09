@@ -1,3 +1,5 @@
 {
+  checkNotNull(file);
+  checkNotNull(charset);
   return new String(toByteArray(file),charset.name());
 }
