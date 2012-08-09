@@ -1,6 +1,6 @@
 {
   String description=new StringBuilder("CharMatcher.is(").append(Integer.toHexString(match)).append(")").toString();
-  return new CharMatcher(description){
+  return new FastMatcher(description){
     @Override public boolean matches(    char c){
       return c == match;
     }
@@ -15,9 +15,6 @@
     }
     @Override public CharMatcher negate(){
       return isNot(match);
-    }
-    @Override public CharMatcher precomputed(){
-      return this;
     }
   }
 ;

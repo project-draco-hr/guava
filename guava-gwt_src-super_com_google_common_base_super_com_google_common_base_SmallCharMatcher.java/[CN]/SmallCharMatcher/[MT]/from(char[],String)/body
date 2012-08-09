@@ -1,0 +1,18 @@
+{
+  int size=chars.length;
+  boolean containsZero=chars[0] == 0;
+  boolean reprobe=false;
+  long filter=0;
+  for (  char c : chars) {
+    filter|=1L << c;
+  }
+  char[] table=null;
+  for (int i=size; table == null && i < MAX_TABLE_SIZE; i++) {
+    table=buildTable(i,chars,false);
+  }
+  if (table == null) {
+    table=buildTable(MAX_TABLE_SIZE,chars,true);
+    reprobe=true;
+  }
+  return new SmallCharMatcher(table,filter,containsZero,reprobe,description);
+}

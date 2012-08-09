@@ -1,0 +1,26 @@
+{
+switch (totalCharacters) {
+case 0:
+    return NONE;
+case 1:
+  return is((char)table.nextSetBit(0));
+case 2:
+{
+  char c1=(char)table.nextSetBit(0);
+  char c2=(char)table.nextSetBit(c1 + 1);
+  return isEither(c1,c2);
+}
+}
+if (totalCharacters <= SmallCharMatcher.MAX_SIZE) {
+return SmallCharMatcher.from(table,description);
+}
+ else if (totalCharacters <= MediumCharMatcher.MAX_SIZE) {
+return MediumCharMatcher.from(table,description);
+}
+ else {
+if (table.length() + Long.SIZE < table.size()) {
+table=(BitSet)table.clone();
+}
+return new BitSetMatcher(table,description);
+}
+}

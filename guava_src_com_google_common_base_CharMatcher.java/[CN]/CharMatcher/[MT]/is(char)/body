@@ -1,6 +1,6 @@
 {
   String description=new StringBuilder("CharMatcher.is(").append(Integer.toHexString(match)).append(")").toString();
-  return new CharMatcher(description){
+  return new FastMatcher(description){
     @Override public boolean matches(    char c){
       return c == match;
     }
@@ -16,11 +16,8 @@
     @Override public CharMatcher negate(){
       return isNot(match);
     }
-    @GwtIncompatible("java.util.BitSet") @Override void setBits(    BitSet table,    boolean value){
-      table.set(match,value);
-    }
-    @Override public CharMatcher precomputed(){
-      return this;
+    @GwtIncompatible("java.util.BitSet") @Override void setBits(    BitSet table){
+      table.set(match);
     }
   }
 ;

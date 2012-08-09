@@ -1,4 +1,0 @@
-{
-  first.setBits(table,value);
-  second.setBits(table,value);
-}

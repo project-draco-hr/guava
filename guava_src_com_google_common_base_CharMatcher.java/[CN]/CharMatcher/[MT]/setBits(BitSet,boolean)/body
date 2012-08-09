@@ -1,7 +1,0 @@
-{
-  for (int c=Character.MIN_VALUE; c <= Character.MAX_VALUE; c++) {
-    if (matches((char)c)) {
-      table.set(c,value);
-    }
-  }
-}

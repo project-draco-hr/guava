@@ -1,22 +1,7 @@
 {
-  long filter=0;
-  int size=chars.cardinality();
-  boolean containsZero=false;
-  boolean reprobe=false;
-  containsZero=chars.get(0);
-  for (int c=chars.nextSetBit(0); c != -1; c=chars.nextSetBit(c + 1)) {
-    filter|=1L << c;
+  char[] charArray=new char[chars.cardinality()];
+  for (int i=0, c=chars.nextSetBit(0); c != -1; c=chars.nextSetBit(c + 1)) {
+    charArray[i++]=(char)c;
   }
-  char[] table=null;
-  for (int i=size; i < MAX_TABLE_SIZE; i++) {
-    table=buildTable(i,chars,false);
-    if (table != null) {
-      break;
-    }
-  }
-  if (table == null) {
-    table=buildTable(MAX_TABLE_SIZE,chars,true);
-    reprobe=true;
-  }
-  return new SmallCharMatcher(table,filter,containsZero,reprobe,description);
+  return from(charArray,description);
 }

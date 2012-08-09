@@ -1,13 +1,10 @@
 {
-  return new CharMatcher(description){
+  return new FastMatcher(description){
     @Override public boolean matches(    char c){
       return startInclusive <= c && c <= endInclusive;
     }
-    @GwtIncompatible("java.util.BitSet") @Override void setBits(    BitSet table,    boolean value){
-      table.set(startInclusive,endInclusive + 1,value);
-    }
-    @Override public CharMatcher precomputed(){
-      return this;
+    @GwtIncompatible("java.util.BitSet") @Override void setBits(    BitSet table){
+      table.set(startInclusive,endInclusive + 1);
     }
   }
 ;
