@@ -1,3 +1,0 @@
-{
-  ASSERT.that(fluent(1,3,5).addTo(Lists.newArrayList(1,2))).hasContentsInOrder(1,2,1,3,5);
-}
