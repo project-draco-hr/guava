@@ -1,0 +1,3 @@
+{
+  return GWT.isProdMode() ? 3 : 5;
+}
