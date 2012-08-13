@@ -1,0 +1,13 @@
+{
+  RunFailingService service=new RunFailingService();
+  RecordingListener listener=RecordingListener.record(service);
+  service.startAndWait();
+  try {
+    service.stopAndWait();
+    fail();
+  }
+ catch (  UncheckedExecutionException e) {
+    assertEquals(EXCEPTION,e.getCause().getCause());
+  }
+  assertEquals(ImmutableList.of(State.STARTING,State.RUNNING,State.FAILED),listener.getStateHistory());
+}

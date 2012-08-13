@@ -1,5 +1,5 @@
 {
-  final StartThrowingService service=new StartThrowingService();
+  final StartFailingService service=new StartFailingService();
   service.start();
   assertEquals(State.FAILED,service.state());
   service.addListener(new RecordingListener(service),MoreExecutors.sameThreadExecutor());

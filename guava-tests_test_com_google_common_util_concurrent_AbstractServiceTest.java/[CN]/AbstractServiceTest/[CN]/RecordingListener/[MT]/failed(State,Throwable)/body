@@ -5,6 +5,7 @@
   if (from == State.STARTING) {
     try {
       service.startAndWait();
+      fail();
     }
  catch (    UncheckedExecutionException e) {
       assertEquals(failure,e.getCause());
@@ -12,6 +13,7 @@
   }
   try {
     service.stopAndWait();
+    fail();
   }
  catch (  UncheckedExecutionException e) {
     if (from == State.STOPPING) {

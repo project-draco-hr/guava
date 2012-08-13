@@ -5,5 +5,5 @@
   service.notifyStarted();
   service.stop();
   service.notifyFailed(EXCEPTION);
-  assertEquals(Arrays.asList(State.STARTING,State.RUNNING,State.STOPPING,State.FAILED),listener.getStateHistory());
+  assertEquals(ImmutableList.of(State.STARTING,State.RUNNING,State.STOPPING,State.FAILED),listener.getStateHistory());
 }

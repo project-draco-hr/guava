@@ -6,7 +6,7 @@
     fail();
   }
  catch (  UncheckedExecutionException e) {
-    assertEquals(EXCEPTION,e.getCause());
+    assertEquals(service.exception,e.getCause());
   }
-  assertEquals(Arrays.asList(State.STARTING,State.FAILED),listener.getStateHistory());
+  assertEquals(ImmutableList.of(State.STARTING,State.FAILED),listener.getStateHistory());
 }

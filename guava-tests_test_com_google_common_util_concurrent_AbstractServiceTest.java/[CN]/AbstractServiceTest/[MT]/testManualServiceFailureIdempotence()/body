@@ -1,11 +1,12 @@
 {
   ManualSwitchedService service=new ManualSwitchedService();
-  RecordingListener listener=RecordingListener.record(service);
+  RecordingListener.record(service);
   service.start();
   service.notifyFailed(new Exception("1"));
   service.notifyFailed(new Exception("2"));
   try {
     service.startAndWait();
+    fail();
   }
  catch (  UncheckedExecutionException e) {
     assertEquals("1",e.getCause().getMessage());

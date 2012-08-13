@@ -7,5 +7,5 @@
   assertEquals(State.TERMINATED,service.state());
   assertFalse(service.isRunning());
   assertFalse(service.doStopCalled);
-  assertEquals(Arrays.asList(State.STARTING,State.RUNNING,State.TERMINATED),listener.getStateHistory());
+  assertEquals(ImmutableList.of(State.STARTING,State.RUNNING,State.TERMINATED),listener.getStateHistory());
 }

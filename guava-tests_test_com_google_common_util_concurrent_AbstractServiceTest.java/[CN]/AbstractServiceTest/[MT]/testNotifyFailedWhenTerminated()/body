@@ -1,0 +1,11 @@
+{
+  NoOpService service=new NoOpService();
+  service.startAndWait();
+  service.stopAndWait();
+  try {
+    service.notifyFailed(new Exception());
+    fail();
+  }
+ catch (  IllegalStateException expected) {
+  }
+}

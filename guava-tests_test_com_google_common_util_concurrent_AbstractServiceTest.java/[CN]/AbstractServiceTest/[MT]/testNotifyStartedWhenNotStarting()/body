@@ -1,0 +1,9 @@
+{
+  AbstractService service=new DefaultService();
+  try {
+    service.notifyStarted();
+    fail();
+  }
+ catch (  IllegalStateException expected) {
+  }
+}

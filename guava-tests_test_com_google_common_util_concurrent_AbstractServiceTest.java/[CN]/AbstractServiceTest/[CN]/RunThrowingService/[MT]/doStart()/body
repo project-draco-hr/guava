@@ -1,4 +1,4 @@
 {
   notifyStarted();
-  notifyFailed(EXCEPTION);
+  throw exception;
 }

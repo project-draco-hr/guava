@@ -1,4 +1,6 @@
 {
   completionLatch.await();
-  return ImmutableList.copyOf(stateHistory);
+synchronized (this) {
+    return ImmutableList.copyOf(stateHistory);
+  }
 }
