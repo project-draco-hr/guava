@@ -1,0 +1,6 @@
+{
+  assertEquals(1,startupCalled);
+  assertEquals(0,shutdownCalled);
+  assertEquals(Service.State.STOPPING,state());
+  shutdownCalled++;
+}
