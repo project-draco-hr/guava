@@ -1,3 +1,4 @@
 {
-  assertEquals(Arrays.asList(BloomFilterStrategies.values()),Arrays.asList(new BloomFilterStrategies[]{BloomFilterStrategies.MURMUR128_MITZ_32}));
+  assertEquals(1,BloomFilterStrategies.values().length);
+  assertEquals(BloomFilterStrategies.MURMUR128_MITZ_32,BloomFilterStrategies.values()[0]);
 }

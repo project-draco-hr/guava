@@ -1,0 +1,5 @@
+{
+  BloomFilter<Long> bf1=BloomFilter.create(new CustomFunnel(),100);
+  BloomFilter<Long> bf2=BloomFilter.create(new CustomFunnel(),100);
+  assertEquals(bf1,bf2);
+}

@@ -1,0 +1,3 @@
+{
+  SerializableTester.reserializeAndAssert(BloomFilter.create(new CustomFunnel(),100));
+}

@@ -8,4 +8,5 @@
     assertTrue(copy.mightContain(Ints.toByteArray(i)));
   }
   assertEquals(bf.expectedFpp(),copy.expectedFpp());
+  SerializableTester.reserializeAndAssert(bf);
 }
