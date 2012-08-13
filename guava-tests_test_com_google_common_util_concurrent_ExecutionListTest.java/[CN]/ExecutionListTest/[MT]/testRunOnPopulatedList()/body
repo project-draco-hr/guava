@@ -1,4 +1,5 @@
 {
+  Executor exec=Executors.newCachedThreadPool();
   CountDownLatch countDownLatch=new CountDownLatch(3);
   list.add(new MockRunnable(countDownLatch),exec);
   list.add(new MockRunnable(countDownLatch),exec);

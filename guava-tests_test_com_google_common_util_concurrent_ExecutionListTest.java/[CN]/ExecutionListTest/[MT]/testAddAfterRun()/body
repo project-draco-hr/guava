@@ -1,6 +1,6 @@
 {
   testRunOnPopulatedList();
   CountDownLatch countDownLatch=new CountDownLatch(1);
-  list.add(new MockRunnable(countDownLatch),exec);
+  list.add(new MockRunnable(countDownLatch),Executors.newCachedThreadPool());
   assertTrue(countDownLatch.await(1L,TimeUnit.SECONDS));
 }

@@ -1,0 +1,32 @@
+{
+  final CountDownLatch okayToRun=new CountDownLatch(1);
+  final AtomicInteger runCalled=new AtomicInteger();
+  list.add(new Runnable(){
+    @Override public void run(){
+      try {
+        okayToRun.await();
+      }
+ catch (      InterruptedException e) {
+        Thread.currentThread().interrupt();
+        throw new RuntimeException(e);
+      }
+      runCalled.getAndIncrement();
+    }
+  }
+,MoreExecutors.sameThreadExecutor());
+  Runnable execute=new Runnable(){
+    @Override public void run(){
+      list.execute();
+    }
+  }
+;
+  Thread thread1=new Thread(execute);
+  Thread thread2=new Thread(execute);
+  thread1.start();
+  thread2.start();
+  assertEquals(0,runCalled.get());
+  okayToRun.countDown();
+  thread1.join();
+  thread2.join();
+  assertEquals(1,runCalled.get());
+}

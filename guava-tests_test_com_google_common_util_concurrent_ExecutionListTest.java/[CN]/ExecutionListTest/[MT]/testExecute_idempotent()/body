@@ -1,0 +1,13 @@
+{
+  final AtomicInteger runCalled=new AtomicInteger();
+  list.add(new Runnable(){
+    @Override public void run(){
+      runCalled.getAndIncrement();
+    }
+  }
+,MoreExecutors.sameThreadExecutor());
+  list.execute();
+  assertEquals(1,runCalled.get());
+  list.execute();
+  assertEquals(1,runCalled.get());
+}
