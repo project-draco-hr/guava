@@ -1,7 +1,7 @@
 {
   ImmutableSet<TypeToken<? super T>> result=interfaces;
   if (result == null) {
-    return (interfaces=FluentIterable.from(allTypes).filter(TypeFilter.INTERFACE_ONLY).toImmutableSet());
+    return (interfaces=FluentIterable.from(allTypes).filter(TypeFilter.INTERFACE_ONLY).toSet());
   }
  else {
     return result;
