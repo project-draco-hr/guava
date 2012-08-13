@@ -1,0 +1,21 @@
+{
+  final Exception exception=new Exception("deliberate");
+  TestService service=new TestService(){
+    @Override protected void startUp() throws Exception {
+      super.startUp();
+      throw exception;
+    }
+  }
+;
+  assertEquals(0,service.startUpCalled);
+  try {
+    service.startAndWait();
+    fail();
+  }
+ catch (  RuntimeException e) {
+    assertSame(exception,e.getCause());
+  }
+  assertEquals(1,service.startUpCalled);
+  assertEquals(Service.State.FAILED,service.state());
+  ASSERT.that(service.transitionStates).hasContentsInOrder(Service.State.STARTING);
+}

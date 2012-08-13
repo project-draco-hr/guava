@@ -1,8 +1,8 @@
 {
-  NullService service=new NullService();
-  assertEquals("NullService [" + Service.State.NEW + "]",service.toString());
-  service.start().get();
-  assertEquals("NullService [" + Service.State.RUNNING + "]",service.toString());
-  service.stop().get();
-  assertEquals("NullService [" + Service.State.TERMINATED + "]",service.toString());
+  AbstractIdleService service=new TestService();
+  assertEquals("TestService [NEW]",service.toString());
+  service.startAndWait();
+  assertEquals("TestService [RUNNING]",service.toString());
+  service.stopAndWait();
+  assertEquals("TestService [TERMINATED]",service.toString());
 }

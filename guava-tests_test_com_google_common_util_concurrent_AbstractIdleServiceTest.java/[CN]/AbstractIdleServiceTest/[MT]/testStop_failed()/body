@@ -1,0 +1,24 @@
+{
+  final Exception exception=new Exception("deliberate");
+  TestService service=new TestService(){
+    @Override protected void shutDown() throws Exception {
+      super.shutDown();
+      throw exception;
+    }
+  }
+;
+  service.startAndWait();
+  assertEquals(1,service.startUpCalled);
+  assertEquals(0,service.shutDownCalled);
+  try {
+    service.stopAndWait();
+    fail();
+  }
+ catch (  RuntimeException e) {
+    assertSame(exception,e.getCause());
+  }
+  assertEquals(1,service.startUpCalled);
+  assertEquals(1,service.shutDownCalled);
+  assertEquals(Service.State.FAILED,service.state());
+  ASSERT.that(service.transitionStates).hasContentsInOrder(Service.State.STARTING,Service.State.STOPPING);
+}

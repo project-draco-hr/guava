@@ -1,0 +1,18 @@
+{
+  final Exception exception=new Exception("deliberate");
+  AbstractIdleService service=new DefaultService(){
+    @Override protected void shutDown() throws Exception {
+      throw exception;
+    }
+  }
+;
+  service.startAndWait();
+  try {
+    service.stopAndWait();
+    fail();
+  }
+ catch (  RuntimeException e) {
+    assertSame(exception,e.getCause());
+  }
+  assertEquals(Service.State.FAILED,service.state());
+}

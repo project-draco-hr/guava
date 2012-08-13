@@ -1,0 +1,8 @@
+{
+  TestService service=new TestService();
+  assertEquals(0,service.startUpCalled);
+  service.startAndWait();
+  assertEquals(1,service.startUpCalled);
+  assertEquals(Service.State.RUNNING,service.state());
+  ASSERT.that(service.transitionStates).hasContentsInOrder(Service.State.STARTING);
+}

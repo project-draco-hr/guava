@@ -1,5 +1,5 @@
 {
-  Service service=new NullService(){
+  Service service=new TestService(){
     @Override protected Executor executor(    Service.State state){
       return new Executor(){
         @Override public void execute(        Runnable command){
@@ -14,6 +14,6 @@
     fail("Expected timeout");
   }
  catch (  TimeoutException e) {
-    assertTrue(e.getMessage().contains(State.STARTING.toString()));
+    ASSERT.that(e.getMessage()).contains(Service.State.STARTING.toString());
   }
 }

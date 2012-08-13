@@ -1,0 +1,6 @@
+{
+  assertEquals(0,startUpCalled);
+  assertEquals(0,shutDownCalled);
+  startUpCalled++;
+  assertEquals(State.STARTING,state());
+}

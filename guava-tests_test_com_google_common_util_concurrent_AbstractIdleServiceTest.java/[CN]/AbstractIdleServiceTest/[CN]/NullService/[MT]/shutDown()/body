@@ -1,6 +1,0 @@
-{
-  assertTrue(startUpCalled);
-  assertFalse(shutDownCalled);
-  shutDownCalled=true;
-  assertEquals(expectedShutdownState,state());
-}

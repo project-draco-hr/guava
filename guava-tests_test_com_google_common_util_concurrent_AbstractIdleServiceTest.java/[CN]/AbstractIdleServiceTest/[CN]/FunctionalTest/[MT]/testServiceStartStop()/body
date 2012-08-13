@@ -1,0 +1,7 @@
+{
+  AbstractIdleService service=new DefaultService();
+  assertEquals(Service.State.RUNNING,service.startAndWait());
+  assertEquals(Service.State.RUNNING,service.state());
+  assertEquals(Service.State.TERMINATED,service.stopAndWait());
+  assertEquals(Service.State.TERMINATED,service.state());
+}

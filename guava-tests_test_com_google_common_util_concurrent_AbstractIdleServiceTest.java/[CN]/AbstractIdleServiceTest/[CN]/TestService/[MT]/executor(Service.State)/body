@@ -1,0 +1,4 @@
+{
+  transitionStates.add(state);
+  return MoreExecutors.sameThreadExecutor();
+}

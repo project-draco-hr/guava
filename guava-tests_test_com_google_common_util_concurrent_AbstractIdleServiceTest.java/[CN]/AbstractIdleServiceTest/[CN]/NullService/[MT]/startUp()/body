@@ -1,6 +1,0 @@
-{
-  assertFalse(startUpCalled);
-  assertFalse(shutDownCalled);
-  startUpCalled=true;
-  assertEquals(State.STARTING,state());
-}

@@ -1,0 +1,6 @@
+{
+  assertEquals(1,startUpCalled);
+  assertEquals(0,shutDownCalled);
+  shutDownCalled++;
+  assertEquals(State.STOPPING,state());
+}
