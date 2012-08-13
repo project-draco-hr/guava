@@ -1,3 +1,0 @@
-{
-  ASSERT.that(fluent(1,2,3,4).toImmutableSet()).hasContentsInOrder(1,2,3,4);
-}

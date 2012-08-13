@@ -1,3 +1,0 @@
-{
-  ASSERT.that(fluent(1,4,2,3).toImmutableSortedSet(Ordering.<Integer>natural().reverse())).hasContentsInOrder(4,3,2,1);
-}
