@@ -1,0 +1,5 @@
+{
+  for (  double d : NUMBERS) {
+    checkTryParse(d,Double.toHexString(d));
+  }
+}

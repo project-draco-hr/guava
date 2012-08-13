@@ -1,0 +1,5 @@
+{
+  checkTryParse("NaN");
+  checkTryParse("+NaN");
+  checkTryParse("-NaN");
+}

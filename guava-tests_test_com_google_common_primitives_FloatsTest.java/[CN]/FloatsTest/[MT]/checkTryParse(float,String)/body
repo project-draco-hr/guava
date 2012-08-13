@@ -1,0 +1,3 @@
+{
+  assertEquals(Float.valueOf(expected),Floats.tryParse(input));
+}

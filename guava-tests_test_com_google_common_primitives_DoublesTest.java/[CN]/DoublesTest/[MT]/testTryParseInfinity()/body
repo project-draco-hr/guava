@@ -1,0 +1,5 @@
+{
+  checkTryParse(Double.POSITIVE_INFINITY,"Infinity");
+  checkTryParse(Double.POSITIVE_INFINITY,"+Infinity");
+  checkTryParse(Double.NEGATIVE_INFINITY,"-Infinity");
+}

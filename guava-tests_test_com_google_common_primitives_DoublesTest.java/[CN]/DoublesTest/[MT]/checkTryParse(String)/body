@@ -1,0 +1,5 @@
+{
+  Double expected=referenceTryParse(input);
+  assertEquals(expected,Doubles.tryParse(input));
+  assertEquals(expected != null,Doubles.FLOATING_POINT_PATTERN.matcher(input).matches());
+}

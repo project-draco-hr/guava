@@ -1,0 +1,3 @@
+{
+  assertEquals(referenceTryParse(input),Floats.tryParse(input));
+}

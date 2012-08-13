@@ -1,0 +1,5 @@
+{
+  for (  float f : NUMBERS) {
+    checkTryParse(f,Float.toString(f));
+  }
+}

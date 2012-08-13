@@ -1,0 +1,6 @@
+{
+  for (  String badInput : BAD_TRY_PARSE_INPUTS) {
+    assertEquals(referenceTryParse(badInput),Floats.tryParse(badInput));
+    assertNull(Floats.tryParse(badInput));
+  }
+}

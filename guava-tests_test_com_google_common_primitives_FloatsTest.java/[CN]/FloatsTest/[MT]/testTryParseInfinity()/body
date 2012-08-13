@@ -1,0 +1,5 @@
+{
+  checkTryParse(Float.POSITIVE_INFINITY,"Infinity");
+  checkTryParse(Float.POSITIVE_INFINITY,"+Infinity");
+  checkTryParse(Float.NEGATIVE_INFINITY,"-Infinity");
+}

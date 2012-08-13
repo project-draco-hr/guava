@@ -1,0 +1,7 @@
+{
+  for (  String badInput : BAD_TRY_PARSE_INPUTS) {
+    assertFalse(Doubles.FLOATING_POINT_PATTERN.matcher(badInput).matches());
+    assertEquals(referenceTryParse(badInput),Doubles.tryParse(badInput));
+    assertNull(Doubles.tryParse(badInput));
+  }
+}
