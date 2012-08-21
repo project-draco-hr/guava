@@ -1,0 +1,8 @@
+{
+  TestApplication application=new TestApplication();
+  ExecutorService service=mock(ExecutorService.class);
+  application.addDelayedShutdownHook(service,2,TimeUnit.SECONDS);
+  when(service.awaitTermination(2,TimeUnit.SECONDS)).thenThrow(new InterruptedException());
+  application.shutdown();
+  verify(service).shutdown();
+}

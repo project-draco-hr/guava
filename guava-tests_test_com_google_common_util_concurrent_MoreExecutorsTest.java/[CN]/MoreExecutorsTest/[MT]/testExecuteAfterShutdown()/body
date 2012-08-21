@@ -1,0 +1,10 @@
+{
+  ExecutorService executor=MoreExecutors.sameThreadExecutor();
+  executor.shutdown();
+  try {
+    executor.execute(EMPTY_RUNNABLE);
+    fail();
+  }
+ catch (  RejectedExecutionException expected) {
+  }
+}

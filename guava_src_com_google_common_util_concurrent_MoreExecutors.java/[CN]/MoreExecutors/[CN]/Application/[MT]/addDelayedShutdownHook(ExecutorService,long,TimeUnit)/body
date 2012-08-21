@@ -1,0 +1,13 @@
+{
+  addShutdownHook(new Thread(new Runnable(){
+    @Override public void run(){
+      try {
+        service.shutdown();
+        service.awaitTermination(terminationTimeout,timeUnit);
+      }
+ catch (      InterruptedException ignored) {
+      }
+    }
+  }
+,"DelayedShutdownHook-for-" + service));
+}

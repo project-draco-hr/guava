@@ -1,0 +1,10 @@
+{
+  TestApplication application=new TestApplication();
+  ExecutorService service=mock(ExecutorService.class);
+  application.addDelayedShutdownHook(service,2,TimeUnit.SECONDS);
+  verify(service,Mockito.never()).shutdown();
+  application.shutdown();
+  InOrder shutdownFirst=Mockito.inOrder(service);
+  shutdownFirst.verify(service).shutdown();
+  shutdownFirst.verify(service).awaitTermination(2,TimeUnit.SECONDS);
+}

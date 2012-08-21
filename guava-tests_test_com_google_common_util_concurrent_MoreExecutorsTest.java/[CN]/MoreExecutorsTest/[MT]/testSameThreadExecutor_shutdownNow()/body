@@ -1,0 +1,5 @@
+{
+  ExecutorService executor=MoreExecutors.sameThreadExecutor();
+  assertEquals(ImmutableList.of(),executor.shutdownNow());
+  assertTrue(executor.isShutdown());
+}

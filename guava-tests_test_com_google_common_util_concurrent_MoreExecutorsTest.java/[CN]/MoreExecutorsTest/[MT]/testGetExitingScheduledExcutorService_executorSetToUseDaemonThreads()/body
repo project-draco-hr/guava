@@ -1,0 +1,6 @@
+{
+  TestApplication application=new TestApplication();
+  ScheduledThreadPoolExecutor executor=new ScheduledThreadPoolExecutor(1);
+  assertNotNull(application.getExitingScheduledExecutorService(executor));
+  assertTrue(executor.getThreadFactory().newThread(EMPTY_RUNNABLE).isDaemon());
+}

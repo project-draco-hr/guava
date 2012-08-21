@@ -1,0 +1,8 @@
+{
+  TestApplication application=new TestApplication();
+  ScheduledThreadPoolExecutor executor=mock(ScheduledThreadPoolExecutor.class);
+  ThreadFactory threadFactory=mock(ThreadFactory.class);
+  when(executor.getThreadFactory()).thenReturn(threadFactory);
+  application.getExitingScheduledExecutorService(executor).execute(EMPTY_RUNNABLE);
+  verify(executor).execute(EMPTY_RUNNABLE);
+}

@@ -1,0 +1,8 @@
+{
+  for (  Thread hook : hooks) {
+    hook.start();
+  }
+  for (  Thread hook : hooks) {
+    hook.join();
+  }
+}
