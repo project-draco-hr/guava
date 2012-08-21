@@ -2,7 +2,7 @@
   boolean doCompletion=compareAndSetState(RUNNING,COMPLETING);
   if (doCompletion) {
     this.value=v;
-    this.exception=t;
+    this.exception=isCancelled() ? new CancellationException("Future.cancel() was called.") : t;
     releaseShared(finalState);
   }
  else   if (getState() == COMPLETING) {

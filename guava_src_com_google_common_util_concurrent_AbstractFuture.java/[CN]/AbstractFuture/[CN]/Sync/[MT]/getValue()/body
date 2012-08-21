@@ -9,7 +9,7 @@ case COMPLETED:
       return value;
     }
 case CANCELLED:
-  throw new CancellationException("Task was cancelled.");
+  throw cancellationExceptionWithCause("Task was cancelled.",exception);
 default :
 throw new IllegalStateException("Error, synchronizer in invalid state: " + state);
 }
