@@ -1,7 +1,8 @@
 {
+  SettableFuture<String> future=SettableFuture.create();
   Thread.currentThread().interrupt();
   try {
-    get(immediateFuture("foo"),0,SECONDS,TwoArgConstructorException.class);
+    get(future,0,SECONDS,TwoArgConstructorException.class);
     fail();
   }
  catch (  TwoArgConstructorException expected) {

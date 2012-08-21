@@ -1,5 +1,3 @@
 {
-  SettableFuture<V> future=SettableFuture.create();
-  future.set(value);
-  return future;
+  return new ImmediateSuccessfulFuture<V>(value);
 }
