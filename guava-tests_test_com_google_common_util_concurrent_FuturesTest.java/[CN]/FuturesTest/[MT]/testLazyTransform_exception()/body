@@ -1,0 +1,24 @@
+{
+  final RuntimeException exception=new RuntimeException("deliberate");
+  Function<Integer,String> function=new Function<Integer,String>(){
+    @Override public String apply(    Integer input){
+      throw exception;
+    }
+  }
+;
+  Future<String> transformed=Futures.lazyTransform(Futures.immediateFuture(1),function);
+  try {
+    transformed.get();
+    fail();
+  }
+ catch (  ExecutionException expected) {
+    assertSame(exception,expected.getCause());
+  }
+  try {
+    transformed.get(1,TimeUnit.SECONDS);
+    fail();
+  }
+ catch (  ExecutionException expected) {
+    assertSame(exception,expected.getCause());
+  }
+}

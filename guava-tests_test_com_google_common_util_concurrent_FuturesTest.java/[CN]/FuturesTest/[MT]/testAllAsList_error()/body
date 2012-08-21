@@ -1,0 +1,21 @@
+{
+  Error error=new Error("deliberate");
+  SettableFuture<String> future1=SettableFuture.create();
+  ListenableFuture<String> future2=Futures.immediateFuture("results");
+  ListenableFuture<List<String>> compound=Futures.allAsList(ImmutableList.of(future1,future2));
+  try {
+    future1.setException(error);
+  }
+ catch (  Error expected) {
+    assertSame(error,expected);
+    try {
+      compound.get();
+    }
+ catch (    ExecutionException ee) {
+      assertSame(error,ee.getCause());
+      return;
+    }
+    fail("Expected error not set in compound future.");
+  }
+  fail("Expected error not thrown");
+}

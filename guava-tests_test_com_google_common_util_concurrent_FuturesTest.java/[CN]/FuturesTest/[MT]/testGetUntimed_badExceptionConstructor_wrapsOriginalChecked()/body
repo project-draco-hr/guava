@@ -1,0 +1,9 @@
+{
+  try {
+    get(FAILED_FUTURE_CHECKED_EXCEPTION,ExceptionWithBadConstructor.class);
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+    assertSame(CHECKED_EXCEPTION,expected.getCause());
+  }
+}

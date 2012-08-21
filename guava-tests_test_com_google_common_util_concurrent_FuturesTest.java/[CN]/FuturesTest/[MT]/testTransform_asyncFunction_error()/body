@@ -1,0 +1,19 @@
+{
+  final Error error=new Error("deliberate");
+  AsyncFunction<String,Integer> function=new AsyncFunction<String,Integer>(){
+    @Override public ListenableFuture<Integer> apply(    String input){
+      throw error;
+    }
+  }
+;
+  SettableFuture<String> inputFuture=SettableFuture.create();
+  Futures.transform(inputFuture,function);
+  try {
+    inputFuture.set("value");
+  }
+ catch (  Error expected) {
+    assertSame(error,expected);
+    return;
+  }
+  fail("should have thrown error");
+}

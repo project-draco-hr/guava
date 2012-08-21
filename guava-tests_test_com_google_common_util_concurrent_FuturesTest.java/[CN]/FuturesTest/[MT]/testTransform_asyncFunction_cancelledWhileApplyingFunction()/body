@@ -1,0 +1,31 @@
+{
+  final CountDownLatch inFunction=new CountDownLatch(1);
+  final CountDownLatch functionDone=new CountDownLatch(1);
+  final SettableFuture<Integer> resultFuture=SettableFuture.create();
+  AsyncFunction<String,Integer> function=new AsyncFunction<String,Integer>(){
+    @Override public ListenableFuture<Integer> apply(    String input) throws Exception {
+      inFunction.countDown();
+      functionDone.await();
+      return resultFuture;
+    }
+  }
+;
+  SettableFuture<String> inputFuture=SettableFuture.create();
+  ListenableFuture<Integer> future=Futures.transform(inputFuture,function,Executors.newSingleThreadExecutor());
+  inputFuture.set("value");
+  inFunction.await();
+  future.cancel(false);
+  functionDone.countDown();
+  try {
+    future.get();
+    fail();
+  }
+ catch (  CancellationException expected) {
+  }
+  try {
+    resultFuture.get();
+    fail();
+  }
+ catch (  CancellationException expected) {
+  }
+}
