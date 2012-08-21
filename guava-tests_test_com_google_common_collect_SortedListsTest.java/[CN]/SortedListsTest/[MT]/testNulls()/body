@@ -1,9 +1,3 @@
 {
-  NullPointerTester tester=new NullPointerTester();
-  tester.setDefault(Function.class,Functions.identity());
-  tester.setDefault(List.class,LIST_WITH_DUPS);
-  tester.setDefault(Comparable.class,2);
-  tester.setDefault(KeyPresentBehavior.class,KeyPresentBehavior.ANY_PRESENT);
-  tester.setDefault(KeyAbsentBehavior.class,KeyAbsentBehavior.NEXT_HIGHER);
-  tester.testAllPublicStaticMethods(SortedLists.class);
+  new NullPointerTester().testAllPublicStaticMethods(SortedLists.class);
 }

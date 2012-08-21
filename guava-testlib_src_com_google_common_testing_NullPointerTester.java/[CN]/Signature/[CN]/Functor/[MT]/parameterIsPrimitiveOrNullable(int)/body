@@ -1,8 +1,8 @@
 {
-  if (TypeToken.of(func.getParameterTypes()[paramIndex]).getRawType().isPrimitive()) {
+  if (TypeToken.of(getParameterTypes()[paramIndex]).getRawType().isPrimitive()) {
     return true;
   }
-  Annotation[] annotations=func.getParameterAnnotations()[paramIndex];
+  Annotation[] annotations=getParameterAnnotations()[paramIndex];
   for (  Annotation annotation : annotations) {
     if (annotation instanceof Nullable) {
       return true;

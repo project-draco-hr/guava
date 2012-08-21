@@ -5,7 +5,7 @@
     if (i != indexOfParamToSetToNull) {
       TypeToken<?> type=TypeToken.of(types[i]);
       params[i]=getDefaultValue(type);
-      if (!parameterIsPrimitiveOrNullable(func,i)) {
+      if (!func.parameterIsPrimitiveOrNullable(i)) {
         Assert.assertTrue("No default value found for " + type.getRawType(),params[i] != null);
       }
     }

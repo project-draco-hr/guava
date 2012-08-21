@@ -1,6 +1,5 @@
 {
   NullPointerTester tester=new NullPointerTester();
-  tester.setDefault(RoundingMode.class,FLOOR);
   tester.setDefault(int.class,1);
   tester.setDefault(long.class,1L);
   tester.testAllPublicStaticMethods(LongMath.class);

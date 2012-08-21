@@ -1,0 +1,11 @@
+{
+  runTester();
+  NullRejectingFromTo<?,?> defaultFunction=(NullRejectingFromTo<?,?>)getDefaultParameterValue(0);
+  assertNotNull(defaultFunction);
+  try {
+    defaultFunction.apply(null);
+    fail("Proxy Should have rejected null");
+  }
+ catch (  NullPointerException expected) {
+  }
+}

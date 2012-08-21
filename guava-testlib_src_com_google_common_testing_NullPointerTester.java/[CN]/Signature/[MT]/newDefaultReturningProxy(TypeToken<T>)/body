@@ -2,6 +2,12 @@
   Set<Class<? super T>> interfaceClasses=type.getTypes().interfaces().rawTypes();
   return (T)Proxy.newProxyInstance(interfaceClasses.iterator().next().getClassLoader(),interfaceClasses.toArray(new Class<?>[interfaceClasses.size()]),new AbstractInvocationHandler(){
     @Override protected Object handleInvocation(    Object proxy,    Method method,    Object[] args){
+      Functor functor=Functor.from(proxy,method);
+      for (int i=0; i < args.length; i++) {
+        if (!functor.parameterIsPrimitiveOrNullable(i)) {
+          Preconditions.checkNotNull(args[i]);
+        }
+      }
       return getDefaultValue(type.resolveType(method.getGenericReturnType()));
     }
     @Override public String toString(){

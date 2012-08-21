@@ -1,7 +1,3 @@
 {
-  NullPointerTester tester=new NullPointerTester();
-  tester.setDefault(InvocationHandler.class,X_RETURNER);
-  tester.setDefault(Type[].class,new Type[]{Map.class});
-  tester.setDefault(Type.class,String.class);
-  tester.testAllPublicStaticMethods(Reflection.class);
+  new NullPointerTester().testAllPublicStaticMethods(Reflection.class);
 }

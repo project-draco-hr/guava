@@ -1,5 +1,3 @@
 {
-  NullPointerTester tester=new NullPointerTester();
-  tester.setDefault(TypeVariable.class,Types.newTypeVariable(List.class,"E"));
-  tester.testAllPublicStaticMethods(TypeParameter.class);
+  new NullPointerTester().testAllPublicStaticMethods(TypeParameter.class);
 }

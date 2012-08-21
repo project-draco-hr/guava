@@ -1,5 +1,3 @@
 {
-  NullPointerTester tester=new NullPointerTester();
-  tester.setDefault(UnsignedLong.class,UnsignedLong.ONE);
-  tester.testAllPublicStaticMethods(UnsignedLong.class);
+  new NullPointerTester().testAllPublicStaticMethods(UnsignedLong.class);
 }

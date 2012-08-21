@@ -1,5 +1,5 @@
 {
-  if (parameterIsPrimitiveOrNullable(func,paramIndex)) {
+  if (func.parameterIsPrimitiveOrNullable(paramIndex)) {
     return;
   }
   Object[] params=buildParamList(func,paramIndex);

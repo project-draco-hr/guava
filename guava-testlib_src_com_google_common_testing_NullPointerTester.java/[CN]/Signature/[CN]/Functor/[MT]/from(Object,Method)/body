@@ -1,0 +1,28 @@
+{
+  return new Functor(){
+    @Override Type[] getParameterTypes(){
+      Type[] unresolved=method.getGenericParameterTypes();
+      if (isStatic(method)) {
+        return unresolved;
+      }
+ else {
+        TypeToken<?> type=TypeToken.of(instance.getClass());
+        Type[] resolved=new Type[unresolved.length];
+        for (int i=0; i < unresolved.length; i++) {
+          resolved[i]=type.resolveType(unresolved[i]).getType();
+        }
+        return resolved;
+      }
+    }
+    @Override Annotation[][] getParameterAnnotations(){
+      return method.getParameterAnnotations();
+    }
+    @Override void invoke(    Object object,    Object[] params) throws InvocationTargetException, IllegalAccessException {
+      method.invoke(object,params);
+    }
+    @Override public String toString(){
+      return method.toString();
+    }
+  }
+;
+}

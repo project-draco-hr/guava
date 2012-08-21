@@ -1,7 +1,5 @@
 {
   NullPointerTester tester=new NullPointerTester();
-  tester.setDefault(StringBuilder.class,new StringBuilder());
-  tester.setDefault(Object.class,Iterators.emptyIterator());
   tester.testAllPublicStaticMethods(Joiner.class);
   tester.testAllPublicInstanceMethods(Joiner.on(","));
   tester.testAllPublicInstanceMethods(Joiner.on(",").skipNulls());
