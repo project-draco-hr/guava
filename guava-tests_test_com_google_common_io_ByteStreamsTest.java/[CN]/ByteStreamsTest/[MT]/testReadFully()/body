@@ -44,11 +44,11 @@
   }
   Arrays.fill(b,(byte)0);
   ByteStreams.readFully(newTestStream(10),b,0,0);
-  assertTrue(Arrays.equals(new byte[10],b));
+  assertEquals(new byte[10],b);
   Arrays.fill(b,(byte)0);
   ByteStreams.readFully(newTestStream(10),b,0,10);
-  assertTrue(Arrays.equals(newPreFilledByteArray(10),b));
+  assertEquals(newPreFilledByteArray(10),b);
   Arrays.fill(b,(byte)0);
   ByteStreams.readFully(newTestStream(10),b,0,5);
-  assertTrue(Arrays.equals(new byte[]{0,1,2,3,4,0,0,0,0,0},b));
+  assertEquals(new byte[]{0,1,2,3,4,0,0,0,0,0},b);
 }

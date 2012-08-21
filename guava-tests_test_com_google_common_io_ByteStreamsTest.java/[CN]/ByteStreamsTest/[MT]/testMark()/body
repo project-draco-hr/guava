@@ -1,0 +1,17 @@
+{
+  byte[] big=newPreFilledByteArray(5);
+  InputStream bin=new ByteArrayInputStream(big);
+  InputStream lin=ByteStreams.limit(bin,2);
+  int read=lin.read();
+  assertEquals(big[0],read);
+  lin.mark(2);
+  read=lin.read();
+  assertEquals(big[1],read);
+  read=lin.read();
+  assertEquals(-1,read);
+  lin.reset();
+  read=lin.read();
+  assertEquals(big[1],read);
+  read=lin.read();
+  assertEquals(-1,read);
+}

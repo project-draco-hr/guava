@@ -7,5 +7,5 @@
     }
   }
 );
-  assertTrue(Arrays.equals(expected,out.toByteArray()));
+  assertEquals(expected,out.toByteArray());
 }

@@ -2,7 +2,7 @@
   byte[] array=newPreFilledByteArray(6000);
   assertEquals((Integer)42,ByteStreams.readBytes(ByteStreams.newInputStreamSupplier(array),new ByteProcessor<Integer>(){
     @Override public boolean processBytes(    byte[] buf,    int off,    int len){
-      assertTrue(Arrays.equals(copyOfRange(buf,off,off + len),newPreFilledByteArray(4096)));
+      assertEquals(copyOfRange(buf,off,off + len),newPreFilledByteArray(4096));
       return false;
     }
     @Override public Integer getResult(){

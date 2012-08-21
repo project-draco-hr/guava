@@ -1,9 +1,9 @@
 {
-  ByteArrayDataInput in=ByteStreams.newDataInput(BYTES);
+  ByteArrayDataInput in=ByteStreams.newDataInput(bytes);
   byte[] actual=new byte[4];
   in.readFully(actual,2,2);
   assertEquals(0,actual[0]);
   assertEquals(0,actual[1]);
-  assertEquals(BYTES[0],actual[2]);
-  assertEquals(BYTES[1],actual[3]);
+  assertEquals(bytes[0],actual[2]);
+  assertEquals(bytes[1],actual[3]);
 }

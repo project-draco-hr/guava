@@ -1,6 +1,6 @@
 {
   ByteArrayDataOutput out=ByteStreams.newDataOutput();
-  out.write(BYTES,4,2);
-  byte[] expected={BYTES[4],BYTES[5]};
+  out.write(bytes,4,2);
+  byte[] expected={bytes[4],bytes[5]};
   assertEquals(expected,out.toByteArray());
 }

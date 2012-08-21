@@ -1,5 +1,5 @@
 {
   Preconditions.checkArgument(expectRead == (int)Math.max(0,Math.min(input,offset + length) - offset));
   InputSupplier<? extends InputStream> supplier=ByteStreams.newInputStreamSupplier(newPreFilledByteArray(input));
-  assertTrue(Arrays.equals(newPreFilledByteArray(offset,expectRead),ByteStreams.toByteArray(ByteStreams.slice(supplier,offset,length))));
+  assertEquals(newPreFilledByteArray(offset,expectRead),ByteStreams.toByteArray(ByteStreams.slice(supplier,offset,length)));
 }

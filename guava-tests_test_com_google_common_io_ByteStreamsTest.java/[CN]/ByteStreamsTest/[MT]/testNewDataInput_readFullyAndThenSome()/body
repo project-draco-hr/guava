@@ -1,6 +1,6 @@
 {
-  ByteArrayDataInput in=ByteStreams.newDataInput(BYTES);
-  byte[] actual=new byte[BYTES.length * 2];
+  ByteArrayDataInput in=ByteStreams.newDataInput(bytes);
+  byte[] actual=new byte[bytes.length * 2];
   try {
     in.readFully(actual);
     fail();

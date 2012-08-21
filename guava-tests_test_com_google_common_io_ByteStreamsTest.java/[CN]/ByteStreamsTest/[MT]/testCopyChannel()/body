@@ -4,5 +4,5 @@
   WritableByteChannel outChannel=Channels.newChannel(out);
   ReadableByteChannel inChannel=Channels.newChannel(new ByteArrayInputStream(expected));
   ByteStreams.copy(inChannel,outChannel);
-  assertTrue(Arrays.equals(expected,out.toByteArray()));
+  assertEquals(expected,out.toByteArray());
 }

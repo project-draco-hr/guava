@@ -1,6 +1,6 @@
 {
   byte[] range=newPreFilledByteArray(200);
-  assertTrue(Arrays.equals(range,ByteStreams.toByteArray(ByteStreams.newInputStreamSupplier(range))));
+  assertEquals(range,ByteStreams.toByteArray(ByteStreams.newInputStreamSupplier(range)));
   byte[] subRange=ByteStreams.toByteArray(ByteStreams.newInputStreamSupplier(range,100,50));
   assertEquals(50,subRange.length);
   assertEquals(100,subRange[0]);

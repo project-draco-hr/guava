@@ -1,5 +1,5 @@
 {
   ByteArrayDataOutput out=ByteStreams.newDataOutput();
   out.writeChar('a');
-  assertTrue(Arrays.equals(new byte[]{0,97},out.toByteArray()));
+  assertEquals(new byte[]{0,97},out.toByteArray());
 }

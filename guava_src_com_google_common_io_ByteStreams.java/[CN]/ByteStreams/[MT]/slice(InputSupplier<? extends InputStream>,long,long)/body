@@ -14,7 +14,7 @@
           throw e;
         }
       }
-      return new LimitInputStream(in,length);
+      return limit(in,length);
     }
   }
 ;

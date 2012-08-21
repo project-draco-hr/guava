@@ -1,0 +1,10 @@
+{
+  InputStream lin=ByteStreams.limit(new UnmarkableInputStream(),2);
+  try {
+    lin.reset();
+    fail();
+  }
+ catch (  IOException expected) {
+    assertEquals("Mark not supported",expected.getMessage());
+  }
+}

@@ -1,5 +1,5 @@
 {
-  ByteArrayDataInput in=ByteStreams.newDataInput(BYTES,2);
+  ByteArrayDataInput in=ByteStreams.newDataInput(bytes,2);
   assertEquals(0x56787654,in.readInt());
   try {
     in.readInt();

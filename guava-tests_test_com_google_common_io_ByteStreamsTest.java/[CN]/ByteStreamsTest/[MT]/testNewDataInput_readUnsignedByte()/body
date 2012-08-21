@@ -1,7 +1,7 @@
 {
-  ByteArrayDataInput in=ByteStreams.newDataInput(BYTES);
-  for (int i=0; i < BYTES.length; i++) {
-    assertEquals(BYTES[i],in.readUnsignedByte());
+  ByteArrayDataInput in=ByteStreams.newDataInput(bytes);
+  for (int i=0; i < bytes.length; i++) {
+    assertEquals(bytes[i],in.readUnsignedByte());
   }
   try {
     in.readUnsignedByte();

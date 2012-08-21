@@ -115,7 +115,7 @@
   assertFalse(brokenRead.areClosed());
   assertTrue(brokenWrite.areClosed());
   in.close();
-  assertTrue(Arrays.equals(range,ByteStreams.toByteArray(okRead)));
+  assertEquals(range,ByteStreams.toByteArray(okRead));
   assertTrue(okRead.areClosed());
   try {
     ByteStreams.toByteArray(brokenRead);
