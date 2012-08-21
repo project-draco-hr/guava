@@ -4,5 +4,5 @@
   assertEquals(9L,spec.writeExpirationDuration);
   assertEquals(TimeUnit.SECONDS,spec.accessExpirationTimeUnit);
   assertEquals(10L,spec.accessExpirationDuration);
-  assertCacheBuilderEquivalence(CacheBuilder.newBuilder().expireAfterAccess(10L,TimeUnit.SECONDS),CacheBuilder.from(spec));
+  assertCacheBuilderEquivalence(CacheBuilder.newBuilder().expireAfterAccess(10L,TimeUnit.SECONDS).expireAfterWrite(9L,TimeUnit.MINUTES),CacheBuilder.from(spec));
 }
