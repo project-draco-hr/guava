@@ -1,8 +1,8 @@
 {
-  NullPointerTester tester=new NullPointerTester();
+  NullPointerTester tester=new NullPointerTester().setDefault(Object.class,Iterators.emptyIterator());
   tester.testAllPublicStaticMethods(Joiner.class);
-  tester.testAllPublicInstanceMethods(Joiner.on(","));
-  tester.testAllPublicInstanceMethods(Joiner.on(",").skipNulls());
-  tester.testAllPublicInstanceMethods(Joiner.on(",").useForNull("x"));
-  tester.testAllPublicInstanceMethods(Joiner.on(",").withKeyValueSeparator("="));
+  tester.testInstanceMethods(Joiner.on(","),NullPointerTester.Visibility.PACKAGE);
+  tester.testInstanceMethods(Joiner.on(",").skipNulls(),NullPointerTester.Visibility.PACKAGE);
+  tester.testInstanceMethods(Joiner.on(",").useForNull("x"),NullPointerTester.Visibility.PACKAGE);
+  tester.testInstanceMethods(Joiner.on(",").withKeyValueSeparator("="),NullPointerTester.Visibility.PACKAGE);
 }
