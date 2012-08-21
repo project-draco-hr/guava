@@ -1,0 +1,5 @@
+{
+  RateLimiter r=RateLimiter.create(1);
+  assertTrue("Unable to acquire initial permit",r.tryAcquire());
+  assertFalse("Capable of acquiring secondary permit",r.tryAcquire());
+}
