@@ -34,7 +34,7 @@
   assertTrue(ArbitraryInstances.get(ImmutableSetMultimap.class).isEmpty());
   assertTrue(ArbitraryInstances.get(MapDifference.class).areEqual());
   assertTrue(ArbitraryInstances.get(SortedMapDifference.class).areEqual());
-  assertEquals(Ranges.all(),ArbitraryInstances.get(Range.class));
+  assertEquals(Range.all(),ArbitraryInstances.get(Range.class));
   assertTrue(ArbitraryInstances.get(NavigableSet.class).isEmpty());
   assertTrue(ArbitraryInstances.get(NavigableMap.class).isEmpty());
   assertTrue(ArbitraryInstances.get(LinkedList.class).isEmpty());
