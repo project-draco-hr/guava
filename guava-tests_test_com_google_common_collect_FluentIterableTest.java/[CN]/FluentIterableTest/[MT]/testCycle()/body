@@ -8,8 +8,5 @@
       break;
     }
   }
-  for (  String string : cycle) {
-    assertEquals("a",string);
-    break;
-  }
+  assertEquals("a",cycle.iterator().next());
 }

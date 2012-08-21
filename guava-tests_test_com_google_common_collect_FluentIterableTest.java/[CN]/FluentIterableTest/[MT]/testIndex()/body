@@ -1,0 +1,10 @@
+{
+  ImmutableListMultimap<Integer,String> expected=ImmutableListMultimap.<Integer,String>builder().putAll(3,"one","two").put(5,"three").put(4,"four").build();
+  ImmutableListMultimap<Integer,String> index=FluentIterable.from(asList("one","two","three","four")).index(new Function<String,Integer>(){
+    @Override public Integer apply(    String input){
+      return input.length();
+    }
+  }
+);
+  assertEquals(expected,index);
+}

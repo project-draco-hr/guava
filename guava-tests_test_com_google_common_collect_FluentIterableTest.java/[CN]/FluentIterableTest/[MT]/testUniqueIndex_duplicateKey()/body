@@ -1,0 +1,13 @@
+{
+  try {
+    FluentIterable.from(asList("one","two","three","four")).uniqueIndex(new Function<String,Integer>(){
+      @Override public Integer apply(      String input){
+        return input.length();
+      }
+    }
+);
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}

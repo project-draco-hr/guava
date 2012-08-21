@@ -1,0 +1,3 @@
+{
+  ASSERT.that(fluent(1,2,3).toMap(Functions.toStringFunction()).entrySet()).hasContentsInOrder(Maps.immutableEntry(1,"1"),Maps.immutableEntry(2,"2"),Maps.immutableEntry(3,"3"));
+}

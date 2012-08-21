@@ -1,0 +1,10 @@
+{
+  ImmutableMap<Integer,String> expected=ImmutableMap.of(3,"two",5,"three",4,"four");
+  ImmutableMap<Integer,String> index=FluentIterable.from(asList("two","three","four")).uniqueIndex(new Function<String,Integer>(){
+    @Override public Integer apply(    String input){
+      return input.length();
+    }
+  }
+);
+  assertEquals(expected,index);
+}
