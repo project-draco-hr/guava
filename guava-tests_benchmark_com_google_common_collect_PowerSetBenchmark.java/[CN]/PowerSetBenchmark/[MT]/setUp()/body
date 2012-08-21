@@ -1,4 +1,4 @@
 {
-  Set<Integer> set=Ranges.closed(1,elements).asSet(integers());
+  Set<Integer> set=Range.closed(1,elements).asSet(integers());
   powerSet=Sets.powerSet(set);
 }

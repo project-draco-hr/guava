@@ -1,18 +1,18 @@
 {
-  assertEquals(Ranges.closed(1,3),ContiguousSet.create(Ranges.closed(1,3),integers()).range());
-  assertEquals(Ranges.closed(1,3),ContiguousSet.create(Ranges.closedOpen(1,4),integers()).range());
-  assertEquals(Ranges.closed(1,3),ContiguousSet.create(Ranges.open(0,4),integers()).range());
-  assertEquals(Ranges.closed(1,3),ContiguousSet.create(Ranges.openClosed(0,3),integers()).range());
-  assertEquals(Ranges.openClosed(0,3),ContiguousSet.create(Ranges.closed(1,3),integers()).range(OPEN,CLOSED));
-  assertEquals(Ranges.openClosed(0,3),ContiguousSet.create(Ranges.closedOpen(1,4),integers()).range(OPEN,CLOSED));
-  assertEquals(Ranges.openClosed(0,3),ContiguousSet.create(Ranges.open(0,4),integers()).range(OPEN,CLOSED));
-  assertEquals(Ranges.openClosed(0,3),ContiguousSet.create(Ranges.openClosed(0,3),integers()).range(OPEN,CLOSED));
-  assertEquals(Ranges.open(0,4),ContiguousSet.create(Ranges.closed(1,3),integers()).range(OPEN,OPEN));
-  assertEquals(Ranges.open(0,4),ContiguousSet.create(Ranges.closedOpen(1,4),integers()).range(OPEN,OPEN));
-  assertEquals(Ranges.open(0,4),ContiguousSet.create(Ranges.open(0,4),integers()).range(OPEN,OPEN));
-  assertEquals(Ranges.open(0,4),ContiguousSet.create(Ranges.openClosed(0,3),integers()).range(OPEN,OPEN));
-  assertEquals(Ranges.closedOpen(1,4),ContiguousSet.create(Ranges.closed(1,3),integers()).range(CLOSED,OPEN));
-  assertEquals(Ranges.closedOpen(1,4),ContiguousSet.create(Ranges.closedOpen(1,4),integers()).range(CLOSED,OPEN));
-  assertEquals(Ranges.closedOpen(1,4),ContiguousSet.create(Ranges.open(0,4),integers()).range(CLOSED,OPEN));
-  assertEquals(Ranges.closedOpen(1,4),ContiguousSet.create(Ranges.openClosed(0,3),integers()).range(CLOSED,OPEN));
+  assertEquals(Range.closed(1,3),ContiguousSet.create(Range.closed(1,3),integers()).range());
+  assertEquals(Range.closed(1,3),ContiguousSet.create(Range.closedOpen(1,4),integers()).range());
+  assertEquals(Range.closed(1,3),ContiguousSet.create(Range.open(0,4),integers()).range());
+  assertEquals(Range.closed(1,3),ContiguousSet.create(Range.openClosed(0,3),integers()).range());
+  assertEquals(Range.openClosed(0,3),ContiguousSet.create(Range.closed(1,3),integers()).range(OPEN,CLOSED));
+  assertEquals(Range.openClosed(0,3),ContiguousSet.create(Range.closedOpen(1,4),integers()).range(OPEN,CLOSED));
+  assertEquals(Range.openClosed(0,3),ContiguousSet.create(Range.open(0,4),integers()).range(OPEN,CLOSED));
+  assertEquals(Range.openClosed(0,3),ContiguousSet.create(Range.openClosed(0,3),integers()).range(OPEN,CLOSED));
+  assertEquals(Range.open(0,4),ContiguousSet.create(Range.closed(1,3),integers()).range(OPEN,OPEN));
+  assertEquals(Range.open(0,4),ContiguousSet.create(Range.closedOpen(1,4),integers()).range(OPEN,OPEN));
+  assertEquals(Range.open(0,4),ContiguousSet.create(Range.open(0,4),integers()).range(OPEN,OPEN));
+  assertEquals(Range.open(0,4),ContiguousSet.create(Range.openClosed(0,3),integers()).range(OPEN,OPEN));
+  assertEquals(Range.closedOpen(1,4),ContiguousSet.create(Range.closed(1,3),integers()).range(CLOSED,OPEN));
+  assertEquals(Range.closedOpen(1,4),ContiguousSet.create(Range.closedOpen(1,4),integers()).range(CLOSED,OPEN));
+  assertEquals(Range.closedOpen(1,4),ContiguousSet.create(Range.open(0,4),integers()).range(CLOSED,OPEN));
+  assertEquals(Range.closedOpen(1,4),ContiguousSet.create(Range.openClosed(0,3),integers()).range(CLOSED,OPEN));
 }

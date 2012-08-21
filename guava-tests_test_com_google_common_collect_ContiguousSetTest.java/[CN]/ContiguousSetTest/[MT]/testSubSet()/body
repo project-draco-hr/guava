@@ -1,5 +1,5 @@
 {
-  ImmutableSortedSet<Integer> set=ContiguousSet.create(Ranges.closed(1,3),integers());
+  ImmutableSortedSet<Integer> set=ContiguousSet.create(Range.closed(1,3),integers());
   ASSERT.that(set.subSet(1,4)).hasContentsInOrder(1,2,3);
   ASSERT.that(set.subSet(2,4)).hasContentsInOrder(2,3);
   ASSERT.that(set.subSet(3,4)).hasContentsInOrder(3);

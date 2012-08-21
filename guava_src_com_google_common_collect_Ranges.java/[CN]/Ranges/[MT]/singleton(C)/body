@@ -1,3 +1,3 @@
 {
-  return closed(value,value);
+  return Range.singleton(value);
 }

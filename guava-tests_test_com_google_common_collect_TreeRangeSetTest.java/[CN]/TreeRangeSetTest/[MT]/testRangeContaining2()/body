@@ -1,10 +1,10 @@
 {
   RangeSet<Integer> rangeSet=TreeRangeSet.create();
-  rangeSet.add(Ranges.closed(3,10));
-  rangeSet.remove(Ranges.open(5,7));
-  assertEquals(Ranges.closed(3,5),rangeSet.rangeContaining(5));
+  rangeSet.add(Range.closed(3,10));
+  rangeSet.remove(Range.open(5,7));
+  assertEquals(Range.closed(3,5),rangeSet.rangeContaining(5));
   assertTrue(rangeSet.contains(5));
-  assertEquals(Ranges.closed(7,10),rangeSet.rangeContaining(8));
+  assertEquals(Range.closed(7,10),rangeSet.rangeContaining(8));
   assertTrue(rangeSet.contains(8));
   assertNull(rangeSet.rangeContaining(6));
   assertFalse(rangeSet.contains(6));

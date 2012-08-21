@@ -1,6 +1,6 @@
 {
   for (  BoundType endpointType : BoundType.values()) {
-    assertEquals(GeneralRange.upTo(Ordering.natural(),3,endpointType),GeneralRange.from(Ranges.upTo(3,endpointType)));
-    assertEquals(GeneralRange.downTo(Ordering.natural(),3,endpointType),GeneralRange.from(Ranges.downTo(3,endpointType)));
+    assertEquals(GeneralRange.upTo(Ordering.natural(),3,endpointType),GeneralRange.from(Range.upTo(3,endpointType)));
+    assertEquals(GeneralRange.downTo(Ordering.natural(),3,endpointType),GeneralRange.from(Range.downTo(3,endpointType)));
   }
 }
