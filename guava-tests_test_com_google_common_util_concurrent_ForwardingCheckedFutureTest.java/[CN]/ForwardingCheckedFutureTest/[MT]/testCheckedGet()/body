@@ -1,7 +1,0 @@
-{
-  expect(delegate.checkedGet()).andReturn(VALUE).times(2);
-  replay(delegate);
-  assertEquals(VALUE,forwarded.checkedGet());
-  assertEquals(VALUE,simple.checkedGet());
-  verify(delegate);
-}

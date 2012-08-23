@@ -1,0 +1,3 @@
+{
+  ForwardingObjectTester.testForwardingObject(ForwardingListenableFuture.class);
+}

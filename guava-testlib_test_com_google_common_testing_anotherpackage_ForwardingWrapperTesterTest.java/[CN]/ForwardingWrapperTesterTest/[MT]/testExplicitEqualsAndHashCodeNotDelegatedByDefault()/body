@@ -1,0 +1,3 @@
+{
+  new ForwardingWrapperTester().testForwarding(Equals.class,NoDelegateToEquals.WRAPPER);
+}

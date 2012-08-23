@@ -1,0 +1,9 @@
+{
+  try {
+    ForwardingObjectTester.testForwardingObject(FailToForward.class);
+  }
+ catch (  AssertionError expected) {
+    return;
+  }
+  fail("Should have thrown");
+}

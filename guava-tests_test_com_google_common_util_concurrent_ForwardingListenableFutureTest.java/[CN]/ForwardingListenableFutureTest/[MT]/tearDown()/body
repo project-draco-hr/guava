@@ -1,4 +1,0 @@
-{
-  tester.tearDown();
-  super.tearDown();
-}

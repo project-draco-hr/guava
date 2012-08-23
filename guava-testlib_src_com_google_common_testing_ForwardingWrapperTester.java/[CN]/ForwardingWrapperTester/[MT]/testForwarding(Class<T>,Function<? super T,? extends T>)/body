@@ -1,8 +1,17 @@
 {
   checkArgument(interfaceType.isInterface(),"%s isn't an interface",interfaceType);
-  Method[] methods=interfaceType.getMethods();
+  Method[] methods=getMostConcreteMethods(interfaceType);
   AccessibleObject.setAccessible(methods,true);
   for (  Method method : methods) {
+    if (method.getName().equals("equals") && method.getParameterTypes().length == 1 && method.getParameterTypes()[0] == Object.class) {
+      continue;
+    }
+    if (method.getName().equals("hashCode") && method.getParameterTypes().length == 0) {
+      continue;
+    }
+    if (method.getName().equals("toString") && method.getParameterTypes().length == 0) {
+      continue;
+    }
     testSuccessfulForwarding(interfaceType,method,wrapperFunction);
     testExceptionPropagation(interfaceType,method,wrapperFunction);
   }

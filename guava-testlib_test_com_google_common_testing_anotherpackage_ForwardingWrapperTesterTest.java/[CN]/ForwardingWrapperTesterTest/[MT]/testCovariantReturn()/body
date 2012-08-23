@@ -1,0 +1,8 @@
+{
+  new ForwardingWrapperTester().testForwarding(Sub.class,new Function<Sub,Sub>(){
+    @Override public Sub apply(    Sub sub){
+      return new ForwardingSub(sub);
+    }
+  }
+);
+}

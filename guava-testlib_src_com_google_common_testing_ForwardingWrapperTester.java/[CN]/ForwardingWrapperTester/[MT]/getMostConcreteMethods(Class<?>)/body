@@ -1,0 +1,12 @@
+{
+  Method[] methods=type.getMethods();
+  for (int i=0; i < methods.length; i++) {
+    try {
+      methods[i]=type.getMethod(methods[i].getName(),methods[i].getParameterTypes());
+    }
+ catch (    Exception e) {
+      throw Throwables.propagate(e);
+    }
+  }
+  return methods;
+}

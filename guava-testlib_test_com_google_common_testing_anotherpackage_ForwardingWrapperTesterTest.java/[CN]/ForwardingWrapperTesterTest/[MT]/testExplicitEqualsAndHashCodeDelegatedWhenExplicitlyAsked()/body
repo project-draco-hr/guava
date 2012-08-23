@@ -1,0 +1,9 @@
+{
+  try {
+    new ForwardingWrapperTester().includingEquals().testForwarding(Equals.class,NoDelegateToEquals.WRAPPER);
+  }
+ catch (  AssertionError expected) {
+    return;
+  }
+  fail("Should have failed");
+}
