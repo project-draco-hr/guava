@@ -1,0 +1,22 @@
+{
+  final RuntimeException exception=new RuntimeException();
+  T proxy=Reflection.newProxy(interfaceType,new AbstractInvocationHandler(){
+    @Override protected Object handleInvocation(    Object p,    Method m,    Object[] args) throws Throwable {
+      throw exception;
+    }
+  }
+);
+  T wrapper=wrapperFunction.apply(proxy);
+  try {
+    method.invoke(wrapper,getParameterValues(method));
+    fail(method + " failed to throw exception as is.");
+  }
+ catch (  InvocationTargetException e) {
+    if (exception != e.getCause()) {
+      throw new RuntimeException(e);
+    }
+  }
+catch (  IllegalAccessException e) {
+    throw new AssertionError(e);
+  }
+}

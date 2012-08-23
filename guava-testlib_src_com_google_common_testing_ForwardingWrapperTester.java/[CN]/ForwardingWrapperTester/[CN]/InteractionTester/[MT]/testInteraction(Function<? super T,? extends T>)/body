@@ -1,0 +1,14 @@
+{
+  T proxy=Reflection.newProxy(interfaceType,this);
+  T wrapper=wrapperFunction.apply(proxy);
+  try {
+    assertEquals("Return value of " + method + " not forwarded",returnValue,method.invoke(wrapper,passedArgs));
+  }
+ catch (  IllegalAccessException e) {
+    throw new RuntimeException(e);
+  }
+catch (  InvocationTargetException e) {
+    throw Throwables.propagate(e.getCause());
+  }
+  assertEquals("Failed to forward to " + method,1,called.get());
+}

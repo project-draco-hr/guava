@@ -1,0 +1,4 @@
+{
+  this.testsEquals=true;
+  return this;
+}

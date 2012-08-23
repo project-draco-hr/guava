@@ -1,0 +1,18 @@
+{
+  tester.includingEquals();
+  assertFailure(Runnable.class,new Function<Runnable,Runnable>(){
+    @Override public Runnable apply(    final Runnable runnable){
+      return new ForwardingRunnable(runnable){
+        @Override public boolean equals(        Object o){
+          if (o instanceof ForwardingRunnable) {
+            ForwardingRunnable that=(ForwardingRunnable)o;
+            return runnable.equals(that.runnable);
+          }
+          return false;
+        }
+      }
+;
+    }
+  }
+,"Runnable");
+}

@@ -1,0 +1,2 @@
+Class<T> interfaceType
+Function<? super T,? extends T> wrapperFunction

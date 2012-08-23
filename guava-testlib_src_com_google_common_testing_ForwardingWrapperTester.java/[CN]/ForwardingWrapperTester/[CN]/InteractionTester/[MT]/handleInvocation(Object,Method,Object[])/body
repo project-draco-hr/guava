@@ -1,0 +1,9 @@
+{
+  assertEquals(method,calledMethod);
+  assertEquals(method + " invoked more than once.",0,called.get());
+  for (int i=0; i < passedArgs.length; i++) {
+    assertEquals("Parameter #" + i + " of "+ method+ " not forwarded",passedArgs[i],args[i]);
+  }
+  called.getAndIncrement();
+  return returnValue;
+}

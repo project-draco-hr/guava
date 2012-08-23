@@ -1,0 +1,8 @@
+{
+  assertFailure(Arithmetic.class,new Function<Arithmetic,Arithmetic>(){
+    @Override public Arithmetic apply(    Arithmetic adder){
+      return new ForwardsToTheWrongMethod(adder);
+    }
+  }
+,"minus(");
+}

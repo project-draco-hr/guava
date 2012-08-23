@@ -1,0 +1,8 @@
+{
+  try {
+    new ForwardingWrapperTester().testForwarding(String.class,Functions.<String>identity());
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}

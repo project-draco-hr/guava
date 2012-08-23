@@ -1,0 +1,5 @@
+{
+  assertEqualInstance(EmptyEnum.class,null);
+  assertEqualInstance(OneConstantEnum.class,OneConstantEnum.CONSTANT1);
+  assertFreshInstance(TwoConstantEnum.class);
+}

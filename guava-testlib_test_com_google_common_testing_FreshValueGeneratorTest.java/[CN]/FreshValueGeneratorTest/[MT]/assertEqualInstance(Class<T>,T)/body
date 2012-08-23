@@ -1,0 +1,5 @@
+{
+  FreshValueGenerator generator=new FreshValueGenerator();
+  assertEquals(value,generator.generate(type));
+  assertEquals(value,generator.generate(type));
+}

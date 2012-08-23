@@ -1,0 +1,12 @@
+{
+  try {
+    tester.testForwarding(interfaceType,wrapperFunction);
+  }
+ catch (  AssertionError expected) {
+    for (    String message : expectedMessages) {
+      ASSERT.that(expected.getMessage()).contains(message);
+    }
+    return;
+  }
+  fail("expected failure not reported");
+}

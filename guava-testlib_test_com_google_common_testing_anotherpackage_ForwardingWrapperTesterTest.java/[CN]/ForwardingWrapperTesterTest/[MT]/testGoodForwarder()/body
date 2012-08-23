@@ -1,0 +1,14 @@
+{
+  tester.testForwarding(Arithmetic.class,new Function<Arithmetic,Arithmetic>(){
+    @Override public Arithmetic apply(    Arithmetic arithmetic){
+      return new ForwardingArithmetic(arithmetic);
+    }
+  }
+);
+  tester.testForwarding(ParameterTypesDifferent.class,new Function<ParameterTypesDifferent,ParameterTypesDifferent>(){
+    @Override public ParameterTypesDifferent apply(    ParameterTypesDifferent delegate){
+      return new ParameterTypesDifferentForwarder(delegate);
+    }
+  }
+);
+}

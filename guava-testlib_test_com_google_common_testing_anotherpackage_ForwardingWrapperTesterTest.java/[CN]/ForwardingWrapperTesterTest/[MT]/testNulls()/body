@@ -1,0 +1,3 @@
+{
+  new NullPointerTester().setDefault(Class.class,Runnable.class).testAllPublicInstanceMethods(new ForwardingWrapperTester());
+}

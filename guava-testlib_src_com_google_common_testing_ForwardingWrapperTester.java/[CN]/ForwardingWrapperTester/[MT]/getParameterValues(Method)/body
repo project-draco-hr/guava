@@ -1,0 +1,8 @@
+{
+  FreshValueGenerator paramValues=new FreshValueGenerator();
+  final List<Object> passedArgs=Lists.newArrayList();
+  for (  Class<?> paramType : method.getParameterTypes()) {
+    passedArgs.add(paramValues.generate(paramType));
+  }
+  return passedArgs.toArray();
+}

@@ -1,0 +1,14 @@
+{
+  assertFailure(Runnable.class,new Function<Runnable,Runnable>(){
+    @Override public Runnable apply(    final Runnable runnable){
+      return new Runnable(){
+        @Override public void run(){
+          runnable.run();
+          runnable.run();
+        }
+      }
+;
+    }
+  }
+,"run()","invoked more than once");
+}

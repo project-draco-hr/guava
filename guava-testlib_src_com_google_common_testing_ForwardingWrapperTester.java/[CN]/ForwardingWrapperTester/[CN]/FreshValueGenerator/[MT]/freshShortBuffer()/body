@@ -1,0 +1,3 @@
+{
+  return ShortBuffer.allocate(freshInt());
+}

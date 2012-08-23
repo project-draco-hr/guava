@@ -1,0 +1,4 @@
+{
+  T proxy=new FreshValueGenerator().newProxy(interfaceType);
+  assertEquals("toString() isn't properly forwarded",proxy.toString(),wrapperFunction.apply(proxy).toString());
+}

@@ -1,0 +1,12 @@
+{
+  assertFailure(Runnable.class,new Function<Runnable,Runnable>(){
+    @Override public Runnable apply(    Runnable runnable){
+      return new ForwardingRunnable(runnable){
+        @Override public void run(){
+        }
+      }
+;
+    }
+  }
+,"run()","Failed to forward");
+}

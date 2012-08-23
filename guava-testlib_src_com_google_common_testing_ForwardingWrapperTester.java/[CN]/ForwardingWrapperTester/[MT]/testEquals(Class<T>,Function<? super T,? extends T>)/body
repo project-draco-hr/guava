@@ -1,0 +1,5 @@
+{
+  FreshValueGenerator generator=new FreshValueGenerator();
+  T instance=generator.newProxy(interfaceType);
+  new EqualsTester().addEqualityGroup(wrapperFunction.apply(instance),wrapperFunction.apply(instance)).addEqualityGroup(wrapperFunction.apply(generator.newProxy(interfaceType))).testEquals();
+}

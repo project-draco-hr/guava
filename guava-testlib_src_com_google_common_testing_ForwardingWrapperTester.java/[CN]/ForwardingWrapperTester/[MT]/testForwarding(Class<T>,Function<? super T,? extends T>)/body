@@ -1,0 +1,13 @@
+{
+  checkArgument(interfaceType.isInterface(),"%s isn't an interface",interfaceType);
+  Method[] methods=interfaceType.getMethods();
+  AccessibleObject.setAccessible(methods,true);
+  for (  Method method : methods) {
+    testSuccessfulForwarding(interfaceType,method,wrapperFunction);
+    testExceptionPropagation(interfaceType,method,wrapperFunction);
+  }
+  if (testsEquals) {
+    testEquals(interfaceType,wrapperFunction);
+  }
+  testToString(interfaceType,wrapperFunction);
+}

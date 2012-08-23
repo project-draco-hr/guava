@@ -1,0 +1,8 @@
+{
+  assertFailure(Adder.class,new Function<Adder,Adder>(){
+    @Override public Adder apply(    Adder adder){
+      return new FailsToForwardParameters(adder);
+    }
+  }
+,"add(","Parameter #0");
+}

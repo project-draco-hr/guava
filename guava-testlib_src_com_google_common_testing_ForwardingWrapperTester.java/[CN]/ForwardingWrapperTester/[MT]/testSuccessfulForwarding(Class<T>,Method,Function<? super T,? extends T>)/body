@@ -1,0 +1,3 @@
+{
+  new InteractionTester<T>(interfaceType,method).testInteraction(wrapperFunction);
+}

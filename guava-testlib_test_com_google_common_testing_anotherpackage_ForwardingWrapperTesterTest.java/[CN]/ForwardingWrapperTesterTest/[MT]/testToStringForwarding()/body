@@ -1,0 +1,13 @@
+{
+  tester.testForwarding(Runnable.class,new Function<Runnable,Runnable>(){
+    @Override public Runnable apply(    final Runnable runnable){
+      return new ForwardingRunnable(runnable){
+        @Override public String toString(){
+          return runnable.toString();
+        }
+      }
+;
+    }
+  }
+);
+}

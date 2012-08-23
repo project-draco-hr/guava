@@ -1,0 +1,22 @@
+{
+  if (type.isInterface()) {
+    return newProxy(type);
+  }
+  for (  Method method : FreshValueGenerator.class.getDeclaredMethods()) {
+    if (method.isAnnotationPresent(Generates.class)) {
+      if (Primitives.wrap(type).isAssignableFrom(Primitives.wrap(method.getReturnType()))) {
+        try {
+          @SuppressWarnings("unchecked") T result=(T)method.invoke(this);
+          return result;
+        }
+ catch (        Exception e) {
+          throw Throwables.propagate(e);
+        }
+      }
+    }
+  }
+  if (type.isEnum()) {
+    return nextInstance(type.getEnumConstants(),null);
+  }
+  return ArbitraryInstances.get(type);
+}
