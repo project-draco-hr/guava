@@ -1,0 +1,13 @@
+{
+  int incrementByNanos=3;
+  final FakeTicker ticker=new FakeTicker().setAutoIncrementStep(incrementByNanos,TimeUnit.NANOSECONDS);
+  int numberOfThreads=64;
+  runConcurrentTest(numberOfThreads,new Callable<Void>(){
+    @Override public Void call() throws Exception {
+      ticker.read();
+      return null;
+    }
+  }
+);
+  assertEquals(incrementByNanos * numberOfThreads,ticker.read());
+}

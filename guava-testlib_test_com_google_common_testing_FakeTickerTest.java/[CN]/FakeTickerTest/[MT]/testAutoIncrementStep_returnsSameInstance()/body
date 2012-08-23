@@ -1,0 +1,4 @@
+{
+  FakeTicker ticker=new FakeTicker();
+  assertSame(ticker,ticker.setAutoIncrementStep(10,TimeUnit.NANOSECONDS));
+}

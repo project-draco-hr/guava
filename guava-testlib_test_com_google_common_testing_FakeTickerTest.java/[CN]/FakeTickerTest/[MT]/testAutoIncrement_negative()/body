@@ -1,0 +1,9 @@
+{
+  FakeTicker ticker=new FakeTicker();
+  try {
+    ticker.setAutoIncrementStep(-1,TimeUnit.NANOSECONDS);
+    fail("Expected IllegalArgumentException");
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}

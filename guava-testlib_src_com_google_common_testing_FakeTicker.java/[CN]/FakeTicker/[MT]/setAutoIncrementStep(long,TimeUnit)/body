@@ -1,0 +1,5 @@
+{
+  checkArgument(autoIncrementStep >= 0,"May not auto-increment by a negative amount");
+  this.autoIncrementStepNanos=timeUnit.toNanos(autoIncrementStep);
+  return this;
+}

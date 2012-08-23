@@ -1,0 +1,18 @@
+{
+  ExecutorService executorService=Executors.newFixedThreadPool(numberOfThreads);
+  final CountDownLatch startLatch=new CountDownLatch(numberOfThreads);
+  final CountDownLatch doneLatch=new CountDownLatch(numberOfThreads);
+  for (int i=numberOfThreads; i > 0; i--) {
+    executorService.submit(new Callable<Void>(){
+      @Override public Void call() throws Exception {
+        startLatch.countDown();
+        startLatch.await();
+        callable.call();
+        doneLatch.countDown();
+        return null;
+      }
+    }
+);
+  }
+  doneLatch.await();
+}
