@@ -1,12 +1,12 @@
 {
-  List<V> localValues=values;
+  List<Optional<V>> localValues=values;
   if (isDone() || localValues == null) {
     checkState(allMustSucceed,"Future was done before all dependencies completed");
     return;
   }
   try {
     checkState(future.isDone(),"Tried to set value from future which is not done");
-    localValues.set(index,getUninterruptibly(future));
+    localValues.set(index,Optional.fromNullable(getUninterruptibly(future)));
   }
  catch (  CancellationException e) {
     if (allMustSucceed) {
@@ -30,9 +30,9 @@ catch (  Error e) {
     int newRemaining=remaining.decrementAndGet();
     checkState(newRemaining >= 0,"Less than 0 remaining futures");
     if (newRemaining == 0) {
-      localValues=values;
-      if (localValues != null) {
-        set(Lists.newArrayList(localValues));
+      FutureCombiner<V,C> localCombiner=combiner;
+      if (localCombiner != null) {
+        set(localCombiner.combine(localValues));
       }
  else {
         checkState(isDone());
