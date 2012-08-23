@@ -1,4 +1,0 @@
-{
-  super.doStart();
-  notifyFailed(new IllegalStateException("failed"));
-}

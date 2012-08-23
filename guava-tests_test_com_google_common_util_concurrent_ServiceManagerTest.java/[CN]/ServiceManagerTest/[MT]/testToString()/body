@@ -1,8 +1,0 @@
-{
-  Service a=new NoOpService();
-  Service b=new FailStartService();
-  ServiceManager manager=new ServiceManager(of(a,b));
-  String toString=manager.toString();
-  assertTrue(toString.contains("NoOpService"));
-  assertTrue(toString.contains("FailStartService"));
-}
