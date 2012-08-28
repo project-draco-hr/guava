@@ -1,0 +1,8 @@
+{
+  if (uri.getScheme().equals("file")) {
+    return readClassesFrom(new File(uri),classloader);
+  }
+ else {
+    return ImmutableSet.of();
+  }
+}

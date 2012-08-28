@@ -1,0 +1,12 @@
+{
+  for (  File f : directory.listFiles()) {
+    String name=f.getName();
+    if (f.isDirectory()) {
+      readClassesFromDirectory(f,classloader,packagePrefix + name + ".",builder);
+    }
+ else     if (isTopLevelClassFile(name)) {
+      String className=packagePrefix + getClassName(name);
+      builder.add(new ClassInfo(className,classloader));
+    }
+  }
+}

@@ -1,0 +1,5 @@
+{
+  ImmutableSet.Builder<ClassInfo> builder=ImmutableSet.builder();
+  readClassesFromDirectory(directory,classloader,"",builder);
+  return builder.build();
+}

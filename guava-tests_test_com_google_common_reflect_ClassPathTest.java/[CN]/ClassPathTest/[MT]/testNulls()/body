@@ -1,0 +1,4 @@
+{
+  new NullPointerTester().testAllPublicStaticMethods(ClassPath.class);
+  new NullPointerTester().testAllPublicInstanceMethods(ClassPath.from(getClass().getClassLoader()));
+}

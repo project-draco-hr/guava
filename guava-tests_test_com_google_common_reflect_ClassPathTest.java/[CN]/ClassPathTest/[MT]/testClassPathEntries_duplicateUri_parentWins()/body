@@ -1,0 +1,8 @@
+{
+  URL url=new URL("file:/a");
+  URLClassLoader parent=new URLClassLoader(new URL[]{url},null);
+  URLClassLoader child=new URLClassLoader(new URL[]{url},parent){
+  }
+;
+  assertEquals(ImmutableMap.of(url.toURI(),parent),ClassPath.getClassPathEntries(child));
+}

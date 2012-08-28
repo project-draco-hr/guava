@@ -1,0 +1,5 @@
+{
+  ASSERT.that(ClassPath.getClassPathEntries(new ClassLoader(null){
+  }
+).keySet()).isEmpty();
+}

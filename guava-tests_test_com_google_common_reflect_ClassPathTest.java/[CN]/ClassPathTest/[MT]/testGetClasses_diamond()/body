@@ -1,0 +1,10 @@
+{
+  ClassLoader parent=ClassPathTest.class.getClassLoader();
+  ClassLoader sub1=new ClassLoader(parent){
+  }
+;
+  ClassLoader sub2=new ClassLoader(parent){
+  }
+;
+  assertEquals(findClass(ClassPath.from(sub1).getClasses(),ClassPathTest.class),findClass(ClassPath.from(sub2).getClasses(),ClassPathTest.class));
+}

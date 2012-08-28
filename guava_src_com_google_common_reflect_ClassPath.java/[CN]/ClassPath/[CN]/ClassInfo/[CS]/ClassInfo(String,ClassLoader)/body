@@ -1,0 +1,4 @@
+{
+  this.className=checkNotNull(className);
+  this.loader=checkNotNull(loader);
+}

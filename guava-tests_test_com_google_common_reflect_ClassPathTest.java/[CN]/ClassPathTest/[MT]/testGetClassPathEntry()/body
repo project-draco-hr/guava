@@ -1,0 +1,6 @@
+{
+  assertEquals(URI.create("file:/usr/test/dep.jar"),ClassPath.getClassPathEntry(new File("/home/build/outer.jar"),"file:/usr/test/dep.jar"));
+  assertEquals(URI.create("file:/home/build/a.jar"),ClassPath.getClassPathEntry(new File("/home/build/outer.jar"),"a.jar"));
+  assertEquals(URI.create("file:/home/build/x/y/z"),ClassPath.getClassPathEntry(new File("/home/build/outer.jar"),"x/y/z"));
+  assertEquals(URI.create("file:/home/build/x/y/z.jar"),ClassPath.getClassPathEntry(new File("/home/build/outer.jar"),"x/y/z.jar"));
+}

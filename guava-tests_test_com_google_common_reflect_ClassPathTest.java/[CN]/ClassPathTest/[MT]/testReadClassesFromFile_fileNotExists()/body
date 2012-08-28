@@ -1,0 +1,4 @@
+{
+  ClassLoader classLoader=ClassPathTest.class.getClassLoader();
+  ASSERT.that(ClassPath.readClassesFrom(new File("no/such/file/anywhere"),classLoader)).isEmpty();
+}

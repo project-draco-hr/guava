@@ -1,0 +1,6 @@
+{
+  InputStream in=new ByteArrayInputStream(content.getBytes(Charsets.US_ASCII));
+  Manifest manifest=new Manifest();
+  manifest.read(in);
+  return manifest;
+}

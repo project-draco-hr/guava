@@ -1,0 +1,16 @@
+{
+  ImmutableSet.Builder<ClassInfo> builder=ImmutableSet.builder();
+  JarFile jarFile=new JarFile(file);
+  for (  URI uri : getClassPathFromManifest(file,jarFile.getManifest())) {
+    builder.addAll(readClassesFrom(uri,classloader));
+  }
+  Enumeration<JarEntry> entries=jarFile.entries();
+  while (entries.hasMoreElements()) {
+    JarEntry entry=entries.nextElement();
+    if (isTopLevelClassFile(entry.getName())) {
+      String className=getClassName(entry.getName().replace('/','.'));
+      builder.add(new ClassInfo(className,classloader));
+    }
+  }
+  return builder.build();
+}

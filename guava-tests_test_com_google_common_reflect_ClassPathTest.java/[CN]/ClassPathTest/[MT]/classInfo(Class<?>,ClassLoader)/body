@@ -1,0 +1,3 @@
+{
+  return new ClassPath.ClassInfo(cls.getName(),classLoader);
+}

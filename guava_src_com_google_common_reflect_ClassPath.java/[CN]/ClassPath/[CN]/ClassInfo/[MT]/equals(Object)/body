@@ -1,0 +1,7 @@
+{
+  if (obj instanceof ClassInfo) {
+    ClassInfo that=(ClassInfo)obj;
+    return className.equals(that.className) && loader == that.loader;
+  }
+  return false;
+}
