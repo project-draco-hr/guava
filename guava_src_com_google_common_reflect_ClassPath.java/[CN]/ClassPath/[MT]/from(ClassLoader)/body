@@ -1,3 +1,7 @@
 {
-  return new ClassPath(classloader);
+  ImmutableSet.Builder<ClassInfo> builder=ImmutableSet.builder();
+  for (  Map.Entry<URI,ClassLoader> entry : getClassPathEntries(classloader).entrySet()) {
+    builder.addAll(readClassesFrom(entry.getKey(),entry.getValue()));
+  }
+  return new ClassPath(builder.build());
 }
