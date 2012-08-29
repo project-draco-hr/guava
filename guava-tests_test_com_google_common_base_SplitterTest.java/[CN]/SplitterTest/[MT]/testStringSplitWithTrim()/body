@@ -1,5 +1,5 @@
 {
   String jacksons="arfo(Marlon)aorf, (Michael)orfa, afro(Jackie)orfa, " + "ofar(Jemaine), aff(Tito)";
-  Iterable<String> family=Splitter.on(",").trimResults(CharMatcher.anyOf("afro").or(CharMatcher.WHITESPACE)).split(jacksons);
+  Iterable<String> family=Splitter.on(',').trimResults(CharMatcher.anyOf("afro").or(CharMatcher.WHITESPACE)).split(jacksons);
   ASSERT.that(family).hasContentsInOrder("(Marlon)","(Michael)","(Jackie)","(Jemaine)","(Tito)");
 }

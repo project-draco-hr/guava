@@ -1,5 +1,5 @@
 {
   String leading=",a,b,c";
-  Iterable<String> letters=Splitter.on(",").split(leading);
+  Iterable<String> letters=Splitter.on(',').split(leading);
   ASSERT.that(letters).hasContentsInOrder("","a","b","c");
 }
