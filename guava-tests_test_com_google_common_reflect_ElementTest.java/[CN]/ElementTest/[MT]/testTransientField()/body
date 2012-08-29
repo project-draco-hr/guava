@@ -1,0 +1,4 @@
+{
+  Element element=A.field("transientField");
+  assertTrue(element.isTransient());
+}

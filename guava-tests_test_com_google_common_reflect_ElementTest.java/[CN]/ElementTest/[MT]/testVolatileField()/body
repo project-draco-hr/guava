@@ -1,0 +1,4 @@
+{
+  Element element=A.field("volatileField");
+  assertTrue(element.isVolatile());
+}

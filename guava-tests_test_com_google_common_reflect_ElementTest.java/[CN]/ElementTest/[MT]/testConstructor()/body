@@ -1,0 +1,8 @@
+{
+  Element element=A.constructor();
+  assertTrue(element.isPublic());
+  assertFalse(element.isPackagePrivate());
+  assertFalse(element.isAbstract());
+  assertFalse(element.isStatic());
+  assertTrue(element.isAnnotationPresent(Tested.class));
+}

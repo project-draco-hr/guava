@@ -1,0 +1,5 @@
+{
+  Element element=A.field("staticField");
+  assertTrue(element.isStatic());
+  assertTrue(element.isAnnotationPresent(Tested.class));
+}

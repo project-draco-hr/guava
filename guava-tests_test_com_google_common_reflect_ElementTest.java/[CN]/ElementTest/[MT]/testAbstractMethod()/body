@@ -1,0 +1,7 @@
+{
+  Element element=A.method("abstractMethod");
+  assertTrue(element.isPackagePrivate());
+  assertTrue(element.isAbstract());
+  assertFalse(element.isFinal());
+  assertTrue(element.isAnnotationPresent(Tested.class));
+}

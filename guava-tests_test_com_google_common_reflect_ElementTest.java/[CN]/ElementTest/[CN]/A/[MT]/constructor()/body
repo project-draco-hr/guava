@@ -1,0 +1,7 @@
+{
+  Constructor<?> constructor=A.class.getDeclaredConstructor(Object.class);
+  Element element=new Element(constructor);
+  assertEquals(constructor.getName(),element.getName());
+  assertEquals(A.class,element.getDeclaringClass());
+  return element;
+}

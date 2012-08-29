@@ -1,0 +1,5 @@
+{
+  Element element=A.method("nativeMethod");
+  assertTrue(element.isNative());
+  assertTrue(element.isPackagePrivate());
+}

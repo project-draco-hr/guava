@@ -1,0 +1,4 @@
+{
+  Element element=A.method("notAnnotatedMethod");
+  assertFalse(element.isAnnotationPresent(Tested.class));
+}

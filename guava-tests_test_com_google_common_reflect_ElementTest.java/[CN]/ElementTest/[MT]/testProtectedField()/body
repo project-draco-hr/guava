@@ -1,0 +1,10 @@
+{
+  Element element=A.field("protectedField");
+  assertFalse(element.isPrivate());
+  assertFalse(element.isPackagePrivate());
+  assertTrue(element.isProtected());
+  assertFalse(element.isPublic());
+  assertFalse(element.isFinal());
+  assertFalse(element.isStatic());
+  assertTrue(element.isAnnotationPresent(Tested.class));
+}

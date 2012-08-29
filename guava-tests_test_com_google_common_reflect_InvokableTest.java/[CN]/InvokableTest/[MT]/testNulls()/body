@@ -1,0 +1,4 @@
+{
+  new NullPointerTester().testAllPublicStaticMethods(Invokable.class);
+  new NullPointerTester().testAllPublicInstanceMethods(Prepender.method("staticMethod"));
+}

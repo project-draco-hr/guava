@@ -1,0 +1,4 @@
+{
+  Element element=A.method("synchronizedMethod");
+  assertTrue(element.isSynchronized());
+}

@@ -1,0 +1,6 @@
+{
+  Element element=new Element(A.class.getDeclaredField(name));
+  assertEquals(name,element.getName());
+  assertEquals(A.class,element.getDeclaringClass());
+  return element;
+}

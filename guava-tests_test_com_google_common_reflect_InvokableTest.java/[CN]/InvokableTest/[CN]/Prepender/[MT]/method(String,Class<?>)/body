@@ -1,0 +1,9 @@
+{
+  try {
+    Method method=Prepender.class.getDeclaredMethod(name,parameterTypes);
+    return Invokable.from(method);
+  }
+ catch (  NoSuchMethodException e) {
+    throw new IllegalArgumentException(e);
+  }
+}

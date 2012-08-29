@@ -1,0 +1,4 @@
+{
+  Invokable<Object,Object> delegate=Prepender.method("prepend",Iterable.class);
+  assertEquals(0,delegate.getTypeParameters().length);
+}

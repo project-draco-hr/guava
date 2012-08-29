@@ -1,0 +1,10 @@
+{
+  Element element=A.method("protectedMethod");
+  assertFalse(element.isAbstract());
+  assertFalse(element.isPrivate());
+  assertFalse(element.isPackagePrivate());
+  assertFalse(element.isFinal());
+  assertFalse(element.isPublic());
+  assertTrue(element.isProtected());
+  assertTrue(element.isAnnotationPresent(Tested.class));
+}

@@ -1,0 +1,3 @@
+{
+  new EqualsTester().addEqualityGroup(Prepender.constructor(),Prepender.constructor()).addEqualityGroup(Prepender.constructor(String.class,int.class)).addEqualityGroup(Prepender.method("privateMethod"),Prepender.method("privateMethod")).addEqualityGroup(Prepender.method("privateFinalMethod")).testEquals();
+}

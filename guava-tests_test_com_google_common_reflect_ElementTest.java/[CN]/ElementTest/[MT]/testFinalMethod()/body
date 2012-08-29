@@ -1,0 +1,8 @@
+{
+  Element element=A.method("publicFinalMethod");
+  assertFalse(element.isAbstract());
+  assertFalse(element.isPrivate());
+  assertTrue(element.isFinal());
+  assertTrue(element.isPublic());
+  assertTrue(element.isAnnotationPresent(Tested.class));
+}
