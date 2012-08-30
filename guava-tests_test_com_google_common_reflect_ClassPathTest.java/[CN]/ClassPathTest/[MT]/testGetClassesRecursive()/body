@@ -1,0 +1,8 @@
+{
+  Set<Class<?>> classes=Sets.newHashSet();
+  ClassPath classpath=ClassPath.from(ClassPathTest.class.getClassLoader());
+  for (  ClassInfo classInfo : classpath.getClassesRecursive(ClassPathTest.class.getPackage().getName())) {
+    classes.add(classInfo.load());
+  }
+  ASSERT.that(classes).containsAllOf(ClassPathTest.class,ClassInSubPackage.class);
+}
