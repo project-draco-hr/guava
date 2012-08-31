@@ -1,0 +1,4 @@
+{
+  RuntimeException expectedException=new RuntimeException();
+  runExpectedExceptionFallbackTest(expectedException,true);
+}

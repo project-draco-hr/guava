@@ -1,0 +1,13 @@
+{
+  SettableFuture<Integer> secondary=SettableFuture.create();
+  FutureFallback<Integer> fallback=mocksControl.createMock(FutureFallback.class);
+  RuntimeException raisedException=new RuntimeException();
+  expect(fallback.create(raisedException)).andReturn(secondary);
+  ListenableFuture<Integer> failingFuture=Futures.immediateFailedFuture(raisedException);
+  mocksControl.replay();
+  ListenableFuture<Integer> derived=Futures.withFallback(failingFuture,fallback);
+  derived.cancel(false);
+  assertTrue(secondary.isCancelled());
+  assertFalse(secondary.wasInterrupted());
+  mocksControl.verify();
+}

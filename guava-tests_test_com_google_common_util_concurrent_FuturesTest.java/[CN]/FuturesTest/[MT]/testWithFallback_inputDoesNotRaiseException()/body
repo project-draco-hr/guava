@@ -1,0 +1,8 @@
+{
+  FutureFallback<Integer> fallback=mocksControl.createMock(FutureFallback.class);
+  ListenableFuture<Integer> originalFuture=Futures.immediateFuture(7);
+  mocksControl.replay();
+  ListenableFuture<Integer> faultToleranteFuture=Futures.withFallback(originalFuture,fallback);
+  assertEquals(7,faultToleranteFuture.get().intValue());
+  mocksControl.verify();
+}

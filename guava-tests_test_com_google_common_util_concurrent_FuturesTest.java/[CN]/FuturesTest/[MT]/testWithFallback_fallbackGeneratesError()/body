@@ -1,0 +1,16 @@
+{
+  Error error=new Error("deliberate");
+  FutureFallback<Integer> fallback=mocksControl.createMock(FutureFallback.class);
+  RuntimeException raisedException=new RuntimeException();
+  expect(fallback.create(raisedException)).andThrow(error);
+  ListenableFuture<Integer> failingFuture=Futures.immediateFailedFuture(raisedException);
+  mocksControl.replay();
+  try {
+    Futures.withFallback(failingFuture,fallback);
+    fail("An Exception should have been thrown!");
+  }
+ catch (  Error expected) {
+    assertSame(error,expected);
+  }
+  mocksControl.verify();
+}
