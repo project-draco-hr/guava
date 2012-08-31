@@ -1,6 +1,5 @@
 {
   if (super.cancel(mayInterruptIfRunning)) {
-    putUninterruptibly(mayInterruptIfRunningChannel,mayInterruptIfRunning);
     cancel(inputFuture,mayInterruptIfRunning);
     cancel(outputFuture,mayInterruptIfRunning);
     return true;

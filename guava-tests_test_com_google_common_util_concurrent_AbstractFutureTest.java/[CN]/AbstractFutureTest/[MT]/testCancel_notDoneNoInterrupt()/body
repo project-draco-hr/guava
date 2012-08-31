@@ -3,5 +3,6 @@
   assertTrue(future.cancel(false));
   assertTrue(future.isCancelled());
   assertTrue(future.isDone());
-  assertFalse(future.wasInterrupted);
+  assertFalse(future.wasInterrupted());
+  assertFalse(future.interruptTaskWasCalled);
 }

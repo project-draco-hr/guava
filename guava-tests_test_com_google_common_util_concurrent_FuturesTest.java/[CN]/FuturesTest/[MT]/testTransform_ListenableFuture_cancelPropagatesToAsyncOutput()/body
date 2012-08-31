@@ -1,0 +1,13 @@
+{
+  ListenableFuture<Foo> immediate=Futures.immediateFuture(new Foo());
+  final SettableFuture<Bar> secondary=SettableFuture.create();
+  AsyncFunction<Foo,Bar> function=new AsyncFunction<Foo,Bar>(){
+    @Override public ListenableFuture<Bar> apply(    Foo unused){
+      return secondary;
+    }
+  }
+;
+  assertTrue(Futures.transform(immediate,function).cancel(false));
+  assertTrue(secondary.isCancelled());
+  assertFalse(secondary.wasInterrupted());
+}

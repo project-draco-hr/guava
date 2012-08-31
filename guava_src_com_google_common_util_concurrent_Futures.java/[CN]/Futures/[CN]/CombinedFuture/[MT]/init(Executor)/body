@@ -1,6 +1,11 @@
 {
   addListener(new Runnable(){
     @Override public void run(){
+      if (CombinedFuture.this.isCancelled()) {
+        for (        ListenableFuture<?> future : CombinedFuture.this.futures) {
+          future.cancel(CombinedFuture.this.wasInterrupted());
+        }
+      }
       CombinedFuture.this.futures=null;
       CombinedFuture.this.values=null;
       CombinedFuture.this.combiner=null;
