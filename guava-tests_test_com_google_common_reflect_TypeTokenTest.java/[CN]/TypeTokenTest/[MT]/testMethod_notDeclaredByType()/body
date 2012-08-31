@@ -1,0 +1,9 @@
+{
+  Method sizeMethod=Map.class.getMethod("size");
+  try {
+    TypeToken.of(List.class).method(sizeMethod);
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}

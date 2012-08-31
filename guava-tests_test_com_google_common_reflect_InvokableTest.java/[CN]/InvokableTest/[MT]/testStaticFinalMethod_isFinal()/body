@@ -1,5 +1,5 @@
 {
-  Invokable<Object,?> delegate=Prepender.method("staticFinalMethod");
+  Invokable<?,?> delegate=Prepender.method("staticFinalMethod");
   assertTrue(delegate.isStatic());
   assertTrue(delegate.isFinal());
   assertFalse(delegate.isOverridable());

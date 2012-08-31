@@ -1,7 +1,8 @@
 {
   try {
     Method method=Prepender.class.getDeclaredMethod(name,parameterTypes);
-    return Invokable.from(method);
+    @SuppressWarnings("unchecked") Invokable<Prepender,Object> invokable=(Invokable<Prepender,Object>)Invokable.from(method);
+    return invokable;
   }
  catch (  NoSuchMethodException e) {
     throw new IllegalArgumentException(e);

@@ -1,0 +1,7 @@
+{
+  Method failMethod=Loser.class.getMethod("lose");
+  Invokable<T,?> invokable=new TypeToken<T>(getClass()){
+  }
+.method(failMethod);
+  ASSERT.that(invokable.getExceptionTypes()).hasContentsInOrder(TypeToken.of(AssertionError.class));
+}

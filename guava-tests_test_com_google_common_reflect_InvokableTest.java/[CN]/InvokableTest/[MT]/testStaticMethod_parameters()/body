@@ -1,6 +1,6 @@
 {
-  Invokable<Object,Object> delegate=Prepender.method("prepend",String.class,Iterable.class);
-  ImmutableList<Parameter<?>> parameters=delegate.getParameters();
+  Invokable<?,?> delegate=Prepender.method("prepend",String.class,Iterable.class);
+  ImmutableList<Parameter> parameters=delegate.getParameters();
   assertEquals(2,parameters.size());
   assertEquals(String.class,parameters.get(0).getType().getType());
   assertTrue(parameters.get(0).isAnnotationPresent(NotBlank.class));

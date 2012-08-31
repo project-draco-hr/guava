@@ -1,5 +1,5 @@
 {
-  Invokable<Object,Object> delegate=Prepender.method("prepend",String.class,Iterable.class);
+  Invokable<?,?> delegate=Prepender.method("prepend",String.class,Iterable.class);
   assertEquals(new TypeToken<Iterable<String>>(){
   }
 ,delegate.getReturnType());

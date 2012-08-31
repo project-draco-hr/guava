@@ -1,0 +1,9 @@
+{
+  @SuppressWarnings("rawtypes") Constructor<Container> constructor=Container.class.getConstructor(Object.class);
+  Invokable<T,?> invokable=new TypeToken<T>(getClass()){
+  }
+.constructor(constructor);
+  ImmutableList<Parameter> params=invokable.getParameters();
+  assertEquals(1,params.size());
+  assertEquals(TypeToken.of(String.class),params.get(0).getType());
+}

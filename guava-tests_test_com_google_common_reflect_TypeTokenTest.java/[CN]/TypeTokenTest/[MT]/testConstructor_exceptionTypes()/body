@@ -1,0 +1,7 @@
+{
+  @SuppressWarnings("rawtypes") Constructor<CannotConstruct> constructor=CannotConstruct.class.getConstructor();
+  Invokable<T,?> invokable=new TypeToken<T>(getClass()){
+  }
+.constructor(constructor);
+  ASSERT.that(invokable.getExceptionTypes()).hasContentsInOrder(TypeToken.of(AssertionError.class));
+}

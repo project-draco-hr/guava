@@ -1,5 +1,5 @@
 {
-  Invokable<Object,Object> delegate=Prepender.method("prepend",String.class,Iterable.class);
+  Invokable<?,Object> delegate=Prepender.method("prepend",String.class,Iterable.class);
   try {
     delegate.returning(new TypeToken<Iterable<Integer>>(){
     }

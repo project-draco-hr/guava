@@ -1,0 +1,10 @@
+{
+  Method setMethod=List.class.getMethod("set",int.class,Object.class);
+  Invokable<T,?> invokable=new TypeToken<T>(getClass()){
+  }
+.method(setMethod);
+  ImmutableList<Parameter> params=invokable.getParameters();
+  assertEquals(2,params.size());
+  assertEquals(TypeToken.of(int.class),params.get(0).getType());
+  assertEquals(TypeToken.of(String.class),params.get(1).getType());
+}

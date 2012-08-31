@@ -1,4 +1,4 @@
 Invokable<?,?> declaration
 int position
-TypeToken<? extends T> type
+TypeToken<?> type
 Annotation[] annotations

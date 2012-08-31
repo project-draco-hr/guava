@@ -1,0 +1,5 @@
+{
+  Method toStringMethod=Object.class.getMethod("toString");
+  ImmutableList<String> list=ImmutableList.of("foo");
+  assertEquals(list.toString(),TypeToken.of(List.class).method(toStringMethod).invoke(list));
+}

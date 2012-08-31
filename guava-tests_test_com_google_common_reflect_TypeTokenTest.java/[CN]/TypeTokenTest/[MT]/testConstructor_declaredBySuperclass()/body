@@ -1,0 +1,9 @@
+{
+  Constructor<Object> constructor=Object.class.getConstructor();
+  try {
+    TypeToken.of(String.class).constructor(constructor);
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}
