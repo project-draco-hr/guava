@@ -1,7 +1,7 @@
 {
   ConcurrentMap<Signature,Method> map=Maps.newConcurrentMap();
   for (  Method method : getVisibleMethods(cls)) {
-    if (!isStatic(method)) {
+    if (!Invokable.from(method).isStatic()) {
       map.putIfAbsent(new Signature(method),method);
     }
   }

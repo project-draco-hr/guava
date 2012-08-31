@@ -1,4 +1,4 @@
 Object instance
-Functor func
+Invokable<?,?> invokable
 int paramIndex
 Class<?> testedClass

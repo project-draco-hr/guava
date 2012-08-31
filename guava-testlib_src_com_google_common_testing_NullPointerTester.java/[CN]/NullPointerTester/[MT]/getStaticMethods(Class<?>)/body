@@ -1,7 +1,7 @@
 {
   ImmutableList.Builder<Method> builder=ImmutableList.builder();
   for (  Method method : getVisibleMethods(cls)) {
-    if (isStatic(method)) {
+    if (Invokable.from(method).isStatic()) {
       builder.add(method);
     }
   }

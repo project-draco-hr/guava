@@ -1,4 +1,4 @@
 {
   method.setAccessible(true);
-  testFunctorParameter(instance,Functor.from(instance,method),paramIndex,method.getDeclaringClass());
+  testParameter(instance,invokable(instance,method),paramIndex,method.getDeclaringClass());
 }

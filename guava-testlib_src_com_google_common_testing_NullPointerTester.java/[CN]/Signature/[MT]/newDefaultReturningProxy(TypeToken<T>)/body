@@ -2,9 +2,10 @@
   Set<Class<? super T>> interfaceClasses=type.getTypes().interfaces().rawTypes();
   return (T)Proxy.newProxyInstance(interfaceClasses.iterator().next().getClassLoader(),interfaceClasses.toArray(new Class<?>[interfaceClasses.size()]),new AbstractInvocationHandler(){
     @Override protected Object handleInvocation(    Object proxy,    Method method,    Object[] args){
-      Functor functor=Functor.from(proxy,method);
+      Invokable<?,?> invokable=invokable(proxy,method);
+      ImmutableList<Parameter> params=invokable.getParameters();
       for (int i=0; i < args.length; i++) {
-        if (!functor.parameterIsPrimitiveOrNullable(i)) {
+        if (!isPrimitiveOrNullable(params.get(i))) {
           Preconditions.checkNotNull(args[i]);
         }
       }

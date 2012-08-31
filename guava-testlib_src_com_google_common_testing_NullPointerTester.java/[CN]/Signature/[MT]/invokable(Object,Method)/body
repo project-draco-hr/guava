@@ -1,0 +1,8 @@
+{
+  if (instance == null) {
+    return Invokable.from(method);
+  }
+ else {
+    return TypeToken.of(instance.getClass()).method(method);
+  }
+}

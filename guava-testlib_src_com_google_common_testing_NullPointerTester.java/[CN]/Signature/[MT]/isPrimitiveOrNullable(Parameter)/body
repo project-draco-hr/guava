@@ -1,0 +1,3 @@
+{
+  return param.getType().getRawType().isPrimitive() || param.isAnnotationPresent(Nullable.class);
+}

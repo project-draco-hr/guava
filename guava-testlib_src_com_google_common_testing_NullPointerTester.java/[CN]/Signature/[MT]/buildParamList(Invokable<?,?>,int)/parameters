@@ -1,2 +1,2 @@
-Functor func
+Invokable<?,?> invokable
 int indexOfParamToSetToNull

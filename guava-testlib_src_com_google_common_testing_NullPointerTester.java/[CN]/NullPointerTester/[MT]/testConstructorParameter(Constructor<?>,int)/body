@@ -1,4 +1,4 @@
 {
   ctor.setAccessible(true);
-  testFunctorParameter(null,Functor.from(ctor),paramIndex,ctor.getDeclaringClass());
+  testParameter(null,Invokable.from(ctor),paramIndex,ctor.getDeclaringClass());
 }

@@ -1,0 +1,23 @@
+{
+  if (isPrimitiveOrNullable(invokable.getParameters().get(paramIndex))) {
+    return;
+  }
+  Object[] params=buildParamList(invokable,paramIndex);
+  try {
+    @SuppressWarnings("unchecked") Invokable<Object,?> unsafe=(Invokable<Object,?>)invokable;
+    unsafe.invoke(instance,params);
+    Assert.fail("No exception thrown from " + invokable + Arrays.toString(params)+ " for "+ testedClass);
+  }
+ catch (  InvocationTargetException e) {
+    Throwable cause=e.getCause();
+    if (cause instanceof NullPointerException || cause instanceof UnsupportedOperationException) {
+      return;
+    }
+    AssertionFailedError error=new AssertionFailedError("wrong exception thrown from " + invokable + ": "+ cause);
+    error.initCause(cause);
+    throw error;
+  }
+catch (  IllegalAccessException e) {
+    throw new RuntimeException(e);
+  }
+}
