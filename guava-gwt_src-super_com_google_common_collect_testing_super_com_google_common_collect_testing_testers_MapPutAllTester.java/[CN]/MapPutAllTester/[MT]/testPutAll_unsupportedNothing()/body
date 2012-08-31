@@ -1,0 +1,8 @@
+{
+  try {
+    getMap().putAll(emptyMap());
+  }
+ catch (  UnsupportedOperationException tolerated) {
+  }
+  expectUnchanged();
+}

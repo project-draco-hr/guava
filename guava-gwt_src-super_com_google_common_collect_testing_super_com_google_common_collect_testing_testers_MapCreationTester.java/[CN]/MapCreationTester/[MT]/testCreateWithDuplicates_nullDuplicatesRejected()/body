@@ -1,0 +1,9 @@
+{
+  Entry<K,V>[] entries=getEntriesMultipleNullKeys();
+  try {
+    resetMap(entries);
+    fail("Should reject duplicate null elements at creation");
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}

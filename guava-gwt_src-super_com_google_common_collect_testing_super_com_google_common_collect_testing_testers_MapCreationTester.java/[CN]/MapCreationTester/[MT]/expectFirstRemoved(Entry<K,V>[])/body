@@ -1,0 +1,5 @@
+{
+  resetMap(entries);
+  List<Entry<K,V>> expectedWithDuplicateRemoved=Arrays.asList(entries).subList(1,getNumElements());
+  expectContents(expectedWithDuplicateRemoved);
+}

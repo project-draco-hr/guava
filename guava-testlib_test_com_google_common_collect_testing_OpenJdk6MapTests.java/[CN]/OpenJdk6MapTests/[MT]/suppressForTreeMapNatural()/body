@@ -1,0 +1,3 @@
+{
+  return Arrays.asList(getPutNullKeyUnsupportedMethod(),getPutAllNullKeyUnsupportedMethod(),getCreateWithNullKeyUnsupportedMethod(),getCreateWithNullUnsupportedMethod());
+}

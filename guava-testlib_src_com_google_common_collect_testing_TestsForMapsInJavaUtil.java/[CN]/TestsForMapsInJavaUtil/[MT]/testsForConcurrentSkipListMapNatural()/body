@@ -1,0 +1,8 @@
+{
+  return NavigableMapTestSuiteBuilder.using(new TestStringSortedMapGenerator(){
+    @Override protected Map<String,String> create(    Entry<String,String>[] entries){
+      return populate(new ConcurrentSkipListMap<String,String>(),entries);
+    }
+  }
+).named("ConcurrentSkipListMap, natural").withFeatures(MapFeature.GENERAL_PURPOSE,CollectionFeature.KNOWN_ORDER,CollectionFeature.SERIALIZABLE,CollectionSize.ANY).suppressing(suppressForConcurrentSkipListMap()).createTestSuite();
+}

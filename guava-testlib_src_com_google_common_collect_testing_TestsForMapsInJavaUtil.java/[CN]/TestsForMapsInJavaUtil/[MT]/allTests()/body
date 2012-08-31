@@ -4,8 +4,11 @@
   suite.addTest(testsForSingletonMap());
   suite.addTest(testsForHashMap());
   suite.addTest(testsForLinkedHashMap());
-  suite.addTest(testsForTreeMap());
+  suite.addTest(testsForTreeMapNatural());
+  suite.addTest(testsForTreeMapWithComparator());
   suite.addTest(testsForEnumMap());
   suite.addTest(testsForConcurrentHashMap());
+  suite.addTest(testsForConcurrentSkipListMapNatural());
+  suite.addTest(testsForConcurrentSkipListMapWithComparator());
   return suite;
 }

@@ -1,0 +1,8 @@
+{
+  try {
+    initMapWithNullKey();
+    fail("Creating a map containing a null key should fail");
+  }
+ catch (  NullPointerException expected) {
+  }
+}

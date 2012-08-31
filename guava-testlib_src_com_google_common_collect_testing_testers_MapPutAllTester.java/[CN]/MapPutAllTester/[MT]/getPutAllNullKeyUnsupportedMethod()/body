@@ -1,0 +1,3 @@
+{
+  return Helpers.getMethod(MapPutAllTester.class,"testPutAll_nullKeyUnsupported");
+}

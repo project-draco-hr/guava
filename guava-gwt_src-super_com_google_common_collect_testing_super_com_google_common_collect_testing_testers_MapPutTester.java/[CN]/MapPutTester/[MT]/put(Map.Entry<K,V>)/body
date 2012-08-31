@@ -1,0 +1,3 @@
+{
+  return getMap().put(entry.getKey(),entry.getValue());
+}

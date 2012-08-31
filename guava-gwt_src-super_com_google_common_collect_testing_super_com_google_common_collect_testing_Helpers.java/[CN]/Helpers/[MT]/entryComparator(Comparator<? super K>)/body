@@ -1,7 +1,7 @@
 {
   return new Comparator<Entry<K,V>>(){
-    @Override public int compare(    Entry<K,V> a,    Entry<K,V> b){
-      return keyComparator.compare(a.getKey(),b.getKey());
+    @Override @SuppressWarnings("unchecked") public int compare(    Entry<K,V> a,    Entry<K,V> b){
+      return (keyComparator == null) ? ((Comparable)a.getKey()).compareTo(b.getKey()) : keyComparator.compare(a.getKey(),b.getKey());
     }
   }
 ;

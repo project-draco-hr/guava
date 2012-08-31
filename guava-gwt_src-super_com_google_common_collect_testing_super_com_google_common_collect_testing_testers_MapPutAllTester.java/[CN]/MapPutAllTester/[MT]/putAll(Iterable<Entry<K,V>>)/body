@@ -1,0 +1,7 @@
+{
+  Map<K,V> map=new LinkedHashMap<K,V>();
+  for (  Entry<K,V> entry : entries) {
+    map.put(entry.getKey(),entry.getValue());
+  }
+  getMap().putAll(map);
+}

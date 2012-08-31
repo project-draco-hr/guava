@@ -12,5 +12,7 @@
   suite.addTest(testsForCheckedSet());
   suite.addTest(testsForAbstractSet());
   suite.addTest(testsForBadlyCollidingHashSet());
+  suite.addTest(testsForConcurrentSkipListSetNatural());
+  suite.addTest(testsForConcurrentSkipListSetWithComparator());
   return suite;
 }

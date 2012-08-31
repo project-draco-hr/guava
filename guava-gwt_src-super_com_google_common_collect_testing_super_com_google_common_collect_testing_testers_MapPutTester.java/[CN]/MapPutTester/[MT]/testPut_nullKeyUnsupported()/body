@@ -1,0 +1,10 @@
+{
+  try {
+    put(nullKeyEntry);
+    fail("put(null, value) should throw");
+  }
+ catch (  NullPointerException expected) {
+  }
+  expectUnchanged();
+  expectNullKeyMissingWhenNullKeysUnsupported("Should not contain null key after unsupported put(null, value)");
+}

@@ -1,0 +1,4 @@
+{
+  assertEquals("put(present, null) should return the associated value",samples.e0.getValue(),put(presentKeyNullValueEntry));
+  expectReplacement(presentKeyNullValueEntry);
+}
