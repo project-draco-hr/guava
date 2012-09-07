@@ -1,0 +1,3 @@
+{
+  return "Please explicitly test null checks in " + classToTest.getName() + "Test."+ NULL_TEST_METHOD_NAMES.get(0)+ "()";
+}

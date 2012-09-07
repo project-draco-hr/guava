@@ -1,0 +1,9 @@
+{
+  List<Object> args=Lists.newArrayList();
+  for (  Parameter param : invokable.getParameters()) {
+    Object defaultValue=getDummyValue(param.getType());
+    assertTrue(errorReporter.cannotDetermineParameterValue(invokable,param),defaultValue != null || param.isAnnotationPresent(Nullable.class));
+    args.add(defaultValue);
+  }
+  return args;
+}

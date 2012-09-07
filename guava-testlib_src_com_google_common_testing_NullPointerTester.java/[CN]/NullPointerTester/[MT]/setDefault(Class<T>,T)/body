@@ -1,4 +1,4 @@
 {
-  defaults.put(type,value);
+  defaults.put(type,checkNotNull(value));
   return this;
 }

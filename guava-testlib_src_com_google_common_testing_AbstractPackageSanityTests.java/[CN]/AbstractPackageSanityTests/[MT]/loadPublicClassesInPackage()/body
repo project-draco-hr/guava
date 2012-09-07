@@ -1,0 +1,18 @@
+{
+  List<Class<?>> classes=Lists.newArrayList();
+  String packageName=getClass().getPackage().getName();
+  for (  ClassPath.ClassInfo classInfo : ClassPath.from(getClass().getClassLoader()).getClasses(packageName)) {
+    Class<?> cls;
+    try {
+      cls=classInfo.load();
+    }
+ catch (    NoClassDefFoundError e) {
+      logger.log(Level.SEVERE,"Cannot load class " + classInfo + ", skipping...",e);
+      continue;
+    }
+    if (!cls.isInterface() && Modifier.isPublic(cls.getModifiers())) {
+      classes.add(cls);
+    }
+  }
+  return classes;
+}

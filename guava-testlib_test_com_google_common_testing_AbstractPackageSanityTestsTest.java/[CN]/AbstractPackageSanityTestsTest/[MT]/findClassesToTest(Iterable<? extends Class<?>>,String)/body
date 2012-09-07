@@ -1,0 +1,3 @@
+{
+  return AbstractPackageSanityTests.findClassesToTest(classes,Arrays.asList(explicitTestNames));
+}

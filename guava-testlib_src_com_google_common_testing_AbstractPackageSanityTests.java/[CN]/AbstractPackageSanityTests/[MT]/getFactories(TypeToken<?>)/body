@@ -1,0 +1,16 @@
+{
+  List<Invokable<?,?>> invokables=Lists.newArrayList();
+  for (  Method method : type.getRawType().getMethods()) {
+    Invokable<?,?> invokable=type.method(method);
+    if (invokable.isStatic() && type.isAssignableFrom(invokable.getReturnType())) {
+      invokables.add(invokable);
+    }
+  }
+  if (!Modifier.isAbstract(type.getRawType().getModifiers())) {
+    for (    Constructor<?> constructor : type.getRawType().getConstructors()) {
+      invokables.add(type.constructor(constructor));
+    }
+  }
+  Collections.sort(invokables,LEAST_PARAMETERS_FIRST);
+  return invokables;
+}

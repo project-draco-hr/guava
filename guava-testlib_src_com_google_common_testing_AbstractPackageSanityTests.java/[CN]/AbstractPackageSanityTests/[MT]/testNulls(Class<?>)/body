@@ -1,0 +1,8 @@
+{
+  nullPointerTester.testAllPublicConstructors(cls);
+  nullPointerTester.testAllPublicStaticMethods(cls);
+  Object instance=instantiate(cls,TestErrorReporter.FOR_NULLS_TEST);
+  if (instance != null) {
+    nullPointerTester.testAllPublicInstanceMethods(instance);
+  }
+}

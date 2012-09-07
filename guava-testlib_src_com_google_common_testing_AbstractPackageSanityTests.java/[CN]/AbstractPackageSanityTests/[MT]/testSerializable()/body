@@ -1,0 +1,7 @@
+{
+  for (  Class<?> classToTest : findClassesToTest(loadPublicClassesInPackage(),SERIALIZABLE_TEST_METHOD_NAMES)) {
+    if (Serializable.class.isAssignableFrom(classToTest)) {
+      testSerializable(classToTest);
+    }
+  }
+}

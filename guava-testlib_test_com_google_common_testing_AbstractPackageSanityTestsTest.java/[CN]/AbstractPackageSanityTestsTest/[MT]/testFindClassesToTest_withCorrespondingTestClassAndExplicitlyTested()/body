@@ -1,0 +1,5 @@
+{
+  ImmutableList<Class<? extends Object>> classes=ImmutableList.of(Foo.class,FooTest.class);
+  ASSERT.that(findClassesToTest(classes,"testPublic")).isEmpty();
+  ASSERT.that(findClassesToTest(classes,"testNotThere","testPublic")).isEmpty();
+}

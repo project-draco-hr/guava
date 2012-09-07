@@ -1,0 +1,9 @@
+{
+  try {
+    cls.getDeclaredMethod("equals",Object.class);
+    return true;
+  }
+ catch (  NoSuchMethodException e) {
+    return false;
+  }
+}

@@ -1,0 +1,30 @@
+{
+  TreeMap<String,Class<?>> classMap=Maps.newTreeMap();
+  for (  Class<?> cls : classes) {
+    classMap.put(cls.getName(),cls);
+  }
+  Multimap<Class<?>,Class<?>> testClasses=HashMultimap.create();
+  LinkedHashSet<Class<?>> nonTestClasses=Sets.newLinkedHashSet();
+  for (  Class<?> cls : classes) {
+    Optional<String> testedClassName=TEST_SUFFIX.chop(cls.getName());
+    if (testedClassName.isPresent()) {
+      Class<?> testedClass=classMap.get(testedClassName.get());
+      if (testedClass != null) {
+        testClasses.put(testedClass,cls);
+      }
+    }
+ else {
+      nonTestClasses.add(cls);
+    }
+  }
+  List<Class<?>> classesToTest=Lists.newArrayListWithExpectedSize(nonTestClasses.size());
+  NEXT_CANDIDATE:   for (  Class<?> cls : nonTestClasses) {
+    for (    Class<?> testClass : testClasses.get(cls)) {
+      if (hasTest(testClass,explicitTestNames)) {
+        continue NEXT_CANDIDATE;
+      }
+    }
+    classesToTest.add(cls);
+  }
+  return classesToTest;
+}

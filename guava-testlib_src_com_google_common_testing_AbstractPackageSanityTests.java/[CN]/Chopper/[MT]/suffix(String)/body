@@ -1,0 +1,13 @@
+{
+  return new Chopper(){
+    @Override Optional<String> chop(    String str){
+      if (str.endsWith(suffix)) {
+        return Optional.of(str.substring(0,str.length() - suffix.length()));
+      }
+ else {
+        return Optional.absent();
+      }
+    }
+  }
+;
+}

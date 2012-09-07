@@ -1,0 +1,3 @@
+{
+  ASSERT.that(findClassesToTest(ImmutableList.of(Foo.class,FooTest.class))).hasContentsInOrder(Foo.class);
+}

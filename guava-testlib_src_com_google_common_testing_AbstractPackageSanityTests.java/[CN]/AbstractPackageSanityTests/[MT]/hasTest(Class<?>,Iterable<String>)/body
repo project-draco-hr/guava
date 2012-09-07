@@ -1,0 +1,12 @@
+{
+  for (  String testName : testNames) {
+    try {
+      testClass.getMethod(testName);
+      return true;
+    }
+ catch (    NoSuchMethodException e) {
+      continue;
+    }
+  }
+  return false;
+}

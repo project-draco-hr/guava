@@ -6,7 +6,7 @@
     if (i != indexOfParamToSetToNull) {
       args[i]=getDefaultValue(param.getType());
       if (!isPrimitiveOrNullable(param)) {
-        Assert.assertTrue("No default value found for " + param,args[i] != null);
+        Assert.assertTrue("No default value found for " + param + " of "+ invokable,args[i] != null);
       }
     }
   }

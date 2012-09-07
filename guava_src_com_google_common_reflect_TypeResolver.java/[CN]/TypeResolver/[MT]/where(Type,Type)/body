@@ -1,5 +1,5 @@
 {
   Map<TypeVariable<?>,Type> mappings=Maps.newHashMap();
-  populateTypeMappings(mappings,formal,actual);
+  populateTypeMappings(mappings,checkNotNull(formal),checkNotNull(actual));
   return where(mappings);
 }

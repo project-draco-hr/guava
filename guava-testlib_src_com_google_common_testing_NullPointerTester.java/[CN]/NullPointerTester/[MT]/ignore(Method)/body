@@ -1,4 +1,4 @@
 {
-  ignoredMembers.add(method);
+  ignoredMembers.add(checkNotNull(method));
   return this;
 }

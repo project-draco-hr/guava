@@ -1,0 +1,14 @@
+{
+  setDefault(byte.class,(byte)1);
+  setDefault(Byte.class,(byte)1);
+  setDefault(short.class,(short)1);
+  setDefault(Short.class,(short)1);
+  setDefault(int.class,1);
+  setDefault(Integer.class,1);
+  setDefault(long.class,1L);
+  setDefault(Long.class,1L);
+  setDefault(float.class,1F);
+  setDefault(Float.class,1F);
+  setDefault(double.class,1D);
+  setDefault(Double.class,1D);
+}

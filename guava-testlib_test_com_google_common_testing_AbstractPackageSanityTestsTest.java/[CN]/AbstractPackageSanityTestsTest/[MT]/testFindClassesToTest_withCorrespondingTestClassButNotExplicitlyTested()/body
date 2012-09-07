@@ -1,0 +1,4 @@
+{
+  ASSERT.that(findClassesToTest(ImmutableList.of(Foo.class,FooTest.class),"testNotThere")).hasContentsInOrder(Foo.class);
+  ASSERT.that(findClassesToTest(ImmutableList.of(Foo.class,FooTest.class),"testNotPublic")).hasContentsInOrder(Foo.class);
+}

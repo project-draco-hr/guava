@@ -1,0 +1,9 @@
+{
+  final Chopper i=this;
+  return new Chopper(){
+    @Override Optional<String> chop(    String str){
+      return i.chop(str).or(you.chop(str));
+    }
+  }
+;
+}

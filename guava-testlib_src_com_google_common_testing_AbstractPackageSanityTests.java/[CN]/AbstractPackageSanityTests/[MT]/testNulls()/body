@@ -1,0 +1,5 @@
+{
+  for (  Class<?> classToTest : findClassesToTest(loadPublicClassesInPackage(),NULL_TEST_METHOD_NAMES)) {
+    testNulls(classToTest);
+  }
+}

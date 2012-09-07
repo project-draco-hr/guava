@@ -1,0 +1,3 @@
+{
+  return "Cannot use " + factory + " to instantiate "+ factory.getDeclaringClass()+ " because default value of "+ param+ " cannot be determined.\n"+ suggestExplicitTest(factory.getDeclaringClass());
+}
