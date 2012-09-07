@@ -1,3 +1,6 @@
 {
-  handlersByType.putAll(finder.findAllHandlers(object));
+  Multimap<Class<?>,EventHandler> methodsInListener=finder.findAllHandlers(object);
+synchronized (handlersByType) {
+    handlersByType.putAll(methodsInListener);
+  }
 }

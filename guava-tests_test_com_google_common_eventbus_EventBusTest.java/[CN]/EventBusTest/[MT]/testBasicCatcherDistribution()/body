@@ -1,9 +1,6 @@
 {
   StringCatcher catcher=new StringCatcher();
   bus.register(catcher);
-  Set<EventHandler> wrappers=bus.getHandlersForEventType(String.class);
-  assertNotNull("Should have at least one method registered.",wrappers);
-  assertEquals("One method should be registered.",1,wrappers.size());
   bus.post(EVENT);
   List<String> events=catcher.getEvents();
   assertEquals("Only one event should be delivered.",1,events.size());

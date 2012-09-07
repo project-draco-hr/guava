@@ -1,0 +1,18 @@
+{
+  List<StringCatcher> catchers=Lists.newCopyOnWriteArrayList();
+  List<Future<?>> futures=Lists.newArrayList();
+  ExecutorService executor=Executors.newFixedThreadPool(10);
+  int numberOfCatchers=10000;
+  for (int i=0; i < numberOfCatchers; i++) {
+    futures.add(executor.submit(new Registrator(bus,catchers)));
+  }
+  for (int i=0; i < numberOfCatchers; i++) {
+    futures.get(i).get();
+  }
+  assertEquals("Unexpected number of catchers in the list",numberOfCatchers,catchers.size());
+  bus.post(EVENT);
+  List<String> expectedEvents=ImmutableList.of(EVENT);
+  for (  StringCatcher catcher : catchers) {
+    assertEquals("One of the registered catchers did not receive an event.",expectedEvents,catcher.getEvents());
+  }
+}

@@ -1,11 +1,13 @@
 {
   Multimap<Class<?>,EventHandler> methodsInListener=finder.findAllHandlers(object);
   for (  Entry<Class<?>,Collection<EventHandler>> entry : methodsInListener.asMap().entrySet()) {
-    Set<EventHandler> currentHandlers=getHandlersForEventType(entry.getKey());
     Collection<EventHandler> eventMethodsInListener=entry.getValue();
-    if (currentHandlers == null || !currentHandlers.containsAll(entry.getValue())) {
-      throw new IllegalArgumentException("missing event handler for an annotated method. Is " + object + " registered?");
+synchronized (handlersByType) {
+      Set<EventHandler> currentHandlers=handlersByType.get(entry.getKey());
+      if (!currentHandlers.containsAll(entry.getValue())) {
+        throw new IllegalArgumentException("missing event handler for an annotated method. Is " + object + " registered?");
+      }
+      currentHandlers.removeAll(eventMethodsInListener);
     }
-    currentHandlers.removeAll(eventMethodsInListener);
   }
 }

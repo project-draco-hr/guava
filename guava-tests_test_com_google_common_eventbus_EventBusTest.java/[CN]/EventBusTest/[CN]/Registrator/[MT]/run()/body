@@ -1,0 +1,5 @@
+{
+  StringCatcher catcher=new StringCatcher();
+  bus.register(catcher);
+  catchers.add(catcher);
+}
