@@ -2,7 +2,8 @@
   Set<Class<?>> dispatchTypes=flattenHierarchy(event.getClass());
   boolean dispatched=false;
   for (  Class<?> eventType : dispatchTypes) {
-synchronized (handlersByType) {
+    handlersByTypeLock.readLock().lock();
+    try {
       Set<EventHandler> wrappers=handlersByType.get(eventType);
       if (!wrappers.isEmpty()) {
         dispatched=true;
@@ -10,6 +11,9 @@ synchronized (handlersByType) {
           enqueueEvent(event,wrapper);
         }
       }
+    }
+  finally {
+      handlersByTypeLock.readLock().unlock();
     }
   }
   if (!dispatched && !(event instanceof DeadEvent)) {

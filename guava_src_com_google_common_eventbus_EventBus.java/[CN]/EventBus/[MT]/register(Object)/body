@@ -1,6 +1,10 @@
 {
   Multimap<Class<?>,EventHandler> methodsInListener=finder.findAllHandlers(object);
-synchronized (handlersByType) {
+  handlersByTypeLock.writeLock().lock();
+  try {
     handlersByType.putAll(methodsInListener);
+  }
+  finally {
+    handlersByTypeLock.writeLock().unlock();
   }
 }
