@@ -1,0 +1,3 @@
+{
+  return Reflection.newProxy(List.class,new DelegatingInvocationHandlerWithEquals(delegate));
+}

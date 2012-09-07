@@ -1,3 +1,4 @@
 {
-  assertEquals(delegate,ImmutableList.copyOf(newDelegatingProxy()));
+  assertEquals(LIST1,ImmutableList.copyOf(newDelegatingList(LIST1)));
+  assertEquals(LIST1,ImmutableList.copyOf(newDelegatingListWithEquals(LIST1)));
 }

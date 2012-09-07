@@ -3,10 +3,11 @@
     args=NO_ARGS;
   }
   if (args.length == 0 && method.getName().equals("hashCode")) {
-    return System.identityHashCode(proxy);
+    return hashCode();
   }
   if (args.length == 1 && method.getName().equals("equals") && method.getParameterTypes()[0] == Object.class) {
-    return proxy == args[0];
+    Object arg=args[0];
+    return proxy.getClass().isInstance(arg) && equals(Proxy.getInvocationHandler(arg));
   }
   if (args.length == 0 && method.getName().equals("toString")) {
     return toString();

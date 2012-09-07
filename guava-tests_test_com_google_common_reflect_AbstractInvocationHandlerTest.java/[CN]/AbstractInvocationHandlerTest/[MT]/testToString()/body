@@ -1,3 +1,4 @@
 {
-  assertEquals(handler.toString(),newDelegatingProxy().toString());
+  List<String> proxy=newDelegatingList(LIST1);
+  assertEquals(Proxy.getInvocationHandler(proxy).toString(),proxy.toString());
 }

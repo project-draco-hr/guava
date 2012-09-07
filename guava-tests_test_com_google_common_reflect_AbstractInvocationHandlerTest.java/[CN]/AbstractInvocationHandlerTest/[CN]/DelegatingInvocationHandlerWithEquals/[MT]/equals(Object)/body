@@ -1,0 +1,9 @@
+{
+  if (obj instanceof DelegatingInvocationHandlerWithEquals) {
+    DelegatingInvocationHandlerWithEquals that=(DelegatingInvocationHandlerWithEquals)obj;
+    return delegate.equals(that.delegate);
+  }
+ else {
+    return false;
+  }
+}

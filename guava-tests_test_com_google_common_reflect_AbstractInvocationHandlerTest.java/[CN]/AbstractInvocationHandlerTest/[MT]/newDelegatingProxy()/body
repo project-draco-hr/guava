@@ -1,3 +1,0 @@
-{
-  return Reflection.newProxy(List.class,handler);
-}

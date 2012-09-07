@@ -1,0 +1,3 @@
+{
+  return Reflection.newProxy(List.class,new SubHandler1(delegate));
+}

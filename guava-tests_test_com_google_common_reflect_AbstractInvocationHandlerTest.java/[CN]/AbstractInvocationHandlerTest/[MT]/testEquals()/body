@@ -1,3 +1,3 @@
 {
-  new EqualsTester().addEqualityGroup(newDelegatingProxy()).addEqualityGroup(newDelegatingProxy()).testEquals();
+  new EqualsTester().addEqualityGroup(newDelegatingList(LIST1)).addEqualityGroup(newDelegatingList(LIST1)).addEqualityGroup(newDelegatingList(LIST2)).addEqualityGroup(newDelegatingListWithEquals(LIST1),newDelegatingListWithEquals(LIST1)).addEqualityGroup(newDelegatingListWithEquals(LIST2),newProxyWithSubHandler1(LIST2),newProxyWithSubHandler2(LIST2)).addEqualityGroup(newDelegatingIterableWithEquals(LIST2)).testEquals();
 }
