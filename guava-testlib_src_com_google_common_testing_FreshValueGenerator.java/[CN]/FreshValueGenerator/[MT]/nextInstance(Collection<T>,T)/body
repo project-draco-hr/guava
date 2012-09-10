@@ -1,0 +1,6 @@
+{
+  if (instances.isEmpty()) {
+    return defaultValue;
+  }
+  return Iterables.get(instances,(freshInt() - 1) % instances.size());
+}

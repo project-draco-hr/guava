@@ -1,11 +1,11 @@
 {
+  final int identity=freshInt();
   return Reflection.newProxy(interfaceType,new AbstractInvocationHandler(){
     @Override protected Object handleInvocation(    Object proxy,    Method method,    Object[] args){
-      throw new UnsupportedOperationException();
+      return interfaceMethodCalled(interfaceType,method);
     }
-    final String string=paramString(interfaceType,freshInt());
     @Override public String toString(){
-      return string;
+      return paramString(interfaceType,identity);
     }
   }
 );

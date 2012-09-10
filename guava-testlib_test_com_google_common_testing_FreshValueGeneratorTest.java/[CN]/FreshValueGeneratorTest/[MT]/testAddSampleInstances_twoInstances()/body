@@ -1,0 +1,7 @@
+{
+  FreshValueGenerator generator=new FreshValueGenerator();
+  generator.addSampleInstances(String.class,ImmutableList.of("a","b"));
+  assertEquals("a",generator.generate(String.class));
+  assertEquals("b",generator.generate(String.class));
+  assertEquals("a",generator.generate(String.class));
+}
