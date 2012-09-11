@@ -3,7 +3,7 @@
   if (predicate instanceof CharMatcher) {
     return (CharMatcher)predicate;
   }
-  String description=new StringBuilder("CharMatcher.forPredicate(").append(predicate).append(')').toString();
+  String description="CharMatcher.forPredicate(" + predicate + ")";
   return new CharMatcher(description){
     @Override public boolean matches(    char c){
       return predicate.apply(c);

@@ -9,7 +9,8 @@ return isEither(sequence.charAt(0),sequence.charAt(1));
 }
 final char[] chars=sequence.toString().toCharArray();
 Arrays.sort(chars);
-return new CharMatcher(new StringBuilder("CharMatcher.anyOf(\"").append(chars).append("\")").toString()){
+String description="CharMatcher.anyOf(\"" + String.valueOf(chars) + "\")";
+return new CharMatcher(description){
 @Override public boolean matches(char c){
 return Arrays.binarySearch(chars,c) >= 0;
 }

@@ -1,5 +1,5 @@
 {
-  String description=new StringBuilder("CharMatcher.is(").append(Integer.toHexString(match)).append(")").toString();
+  String description="CharMatcher.is(" + Integer.toHexString(match) + ")";
   return new FastMatcher(description){
     @Override public boolean matches(    char c){
       return c == match;

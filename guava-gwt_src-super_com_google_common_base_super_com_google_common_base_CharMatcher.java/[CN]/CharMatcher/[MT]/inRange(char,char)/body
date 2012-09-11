@@ -1,5 +1,5 @@
 {
   checkArgument(endInclusive >= startInclusive);
-  String description=new StringBuilder("CharMatcher.inRange(").append(Integer.toHexString(startInclusive)).append(", ").append(Integer.toHexString(endInclusive)).append(")").toString();
+  String description="CharMatcher.inRange(" + Integer.toHexString(startInclusive) + ", "+ Integer.toHexString(endInclusive)+ ")";
   return inRange(startInclusive,endInclusive,description);
 }
