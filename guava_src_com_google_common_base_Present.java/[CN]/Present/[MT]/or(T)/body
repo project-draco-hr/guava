@@ -1,4 +1,4 @@
 {
-  checkNotNull(defaultValue,"use orNull() instead of or(null)");
+  checkNotNull(defaultValue,"use Optional.orNull() instead of Optional.or(null)");
   return reference;
 }
