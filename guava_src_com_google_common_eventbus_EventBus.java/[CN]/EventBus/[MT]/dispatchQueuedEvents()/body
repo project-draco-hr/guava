@@ -4,11 +4,9 @@
   }
   isDispatching.set(true);
   try {
-    while (true) {
-      EventWithHandler eventWithHandler=eventsToDispatch.get().poll();
-      if (eventWithHandler == null) {
-        break;
-      }
+    Queue<EventWithHandler> events=eventsToDispatch.get();
+    EventWithHandler eventWithHandler;
+    while ((eventWithHandler=events.poll()) != null) {
       dispatch(eventWithHandler.event,eventWithHandler.handler);
     }
   }

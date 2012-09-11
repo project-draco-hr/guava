@@ -1,8 +1,8 @@
 {
   try {
-    return flattenHierarchyCache.get(concreteClass);
+    return flattenHierarchyCache.getUnchecked(concreteClass);
   }
- catch (  ExecutionException e) {
+ catch (  UncheckedExecutionException e) {
     throw Throwables.propagate(e.getCause());
   }
 }
