@@ -1,5 +1,5 @@
 {
-  ImmutableSet.Builder<ClassInfo> builder=ImmutableSet.builder();
+  ImmutableSortedSet.Builder<ClassInfo> builder=new ImmutableSortedSet.Builder<ClassInfo>(Ordering.usingToString());
   for (  Map.Entry<URI,ClassLoader> entry : getClassPathEntries(classloader).entrySet()) {
     builder.addAll(readClassesFrom(entry.getKey(),entry.getValue()));
   }

@@ -4,7 +4,7 @@
   Set<Class<?>> classes=Sets.newHashSet();
   Set<String> packageNames=Sets.newHashSet();
   ClassPath classpath=ClassPath.from(getClass().getClassLoader());
-  for (  ClassInfo classInfo : classpath.getClasses(ClassPathTest.class.getPackage().getName())) {
+  for (  ClassInfo classInfo : classpath.getTopLevelClasses(ClassPathTest.class.getPackage().getName())) {
     names.add(classInfo.getName());
     strings.add(classInfo.toString());
     classes.add(classInfo.load());

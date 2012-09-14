@@ -6,5 +6,5 @@
   ClassLoader sub2=new ClassLoader(parent){
   }
 ;
-  assertEquals(findClass(ClassPath.from(sub1).getClasses(),ClassPathTest.class),findClass(ClassPath.from(sub2).getClasses(),ClassPathTest.class));
+  assertEquals(findClass(ClassPath.from(sub1).getTopLevelClasses(),ClassPathTest.class),findClass(ClassPath.from(sub2).getTopLevelClasses(),ClassPathTest.class));
 }
