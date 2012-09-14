@@ -1,5 +1,4 @@
 {
-  int minCapacity=size + count;
   if (contents.length < minCapacity) {
     contents=ObjectArrays.arraysCopyOf(contents,expandedCapacity(contents.length,minCapacity));
   }

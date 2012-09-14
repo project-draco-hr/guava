@@ -1,5 +1,5 @@
 {
-  expandFor(1);
+  ensureCapacity(size + 1);
   contents[size++]=checkNotNull(element);
   return this;
 }

@@ -1,7 +1,7 @@
 {
   if (elements instanceof Collection) {
     Collection<?> collection=(Collection<?>)elements;
-    expandFor(collection.size());
+    ensureCapacity(size + collection.size());
   }
   super.addAll(elements);
   return this;
