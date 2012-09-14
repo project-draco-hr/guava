@@ -6,7 +6,8 @@
   }
   try {
     checkState(future.isDone(),"Tried to set value from future which is not done");
-    localValues.set(index,Optional.fromNullable(getUninterruptibly(future)));
+    V returnValue=getUninterruptibly(future);
+    localValues.set(index,Optional.fromNullable(returnValue));
   }
  catch (  CancellationException e) {
     if (allMustSucceed) {
