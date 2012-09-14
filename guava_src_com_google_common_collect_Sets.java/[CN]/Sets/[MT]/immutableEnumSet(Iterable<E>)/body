@@ -1,4 +1,7 @@
 {
+  if (elements instanceof ImmutableEnumSet) {
+    return (ImmutableEnumSet<E>)elements;
+  }
   Iterator<E> iterator=elements.iterator();
   if (!iterator.hasNext()) {
     return ImmutableSet.of();
