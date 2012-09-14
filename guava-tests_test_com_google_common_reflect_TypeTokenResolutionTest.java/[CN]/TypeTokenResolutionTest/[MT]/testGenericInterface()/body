@@ -1,5 +1,5 @@
 {
-  Type fType=Function.class.getTypeParameters()[0];
+  Type fType=Supplier.class.getTypeParameters()[0];
   assertEquals(Integer.class,TypeToken.of(IntegerStringFunction.class).resolveType(fType).getRawType());
   Type predicateParameterType=Predicate.class.getTypeParameters()[0];
   assertEquals(new TypeToken<List<String>>(){
