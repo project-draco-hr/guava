@@ -1,5 +1,5 @@
 {
   for (  Range<C> range : other.asRanges()) {
-    this.add(range);
+    remove(range);
   }
 }
