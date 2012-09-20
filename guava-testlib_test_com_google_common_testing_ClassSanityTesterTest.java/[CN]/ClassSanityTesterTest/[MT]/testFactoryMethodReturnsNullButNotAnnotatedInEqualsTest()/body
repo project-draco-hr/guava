@@ -1,0 +1,9 @@
+{
+  try {
+    tester.testEquals(FactoryMethodReturnsNullButNotAnnotated.class);
+  }
+ catch (  AssertionFailedError expected) {
+    return;
+  }
+  fail("should have failed");
+}

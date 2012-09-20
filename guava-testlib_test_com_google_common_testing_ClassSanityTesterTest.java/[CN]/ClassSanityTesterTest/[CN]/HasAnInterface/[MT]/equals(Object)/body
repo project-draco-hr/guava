@@ -1,0 +1,9 @@
+{
+  if (obj instanceof HasAnInterface) {
+    HasAnInterface that=(HasAnInterface)obj;
+    return i.equals(that.i);
+  }
+ else {
+    return false;
+  }
+}

@@ -1,0 +1,15 @@
+{
+  List<Object> args=Lists.newArrayList();
+  for (  Parameter param : invokable.getParameters()) {
+    if (param.isAnnotationPresent(Nullable.class)) {
+      args.add(null);
+      continue;
+    }
+    Object defaultValue=getDummyValue(param.getType());
+    if (defaultValue == null) {
+      throw new ParameterNotInstantiableException(param);
+    }
+    args.add(defaultValue);
+  }
+  return args;
+}

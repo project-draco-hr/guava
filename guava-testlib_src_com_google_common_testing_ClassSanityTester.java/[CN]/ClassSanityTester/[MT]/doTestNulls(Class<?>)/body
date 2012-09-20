@@ -1,0 +1,8 @@
+{
+  nullPointerTester.testConstructors(cls,Visibility.PACKAGE);
+  nullPointerTester.testStaticMethods(cls,Visibility.PACKAGE);
+  Object instance=instantiate(cls);
+  if (instance != null) {
+    nullPointerTester.testInstanceMethods(instance,Visibility.PACKAGE);
+  }
+}

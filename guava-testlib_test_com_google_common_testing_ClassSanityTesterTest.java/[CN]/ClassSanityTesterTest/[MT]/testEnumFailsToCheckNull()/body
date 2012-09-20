@@ -1,0 +1,9 @@
+{
+  try {
+    tester.testNulls(EnumFailsToCheckNull.class);
+  }
+ catch (  AssertionFailedError expected) {
+    return;
+  }
+  fail("should have failed");
+}

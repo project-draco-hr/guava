@@ -1,0 +1,32 @@
+{
+  List<Parameter> params=factory.getParameters();
+  List<FreshValueGenerator> argGenerators=Lists.newArrayListWithCapacity(params.size());
+  List<Object> args=Lists.newArrayListWithCapacity(params.size());
+  for (  Parameter param : params) {
+    FreshValueGenerator generator=newFreshValueGenerator();
+    argGenerators.add(generator);
+    args.add(generateDummyArg(param,generator));
+  }
+  Object instance=createInstance(factory,args);
+  final List<List<List<Object>>> argGroups=Lists.newArrayList();
+  EqualsTester tester=new EqualsTester().setItemReporter(new ItemReporter(){
+    @Override String reportItem(    Item item){
+      List<Object> factoryArgs=argGroups.get(item.groupNumber).get(item.itemNumber);
+      return factory.getName() + "(" + Joiner.on(", ").useForNull("null").join(factoryArgs)+ ")";
+    }
+  }
+);
+  tester.addEqualityGroup(instance,createInstance(factory,args));
+  argGroups.add(ImmutableList.of(args,args));
+  for (int i=0; i < params.size(); i++) {
+    List<Object> newArgs=Lists.newArrayList(args);
+    Object newArg=argGenerators.get(i).generate(params.get(i).getType().getRawType());
+    if (Objects.equal(args.get(i),newArg)) {
+      continue;
+    }
+    newArgs.set(i,newArg);
+    tester.addEqualityGroup(createInstance(factory,newArgs));
+    argGroups.add(ImmutableList.of(newArgs));
+  }
+  tester.testEquals();
+}

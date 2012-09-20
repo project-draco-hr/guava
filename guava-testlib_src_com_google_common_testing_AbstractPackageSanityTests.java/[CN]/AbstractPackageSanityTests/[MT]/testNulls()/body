@@ -1,5 +1,10 @@
 {
-  for (  Class<?> classToTest : findClassesToTest(loadPublicClassesInPackage(),NULL_TEST_METHOD_NAMES)) {
-    testNulls(classToTest);
+  for (  Class<?> classToTest : findClassesToTest(loadClassesInPackage(),NULL_TEST_METHOD_NAMES)) {
+    try {
+      tester.doTestNulls(classToTest);
+    }
+ catch (    Throwable e) {
+      throw sanityError(classToTest,NULL_TEST_METHOD_NAMES,"nulls test",e);
+    }
   }
 }

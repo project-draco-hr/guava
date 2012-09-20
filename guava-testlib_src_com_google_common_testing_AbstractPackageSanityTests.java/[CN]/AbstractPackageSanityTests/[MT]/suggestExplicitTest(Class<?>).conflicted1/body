@@ -1,3 +1,0 @@
-{
-  return "Please explicitly test serialization in " + classToTest.getName() + "Test."+ SERIALIZABLE_TEST_METHOD_NAMES.get(0)+ "()";
-}

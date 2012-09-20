@@ -1,0 +1,9 @@
+{
+  EqualsTester tester=new EqualsTester();
+  for (  Method method : ParameterTest.class.getDeclaredMethods()) {
+    for (    Parameter param : Invokable.from(method).getParameters()) {
+      tester.addEqualityGroup(param);
+    }
+  }
+  tester.testEquals();
+}

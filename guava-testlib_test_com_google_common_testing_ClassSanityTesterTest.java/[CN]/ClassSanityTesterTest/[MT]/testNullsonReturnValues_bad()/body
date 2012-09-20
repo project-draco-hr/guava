@@ -1,0 +1,9 @@
+{
+  try {
+    tester.forAllPublicStaticMethods(BadNullsFactory.class).testNulls();
+  }
+ catch (  AssertionFailedError expected) {
+    return;
+  }
+  fail();
+}

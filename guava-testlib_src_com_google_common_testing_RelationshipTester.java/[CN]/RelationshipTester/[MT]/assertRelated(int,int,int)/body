@@ -6,6 +6,6 @@
     assertion.assertRelated(item,related);
   }
  catch (  AssertionFailedError e) {
-    throw new AssertionFailedError(e.getMessage().replace("$ITEM",itemString(item,groupNumber,itemNumber)).replace("$RELATED",itemString(related,groupNumber,relatedItemNumber)));
+    throw new AssertionFailedError(e.getMessage().replace("$ITEM",itemReporter.reportItem(new Item(item,groupNumber,itemNumber))).replace("$RELATED",itemReporter.reportItem(new Item(related,groupNumber,relatedItemNumber))));
   }
 }

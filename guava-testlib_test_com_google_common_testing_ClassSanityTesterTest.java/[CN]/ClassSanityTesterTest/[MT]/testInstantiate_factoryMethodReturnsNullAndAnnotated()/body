@@ -1,0 +1,8 @@
+{
+  try {
+    tester.instantiate(FactoryMethodReturnsNullAndAnnotated.class);
+    fail("should have failed");
+  }
+ catch (  FactoryMethodReturnsNullException expected) {
+  }
+}

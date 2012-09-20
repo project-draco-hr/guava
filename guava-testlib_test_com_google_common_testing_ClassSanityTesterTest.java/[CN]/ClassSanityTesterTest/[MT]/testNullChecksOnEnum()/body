@@ -1,0 +1,5 @@
+{
+  tester.testNulls(OneConstantEnum.class);
+  tester.testNulls(NoConstantEnum.class);
+  tester.testNulls(TimeUnit.class);
+}

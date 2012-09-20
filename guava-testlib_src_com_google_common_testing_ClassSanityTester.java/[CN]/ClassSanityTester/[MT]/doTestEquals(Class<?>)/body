@@ -1,0 +1,33 @@
+{
+  if (cls.isEnum()) {
+    return;
+  }
+  List<? extends Invokable<?,?>> factories=Lists.reverse(getFactories(TypeToken.of(cls)));
+  if (factories.isEmpty()) {
+    return;
+  }
+  int numberOfParameters=factories.get(0).getParameters().size();
+  List<ParameterNotInstantiableException> paramErrors=Lists.newArrayList();
+  List<InvocationTargetException> instantiationExceptions=Lists.newArrayList();
+  List<FactoryMethodReturnsNullException> nullErrors=Lists.newArrayList();
+  for (  Invokable<?,?> factory : factories) {
+    if (factory.getParameters().size() == numberOfParameters) {
+      try {
+        testEqualsUsing(factory);
+        return;
+      }
+ catch (      ParameterNotInstantiableException e) {
+        paramErrors.add(e);
+      }
+catch (      InvocationTargetException e) {
+        instantiationExceptions.add(e);
+      }
+catch (      FactoryMethodReturnsNullException e) {
+        nullErrors.add(e);
+      }
+    }
+  }
+  throwFirst(paramErrors);
+  throwFirst(instantiationExceptions);
+  throwFirst(nullErrors);
+}

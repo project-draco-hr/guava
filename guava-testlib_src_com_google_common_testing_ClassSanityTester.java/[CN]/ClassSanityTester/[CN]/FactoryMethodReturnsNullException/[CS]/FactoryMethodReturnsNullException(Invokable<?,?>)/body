@@ -1,0 +1,3 @@
+{
+  super(factory + " returns null and cannot be used to test instance methods.");
+}

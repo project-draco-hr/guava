@@ -1,0 +1,6 @@
+{
+  return new Serializable(){
+    @SuppressWarnings("unused") private final Object notSerializable=new Object();
+  }
+;
+}

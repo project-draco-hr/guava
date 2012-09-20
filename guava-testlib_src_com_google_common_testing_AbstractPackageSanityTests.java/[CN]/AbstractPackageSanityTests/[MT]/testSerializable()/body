@@ -1,7 +1,20 @@
 {
-  for (  Class<?> classToTest : findClassesToTest(loadPublicClassesInPackage(),SERIALIZABLE_TEST_METHOD_NAMES)) {
+  for (  Class<?> classToTest : findClassesToTest(loadClassesInPackage(),SERIALIZABLE_TEST_METHOD_NAMES)) {
     if (Serializable.class.isAssignableFrom(classToTest)) {
-      testSerializable(classToTest);
+      try {
+        Object instance=tester.instantiate(classToTest);
+        if (instance != null) {
+          if (isEqualsDefined(classToTest)) {
+            SerializableTester.reserializeAndAssert(instance);
+          }
+ else {
+            SerializableTester.reserialize(instance);
+          }
+        }
+      }
+ catch (      Throwable e) {
+        throw sanityError(classToTest,SERIALIZABLE_TEST_METHOD_NAMES,"serializable test",e);
+      }
     }
   }
 }

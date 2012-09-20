@@ -1,4 +1,3 @@
 {
-  nullPointerTester.setDefault(type,value);
-  defaultValues.putInstance(type,value);
+  tester.setDefault(type,value);
 }

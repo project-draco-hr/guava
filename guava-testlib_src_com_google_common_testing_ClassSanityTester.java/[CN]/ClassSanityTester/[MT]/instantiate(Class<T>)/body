@@ -1,0 +1,39 @@
+{
+  if (cls.isEnum()) {
+    T[] constants=cls.getEnumConstants();
+    if (constants.length > 0) {
+      return constants[0];
+    }
+ else {
+      return null;
+    }
+  }
+  TypeToken<T> type=TypeToken.of(cls);
+  List<ParameterNotInstantiableException> paramErrors=Lists.newArrayList();
+  List<InvocationTargetException> instantiationExceptions=Lists.newArrayList();
+  List<FactoryMethodReturnsNullException> nullErrors=Lists.newArrayList();
+  for (  Invokable<?,? extends T> factory : getFactories(type)) {
+    T instance;
+    try {
+      instance=instantiate(factory);
+    }
+ catch (    ParameterNotInstantiableException e) {
+      paramErrors.add(e);
+      continue;
+    }
+catch (    InvocationTargetException e) {
+      instantiationExceptions.add(e);
+      continue;
+    }
+    if (instance == null) {
+      nullErrors.add(new FactoryMethodReturnsNullException(factory));
+    }
+ else {
+      return instance;
+    }
+  }
+  throwFirst(paramErrors);
+  throwFirst(instantiationExceptions);
+  throwFirst(nullErrors);
+  return null;
+}

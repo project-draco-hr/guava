@@ -1,0 +1,7 @@
+{
+  T returnValue=factory.invoke(null,args.toArray());
+  if (returnValue == null) {
+    Assert.assertTrue(factory + " returns null but it's not annotated with @Nullable",factory.isAnnotationPresent(Nullable.class));
+  }
+  return returnValue;
+}

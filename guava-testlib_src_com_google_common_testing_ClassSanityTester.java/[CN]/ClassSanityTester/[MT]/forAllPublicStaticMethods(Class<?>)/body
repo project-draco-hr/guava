@@ -1,0 +1,14 @@
+{
+  ImmutableList.Builder<Invokable<?,?>> builder=ImmutableList.builder();
+  for (  Method method : cls.getDeclaredMethods()) {
+    Invokable<?,?> invokable=Invokable.from(method);
+    if (invokable.isPublic() && invokable.isStatic() && !invokable.isSynthetic()) {
+      Class<?> returnType=Primitives.unwrap(invokable.getReturnType().getRawType());
+      if (returnType.isEnum() && returnType.isPrimitive()) {
+        continue;
+      }
+      builder.add(invokable);
+    }
+  }
+  return new FactoryMethodReturnValueTester(builder.build());
+}

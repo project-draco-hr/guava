@@ -1,0 +1,12 @@
+{
+  FreshValueGenerator generator=new FreshValueGenerator(){
+    @Override Object interfaceMethodCalled(    Class<?> interfaceType,    Method method){
+      return getDummyValue(TypeToken.of(interfaceType).method(method).getReturnType());
+    }
+  }
+;
+  for (  Map.Entry<Class<?>,Collection<Object>> entry : sampleInstances.asMap().entrySet()) {
+    generator.addSampleInstances((Class)entry.getKey(),entry.getValue());
+  }
+  return generator;
+}

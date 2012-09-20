@@ -1,0 +1,8 @@
+{
+  try {
+    tester.doTestEquals(ConstructorParameterNotInstantiable.class);
+    fail("should have failed");
+  }
+ catch (  ParameterNotInstantiableException expected) {
+  }
+}

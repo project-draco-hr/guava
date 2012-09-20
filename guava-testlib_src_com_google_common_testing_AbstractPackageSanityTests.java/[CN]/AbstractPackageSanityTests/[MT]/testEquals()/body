@@ -1,0 +1,12 @@
+{
+  for (  Class<?> classToTest : findClassesToTest(loadClassesInPackage(),EQUALS_TEST_METHOD_NAMES)) {
+    if (!classToTest.isEnum() && isEqualsDefined(classToTest)) {
+      try {
+        tester.doTestEquals(classToTest);
+      }
+ catch (      Throwable e) {
+        throw sanityError(classToTest,EQUALS_TEST_METHOD_NAMES,"equals test",e);
+      }
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  try {
+    tester.instantiate(ConstructorThrows.class);
+    fail();
+  }
+ catch (  InvocationTargetException expected) {
+  }
+}

@@ -1,0 +1,7 @@
+{
+  for (  Method method : ParameterTest.class.getDeclaredMethods()) {
+    for (    Parameter param : Invokable.from(method).getParameters()) {
+      new NullPointerTester().testAllPublicInstanceMethods(param);
+    }
+  }
+}

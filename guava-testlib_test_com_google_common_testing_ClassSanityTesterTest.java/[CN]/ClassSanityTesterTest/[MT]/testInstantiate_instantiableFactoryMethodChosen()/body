@@ -1,0 +1,3 @@
+{
+  assertEquals("good",tester.instantiate(InstantiableFactoryMethodChosen.class).name);
+}

@@ -1,0 +1,9 @@
+{
+  tester.setSampleInstances(NotInstantiable.class,ImmutableList.<NotInstantiable>of());
+  try {
+    tester.instantiate(ConstructorParameterNotInstantiable.class);
+    fail();
+  }
+ catch (  ParameterNotInstantiableException expected) {
+  }
+}

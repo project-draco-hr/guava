@@ -1,0 +1,9 @@
+{
+  try {
+    tester.forAllPublicStaticMethods(FactoryThatReturnsNullButNotAnnotated.class).testNulls();
+  }
+ catch (  AssertionFailedError expected) {
+    return;
+  }
+  fail();
+}

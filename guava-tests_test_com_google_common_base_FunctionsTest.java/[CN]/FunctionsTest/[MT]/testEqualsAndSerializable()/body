@@ -1,0 +1,3 @@
+{
+  new ClassSanityTester().forAllPublicStaticMethods(Functions.class).testEqualsAndSerializable();
+}

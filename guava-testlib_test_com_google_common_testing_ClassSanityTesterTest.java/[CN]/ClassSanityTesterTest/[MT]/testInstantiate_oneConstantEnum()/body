@@ -1,0 +1,3 @@
+{
+  assertEquals(OneConstantEnum.A,tester.instantiate(OneConstantEnum.class));
+}

@@ -1,0 +1,10 @@
+{
+  try {
+    tester.instantiate(FactoryMethodReturnsNullButNotAnnotated.class);
+  }
+ catch (  AssertionFailedError expected) {
+    ASSERT.that(expected.getMessage()).contains("@Nullable");
+    return;
+  }
+  fail("should have failed");
+}

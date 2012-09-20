@@ -1,0 +1,5 @@
+{
+  this.value=value;
+  this.groupNumber=groupNumber;
+  this.itemNumber=itemNumber;
+}

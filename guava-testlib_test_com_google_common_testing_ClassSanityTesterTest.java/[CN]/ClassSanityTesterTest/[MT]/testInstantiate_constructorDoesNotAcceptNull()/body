@@ -1,0 +1,3 @@
+{
+  assertNotNull(tester.instantiate(ConstructorDoesNotAcceptNull.class).name);
+}

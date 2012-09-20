@@ -1,0 +1,7 @@
+{
+  T instance=invoke(factory,args);
+  if (instance == null) {
+    throw new FactoryMethodReturnsNullException(factory);
+  }
+  return instance;
+}

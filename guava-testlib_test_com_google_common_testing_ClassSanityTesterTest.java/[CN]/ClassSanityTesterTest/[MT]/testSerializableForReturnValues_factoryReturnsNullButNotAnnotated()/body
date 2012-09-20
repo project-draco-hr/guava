@@ -1,0 +1,9 @@
+{
+  try {
+    tester.forAllPublicStaticMethods(FactoryThatReturnsNullButNotAnnotated.class).testSerializable();
+  }
+ catch (  AssertionFailedError expected) {
+    return;
+  }
+  fail();
+}

@@ -10,7 +10,7 @@
       assertTrue("$ITEM must be unequal to $UNRELATED",!Objects.equal(item,unrelated));
     }
   }
-);
+,itemReporter);
   for (  List<Object> group : equalityGroups) {
     delegate.addRelatedGroup(group);
   }

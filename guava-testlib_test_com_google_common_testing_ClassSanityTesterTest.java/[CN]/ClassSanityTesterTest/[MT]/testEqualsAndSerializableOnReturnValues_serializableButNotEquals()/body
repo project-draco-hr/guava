@@ -1,0 +1,9 @@
+{
+  try {
+    tester.forAllPublicStaticMethods(GoodSerializableFactory.class).testEqualsAndSerializable();
+  }
+ catch (  AssertionFailedError expected) {
+    return;
+  }
+  fail("should have failed");
+}

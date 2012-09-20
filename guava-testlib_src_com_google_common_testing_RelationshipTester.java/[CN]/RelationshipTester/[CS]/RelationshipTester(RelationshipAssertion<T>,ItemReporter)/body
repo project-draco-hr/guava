@@ -1,0 +1,4 @@
+{
+  this.assertion=checkNotNull(assertion);
+  this.itemReporter=checkNotNull(itemReporter);
+}

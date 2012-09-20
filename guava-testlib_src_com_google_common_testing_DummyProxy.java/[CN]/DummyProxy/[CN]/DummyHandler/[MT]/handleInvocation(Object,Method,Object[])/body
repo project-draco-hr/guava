@@ -1,0 +1,11 @@
+{
+  Invokable<?,?> invokable=interfaceType.method(method);
+  ImmutableList<Parameter> params=invokable.getParameters();
+  for (int i=0; i < args.length; i++) {
+    Parameter param=params.get(i);
+    if (!param.isAnnotationPresent(Nullable.class)) {
+      checkNotNull(args[i]);
+    }
+  }
+  return dummyReturnValue(interfaceType.resolveType(method.getGenericReturnType()));
+}

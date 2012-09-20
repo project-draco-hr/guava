@@ -1,0 +1,3 @@
+{
+  tester.forAllPublicStaticMethods(GoodNullsFactory.class).testNulls();
+}

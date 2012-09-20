@@ -1,0 +1,4 @@
+String a
+int b
+OneConstantEnum oneConstantOnly
+NoConstantEnum noConstant

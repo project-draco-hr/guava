@@ -1,0 +1,4 @@
+{
+  checkNotNull(s);
+  return new InstantiableFactoryMethodChosen("good");
+}

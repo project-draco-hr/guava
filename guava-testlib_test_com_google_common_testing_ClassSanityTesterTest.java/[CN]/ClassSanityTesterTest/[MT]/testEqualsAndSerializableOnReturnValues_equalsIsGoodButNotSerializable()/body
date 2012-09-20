@@ -1,0 +1,8 @@
+{
+  try {
+    tester.forAllPublicStaticMethods(GoodEqualsFactory.class).testEqualsAndSerializable();
+    return;
+  }
+ catch (  RuntimeException expected) {
+  }
+}

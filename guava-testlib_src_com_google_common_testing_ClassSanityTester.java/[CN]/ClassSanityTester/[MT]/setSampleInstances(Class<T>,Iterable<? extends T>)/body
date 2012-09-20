@@ -1,0 +1,8 @@
+{
+  ImmutableList<? extends T> samples=ImmutableList.copyOf(instances);
+  sampleInstances.putAll(checkNotNull(type),samples);
+  if (!samples.isEmpty()) {
+    setDefault(type,samples.get(0));
+  }
+  return this;
+}

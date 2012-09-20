@@ -1,0 +1,9 @@
+{
+  if (obj instanceof GoodEquals) {
+    GoodEquals that=(GoodEquals)obj;
+    return a.equals(that.a) && b == that.b;
+  }
+ else {
+    return false;
+  }
+}

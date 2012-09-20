@@ -1,0 +1,3 @@
+{
+  assertEquals("good",tester.instantiate(InstantiableConstructorChosen.class).name);
+}

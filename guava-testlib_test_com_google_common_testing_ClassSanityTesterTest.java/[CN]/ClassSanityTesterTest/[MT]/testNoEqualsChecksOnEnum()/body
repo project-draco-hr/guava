@@ -1,0 +1,5 @@
+{
+  tester.testEquals(OneConstantEnum.class);
+  tester.testEquals(NoConstantEnum.class);
+  tester.testEquals(TimeUnit.class);
+}

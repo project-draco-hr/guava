@@ -1,0 +1,5 @@
+{
+  NotInstantiable x=new NotInstantiable();
+  tester.setDefault(NotInstantiable.class,x);
+  assertNotNull(tester.instantiate(ConstructorParameterNotInstantiable.class));
+}

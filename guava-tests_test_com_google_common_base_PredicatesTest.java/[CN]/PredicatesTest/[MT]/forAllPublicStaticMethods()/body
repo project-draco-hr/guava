@@ -1,0 +1,3 @@
+{
+  return new ClassSanityTester().setSampleInstances(Iterable.class,ImmutableList.of(ImmutableList.of(Predicates.alwaysFalse()),ImmutableList.of(Predicates.alwaysTrue()))).setSampleInstances(Predicate[].class,ImmutableList.of(new Predicate[]{Predicates.alwaysFalse()},new Predicate[]{Predicates.alwaysTrue()})).setSampleInstances(Class.class,ImmutableList.of(Object.class,String.class)).forAllPublicStaticMethods(Predicates.class);
+}

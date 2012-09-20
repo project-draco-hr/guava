@@ -1,0 +1,10 @@
+{
+  if (param.isAnnotationPresent(Nullable.class)) {
+    return null;
+  }
+  Object arg=generator.generate(param.getType().getRawType());
+  if (arg == null) {
+    throw new ParameterNotInstantiableException(param);
+  }
+  return arg;
+}

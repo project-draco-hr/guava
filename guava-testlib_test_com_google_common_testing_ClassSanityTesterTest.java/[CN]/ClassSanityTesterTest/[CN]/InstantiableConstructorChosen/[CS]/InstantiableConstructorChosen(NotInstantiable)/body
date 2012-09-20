@@ -1,0 +1,4 @@
+{
+  checkNotNull(x);
+  this.name="x1";
+}

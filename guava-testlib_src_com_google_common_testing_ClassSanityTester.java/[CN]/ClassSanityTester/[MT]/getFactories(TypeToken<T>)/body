@@ -1,0 +1,22 @@
+{
+  List<Invokable<?,? extends T>> factories=Lists.newArrayList();
+  for (  Method method : type.getRawType().getDeclaredMethods()) {
+    Invokable<?,?> invokable=type.method(method);
+    if (!invokable.isPrivate() && !invokable.isSynthetic() && invokable.isStatic()&& type.isAssignableFrom(invokable.getReturnType())) {
+      @SuppressWarnings("unchecked") Invokable<?,? extends T> factory=(Invokable<?,? extends T>)invokable;
+      factories.add(factory);
+    }
+  }
+  if (!Modifier.isAbstract(type.getRawType().getModifiers())) {
+    for (    Constructor<?> constructor : type.getRawType().getDeclaredConstructors()) {
+      Invokable<T,T> invokable=type.constructor(constructor);
+      if (!invokable.isPrivate() && !invokable.isSynthetic()) {
+        factories.add(invokable);
+      }
+    }
+  }
+  for (  Invokable<?,?> factory : factories) {
+    factory.setAccessible(true);
+  }
+  return BY_NUMBER_OF_PARAMETERS.compound(BY_METHOD_NAME).compound(BY_PARAMETERS).immutableSortedCopy(factories);
+}

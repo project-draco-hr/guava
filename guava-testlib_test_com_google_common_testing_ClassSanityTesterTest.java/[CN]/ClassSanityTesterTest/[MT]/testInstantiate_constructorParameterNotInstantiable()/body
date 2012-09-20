@@ -1,0 +1,8 @@
+{
+  try {
+    tester.instantiate(ConstructorParameterNotInstantiable.class);
+    fail();
+  }
+ catch (  ParameterNotInstantiableException expected) {
+  }
+}

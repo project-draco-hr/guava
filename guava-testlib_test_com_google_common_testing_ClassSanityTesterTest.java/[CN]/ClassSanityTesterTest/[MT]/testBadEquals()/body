@@ -1,0 +1,10 @@
+{
+  try {
+    tester.testEquals(BadEquals.class);
+  }
+ catch (  AssertionFailedError expected) {
+    ASSERT.that(expected.getMessage()).contains("create(null)");
+    return;
+  }
+  fail("should have failed");
+}

@@ -5,6 +5,6 @@
     assertion.assertUnrelated(item,unrelated);
   }
  catch (  AssertionFailedError e) {
-    throw new AssertionFailedError(e.getMessage().replace("$ITEM",itemString(item,groupNumber,itemNumber)).replace("$UNRELATED",itemString(unrelated,unrelatedGroupNumber,unrelatedItemNumber)));
+    throw new AssertionFailedError(e.getMessage().replace("$ITEM",itemReporter.reportItem(new Item(item,groupNumber,itemNumber))).replace("$UNRELATED",itemReporter.reportItem(new Item(unrelated,unrelatedGroupNumber,unrelatedItemNumber))));
   }
 }

@@ -1,0 +1,4 @@
+{
+  this.a=checkNotNull(a);
+  this.b=b;
+}

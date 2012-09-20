@@ -1,0 +1,9 @@
+{
+  if (obj instanceof DummyHandler) {
+    DummyHandler that=(DummyHandler)obj;
+    return identity().equals(that.identity());
+  }
+ else {
+    return false;
+  }
+}

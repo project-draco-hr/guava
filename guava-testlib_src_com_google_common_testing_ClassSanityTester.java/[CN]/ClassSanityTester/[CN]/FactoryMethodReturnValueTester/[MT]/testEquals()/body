@@ -1,0 +1,10 @@
+{
+  for (  Invokable<?,?> factory : factories) {
+    try {
+      testEqualsUsing(factory);
+    }
+ catch (    FactoryMethodReturnsNullException e) {
+    }
+  }
+  return this;
+}
