@@ -1,0 +1,6 @@
+{
+  if (rawType.isInterface()) {
+    return newProxy(rawType);
+  }
+  return ArbitraryInstances.get(rawType);
+}

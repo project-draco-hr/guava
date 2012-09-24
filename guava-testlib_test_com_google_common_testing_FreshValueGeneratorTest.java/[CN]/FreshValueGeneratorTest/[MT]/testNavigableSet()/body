@@ -1,0 +1,13 @@
+{
+  assertFreshInstance(new TypeToken<NavigableSet<String>>(){
+  }
+);
+  TreeSet<String> expected=Sets.newTreeSet();
+  expected.add(new FreshValueGenerator().generate(String.class));
+  assertValueAndTypeEquals(expected,new FreshValueGenerator().generate(new TypeToken<NavigableSet<String>>(){
+  }
+));
+  assertFreshInstance(new TypeToken<NavigableSet<EmptyEnum>>(){
+  }
+);
+}

@@ -1,0 +1,14 @@
+{
+  assertFreshInstance(new TypeToken<HashMap<String,?>>(){
+  }
+);
+  FreshValueGenerator generator=new FreshValueGenerator();
+  HashMap<String,Integer> expected=Maps.newLinkedHashMap();
+  expected.put(generator.generate(String.class),generator.generate(int.class));
+  assertValueAndTypeEquals(expected,new FreshValueGenerator().generate(new TypeToken<HashMap<String,Integer>>(){
+  }
+));
+  assertNotNull(new FreshValueGenerator().generate(new TypeToken<HashMap<EmptyEnum,Integer>>(){
+  }
+));
+}

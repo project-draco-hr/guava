@@ -1,0 +1,3 @@
+{
+  return freshLinkedHashMap(key,value);
+}

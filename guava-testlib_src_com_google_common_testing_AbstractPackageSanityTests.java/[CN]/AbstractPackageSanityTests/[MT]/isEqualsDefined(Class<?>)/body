@@ -1,7 +1,6 @@
 {
   try {
-    cls.getDeclaredMethod("equals",Object.class);
-    return true;
+    return !cls.getDeclaredMethod("equals",Object.class).isSynthetic();
   }
  catch (  NoSuchMethodException e) {
     return false;

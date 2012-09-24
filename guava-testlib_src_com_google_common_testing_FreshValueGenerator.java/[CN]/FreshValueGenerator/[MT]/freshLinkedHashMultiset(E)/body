@@ -1,0 +1,5 @@
+{
+  LinkedHashMultiset<E> multiset=LinkedHashMultiset.create();
+  multiset.add(freshElement);
+  return multiset;
+}

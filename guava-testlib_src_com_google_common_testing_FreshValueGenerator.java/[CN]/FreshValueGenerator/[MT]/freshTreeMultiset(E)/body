@@ -1,0 +1,5 @@
+{
+  TreeMultiset<E> multiset=TreeMultiset.create();
+  multiset.add(freshElement);
+  return multiset;
+}

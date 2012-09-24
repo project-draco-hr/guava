@@ -1,0 +1,5 @@
+{
+  LinkedHashSet<E> set=Sets.newLinkedHashSet();
+  set.add(freshElement);
+  return set;
+}

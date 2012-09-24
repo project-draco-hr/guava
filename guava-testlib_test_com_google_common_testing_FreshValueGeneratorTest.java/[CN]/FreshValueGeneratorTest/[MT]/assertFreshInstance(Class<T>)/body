@@ -1,7 +1,3 @@
 {
-  FreshValueGenerator generator=new FreshValueGenerator();
-  T value1=generator.generate(type);
-  T value2=generator.generate(type);
-  assertNotNull("Null returned for " + type,value1);
-  assertFalse("Equal instance " + value1 + " returned for "+ type,value1.equals(value2));
+  assertFreshInstance(TypeToken.of(type));
 }

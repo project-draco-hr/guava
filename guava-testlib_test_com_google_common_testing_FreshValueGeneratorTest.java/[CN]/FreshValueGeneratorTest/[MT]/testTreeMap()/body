@@ -1,0 +1,14 @@
+{
+  assertFreshInstance(new TypeToken<TreeMap<String,?>>(){
+  }
+);
+  FreshValueGenerator generator=new FreshValueGenerator();
+  TreeMap<String,Integer> expected=Maps.newTreeMap();
+  expected.put(generator.generate(String.class),generator.generate(int.class));
+  assertValueAndTypeEquals(expected,new FreshValueGenerator().generate(new TypeToken<TreeMap<String,Integer>>(){
+  }
+));
+  assertNotNull(new FreshValueGenerator().generate(new TypeToken<LinkedHashSet<EmptyEnum>>(){
+  }
+));
+}

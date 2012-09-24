@@ -1,0 +1,5 @@
+{
+  HashBiMap<K,V> bimap=HashBiMap.create();
+  bimap.put(key,value);
+  return bimap;
+}

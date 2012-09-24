@@ -1,0 +1,16 @@
+{
+  assertFreshInstance(new TypeToken<RowSortedTable<String,?,?>>(){
+  }
+);
+  FreshValueGenerator generator=new FreshValueGenerator();
+  RowSortedTable<String,Integer,List<String>> expected=TreeBasedTable.create();
+  expected.put(generator.generate(String.class),generator.generate(int.class),generator.generate(new TypeToken<List<String>>(){
+  }
+));
+  assertValueAndTypeEquals(expected,new FreshValueGenerator().generate(new TypeToken<RowSortedTable<String,Integer,List<String>>>(){
+  }
+));
+  assertFreshInstance(new TypeToken<RowSortedTable<EmptyEnum,String,Integer>>(){
+  }
+);
+}

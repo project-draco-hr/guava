@@ -1,0 +1,10 @@
+{
+  try {
+    tester.testEquals(BadEqualsWithParameterizedType.class);
+  }
+ catch (  AssertionFailedError expected) {
+    ASSERT.that(expected.getMessage()).contains("create([[1]])");
+    return;
+  }
+  fail("should have failed");
+}

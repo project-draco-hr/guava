@@ -1,0 +1,5 @@
+{
+  ConcurrentMap<K,V> map=Maps.newConcurrentMap();
+  map.put(key,value);
+  return map;
+}

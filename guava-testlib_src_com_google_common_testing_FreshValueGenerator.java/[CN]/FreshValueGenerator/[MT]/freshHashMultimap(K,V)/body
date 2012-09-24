@@ -1,0 +1,5 @@
+{
+  HashMultimap<K,V> multimap=HashMultimap.create();
+  multimap.put(key,value);
+  return multimap;
+}

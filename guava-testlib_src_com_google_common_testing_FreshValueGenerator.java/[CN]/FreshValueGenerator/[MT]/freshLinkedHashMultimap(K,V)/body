@@ -1,0 +1,5 @@
+{
+  LinkedHashMultimap<K,V> multimap=LinkedHashMultimap.create();
+  multimap.put(key,value);
+  return multimap;
+}

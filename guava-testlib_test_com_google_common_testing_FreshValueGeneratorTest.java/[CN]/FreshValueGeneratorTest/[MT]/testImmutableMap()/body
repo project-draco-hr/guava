@@ -1,0 +1,12 @@
+{
+  assertFreshInstance(new TypeToken<ImmutableMap<String,Integer>>(){
+  }
+);
+  FreshValueGenerator generator=new FreshValueGenerator();
+  assertValueAndTypeEquals(ImmutableMap.of(generator.generate(String.class),generator.generate(int.class)),new FreshValueGenerator().generate(new TypeToken<ImmutableMap<String,Integer>>(){
+  }
+));
+  assertValueAndTypeEquals(ImmutableMap.of(),new FreshValueGenerator().generate(new TypeToken<ImmutableMap<EmptyEnum,String>>(){
+  }
+));
+}

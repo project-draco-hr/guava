@@ -1,0 +1,5 @@
+{
+  TreeMap<K,V> map=Maps.newTreeMap();
+  map.put(key,value);
+  return map;
+}

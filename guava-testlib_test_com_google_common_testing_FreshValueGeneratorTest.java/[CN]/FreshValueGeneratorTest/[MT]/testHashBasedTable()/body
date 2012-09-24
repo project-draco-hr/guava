@@ -1,0 +1,13 @@
+{
+  assertFreshInstance(new TypeToken<HashBasedTable<String,?,?>>(){
+  }
+);
+  FreshValueGenerator generator=new FreshValueGenerator();
+  HashBasedTable<String,Integer,List<String>> expected=HashBasedTable.create();
+  expected.put(generator.generate(String.class),generator.generate(int.class),generator.generate(new TypeToken<List<String>>(){
+  }
+));
+  assertValueAndTypeEquals(expected,new FreshValueGenerator().generate(new TypeToken<HashBasedTable<String,Integer,List<String>>>(){
+  }
+));
+}

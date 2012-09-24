@@ -11,4 +11,5 @@
   setDefault(Float.class,1F);
   setDefault(double.class,1D);
   setDefault(Double.class,1D);
+  setDefault(Class.class,Class.class);
 }

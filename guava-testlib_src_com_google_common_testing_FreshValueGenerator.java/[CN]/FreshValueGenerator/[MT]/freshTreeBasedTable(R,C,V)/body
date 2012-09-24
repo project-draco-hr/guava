@@ -1,0 +1,5 @@
+{
+  TreeBasedTable<R,C,V> table=TreeBasedTable.create();
+  table.put(row,column,value);
+  return table;
+}

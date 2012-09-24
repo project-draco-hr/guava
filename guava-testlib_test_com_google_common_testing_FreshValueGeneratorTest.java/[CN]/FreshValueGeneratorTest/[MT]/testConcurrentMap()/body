@@ -1,0 +1,14 @@
+{
+  assertFreshInstance(new TypeToken<ConcurrentMap<String,?>>(){
+  }
+);
+  FreshValueGenerator generator=new FreshValueGenerator();
+  ConcurrentMap<String,Integer> expected=Maps.newConcurrentMap();
+  expected.put(generator.generate(String.class),generator.generate(int.class));
+  assertValueAndTypeEquals(expected,new FreshValueGenerator().generate(new TypeToken<ConcurrentMap<String,Integer>>(){
+  }
+));
+  assertFreshInstance(new TypeToken<ConcurrentMap<EmptyEnum,String>>(){
+  }
+);
+}

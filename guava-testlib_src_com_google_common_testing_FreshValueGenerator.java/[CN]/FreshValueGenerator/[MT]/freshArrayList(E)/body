@@ -1,0 +1,5 @@
+{
+  ArrayList<E> list=Lists.newArrayList();
+  list.add(freshElement);
+  return list;
+}

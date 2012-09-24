@@ -1,0 +1,12 @@
+{
+  assertFreshInstance(new TypeToken<ImmutableBiMap<String,Integer>>(){
+  }
+);
+  FreshValueGenerator generator=new FreshValueGenerator();
+  assertValueAndTypeEquals(ImmutableBiMap.of(generator.generate(String.class),generator.generate(int.class)),new FreshValueGenerator().generate(new TypeToken<ImmutableBiMap<String,Integer>>(){
+  }
+));
+  assertValueAndTypeEquals(ImmutableBiMap.of(),new FreshValueGenerator().generate(new TypeToken<ImmutableBiMap<EmptyEnum,String>>(){
+  }
+));
+}

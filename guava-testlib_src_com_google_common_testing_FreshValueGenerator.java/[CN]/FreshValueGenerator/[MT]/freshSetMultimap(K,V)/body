@@ -1,0 +1,3 @@
+{
+  return freshLinkedHashMultimap(key,value);
+}

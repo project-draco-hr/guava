@@ -1,0 +1,5 @@
+{
+  ArrayListMultimap<K,V> multimap=ArrayListMultimap.create();
+  multimap.put(key,value);
+  return multimap;
+}

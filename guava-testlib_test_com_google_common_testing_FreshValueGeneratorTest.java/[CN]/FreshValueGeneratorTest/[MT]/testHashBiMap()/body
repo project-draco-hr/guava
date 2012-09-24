@@ -1,0 +1,11 @@
+{
+  assertFreshInstance(new TypeToken<HashBiMap<String,?>>(){
+  }
+);
+  FreshValueGenerator generator=new FreshValueGenerator();
+  HashBiMap<String,Integer> expected=HashBiMap.create();
+  expected.put(generator.generate(String.class),generator.generate(int.class));
+  assertValueAndTypeEquals(expected,new FreshValueGenerator().generate(new TypeToken<HashBiMap<String,Integer>>(){
+  }
+));
+}

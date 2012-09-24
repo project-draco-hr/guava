@@ -1,0 +1,41 @@
+{
+  Class<?> rawType=type.getRawType();
+  List<Object> samples=sampleInstances.get(rawType);
+  Object sample=nextInstance(samples,null);
+  if (sample != null) {
+    return sample;
+  }
+  if (rawType.isEnum()) {
+    return nextInstance(rawType.getEnumConstants(),null);
+  }
+  if (type.isArray()) {
+    TypeToken<?> componentType=type.getComponentType();
+    Object array=Array.newInstance(componentType.getRawType(),1);
+    Array.set(array,0,generateIfPossible(componentType));
+    return array;
+  }
+  Method generator=GENERATORS.get(Primitives.unwrap(rawType));
+  if (generator != null) {
+    ImmutableList<Parameter> params=Invokable.from(generator).getParameters();
+    List<Object> args=Lists.newArrayListWithCapacity(params.size());
+    TypeVariable<?>[] typeVars=rawType.getTypeParameters();
+    for (int i=0; i < params.size(); i++) {
+      TypeToken<?> paramType=type.resolveType(typeVars[i]);
+      Object argValue=generateIfPossible(paramType);
+      if (argValue == null) {
+        return defaultGenerate(rawType);
+      }
+      args.add(argValue);
+    }
+    try {
+      return generator.invoke(this,args.toArray());
+    }
+ catch (    InvocationTargetException e) {
+      Throwables.propagate(e.getCause());
+    }
+catch (    Exception e) {
+      throw Throwables.propagate(e);
+    }
+  }
+  return defaultGenerate(rawType);
+}

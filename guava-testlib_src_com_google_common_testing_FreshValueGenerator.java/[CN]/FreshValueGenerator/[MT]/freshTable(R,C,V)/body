@@ -1,0 +1,3 @@
+{
+  return freshHashBasedTable(row,column,value);
+}

@@ -1,0 +1,4 @@
+{
+  assertEquals(expected,actual);
+  assertEquals(expected.getClass(),actual.getClass());
+}

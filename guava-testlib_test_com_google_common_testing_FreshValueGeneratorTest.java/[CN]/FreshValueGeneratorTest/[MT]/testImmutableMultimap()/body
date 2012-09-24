@@ -1,0 +1,12 @@
+{
+  assertFreshInstance(new TypeToken<ImmutableMultimap<String,Integer>>(){
+  }
+);
+  FreshValueGenerator generator=new FreshValueGenerator();
+  assertValueAndTypeEquals(ImmutableMultimap.of(generator.generate(String.class),generator.generate(int.class)),new FreshValueGenerator().generate(new TypeToken<ImmutableMultimap<String,Integer>>(){
+  }
+));
+  assertValueAndTypeEquals(ImmutableMultimap.of(),new FreshValueGenerator().generate(new TypeToken<ImmutableMultimap<EmptyEnum,String>>(){
+  }
+));
+}

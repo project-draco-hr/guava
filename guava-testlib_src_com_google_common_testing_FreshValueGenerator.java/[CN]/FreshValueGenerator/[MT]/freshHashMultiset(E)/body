@@ -1,0 +1,5 @@
+{
+  HashMultiset<E> multiset=HashMultiset.create();
+  multiset.add(freshElement);
+  return multiset;
+}

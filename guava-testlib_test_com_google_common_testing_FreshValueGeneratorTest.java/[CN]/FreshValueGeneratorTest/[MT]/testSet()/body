@@ -1,0 +1,11 @@
+{
+  assertFreshInstance(new TypeToken<Set<String>>(){
+  }
+);
+  assertValueAndTypeEquals(newLinkedHashSet(new FreshValueGenerator().generate(Number.class)),new FreshValueGenerator().generate(new TypeToken<Set<? extends Number>>(){
+  }
+));
+  assertFreshInstance(new TypeToken<Set<EmptyEnum>>(){
+  }
+);
+}

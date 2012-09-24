@@ -1,0 +1,10 @@
+{
+  assertFreshInstance(new TypeToken<TreeMultiset<String>>(){
+  }
+);
+  TreeMultiset<String> expected=TreeMultiset.create();
+  expected.add(new FreshValueGenerator().generate(String.class));
+  assertValueAndTypeEquals(expected,new FreshValueGenerator().generate(new TypeToken<TreeMultiset<String>>(){
+  }
+));
+}

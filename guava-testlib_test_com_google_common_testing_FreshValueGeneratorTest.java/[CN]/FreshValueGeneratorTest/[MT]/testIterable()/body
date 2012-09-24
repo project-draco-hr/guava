@@ -1,0 +1,11 @@
+{
+  assertFreshInstance(new TypeToken<Iterable<String>>(){
+  }
+);
+  assertValueAndTypeEquals(Lists.newArrayList(new FreshValueGenerator().generate(String.class)),new FreshValueGenerator().generate(new TypeToken<Iterable<String>>(){
+  }
+));
+  assertFreshInstance(new TypeToken<Iterable<EmptyEnum>>(){
+  }
+);
+}

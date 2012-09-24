@@ -1,0 +1,5 @@
+{
+  HashBasedTable<R,C,V> table=HashBasedTable.create();
+  table.put(row,column,value);
+  return table;
+}

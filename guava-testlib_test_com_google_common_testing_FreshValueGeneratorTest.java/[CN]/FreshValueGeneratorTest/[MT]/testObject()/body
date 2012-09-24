@@ -1,0 +1,3 @@
+{
+  assertEquals(new FreshValueGenerator().generate(String.class),new FreshValueGenerator().generate(Object.class));
+}

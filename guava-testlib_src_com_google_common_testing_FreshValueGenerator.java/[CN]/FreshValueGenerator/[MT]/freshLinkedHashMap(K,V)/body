@@ -1,0 +1,5 @@
+{
+  LinkedHashMap<K,V> map=Maps.newLinkedHashMap();
+  map.put(key,value);
+  return map;
+}

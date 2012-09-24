@@ -1,0 +1,13 @@
+{
+  assertFreshInstance(new TypeToken<TreeBasedTable<String,?,?>>(){
+  }
+);
+  FreshValueGenerator generator=new FreshValueGenerator();
+  TreeBasedTable<String,Integer,List<String>> expected=TreeBasedTable.create();
+  expected.put(generator.generate(String.class),generator.generate(int.class),generator.generate(new TypeToken<List<String>>(){
+  }
+));
+  assertValueAndTypeEquals(expected,new FreshValueGenerator().generate(new TypeToken<TreeBasedTable<String,Integer,List<String>>>(){
+  }
+));
+}

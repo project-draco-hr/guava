@@ -1,0 +1,11 @@
+{
+  assertFreshInstance(new TypeToken<ImmutableCollection<String>>(){
+  }
+);
+  assertValueAndTypeEquals(ImmutableList.of(new FreshValueGenerator().generate(String.class)),new FreshValueGenerator().generate(new TypeToken<ImmutableCollection<String>>(){
+  }
+));
+  assertValueAndTypeEquals(ImmutableList.of(),new FreshValueGenerator().generate(new TypeToken<ImmutableCollection<EmptyEnum>>(){
+  }
+));
+}

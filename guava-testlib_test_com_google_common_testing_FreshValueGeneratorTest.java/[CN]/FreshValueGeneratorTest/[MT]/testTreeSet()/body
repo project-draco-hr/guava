@@ -1,0 +1,13 @@
+{
+  assertFreshInstance(new TypeToken<TreeSet<String>>(){
+  }
+);
+  TreeSet<String> expected=Sets.newTreeSet();
+  expected.add(new FreshValueGenerator().generate(String.class));
+  assertValueAndTypeEquals(expected,new FreshValueGenerator().generate(new TypeToken<TreeSet<? extends CharSequence>>(){
+  }
+));
+  assertNotNull(new FreshValueGenerator().generate(new TypeToken<TreeSet<EmptyEnum>>(){
+  }
+));
+}
