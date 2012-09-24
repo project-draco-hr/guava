@@ -1,0 +1,5 @@
+{
+  Multiset<String> ms1=HashMultiset.create();
+  Multiset<String> ms2=HashMultiset.create(Arrays.asList("a","b","a"));
+  assertEquals(ms2,Multisets.union(ms1,ms2));
+}
