@@ -27,6 +27,8 @@
   suite.addTest(MultisetTestSuiteBuilder.using(concurrentMultisetGenerator()).withFeatures(CollectionSize.ANY,CollectionFeature.GENERAL_PURPOSE,CollectionFeature.SERIALIZABLE,CollectionFeature.ALLOWS_NULL_QUERIES).named("ConcurrentHashMultiset").createTestSuite());
   suite.addTest(MultisetTestSuiteBuilder.using(enumMultisetGenerator()).withFeatures(CollectionSize.ANY,CollectionFeature.KNOWN_ORDER,CollectionFeature.GENERAL_PURPOSE,CollectionFeature.ALLOWS_NULL_QUERIES).named("EnumMultiset").createTestSuite());
   suite.addTest(MultisetTestSuiteBuilder.using(intersectionGenerator()).withFeatures(CollectionSize.ANY,CollectionFeature.ALLOWS_NULL_VALUES,CollectionFeature.KNOWN_ORDER).named("IntersectionMultiset").createTestSuite());
+  suite.addTest(MultisetTestSuiteBuilder.using(sumGenerator()).withFeatures(CollectionSize.ANY,CollectionFeature.ALLOWS_NULL_VALUES).named("SumMultiset").createTestSuite());
+  suite.addTest(MultisetTestSuiteBuilder.using(differenceGenerator()).withFeatures(CollectionSize.ANY,CollectionFeature.ALLOWS_NULL_VALUES,CollectionFeature.KNOWN_ORDER).named("DifferenceMultiset").createTestSuite());
   suite.addTest(SortedMultisetTestSuiteBuilder.using(unmodifiableSortedMultisetGenerator()).withFeatures(CollectionSize.ANY,CollectionFeature.KNOWN_ORDER,CollectionFeature.ALLOWS_NULL_QUERIES).named("UnmodifiableSortedTreeMultiset").createTestSuite());
   return suite;
 }
