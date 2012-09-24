@@ -19,6 +19,9 @@
   }
   List<Class<?>> classesToTest=Lists.newArrayListWithExpectedSize(nonTestClasses.size());
   NEXT_CANDIDATE:   for (  Class<?> cls : nonTestClasses) {
+    if (!visibility.isVisible(cls.getModifiers())) {
+      continue;
+    }
     for (    Class<?> testClass : testClasses.get(cls)) {
       if (hasTest(testClass,explicitTestNames)) {
         continue NEXT_CANDIDATE;

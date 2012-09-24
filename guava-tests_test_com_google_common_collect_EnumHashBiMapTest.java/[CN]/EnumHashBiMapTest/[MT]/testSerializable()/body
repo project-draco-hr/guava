@@ -1,0 +1,3 @@
+{
+  SerializableTester.reserializeAndAssert(EnumHashBiMap.create(Currency.class));
+}

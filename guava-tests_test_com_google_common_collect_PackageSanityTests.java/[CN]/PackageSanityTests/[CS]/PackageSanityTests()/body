@@ -1,0 +1,4 @@
+{
+  publicApiOnly();
+  setDefault(DiscreteDomain.class,DiscreteDomains.integers());
+}

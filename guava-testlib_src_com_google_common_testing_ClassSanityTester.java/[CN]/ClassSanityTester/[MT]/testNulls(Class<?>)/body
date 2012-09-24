@@ -1,6 +1,6 @@
 {
   try {
-    doTestNulls(cls);
+    doTestNulls(cls,Visibility.PACKAGE);
   }
  catch (  Exception e) {
     throw Throwables.propagate(e);

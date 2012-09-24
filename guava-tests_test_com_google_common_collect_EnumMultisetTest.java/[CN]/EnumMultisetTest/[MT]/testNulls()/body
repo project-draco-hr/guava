@@ -1,0 +1,3 @@
+{
+  new NullPointerTester().setDefault(Class.class,Color.class).setDefault(Iterable.class,ImmutableList.copyOf(Color.values())).testAllPublicStaticMethods(EnumMultiset.class);
+}

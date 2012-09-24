@@ -1,0 +1,10 @@
+{
+  if (!Modifier.isAbstract(cls.getModifiers())) {
+    nullPointerTester.testConstructors(cls,visibility);
+  }
+  nullPointerTester.testStaticMethods(cls,visibility);
+  Object instance=instantiate(cls);
+  if (instance != null) {
+    nullPointerTester.testInstanceMethods(instance,visibility);
+  }
+}

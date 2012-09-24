@@ -1,0 +1,4 @@
+{
+  new NullPointerTester().testAllPublicStaticMethods(EnumBiMap.class);
+  new NullPointerTester().testAllPublicInstanceMethods(EnumBiMap.create(ImmutableMap.of(Currency.DOLLAR,Country.CHILE)));
+}

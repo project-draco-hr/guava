@@ -1,0 +1,5 @@
+{
+  sanityTests.publicApiOnly();
+  ASSERT.that(findClassesToTest(ImmutableList.of(Foo.class))).isEmpty();
+  ASSERT.that(findClassesToTest(ImmutableList.of(PublicFoo.class))).hasContentsInOrder(PublicFoo.class);
+}

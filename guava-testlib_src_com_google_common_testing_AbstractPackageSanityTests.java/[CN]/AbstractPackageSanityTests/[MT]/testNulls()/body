@@ -1,7 +1,7 @@
 {
   for (  Class<?> classToTest : findClassesToTest(loadClassesInPackage(),NULL_TEST_METHOD_NAMES)) {
     try {
-      tester.doTestNulls(classToTest);
+      tester.doTestNulls(classToTest,visibility);
     }
  catch (    Throwable e) {
       throw sanityError(classToTest,NULL_TEST_METHOD_NAMES,"nulls test",e);

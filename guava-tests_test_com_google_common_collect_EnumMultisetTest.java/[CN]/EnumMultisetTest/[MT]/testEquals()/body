@@ -1,0 +1,3 @@
+{
+  new ClassSanityTester().setSampleInstances(Class.class,ImmutableList.of(Color.class)).setSampleInstances(Enum.class,ImmutableList.copyOf(Color.values())).setSampleInstances(Iterable.class,ImmutableList.of(ImmutableList.of(Color.RED),ImmutableList.of(Color.GREEN))).forAllPublicStaticMethods(EnumMultiset.class).testEquals();
+}

@@ -1,0 +1,4 @@
+{
+  new NullPointerTester().testAllPublicStaticMethods(EnumHashBiMap.class);
+  new NullPointerTester().testAllPublicInstanceMethods(EnumHashBiMap.create(Currency.class));
+}
