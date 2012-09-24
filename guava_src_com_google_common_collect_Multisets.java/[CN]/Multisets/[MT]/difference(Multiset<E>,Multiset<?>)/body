@@ -32,7 +32,7 @@
           while (iterator1.hasNext()) {
             Entry<E> entry1=iterator1.next();
             E element=entry1.getElement();
-            int count=Math.max(0,entry1.getCount() - multiset2.count(element));
+            int count=entry1.getCount() - multiset2.count(element);
             if (count > 0) {
               return immutableEntry(element,count);
             }
