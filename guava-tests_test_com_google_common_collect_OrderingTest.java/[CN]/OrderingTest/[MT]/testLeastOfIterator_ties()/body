@@ -1,0 +1,9 @@
+{
+  Integer foo=new Integer(Integer.MAX_VALUE - 10);
+  Integer bar=new Integer(Integer.MAX_VALUE - 10);
+  assertNotSame(foo,bar);
+  assertEquals(foo,bar);
+  List<Integer> list=Arrays.asList(3,foo,bar,-1);
+  List<Integer> result=numberOrdering.leastOf(list.iterator(),list.size());
+  assertEquals(ImmutableList.of(-1,3,foo,bar),result);
+}

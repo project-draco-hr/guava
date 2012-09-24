@@ -1,0 +1,7 @@
+{
+  Iterator<Integer> itr=Iterators.forArray(3,null,5,-1);
+  List<Integer> result=Ordering.natural().nullsLast().leastOf(itr,3);
+  assertTrue(result instanceof RandomAccess);
+  assertListImmutable(result);
+  assertEquals(ImmutableList.of(-1,3,5),result);
+}

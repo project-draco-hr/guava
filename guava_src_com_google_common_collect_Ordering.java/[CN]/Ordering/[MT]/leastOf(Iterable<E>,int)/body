@@ -1,16 +1,3 @@
 {
-  checkArgument(k >= 0,"%d is negative",k);
-  @SuppressWarnings("unchecked") E[] values=(E[])Iterables.toArray(iterable);
-  E[] resultArray;
-  if (values.length <= k) {
-    Arrays.sort(values,this);
-    resultArray=values;
-  }
- else {
-    quicksortLeastK(values,0,values.length - 1,k);
-    @SuppressWarnings("unchecked") E[] tmp=(E[])new Object[k];
-    resultArray=tmp;
-    System.arraycopy(values,0,resultArray,0,k);
-  }
-  return Collections.unmodifiableList(Arrays.asList(resultArray));
+  return leastOf(iterable.iterator(),k);
 }
