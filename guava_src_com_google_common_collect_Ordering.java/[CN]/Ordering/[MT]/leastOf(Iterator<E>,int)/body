@@ -4,6 +4,15 @@
   if (k == 0 || !elements.hasNext()) {
     return ImmutableList.of();
   }
+ else   if (k >= Integer.MAX_VALUE / 2) {
+    ArrayList<E> list=Lists.newArrayList(elements);
+    Collections.sort(list,this);
+    if (list.size() > k) {
+      list.subList(k,list.size()).clear();
+    }
+    list.trimToSize();
+    return Collections.unmodifiableList(list);
+  }
   int bufferCap=k * 2;
   @SuppressWarnings("unchecked") E[] buffer=(E[])new Object[bufferCap];
   E threshold=elements.next();
