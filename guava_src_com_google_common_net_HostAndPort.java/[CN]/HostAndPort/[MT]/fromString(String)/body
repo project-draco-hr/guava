@@ -21,7 +21,7 @@
     }
   }
   int port=NO_PORT;
-  if (portString != null) {
+  if (!Strings.isNullOrEmpty(portString)) {
     checkArgument(!portString.startsWith("+"),"Unparseable port number: %s",hostPortString);
     try {
       port=Integer.parseInt(portString);
