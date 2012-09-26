@@ -4,6 +4,5 @@
       return ImmutableSet.of();
     }
   }
-  CartesianSet<B> cartesianSet=new CartesianSet<B>(sets);
-  return cartesianSet;
+  return CartesianSet.create(sets);
 }

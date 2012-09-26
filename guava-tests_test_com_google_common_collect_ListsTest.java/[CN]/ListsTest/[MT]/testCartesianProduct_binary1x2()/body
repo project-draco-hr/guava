@@ -1,0 +1,3 @@
+{
+  ASSERT.that(Lists.cartesianProduct(list(1),list(2,3))).hasContentsInOrder(list(1,2),list(1,3));
+}

@@ -1,3 +1,0 @@
-{
-  return choicesList.get(index / dividend % size());
-}

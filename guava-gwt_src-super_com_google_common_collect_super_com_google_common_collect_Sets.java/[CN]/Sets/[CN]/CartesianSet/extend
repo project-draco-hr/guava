@@ -1,1 +1,1 @@
-AbstractSet<List<B>>
+ForwardingCollection<List<E>>

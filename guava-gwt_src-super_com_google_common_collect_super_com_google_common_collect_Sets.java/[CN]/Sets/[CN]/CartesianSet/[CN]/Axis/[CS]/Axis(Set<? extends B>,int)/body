@@ -1,5 +1,0 @@
-{
-  choices=ImmutableSet.copyOf(set);
-  choicesList=choices.asList();
-  this.dividend=dividend;
-}
