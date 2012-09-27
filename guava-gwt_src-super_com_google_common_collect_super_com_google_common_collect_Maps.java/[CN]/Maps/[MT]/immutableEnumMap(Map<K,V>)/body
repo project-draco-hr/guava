@@ -1,0 +1,14 @@
+{
+  if (map.isEmpty()) {
+    return ImmutableMap.of();
+  }
+ else   if (map instanceof ImmutableEnumMap) {
+    return (ImmutableEnumMap<K,V>)map;
+  }
+  for (  Map.Entry<K,V> entry : map.entrySet()) {
+    checkNotNull(entry.getKey());
+    checkNotNull(entry.getValue());
+  }
+  EnumMap<K,V> enumMap=new EnumMap<K,V>(map);
+  return new ImmutableEnumMap<K,V>(enumMap);
+}
