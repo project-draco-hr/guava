@@ -1,0 +1,5 @@
+{
+  new NullPointerTester().testAllPublicStaticMethods(Equivalence.class);
+  new NullPointerTester().testAllPublicInstanceMethods(Equivalence.equals());
+  new NullPointerTester().testAllPublicInstanceMethods(Equivalence.identity());
+}
