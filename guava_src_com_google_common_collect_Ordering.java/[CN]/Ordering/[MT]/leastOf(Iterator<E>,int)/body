@@ -32,6 +32,7 @@
     if (bufferSize == bufferCap) {
       int left=0;
       int right=bufferCap - 1;
+      int minThresholdPosition=0;
       while (left < right) {
         int pivotIndex=(left + right + 1) >>> 1;
         int pivotNewIndex=partition(buffer,left,right,pivotIndex);
@@ -40,14 +41,15 @@
         }
  else         if (pivotNewIndex < k) {
           left=Math.max(pivotNewIndex,left + 1);
+          minThresholdPosition=pivotNewIndex;
         }
  else {
           break;
         }
       }
       bufferSize=k;
-      threshold=buffer[0];
-      for (int i=1; i < bufferSize; i++) {
+      threshold=buffer[minThresholdPosition];
+      for (int i=minThresholdPosition + 1; i < bufferSize; i++) {
         threshold=max(threshold,buffer[i]);
       }
     }
