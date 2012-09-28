@@ -1,7 +1,9 @@
 {
   ImmutableMap<K,V> map=super.build();
-  if (map.isEmpty()) {
-    return of();
+  if (map instanceof ImmutableBiMap) {
+    return (ImmutableBiMap<K,V>)map;
   }
-  return new RegularImmutableBiMap<K,V>(map);
+ else {
+    return new RegularImmutableBiMap<K,V>(map);
+  }
 }

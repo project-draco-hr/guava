@@ -5,7 +5,7 @@ case 0:
     return of();
 case 1:
   Entry<K,V> entry=getOnlyElement(entries);
-return new SingletonImmutableMap<K,V>(entry.getKey(),entry.getValue());
+return of(entry.getKey(),entry.getValue());
 default :
 @SuppressWarnings("unchecked") Entry<K,V>[] entryArray=entries.toArray(new Entry[entries.size()]);
 return new RegularImmutableMap<K,V>(entryArray);

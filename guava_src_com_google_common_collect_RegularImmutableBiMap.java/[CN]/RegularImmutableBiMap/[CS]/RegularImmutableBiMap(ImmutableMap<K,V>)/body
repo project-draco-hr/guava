@@ -1,4 +1,5 @@
 {
+  checkArgument(delegate.size() >= 2);
   this.delegate=delegate;
   ImmutableMap.Builder<V,K> builder=ImmutableMap.builder();
   for (  Entry<K,V> entry : delegate.entrySet()) {

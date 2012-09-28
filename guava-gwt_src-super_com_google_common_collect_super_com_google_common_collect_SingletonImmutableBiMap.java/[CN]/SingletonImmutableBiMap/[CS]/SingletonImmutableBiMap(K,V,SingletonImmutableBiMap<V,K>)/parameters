@@ -1,0 +1,3 @@
+K key
+V value
+SingletonImmutableBiMap<V,K> inverse

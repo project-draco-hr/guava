@@ -1,0 +1,2 @@
+SerializationStreamWriter writer
+SingletonImmutableBiMap<?,?> instance

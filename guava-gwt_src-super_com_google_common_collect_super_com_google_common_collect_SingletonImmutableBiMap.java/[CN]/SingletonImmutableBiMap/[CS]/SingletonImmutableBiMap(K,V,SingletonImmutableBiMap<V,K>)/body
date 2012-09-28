@@ -1,0 +1,6 @@
+{
+  super(Collections.singletonMap(checkNotNull(key),checkNotNull(value)));
+  this.singleKey=singleKey;
+  this.singleValue=singleValue;
+  this.inverse=inverse;
+}

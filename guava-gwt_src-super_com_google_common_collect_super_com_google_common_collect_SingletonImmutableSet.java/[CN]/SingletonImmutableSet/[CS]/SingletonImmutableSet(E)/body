@@ -1,4 +1,3 @@
 {
-  super(Collections.singleton(checkNotNull(element)));
-  this.element=element;
+  this.element=checkNotNull(element);
 }

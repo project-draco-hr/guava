@@ -5,9 +5,11 @@
       return bimap;
     }
   }
-  if (map.isEmpty()) {
-    return of();
-  }
   ImmutableMap<K,V> immutableMap=ImmutableMap.copyOf(map);
-  return new RegularImmutableBiMap<K,V>(immutableMap);
+  if (immutableMap instanceof ImmutableBiMap) {
+    return (ImmutableBiMap<K,V>)immutableMap;
+  }
+ else {
+    return new RegularImmutableBiMap<K,V>(immutableMap);
+  }
 }
