@@ -1,0 +1,7 @@
+{
+  if (obj instanceof Table) {
+    Table<?,?,?> other=(Table<?,?,?>)obj;
+    return cellSet().equals(other.cellSet());
+  }
+  return false;
+}
