@@ -1,0 +1,3 @@
+{
+  tester.doTestNulls(NoNullCheckNeededDespitNotInstantiable.class,Visibility.PACKAGE);
+}

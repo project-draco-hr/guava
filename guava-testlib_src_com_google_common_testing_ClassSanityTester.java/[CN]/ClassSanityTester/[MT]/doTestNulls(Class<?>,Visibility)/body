@@ -3,8 +3,10 @@
     nullPointerTester.testConstructors(cls,visibility);
   }
   nullPointerTester.testStaticMethods(cls,visibility);
-  Object instance=instantiate(cls);
-  if (instance != null) {
-    nullPointerTester.testInstanceMethods(instance,visibility);
+  if (hasInstanceMethodToTestNulls(cls,visibility)) {
+    Object instance=instantiate(cls);
+    if (instance != null) {
+      nullPointerTester.testInstanceMethods(instance,visibility);
+    }
   }
 }

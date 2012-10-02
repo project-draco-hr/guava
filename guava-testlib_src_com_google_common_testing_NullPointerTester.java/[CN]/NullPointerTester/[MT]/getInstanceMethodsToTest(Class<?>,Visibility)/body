@@ -1,0 +1,9 @@
+{
+  ImmutableList.Builder<Method> builder=ImmutableList.builder();
+  for (  Method method : minimalVisibility.getInstanceMethods(c)) {
+    if (!isIgnored(method)) {
+      builder.add(method);
+    }
+  }
+  return builder.build();
+}

@@ -1,8 +1,5 @@
 {
-  Class<?> c=instance.getClass();
-  for (  Method method : minimalVisibility.getInstanceMethods(c)) {
-    if (!isIgnored(method)) {
-      testMethod(instance,method);
-    }
+  for (  Method method : getInstanceMethodsToTest(instance.getClass(),minimalVisibility)) {
+    testMethod(instance,method);
   }
 }
