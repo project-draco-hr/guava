@@ -1,0 +1,8 @@
+{
+  try {
+    MathPreconditions.checkPositive("long",-1L);
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}

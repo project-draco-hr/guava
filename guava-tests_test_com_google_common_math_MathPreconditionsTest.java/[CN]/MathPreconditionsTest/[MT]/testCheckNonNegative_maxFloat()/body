@@ -1,0 +1,3 @@
+{
+  MathPreconditions.checkNonNegative("float",Float.MAX_VALUE);
+}

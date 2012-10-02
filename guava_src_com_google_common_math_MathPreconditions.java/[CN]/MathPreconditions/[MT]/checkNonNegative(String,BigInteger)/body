@@ -1,5 +1,5 @@
 {
-  if (checkNotNull(x).signum() < 0) {
+  if (x.signum() < 0) {
     throw new IllegalArgumentException(role + " (" + x+ ") must be >= 0");
   }
   return x;

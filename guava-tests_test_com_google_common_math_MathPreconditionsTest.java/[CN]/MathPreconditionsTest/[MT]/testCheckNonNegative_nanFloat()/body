@@ -1,0 +1,8 @@
+{
+  try {
+    MathPreconditions.checkNonNegative("float",Float.NaN);
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}

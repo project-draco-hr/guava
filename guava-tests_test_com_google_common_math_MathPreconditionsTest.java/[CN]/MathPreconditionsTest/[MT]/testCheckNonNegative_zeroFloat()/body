@@ -1,0 +1,3 @@
+{
+  MathPreconditions.checkNonNegative("float",0f);
+}

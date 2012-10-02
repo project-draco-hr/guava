@@ -1,0 +1,3 @@
+{
+  MathPreconditions.checkPositive("int",1);
+}

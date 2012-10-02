@@ -1,0 +1,3 @@
+{
+  MathPreconditions.checkNonNegative("double",Double.MIN_VALUE);
+}

@@ -1,0 +1,8 @@
+{
+  try {
+    MathPreconditions.checkNonNegative("int",Integer.MIN_VALUE);
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}

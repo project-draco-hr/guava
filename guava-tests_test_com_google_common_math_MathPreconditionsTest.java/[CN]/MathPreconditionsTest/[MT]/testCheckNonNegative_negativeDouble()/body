@@ -1,0 +1,8 @@
+{
+  try {
+    MathPreconditions.checkNonNegative("double",-1d);
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}

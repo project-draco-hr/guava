@@ -1,0 +1,3 @@
+{
+  MathPreconditions.checkPositive("long",1);
+}

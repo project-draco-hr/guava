@@ -1,0 +1,8 @@
+{
+  try {
+    MathPreconditions.checkPositive("int",0);
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}
