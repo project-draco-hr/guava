@@ -1,3 +1,0 @@
-{
-  return putBytes(charSequence.toString().getBytes(charset));
-}

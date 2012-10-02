@@ -1,0 +1,3 @@
+{
+  HashTestUtils.assertInvariants(Hashing.crc32());
+}

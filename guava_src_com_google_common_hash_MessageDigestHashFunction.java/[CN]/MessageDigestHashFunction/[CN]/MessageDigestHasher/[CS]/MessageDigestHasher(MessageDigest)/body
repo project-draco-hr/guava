@@ -1,4 +1,3 @@
 {
   this.digest=digest;
-  this.scratch=ByteBuffer.allocate(8).order(ByteOrder.LITTLE_ENDIAN);
 }

@@ -1,5 +1,0 @@
-{
-  checkNotDone();
-  digest.update(b);
-  return this;
-}

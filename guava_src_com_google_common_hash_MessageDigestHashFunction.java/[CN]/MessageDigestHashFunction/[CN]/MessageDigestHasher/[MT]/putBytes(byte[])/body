@@ -1,5 +1,0 @@
-{
-  checkNotDone();
-  digest.update(bytes);
-  return this;
-}

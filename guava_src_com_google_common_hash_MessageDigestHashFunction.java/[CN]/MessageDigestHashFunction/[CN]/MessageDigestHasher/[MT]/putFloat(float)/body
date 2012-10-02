@@ -1,7 +1,0 @@
-{
-  checkNotDone();
-  scratch.putFloat(f);
-  digest.update(scratch.array(),0,4);
-  scratch.clear();
-  return this;
-}

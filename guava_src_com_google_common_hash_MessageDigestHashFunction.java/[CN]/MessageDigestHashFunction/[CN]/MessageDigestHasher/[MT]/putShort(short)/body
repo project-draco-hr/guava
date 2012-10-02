@@ -1,7 +1,0 @@
-{
-  checkNotDone();
-  scratch.putShort(s);
-  digest.update(scratch.array(),0,Shorts.BYTES);
-  scratch.clear();
-  return this;
-}

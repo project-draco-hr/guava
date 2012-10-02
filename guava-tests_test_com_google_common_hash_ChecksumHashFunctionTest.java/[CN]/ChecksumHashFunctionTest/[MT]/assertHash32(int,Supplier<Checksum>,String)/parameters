@@ -1,0 +1,3 @@
+int expected
+Supplier<Checksum> supplier
+String input

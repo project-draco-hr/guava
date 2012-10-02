@@ -1,0 +1,4 @@
+{
+  byte[] bytes=HashTestUtils.ascii(input);
+  assertEquals(expected,new ChecksumHashFunction(supplier,32).hashBytes(bytes).asInt());
+}

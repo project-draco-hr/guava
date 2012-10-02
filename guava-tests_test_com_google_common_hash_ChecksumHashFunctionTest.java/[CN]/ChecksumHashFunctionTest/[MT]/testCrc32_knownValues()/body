@@ -1,0 +1,10 @@
+{
+  assertHash32(0x1C8600E3,CRC_32,"hell");
+  assertHash32(0x3610A686,CRC_32,"hello");
+  assertHash32(0xED81F9F6,CRC_32,"hello ");
+  assertHash32(0x4850DDC2,CRC_32,"hello w");
+  assertHash32(0x7A2D6005,CRC_32,"hello wo");
+  assertHash32(0x1C192672,CRC_32,"hello wor");
+  assertHash32(0x414FA339,CRC_32,"The quick brown fox jumps over the lazy dog");
+  assertHash32(0x4400B5BC,CRC_32,"The quick brown fox jumps over the lazy cog");
+}

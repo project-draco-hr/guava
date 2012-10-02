@@ -1,0 +1,3 @@
+{
+  HashTestUtils.assertInvariants(Hashing.adler32());
+}

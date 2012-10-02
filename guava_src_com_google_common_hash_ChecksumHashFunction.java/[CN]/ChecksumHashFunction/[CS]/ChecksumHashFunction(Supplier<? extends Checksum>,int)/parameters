@@ -1,0 +1,2 @@
+Supplier<? extends Checksum> checksumSupplier
+int bits

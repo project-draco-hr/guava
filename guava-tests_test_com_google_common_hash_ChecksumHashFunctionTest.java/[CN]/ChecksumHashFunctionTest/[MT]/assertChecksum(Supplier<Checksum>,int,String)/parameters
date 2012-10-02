@@ -1,0 +1,3 @@
+Supplier<Checksum> supplier
+int bits
+String input

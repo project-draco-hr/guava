@@ -1,0 +1,10 @@
+{
+  assertHash32(0x041701A6,ADLER_32,"hell");
+  assertHash32(0x062C0215,ADLER_32,"hello");
+  assertHash32(0x08610235,ADLER_32,"hello ");
+  assertHash32(0x0B0D02AC,ADLER_32,"hello w");
+  assertHash32(0x0E28031B,ADLER_32,"hello wo");
+  assertHash32(0x11B5038D,ADLER_32,"hello wor");
+  assertHash32(0x5BDC0FDA,ADLER_32,"The quick brown fox jumps over the lazy dog");
+  assertHash32(0x5BD90FD9,ADLER_32,"The quick brown fox jumps over the lazy cog");
+}
