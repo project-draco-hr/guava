@@ -1,0 +1,8 @@
+{
+  ImmutableRangeSet<Integer> rangeSet=ImmutableRangeSet.all();
+  ASSERT.that(rangeSet.asRanges()).hasContentsInOrder(Range.all());
+  assertTrue(rangeSet.contains(0));
+  assertTrue(rangeSet.encloses(Range.<Integer>all()));
+  assertTrue(rangeSet.enclosesAll(rangeSet));
+  assertEquals(ImmutableRangeSet.<Integer>of(),rangeSet.complement());
+}

@@ -1,0 +1,9 @@
+{
+  ImmutableRangeSet<Integer> rangeSet=ImmutableRangeSet.<Integer>builder().add(Range.closed(5,8)).add(Range.closedOpen(1,3)).build();
+  try {
+    rangeSet.add(Range.open(3,4));
+    fail();
+  }
+ catch (  UnsupportedOperationException expected) {
+  }
+}

@@ -1,0 +1,15 @@
+{
+  ImmutableRangeSet<Integer> rangeSet=ImmutableRangeSet.of(Range.closedOpen(1,5));
+  ASSERT.that(rangeSet.asRanges()).hasContentsInOrder(Range.closedOpen(1,5));
+  assertTrue(rangeSet.encloses(Range.closed(3,4)));
+  assertTrue(rangeSet.encloses(Range.closedOpen(1,4)));
+  assertTrue(rangeSet.encloses(Range.closedOpen(1,5)));
+  assertFalse(rangeSet.encloses(Range.greaterThan(2)));
+  assertTrue(rangeSet.contains(3));
+  assertFalse(rangeSet.contains(5));
+  assertFalse(rangeSet.contains(0));
+  RangeSet<Integer> expectedComplement=TreeRangeSet.create();
+  expectedComplement.add(Range.lessThan(1));
+  expectedComplement.add(Range.atLeast(5));
+  assertEquals(expectedComplement,rangeSet.complement());
+}

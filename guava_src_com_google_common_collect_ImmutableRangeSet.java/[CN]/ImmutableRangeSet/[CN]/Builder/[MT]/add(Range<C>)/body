@@ -1,0 +1,4 @@
+{
+  rangeSet.add(range);
+  return this;
+}
