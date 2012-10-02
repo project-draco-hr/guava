@@ -5,4 +5,11 @@
   assertTrue(future.isDone());
   assertFalse(future.wasInterrupted());
   assertFalse(future.interruptTaskWasCalled);
+  try {
+    future.get();
+    fail("Expected CancellationException");
+  }
+ catch (  CancellationException e) {
+    assertNotNull(e.getCause());
+  }
 }
