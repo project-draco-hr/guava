@@ -1,3 +1,4 @@
 {
+  checkNotNull(ticker);
   expireEntries(toLocalCache(cache),expiringTime,ticker);
 }

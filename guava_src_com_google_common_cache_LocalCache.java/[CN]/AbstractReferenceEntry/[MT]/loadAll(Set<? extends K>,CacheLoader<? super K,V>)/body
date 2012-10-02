@@ -1,4 +1,6 @@
 {
+  checkNotNull(loader);
+  checkNotNull(keys);
   Stopwatch stopwatch=new Stopwatch().start();
   Map<K,V> result;
   boolean success=false;

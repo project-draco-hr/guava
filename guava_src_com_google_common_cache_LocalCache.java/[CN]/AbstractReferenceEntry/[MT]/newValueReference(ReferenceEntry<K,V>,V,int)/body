@@ -1,4 +1,4 @@
 {
   int hash=entry.getHash();
-  return valueStrength.referenceValue(segmentFor(hash),entry,value,weight);
+  return valueStrength.referenceValue(segmentFor(hash),entry,checkNotNull(value),weight);
 }

@@ -1,7 +1,7 @@
 {
   this.map=map;
   this.maxSegmentWeight=maxSegmentWeight;
-  this.statsCounter=statsCounter;
+  this.statsCounter=checkNotNull(statsCounter);
   initTable(newEntryArray(initialCapacity));
   keyReferenceQueue=map.usesKeyReferences() ? new ReferenceQueue<K>() : null;
   valueReferenceQueue=map.usesValueReferences() ? new ReferenceQueue<V>() : null;

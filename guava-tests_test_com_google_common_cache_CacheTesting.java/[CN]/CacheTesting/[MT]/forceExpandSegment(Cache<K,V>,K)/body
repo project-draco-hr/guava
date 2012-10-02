@@ -1,4 +1,6 @@
 {
+  checkNotNull(cache);
+  checkNotNull(key);
   LocalCache<K,V> map=toLocalCache(cache);
   int hash=map.hash(key);
   Segment<K,V> segment=map.segmentFor(hash);

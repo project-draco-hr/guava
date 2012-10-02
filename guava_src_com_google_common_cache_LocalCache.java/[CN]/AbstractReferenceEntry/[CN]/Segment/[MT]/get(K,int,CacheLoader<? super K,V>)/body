@@ -1,4 +1,6 @@
 {
+  checkNotNull(key);
+  checkNotNull(loader);
   try {
     if (count != 0) {
       ReferenceEntry<K,V> e=getEntry(key,hash);
