@@ -1,4 +1,5 @@
 {
+  checkNotNull(event);
   try {
     method.invoke(target,new Object[]{event});
   }

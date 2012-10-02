@@ -1,13 +1,7 @@
 {
-  if (this == obj) {
-    return true;
+  if (obj instanceof EventHandler) {
+    EventHandler that=(EventHandler)obj;
+    return target == that.target && method.equals(that.method);
   }
-  if (obj == null) {
-    return false;
-  }
-  if (getClass() != obj.getClass()) {
-    return false;
-  }
-  final EventHandler other=(EventHandler)obj;
-  return method.equals(other.method) && target == other.target;
+  return false;
 }

@@ -1,8 +1,0 @@
-{
-  try {
-    new EventHandler(this,null);
-    fail("EventHandler must immediately reject null methods.");
-  }
- catch (  NullPointerException e) {
-  }
-}

@@ -1,9 +1,0 @@
-{
-  Method method=getRecordingMethod();
-  try {
-    new EventHandler(null,method);
-    fail("EventHandler must immediately reject null targets.");
-  }
- catch (  NullPointerException e) {
-  }
-}

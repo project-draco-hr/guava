@@ -1,4 +1,4 @@
 {
-  this.source=source;
-  this.event=event;
+  this.source=checkNotNull(source);
+  this.event=checkNotNull(event);
 }

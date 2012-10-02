@@ -1,4 +1,4 @@
 {
   final int PRIME=31;
-  return (PRIME + method.hashCode()) * PRIME + target.hashCode();
+  return (PRIME + method.hashCode()) * PRIME + System.identityHashCode(target);
 }

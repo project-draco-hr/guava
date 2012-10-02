@@ -1,4 +1,4 @@
 {
-  this.event=event;
-  this.handler=handler;
+  this.event=checkNotNull(event);
+  this.handler=checkNotNull(handler);
 }
