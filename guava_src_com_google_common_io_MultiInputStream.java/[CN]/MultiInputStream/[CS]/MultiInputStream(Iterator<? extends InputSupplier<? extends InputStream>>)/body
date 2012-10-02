@@ -1,4 +1,4 @@
 {
-  this.it=it;
+  this.it=checkNotNull(it);
   advance();
 }

@@ -1,7 +1,7 @@
 {
-  Preconditions.checkNotNull(supplier);
-  Preconditions.checkArgument(offset >= 0,"offset is negative");
-  Preconditions.checkArgument(length >= 0,"length is negative");
+  checkNotNull(supplier);
+  checkArgument(offset >= 0,"offset is negative");
+  checkArgument(length >= 0,"length is negative");
   return new InputSupplier<InputStream>(){
     @Override public InputStream getInput() throws IOException {
       InputStream in=supplier.getInput();

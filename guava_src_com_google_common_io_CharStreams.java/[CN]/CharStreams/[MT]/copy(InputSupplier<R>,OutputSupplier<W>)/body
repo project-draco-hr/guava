@@ -1,4 +1,6 @@
 {
+  checkNotNull(from);
+  checkNotNull(to);
   int successfulOps=0;
   R in=from.getInput();
   try {

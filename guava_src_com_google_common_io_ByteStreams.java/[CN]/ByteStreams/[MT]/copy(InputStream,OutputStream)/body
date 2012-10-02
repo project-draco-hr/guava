@@ -1,4 +1,6 @@
 {
+  checkNotNull(from);
+  checkNotNull(to);
   byte[] buf=new byte[BUF_SIZE];
   long total=0;
   while (true) {

@@ -1,3 +1,3 @@
 {
-  this.target=target;
+  this.target=checkNotNull(target);
 }

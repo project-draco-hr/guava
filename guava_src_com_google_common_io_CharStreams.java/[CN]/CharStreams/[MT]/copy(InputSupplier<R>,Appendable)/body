@@ -1,4 +1,6 @@
 {
+  checkNotNull(from);
+  checkNotNull(to);
   boolean threw=true;
   R in=from.getInput();
   try {

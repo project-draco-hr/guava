@@ -1,4 +1,6 @@
 {
+  checkNotNull(from);
+  checkNotNull(to);
   boolean threw=true;
   InputStream in=from.getInput();
   try {

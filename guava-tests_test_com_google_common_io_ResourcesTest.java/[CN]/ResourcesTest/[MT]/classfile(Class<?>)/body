@@ -1,0 +1,3 @@
+{
+  return c.getResource(c.getSimpleName() + ".class");
+}

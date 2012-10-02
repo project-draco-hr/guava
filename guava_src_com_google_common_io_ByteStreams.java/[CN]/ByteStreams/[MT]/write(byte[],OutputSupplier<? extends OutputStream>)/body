@@ -1,5 +1,6 @@
 {
-  Preconditions.checkNotNull(from);
+  checkNotNull(from);
+  checkNotNull(to);
   boolean threw=true;
   OutputStream out=to.getOutput();
   try {

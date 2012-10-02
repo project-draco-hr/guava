@@ -1,5 +1,4 @@
 {
-  URL url=getClass().getResource("/com/google/common/io/Resources.class");
-  byte[] data=Resources.toByteArray(url);
+  byte[] data=Resources.toByteArray(classfile(Resources.class));
   assertEquals(0xCAFEBABE,new DataInputStream(new ByteArrayInputStream(data)).readInt());
 }

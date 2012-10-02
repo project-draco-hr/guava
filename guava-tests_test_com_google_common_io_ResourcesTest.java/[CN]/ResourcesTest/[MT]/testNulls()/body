@@ -1,0 +1,3 @@
+{
+  new NullPointerTester().setDefault(URL.class,classfile(ResourcesTest.class)).testAllPublicStaticMethods(Resources.class);
+}
