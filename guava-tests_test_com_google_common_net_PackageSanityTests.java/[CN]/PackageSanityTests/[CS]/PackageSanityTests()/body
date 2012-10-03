@@ -1,0 +1,3 @@
+{
+  setDefault(InternetDomainName.class,InternetDomainName.from("google.com"));
+}
