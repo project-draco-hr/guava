@@ -4,5 +4,5 @@
   checksum.update(bytes,0,bytes.length);
   long value=checksum.getValue();
   HashCode hashCode=new ChecksumHashFunction(supplier,bits).hashBytes(bytes);
-  assertEquals(value,Hashing.padToLong(hashCode));
+  assertEquals(value,hashCode.padToLong());
 }
