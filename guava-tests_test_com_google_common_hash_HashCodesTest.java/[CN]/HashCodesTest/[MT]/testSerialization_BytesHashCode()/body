@@ -1,3 +1,0 @@
-{
-  reserializeAndAssert(HashCodes.fromBytes(expectedHashCodes.get(0).bytes));
-}

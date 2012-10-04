@@ -1,3 +1,0 @@
-{
-  reserializeAndAssert(HashCodes.fromLong(42L));
-}

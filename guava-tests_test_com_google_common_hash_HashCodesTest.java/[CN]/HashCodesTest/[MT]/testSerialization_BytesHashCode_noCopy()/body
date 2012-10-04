@@ -1,3 +1,0 @@
-{
-  reserializeAndAssert(HashCodes.fromBytesNoCopy(expectedHashCodes.get(0).bytes));
-}
