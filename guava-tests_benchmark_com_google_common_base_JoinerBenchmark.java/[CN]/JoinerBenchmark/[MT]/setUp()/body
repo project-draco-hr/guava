@@ -1,0 +1,6 @@
+{
+  String component=Strings.repeat("a",componentLength);
+  String[] raw=new String[count];
+  Arrays.fill(raw,component);
+  components=Arrays.asList(raw);
+}

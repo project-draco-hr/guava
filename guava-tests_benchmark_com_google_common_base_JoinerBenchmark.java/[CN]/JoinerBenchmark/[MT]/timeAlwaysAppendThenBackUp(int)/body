@@ -1,0 +1,15 @@
+{
+  int dummy=0;
+  for (int i=0; i < reps; i++) {
+    StringBuilder sb=new StringBuilder();
+    for (    String comp : components) {
+      sb.append(comp);
+      sb.append(DELIMITER_STRING);
+    }
+    if (sb.length() > 0) {
+      sb.setLength(sb.length() - DELIMITER_STRING.length());
+    }
+    dummy^=sb.toString().length();
+  }
+  return dummy;
+}

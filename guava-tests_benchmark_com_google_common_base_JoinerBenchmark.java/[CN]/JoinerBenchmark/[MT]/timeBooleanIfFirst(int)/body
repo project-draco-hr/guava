@@ -1,0 +1,16 @@
+{
+  int dummy=0;
+  for (int i=0; i < reps; i++) {
+    StringBuilder sb=new StringBuilder();
+    boolean append=false;
+    for (    String comp : components) {
+      if (append) {
+        sb.append(DELIMITER_STRING);
+      }
+      sb.append(comp);
+      append=true;
+    }
+    dummy^=sb.toString().length();
+  }
+  return dummy;
+}
