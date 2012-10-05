@@ -1,6 +1,6 @@
 {
-  checkPermits(permits);
   long timeoutMicros=unit.toMicros(timeout);
+  checkPermits(permits);
   long microsToWait;
 synchronized (this) {
     long nowMicros=readSafeMicros();

@@ -1,0 +1,5 @@
+{
+  NullPointerTester tester=new NullPointerTester().setDefault(RateLimiter.SleepingTicker.class,ticker);
+  tester.testStaticMethods(RateLimiter.class,Visibility.PACKAGE);
+  tester.testInstanceMethods(RateLimiter.create(ticker,5.0),Visibility.PACKAGE);
+}
