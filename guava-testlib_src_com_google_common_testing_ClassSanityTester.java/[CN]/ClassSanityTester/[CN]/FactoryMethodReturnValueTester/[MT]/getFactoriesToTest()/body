@@ -1,0 +1,9 @@
+{
+  ImmutableList.Builder<Invokable<?,?>> builder=ImmutableList.builder();
+  for (  Invokable<?,?> factory : factories) {
+    if (returnTypeToTest.isAssignableFrom(factory.getReturnType().getRawType())) {
+      builder.add(factory);
+    }
+  }
+  return builder.build();
+}

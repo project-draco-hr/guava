@@ -1,0 +1,3 @@
+{
+  tester.forAllPublicStaticMethods(BadNullsFactory.class).thatReturn(Iterable.class).testNulls();
+}

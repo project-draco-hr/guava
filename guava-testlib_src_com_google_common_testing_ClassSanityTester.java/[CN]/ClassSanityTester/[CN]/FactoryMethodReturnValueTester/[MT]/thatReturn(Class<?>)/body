@@ -1,0 +1,4 @@
+{
+  this.returnTypeToTest=returnType;
+  return this;
+}

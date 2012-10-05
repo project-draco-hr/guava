@@ -1,6 +1,6 @@
 {
   try {
-    tester.forAllPublicStaticMethods(BadNullsFactory.class).testNulls();
+    tester.forAllPublicStaticMethods(BadNullsFactory.class).thatReturn(Object.class).testNulls();
   }
  catch (  AssertionFailedError expected) {
     return;
