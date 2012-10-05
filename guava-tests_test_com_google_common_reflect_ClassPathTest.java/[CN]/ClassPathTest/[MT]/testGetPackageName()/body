@@ -1,0 +1,4 @@
+{
+  assertEquals("",new ClassPath.ClassInfo("Foo",getClass().getClassLoader()).getPackageName());
+  assertEquals("a.b",new ClassPath.ClassInfo("a.b.Foo",getClass().getClassLoader()).getPackageName());
+}
