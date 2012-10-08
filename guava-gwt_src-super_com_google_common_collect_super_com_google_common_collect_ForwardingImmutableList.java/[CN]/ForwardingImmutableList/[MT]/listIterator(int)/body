@@ -1,3 +1,0 @@
-{
-  return Iterators.unmodifiableListIterator(delegateList().listIterator(index));
-}
