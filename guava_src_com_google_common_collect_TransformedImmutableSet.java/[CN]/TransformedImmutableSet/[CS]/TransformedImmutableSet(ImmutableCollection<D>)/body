@@ -1,4 +1,0 @@
-{
-  this.source=source;
-  this.hashCode=Sets.hashCodeImpl(this);
-}
