@@ -1,0 +1,12 @@
+{
+  for (  Range<Integer> query : QUERY_RANGES) {
+    boolean expectEnclose=false;
+    for (    Range<Integer> expectedRange : rangeSet.asRanges()) {
+      if (expectedRange.encloses(query)) {
+        expectEnclose=true;
+        break;
+      }
+    }
+    assertEquals(rangeSet + " was incorrect on encloses(" + query+ ")",expectEnclose,rangeSet.encloses(query));
+  }
+}

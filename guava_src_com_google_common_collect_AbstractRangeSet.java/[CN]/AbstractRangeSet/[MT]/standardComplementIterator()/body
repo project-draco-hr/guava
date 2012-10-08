@@ -1,0 +1,24 @@
+{
+  return new AbstractIterator<Range<C>>(){
+    final Iterator<Range<C>> positiveIterator=AbstractRangeSet.this.asRanges().iterator();
+    Cut<C> prevCut=Cut.belowAll();
+    @Override protected Range<C> computeNext(){
+      while (positiveIterator.hasNext()) {
+        Cut<C> oldCut=prevCut;
+        Range<C> positiveRange=positiveIterator.next();
+        prevCut=positiveRange.upperBound;
+        if (oldCut.compareTo(positiveRange.lowerBound) < 0) {
+          return new Range<C>(oldCut,positiveRange.lowerBound);
+        }
+      }
+      Cut<C> posInfinity=Cut.aboveAll();
+      if (prevCut.compareTo(posInfinity) < 0) {
+        Range<C> result=new Range<C>(prevCut,posInfinity);
+        prevCut=posInfinity;
+        return result;
+      }
+      return endOfData();
+    }
+  }
+;
+}

@@ -1,0 +1,19 @@
+{
+  Cut<C> valueCut=Cut.belowValue(value);
+  Entry<Cut<C>,Range<C>> entryBelow=rangesByLowerCut.floorEntry(valueCut);
+  Cut<C> lowerBound;
+  if (entryBelow == null) {
+    lowerBound=Cut.belowAll();
+  }
+ else {
+    Range<C> rangeBelow=entryBelow.getValue();
+    if (rangeBelow.contains(value)) {
+      return null;
+    }
+ else {
+      lowerBound=rangeBelow.upperBound;
+    }
+  }
+  Cut<C> upperBound=Objects.firstNonNull(rangesByLowerCut.higherKey(valueCut),Cut.<C>aboveAll());
+  return new Range<C>(lowerBound,upperBound);
+}

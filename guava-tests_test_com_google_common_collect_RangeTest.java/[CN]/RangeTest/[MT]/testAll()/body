@@ -6,5 +6,6 @@
   assertUnboundedAbove(range);
   assertFalse(range.isEmpty());
   assertEquals("(-\u221e\u2025+\u221e)",range.toString());
-  reserializeAndAssert(range);
+  assertSame(range,reserializeAndAssert(range));
+  assertSame(range,Range.all());
 }

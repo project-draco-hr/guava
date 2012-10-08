@@ -1,0 +1,21 @@
+{
+  return new AbstractSet<Range<C>>(){
+    @Override public Iterator<Range<C>> iterator(){
+      return TreeRangeSet.this.standardComplementIterator();
+    }
+    @Override public int size(){
+      boolean positiveBoundedBelow=!rangesByLowerCut.containsKey(Cut.belowAll());
+      Entry<Cut<C>,Range<C>> lastEntry=rangesByLowerCut.lastEntry();
+      boolean positiveBoundedAbove=lastEntry == null || lastEntry.getValue().hasUpperBound();
+      int size=rangesByLowerCut.size() - 1;
+      if (positiveBoundedBelow) {
+        size++;
+      }
+      if (positiveBoundedAbove) {
+        size++;
+      }
+      return size;
+    }
+  }
+;
+}

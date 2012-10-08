@@ -1,0 +1,8 @@
+{
+  for (  Range<Integer> range : QUERY_RANGES) {
+    TreeRangeSet<Integer> rangeSet=TreeRangeSet.create();
+    rangeSet.add(range);
+    testEnclosing(rangeSet);
+    testEnclosing(rangeSet.complement());
+  }
+}

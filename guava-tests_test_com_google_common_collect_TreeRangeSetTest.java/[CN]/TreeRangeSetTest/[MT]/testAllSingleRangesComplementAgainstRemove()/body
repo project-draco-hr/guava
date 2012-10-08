@@ -1,0 +1,11 @@
+{
+  for (  Range<Integer> range : QUERY_RANGES) {
+    TreeRangeSet<Integer> rangeSet=TreeRangeSet.create();
+    rangeSet.add(range);
+    TreeRangeSet<Integer> complement=TreeRangeSet.create();
+    complement.add(Range.<Integer>all());
+    complement.remove(range);
+    assertEquals(complement,rangeSet.complement());
+    ASSERT.that(rangeSet.complement().asRanges()).hasContentsInOrder(complement.asRanges().toArray());
+  }
+}

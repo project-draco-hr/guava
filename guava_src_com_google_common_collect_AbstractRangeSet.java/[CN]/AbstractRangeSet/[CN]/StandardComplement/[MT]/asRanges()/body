@@ -1,4 +1,0 @@
-{
-  Set<Range<C>> result=asRanges;
-  return (result == null) ? asRanges=createAsRanges() : result;
-}
