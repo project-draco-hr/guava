@@ -1,4 +1,0 @@
-{
-  super(new TreeMap<K,Collection<V>>(keyComparator));
-  putAll(multimap);
-}
