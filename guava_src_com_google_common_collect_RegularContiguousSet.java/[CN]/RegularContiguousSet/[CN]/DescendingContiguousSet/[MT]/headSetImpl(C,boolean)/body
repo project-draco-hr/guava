@@ -1,3 +1,0 @@
-{
-  return RegularContiguousSet.this.tailSetImpl(toElement,inclusive).descendingSet();
-}

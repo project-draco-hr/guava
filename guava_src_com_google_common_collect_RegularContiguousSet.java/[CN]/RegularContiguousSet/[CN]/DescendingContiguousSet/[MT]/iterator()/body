@@ -1,9 +1,0 @@
-{
-  return new AbstractSequentialIterator<C>(first()){
-    final C last=last();
-    @Override protected C computeNext(    C previous){
-      return equalsOrThrow(previous,last) ? null : domain.previous(previous);
-    }
-  }
-;
-}
