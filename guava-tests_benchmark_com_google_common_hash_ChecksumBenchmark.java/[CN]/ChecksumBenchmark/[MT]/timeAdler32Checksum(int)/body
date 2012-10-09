@@ -1,0 +1,9 @@
+{
+  byte result=0x01;
+  for (int i=0; i < reps; i++) {
+    Adler32 checksum=new Adler32();
+    checksum.update(testBytes);
+    result^=checksum.getValue();
+  }
+  return result;
+}
