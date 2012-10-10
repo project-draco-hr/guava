@@ -5,5 +5,10 @@
       return set;
     }
   }
+ else   if (elements instanceof EnumSet) {
+    EnumSet<?> enumSet=EnumSet.copyOf((EnumSet<?>)elements);
+    @SuppressWarnings("unchecked") ImmutableSet<E> result=(ImmutableSet<E>)ImmutableEnumSet.asImmutable(enumSet);
+    return result;
+  }
   return copyFromCollection(elements);
 }
