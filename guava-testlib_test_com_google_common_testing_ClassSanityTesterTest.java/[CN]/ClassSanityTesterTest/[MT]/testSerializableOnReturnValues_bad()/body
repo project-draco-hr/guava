@@ -1,8 +1,9 @@
 {
   try {
     tester.forAllPublicStaticMethods(BadSerializableFactory.class).testSerializable();
-    fail();
   }
- catch (  RuntimeException expected) {
+ catch (  AssertionError expected) {
+    return;
   }
+  fail();
 }

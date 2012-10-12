@@ -1,0 +1,3 @@
+{
+  new ClassSanityTester().forAllPublicStaticMethods(Futures.class).thatReturn(Future.class).testNulls();
+}

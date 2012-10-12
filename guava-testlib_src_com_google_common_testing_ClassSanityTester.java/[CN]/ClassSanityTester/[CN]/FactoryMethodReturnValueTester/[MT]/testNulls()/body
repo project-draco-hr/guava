@@ -1,8 +1,15 @@
 {
   for (  Invokable<?,?> factory : getFactoriesToTest()) {
     Object instance=instantiate(factory);
-    if (instance != null) {
-      nullPointerTester.testAllPublicInstanceMethods(instance);
+    if (instance != null && packagesToTest.contains(Reflection.getPackageName(instance.getClass()))) {
+      try {
+        nullPointerTester.testAllPublicInstanceMethods(instance);
+      }
+ catch (      AssertionError e) {
+        AssertionError error=new AssertionFailedError("Null check failed on return value of " + factory);
+        error.initCause(e);
+        throw error;
+      }
     }
   }
   return this;

@@ -1,3 +1,0 @@
-{
-  new NullPointerTester().testAllPublicStaticMethods(Futures.class);
-}
