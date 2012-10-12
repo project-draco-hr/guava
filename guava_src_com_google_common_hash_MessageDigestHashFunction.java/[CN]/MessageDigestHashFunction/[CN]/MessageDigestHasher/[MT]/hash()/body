@@ -1,4 +1,4 @@
 {
   done=true;
-  return HashCodes.fromBytesNoCopy(digest.digest());
+  return (bytes == digest.getDigestLength()) ? HashCodes.fromBytesNoCopy(digest.digest()) : HashCodes.fromBytesNoCopy(Arrays.copyOf(digest.digest(),bytes));
 }

@@ -1,0 +1,3 @@
+{
+  return getMessageDigest(algorithmName).getDigestLength();
+}

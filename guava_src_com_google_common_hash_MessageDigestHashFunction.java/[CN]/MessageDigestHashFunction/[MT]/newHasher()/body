@@ -1,3 +1,3 @@
 {
-  return new MessageDigestHasher(getMessageDigest(algorithmName));
+  return new MessageDigestHasher(getMessageDigest(algorithmName),bytes);
 }

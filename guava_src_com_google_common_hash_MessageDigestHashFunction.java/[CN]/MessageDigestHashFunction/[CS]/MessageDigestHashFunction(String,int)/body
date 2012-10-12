@@ -1,0 +1,6 @@
+{
+  int maxLength=getMessageDigestLength(algorithmName);
+  checkArgument(bytes >= 4 && bytes <= maxLength,"bytes (%s) must be >= 4 and < %s",bytes,maxLength);
+  this.algorithmName=checkNotNull(algorithmName);
+  this.bytes=bytes;
+}

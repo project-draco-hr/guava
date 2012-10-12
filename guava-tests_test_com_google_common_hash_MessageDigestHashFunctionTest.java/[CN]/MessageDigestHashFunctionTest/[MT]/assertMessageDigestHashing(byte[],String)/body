@@ -1,3 +1,14 @@
 {
-  assertEquals(HashCodes.fromBytes(MessageDigest.getInstance(algorithmName).digest(input)),new MessageDigestHashFunction(algorithmName).hashBytes(input));
+  MessageDigest digest=MessageDigest.getInstance(algorithmName);
+  assertEquals(HashCodes.fromBytes(digest.digest(input)),new MessageDigestHashFunction(algorithmName).hashBytes(input));
+  for (int bytes=4; bytes <= digest.getDigestLength(); bytes++) {
+    assertEquals(HashCodes.fromBytes(Arrays.copyOf(digest.digest(input),bytes)),new MessageDigestHashFunction(algorithmName,bytes).hashBytes(input));
+  }
+  try {
+    int maxSize=digest.getDigestLength();
+    new MessageDigestHashFunction(algorithmName,maxSize + 1);
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
 }
