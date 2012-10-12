@@ -1,1 +1,1 @@
-AbstractBiMap<K,V>
+AbstractMap<K,V>

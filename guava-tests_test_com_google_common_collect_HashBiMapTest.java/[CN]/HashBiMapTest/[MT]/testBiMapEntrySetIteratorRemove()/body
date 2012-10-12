@@ -6,6 +6,7 @@
   Map.Entry<Integer,String> entry=iterator.next();
   entry.setValue("two");
   assertEquals("two",map.get(1));
+  assertEquals(Integer.valueOf(1),map.inverse().get("two"));
   iterator.remove();
   assertTrue(map.isEmpty());
 }
