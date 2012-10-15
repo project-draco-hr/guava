@@ -1,0 +1,4 @@
+{
+  ImmutableMap<K,ImmutableSet<V>> map=viewValuesAsImmutableSet();
+  return new ImmutableSetMultimap<K,V>(map,map.size(),null);
+}
