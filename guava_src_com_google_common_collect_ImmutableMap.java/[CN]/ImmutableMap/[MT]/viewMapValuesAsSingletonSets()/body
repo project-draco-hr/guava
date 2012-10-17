@@ -19,7 +19,7 @@ class MapViewOfValuesAsSingletonSets extends ImmutableMap<K,ImmutableSet<V>> {
           return MapViewOfValuesAsSingletonSets.this;
         }
         @Override public UnmodifiableIterator<Entry<K,ImmutableSet<V>>> iterator(){
-          final Iterator<Entry<K,V>> backingIterator=((ImmutableMap<K,V>)ImmutableMap.this).entrySet().iterator();
+          final Iterator<Entry<K,V>> backingIterator=ImmutableMap.this.entrySet().iterator();
           return new UnmodifiableIterator<Entry<K,ImmutableSet<V>>>(){
             @Override public boolean hasNext(){
               return backingIterator.hasNext();

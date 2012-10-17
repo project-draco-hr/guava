@@ -5,6 +5,15 @@
       return kvMap;
     }
   }
+ else   if (map instanceof EnumMap) {
+    EnumMap<?,?> enumMap=(EnumMap<?,?>)map;
+    for (    Map.Entry<?,?> entry : enumMap.entrySet()) {
+      checkNotNull(entry.getKey());
+      checkNotNull(entry.getValue());
+    }
+    @SuppressWarnings("unchecked") ImmutableMap<K,V> result=ImmutableEnumMap.asImmutable(new EnumMap(enumMap));
+    return result;
+  }
   @SuppressWarnings("unchecked") Entry<K,V>[] entries=map.entrySet().toArray(new Entry[0]);
 switch (entries.length) {
 case 0:

@@ -1,0 +1,7 @@
+{
+  for (  Map.Entry<K,V> entry : checkNotNull(map).entrySet()) {
+    checkNotNull(entry.getKey());
+    checkNotNull(entry.getValue());
+  }
+  return new ImmutableEnumMap<K,V>(map);
+}

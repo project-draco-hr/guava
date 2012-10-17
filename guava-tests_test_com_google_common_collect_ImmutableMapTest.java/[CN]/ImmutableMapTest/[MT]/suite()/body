@@ -2,6 +2,7 @@
   TestSuite suite=new TestSuite();
   suite.addTestSuite(ImmutableMapTest.class);
   suite.addTest(MapTestSuiteBuilder.using(new ImmutableMapGenerator()).withFeatures(CollectionSize.ANY,CollectionFeature.SERIALIZABLE_INCLUDING_VIEWS,CollectionFeature.KNOWN_ORDER,MapFeature.REJECTS_DUPLICATES_AT_CREATION,CollectionFeature.ALLOWS_NULL_QUERIES).named("ImmutableMap").createTestSuite());
+  suite.addTest(MapTestSuiteBuilder.using(new ImmutableMapCopyOfEnumMapGenerator()).withFeatures(CollectionSize.ANY,CollectionFeature.SERIALIZABLE_INCLUDING_VIEWS,CollectionFeature.KNOWN_ORDER,CollectionFeature.ALLOWS_NULL_QUERIES).named("ImmutableMap.copyOf[EnumMap]").createTestSuite());
   suite.addTest(CollectionTestSuiteBuilder.using(new ImmutableMapUnhashableValuesGenerator()).withFeatures(CollectionSize.ANY,CollectionFeature.KNOWN_ORDER,CollectionFeature.ALLOWS_NULL_QUERIES).named("ImmutableMap.values, unhashable").createTestSuite());
   suite.addTest(ListTestSuiteBuilder.using(new ImmutableMapValueListGenerator()).named("ImmutableMap.values.asList").withFeatures(CollectionSize.ANY,CollectionFeature.SERIALIZABLE,CollectionFeature.ALLOWS_NULL_QUERIES).createTestSuite());
   return suite;

@@ -1,0 +1,7 @@
+{
+  EnumMap<AnEnum,String> map=new EnumMap<AnEnum,String>(AnEnum.class);
+  for (  Entry<AnEnum,String> entry : entries) {
+    map.put(entry.getKey(),entry.getValue());
+  }
+  return ImmutableMap.copyOf(map);
+}

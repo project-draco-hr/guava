@@ -1,0 +1,8 @@
+{
+  return new Ordering<Entry<AnEnum,String>>(){
+    @Override public int compare(    Entry<AnEnum,String> left,    Entry<AnEnum,String> right){
+      return left.getKey().compareTo(right.getKey());
+    }
+  }
+.sortedCopy(insertionOrder);
+}

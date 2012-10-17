@@ -1,14 +1,15 @@
 {
-  if (map.isEmpty()) {
-    return ImmutableMap.of();
-  }
- else   if (map instanceof ImmutableEnumMap) {
+  if (map instanceof ImmutableEnumMap) {
     return (ImmutableEnumMap<K,V>)map;
   }
-  for (  Map.Entry<K,V> entry : map.entrySet()) {
-    checkNotNull(entry.getKey());
-    checkNotNull(entry.getValue());
+ else   if (map.isEmpty()) {
+    return ImmutableMap.of();
   }
-  EnumMap<K,V> enumMap=new EnumMap<K,V>(map);
-  return new ImmutableEnumMap<K,V>(enumMap);
+ else {
+    for (    Map.Entry<K,V> entry : map.entrySet()) {
+      checkNotNull(entry.getKey());
+      checkNotNull(entry.getValue());
+    }
+    return ImmutableEnumMap.asImmutable(new EnumMap<K,V>(map));
+  }
 }

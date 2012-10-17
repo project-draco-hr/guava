@@ -3,6 +3,15 @@
     @SuppressWarnings("unchecked") ImmutableMap<K,V> kvMap=(ImmutableMap<K,V>)map;
     return kvMap;
   }
+ else   if (map instanceof EnumMap) {
+    EnumMap<?,?> enumMap=(EnumMap<?,?>)map;
+    for (    Map.Entry<?,?> entry : enumMap.entrySet()) {
+      checkNotNull(entry.getKey());
+      checkNotNull(entry.getValue());
+    }
+    @SuppressWarnings("unchecked") ImmutableMap<K,V> result=ImmutableEnumMap.asImmutable(new EnumMap(enumMap));
+    return result;
+  }
   int size=map.size();
 switch (size) {
 case 0:
