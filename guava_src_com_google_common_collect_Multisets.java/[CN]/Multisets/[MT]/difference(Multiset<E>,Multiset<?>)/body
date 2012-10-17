@@ -6,25 +6,6 @@
       int count1=multiset1.count(element);
       return (count1 == 0) ? 0 : Math.max(0,count1 - multiset2.count(element));
     }
-    @Override Set<E> createElementSet(){
-      return new Sets.ImprovedAbstractSet<E>(){
-        @Override public Iterator<E> iterator(){
-          return Iterators.transform(entryIterator(),new Function<Entry<E>,E>(){
-            @Override public E apply(            Entry<E> input){
-              return input.getElement();
-            }
-          }
-);
-        }
-        @Override public boolean contains(        @Nullable Object o){
-          return count(o) > 0;
-        }
-        @Override public int size(){
-          return Iterators.size(iterator());
-        }
-      }
-;
-    }
     @Override Iterator<Entry<E>> entryIterator(){
       final Iterator<Entry<E>> iterator1=multiset1.entrySet().iterator();
       return new AbstractIterator<Entry<E>>(){
@@ -43,7 +24,7 @@
 ;
     }
     @Override int distinctElements(){
-      return elementSet().size();
+      return Iterators.size(entryIterator());
     }
   }
 ;
