@@ -1,5 +1,5 @@
 {
-  final ScheduledExecutorService executor=Executors.newSingleThreadScheduledExecutor();
+  final ScheduledExecutorService executor=Executors.newSingleThreadScheduledExecutor(new ThreadFactoryBuilder().setNameFormat(serviceName()).build());
   addListener(new Listener(){
     @Override public void starting(){
     }
