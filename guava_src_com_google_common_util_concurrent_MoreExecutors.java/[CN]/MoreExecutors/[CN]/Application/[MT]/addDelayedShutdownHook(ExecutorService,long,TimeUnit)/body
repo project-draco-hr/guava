@@ -1,7 +1,7 @@
 {
   checkNotNull(service);
   checkNotNull(timeUnit);
-  addShutdownHook(MoreExecutors.newThread("DelayedShutdownHook-for-" + service,new Runnable(){
+  addShutdownHook(new Thread(new Runnable(){
     @Override public void run(){
       try {
         service.shutdown();
@@ -11,5 +11,5 @@
       }
     }
   }
-));
+,"DelayedShutdownHook-for-" + service));
 }

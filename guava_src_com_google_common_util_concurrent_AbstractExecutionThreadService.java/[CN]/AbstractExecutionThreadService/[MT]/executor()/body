@@ -1,7 +1,7 @@
 {
   return new Executor(){
     @Override public void execute(    Runnable command){
-      MoreExecutors.newThread(getServiceName(),command).start();
+      new Thread(command,getServiceName()).start();
     }
   }
 ;
