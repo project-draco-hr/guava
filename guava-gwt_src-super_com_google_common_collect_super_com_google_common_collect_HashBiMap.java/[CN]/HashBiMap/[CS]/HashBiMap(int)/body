@@ -1,3 +1,3 @@
 {
-  super(Maps.<K,V>newHashMapWithExpectedSize(expectedSize),Maps.<V,K>newHashMapWithExpectedSize(expectedSize));
+  init(expectedSize);
 }

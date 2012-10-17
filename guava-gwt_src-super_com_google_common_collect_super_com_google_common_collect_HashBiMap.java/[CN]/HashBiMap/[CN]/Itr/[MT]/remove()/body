@@ -1,0 +1,7 @@
+{
+  checkForConcurrentModification();
+  checkState(toRemove != null,"Only one remove() call allowed per call to next");
+  delete(toRemove);
+  expectedModCount=modCount;
+  toRemove=null;
+}
