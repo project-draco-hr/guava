@@ -1,0 +1,3 @@
+{
+  this.classFilter=and(this.classFilter,not(condition));
+}

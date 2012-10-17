@@ -4,7 +4,7 @@
     classMap.put(cls.getName(),cls);
   }
   Multimap<Class<?>,Class<?>> testClasses=HashMultimap.create();
-  LinkedHashSet<Class<?>> nonTestClasses=Sets.newLinkedHashSet();
+  LinkedHashSet<Class<?>> candidateClasses=Sets.newLinkedHashSet();
   for (  Class<?> cls : classes) {
     Optional<String> testedClassName=TEST_SUFFIX.chop(cls.getName());
     if (testedClassName.isPresent()) {
@@ -14,20 +14,17 @@
       }
     }
  else {
-      nonTestClasses.add(cls);
+      candidateClasses.add(cls);
     }
   }
-  List<Class<?>> classesToTest=Lists.newArrayListWithExpectedSize(nonTestClasses.size());
-  NEXT_CANDIDATE:   for (  Class<?> cls : nonTestClasses) {
-    if (!visibility.isVisible(cls.getModifiers())) {
-      continue;
-    }
-    for (    Class<?> testClass : testClasses.get(cls)) {
+  List<Class<?>> result=Lists.newArrayList();
+  NEXT_CANDIDATE:   for (  Class<?> candidate : Iterables.filter(candidateClasses,classFilter)) {
+    for (    Class<?> testClass : testClasses.get(candidate)) {
       if (hasTest(testClass,explicitTestNames)) {
         continue NEXT_CANDIDATE;
       }
     }
-    classesToTest.add(cls);
+    result.add(candidate);
   }
-  return classesToTest;
+  return result;
 }
