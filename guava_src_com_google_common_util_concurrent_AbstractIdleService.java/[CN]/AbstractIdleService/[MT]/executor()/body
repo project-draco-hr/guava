@@ -1,4 +1,5 @@
 {
+  final State state=state();
   return new Executor(){
     @Override public void execute(    Runnable command){
       new Thread(command,serviceName() + " " + state).start();
