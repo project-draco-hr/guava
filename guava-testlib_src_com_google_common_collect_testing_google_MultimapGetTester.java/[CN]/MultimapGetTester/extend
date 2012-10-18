@@ -1,1 +1,1 @@
-AbstractMultimapTester<K,V>
+AbstractMultimapTester<K,V,Multimap<K,V>>

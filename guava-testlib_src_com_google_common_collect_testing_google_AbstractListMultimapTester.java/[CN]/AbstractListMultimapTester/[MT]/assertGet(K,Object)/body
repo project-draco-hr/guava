@@ -1,0 +1,14 @@
+{
+  ASSERT.that(multimap().get(key)).hasContentsInOrder(values);
+  if (values.length > 0) {
+    ASSERT.that(multimap().asMap().get(key)).hasContentsInOrder(values);
+    assertFalse(multimap().isEmpty());
+  }
+ else {
+    ASSERT.that(multimap().asMap().get(key)).isNull();
+  }
+  assertEquals(values.length,multimap().get(key).size());
+  assertEquals(values.length > 0,multimap().containsKey(key));
+  assertEquals(values.length > 0,multimap().keySet().contains(key));
+  assertEquals(values.length > 0,multimap().keys().contains(key));
+}

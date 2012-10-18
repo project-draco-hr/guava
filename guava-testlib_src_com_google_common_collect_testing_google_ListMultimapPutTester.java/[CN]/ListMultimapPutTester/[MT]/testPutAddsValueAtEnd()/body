@@ -1,0 +1,13 @@
+{
+  for (  K key : sampleKeys()) {
+    for (    V value : sampleValues()) {
+      resetContainer();
+      List<V> values=multimap().get(key);
+      List<V> expectedValues=Helpers.copyToList(values);
+      multimap().put(key,value);
+      expectedValues.add(value);
+      assertGet(key,expectedValues.toArray());
+      assertEquals(value,values.get(values.size() - 1));
+    }
+  }
+}

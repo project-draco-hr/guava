@@ -1,0 +1,8 @@
+{
+  int size=getNumElements();
+  Collection<V> collection=multimap().get(sampleKeys().e3);
+  ASSERT.that(collection).isEmpty();
+  multimap().put(sampleKeys().e3,sampleValues().e3);
+  ASSERT.that(collection).hasContentsAnyOrder(sampleValues().e3);
+  assertEquals(size + 1,multimap().size());
+}

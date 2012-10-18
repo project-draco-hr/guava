@@ -1,0 +1,13 @@
+{
+  K k=sampleKeys().e0;
+  V v0=sampleValues().e0;
+  V v1=sampleValues().e2;
+  List<V> values=Arrays.asList(v0,v1,v0);
+  for (int i=0; i < 3; i++) {
+    resetContainer(mapEntry(k,v0),mapEntry(k,v1),mapEntry(k,v0));
+    List<V> expectedValues=copyToList(values);
+    multimap().get(k).remove(i);
+    expectedValues.remove(i);
+    assertGet(k,expectedValues.toArray());
+  }
+}

@@ -1,0 +1,14 @@
+{
+  List<K> keys=Helpers.copyToList(multimap().keySet());
+  for (  K key : keys) {
+    resetContainer();
+    int size=getNumElements();
+    Collection<V> collection=multimap().asMap().get(key);
+    assertNotNull(collection);
+    Collection<V> expectedCollection=Helpers.copyToList(collection);
+    multimap().put(key,sampleValues().e3);
+    expectedCollection.add(sampleValues().e3);
+    ASSERT.that(collection).hasContentsAnyOrder(expectedCollection.toArray());
+    assertEquals(size + 1,multimap().size());
+  }
+}

@@ -1,0 +1,14 @@
+{
+  List<Entry<K,V>> entries=copyToList(multimap().entries());
+  for (  Entry<K,V> entry : entries) {
+    resetContainer();
+    K k=entry.getKey();
+    V v=entry.getValue();
+    List<V> values=multimap().get(k);
+    List<V> expectedValues=copyToList(values);
+    assertTrue(multimap().put(k,v));
+    expectedValues.add(v);
+    assertGet(k,expectedValues.toArray());
+    assertEquals(v,values.get(values.size() - 1));
+  }
+}

@@ -1,1 +1,1 @@
-AbstractContainerTester<Multimap<K,V>,Map.Entry<K,V>>
+AbstractContainerTester<M,Map.Entry<K,V>>

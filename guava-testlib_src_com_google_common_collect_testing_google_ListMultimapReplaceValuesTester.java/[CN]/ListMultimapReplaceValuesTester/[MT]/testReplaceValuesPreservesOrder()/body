@@ -1,0 +1,8 @@
+{
+  @SuppressWarnings("unchecked") List<V> values=Arrays.asList(sampleValues().e3,sampleValues().e1,sampleValues().e4);
+  for (  K k : sampleKeys()) {
+    resetContainer();
+    multimap().replaceValues(k,values);
+    assertGet(k,values.toArray());
+  }
+}

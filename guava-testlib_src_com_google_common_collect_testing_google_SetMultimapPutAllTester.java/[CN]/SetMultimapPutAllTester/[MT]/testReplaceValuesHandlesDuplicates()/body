@@ -1,0 +1,12 @@
+{
+  V v0=sampleValues().e3;
+  V v1=sampleValues().e2;
+  @SuppressWarnings("unchecked") List<V> valuesToPut=Arrays.asList(v0,v1,v0);
+  for (  K k : sampleKeys()) {
+    resetContainer();
+    Set<V> expectedValues=copyToSet(multimap().get(k));
+    multimap().putAll(k,valuesToPut);
+    expectedValues.addAll(valuesToPut);
+    assertGet(k,expectedValues.toArray());
+  }
+}
