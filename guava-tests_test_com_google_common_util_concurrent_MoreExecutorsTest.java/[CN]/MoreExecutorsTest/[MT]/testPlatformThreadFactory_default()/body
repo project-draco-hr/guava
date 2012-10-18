@@ -1,0 +1,5 @@
+{
+  ThreadFactory factory=MoreExecutors.platformThreadFactory();
+  assertNotNull(factory);
+  assertEquals(factory.getClass(),Executors.defaultThreadFactory().getClass());
+}
