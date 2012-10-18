@@ -1,0 +1,21 @@
+{
+  Handler throwingHandler=new Handler(){
+    @Override public void publish(    @Nullable LogRecord record){
+      AssertionFailedError error=new AssertionFailedError();
+      error.initCause(record.getThrown());
+      throw error;
+    }
+    @Override public void flush(){
+    }
+    @Override public void close(){
+    }
+  }
+;
+  ExecutionList.log.addHandler(throwingHandler);
+  try {
+    doTestSuccessfulAsList_resultCancelledRacingInputDone();
+  }
+  finally {
+    ExecutionList.log.removeHandler(throwingHandler);
+  }
+}
