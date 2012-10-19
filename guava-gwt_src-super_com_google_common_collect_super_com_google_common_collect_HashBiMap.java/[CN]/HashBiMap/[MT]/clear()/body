@@ -1,6 +1,0 @@
-{
-  size=0;
-  Arrays.fill(hashTableKToV,null);
-  Arrays.fill(hashTableVToK,null);
-  modCount++;
-}

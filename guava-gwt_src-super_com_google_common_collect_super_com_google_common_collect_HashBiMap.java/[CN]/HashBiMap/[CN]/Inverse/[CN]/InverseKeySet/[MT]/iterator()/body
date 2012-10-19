@@ -1,8 +1,0 @@
-{
-  return new Itr<V>(){
-    @Override V output(    BiEntry<K,V> entry){
-      return entry.value;
-    }
-  }
-;
-}

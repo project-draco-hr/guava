@@ -1,3 +1,0 @@
-{
-  return putInverse(value,key,false);
-}

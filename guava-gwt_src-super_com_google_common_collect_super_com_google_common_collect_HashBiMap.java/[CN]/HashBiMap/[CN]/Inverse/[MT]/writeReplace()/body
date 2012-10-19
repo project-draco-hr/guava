@@ -1,3 +1,0 @@
-{
-  return new InverseSerializedForm<K,V>(HashBiMap.this);
-}

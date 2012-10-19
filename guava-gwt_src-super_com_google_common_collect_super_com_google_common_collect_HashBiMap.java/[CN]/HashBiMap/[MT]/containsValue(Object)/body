@@ -1,3 +1,0 @@
-{
-  return seekByValue(value,hash(value)) != null;
-}
