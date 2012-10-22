@@ -1,0 +1,4 @@
+{
+  checkNotNull(keyPredicate);
+  return filterEntries(unfiltered,new KeyPredicate<K,V>(keyPredicate));
+}

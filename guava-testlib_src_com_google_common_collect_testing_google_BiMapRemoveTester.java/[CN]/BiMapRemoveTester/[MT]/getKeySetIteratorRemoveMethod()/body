@@ -1,0 +1,3 @@
+{
+  return Helpers.getMethod(BiMapRemoveTester.class,"testKeySetIteratorRemove");
+}

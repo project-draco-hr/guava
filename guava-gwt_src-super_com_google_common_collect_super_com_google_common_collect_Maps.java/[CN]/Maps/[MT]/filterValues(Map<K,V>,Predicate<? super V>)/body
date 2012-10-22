@@ -2,12 +2,8 @@
   if (unfiltered instanceof SortedMap) {
     return filterValues((SortedMap<K,V>)unfiltered,valuePredicate);
   }
-  checkNotNull(valuePredicate);
-  Predicate<Entry<K,V>> entryPredicate=new Predicate<Entry<K,V>>(){
-    @Override public boolean apply(    Entry<K,V> input){
-      return valuePredicate.apply(input.getValue());
-    }
+ else   if (unfiltered instanceof BiMap) {
+    return filterValues((BiMap<K,V>)unfiltered,valuePredicate);
   }
-;
-  return filterEntries(unfiltered,entryPredicate);
+  return filterEntries(unfiltered,new ValuePredicate<K,V>(valuePredicate));
 }

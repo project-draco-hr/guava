@@ -1,0 +1,174 @@
+{
+  TestSuite suite=new TestSuite();
+  suite.addTest(MapTestSuiteBuilder.using(new TestStringMapGenerator(){
+    @Override protected Map<String,String> create(    Entry<String,String>[] entries){
+      Map<String,String> map=Maps.newHashMap();
+      for (      Entry<String,String> entry : entries) {
+        map.put(entry.getKey(),entry.getValue());
+      }
+      map.putAll(ENTRIES_TO_FILTER_OUT);
+      return Maps.filterKeys(map,new Predicate<String>(){
+        @Override public boolean apply(        String input){
+          return input == null || (input.charAt(0) >= 'a' && input.charAt(0) <= 'z');
+        }
+      }
+);
+    }
+  }
+).named("Maps.filterKeys[Map]").withFeatures(CollectionSize.ANY,MapFeature.ALLOWS_NULL_KEYS,MapFeature.ALLOWS_NULL_VALUES,MapFeature.GENERAL_PURPOSE).suppressing(getIteratorUnknownOrderRemoveSupportedMethod()).createTestSuite());
+  suite.addTest(SortedMapTestSuiteBuilder.using(new TestStringSortedMapGenerator(){
+    @Override protected SortedMap<String,String> create(    Entry<String,String>[] entries){
+      SortedMap<String,String> map=Maps.newTreeMap();
+      for (      Entry<String,String> entry : entries) {
+        map.put(entry.getKey(),entry.getValue());
+      }
+      map.putAll(ENTRIES_TO_FILTER_OUT);
+      return Maps.filterKeys(map,new Predicate<String>(){
+        @Override public boolean apply(        String input){
+          return input == null || (input.charAt(0) >= 'a' && input.charAt(0) <= 'z');
+        }
+      }
+);
+    }
+  }
+).named("Maps.filterKeys[SortedMap]").withFeatures(CollectionSize.ANY,MapFeature.ALLOWS_NULL_VALUES,MapFeature.GENERAL_PURPOSE).suppressing(getIteratorKnownOrderRemoveSupportedMethod()).createTestSuite());
+  suite.addTest(BiMapTestSuiteBuilder.using(new TestStringBiMapGenerator(){
+    @Override protected BiMap<String,String> create(    Entry<String,String>[] entries){
+      BiMap<String,String> map=HashBiMap.create();
+      for (      Entry<String,String> entry : entries) {
+        map.put(entry.getKey(),entry.getValue());
+      }
+      map.putAll(ENTRIES_TO_FILTER_OUT);
+      return Maps.filterKeys(map,new Predicate<String>(){
+        @Override public boolean apply(        String input){
+          return input == null || (input.charAt(0) >= 'a' && input.charAt(0) <= 'z');
+        }
+      }
+);
+    }
+  }
+).named("Maps.filterKeys[BiMap]").withFeatures(CollectionSize.ANY,MapFeature.ALLOWS_NULL_KEYS,MapFeature.ALLOWS_NULL_VALUES,MapFeature.GENERAL_PURPOSE).suppressing(getIteratorUnknownOrderRemoveSupportedMethod(),getKeySetIteratorRemoveMethod()).createTestSuite());
+  suite.addTest(MapTestSuiteBuilder.using(new TestStringMapGenerator(){
+    @Override protected Map<String,String> create(    Entry<String,String>[] entries){
+      Map<String,String> map=Maps.newHashMap();
+      for (      Entry<String,String> entry : entries) {
+        map.put(entry.getKey(),entry.getValue());
+      }
+      map.putAll(ENTRIES_TO_FILTER_OUT);
+      return Maps.filterValues(map,new Predicate<String>(){
+        @Override public boolean apply(        String input){
+          return input == null || (input.charAt(0) >= 'A' && input.charAt(0) <= 'Z');
+        }
+      }
+);
+    }
+  }
+).named("Maps.filterValues[Map]").withFeatures(CollectionSize.ANY,MapFeature.ALLOWS_NULL_KEYS,MapFeature.ALLOWS_NULL_VALUES,MapFeature.GENERAL_PURPOSE).suppressing(getIteratorUnknownOrderRemoveSupportedMethod()).createTestSuite());
+  suite.addTest(BiMapTestSuiteBuilder.using(new TestStringBiMapGenerator(){
+    @Override protected BiMap<String,String> create(    Entry<String,String>[] entries){
+      BiMap<String,String> map=HashBiMap.create();
+      for (      Entry<String,String> entry : entries) {
+        map.put(entry.getKey(),entry.getValue());
+      }
+      map.putAll(ENTRIES_TO_FILTER_OUT);
+      return Maps.filterValues(map,new Predicate<String>(){
+        @Override public boolean apply(        String input){
+          return input == null || (input.charAt(0) >= 'A' && input.charAt(0) <= 'Z');
+        }
+      }
+);
+    }
+  }
+).named("Maps.filterValues[BiMap]").withFeatures(CollectionSize.ANY,MapFeature.ALLOWS_NULL_KEYS,MapFeature.ALLOWS_NULL_VALUES,MapFeature.GENERAL_PURPOSE).suppressing(getIteratorUnknownOrderRemoveSupportedMethod(),getKeySetIteratorRemoveMethod()).createTestSuite());
+  suite.addTest(SortedMapTestSuiteBuilder.using(new TestStringSortedMapGenerator(){
+    @Override protected SortedMap<String,String> create(    Entry<String,String>[] entries){
+      SortedMap<String,String> map=Maps.newTreeMap();
+      for (      Entry<String,String> entry : entries) {
+        map.put(entry.getKey(),entry.getValue());
+      }
+      map.putAll(ENTRIES_TO_FILTER_OUT);
+      return Maps.filterValues(map,new Predicate<String>(){
+        @Override public boolean apply(        String input){
+          return input == null || (input.charAt(0) >= 'A' && input.charAt(0) <= 'Z');
+        }
+      }
+);
+    }
+  }
+).named("Maps.filterValues[SortedMap]").withFeatures(CollectionSize.ANY,MapFeature.ALLOWS_NULL_VALUES,MapFeature.GENERAL_PURPOSE).suppressing(getIteratorKnownOrderRemoveSupportedMethod()).createTestSuite());
+  suite.addTest(MapTestSuiteBuilder.using(new TestStringMapGenerator(){
+    @Override protected Map<String,String> create(    Entry<String,String>[] entries){
+      Map<String,String> map=Maps.newHashMap();
+      for (      Entry<String,String> entry : entries) {
+        map.put(entry.getKey(),entry.getValue());
+      }
+      map.putAll(ENTRIES_TO_FILTER_OUT);
+      return Maps.filterEntries(map,new Predicate<Entry<String,String>>(){
+        @Override public boolean apply(        Entry<String,String> entry){
+          String input=entry.getKey();
+          return input == null || (input.charAt(0) >= 'a' && input.charAt(0) <= 'z');
+        }
+      }
+);
+    }
+  }
+).named("Maps.filterEntries[Map]").withFeatures(CollectionSize.ANY,MapFeature.ALLOWS_NULL_KEYS,MapFeature.ALLOWS_NULL_VALUES,MapFeature.GENERAL_PURPOSE).suppressing(getIteratorUnknownOrderRemoveSupportedMethod()).createTestSuite());
+  suite.addTest(BiMapTestSuiteBuilder.using(new TestStringBiMapGenerator(){
+    @Override protected BiMap<String,String> create(    Entry<String,String>[] entries){
+      BiMap<String,String> map=HashBiMap.create();
+      for (      Entry<String,String> entry : entries) {
+        map.put(entry.getKey(),entry.getValue());
+      }
+      map.putAll(ENTRIES_TO_FILTER_OUT);
+      return Maps.filterEntries(map,new Predicate<Entry<String,String>>(){
+        @Override public boolean apply(        Entry<String,String> entry){
+          String input=entry.getKey();
+          return input == null || (input.charAt(0) >= 'a' && input.charAt(0) <= 'z');
+        }
+      }
+);
+    }
+  }
+).named("Maps.filterEntries[BiMap]").withFeatures(CollectionSize.ANY,MapFeature.ALLOWS_NULL_KEYS,MapFeature.ALLOWS_NULL_VALUES,MapFeature.GENERAL_PURPOSE).suppressing(getIteratorUnknownOrderRemoveSupportedMethod(),getKeySetIteratorRemoveMethod()).createTestSuite());
+  suite.addTest(SortedMapTestSuiteBuilder.using(new TestStringSortedMapGenerator(){
+    @Override protected SortedMap<String,String> create(    Entry<String,String>[] entries){
+      SortedMap<String,String> map=Maps.newTreeMap();
+      for (      Entry<String,String> entry : entries) {
+        map.put(entry.getKey(),entry.getValue());
+      }
+      map.putAll(ENTRIES_TO_FILTER_OUT);
+      return Maps.filterEntries(map,new Predicate<Entry<String,String>>(){
+        @Override public boolean apply(        Entry<String,String> entry){
+          String input=entry.getKey();
+          return input == null || (input.charAt(0) >= 'a' && input.charAt(0) <= 'z');
+        }
+      }
+);
+    }
+  }
+).named("Maps.filterEntries[SortedMap]").withFeatures(CollectionSize.ANY,MapFeature.ALLOWS_NULL_VALUES,MapFeature.GENERAL_PURPOSE).suppressing(getIteratorKnownOrderRemoveSupportedMethod()).createTestSuite());
+  suite.addTest(MapTestSuiteBuilder.using(new TestStringMapGenerator(){
+    @Override protected Map<String,String> create(    Entry<String,String>[] entries){
+      Map<String,String> map=Maps.newHashMap();
+      for (      Entry<String,String> entry : entries) {
+        map.put(entry.getKey(),entry.getValue());
+      }
+      map.putAll(ENTRIES_TO_FILTER_OUT);
+      map.put("","weird");
+      Map<String,String> withoutEmptyKey=Maps.filterKeys(map,new Predicate<String>(){
+        @Override public boolean apply(        String input){
+          return input == null || input.length() != 0;
+        }
+      }
+);
+      return Maps.filterKeys(withoutEmptyKey,new Predicate<String>(){
+        @Override public boolean apply(        String input){
+          return input == null || (input.charAt(0) >= 'a' && input.charAt(0) <= 'z');
+        }
+      }
+);
+    }
+  }
+).named("Maps.filterKeys, chained").withFeatures(CollectionSize.ANY,MapFeature.ALLOWS_NULL_KEYS,MapFeature.ALLOWS_NULL_VALUES,MapFeature.GENERAL_PURPOSE).suppressing(getIteratorUnknownOrderRemoveSupportedMethod()).createTestSuite());
+  return suite;
+}

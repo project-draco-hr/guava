@@ -1,0 +1,8 @@
+{
+  int initialSize=getNumElements();
+  Iterator<K> iterator=getMap().keySet().iterator();
+  iterator.next();
+  iterator.remove();
+  assertEquals(initialSize - 1,getMap().size());
+  assertEquals(initialSize - 1,getMap().inverse().size());
+}

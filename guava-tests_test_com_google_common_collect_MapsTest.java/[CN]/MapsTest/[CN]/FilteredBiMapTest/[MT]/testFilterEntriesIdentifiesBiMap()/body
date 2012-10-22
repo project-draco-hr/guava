@@ -1,0 +1,4 @@
+{
+  BiMap<String,Integer> map=createUnfiltered();
+  assertTrue(Maps.filterEntries((Map<String,Integer>)map,CORRECT_LENGTH) instanceof BiMap);
+}
