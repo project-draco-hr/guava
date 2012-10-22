@@ -1,0 +1,4 @@
+{
+  forward.take();
+  assertEquals("[take]",getCalls());
+}

@@ -1,0 +1,4 @@
+{
+  forward.put("asf");
+  assertEquals("[put(Object)]",getCalls());
+}

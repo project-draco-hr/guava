@@ -1,0 +1,4 @@
+{
+  forward.remainingCapacity();
+  assertEquals("[remainingCapacity]",getCalls());
+}

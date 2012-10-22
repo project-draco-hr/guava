@@ -1,0 +1,4 @@
+{
+  forward.offerFirst("asf",2L,TimeUnit.SECONDS);
+  assertEquals("[offerFirst(Object,long,TimeUnit)]",getCalls());
+}

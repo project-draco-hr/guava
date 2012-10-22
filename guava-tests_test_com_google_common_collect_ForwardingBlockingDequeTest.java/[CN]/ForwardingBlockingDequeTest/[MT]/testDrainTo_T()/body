@@ -1,0 +1,4 @@
+{
+  forward.drainTo(Lists.newArrayList());
+  assertEquals("[drainTo(Collection)]",getCalls());
+}

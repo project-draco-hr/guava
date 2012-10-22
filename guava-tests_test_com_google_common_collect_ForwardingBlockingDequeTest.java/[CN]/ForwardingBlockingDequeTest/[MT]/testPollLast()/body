@@ -1,0 +1,4 @@
+{
+  forward.pollLast(2L,TimeUnit.SECONDS);
+  assertEquals("[pollLast(long,TimeUnit)]",getCalls());
+}
