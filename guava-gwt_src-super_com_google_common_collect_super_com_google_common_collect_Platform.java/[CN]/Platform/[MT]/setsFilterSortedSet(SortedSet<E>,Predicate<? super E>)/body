@@ -1,0 +1,3 @@
+{
+  return Sets.filterSortedIgnoreNavigable(unfiltered,predicate);
+}

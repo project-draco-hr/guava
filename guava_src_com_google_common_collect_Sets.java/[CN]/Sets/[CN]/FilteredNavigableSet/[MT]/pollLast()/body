@@ -1,0 +1,11 @@
+{
+  Iterator<E> unfilteredIterator=unfiltered().descendingIterator();
+  while (unfilteredIterator.hasNext()) {
+    E e=unfilteredIterator.next();
+    if (predicate.apply(e)) {
+      unfilteredIterator.remove();
+      return e;
+    }
+  }
+  return null;
+}

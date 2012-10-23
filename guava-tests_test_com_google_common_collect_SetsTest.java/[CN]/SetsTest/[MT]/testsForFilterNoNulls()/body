@@ -1,5 +1,6 @@
 {
-  return SetTestSuiteBuilder.using(new TestStringSetGenerator(){
+  TestSuite suite=new TestSuite();
+  suite.addTest(SetTestSuiteBuilder.using(new TestStringSetGenerator(){
     @Override public Set<String> create(    String[] elements){
       Set<String> unfiltered=Sets.newLinkedHashSet();
       unfiltered.add("yyy");
@@ -8,5 +9,19 @@
       return Sets.filter(unfiltered,Collections2Test.LENGTH_1);
     }
   }
-).named("Sets.filter, no nulls").withFeatures(SetFeature.GENERAL_PURPOSE,CollectionFeature.KNOWN_ORDER,CollectionSize.ANY,CollectionFeature.ALLOWS_NULL_QUERIES).suppressing(getIteratorKnownOrderRemoveSupportedMethod()).createTestSuite();
+).named("Sets.filter, no nulls").withFeatures(SetFeature.GENERAL_PURPOSE,CollectionFeature.KNOWN_ORDER,CollectionSize.ANY,CollectionFeature.ALLOWS_NULL_QUERIES).suppressing(getIteratorKnownOrderRemoveSupportedMethod()).createTestSuite());
+  suite.addTest(NavigableSetTestSuiteBuilder.using(new TestStringSetGenerator(){
+    @Override public NavigableSet<String> create(    String[] elements){
+      NavigableSet<String> unfiltered=Sets.newTreeSet();
+      unfiltered.add("yyy");
+      unfiltered.addAll(ImmutableList.copyOf(elements));
+      unfiltered.add("zzz");
+      return Sets.filter(unfiltered,Collections2Test.LENGTH_1);
+    }
+    @Override public List<String> order(    List<String> insertionOrder){
+      return Ordering.natural().sortedCopy(insertionOrder);
+    }
+  }
+).named("Sets.filter[NavigableSet]").withFeatures(SetFeature.GENERAL_PURPOSE,CollectionFeature.KNOWN_ORDER,CollectionSize.ANY,CollectionFeature.ALLOWS_NULL_QUERIES).suppressing(getIteratorKnownOrderRemoveSupportedMethod()).createTestSuite());
+  return suite;
 }
