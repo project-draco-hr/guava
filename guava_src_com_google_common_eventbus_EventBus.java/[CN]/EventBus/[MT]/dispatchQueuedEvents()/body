@@ -11,6 +11,6 @@
     }
   }
   finally {
-    isDispatching.set(false);
+    isDispatching.remove();
   }
 }
