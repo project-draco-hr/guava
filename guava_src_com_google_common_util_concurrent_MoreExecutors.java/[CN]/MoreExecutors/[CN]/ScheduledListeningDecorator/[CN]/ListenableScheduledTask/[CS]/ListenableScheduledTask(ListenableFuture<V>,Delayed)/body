@@ -1,0 +1,4 @@
+{
+  super(futureDelegate);
+  this.delayedDelegate=delayedDelegate;
+}

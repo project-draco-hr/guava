@@ -1,3 +1,5 @@
 {
-  return delegate.scheduleAtFixedRate(command,initialDelay,period,unit);
+  ListenableFutureTask<Void> task=ListenableFutureTask.create(command,null);
+  Delayed delayed=delegate.scheduleAtFixedRate(task,initialDelay,period,unit);
+  return new ListenableScheduledTask<Void>(task,delayed);
 }
