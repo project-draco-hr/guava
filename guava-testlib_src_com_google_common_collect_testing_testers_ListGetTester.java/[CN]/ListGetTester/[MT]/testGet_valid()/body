@@ -1,3 +1,3 @@
 {
-  expectContents(createSamplesArray());
+  expectContents(createOrderedArray());
 }

@@ -1,0 +1,5 @@
+{
+  E[] array=getSubjectGenerator().createArray(getNumElements());
+  getOrderedElements().toArray(array);
+  return array;
+}
