@@ -1,0 +1,8 @@
+{
+  ImmutableMap.Builder<String,Integer> builder=ImmutableMap.builder();
+  for (  Object o : elements) {
+    @SuppressWarnings("unchecked") Entry<String,Integer> entry=(Entry<String,Integer>)o;
+    builder.put(entry);
+  }
+  return builder.build().entrySet().asList();
+}
