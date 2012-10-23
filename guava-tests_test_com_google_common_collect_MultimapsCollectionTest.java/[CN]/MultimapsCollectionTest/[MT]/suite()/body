@@ -1,0 +1,179 @@
+{
+  TestSuite suite=new TestSuite();
+  suite.addTest(ListMultimapTestSuiteBuilder.using(new TestStringListMultimapGenerator(){
+    @Override protected ListMultimap<String,String> create(    Entry<String,String>[] entries){
+      ListMultimap<String,String> multimap=Multimaps.synchronizedListMultimap(ArrayListMultimap.<String,String>create());
+      for (      Entry<String,String> entry : entries) {
+        multimap.put(entry.getKey(),entry.getValue());
+      }
+      return multimap;
+    }
+  }
+).named("synchronized ArrayListMultimap").withFeatures(MapFeature.ALLOWS_NULL_KEYS,MapFeature.ALLOWS_NULL_VALUES,MapFeature.GENERAL_PURPOSE,MapFeature.FAILS_FAST_ON_CONCURRENT_MODIFICATION,CollectionSize.ANY).createTestSuite());
+  suite.addTest(SetTestSuiteBuilder.using(new TestStringSetGenerator(){
+    @Override protected Set<String> create(    String[] elements){
+      PopulatableMapAsMultimap<Integer,String> multimap=PopulatableMapAsMultimap.create();
+      populateMultimapForGet(multimap,elements);
+      return multimap.build().get(3);
+    }
+  }
+).named("Multimaps.forMap.get").withFeatures(FOR_MAP_FEATURES_ONE).createTestSuite());
+  suite.addTest(SetTestSuiteBuilder.using(new TestStringSetGenerator(){
+    @Override protected Set<String> create(    String[] elements){
+      SetMultimap<Integer,String> multimap=LinkedHashMultimap.create();
+      populateMultimapForGet(multimap,elements);
+      multimap.put(3,"badvalue");
+      multimap.put(55556,"foo");
+      return (Set<String>)Multimaps.filterEntries(multimap,FILTER_GET_PREDICATE).get(3);
+    }
+  }
+).named("Multimaps.filterEntries.get").withFeatures(COLLECTION_FEATURES_ORDER).suppressing(CollectionIteratorTester.getIteratorKnownOrderRemoveSupportedMethod()).createTestSuite());
+  suite.addTest(SetTestSuiteBuilder.using(new TestStringSetGenerator(){
+    @Override protected Set<String> create(    String[] elements){
+      PopulatableMapAsMultimap<String,Integer> multimap=PopulatableMapAsMultimap.create();
+      populateMultimapForKeySet(multimap,elements);
+      return multimap.build().keySet();
+    }
+  }
+).named("Multimaps.forMap.keySet").withFeatures(FOR_MAP_FEATURES_ANY).createTestSuite());
+  suite.addTest(SetTestSuiteBuilder.using(new TestStringSetGenerator(){
+    @Override protected Set<String> create(    String[] elements){
+      SetMultimap<String,Integer> multimap=LinkedHashMultimap.create();
+      populateMultimapForKeySet(multimap,elements);
+      multimap.put("badkey",3);
+      multimap.put("a",55556);
+      return Multimaps.filterEntries(multimap,FILTER_KEYSET_PREDICATE).keySet();
+    }
+  }
+).named("Multimaps.filterEntries.keySet").withFeatures(COLLECTION_FEATURES_REMOVE_ORDER).suppressing(CollectionIteratorTester.getIteratorKnownOrderRemoveSupportedMethod()).createTestSuite());
+  suite.addTest(CollectionTestSuiteBuilder.using(new TestStringCollectionGenerator(){
+    @Override public Collection<String> create(    String[] elements){
+      Multimap<Integer,String> multimap=LinkedHashMultimap.create();
+      populateMultimapForValues(multimap,elements);
+      multimap.put(3,"badvalue");
+      multimap.put(55556,"foo");
+      return Multimaps.filterEntries(multimap,FILTER_GET_PREDICATE).values();
+    }
+  }
+).named("Multimaps.filterEntries.values").withFeatures(COLLECTION_FEATURES_REMOVE_ORDER).suppressing(CollectionIteratorTester.getIteratorKnownOrderRemoveSupportedMethod()).createTestSuite());
+  suite.addTest(MultisetTestSuiteBuilder.using(new TestStringMultisetGenerator(){
+    @Override protected Multiset<String> create(    String[] elements){
+      PopulatableMapAsMultimap<String,Integer> multimap=PopulatableMapAsMultimap.create();
+      populateMultimapForKeys(multimap,elements);
+      return multimap.build().keys();
+    }
+  }
+).named("Multimaps.forMap.keys").withFeatures(FOR_MAP_FEATURES_ANY).suppressing(getReadsDuplicateInitializingMethods()).suppressing(getSetCountDuplicateInitializingMethods()).suppressing(getIteratorDuplicateInitializingMethods()).createTestSuite());
+  suite.addTest(MultisetTestSuiteBuilder.using(new TestStringMultisetGenerator(){
+    @Override protected Multiset<String> create(    String[] elements){
+      SetMultimap<String,Integer> multimap=LinkedHashMultimap.create();
+      populateMultimapForKeys(multimap,elements);
+      multimap.put("badkey",3);
+      multimap.put("a",55556);
+      return Multimaps.filterEntries(multimap,FILTER_KEYSET_PREDICATE).keys();
+    }
+  }
+).named("Multimaps.filterEntries.keys").withFeatures(COLLECTION_FEATURES_REMOVE_ORDER).suppressing(CollectionIteratorTester.getIteratorKnownOrderRemoveSupportedMethod()).suppressing(MultisetWritesTester.getEntrySetIteratorMethod()).suppressing(getIteratorDuplicateInitializingMethods()).createTestSuite());
+  suite.addTest(CollectionTestSuiteBuilder.using(new TestEntriesGenerator(){
+    @Override Multimap<String,Integer> createMultimap(){
+      Multimap<String,Integer> multimap=LinkedHashMultimap.create();
+      multimap.put("badkey",3);
+      multimap.put("a",55556);
+      return Multimaps.filterEntries(multimap,FILTER_KEYSET_PREDICATE);
+    }
+  }
+).named("Multimap.filterEntries.entries").withFeatures(CollectionSize.ANY,CollectionFeature.SUPPORTS_REMOVE,CollectionFeature.KNOWN_ORDER).suppressing(CollectionIteratorTester.getIteratorKnownOrderRemoveSupportedMethod()).createTestSuite());
+  suite.addTest(ListTestSuiteBuilder.using(new TestStringListGenerator(){
+    @Override protected List<String> create(    String[] elements){
+      ListMultimap<Integer,String> multimap=ArrayListMultimap.create();
+      populateMultimapForGet(multimap,elements);
+      return Multimaps.transformValues(multimap,Functions.<String>identity()).get(3);
+    }
+  }
+).named("Multimaps.transformValues[ListMultimap].get").withFeatures(CollectionSize.ANY,CollectionFeature.ALLOWS_NULL_VALUES,CollectionFeature.SUPPORTS_REMOVE,ListFeature.SUPPORTS_REMOVE_WITH_INDEX).createTestSuite());
+  suite.addTest(SetTestSuiteBuilder.using(new TestStringSetGenerator(){
+    @Override protected Set<String> create(    String[] elements){
+      ListMultimap<String,Integer> multimap=ArrayListMultimap.create();
+      populateMultimapForKeySet(multimap,elements);
+      return Multimaps.transformValues(multimap,Functions.<Integer>identity()).keySet();
+    }
+  }
+).named("Multimaps.transformValues[ListMultimap].keySet").withFeatures(CollectionSize.ANY,CollectionFeature.ALLOWS_NULL_VALUES,CollectionFeature.SUPPORTS_REMOVE).createTestSuite());
+  suite.addTest(MultisetTestSuiteBuilder.using(new TestStringMultisetGenerator(){
+    @Override protected Multiset<String> create(    String[] elements){
+      ListMultimap<String,Integer> multimap=ArrayListMultimap.create();
+      populateMultimapForKeys(multimap,elements);
+      return Multimaps.transformValues(multimap,Functions.<Integer>identity()).keys();
+    }
+  }
+).named("Multimaps.transform[ListMultimap].keys").withFeatures(COLLECTION_FEATURES_REMOVE).createTestSuite());
+  suite.addTest(CollectionTestSuiteBuilder.using(new TestStringCollectionGenerator(){
+    @Override public Collection<String> create(    String[] elements){
+      ListMultimap<Integer,String> multimap=ArrayListMultimap.create();
+      populateMultimapForValues(multimap,elements);
+      return Multimaps.transformValues(multimap,Functions.<String>identity()).values();
+    }
+  }
+).named("Multimaps.transformValues[ListMultimap].values").withFeatures(COLLECTION_FEATURES_REMOVE).createTestSuite());
+  suite.addTest(CollectionTestSuiteBuilder.using(new TestEntriesGenerator(){
+    @Override public Collection<Entry<String,Integer>> create(    Object... elements){
+      ListMultimap<String,Integer> multimap=ArrayListMultimap.create();
+      for (      Object element : elements) {
+        @SuppressWarnings("unchecked") Entry<String,Integer> entry=(Entry<String,Integer>)element;
+        multimap.put(entry.getKey(),entry.getValue());
+      }
+      return Multimaps.transformValues(multimap,Functions.<Integer>identity()).entries();
+    }
+    @Override Multimap<String,Integer> createMultimap(){
+      return Multimaps.transformValues(ArrayListMultimap.<String,Integer>create(),Functions.<Integer>identity());
+    }
+  }
+).named("Multimaps.transformValues[ListMultimap].entries").withFeatures(CollectionSize.ANY,CollectionFeature.SUPPORTS_REMOVE).createTestSuite());
+  suite.addTest(CollectionTestSuiteBuilder.using(new TestStringCollectionGenerator(){
+    @Override protected Collection<String> create(    String[] elements){
+      Multimap<Integer,String> multimap=ArrayListMultimap.create();
+      populateMultimapForGet(multimap,elements);
+      return Multimaps.transformValues(multimap,Functions.<String>identity()).get(3);
+    }
+  }
+).named("Multimaps.transformValues[Multimap].get").withFeatures(CollectionSize.ANY,CollectionFeature.ALLOWS_NULL_VALUES,CollectionFeature.SUPPORTS_REMOVE).createTestSuite());
+  suite.addTest(SetTestSuiteBuilder.using(new TestStringSetGenerator(){
+    @Override protected Set<String> create(    String[] elements){
+      Multimap<String,Integer> multimap=ArrayListMultimap.create();
+      populateMultimapForKeySet(multimap,elements);
+      return Multimaps.transformValues(multimap,Functions.<Integer>identity()).keySet();
+    }
+  }
+).named("Multimaps.transformValues[Multimap].keySet").withFeatures(COLLECTION_FEATURES_REMOVE).createTestSuite());
+  suite.addTest(MultisetTestSuiteBuilder.using(new TestStringMultisetGenerator(){
+    @Override protected Multiset<String> create(    String[] elements){
+      Multimap<String,Integer> multimap=ArrayListMultimap.create();
+      populateMultimapForKeys(multimap,elements);
+      return Multimaps.transformValues(multimap,Functions.<Integer>identity()).keys();
+    }
+  }
+).named("Multimaps.transformValues[Multimap].keys").withFeatures(COLLECTION_FEATURES_REMOVE).createTestSuite());
+  suite.addTest(CollectionTestSuiteBuilder.using(new TestStringCollectionGenerator(){
+    @Override public Collection<String> create(    String[] elements){
+      Multimap<Integer,String> multimap=ArrayListMultimap.create();
+      populateMultimapForValues(multimap,elements);
+      return Multimaps.transformValues(multimap,Functions.<String>identity()).values();
+    }
+  }
+).named("Multimaps.transformValues[Multimap].values").withFeatures(COLLECTION_FEATURES_REMOVE).createTestSuite());
+  suite.addTest(CollectionTestSuiteBuilder.using(new TestEntriesGenerator(){
+    @Override public Collection<Entry<String,Integer>> create(    Object... elements){
+      Multimap<String,Integer> multimap=ArrayListMultimap.create();
+      for (      Object element : elements) {
+        @SuppressWarnings("unchecked") Entry<String,Integer> entry=(Entry<String,Integer>)element;
+        multimap.put(entry.getKey(),entry.getValue());
+      }
+      return Multimaps.transformValues(multimap,Functions.<Integer>identity()).entries();
+    }
+    @Override Multimap<String,Integer> createMultimap(){
+      return Multimaps.transformValues((Multimap<String,Integer>)ArrayListMultimap.<String,Integer>create(),Functions.<Integer>identity());
+    }
+  }
+).named("Multimaps.transformValues[Multimap].entries").withFeatures(CollectionSize.ANY,CollectionFeature.SUPPORTS_REMOVE).createTestSuite());
+  return suite;
+}

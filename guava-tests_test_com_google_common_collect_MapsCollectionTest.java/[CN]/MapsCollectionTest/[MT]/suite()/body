@@ -1,15 +1,5 @@
 {
   TestSuite suite=new TestSuite();
-  suite.addTest(MapTestSuiteBuilder.using(new TestEnumMapGenerator(){
-    @Override protected Map<AnEnum,String> create(    Entry<AnEnum,String>[] entries){
-      Map<AnEnum,String> map=Maps.newHashMap();
-      for (      Entry<AnEnum,String> entry : entries) {
-        map.put(entry.getKey(),entry.getValue());
-      }
-      return Maps.immutableEnumMap(map);
-    }
-  }
-).named("Maps.immutableEnumMap").withFeatures(CollectionSize.ANY,CollectionFeature.SERIALIZABLE,CollectionFeature.ALLOWS_NULL_QUERIES).createTestSuite());
   suite.addTest(NavigableMapTestSuiteBuilder.using(new TestStringSortedMapGenerator(){
     @Override protected Map<String,String> create(    Entry<String,String>[] entries){
       SafeTreeMap<String,String> map=new SafeTreeMap<String,String>();

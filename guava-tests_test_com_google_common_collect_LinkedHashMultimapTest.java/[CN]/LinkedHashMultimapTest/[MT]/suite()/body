@@ -1,0 +1,15 @@
+{
+  TestSuite suite=new TestSuite();
+  suite.addTest(SetMultimapTestSuiteBuilder.using(new TestStringSetMultimapGenerator(){
+    @Override protected SetMultimap<String,String> create(    Entry<String,String>[] entries){
+      SetMultimap<String,String> multimap=LinkedHashMultimap.create();
+      for (      Entry<String,String> entry : entries) {
+        multimap.put(entry.getKey(),entry.getValue());
+      }
+      return multimap;
+    }
+  }
+).named("LinkedHashMultimap").withFeatures(MapFeature.ALLOWS_NULL_KEYS,MapFeature.ALLOWS_NULL_VALUES,MapFeature.GENERAL_PURPOSE,MapFeature.FAILS_FAST_ON_CONCURRENT_MODIFICATION,CollectionFeature.KNOWN_ORDER,CollectionFeature.SERIALIZABLE,CollectionSize.ANY).createTestSuite());
+  suite.addTestSuite(LinkedHashMultimapTest.class);
+  return suite;
+}

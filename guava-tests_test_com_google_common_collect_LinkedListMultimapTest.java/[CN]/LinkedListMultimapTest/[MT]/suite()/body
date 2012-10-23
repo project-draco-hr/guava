@@ -1,0 +1,15 @@
+{
+  TestSuite suite=new TestSuite();
+  suite.addTest(ListMultimapTestSuiteBuilder.using(new TestStringListMultimapGenerator(){
+    @Override protected ListMultimap<String,String> create(    Entry<String,String>[] entries){
+      ListMultimap<String,String> multimap=LinkedListMultimap.create();
+      for (      Entry<String,String> entry : entries) {
+        multimap.put(entry.getKey(),entry.getValue());
+      }
+      return multimap;
+    }
+  }
+).named("LinkedListMultimap").withFeatures(MapFeature.ALLOWS_NULL_KEYS,MapFeature.ALLOWS_NULL_VALUES,MapFeature.GENERAL_PURPOSE,CollectionFeature.SERIALIZABLE,CollectionFeature.KNOWN_ORDER,CollectionSize.ANY).createTestSuite());
+  suite.addTestSuite(LinkedListMultimapTest.class);
+  return suite;
+}

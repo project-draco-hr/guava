@@ -1,0 +1,6 @@
+{
+  TestSuite suite=new TestSuite();
+  suite.addTest(BiMapTestSuiteBuilder.using(new EnumHashBiMapGenerator()).named("EnumHashBiMap").withFeatures(CollectionSize.ANY,CollectionFeature.SERIALIZABLE,MapFeature.ALLOWS_NULL_VALUES,MapFeature.GENERAL_PURPOSE,CollectionFeature.KNOWN_ORDER).createTestSuite());
+  suite.addTestSuite(EnumHashBiMapTest.class);
+  return suite;
+}

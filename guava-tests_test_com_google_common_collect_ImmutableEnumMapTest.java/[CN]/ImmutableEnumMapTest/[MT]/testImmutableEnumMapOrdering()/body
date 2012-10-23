@@ -1,0 +1,4 @@
+{
+  ImmutableMap<AnEnum,String> map=Maps.immutableEnumMap(ImmutableMap.of(AnEnum.C,"c",AnEnum.A,"a",AnEnum.E,"e"));
+  ASSERT.that(map.entrySet()).hasContentsInOrder(Helpers.mapEntry(AnEnum.A,"a"),Helpers.mapEntry(AnEnum.C,"c"),Helpers.mapEntry(AnEnum.E,"e"));
+}

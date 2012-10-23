@@ -1,0 +1,15 @@
+{
+  TestSuite suite=new TestSuite();
+  suite.addTestSuite(ImmutableSetMultimapTest.class);
+  suite.addTest(SetMultimapTestSuiteBuilder.using(new TestStringSetMultimapGenerator(){
+    @Override protected SetMultimap<String,String> create(    Entry<String,String>[] entries){
+      ImmutableSetMultimap.Builder<String,String> builder=ImmutableSetMultimap.builder();
+      for (      Entry<String,String> entry : entries) {
+        builder.put(entry.getKey(),entry.getValue());
+      }
+      return builder.build();
+    }
+  }
+).named("ImmutableSetMultimap").withFeatures(MapFeature.ALLOWS_NULL_QUERIES,CollectionFeature.KNOWN_ORDER,CollectionFeature.SERIALIZABLE,CollectionSize.ANY).createTestSuite());
+  return suite;
+}

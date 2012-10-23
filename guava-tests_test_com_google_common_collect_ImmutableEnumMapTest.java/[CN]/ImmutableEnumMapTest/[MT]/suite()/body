@@ -1,0 +1,6 @@
+{
+  TestSuite suite=new TestSuite();
+  suite.addTest(MapTestSuiteBuilder.using(new ImmutableEnumMapGenerator()).named("Maps.immutableEnumMap").withFeatures(CollectionSize.ANY,CollectionFeature.SERIALIZABLE,CollectionFeature.ALLOWS_NULL_QUERIES).createTestSuite());
+  suite.addTestSuite(ImmutableEnumMapTest.class);
+  return suite;
+}
