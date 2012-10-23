@@ -1,4 +1,4 @@
 {
-  in.mark(readlimit);
+  in.mark(readLimit);
   mark=left;
 }

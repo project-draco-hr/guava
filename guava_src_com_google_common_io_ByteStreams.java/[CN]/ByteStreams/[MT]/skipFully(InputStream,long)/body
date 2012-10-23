@@ -1,9 +1,11 @@
 {
+  long toSkip=n;
   while (n > 0) {
     long amt=in.skip(n);
     if (amt == 0) {
       if (in.read() == -1) {
-        throw new EOFException();
+        long skipped=toSkip - n;
+        throw new EOFException("reached end of stream after skipping " + skipped + " bytes; "+ toSkip+ " bytes expected");
       }
       n--;
     }

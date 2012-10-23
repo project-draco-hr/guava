@@ -1,5 +1,6 @@
 {
-  if (read(in,b,off,len) != len) {
-    throw new EOFException();
+  int read=read(in,b,off,len);
+  if (read != len) {
+    throw new EOFException("reached end of stream after reading " + read + " bytes; "+ len+ " bytes expected");
   }
 }
