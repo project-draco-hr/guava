@@ -1,5 +1,3 @@
 {
-  ListenableFutureTask<Object> task=ListenableFutureTask.create(command,null);
-  Delayed delayed=delegate.scheduleWithFixedDelay(task,initialDelay,delay,unit);
-  return new ListenableScheduledTask<Object>(task,delayed);
+  return delegate.scheduleWithFixedDelay(command,initialDelay,delay,unit);
 }
