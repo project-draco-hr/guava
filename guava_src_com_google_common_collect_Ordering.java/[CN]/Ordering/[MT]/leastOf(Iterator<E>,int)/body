@@ -1,6 +1,6 @@
 {
   checkNotNull(elements);
-  checkArgument(k >= 0,"k (%d) must be nonnegative",k);
+  checkArgument(k >= 0,"k (%s) must be nonnegative",k);
   if (k == 0 || !elements.hasNext()) {
     return ImmutableList.of();
   }
