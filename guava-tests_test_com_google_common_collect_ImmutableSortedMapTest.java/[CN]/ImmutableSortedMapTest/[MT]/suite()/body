@@ -2,5 +2,8 @@
   TestSuite suite=new TestSuite();
   suite.addTestSuite(ImmutableSortedMapTest.class);
   suite.addTest(NavigableMapTestSuiteBuilder.using(new ImmutableSortedMapGenerator()).withFeatures(CollectionSize.ANY,CollectionFeature.SERIALIZABLE_INCLUDING_VIEWS,CollectionFeature.KNOWN_ORDER,MapFeature.REJECTS_DUPLICATES_AT_CREATION,MapFeature.ALLOWS_NULL_QUERIES).named("ImmutableSortedMap").createTestSuite());
+  suite.addTest(ListTestSuiteBuilder.using(new ImmutableSortedMapEntryListGenerator()).named("ImmutableSortedMap.entrySet.asList").withFeatures(CollectionSize.ANY,CollectionFeature.SERIALIZABLE,CollectionFeature.REJECTS_DUPLICATES_AT_CREATION,CollectionFeature.ALLOWS_NULL_QUERIES).createTestSuite());
+  suite.addTest(ListTestSuiteBuilder.using(new ImmutableSortedMapKeyListGenerator()).named("ImmutableSortedMap.keySet.asList").withFeatures(CollectionSize.ANY,CollectionFeature.SERIALIZABLE,CollectionFeature.REJECTS_DUPLICATES_AT_CREATION,CollectionFeature.ALLOWS_NULL_QUERIES).createTestSuite());
+  suite.addTest(ListTestSuiteBuilder.using(new ImmutableSortedMapValueListGenerator()).named("ImmutableSortedMap.values.asList").withFeatures(CollectionSize.ANY,CollectionFeature.SERIALIZABLE,CollectionFeature.REJECTS_DUPLICATES_AT_CREATION,CollectionFeature.ALLOWS_NULL_QUERIES).createTestSuite());
   return suite;
 }

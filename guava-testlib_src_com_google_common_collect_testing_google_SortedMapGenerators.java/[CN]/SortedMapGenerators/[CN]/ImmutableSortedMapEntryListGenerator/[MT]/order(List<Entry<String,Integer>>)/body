@@ -1,0 +1,8 @@
+{
+  return new Ordering<Entry<String,Integer>>(){
+    @Override public int compare(    Entry<String,Integer> left,    Entry<String,Integer> right){
+      return left.getKey().compareTo(right.getKey());
+    }
+  }
+.sortedCopy(insertionOrder);
+}
