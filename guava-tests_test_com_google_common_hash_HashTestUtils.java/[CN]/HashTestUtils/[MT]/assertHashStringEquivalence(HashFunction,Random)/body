@@ -1,4 +1,5 @@
 {
+  new EqualsTester().addEqualityGroup(hashFunction.newHasher().putString("abc").hash(),hashFunction.newHasher().putString("ab").putString("c").hash(),hashFunction.newHasher().putString("a").putString("bc").hash(),hashFunction.newHasher().putString("a").putString("b").putString("c").hash(),hashFunction.newHasher().putChar('a').putString("bc").hash(),hashFunction.newHasher().putString("ab").putChar('c').hash(),hashFunction.newHasher().putChar('a').putChar('b').putChar('c').hash()).testEquals();
   int size=random.nextInt(2048);
   byte[] bytes=new byte[size];
   random.nextBytes(bytes);
