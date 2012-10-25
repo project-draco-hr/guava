@@ -13,7 +13,7 @@
         multiset1.add(elements[0]);
       }
       if (elements.length > 1) {
-        if (!elements[0].equals(elements[1])) {
+        if (!Objects.equal(elements[0],elements[1])) {
           multiset2.add(elements[1],2);
         }
       }

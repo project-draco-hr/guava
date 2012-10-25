@@ -1,4 +1,6 @@
 {
-  this.features=Helpers.copyToSet(features);
+  for (  Feature<?> feature : features) {
+    this.features.add(feature);
+  }
   return self();
 }

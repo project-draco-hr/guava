@@ -1,0 +1,14 @@
+{
+  Map<E,Entry<E>> map=new LinkedHashMap<E,Entry<E>>();
+  for (  Entry<E> entry : insertionOrder) {
+    map.put(entry.getElement(),entry);
+  }
+  Set<E> seen=new HashSet<E>();
+  List<Entry<E>> order=new ArrayList<Entry<E>>();
+  for (  E e : gen.order(new ArrayList<E>(map.keySet()))) {
+    if (seen.add(e)) {
+      order.add(map.get(e));
+    }
+  }
+  return order;
+}

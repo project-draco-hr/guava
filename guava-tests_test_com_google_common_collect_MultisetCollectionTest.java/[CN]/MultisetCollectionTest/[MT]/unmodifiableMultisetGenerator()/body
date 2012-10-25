@@ -1,11 +1,20 @@
 {
   return new TestStringMultisetGenerator(){
     @Override protected Multiset<String> create(    String[] elements){
-      return Multisets.unmodifiableMultiset(TreeMultiset.create(asList(elements)));
+      return Multisets.unmodifiableMultiset(LinkedHashMultiset.create(asList(elements)));
     }
     @Override public List<String> order(    List<String> insertionOrder){
-      Collections.sort(insertionOrder);
-      return insertionOrder;
+      List<String> order=new ArrayList<String>();
+      for (      String s : insertionOrder) {
+        int index=order.indexOf(s);
+        if (index == -1) {
+          order.add(s);
+        }
+ else {
+          order.add(index,s);
+        }
+      }
+      return order;
     }
   }
 ;

@@ -1,8 +1,13 @@
 {
-  Iterator<V> valueIter=((TestMultimapGenerator<K,V,M>)multimapGenerator.getInnerGenerator()).sampleValues().iterator();
-  Entry<K,V>[] entries=new Entry[elements.length];
+  Map.Entry[] entries=new Map.Entry[elements.length];
+  Map<K,Iterator<V>> valueIterators=new HashMap<K,Iterator<V>>();
   for (int i=0; i < elements.length; i++) {
-    entries[i]=mapEntry((K)elements[i],valueIter.next());
+    @SuppressWarnings("unchecked") K key=(K)elements[i];
+    Iterator<V> valueItr=valueIterators.get(key);
+    if (valueItr == null) {
+      valueIterators.put(key,valueItr=sampleValuesIterator());
+    }
+    entries[i]=mapEntry((K)elements[i],valueItr.next());
   }
   return multimapGenerator.create(entries).keys();
 }

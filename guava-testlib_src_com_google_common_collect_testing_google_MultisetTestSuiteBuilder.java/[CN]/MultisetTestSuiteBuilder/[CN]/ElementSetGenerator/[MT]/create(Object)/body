@@ -1,0 +1,8 @@
+{
+  Object[] duplicated=new Object[elements.length * 2];
+  for (int i=0; i < elements.length; i++) {
+    duplicated[i]=elements[i];
+    duplicated[i + elements.length]=elements[i];
+  }
+  return ((Multiset<E>)gen.create(duplicated)).elementSet();
+}

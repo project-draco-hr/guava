@@ -1,5 +1,5 @@
 {
-  Iterator<V> valueIter=((TestMultimapGenerator<K,V,M>)multimapGenerator.getInnerGenerator()).sampleValues().iterator();
+  Iterator<V> valueIter=sampleValuesIterator();
   List<Entry<K,V>> entries=new ArrayList<Entry<K,V>>();
   for (  K k : insertionOrder) {
     entries.add(mapEntry(k,valueIter.next()));

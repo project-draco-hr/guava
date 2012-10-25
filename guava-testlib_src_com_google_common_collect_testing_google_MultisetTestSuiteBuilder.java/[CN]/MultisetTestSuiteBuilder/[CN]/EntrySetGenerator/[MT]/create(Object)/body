@@ -1,0 +1,12 @@
+{
+  List<Object> contents=new ArrayList<Object>();
+  Set<E> elements=new HashSet<E>();
+  for (  Object o : entries) {
+    @SuppressWarnings("unchecked") Multiset.Entry<E> entry=(Entry<E>)o;
+    checkArgument(elements.add(entry.getElement()),"Duplicate keys not allowed in EntrySetGenerator");
+    for (int i=0; i < entry.getCount(); i++) {
+      contents.add(entry.getElement());
+    }
+  }
+  return ((Multiset<E>)gen.create(contents.toArray())).entrySet();
+}
