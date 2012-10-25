@@ -1,4 +1,6 @@
 {
-  rangeSet.addAll(ranges);
+  for (  Range<C> range : ranges.asRanges()) {
+    add(range);
+  }
   return this;
 }
