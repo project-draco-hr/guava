@@ -1,0 +1,26 @@
+{
+  Closer closer=new Closer(suppressor);
+  TestCloseable c1=null;
+  TestCloseable c2=null;
+  TestCloseable c3=null;
+  try {
+    try {
+      c1=closer.add(TestCloseable.normal());
+      c2=closer.add(TestCloseable.normal());
+      c3=closer.add(TestCloseable.throwsOnCreate());
+    }
+ catch (    Throwable e) {
+      throw closer.rethrow(e,IOException.class);
+    }
+ finally {
+      closer.close();
+    }
+  }
+ catch (  Throwable expected) {
+    assertTrue(expected instanceof IOException);
+  }
+  assertTrue(c1.isClosed());
+  assertTrue(c2.isClosed());
+  assertNull(c3);
+  assertTrue(suppressor.suppressions.isEmpty());
+}

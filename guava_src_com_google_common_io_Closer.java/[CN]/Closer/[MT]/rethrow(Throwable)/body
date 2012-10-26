@@ -1,0 +1,4 @@
+{
+  thrown=e;
+  throw Throwables.propagate(e);
+}

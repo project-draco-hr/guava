@@ -1,0 +1,24 @@
+{
+  TestLogHandler logHandler=new TestLogHandler();
+  Closer.logger.addHandler(logHandler);
+  try {
+    Closer closer=new Closer(new Closer.LoggingSuppressor());
+    TestCloseable c1=closer.add(TestCloseable.throwsOnClose(new IOException()));
+    TestCloseable c2=closer.add(TestCloseable.throwsOnClose(new RuntimeException()));
+    try {
+      throw closer.rethrow(new IOException("thrown"),IOException.class);
+    }
+ catch (    IOException expected) {
+    }
+    assertTrue(logHandler.getStoredLogRecords().isEmpty());
+    closer.close();
+    assertEquals(2,logHandler.getStoredLogRecords().size());
+    LogRecord record=logHandler.getStoredLogRecords().get(0);
+    assertEquals("Suppressing exception thrown when closing " + c2,record.getMessage());
+    record=logHandler.getStoredLogRecords().get(1);
+    assertEquals("Suppressing exception thrown when closing " + c1,record.getMessage());
+  }
+  finally {
+    Closer.logger.removeHandler(logHandler);
+  }
+}

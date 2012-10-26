@@ -1,0 +1,31 @@
+{
+  if (!Closer.SuppressingSuppressor.isAvailable()) {
+    return;
+  }
+  Closer closer=new Closer(new Closer.SuppressingSuppressor());
+  IOException thrownException=new IOException();
+  IOException c1Exception=new IOException();
+  RuntimeException c2Exception=new RuntimeException();
+  TestCloseable c1=closer.add(TestCloseable.throwsOnClose(c1Exception));
+  TestCloseable c2=closer.add(TestCloseable.throwsOnClose(c2Exception));
+  try {
+    try {
+      throw thrownException;
+    }
+ catch (    Throwable e) {
+      throw closer.rethrow(thrownException,IOException.class);
+    }
+ finally {
+      assertEquals(0,getSuppressed(thrownException).length);
+      closer.close();
+    }
+  }
+ catch (  IOException expected) {
+    assertSame(thrownException,expected);
+  }
+  assertTrue(c1.isClosed());
+  assertTrue(c2.isClosed());
+  ImmutableSet<Throwable> suppressed=ImmutableSet.copyOf(getSuppressed(thrownException));
+  assertEquals(2,suppressed.size());
+  assertEquals(ImmutableSet.of(c1Exception,c2Exception),suppressed);
+}

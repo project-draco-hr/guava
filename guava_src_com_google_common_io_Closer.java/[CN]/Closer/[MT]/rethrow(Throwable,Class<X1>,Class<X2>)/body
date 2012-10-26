@@ -1,0 +1,5 @@
+{
+  thrown=e;
+  Throwables.propagateIfPossible(e,declaredType1,declaredType2);
+  throw Throwables.propagate(e);
+}

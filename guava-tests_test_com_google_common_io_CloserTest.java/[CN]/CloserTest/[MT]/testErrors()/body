@@ -1,0 +1,19 @@
+{
+  Closer closer=new Closer(suppressor);
+  Error c1Exception=new Error();
+  Error c2Exception=new Error();
+  Error c3Exception=new Error();
+  TestCloseable c1=closer.add(TestCloseable.throwsOnClose(c1Exception));
+  TestCloseable c2=closer.add(TestCloseable.throwsOnClose(c2Exception));
+  TestCloseable c3=closer.add(TestCloseable.throwsOnClose(c3Exception));
+  try {
+    closer.close();
+  }
+ catch (  Throwable expected) {
+    assertSame(c3Exception,expected);
+  }
+  assertTrue(c1.isClosed());
+  assertTrue(c2.isClosed());
+  assertTrue(c3.isClosed());
+  assertSuppressed(new Suppression(c2,c3Exception,c2Exception),new Suppression(c1,c3Exception,c1Exception));
+}

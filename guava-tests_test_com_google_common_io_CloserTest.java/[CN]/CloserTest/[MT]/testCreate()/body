@@ -1,0 +1,12 @@
+{
+  Closer closer=Closer.create();
+  String javaVersion=System.getProperty("java.version");
+  String secondPart=Iterables.get(Splitter.on('.').split(javaVersion),1);
+  int versionNumber=Integer.parseInt(secondPart);
+  if (versionNumber < 7) {
+    assertTrue(closer.suppressor instanceof Closer.LoggingSuppressor);
+  }
+ else {
+    assertTrue(closer.suppressor instanceof Closer.SuppressingSuppressor);
+  }
+}

@@ -1,0 +1,3 @@
+{
+  suppressions.add(new Suppression(closeable,thrown,suppressed));
+}

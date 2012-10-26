@@ -1,0 +1,14 @@
+{
+  Closer closer=new Closer(suppressor);
+  TestCloseable c1=closer.add(TestCloseable.normal());
+  TestCloseable c2=closer.add(TestCloseable.normal());
+  TestCloseable c3=closer.add(TestCloseable.normal());
+  assertFalse(c1.isClosed());
+  assertFalse(c2.isClosed());
+  assertFalse(c3.isClosed());
+  closer.close();
+  assertTrue(c1.isClosed());
+  assertTrue(c2.isClosed());
+  assertTrue(c3.isClosed());
+  assertTrue(suppressor.suppressions.isEmpty());
+}

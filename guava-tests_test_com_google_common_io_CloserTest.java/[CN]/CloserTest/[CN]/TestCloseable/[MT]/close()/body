@@ -1,0 +1,7 @@
+{
+  closed=true;
+  if (throwOnClose != null) {
+    Throwables.propagateIfPossible(throwOnClose,IOException.class);
+    throw new AssertionError(throwOnClose);
+  }
+}
