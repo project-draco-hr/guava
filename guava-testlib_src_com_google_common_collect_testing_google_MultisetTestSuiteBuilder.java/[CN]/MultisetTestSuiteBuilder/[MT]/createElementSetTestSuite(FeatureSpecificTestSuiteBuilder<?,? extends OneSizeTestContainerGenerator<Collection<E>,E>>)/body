@@ -1,0 +1,3 @@
+{
+  return SetTestSuiteBuilder.using(new ElementSetGenerator<E>(parentBuilder.getSubjectGenerator())).named(getName() + ".elementSet").withFeatures(computeElementSetFeatures(parentBuilder.getFeatures())).suppressing(parentBuilder.getSuppressedTests()).createTestSuite();
+}

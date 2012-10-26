@@ -1,6 +1,6 @@
 {
   List<TestSuite> derivedSuites=new ArrayList<TestSuite>(super.createDerivedSuites(parentBuilder));
-  derivedSuites.add(SetTestSuiteBuilder.using(new ElementSetGenerator<E>(parentBuilder.getSubjectGenerator())).named(getName() + ".elementSet").withFeatures(computeElementSetFeatures(parentBuilder.getFeatures())).suppressing(parentBuilder.getSuppressedTests()).createTestSuite());
+  derivedSuites.add(createElementSetTestSuite(parentBuilder));
   if (!parentBuilder.getFeatures().contains(NoRecurse.NO_ENTRY_SET)) {
     derivedSuites.add(SetTestSuiteBuilder.using(new EntrySetGenerator<E>(parentBuilder.getSubjectGenerator())).named(getName() + ".entrySet").withFeatures(computeEntrySetFeatures(parentBuilder.getFeatures())).suppressing(parentBuilder.getSuppressedTests()).createTestSuite());
   }
