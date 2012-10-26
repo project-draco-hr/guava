@@ -1,0 +1,6 @@
+{
+  TestSuite suite=new TestSuite();
+  suite.addTest(MultisetTestSuiteBuilder.using(hashMultisetGenerator()).withFeatures(CollectionSize.ANY,CollectionFeature.ALLOWS_NULL_VALUES,CollectionFeature.SERIALIZABLE,CollectionFeature.GENERAL_PURPOSE).named("HashMultiset").createTestSuite());
+  suite.addTestSuite(HashMultisetTest.class);
+  return suite;
+}

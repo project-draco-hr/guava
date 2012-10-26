@@ -1,0 +1,26 @@
+{
+  TestSuite suite=new TestSuite();
+  suite.addTest(SortedMultisetTestSuiteBuilder.using(new TestStringMultisetGenerator(){
+    @Override protected Multiset<String> create(    String[] elements){
+      return TreeMultiset.create(Arrays.asList(elements));
+    }
+    @Override public List<String> order(    List<String> insertionOrder){
+      return Ordering.natural().sortedCopy(insertionOrder);
+    }
+  }
+).withFeatures(CollectionSize.ANY,CollectionFeature.KNOWN_ORDER,CollectionFeature.GENERAL_PURPOSE,CollectionFeature.SERIALIZABLE,CollectionFeature.ALLOWS_NULL_QUERIES).named("TreeMultiset, Ordering.natural").createTestSuite());
+  suite.addTest(SortedMultisetTestSuiteBuilder.using(new TestStringMultisetGenerator(){
+    @Override protected Multiset<String> create(    String[] elements){
+      Multiset<String> result=TreeMultiset.create(NullsBeforeB.INSTANCE);
+      result.addAll(Arrays.asList(elements));
+      return result;
+    }
+    @Override public List<String> order(    List<String> insertionOrder){
+      sort(insertionOrder,NullsBeforeB.INSTANCE);
+      return insertionOrder;
+    }
+  }
+).withFeatures(CollectionSize.ANY,CollectionFeature.KNOWN_ORDER,CollectionFeature.GENERAL_PURPOSE,CollectionFeature.SERIALIZABLE,CollectionFeature.ALLOWS_NULL_VALUES).named("TreeMultiset, NullsBeforeB").createTestSuite());
+  suite.addTestSuite(TreeMultisetTest.class);
+  return suite;
+}
