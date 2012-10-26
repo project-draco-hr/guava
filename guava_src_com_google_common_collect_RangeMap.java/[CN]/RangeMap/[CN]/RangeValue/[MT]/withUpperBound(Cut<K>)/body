@@ -1,4 +1,0 @@
-{
-  Range<K> newRange=new Range<K>(getLowerBound(),newUpperBound);
-  return newRange.isEmpty() ? null : new RangeValue<K,V>(newRange,getValue());
-}

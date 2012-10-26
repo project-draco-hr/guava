@@ -1,0 +1,15 @@
+{
+  int index=SortedLists.binarySearch(ranges,new Function<Range<K>,Cut<K>>(){
+    @Override @Nullable public Cut<K> apply(    Range<K> input){
+      return input.lowerBound;
+    }
+  }
+,Cut.belowValue(key),KeyPresentBehavior.ANY_PRESENT,KeyAbsentBehavior.NEXT_LOWER);
+  if (index == -1) {
+    return null;
+  }
+ else {
+    Range<K> range=ranges.get(index);
+    return range.contains(key) ? values.get(index) : null;
+  }
+}

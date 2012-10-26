@@ -1,0 +1,16 @@
+{
+  for (  Range<Integer> range1 : RANGES) {
+    for (    Range<Integer> range2 : RANGES) {
+      boolean expectRejection=range1.isConnected(range2) && !range1.intersection(range2).isEmpty();
+      ImmutableRangeMap.Builder<Integer,Integer> builder=ImmutableRangeMap.builder();
+      builder.put(range1,1);
+      try {
+        builder.put(range2,2);
+        assertFalse(expectRejection);
+      }
+ catch (      IllegalArgumentException e) {
+        assertTrue(expectRejection);
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  checkNotNull(range);
+  checkNotNull(value);
+  if (!keyRanges.complement().encloses(range)) {
+    for (    Entry<Range<K>,V> entry : rangeMap.asMapOfRanges().entrySet()) {
+      Range<K> key=entry.getKey();
+      if (key.isConnected(range) && !key.intersection(range).isEmpty()) {
+        throw new IllegalArgumentException("Overlapping ranges: range " + range + " overlaps with entry "+ entry);
+      }
+    }
+  }
+  if (range.isEmpty()) {
+    return this;
+  }
+  keyRanges.add(range);
+  rangeMap.put(range,value);
+  return this;
+}

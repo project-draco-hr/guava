@@ -1,6 +1,0 @@
-{
-  checkNotNull(rangeMap);
-  for (  RangeValue<K,V> rangeValue : rangeMap.map.values()) {
-    put(rangeValue.getKey(),rangeValue.getValue());
-  }
-}

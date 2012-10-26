@@ -1,3 +1,0 @@
-{
-  return o instanceof RangeMap && map.equals(((RangeMap)o).map);
-}

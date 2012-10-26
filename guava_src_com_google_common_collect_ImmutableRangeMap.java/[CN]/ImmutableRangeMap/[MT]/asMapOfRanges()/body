@@ -1,0 +1,13 @@
+{
+  if (ranges.isEmpty()) {
+    return ImmutableMap.of();
+  }
+  Comparator<Range<K>> rangeComparator=new Ordering<Range<K>>(){
+    @Override public int compare(    Range<K> left,    Range<K> right){
+      return ComparisonChain.start().compare(left.lowerBound,right.lowerBound).compare(left.upperBound,right.upperBound).result();
+    }
+  }
+;
+  RegularImmutableSortedSet<Range<K>> rangeSet=new RegularImmutableSortedSet<Range<K>>(ranges,rangeComparator);
+  return new RegularImmutableSortedMap<Range<K>,V>(rangeSet,values);
+}

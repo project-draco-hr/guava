@@ -1,5 +1,0 @@
-{
-  for (int i=MIN_BOUND - 1; i <= MAX_BOUND + 1; i++) {
-    assertEquals(model.get(i),test.get(i));
-  }
-}

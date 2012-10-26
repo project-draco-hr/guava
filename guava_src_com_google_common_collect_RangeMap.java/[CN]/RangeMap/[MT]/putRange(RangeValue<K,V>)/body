@@ -1,5 +1,0 @@
-{
-  if (rangeValue != null && !rangeValue.getKey().isEmpty()) {
-    map.put(rangeValue.getLowerBound(),rangeValue);
-  }
-}

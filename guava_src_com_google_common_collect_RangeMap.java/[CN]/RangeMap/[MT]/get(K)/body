@@ -1,7 +1,0 @@
-{
-  Entry<Cut<K>,RangeValue<K,V>> lowerEntry=map.lowerEntry(Cut.aboveValue(key));
-  if (lowerEntry != null && lowerEntry.getValue().getKey().contains(key)) {
-    return lowerEntry.getValue().getValue();
-  }
-  return null;
-}

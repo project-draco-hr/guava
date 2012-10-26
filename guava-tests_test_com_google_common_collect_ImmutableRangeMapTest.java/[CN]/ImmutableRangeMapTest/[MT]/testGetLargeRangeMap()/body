@@ -1,0 +1,10 @@
+{
+  ImmutableRangeMap.Builder<Integer,Integer> builder=ImmutableRangeMap.builder();
+  for (int i=0; i < 100; i++) {
+    builder.put(Range.closedOpen(i,i + 1),i);
+  }
+  ImmutableRangeMap<Integer,Integer> map=builder.build();
+  for (int i=0; i < 100; i++) {
+    assertEquals(Integer.valueOf(i),map.get(i));
+  }
+}

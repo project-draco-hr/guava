@@ -1,0 +1,13 @@
+{
+  for (  Range<Integer> rangeToPut : RANGES) {
+    for (    Range<Integer> rangeToRemove : RANGES) {
+      Map<Integer,Integer> model=Maps.newHashMap();
+      putModel(model,rangeToPut,1);
+      removeModel(model,rangeToRemove);
+      RangeMap<Integer,Integer> test=TreeRangeMap.create();
+      test.put(rangeToPut,1);
+      test.remove(rangeToRemove);
+      verify(model,test);
+    }
+  }
+}

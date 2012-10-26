@@ -1,0 +1,17 @@
+{
+  for (  Range<Integer> range1 : RANGES) {
+    for (    Range<Integer> range2 : RANGES) {
+      for (      Range<Integer> range3 : RANGES) {
+        Map<Integer,Integer> model=Maps.newHashMap();
+        putModel(model,range1,1);
+        putModel(model,range2,2);
+        putModel(model,range3,3);
+        RangeMap<Integer,Integer> test=TreeRangeMap.create();
+        test.put(range1,1);
+        test.put(range2,2);
+        test.put(range3,3);
+        verify(model,test);
+      }
+    }
+  }
+}
