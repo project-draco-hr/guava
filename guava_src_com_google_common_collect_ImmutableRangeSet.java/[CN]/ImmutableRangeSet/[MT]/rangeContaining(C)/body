@@ -1,11 +1,5 @@
 {
-  Function<Range<C>,Cut<C>> lowerBoundFunction=new Function<Range<C>,Cut<C>>(){
-    @Override public Cut<C> apply(    Range<C> input){
-      return input.lowerBound;
-    }
-  }
-;
-  int index=SortedLists.binarySearch(ranges,lowerBoundFunction,Cut.belowValue(value),Ordering.natural(),ANY_PRESENT,NEXT_LOWER);
+  int index=SortedLists.binarySearch(ranges,Range.<C>lowerBoundFn(),Cut.belowValue(value),Ordering.natural(),ANY_PRESENT,NEXT_LOWER);
   if (index != -1) {
     Range<C> range=ranges.get(index);
     return range.contains(value) ? range : null;

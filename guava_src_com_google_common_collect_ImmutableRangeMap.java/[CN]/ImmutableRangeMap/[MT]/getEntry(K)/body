@@ -5,6 +5,6 @@
   }
  else {
     Range<K> range=ranges.get(index);
-    return range.contains(key) ? values.get(index) : null;
+    return range.contains(key) ? Maps.immutableEntry(range,values.get(index)) : null;
   }
 }

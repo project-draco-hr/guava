@@ -2,10 +2,5 @@
   if (ranges.isEmpty()) {
     return ImmutableSet.of();
   }
-  return new RegularImmutableSortedSet<Range<C>>(ranges,new Comparator<Range<C>>(){
-    @Override public int compare(    Range<C> range1,    Range<C> range2){
-      return ComparisonChain.start().compare(range1.lowerBound,range2.lowerBound).compare(range1.upperBound,range2.upperBound).result();
-    }
-  }
-);
+  return new RegularImmutableSortedSet<Range<C>>(ranges,Range.RANGE_LEX_ORDERING);
 }
