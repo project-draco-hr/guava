@@ -1,10 +1,11 @@
 {
   Collection<V> collection=map.remove(key);
-  Collection<V> output=createCollection();
-  if (collection != null) {
-    output.addAll(collection);
-    totalSize-=collection.size();
-    collection.clear();
+  if (collection == null) {
+    return createUnmodifiableEmptyCollection();
   }
+  Collection<V> output=createCollection();
+  output.addAll(collection);
+  totalSize-=collection.size();
+  collection.clear();
   return unmodifiableCollectionSubclass(output);
 }
