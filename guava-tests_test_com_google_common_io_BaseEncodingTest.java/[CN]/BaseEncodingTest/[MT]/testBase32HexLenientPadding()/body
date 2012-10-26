@@ -1,0 +1,8 @@
+{
+  testDecodes(base32Hex(),"CPNMU","foo");
+  testDecodes(base32Hex(),"CPNMU=","foo");
+  testDecodes(base32Hex(),"CPNMU==","foo");
+  testDecodes(base32Hex(),"CPNMU===","foo");
+  testDecodes(base32Hex(),"CPNMU====","foo");
+  testDecodes(base32Hex(),"CPNMU=====","foo");
+}

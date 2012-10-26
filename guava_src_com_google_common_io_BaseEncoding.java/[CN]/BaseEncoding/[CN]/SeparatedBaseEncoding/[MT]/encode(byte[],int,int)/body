@@ -1,0 +1,4 @@
+{
+  String unseparated=delegate.encode(bytes,off,len);
+  return Joiner.on(separator).join(Splitter.fixedLength(afterEveryChars).split(unseparated));
+}

@@ -1,0 +1,8 @@
+{
+  testEncoding(encoding,decoded,encoded);
+  for (int sepLength=3; sepLength <= 5; sepLength++) {
+    for (    String separator : ImmutableList.of(",","\n",";;","")) {
+      testEncoding(encoding.withSeparator(separator,sepLength),decoded,Joiner.on(separator).join(Splitter.fixedLength(sepLength).split(encoded)));
+    }
+  }
+}

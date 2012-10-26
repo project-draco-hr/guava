@@ -1,0 +1,10 @@
+{
+  BaseEncoding enc=base32().withPadChar('~');
+  testEncodingWithCasing(enc,"","");
+  testEncodingWithCasing(enc,"f","MY~~~~~~");
+  testEncodingWithCasing(enc,"fo","MZXQ~~~~");
+  testEncodingWithCasing(enc,"foo","MZXW6~~~");
+  testEncodingWithCasing(enc,"foob","MZXW6YQ~");
+  testEncodingWithCasing(enc,"fooba","MZXW6YTB");
+  testEncodingWithCasing(enc,"foobar","MZXW6YTBOI~~~~~~");
+}

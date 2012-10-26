@@ -1,0 +1,39 @@
+{
+  checkNotNull(chars);
+  int outputLength=bytesPerChunk * divide(chars.length(),charsPerChunk,CEILING);
+  ByteBuffer outputBuffer=ByteBuffer.allocate(outputLength);
+  int bitBuffer=0;
+  int bitBufferLength=0;
+  CharMatcher paddingMatcher=paddingMatcher();
+  boolean hitPadding=false;
+  for (int i=0; i < chars.length(); i++) {
+    char c=chars.charAt(i);
+    if (paddingMatcher.matches(c)) {
+      if (!hitPadding && (i <= 0 || !validPadding[i % charsPerChunk])) {
+        throw new IllegalArgumentException("Padding cannot start at index " + i);
+      }
+      hitPadding=true;
+    }
+ else     if (hitPadding) {
+      throw new IllegalArgumentException("Expected padding character but found '" + c + "' at index "+ i);
+    }
+ else     if (!CharMatcher.ASCII.matches(c) || decodabet[c] == -1) {
+      throw new IllegalArgumentException("Unrecognized character: " + c);
+    }
+ else {
+      bitBuffer<<=bitsPerChar;
+      bitBuffer|=decodabet[c] & alphabetMask;
+      bitBufferLength+=bitsPerChar;
+      if (bitBufferLength >= 8) {
+        outputBuffer.put((byte)(bitBuffer >> (bitBufferLength - 8)));
+        bitBufferLength-=8;
+      }
+    }
+  }
+  int charsOverChunk=chars.length() % charsPerChunk;
+  if (!hitPadding && !validPadding[charsOverChunk]) {
+    throw new IllegalArgumentException("Bad trailing characters \"" + chars.subSequence(chars.length() - charsOverChunk,chars.length()) + "\"");
+  }
+  outputBuffer.flip();
+  return extractBytes(outputBuffer);
+}

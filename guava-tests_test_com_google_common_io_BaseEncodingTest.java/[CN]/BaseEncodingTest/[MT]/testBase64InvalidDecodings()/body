@@ -1,0 +1,6 @@
+{
+  assertFailsToDecode(base64(),"\u007f");
+  assertFailsToDecode(base64(),"Wf2!");
+  assertFailsToDecode(base64(),"let's not talk of love or chains!");
+  assertFailsToDecode(base64(),"12345");
+}

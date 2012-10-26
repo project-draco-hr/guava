@@ -1,0 +1,9 @@
+{
+  testEncodingWithCasing(base32Hex(),"","");
+  testEncodingWithCasing(base32Hex(),"f","CO======");
+  testEncodingWithCasing(base32Hex(),"fo","CPNG====");
+  testEncodingWithCasing(base32Hex(),"foo","CPNMU===");
+  testEncodingWithCasing(base32Hex(),"foob","CPNMUOG=");
+  testEncodingWithCasing(base32Hex(),"fooba","CPNMUOJ1");
+  testEncodingWithCasing(base32Hex(),"foobar","CPNMUOJ1E8======");
+}

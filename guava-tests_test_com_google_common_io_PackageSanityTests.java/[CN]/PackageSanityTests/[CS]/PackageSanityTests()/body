@@ -1,0 +1,5 @@
+{
+  setDefault(BaseEncoding.class,BaseEncoding.base64());
+  setDefault(int.class,32);
+  setDefault(String.class,"abcd");
+}

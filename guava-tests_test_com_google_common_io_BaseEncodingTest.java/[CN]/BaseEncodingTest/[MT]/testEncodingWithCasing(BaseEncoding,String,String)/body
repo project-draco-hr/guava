@@ -1,0 +1,5 @@
+{
+  testEncodingWithSeparators(encoding,decoded,encoded);
+  testEncodingWithSeparators(encoding.upperCase(),decoded,Ascii.toUpperCase(encoded));
+  testEncodingWithSeparators(encoding.lowerCase(),decoded,Ascii.toLowerCase(encoded));
+}

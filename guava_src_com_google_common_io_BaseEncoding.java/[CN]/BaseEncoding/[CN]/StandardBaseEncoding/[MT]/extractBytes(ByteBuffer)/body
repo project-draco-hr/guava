@@ -1,0 +1,11 @@
+{
+  if (buf.hasArray() && buf.arrayOffset() == 0 && buf.position() == 0 && buf.limit() == buf.capacity()) {
+    return buf.array();
+  }
+ else {
+    byte[] result=new byte[buf.remaining()];
+    buf.get(result);
+    buf.position(buf.position() - result.length);
+    return result;
+  }
+}

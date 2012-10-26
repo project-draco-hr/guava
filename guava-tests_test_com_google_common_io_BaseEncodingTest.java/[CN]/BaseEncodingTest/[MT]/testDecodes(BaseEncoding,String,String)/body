@@ -1,0 +1,4 @@
+{
+  byte[] bytes=decoded.getBytes(Charsets.US_ASCII);
+  assertEquals(bytes,encoding.decode(encoded));
+}

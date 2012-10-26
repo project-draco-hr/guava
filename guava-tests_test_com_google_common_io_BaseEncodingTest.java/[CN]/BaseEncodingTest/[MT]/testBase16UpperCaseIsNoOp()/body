@@ -1,0 +1,3 @@
+{
+  assertSame(base16().upperCase(),base16().upperCase());
+}

@@ -1,0 +1,5 @@
+{
+  checkNotNull(separator);
+  checkArgument(paddingMatcher().or(CharMatcher.anyOf(alphabet)).matchesNoneOf(separator),"Separator cannot contain alphabet or padding characters");
+  return new SeparatedBaseEncoding(this,separator,afterEveryChars);
+}

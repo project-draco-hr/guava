@@ -1,0 +1,3 @@
+{
+  assertSame(base32Hex(),base32Hex().upperCase());
+}

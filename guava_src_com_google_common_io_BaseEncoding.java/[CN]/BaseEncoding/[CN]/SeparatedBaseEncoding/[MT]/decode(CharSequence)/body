@@ -1,0 +1,3 @@
+{
+  return delegate.decode(separatorChars.removeFrom(chars));
+}
