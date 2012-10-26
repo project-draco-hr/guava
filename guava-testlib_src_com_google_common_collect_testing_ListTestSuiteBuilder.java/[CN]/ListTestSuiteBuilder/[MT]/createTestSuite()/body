@@ -1,8 +1,4 @@
 {
-  if (!getFeatures().contains(CollectionFeature.KNOWN_ORDER)) {
-    List<Feature<?>> features=Helpers.copyToList(getFeatures());
-    features.add(CollectionFeature.KNOWN_ORDER);
-    withFeatures(features);
-  }
+  withFeatures(CollectionFeature.KNOWN_ORDER);
   return super.createTestSuite();
 }
