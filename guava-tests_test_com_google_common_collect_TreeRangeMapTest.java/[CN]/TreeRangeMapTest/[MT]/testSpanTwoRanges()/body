@@ -1,0 +1,33 @@
+{
+  for (  Range<Integer> range1 : RANGES) {
+    for (    Range<Integer> range2 : RANGES) {
+      RangeMap<Integer,Integer> rangeMap=TreeRangeMap.create();
+      rangeMap.put(range1,1);
+      rangeMap.put(range2,2);
+      Range<Integer> expected;
+      if (range1.isEmpty()) {
+        if (range2.isEmpty()) {
+          expected=null;
+        }
+ else {
+          expected=range2;
+        }
+      }
+ else {
+        if (range2.isEmpty()) {
+          expected=range1;
+        }
+ else {
+          expected=range1.span(range2);
+        }
+      }
+      try {
+        assertEquals(expected,rangeMap.span());
+        assertNotNull(expected);
+      }
+ catch (      NoSuchElementException e) {
+        assertNull(expected);
+      }
+    }
+  }
+}

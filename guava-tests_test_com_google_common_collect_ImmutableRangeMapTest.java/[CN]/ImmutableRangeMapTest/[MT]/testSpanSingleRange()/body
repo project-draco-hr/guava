@@ -1,0 +1,6 @@
+{
+  for (  Range<Integer> range : RANGES) {
+    RangeMap<Integer,Integer> rangemap=ImmutableRangeMap.<Integer,Integer>builder().put(range,1).build();
+    assertEquals(range,rangemap.span());
+  }
+}

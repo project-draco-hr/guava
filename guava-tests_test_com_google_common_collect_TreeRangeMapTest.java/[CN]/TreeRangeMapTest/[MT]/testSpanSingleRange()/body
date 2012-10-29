@@ -1,0 +1,13 @@
+{
+  for (  Range<Integer> range : RANGES) {
+    RangeMap<Integer,Integer> rangeMap=TreeRangeMap.create();
+    rangeMap.put(range,1);
+    try {
+      assertEquals(range,rangeMap.span());
+      assertFalse(range.isEmpty());
+    }
+ catch (    NoSuchElementException e) {
+      assertTrue(range.isEmpty());
+    }
+  }
+}

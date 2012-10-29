@@ -1,0 +1,10 @@
+{
+  for (  Range<Integer> range1 : RANGES) {
+    for (    Range<Integer> range2 : RANGES) {
+      if (!range1.isConnected(range2) || range1.intersection(range2).isEmpty()) {
+        RangeMap<Integer,Integer> rangemap=ImmutableRangeMap.<Integer,Integer>builder().put(range1,1).put(range2,2).build();
+        assertEquals(range1.span(range2),rangemap.span());
+      }
+    }
+  }
+}
