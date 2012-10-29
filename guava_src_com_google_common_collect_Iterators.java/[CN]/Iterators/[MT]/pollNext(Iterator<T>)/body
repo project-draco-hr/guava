@@ -4,5 +4,7 @@
     iterator.remove();
     return result;
   }
-  return null;
+ else {
+    return null;
+  }
 }
