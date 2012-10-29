@@ -1,7 +1,8 @@
 {
   checkNotNull(chars);
-  int outputLength=bytesPerChunk * divide(chars.length(),charsPerChunk,CEILING);
-  ByteBuffer outputBuffer=ByteBuffer.allocate(outputLength);
+  int expectedOutputLength=bytesPerChunk * divide(chars.length(),charsPerChunk,CEILING);
+  byte[] output=new byte[expectedOutputLength];
+  int outputPosition=0;
   int bitBuffer=0;
   int bitBufferLength=0;
   CharMatcher paddingMatcher=paddingMatcher();
@@ -25,7 +26,7 @@
       bitBuffer|=decodabet[c] & alphabetMask;
       bitBufferLength+=bitsPerChar;
       if (bitBufferLength >= 8) {
-        outputBuffer.put((byte)(bitBuffer >> (bitBufferLength - 8)));
+        output[outputPosition++]=(byte)(bitBuffer >> (bitBufferLength - 8));
         bitBufferLength-=8;
       }
     }
@@ -34,6 +35,5 @@
   if (!hitPadding && !validPadding[charsOverChunk]) {
     throw new IllegalArgumentException("Bad trailing characters \"" + chars.subSequence(chars.length() - charsOverChunk,chars.length()) + "\"");
   }
-  outputBuffer.flip();
-  return extractBytes(outputBuffer);
+  return extract(output,outputPosition);
 }

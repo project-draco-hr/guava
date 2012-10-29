@@ -1,4 +1,10 @@
 {
-  byte[] bytes=decoded.getBytes(Charsets.US_ASCII);
+  byte[] bytes;
+  try {
+    bytes=decoded.getBytes("UTF-8");
+  }
+ catch (  UnsupportedEncodingException e) {
+    throw new AssertionError();
+  }
   assertEquals(bytes,encoding.decode(encoded));
 }
