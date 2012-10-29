@@ -1,0 +1,2 @@
+NavigableSet<Integer> elements
+Predicate<? super Integer> predicate

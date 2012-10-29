@@ -1,0 +1,9 @@
+{
+  for (  List<Integer> contents : SAMPLE_INPUTS) {
+    for (int i=0; i < 10; i++) {
+      for (      boolean inclusive : ImmutableList.of(true,false)) {
+        assertEquals(filter(createUnfiltered(contents).headSet(i,inclusive),EVEN),filter(createUnfiltered(contents),EVEN).headSet(i,inclusive));
+      }
+    }
+  }
+}

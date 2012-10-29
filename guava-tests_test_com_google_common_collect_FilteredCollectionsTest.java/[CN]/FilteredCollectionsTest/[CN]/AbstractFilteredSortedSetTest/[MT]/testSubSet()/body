@@ -1,0 +1,9 @@
+{
+  for (  List<Integer> contents : SAMPLE_INPUTS) {
+    for (int i=0; i < 10; i++) {
+      for (int j=i; j < 10; j++) {
+        assertEquals(filter((C)createUnfiltered(contents).subSet(i,j),EVEN),filter(createUnfiltered(contents),EVEN).subSet(i,j));
+      }
+    }
+  }
+}

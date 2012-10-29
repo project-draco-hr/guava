@@ -1,0 +1,15 @@
+{
+  for (  List<Integer> contents : SAMPLE_INPUTS) {
+    for (int i=0; i < 10; i++) {
+      for (int j=i + 1; j < 10; j++) {
+        for (        boolean fromInclusive : ImmutableList.of(true,false)) {
+          for (          boolean toInclusive : ImmutableList.of(true,false)) {
+            NavigableSet<Integer> filterSubset=filter(createUnfiltered(contents).subSet(i,fromInclusive,j,toInclusive),EVEN);
+            NavigableSet<Integer> subsetFilter=filter(createUnfiltered(contents),EVEN).subSet(i,fromInclusive,j,toInclusive);
+            assertEquals(filterSubset,subsetFilter);
+          }
+        }
+      }
+    }
+  }
+}

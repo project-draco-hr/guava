@@ -1,0 +1,2 @@
+Iterable<Integer> elements
+Predicate<? super Integer> predicate

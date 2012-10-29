@@ -1,0 +1,2 @@
+C elements
+Predicate<? super Integer> predicate

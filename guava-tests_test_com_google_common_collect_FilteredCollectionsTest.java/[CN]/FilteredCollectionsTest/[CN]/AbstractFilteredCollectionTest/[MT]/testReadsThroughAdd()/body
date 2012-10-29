@@ -1,0 +1,11 @@
+{
+  for (  List<Integer> contents : SAMPLE_INPUTS) {
+    C unfiltered=createUnfiltered(contents);
+    C filterThenAdd=filter(unfiltered,EVEN);
+    unfiltered.add(4);
+    List<Integer> target=Lists.newArrayList(contents);
+    target.add(4);
+    C addThenFilter=filter(createUnfiltered(target),EVEN);
+    ASSERT.that(filterThenAdd).hasContentsAnyOrder(addThenFilter.toArray());
+  }
+}

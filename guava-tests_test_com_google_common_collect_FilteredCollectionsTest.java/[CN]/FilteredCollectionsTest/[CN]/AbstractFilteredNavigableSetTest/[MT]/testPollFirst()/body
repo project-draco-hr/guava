@@ -1,0 +1,8 @@
+{
+  for (  List<Integer> contents : SAMPLE_INPUTS) {
+    NavigableSet<Integer> filtered=filter(createUnfiltered(contents),EVEN);
+    NavigableSet<Integer> unfiltered=createUnfiltered(filtered);
+    assertEquals(unfiltered.pollFirst(),filtered.pollFirst());
+    assertEquals(unfiltered,filtered);
+  }
+}

@@ -1,8 +1,0 @@
-{
-  try {
-    filteredEmpty.last();
-    fail("CallLastOnEmptySetThrowsException");
-  }
- catch (  NoSuchElementException expected) {
-  }
-}

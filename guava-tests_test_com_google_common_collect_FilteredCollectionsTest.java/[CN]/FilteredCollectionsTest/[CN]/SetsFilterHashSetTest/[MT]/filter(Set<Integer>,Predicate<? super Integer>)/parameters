@@ -1,0 +1,2 @@
+Set<Integer> elements
+Predicate<? super Integer> predicate

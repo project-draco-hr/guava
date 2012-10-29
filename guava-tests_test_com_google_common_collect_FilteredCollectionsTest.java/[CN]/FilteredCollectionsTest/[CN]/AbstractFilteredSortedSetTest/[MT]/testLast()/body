@@ -1,0 +1,13 @@
+{
+  for (  List<Integer> contents : SAMPLE_INPUTS) {
+    C filtered=filter(createUnfiltered(contents),EVEN);
+    try {
+      Integer first=filtered.last();
+      assertFalse(filtered.isEmpty());
+      assertEquals(Ordering.natural().max(filtered),first);
+    }
+ catch (    NoSuchElementException e) {
+      assertTrue(filtered.isEmpty());
+    }
+  }
+}

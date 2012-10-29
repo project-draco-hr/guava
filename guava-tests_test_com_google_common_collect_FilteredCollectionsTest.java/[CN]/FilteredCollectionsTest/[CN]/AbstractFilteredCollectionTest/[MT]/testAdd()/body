@@ -1,0 +1,15 @@
+{
+  for (  List<Integer> contents : SAMPLE_INPUTS) {
+    for (int toAdd=0; toAdd < 10; toAdd++) {
+      boolean expectedResult=createUnfiltered(contents).add(toAdd);
+      C filtered=filter(createUnfiltered(contents),EVEN);
+      try {
+        assertEquals(expectedResult,filtered.add(toAdd));
+        assertTrue(EVEN.apply(toAdd));
+      }
+ catch (      IllegalArgumentException e) {
+        assertFalse(EVEN.apply(toAdd));
+      }
+    }
+  }
+}

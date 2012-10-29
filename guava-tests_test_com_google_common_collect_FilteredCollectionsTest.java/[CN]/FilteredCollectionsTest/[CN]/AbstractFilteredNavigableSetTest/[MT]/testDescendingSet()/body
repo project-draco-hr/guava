@@ -1,0 +1,7 @@
+{
+  for (  List<Integer> contents : SAMPLE_INPUTS) {
+    NavigableSet<Integer> filtered=filter(createUnfiltered(contents),EVEN);
+    NavigableSet<Integer> unfiltered=createUnfiltered(filtered);
+    ASSERT.that(filtered.descendingSet()).hasContentsInOrder(unfiltered.descendingSet().toArray());
+  }
+}

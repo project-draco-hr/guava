@@ -1,0 +1,5 @@
+{
+  for (  List<Integer> contents : SAMPLE_INPUTS) {
+    assertFalse(filter(createUnfiltered(contents),EVEN).contains(new Object()));
+  }
+}

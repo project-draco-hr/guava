@@ -1,0 +1,14 @@
+{
+  ImmutableList<Integer> toAdd=ImmutableList.of(2,4,3);
+  for (  List<Integer> contents : SAMPLE_INPUTS) {
+    C filtered=filter(createUnfiltered(contents),EVEN);
+    C filteredToModify=filter(createUnfiltered(contents),EVEN);
+    try {
+      filteredToModify.addAll(toAdd);
+      fail("Expected IllegalArgumentException");
+    }
+ catch (    IllegalArgumentException expected) {
+    }
+    ASSERT.that(filteredToModify).hasContentsAnyOrder(filtered.toArray());
+  }
+}

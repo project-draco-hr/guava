@@ -1,0 +1,9 @@
+{
+  final TreeSet<Integer> result=Sets.newTreeSet(contents);
+  return new ForwardingSortedSet<Integer>(){
+    @Override protected SortedSet<Integer> delegate(){
+      return result;
+    }
+  }
+;
+}

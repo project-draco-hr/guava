@@ -1,0 +1,12 @@
+{
+  for (  List<Integer> contents : SAMPLE_INPUTS) {
+    NavigableSet<Integer> filtered=filter(createUnfiltered(contents),EVEN);
+    NavigableSet<Integer> unfiltered=createUnfiltered(filtered);
+    for (int i=0; i < 10; i++) {
+      assertEquals(unfiltered.lower(i),filtered.lower(i));
+      assertEquals(unfiltered.floor(i),filtered.floor(i));
+      assertEquals(unfiltered.ceiling(i),filtered.ceiling(i));
+      assertEquals(unfiltered.higher(i),filtered.higher(i));
+    }
+  }
+}

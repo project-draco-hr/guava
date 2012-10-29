@@ -1,0 +1,11 @@
+{
+  for (  List<Integer> contents : SAMPLE_INPUTS) {
+    Set<Integer> expected=Sets.newHashSet();
+    for (    Integer i : contents) {
+      if (EVEN.apply(i)) {
+        expected.add(i);
+      }
+    }
+    new EqualsTester().addEqualityGroup(expected,filter(createUnfiltered(contents),EVEN)).testEquals();
+  }
+}
