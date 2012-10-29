@@ -1,13 +1,12 @@
 {
   long count=0;
-  boolean threw=true;
-  InputStream in=supplier.getInput();
+  Closer closer=Closer.create();
   try {
+    InputStream in=closer.add(supplier.getInput());
     while (true) {
       long amt=in.skip(Integer.MAX_VALUE);
       if (amt == 0) {
         if (in.read() == -1) {
-          threw=false;
           return count;
         }
         count++;
@@ -17,7 +16,10 @@
       }
     }
   }
-  finally {
-    Closeables.close(in,threw);
+ catch (  Throwable e) {
+    throw closer.rethrow(e,IOException.class);
+  }
+ finally {
+    closer.close();
   }
 }

@@ -1,6 +1,6 @@
 {
   TestLogHandler logHandler=new TestLogHandler();
-  Closer.logger.addHandler(logHandler);
+  Closeables.logger.addHandler(logHandler);
   try {
     Closer closer=new Closer(new Closer.LoggingSuppressor());
     TestCloseable c1=closer.add(TestCloseable.throwsOnClose(new IOException()));
@@ -19,6 +19,6 @@
     assertEquals("Suppressing exception thrown when closing " + c1,record.getMessage());
   }
   finally {
-    Closer.logger.removeHandler(logHandler);
+    Closeables.logger.removeHandler(logHandler);
   }
 }

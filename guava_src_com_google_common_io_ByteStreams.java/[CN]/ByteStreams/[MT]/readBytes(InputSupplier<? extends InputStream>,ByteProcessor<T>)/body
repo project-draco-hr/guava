@@ -1,20 +1,22 @@
 {
   byte[] buf=new byte[BUF_SIZE];
-  boolean threw=true;
-  InputStream in=supplier.getInput();
+  Closer closer=Closer.create();
   try {
+    InputStream in=closer.add(supplier.getInput());
     int amt;
     do {
       amt=in.read(buf);
       if (amt == -1) {
-        threw=false;
         break;
       }
     }
  while (processor.processBytes(buf,0,amt));
     return processor.getResult();
   }
-  finally {
-    Closeables.close(in,threw);
+ catch (  Throwable e) {
+    throw closer.rethrow(e,IOException.class);
+  }
+ finally {
+    closer.close();
   }
 }

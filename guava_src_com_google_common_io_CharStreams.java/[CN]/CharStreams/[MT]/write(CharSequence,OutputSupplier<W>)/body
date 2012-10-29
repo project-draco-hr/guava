@@ -1,12 +1,14 @@
 {
-  Preconditions.checkNotNull(from);
-  boolean threw=true;
-  W out=to.getOutput();
+  checkNotNull(from);
+  Closer closer=Closer.create();
   try {
+    W out=closer.add(to.getOutput());
     out.append(from);
-    threw=false;
   }
-  finally {
-    Closeables.close(out,threw);
+ catch (  Throwable e) {
+    throw closer.rethrow(e,IOException.class);
+  }
+ finally {
+    closer.close();
   }
 }

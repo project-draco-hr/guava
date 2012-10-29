@@ -6,14 +6,16 @@
   }
  else {
     byte[] b=new byte[(int)file.length()];
-    boolean threw=true;
-    InputStream in=new FileInputStream(file);
+    Closer closer=Closer.create();
     try {
+      InputStream in=closer.add(new FileInputStream(file));
       ByteStreams.readFully(in,b);
-      threw=false;
     }
-  finally {
-      Closeables.close(in,threw);
+ catch (    Throwable e) {
+      throw closer.rethrow(e,IOException.class);
+    }
+ finally {
+      closer.close();
     }
     return b;
   }

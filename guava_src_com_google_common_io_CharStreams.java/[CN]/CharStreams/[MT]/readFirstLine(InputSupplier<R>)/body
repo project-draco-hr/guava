@@ -1,12 +1,13 @@
 {
-  boolean threw=true;
-  R r=supplier.getInput();
+  Closer closer=Closer.create();
   try {
-    String line=new LineReader(r).readLine();
-    threw=false;
-    return line;
+    R r=closer.add(supplier.getInput());
+    return new LineReader(r).readLine();
   }
-  finally {
-    Closeables.close(r,threw);
+ catch (  Throwable e) {
+    throw closer.rethrow(e,IOException.class);
+  }
+ finally {
+    closer.close();
   }
 }

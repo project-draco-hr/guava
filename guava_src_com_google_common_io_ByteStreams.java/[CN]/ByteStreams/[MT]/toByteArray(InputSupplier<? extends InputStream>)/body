@@ -1,12 +1,14 @@
 {
-  boolean threw=true;
-  InputStream in=supplier.getInput();
+  checkNotNull(supplier);
+  Closer closer=Closer.create();
   try {
-    byte[] result=toByteArray(in);
-    threw=false;
-    return result;
+    InputStream in=closer.add(supplier.getInput());
+    return toByteArray(in);
   }
-  finally {
-    Closeables.close(in,threw);
+ catch (  Throwable e) {
+    throw closer.rethrow(e,IOException.class);
+  }
+ finally {
+    closer.close();
   }
 }

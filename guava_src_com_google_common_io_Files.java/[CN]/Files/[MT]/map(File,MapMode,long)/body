@@ -1,14 +1,15 @@
 {
   checkNotNull(file);
   checkNotNull(mode);
-  RandomAccessFile raf=new RandomAccessFile(file,mode == MapMode.READ_ONLY ? "r" : "rw");
-  boolean threw=true;
+  Closer closer=Closer.create();
   try {
-    MappedByteBuffer mbb=map(raf,mode,size);
-    threw=false;
-    return mbb;
+    RandomAccessFile raf=closer.add(new RandomAccessFile(file,mode == MapMode.READ_ONLY ? "r" : "rw"));
+    return map(raf,mode,size);
   }
-  finally {
-    Closeables.close(raf,threw);
+ catch (  Throwable e) {
+    throw closer.rethrow(e,IOException.class);
+  }
+ finally {
+    closer.close();
   }
 }

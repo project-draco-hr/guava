@@ -1,12 +1,13 @@
 {
-  FileChannel channel=raf.getChannel();
-  boolean threw=true;
+  Closer closer=Closer.create();
   try {
-    MappedByteBuffer mbb=channel.map(mode,0,size);
-    threw=false;
-    return mbb;
+    FileChannel channel=closer.add(raf.getChannel());
+    return channel.map(mode,0,size);
   }
-  finally {
-    Closeables.close(channel,threw);
+ catch (  Throwable e) {
+    throw closer.rethrow(e,IOException.class);
+  }
+ finally {
+    closer.close();
   }
 }

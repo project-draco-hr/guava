@@ -9,9 +9,15 @@
         try {
           skipFully(in,offset);
         }
- catch (        IOException e) {
-          Closeables.closeQuietly(in);
-          throw e;
+ catch (        Throwable e) {
+          Closer closer=Closer.create();
+          closer.add(in);
+          try {
+            throw closer.rethrow(e,IOException.class);
+          }
+  finally {
+            closer.close();
+          }
         }
       }
       return limit(in,length);

@@ -1,14 +1,15 @@
 {
   checkNotNull(from);
   checkNotNull(to);
-  boolean threw=true;
-  OutputStream out=to.getOutput();
+  Closer closer=Closer.create();
   try {
-    long count=copy(from,out);
-    threw=false;
-    return count;
+    OutputStream out=closer.add(to.getOutput());
+    return copy(from,out);
   }
-  finally {
-    Closeables.close(out,threw);
+ catch (  Throwable e) {
+    throw closer.rethrow(e,IOException.class);
+  }
+ finally {
+    closer.close();
   }
 }

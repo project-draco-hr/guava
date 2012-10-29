@@ -1,29 +1,25 @@
 {
   byte[] buf1=new byte[BUF_SIZE];
   byte[] buf2=new byte[BUF_SIZE];
-  boolean threw=true;
-  InputStream in1=supplier1.getInput();
+  Closer closer=Closer.create();
   try {
-    InputStream in2=supplier2.getInput();
-    try {
-      while (true) {
-        int read1=read(in1,buf1,0,BUF_SIZE);
-        int read2=read(in2,buf2,0,BUF_SIZE);
-        if (read1 != read2 || !Arrays.equals(buf1,buf2)) {
-          threw=false;
-          return false;
-        }
- else         if (read1 != BUF_SIZE) {
-          threw=false;
-          return true;
-        }
+    InputStream in1=closer.add(supplier1.getInput());
+    InputStream in2=closer.add(supplier2.getInput());
+    while (true) {
+      int read1=read(in1,buf1,0,BUF_SIZE);
+      int read2=read(in2,buf2,0,BUF_SIZE);
+      if (read1 != read2 || !Arrays.equals(buf1,buf2)) {
+        return false;
+      }
+ else       if (read1 != BUF_SIZE) {
+        return true;
       }
     }
-  finally {
-      Closeables.close(in2,threw);
-    }
   }
-  finally {
-    Closeables.close(in1,threw);
+ catch (  Throwable e) {
+    throw closer.rethrow(e,IOException.class);
+  }
+ finally {
+    closer.close();
   }
 }

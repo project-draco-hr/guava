@@ -1,6 +1,6 @@
 {
-  Preconditions.checkNotNull(out);
-  Preconditions.checkNotNull(charset);
+  checkNotNull(out);
+  checkNotNull(charset);
   return new OutputSupplier<OutputStreamWriter>(){
     @Override public OutputStreamWriter getOutput() throws IOException {
       return new OutputStreamWriter(out.getOutput(),charset);

@@ -1,21 +1,16 @@
 {
   checkNotNull(from);
   checkNotNull(to);
-  int successfulOps=0;
-  InputStream in=from.getInput();
+  Closer closer=Closer.create();
   try {
-    OutputStream out=to.getOutput();
-    try {
-      long count=copy(in,out);
-      successfulOps++;
-      return count;
-    }
-  finally {
-      Closeables.close(out,successfulOps < 1);
-      successfulOps++;
-    }
+    InputStream in=closer.add(from.getInput());
+    OutputStream out=closer.add(to.getOutput());
+    return copy(in,out);
   }
-  finally {
-    Closeables.close(in,successfulOps < 2);
+ catch (  Throwable e) {
+    throw closer.rethrow(e,IOException.class);
+  }
+ finally {
+    closer.close();
   }
 }
