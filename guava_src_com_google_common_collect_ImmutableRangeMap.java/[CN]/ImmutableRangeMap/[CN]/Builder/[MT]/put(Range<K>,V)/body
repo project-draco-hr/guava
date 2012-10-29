@@ -1,6 +1,7 @@
 {
   checkNotNull(range);
   checkNotNull(value);
+  checkArgument(!range.isEmpty(),"Range must not be empty, but was %s",range);
   if (!keyRanges.complement().encloses(range)) {
     for (    Entry<Range<K>,V> entry : rangeMap.asMapOfRanges().entrySet()) {
       Range<K> key=entry.getKey();
@@ -8,9 +9,6 @@
         throw new IllegalArgumentException("Overlapping ranges: range " + range + " overlaps with entry "+ entry);
       }
     }
-  }
-  if (range.isEmpty()) {
-    return this;
   }
   keyRanges.add(range);
   rangeMap.put(range,value);

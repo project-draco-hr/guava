@@ -1,0 +1,17 @@
+{
+  for (int i=MIN_BOUND; i <= MAX_BOUND; i++) {
+    ImmutableRangeMap.Builder<Integer,Integer> builder=ImmutableRangeMap.builder();
+    try {
+      builder.put(Range.closedOpen(i,i),1);
+      fail("Expected IllegalArgumentException");
+    }
+ catch (    IllegalArgumentException expected) {
+    }
+    try {
+      builder.put(Range.openClosed(i,i),1);
+      fail("Expected IllegalArgumentException");
+    }
+ catch (    IllegalArgumentException expected) {
+    }
+  }
+}
