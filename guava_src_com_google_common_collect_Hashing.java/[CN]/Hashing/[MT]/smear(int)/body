@@ -1,4 +1,3 @@
 {
-  hashCode^=(hashCode >>> 20) ^ (hashCode >>> 12);
-  return hashCode ^ (hashCode >>> 7) ^ (hashCode >>> 4);
+  return C2 * Integer.rotateLeft(hashCode * C1,15);
 }
