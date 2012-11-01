@@ -1,0 +1,3 @@
+{
+  return Longs.compare(getDelay(TimeUnit.NANOSECONDS),other.getDelay(TimeUnit.NANOSECONDS));
+}
