@@ -1,0 +1,13 @@
+{
+  taskDone=false;
+  Runnable task=new Runnable(){
+    @Override public void run(){
+      taskDone=true;
+    }
+  }
+;
+  ScheduledFuture<?> future=TestingExecutors.noOpScheduledExecutor().schedule(task,10,TimeUnit.MILLISECONDS);
+  Thread.sleep(20);
+  assertFalse(taskDone);
+  assertFalse(future.isDone());
+}

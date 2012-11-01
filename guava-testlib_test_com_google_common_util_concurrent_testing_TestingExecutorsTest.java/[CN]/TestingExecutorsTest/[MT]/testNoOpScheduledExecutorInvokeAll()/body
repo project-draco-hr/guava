@@ -1,0 +1,21 @@
+{
+  ListeningScheduledExecutorService executor=TestingExecutors.noOpScheduledExecutor();
+  taskDone=false;
+  Callable<Boolean> task=new Callable<Boolean>(){
+    @Override public Boolean call(){
+      taskDone=true;
+      return taskDone;
+    }
+  }
+;
+  List<Future<Boolean>> futureList=executor.invokeAll(ImmutableList.of(task),10,TimeUnit.MILLISECONDS);
+  Future<Boolean> future=futureList.get(0);
+  assertFalse(taskDone);
+  assertTrue(future.isDone());
+  try {
+    future.get();
+    fail();
+  }
+ catch (  CancellationException e) {
+  }
+}
