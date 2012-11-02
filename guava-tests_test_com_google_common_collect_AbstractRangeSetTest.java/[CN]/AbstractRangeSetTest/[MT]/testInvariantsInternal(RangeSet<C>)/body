@@ -10,4 +10,19 @@
   for (  Range<C> range : asRanges) {
     assertFalse(range.isEmpty());
   }
+  Iterator<Range<C>> itr=rangeSet.asRanges().iterator();
+  Range<C> expectedSpan=null;
+  if (itr.hasNext()) {
+    expectedSpan=itr.next();
+    while (itr.hasNext()) {
+      expectedSpan=expectedSpan.span(itr.next());
+    }
+  }
+  try {
+    Range<C> span=rangeSet.span();
+    assertEquals(expectedSpan,span);
+  }
+ catch (  NoSuchElementException e) {
+    assertNull(expectedSpan);
+  }
 }

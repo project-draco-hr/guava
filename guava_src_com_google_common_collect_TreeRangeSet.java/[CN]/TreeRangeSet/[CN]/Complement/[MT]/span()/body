@@ -1,0 +1,25 @@
+{
+  Cut<C> spanLowerBound;
+  Entry<Cut<C>,Range<C>> firstEntry=rangesByLowerCut.firstEntry();
+  if (firstEntry == null) {
+    return Range.all();
+  }
+ else   if (firstEntry.getValue().hasLowerBound()) {
+    spanLowerBound=Cut.belowAll();
+  }
+ else {
+    spanLowerBound=firstEntry.getValue().upperBound;
+    if (Cut.aboveAll().equals(spanLowerBound)) {
+      throw new NoSuchElementException();
+    }
+  }
+  Cut<C> spanUpperBound;
+  Entry<Cut<C>,Range<C>> lastEntry=rangesByLowerCut.lastEntry();
+  if (lastEntry.getValue().hasUpperBound()) {
+    spanUpperBound=Cut.aboveAll();
+  }
+ else {
+    spanUpperBound=lastEntry.getValue().lowerBound;
+  }
+  return Range.create(spanLowerBound,spanUpperBound);
+}

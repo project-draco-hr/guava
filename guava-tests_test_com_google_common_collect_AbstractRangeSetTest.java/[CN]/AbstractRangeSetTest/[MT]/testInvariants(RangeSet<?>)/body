@@ -1,3 +1,4 @@
 {
   testInvariantsInternal(rangeSet);
+  testInvariantsInternal(rangeSet.complement());
 }
