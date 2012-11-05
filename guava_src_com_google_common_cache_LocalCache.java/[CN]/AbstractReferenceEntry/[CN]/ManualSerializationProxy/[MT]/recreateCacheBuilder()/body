@@ -1,5 +1,5 @@
 {
-  CacheBuilder<Object,Object> builder=CacheBuilder.newBuilder().setKeyStrength(keyStrength).setValueStrength(valueStrength).keyEquivalence(keyEquivalence).valueEquivalence(valueEquivalence).concurrencyLevel(concurrencyLevel).removalListener(removalListener);
+  CacheBuilder<K,V> builder=CacheBuilder.newBuilder().setKeyStrength(keyStrength).setValueStrength(valueStrength).keyEquivalence(keyEquivalence).valueEquivalence(valueEquivalence).concurrencyLevel(concurrencyLevel).removalListener(removalListener);
   builder.strictParsing=false;
   if (expireAfterWriteNanos > 0) {
     builder.expireAfterWrite(expireAfterWriteNanos,TimeUnit.NANOSECONDS);
