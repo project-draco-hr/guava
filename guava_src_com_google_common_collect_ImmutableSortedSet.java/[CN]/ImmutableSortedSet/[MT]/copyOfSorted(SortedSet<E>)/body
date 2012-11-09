@@ -1,6 +1,6 @@
 {
   Comparator<? super E> comparator=SortedIterables.comparator(sortedSet);
-  E[] elements=(E[])sortedSet.toArray();
+  Object[] elements=sortedSet.toArray();
   if (elements.length == 0) {
     return emptySet(comparator);
   }
