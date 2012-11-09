@@ -2,10 +2,10 @@
   for (  long a : TEST_LONGS) {
     for (    long b : TEST_LONGS) {
       if (b != 0) {
-        UnsignedLong aUnsigned=UnsignedLong.asUnsigned(a);
-        UnsignedLong bUnsigned=UnsignedLong.asUnsigned(b);
+        UnsignedLong aUnsigned=UnsignedLong.fromLongBits(a);
+        UnsignedLong bUnsigned=UnsignedLong.fromLongBits(b);
         long expected=aUnsigned.bigIntegerValue().remainder(bUnsigned.bigIntegerValue()).longValue();
-        UnsignedLong unsignedRem=aUnsigned.remainder(bUnsigned);
+        UnsignedLong unsignedRem=aUnsigned.mod(bUnsigned);
         assertEquals(expected,unsignedRem.longValue());
       }
     }

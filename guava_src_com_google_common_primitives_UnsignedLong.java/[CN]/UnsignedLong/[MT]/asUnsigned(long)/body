@@ -1,3 +1,3 @@
 {
-  return new UnsignedLong(value);
+  return fromLongBits(value);
 }

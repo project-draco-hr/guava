@@ -1,6 +1,6 @@
 {
   for (  long value : TEST_LONGS) {
-    UnsignedLong unsignedValue=UnsignedLong.asUnsigned(value);
+    UnsignedLong unsignedValue=UnsignedLong.fromLongBits(value);
     assertEquals(unsignedValue.bigIntegerValue().floatValue(),unsignedValue.floatValue());
   }
 }

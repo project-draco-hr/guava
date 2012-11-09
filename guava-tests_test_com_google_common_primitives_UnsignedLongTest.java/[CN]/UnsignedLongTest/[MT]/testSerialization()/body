@@ -1,5 +1,5 @@
 {
   for (  long a : TEST_LONGS) {
-    SerializableTester.reserializeAndAssert(UnsignedLong.asUnsigned(a));
+    SerializableTester.reserializeAndAssert(UnsignedLong.fromLongBits(a));
   }
 }
