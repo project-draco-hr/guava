@@ -1,0 +1,29 @@
+{
+  return new NavigableKeySet<K,V>(this){
+    @Override public boolean removeAll(    Collection<?> c){
+      boolean changed=false;
+      Iterator<Entry<K,V>> entryIterator=sortedMap().entrySet().iterator();
+      while (entryIterator.hasNext()) {
+        Entry<K,V> entry=entryIterator.next();
+        if (c.contains(entry.getKey()) && predicate.apply(entry)) {
+          entryIterator.remove();
+          changed=true;
+        }
+      }
+      return changed;
+    }
+    @Override public boolean retainAll(    Collection<?> c){
+      boolean changed=false;
+      Iterator<Entry<K,V>> entryIterator=sortedMap().entrySet().iterator();
+      while (entryIterator.hasNext()) {
+        Entry<K,V> entry=entryIterator.next();
+        if (!c.contains(entry.getKey()) && predicate.apply(entry)) {
+          entryIterator.remove();
+          changed=true;
+        }
+      }
+      return changed;
+    }
+  }
+;
+}

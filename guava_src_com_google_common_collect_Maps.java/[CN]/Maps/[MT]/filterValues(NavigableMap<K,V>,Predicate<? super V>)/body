@@ -1,0 +1,3 @@
+{
+  return filterEntries(unfiltered,new ValuePredicate<K,V>(valuePredicate));
+}

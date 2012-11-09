@@ -1,0 +1,3 @@
+{
+  return filterEntries(sortedMap().subMap(fromKey,fromInclusive,toKey,toInclusive),predicate);
+}

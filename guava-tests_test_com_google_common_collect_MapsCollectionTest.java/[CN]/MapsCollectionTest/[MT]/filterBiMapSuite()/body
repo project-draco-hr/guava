@@ -1,0 +1,31 @@
+{
+  TestSuite suite=new TestSuite("FilterBiMap");
+  suite.addTest(BiMapTestSuiteBuilder.using(new TestStringBiMapGenerator(){
+    @Override protected BiMap<String,String> create(    Entry<String,String>[] entries){
+      BiMap<String,String> map=HashBiMap.create();
+      putEntries(map,entries);
+      map.putAll(ENTRIES_TO_FILTER);
+      return Maps.filterKeys(map,FILTER_KEYS);
+    }
+  }
+).named("Maps.filterKeys[BiMap, Predicate]").withFeatures(MapFeature.ALLOWS_NULL_KEYS,MapFeature.ALLOWS_NULL_VALUES,MapFeature.GENERAL_PURPOSE,CollectionSize.ANY).suppressing(CollectionIteratorTester.getIteratorUnknownOrderRemoveSupportedMethod(),BiMapRemoveTester.getKeySetIteratorRemoveMethod()).createTestSuite());
+  suite.addTest(BiMapTestSuiteBuilder.using(new TestStringBiMapGenerator(){
+    @Override protected BiMap<String,String> create(    Entry<String,String>[] entries){
+      BiMap<String,String> map=HashBiMap.create();
+      putEntries(map,entries);
+      map.putAll(ENTRIES_TO_FILTER);
+      return Maps.filterValues(map,FILTER_VALUES);
+    }
+  }
+).named("Maps.filterValues[BiMap, Predicate]").withFeatures(MapFeature.ALLOWS_NULL_KEYS,MapFeature.ALLOWS_NULL_VALUES,MapFeature.GENERAL_PURPOSE,CollectionSize.ANY).suppressing(CollectionIteratorTester.getIteratorUnknownOrderRemoveSupportedMethod(),BiMapRemoveTester.getKeySetIteratorRemoveMethod()).createTestSuite());
+  suite.addTest(BiMapTestSuiteBuilder.using(new TestStringBiMapGenerator(){
+    @Override protected BiMap<String,String> create(    Entry<String,String>[] entries){
+      BiMap<String,String> map=HashBiMap.create();
+      putEntries(map,entries);
+      map.putAll(ENTRIES_TO_FILTER);
+      return Maps.filterEntries(map,FILTER_ENTRIES);
+    }
+  }
+).named("Maps.filterEntries[BiMap, Predicate]").withFeatures(MapFeature.ALLOWS_NULL_KEYS,MapFeature.ALLOWS_NULL_VALUES,MapFeature.GENERAL_PURPOSE,CollectionSize.ANY).suppressing(CollectionIteratorTester.getIteratorUnknownOrderRemoveSupportedMethod(),BiMapRemoveTester.getKeySetIteratorRemoveMethod()).createTestSuite());
+  return suite;
+}

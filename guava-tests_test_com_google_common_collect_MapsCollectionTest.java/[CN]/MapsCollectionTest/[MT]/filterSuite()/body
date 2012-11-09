@@ -1,0 +1,8 @@
+{
+  TestSuite suite=new TestSuite("Filter");
+  suite.addTest(filterMapSuite());
+  suite.addTest(filterBiMapSuite());
+  suite.addTest(filterSortedMapSuite());
+  suite.addTest(filterNavigableMapSuite());
+  return suite;
+}

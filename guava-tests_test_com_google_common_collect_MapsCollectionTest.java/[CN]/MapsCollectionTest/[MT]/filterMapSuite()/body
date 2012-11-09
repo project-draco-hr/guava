@@ -1,0 +1,41 @@
+{
+  TestSuite suite=new TestSuite("FilterMap");
+  suite.addTest(MapTestSuiteBuilder.using(new TestStringMapGenerator(){
+    @Override protected Map<String,String> create(    Entry<String,String>[] entries){
+      Map<String,String> map=Maps.newHashMap();
+      putEntries(map,entries);
+      map.putAll(ENTRIES_TO_FILTER);
+      return Maps.filterKeys(map,FILTER_KEYS);
+    }
+  }
+).named("Maps.filterKeys[Map, Predicate]").withFeatures(MapFeature.ALLOWS_NULL_KEYS,MapFeature.ALLOWS_NULL_VALUES,MapFeature.GENERAL_PURPOSE,CollectionSize.ANY).suppressing(CollectionIteratorTester.getIteratorUnknownOrderRemoveSupportedMethod()).createTestSuite());
+  suite.addTest(MapTestSuiteBuilder.using(new TestStringMapGenerator(){
+    @Override protected Map<String,String> create(    Entry<String,String>[] entries){
+      Map<String,String> map=Maps.newHashMap();
+      putEntries(map,entries);
+      map.putAll(ENTRIES_TO_FILTER);
+      return Maps.filterValues(map,FILTER_VALUES);
+    }
+  }
+).named("Maps.filterValues[Map, Predicate]").withFeatures(MapFeature.ALLOWS_NULL_KEYS,MapFeature.ALLOWS_NULL_VALUES,MapFeature.GENERAL_PURPOSE,CollectionSize.ANY).suppressing(CollectionIteratorTester.getIteratorUnknownOrderRemoveSupportedMethod()).createTestSuite());
+  suite.addTest(MapTestSuiteBuilder.using(new TestStringMapGenerator(){
+    @Override protected Map<String,String> create(    Entry<String,String>[] entries){
+      Map<String,String> map=Maps.newHashMap();
+      putEntries(map,entries);
+      map.putAll(ENTRIES_TO_FILTER);
+      return Maps.filterEntries(map,FILTER_ENTRIES);
+    }
+  }
+).named("Maps.filterEntries[Map, Predicate]").withFeatures(MapFeature.ALLOWS_NULL_KEYS,MapFeature.ALLOWS_NULL_VALUES,MapFeature.GENERAL_PURPOSE,CollectionSize.ANY).suppressing(CollectionIteratorTester.getIteratorUnknownOrderRemoveSupportedMethod()).createTestSuite());
+  suite.addTest(MapTestSuiteBuilder.using(new TestStringMapGenerator(){
+    @Override protected Map<String,String> create(    Entry<String,String>[] entries){
+      Map<String,String> map=Maps.newHashMap();
+      putEntries(map,entries);
+      map.putAll(ENTRIES_TO_FILTER);
+      map=Maps.filterEntries(map,FILTER_ENTRIES_1);
+      return Maps.filterEntries(map,FILTER_ENTRIES_2);
+    }
+  }
+).named("Maps.filterEntries[Maps.filterEntries[Map, Predicate], Predicate]").withFeatures(MapFeature.ALLOWS_NULL_KEYS,MapFeature.ALLOWS_NULL_VALUES,MapFeature.GENERAL_PURPOSE,CollectionSize.ANY).suppressing(CollectionIteratorTester.getIteratorUnknownOrderRemoveSupportedMethod()).createTestSuite());
+  return suite;
+}

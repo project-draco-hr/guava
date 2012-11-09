@@ -1,8 +1,0 @@
-{
-  SortedMap<Integer,String> unfiltered=new ContainsKeySafeSortedMap();
-  unfiltered.put(1,"one");
-  unfiltered.put(3,"three");
-  unfiltered.put(4,"four");
-  unfiltered.put(5,"five");
-  return Maps.filterEntries(unfiltered,EVEN_AND_LENGTH_3);
-}

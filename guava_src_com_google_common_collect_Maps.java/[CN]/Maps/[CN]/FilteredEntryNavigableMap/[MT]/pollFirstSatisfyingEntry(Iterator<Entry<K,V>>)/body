@@ -1,0 +1,10 @@
+{
+  while (entryIterator.hasNext()) {
+    Entry<K,V> entry=entryIterator.next();
+    if (predicate.apply(entry)) {
+      entryIterator.remove();
+      return entry;
+    }
+  }
+  return null;
+}

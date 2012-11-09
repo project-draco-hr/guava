@@ -1,0 +1,3 @@
+{
+  return filterEntries(sortedMap().descendingMap(),predicate);
+}

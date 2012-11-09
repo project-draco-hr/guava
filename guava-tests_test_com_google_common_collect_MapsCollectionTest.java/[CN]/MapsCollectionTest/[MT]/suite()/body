@@ -3,9 +3,7 @@
   suite.addTest(NavigableMapTestSuiteBuilder.using(new TestStringSortedMapGenerator(){
     @Override protected SortedMap<String,String> create(    Entry<String,String>[] entries){
       SafeTreeMap<String,String> map=new SafeTreeMap<String,String>();
-      for (      Entry<String,String> entry : entries) {
-        map.put(entry.getKey(),entry.getValue());
-      }
+      putEntries(map,entries);
       return Maps.unmodifiableNavigableMap(map);
     }
   }
@@ -13,9 +11,7 @@
   suite.addTest(NavigableMapTestSuiteBuilder.using(new TestStringSortedMapGenerator(){
     @Override protected SortedMap<String,String> create(    Entry<String,String>[] entries){
       SafeTreeMap<String,String> map=new SafeTreeMap<String,String>();
-      for (      Entry<String,String> entry : entries) {
-        map.put(entry.getKey(),entry.getValue());
-      }
+      putEntries(map,entries);
       return SerializableTester.reserialize(Maps.unmodifiableNavigableMap(map));
     }
   }
@@ -150,5 +146,6 @@
     }
   }
 ).named("Maps.asMap[NavigableSet, Function]").withFeatures(CollectionSize.ANY,MapFeature.SUPPORTS_REMOVE).createTestSuite());
+  suite.addTest(filterSuite());
   return suite;
 }

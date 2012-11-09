@@ -1,0 +1,34 @@
+{
+  TestSuite suite=new TestSuite("FilterNavigableMap");
+  suite.addTest(NavigableMapTestSuiteBuilder.using(new TestStringSortedMapGenerator(){
+    @Override protected NavigableMap<String,String> create(    Entry<String,String>[] entries){
+      NavigableMap<String,String> map=new SafeTreeMap<String,String>();
+      putEntries(map,entries);
+      map.put("banana","toast");
+      map.put("eggplant","spam");
+      return Maps.filterKeys(map,FILTER_KEYS);
+    }
+  }
+).named("Maps.filterKeys[NavigableMap, Predicate]").withFeatures(MapFeature.ALLOWS_NULL_VALUES,MapFeature.GENERAL_PURPOSE,CollectionSize.ANY).suppressing(CollectionIteratorTester.getIteratorKnownOrderRemoveSupportedMethod()).createTestSuite());
+  suite.addTest(NavigableMapTestSuiteBuilder.using(new TestStringSortedMapGenerator(){
+    @Override protected NavigableMap<String,String> create(    Entry<String,String>[] entries){
+      NavigableMap<String,String> map=new SafeTreeMap<String,String>();
+      putEntries(map,entries);
+      map.put("banana","toast");
+      map.put("eggplant","spam");
+      return Maps.filterValues(map,FILTER_VALUES);
+    }
+  }
+).named("Maps.filterValues[NavigableMap, Predicate]").withFeatures(MapFeature.ALLOWS_NULL_VALUES,MapFeature.GENERAL_PURPOSE,CollectionSize.ANY).suppressing(CollectionIteratorTester.getIteratorKnownOrderRemoveSupportedMethod()).createTestSuite());
+  suite.addTest(NavigableMapTestSuiteBuilder.using(new TestStringSortedMapGenerator(){
+    @Override protected NavigableMap<String,String> create(    Entry<String,String>[] entries){
+      NavigableMap<String,String> map=new SafeTreeMap<String,String>();
+      putEntries(map,entries);
+      map.put("banana","toast");
+      map.put("eggplant","spam");
+      return Maps.filterEntries(map,FILTER_ENTRIES);
+    }
+  }
+).named("Maps.filterEntries[NavigableMap, Predicate]").withFeatures(MapFeature.ALLOWS_NULL_VALUES,MapFeature.GENERAL_PURPOSE,CollectionSize.ANY).suppressing(CollectionIteratorTester.getIteratorKnownOrderRemoveSupportedMethod()).createTestSuite());
+  return suite;
+}

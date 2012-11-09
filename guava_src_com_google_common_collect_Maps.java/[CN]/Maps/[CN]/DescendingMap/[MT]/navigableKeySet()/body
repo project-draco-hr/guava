@@ -1,12 +1,4 @@
 {
   NavigableSet<K> result=navigableKeySet;
-  if (result == null) {
-    result=navigableKeySet=new NavigableKeySet<K,V>(){
-      @Override NavigableMap<K,V> map(){
-        return DescendingMap.this;
-      }
-    }
-;
-  }
-  return result;
+  return (result == null) ? navigableKeySet=new NavigableKeySet<K,V>(this) : result;
 }
