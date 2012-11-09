@@ -1,0 +1,3 @@
+{
+  return HashCodes.fromBytes(new byte[]{(byte)(crc ^ FINAL_VAL)});
+}

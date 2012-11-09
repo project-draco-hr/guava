@@ -1,0 +1,7 @@
+{
+  assertCrc8("Google",(byte)1);
+  assertCrc8("GOOGLE",(byte)-90);
+  assertCrc8("My CRC 8!",(byte)-36);
+  assertCrc8("Z",(byte)-44);
+  assertCrc8("",(byte)85);
+}
