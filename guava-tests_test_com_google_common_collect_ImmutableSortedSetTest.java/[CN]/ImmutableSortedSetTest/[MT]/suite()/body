@@ -12,5 +12,6 @@
   suite.addTest(ListTestSuiteBuilder.using(new ImmutableSortedSetAsListGenerator()).named("ImmutableSortedSet.asList").withFeatures(CollectionSize.ANY,CollectionFeature.REJECTS_DUPLICATES_AT_CREATION,CollectionFeature.SERIALIZABLE,CollectionFeature.ALLOWS_NULL_QUERIES).createTestSuite());
   suite.addTest(ListTestSuiteBuilder.using(new ImmutableSortedSetSubsetAsListGenerator()).named("ImmutableSortedSet.subSet.asList").withFeatures(CollectionSize.ANY,CollectionFeature.REJECTS_DUPLICATES_AT_CREATION,CollectionFeature.SERIALIZABLE,CollectionFeature.ALLOWS_NULL_QUERIES).createTestSuite());
   suite.addTest(ListTestSuiteBuilder.using(new ImmutableSortedSetDescendingAsListGenerator()).named("ImmutableSortedSet.descendingSet.asList").withFeatures(CollectionSize.ANY,CollectionFeature.REJECTS_DUPLICATES_AT_CREATION,CollectionFeature.SERIALIZABLE,CollectionFeature.ALLOWS_NULL_QUERIES).createTestSuite());
+  suite.addTestSuite(ImmutableSortedSetTest.class);
   return suite;
 }
