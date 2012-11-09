@@ -1,0 +1,9 @@
+{
+  testStreamingEncodingWithCasing(base32Hex(),"","");
+  testStreamingEncodingWithCasing(base32Hex(),"f","CO======");
+  testStreamingEncodingWithCasing(base32Hex(),"fo","CPNG====");
+  testStreamingEncodingWithCasing(base32Hex(),"foo","CPNMU===");
+  testStreamingEncodingWithCasing(base32Hex(),"foob","CPNMUOG=");
+  testStreamingEncodingWithCasing(base32Hex(),"fooba","CPNMUOJ1");
+  testStreamingEncodingWithCasing(base32Hex(),"foobar","CPNMUOJ1E8======");
+}

@@ -1,0 +1,10 @@
+{
+  BaseEncoding enc=base64().omitPadding();
+  testStreamingEncodingWithSeparators(enc,"","");
+  testStreamingEncodingWithSeparators(enc,"f","Zg");
+  testStreamingEncodingWithSeparators(enc,"fo","Zm8");
+  testStreamingEncodingWithSeparators(enc,"foo","Zm9v");
+  testStreamingEncodingWithSeparators(enc,"foob","Zm9vYg");
+  testStreamingEncodingWithSeparators(enc,"fooba","Zm9vYmE");
+  testStreamingEncodingWithSeparators(enc,"foobar","Zm9vYmFy");
+}

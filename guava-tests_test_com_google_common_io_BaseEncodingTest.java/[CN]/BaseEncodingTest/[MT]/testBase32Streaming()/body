@@ -1,0 +1,9 @@
+{
+  testStreamingEncodingWithCasing(base32(),"","");
+  testStreamingEncodingWithCasing(base32(),"f","MY======");
+  testStreamingEncodingWithCasing(base32(),"fo","MZXQ====");
+  testStreamingEncodingWithCasing(base32(),"foo","MZXW6===");
+  testStreamingEncodingWithCasing(base32(),"foob","MZXW6YQ=");
+  testStreamingEncodingWithCasing(base32(),"fooba","MZXW6YTB");
+  testStreamingEncodingWithCasing(base32(),"foobar","MZXW6YTBOI======");
+}

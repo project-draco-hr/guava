@@ -1,0 +1,5 @@
+{
+  testStreamingEncodingWithSeparators(encoding,decoded,encoded);
+  testStreamingEncodingWithSeparators(encoding.upperCase(),decoded,Ascii.toUpperCase(encoded));
+  testStreamingEncodingWithSeparators(encoding.lowerCase(),decoded,Ascii.toLowerCase(encoded));
+}

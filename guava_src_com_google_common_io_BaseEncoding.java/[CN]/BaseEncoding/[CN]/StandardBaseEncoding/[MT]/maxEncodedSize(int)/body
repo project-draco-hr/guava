@@ -1,0 +1,3 @@
+{
+  return charsPerChunk * divide(bytes,bytesPerChunk,CEILING);
+}

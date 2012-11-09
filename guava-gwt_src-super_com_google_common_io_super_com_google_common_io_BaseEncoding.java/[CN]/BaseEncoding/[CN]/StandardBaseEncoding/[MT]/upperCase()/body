@@ -1,0 +1,11 @@
+{
+  if (ASCII_UPPER_CASE.matchesAnyOf(alphabet) && ASCII_LOWER_CASE.matchesAnyOf(alphabet)) {
+    throw new IllegalStateException("alphabet uses both upper and lower case characters");
+  }
+ else   if (ASCII_NOT_LOWER_CASE.matchesAllOf(alphabet)) {
+    return this;
+  }
+ else {
+    return new StandardBaseEncoding(Ascii.toUpperCase(alphabet),paddingChar);
+  }
+}

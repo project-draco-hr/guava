@@ -1,0 +1,4 @@
+{
+  testStreamingEncodes(encoding,decoded,encoded);
+  testStreamingDecodes(encoding,encoded,decoded);
+}

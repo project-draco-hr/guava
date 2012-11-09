@@ -1,7 +1,7 @@
 {
   try {
     encoding.decode(cannotDecode);
-    fail();
+    fail("Expected IllegalArgumentException");
   }
  catch (  IllegalArgumentException expected) {
   }

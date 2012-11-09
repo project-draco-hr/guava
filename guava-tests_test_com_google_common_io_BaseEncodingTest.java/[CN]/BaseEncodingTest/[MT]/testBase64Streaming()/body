@@ -1,0 +1,9 @@
+{
+  testStreamingEncodingWithSeparators(base64(),"","");
+  testStreamingEncodingWithSeparators(base64(),"f","Zg==");
+  testStreamingEncodingWithSeparators(base64(),"fo","Zm8=");
+  testStreamingEncodingWithSeparators(base64(),"foo","Zm9v");
+  testStreamingEncodingWithSeparators(base64(),"foob","Zm9vYg==");
+  testStreamingEncodingWithSeparators(base64(),"fooba","Zm9vYmE=");
+  testStreamingEncodingWithSeparators(base64(),"foobar","Zm9vYmFy");
+}
