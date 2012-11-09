@@ -1,3 +1,10 @@
 {
-  return constructor.getGenericParameterTypes();
+  Type[] types=constructor.getGenericParameterTypes();
+  Class<?> declaringClass=constructor.getDeclaringClass();
+  if (!Modifier.isStatic(declaringClass.getModifiers()) && declaringClass.getEnclosingClass() != null) {
+    if (types.length == constructor.getParameterTypes().length) {
+      return Arrays.copyOfRange(types,1,types.length);
+    }
+  }
+  return types;
 }

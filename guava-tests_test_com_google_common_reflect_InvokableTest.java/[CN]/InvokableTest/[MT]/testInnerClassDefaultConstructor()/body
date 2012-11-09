@@ -1,0 +1,4 @@
+{
+  Constructor<?> constructor=InnerWithDefaultConstructor.class.getDeclaredConstructors()[0];
+  assertEquals(0,Invokable.from(constructor).getParameters().size());
+}

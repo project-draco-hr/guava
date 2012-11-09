@@ -1,0 +1,9 @@
+{
+  try {
+    new NullPointerTester().testAllPublicConstructors(Inner.class);
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+    ASSERT.that(expected.getMessage()).contains("inner class");
+  }
+}

@@ -1,0 +1,6 @@
+{
+  Constructor<?> constructor=InnerWithOneParameterConstructor.class.getDeclaredConstructors()[0];
+  Invokable<?,?> invokable=Invokable.from(constructor);
+  assertEquals(1,invokable.getParameters().size());
+  assertEquals(TypeToken.of(String.class),invokable.getParameters().get(0).getType());
+}

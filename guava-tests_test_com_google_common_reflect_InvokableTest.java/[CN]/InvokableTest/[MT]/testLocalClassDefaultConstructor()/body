@@ -1,0 +1,11 @@
+{
+  final int i=1;
+  final String s="hello world";
+class LocalWithDefaultConstructor implements Runnable {
+    @Override public void run(){
+      System.out.println(s + i);
+    }
+  }
+  Constructor<?> constructor=LocalWithDefaultConstructor.class.getDeclaredConstructors()[0];
+  assertEquals(0,Invokable.from(constructor).getParameters().size());
+}

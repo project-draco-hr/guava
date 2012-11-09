@@ -1,0 +1,13 @@
+{
+  final int i=1;
+  final String s="hello world";
+class LocalWithOneParameterConstructor {
+    @SuppressWarnings("unused") public LocalWithOneParameterConstructor(    String x){
+      System.out.println(s + i);
+    }
+  }
+  Constructor<?> constructor=LocalWithOneParameterConstructor.class.getDeclaredConstructors()[0];
+  Invokable<?,?> invokable=Invokable.from(constructor);
+  assertEquals(1,invokable.getParameters().size());
+  assertEquals(TypeToken.of(String.class),invokable.getParameters().get(0).getType());
+}

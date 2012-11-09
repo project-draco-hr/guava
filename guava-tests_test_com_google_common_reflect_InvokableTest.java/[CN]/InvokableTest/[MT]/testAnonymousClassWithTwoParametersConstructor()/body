@@ -1,0 +1,11 @@
+{
+abstract class Base {
+    @SuppressWarnings("unused") Base(    String s,    int i){
+    }
+  }
+  Class<?> anonymous=new Base("test",0){
+  }
+.getClass();
+  Constructor<?> constructor=anonymous.getDeclaredConstructors()[0];
+  assertEquals(2,Invokable.from(constructor).getParameters().size());
+}
