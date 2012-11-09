@@ -1,0 +1,6 @@
+{
+  StringReader reader=new StringReader(STRING);
+  sink.writeFrom(reader);
+  assertTrue(sink.wasStreamOpened() && sink.wasStreamClosed());
+  assertEquals(STRING,sink.getString());
+}

@@ -1,0 +1,5 @@
+{
+  outputStreamOpened=true;
+  bytes.reset();
+  return new Out();
+}

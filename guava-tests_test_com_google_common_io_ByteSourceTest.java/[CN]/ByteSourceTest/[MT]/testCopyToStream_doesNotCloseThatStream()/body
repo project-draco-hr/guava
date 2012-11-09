@@ -1,0 +1,6 @@
+{
+  TestOutputStream out=new TestOutputStream(ByteStreams.nullOutputStream());
+  assertFalse(out.closed());
+  source.copyTo(out);
+  assertFalse(out.closed());
+}

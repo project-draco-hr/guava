@@ -1,0 +1,5 @@
+CharSourceFactory factory
+String string
+String suiteName
+String caseDesc
+Method method

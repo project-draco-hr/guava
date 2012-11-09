@@ -1,0 +1,15 @@
+{
+  checkNotNull(factory);
+  return new ByteSourceFactory(){
+    @Override public ByteSource createSource(    byte[] bytes) throws IOException {
+      return factory.createSource(bytes).slice(off,len);
+    }
+    @Override public byte[] getExpected(    byte[] bytes){
+      return Arrays.copyOfRange(factory.getExpected(bytes),off,off + len);
+    }
+    @Override public void tearDown() throws IOException {
+      factory.tearDown();
+    }
+  }
+;
+}

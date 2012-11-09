@@ -1,0 +1,10 @@
+{
+  final ByteArrayOutputStream out=new ByteArrayOutputStream();
+  source.copyTo(new ByteSink(){
+    @Override public OutputStream openStream() throws IOException {
+      return out;
+    }
+  }
+);
+  assertExpectedBytes(out.toByteArray());
+}

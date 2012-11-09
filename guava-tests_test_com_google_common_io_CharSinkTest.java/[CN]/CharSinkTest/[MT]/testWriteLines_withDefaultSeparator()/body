@@ -1,0 +1,5 @@
+{
+  sink.writeLines(ImmutableList.of("foo","bar","baz"));
+  String separator=System.getProperty("line.separator");
+  assertEquals("foo" + separator + "bar"+ separator+ "baz"+ separator,sink.getString());
+}

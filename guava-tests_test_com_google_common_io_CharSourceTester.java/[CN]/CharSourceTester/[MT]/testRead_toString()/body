@@ -1,0 +1,4 @@
+{
+  String string=source.read();
+  assertExpectedString(string);
+}

@@ -1,0 +1,6 @@
+{
+  TestSuite suite=new TestSuite();
+  suite.addTest(ByteSourceTester.tests("ByteStreams.asByteSource[byte[]]",SourceSinkFactories.byteArraySourceFactory(),true));
+  suite.addTestSuite(ByteStreamsTest.class);
+  return suite;
+}

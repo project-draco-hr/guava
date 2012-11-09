@@ -1,0 +1,6 @@
+{
+  TestSuite suite=suiteForBytes(factory,string.getBytes(Charsets.UTF_8),name,desc,true);
+  CharSourceFactory charSourceFactory=SourceSinkFactories.asCharSourceFactory(factory);
+  suite.addTest(CharSourceTester.suiteForString(charSourceFactory,string,name + ".asCharSource[Charset]",desc));
+  return suite;
+}

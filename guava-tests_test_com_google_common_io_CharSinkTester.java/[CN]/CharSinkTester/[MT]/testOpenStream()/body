@@ -1,0 +1,10 @@
+{
+  Writer writer=sink.openStream();
+  try {
+    writer.write(data);
+  }
+  finally {
+    writer.close();
+  }
+  assertContainsExpectedString();
+}

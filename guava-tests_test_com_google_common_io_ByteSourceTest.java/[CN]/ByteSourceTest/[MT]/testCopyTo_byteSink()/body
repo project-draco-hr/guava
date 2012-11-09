@@ -1,0 +1,8 @@
+{
+  TestByteSink sink=new TestByteSink();
+  assertFalse(sink.wasStreamOpened() || sink.wasStreamClosed());
+  assertEquals(bytes.length,source.copyTo(sink));
+  assertTrue(source.wasStreamOpened() && source.wasStreamClosed());
+  assertTrue(sink.wasStreamOpened() && sink.wasStreamClosed());
+  assertArrayEquals(bytes,sink.getBytes());
+}

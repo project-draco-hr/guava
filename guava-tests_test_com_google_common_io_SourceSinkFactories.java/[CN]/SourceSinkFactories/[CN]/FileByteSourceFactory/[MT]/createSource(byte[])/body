@@ -1,0 +1,12 @@
+{
+  checkNotNull(bytes);
+  File file=createFile();
+  OutputStream out=new FileOutputStream(file);
+  try {
+    out.write(bytes);
+  }
+  finally {
+    out.close();
+  }
+  return Files.asByteSource(file);
+}

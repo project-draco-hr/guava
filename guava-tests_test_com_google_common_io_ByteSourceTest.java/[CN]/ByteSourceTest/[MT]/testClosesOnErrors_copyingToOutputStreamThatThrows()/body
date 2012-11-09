@@ -1,0 +1,11 @@
+{
+  TestByteSource okSource=new TestByteSource(bytes);
+  try {
+    OutputStream out=new TestOutputStream(ByteStreams.nullOutputStream(),WRITE_THROWS);
+    okSource.copyTo(out);
+    fail();
+  }
+ catch (  IOException expected) {
+  }
+  assertTrue(okSource.wasStreamClosed());
+}

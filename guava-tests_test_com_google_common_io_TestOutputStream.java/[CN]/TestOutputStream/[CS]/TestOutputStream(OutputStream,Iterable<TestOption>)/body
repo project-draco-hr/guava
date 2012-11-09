@@ -1,0 +1,5 @@
+{
+  super(checkNotNull(out));
+  this.options=ImmutableSet.copyOf(options);
+  throwIf(OPEN_THROWS);
+}

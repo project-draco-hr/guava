@@ -1,0 +1,12 @@
+{
+  for (  TestOption option : EnumSet.of(OPEN_THROWS,WRITE_THROWS,CLOSE_THROWS)) {
+    TestByteSource okSource=new TestByteSource(bytes);
+    try {
+      okSource.copyTo(new TestByteSink(option));
+      fail();
+    }
+ catch (    IOException expected) {
+    }
+    assertTrue("stream not closed when copying to sink with option: " + option,!okSource.wasStreamOpened() || okSource.wasStreamClosed());
+  }
+}

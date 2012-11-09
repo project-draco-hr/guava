@@ -1,0 +1,4 @@
+{
+  assertArrayEquals(bytes,source.read());
+  assertTrue(source.wasStreamOpened() && source.wasStreamClosed());
+}

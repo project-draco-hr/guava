@@ -1,0 +1,3 @@
+{
+  source=factory.createSource(data);
+}

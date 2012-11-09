@@ -1,0 +1,9 @@
+{
+  BufferedWriter writer=sink.openBufferedStream();
+  assertTrue(sink.wasStreamOpened());
+  assertFalse(sink.wasStreamClosed());
+  writer.write(STRING);
+  writer.close();
+  assertTrue(sink.wasStreamClosed());
+  assertEquals(STRING,sink.getString());
+}

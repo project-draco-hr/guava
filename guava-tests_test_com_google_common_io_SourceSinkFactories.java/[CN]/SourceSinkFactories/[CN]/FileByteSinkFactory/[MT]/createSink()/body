@@ -1,0 +1,14 @@
+{
+  File file=createFile();
+  if (initialBytes != null) {
+    FileOutputStream out=new FileOutputStream(file);
+    try {
+      out.write(initialBytes);
+    }
+  finally {
+      out.close();
+    }
+    return Files.asByteSink(file,FileWriteMode.APPEND);
+  }
+  return Files.asByteSink(file);
+}

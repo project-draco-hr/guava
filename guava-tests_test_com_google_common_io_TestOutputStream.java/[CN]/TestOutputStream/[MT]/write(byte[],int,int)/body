@@ -1,0 +1,5 @@
+{
+  throwIf(closed);
+  throwIf(WRITE_THROWS);
+  super.write(b,off,len);
+}

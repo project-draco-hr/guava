@@ -1,0 +1,13 @@
+{
+  assertTrue(source.contentEquals(source));
+  assertTrue(source.wasStreamOpened() && source.wasStreamClosed());
+  ByteSource equalSource=new TestByteSource(bytes);
+  assertTrue(source.contentEquals(equalSource));
+  assertTrue(new TestByteSource(bytes).contentEquals(source));
+  ByteSource fewerBytes=new TestByteSource(newPreFilledByteArray(bytes.length / 2));
+  assertFalse(source.contentEquals(fewerBytes));
+  byte[] copy=bytes.clone();
+  copy[9876]=1;
+  ByteSource oneByteOff=new TestByteSource(copy);
+  assertFalse(source.contentEquals(oneByteOff));
+}

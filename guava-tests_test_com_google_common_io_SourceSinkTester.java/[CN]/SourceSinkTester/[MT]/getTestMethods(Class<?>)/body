@@ -1,0 +1,9 @@
+{
+  List<Method> result=Lists.newArrayList();
+  for (  Method method : testClass.getDeclaredMethods()) {
+    if (Modifier.isPublic(method.getModifiers()) && method.getReturnType() == void.class && method.getParameterTypes().length == 0 && method.getName().startsWith("test")) {
+      result.add(method);
+    }
+  }
+  return ImmutableList.copyOf(result);
+}

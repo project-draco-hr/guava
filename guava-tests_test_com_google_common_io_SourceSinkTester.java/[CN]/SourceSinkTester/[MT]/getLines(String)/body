@@ -1,0 +1,13 @@
+{
+  try {
+    return new CharSource(){
+      @Override public Reader openStream() throws IOException {
+        return new StringReader(string);
+      }
+    }
+.readLines();
+  }
+ catch (  IOException e) {
+    throw new AssertionError();
+  }
+}

@@ -1,0 +1,4 @@
+String name
+ByteSinkFactory factory
+String string
+String desc

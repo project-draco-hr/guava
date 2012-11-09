@@ -1,0 +1,8 @@
+{
+  TestCharSink sink=new TestCharSink();
+  assertFalse(sink.wasStreamOpened() || sink.wasStreamClosed());
+  assertEquals(STRING.length(),source.copyTo(sink));
+  assertTrue(source.wasStreamOpened() && source.wasStreamClosed());
+  assertTrue(sink.wasStreamOpened() && sink.wasStreamClosed());
+  assertEquals(STRING,sink.getString());
+}

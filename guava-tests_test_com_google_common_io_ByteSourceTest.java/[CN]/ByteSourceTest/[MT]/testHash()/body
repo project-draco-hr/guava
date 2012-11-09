@@ -1,0 +1,4 @@
+{
+  ByteSource byteSource=new TestByteSource("hamburger\n".getBytes(Charsets.US_ASCII));
+  assertEquals("cfa0c5002275c90508338a5cdb2a9781",byteSource.hash(Hashing.md5()).toString());
+}

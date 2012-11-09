@@ -1,0 +1,6 @@
+{
+  ByteArrayInputStream in=new ByteArrayInputStream(bytes);
+  sink.writeFrom(in);
+  assertTrue(sink.wasStreamOpened() && sink.wasStreamClosed());
+  assertArrayEquals(bytes,sink.getBytes());
+}

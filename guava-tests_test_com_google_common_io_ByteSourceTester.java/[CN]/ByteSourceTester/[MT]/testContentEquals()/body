@@ -1,0 +1,8 @@
+{
+  assertTrue(source.contentEquals(new ByteSource(){
+    @Override public InputStream openStream() throws IOException {
+      return new RandomAmountInputStream(new ByteArrayInputStream(expected),new Random());
+    }
+  }
+));
+}

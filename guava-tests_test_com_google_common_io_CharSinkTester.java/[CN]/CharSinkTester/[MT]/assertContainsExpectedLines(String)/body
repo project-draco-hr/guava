@@ -1,0 +1,7 @@
+{
+  String expected=expectedLines.isEmpty() ? "" : Joiner.on(separator).join(expectedLines);
+  if (!lines.isEmpty()) {
+    expected+=separator;
+  }
+  assertEquals(expected,factory.getSinkContents());
+}

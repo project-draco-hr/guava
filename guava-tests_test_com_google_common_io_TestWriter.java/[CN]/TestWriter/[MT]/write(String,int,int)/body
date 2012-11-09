@@ -1,0 +1,4 @@
+{
+  super.write(str,off,len);
+  flush();
+}

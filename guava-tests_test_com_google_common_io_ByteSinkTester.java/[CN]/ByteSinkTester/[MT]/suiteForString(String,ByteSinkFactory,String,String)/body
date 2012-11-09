@@ -1,0 +1,7 @@
+{
+  byte[] bytes=string.getBytes(Charsets.UTF_8);
+  TestSuite suite=suiteForBytes(name,factory,desc,bytes);
+  CharSinkFactory charSinkFactory=SourceSinkFactories.asCharSinkFactory(factory);
+  suite.addTest(CharSinkTester.suiteForString(name + ".asCharSink[Charset]",charSinkFactory,string,desc));
+  return suite;
+}

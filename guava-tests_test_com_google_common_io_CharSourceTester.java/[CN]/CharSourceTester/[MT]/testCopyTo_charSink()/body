@@ -1,0 +1,5 @@
+{
+  TestCharSink sink=new TestCharSink();
+  assertEquals(expected.length(),source.copyTo(sink));
+  assertExpectedString(sink.getString());
+}

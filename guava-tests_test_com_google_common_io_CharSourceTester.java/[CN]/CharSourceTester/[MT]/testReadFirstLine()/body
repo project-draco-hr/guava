@@ -1,0 +1,8 @@
+{
+  if (expectedLines.isEmpty()) {
+    assertNull(source.readFirstLine());
+  }
+ else {
+    assertEquals(expectedLines.get(0),source.readFirstLine());
+  }
+}

@@ -1,0 +1,9 @@
+{
+  TestSuite suite=new TestSuite(name);
+  for (  Map.Entry<String,String> entry : TEST_STRINGS.entrySet()) {
+    String desc=entry.getKey();
+    TestSuite stringSuite=suiteForString(name,factory,entry.getValue(),desc);
+    suite.addTest(stringSuite);
+  }
+  return suite;
+}

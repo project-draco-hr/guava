@@ -1,0 +1,10 @@
+{
+  TestCharSource okSource=new TestCharSource(STRING);
+  try {
+    okSource.copyTo(new TestWriter(WRITE_THROWS));
+    fail();
+  }
+ catch (  IOException expected) {
+  }
+  assertTrue(okSource.wasStreamClosed());
+}

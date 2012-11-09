@@ -1,0 +1,5 @@
+{
+  throwIf(closed);
+  throwIf(READ_THROWS);
+  return in.read(b,off,len);
+}

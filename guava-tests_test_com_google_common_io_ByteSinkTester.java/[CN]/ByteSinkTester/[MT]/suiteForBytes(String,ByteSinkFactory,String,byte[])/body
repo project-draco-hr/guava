@@ -1,0 +1,7 @@
+{
+  TestSuite suite=new TestSuite(name + " [" + desc+ "]");
+  for (  final Method method : testMethods) {
+    suite.addTest(new ByteSinkTester(factory,bytes,name,desc,method));
+  }
+  return suite;
+}

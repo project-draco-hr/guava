@@ -1,0 +1,17 @@
+{
+  checkNotNull(lines);
+  checkNotNull(lineSeparator);
+  Closer closer=Closer.create();
+  try {
+    BufferedWriter out=closer.add(openBufferedStream());
+    for (    CharSequence line : lines) {
+      out.append(line).append(lineSeparator);
+    }
+  }
+ catch (  Throwable e) {
+    throw closer.rethrow(e,IOException.class);
+  }
+ finally {
+    closer.close();
+  }
+}

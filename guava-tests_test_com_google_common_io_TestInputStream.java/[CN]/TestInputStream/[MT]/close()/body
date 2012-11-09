@@ -1,0 +1,5 @@
+{
+  closed=true;
+  throwIf(CLOSE_THROWS);
+  in.close();
+}

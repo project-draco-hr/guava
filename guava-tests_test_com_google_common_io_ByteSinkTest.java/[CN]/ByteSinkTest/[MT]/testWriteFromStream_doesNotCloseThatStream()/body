@@ -1,0 +1,6 @@
+{
+  TestInputStream in=new TestInputStream(new ByteArrayInputStream(new byte[10]));
+  assertFalse(in.closed());
+  sink.writeFrom(in);
+  assertFalse(in.closed());
+}

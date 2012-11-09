@@ -1,0 +1,3 @@
+{
+  this(new TestOutputStream(ByteStreams.nullOutputStream(),options));
+}

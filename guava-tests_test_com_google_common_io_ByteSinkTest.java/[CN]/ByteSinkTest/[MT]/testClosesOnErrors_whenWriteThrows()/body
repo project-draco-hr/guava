@@ -1,0 +1,10 @@
+{
+  TestByteSink failSink=new TestByteSink(WRITE_THROWS);
+  try {
+    new TestByteSource(new byte[10]).copyTo(failSink);
+    fail();
+  }
+ catch (  IOException expected) {
+  }
+  assertTrue(failSink.wasStreamClosed());
+}

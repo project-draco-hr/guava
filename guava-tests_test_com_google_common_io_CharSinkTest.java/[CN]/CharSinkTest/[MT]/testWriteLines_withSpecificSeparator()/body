@@ -1,0 +1,4 @@
+{
+  sink.writeLines(ImmutableList.of("foo","bar","baz"),"\n");
+  assertEquals("foo\nbar\nbaz\n",sink.getString());
+}

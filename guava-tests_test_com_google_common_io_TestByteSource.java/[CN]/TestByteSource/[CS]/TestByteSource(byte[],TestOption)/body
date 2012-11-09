@@ -1,0 +1,4 @@
+{
+  this.bytes=checkNotNull(bytes);
+  this.options=ImmutableSet.copyOf(options);
+}

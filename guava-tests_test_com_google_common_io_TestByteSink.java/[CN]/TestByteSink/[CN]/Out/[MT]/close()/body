@@ -1,0 +1,4 @@
+{
+  outputStreamClosed=true;
+  super.close();
+}

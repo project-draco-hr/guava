@@ -1,0 +1,7 @@
+{
+  checkArgument(expectRead == (int)Math.max(0,Math.min(input,offset + length) - offset));
+  byte[] expected=newPreFilledByteArray(offset,expectRead);
+  ByteSource source=new TestByteSource(newPreFilledByteArray(input));
+  ByteSource slice=source.slice(offset,length);
+  assertArrayEquals(expected,slice.read());
+}

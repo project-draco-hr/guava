@@ -1,0 +1,12 @@
+{
+  File file=getFile();
+  Reader reader=new InputStreamReader(new FileInputStream(file),Charsets.UTF_8);
+  StringBuilder builder=new StringBuilder();
+  CharBuffer buffer=CharBuffer.allocate(100);
+  while (reader.read(buffer) != -1) {
+    buffer.flip();
+    builder.append(buffer);
+    buffer.clear();
+  }
+  return builder.toString();
+}

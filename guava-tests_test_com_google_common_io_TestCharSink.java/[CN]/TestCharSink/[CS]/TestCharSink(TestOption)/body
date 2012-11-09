@@ -1,0 +1,3 @@
+{
+  this.byteSink=new TestByteSink(options);
+}

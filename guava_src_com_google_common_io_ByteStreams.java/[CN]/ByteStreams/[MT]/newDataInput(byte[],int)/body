@@ -1,4 +1,4 @@
 {
-  Preconditions.checkPositionIndex(start,bytes.length);
+  checkPositionIndex(start,bytes.length);
   return new ByteArrayDataInputStream(bytes,start);
 }

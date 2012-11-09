@@ -1,0 +1,10 @@
+{
+  TestCharSink okSink=new TestCharSink();
+  try {
+    okSink.writeFrom(new TestReader(READ_THROWS));
+    fail();
+  }
+ catch (  IOException expected) {
+  }
+  assertTrue(okSink.wasStreamClosed());
+}

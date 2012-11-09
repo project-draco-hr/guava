@@ -1,0 +1,6 @@
+{
+  if (!fileThreadLocal.get().delete()) {
+    logger.warning("Unable to delete file: " + fileThreadLocal.get());
+  }
+  fileThreadLocal.remove();
+}

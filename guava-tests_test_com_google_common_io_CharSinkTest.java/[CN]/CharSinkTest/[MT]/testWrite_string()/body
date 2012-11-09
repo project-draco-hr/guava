@@ -1,0 +1,6 @@
+{
+  assertEquals("",sink.getString());
+  sink.write(STRING);
+  assertTrue(sink.wasStreamOpened() && sink.wasStreamClosed());
+  assertEquals(STRING,sink.getString());
+}

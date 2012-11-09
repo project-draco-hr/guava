@@ -1,0 +1,5 @@
+{
+  closed=true;
+  super.close();
+  throwIf(CLOSE_THROWS);
+}

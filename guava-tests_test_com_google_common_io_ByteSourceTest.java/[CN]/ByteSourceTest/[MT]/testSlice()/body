@@ -1,0 +1,28 @@
+{
+  try {
+    source.slice(-1,10);
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+  try {
+    source.slice(0,-1);
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+  assertCorrectSlice(0,0,0,0);
+  assertCorrectSlice(0,0,1,0);
+  assertCorrectSlice(100,0,10,10);
+  assertCorrectSlice(100,0,100,100);
+  assertCorrectSlice(100,5,10,10);
+  assertCorrectSlice(100,5,100,95);
+  assertCorrectSlice(100,100,0,0);
+  assertCorrectSlice(100,100,10,0);
+  try {
+    assertCorrectSlice(100,101,10,0);
+    fail();
+  }
+ catch (  EOFException expected) {
+  }
+}

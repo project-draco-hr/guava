@@ -1,0 +1,3 @@
+{
+  return new InputStreamReader(byteSource.openStream(),UTF_8);
+}

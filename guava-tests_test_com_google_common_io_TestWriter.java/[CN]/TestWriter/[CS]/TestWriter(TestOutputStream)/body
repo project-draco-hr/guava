@@ -1,0 +1,4 @@
+{
+  super(new OutputStreamWriter(checkNotNull(out),UTF_8));
+  this.out=out;
+}

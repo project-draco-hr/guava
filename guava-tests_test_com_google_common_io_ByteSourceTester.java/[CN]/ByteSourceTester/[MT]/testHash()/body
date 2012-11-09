@@ -1,0 +1,4 @@
+{
+  HashCode expectedHash=Hashing.md5().hashBytes(expected);
+  assertEquals(expectedHash,source.hash(Hashing.md5()));
+}

@@ -1,0 +1,7 @@
+{
+  TestSuite suite=new TestSuite(name + " [" + desc+ "]");
+  for (  Method method : testMethods) {
+    suite.addTest(new CharSourceTester(factory,string,name,desc,method));
+  }
+  return suite;
+}

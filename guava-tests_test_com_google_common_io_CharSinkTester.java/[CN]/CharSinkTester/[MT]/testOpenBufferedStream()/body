@@ -1,0 +1,10 @@
+{
+  BufferedWriter writer=sink.openBufferedStream();
+  try {
+    writer.write(data);
+  }
+  finally {
+    writer.close();
+  }
+  assertContainsExpectedString();
+}

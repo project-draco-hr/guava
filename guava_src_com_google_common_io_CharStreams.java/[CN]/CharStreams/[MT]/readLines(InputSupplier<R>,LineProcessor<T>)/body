@@ -2,14 +2,7 @@
   Closer closer=Closer.create();
   try {
     R r=closer.add(supplier.getInput());
-    LineReader lineReader=new LineReader(r);
-    String line;
-    while ((line=lineReader.readLine()) != null) {
-      if (!callback.processLine(line)) {
-        break;
-      }
-    }
-    return callback.getResult();
+    return readLines(r,callback);
   }
  catch (  Throwable e) {
     throw closer.rethrow(e,IOException.class);

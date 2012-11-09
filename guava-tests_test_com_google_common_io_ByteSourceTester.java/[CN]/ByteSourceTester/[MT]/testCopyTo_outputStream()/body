@@ -1,0 +1,5 @@
+{
+  ByteArrayOutputStream out=new ByteArrayOutputStream();
+  source.copyTo(out);
+  assertExpectedBytes(out.toByteArray());
+}

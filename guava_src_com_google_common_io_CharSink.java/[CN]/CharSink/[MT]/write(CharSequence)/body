@@ -1,0 +1,14 @@
+{
+  checkNotNull(charSequence);
+  Closer closer=Closer.create();
+  try {
+    Writer out=closer.add(openStream());
+    out.append(charSequence);
+  }
+ catch (  Throwable e) {
+    throw closer.rethrow(e,IOException.class);
+  }
+ finally {
+    closer.close();
+  }
+}

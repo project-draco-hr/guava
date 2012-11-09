@@ -1,0 +1,4 @@
+{
+  inputStreamOpened=true;
+  return new RandomAmountInputStream(new In(),new Random());
+}

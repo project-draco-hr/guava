@@ -1,0 +1,5 @@
+{
+  String separator="\r\n";
+  sink.writeLines(lines,separator);
+  assertContainsExpectedLines(separator);
+}

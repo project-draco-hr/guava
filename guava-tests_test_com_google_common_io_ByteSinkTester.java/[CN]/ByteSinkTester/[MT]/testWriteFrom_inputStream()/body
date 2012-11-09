@@ -1,0 +1,4 @@
+{
+  sink.writeFrom(new ByteArrayInputStream(data));
+  assertContainsExpectedBytes();
+}

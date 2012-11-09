@@ -1,0 +1,5 @@
+{
+  StringBuilder builder=new StringBuilder();
+  assertEquals(expected.length(),source.copyTo(builder));
+  assertExpectedString(builder.toString());
+}

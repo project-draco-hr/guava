@@ -1,0 +1,12 @@
+{
+  BufferedReader reader=source.openBufferedStream();
+  StringWriter writer=new StringWriter();
+  char[] buf=new char[64];
+  int read;
+  while ((read=reader.read(buf)) != -1) {
+    writer.write(buf,0,read);
+  }
+  reader.close();
+  writer.close();
+  assertExpectedString(writer.toString());
+}

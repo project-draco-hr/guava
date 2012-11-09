@@ -1,0 +1,10 @@
+{
+  OutputStream out=sink.openStream();
+  try {
+    ByteStreams.copy(new ByteArrayInputStream(data),out);
+  }
+  finally {
+    out.close();
+  }
+  assertContainsExpectedBytes();
+}

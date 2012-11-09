@@ -1,0 +1,5 @@
+{
+  throwIf(closed);
+  throwIf(SKIP_THROWS);
+  return in.skip(n);
+}

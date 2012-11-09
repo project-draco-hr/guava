@@ -1,0 +1,19 @@
+{
+  InputStream in=ByteSource.this.openStream();
+  if (offset > 0) {
+    try {
+      ByteStreams.skipFully(in,offset);
+    }
+ catch (    Throwable e) {
+      Closer closer=Closer.create();
+      closer.add(in);
+      try {
+        throw closer.rethrow(e,IOException.class);
+      }
+  finally {
+        closer.close();
+      }
+    }
+  }
+  return ByteStreams.limit(in,length);
+}

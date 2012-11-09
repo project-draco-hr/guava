@@ -1,0 +1,14 @@
+{
+  checkNotNull(bytes);
+  Closer closer=Closer.create();
+  try {
+    OutputStream out=closer.add(openStream());
+    out.write(bytes);
+  }
+ catch (  Throwable e) {
+    throw closer.rethrow(e,IOException.class);
+  }
+ finally {
+    closer.close();
+  }
+}

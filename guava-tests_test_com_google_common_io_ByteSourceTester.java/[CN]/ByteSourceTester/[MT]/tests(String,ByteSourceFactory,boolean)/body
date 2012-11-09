@@ -1,0 +1,12 @@
+{
+  TestSuite suite=new TestSuite(name);
+  for (  Map.Entry<String,String> entry : TEST_STRINGS.entrySet()) {
+    if (testAsCharSource) {
+      suite.addTest(suiteForString(factory,entry.getValue(),name,entry.getKey()));
+    }
+ else {
+      suite.addTest(suiteForBytes(factory,entry.getValue().getBytes(Charsets.UTF_8),name,entry.getKey(),true));
+    }
+  }
+  return suite;
+}

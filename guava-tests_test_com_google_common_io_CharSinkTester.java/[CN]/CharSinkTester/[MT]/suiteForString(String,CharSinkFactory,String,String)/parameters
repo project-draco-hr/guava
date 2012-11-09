@@ -1,0 +1,4 @@
+String name
+CharSinkFactory factory
+String string
+String desc

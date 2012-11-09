@@ -1,0 +1,6 @@
+{
+  TestWriter writer=new TestWriter();
+  assertFalse(writer.closed());
+  source.copyTo(writer);
+  assertFalse(writer.closed());
+}

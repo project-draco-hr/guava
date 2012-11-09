@@ -1,0 +1,5 @@
+{
+  TestCharSource lines=new TestCharSource(LINES);
+  assertEquals("foo",lines.readFirstLine());
+  assertTrue(lines.wasStreamOpened() && lines.wasStreamClosed());
+}

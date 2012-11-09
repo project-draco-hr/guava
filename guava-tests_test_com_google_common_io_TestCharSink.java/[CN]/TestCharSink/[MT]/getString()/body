@@ -1,0 +1,3 @@
+{
+  return new String(byteSink.getBytes(),UTF_8);
+}

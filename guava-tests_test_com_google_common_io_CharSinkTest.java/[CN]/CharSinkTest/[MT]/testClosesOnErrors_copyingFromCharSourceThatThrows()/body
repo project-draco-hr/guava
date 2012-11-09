@@ -1,0 +1,13 @@
+{
+  for (  TestOption option : EnumSet.of(OPEN_THROWS,READ_THROWS,CLOSE_THROWS)) {
+    TestCharSource failSource=new TestCharSource(STRING,option);
+    TestCharSink okSink=new TestCharSink();
+    try {
+      failSource.copyTo(okSink);
+      fail();
+    }
+ catch (    IOException expected) {
+    }
+    assertTrue("stream not closed when copying from source with option: " + option,!okSink.wasStreamOpened() || okSink.wasStreamClosed());
+  }
+}

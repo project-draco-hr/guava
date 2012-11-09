@@ -1,0 +1,4 @@
+CharSourceFactory factory
+String string
+String name
+String desc

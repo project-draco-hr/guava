@@ -1,0 +1,1 @@
+SourceSinkTester<CharSource,String,CharSourceFactory>

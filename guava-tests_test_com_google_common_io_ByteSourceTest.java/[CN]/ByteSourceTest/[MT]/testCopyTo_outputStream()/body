@@ -1,0 +1,6 @@
+{
+  ByteArrayOutputStream out=new ByteArrayOutputStream();
+  assertEquals(bytes.length,source.copyTo(out));
+  assertTrue(source.wasStreamOpened() && source.wasStreamClosed());
+  assertArrayEquals(bytes,out.toByteArray());
+}

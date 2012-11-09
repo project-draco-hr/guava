@@ -2,4 +2,5 @@
   setDefault(BaseEncoding.class,BaseEncoding.base64());
   setDefault(int.class,32);
   setDefault(String.class,"abcd");
+  setDefault(Method.class,AbstractPackageSanityTests.class.getDeclaredMethods()[0]);
 }

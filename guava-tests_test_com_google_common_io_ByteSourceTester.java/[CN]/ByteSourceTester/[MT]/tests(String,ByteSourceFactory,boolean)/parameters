@@ -1,0 +1,3 @@
+String name
+ByteSourceFactory factory
+boolean testAsCharSource

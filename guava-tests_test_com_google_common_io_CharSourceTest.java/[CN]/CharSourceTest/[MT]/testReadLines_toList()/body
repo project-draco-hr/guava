@@ -1,0 +1,5 @@
+{
+  TestCharSource lines=new TestCharSource(LINES);
+  assertEquals(ImmutableList.of("foo","bar","baz","something"),lines.readLines());
+  assertTrue(lines.wasStreamOpened() && lines.wasStreamClosed());
+}

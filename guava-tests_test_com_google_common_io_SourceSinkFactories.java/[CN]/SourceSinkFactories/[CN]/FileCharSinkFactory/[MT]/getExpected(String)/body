@@ -1,0 +1,4 @@
+{
+  checkNotNull(string);
+  return initialString == null ? string : initialString + string;
+}

@@ -1,0 +1,6 @@
+{
+  TestReader in=new TestReader();
+  assertFalse(in.closed());
+  sink.writeFrom(in);
+  assertFalse(in.closed());
+}

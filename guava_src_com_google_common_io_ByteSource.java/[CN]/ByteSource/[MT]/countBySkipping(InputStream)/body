@@ -1,0 +1,15 @@
+{
+  long count=0;
+  while (true) {
+    long skipped=in.skip(Math.min(in.available(),Integer.MAX_VALUE));
+    if (skipped <= 0) {
+      if (in.read() == -1) {
+        return count;
+      }
+      count++;
+    }
+ else {
+      count+=skipped;
+    }
+  }
+}

@@ -1,0 +1,4 @@
+{
+  super.createSource(bytes);
+  return Resources.asByteSource(getFile().toURI().toURL());
+}

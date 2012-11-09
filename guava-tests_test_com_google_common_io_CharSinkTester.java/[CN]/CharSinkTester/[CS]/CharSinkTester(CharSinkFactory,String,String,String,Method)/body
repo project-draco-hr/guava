@@ -1,0 +1,5 @@
+{
+  super(factory,string,suiteName,caseDesc,method);
+  this.lines=getLines(string);
+  this.expectedLines=getLines(expected);
+}

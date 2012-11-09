@@ -1,0 +1,4 @@
+{
+  String initialString=IoTestCase.ASCII + IoTestCase.I18N;
+  return new FileByteSinkFactory(initialString.getBytes(Charsets.UTF_8));
+}

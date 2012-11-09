@@ -1,0 +1,6 @@
+{
+  StringBuilder builder=new StringBuilder();
+  assertEquals(STRING.length(),source.copyTo(builder));
+  assertTrue(source.wasStreamOpened() && source.wasStreamClosed());
+  assertEquals(STRING,builder.toString());
+}

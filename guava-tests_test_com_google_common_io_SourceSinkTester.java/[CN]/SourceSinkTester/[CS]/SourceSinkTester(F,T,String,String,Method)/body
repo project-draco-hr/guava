@@ -1,0 +1,8 @@
+{
+  super(method.getName());
+  this.factory=checkNotNull(factory);
+  this.data=checkNotNull(data);
+  this.expected=checkNotNull(factory.getExpected(data));
+  this.suiteName=checkNotNull(suiteName);
+  this.caseDesc=checkNotNull(caseDesc);
+}

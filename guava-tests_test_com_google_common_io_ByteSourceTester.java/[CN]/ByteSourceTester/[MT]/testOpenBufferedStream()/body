@@ -1,0 +1,10 @@
+{
+  BufferedInputStream in=source.openBufferedStream();
+  try {
+    byte[] readBytes=ByteStreams.toByteArray(in);
+    assertExpectedBytes(readBytes);
+  }
+  finally {
+    in.close();
+  }
+}

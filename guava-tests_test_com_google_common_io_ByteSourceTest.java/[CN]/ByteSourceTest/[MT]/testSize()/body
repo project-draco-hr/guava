@@ -1,0 +1,5 @@
+{
+  assertEquals(bytes.length,source.size());
+  assertTrue(source.wasStreamOpened() && source.wasStreamClosed());
+  assertEquals(bytes.length,new TestByteSource(bytes,SKIP_THROWS).size());
+}

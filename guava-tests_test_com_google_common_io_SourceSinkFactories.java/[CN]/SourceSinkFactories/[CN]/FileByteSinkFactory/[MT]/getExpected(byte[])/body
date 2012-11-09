@@ -1,0 +1,11 @@
+{
+  if (initialBytes == null) {
+    return checkNotNull(bytes);
+  }
+ else {
+    byte[] result=new byte[initialBytes.length + bytes.length];
+    System.arraycopy(initialBytes,0,result,0,initialBytes.length);
+    System.arraycopy(bytes,0,result,initialBytes.length,bytes.length);
+    return result;
+  }
+}

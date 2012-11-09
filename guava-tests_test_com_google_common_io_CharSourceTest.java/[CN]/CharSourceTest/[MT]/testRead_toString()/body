@@ -1,0 +1,4 @@
+{
+  assertEquals(STRING,source.read());
+  assertTrue(source.wasStreamOpened() && source.wasStreamClosed());
+}

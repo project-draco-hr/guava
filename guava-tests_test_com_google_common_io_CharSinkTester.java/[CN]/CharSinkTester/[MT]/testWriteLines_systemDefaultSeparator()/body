@@ -1,0 +1,5 @@
+{
+  String separator=System.getProperty("line.separator");
+  sink.writeLines(lines);
+  assertContainsExpectedLines(separator);
+}

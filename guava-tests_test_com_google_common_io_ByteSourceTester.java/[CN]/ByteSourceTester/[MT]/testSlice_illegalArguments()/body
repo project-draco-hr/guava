@@ -1,0 +1,14 @@
+{
+  try {
+    source.slice(-1,0);
+    fail("expected IllegalArgumentException for call to slice with offset -1: " + source);
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+  try {
+    source.slice(0,-1);
+    fail("expected IllegalArgumentException for call to slice with length -1: " + source);
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}

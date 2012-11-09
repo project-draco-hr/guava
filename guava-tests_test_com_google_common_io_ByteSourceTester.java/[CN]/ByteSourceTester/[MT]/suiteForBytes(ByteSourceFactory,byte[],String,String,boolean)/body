@@ -1,0 +1,15 @@
+{
+  TestSuite suite=new TestSuite(name + " [" + desc+ "]");
+  for (  Method method : testMethods) {
+    suite.addTest(new ByteSourceTester(factory,bytes,name,desc,method));
+  }
+  if (slice && bytes.length > 0) {
+    Random random=new Random();
+    byte[] expected=factory.getExpected(bytes);
+    int off=random.nextInt(expected.length);
+    int len=random.nextInt(expected.length - off);
+    ByteSourceFactory sliced=SourceSinkFactories.asSlicedByteSourceFactory(factory,off,len);
+    suite.addTest(suiteForBytes(sliced,bytes,name + ".slice[int, int]",desc,false));
+  }
+  return suite;
+}

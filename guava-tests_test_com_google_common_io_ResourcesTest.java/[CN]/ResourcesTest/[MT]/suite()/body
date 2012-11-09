@@ -1,0 +1,7 @@
+{
+  TestSuite suite=new TestSuite();
+  suite.addTest(ByteSourceTester.tests("Resources.asByteSource[URL]",SourceSinkFactories.urlByteSourceFactory(),true));
+  suite.addTest(CharSourceTester.tests("Resources.asCharSource[URL, Charset]",SourceSinkFactories.urlCharSourceFactory()));
+  suite.addTestSuite(ResourcesTest.class);
+  return suite;
+}

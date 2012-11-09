@@ -1,4 +1,4 @@
 {
-  super(in);
+  super(checkNotNull(in));
   this.random=checkNotNull(random);
 }

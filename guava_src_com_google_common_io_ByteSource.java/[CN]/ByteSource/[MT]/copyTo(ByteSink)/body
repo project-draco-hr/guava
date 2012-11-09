@@ -1,0 +1,15 @@
+{
+  checkNotNull(sink);
+  Closer closer=Closer.create();
+  try {
+    InputStream in=closer.add(openStream());
+    OutputStream out=closer.add(sink.openStream());
+    return ByteStreams.copy(in,out);
+  }
+ catch (  Throwable e) {
+    throw closer.rethrow(e,IOException.class);
+  }
+ finally {
+    closer.close();
+  }
+}

@@ -1,0 +1,14 @@
+{
+  File file=createFile();
+  if (initialString != null) {
+    Writer writer=new OutputStreamWriter(new FileOutputStream(file),Charsets.UTF_8);
+    try {
+      writer.write(initialString);
+    }
+  finally {
+      writer.close();
+    }
+    return Files.asCharSink(file,Charsets.UTF_8,FileWriteMode.APPEND);
+  }
+  return Files.asCharSink(file,Charsets.UTF_8);
+}
