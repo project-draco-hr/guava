@@ -1,0 +1,13 @@
+{
+switch (entries.size()) {
+case 0:
+    return of();
+case 1:
+{
+    Entry<? extends K,? extends V> entry=Iterables.getOnlyElement(entries);
+    return new SingletonImmutableBiMap<K,V>(entry.getKey(),entry.getValue());
+  }
+default :
+return new RegularImmutableBiMap<K,V>(entries);
+}
+}

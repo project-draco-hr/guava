@@ -1,3 +1,4 @@
 {
-  return inverse;
+  ImmutableBiMap<V,K> result=inverse;
+  return (result == null) ? inverse=new Inverse() : result;
 }

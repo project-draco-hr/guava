@@ -1,0 +1,5 @@
+{
+  super(key,value);
+  this.nextInKToVBucket=nextInKToVBucket;
+  this.nextInVToKBucket=nextInVToKBucket;
+}

@@ -1,9 +1,3 @@
 {
-  ImmutableMap<K,V> map=super.build();
-  if (map instanceof ImmutableBiMap) {
-    return (ImmutableBiMap<K,V>)map;
-  }
- else {
-    return new RegularImmutableBiMap<K,V>(map);
-  }
+  return fromEntries(entries);
 }

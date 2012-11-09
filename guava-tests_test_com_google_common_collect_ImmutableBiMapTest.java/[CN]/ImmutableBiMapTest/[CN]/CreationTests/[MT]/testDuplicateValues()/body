@@ -5,6 +5,6 @@
     fail();
   }
  catch (  IllegalArgumentException expected) {
-    assertEquals("duplicate key: 1",expected.getMessage());
+    assertTrue(expected.getMessage().contains("1"));
   }
 }
