@@ -1,0 +1,11 @@
+{
+  if (range.encloses(subRange)) {
+    return this;
+  }
+ else   if (subRange.isConnected(range)) {
+    return asSet(domain,subRange.intersection(range));
+  }
+ else {
+    return ImmutableSortedSet.of();
+  }
+}

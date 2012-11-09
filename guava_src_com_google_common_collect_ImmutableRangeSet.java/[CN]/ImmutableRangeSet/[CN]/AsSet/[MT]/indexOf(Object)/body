@@ -1,0 +1,16 @@
+{
+  if (contains(target)) {
+    @SuppressWarnings("unchecked") C c=(C)target;
+    long total=0;
+    for (    Range<C> range : subRanges) {
+      if (range.contains(c)) {
+        return Ints.saturatedCast(total + range.asSet(domain).indexOf(c));
+      }
+ else {
+        total+=range.asSet(domain).size();
+      }
+    }
+    throw new AssertionError("impossible");
+  }
+  return -1;
+}

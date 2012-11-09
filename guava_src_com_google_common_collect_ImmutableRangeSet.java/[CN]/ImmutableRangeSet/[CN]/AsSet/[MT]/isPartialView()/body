@@ -1,0 +1,3 @@
+{
+  return subRanges.isPartialView() || subRanges.size() < ranges.size();
+}

@@ -1,0 +1,18 @@
+{
+  return new AbstractIterator<C>(){
+    final Iterator<Range<C>> rangeItr=subRanges.iterator();
+    Iterator<C> elemItr=Iterators.emptyIterator();
+    @Override protected C computeNext(){
+      while (!elemItr.hasNext()) {
+        if (rangeItr.hasNext()) {
+          elemItr=rangeItr.next().asSet(domain).iterator();
+        }
+ else {
+          return endOfData();
+        }
+      }
+      return elemItr.next();
+    }
+  }
+;
+}

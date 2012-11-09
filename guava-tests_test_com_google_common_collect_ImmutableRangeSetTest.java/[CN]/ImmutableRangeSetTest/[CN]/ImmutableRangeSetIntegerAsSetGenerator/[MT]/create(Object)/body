@@ -1,0 +1,8 @@
+{
+  ImmutableRangeSet.Builder<Integer> builder=ImmutableRangeSet.builder();
+  for (  Object o : elements) {
+    Integer i=(Integer)o;
+    builder.add(Range.singleton(i));
+  }
+  return builder.build().asSet(DiscreteDomains.integers());
+}

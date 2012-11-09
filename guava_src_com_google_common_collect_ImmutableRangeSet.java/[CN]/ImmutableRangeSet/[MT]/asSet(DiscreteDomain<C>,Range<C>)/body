@@ -1,0 +1,32 @@
+{
+  checkNotNull(domain);
+  checkNotNull(range);
+  if (isEmpty()) {
+    return ImmutableSortedSet.of();
+  }
+  Range<C> span=span();
+  if (!range.isConnected(span)) {
+    return ImmutableSortedSet.of();
+  }
+  range=range.intersection(span).canonical(domain);
+  if (!range.hasLowerBound()) {
+    throw new IllegalArgumentException("Neither the DiscreteDomain nor this range set are bounded below");
+  }
+ else   if (!range.hasUpperBound()) {
+    try {
+      domain.maxValue();
+    }
+ catch (    NoSuchElementException e) {
+      throw new IllegalArgumentException("Neither the DiscreteDomain nor this range set are bounded above");
+    }
+  }
+  ImmutableList<Range<C>> subRanges=intersectRanges(range);
+switch (subRanges.size()) {
+case 0:
+    return ImmutableSortedSet.of();
+case 1:
+  return subRanges.get(0).asSet(domain);
+default :
+return new AsSet(domain,range,subRanges);
+}
+}

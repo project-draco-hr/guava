@@ -1,3 +1,3 @@
 {
-  return start.subtract(end).max(MIN_LONG).min(MAX_LONG).longValue();
+  return end.subtract(start).max(MIN_LONG).min(MAX_LONG).longValue();
 }
