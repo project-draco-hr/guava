@@ -1,5 +1,5 @@
 {
-  String s=new String(new char[]{randomLowSurrogate(random),randomHighSurrogate(random)});
+  String s=new String(new char[]{randomHighSurrogate(random),randomLowSurrogate(random)});
   for (  PrimitiveSink sink : sinks) {
     sink.putString(s);
   }

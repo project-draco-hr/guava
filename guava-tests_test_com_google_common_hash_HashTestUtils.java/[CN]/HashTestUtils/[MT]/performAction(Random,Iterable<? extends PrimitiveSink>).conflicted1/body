@@ -1,6 +1,6 @@
 {
-  String s=new String(new char[]{randomLowSurrogate(random)});
+  double value=random.nextDouble();
   for (  PrimitiveSink sink : sinks) {
-    sink.putString(s);
+    sink.putDouble(value);
   }
 }

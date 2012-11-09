@@ -1,7 +1,6 @@
 {
-  byte[] value=new byte[random.nextInt(128)];
-  random.nextBytes(value);
+  String s=new String(new char[]{randomHighSurrogate(random)});
   for (  PrimitiveSink sink : sinks) {
-    sink.putBytes(value);
+    sink.putString(s);
   }
 }
