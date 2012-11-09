@@ -4,7 +4,7 @@
     return IntMath.log10((int)x,mode);
   }
   int logFloor=log10Floor(x);
-  long floorPow=POWERS_OF_10[logFloor];
+  long floorPow=powersOf10[logFloor];
 switch (mode) {
 case UNNECESSARY:
     checkRoundingUnnecessary(x == floorPow);
@@ -17,7 +17,7 @@ return (x == floorPow) ? logFloor : logFloor + 1;
 case HALF_DOWN:
 case HALF_UP:
 case HALF_EVEN:
-return (x <= HALF_POWERS_OF_10[logFloor]) ? logFloor : logFloor + 1;
+return (x <= halfPowersOf10[logFloor]) ? logFloor : logFloor + 1;
 default :
 throw new AssertionError();
 }

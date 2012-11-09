@@ -1,5 +1,5 @@
 {
-  int y=MAX_LOG10_FOR_LEADING_ZEROS[Long.numberOfLeadingZeros(x)];
-  long sgn=(x - POWERS_OF_10[y]) >>> (Long.SIZE - 1);
+  int y=maxLog10ForLeadingZeros[Long.numberOfLeadingZeros(x)];
+  long sgn=(x - powersOf10[y]) >>> (Long.SIZE - 1);
   return y - (int)sgn;
 }

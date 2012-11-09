@@ -5,7 +5,7 @@
   if (k > (n >> 1)) {
     k=n - k;
   }
-  if (k < LongMath.BIGGEST_BINOMIALS.length && n <= LongMath.BIGGEST_BINOMIALS[k]) {
+  if (k < LongMath.biggestBinomials.length && n <= LongMath.biggestBinomials[k]) {
     return BigInteger.valueOf(LongMath.binomial(n,k));
   }
   BigInteger accum=BigInteger.ONE;

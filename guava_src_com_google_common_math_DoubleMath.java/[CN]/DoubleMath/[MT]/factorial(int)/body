@@ -8,6 +8,6 @@
     for (int i=1 + (n & ~0xf); i <= n; i++) {
       accum*=i;
     }
-    return accum * EVERY_SIXTEENTH_FACTORIAL[n >> 4];
+    return accum * everySixteenthFactorial[n >> 4];
   }
 }

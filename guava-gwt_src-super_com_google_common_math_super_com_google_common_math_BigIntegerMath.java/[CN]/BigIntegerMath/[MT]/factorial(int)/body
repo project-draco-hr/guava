@@ -1,12 +1,12 @@
 {
   checkNonNegative("n",n);
-  if (n < LongMath.FACTORIALS.length) {
-    return BigInteger.valueOf(LongMath.FACTORIALS[n]);
+  if (n < LongMath.factorials.length) {
+    return BigInteger.valueOf(LongMath.factorials[n]);
   }
   int approxSize=IntMath.divide(n * IntMath.log2(n,CEILING),Long.SIZE,CEILING);
   ArrayList<BigInteger> bignums=new ArrayList<BigInteger>(approxSize);
-  int startingNumber=LongMath.FACTORIALS.length;
-  long product=LongMath.FACTORIALS[startingNumber - 1];
+  int startingNumber=LongMath.factorials.length;
+  long product=LongMath.factorials[startingNumber - 1];
   int shift=Long.numberOfTrailingZeros(product);
   product>>=shift;
   int productBits=LongMath.log2(product,FLOOR) + 1;

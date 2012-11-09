@@ -1,5 +1,5 @@
 {
-  int y=MAX_LOG10_FOR_LEADING_ZEROS[Integer.numberOfLeadingZeros(x)];
-  int sgn=(x - POWERS_OF_10[y]) >>> (Integer.SIZE - 1);
+  int y=maxLog10ForLeadingZeros[Integer.numberOfLeadingZeros(x)];
+  int sgn=(x - powersOf10[y]) >>> (Integer.SIZE - 1);
   return y - sgn;
 }

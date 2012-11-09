@@ -1,5 +1,5 @@
 {
   for (int i=0; i < Integer.SIZE; i++) {
-    assertEquals(BigIntegerMath.log10(BigInteger.ONE.shiftLeft(Integer.SIZE - i),FLOOR),IntMath.MAX_LOG10_FOR_LEADING_ZEROS[i]);
+    assertEquals(BigIntegerMath.log10(BigInteger.ONE.shiftLeft(Integer.SIZE - i),FLOOR),IntMath.maxLog10ForLeadingZeros[i]);
   }
 }

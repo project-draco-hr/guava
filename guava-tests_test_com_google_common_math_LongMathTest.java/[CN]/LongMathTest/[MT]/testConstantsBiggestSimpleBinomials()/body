@@ -1,10 +1,10 @@
 {
-  for (int k=0; k < LongMath.BIGGEST_SIMPLE_BINOMIALS.length; k++) {
-    assertTrue(LongMath.BIGGEST_SIMPLE_BINOMIALS[k] <= LongMath.BIGGEST_BINOMIALS[k]);
-    simpleBinomial(LongMath.BIGGEST_SIMPLE_BINOMIALS[k],k);
-    if (LongMath.BIGGEST_SIMPLE_BINOMIALS[k] < Integer.MAX_VALUE) {
+  for (int k=0; k < LongMath.biggestSimpleBinomials.length; k++) {
+    assertTrue(LongMath.biggestSimpleBinomials[k] <= LongMath.biggestBinomials[k]);
+    simpleBinomial(LongMath.biggestSimpleBinomials[k],k);
+    if (LongMath.biggestSimpleBinomials[k] < Integer.MAX_VALUE) {
       try {
-        simpleBinomial(LongMath.BIGGEST_SIMPLE_BINOMIALS[k] + 1,k);
+        simpleBinomial(LongMath.biggestSimpleBinomials[k] + 1,k);
         fail("Expected ArithmeticException");
       }
  catch (      ArithmeticException expected) {
@@ -12,7 +12,7 @@
     }
   }
   try {
-    int k=LongMath.BIGGEST_SIMPLE_BINOMIALS.length;
+    int k=LongMath.biggestSimpleBinomials.length;
     simpleBinomial(2 * k,k);
     fail("Expected ArithmeticException");
   }

@@ -1,9 +1,9 @@
 {
-  for (int i=0; i < LongMath.POWERS_OF_10.length; i++) {
-    assertEquals(LongMath.checkedPow(10,i),LongMath.POWERS_OF_10[i]);
+  for (int i=0; i < LongMath.powersOf10.length; i++) {
+    assertEquals(LongMath.checkedPow(10,i),LongMath.powersOf10[i]);
   }
   try {
-    LongMath.checkedPow(10,LongMath.POWERS_OF_10.length);
+    LongMath.checkedPow(10,LongMath.powersOf10.length);
     fail("Expected ArithmeticException");
   }
  catch (  ArithmeticException expected) {

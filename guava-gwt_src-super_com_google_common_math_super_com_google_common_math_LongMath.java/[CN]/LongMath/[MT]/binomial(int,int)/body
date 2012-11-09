@@ -5,11 +5,11 @@
   if (k > (n >> 1)) {
     k=n - k;
   }
-  if (k >= BIGGEST_BINOMIALS.length || n > BIGGEST_BINOMIALS[k]) {
+  if (k >= biggestBinomials.length || n > biggestBinomials[k]) {
     return Long.MAX_VALUE;
   }
   long result=1;
-  if (k < BIGGEST_SIMPLE_BINOMIALS.length && n <= BIGGEST_SIMPLE_BINOMIALS[k]) {
+  if (k < biggestSimpleBinomials.length && n <= biggestSimpleBinomials[k]) {
     for (int i=0; i < k; i++) {
       result*=n - i;
       result/=i + 1;
