@@ -1,0 +1,8 @@
+{
+  for (  Method m : TreeMultimap.class.getMethods()) {
+    if (m.getName().equals("keySet") && m.getReturnType().equals(SortedSet.class)) {
+      return;
+    }
+  }
+  fail("No bridge method found");
+}

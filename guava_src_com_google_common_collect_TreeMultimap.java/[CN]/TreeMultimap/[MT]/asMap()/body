@@ -1,3 +1,3 @@
 {
-  return (SortedMap<K,Collection<V>>)super.asMap();
+  return (NavigableMap<K,Collection<V>>)super.asMap();
 }

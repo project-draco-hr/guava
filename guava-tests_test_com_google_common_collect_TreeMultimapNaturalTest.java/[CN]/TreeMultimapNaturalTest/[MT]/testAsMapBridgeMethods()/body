@@ -1,0 +1,7 @@
+{
+  for (  Method m : TreeMultimap.class.getMethods()) {
+    if (m.getName().equals("asMap") && m.getReturnType().equals(SortedMap.class)) {
+      return;
+    }
+  }
+}

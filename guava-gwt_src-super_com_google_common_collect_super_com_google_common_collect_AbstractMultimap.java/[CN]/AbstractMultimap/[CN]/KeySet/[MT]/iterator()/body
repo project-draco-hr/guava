@@ -1,6 +1,6 @@
 {
+  final Iterator<Map.Entry<K,Collection<V>>> entryIterator=subMap.entrySet().iterator();
   return new Iterator<K>(){
-    final Iterator<Map.Entry<K,Collection<V>>> entryIterator=subMap.entrySet().iterator();
     Map.Entry<K,Collection<V>> entry;
     @Override public boolean hasNext(){
       return entryIterator.hasNext();
