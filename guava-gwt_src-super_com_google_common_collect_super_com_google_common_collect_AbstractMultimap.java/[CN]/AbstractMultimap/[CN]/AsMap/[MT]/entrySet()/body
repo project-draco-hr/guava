@@ -1,0 +1,4 @@
+{
+  Set<Map.Entry<K,Collection<V>>> result=entrySet;
+  return (result == null) ? entrySet=new AsMapEntries() : result;
+}

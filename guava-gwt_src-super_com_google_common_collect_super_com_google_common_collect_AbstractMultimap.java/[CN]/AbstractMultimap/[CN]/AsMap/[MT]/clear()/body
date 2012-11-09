@@ -1,0 +1,8 @@
+{
+  if (submap == map) {
+    AbstractMultimap.this.clear();
+  }
+ else {
+    Iterators.clear(new AsMapIterator());
+  }
+}

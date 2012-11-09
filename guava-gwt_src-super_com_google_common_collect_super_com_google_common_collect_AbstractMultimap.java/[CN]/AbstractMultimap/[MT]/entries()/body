@@ -1,0 +1,4 @@
+{
+  Collection<Map.Entry<K,V>> result=entries;
+  return (result == null) ? entries=createEntries() : result;
+}

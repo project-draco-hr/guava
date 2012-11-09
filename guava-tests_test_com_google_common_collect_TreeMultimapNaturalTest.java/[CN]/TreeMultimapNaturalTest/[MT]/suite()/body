@@ -31,6 +31,28 @@
     }
   }
 ).named("TreeMultimap.keySet").withFeatures(CollectionFeature.ALLOWS_NULL_VALUES,CollectionFeature.SUPPORTS_REMOVE,CollectionFeature.KNOWN_ORDER,CollectionSize.ANY).createTestSuite());
+  suite.addTest(NavigableSetTestSuiteBuilder.using(new TestStringSetGenerator(){
+    @Override protected Set<String> create(    String[] elements){
+      TreeMultimap<Integer,String> multimap=TreeMultimap.create(Ordering.natural(),Ordering.natural().nullsFirst());
+      multimap.putAll(1,Arrays.asList(elements));
+      return multimap.get(1);
+    }
+    @Override public List<String> order(    List<String> insertionOrder){
+      return Ordering.natural().nullsFirst().sortedCopy(insertionOrder);
+    }
+  }
+).named("TreeMultimap.get").withFeatures(CollectionFeature.ALLOWS_NULL_VALUES,CollectionFeature.GENERAL_PURPOSE,CollectionFeature.KNOWN_ORDER,CollectionSize.ANY).createTestSuite());
+  suite.addTest(NavigableSetTestSuiteBuilder.using(new TestStringSetGenerator(){
+    @Override protected Set<String> create(    String[] elements){
+      TreeMultimap<Integer,String> multimap=TreeMultimap.create(Ordering.natural(),Ordering.natural().nullsFirst());
+      multimap.putAll(1,Arrays.asList(elements));
+      return (Set<String>)multimap.asMap().entrySet().iterator().next().getValue();
+    }
+    @Override public List<String> order(    List<String> insertionOrder){
+      return Ordering.natural().nullsFirst().sortedCopy(insertionOrder);
+    }
+  }
+).named("TreeMultimap.asMap.entrySet collection").withFeatures(CollectionFeature.ALLOWS_NULL_VALUES,CollectionFeature.GENERAL_PURPOSE,CollectionFeature.KNOWN_ORDER,CollectionSize.ONE,CollectionSize.SEVERAL).createTestSuite());
   suite.addTestSuite(TreeMultimapNaturalTest.class);
   return suite;
 }

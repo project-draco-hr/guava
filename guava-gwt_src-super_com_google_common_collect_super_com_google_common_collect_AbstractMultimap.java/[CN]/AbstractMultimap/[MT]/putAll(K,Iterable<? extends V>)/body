@@ -1,0 +1,19 @@
+{
+  if (!values.iterator().hasNext()) {
+    return false;
+  }
+  Collection<V> collection=getOrCreateCollection(key);
+  int oldSize=collection.size();
+  boolean changed=false;
+  if (values instanceof Collection) {
+    Collection<? extends V> c=Collections2.cast(values);
+    changed=collection.addAll(c);
+  }
+ else {
+    for (    V value : values) {
+      changed|=collection.add(value);
+    }
+  }
+  totalSize+=(collection.size() - oldSize);
+  return changed;
+}

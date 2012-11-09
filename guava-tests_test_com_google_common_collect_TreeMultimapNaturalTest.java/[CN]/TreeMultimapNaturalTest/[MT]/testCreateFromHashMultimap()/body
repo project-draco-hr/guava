@@ -1,5 +1,5 @@
 {
-  Multimap<Double,Double> hash=TreeMultimap.create();
+  Multimap<Double,Double> hash=HashMultimap.create();
   hash.put(1.0,2.0);
   hash.put(2.0,3.0);
   hash.put(3.0,4.0);
