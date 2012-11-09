@@ -1,7 +1,7 @@
 {
   Joiner j=Joiner.on("x").useForNull("y");
   try {
-    j.skipNulls();
+    j=j.skipNulls();
     fail();
   }
  catch (  UnsupportedOperationException expected) {
