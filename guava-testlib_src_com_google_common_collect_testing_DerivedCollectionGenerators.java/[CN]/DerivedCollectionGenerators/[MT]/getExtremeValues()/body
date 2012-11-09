@@ -1,8 +1,0 @@
-{
-  List<Entry<String,String>> result=new ArrayList<Entry<String,String>>();
-  result.add(Helpers.mapEntry("!! a","below view"));
-  result.add(Helpers.mapEntry("!! b","below view"));
-  result.add(Helpers.mapEntry("~~ y","above view"));
-  result.add(Helpers.mapEntry("~~ z","above view"));
-  return result;
-}

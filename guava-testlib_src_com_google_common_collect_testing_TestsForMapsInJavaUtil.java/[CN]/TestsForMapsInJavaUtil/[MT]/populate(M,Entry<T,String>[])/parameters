@@ -1,2 +1,2 @@
-Map<T,String> map
+M map
 Entry<T,String>[] entries

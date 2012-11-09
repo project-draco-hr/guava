@@ -1,6 +1,6 @@
 {
   return NavigableMapTestSuiteBuilder.using(new TestStringSortedMapGenerator(){
-    @Override protected Map<String,String> create(    Entry<String,String>[] entries){
+    @Override protected SortedMap<String,String> create(    Entry<String,String>[] entries){
       return populate(new ConcurrentSkipListMap<String,String>(),entries);
     }
   }

@@ -1,5 +1,5 @@
 {
-  final TestMapGenerator<K,V> delegate=(TestMapGenerator<K,V>)parentBuilder.getSubjectGenerator().getInnerGenerator();
+  final TestSortedMapGenerator<K,V> delegate=(TestSortedMapGenerator<K,V>)parentBuilder.getSubjectGenerator().getInnerGenerator();
   List<Feature<?>> features=new ArrayList<Feature<?>>();
   features.add(NoRecurse.SUBMAP);
   features.addAll(parentBuilder.getFeatures());

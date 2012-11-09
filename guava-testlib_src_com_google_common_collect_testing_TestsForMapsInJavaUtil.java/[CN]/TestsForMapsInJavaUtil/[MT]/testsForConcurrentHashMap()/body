@@ -1,5 +1,5 @@
 {
-  return MapTestSuiteBuilder.using(new TestStringSortedMapGenerator(){
+  return MapTestSuiteBuilder.using(new TestStringMapGenerator(){
     @Override protected Map<String,String> create(    Entry<String,String>[] entries){
       return populate(new ConcurrentHashMap<String,String>(),entries);
     }

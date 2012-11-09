@@ -2,7 +2,7 @@
   super(delegate);
   this.to=to;
   this.from=from;
-  SortedMap<K,V> emptyMap=(SortedMap<K,V>)delegate.create();
+  SortedMap<K,V> emptyMap=delegate.create();
   this.entryComparator=Helpers.entryComparator(emptyMap.comparator());
   SampleElements<Entry<K,V>> samples=delegate.samples();
   @SuppressWarnings("unchecked") List<Entry<K,V>> samplesList=Arrays.asList(samples.e0,samples.e1,samples.e2,samples.e3,samples.e4);
