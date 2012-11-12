@@ -1,3 +1,0 @@
-{
-  crc=CRC_TABLE[UnsignedBytes.toInt(b) ^ crc];
-}
