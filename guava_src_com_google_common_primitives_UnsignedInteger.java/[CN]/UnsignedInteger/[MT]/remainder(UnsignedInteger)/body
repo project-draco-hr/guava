@@ -1,4 +1,3 @@
 {
-  checkNotNull(val);
-  return asUnsigned(UnsignedInts.remainder(value,val.value));
+  return mod(val);
 }

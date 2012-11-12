@@ -1,6 +1,6 @@
 {
   for (  int a : TEST_INTS) {
-    UnsignedInteger aUnsigned=UnsignedInteger.asUnsigned(a);
+    UnsignedInteger aUnsigned=UnsignedInteger.fromIntBits(a);
     int intValue=aUnsigned.bigIntegerValue().intValue();
     assertEquals(intValue,aUnsigned.intValue());
   }

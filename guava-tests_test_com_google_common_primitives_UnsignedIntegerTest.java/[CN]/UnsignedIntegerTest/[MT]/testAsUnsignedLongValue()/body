@@ -1,6 +1,0 @@
-{
-  for (  int value : TEST_INTS) {
-    long expected=value & 0xffffffffL;
-    assertEquals(UnsignedInts.toString(value),expected,UnsignedInteger.asUnsigned(value).longValue());
-  }
-}

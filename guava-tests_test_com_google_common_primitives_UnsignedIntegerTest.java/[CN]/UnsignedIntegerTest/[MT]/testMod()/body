@@ -1,0 +1,13 @@
+{
+  for (  int a : TEST_INTS) {
+    for (    int b : TEST_INTS) {
+      if (b != 0) {
+        UnsignedInteger aUnsigned=UnsignedInteger.fromIntBits(a);
+        UnsignedInteger bUnsigned=UnsignedInteger.fromIntBits(b);
+        int expected=aUnsigned.bigIntegerValue().mod(bUnsigned.bigIntegerValue()).intValue();
+        UnsignedInteger unsignedRem=aUnsigned.mod(bUnsigned);
+        assertEquals(expected,unsignedRem.intValue());
+      }
+    }
+  }
+}

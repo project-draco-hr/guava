@@ -2,10 +2,10 @@
   for (  int a : TEST_INTS) {
     for (    int b : TEST_INTS) {
       if (b != 0) {
-        UnsignedInteger aUnsigned=UnsignedInteger.asUnsigned(a);
-        UnsignedInteger bUnsigned=UnsignedInteger.asUnsigned(b);
+        UnsignedInteger aUnsigned=UnsignedInteger.fromIntBits(a);
+        UnsignedInteger bUnsigned=UnsignedInteger.fromIntBits(b);
         int expected=aUnsigned.bigIntegerValue().divide(bUnsigned.bigIntegerValue()).intValue();
-        UnsignedInteger unsignedDiv=aUnsigned.divide(bUnsigned);
+        UnsignedInteger unsignedDiv=aUnsigned.dividedBy(bUnsigned);
         assertEquals(expected,unsignedDiv.intValue());
       }
     }

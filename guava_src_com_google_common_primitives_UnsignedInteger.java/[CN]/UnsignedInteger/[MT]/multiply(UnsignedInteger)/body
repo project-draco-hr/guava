@@ -1,4 +1,3 @@
 {
-  checkNotNull(val);
-  return asUnsigned(value * val.value);
+  return times(val);
 }

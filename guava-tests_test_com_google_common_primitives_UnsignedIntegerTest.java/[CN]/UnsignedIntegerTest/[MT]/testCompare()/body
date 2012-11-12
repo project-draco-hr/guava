@@ -1,8 +1,8 @@
 {
   for (  int a : TEST_INTS) {
     for (    int b : TEST_INTS) {
-      UnsignedInteger aUnsigned=UnsignedInteger.asUnsigned(a);
-      UnsignedInteger bUnsigned=UnsignedInteger.asUnsigned(b);
+      UnsignedInteger aUnsigned=UnsignedInteger.fromIntBits(a);
+      UnsignedInteger bUnsigned=UnsignedInteger.fromIntBits(b);
       assertEquals(aUnsigned.bigIntegerValue().compareTo(bUnsigned.bigIntegerValue()),aUnsigned.compareTo(bUnsigned));
     }
   }
