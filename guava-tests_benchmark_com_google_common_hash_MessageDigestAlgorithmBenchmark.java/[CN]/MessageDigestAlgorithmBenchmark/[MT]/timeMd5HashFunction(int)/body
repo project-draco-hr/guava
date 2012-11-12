@@ -1,3 +1,0 @@
-{
-  return runHashFunction(reps,Hashing.md5());
-}

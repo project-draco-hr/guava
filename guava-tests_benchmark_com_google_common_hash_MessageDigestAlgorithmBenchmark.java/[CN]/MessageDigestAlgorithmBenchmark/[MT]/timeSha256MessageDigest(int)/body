@@ -1,3 +1,0 @@
-{
-  return runMessageDigest(reps,"SHA-256");
-}

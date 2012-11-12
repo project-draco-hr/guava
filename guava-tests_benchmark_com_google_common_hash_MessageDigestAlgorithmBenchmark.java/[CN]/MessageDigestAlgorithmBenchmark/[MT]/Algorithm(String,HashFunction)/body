@@ -1,0 +1,4 @@
+{
+  this.algorithmName=algorithmName;
+  this.hashFn=hashFn;
+}
