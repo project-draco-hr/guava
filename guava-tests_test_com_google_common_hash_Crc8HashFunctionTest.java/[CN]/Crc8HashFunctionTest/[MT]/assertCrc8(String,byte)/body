@@ -1,3 +1,0 @@
-{
-  assertEquals(expectedCrc,Hashing.crc8().hashString(value,Charsets.US_ASCII).asBytes()[0]);
-}
