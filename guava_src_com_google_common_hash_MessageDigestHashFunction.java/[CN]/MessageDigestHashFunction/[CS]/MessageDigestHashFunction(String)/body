@@ -1,4 +1,5 @@
 {
-  this.algorithmName=checkNotNull(algorithmName);
-  this.bytes=getMessageDigestLength(algorithmName);
+  this.prototype=getMessageDigest(algorithmName);
+  this.bytes=prototype.getDigestLength();
+  this.supportsClone=supportsClone();
 }
