@@ -10,8 +10,7 @@
       while (true) {
         int readChar=reader.read();
         if (readChar == -1) {
-          int charsOverChunk=readChars % charsPerChunk;
-          if (!hitPadding && !validPadding[charsOverChunk]) {
+          if (!hitPadding && !alphabet.isValidPaddingStartPosition(readChars)) {
             throw new IOException("Invalid input length " + readChars);
           }
           return -1;
@@ -19,7 +18,7 @@
         readChars++;
         char ch=(char)readChar;
         if (paddingMatcher.matches(ch)) {
-          if (!hitPadding && (readChars == 0 || !validPadding[(readChars - 1) % charsPerChunk])) {
+          if (!hitPadding && (readChars == 1 || !alphabet.isValidPaddingStartPosition(readChars - 1))) {
             throw new IOException("Padding cannot start at index " + readChars);
           }
           hitPadding=true;
@@ -27,13 +26,10 @@
  else         if (hitPadding) {
           throw new IOException("Expected padding character but found '" + ch + "' at index "+ readChars);
         }
- else         if (!CharMatcher.ASCII.matches(ch) || decodabet[ch] == -1) {
-          throw new IOException("Unrecognized character: " + ch);
-        }
  else {
-          bitBuffer<<=bitsPerChar;
-          bitBuffer|=decodabet[ch] & alphabetMask;
-          bitBufferLength+=bitsPerChar;
+          bitBuffer<<=alphabet.bitsPerChar;
+          bitBuffer|=alphabet.decode(ch);
+          bitBufferLength+=alphabet.bitsPerChar;
           if (bitBufferLength >= 8) {
             bitBufferLength-=8;
             return (bitBuffer >> bitBufferLength) & 0xFF;

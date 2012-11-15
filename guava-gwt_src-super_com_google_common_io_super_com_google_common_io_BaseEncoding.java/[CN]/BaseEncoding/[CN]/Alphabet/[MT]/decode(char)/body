@@ -1,0 +1,6 @@
+{
+  if (ch >= 128 || decodabet[ch] == -1) {
+    throw new IOException("Unrecognized character: " + ch);
+  }
+  return decodabet[ch];
+}

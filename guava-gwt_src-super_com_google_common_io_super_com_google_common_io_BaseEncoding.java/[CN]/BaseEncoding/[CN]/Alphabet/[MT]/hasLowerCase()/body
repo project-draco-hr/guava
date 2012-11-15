@@ -1,0 +1,8 @@
+{
+  for (  char c : chars) {
+    if (c >= 'a' & c <= 'z') {
+      return true;
+    }
+  }
+  return false;
+}

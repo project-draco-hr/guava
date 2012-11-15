@@ -8,11 +8,11 @@
       bitBuffer<<=8;
       bitBuffer|=b & 0xFF;
       bitBufferLength+=8;
-      while (bitBufferLength >= bitsPerChar) {
-        int charIndex=(bitBuffer >> (bitBufferLength - bitsPerChar)) & alphabetMask;
-        out.write(alphabet.charAt(charIndex));
+      while (bitBufferLength >= alphabet.bitsPerChar) {
+        int charIndex=(bitBuffer >> (bitBufferLength - alphabet.bitsPerChar)) & alphabet.mask;
+        out.write(alphabet.encode(charIndex));
         writtenChars++;
-        bitBufferLength-=bitsPerChar;
+        bitBufferLength-=alphabet.bitsPerChar;
       }
     }
     @Override public void flush() throws IOException {
@@ -20,11 +20,11 @@
     }
     @Override public void close() throws IOException {
       if (bitBufferLength > 0) {
-        int charIndex=(bitBuffer << (bitsPerChar - bitBufferLength)) & alphabetMask;
-        out.write(alphabet.charAt(charIndex));
+        int charIndex=(bitBuffer << (alphabet.bitsPerChar - bitBufferLength)) & alphabet.mask;
+        out.write(alphabet.encode(charIndex));
         writtenChars++;
         if (paddingChar != null) {
-          while (writtenChars % charsPerChunk != 0) {
+          while (writtenChars % alphabet.charsPerChunk != 0) {
             out.write(paddingChar.charValue());
             writtenChars++;
           }

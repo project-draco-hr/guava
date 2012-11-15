@@ -1,9 +1,6 @@
 {
-  if (8 % bitsPerChar == 0 || (paddingChar != null && paddingChar.charValue() == padChar)) {
+  if (8 % alphabet.bitsPerChar == 0 || (paddingChar != null && paddingChar.charValue() == padChar)) {
     return this;
-  }
- else   if (alphabet.indexOf(padChar) != -1) {
-    throw new IllegalArgumentException("Padding character '" + padChar + "'appears in alphabet");
   }
  else {
     return new StandardBaseEncoding(alphabet,padChar);
