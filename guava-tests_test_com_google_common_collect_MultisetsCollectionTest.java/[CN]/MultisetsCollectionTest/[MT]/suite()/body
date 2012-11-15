@@ -7,5 +7,6 @@
   suite.addTest(MultisetTestSuiteBuilder.using(intersectionGenerator()).withFeatures(CollectionSize.ANY,CollectionFeature.ALLOWS_NULL_VALUES,CollectionFeature.KNOWN_ORDER).named("Multisets.intersection").createTestSuite());
   suite.addTest(MultisetTestSuiteBuilder.using(sumGenerator()).withFeatures(CollectionSize.ANY,CollectionFeature.ALLOWS_NULL_VALUES).named("Multisets.sum").createTestSuite());
   suite.addTest(MultisetTestSuiteBuilder.using(differenceGenerator()).withFeatures(CollectionSize.ANY,CollectionFeature.ALLOWS_NULL_VALUES,CollectionFeature.KNOWN_ORDER).named("Multisets.difference").createTestSuite());
+  suite.addTest(MultisetTestSuiteBuilder.using(filteredGenerator()).withFeatures(CollectionSize.ANY,CollectionFeature.ALLOWS_NULL_VALUES,CollectionFeature.KNOWN_ORDER,CollectionFeature.GENERAL_PURPOSE).named("Multiset.filter[Multiset, Predicate]").suppressing(CollectionIteratorTester.getIteratorKnownOrderRemoveSupportedMethod(),MultisetIteratorTester.getIteratorKnownOrderRemoveSupportedMethod(),MultisetWritesTester.getEntrySetIteratorMethod()).createTestSuite());
   return suite;
 }
