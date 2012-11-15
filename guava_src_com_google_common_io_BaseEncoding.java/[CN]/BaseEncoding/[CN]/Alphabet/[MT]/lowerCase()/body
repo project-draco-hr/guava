@@ -1,18 +1,13 @@
 {
-  Alphabet result=lowerCase;
-  if (result == null) {
-    if (!hasUpperCase()) {
-      result=lowerCase=this;
-    }
- else {
-      checkState(!hasLowerCase(),"Cannot call lowerCase() on a mixed-case alphabet");
-      char[] lowerCased=new char[chars.length];
-      for (int i=0; i < chars.length; i++) {
-        lowerCased[i]=Ascii.toLowerCase(chars[i]);
-      }
-      result=lowerCase=new Alphabet(name + ".lowerCase()",lowerCased);
-      result.upperCase=this;
-    }
+  if (!hasUpperCase()) {
+    return this;
   }
-  return result;
+ else {
+    checkState(!hasLowerCase(),"Cannot call lowerCase() on a mixed-case alphabet");
+    char[] lowerCased=new char[chars.length];
+    for (int i=0; i < chars.length; i++) {
+      lowerCased[i]=Ascii.toLowerCase(chars[i]);
+    }
+    return new Alphabet(name + ".lowerCase()",lowerCased);
+  }
 }

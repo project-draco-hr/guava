@@ -1,4 +1,8 @@
 {
-  Alphabet upper=alphabet.upperCase();
-  return (upper == alphabet) ? this : new StandardBaseEncoding(upper,paddingChar);
+  BaseEncoding result=upperCase;
+  if (result == null) {
+    Alphabet upper=alphabet.upperCase();
+    result=upperCase=(upper == alphabet) ? this : new StandardBaseEncoding(upper,paddingChar);
+  }
+  return result;
 }
