@@ -10,7 +10,7 @@
       for (int i=0; i < chars.length; i++) {
         lowerCased[i]=Ascii.toLowerCase(chars[i]);
       }
-      result=lowerCase=new Alphabet(lowerCased);
+      result=lowerCase=new Alphabet(name + ".lowerCase()",lowerCased);
       result.upperCase=this;
     }
   }
