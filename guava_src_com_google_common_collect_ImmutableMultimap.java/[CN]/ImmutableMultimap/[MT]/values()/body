@@ -1,4 +1,3 @@
 {
-  ImmutableCollection<V> result=values;
-  return (result == null) ? (values=new Values<V>(this)) : result;
+  return (ImmutableCollection<V>)super.values();
 }

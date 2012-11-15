@@ -1,0 +1,8 @@
+{
+  return new Multimaps.Values<K,V>(){
+    @Override Multimap<K,V> multimap(){
+      return AbstractMultimap.this;
+    }
+  }
+;
+}

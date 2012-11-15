@@ -1,17 +1,6 @@
 {
-  Iterator<? extends V> iterator=values.iterator();
-  if (!iterator.hasNext()) {
-    return removeAll(key);
-  }
-  Collection<V> collection=getOrCreateCollection(key);
-  Collection<V> oldValues=createCollection();
-  oldValues.addAll(collection);
-  totalSize-=collection.size();
-  collection.clear();
-  while (iterator.hasNext()) {
-    if (collection.add(iterator.next())) {
-      totalSize++;
-    }
-  }
-  return unmodifiableCollectionSubclass(oldValues);
+  checkNotNull(values);
+  Collection<V> result=removeAll(key);
+  putAll(key,values);
+  return result;
 }

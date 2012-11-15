@@ -5,7 +5,7 @@
         return AbstractMultimap.this;
       }
       @Override public Iterator<Entry<K,V>> iterator(){
-        return createEntryIterator();
+        return entryIterator();
       }
     }
 ;
@@ -15,7 +15,7 @@
       return AbstractMultimap.this;
     }
     @Override public Iterator<Entry<K,V>> iterator(){
-      return createEntryIterator();
+      return entryIterator();
     }
   }
 ;

@@ -1,5 +1,5 @@
 {
-  for (  Collection<V> collection : map.values()) {
+  for (  Collection<V> collection : asMap().values()) {
     if (collection.contains(value)) {
       return true;
     }

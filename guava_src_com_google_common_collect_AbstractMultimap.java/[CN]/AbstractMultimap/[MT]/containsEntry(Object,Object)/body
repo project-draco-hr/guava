@@ -1,4 +1,4 @@
 {
-  Collection<V> collection=map.get(key);
+  Collection<V> collection=asMap().get(key);
   return collection != null && collection.contains(value);
 }

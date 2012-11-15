@@ -1,4 +1,3 @@
 {
-  ImmutableMultiset<K> result=keys;
-  return (result == null) ? (keys=createKeys()) : result;
+  return (ImmutableMultiset<K>)super.keys();
 }
