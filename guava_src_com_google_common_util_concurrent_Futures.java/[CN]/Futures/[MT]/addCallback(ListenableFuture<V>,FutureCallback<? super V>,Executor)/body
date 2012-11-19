@@ -2,19 +2,23 @@
   Preconditions.checkNotNull(callback);
   Runnable callbackListener=new Runnable(){
     @Override public void run(){
+      final V value;
       try {
-        V value=getUninterruptibly(future);
-        callback.onSuccess(value);
+        value=getUninterruptibly(future);
       }
  catch (      ExecutionException e) {
         callback.onFailure(e.getCause());
+        return;
       }
 catch (      RuntimeException e) {
         callback.onFailure(e);
+        return;
       }
 catch (      Error e) {
         callback.onFailure(e);
+        return;
       }
+      callback.onSuccess(value);
     }
   }
 ;
