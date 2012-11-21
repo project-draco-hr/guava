@@ -1,5 +1,5 @@
 {
-  String description="CharMatcher.anyOf(\"" + match1 + match2+ "\")";
+  String description="CharMatcher.anyOf(\"" + showCharacter(match1) + showCharacter(match2)+ "\")";
   return new FastMatcher(description){
     @Override public boolean matches(    char c){
       return c == match1 || c == match2;
