@@ -1,8 +1,0 @@
-{
-  if (o instanceof Entry) {
-    Entry<?,?> entry=(Entry<?,?>)o;
-    Collection<V2> values=get((K)entry.getKey());
-    return values.remove(entry.getValue());
-  }
-  return false;
-}

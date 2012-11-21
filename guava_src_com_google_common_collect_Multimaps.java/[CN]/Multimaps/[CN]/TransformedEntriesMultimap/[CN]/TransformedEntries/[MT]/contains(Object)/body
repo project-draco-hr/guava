@@ -1,7 +1,0 @@
-{
-  if (o instanceof Entry) {
-    Entry<?,?> entry=(Entry<?,?>)o;
-    return containsEntry(entry.getKey(),entry.getValue());
-  }
-  return false;
-}

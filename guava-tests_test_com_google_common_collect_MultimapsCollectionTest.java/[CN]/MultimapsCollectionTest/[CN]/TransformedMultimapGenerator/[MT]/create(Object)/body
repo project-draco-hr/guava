@@ -1,0 +1,8 @@
+{
+  Multimap<String,String> multimap=ArrayListMultimap.create();
+  for (  Object o : elements) {
+    @SuppressWarnings("unchecked") Entry<String,String> entry=(Entry<String,String>)o;
+    multimap.put(entry.getKey(),Ascii.toUpperCase(entry.getValue()));
+  }
+  return transform(multimap);
+}

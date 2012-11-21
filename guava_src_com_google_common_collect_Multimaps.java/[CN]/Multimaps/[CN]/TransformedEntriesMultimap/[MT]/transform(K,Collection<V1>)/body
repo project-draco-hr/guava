@@ -1,8 +1,9 @@
 {
-  return Collections2.transform(values,new Function<V1,V2>(){
-    @Override public V2 apply(    V1 value){
-      return transformer.transformEntry(key,value);
-    }
+  Function<V1,V2> function=new ValueFunction<K,V1,V2>(key,transformer);
+  if (values instanceof List) {
+    return Lists.transform((List<V1>)values,function);
   }
-);
+ else {
+    return Collections2.transform(values,function);
+  }
 }
