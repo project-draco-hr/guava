@@ -5,22 +5,46 @@
   if (k > (n >> 1)) {
     k=n - k;
   }
-  if (k >= biggestBinomials.length || n > biggestBinomials[k]) {
-    return Long.MAX_VALUE;
-  }
-  long result=1;
-  if (k < biggestSimpleBinomials.length && n <= biggestSimpleBinomials[k]) {
-    for (int i=0; i < k; i++) {
-      result*=n - i;
-      result/=i + 1;
-    }
-  }
- else {
-    for (int i=1; i <= k; i++, n--) {
-      int d=IntMath.gcd(n,i);
-      result/=i / d;
-      result*=n / d;
-    }
+switch (k) {
+case 0:
+    return 1;
+case 1:
+  return n;
+default :
+if (n < factorials.length) {
+  return factorials[n] / (factorials[k] * factorials[n - k]);
+}
+ else if (k >= biggestBinomials.length || n > biggestBinomials[k]) {
+  return Long.MAX_VALUE;
+}
+ else if (k < biggestSimpleBinomials.length && n <= biggestSimpleBinomials[k]) {
+  long result=n--;
+  for (int i=2; i <= k; n--, i++) {
+    result*=n;
+    result/=i;
   }
   return result;
+}
+ else {
+  int nBits=LongMath.log2(n,RoundingMode.CEILING);
+  long result=1;
+  long numerator=n--;
+  long denominator=1;
+  int numeratorBits=nBits;
+  for (int i=2; i <= k; i++, n--) {
+    if (numeratorBits + nBits < Long.SIZE - 1) {
+      numerator*=n;
+      denominator*=i;
+      numeratorBits+=nBits;
+    }
+ else {
+      result=multiplyFraction(result,numerator,denominator);
+      numerator=n;
+      denominator=i;
+      numeratorBits=nBits;
+    }
+  }
+  return multiplyFraction(result,numerator,denominator);
+}
+}
 }

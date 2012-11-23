@@ -1,0 +1,7 @@
+{
+  for (int k=3; k < LongMath.biggestBinomials.length; k++) {
+    for (int n=70; n <= LongMath.biggestBinomials[k]; n++) {
+      assertEquals(BigIntegerMath.binomial(n,k).longValue(),LongMath.binomial(n,k));
+    }
+  }
+}
