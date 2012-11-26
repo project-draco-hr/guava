@@ -1,10 +1,10 @@
 {
-  long guess=(long)(Math.sqrt(x) + 0.5);
+  long guess=(long)Math.sqrt(x);
   long guessSquared=guess * guess;
   if (x - guessSquared >= guess + guess + 1) {
     guess++;
   }
- else   if (UnsignedLongs.compare(x,guessSquared) < 0) {
+ else   if (x < guessSquared) {
     guess--;
   }
   return guess;
