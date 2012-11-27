@@ -1,0 +1,14 @@
+{
+  long min=0;
+  long max=(1L << 32) - 1;
+  for (  long value : TEST_LONGS) {
+    boolean expectSuccess=value >= min && value <= max;
+    try {
+      assertEquals(value,UnsignedInteger.valueOf(value).longValue());
+      assertTrue(expectSuccess);
+    }
+ catch (    IllegalArgumentException e) {
+      assertFalse(expectSuccess);
+    }
+  }
+}
