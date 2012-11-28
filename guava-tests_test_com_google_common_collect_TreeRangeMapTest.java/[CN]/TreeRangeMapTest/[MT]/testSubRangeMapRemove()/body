@@ -1,0 +1,14 @@
+{
+  RangeMap<Integer,Integer> rangeMap=TreeRangeMap.create();
+  rangeMap.put(Range.open(3,7),1);
+  rangeMap.put(Range.closed(9,10),2);
+  rangeMap.put(Range.closed(12,16),3);
+  RangeMap<Integer,Integer> sub=rangeMap.subRangeMap(Range.closed(5,11));
+  assertEquals(ImmutableMap.of(Range.closedOpen(5,7),1,Range.closed(9,10),2),sub.asMapOfRanges());
+  sub.remove(Range.closed(7,9));
+  assertEquals(ImmutableMap.of(Range.closedOpen(5,7),1,Range.openClosed(9,10),2),sub.asMapOfRanges());
+  assertEquals(ImmutableMap.of(Range.open(3,7),1,Range.openClosed(9,10),2,Range.closed(12,16),3),rangeMap.asMapOfRanges());
+  sub.remove(Range.closed(3,9));
+  assertEquals(ImmutableMap.of(Range.openClosed(9,10),2),sub.asMapOfRanges());
+  assertEquals(ImmutableMap.of(Range.open(3,5),1,Range.openClosed(9,10),2,Range.closed(12,16),3),rangeMap.asMapOfRanges());
+}

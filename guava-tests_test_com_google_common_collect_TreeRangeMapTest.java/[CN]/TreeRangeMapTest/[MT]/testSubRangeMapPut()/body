@@ -1,0 +1,20 @@
+{
+  RangeMap<Integer,Integer> rangeMap=TreeRangeMap.create();
+  rangeMap.put(Range.open(3,7),1);
+  rangeMap.put(Range.closed(9,10),2);
+  rangeMap.put(Range.closed(12,16),3);
+  RangeMap<Integer,Integer> sub=rangeMap.subRangeMap(Range.closed(5,11));
+  assertEquals(ImmutableMap.of(Range.closedOpen(5,7),1,Range.closed(9,10),2),sub.asMapOfRanges());
+  sub.put(Range.closed(7,9),4);
+  assertEquals(ImmutableMap.of(Range.closedOpen(5,7),1,Range.closed(7,9),4,Range.openClosed(9,10),2),sub.asMapOfRanges());
+  assertEquals(ImmutableMap.of(Range.open(3,7),1,Range.closed(7,9),4,Range.openClosed(9,10),2,Range.closed(12,16),3),rangeMap.asMapOfRanges());
+  try {
+    sub.put(Range.open(9,12),5);
+    fail("Expected IllegalArgumentException");
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+  sub=sub.subRangeMap(Range.closedOpen(5,5));
+  sub.put(Range.closedOpen(5,5),6);
+  assertEquals(ImmutableMap.of(Range.open(3,7),1,Range.closed(7,9),4,Range.openClosed(9,10),2,Range.closed(12,16),3),rangeMap.asMapOfRanges());
+}

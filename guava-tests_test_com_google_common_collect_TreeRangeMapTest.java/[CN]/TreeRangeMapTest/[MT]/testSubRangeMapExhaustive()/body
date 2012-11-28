@@ -1,0 +1,29 @@
+{
+  for (  Range<Integer> range1 : RANGES) {
+    for (    Range<Integer> range2 : RANGES) {
+      RangeMap<Integer,Integer> rangeMap=TreeRangeMap.create();
+      rangeMap.put(range1,1);
+      rangeMap.put(range2,2);
+      for (      Range<Integer> subRange : RANGES) {
+        RangeMap<Integer,Integer> expected=TreeRangeMap.create();
+        for (        Map.Entry<Range<Integer>,Integer> entry : rangeMap.asMapOfRanges().entrySet()) {
+          if (entry.getKey().isConnected(subRange)) {
+            expected.put(entry.getKey().intersection(subRange),entry.getValue());
+          }
+        }
+        RangeMap<Integer,Integer> subRangeMap=rangeMap.subRangeMap(subRange);
+        assertEquals(expected,subRangeMap);
+        assertEquals(expected.asMapOfRanges(),subRangeMap.asMapOfRanges());
+        if (!expected.asMapOfRanges().isEmpty()) {
+          assertEquals(expected.span(),subRangeMap.span());
+        }
+        for (int i=MIN_BOUND; i <= MAX_BOUND; i++) {
+          assertEquals(expected.get(i),subRangeMap.get(i));
+        }
+        for (        Range<Integer> query : RANGES) {
+          assertEquals(expected.asMapOfRanges().get(query),subRangeMap.asMapOfRanges().get(query));
+        }
+      }
+    }
+  }
+}

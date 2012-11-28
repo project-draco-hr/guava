@@ -2,6 +2,9 @@
   if (checkNotNull(range).isEmpty()) {
     return ImmutableRangeMap.of();
   }
+ else   if (ranges.isEmpty() || range.encloses(span())) {
+    return this;
+  }
   int lowerIndex=SortedLists.binarySearch(ranges,Range.<K>upperBoundFn(),range.lowerBound,KeyPresentBehavior.FIRST_AFTER,KeyAbsentBehavior.NEXT_HIGHER);
   int upperIndex=SortedLists.binarySearch(ranges,Range.<K>lowerBoundFn(),range.upperBound,KeyPresentBehavior.ANY_PRESENT,KeyAbsentBehavior.NEXT_HIGHER);
   if (lowerIndex >= upperIndex) {
