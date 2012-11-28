@@ -1,0 +1,19 @@
+{
+  for (  Range<Integer> range1 : RANGES) {
+    for (    Range<Integer> range2 : RANGES) {
+      if (!range1.isConnected(range2) || range1.intersection(range2).isEmpty()) {
+        for (        Range<Integer> subRange : RANGES) {
+          ImmutableRangeMap<Integer,Integer> rangeMap=ImmutableRangeMap.<Integer,Integer>builder().put(range1,1).put(range2,2).build();
+          ImmutableRangeMap.Builder<Integer,Integer> expectedBuilder=ImmutableRangeMap.builder();
+          for (          Map.Entry<Range<Integer>,Integer> entry : rangeMap.asMapOfRanges().entrySet()) {
+            if (entry.getKey().isConnected(subRange) && !entry.getKey().intersection(subRange).isEmpty()) {
+              expectedBuilder.put(entry.getKey().intersection(subRange),entry.getValue());
+            }
+          }
+          ImmutableRangeMap<Integer,Integer> expected=expectedBuilder.build();
+          assertEquals(expected,rangeMap.subRangeMap(subRange));
+        }
+      }
+    }
+  }
+}
