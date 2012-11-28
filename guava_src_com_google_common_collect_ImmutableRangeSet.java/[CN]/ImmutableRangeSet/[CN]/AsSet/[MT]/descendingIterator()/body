@@ -1,6 +1,6 @@
 {
   return new AbstractIterator<C>(){
-    final Iterator<Range<C>> rangeItr=subRanges.reverse().iterator();
+    final Iterator<Range<C>> rangeItr=ranges.reverse().iterator();
     Iterator<C> elemItr=Iterators.emptyIterator();
     @Override protected C computeNext(){
       while (!elemItr.hasNext()) {

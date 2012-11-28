@@ -2,7 +2,7 @@
   if (contains(target)) {
     @SuppressWarnings("unchecked") C c=(C)target;
     long total=0;
-    for (    Range<C> range : subRanges) {
+    for (    Range<C> range : ranges) {
       if (range.contains(c)) {
         return Ints.saturatedCast(total + range.asSet(domain).indexOf(c));
       }

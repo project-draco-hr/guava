@@ -2,7 +2,7 @@
   Integer result=size;
   if (result == null) {
     long total=0;
-    for (    Range<C> range : subRanges) {
+    for (    Range<C> range : ranges) {
       total+=range.asSet(domain).size();
       if (total >= Integer.MAX_VALUE) {
         break;

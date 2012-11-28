@@ -1,3 +1,0 @@
-DiscreteDomain<C> domain
-Range<C> subRange
-ImmutableList<Range<C>> subRanges
