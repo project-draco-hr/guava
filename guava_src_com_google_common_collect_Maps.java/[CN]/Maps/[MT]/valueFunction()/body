@@ -1,3 +1,3 @@
 {
-  return (Function)VALUE_FUNCTION;
+  return (Function)EntryFunction.VALUE;
 }

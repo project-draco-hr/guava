@@ -1,0 +1,4 @@
+{
+  super(unfiltered);
+  this.predicate=checkNotNull(predicate);
+}

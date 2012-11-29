@@ -1,3 +1,0 @@
-{
-  return (entries == null) ? entries=Collections2.filter(unfiltered.entries(),predicate) : entries;
-}

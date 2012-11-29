@@ -1,3 +1,0 @@
-{
-  return filterCollection(unfiltered.get(key),new ValuePredicate(key));
-}

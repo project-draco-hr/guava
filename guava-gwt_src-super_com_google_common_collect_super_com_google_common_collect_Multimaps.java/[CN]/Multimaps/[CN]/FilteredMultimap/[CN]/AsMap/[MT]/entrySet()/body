@@ -1,3 +1,0 @@
-{
-  return (entrySet == null) ? entrySet=new EntrySet(super.entrySet()) : entrySet;
-}

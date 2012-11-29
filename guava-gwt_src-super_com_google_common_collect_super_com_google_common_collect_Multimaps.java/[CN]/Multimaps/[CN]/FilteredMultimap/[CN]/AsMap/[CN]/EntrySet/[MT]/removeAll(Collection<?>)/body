@@ -1,3 +1,0 @@
-{
-  return Sets.removeAllImpl(this,c);
-}

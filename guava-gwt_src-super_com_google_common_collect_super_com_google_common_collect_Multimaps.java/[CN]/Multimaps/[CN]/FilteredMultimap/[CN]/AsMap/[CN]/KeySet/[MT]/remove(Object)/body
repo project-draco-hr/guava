@@ -1,8 +1,0 @@
-{
-  Collection<V> collection=delegate.get(o);
-  if (collection == null) {
-    return false;
-  }
-  collection.clear();
-  return true;
-}

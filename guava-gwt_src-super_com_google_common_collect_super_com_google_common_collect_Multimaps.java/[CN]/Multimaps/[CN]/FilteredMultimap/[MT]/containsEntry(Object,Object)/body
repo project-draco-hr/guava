@@ -1,3 +1,0 @@
-{
-  return unfiltered.containsEntry(key,value) && satisfiesPredicate(key,value);
-}

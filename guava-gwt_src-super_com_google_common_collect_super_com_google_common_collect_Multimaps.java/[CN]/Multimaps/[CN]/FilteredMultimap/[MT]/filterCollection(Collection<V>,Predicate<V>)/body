@@ -1,8 +1,0 @@
-{
-  if (collection instanceof Set) {
-    return Sets.filter((Set<V>)collection,predicate);
-  }
- else {
-    return Collections2.filter(collection,predicate);
-  }
-}

@@ -1,0 +1,21 @@
+{
+  Set<K> result=keySet;
+  if (result == null) {
+    return keySet=new Maps.KeySet<K,Collection<V>>(){
+      @Override Map<K,Collection<V>> map(){
+        return AsMap.this;
+      }
+      @Override public boolean removeAll(      Collection<?> c){
+        return removeIf(compose(in(c),Maps.<K>keyFunction()));
+      }
+      @Override public boolean retainAll(      Collection<?> c){
+        return removeIf(compose(not(in(c)),Maps.<K>keyFunction()));
+      }
+      @Override public boolean remove(      @Nullable Object o){
+        return AsMap.this.remove(o) != null;
+      }
+    }
+;
+  }
+  return result;
+}

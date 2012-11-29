@@ -1,0 +1,3 @@
+{
+  return new SampleElements<Integer>(114,37,42,19,82);
+}

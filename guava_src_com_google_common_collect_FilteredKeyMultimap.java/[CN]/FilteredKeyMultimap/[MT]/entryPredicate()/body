@@ -1,0 +1,3 @@
+{
+  return Predicates.compose(keyPredicate,Maps.<K>keyFunction());
+}

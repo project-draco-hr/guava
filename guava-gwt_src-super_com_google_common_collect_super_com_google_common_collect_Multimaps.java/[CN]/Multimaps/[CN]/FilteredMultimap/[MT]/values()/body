@@ -1,3 +1,0 @@
-{
-  return (values == null) ? values=new Values() : values;
-}

@@ -1,0 +1,4 @@
+{
+  super(unfiltered);
+  this.keyPredicate=checkNotNull(keyPredicate);
+}

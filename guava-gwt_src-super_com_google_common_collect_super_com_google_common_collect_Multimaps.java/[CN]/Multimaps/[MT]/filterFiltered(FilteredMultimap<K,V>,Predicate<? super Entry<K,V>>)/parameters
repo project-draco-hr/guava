@@ -1,2 +1,2 @@
-FilteredMultimap<K,V> map
+FilteredMultimap<K,V> multimap
 Predicate<? super Entry<K,V>> entryPredicate

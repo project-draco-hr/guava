@@ -1,3 +1,0 @@
-{
-  return containsEntry(key,value) ? unfiltered.remove(key,value) : false;
-}
