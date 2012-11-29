@@ -11,7 +11,7 @@
     assertTrue(cache.asMap().containsKey(key2));
     assertEquals(1,cache.size());
     assertEquals(ImmutableSet.of(key2),cache.asMap().keySet());
-    ASSERT.that(cache.asMap().values()).hasContentsAnyOrder(value2);
+    ASSERT.that(cache.asMap().values()).has().item(value2);
     assertEquals(ImmutableSet.of(immutableEntry(key2,value2)),cache.asMap().entrySet());
   }
 }

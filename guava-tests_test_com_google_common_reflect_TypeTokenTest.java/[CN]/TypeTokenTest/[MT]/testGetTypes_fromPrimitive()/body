@@ -1,9 +1,9 @@
 {
   TypeToken<Integer>.TypeSet types=TypeToken.of(int.class).getTypes();
-  ASSERT.that(types).hasContentsAnyOrder(TypeToken.of(int.class));
-  ASSERT.that(types.rawTypes()).hasContentsAnyOrder(int.class);
+  ASSERT.that(types).has().item(TypeToken.of(int.class));
+  ASSERT.that(types.rawTypes()).has().item(int.class);
   ASSERT.that(types.interfaces()).isEmpty();
   ASSERT.that(types.interfaces().rawTypes()).isEmpty();
-  ASSERT.that(types.classes()).hasContentsAnyOrder(TypeToken.of(int.class));
-  ASSERT.that(types.classes().rawTypes()).hasContentsAnyOrder(int.class);
+  ASSERT.that(types.classes()).has().item(TypeToken.of(int.class));
+  ASSERT.that(types.classes().rawTypes()).has().item(int.class);
 }

@@ -11,8 +11,8 @@
   multimap2.put("bar",3);
   multimap2.put(nullKey(),nullValue());
   multimap.putAll(multimap2);
-  ASSERT.that(valuesFoo).hasContentsAnyOrder(1,2);
-  ASSERT.that(valuesBar).hasContentsAnyOrder(3);
-  ASSERT.that(valuesCow).hasContentsAnyOrder(5);
-  ASSERT.that(valuesNull).hasContentsAnyOrder(nullValue(),2);
+  ASSERT.that(valuesFoo).has().allOf(1,2);
+  ASSERT.that(valuesBar).has().item(3);
+  ASSERT.that(valuesCow).has().item(5);
+  ASSERT.that(valuesNull).has().allOf(nullValue(),2);
 }

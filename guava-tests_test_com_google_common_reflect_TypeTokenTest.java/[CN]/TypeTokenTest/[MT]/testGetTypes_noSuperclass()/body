@@ -2,10 +2,10 @@
   TypeToken<Object>.TypeSet types=new TypeToken<Object>(){
   }
 .getTypes();
-  ASSERT.that(types).hasContentsAnyOrder(TypeToken.of(Object.class));
-  ASSERT.that(types.rawTypes()).hasContentsAnyOrder(Object.class);
+  ASSERT.that(types).has().item(TypeToken.of(Object.class));
+  ASSERT.that(types.rawTypes()).has().item(Object.class);
   ASSERT.that(types.interfaces()).isEmpty();
   ASSERT.that(types.interfaces().rawTypes()).isEmpty();
-  ASSERT.that(types.classes()).hasContentsAnyOrder(TypeToken.of(Object.class));
-  ASSERT.that(types.classes().rawTypes()).hasContentsAnyOrder(Object.class);
+  ASSERT.that(types.classes()).has().item(TypeToken.of(Object.class));
+  ASSERT.that(types.classes().rawTypes()).has().item(Object.class);
 }

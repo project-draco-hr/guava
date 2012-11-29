@@ -3,5 +3,5 @@
   rangeSet.add(Range.closedOpen(3,3));
   testInvariants(rangeSet);
   ASSERT.that(rangeSet.asRanges()).isEmpty();
-  ASSERT.that(rangeSet.complement().asRanges()).hasContentsInOrder(Range.<Integer>all());
+  ASSERT.that(rangeSet.complement().asRanges()).has().allOf(Range.<Integer>all()).inOrder();
 }

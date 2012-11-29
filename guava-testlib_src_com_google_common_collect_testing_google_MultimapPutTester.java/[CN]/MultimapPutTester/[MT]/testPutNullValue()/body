@@ -1,6 +1,6 @@
 {
   int size=getNumElements();
   multimap().put(sampleKeys().e3,null);
-  assertGet(sampleKeys().e3,new Object[]{null});
+  assertGet(sampleKeys().e3,Lists.newArrayList((V)null));
   assertEquals(size + 1,multimap().size());
 }

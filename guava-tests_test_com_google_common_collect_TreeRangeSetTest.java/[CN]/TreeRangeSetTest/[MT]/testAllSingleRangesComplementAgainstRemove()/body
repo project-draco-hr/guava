@@ -6,6 +6,6 @@
     complement.add(Range.<Integer>all());
     complement.remove(range);
     assertEquals(complement,rangeSet.complement());
-    ASSERT.that(rangeSet.complement().asRanges()).hasContentsInOrder(complement.asRanges().toArray());
+    ASSERT.that(rangeSet.complement().asRanges()).has().allFrom(complement.asRanges()).inOrder();
   }
 }

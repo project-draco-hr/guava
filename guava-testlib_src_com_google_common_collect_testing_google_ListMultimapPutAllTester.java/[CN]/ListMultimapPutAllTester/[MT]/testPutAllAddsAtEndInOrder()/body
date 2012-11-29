@@ -5,6 +5,6 @@
     List<V> expectedValues=copyToList(multimap().get(k));
     multimap().putAll(k,values);
     expectedValues.addAll(values);
-    assertGet(k,expectedValues.toArray());
+    assertGet(k,expectedValues);
   }
 }

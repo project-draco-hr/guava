@@ -1,8 +1,8 @@
 {
   SortedSet<String> set=of("e");
   assertTrue(set.subSet("c","g") instanceof ImmutableSortedSet);
-  ASSERT.that(set.subSet("c","g")).hasContentsInOrder("e");
-  ASSERT.that(set.subSet("e","g")).hasContentsInOrder("e");
+  ASSERT.that(set.subSet("c","g")).has().item("e");
+  ASSERT.that(set.subSet("e","g")).has().item("e");
   assertSame(of(),set.subSet("f","g"));
   assertSame(of(),set.subSet("c","e"));
   assertSame(of(),set.subSet("c","d"));

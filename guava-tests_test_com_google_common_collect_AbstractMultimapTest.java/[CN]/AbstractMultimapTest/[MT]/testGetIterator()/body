@@ -13,7 +13,7 @@
   assertTrue(iterator.hasNext());
   Integer v3=iterator.next();
   assertFalse(iterator.hasNext());
-  ASSERT.that(asList(v1,v2,v3)).hasContentsAnyOrder(1,3,5);
+  ASSERT.that(asList(v1,v2,v3)).has().allOf(1,3,5);
   assertSize(3);
   assertTrue(multimap.containsEntry("foo",v1));
   assertFalse(multimap.containsEntry("foo",v2));
@@ -26,7 +26,7 @@
   Integer n3=iterator.next();
   iterator.remove();
   assertFalse(iterator.hasNext());
-  ASSERT.that(asList(n1,n3)).hasContentsAnyOrder(v1,v3);
+  ASSERT.that(asList(n1,n3)).has().allOf(v1,v3);
   assertSize(1);
   assertFalse(multimap.containsKey("foo"));
 }

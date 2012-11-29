@@ -9,7 +9,7 @@
     Collection<V> expectedCollection=Helpers.copyToList(collection);
     multimap().remove(key,value);
     expectedCollection.remove(value);
-    ASSERT.that(collection).hasContentsAnyOrder(expectedCollection.toArray());
+    ASSERT.that(collection).has().allFrom(expectedCollection);
     assertEquals(!expectedCollection.isEmpty(),multimap().containsKey(key));
   }
 }

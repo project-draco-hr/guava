@@ -11,8 +11,8 @@
   V v2=sampleValues().e2;
   assertTrue(result.add(v1));
   assertTrue(result.add(v2));
-  ASSERT.that(result).hasContentsAnyOrder(v1,v2);
-  ASSERT.that(multimap().get(k0)).hasContentsAnyOrder(v1,v2);
+  ASSERT.that(result).has().allOf(v1,v2);
+  ASSERT.that(multimap().get(k0)).has().allOf(v1,v2);
   assertTrue(multimap().containsKey(k0));
   assertFalse(multimap().containsEntry(k0,v0));
   assertTrue(multimap().containsEntry(k0,v2));

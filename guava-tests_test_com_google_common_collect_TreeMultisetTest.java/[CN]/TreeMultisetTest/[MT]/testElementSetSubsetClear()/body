@@ -7,11 +7,11 @@
   ms.add("e",3);
   ms.add("f",2);
   SortedSet<String> elementSet=ms.elementSet();
-  ASSERT.that(elementSet).hasContentsInOrder("a","b","c","d","e","f");
+  ASSERT.that(elementSet).has().allOf("a","b","c","d","e","f").inOrder();
   SortedSet<String> subset=elementSet.subSet("b","f");
-  ASSERT.that(subset).hasContentsInOrder("b","c","d","e");
+  ASSERT.that(subset).has().allOf("b","c","d","e").inOrder();
   subset.clear();
-  ASSERT.that(elementSet).hasContentsInOrder("a","f");
-  ASSERT.that(subset).hasContentsInOrder();
+  ASSERT.that(elementSet).has().allOf("a","f").inOrder();
+  ASSERT.that(subset).isEmpty();
   assertEquals(3,ms.size());
 }

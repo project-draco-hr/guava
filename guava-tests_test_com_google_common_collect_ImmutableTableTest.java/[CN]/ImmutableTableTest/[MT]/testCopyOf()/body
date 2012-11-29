@@ -6,6 +6,6 @@
   table.put('b',1,"bar");
   table.put('a',2,"baz");
   validateTableCopies(table);
-  ASSERT.that(table.row('b').keySet()).hasContentsInOrder(1,2);
-  ASSERT.that(ImmutableTable.copyOf(table).row('b').keySet()).hasContentsInOrder(2,1);
+  ASSERT.that(table.row('b').keySet()).has().allOf(1,2).inOrder();
+  ASSERT.that(ImmutableTable.copyOf(table).row('b').keySet()).has().allOf(2,1).inOrder();
 }

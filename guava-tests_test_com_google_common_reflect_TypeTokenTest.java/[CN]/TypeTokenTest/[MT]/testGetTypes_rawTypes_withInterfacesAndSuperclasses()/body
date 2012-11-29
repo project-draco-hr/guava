@@ -6,8 +6,8 @@ abstract class Class3<T> extends Class2 implements Interface3<T> {
   TypeToken<Class3<String>>.TypeSet types=new TypeToken<Class3<String>>(){
   }
 .getTypes();
-  ASSERT.that(types.rawTypes()).hasContentsAnyOrder(Class3.class,Interface3.class,Iterable.class,Class2.class,Interface12.class,Interface1.class,Interface2.class,Class1.class,Object.class);
-  ASSERT.that(types.interfaces().rawTypes()).hasContentsAnyOrder(Interface3.class,Interface12.class,Interface1.class,Interface2.class,Iterable.class);
-  ASSERT.that(types.classes().rawTypes()).hasContentsAnyOrder(Class3.class,Class2.class,Class1.class,Object.class);
+  ASSERT.that(types.rawTypes()).has().allOf(Class3.class,Interface3.class,Iterable.class,Class2.class,Interface12.class,Interface1.class,Interface2.class,Class1.class,Object.class);
+  ASSERT.that(types.interfaces().rawTypes()).has().allOf(Interface3.class,Interface12.class,Interface1.class,Interface2.class,Iterable.class);
+  ASSERT.that(types.classes().rawTypes()).has().allOf(Class3.class,Class2.class,Class1.class,Object.class);
   assertSubtypeFirst(types);
 }

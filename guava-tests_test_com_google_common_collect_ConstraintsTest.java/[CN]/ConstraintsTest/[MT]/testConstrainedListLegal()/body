@@ -11,13 +11,13 @@
   assertTrue(constrained.equals(list));
   assertEquals(list.toString(),constrained.toString());
   assertEquals(list.hashCode(),constrained.hashCode());
-  ASSERT.that(list).hasContentsInOrder("foo","cow","baz",TEST_ELEMENT,"box","fan","qux","cat","dog");
-  ASSERT.that(constrained).hasContentsInOrder("foo","cow","baz",TEST_ELEMENT,"box","fan","qux","cat","dog");
+  ASSERT.that(list).has().allOf("foo","cow","baz",TEST_ELEMENT,"box","fan","qux","cat","dog").inOrder();
+  ASSERT.that(constrained).has().allOf("foo","cow","baz",TEST_ELEMENT,"box","fan","qux","cat","dog").inOrder();
   ListIterator<String> iterator=constrained.listIterator();
   iterator.next();
   iterator.set("sun");
   constrained.listIterator(2).add("sky");
-  ASSERT.that(list).hasContentsInOrder("sun","cow","sky","baz",TEST_ELEMENT,"box","fan","qux","cat","dog");
-  ASSERT.that(constrained).hasContentsInOrder("sun","cow","sky","baz",TEST_ELEMENT,"box","fan","qux","cat","dog");
+  ASSERT.that(list).has().allOf("sun","cow","sky","baz",TEST_ELEMENT,"box","fan","qux","cat","dog").inOrder();
+  ASSERT.that(constrained).has().allOf("sun","cow","sky","baz",TEST_ELEMENT,"box","fan","qux","cat","dog").inOrder();
   assertTrue(constrained instanceof RandomAccess);
 }

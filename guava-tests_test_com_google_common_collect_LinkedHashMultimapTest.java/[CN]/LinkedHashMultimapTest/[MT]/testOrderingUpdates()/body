@@ -1,13 +1,13 @@
 {
   Multimap<String,Integer> multimap=initializeMultimap5();
-  ASSERT.that(multimap.replaceValues("foo",asList(6,7))).hasContentsInOrder(5,3);
-  ASSERT.that(multimap.keySet()).hasContentsInOrder("foo","bar","cow");
-  ASSERT.that(multimap.removeAll("foo")).hasContentsInOrder(6,7);
-  ASSERT.that(multimap.keySet()).hasContentsInOrder("bar","cow");
+  ASSERT.that(multimap.replaceValues("foo",asList(6,7))).has().allOf(5,3).inOrder();
+  ASSERT.that(multimap.keySet()).has().allOf("foo","bar","cow").inOrder();
+  ASSERT.that(multimap.removeAll("foo")).has().allOf(6,7).inOrder();
+  ASSERT.that(multimap.keySet()).has().allOf("bar","cow").inOrder();
   assertTrue(multimap.remove("bar",4));
-  ASSERT.that(multimap.keySet()).hasContentsInOrder("bar","cow");
+  ASSERT.that(multimap.keySet()).has().allOf("bar","cow").inOrder();
   assertTrue(multimap.remove("bar",1));
-  ASSERT.that(multimap.keySet()).hasContentsInOrder("cow");
+  ASSERT.that(multimap.keySet()).has().item("cow");
   multimap.put("bar",9);
-  ASSERT.that(multimap.keySet()).hasContentsInOrder("cow","bar");
+  ASSERT.that(multimap.keySet()).has().allOf("cow","bar").inOrder();
 }

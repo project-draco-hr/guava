@@ -8,7 +8,7 @@
     List<V> expectedValues=copyToList(values);
     assertTrue(multimap().put(k,v));
     expectedValues.add(v);
-    assertGet(k,expectedValues.toArray());
+    assertGet(k,expectedValues);
     assertEquals(v,values.get(values.size() - 1));
   }
 }

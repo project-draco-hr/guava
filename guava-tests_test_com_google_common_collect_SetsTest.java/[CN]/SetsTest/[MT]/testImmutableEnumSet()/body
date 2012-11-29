@@ -1,6 +1,6 @@
 {
   Set<SomeEnum> units=Sets.immutableEnumSet(SomeEnum.D,SomeEnum.B);
-  ASSERT.that(units).hasContentsInOrder(SomeEnum.B,SomeEnum.D);
+  ASSERT.that(units).has().allOf(SomeEnum.B,SomeEnum.D).inOrder();
   try {
     units.remove(SomeEnum.B);
     fail("ImmutableEnumSet should throw an exception on remove()");

@@ -20,5 +20,5 @@
   assertEquals(1,service.startUpCalled);
   assertEquals(1,service.shutDownCalled);
   assertEquals(Service.State.FAILED,service.state());
-  ASSERT.that(service.transitionStates).hasContentsInOrder(Service.State.STARTING,Service.State.STOPPING);
+  ASSERT.that(service.transitionStates).has().allOf(Service.State.STARTING,Service.State.STOPPING).inOrder();
 }

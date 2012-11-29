@@ -7,6 +7,6 @@
     Set<V> expectedValues=copyToSet(multimap().get(k));
     multimap().putAll(k,valuesToPut);
     expectedValues.addAll(valuesToPut);
-    assertGet(k,expectedValues.toArray());
+    assertGet(k,expectedValues);
   }
 }

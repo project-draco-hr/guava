@@ -2,5 +2,5 @@
   initMultimapWithNullKey();
   assertTrue(multimap().remove(null,getValueForNullKey()));
   expectMissing(Helpers.mapEntry((K)null,getValueForNullKey()));
-  assertGet(getKeyForNullValue(),EMPTY);
+  assertGet(getKeyForNullValue(),ImmutableList.<V>of());
 }

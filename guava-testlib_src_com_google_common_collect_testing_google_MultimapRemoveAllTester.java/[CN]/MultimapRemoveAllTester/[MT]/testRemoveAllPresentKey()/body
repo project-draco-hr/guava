@@ -1,4 +1,4 @@
 {
-  ASSERT.that(multimap().removeAll(sampleKeys().e0)).hasContentsInOrder(sampleValues().e0);
+  ASSERT.that(multimap().removeAll(sampleKeys().e0)).has().allOf(sampleValues().e0).inOrder();
   expectMissing(samples.e0);
 }

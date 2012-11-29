@@ -21,12 +21,8 @@
   assertSame(three,map.remove(two));
   assertNull(map.put(three,one));
   assertNull(map.put(one,two));
-  Set<Map.Entry<Object,Object>> entries=map.entrySet();
-  ASSERT.that(entries).hasContentsAnyOrder(Maps.immutableEntry(three,one),Maps.immutableEntry(one,two));
-  Set<Object> keys=map.keySet();
-  ASSERT.that(keys).hasContentsAnyOrder(one,three);
-  Collection<Object> values=map.values();
-  ASSERT.that(values).hasContentsAnyOrder(one,two);
+  ASSERT.that(map).hasKey(three).withValue(one);
+  ASSERT.that(map).hasKey(one).withValue(two);
   map.clear();
   assertEquals(EMPTY_STATS,cache.stats());
 }

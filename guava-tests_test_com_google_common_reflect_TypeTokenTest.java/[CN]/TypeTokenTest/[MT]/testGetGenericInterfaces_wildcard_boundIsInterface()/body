@@ -2,7 +2,7 @@
   TypeToken<Iterable<String>> interfaceType=new TypeToken<Iterable<String>>(){
   }
 ;
-  ASSERT.that(TypeToken.of(Types.subtypeOf(interfaceType.getType())).getGenericInterfaces()).hasContentsAnyOrder(interfaceType);
+  ASSERT.that(TypeToken.of(Types.subtypeOf(interfaceType.getType())).getGenericInterfaces()).iteratesOverSequence(interfaceType);
   assertHasArrayInterfaces(new TypeToken<Iterable<String>[]>(){
   }
 );

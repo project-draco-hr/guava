@@ -44,8 +44,8 @@
   assertFalse(multisetView.contains("bar"));
   assertFalse(set.contains("bar"));
   assertEquals(set,multisetView.elementSet());
-  ASSERT.that(multisetView.elementSet()).hasContentsAnyOrder("foo",null);
-  ASSERT.that(multisetView.entrySet()).hasContentsAnyOrder(Multisets.immutableEntry("foo",1),Multisets.immutableEntry((String)null,1));
+  ASSERT.that(multisetView.elementSet()).has().allOf("foo",null);
+  ASSERT.that(multisetView.entrySet()).has().allOf(Multisets.immutableEntry("foo",1),Multisets.immutableEntry((String)null,1));
   multisetView.clear();
   assertFalse(multisetView.contains("foo"));
   assertFalse(set.contains("foo"));

@@ -19,6 +19,6 @@
   }
  catch (  TestElementException expected) {
   }
-  ASSERT.that(constrained).hasContentsAnyOrder("foo","bar");
-  ASSERT.that(multiset).hasContentsAnyOrder("foo","bar");
+  ASSERT.that(constrained).has().allOf("foo","bar");
+  ASSERT.that(multiset).has().allOf("foo","bar");
 }

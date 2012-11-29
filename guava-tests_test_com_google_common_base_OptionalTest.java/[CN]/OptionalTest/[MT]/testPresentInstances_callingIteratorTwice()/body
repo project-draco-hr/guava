@@ -1,6 +1,6 @@
 {
   List<Optional<String>> optionals=ImmutableList.of(Optional.of("a"),Optional.<String>absent(),Optional.of("c"));
   Iterable<String> onlyPresent=Optional.presentInstances(optionals);
-  ASSERT.that(onlyPresent).hasContentsInOrder("a","c");
-  ASSERT.that(onlyPresent).hasContentsInOrder("a","c");
+  ASSERT.that(onlyPresent).iteratesOverSequence("a","c");
+  ASSERT.that(onlyPresent).iteratesOverSequence("a","c");
 }

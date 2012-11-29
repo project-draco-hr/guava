@@ -6,7 +6,7 @@
       List<V> expectedValues=Helpers.copyToList(values);
       multimap().put(key,value);
       expectedValues.add(value);
-      assertGet(key,expectedValues.toArray());
+      assertGet(key,expectedValues);
       assertEquals(value,values.get(values.size() - 1));
     }
   }

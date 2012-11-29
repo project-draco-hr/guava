@@ -12,5 +12,5 @@
   assertTrue(compound.isDone());
   assertTrue(listener.wasCalled());
   List<String> results=compound.get();
-  ASSERT.that(results).hasContentsInOrder(null,DATA2);
+  ASSERT.that(results).has().allOf(null,DATA2).inOrder();
 }

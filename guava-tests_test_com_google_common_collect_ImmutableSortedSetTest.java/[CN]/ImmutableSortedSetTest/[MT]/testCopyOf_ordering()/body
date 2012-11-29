@@ -1,4 +1,4 @@
 {
   SortedSet<String> set=copyOf(asList("e","a","f","b","d","c"));
-  ASSERT.that(set).hasContentsInOrder("a","b","c","d","e","f");
+  ASSERT.that(set).has().allOf("a","b","c","d","e","f").inOrder();
 }

@@ -10,6 +10,6 @@
     List<V> asMapValue=(List<V>)asMapEntry.getValue();
     asMapValue.remove(i);
     expectedValues.remove(i);
-    assertGet(k,expectedValues.toArray());
+    assertGet(k,expectedValues);
   }
 }

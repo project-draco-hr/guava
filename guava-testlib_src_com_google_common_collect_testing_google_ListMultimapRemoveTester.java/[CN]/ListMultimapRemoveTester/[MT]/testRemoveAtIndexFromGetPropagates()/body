@@ -8,6 +8,6 @@
     List<V> expectedValues=copyToList(values);
     multimap().get(k).remove(i);
     expectedValues.remove(i);
-    assertGet(k,expectedValues.toArray());
+    assertGet(k,expectedValues);
   }
 }

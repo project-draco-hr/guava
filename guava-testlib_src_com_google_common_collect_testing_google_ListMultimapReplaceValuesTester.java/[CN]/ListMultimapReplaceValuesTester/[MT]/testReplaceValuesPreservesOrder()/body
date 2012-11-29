@@ -3,6 +3,6 @@
   for (  K k : sampleKeys()) {
     resetContainer();
     multimap().replaceValues(k,values);
-    assertGet(k,values.toArray());
+    assertGet(k,values);
   }
 }

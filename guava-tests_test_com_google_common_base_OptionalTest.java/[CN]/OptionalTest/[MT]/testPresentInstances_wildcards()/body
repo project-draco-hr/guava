@@ -1,5 +1,5 @@
 {
   List<Optional<? extends Number>> optionals=ImmutableList.<Optional<? extends Number>>of(Optional.<Double>absent(),Optional.of(2));
   Iterable<Number> onlyPresent=Optional.presentInstances(optionals);
-  ASSERT.that(onlyPresent).hasContentsInOrder(2);
+  ASSERT.that(onlyPresent).iteratesOverSequence(2);
 }

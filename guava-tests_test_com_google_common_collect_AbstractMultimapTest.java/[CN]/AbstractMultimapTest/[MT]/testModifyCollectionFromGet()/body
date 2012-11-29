@@ -30,12 +30,12 @@
   assertTrue(values.add(17));
   assertTrue(values.removeAll(asList(11,15)));
   assertSize(4);
-  ASSERT.that(multimap.get("foo")).hasContentsAnyOrder(9,13,17);
+  ASSERT.that(multimap.get("foo")).has().allOf(9,13,17);
   assertFalse(values.removeAll(asList(21,25)));
   assertSize(4);
   assertTrue(values.retainAll(asList(13,17,19)));
   assertSize(3);
-  ASSERT.that(multimap.get("foo")).hasContentsAnyOrder(13,17);
+  ASSERT.that(multimap.get("foo")).has().allOf(13,17);
   assertFalse(values.retainAll(asList(13,17,19)));
   assertSize(3);
   values.remove(13);

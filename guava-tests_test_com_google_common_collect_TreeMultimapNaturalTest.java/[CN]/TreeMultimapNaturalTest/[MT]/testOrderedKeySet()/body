@@ -1,4 +1,4 @@
 {
   TreeMultimap<String,Integer> multimap=createPopulate();
-  ASSERT.that(multimap.keySet()).hasContentsInOrder("foo","google","tree");
+  ASSERT.that(multimap.keySet()).has().allOf("foo","google","tree").inOrder();
 }

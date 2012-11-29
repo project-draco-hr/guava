@@ -4,5 +4,5 @@
   service.startAndWait();
   assertEquals(1,service.startUpCalled);
   assertEquals(Service.State.RUNNING,service.state());
-  ASSERT.that(service.transitionStates).hasContentsInOrder(Service.State.STARTING);
+  ASSERT.that(service.transitionStates).has().allOf(Service.State.STARTING).inOrder();
 }

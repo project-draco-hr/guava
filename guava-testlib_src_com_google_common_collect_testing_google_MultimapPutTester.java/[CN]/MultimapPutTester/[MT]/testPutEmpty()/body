@@ -2,7 +2,7 @@
   int size=getNumElements();
   K key=sampleKeys().e3;
   V value=sampleValues().e3;
-  assertGet(key,EMPTY);
+  assertGet(key,ImmutableList.<V>of());
   assertTrue(multimap().put(key,value));
   assertGet(key,value);
   assertEquals(size + 1,multimap().size());

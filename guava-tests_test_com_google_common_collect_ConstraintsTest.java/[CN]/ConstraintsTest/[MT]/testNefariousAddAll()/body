@@ -3,6 +3,6 @@
   List<String> constrained=Constraints.constrainedList(list,TEST_CONSTRAINT);
   Collection<String> onceIterable=onceIterableCollection("baz");
   constrained.addAll(onceIterable);
-  ASSERT.that(constrained).hasContentsInOrder("foo","bar","baz");
-  ASSERT.that(list).hasContentsInOrder("foo","bar","baz");
+  ASSERT.that(constrained).has().allOf("foo","bar","baz").inOrder();
+  ASSERT.that(list).has().allOf("foo","bar","baz").inOrder();
 }

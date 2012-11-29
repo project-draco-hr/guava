@@ -8,10 +8,10 @@
   builder.put("a",2);
   builder.put("b",6);
   ImmutableSetMultimap<String,Integer> multimap=builder.build();
-  ASSERT.that(multimap.keySet()).hasContentsInOrder("d","c","b","a");
-  ASSERT.that(multimap.values()).hasContentsInOrder(2,4,3,6,5,2);
-  ASSERT.that(multimap.get("a")).hasContentsInOrder(5,2);
-  ASSERT.that(multimap.get("b")).hasContentsInOrder(3,6);
+  ASSERT.that(multimap.keySet()).has().allOf("d","c","b","a").inOrder();
+  ASSERT.that(multimap.values()).has().allOf(2,4,3,6,5,2).inOrder();
+  ASSERT.that(multimap.get("a")).has().allOf(5,2).inOrder();
+  ASSERT.that(multimap.get("b")).has().allOf(3,6).inOrder();
   assertFalse(multimap.get("a") instanceof ImmutableSortedSet);
   assertFalse(multimap.get("x") instanceof ImmutableSortedSet);
   assertFalse(multimap.asMap().get("a") instanceof ImmutableSortedSet);

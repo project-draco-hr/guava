@@ -7,5 +7,5 @@
   }
 ;
   ListMultimap<String,Integer> transformed=Multimaps.transformValues(multimap,square);
-  ASSERT.that(transformed.entries()).hasContentsInOrder(immutableEntry("a",4),immutableEntry("a",16),immutableEntry("b",9),immutableEntry("b",9),immutableEntry("c",36));
+  ASSERT.that(transformed.entries()).has().allOf(immutableEntry("a",4),immutableEntry("a",16),immutableEntry("b",9),immutableEntry("b",9),immutableEntry("c",36)).inOrder();
 }

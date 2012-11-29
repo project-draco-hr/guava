@@ -1,4 +1,4 @@
 {
-  ASSERT.that(findClassesToTest(ImmutableList.of(Foo.class))).hasContentsInOrder(Foo.class);
-  ASSERT.that(findClassesToTest(ImmutableList.of(Foo.class,Foo2Test.class))).hasContentsInOrder(Foo.class);
+  ASSERT.that(findClassesToTest(ImmutableList.of(Foo.class))).has().allOf(Foo.class).inOrder();
+  ASSERT.that(findClassesToTest(ImmutableList.of(Foo.class,Foo2Test.class))).has().allOf(Foo.class).inOrder();
 }

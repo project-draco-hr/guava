@@ -2,5 +2,5 @@
   SortedSet<String> input=Sets.newTreeSet(STRING_LENGTH);
   Collections.addAll(input,"in","the","quick","jumped","over","a");
   SortedSet<String> set=copyOf(input);
-  ASSERT.that(set).hasContentsInOrder("a","in","jumped","over","quick","the");
+  ASSERT.that(set).has().allOf("a","in","jumped","over","quick","the").inOrder();
 }

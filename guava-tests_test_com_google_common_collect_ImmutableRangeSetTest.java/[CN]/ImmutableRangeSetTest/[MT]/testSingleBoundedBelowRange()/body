@@ -1,6 +1,6 @@
 {
   ImmutableRangeSet<Integer> rangeSet=ImmutableRangeSet.of(Range.greaterThan(2));
-  ASSERT.that(rangeSet.asRanges()).hasContentsInOrder(Range.greaterThan(2));
+  ASSERT.that(rangeSet.asRanges()).has().item(Range.greaterThan(2));
   assertTrue(rangeSet.encloses(Range.closed(3,4)));
   assertTrue(rangeSet.encloses(Range.greaterThan(3)));
   assertFalse(rangeSet.encloses(Range.closedOpen(1,5)));

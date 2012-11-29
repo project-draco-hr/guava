@@ -6,6 +6,6 @@
   multimap.put("c",4);
   multimap.remove("a",1);
   multimap=SerializableTester.reserializeAndAssert(multimap);
-  ASSERT.that(multimap.keySet()).hasContentsInOrder("a","b","c");
-  ASSERT.that(multimap.entries()).hasContentsInOrder(mapEntry("b",2),mapEntry("a",3),mapEntry("c",4));
+  ASSERT.that(multimap.keySet()).has().allOf("a","b","c").inOrder();
+  ASSERT.that(multimap.entries()).has().allOf(mapEntry("b",2),mapEntry("a",3),mapEntry("c",4)).inOrder();
 }

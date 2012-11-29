@@ -5,7 +5,7 @@
   assertEquals(ImmutableMap.of("one",3,"two",3,"three",5),map);
   assertEquals(Integer.valueOf(5),map.get("three"));
   assertNull(map.get("five"));
-  ASSERT.that(map.entrySet()).hasContentsInOrder(mapEntry("one",3),mapEntry("three",5),mapEntry("two",3));
-  ASSERT.that(map.tailMap("onea").entrySet()).hasContentsInOrder(mapEntry("three",5),mapEntry("two",3));
-  ASSERT.that(map.subMap("one","two").entrySet()).hasContentsInOrder(mapEntry("one",3),mapEntry("three",5));
+  ASSERT.that(map.entrySet()).has().allOf(mapEntry("one",3),mapEntry("three",5),mapEntry("two",3)).inOrder();
+  ASSERT.that(map.tailMap("onea").entrySet()).has().allOf(mapEntry("three",5),mapEntry("two",3)).inOrder();
+  ASSERT.that(map.subMap("one","two").entrySet()).has().allOf(mapEntry("one",3),mapEntry("three",5)).inOrder();
 }

@@ -3,5 +3,5 @@
   assertTrue(set.isEmpty());
   set.add(new LegacyComparable("foo"));
   set.add(new LegacyComparable("bar"));
-  ASSERT.that(set).hasContentsInOrder(new LegacyComparable("bar"),new LegacyComparable("foo"));
+  ASSERT.that(set).has().allOf(new LegacyComparable("bar"),new LegacyComparable("foo")).inOrder();
 }

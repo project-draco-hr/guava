@@ -11,6 +11,6 @@
   builder.put('r',4,"foo");
   builder.put('x',5,"bar");
   Table<Character,Integer,String> table=builder.build();
-  ASSERT.that(table.columnKeySet()).hasContentsInOrder(0,1,2,3,4,5,7);
-  ASSERT.that(table.row('c').keySet()).hasContentsInOrder(0,3);
+  ASSERT.that(table.columnKeySet()).has().allOf(0,1,2,3,4,5,7).inOrder();
+  ASSERT.that(table.row('c').keySet()).has().allOf(0,3).inOrder();
 }

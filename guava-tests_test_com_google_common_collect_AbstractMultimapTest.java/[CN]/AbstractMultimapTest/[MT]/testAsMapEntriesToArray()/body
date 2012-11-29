@@ -3,6 +3,6 @@
   multimap.put("foo",nullValue());
   multimap.put(nullKey(),3);
   Collection<Entry<String,Collection<Integer>>> entries=multimap.asMap().entrySet();
-  ASSERT.that(entries.toArray()).hasContentsAnyOrder(Maps.immutableEntry("foo",multimap.get("foo")),Maps.immutableEntry(nullKey(),multimap.get(nullKey())));
-  ASSERT.that(entries.toArray(new Entry[2])).hasContentsAnyOrder(Maps.immutableEntry("foo",multimap.get("foo")),Maps.immutableEntry(nullKey(),multimap.get(nullKey())));
+  ASSERT.that(entries.toArray()).has().allOf(Maps.immutableEntry("foo",multimap.get("foo")),Maps.immutableEntry(nullKey(),multimap.get(nullKey())));
+  ASSERT.that(entries.toArray(new Entry[2])).has().allOf(Maps.immutableEntry("foo",multimap.get("foo")),Maps.immutableEntry(nullKey(),multimap.get(nullKey())));
 }

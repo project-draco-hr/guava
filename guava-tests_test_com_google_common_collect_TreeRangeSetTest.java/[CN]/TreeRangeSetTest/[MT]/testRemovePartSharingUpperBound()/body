@@ -3,6 +3,6 @@
   rangeSet.add(Range.closed(3,5));
   rangeSet.remove(Range.openClosed(3,5));
   testInvariants(rangeSet);
-  ASSERT.that(rangeSet.asRanges()).hasContentsInOrder(Range.singleton(3));
-  ASSERT.that(rangeSet.complement().asRanges()).hasContentsInOrder(Range.lessThan(3),Range.greaterThan(3));
+  ASSERT.that(rangeSet.asRanges()).has().item(Range.singleton(3));
+  ASSERT.that(rangeSet.complement().asRanges()).has().allOf(Range.lessThan(3),Range.greaterThan(3)).inOrder();
 }

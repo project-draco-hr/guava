@@ -6,7 +6,7 @@
   ms.add("a");
   ms.add("b");
   ms.add(null,2);
-  ASSERT.that(ms).hasContentsInOrder(null,null,null,"a","b","b");
+  ASSERT.that(ms).has().allOf(null,null,null,"a","b","b").inOrder();
   assertEquals(3,ms.count(null));
   SortedSet<String> elementSet=ms.elementSet();
   assertEquals(null,elementSet.first());

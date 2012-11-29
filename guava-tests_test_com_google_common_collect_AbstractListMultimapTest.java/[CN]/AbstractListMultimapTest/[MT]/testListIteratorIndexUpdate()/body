@@ -4,10 +4,10 @@
   ListIterator<Integer> iterator=multimap.get("foo").listIterator(1);
   assertEquals(2,iterator.next().intValue());
   iterator.set(6);
-  ASSERT.that(multimap.get("foo")).hasContentsInOrder(1,6,3,4,5);
+  ASSERT.that(multimap.get("foo")).has().allOf(1,6,3,4,5).inOrder();
   assertTrue(iterator.hasNext());
   assertEquals(3,iterator.next().intValue());
   iterator.remove();
-  ASSERT.that(multimap.get("foo")).hasContentsInOrder(1,6,4,5);
+  ASSERT.that(multimap.get("foo")).has().allOf(1,6,4,5).inOrder();
   assertEquals(4,multimap.size());
 }

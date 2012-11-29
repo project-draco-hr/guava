@@ -9,6 +9,6 @@
     List<V> asMapValue=(List<V>)multimap().asMap().get(k);
     asMapValue.remove(i);
     expectedValues.remove(i);
-    assertGet(k,expectedValues.toArray());
+    assertGet(k,expectedValues);
   }
 }

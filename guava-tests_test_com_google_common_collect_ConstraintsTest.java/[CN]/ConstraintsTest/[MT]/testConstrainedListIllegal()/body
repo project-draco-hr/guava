@@ -61,6 +61,6 @@
   }
  catch (  TestElementException expected) {
   }
-  ASSERT.that(constrained).hasContentsInOrder("foo","bar");
-  ASSERT.that(list).hasContentsInOrder("foo","bar");
+  ASSERT.that(constrained).has().allOf("foo","bar").inOrder();
+  ASSERT.that(list).has().allOf("foo","bar").inOrder();
 }

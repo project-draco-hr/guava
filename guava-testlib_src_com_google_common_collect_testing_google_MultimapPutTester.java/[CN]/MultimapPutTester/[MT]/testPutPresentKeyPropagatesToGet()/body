@@ -7,7 +7,7 @@
     Collection<V> expectedCollection=Helpers.copyToList(collection);
     multimap().put(key,sampleValues().e3);
     expectedCollection.add(sampleValues().e3);
-    ASSERT.that(collection).hasContentsAnyOrder(expectedCollection.toArray());
+    ASSERT.that(collection).has().allFrom(expectedCollection);
     assertEquals(size + 1,multimap().size());
   }
 }

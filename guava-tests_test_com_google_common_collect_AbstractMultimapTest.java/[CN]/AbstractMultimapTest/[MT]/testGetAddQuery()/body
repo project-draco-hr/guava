@@ -9,7 +9,7 @@
   assertTrue(values.contains(1));
   assertTrue(values.contains(5));
   assertFalse(values.contains(6));
-  ASSERT.that(values).hasContentsAnyOrder(1,3,5);
+  ASSERT.that(values).has().allOf(1,3,5);
   assertTrue(values.containsAll(asList(3,5)));
   assertFalse(values.isEmpty());
   assertEquals(multimap.get("foo"),values);

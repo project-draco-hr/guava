@@ -1,5 +1,5 @@
 {
   File jarFile=new File("base/some.jar");
   Manifest manifest=manifestClasspath("current.jar");
-  ASSERT.that(ClassPath.getClassPathFromManifest(jarFile,manifest)).hasContentsInOrder(new File("base/current.jar").toURI());
+  ASSERT.that(ClassPath.getClassPathFromManifest(jarFile,manifest)).has().allOf(new File("base/current.jar").toURI()).inOrder();
 }

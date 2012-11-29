@@ -6,7 +6,7 @@
     int size=multimap().size();
     Collection<V> oldKeyValues=Helpers.copyToList(multimap().get(k));
     multimap().replaceValues(k,values);
-    assertGet(k,values.toArray());
+    assertGet(k,values);
     assertEquals(size + values.size() - oldKeyValues.size(),multimap().size());
   }
 }

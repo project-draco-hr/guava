@@ -1,4 +1,4 @@
 {
   String[] result=ObjectArrays.concat("foo",new String[]{"bar","baz"});
-  ASSERT.that(result).hasContentsInOrder("foo","bar","baz");
+  ASSERT.that(result).has().allOf("foo","bar","baz").inOrder();
 }

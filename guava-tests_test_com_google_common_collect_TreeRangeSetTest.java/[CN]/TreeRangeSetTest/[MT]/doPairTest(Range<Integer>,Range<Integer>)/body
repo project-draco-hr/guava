@@ -6,20 +6,20 @@
     ASSERT.that(rangeSet.asRanges()).isEmpty();
   }
  else   if (a.isEmpty()) {
-    ASSERT.that(rangeSet.asRanges()).hasContentsInOrder(b);
+    ASSERT.that(rangeSet.asRanges()).has().item(b);
   }
  else   if (b.isEmpty()) {
-    ASSERT.that(rangeSet.asRanges()).hasContentsInOrder(a);
+    ASSERT.that(rangeSet.asRanges()).has().item(a);
   }
  else   if (a.isConnected(b)) {
-    ASSERT.that(rangeSet.asRanges()).hasContentsInOrder(a.span(b));
+    ASSERT.that(rangeSet.asRanges()).has().allOf(a.span(b)).inOrder();
   }
  else {
     if (a.lowerEndpoint() < b.lowerEndpoint()) {
-      ASSERT.that(rangeSet.asRanges()).hasContentsInOrder(a,b);
+      ASSERT.that(rangeSet.asRanges()).has().allOf(a,b).inOrder();
     }
  else {
-      ASSERT.that(rangeSet.asRanges()).hasContentsInOrder(b,a);
+      ASSERT.that(rangeSet.asRanges()).has().allOf(b,a).inOrder();
     }
   }
 }

@@ -54,10 +54,10 @@
   assertFalse(map.containsKey("bar"));
   assertEquals(map.keySet(),multimapView.keySet());
   assertEquals(map.keySet(),multimapView.keys().elementSet());
-  ASSERT.that(multimapView.keys()).hasContentsAnyOrder("foo");
-  ASSERT.that(multimapView.values()).hasContentsAnyOrder(1);
-  ASSERT.that(multimapView.entries()).hasContentsAnyOrder(Maps.immutableEntry("foo",1));
-  ASSERT.that(multimapView.asMap().entrySet()).hasContentsAnyOrder(Maps.immutableEntry("foo",(Collection<Integer>)Collections.singleton(1)));
+  ASSERT.that(multimapView.keys()).has().item("foo");
+  ASSERT.that(multimapView.values()).has().item(1);
+  ASSERT.that(multimapView.entries()).has().item(Maps.immutableEntry("foo",1));
+  ASSERT.that(multimapView.asMap().entrySet()).has().item(Maps.immutableEntry("foo",(Collection<Integer>)Collections.singleton(1)));
   multimapView.clear();
   assertFalse(multimapView.containsKey("foo"));
   assertFalse(map.containsKey("foo"));

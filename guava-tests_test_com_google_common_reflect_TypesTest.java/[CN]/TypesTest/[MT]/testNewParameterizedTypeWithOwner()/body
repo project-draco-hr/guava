@@ -11,5 +11,5 @@
   assertEquals(jvmType.toString(),ourType.toString());
   assertEquals(Map.class,ourType.getOwnerType());
   assertEquals(Map.Entry.class,ourType.getRawType());
-  ASSERT.that(ourType.getActualTypeArguments()).hasContentsInOrder(jvmType.getActualTypeArguments());
+  ASSERT.that(ourType.getActualTypeArguments()).iteratesOverSequence(jvmType.getActualTypeArguments());
 }

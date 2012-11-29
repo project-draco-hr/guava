@@ -2,12 +2,12 @@
   ms.add("a");
   ms.add("b",2);
   ms.add("c");
-  ASSERT.that(ms.elementSet()).hasContentsInOrder("a","b","c");
+  ASSERT.that(ms.elementSet()).has().allOf("a","b","c").inOrder();
   ms.remove("b");
-  ASSERT.that(ms.elementSet()).hasContentsInOrder("a","b","c");
+  ASSERT.that(ms.elementSet()).has().allOf("a","b","c").inOrder();
   ms.add("b");
-  ASSERT.that(ms.elementSet()).hasContentsInOrder("a","b","c");
+  ASSERT.that(ms.elementSet()).has().allOf("a","b","c").inOrder();
   ms.remove("b",2);
   ms.add("b");
-  ASSERT.that(ms.elementSet()).hasContentsInOrder("a","c","b");
+  ASSERT.that(ms.elementSet()).has().allOf("a","c","b").inOrder();
 }

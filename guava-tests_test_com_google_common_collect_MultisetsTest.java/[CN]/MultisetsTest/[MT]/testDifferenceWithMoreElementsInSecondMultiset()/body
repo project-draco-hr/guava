@@ -2,7 +2,7 @@
   Multiset<String> ms1=HashMultiset.create(Arrays.asList("a","b","a"));
   Multiset<String> ms2=HashMultiset.create(Arrays.asList("a","b","b","b"));
   Multiset<String> diff=Multisets.difference(ms1,ms2);
-  ASSERT.that(diff).hasContentsAnyOrder("a");
+  ASSERT.that(diff).has().item("a");
   assertEquals(0,diff.count("b"));
   assertEquals(1,diff.count("a"));
   assertFalse(diff.contains("b"));

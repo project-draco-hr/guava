@@ -3,16 +3,16 @@
   SortedMap<Integer,String> right=ImmutableSortedMap.of(1,"a",3,"f",5,"g",6,"z");
   SortedMapDifference<Integer,String> diff1=Maps.difference(left,right);
   assertFalse(diff1.areEqual());
-  ASSERT.that(diff1.entriesOnlyOnLeft().entrySet()).hasContentsInOrder(Maps.immutableEntry(4,"d"),Maps.immutableEntry(2,"b"));
-  ASSERT.that(diff1.entriesOnlyOnRight().entrySet()).hasContentsInOrder(Maps.immutableEntry(6,"z"));
-  ASSERT.that(diff1.entriesInCommon().entrySet()).hasContentsInOrder(Maps.immutableEntry(1,"a"));
-  ASSERT.that(diff1.entriesDiffering().entrySet()).hasContentsInOrder(Maps.immutableEntry(5,ValueDifferenceImpl.create("e","g")),Maps.immutableEntry(3,ValueDifferenceImpl.create("c","f")));
+  ASSERT.that(diff1.entriesOnlyOnLeft().entrySet()).has().allOf(Maps.immutableEntry(4,"d"),Maps.immutableEntry(2,"b")).inOrder();
+  ASSERT.that(diff1.entriesOnlyOnRight().entrySet()).has().item(Maps.immutableEntry(6,"z"));
+  ASSERT.that(diff1.entriesInCommon().entrySet()).has().item(Maps.immutableEntry(1,"a"));
+  ASSERT.that(diff1.entriesDiffering().entrySet()).has().allOf(Maps.immutableEntry(5,ValueDifferenceImpl.create("e","g")),Maps.immutableEntry(3,ValueDifferenceImpl.create("c","f"))).inOrder();
   assertEquals("not equal: only on left={4=d, 2=b}: only on right={6=z}: " + "value differences={5=(e, g), 3=(c, f)}",diff1.toString());
   SortedMapDifference<Integer,String> diff2=Maps.difference(right,left);
   assertFalse(diff2.areEqual());
-  ASSERT.that(diff2.entriesOnlyOnLeft().entrySet()).hasContentsInOrder(Maps.immutableEntry(6,"z"));
-  ASSERT.that(diff2.entriesOnlyOnRight().entrySet()).hasContentsInOrder(Maps.immutableEntry(2,"b"),Maps.immutableEntry(4,"d"));
-  ASSERT.that(diff1.entriesInCommon().entrySet()).hasContentsInOrder(Maps.immutableEntry(1,"a"));
+  ASSERT.that(diff2.entriesOnlyOnLeft().entrySet()).has().item(Maps.immutableEntry(6,"z"));
+  ASSERT.that(diff2.entriesOnlyOnRight().entrySet()).has().allOf(Maps.immutableEntry(2,"b"),Maps.immutableEntry(4,"d")).inOrder();
+  ASSERT.that(diff1.entriesInCommon().entrySet()).has().item(Maps.immutableEntry(1,"a"));
   assertEquals(ImmutableMap.of(3,ValueDifferenceImpl.create("f","c"),5,ValueDifferenceImpl.create("g","e")),diff2.entriesDiffering());
   assertEquals("not equal: only on left={6=z}: only on right={2=b, 4=d}: " + "value differences={3=(f, c), 5=(g, e)}",diff2.toString());
 }

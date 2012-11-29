@@ -3,5 +3,5 @@
   Iterable<String> tail=skip(list,1);
   list.subList(1,3).clear();
   list.addAll(0,newArrayList("A","B","C"));
-  ASSERT.that(tail).hasContentsInOrder("B","C","a");
+  ASSERT.that(tail).iteratesOverSequence("B","C","a");
 }

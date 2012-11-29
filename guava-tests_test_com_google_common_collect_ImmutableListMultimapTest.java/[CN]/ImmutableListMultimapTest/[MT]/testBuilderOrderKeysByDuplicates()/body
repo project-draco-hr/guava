@@ -13,8 +13,8 @@
   builder.put("a",2);
   builder.put("bb",6);
   ImmutableListMultimap<String,Integer> multimap=builder.build();
-  ASSERT.that(multimap.keySet()).hasContentsInOrder("d","a","bb","cc");
-  ASSERT.that(multimap.values()).hasContentsInOrder(2,5,2,3,6,4);
-  ASSERT.that(multimap.get("a")).hasContentsInOrder(5,2);
-  ASSERT.that(multimap.get("bb")).hasContentsInOrder(3,6);
+  ASSERT.that(multimap.keySet()).has().allOf("d","a","bb","cc").inOrder();
+  ASSERT.that(multimap.values()).has().allOf(2,5,2,3,6,4).inOrder();
+  ASSERT.that(multimap.get("a")).has().allOf(5,2).inOrder();
+  ASSERT.that(multimap.get("bb")).has().allOf(3,6).inOrder();
 }

@@ -1,6 +1,6 @@
 {
   List<String> list=Lists.asList("foo","bar",new String[0]);
-  ASSERT.that(list).hasContentsInOrder("foo","bar");
+  ASSERT.that(list).has().allOf("foo","bar").inOrder();
   assertEquals(2,list.size());
   assertIndexIsOutOfBounds(list,-1);
   assertEquals("foo",list.get(0));

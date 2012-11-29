@@ -7,23 +7,23 @@
     ticker.advance(1,MILLISECONDS);
   }
   Set<Integer> keySet=cache.asMap().keySet();
-  ASSERT.that(keySet).hasContentsAnyOrder(0,1,2,3,4,5,6,7,8,9);
+  ASSERT.that(keySet).has().allOf(0,1,2,3,4,5,6,7,8,9);
   ticker.advance(1,MILLISECONDS);
-  ASSERT.that(keySet).hasContentsAnyOrder(1,2,3,4,5,6,7,8,9);
+  ASSERT.that(keySet).has().allOf(1,2,3,4,5,6,7,8,9);
   getAll(cache,asList(0,1,2));
   CacheTesting.drainRecencyQueues(cache);
   ticker.advance(1,MILLISECONDS);
-  ASSERT.that(keySet).hasContentsAnyOrder(2,3,4,5,6,7,8,9,0);
+  ASSERT.that(keySet).has().allOf(2,3,4,5,6,7,8,9,0);
   cache.get(2,Callables.returning(-2));
   CacheTesting.drainRecencyQueues(cache);
   ticker.advance(1,MILLISECONDS);
-  ASSERT.that(keySet).hasContentsAnyOrder(3,4,5,6,7,8,9,0);
+  ASSERT.that(keySet).has().allOf(3,4,5,6,7,8,9,0);
   cache.asMap().put(3,-3);
   ticker.advance(1,MILLISECONDS);
-  ASSERT.that(keySet).hasContentsAnyOrder(4,5,6,7,8,9,0,3);
+  ASSERT.that(keySet).has().allOf(4,5,6,7,8,9,0,3);
   cache.asMap().replace(4,-4);
   ticker.advance(1,MILLISECONDS);
-  ASSERT.that(keySet).hasContentsAnyOrder(5,6,7,8,9,0,3,4);
+  ASSERT.that(keySet).has().allOf(5,6,7,8,9,0,3,4);
   ticker.advance(1,MILLISECONDS);
-  ASSERT.that(keySet).hasContentsAnyOrder(6,7,8,9,0,3,4);
+  ASSERT.that(keySet).has().allOf(6,7,8,9,0,3,4);
 }

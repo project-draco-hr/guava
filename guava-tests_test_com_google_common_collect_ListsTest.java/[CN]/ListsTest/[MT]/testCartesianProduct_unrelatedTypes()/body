@@ -5,5 +5,5 @@
   List<Object> exp2=list((Object)1,"4");
   List<Object> exp3=list((Object)2,"3");
   List<Object> exp4=list((Object)2,"4");
-  ASSERT.that(Lists.<Object>cartesianProduct(x,y)).hasContentsInOrder(exp1,exp2,exp3,exp4);
+  ASSERT.that(Lists.<Object>cartesianProduct(x,y)).has().allOf(exp1,exp2,exp3,exp4).inOrder();
 }

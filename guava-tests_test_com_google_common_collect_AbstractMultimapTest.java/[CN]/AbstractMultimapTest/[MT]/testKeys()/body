@@ -6,7 +6,7 @@
   Multiset<String> multiset=multimap.keys();
   assertEquals(3,multiset.count("foo"));
   assertEquals(1,multiset.count(nullKey()));
-  ASSERT.that(multiset.elementSet()).hasContentsAnyOrder("foo",nullKey());
+  ASSERT.that(multiset.elementSet()).has().allOf("foo",nullKey());
   assertEquals(2,multiset.entrySet().size());
   assertEquals(4,multiset.size());
   Set<Multiset.Entry<String>> entries=multimap.keys().entrySet();

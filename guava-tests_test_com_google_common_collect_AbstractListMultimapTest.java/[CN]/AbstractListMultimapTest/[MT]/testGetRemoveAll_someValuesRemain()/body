@@ -2,5 +2,5 @@
   ListMultimap<String,Integer> multimap=create();
   multimap.putAll("foo",asList(1,2,2,3,3,3));
   multimap.get("foo").removeAll(asList(2,3,3,4));
-  ASSERT.that(multimap.get("foo")).hasContentsInOrder(1);
+  ASSERT.that(multimap.get("foo")).has().item(1);
 }

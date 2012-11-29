@@ -7,8 +7,8 @@
   multimap.put("foo",5);
   List<Integer> list=multimap.get("foo");
   List<Integer> sublist=list.subList(1,4);
-  ASSERT.that(sublist).hasContentsInOrder(2,3,4);
+  ASSERT.that(sublist).has().allOf(2,3,4).inOrder();
   list.set(3,6);
-  ASSERT.that(multimap.get("foo")).hasContentsInOrder(1,2,3,6,5);
-  ASSERT.that(sublist).hasContentsInOrder(2,3,6);
+  ASSERT.that(multimap.get("foo")).has().allOf(1,2,3,6,5).inOrder();
+  ASSERT.that(sublist).has().allOf(2,3,6).inOrder();
 }

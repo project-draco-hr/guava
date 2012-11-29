@@ -1,5 +1,5 @@
 {
   assertTrue(multimap().remove(sampleKeys().e0,sampleValues().e0));
   expectMissing(samples.e0);
-  assertGet(sampleKeys().e0,EMPTY);
+  assertGet(sampleKeys().e0,ImmutableList.<V>of());
 }

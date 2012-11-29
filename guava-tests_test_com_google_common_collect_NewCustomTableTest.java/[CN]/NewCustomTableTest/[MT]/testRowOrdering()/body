@@ -1,4 +1,4 @@
 {
   table=create("foo",3,'a',"bar",1,'b',"foo",2,'c');
-  ASSERT.that(table.row("foo").keySet()).hasContentsInOrder(2,3);
+  ASSERT.that(table.row("foo").keySet()).has().allOf(2,3).inOrder();
 }

@@ -2,10 +2,10 @@
   for (  LoadingCache<Object,Object> cache : caches()) {
     Collection<Object> values=cache.asMap().values();
     List<Entry<Object,Object>> warmed=warmUp(cache);
-    Object[] expectedArray=Maps.newHashMap(cache.asMap()).values().toArray(new Object[0]);
-    ASSERT.that(values).hasContentsAnyOrder(expectedArray);
-    ASSERT.that(asList(values.toArray())).hasContentsAnyOrder(expectedArray);
-    ASSERT.that(asList(values.toArray(new Object[(int)cache.size()]))).hasContentsAnyOrder(expectedArray);
+    Collection<Object> expected=Maps.newHashMap(cache.asMap()).values();
+    ASSERT.that(values).has().allFrom(expected);
+    ASSERT.that(values.toArray()).has().allFrom(expected);
+    ASSERT.that(values.toArray(new Object[0])).has().allFrom(expected);
     assertEquals(WARMUP_SIZE,values.size());
     for (int i=WARMUP_MIN; i < WARMUP_MAX; i++) {
       Object value=warmed.get(i - WARMUP_MIN).getValue();

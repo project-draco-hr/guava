@@ -2,10 +2,10 @@
   for (  LoadingCache<Object,Object> cache : caches()) {
     Set<Entry<Object,Object>> entries=cache.asMap().entrySet();
     List<Entry<Object,Object>> warmed=warmUp(cache,WARMUP_MIN,WARMUP_MAX);
-    Set<Entry<Object,Object>> entrySet=Maps.newHashMap(cache.asMap()).entrySet();
-    ASSERT.that(entries).is(entrySet);
-    ASSERT.that(entries.toArray()).hasContentsAnyOrder(entrySet.toArray());
-    ASSERT.that(entries.toArray(new Entry[0])).hasContentsAnyOrder(entrySet.toArray(new Entry[0]));
+    Set<?> expected=Maps.newHashMap(cache.asMap()).entrySet();
+    ASSERT.that(entries).has().allFrom((Collection<Entry<Object,Object>>)expected);
+    ASSERT.that(entries.toArray()).has().allFrom((Collection<Object>)expected);
+    ASSERT.that(entries.toArray(new Entry[0])).has().allFrom((Collection<Entry>)expected);
     new EqualsTester().addEqualityGroup(cache.asMap().entrySet(),entries).addEqualityGroup(ImmutableSet.of()).testEquals();
     assertEquals(WARMUP_SIZE,entries.size());
     for (int i=WARMUP_MIN; i < WARMUP_MAX; i++) {

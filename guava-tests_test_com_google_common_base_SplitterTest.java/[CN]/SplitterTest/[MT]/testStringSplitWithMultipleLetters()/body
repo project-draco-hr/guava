@@ -1,4 +1,4 @@
 {
   Iterable<String> testStringingMotto=Splitter.on('-').split("Testing-rocks-Debugging-sucks");
-  ASSERT.that(testStringingMotto).hasContentsInOrder("Testing","rocks","Debugging","sucks");
+  ASSERT.that(testStringingMotto).iteratesOverSequence("Testing","rocks","Debugging","sucks");
 }

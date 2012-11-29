@@ -1,3 +1,3 @@
 {
-  ASSERT.that(fluent(1,3,5).copyInto(Sets.newHashSet(1,2,3,5))).hasContentsAnyOrder(1,2,3,5);
+  ASSERT.that(fluent(1,3,5).copyInto(Sets.newHashSet(1,2,3,5))).has().allOf(1,2,3,5);
 }

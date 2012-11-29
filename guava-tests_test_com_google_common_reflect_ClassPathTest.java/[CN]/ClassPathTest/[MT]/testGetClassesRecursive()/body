@@ -4,5 +4,5 @@
   for (  ClassInfo classInfo : classpath.getTopLevelClassesRecursive(ClassPathTest.class.getPackage().getName())) {
     classes.add(classInfo.load());
   }
-  ASSERT.that(classes).containsAllOf(ClassPathTest.class,ClassInSubPackage.class);
+  ASSERT.that(classes).has().allOf(ClassPathTest.class,ClassInSubPackage.class);
 }

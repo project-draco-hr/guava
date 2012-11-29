@@ -8,6 +8,6 @@
   assertTrue(constrained.equals(set));
   assertEquals(set.toString(),constrained.toString());
   assertEquals(set.hashCode(),constrained.hashCode());
-  ASSERT.that(set).hasContentsInOrder("foo","bar",TEST_ELEMENT,"qux","cat","dog");
-  ASSERT.that(constrained).hasContentsInOrder("foo","bar",TEST_ELEMENT,"qux","cat","dog");
+  ASSERT.that(set).has().allOf("foo","bar",TEST_ELEMENT,"qux","cat","dog").inOrder();
+  ASSERT.that(constrained).has().allOf("foo","bar",TEST_ELEMENT,"qux","cat","dog").inOrder();
 }

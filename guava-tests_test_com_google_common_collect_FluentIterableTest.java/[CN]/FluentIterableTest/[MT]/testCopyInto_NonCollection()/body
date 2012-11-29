@@ -7,5 +7,5 @@
     }
   }
 ;
-  ASSERT.that(FluentIterable.from(iterable).copyInto(list)).hasContentsInOrder(1,2,3,9,8,7);
+  ASSERT.that(FluentIterable.from(iterable).copyInto(list)).has().allOf(1,2,3,9,8,7).inOrder();
 }

@@ -7,8 +7,8 @@
   ListIterator<Integer> iterator=list.listIterator();
   assertEquals(1,iterator.next().intValue());
   iterator.set(2);
-  ASSERT.that(multimap.get("foo")).hasContentsInOrder(2,3,5);
+  ASSERT.that(multimap.get("foo")).has().allOf(2,3,5).inOrder();
   assertEquals(3,iterator.next().intValue());
   iterator.remove();
-  ASSERT.that(multimap.get("foo")).hasContentsInOrder(2,5);
+  ASSERT.that(multimap.get("foo")).has().allOf(2,5).inOrder();
 }

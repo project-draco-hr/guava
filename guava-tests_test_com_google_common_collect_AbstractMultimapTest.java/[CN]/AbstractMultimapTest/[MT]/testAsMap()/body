@@ -4,13 +4,13 @@
   multimap.put(nullKey(),3);
   Map<String,Collection<Integer>> map=multimap.asMap();
   assertEquals(2,map.size());
-  ASSERT.that(map.get("foo")).hasContentsAnyOrder(1,nullValue());
-  ASSERT.that(map.get(nullKey())).hasContentsAnyOrder(3);
+  ASSERT.that(map.get("foo")).has().allOf(1,nullValue());
+  ASSERT.that(map.get(nullKey())).has().item(3);
   assertNull(map.get("bar"));
   assertTrue(map.containsKey("foo"));
   assertTrue(map.containsKey(nullKey()));
   assertFalse(multimap.containsKey("bar"));
-  ASSERT.that(map.remove("foo")).hasContentsAnyOrder(1,nullValue());
+  ASSERT.that(map.remove("foo")).has().allOf(1,nullValue());
   assertFalse(multimap.containsKey("foo"));
   assertEquals(1,multimap.size());
   assertNull(map.remove("bar"));

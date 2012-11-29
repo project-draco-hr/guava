@@ -10,6 +10,6 @@
   builder.put('a',2,"bar");
   builder.put('a',1,"baz");
   Table<Character,Integer,String> table=builder.build();
-  ASSERT.that(table.rowKeySet()).hasContentsInOrder('a','b','c');
-  ASSERT.that(table.column(1).keySet()).hasContentsInOrder('a','b','c');
+  ASSERT.that(table.rowKeySet()).has().allOf('a','b','c').inOrder();
+  ASSERT.that(table.column(1).keySet()).has().allOf('a','b','c').inOrder();
 }

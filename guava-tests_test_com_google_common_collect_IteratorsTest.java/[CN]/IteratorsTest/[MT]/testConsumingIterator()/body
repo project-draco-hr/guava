@@ -1,11 +1,11 @@
 {
   List<String> list=Lists.newArrayList("a","b");
   Iterator<String> consumingIterator=Iterators.consumingIterator(list.iterator());
-  ASSERT.that(list).hasContentsInOrder("a","b");
+  ASSERT.that(list).has().allOf("a","b").inOrder();
   assertTrue(consumingIterator.hasNext());
-  ASSERT.that(list).hasContentsInOrder("a","b");
+  ASSERT.that(list).has().allOf("a","b").inOrder();
   assertEquals("a",consumingIterator.next());
-  ASSERT.that(list).hasContentsInOrder("b");
+  ASSERT.that(list).has().item("b");
   assertTrue(consumingIterator.hasNext());
   assertEquals("b",consumingIterator.next());
   ASSERT.that(list).isEmpty();

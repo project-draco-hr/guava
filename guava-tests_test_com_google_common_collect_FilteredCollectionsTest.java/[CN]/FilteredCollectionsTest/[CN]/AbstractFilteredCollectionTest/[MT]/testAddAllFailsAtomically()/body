@@ -9,6 +9,6 @@
     }
  catch (    IllegalArgumentException expected) {
     }
-    ASSERT.that(filteredToModify).hasContentsAnyOrder(filtered.toArray());
+    ASSERT.that(filteredToModify).has().allFrom(filtered);
   }
 }

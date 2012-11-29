@@ -8,6 +8,6 @@
   assertTrue(multimap().put(key,v2));
   values.add(v1);
   values.add(v2);
-  assertGet(key,values.toArray());
+  assertGet(key,values);
   assertEquals(size + 2,multimap().size());
 }

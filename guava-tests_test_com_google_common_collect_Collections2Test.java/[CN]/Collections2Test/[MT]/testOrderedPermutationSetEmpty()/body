@@ -2,7 +2,7 @@
   List<Integer> list=newArrayList();
   Collection<List<Integer>> permutationSet=Collections2.orderedPermutations(list);
   assertEquals(1,permutationSet.size());
-  assertTrue(permutationSet.contains(list));
+  ASSERT.that(permutationSet).has().item(list);
   Iterator<List<Integer>> permutations=permutationSet.iterator();
   assertNextPermutation(Lists.<Integer>newArrayList(),permutations);
   assertNoMorePermutations(permutations);

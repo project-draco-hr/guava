@@ -34,5 +34,5 @@
   }
  catch (  IllegalArgumentException expected) {
   }
-  ASSERT.that(multimap.entries()).hasContentsAnyOrder(Maps.immutableEntry(Color.RED,1),Maps.immutableEntry(Color.BLUE,2));
+  ASSERT.that(multimap.entries()).has().allOf(Maps.immutableEntry(Color.RED,1),Maps.immutableEntry(Color.BLUE,2));
 }
