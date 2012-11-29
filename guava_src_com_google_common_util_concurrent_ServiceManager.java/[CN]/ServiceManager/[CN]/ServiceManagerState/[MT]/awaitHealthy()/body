@@ -1,0 +1,9 @@
+{
+  monitor.enter();
+  try {
+    monitor.waitForUninterruptibly(awaitHealthGuard);
+  }
+  finally {
+    monitor.leave();
+  }
+}

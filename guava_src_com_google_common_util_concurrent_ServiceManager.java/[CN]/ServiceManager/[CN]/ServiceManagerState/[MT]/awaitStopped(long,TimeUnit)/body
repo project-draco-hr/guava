@@ -1,0 +1,9 @@
+{
+  monitor.enter();
+  try {
+    return monitor.waitForUninterruptibly(stoppedGuard,timeout,unit);
+  }
+  finally {
+    monitor.leave();
+  }
+}

@@ -1,0 +1,20 @@
+{
+  Map<Service,Long> loadTimeMap=Maps.newHashMapWithExpectedSize(services.size());
+  for (  Map.Entry<Service,ServiceListener> entry : services.entrySet()) {
+    State state=entry.getKey().state();
+    if (state != State.NEW && state != State.STARTING) {
+      loadTimeMap.put(entry.getKey(),entry.getValue().startupTimeMillis());
+    }
+  }
+  List<Entry<Service,Long>> servicesByStartTime=Ordering.<Long>natural().onResultOf(new Function<Map.Entry<Service,Long>,Long>(){
+    @Override public Long apply(    Map.Entry<Service,Long> input){
+      return input.getValue();
+    }
+  }
+).sortedCopy(loadTimeMap.entrySet());
+  ImmutableMap.Builder<Service,Long> builder=ImmutableMap.builder();
+  for (  Map.Entry<Service,Long> entry : servicesByStartTime) {
+    builder.put(entry);
+  }
+  return builder.build();
+}

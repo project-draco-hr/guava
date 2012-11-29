@@ -1,0 +1,8 @@
+{
+synchronized (watch) {
+    if (!watch.isRunning()) {
+      watch.start();
+      logger.log(Level.INFO,"Starting {0}",service);
+    }
+  }
+}

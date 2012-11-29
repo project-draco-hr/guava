@@ -1,0 +1,3 @@
+{
+  return Objects.toStringHelper(ServiceManager.class).add("services",services.keySet()).toString();
+}

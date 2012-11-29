@@ -1,0 +1,16 @@
+{
+  boolean result=true;
+  for (  Service service : services.keySet()) {
+    if (!service.isRunning()) {
+      State state=service.state();
+      if (state == State.FAILED) {
+        logger.log(Level.SEVERE,"Service " + service + " has failed",service.failureCause());
+      }
+ else {
+        logger.severe("Failing health check because service: " + service + " is "+ state);
+      }
+      result=false;
+    }
+  }
+  return result;
+}

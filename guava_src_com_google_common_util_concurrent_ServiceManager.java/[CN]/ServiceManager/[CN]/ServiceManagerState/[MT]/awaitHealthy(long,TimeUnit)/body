@@ -1,0 +1,12 @@
+{
+  monitor.enter();
+  try {
+    if (monitor.waitForUninterruptibly(awaitHealthGuard,timeout,unit)) {
+      return true;
+    }
+    return false;
+  }
+  finally {
+    monitor.leave();
+  }
+}

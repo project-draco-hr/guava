@@ -1,0 +1,24 @@
+{
+  StopFailingService service=new StopFailingService();
+  try {
+    service.failureCause();
+    fail();
+  }
+ catch (  IllegalStateException e) {
+  }
+  service.startAndWait();
+  try {
+    service.failureCause();
+    fail();
+  }
+ catch (  IllegalStateException e) {
+  }
+  try {
+    service.stopAndWait();
+    fail();
+  }
+ catch (  UncheckedExecutionException e) {
+    assertEquals(EXCEPTION,service.failureCause());
+    assertEquals(EXCEPTION,e.getCause());
+  }
+}
