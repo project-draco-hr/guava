@@ -1,4 +1,3 @@
 {
-  checkNotNull(file);
   return newOutputStreamSupplier(file,false);
 }

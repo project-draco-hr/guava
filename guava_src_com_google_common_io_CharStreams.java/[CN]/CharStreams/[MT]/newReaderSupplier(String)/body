@@ -1,9 +1,3 @@
 {
-  checkNotNull(value);
-  return new InputSupplier<StringReader>(){
-    @Override public StringReader getInput(){
-      return new StringReader(value);
-    }
-  }
-;
+  return CharStreams.asInputSupplier(asCharSource(value));
 }

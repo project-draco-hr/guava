@@ -1,14 +1,3 @@
 {
-  checkNotNull(from);
-  Closer closer=Closer.create();
-  try {
-    W out=closer.add(to.getOutput());
-    out.append(from);
-  }
- catch (  Throwable e) {
-    throw closer.rethrow(e,IOException.class);
-  }
- finally {
-    closer.close();
-  }
+  asCharSink(to).write(from);
 }

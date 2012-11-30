@@ -1,14 +1,3 @@
 {
-  checkNotNull(supplier);
-  Closer closer=Closer.create();
-  try {
-    InputStream in=closer.add(supplier.getInput());
-    return toByteArray(in);
-  }
- catch (  Throwable e) {
-    throw closer.rethrow(e,IOException.class);
-  }
- finally {
-    closer.close();
-  }
+  return asByteSource(supplier).read();
 }

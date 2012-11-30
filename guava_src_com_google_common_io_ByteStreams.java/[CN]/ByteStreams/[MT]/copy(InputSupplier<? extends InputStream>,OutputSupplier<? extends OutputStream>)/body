@@ -1,16 +1,3 @@
 {
-  checkNotNull(from);
-  checkNotNull(to);
-  Closer closer=Closer.create();
-  try {
-    InputStream in=closer.add(from.getInput());
-    OutputStream out=closer.add(to.getOutput());
-    return copy(in,out);
-  }
- catch (  Throwable e) {
-    throw closer.rethrow(e,IOException.class);
-  }
- finally {
-    closer.close();
-  }
+  return asByteSource(from).copyTo(asByteSink(to));
 }

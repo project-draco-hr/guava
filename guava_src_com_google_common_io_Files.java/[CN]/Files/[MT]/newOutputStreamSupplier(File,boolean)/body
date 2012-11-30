@@ -1,9 +1,3 @@
 {
-  checkNotNull(file);
-  return new OutputSupplier<FileOutputStream>(){
-    @Override public FileOutputStream getOutput() throws IOException {
-      return new FileOutputStream(file,append);
-    }
-  }
-;
+  return ByteStreams.asOutputSupplier(asByteSink(file,modes(append)));
 }

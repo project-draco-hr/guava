@@ -1,0 +1,9 @@
+{
+  checkNotNull(supplier);
+  return new CharSink(){
+    @Override public Writer openStream() throws IOException {
+      return asWriter(supplier.getOutput());
+    }
+  }
+;
+}

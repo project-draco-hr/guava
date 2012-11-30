@@ -1,5 +1,3 @@
 {
-  Hasher hasher=hashFunction.newHasher();
-  copy(supplier,Funnels.asOutputStream(hasher));
-  return hasher.hash();
+  return asByteSource(supplier).hash(hashFunction);
 }

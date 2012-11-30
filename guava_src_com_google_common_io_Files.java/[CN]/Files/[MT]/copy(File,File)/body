@@ -1,6 +1,4 @@
 {
-  checkNotNull(from);
-  checkNotNull(to);
   checkArgument(!from.equals(to),"Source %s and destination %s must be different",from,to);
-  copy(newInputStreamSupplier(from),to);
+  asByteSource(from).copyTo(asByteSink(to));
 }

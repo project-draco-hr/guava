@@ -1,0 +1,9 @@
+{
+  checkNotNull(supplier);
+  return new ByteSource(){
+    @Override public InputStream openStream() throws IOException {
+      return supplier.getInput();
+    }
+  }
+;
+}

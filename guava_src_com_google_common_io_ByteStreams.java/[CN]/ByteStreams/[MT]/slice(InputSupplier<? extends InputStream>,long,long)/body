@@ -1,27 +1,3 @@
 {
-  checkNotNull(supplier);
-  checkArgument(offset >= 0,"offset is negative");
-  checkArgument(length >= 0,"length is negative");
-  return new InputSupplier<InputStream>(){
-    @Override public InputStream getInput() throws IOException {
-      InputStream in=supplier.getInput();
-      if (offset > 0) {
-        try {
-          skipFully(in,offset);
-        }
- catch (        Throwable e) {
-          Closer closer=Closer.create();
-          closer.add(in);
-          try {
-            throw closer.rethrow(e,IOException.class);
-          }
-  finally {
-            closer.close();
-          }
-        }
-      }
-      return limit(in,length);
-    }
-  }
-;
+  return asInputSupplier(asByteSource(supplier).slice(offset,length));
 }

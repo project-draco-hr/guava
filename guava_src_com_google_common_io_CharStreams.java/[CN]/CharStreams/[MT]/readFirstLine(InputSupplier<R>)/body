@@ -1,13 +1,3 @@
 {
-  Closer closer=Closer.create();
-  try {
-    R r=closer.add(supplier.getInput());
-    return new LineReader(r).readLine();
-  }
- catch (  Throwable e) {
-    throw closer.rethrow(e,IOException.class);
-  }
- finally {
-    closer.close();
-  }
+  return asCharSource(supplier).readFirstLine();
 }

@@ -1,5 +1,3 @@
 {
-  checkNotNull(file);
-  checkNotNull(checksum);
   return ByteStreams.getChecksum(newInputStreamSupplier(file),checksum);
 }

@@ -1,0 +1,9 @@
+{
+  checkNotNull(sink);
+  return new OutputSupplier<W>(){
+    @Override public W getOutput() throws IOException {
+      return (W)sink.openStream();
+    }
+  }
+;
+}

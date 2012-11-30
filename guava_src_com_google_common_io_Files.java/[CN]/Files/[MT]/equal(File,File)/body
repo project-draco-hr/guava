@@ -9,5 +9,5 @@
   if (len1 != 0 && len2 != 0 && len1 != len2) {
     return false;
   }
-  return ByteStreams.equal(newInputStreamSupplier(file1),newInputStreamSupplier(file2));
+  return asByteSource(file1).contentEquals(asByteSource(file2));
 }

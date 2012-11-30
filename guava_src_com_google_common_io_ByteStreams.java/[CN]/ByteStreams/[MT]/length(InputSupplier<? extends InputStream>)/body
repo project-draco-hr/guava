@@ -1,25 +1,3 @@
 {
-  long count=0;
-  Closer closer=Closer.create();
-  try {
-    InputStream in=closer.add(supplier.getInput());
-    while (true) {
-      long amt=in.skip(Integer.MAX_VALUE);
-      if (amt == 0) {
-        if (in.read() == -1) {
-          return count;
-        }
-        count++;
-      }
- else {
-        count+=amt;
-      }
-    }
-  }
- catch (  Throwable e) {
-    throw closer.rethrow(e,IOException.class);
-  }
- finally {
-    closer.close();
-  }
+  return asByteSource(supplier).size();
 }

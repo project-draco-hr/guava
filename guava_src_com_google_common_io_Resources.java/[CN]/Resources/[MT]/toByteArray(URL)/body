@@ -1,3 +1,3 @@
 {
-  return ByteStreams.toByteArray(newInputStreamSupplier(url));
+  return asByteSource(url).read();
 }

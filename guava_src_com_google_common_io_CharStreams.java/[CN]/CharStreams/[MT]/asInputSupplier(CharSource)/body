@@ -1,0 +1,9 @@
+{
+  checkNotNull(source);
+  return new InputSupplier<R>(){
+    @Override public R getInput() throws IOException {
+      return (R)source.openStream();
+    }
+  }
+;
+}

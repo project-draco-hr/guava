@@ -1,16 +1,14 @@
 {
+  checkNotNull(processor);
   byte[] buf=new byte[BUF_SIZE];
   Closer closer=Closer.create();
   try {
     InputStream in=closer.add(supplier.getInput());
-    int amt;
+    int read;
     do {
-      amt=in.read(buf);
-      if (amt == -1) {
-        break;
-      }
+      read=in.read(buf);
     }
- while (processor.processBytes(buf,0,amt));
+ while (read != -1 && processor.processBytes(buf,0,read));
     return processor.getResult();
   }
  catch (  Throwable e) {

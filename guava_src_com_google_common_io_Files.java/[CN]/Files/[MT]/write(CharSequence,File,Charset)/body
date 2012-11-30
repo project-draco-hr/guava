@@ -1,6 +1,3 @@
 {
-  checkNotNull(from);
-  checkNotNull(to);
-  checkNotNull(charset);
-  write(from,to,charset,false);
+  asCharSink(to,charset).write(from);
 }

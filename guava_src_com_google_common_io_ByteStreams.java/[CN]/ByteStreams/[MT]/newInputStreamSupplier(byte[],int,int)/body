@@ -1,9 +1,3 @@
 {
-  checkNotNull(b);
-  return new InputSupplier<ByteArrayInputStream>(){
-    @Override public ByteArrayInputStream getInput(){
-      return new ByteArrayInputStream(b,off,len);
-    }
-  }
-;
+  return ByteStreams.asInputSupplier(asByteSource(b).slice(off,len));
 }
