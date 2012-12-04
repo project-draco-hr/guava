@@ -3,8 +3,8 @@
   stopwatch.reset();
   assertFalse(stopwatch.isRunning());
   ticker.advance(2);
-  assertEquals(0,stopwatch.elapsedTime(NANOSECONDS));
+  assertEquals(0,stopwatch.elapsed(NANOSECONDS));
   stopwatch.start();
   ticker.advance(3);
-  assertEquals(3,stopwatch.elapsedTime(NANOSECONDS));
+  assertEquals(3,stopwatch.elapsed(NANOSECONDS));
 }

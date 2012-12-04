@@ -1,7 +1,0 @@
-{
-  stopwatch.start();
-  ticker.advance(999999);
-  assertEquals(0,stopwatch.elapsedTime(MILLISECONDS));
-  ticker.advance(1);
-  assertEquals(1,stopwatch.elapsedTime(MILLISECONDS));
-}

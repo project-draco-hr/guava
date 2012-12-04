@@ -1,4 +1,4 @@
 {
   assertFalse(stopwatch.isRunning());
-  assertEquals(0,stopwatch.elapsedTime(NANOSECONDS));
+  assertEquals(0,stopwatch.elapsed(NANOSECONDS));
 }

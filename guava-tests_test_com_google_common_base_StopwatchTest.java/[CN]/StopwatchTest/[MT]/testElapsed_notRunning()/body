@@ -4,5 +4,5 @@
   ticker.advance(4);
   stopwatch.stop();
   ticker.advance(9);
-  assertEquals(4,stopwatch.elapsedTime(NANOSECONDS));
+  assertEquals(4,stopwatch.elapsed(NANOSECONDS));
 }
