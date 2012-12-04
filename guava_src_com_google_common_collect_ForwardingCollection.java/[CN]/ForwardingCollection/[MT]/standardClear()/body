@@ -1,7 +1,3 @@
 {
-  Iterator<E> iterator=iterator();
-  while (iterator.hasNext()) {
-    iterator.next();
-    iterator.remove();
-  }
+  Iterators.clear(iterator());
 }

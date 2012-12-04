@@ -1,7 +1,3 @@
 {
-  Iterator<Entry<E>> entryIterator=entrySet().iterator();
-  while (entryIterator.hasNext()) {
-    entryIterator.next();
-    entryIterator.remove();
-  }
+  Iterators.clear(entrySet().iterator());
 }
