@@ -1,5 +1,5 @@
 {
-  checkState(!isRunning);
+  checkState(!isRunning,"This stopwatch is already running; it cannot be started more than once.");
   isRunning=true;
   startTick=ticker.read();
   return this;
