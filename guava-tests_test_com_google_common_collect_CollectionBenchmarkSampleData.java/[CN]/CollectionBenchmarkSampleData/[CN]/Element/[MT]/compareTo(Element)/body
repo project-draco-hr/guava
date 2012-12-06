@@ -1,3 +1,3 @@
 {
-  return (hash < that.hash) ? -1 : (hash > that.hash) ? 1 : 0;
+  return Ints.compare(hash,that.hash);
 }

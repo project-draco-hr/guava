@@ -2,14 +2,16 @@
   List<Element> queryList=Lists.newArrayListWithCapacity(numQueries);
   int numGoodQueries=(int)(numQueries * hitRate + 0.5);
   int size=elementsInSet.size();
-  int minCopiesOfEachGoodQuery=numGoodQueries / size;
-  int extras=numGoodQueries % size;
-  for (int i=0; i < minCopiesOfEachGoodQuery; i++) {
-    queryList.addAll(elementsInSet);
+  if (size > 0) {
+    int minCopiesOfEachGoodQuery=numGoodQueries / size;
+    int extras=numGoodQueries % size;
+    for (int i=0; i < minCopiesOfEachGoodQuery; i++) {
+      queryList.addAll(elementsInSet);
+    }
+    List<Element> tmp=Lists.newArrayList(elementsInSet);
+    Collections.shuffle(tmp,random);
+    queryList.addAll(tmp.subList(0,extras));
   }
-  List<Element> tmp=Lists.newArrayList(elementsInSet);
-  Collections.shuffle(tmp,random);
-  queryList.addAll(tmp.subList(0,extras));
   while (queryList.size() < numQueries) {
     Element candidate=newElement();
     if (!elementsInSet.contains(candidate)) {
