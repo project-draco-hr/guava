@@ -1,4 +1,3 @@
 {
-  addHolder().builder.append(value);
-  return this;
+  return addHolder(String.valueOf(value));
 }

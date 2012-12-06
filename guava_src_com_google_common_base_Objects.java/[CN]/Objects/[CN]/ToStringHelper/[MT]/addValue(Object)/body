@@ -1,4 +1,3 @@
 {
-  addHolder(value).builder.append(value);
-  return this;
+  return addHolder(value);
 }

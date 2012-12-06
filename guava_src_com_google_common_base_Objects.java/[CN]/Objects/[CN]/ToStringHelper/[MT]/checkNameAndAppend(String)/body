@@ -1,4 +1,0 @@
-{
-  checkNotNull(name);
-  return addHolder().builder.append(name).append('=');
-}

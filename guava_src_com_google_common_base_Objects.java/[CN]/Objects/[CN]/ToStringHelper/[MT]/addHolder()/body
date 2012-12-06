@@ -1,5 +1,5 @@
 {
   ValueHolder valueHolder=new ValueHolder();
-  valueHolders.add(valueHolder);
+  holderTail=holderTail.next=valueHolder;
   return valueHolder;
 }

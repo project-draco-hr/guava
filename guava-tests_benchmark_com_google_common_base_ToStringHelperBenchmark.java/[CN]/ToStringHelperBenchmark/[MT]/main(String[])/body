@@ -1,0 +1,3 @@
+{
+  Runner.main(ToStringHelperBenchmark.class,args);
+}

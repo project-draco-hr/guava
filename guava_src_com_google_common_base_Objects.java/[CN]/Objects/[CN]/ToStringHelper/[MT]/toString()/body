@@ -1,17 +1,15 @@
 {
   boolean omitNullValuesSnapshot=omitNullValues;
-  boolean needsSeparator=false;
+  String nextSeparator="";
   StringBuilder builder=new StringBuilder(32).append(className).append('{');
-  for (  ValueHolder valueHolder : valueHolders) {
-    if (!omitNullValuesSnapshot || !valueHolder.isNull) {
-      if (needsSeparator) {
-        builder.append(", ");
+  for (ValueHolder valueHolder=holderHead.next; valueHolder != null; valueHolder=valueHolder.next) {
+    if (!omitNullValuesSnapshot || valueHolder.value != null) {
+      builder.append(nextSeparator);
+      nextSeparator=", ";
+      if (valueHolder.name != null) {
+        builder.append(valueHolder.name).append('=');
       }
- else {
-        needsSeparator=true;
-      }
-      CharSequence sequence=valueHolder.builder;
-      builder.append(sequence);
+      builder.append(valueHolder.value);
     }
   }
   return builder.append('}').toString();

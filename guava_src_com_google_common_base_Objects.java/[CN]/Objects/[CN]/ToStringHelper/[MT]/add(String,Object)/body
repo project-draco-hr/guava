@@ -1,5 +1,3 @@
 {
-  checkNotNull(name);
-  addHolder(value).builder.append(name).append('=').append(value);
-  return this;
+  return addHolder(name,value);
 }
