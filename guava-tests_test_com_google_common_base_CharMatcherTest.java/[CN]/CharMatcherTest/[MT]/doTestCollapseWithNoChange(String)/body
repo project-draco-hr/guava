@@ -1,10 +1,10 @@
 {
-  assertEquals(inout,is('-').collapseFrom(inout,'_'));
-  assertEquals(inout,is('-').or(is('#')).collapseFrom(inout,'_'));
-  assertEquals(inout,isNot('x').collapseFrom(inout,'_'));
-  assertEquals(inout,is('x').negate().collapseFrom(inout,'_'));
-  assertEquals(inout,anyOf("-").collapseFrom(inout,'_'));
-  assertEquals(inout,anyOf("-#").collapseFrom(inout,'_'));
-  assertEquals(inout,anyOf("-#123").collapseFrom(inout,'_'));
-  assertEquals(inout,CharMatcher.NONE.collapseFrom(inout,'_'));
+  assertSame(inout,is('-').collapseFrom(inout,'_'));
+  assertSame(inout,is('-').or(is('#')).collapseFrom(inout,'_'));
+  assertSame(inout,isNot('x').collapseFrom(inout,'_'));
+  assertSame(inout,is('x').negate().collapseFrom(inout,'_'));
+  assertSame(inout,anyOf("-").collapseFrom(inout,'_'));
+  assertSame(inout,anyOf("-#").collapseFrom(inout,'_'));
+  assertSame(inout,anyOf("-#123").collapseFrom(inout,'_'));
+  assertSame(inout,CharMatcher.NONE.collapseFrom(inout,'_'));
 }

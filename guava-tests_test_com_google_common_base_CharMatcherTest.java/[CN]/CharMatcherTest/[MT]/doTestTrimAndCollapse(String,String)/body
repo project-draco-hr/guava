@@ -1,9 +1,12 @@
 {
-  assertEquals(out,is('-').trimAndCollapseFrom(in,'_'));
-  assertEquals(out,is('-').or(is('#')).trimAndCollapseFrom(in,'_'));
-  assertEquals(out,isNot('x').trimAndCollapseFrom(in,'_'));
-  assertEquals(out,is('x').negate().trimAndCollapseFrom(in,'_'));
-  assertEquals(out,anyOf("-").trimAndCollapseFrom(in,'_'));
-  assertEquals(out,anyOf("-#").trimAndCollapseFrom(in,'_'));
-  assertEquals(out,anyOf("-#123").trimAndCollapseFrom(in,'_'));
+  for (  char replacement : new char[]{'_','-'}) {
+    String expected=out.replace('_',replacement);
+    assertEqualsSame(expected,in,is('-').trimAndCollapseFrom(in,replacement));
+    assertEqualsSame(expected,in,is('-').or(is('#')).trimAndCollapseFrom(in,replacement));
+    assertEqualsSame(expected,in,isNot('x').trimAndCollapseFrom(in,replacement));
+    assertEqualsSame(expected,in,is('x').negate().trimAndCollapseFrom(in,replacement));
+    assertEqualsSame(expected,in,anyOf("-").trimAndCollapseFrom(in,replacement));
+    assertEqualsSame(expected,in,anyOf("-#").trimAndCollapseFrom(in,replacement));
+    assertEqualsSame(expected,in,anyOf("-#123").trimAndCollapseFrom(in,replacement));
+  }
 }

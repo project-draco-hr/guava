@@ -1,4 +1,6 @@
 {
+  doTestTrimAndCollapse("","");
+  doTestTrimAndCollapse("x","x");
   doTestTrimAndCollapse("-","");
   doTestTrimAndCollapse("x-","x");
   doTestTrimAndCollapse("-x","x");
