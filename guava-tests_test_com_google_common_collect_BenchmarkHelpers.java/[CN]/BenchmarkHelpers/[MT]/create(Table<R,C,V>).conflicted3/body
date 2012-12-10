@@ -1,0 +1,3 @@
+{
+  return HashBasedTable.create(contents);
+}

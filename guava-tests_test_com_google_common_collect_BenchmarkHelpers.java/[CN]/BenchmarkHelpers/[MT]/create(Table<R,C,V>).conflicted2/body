@@ -1,0 +1,8 @@
+{
+  if (contents.isEmpty()) {
+    return ImmutableTable.of();
+  }
+ else {
+    return ArrayTable.create(contents);
+  }
+}
