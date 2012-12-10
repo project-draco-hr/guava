@@ -1,8 +1,3 @@
 {
-  return new SortedMultisets.ElementSet<E>(){
-    @Override SortedMultiset<E> multiset(){
-      return AbstractSortedMultiset.this;
-    }
-  }
-;
+  return new SortedMultisets.NavigableElementSet<E>(this);
 }

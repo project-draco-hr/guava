@@ -1,3 +1,0 @@
-{
-  return unmodifiableSortedMultiset(delegate().headMultiset(upperBound,boundType));
-}

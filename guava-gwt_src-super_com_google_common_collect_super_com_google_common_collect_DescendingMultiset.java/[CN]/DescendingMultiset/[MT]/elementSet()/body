@@ -1,0 +1,7 @@
+{
+  SortedSet<E> result=elementSet;
+  if (result == null) {
+    return elementSet=new SortedMultisets.ElementSet<E>(this);
+  }
+  return result;
+}
