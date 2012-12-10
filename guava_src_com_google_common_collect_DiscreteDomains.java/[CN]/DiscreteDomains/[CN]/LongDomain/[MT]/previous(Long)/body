@@ -1,4 +1,0 @@
-{
-  long l=value;
-  return (l == Long.MIN_VALUE) ? null : l - 1;
-}
