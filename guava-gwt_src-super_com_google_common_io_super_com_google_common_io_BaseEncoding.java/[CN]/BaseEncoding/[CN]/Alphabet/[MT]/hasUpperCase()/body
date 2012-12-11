@@ -1,6 +1,6 @@
 {
   for (  char c : chars) {
-    if (c >= 'A' & c <= 'Z') {
+    if (Ascii.isUpperCase(c)) {
       return true;
     }
   }

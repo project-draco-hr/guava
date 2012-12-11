@@ -11,10 +11,11 @@
   this.charsPerChunk=8 / gcd;
   this.bytesPerChunk=bitsPerChar / gcd;
   this.mask=chars.length - 1;
-  byte[] decodabet=new byte[128];
+  byte[] decodabet=new byte[Ascii.MAX + 1];
   Arrays.fill(decodabet,(byte)-1);
   for (int i=0; i < chars.length; i++) {
     char c=chars[i];
+    checkArgument(CharMatcher.ASCII.matches(c),"Non-ASCII character: %s",c);
     checkArgument(decodabet[c] == -1,"Duplicate character: %s",c);
     decodabet[c]=(byte)i;
   }

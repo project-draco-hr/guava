@@ -1,6 +1,6 @@
 {
   for (  char c : chars) {
-    if (c >= 'a' & c <= 'z') {
+    if (Ascii.isLowerCase(c)) {
       return true;
     }
   }
