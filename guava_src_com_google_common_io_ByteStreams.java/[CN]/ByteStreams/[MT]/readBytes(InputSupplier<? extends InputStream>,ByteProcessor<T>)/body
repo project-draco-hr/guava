@@ -1,15 +1,10 @@
 {
+  checkNotNull(supplier);
   checkNotNull(processor);
-  byte[] buf=new byte[BUF_SIZE];
   Closer closer=Closer.create();
   try {
     InputStream in=closer.add(supplier.getInput());
-    int read;
-    do {
-      read=in.read(buf);
-    }
- while (read != -1 && processor.processBytes(buf,0,read));
-    return processor.getResult();
+    return readBytes(in,processor);
   }
  catch (  Throwable e) {
     throw closer.rethrow(e,IOException.class);
