@@ -1,15 +1,10 @@
 {
   this.matcher=precomputed ? config.matcher.precomputed() : config.matcher;
-  if (size.equals("small") || size.equals("medium")) {
+  if (size == Size.SMALL) {
     BitSet tmp=new BitSet();
     matcher.setBits(tmp);
     int matchedCharCount=tmp.cardinality();
-    if (size.equals("small") && matchedCharCount <= SmallCharMatcher.MAX_SIZE) {
-      this.matcher=SmallCharMatcher.from(tmp,"");
-    }
- else     if (size.equals("medium")) {
-      this.matcher=MediumCharMatcher.from(tmp,"");
-    }
+    this.matcher=SmallCharMatcher.from(tmp,"");
   }
   this.string=checkString(length,percent,config.matchingChars,new Random(),forceSlow,web);
 }

@@ -1,7 +1,0 @@
-{
-  super(description);
-  this.table=table;
-  this.filter=filter;
-  this.containsZero=containsZero;
-  this.reprobe=reprobe;
-}

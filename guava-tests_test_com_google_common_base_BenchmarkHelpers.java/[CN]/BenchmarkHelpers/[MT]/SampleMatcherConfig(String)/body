@@ -1,0 +1,3 @@
+{
+  this(CharMatcher.anyOf(matchingChars),matchingChars);
+}

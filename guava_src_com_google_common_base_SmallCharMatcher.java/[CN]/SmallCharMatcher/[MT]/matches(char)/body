@@ -5,22 +5,20 @@
   if (!checkFilter(c)) {
     return false;
   }
-  int index=c % table.length;
-  if (index < 0) {
-    index+=table.length;
-  }
-  while (true) {
+  int mask=table.length - 1;
+  int startingIndex=smear(c) & mask;
+  int index=startingIndex;
+  do {
     if (table[index] == 0) {
       return false;
     }
  else     if (table[index] == c) {
       return true;
     }
- else     if (reprobe) {
-      index=(index + 1) % table.length;
-    }
  else {
-      return false;
+      index=(index + 1) & mask;
     }
   }
+ while (index != startingIndex);
+  return false;
 }

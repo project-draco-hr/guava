@@ -11,16 +11,10 @@ case 2:
   return isEither(c1,c2);
 }
 }
-if (totalCharacters <= SmallCharMatcher.MAX_SIZE) {
+if (totalCharacters <= SmallCharMatcher.MAX_SIZE && table.length() > totalCharacters * Character.SIZE) {
 return SmallCharMatcher.from(table,description);
 }
- else if (totalCharacters <= MediumCharMatcher.MAX_SIZE) {
-return MediumCharMatcher.from(table,description);
-}
  else {
-if (table.length() + Long.SIZE < table.size()) {
-table=(BitSet)table.clone();
-}
 return new BitSetMatcher(table,description);
 }
 }
