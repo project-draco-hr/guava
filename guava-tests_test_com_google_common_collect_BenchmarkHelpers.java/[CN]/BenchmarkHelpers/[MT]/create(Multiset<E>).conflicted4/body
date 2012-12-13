@@ -1,0 +1,3 @@
+{
+  return HashMultiset.create(contents);
+}
