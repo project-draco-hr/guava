@@ -23,5 +23,5 @@
     }
   }
   rangesByLowerBound.subMap(lbToAdd,ubToAdd).clear();
-  replaceRangeWithSameLowerBound(new Range<C>(lbToAdd,ubToAdd));
+  replaceRangeWithSameLowerBound(Range.create(lbToAdd,ubToAdd));
 }

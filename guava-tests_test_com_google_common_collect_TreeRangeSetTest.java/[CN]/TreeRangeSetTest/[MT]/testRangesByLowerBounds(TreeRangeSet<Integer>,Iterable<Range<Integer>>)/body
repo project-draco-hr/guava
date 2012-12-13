@@ -1,0 +1,8 @@
+{
+  NavigableMap<Cut<Integer>,Range<Integer>> expectedRangesByLowerBound=Maps.newTreeMap();
+  for (  Range<Integer> range : expectedRanges) {
+    expectedRangesByLowerBound.put(range.lowerBound,range);
+  }
+  NavigableMap<Cut<Integer>,Range<Integer>> rangesByLowerBound=rangeSet.rangesByLowerBound;
+  testNavigationAgainstExpected(expectedRangesByLowerBound,rangesByLowerBound,CUTS_TO_TEST);
+}

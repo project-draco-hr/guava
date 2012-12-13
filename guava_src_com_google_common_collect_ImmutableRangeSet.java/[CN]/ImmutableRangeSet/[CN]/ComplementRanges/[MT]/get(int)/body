@@ -14,5 +14,5 @@
  else {
     upperBound=ranges.get(index + (positiveBoundedBelow ? 0 : 1)).lowerBound;
   }
-  return new Range<C>(lowerBound,upperBound);
+  return Range.create(lowerBound,upperBound);
 }

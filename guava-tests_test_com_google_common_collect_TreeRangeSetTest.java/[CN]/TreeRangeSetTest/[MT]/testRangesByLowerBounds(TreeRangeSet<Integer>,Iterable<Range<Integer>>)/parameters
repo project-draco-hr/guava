@@ -1,0 +1,2 @@
+TreeRangeSet<Integer> rangeSet
+Iterable<Range<Integer>> expectedRanges

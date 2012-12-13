@@ -1,0 +1,6 @@
+{
+  RangeSet<Integer> expected=TreeRangeSet.create();
+  expected.add(Range.<Integer>all());
+  expected.removeAll(rangeSet);
+  return expected;
+}

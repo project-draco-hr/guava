@@ -1,0 +1,14 @@
+{
+  for (  K key : keysToTest) {
+    assertEquals(expected.lowerEntry(key),navigableMap.lowerEntry(key));
+    assertEquals(expected.floorEntry(key),navigableMap.floorEntry(key));
+    assertEquals(expected.ceilingEntry(key),navigableMap.ceilingEntry(key));
+    assertEquals(expected.higherEntry(key),navigableMap.higherEntry(key));
+    for (    boolean inclusive : new boolean[]{false,true}) {
+      ASSERT.that(navigableMap.headMap(key,inclusive).entrySet()).has().allFrom(expected.headMap(key,inclusive).entrySet()).inOrder();
+      ASSERT.that(navigableMap.tailMap(key,inclusive).entrySet()).has().allFrom(expected.tailMap(key,inclusive).entrySet()).inOrder();
+      ASSERT.that(navigableMap.headMap(key,inclusive).descendingMap().entrySet()).has().allFrom(expected.headMap(key,inclusive).descendingMap().entrySet()).inOrder();
+      ASSERT.that(navigableMap.tailMap(key,inclusive).descendingMap().entrySet()).has().allFrom(expected.tailMap(key,inclusive).descendingMap().entrySet()).inOrder();
+    }
+  }
+}

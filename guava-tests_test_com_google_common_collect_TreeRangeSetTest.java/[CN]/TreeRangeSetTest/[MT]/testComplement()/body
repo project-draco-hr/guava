@@ -1,0 +1,10 @@
+{
+  for (  Range<Integer> range1 : QUERY_RANGES) {
+    for (    Range<Integer> range2 : QUERY_RANGES) {
+      TreeRangeSet<Integer> rangeSet=TreeRangeSet.create();
+      rangeSet.add(range1);
+      rangeSet.add(range2);
+      testViewAgainstExpected(expectedComplement(rangeSet),rangeSet.complement());
+    }
+  }
+}

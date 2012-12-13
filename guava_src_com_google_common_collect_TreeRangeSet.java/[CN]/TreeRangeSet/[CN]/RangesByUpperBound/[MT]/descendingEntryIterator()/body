@@ -1,11 +1,12 @@
 {
-  final PeekingIterator<Range<C>> backingItr;
+  Collection<Range<C>> candidates;
   if (upperBoundWindow.hasUpperBound()) {
-    backingItr=Iterators.peekingIterator(rangesByLowerBound.headMap(upperBoundWindow.upperEndpoint(),false).descendingMap().values().iterator());
+    candidates=rangesByLowerBound.headMap(upperBoundWindow.upperEndpoint(),false).descendingMap().values();
   }
  else {
-    backingItr=Iterators.peekingIterator(rangesByLowerBound.descendingMap().values().iterator());
+    candidates=rangesByLowerBound.descendingMap().values();
   }
+  final PeekingIterator<Range<C>> backingItr=Iterators.peekingIterator(candidates.iterator());
   if (backingItr.hasNext() && upperBoundWindow.upperBound.isLessThan(backingItr.peek().upperBound)) {
     backingItr.next();
   }

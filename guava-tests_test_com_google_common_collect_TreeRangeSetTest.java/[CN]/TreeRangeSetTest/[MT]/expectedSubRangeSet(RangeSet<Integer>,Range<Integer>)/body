@@ -1,0 +1,9 @@
+{
+  RangeSet<Integer> expected=TreeRangeSet.create();
+  for (  Range<Integer> range : rangeSet.asRanges()) {
+    if (range.isConnected(subRange)) {
+      expected.add(range.intersection(subRange));
+    }
+  }
+  return expected;
+}

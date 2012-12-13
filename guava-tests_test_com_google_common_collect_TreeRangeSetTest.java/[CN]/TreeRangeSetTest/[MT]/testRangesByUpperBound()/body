@@ -1,0 +1,14 @@
+{
+  for (  Range<Integer> range1 : QUERY_RANGES) {
+    for (    Range<Integer> range2 : QUERY_RANGES) {
+      TreeRangeSet<Integer> rangeSet=TreeRangeSet.create();
+      rangeSet.add(range1);
+      rangeSet.add(range2);
+      NavigableMap<Cut<Integer>,Range<Integer>> expectedRangesByUpperBound=Maps.newTreeMap();
+      for (      Range<Integer> range : rangeSet.asRanges()) {
+        expectedRangesByUpperBound.put(range.upperBound,range);
+      }
+      testNavigationAgainstExpected(expectedRangesByUpperBound,new TreeRangeSet.RangesByUpperBound<Integer>(rangeSet.rangesByLowerBound),CUTS_TO_TEST);
+    }
+  }
+}
