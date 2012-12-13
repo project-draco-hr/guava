@@ -1,3 +1,0 @@
-Node<K,V> keyHead
-Node<K,V> keyTail
-int keyCount

@@ -1,6 +1,7 @@
 {
   head=null;
   tail=null;
-  keyToKeyList.clear();
-  size=0;
+  keyCount.clear();
+  keyToKeyHead.clear();
+  keyToKeyTail.clear();
 }

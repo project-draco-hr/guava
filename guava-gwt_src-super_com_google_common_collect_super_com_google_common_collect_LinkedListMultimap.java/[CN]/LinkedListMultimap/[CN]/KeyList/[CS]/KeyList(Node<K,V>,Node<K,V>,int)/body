@@ -1,5 +1,0 @@
-{
-  this.head=keyHead;
-  this.tail=keyTail;
-  this.count=keyCount;
-}

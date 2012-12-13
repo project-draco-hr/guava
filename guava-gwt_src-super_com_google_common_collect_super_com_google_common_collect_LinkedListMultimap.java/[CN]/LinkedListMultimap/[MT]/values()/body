@@ -3,7 +3,7 @@
   if (result == null) {
     valuesList=result=new AbstractSequentialList<V>(){
       @Override public int size(){
-        return size;
+        return keyCount.size();
       }
       @Override public ListIterator<V> listIterator(      int index){
         final NodeIterator nodes=new NodeIterator(index);

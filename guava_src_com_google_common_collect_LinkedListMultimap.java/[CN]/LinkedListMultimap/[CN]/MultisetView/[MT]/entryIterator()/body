@@ -6,7 +6,7 @@
           return key;
         }
         @Override public int getCount(){
-          return keyToKeyList.get(key).count;
+          return keyCount.count(key);
         }
       }
 ;

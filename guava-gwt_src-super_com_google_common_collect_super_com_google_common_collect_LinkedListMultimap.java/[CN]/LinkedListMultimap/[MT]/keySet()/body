@@ -3,7 +3,7 @@
   if (result == null) {
     keySet=result=new Sets.ImprovedAbstractSet<K>(){
       @Override public int size(){
-        return keyToKeyList.size();
+        return keyCount.elementSet().size();
       }
       @Override public Iterator<K> iterator(){
         return new DistinctKeyIterator();

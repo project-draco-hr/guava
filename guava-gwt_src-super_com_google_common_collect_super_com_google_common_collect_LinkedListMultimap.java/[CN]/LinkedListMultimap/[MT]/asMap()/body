@@ -3,7 +3,7 @@
   if (result == null) {
     map=result=new Multimaps.AsMap<K,V>(){
       @Override public int size(){
-        return keyToKeyList.size();
+        return keyCount.elementSet().size();
       }
       @Override Multimap<K,V> multimap(){
         return LinkedListMultimap.this;
