@@ -1,5 +1,3 @@
 {
-  keyCount=LinkedHashMultiset.create(expectedKeys);
-  keyToKeyHead=Maps.newHashMapWithExpectedSize(expectedKeys);
-  keyToKeyTail=Maps.newHashMapWithExpectedSize(expectedKeys);
+  keyToKeyList=new LinkedHashMap<K,KeyList<K,V>>(expectedKeys);
 }

@@ -1,15 +1,16 @@
 {
-  int size=keyCount.count(key);
+  KeyList<K,V> keyList=keyToKeyList.get(key);
+  int size=(keyList == null) ? 0 : keyList.count;
   Preconditions.checkPositionIndex(index,size);
   if (index >= (size / 2)) {
-    previous=keyToKeyTail.get(key);
+    previous=(keyList == null) ? null : keyList.tail;
     nextIndex=size;
     while (index++ < size) {
       previous();
     }
   }
  else {
-    next=keyToKeyHead.get(key);
+    next=(keyList == null) ? null : keyList.head;
     while (index-- > 0) {
       next();
     }

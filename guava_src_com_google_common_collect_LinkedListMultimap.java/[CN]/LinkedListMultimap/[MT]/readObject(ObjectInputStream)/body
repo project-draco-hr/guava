@@ -1,8 +1,6 @@
 {
   stream.defaultReadObject();
-  keyCount=LinkedHashMultiset.create();
-  keyToKeyHead=Maps.newHashMap();
-  keyToKeyTail=Maps.newHashMap();
+  keyToKeyList=Maps.newLinkedHashMap();
   int size=stream.readInt();
   for (int i=0; i < size; i++) {
     @SuppressWarnings("unchecked") K key=(K)stream.readObject();

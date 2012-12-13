@@ -11,23 +11,24 @@
  else {
     tail=node.previous;
   }
-  if (node.previousSibling != null) {
-    node.previousSibling.nextSibling=node.nextSibling;
-  }
- else   if (node.nextSibling != null) {
-    keyToKeyHead.put(node.key,node.nextSibling);
+  if (node.previousSibling == null && node.nextSibling == null) {
+    keyToKeyList.remove(node.key);
   }
  else {
-    keyToKeyHead.remove(node.key);
-  }
-  if (node.nextSibling != null) {
-    node.nextSibling.previousSibling=node.previousSibling;
-  }
- else   if (node.previousSibling != null) {
-    keyToKeyTail.put(node.key,node.previousSibling);
-  }
+    KeyList<K,V> keyList=keyToKeyList.get(node.key);
+    keyList.count--;
+    if (node.previousSibling == null) {
+      keyList.head=node.nextSibling;
+    }
  else {
-    keyToKeyTail.remove(node.key);
+      node.previousSibling.nextSibling=node.nextSibling;
+    }
+    if (node.nextSibling == null) {
+      keyList.tail=node.previousSibling;
+    }
+ else {
+      node.nextSibling.previousSibling=node.previousSibling;
+    }
   }
-  keyCount.remove(node.key);
+  size--;
 }
