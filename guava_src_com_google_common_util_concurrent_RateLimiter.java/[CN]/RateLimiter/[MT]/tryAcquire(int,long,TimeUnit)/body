@@ -2,7 +2,7 @@
   long timeoutMicros=unit.toMicros(timeout);
   checkPermits(permits);
   long microsToWait;
-synchronized (this) {
+synchronized (mutex) {
     long nowMicros=readSafeMicros();
     if (nextFreeTicketMicros > nowMicros + timeoutMicros) {
       return false;

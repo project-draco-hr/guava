@@ -1,7 +1,7 @@
 {
   checkPermits(permits);
   long microsToWait;
-synchronized (this) {
+synchronized (mutex) {
     microsToWait=reserveNextTicket(permits,readSafeMicros());
   }
   ticker.sleepMicrosUninterruptibly(microsToWait);
