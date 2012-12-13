@@ -4,5 +4,5 @@
     assertEquals(elements.get(i) + 1,(int)elements.get(i + 1));
   }
   Range<Integer> range=(elements.isEmpty()) ? Range.closedOpen(0,0) : Range.encloseAll(elements);
-  return range.asSet(DiscreteDomain.integers());
+  return ContiguousSet.create(range,DiscreteDomain.integers());
 }

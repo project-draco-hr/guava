@@ -28,11 +28,11 @@ catch (  Error e) {
   }
  finally {
     if (!success) {
-      globalStatsCounter.recordLoadException(stopwatch.elapsedTime(NANOSECONDS));
+      globalStatsCounter.recordLoadException(stopwatch.elapsed(NANOSECONDS));
     }
   }
   if (result == null) {
-    globalStatsCounter.recordLoadException(stopwatch.elapsedTime(NANOSECONDS));
+    globalStatsCounter.recordLoadException(stopwatch.elapsed(NANOSECONDS));
     throw new InvalidCacheLoadException(loader + " returned null map from loadAll");
   }
   stopwatch.stop();
@@ -48,9 +48,9 @@ catch (  Error e) {
     }
   }
   if (nullsPresent) {
-    globalStatsCounter.recordLoadException(stopwatch.elapsedTime(NANOSECONDS));
+    globalStatsCounter.recordLoadException(stopwatch.elapsed(NANOSECONDS));
     throw new InvalidCacheLoadException(loader + " returned null keys or values from loadAll");
   }
-  globalStatsCounter.recordLoadSuccess(stopwatch.elapsedTime(NANOSECONDS));
+  globalStatsCounter.recordLoadSuccess(stopwatch.elapsed(NANOSECONDS));
   return result;
 }
