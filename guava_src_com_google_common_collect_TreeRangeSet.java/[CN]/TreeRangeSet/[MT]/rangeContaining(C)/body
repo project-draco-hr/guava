@@ -1,6 +1,6 @@
 {
   checkNotNull(value);
-  Entry<Cut<C>,Range<C>> floorEntry=rangesByLowerCut.floorEntry(Cut.belowValue(value));
+  Entry<Cut<C>,Range<C>> floorEntry=rangesByLowerBound.floorEntry(Cut.belowValue(value));
   if (floorEntry != null && floorEntry.getValue().contains(value)) {
     return floorEntry.getValue();
   }

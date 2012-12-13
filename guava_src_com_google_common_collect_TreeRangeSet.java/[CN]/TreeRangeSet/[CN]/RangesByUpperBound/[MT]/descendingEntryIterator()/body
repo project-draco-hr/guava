@@ -1,0 +1,22 @@
+{
+  final PeekingIterator<Range<C>> backingItr;
+  if (upperBoundWindow.hasUpperBound()) {
+    backingItr=Iterators.peekingIterator(rangesByLowerBound.headMap(upperBoundWindow.upperEndpoint(),false).descendingMap().values().iterator());
+  }
+ else {
+    backingItr=Iterators.peekingIterator(rangesByLowerBound.descendingMap().values().iterator());
+  }
+  if (backingItr.hasNext() && upperBoundWindow.upperBound.isLessThan(backingItr.peek().upperBound)) {
+    backingItr.next();
+  }
+  return new AbstractIterator<Entry<Cut<C>,Range<C>>>(){
+    @Override protected Entry<Cut<C>,Range<C>> computeNext(){
+      if (!backingItr.hasNext()) {
+        return endOfData();
+      }
+      Range<C> range=backingItr.next();
+      return upperBoundWindow.lowerBound.isLessThan(range.upperBound) ? Maps.immutableEntry(range.upperBound,range) : endOfData();
+    }
+  }
+;
+}

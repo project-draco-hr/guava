@@ -1,5 +1,0 @@
-{
-  checkNotNull(range);
-  Range<C> floorRange=floorRange(range.lowerBound);
-  return floorRange != null && floorRange.encloses(range);
-}

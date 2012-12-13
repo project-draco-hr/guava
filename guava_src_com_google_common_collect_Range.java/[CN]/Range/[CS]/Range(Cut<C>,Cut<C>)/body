@@ -2,6 +2,6 @@
   if (lowerBound.compareTo(upperBound) > 0) {
     throw new IllegalArgumentException("Invalid range: " + toString(lowerBound,upperBound));
   }
-  this.lowerBound=lowerBound;
-  this.upperBound=upperBound;
+  this.lowerBound=checkNotNull(lowerBound);
+  this.upperBound=checkNotNull(upperBound);
 }

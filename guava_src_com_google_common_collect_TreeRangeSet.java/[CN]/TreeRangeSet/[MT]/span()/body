@@ -1,6 +1,6 @@
 {
-  Entry<Cut<C>,Range<C>> firstEntry=rangesByLowerCut.firstEntry();
-  Entry<Cut<C>,Range<C>> lastEntry=rangesByLowerCut.lastEntry();
+  Entry<Cut<C>,Range<C>> firstEntry=rangesByLowerBound.firstEntry();
+  Entry<Cut<C>,Range<C>> lastEntry=rangesByLowerBound.lastEntry();
   if (firstEntry == null) {
     throw new NoSuchElementException();
   }

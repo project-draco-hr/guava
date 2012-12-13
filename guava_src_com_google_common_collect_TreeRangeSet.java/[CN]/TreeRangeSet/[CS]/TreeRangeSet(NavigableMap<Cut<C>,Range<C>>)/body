@@ -1,3 +1,3 @@
 {
-  this.rangesByLowerCut=rangesByLowerCut;
+  this.rangesByLowerBound=rangesByLowerCut;
 }

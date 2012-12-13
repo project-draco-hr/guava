@@ -3,7 +3,7 @@
   if (rangeToRemove.isEmpty()) {
     return;
   }
-  Entry<Cut<C>,Range<C>> entryBelowLB=rangesByLowerCut.lowerEntry(rangeToRemove.lowerBound);
+  Entry<Cut<C>,Range<C>> entryBelowLB=rangesByLowerBound.lowerEntry(rangeToRemove.lowerBound);
   if (entryBelowLB != null) {
     Range<C> rangeBelowLB=entryBelowLB.getValue();
     if (rangeBelowLB.upperBound.compareTo(rangeToRemove.lowerBound) >= 0) {
@@ -13,12 +13,12 @@
       replaceRangeWithSameLowerBound(new Range<C>(rangeBelowLB.lowerBound,rangeToRemove.lowerBound));
     }
   }
-  Entry<Cut<C>,Range<C>> entryBelowUB=rangesByLowerCut.floorEntry(rangeToRemove.upperBound);
+  Entry<Cut<C>,Range<C>> entryBelowUB=rangesByLowerBound.floorEntry(rangeToRemove.upperBound);
   if (entryBelowUB != null) {
     Range<C> rangeBelowUB=entryBelowUB.getValue();
     if (rangeBelowUB.upperBound.compareTo(rangeToRemove.upperBound) >= 0) {
       replaceRangeWithSameLowerBound(new Range<C>(rangeToRemove.upperBound,rangeBelowUB.upperBound));
     }
   }
-  rangesByLowerCut.subMap(rangeToRemove.lowerBound,rangeToRemove.upperBound).clear();
+  rangesByLowerBound.subMap(rangeToRemove.lowerBound,rangeToRemove.upperBound).clear();
 }
