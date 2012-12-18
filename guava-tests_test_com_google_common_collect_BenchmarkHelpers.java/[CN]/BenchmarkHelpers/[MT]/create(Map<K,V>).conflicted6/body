@@ -1,3 +1,3 @@
 {
-  return ImmutableSortedMap.copyOf(map);
+  return Maps.newHashMap(map);
 }

@@ -1,3 +1,3 @@
 {
-  return LinkedListMultimap.create(contents);
+  return ArrayListMultimap.create(contents);
 }

@@ -1,5 +1,8 @@
 {
-  Table<R,C,V> table=TreeBasedTable.create();
-  table.putAll(contents);
-  return table;
+  if (contents.isEmpty()) {
+    return ImmutableTable.of();
+  }
+ else {
+    return ArrayTable.create(contents);
+  }
 }
