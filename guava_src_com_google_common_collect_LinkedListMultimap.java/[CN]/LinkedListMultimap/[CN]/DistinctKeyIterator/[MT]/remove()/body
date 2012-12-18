@@ -1,5 +1,7 @@
 {
+  checkForConcurrentModification();
   checkState(current != null);
   removeAllNodes(current.key);
   current=null;
+  expectedModCount=modCount;
 }

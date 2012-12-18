@@ -1,4 +1,5 @@
 {
+  checkForConcurrentModification();
   checkState(current != null);
   if (current != next) {
     previous=current.previous;
@@ -9,4 +10,5 @@
   }
   removeNode(current);
   current=null;
+  expectedModCount=modCount;
 }

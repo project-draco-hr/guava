@@ -1,3 +1,4 @@
 {
+  checkForConcurrentModification();
   return previous != null;
 }
