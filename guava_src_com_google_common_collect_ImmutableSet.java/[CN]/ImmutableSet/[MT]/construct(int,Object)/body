@@ -3,10 +3,9 @@ switch (n) {
 case 0:
     return of();
 case 1:
-{
-    @SuppressWarnings("unchecked") E elem=(E)elements[0];
-    return of(elem);
-  }
+  @SuppressWarnings("unchecked") E elem=(E)elements[0];
+return of(elem);
+default :
 }
 int tableSize=chooseTableSize(n);
 Object[] table=new Object[tableSize];
@@ -17,17 +16,17 @@ for (int i=0; i < n; i++) {
 Object element=ObjectArrays.checkElementNotNull(elements[i],i);
 int hash=element.hashCode();
 for (int j=Hashing.smear(hash); ; j++) {
-  int index=j & mask;
-  Object value=table[index];
-  if (value == null) {
-    elements[uniques++]=element;
-    table[index]=element;
-    hashCode+=hash;
-    break;
-  }
- else   if (value.equals(element)) {
-    break;
-  }
+int index=j & mask;
+Object value=table[index];
+if (value == null) {
+  elements[uniques++]=element;
+  table[index]=element;
+  hashCode+=hash;
+  break;
+}
+ else if (value.equals(element)) {
+  break;
+}
 }
 }
 Arrays.fill(elements,uniques,n,null);

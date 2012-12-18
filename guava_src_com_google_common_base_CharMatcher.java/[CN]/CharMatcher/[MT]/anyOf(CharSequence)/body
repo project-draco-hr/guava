@@ -6,6 +6,7 @@ case 1:
   return is(sequence.charAt(0));
 case 2:
 return isEither(sequence.charAt(0),sequence.charAt(1));
+default :
 }
 final char[] chars=sequence.toString().toCharArray();
 Arrays.sort(chars);

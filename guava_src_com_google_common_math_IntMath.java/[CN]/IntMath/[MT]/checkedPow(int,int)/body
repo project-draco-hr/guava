@@ -13,6 +13,7 @@ return 1 << k;
 case (-2):
 checkNoOverflow(k < Integer.SIZE);
 return ((k & 1) == 0) ? 1 << k : -1 << k;
+default :
 }
 int accum=1;
 while (true) {

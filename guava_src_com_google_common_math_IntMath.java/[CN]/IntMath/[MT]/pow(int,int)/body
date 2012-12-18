@@ -16,6 +16,7 @@ return ((k & 1) == 0) ? (1 << k) : -(1 << k);
  else {
 return 0;
 }
+default :
 }
 for (int accum=1; ; k>>=1) {
 switch (k) {
