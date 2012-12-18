@@ -5,7 +5,7 @@
     int bitBufferLength=0;
     int readChars=0;
     boolean hitPadding=false;
-    final CharMatcher paddingMatcher=paddingMatcher();
+    final CharMatcher paddingMatcher=padding();
     @Override public int read() throws IOException {
       while (true) {
         int readChar=reader.read();

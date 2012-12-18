@@ -1,4 +1,5 @@
 {
+  chars=padding().trimTrailingFrom(chars);
   ByteInput decodedInput=decodingStream(asCharInput(chars));
   byte[] tmp=new byte[maxDecodedSize(chars.length())];
   int index=0;
