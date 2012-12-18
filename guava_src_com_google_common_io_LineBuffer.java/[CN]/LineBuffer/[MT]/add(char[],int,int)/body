@@ -23,6 +23,7 @@ line.append(cbuf,start,pos - start);
 finishLine(true);
 start=pos + 1;
 break;
+default :
 }
 }
 line.append(cbuf,start,off + len - start);

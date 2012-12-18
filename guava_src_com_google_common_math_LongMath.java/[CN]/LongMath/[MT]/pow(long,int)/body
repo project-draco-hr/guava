@@ -17,6 +17,8 @@ return ((k & 1) == 0) ? 1L << k : -(1L << k);
  else {
 return 0;
 }
+default :
+throw new AssertionError();
 }
 }
 for (long accum=1; ; k>>=1) {

@@ -14,6 +14,8 @@ return 1L << k;
 case (-2):
 checkNoOverflow(k < Long.SIZE);
 return ((k & 1) == 0) ? (1L << k) : (-1L << k);
+default :
+throw new AssertionError();
 }
 }
 long accum=1;
