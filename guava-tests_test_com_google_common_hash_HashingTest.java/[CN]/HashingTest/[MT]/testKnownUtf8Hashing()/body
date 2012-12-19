@@ -1,0 +1,8 @@
+{
+  for (  Cell<HashFunction,String,String> cell : KNOWN_HASHES.cellSet()) {
+    HashFunction func=cell.getRowKey();
+    String input=cell.getColumnKey();
+    String expected=cell.getValue();
+    assertEquals(String.format("Known hash for hash(%s, UTF_8) failed",input),expected,func.hashString(input,Charsets.UTF_8).toString());
+  }
+}
