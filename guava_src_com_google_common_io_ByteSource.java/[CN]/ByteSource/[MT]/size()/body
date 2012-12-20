@@ -1,7 +1,7 @@
 {
   Closer closer=Closer.create();
   try {
-    InputStream in=closer.add(openStream());
+    InputStream in=closer.register(openStream());
     return countBySkipping(in);
   }
  catch (  IOException e) {
@@ -11,11 +11,11 @@
   }
   closer=Closer.create();
   try {
-    InputStream in=closer.add(openStream());
+    InputStream in=closer.register(openStream());
     return countByReading(in);
   }
  catch (  Throwable e) {
-    throw closer.rethrow(e,IOException.class);
+    throw closer.rethrow(e);
   }
  finally {
     closer.close();

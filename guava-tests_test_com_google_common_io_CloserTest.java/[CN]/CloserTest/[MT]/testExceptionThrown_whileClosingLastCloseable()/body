@@ -1,8 +1,8 @@
 {
   Closer closer=new Closer(suppressor);
   IOException exception=new IOException();
-  TestCloseable c1=closer.add(TestCloseable.throwsOnClose(exception));
-  TestCloseable c2=closer.add(TestCloseable.normal());
+  TestCloseable c1=closer.register(TestCloseable.throwsOnClose(exception));
+  TestCloseable c2=closer.register(TestCloseable.normal());
   try {
     closer.close();
   }

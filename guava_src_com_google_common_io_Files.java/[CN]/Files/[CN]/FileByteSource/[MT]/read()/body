@@ -9,7 +9,7 @@
   byte[] bytes=new byte[(int)size];
   Closer closer=Closer.create();
   try {
-    InputStream in=closer.add(openStream());
+    InputStream in=closer.register(openStream());
     int off=0;
     int read=0;
     while (off < size && ((read=in.read(bytes,off,(int)size - off)) != -1)) {
@@ -30,7 +30,7 @@
     return result;
   }
  catch (  Throwable e) {
-    throw closer.rethrow(e,IOException.class);
+    throw closer.rethrow(e);
   }
  finally {
     closer.close();

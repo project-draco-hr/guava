@@ -2,12 +2,12 @@
   checkNotNull(sink);
   Closer closer=Closer.create();
   try {
-    Reader reader=closer.add(openStream());
-    Writer writer=closer.add(sink.openStream());
+    Reader reader=closer.register(openStream());
+    Writer writer=closer.register(sink.openStream());
     return CharStreams.copy(reader,writer);
   }
  catch (  Throwable e) {
-    throw closer.rethrow(e,IOException.class);
+    throw closer.rethrow(e);
   }
  finally {
     closer.close();

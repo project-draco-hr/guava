@@ -3,8 +3,8 @@
   Closeables.logger.addHandler(logHandler);
   try {
     Closer closer=new Closer(new Closer.LoggingSuppressor());
-    TestCloseable c1=closer.add(TestCloseable.throwsOnClose(new IOException()));
-    TestCloseable c2=closer.add(TestCloseable.throwsOnClose(new RuntimeException()));
+    TestCloseable c1=closer.register(TestCloseable.throwsOnClose(new IOException()));
+    TestCloseable c2=closer.register(TestCloseable.throwsOnClose(new RuntimeException()));
     try {
       throw closer.rethrow(new IOException("thrown"),IOException.class);
     }

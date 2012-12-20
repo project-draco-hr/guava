@@ -1,4 +1,5 @@
 {
   thrown=e;
+  Throwables.propagateIfPossible(e,IOException.class);
   throw Throwables.propagate(e);
 }

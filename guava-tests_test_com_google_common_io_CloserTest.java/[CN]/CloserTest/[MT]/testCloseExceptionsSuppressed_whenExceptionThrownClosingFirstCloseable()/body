@@ -3,9 +3,9 @@
   IOException c1Exception=new IOException();
   IOException c2Exception=new IOException();
   IOException c3Exception=new IOException();
-  TestCloseable c1=closer.add(TestCloseable.throwsOnClose(c1Exception));
-  TestCloseable c2=closer.add(TestCloseable.throwsOnClose(c2Exception));
-  TestCloseable c3=closer.add(TestCloseable.throwsOnClose(c3Exception));
+  TestCloseable c1=closer.register(TestCloseable.throwsOnClose(c1Exception));
+  TestCloseable c2=closer.register(TestCloseable.throwsOnClose(c2Exception));
+  TestCloseable c3=closer.register(TestCloseable.throwsOnClose(c3Exception));
   try {
     closer.close();
   }

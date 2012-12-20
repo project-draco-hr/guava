@@ -5,12 +5,12 @@
   TestCloseable c3=null;
   try {
     try {
-      c1=closer.add(TestCloseable.normal());
-      c2=closer.add(TestCloseable.normal());
-      c3=closer.add(TestCloseable.throwsOnCreate());
+      c1=closer.register(TestCloseable.normal());
+      c2=closer.register(TestCloseable.normal());
+      c3=closer.register(TestCloseable.throwsOnCreate());
     }
  catch (    Throwable e) {
-      throw closer.rethrow(e,IOException.class);
+      throw closer.rethrow(e);
     }
  finally {
       closer.close();

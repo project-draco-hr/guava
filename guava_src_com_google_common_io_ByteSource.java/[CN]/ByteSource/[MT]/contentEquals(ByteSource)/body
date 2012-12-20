@@ -4,8 +4,8 @@
   byte[] buf2=new byte[BUF_SIZE];
   Closer closer=Closer.create();
   try {
-    InputStream in1=closer.add(openStream());
-    InputStream in2=closer.add(other.openStream());
+    InputStream in1=closer.register(openStream());
+    InputStream in2=closer.register(other.openStream());
     while (true) {
       int read1=ByteStreams.read(in1,buf1,0,BUF_SIZE);
       int read2=ByteStreams.read(in2,buf2,0,BUF_SIZE);
@@ -18,7 +18,7 @@
     }
   }
  catch (  Throwable e) {
-    throw closer.rethrow(e,IOException.class);
+    throw closer.rethrow(e);
   }
  finally {
     closer.close();

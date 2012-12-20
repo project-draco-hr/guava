@@ -6,9 +6,9 @@
     }
  catch (    Throwable e) {
       Closer closer=Closer.create();
-      closer.add(in);
+      closer.register(in);
       try {
-        throw closer.rethrow(e,IOException.class);
+        throw closer.rethrow(e);
       }
   finally {
         closer.close();

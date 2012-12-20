@@ -3,8 +3,8 @@
   RuntimeException tryException=new RuntimeException();
   RuntimeException c1Exception=new RuntimeException();
   RuntimeException c2Exception=new RuntimeException();
-  TestCloseable c1=closer.add(TestCloseable.throwsOnClose(c1Exception));
-  TestCloseable c2=closer.add(TestCloseable.throwsOnClose(c2Exception));
+  TestCloseable c1=closer.register(TestCloseable.throwsOnClose(c1Exception));
+  TestCloseable c2=closer.register(TestCloseable.throwsOnClose(c2Exception));
   try {
     try {
       throw tryException;

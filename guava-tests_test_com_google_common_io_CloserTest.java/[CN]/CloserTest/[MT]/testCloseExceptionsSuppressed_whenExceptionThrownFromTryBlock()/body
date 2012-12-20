@@ -3,14 +3,14 @@
   IOException tryException=new IOException();
   IOException c1Exception=new IOException();
   IOException c2Exception=new IOException();
-  TestCloseable c1=closer.add(TestCloseable.throwsOnClose(c1Exception));
-  TestCloseable c2=closer.add(TestCloseable.throwsOnClose(c2Exception));
+  TestCloseable c1=closer.register(TestCloseable.throwsOnClose(c1Exception));
+  TestCloseable c2=closer.register(TestCloseable.throwsOnClose(c2Exception));
   try {
     try {
       throw tryException;
     }
  catch (    Throwable e) {
-      throw closer.rethrow(e,IOException.class);
+      throw closer.rethrow(e);
     }
  finally {
       closer.close();
