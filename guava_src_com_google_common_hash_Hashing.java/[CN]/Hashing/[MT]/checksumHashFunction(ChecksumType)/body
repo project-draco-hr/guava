@@ -1,3 +1,0 @@
-{
-  return new ChecksumHashFunction(type,type.bits);
-}

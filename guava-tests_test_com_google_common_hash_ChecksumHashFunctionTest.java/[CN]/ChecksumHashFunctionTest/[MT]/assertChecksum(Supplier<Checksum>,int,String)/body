@@ -1,8 +1,0 @@
-{
-  byte[] bytes=HashTestUtils.ascii(input);
-  Checksum checksum=supplier.get();
-  checksum.update(bytes,0,bytes.length);
-  long value=checksum.getValue();
-  HashCode hashCode=new ChecksumHashFunction(supplier,bits).hashBytes(bytes);
-  assertEquals(value,hashCode.padToLong());
-}

@@ -3,4 +3,5 @@
   HashTestUtils.checkNo2BitCharacteristics(Hashing.sha1());
   HashTestUtils.checkNoFunnels(Hashing.sha1());
   HashTestUtils.assertInvariants(Hashing.sha1());
+  assertEquals("Hashing.sha1()",Hashing.sha1().toString());
 }

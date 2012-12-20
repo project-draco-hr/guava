@@ -4,4 +4,5 @@
   HashTestUtils.checkNo2BitCharacteristics(Hashing.murmur3_128());
   HashTestUtils.checkNoFunnels(Hashing.murmur3_128());
   HashTestUtils.assertInvariants(Hashing.murmur3_128());
+  assertEquals("Hashing.murmur3_128(0)",Hashing.murmur3_128().toString());
 }

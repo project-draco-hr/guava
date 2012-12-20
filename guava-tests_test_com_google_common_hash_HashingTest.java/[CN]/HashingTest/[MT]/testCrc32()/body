@@ -1,3 +1,4 @@
 {
   HashTestUtils.assertInvariants(Hashing.crc32());
+  assertEquals("Hashing.crc32()",Hashing.crc32().toString());
 }

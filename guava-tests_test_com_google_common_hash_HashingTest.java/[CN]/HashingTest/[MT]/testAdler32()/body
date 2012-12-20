@@ -1,3 +1,4 @@
 {
   HashTestUtils.assertInvariants(Hashing.adler32());
+  assertEquals("Hashing.adler32()",Hashing.adler32().toString());
 }

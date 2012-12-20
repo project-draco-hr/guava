@@ -3,4 +3,5 @@
   HashTestUtils.checkNo2BitCharacteristics(Hashing.md5());
   HashTestUtils.checkNoFunnels(Hashing.md5());
   HashTestUtils.assertInvariants(Hashing.md5());
+  assertEquals("Hashing.md5()",Hashing.md5().toString());
 }

@@ -1,0 +1,6 @@
+{
+  assertEquals("Hashing.md5()",Hashing.md5().toString());
+  assertEquals("Hashing.sha1()",Hashing.sha1().toString());
+  assertEquals("Hashing.sha256()",Hashing.sha256().toString());
+  assertEquals("Hashing.sha512()",Hashing.sha512().toString());
+}

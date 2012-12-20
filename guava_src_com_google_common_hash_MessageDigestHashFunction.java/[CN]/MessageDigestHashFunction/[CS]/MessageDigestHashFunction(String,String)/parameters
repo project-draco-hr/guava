@@ -1,2 +1,2 @@
 String algorithmName
-int bytes
+String toString

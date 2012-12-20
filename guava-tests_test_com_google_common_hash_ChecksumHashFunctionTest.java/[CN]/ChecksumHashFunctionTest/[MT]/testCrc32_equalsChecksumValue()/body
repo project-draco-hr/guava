@@ -1,5 +1,5 @@
 {
-  assertChecksum(CRC_32,32,"");
-  assertChecksum(CRC_32,32,"Z");
-  assertChecksum(CRC_32,32,"foobar");
+  assertChecksum(CRC_32,"");
+  assertChecksum(CRC_32,"Z");
+  assertChecksum(CRC_32,"foobar");
 }

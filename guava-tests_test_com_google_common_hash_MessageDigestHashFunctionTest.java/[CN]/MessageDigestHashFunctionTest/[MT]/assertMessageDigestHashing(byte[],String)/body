@@ -1,14 +1,19 @@
 {
-  MessageDigest digest=MessageDigest.getInstance(algorithmName);
-  assertEquals(HashCodes.fromBytes(digest.digest(input)),new MessageDigestHashFunction(algorithmName).hashBytes(input));
-  for (int bytes=4; bytes <= digest.getDigestLength(); bytes++) {
-    assertEquals(HashCodes.fromBytes(Arrays.copyOf(digest.digest(input),bytes)),new MessageDigestHashFunction(algorithmName,bytes).hashBytes(input));
-  }
   try {
-    int maxSize=digest.getDigestLength();
-    new MessageDigestHashFunction(algorithmName,maxSize + 1);
-    fail();
+    MessageDigest digest=MessageDigest.getInstance(algorithmName);
+    assertEquals(HashCodes.fromBytes(digest.digest(input)),new MessageDigestHashFunction(algorithmName,algorithmName).hashBytes(input));
+    for (int bytes=4; bytes <= digest.getDigestLength(); bytes++) {
+      assertEquals(HashCodes.fromBytes(Arrays.copyOf(digest.digest(input),bytes)),new MessageDigestHashFunction(algorithmName,bytes,algorithmName).hashBytes(input));
+    }
+    try {
+      int maxSize=digest.getDigestLength();
+      new MessageDigestHashFunction(algorithmName,maxSize + 1,algorithmName);
+      fail();
+    }
+ catch (    IllegalArgumentException expected) {
+    }
   }
- catch (  IllegalArgumentException expected) {
+ catch (  NoSuchAlgorithmException nsae) {
+    throw new AssertionError(nsae);
   }
 }

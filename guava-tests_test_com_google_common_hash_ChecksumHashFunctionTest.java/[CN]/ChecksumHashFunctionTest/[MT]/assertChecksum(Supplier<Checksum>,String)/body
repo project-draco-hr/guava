@@ -1,7 +1,10 @@
 {
   byte[] bytes=HashTestUtils.ascii(input);
+  Checksum checksum=supplier.get();
+  checksum.update(bytes,0,bytes.length);
+  long value=checksum.getValue();
   String toString="name";
   HashFunction func=new ChecksumHashFunction(supplier,32,toString);
-  assertEquals(expected,func.hashBytes(bytes).asInt());
   assertEquals(toString,func.toString());
+  assertEquals(value,func.hashBytes(bytes).padToLong());
 }

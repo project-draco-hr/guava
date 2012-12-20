@@ -1,5 +1,5 @@
 {
-  assertChecksum(ADLER_32,32,"");
-  assertChecksum(ADLER_32,32,"Z");
-  assertChecksum(ADLER_32,32,"foobar");
+  assertChecksum(ADLER_32,"");
+  assertChecksum(ADLER_32,"Z");
+  assertChecksum(ADLER_32,"foobar");
 }
