@@ -1,4 +1,4 @@
 {
   int hash=hash(checkNotNull(key));
-  segmentFor(hash).refresh(key,hash,defaultLoader);
+  segmentFor(hash).refresh(key,hash,defaultLoader,false);
 }

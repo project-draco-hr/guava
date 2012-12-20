@@ -1,6 +1,6 @@
 {
-  if (map.refreshes() && (now - entry.getWriteTime() > map.refreshNanos)) {
-    V newValue=refresh(key,hash,loader);
+  if (map.refreshes() && (now - entry.getWriteTime() > map.refreshNanos) && !entry.getValueReference().isLoading()) {
+    V newValue=refresh(key,hash,loader,true);
     if (newValue != null) {
       return newValue;
     }

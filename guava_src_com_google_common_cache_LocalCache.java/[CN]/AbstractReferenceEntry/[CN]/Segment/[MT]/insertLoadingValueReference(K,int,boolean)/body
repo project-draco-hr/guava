@@ -11,7 +11,7 @@
       K entryKey=e.getKey();
       if (e.getHash() == hash && entryKey != null && map.keyEquivalence.equivalent(key,entryKey)) {
         ValueReference<K,V> valueReference=e.getValueReference();
-        if (valueReference.isLoading()) {
+        if (valueReference.isLoading() || (checkTime && (now - e.getWriteTime() < map.refreshNanos))) {
           return null;
         }
         ++modCount;

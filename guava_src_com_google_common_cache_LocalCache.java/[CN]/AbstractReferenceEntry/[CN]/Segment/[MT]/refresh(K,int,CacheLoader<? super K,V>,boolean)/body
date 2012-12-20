@@ -1,5 +1,5 @@
 {
-  final LoadingValueReference<K,V> loadingValueReference=insertLoadingValueReference(key,hash);
+  final LoadingValueReference<K,V> loadingValueReference=insertLoadingValueReference(key,hash,checkTime);
   if (loadingValueReference == null) {
     return null;
   }
