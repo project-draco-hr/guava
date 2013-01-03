@@ -1,3 +1,0 @@
-ImmutableSet<Cell<R,C,V>> cellSet
-ImmutableSet<R> rowSpace
-ImmutableSet<C> columnSpace

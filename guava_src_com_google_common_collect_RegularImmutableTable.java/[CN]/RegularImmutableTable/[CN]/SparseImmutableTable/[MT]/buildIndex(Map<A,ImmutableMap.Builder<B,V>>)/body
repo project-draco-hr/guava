@@ -1,8 +1,0 @@
-{
-  return ImmutableMap.copyOf(Maps.transformValues(indexBuilder,new Function<ImmutableMap.Builder<B,V>,Map<B,V>>(){
-    @Override public Map<B,V> apply(    ImmutableMap.Builder<B,V> from){
-      return from.build();
-    }
-  }
-));
-}

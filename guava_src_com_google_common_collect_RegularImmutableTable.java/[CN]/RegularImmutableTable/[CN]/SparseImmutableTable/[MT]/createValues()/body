@@ -1,0 +1,17 @@
+{
+  return new ImmutableList<V>(){
+    @Override public int size(){
+      return iterationOrderRow.length;
+    }
+    @Override public V get(    int index){
+      int rowIndex=iterationOrderRow[index];
+      ImmutableMap<C,V> row=(ImmutableMap<C,V>)rowMap.values().asList().get(rowIndex);
+      int columnIndex=iterationOrderColumn[index];
+      return row.values().asList().get(columnIndex);
+    }
+    @Override boolean isPartialView(){
+      return true;
+    }
+  }
+;
+}

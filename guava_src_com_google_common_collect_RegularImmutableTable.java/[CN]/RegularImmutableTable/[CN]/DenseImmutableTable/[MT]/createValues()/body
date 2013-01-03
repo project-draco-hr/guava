@@ -1,0 +1,14 @@
+{
+  return new ImmutableList<V>(){
+    @Override public int size(){
+      return iterationOrderRow.length;
+    }
+    @Override public V get(    int index){
+      return values[iterationOrderRow[index]][iterationOrderColumn[index]];
+    }
+    @Override boolean isPartialView(){
+      return true;
+    }
+  }
+;
+}

@@ -1,0 +1,16 @@
+{
+  return new ImmutableAsList<Cell<R,C,V>>(){
+    @Override public Cell<R,C,V> get(    int index){
+      int rowIndex=iterationOrderRow[index];
+      Map.Entry<R,Map<C,V>> rowEntry=rowMap.entrySet().asList().get(rowIndex);
+      ImmutableMap<C,V> row=(ImmutableMap<C,V>)rowEntry.getValue();
+      int columnIndex=iterationOrderColumn[index];
+      Map.Entry<C,V> colEntry=row.entrySet().asList().get(columnIndex);
+      return Tables.immutableCell(rowEntry.getKey(),colEntry.getKey(),colEntry.getValue());
+    }
+    @Override ImmutableCollection<Cell<R,C,V>> delegateCollection(){
+      return SparseCellSet.this;
+    }
+  }
+;
+}

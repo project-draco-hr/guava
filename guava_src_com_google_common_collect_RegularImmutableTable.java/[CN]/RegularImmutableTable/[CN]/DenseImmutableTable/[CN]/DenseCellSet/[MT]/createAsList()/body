@@ -1,0 +1,16 @@
+{
+  return new ImmutableAsList<Cell<R,C,V>>(){
+    @Override public Cell<R,C,V> get(    int index){
+      int rowIndex=iterationOrderRow[index];
+      int columnIndex=iterationOrderColumn[index];
+      R rowKey=rowKeySet().asList().get(rowIndex);
+      C columnKey=columnKeySet().asList().get(columnIndex);
+      V value=values[rowIndex][columnIndex];
+      return Tables.immutableCell(rowKey,columnKey,value);
+    }
+    @Override ImmutableCollection<Cell<R,C,V>> delegateCollection(){
+      return DenseCellSet.this;
+    }
+  }
+;
+}
