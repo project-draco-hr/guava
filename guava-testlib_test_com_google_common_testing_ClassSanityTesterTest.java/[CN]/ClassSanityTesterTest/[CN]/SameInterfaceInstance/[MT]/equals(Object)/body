@@ -1,0 +1,7 @@
+{
+  if (obj instanceof SameInterfaceInstance) {
+    SameInterfaceInstance that=(SameInterfaceInstance)obj;
+    return s == that.s;
+  }
+  return false;
+}

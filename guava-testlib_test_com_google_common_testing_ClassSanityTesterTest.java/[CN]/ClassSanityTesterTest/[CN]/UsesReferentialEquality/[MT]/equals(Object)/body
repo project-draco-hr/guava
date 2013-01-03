@@ -1,0 +1,7 @@
+{
+  if (obj instanceof UsesReferentialEquality) {
+    UsesReferentialEquality that=(UsesReferentialEquality)obj;
+    return s == that.s;
+  }
+  return false;
+}

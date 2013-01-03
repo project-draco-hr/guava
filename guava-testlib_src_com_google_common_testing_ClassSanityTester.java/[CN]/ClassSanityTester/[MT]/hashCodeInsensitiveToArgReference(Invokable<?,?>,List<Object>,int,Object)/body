@@ -1,0 +1,5 @@
+{
+  List<Object> tentativeArgs=Lists.newArrayList(args);
+  tentativeArgs.set(i,alternateArg);
+  return createInstance(factory,tentativeArgs).hashCode() == createInstance(factory,args).hashCode();
+}

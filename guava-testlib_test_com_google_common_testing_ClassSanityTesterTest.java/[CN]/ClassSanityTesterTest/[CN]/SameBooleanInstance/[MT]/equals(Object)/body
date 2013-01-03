@@ -1,0 +1,7 @@
+{
+  if (obj instanceof SameBooleanInstance) {
+    SameBooleanInstance that=(SameBooleanInstance)obj;
+    return i == that.i;
+  }
+  return false;
+}

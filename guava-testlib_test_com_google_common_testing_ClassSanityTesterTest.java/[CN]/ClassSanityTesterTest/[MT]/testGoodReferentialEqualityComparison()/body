@@ -1,0 +1,5 @@
+{
+  tester.testEquals(UsesEnum.class);
+  tester.testEquals(UsesReferentialEquality.class);
+  tester.testEquals(SameListInstance.class);
+}

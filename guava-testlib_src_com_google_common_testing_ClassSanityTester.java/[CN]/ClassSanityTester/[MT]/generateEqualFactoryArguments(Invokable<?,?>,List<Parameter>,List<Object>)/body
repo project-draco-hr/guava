@@ -1,0 +1,12 @@
+{
+  List<Object> equalArgs=Lists.newArrayList(args);
+  for (int i=0; i < args.size(); i++) {
+    Parameter param=params.get(i);
+    Object arg=args.get(i);
+    Object shouldBeEqualArg=generateDummyArg(param,newFreshValueGenerator());
+    if (arg != shouldBeEqualArg && Objects.equal(arg,shouldBeEqualArg) && hashCodeInsensitiveToArgReference(factory,args,i,shouldBeEqualArg) && hashCodeInsensitiveToArgReference(factory,args,i,generateDummyArg(param,newFreshValueGenerator()))) {
+      equalArgs.set(i,shouldBeEqualArg);
+    }
+  }
+  return equalArgs;
+}

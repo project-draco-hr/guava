@@ -1,0 +1,13 @@
+{
+  assertBadUseOfReferentialEquality(SameIntegerInstance.class);
+  assertBadUseOfReferentialEquality(SameLongInstance.class);
+  assertBadUseOfReferentialEquality(SameFloatInstance.class);
+  assertBadUseOfReferentialEquality(SameDoubleInstance.class);
+  assertBadUseOfReferentialEquality(SameShortInstance.class);
+  assertBadUseOfReferentialEquality(SameByteInstance.class);
+  assertBadUseOfReferentialEquality(SameCharacterInstance.class);
+  assertBadUseOfReferentialEquality(SameBooleanInstance.class);
+  assertBadUseOfReferentialEquality(SameObjectInstance.class);
+  assertBadUseOfReferentialEquality(SameStringInstance.class);
+  assertBadUseOfReferentialEquality(SameInterfaceInstance.class);
+}

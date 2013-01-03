@@ -1,12 +1,3 @@
 {
-  final int identity=freshInt();
-  return Reflection.newProxy(interfaceType,new AbstractInvocationHandler(){
-    @Override protected Object handleInvocation(    Object proxy,    Method method,    Object[] args){
-      return interfaceMethodCalled(interfaceType,method);
-    }
-    @Override public String toString(){
-      return paramString(interfaceType,identity);
-    }
-  }
-);
+  return Reflection.newProxy(interfaceType,new FreshInvocationHandler(interfaceType));
 }

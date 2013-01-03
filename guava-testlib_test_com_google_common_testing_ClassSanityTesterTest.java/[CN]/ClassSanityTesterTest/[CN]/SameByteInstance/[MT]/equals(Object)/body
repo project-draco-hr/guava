@@ -1,0 +1,7 @@
+{
+  if (obj instanceof SameByteInstance) {
+    SameByteInstance that=(SameByteInstance)obj;
+    return i == that.i;
+  }
+  return false;
+}

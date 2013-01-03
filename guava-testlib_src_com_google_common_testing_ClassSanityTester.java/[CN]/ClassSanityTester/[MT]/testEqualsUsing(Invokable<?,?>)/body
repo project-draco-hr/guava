@@ -8,7 +8,9 @@
     args.add(generateDummyArg(param,generator));
   }
   Object instance=createInstance(factory,args);
+  List<Object> equalArgs=generateEqualFactoryArguments(factory,params,args);
   final List<List<List<Object>>> argGroups=Lists.newArrayList();
+  argGroups.add(ImmutableList.of(args,equalArgs));
   EqualsTester tester=new EqualsTester().setItemReporter(new ItemReporter(){
     @Override String reportItem(    Item item){
       List<Object> factoryArgs=argGroups.get(item.groupNumber).get(item.itemNumber);
@@ -16,8 +18,7 @@
     }
   }
 );
-  tester.addEqualityGroup(instance,createInstance(factory,args));
-  argGroups.add(ImmutableList.of(args,args));
+  tester.addEqualityGroup(instance,createInstance(factory,equalArgs));
   for (int i=0; i < params.size(); i++) {
     List<Object> newArgs=Lists.newArrayList(args);
     Object newArg=argGenerators.get(i).generate(params.get(i).getType().getRawType());

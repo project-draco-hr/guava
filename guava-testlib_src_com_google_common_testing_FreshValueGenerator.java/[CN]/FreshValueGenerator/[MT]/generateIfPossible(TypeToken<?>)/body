@@ -14,7 +14,7 @@
     Array.set(array,0,generateIfPossible(componentType));
     return array;
   }
-  Method generator=GENERATORS.get(Primitives.unwrap(rawType));
+  Method generator=GENERATORS.get(rawType);
   if (generator != null) {
     ImmutableList<Parameter> params=Invokable.from(generator).getParameters();
     List<Object> args=Lists.newArrayListWithCapacity(params.size());

@@ -1,0 +1,7 @@
+{
+  if (obj instanceof SameStringInstance) {
+    SameStringInstance that=(SameStringInstance)obj;
+    return s == that.s;
+  }
+  return false;
+}

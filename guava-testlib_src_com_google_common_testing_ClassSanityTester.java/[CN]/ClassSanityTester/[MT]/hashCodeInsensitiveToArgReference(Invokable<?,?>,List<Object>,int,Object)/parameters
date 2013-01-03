@@ -1,0 +1,4 @@
+Invokable<?,?> factory
+List<Object> args
+int i
+Object alternateArg

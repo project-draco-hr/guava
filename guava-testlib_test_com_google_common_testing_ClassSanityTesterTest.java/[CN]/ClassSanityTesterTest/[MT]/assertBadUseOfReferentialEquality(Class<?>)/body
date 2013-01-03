@@ -1,0 +1,10 @@
+{
+  try {
+    tester.testEquals(cls);
+  }
+ catch (  AssertionFailedError expected) {
+    ASSERT.that(expected.getMessage()).contains(cls.getSimpleName() + "(");
+    return;
+  }
+  fail("should have failed");
+}
