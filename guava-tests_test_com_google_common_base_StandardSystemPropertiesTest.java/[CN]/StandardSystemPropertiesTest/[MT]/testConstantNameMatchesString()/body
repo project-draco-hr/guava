@@ -1,7 +1,0 @@
-{
-  for (  Field field : StandardSystemProperties.class.getFields()) {
-    String actual=(String)field.get(null);
-    String expected=Ascii.toLowerCase(field.getName()).replaceAll("_",".");
-    assertEquals(expected,actual);
-  }
-}
