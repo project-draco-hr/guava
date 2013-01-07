@@ -1,4 +1,5 @@
 {
   Invokable<?,?> delegate=Invokable.from(FinalClass.class.getDeclaredMethod("notFinalMethod"));
   assertFalse(delegate.isOverridable());
+  assertFalse(delegate.isVarArgs());
 }

@@ -1,4 +1,5 @@
 {
   Invokable<?,?> delegate=Invokable.from(Foo.class.getDeclaredConstructor());
   assertFalse(delegate.isOverridable());
+  assertFalse(delegate.isVarArgs());
 }

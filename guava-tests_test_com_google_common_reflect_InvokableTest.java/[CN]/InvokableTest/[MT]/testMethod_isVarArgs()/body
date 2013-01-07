@@ -1,0 +1,4 @@
+{
+  Invokable<?,?> delegate=Prepender.method("privateVarArgsMethod",String[].class);
+  assertTrue(delegate.isVarArgs());
+}

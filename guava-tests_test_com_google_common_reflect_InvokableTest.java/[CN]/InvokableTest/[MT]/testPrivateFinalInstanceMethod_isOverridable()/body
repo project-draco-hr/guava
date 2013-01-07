@@ -3,4 +3,5 @@
   assertTrue(delegate.isPrivate());
   assertTrue(delegate.isFinal());
   assertFalse(delegate.isOverridable());
+  assertFalse(delegate.isVarArgs());
 }

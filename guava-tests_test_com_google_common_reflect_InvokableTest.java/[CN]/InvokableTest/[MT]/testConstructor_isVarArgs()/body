@@ -1,0 +1,4 @@
+{
+  Invokable<?,?> delegate=Prepender.constructor(String[].class);
+  assertTrue(delegate.isVarArgs());
+}
