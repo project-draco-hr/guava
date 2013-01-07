@@ -1,0 +1,10 @@
+{
+  ClassLoader classLoader=ClassPathTest.class.getClassLoader();
+  File notJar=File.createTempFile("not_a_jar","txt");
+  try {
+    ASSERT.that(ClassPath.readClassesFrom(notJar,classLoader)).isEmpty();
+  }
+  finally {
+    notJar.delete();
+  }
+}
