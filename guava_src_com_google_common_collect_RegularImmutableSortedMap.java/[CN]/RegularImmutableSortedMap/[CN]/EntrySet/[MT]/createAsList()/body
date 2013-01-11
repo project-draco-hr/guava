@@ -1,7 +1,6 @@
 {
   return new ImmutableAsList<Entry<K,V>>(){
     private final ImmutableList<K> keyList=keySet().asList();
-    private final ImmutableList<V> valueList=values().asList();
     @Override public Entry<K,V> get(    int index){
       return Maps.immutableEntry(keyList.get(index),valueList.get(index));
     }
