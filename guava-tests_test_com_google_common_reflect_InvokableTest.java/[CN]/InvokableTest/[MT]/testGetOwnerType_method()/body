@@ -1,0 +1,4 @@
+{
+  Invokable<?,?> invokable=Invokable.from(String.class.getMethod("length"));
+  assertEquals(TypeToken.of(String.class),invokable.getOwnerType());
+}

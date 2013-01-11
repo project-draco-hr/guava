@@ -1,0 +1,9 @@
+{
+  @SuppressWarnings("rawtypes") Constructor<ArrayList> constructor=ArrayList.class.getConstructor();
+  assertEquals(TypeToken.of(ArrayList.class),TypeToken.of(ArrayList.class).constructor(constructor).getOwnerType());
+  assertEquals(new TypeToken<ArrayList<String>>(){
+  }
+,new TypeToken<ArrayList<String>>(){
+  }
+.constructor(constructor).getOwnerType());
+}

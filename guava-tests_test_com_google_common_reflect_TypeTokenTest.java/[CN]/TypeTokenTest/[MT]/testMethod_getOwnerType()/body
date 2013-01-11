@@ -1,0 +1,9 @@
+{
+  Method sizeMethod=List.class.getMethod("size");
+  assertEquals(TypeToken.of(List.class),TypeToken.of(List.class).method(sizeMethod).getOwnerType());
+  assertEquals(new TypeToken<List<String>>(){
+  }
+,new TypeToken<List<String>>(){
+  }
+.method(sizeMethod).getOwnerType());
+}
