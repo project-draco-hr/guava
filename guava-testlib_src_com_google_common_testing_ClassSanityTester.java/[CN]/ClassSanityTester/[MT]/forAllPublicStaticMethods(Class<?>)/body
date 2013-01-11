@@ -2,6 +2,7 @@
   ImmutableList.Builder<Invokable<?,?>> builder=ImmutableList.builder();
   for (  Method method : cls.getDeclaredMethods()) {
     Invokable<?,?> invokable=Invokable.from(method);
+    invokable.setAccessible(true);
     if (invokable.isPublic() && invokable.isStatic() && !invokable.isSynthetic()) {
       builder.add(invokable);
     }
