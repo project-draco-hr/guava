@@ -1,3 +1,0 @@
-{
-  return new SoftExpirableEvictableEntry<K,V>(segment.keyReferenceQueue,key,hash,next);
-}
