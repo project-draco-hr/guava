@@ -1,3 +1,0 @@
-{
-  this.typeVariable=checkNotNull(typeVariable);
-}

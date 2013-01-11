@@ -1,0 +1,10 @@
+{
+  Method method=TypeParameterTest.class.getDeclaredMethod("testEquals");
+  new EqualsTester().addEqualityGroup(new TypeParameter<A>(){
+  }
+,new TypeParameter<A>(){
+  }
+).addEqualityGroup(new TypeParameter<B>(){
+  }
+).testEquals();
+}
