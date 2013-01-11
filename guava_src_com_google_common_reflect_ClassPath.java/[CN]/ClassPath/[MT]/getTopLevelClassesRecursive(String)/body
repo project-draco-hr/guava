@@ -2,7 +2,7 @@
   checkNotNull(packageName);
   String packagePrefix=packageName + '.';
   ImmutableSet.Builder<ClassInfo> builder=ImmutableSet.builder();
-  for (  ClassInfo classInfo : classes) {
+  for (  ClassInfo classInfo : getTopLevelClasses()) {
     if (classInfo.getName().startsWith(packagePrefix)) {
       builder.add(classInfo);
     }

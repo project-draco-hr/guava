@@ -1,5 +1,0 @@
-{
-  assertTrue(ClassPath.isTopLevelClassFile(ClassPathTest.class.getName() + ".class"));
-  assertFalse(ClassPath.isTopLevelClassFile(ClassPathTest.class.getName()));
-  assertFalse(ClassPath.isTopLevelClassFile(Nested.class.getName() + ".class"));
-}

@@ -1,0 +1,12 @@
+{
+  ClassLoader classLoader=ClassPathTest.class.getClassLoader();
+  ImmutableSet.Builder<ResourceInfo> resources=ImmutableSet.builder();
+  File notJar=File.createTempFile("not_a_jar","txt");
+  try {
+    ClassPath.browseFrom(notJar,classLoader,resources);
+  }
+  finally {
+    notJar.delete();
+  }
+  ASSERT.that(resources.build()).isEmpty();
+}

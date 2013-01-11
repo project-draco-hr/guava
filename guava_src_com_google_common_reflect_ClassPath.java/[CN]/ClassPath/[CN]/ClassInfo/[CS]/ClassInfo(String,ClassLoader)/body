@@ -1,4 +1,4 @@
 {
-  this.className=checkNotNull(className);
-  this.loader=checkNotNull(loader);
+  super(resourceName,loader);
+  this.className=getClassName(resourceName);
 }

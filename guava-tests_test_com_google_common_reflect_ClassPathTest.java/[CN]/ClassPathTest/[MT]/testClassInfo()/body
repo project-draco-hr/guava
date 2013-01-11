@@ -1,3 +1,0 @@
-{
-  new EqualsTester().addEqualityGroup(classInfo(ClassPathTest.class),classInfo(ClassPathTest.class)).addEqualityGroup(classInfo(Test.class),classInfo(Test.class,getClass().getClassLoader())).testEquals();
-}

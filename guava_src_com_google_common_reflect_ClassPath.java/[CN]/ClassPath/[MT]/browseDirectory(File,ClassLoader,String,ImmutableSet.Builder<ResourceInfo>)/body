@@ -1,0 +1,12 @@
+{
+  for (  File f : directory.listFiles()) {
+    String name=f.getName();
+    if (f.isDirectory()) {
+      browseDirectory(f,classloader,packagePrefix + name + "/",resources);
+    }
+ else {
+      String resourceName=packagePrefix + name;
+      resources.add(ResourceInfo.of(resourceName,classloader));
+    }
+  }
+}

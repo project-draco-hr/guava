@@ -1,4 +1,4 @@
 {
-  assertEquals("Foo",new ClassPath.ClassInfo("Foo",getClass().getClassLoader()).getSimpleName());
-  assertEquals("Foo",new ClassPath.ClassInfo("a.b.Foo",getClass().getClassLoader()).getSimpleName());
+  assertEquals("Foo",new ClassInfo("Foo.class",getClass().getClassLoader()).getSimpleName());
+  assertEquals("Foo",new ClassInfo("a/b/Foo.class",getClass().getClassLoader()).getSimpleName());
 }

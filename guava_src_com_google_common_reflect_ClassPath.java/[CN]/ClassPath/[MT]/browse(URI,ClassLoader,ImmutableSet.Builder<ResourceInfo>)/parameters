@@ -1,0 +1,3 @@
+URI uri
+ClassLoader classloader
+ImmutableSet.Builder<ResourceInfo> resources

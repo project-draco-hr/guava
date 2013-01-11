@@ -1,0 +1,3 @@
+File file
+ClassLoader classloader
+ImmutableSet.Builder<ResourceInfo> resources

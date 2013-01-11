@@ -1,0 +1,11 @@
+{
+  if (!file.exists()) {
+    return;
+  }
+  if (file.isDirectory()) {
+    browseDirectory(file,classloader,resources);
+  }
+ else {
+    browseJar(file,classloader,resources);
+  }
+}

@@ -1,3 +1,0 @@
-{
-  return filename.endsWith(CLASS_FILE_NAME_EXTENSION) && filename.indexOf('$') < 0;
-}

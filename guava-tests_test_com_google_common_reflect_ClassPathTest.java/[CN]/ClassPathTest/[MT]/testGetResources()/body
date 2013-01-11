@@ -1,0 +1,14 @@
+{
+  Map<String,ResourceInfo> byName=Maps.newHashMap();
+  Map<String,ResourceInfo> byToString=Maps.newHashMap();
+  ClassPath classpath=ClassPath.from(getClass().getClassLoader());
+  for (  ResourceInfo resource : classpath.getResources()) {
+    byName.put(resource.getResourceName(),resource);
+    byToString.put(resource.toString(),resource);
+    assertNotNull(resource.url());
+  }
+  String testResourceName="com/google/common/reflect/test.txt";
+  ASSERT.that(byName.keySet()).has().allOf("com/google/common/reflect/ClassPath.class","com/google/common/reflect/ClassPathTest.class","com/google/common/reflect/ClassPathTest$Nested.class",testResourceName);
+  ASSERT.that(byToString.keySet()).has().allOf("com.google.common.reflect.ClassPath","com.google.common.reflect.ClassPathTest","com/google/common/reflect/ClassPathTest$Nested.class",testResourceName);
+  assertEquals(getClass().getClassLoader().getResource(testResourceName),byName.get("com/google/common/reflect/test.txt").url());
+}
