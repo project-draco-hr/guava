@@ -5,7 +5,7 @@
   }
   Collection<V> values;
   try {
-    values=multimap().asMap().get(element);
+    values=multimap.asMap().get(element);
   }
  catch (  ClassCastException e) {
     return 0;

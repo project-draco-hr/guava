@@ -1,10 +1,7 @@
 {
   try {
-    if (multimap().containsKey(element)) {
-      Collection<V> values=multimap().asMap().get(element);
-      return (values == null) ? 0 : values.size();
-    }
-    return 0;
+    Collection<V> values=multimap.asMap().get(element);
+    return (values == null) ? 0 : values.size();
   }
  catch (  ClassCastException e) {
     return 0;

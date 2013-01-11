@@ -1,5 +1,5 @@
 {
-  return new TransformedIterator<Map.Entry<K,Collection<V>>,Multiset.Entry<K>>(multimap().asMap().entrySet().iterator()){
+  return new TransformedIterator<Map.Entry<K,Collection<V>>,Multiset.Entry<K>>(multimap.asMap().entrySet().iterator()){
     @Override Multiset.Entry<K> transform(    final Map.Entry<K,Collection<V>> backingEntry){
       return new Multisets.AbstractEntry<K>(){
         @Override public K getElement(){
