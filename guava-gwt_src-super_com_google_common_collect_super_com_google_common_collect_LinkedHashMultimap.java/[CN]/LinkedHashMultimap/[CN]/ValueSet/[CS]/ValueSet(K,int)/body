@@ -2,10 +2,7 @@
   this.key=key;
   this.firstEntry=this;
   this.lastEntry=this;
-  int tableSize=Integer.highestOneBit(Math.max(expectedValues,2) - 1) << 1;
-  if (tableSize < 0) {
-    tableSize=MAX_VALUE_SET_TABLE_SIZE;
-  }
+  int tableSize=Hashing.closedTableSize(expectedValues,VALUE_SET_LOAD_FACTOR);
   @SuppressWarnings("unchecked") ValueEntry<K,V>[] hashTable=new ValueEntry[tableSize];
   this.hashTable=hashTable;
 }

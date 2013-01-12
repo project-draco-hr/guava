@@ -1,3 +1,3 @@
 {
-  return asMap(backingSet().headSet(toKey,inclusive),function);
+  return asMap(set.headSet(toKey,inclusive),function);
 }

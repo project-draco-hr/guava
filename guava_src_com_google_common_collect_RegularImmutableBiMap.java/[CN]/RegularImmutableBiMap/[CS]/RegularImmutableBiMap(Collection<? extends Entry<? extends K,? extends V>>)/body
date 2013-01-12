@@ -1,6 +1,6 @@
 {
   int n=entriesToAdd.size();
-  int tableSize=RegularImmutableMap.chooseTableSize(n);
+  int tableSize=Hashing.closedTableSize(n,MAX_LOAD_FACTOR);
   this.mask=tableSize - 1;
   BiMapEntry<K,V>[] kToVTable=createEntryArray(tableSize);
   BiMapEntry<K,V>[] vToKTable=createEntryArray(tableSize);

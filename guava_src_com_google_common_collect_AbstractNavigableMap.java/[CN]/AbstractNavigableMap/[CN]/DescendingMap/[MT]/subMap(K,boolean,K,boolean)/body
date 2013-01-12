@@ -1,3 +1,0 @@
-{
-  return delegate().subMap(toKey,toInclusive,fromKey,fromInclusive).descendingMap();
-}

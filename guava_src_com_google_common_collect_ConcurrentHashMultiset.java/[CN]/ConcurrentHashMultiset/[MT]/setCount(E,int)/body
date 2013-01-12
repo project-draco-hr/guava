@@ -2,7 +2,7 @@
   checkNotNull(element);
   checkNonnegative(count,"count");
   while (true) {
-    AtomicInteger existingCounter=safeGet(element);
+    AtomicInteger existingCounter=Maps.safeGet(countMap,element);
     if (existingCounter == null) {
       if (count == 0) {
         return 0;

@@ -1,3 +1,0 @@
-{
-  return immutableEntry(key,function.apply(key));
-}

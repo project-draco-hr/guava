@@ -1,12 +1,4 @@
 {
-  try {
-    Collection<V> values=multimap.asMap().get(element);
-    return (values == null) ? 0 : values.size();
-  }
- catch (  ClassCastException e) {
-    return 0;
-  }
-catch (  NullPointerException e) {
-    return 0;
-  }
+  Collection<V> values=Maps.safeGet(multimap.asMap(),element);
+  return (values == null) ? 0 : values.size();
 }

@@ -1,3 +1,0 @@
-{
-  return lastKey(backingSet().headSet(key,false));
-}

@@ -1,3 +1,0 @@
-{
-  return Ordering.from(delegate().comparator()).<K>reverse();
-}

@@ -1,6 +1,0 @@
-{
-  if (set.isEmpty()) {
-    return null;
-  }
-  return set.first();
-}

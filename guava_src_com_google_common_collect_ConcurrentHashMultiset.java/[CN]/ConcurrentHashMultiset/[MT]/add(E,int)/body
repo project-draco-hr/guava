@@ -5,7 +5,7 @@
   }
   checkArgument(occurrences > 0,"Invalid occurrences: %s",occurrences);
   while (true) {
-    AtomicInteger existingCounter=safeGet(element);
+    AtomicInteger existingCounter=Maps.safeGet(countMap,element);
     if (existingCounter == null) {
       existingCounter=countMap.putIfAbsent(element,new AtomicInteger(occurrences));
       if (existingCounter == null) {

@@ -1,3 +1,0 @@
-{
-  return new Maps.NavigableKeySet<K,V>(this);
-}

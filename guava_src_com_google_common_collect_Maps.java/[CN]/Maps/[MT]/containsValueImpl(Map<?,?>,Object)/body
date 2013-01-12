@@ -1,8 +1,3 @@
 {
-  for (  Entry<?,?> entry : map.entrySet()) {
-    if (Objects.equal(entry.getValue(),value)) {
-      return true;
-    }
-  }
-  return false;
+  return Iterators.contains(valueIterator(map.entrySet().iterator()),value);
 }

@@ -1,8 +1,3 @@
 {
-  return new ImmutableMapValues<K,V>(){
-    @Override ImmutableMap<K,V> map(){
-      return ImmutableMap.this;
-    }
-  }
-;
+  return new ImmutableMapValues<K,V>(this);
 }

@@ -1,14 +1,5 @@
 {
-  Collection<V> collection;
-  try {
-    collection=map.remove(key);
-  }
- catch (  NullPointerException e) {
-    return 0;
-  }
-catch (  ClassCastException e) {
-    return 0;
-  }
+  Collection<V> collection=Maps.safeRemove(map,key);
   int count=0;
   if (collection != null) {
     count=collection.size();

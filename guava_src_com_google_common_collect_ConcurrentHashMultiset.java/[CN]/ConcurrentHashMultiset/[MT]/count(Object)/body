@@ -1,4 +1,4 @@
 {
-  AtomicInteger existingCounter=safeGet(element);
+  AtomicInteger existingCounter=Maps.safeGet(countMap,element);
   return (existingCounter == null) ? 0 : existingCounter.get();
 }

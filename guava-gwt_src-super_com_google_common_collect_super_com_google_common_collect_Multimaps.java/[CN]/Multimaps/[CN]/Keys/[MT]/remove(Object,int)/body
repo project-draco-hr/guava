@@ -3,16 +3,7 @@
   if (occurrences == 0) {
     return count(element);
   }
-  Collection<V> values;
-  try {
-    values=multimap.asMap().get(element);
-  }
- catch (  ClassCastException e) {
-    return 0;
-  }
-catch (  NullPointerException e) {
-    return 0;
-  }
+  Collection<V> values=Maps.safeGet(multimap.asMap(),element);
   if (values == null) {
     return 0;
   }

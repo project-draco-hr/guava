@@ -5,29 +5,13 @@
       return delegate;
     }
     @Override public boolean contains(    @Nullable Object object){
-      if (object == null) {
-        return false;
-      }
-      try {
-        return delegate.contains(object);
-      }
- catch (      ClassCastException e) {
-        return false;
-      }
+      return object != null && Collections2.safeContains(delegate,object);
     }
     @Override public boolean containsAll(    Collection<?> collection){
       return standardContainsAll(collection);
     }
     @Override public boolean remove(    Object object){
-      if (object == null) {
-        return false;
-      }
-      try {
-        return delegate.remove(object);
-      }
- catch (      ClassCastException e) {
-        return false;
-      }
+      return object != null && Collections2.safeRemove(delegate,object);
     }
     @Override public boolean removeAll(    Collection<?> c){
       return standardRemoveAll(c);

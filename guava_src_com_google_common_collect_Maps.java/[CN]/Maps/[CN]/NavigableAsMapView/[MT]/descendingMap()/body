@@ -1,3 +1,3 @@
 {
-  return asMap(backingSet().descendingSet(),function);
+  return asMap(set.descendingSet(),function);
 }

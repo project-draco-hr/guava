@@ -2,7 +2,7 @@
   checkNotNull(element);
   checkNonnegative(expectedOldCount,"oldCount");
   checkNonnegative(newCount,"newCount");
-  AtomicInteger existingCounter=safeGet(element);
+  AtomicInteger existingCounter=Maps.safeGet(countMap,element);
   if (existingCounter == null) {
     if (expectedOldCount != 0) {
       return false;

@@ -1,8 +1,0 @@
-{
-  int tableSize=Integer.highestOneBit(size);
-  if ((double)size / tableSize > MAX_LOAD_FACTOR) {
-    tableSize<<=1;
-    checkArgument(tableSize > 0,"table too large: %s",size);
-  }
-  return tableSize;
-}

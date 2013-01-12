@@ -3,7 +3,7 @@
     return true;
   }
   checkArgument(occurrences > 0,"Invalid occurrences: %s",occurrences);
-  AtomicInteger existingCounter=safeGet(element);
+  AtomicInteger existingCounter=Maps.safeGet(countMap,element);
   if (existingCounter == null) {
     return false;
   }

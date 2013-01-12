@@ -1,7 +1,7 @@
 {
   int size=immutableEntries.length;
   entries=createEntryArray(size);
-  int tableSize=chooseTableSize(size);
+  int tableSize=Hashing.closedTableSize(size,MAX_LOAD_FACTOR);
   table=createEntryArray(tableSize);
   mask=tableSize - 1;
   for (int entryIndex=0; entryIndex < size; entryIndex++) {
