@@ -1,4 +1,0 @@
-{
-  packagesToTest.add(Reflection.getPackageName(declaringClass));
-  this.factories=factories;
-}

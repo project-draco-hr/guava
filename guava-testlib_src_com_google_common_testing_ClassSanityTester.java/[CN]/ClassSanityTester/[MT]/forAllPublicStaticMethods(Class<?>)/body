@@ -7,5 +7,5 @@
       builder.add(invokable);
     }
   }
-  return new FactoryMethodReturnValueTester(cls,builder.build());
+  return new FactoryMethodReturnValueTester(cls,builder.build(),"public static methods");
 }

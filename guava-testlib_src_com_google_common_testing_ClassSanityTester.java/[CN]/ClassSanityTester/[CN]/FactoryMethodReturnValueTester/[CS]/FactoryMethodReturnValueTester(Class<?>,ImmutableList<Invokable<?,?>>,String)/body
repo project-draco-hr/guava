@@ -1,0 +1,6 @@
+{
+  this.declaringClass=declaringClass;
+  this.factories=factories;
+  this.factoryMethodsDescription=factoryMethodsDescription;
+  packagesToTest.add(Reflection.getPackageName(declaringClass));
+}

@@ -5,5 +5,7 @@
       builder.add(factory);
     }
   }
-  return builder.build();
+  ImmutableList<Invokable<?,?>> factoriesToTest=builder.build();
+  Assert.assertFalse("No " + factoryMethodsDescription + " that return "+ returnTypeToTest.getName()+ " or subtype are found in "+ declaringClass+ ".",factoriesToTest.isEmpty());
+  return factoriesToTest;
 }

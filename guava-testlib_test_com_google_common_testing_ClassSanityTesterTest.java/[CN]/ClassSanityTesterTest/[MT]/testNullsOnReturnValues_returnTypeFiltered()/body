@@ -1,3 +1,10 @@
 {
-  tester.forAllPublicStaticMethods(BadNullsFactory.class).thatReturn(Iterable.class).testNulls();
+  try {
+    tester.forAllPublicStaticMethods(BadNullsFactory.class).thatReturn(Iterable.class).testNulls();
+  }
+ catch (  AssertionFailedError expected) {
+    assertEquals("No public static methods that return java.lang.Iterable or subtype are found in " + BadNullsFactory.class + ".",expected.getMessage());
+    return;
+  }
+  fail();
 }
