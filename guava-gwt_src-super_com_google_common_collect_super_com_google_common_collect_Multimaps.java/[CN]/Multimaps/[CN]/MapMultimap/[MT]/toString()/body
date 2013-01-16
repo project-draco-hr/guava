@@ -1,8 +1,3 @@
 {
-  if (map.isEmpty()) {
-    return "{}";
-  }
-  StringBuilder builder=Collections2.newStringBuilderForCollection(map.size()).append('{');
-  JOINER.appendTo(builder,map);
-  return builder.append("]}").toString();
+  return asMap().toString();
 }

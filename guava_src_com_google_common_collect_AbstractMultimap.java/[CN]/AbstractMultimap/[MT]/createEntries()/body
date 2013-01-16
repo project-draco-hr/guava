@@ -1,22 +1,8 @@
 {
   if (this instanceof SetMultimap) {
-    return new Multimaps.EntrySet<K,V>(){
-      @Override Multimap<K,V> multimap(){
-        return AbstractMultimap.this;
-      }
-      @Override public Iterator<Entry<K,V>> iterator(){
-        return entryIterator();
-      }
-    }
-;
+    return new EntrySet();
   }
-  return new Multimaps.Entries<K,V>(){
-    @Override Multimap<K,V> multimap(){
-      return AbstractMultimap.this;
-    }
-    @Override public Iterator<Entry<K,V>> iterator(){
-      return entryIterator();
-    }
+ else {
+    return new Entries();
   }
-;
 }
