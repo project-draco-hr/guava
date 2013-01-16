@@ -1,3 +1,0 @@
-{
-  super(areEqual,onlyOnLeft,onlyOnRight,onBoth,differences);
-}

@@ -1,5 +1,5 @@
 {
-  final Iterator<Map.Entry<K,Collection<V>>> entryIterator=subMap.entrySet().iterator();
+  final Iterator<Map.Entry<K,Collection<V>>> entryIterator=map().entrySet().iterator();
   return new Iterator<K>(){
     Map.Entry<K,Collection<V>> entry;
     @Override public boolean hasNext(){

@@ -1,3 +1,0 @@
-{
-  return new MapDifferenceImpl<K,V>(areEqual,Collections.unmodifiableMap(onlyOnLeft),Collections.unmodifiableMap(onlyOnRight),Collections.unmodifiableMap(onBoth),Collections.unmodifiableMap(differences));
-}

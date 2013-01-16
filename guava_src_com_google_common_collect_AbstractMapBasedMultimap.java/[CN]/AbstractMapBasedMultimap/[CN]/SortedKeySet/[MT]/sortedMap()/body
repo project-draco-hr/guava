@@ -1,3 +1,3 @@
 {
-  return (SortedMap<K,Collection<V>>)subMap;
+  return (SortedMap<K,Collection<V>>)super.map();
 }

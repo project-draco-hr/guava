@@ -1,8 +1,3 @@
 {
-  return new TransformedIterator<Entry<K,V>,K>(entryIterator){
-    @Override K transform(    Entry<K,V> entry){
-      return entry.getKey();
-    }
-  }
-;
+  return Iterators.transform(entryIterator,Maps.<K>keyFunction());
 }

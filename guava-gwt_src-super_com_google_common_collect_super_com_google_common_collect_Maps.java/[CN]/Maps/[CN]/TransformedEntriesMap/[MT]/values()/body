@@ -1,12 +1,4 @@
 {
   Collection<V2> result=values;
-  if (result == null) {
-    return values=new Values<K,V2>(){
-      @Override Map<K,V2> map(){
-        return TransformedEntriesMap.this;
-      }
-    }
-;
-  }
-  return result;
+  return (result == null) ? values=new Values<K,V2>(this) : result;
 }

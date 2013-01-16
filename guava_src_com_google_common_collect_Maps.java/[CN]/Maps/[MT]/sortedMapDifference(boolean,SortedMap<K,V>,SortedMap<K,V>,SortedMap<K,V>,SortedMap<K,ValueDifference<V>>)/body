@@ -1,3 +1,0 @@
-{
-  return new SortedMapDifferenceImpl<K,V>(areEqual,Collections.unmodifiableSortedMap(onlyOnLeft),Collections.unmodifiableSortedMap(onlyOnRight),Collections.unmodifiableSortedMap(onBoth),Collections.unmodifiableSortedMap(differences));
-}

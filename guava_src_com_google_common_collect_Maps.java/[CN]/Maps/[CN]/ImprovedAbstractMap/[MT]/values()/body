@@ -1,12 +1,4 @@
 {
   Collection<V> result=values;
-  if (result == null) {
-    return values=new Values<K,V>(){
-      @Override Map<K,V> map(){
-        return ImprovedAbstractMap.this;
-      }
-    }
-;
-  }
-  return result;
+  return (result == null) ? values=new Values<K,V>(this) : result;
 }

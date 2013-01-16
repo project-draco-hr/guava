@@ -1,12 +1,7 @@
 {
   Set<K> result=keySet;
   if (result == null) {
-    return keySet=new KeySet<K,V>(){
-      @Override Map<K,V> map(){
-        return ImprovedAbstractMap.this;
-      }
-    }
-;
+    return keySet=new KeySet<K,V>(this);
   }
   return result;
 }

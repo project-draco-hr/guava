@@ -1,7 +1,0 @@
-{
-  this.areEqual=areEqual;
-  this.onlyOnLeft=onlyOnLeft;
-  this.onlyOnRight=onlyOnRight;
-  this.onBoth=onBoth;
-  this.differences=differences;
-}

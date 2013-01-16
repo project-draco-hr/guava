@@ -1,8 +1,5 @@
 {
-  return new Maps.KeySet<Range<K>,V>(){
-    @Override Map<Range<K>,V> map(){
-      return SubRangeMapAsMap.this;
-    }
+  return new Maps.KeySet<Range<K>,V>(SubRangeMapAsMap.this){
     @Override public boolean remove(    @Nullable Object o){
       return SubRangeMapAsMap.this.remove(o) != null;
     }
