@@ -1,12 +1,13 @@
 {
   if (map instanceof ImmutableEnumMap) {
-    return (ImmutableEnumMap<K,V>)map;
+    @SuppressWarnings("unchecked") ImmutableEnumMap<K,V> result=(ImmutableEnumMap<K,V>)map;
+    return result;
   }
  else   if (map.isEmpty()) {
     return ImmutableMap.of();
   }
  else {
-    for (    Map.Entry<K,V> entry : map.entrySet()) {
+    for (    Map.Entry<K,? extends V> entry : map.entrySet()) {
       checkNotNull(entry.getKey());
       checkNotNull(entry.getValue());
     }
