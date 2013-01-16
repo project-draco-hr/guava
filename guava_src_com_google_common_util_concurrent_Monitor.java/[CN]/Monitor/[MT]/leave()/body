@@ -1,10 +1,9 @@
 {
   final ReentrantLock lock=this.lock;
-  if (!lock.isHeldByCurrentThread()) {
-    throw new IllegalMonitorStateException();
-  }
   try {
-    signalConditionsOfSatisfiedGuards(null);
+    if (lock.getHoldCount() == 1) {
+      signalConditionsOfSatisfiedGuards(null);
+    }
   }
   finally {
     lock.unlock();
