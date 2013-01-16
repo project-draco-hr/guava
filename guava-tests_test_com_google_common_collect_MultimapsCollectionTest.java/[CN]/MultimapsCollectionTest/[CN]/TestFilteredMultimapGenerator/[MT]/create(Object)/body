@@ -1,8 +1,0 @@
-{
-  Multimap<String,Integer> multimap=LinkedHashMultimap.create();
-  for (  Object o : elements) {
-    @SuppressWarnings("unchecked") Entry<String,Integer> entry=(Entry<String,Integer>)o;
-    multimap.put(entry.getKey(),entry.getValue());
-  }
-  return filter(multimap);
-}

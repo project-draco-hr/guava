@@ -1,28 +1,3 @@
 {
-  return new Multimaps.Entries<K,V>(){
-    @Override Multimap<K,V> multimap(){
-      return FilteredKeyMultimap.this;
-    }
-    @Override public Iterator<Entry<K,V>> iterator(){
-      return entryIterator();
-    }
-    @Override @SuppressWarnings("unchecked") public boolean remove(    @Nullable Object o){
-      if (o instanceof Entry) {
-        Entry<?,?> entry=(Entry<?,?>)o;
-        if (unfiltered.containsEntry(entry.getKey(),entry.getValue()) && keyPredicate.apply((K)entry.getKey())) {
-          return unfiltered.remove(entry.getKey(),entry.getValue());
-        }
-      }
-      return false;
-    }
-    @Override public boolean removeAll(    Collection<?> c){
-      Predicate<Entry<K,?>> combinedPredicate=Predicates.and(Predicates.compose(keyPredicate,Maps.<K>keyFunction()),Predicates.in(c));
-      return Iterators.removeIf(unfiltered.entries().iterator(),combinedPredicate);
-    }
-    @Override public boolean retainAll(    Collection<?> c){
-      Predicate<Entry<K,?>> combinedPredicate=Predicates.and(Predicates.compose(keyPredicate,Maps.<K>keyFunction()),Predicates.not(Predicates.in(c)));
-      return Iterators.removeIf(unfiltered.entries().iterator(),combinedPredicate);
-    }
-  }
-;
+  return new Entries();
 }

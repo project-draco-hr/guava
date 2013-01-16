@@ -1,5 +1,7 @@
 {
   TestSuite suite=new TestSuite();
+  suite.addTest(transformSuite());
+  suite.addTest(filterSuite());
   suite.addTest(ListMultimapTestSuiteBuilder.using(new TestStringListMultimapGenerator(){
     @Override protected ListMultimap<String,String> create(    Entry<String,String>[] entries){
       ListMultimap<String,String> multimap=Multimaps.synchronizedListMultimap(ArrayListMultimap.<String,String>create());
@@ -10,7 +12,6 @@
     }
   }
 ).named("synchronized ArrayListMultimap").withFeatures(MapFeature.ALLOWS_NULL_KEYS,MapFeature.ALLOWS_NULL_VALUES,MapFeature.GENERAL_PURPOSE,MapFeature.FAILS_FAST_ON_CONCURRENT_MODIFICATION,CollectionSize.ANY).createTestSuite());
-  suite.addTest(transformSuite());
   suite.addTest(SetTestSuiteBuilder.using(new TestStringSetGenerator(){
     @Override protected Set<String> create(    String[] elements){
       PopulatableMapAsMultimap<Integer,String> multimap=PopulatableMapAsMultimap.create();

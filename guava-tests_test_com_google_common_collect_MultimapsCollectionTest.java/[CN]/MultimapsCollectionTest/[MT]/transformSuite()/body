@@ -24,6 +24,5 @@
     }
   }
 ).named("Multimaps.transformEntries[ListMultimap]").withFeatures(CollectionSize.ANY,MapFeature.SUPPORTS_REMOVE,MapFeature.ALLOWS_NULL_KEYS).createTestSuite());
-  suite.addTest(filterSuite());
   return suite;
 }

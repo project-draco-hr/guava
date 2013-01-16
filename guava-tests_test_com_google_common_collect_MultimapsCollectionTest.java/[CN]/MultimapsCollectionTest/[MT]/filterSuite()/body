@@ -1,51 +1,71 @@
 {
+  List<Method> toSuppress=ImmutableList.of(CollectionIteratorTester.getIteratorUnknownOrderRemoveSupportedMethod(),MultisetIteratorTester.getIteratorUnknownOrderRemoveSupportedMethod(),MultisetWritesTester.getEntrySetIteratorMethod());
   TestSuite suite=new TestSuite("Multimaps.filter*");
-  suite.addTest(MultimapTestSuiteBuilder.using(new TestFilteredMultimapGenerator(){
-    @Override Multimap<String,Integer> filter(    Multimap<String,Integer> multimap){
+  suite.addTest(SetMultimapTestSuiteBuilder.using(new FilteredSetMultimapGenerator(){
+    @Override SetMultimap<String,Integer> filter(    SetMultimap<String,Integer> multimap){
       multimap.put("foo",17);
       multimap.put("bar",32);
       multimap.put("foo",16);
       return Multimaps.filterKeys(multimap,Predicates.not(Predicates.in(ImmutableSet.of("foo","bar"))));
     }
   }
-).named("Multimaps.filterKeys[Multimap, Predicate]").withFeatures(CollectionSize.ANY,MapFeature.GENERAL_PURPOSE,MapFeature.ALLOWS_NULL_KEYS,MapFeature.ALLOWS_NULL_VALUES).suppressing(CollectionIteratorTester.getIteratorUnknownOrderRemoveSupportedMethod(),MultisetIteratorTester.getIteratorUnknownOrderRemoveSupportedMethod(),MultisetWritesTester.getEntrySetIteratorMethod()).createTestSuite());
-  suite.addTest(MultimapTestSuiteBuilder.using(new TestFilteredMultimapGenerator(){
-    @Override Multimap<String,Integer> filter(    Multimap<String,Integer> multimap){
+).named("Multimaps.filterKeys[SetMultimap, Predicate]").withFeatures(CollectionSize.ANY,MapFeature.GENERAL_PURPOSE,MapFeature.ALLOWS_NULL_KEYS,MapFeature.ALLOWS_NULL_VALUES).suppressing(toSuppress).createTestSuite());
+  suite.addTest(ListMultimapTestSuiteBuilder.using(new FilteredListMultimapGenerator(){
+    @Override ListMultimap<String,Integer> filter(    ListMultimap<String,Integer> multimap){
+      multimap.put("foo",17);
+      multimap.put("bar",32);
+      multimap.put("foo",16);
+      return Multimaps.filterKeys(multimap,Predicates.not(Predicates.in(ImmutableSet.of("foo","bar"))));
+    }
+  }
+).named("Multimaps.filterKeys[ListMultimap, Predicate]").withFeatures(CollectionSize.ANY,MapFeature.GENERAL_PURPOSE,MapFeature.ALLOWS_NULL_KEYS,MapFeature.ALLOWS_NULL_VALUES).suppressing(toSuppress).createTestSuite());
+  suite.addTest(ListMultimapTestSuiteBuilder.using(new FilteredListMultimapGenerator(){
+    @Override ListMultimap<String,Integer> filter(    ListMultimap<String,Integer> multimap){
+      multimap.put("foo",17);
+      multimap.put("bar",32);
+      multimap.put("foo",16);
+      multimap=Multimaps.filterKeys(multimap,Predicates.not(Predicates.equalTo("foo")));
+      return Multimaps.filterKeys(multimap,Predicates.not(Predicates.equalTo("bar")));
+    }
+  }
+).named("Multimaps.filterKeys[Multimaps.filterKeys[ListMultimap], Predicate]").withFeatures(CollectionSize.ANY,MapFeature.GENERAL_PURPOSE,MapFeature.ALLOWS_NULL_KEYS,MapFeature.ALLOWS_NULL_VALUES).suppressing(toSuppress).createTestSuite());
+  suite.addTest(SetMultimapTestSuiteBuilder.using(new FilteredSetMultimapGenerator(){
+    @Override SetMultimap<String,Integer> filter(    SetMultimap<String,Integer> multimap){
       multimap.put("one",314);
       multimap.put("two",159);
       multimap.put("one",265);
       return Multimaps.filterValues(multimap,Predicates.not(Predicates.in(ImmutableSet.of(314,159,265))));
     }
   }
-).named("Multimaps.filterValues[Multimap, Predicate]").withFeatures(CollectionSize.ANY,MapFeature.GENERAL_PURPOSE,MapFeature.ALLOWS_NULL_KEYS,MapFeature.ALLOWS_NULL_VALUES).suppressing(CollectionIteratorTester.getIteratorUnknownOrderRemoveSupportedMethod(),MultisetIteratorTester.getIteratorUnknownOrderRemoveSupportedMethod(),MultisetWritesTester.getEntrySetIteratorMethod()).createTestSuite());
-  suite.addTest(MultimapTestSuiteBuilder.using(new TestFilteredMultimapGenerator(){
-    @Override Multimap<String,Integer> filter(    Multimap<String,Integer> multimap){
+).named("Multimaps.filterValues[SetMultimap, Predicate]").withFeatures(CollectionSize.ANY,MapFeature.GENERAL_PURPOSE,MapFeature.ALLOWS_NULL_KEYS,MapFeature.ALLOWS_NULL_VALUES).suppressing(toSuppress).createTestSuite());
+  suite.addTest(SetMultimapTestSuiteBuilder.using(new FilteredSetMultimapGenerator(){
+    @Override SetMultimap<String,Integer> filter(    SetMultimap<String,Integer> multimap){
       ImmutableSetMultimap<String,Integer> badEntries=ImmutableSetMultimap.of("foo",314,"one",159,"two",265,"bar",358);
       multimap.putAll(badEntries);
       return Multimaps.filterEntries(multimap,Predicates.not(Predicates.in(badEntries.entries())));
     }
   }
-).named("Multimaps.filterEntries[Multimap, Predicate]").withFeatures(CollectionSize.ANY,MapFeature.GENERAL_PURPOSE,MapFeature.ALLOWS_NULL_KEYS,MapFeature.ALLOWS_NULL_VALUES).suppressing(CollectionIteratorTester.getIteratorUnknownOrderRemoveSupportedMethod(),MultisetIteratorTester.getIteratorUnknownOrderRemoveSupportedMethod(),MultisetWritesTester.getEntrySetIteratorMethod()).createTestSuite());
-  suite.addTest(MultimapTestSuiteBuilder.using(new TestFilteredMultimapGenerator(){
-    @Override Multimap<String,Integer> filter(    Multimap<String,Integer> multimap){
+).named("Multimaps.filterEntries[SetMultimap, Predicate]").withFeatures(CollectionSize.ANY,MapFeature.GENERAL_PURPOSE,MapFeature.ALLOWS_NULL_KEYS,MapFeature.ALLOWS_NULL_VALUES).suppressing(toSuppress).createTestSuite());
+  suite.addTest(SetMultimapTestSuiteBuilder.using(new FilteredSetMultimapGenerator(){
+    @Override SetMultimap<String,Integer> filter(    SetMultimap<String,Integer> multimap){
       ImmutableSetMultimap<String,Integer> badEntries=ImmutableSetMultimap.of("foo",314,"one",159,"two",265,"bar",358);
       multimap.putAll(badEntries);
       multimap=Multimaps.filterKeys(multimap,Predicates.not(Predicates.in(ImmutableSet.of("foo","bar"))));
       return Multimaps.filterEntries(multimap,Predicates.not(Predicates.in(badEntries.entries())));
     }
   }
-).named("Multimaps.filterEntries[Maps.filterKeys[Multimap]]").withFeatures(CollectionSize.ANY,MapFeature.GENERAL_PURPOSE,MapFeature.ALLOWS_NULL_KEYS,MapFeature.ALLOWS_NULL_VALUES).suppressing(CollectionIteratorTester.getIteratorUnknownOrderRemoveSupportedMethod(),MultisetIteratorTester.getIteratorUnknownOrderRemoveSupportedMethod(),MultisetWritesTester.getEntrySetIteratorMethod()).createTestSuite());
-  suite.addTest(MultimapTestSuiteBuilder.using(new TestFilteredMultimapGenerator(){
-    @Override Multimap<String,Integer> filter(    Multimap<String,Integer> multimap){
+).named("Multimaps.filterEntries[Maps.filterKeys[SetMultimap]]").withFeatures(CollectionSize.ANY,MapFeature.GENERAL_PURPOSE,MapFeature.ALLOWS_NULL_KEYS,MapFeature.ALLOWS_NULL_VALUES).suppressing(toSuppress).createTestSuite());
+  suite.addTest(SetMultimapTestSuiteBuilder.using(new FilteredSetMultimapGenerator(){
+    @Override SetMultimap<String,Integer> filter(    SetMultimap<String,Integer> multimap){
       ImmutableSetMultimap<String,Integer> badEntries=ImmutableSetMultimap.of("foo",314,"one",159,"two",265,"bar",358);
       multimap.putAll(badEntries);
       multimap=Multimaps.filterEntries(multimap,Predicates.not(Predicates.in(ImmutableMap.of("one",159,"two",265).entrySet())));
       return Multimaps.filterKeys(multimap,Predicates.not(Predicates.in(ImmutableSet.of("foo","bar"))));
     }
   }
-).named("Multimaps.filterKeys[Maps.filterEntries[Multimap]]").withFeatures(CollectionSize.ANY,MapFeature.GENERAL_PURPOSE,MapFeature.ALLOWS_NULL_KEYS,MapFeature.ALLOWS_NULL_VALUES).suppressing(CollectionIteratorTester.getIteratorUnknownOrderRemoveSupportedMethod(),MultisetIteratorTester.getIteratorUnknownOrderRemoveSupportedMethod(),MultisetWritesTester.getEntrySetIteratorMethod()).createTestSuite());
-  suite.addTest(MultimapTestSuiteBuilder.using(new TestFilteredMultimapGenerator(){
-    @Override Multimap<String,Integer> filter(    Multimap<String,Integer> multimap){
+).named("Multimaps.filterKeys[Maps.filterEntries[SetMultimap]]").withFeatures(CollectionSize.ANY,MapFeature.GENERAL_PURPOSE,MapFeature.ALLOWS_NULL_KEYS,MapFeature.ALLOWS_NULL_VALUES).suppressing(toSuppress).createTestSuite());
+  suite.addTest(SetMultimapTestSuiteBuilder.using(new FilteredSetMultimapGenerator(){
+    @Override SetMultimap<String,Integer> filter(    SetMultimap<String,Integer> multimap){
       ImmutableSetMultimap<String,Integer> badEntries=ImmutableSetMultimap.of("foo",314,"bar",358);
       multimap.putAll(badEntries);
       multimap=Multimaps.filterKeys(multimap,Predicates.not(Predicates.equalTo("foo")));
@@ -53,6 +73,6 @@
       return multimap;
     }
   }
-).named("Multimaps.filterKeys[Maps.filterKeys[Multimap]]").withFeatures(CollectionSize.ANY,MapFeature.GENERAL_PURPOSE,MapFeature.ALLOWS_NULL_KEYS,MapFeature.ALLOWS_NULL_VALUES).suppressing(CollectionIteratorTester.getIteratorUnknownOrderRemoveSupportedMethod(),MultisetIteratorTester.getIteratorUnknownOrderRemoveSupportedMethod(),MultisetWritesTester.getEntrySetIteratorMethod()).createTestSuite());
+).named("Multimaps.filterKeys[Maps.filterKeys[SetMultimap]]").withFeatures(CollectionSize.ANY,MapFeature.GENERAL_PURPOSE,MapFeature.ALLOWS_NULL_KEYS,MapFeature.ALLOWS_NULL_VALUES).suppressing(toSuppress).createTestSuite());
   return suite;
 }
