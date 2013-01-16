@@ -1,9 +1,3 @@
 {
-  checkNotNull(array);
-  return new AbstractIndexedListIterator<T>(array.length){
-    @Override protected T get(    int index){
-      return array[index];
-    }
-  }
-;
+  return forArray(array,0,array.length,0);
 }

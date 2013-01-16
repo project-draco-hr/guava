@@ -1,10 +1,13 @@
 {
   checkNotNull(iterable);
-  checkNonnegativeIndex(position);
-  try {
-    return get(iterable,position);
+  Iterators.checkNonnegative(position);
+  if (iterable instanceof List) {
+    List<? extends T> list=Lists.cast(iterable);
+    return (position < list.size()) ? list.get(position) : defaultValue;
   }
- catch (  IndexOutOfBoundsException e) {
-    return defaultValue;
+ else {
+    Iterator<? extends T> iterator=iterable.iterator();
+    Iterators.advance(iterator,position);
+    return Iterators.getNext(iterator,defaultValue);
   }
 }

@@ -1,12 +1,10 @@
 {
   checkNotNull(predicate,"predicate");
-  int i=0;
-  while (iterator.hasNext()) {
+  for (int i=0; iterator.hasNext(); i++) {
     T current=iterator.next();
     if (predicate.apply(current)) {
       return i;
     }
-    i++;
   }
   return -1;
 }

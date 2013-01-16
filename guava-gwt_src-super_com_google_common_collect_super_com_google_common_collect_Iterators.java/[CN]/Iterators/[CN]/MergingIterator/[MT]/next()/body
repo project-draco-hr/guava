@@ -1,8 +1,5 @@
 {
-  if (queue.isEmpty()) {
-    return endOfData();
-  }
-  PeekingIterator<T> nextIter=queue.poll();
+  PeekingIterator<T> nextIter=queue.remove();
   T next=nextIter.next();
   if (nextIter.hasNext()) {
     queue.add(nextIter);

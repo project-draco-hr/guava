@@ -1,1 +1,1 @@
-AbstractIterator<T>
+UnmodifiableIterator<T>

@@ -1,11 +1,3 @@
 {
-  checkNotNull(elementsToRemove);
-  boolean modified=false;
-  while (removeFrom.hasNext()) {
-    if (elementsToRemove.contains(removeFrom.next())) {
-      removeFrom.remove();
-      modified=true;
-    }
-  }
-  return modified;
+  return removeIf(removeFrom,Predicates.in(elementsToRemove));
 }

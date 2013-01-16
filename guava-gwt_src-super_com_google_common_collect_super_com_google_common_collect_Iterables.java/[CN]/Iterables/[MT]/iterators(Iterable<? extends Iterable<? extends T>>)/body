@@ -1,11 +1,7 @@
 {
-  final Iterator<? extends Iterable<? extends T>> iterableIterator=iterables.iterator();
-  return new UnmodifiableIterator<Iterator<? extends T>>(){
-    @Override public boolean hasNext(){
-      return iterableIterator.hasNext();
-    }
-    @Override public Iterator<? extends T> next(){
-      return iterableIterator.next().iterator();
+  return new TransformedIterator<Iterable<? extends T>,Iterator<? extends T>>(iterables.iterator()){
+    @Override Iterator<? extends T> transform(    Iterable<? extends T> from){
+      return from.iterator();
     }
   }
 ;

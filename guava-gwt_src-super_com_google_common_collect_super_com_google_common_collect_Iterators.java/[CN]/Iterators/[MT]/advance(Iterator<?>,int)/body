@@ -1,6 +1,6 @@
 {
   checkNotNull(iterator);
-  checkArgument(numberToAdvance >= 0,"number to advance cannot be negative");
+  checkArgument(numberToAdvance >= 0,"numberToAdvance must be nonnegative");
   int i;
   for (i=0; i < numberToAdvance && iterator.hasNext(); i++) {
     iterator.next();
