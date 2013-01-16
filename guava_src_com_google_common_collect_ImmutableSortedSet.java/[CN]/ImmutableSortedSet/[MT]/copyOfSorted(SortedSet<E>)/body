@@ -1,10 +1,10 @@
 {
   Comparator<? super E> comparator=SortedIterables.comparator(sortedSet);
-  Object[] elements=sortedSet.toArray();
-  if (elements.length == 0) {
+  ImmutableList<E> list=ImmutableList.copyOf(sortedSet);
+  if (list.isEmpty()) {
     return emptySet(comparator);
   }
  else {
-    return new RegularImmutableSortedSet<E>(ImmutableList.<E>asImmutableList(elements),comparator);
+    return new RegularImmutableSortedSet<E>(list,comparator);
   }
 }

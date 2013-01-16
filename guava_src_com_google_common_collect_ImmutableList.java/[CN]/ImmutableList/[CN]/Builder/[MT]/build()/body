@@ -1,16 +1,3 @@
 {
-switch (size) {
-case 0:
-    return of();
-case 1:
-  @SuppressWarnings("unchecked") E singleElement=(E)contents[0];
-return of(singleElement);
-default :
-if (size == contents.length) {
-return new RegularImmutableList<E>(contents);
-}
- else {
-return new RegularImmutableList<E>(ObjectArrays.arraysCopyOf(contents,size));
-}
-}
+  return asImmutableList(contents,size);
 }

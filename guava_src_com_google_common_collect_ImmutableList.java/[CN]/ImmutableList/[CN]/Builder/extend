@@ -1,1 +1,1 @@
-ImmutableCollection.Builder<E>
+ImmutableCollection.ArrayBasedBuilder<E>

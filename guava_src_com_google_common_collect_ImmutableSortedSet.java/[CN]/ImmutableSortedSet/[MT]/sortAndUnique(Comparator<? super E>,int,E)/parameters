@@ -1,3 +1,0 @@
-Comparator<? super E> comparator
-int n
-E contents

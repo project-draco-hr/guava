@@ -1,10 +1,17 @@
 {
-  int uniques=sortAndUnique(comparator,n,contents);
-  if (uniques == 0) {
+  if (n == 0) {
     return emptySet(comparator);
   }
- else   if (uniques < contents.length) {
-    contents=ObjectArrays.arraysCopyOf(contents,uniques);
+  checkElementsNotNull(contents,n);
+  Arrays.sort(contents,0,n,comparator);
+  int uniques=1;
+  for (int i=1; i < n; i++) {
+    E cur=contents[i];
+    E prev=contents[uniques - 1];
+    if (comparator.compare(cur,prev) != 0) {
+      contents[uniques++]=cur;
+    }
   }
-  return new RegularImmutableSortedSet<E>(ImmutableList.<E>asImmutableList(contents),comparator);
+  Arrays.fill(contents,uniques,n,null);
+  return new RegularImmutableSortedSet<E>(ImmutableList.<E>asImmutableList(contents,uniques),comparator);
 }

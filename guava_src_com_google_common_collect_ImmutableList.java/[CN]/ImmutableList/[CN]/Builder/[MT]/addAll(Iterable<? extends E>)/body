@@ -1,8 +1,4 @@
 {
-  if (elements instanceof Collection) {
-    Collection<?> collection=(Collection<?>)elements;
-    ensureCapacity(size + collection.size());
-  }
   super.addAll(elements);
   return this;
 }

@@ -5,6 +5,6 @@ case 0:
 case 1:
   return new SingletonImmutableList<E>(elements[0]);
 default :
-return construct(elements.clone());
+return new RegularImmutableList<E>(checkElementsNotNull(elements.clone()));
 }
 }

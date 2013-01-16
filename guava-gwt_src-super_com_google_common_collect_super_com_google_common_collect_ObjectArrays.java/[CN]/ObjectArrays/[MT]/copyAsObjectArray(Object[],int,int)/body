@@ -1,0 +1,6 @@
+{
+  checkPositionIndexes(offset,offset + length,elements.length);
+  Object[] result=new Object[length];
+  System.arraycopy(elements,offset,result,0,length);
+  return result;
+}

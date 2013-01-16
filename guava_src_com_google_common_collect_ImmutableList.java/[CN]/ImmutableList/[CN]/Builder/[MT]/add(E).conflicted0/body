@@ -1,6 +1,4 @@
 {
-  checkNotNull(element);
-  ensureCapacity(size + 1);
-  contents[size++]=element;
+  super.add(element);
   return this;
 }
