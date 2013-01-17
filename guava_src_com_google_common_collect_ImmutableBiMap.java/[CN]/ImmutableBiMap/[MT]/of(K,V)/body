@@ -1,5 +1,3 @@
 {
-  checkNotNull(k1,"null key in entry: null=%s",v1);
-  checkNotNull(v1,"null value in entry: %s=null",k1);
   return new SingletonImmutableBiMap<K,V>(k1,v1);
 }

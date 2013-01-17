@@ -4,7 +4,7 @@ case 0:
     return of();
 case 1:
   @SuppressWarnings("unchecked") Entry<K,V> onlyEntry=(Entry<K,V>)entries[0];
-return new SingletonImmutableBiMap<K,V>(onlyEntry);
+return ImmutableBiMap.of(onlyEntry.getKey(),onlyEntry.getValue());
 default :
 return new RegularImmutableMap<K,V>(size,entries);
 }

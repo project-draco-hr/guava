@@ -6,10 +6,12 @@
   for (int entryIndex=0; entryIndex < size; entryIndex++) {
     @SuppressWarnings("unchecked") Entry<K,V> entry=(Entry<K,V>)theEntries[entryIndex];
     K key=entry.getKey();
+    V value=entry.getValue();
+    checkEntryNotNull(key,value);
     int keyHashCode=key.hashCode();
     int tableIndex=Hashing.smear(keyHashCode) & mask;
     @Nullable LinkedEntry<K,V> existing=table[tableIndex];
-    LinkedEntry<K,V> linkedEntry=newLinkedEntry(key,entry.getValue(),existing);
+    LinkedEntry<K,V> linkedEntry=newLinkedEntry(key,value,existing);
     table[tableIndex]=linkedEntry;
     entries[entryIndex]=linkedEntry;
     while (existing != null) {

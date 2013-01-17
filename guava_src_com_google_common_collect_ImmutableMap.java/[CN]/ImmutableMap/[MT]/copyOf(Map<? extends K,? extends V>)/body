@@ -8,8 +8,7 @@
  else   if (map instanceof EnumMap) {
     EnumMap<?,?> enumMap=(EnumMap<?,?>)map;
     for (    Map.Entry<?,?> entry : enumMap.entrySet()) {
-      checkNotNull(entry.getKey());
-      checkNotNull(entry.getValue());
+      checkEntryNotNull(entry.getKey(),entry.getValue());
     }
     @SuppressWarnings("unchecked") ImmutableMap<K,V> result=ImmutableEnumMap.asImmutable(new EnumMap(enumMap));
     return result;

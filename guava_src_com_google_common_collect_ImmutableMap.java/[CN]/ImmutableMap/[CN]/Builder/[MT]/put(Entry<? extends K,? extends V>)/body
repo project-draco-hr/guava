@@ -3,8 +3,7 @@
   V value=entry.getValue();
   ensureCapacity(size + 1);
   if (entry instanceof ImmutableEntry) {
-    checkNotNull(key);
-    checkNotNull(value);
+    checkEntryNotNull(key,value);
     @SuppressWarnings("unchecked") Entry<K,V> immutableEntry=(Entry<K,V>)entry;
     entries[size++]=immutableEntry;
   }
