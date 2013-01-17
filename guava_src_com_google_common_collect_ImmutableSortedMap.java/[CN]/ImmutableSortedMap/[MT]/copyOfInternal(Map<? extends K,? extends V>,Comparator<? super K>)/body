@@ -12,14 +12,5 @@
     }
   }
   @SuppressWarnings("unchecked") Entry<K,V>[] entries=map.entrySet().toArray(new Entry[0]);
-  for (int i=0; i < entries.length; i++) {
-    Entry<K,V> entry=entries[i];
-    entries[i]=entryOf(entry.getKey(),entry.getValue());
-  }
-  List<Entry<K,V>> list=Arrays.asList(entries);
-  if (!sameComparator) {
-    sortEntries(list,comparator);
-    validateEntries(list,comparator);
-  }
-  return fromSortedEntries(comparator,list);
+  return fromEntries(comparator,sameComparator,entries.length,entries);
 }

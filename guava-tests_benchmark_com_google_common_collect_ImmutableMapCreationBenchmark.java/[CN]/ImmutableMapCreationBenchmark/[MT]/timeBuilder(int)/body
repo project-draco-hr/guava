@@ -1,7 +1,0 @@
-{
-  for (int i=0; i < reps; i++) {
-    ImmutableMap.Builder<String,String> builder=ImmutableMap.builder();
-    testMap=builder.putAll(testData).build();
-  }
-  return testMap.get("");
-}

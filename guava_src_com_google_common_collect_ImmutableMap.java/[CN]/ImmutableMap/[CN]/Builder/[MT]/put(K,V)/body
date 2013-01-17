@@ -1,4 +1,5 @@
 {
-  entries.add(entryOf(key,value));
+  ensureCapacity(size + 1);
+  entries[size++]=entryOf(key,value);
   return this;
 }

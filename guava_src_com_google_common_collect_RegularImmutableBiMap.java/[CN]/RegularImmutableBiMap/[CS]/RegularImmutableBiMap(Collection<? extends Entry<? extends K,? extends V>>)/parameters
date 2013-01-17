@@ -1,1 +1,0 @@
-Collection<? extends Entry<? extends K,? extends V>> entriesToAdd

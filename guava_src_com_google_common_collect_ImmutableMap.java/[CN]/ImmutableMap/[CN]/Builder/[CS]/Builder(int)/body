@@ -1,0 +1,4 @@
+{
+  this.entries=createEntryArray(initialCapacity);
+  this.size=0;
+}

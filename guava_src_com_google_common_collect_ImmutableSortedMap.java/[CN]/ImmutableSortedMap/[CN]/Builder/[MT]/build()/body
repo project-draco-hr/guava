@@ -1,5 +1,3 @@
 {
-  sortEntries(entries,comparator);
-  validateEntries(entries,comparator);
-  return fromSortedEntries(comparator,entries);
+  return fromEntries(comparator,false,size,entries);
 }

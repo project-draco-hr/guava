@@ -1,0 +1,14 @@
+{
+switch (n) {
+case 0:
+    return of();
+case 1:
+{
+    @SuppressWarnings("unchecked") K key=(K)entries[0].getKey();
+    @SuppressWarnings("unchecked") V value=(V)entries[0].getValue();
+    return new SingletonImmutableBiMap<K,V>(key,value);
+  }
+default :
+return new RegularImmutableBiMap<K,V>(n,entries);
+}
+}

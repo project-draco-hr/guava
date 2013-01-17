@@ -1,14 +1,15 @@
 {
   K key=entry.getKey();
   V value=entry.getValue();
+  ensureCapacity(size + 1);
   if (entry instanceof ImmutableEntry) {
     checkNotNull(key);
     checkNotNull(value);
     @SuppressWarnings("unchecked") Entry<K,V> immutableEntry=(Entry<K,V>)entry;
-    entries.add(immutableEntry);
+    entries[size++]=immutableEntry;
   }
  else {
-    entries.add(entryOf(key,value));
+    entries[size++]=entryOf(key,value);
   }
   return this;
 }

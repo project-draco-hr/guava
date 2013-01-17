@@ -1,0 +1,20 @@
+{
+  entries=createEntryArray(size);
+  int tableSize=Hashing.closedTableSize(size,MAX_LOAD_FACTOR);
+  table=createEntryArray(tableSize);
+  mask=tableSize - 1;
+  for (int entryIndex=0; entryIndex < size; entryIndex++) {
+    @SuppressWarnings("unchecked") Entry<K,V> entry=(Entry<K,V>)theEntries[entryIndex];
+    K key=entry.getKey();
+    int keyHashCode=key.hashCode();
+    int tableIndex=Hashing.smear(keyHashCode) & mask;
+    @Nullable LinkedEntry<K,V> existing=table[tableIndex];
+    LinkedEntry<K,V> linkedEntry=newLinkedEntry(key,entry.getValue(),existing);
+    table[tableIndex]=linkedEntry;
+    entries[entryIndex]=linkedEntry;
+    while (existing != null) {
+      checkArgument(!key.equals(existing.getKey()),"duplicate key: %s",key);
+      existing=existing.next();
+    }
+  }
+}
