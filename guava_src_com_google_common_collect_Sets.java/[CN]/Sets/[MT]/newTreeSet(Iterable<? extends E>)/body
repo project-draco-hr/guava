@@ -1,7 +1,5 @@
 {
   TreeSet<E> set=newTreeSet();
-  for (  E element : elements) {
-    set.add(element);
-  }
+  Iterables.addAll(set,elements);
   return set;
 }

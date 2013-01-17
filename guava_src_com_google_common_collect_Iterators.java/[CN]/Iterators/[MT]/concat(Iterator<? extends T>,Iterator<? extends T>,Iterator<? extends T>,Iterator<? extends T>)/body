@@ -1,7 +1,3 @@
 {
-  checkNotNull(a);
-  checkNotNull(b);
-  checkNotNull(c);
-  checkNotNull(d);
-  return concat(Arrays.asList(a,b,c,d).iterator());
+  return concat(ImmutableList.of(a,b,c,d).iterator());
 }

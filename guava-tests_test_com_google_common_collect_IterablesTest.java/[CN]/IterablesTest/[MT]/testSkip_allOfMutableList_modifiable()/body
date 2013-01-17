@@ -1,0 +1,10 @@
+{
+  List<String> list=newArrayList("a","b");
+  Iterator<String> iterator=skip(list,2).iterator();
+  try {
+    iterator.remove();
+    fail("Expected IllegalStateException");
+  }
+ catch (  IllegalStateException expected) {
+  }
+}

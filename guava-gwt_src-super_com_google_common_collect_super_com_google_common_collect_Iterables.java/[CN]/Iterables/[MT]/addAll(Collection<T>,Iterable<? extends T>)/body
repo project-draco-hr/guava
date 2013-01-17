@@ -3,5 +3,5 @@
     Collection<? extends T> c=Collections2.cast(elementsToAdd);
     return addTo.addAll(c);
   }
-  return Iterators.addAll(addTo,elementsToAdd.iterator());
+  return Iterators.addAll(addTo,checkNotNull(elementsToAdd).iterator());
 }

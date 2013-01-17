@@ -1,7 +1,0 @@
-{
-  int hash=1;
-  for (int i=0; i < sequence.length(); i++) {
-    hash=hash * 31 + sequence.charAt(i);
-  }
-  return hash;
-}

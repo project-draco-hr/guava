@@ -18,7 +18,7 @@
       return current.next();
     }
     @Override public void remove(){
-      checkState(removeFrom != null,"no calls to next() since last call to remove()");
+      checkRemove(removeFrom != null);
       removeFrom.remove();
       removeFrom=null;
     }

@@ -3,8 +3,6 @@
     return new LinkedHashSet<E>(Collections2.cast(elements));
   }
   LinkedHashSet<E> set=newLinkedHashSet();
-  for (  E element : elements) {
-    set.add(element);
-  }
+  Iterables.addAll(set,elements);
   return set;
 }

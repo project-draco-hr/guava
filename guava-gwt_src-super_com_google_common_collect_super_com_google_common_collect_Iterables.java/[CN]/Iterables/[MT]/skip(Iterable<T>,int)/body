@@ -5,7 +5,8 @@
     final List<T> list=(List<T>)iterable;
     return new FluentIterable<T>(){
       @Override public Iterator<T> iterator(){
-        return (numberToSkip >= list.size()) ? Iterators.<T>emptyIterator() : list.subList(numberToSkip,list.size()).iterator();
+        int toSkip=Math.min(list.size(),numberToSkip);
+        return list.subList(toSkip,list.size()).iterator();
       }
     }
 ;
@@ -20,20 +21,12 @@
           return iterator.hasNext();
         }
         @Override public T next(){
-          if (!hasNext()) {
-            throw new NoSuchElementException();
-          }
-          try {
-            return iterator.next();
-          }
-  finally {
-            atStart=false;
-          }
+          T result=iterator.next();
+          atStart=false;
+          return result;
         }
         @Override public void remove(){
-          if (atStart) {
-            throw new IllegalStateException();
-          }
+          Iterators.checkRemove(!atStart);
           iterator.remove();
         }
       }

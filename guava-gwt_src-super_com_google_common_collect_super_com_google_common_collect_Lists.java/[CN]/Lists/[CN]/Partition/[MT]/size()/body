@@ -1,7 +1,3 @@
 {
-  int result=list.size() / size;
-  if (result * size != list.size()) {
-    result++;
-  }
-  return result;
+  return IntMath.divide(list.size(),size,RoundingMode.CEILING);
 }
