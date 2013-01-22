@@ -1,5 +1,5 @@
 {
-  ImmutableMap.Builder<Element,Element> builder=ImmutableMap.builder();
+  ImmutableSortedMap.Builder<Element,Element> builder=ImmutableSortedMap.naturalOrder();
   for (  Element element : keys) {
     builder.put(element,element);
   }

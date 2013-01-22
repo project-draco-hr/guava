@@ -1,7 +1,3 @@
 {
-  Map<Element,Element> map=new MapMaker().concurrencyLevel(16).makeMap();
-  for (  Element element : keys) {
-    map.put(element,element);
-  }
-  return map;
+  return Collections.unmodifiableMap(Hash.create(keys));
 }

@@ -1,3 +1,3 @@
 {
-  return Hashing.murmur3_32().hashBytes(data).asInt();
+  return Hashing.md5().hashBytes(data).asLong();
 }
