@@ -4,6 +4,9 @@
     @Override public Reader openStream() throws IOException {
       return asReader(supplier.getInput());
     }
+    @Override public String toString(){
+      return "CharStreams.asCharSource(" + supplier + ")";
+    }
   }
 ;
 }

@@ -1,0 +1,3 @@
+{
+  return asByteSource(join(ImmutableList.copyOf(sources)));
+}

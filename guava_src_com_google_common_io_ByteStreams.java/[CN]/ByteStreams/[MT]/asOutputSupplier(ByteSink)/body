@@ -1,9 +1,3 @@
 {
-  checkNotNull(sink);
-  return new OutputSupplier<S>(){
-    @SuppressWarnings("unchecked") @Override public S getOutput() throws IOException {
-      return (S)sink.openStream();
-    }
-  }
-;
+  return (OutputSupplier)checkNotNull(sink);
 }

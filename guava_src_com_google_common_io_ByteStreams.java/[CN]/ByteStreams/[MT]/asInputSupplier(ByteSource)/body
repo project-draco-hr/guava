@@ -1,9 +1,3 @@
 {
-  checkNotNull(source);
-  return new InputSupplier<S>(){
-    @SuppressWarnings("unchecked") @Override public S getInput() throws IOException {
-      return (S)source.openStream();
-    }
-  }
-;
+  return (InputSupplier)checkNotNull(source);
 }

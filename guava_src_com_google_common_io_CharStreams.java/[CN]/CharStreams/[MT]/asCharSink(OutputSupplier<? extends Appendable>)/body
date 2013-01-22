@@ -4,6 +4,9 @@
     @Override public Writer openStream() throws IOException {
       return asWriter(supplier.getOutput());
     }
+    @Override public String toString(){
+      return "CharStreams.asCharSink(" + supplier + ")";
+    }
   }
 ;
 }

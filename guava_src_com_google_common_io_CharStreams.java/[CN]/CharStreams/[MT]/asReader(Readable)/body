@@ -11,7 +11,9 @@
       return readable.read(target);
     }
     @Override public void close() throws IOException {
-      readable.close();
+      if (readable instanceof Closeable) {
+        ((Closeable)readable).close();
+      }
     }
   }
 ;
