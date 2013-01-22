@@ -1,0 +1,3 @@
+SortedSet<E> sortedSet
+E firstExclusive
+E lastExclusive

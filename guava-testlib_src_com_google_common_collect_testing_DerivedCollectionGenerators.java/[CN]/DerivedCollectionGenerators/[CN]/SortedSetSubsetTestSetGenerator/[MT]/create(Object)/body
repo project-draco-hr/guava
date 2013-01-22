@@ -1,0 +1,24 @@
+{
+  @SuppressWarnings("unchecked") List<E> normalValues=(List)Arrays.asList(elements);
+  List<E> extremeValues=new ArrayList<E>();
+  for (  Object o : elements) {
+    if (o == null) {
+      throw new NullPointerException();
+    }
+  }
+  E firstExclusive=delegate.belowSamplesGreater();
+  E lastExclusive=delegate.aboveSamplesLesser();
+  if (from != Bound.NO_BOUND) {
+    extremeValues.add(delegate.belowSamplesLesser());
+    extremeValues.add(delegate.belowSamplesGreater());
+  }
+  if (to != Bound.NO_BOUND) {
+    extremeValues.add(delegate.aboveSamplesLesser());
+    extremeValues.add(delegate.aboveSamplesGreater());
+  }
+  List<E> allEntries=new ArrayList<E>();
+  allEntries.addAll(extremeValues);
+  allEntries.addAll(normalValues);
+  SortedSet<E> map=delegate.create(allEntries.toArray());
+  return createSubSet(map,firstExclusive,lastExclusive);
+}

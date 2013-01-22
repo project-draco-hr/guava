@@ -1,0 +1,4 @@
+{
+  super(mapGenerator);
+  this.delegate=(TestSortedMapGenerator<K,V>)mapGenerator.getInnerGenerator();
+}

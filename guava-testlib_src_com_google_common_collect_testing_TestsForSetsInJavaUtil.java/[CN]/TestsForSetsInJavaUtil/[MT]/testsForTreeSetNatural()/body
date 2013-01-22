@@ -1,5 +1,5 @@
 {
-  return SetTestSuiteBuilder.using(new TestStringSortedSetGenerator(){
+  return NavigableSetTestSuiteBuilder.using(new TestStringSortedSetGenerator(){
     @Override public SortedSet<String> create(    String[] elements){
       return new TreeSet<String>(MinimalCollection.of(elements));
     }

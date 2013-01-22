@@ -1,0 +1,14 @@
+{
+  List<TestSuite> derivedSuites=new ArrayList<TestSuite>(super.createDerivedSuites(parentBuilder));
+  if (!parentBuilder.getFeatures().contains(CollectionFeature.SUBSET_VIEW)) {
+    derivedSuites.add(createSubsetSuite(parentBuilder,Bound.NO_BOUND,Bound.INCLUSIVE));
+    derivedSuites.add(createSubsetSuite(parentBuilder,Bound.EXCLUSIVE,Bound.NO_BOUND));
+    derivedSuites.add(createSubsetSuite(parentBuilder,Bound.EXCLUSIVE,Bound.EXCLUSIVE));
+    derivedSuites.add(createSubsetSuite(parentBuilder,Bound.EXCLUSIVE,Bound.INCLUSIVE));
+    derivedSuites.add(createSubsetSuite(parentBuilder,Bound.INCLUSIVE,Bound.INCLUSIVE));
+  }
+  if (!parentBuilder.getFeatures().contains(CollectionFeature.DESCENDING_VIEW)) {
+    derivedSuites.add(createDescendingSuite(parentBuilder));
+  }
+  return derivedSuites;
+}

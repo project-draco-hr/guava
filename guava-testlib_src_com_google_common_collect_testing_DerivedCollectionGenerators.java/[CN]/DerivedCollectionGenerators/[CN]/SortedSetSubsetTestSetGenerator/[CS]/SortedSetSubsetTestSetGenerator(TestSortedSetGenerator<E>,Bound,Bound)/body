@@ -1,0 +1,12 @@
+{
+  this.to=to;
+  this.from=from;
+  this.delegate=delegate;
+  SortedSet<E> emptySet=delegate.create();
+  this.comparator=emptySet.comparator();
+  SampleElements<E> samples=delegate.samples();
+  List<E> samplesList=new ArrayList<E>(samples.asList());
+  Collections.sort(samplesList,comparator);
+  this.firstInclusive=samplesList.get(0);
+  this.lastInclusive=samplesList.get(samplesList.size() - 1);
+}

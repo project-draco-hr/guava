@@ -1,13 +1,3 @@
 {
-  checkNotNull(collection);
-  boolean changed=false;
-  Iterator<Entry<K,V>> iterator=unfiltered.entrySet().iterator();
-  while (iterator.hasNext()) {
-    Entry<K,V> entry=iterator.next();
-    if (!collection.contains(entry.getValue()) && predicate.apply(entry)) {
-      iterator.remove();
-      changed=true;
-    }
-  }
-  return changed;
+  return Iterables.removeIf(unfiltered.entrySet(),Predicates.<Entry<K,V>>and(predicate,Predicates.compose(Predicates.not(Predicates.in(collection)),Maps.<V>valueFunction())));
 }

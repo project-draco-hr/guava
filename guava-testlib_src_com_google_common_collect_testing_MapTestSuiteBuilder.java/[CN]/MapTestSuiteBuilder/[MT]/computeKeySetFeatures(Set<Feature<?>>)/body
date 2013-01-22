@@ -1,5 +1,6 @@
 {
   Set<Feature<?>> keySetFeatures=computeCommonDerivedCollectionFeatures(mapFeatures);
+  keySetFeatures.add(CollectionFeature.SUBSET_VIEW);
   if (mapFeatures.contains(MapFeature.ALLOWS_NULL_KEYS)) {
     keySetFeatures.add(CollectionFeature.ALLOWS_NULL_VALUES);
   }

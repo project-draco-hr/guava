@@ -1,0 +1,14 @@
+{
+  if (from == Bound.NO_BOUND && to == Bound.EXCLUSIVE) {
+    return set.headSet(lastExclusive);
+  }
+ else   if (from == Bound.INCLUSIVE && to == Bound.NO_BOUND) {
+    return set.tailSet(firstInclusive);
+  }
+ else   if (from == Bound.INCLUSIVE && to == Bound.EXCLUSIVE) {
+    return set.subSet(firstInclusive,lastExclusive);
+  }
+ else {
+    throw new IllegalArgumentException();
+  }
+}

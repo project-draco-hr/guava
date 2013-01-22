@@ -1,0 +1,21 @@
+{
+  NavigableSet<E> set=(NavigableSet<E>)sortedSet;
+  if (from == Bound.NO_BOUND && to == Bound.INCLUSIVE) {
+    return set.headSet(lastInclusive,true);
+  }
+ else   if (from == Bound.EXCLUSIVE && to == Bound.NO_BOUND) {
+    return set.tailSet(firstExclusive,false);
+  }
+ else   if (from == Bound.EXCLUSIVE && to == Bound.EXCLUSIVE) {
+    return set.subSet(firstExclusive,false,lastExclusive,false);
+  }
+ else   if (from == Bound.EXCLUSIVE && to == Bound.INCLUSIVE) {
+    return set.subSet(firstExclusive,false,lastInclusive,true);
+  }
+ else   if (from == Bound.INCLUSIVE && to == Bound.INCLUSIVE) {
+    return set.subSet(firstInclusive,true,lastInclusive,true);
+  }
+ else {
+    return (NavigableSet<E>)super.createSubSet(set,firstExclusive,lastExclusive);
+  }
+}

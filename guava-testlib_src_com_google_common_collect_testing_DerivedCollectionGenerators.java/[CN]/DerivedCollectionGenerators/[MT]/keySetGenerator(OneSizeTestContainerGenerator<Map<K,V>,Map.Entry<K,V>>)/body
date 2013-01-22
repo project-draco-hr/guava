@@ -1,0 +1,8 @@
+{
+  if (mapGenerator.getInnerGenerator() instanceof TestSortedMapGenerator) {
+    return new MapSortedKeySetGenerator<K,V>(mapGenerator);
+  }
+ else {
+    return new MapKeySetGenerator<K,V>(mapGenerator);
+  }
+}

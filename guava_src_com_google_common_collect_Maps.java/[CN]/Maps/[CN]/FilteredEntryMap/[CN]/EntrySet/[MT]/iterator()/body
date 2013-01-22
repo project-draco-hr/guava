@@ -1,11 +1,7 @@
 {
   final Iterator<Entry<K,V>> iterator=filteredEntrySet.iterator();
-  return new UnmodifiableIterator<Entry<K,V>>(){
-    @Override public boolean hasNext(){
-      return iterator.hasNext();
-    }
-    @Override public Entry<K,V> next(){
-      final Entry<K,V> entry=iterator.next();
+  return new TransformedIterator<Entry<K,V>,Entry<K,V>>(iterator){
+    @Override Entry<K,V> transform(    final Entry<K,V> entry){
       return new ForwardingMapEntry<K,V>(){
         @Override protected Entry<K,V> delegate(){
           return entry;
