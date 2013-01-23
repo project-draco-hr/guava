@@ -1,0 +1,7 @@
+{
+  writer.writeInt(table.rowKeySet().size());
+  for (  Object rowKey : table.rowKeySet()) {
+    writer.writeObject(rowKey);
+    Map_CustomFieldSerializerBase.serialize(writer,table.row(rowKey));
+  }
+}

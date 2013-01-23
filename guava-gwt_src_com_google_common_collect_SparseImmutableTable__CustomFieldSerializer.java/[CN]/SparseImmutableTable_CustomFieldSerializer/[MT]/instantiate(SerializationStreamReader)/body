@@ -1,0 +1,3 @@
+{
+  return (SparseImmutableTable<Object,Object,Object>)ImmutableTable_CustomFieldSerializerBase.instantiate(reader);
+}

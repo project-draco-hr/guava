@@ -1,0 +1,6 @@
+{
+  Object rowKey=reader.readObject();
+  Object columnKey=reader.readObject();
+  Object value=reader.readObject();
+  return new SingletonImmutableTable<Object,Object,Object>(rowKey,columnKey,value);
+}

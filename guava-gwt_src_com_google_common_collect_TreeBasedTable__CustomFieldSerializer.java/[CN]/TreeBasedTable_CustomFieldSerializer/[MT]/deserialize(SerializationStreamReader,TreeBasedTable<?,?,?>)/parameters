@@ -1,2 +1,2 @@
 SerializationStreamReader reader
-TreeBasedTable<?,?,?> instance
+TreeBasedTable<?,?,?> table

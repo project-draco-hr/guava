@@ -1,0 +1,3 @@
+{
+  ImmutableTable_CustomFieldSerializerBase.serialize(writer,table);
+}

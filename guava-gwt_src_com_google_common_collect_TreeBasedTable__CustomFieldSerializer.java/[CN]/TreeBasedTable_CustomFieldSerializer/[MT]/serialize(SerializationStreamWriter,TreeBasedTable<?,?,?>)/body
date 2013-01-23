@@ -1,5 +1,5 @@
 {
-  writer.writeObject(instance.rowComparator());
-  writer.writeObject(instance.columnComparator());
-  writer.writeObject(instance.backingMap);
+  writer.writeObject(table.rowComparator());
+  writer.writeObject(table.columnComparator());
+  Table_CustomFieldSerializerBase.serialize(writer,table);
 }

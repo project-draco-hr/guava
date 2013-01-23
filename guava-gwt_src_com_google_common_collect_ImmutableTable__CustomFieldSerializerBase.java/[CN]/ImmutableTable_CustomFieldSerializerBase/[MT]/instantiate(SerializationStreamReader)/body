@@ -1,0 +1,12 @@
+{
+  ImmutableTable.Builder<Object,Object,Object> builder=ImmutableTable.builder();
+  int rowCount=reader.readInt();
+  for (int i=0; i < rowCount; i++) {
+    Object rowKey=reader.readObject();
+    int colCount=reader.readInt();
+    for (int j=0; j < colCount; j++) {
+      builder.put(rowKey,reader.readObject(),reader.readObject());
+    }
+  }
+  return builder.build();
+}

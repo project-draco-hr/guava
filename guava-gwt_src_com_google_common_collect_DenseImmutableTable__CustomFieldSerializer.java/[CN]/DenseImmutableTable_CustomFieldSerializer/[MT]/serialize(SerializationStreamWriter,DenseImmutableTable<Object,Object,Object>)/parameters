@@ -1,0 +1,2 @@
+SerializationStreamWriter writer
+DenseImmutableTable<Object,Object,Object> table

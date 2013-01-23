@@ -1,0 +1,5 @@
+{
+  writer.writeObject(instance.singleRowKey);
+  writer.writeObject(instance.singleColumnKey);
+  writer.writeObject(instance.singleValue);
+}

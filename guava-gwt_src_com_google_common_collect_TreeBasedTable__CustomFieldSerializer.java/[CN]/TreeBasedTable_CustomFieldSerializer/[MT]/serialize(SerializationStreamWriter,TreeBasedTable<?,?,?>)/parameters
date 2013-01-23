@@ -1,2 +1,2 @@
 SerializationStreamWriter writer
-TreeBasedTable<?,?,?> instance
+TreeBasedTable<?,?,?> table

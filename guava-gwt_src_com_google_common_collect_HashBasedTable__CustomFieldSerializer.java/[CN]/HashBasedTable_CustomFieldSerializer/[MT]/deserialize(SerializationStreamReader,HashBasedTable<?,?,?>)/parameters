@@ -1,2 +1,2 @@
 SerializationStreamReader reader
-HashBasedTable<?,?,?> instance
+HashBasedTable<?,?,?> table
