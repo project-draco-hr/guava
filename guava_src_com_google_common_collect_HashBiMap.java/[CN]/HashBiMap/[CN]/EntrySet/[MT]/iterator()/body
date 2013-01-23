@@ -3,31 +3,28 @@
     @Override Entry<K,V> output(    BiEntry<K,V> entry){
       return new MapEntry(entry);
     }
-class MapEntry extends AbstractMapEntry<K,V> {
+class MapEntry extends ForwardingMapEntry<K,V> {
       BiEntry<K,V> delegate;
       MapEntry(      BiEntry<K,V> entry){
         this.delegate=entry;
       }
-      @Override public K getKey(){
-        return delegate.key;
-      }
-      @Override public V getValue(){
-        return delegate.value;
+      @Override protected Entry<K,V> delegate(){
+        return delegate;
       }
       @Override public V setValue(      V value){
-        V oldValue=delegate.value;
-        int valueHash=hash(value);
-        if (valueHash == delegate.valueHash && Objects.equal(value,oldValue)) {
+        int smearedValueHash=Hashing.smearedHash(value);
+        if (delegate.matchesValue(value,smearedValueHash)) {
           return value;
         }
-        checkArgument(seekByValue(value,valueHash) == null,"value already present: %s",value);
+        checkArgument(seekByValue(value,smearedValueHash) == null,"value already present: %s",value);
         delete(delegate);
-        BiEntry<K,V> newEntry=new BiEntry<K,V>(delegate.key,delegate.keyHash,value,valueHash);
+        BiEntry<K,V> newEntry=new BiEntry<K,V>(delegate.getKey(),delegate.smearedKeyHash,value,smearedValueHash);
         insert(newEntry);
         expectedModCount=modCount;
         if (toRemove == delegate) {
           toRemove=newEntry;
         }
+        V oldValue=delegate.getValue();
         delegate=newEntry;
         return oldValue;
       }

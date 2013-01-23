@@ -1,11 +1,11 @@
 {
-  int keyHash=hash(key);
-  int valueHash=hash(value);
-  BiEntry<K,V> oldEntryForKey=seekByKey(key,keyHash);
-  if (oldEntryForKey != null && valueHash == oldEntryForKey.valueHash && Objects.equal(value,oldEntryForKey.value)) {
+  int smearedKeyHash=Hashing.smearedHash(key);
+  int smearedValueHash=Hashing.smearedHash(value);
+  BiEntry<K,V> oldEntryForKey=seekByKey(key,smearedKeyHash);
+  if (oldEntryForKey != null && oldEntryForKey.matchesValue(value,smearedValueHash)) {
     return value;
   }
-  BiEntry<K,V> oldEntryForValue=seekByValue(value,valueHash);
+  BiEntry<K,V> oldEntryForValue=seekByValue(value,smearedValueHash);
   if (oldEntryForValue != null) {
     if (force) {
       delete(oldEntryForValue);
@@ -17,8 +17,8 @@
   if (oldEntryForKey != null) {
     delete(oldEntryForKey);
   }
-  BiEntry<K,V> newEntry=new BiEntry<K,V>(key,keyHash,value,valueHash);
+  BiEntry<K,V> newEntry=new BiEntry<K,V>(key,smearedKeyHash,value,smearedValueHash);
   insert(newEntry);
   rehashIfNecessary();
-  return (oldEntryForKey == null) ? null : oldEntryForKey.value;
+  return valueOrNull(oldEntryForKey);
 }

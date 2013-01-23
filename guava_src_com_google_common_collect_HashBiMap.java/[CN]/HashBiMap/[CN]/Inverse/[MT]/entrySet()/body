@@ -14,22 +14,23 @@ class InverseEntry extends AbstractMapEntry<V,K> {
             this.delegate=entry;
           }
           @Override public V getKey(){
-            return delegate.value;
+            return delegate.getValue();
           }
           @Override public K getValue(){
-            return delegate.key;
+            return delegate.getKey();
           }
           @Override public K setValue(          K key){
-            K oldKey=delegate.key;
-            int keyHash=hash(key);
-            if (keyHash == delegate.keyHash && Objects.equal(key,oldKey)) {
+            int smearedKeyHash=Hashing.smearedHash(key);
+            if (delegate.matchesKey(key,smearedKeyHash)) {
               return key;
             }
-            checkArgument(seekByKey(key,keyHash) == null,"value already present: %s",key);
+            checkArgument(seekByKey(key,smearedKeyHash) == null,"value already present: %s",key);
             delete(delegate);
-            BiEntry<K,V> newEntry=new BiEntry<K,V>(key,keyHash,delegate.value,delegate.valueHash);
+            BiEntry<K,V> newEntry=new BiEntry<K,V>(key,smearedKeyHash,delegate.getValue(),delegate.smearedValueHash);
             insert(newEntry);
             expectedModCount=modCount;
+            K oldKey=delegate.getKey();
+            delegate=newEntry;
             return oldKey;
           }
         }

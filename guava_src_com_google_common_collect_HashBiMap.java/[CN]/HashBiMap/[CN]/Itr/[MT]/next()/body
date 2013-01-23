@@ -4,7 +4,7 @@
     throw new NoSuchElementException();
   }
   BiEntry<K,V> entry=next;
-  next=entry.nextInKToVBucket;
+  next=entry.nextInKeyBucket;
   toRemove=entry;
   return output(entry);
 }

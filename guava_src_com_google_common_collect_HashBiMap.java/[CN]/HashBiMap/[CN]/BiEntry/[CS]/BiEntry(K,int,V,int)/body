@@ -1,6 +1,5 @@
 {
-  this.key=key;
-  this.keyHash=keyHash;
-  this.value=value;
-  this.valueHash=valueHash;
+  super(key,value);
+  this.smearedKeyHash=smearedKeyHash;
+  this.smearedValueHash=smearedValueHash;
 }

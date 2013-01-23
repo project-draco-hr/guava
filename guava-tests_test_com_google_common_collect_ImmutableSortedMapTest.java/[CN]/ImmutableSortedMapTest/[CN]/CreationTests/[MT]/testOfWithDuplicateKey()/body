@@ -4,6 +4,5 @@
     fail();
   }
  catch (  IllegalArgumentException expected) {
-    assertEquals("Duplicate keys in mappings one=1 and one=1",expected.getMessage());
   }
 }

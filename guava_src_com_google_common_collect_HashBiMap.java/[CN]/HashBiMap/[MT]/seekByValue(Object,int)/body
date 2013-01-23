@@ -1,6 +1,6 @@
 {
-  for (BiEntry<K,V> entry=hashTableVToK[valueHash & mask]; entry != null; entry=entry.nextInVToKBucket) {
-    if (valueHash == entry.valueHash && Objects.equal(value,entry.value)) {
+  for (BiEntry<K,V> entry=hashTableVToK[smearedKeyHash & mask]; entry != null; entry=entry.nextInValueBucket) {
+    if (entry.matchesValue(value,smearedKeyHash)) {
       return entry;
     }
   }
