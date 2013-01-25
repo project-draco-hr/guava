@@ -1,3 +1,3 @@
 {
-  Runner.main(MessageDigestCreationBenchmark.class,args);
+  CaliperMain.main(MessageDigestCreationBenchmark.class,args);
 }

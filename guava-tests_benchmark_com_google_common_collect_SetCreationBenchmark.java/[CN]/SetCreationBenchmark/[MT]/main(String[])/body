@@ -1,3 +1,3 @@
 {
-  Runner.main(SetCreationBenchmark.class,args);
+  CaliperMain.main(SetCreationBenchmark.class,args);
 }

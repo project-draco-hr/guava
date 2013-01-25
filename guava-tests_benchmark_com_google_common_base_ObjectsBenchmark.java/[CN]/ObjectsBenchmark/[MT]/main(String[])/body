@@ -1,3 +1,3 @@
 {
-  Runner.main(ObjectsBenchmark.class,args);
+  CaliperMain.main(ObjectsBenchmark.class,args);
 }

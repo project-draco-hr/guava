@@ -1,3 +1,3 @@
 {
-  Runner.main(MonitorBenchmark.class,args);
+  CaliperMain.main(MonitorBenchmark.class,args);
 }

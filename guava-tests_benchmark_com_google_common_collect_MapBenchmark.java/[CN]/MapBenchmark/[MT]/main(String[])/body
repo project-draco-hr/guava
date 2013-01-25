@@ -1,3 +1,3 @@
 {
-  Runner.main(MapBenchmark.class,args);
+  CaliperMain.main(MapBenchmark.class,args);
 }

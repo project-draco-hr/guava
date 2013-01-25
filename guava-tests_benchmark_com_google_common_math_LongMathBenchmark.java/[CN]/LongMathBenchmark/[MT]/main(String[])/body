@@ -1,3 +1,3 @@
 {
-  Runner.main(LongMathBenchmark.class,args);
+  CaliperMain.main(LongMathBenchmark.class,args);
 }

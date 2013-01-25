@@ -1,3 +1,3 @@
 {
-  Runner.main(HashFunctionBenchmark.class,args);
+  CaliperMain.main(HashFunctionBenchmark.class,args);
 }
