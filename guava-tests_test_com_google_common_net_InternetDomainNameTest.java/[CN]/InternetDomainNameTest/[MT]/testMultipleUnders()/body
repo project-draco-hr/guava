@@ -1,6 +1,6 @@
 {
-  InternetDomainName domain=InternetDomainName.from("www.essex.police.uk");
+  InternetDomainName domain=InternetDomainName.from("www.essex.sch.uk");
   assertTrue(domain.hasPublicSuffix());
-  assertEquals("essex.police.uk",domain.publicSuffix().name());
-  assertEquals("www.essex.police.uk",domain.topPrivateDomain().name());
+  assertEquals("essex.sch.uk",domain.publicSuffix().name());
+  assertEquals("www.essex.sch.uk",domain.topPrivateDomain().name());
 }
