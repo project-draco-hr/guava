@@ -1,0 +1,4 @@
+{
+  this.throwAfterCount=throwAfterCount;
+  this.thrown=thrown;
+}

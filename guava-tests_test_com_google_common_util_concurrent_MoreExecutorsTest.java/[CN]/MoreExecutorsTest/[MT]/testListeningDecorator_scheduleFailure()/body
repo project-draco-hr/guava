@@ -1,0 +1,8 @@
+{
+  ScheduledThreadPoolExecutor delegate=new ScheduledThreadPoolExecutor(1);
+  ListeningScheduledExecutorService service=listeningDecorator(delegate);
+  RuntimeException ex=new RuntimeException();
+  ListenableFuture<?> future=service.schedule(new ThrowingRunnable(0,ex),1,TimeUnit.MILLISECONDS);
+  assertExecutionException(future,ex);
+  assertEquals(0,delegate.getQueue().size());
+}

@@ -1,0 +1,2 @@
+int throwAfterCount
+RuntimeException thrown

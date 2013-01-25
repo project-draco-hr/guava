@@ -1,0 +1,5 @@
+{
+  if (++count >= throwAfterCount) {
+    throw thrown;
+  }
+}

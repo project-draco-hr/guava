@@ -1,0 +1,16 @@
+{
+  ScheduledThreadPoolExecutor delegate=new ScheduledThreadPoolExecutor(1);
+  ListeningScheduledExecutorService service=listeningDecorator(delegate);
+  RuntimeException ex=new RuntimeException();
+  ListenableFuture<?> future;
+  ThrowingRunnable runnable=new ThrowingRunnable(5,ex);
+  future=service.scheduleAtFixedRate(runnable,1,1,TimeUnit.MILLISECONDS);
+  assertExecutionException(future,ex);
+  assertEquals(5,runnable.count);
+  assertEquals(0,delegate.getQueue().size());
+  runnable=new ThrowingRunnable(5,ex);
+  future=service.scheduleWithFixedDelay(runnable,1,1,TimeUnit.MILLISECONDS);
+  assertExecutionException(future,ex);
+  assertEquals(5,runnable.count);
+  assertEquals(0,delegate.getQueue().size());
+}
