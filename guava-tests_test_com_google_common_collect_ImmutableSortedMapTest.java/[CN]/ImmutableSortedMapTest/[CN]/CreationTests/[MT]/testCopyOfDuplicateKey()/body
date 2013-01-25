@@ -5,5 +5,6 @@
     fail("Expected IllegalArgumentException");
   }
  catch (  IllegalArgumentException expected) {
+    assertEquals("Duplicate keys in mappings 11=eleven and 12=twelve",expected.getMessage());
   }
 }

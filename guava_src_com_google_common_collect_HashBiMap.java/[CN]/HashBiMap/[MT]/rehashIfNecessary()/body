@@ -9,7 +9,7 @@
     for (int bucket=0; bucket < oldKToV.length; bucket++) {
       BiEntry<K,V> entry=oldKToV[bucket];
       while (entry != null) {
-        BiEntry<K,V> nextEntry=entry.nextInKeyBucket;
+        BiEntry<K,V> nextEntry=entry.nextInKToVBucket;
         insert(entry);
         entry=nextEntry;
       }

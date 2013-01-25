@@ -25,8 +25,25 @@
     @Override public void remove(){
       checkForComodification();
       Iterators.checkRemove(toRemove != null);
-      ValueSet.this.remove(toRemove.getValue());
-      expectedModCount=modCount;
+      Object o=toRemove.getValue();
+      int hash=(o == null) ? 0 : o.hashCode();
+      int row=Hashing.smear(hash) & (hashTable.length - 1);
+      ValueEntry<K,V> prev=null;
+      for (ValueEntry<K,V> entry=hashTable[row]; entry != null; prev=entry, entry=entry.nextInValueSetHashRow) {
+        if (entry == toRemove) {
+          if (prev == null) {
+            hashTable[row]=entry.nextInValueSetHashRow;
+          }
+ else {
+            prev.nextInValueSetHashRow=entry.nextInValueSetHashRow;
+          }
+          deleteFromValueSet(toRemove);
+          deleteFromMultimap(toRemove);
+          size--;
+          expectedModCount=++modCount;
+          break;
+        }
+      }
       toRemove=null;
     }
   }

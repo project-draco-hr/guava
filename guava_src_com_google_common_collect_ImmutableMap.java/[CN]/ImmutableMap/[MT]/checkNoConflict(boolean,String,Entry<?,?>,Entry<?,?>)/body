@@ -1,5 +1,0 @@
-{
-  if (!safe) {
-    throw new IllegalArgumentException("Multiple entries with same " + conflictDescription + ": "+ entry1+ " and "+ entry2);
-  }
-}

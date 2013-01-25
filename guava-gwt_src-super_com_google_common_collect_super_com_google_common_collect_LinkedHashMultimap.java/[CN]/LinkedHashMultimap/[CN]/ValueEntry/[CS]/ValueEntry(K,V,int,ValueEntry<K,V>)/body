@@ -1,5 +1,6 @@
 {
-  super(key,value);
-  this.smearedValueHash=smearedValueHash;
-  this.nextInValueBucket=nextInValueBucket;
+  this.key=key;
+  this.value=value;
+  this.valueHash=valueHash;
+  this.nextInValueSetHashRow=nextInValueSetHashRow;
 }

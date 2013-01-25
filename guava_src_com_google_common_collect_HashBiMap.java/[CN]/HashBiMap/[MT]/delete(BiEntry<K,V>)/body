@@ -1,27 +1,27 @@
 {
-  int keyBucket=entry.smearedKeyHash & mask;
+  int keyBucket=entry.keyHash & mask;
   BiEntry<K,V> prevBucketEntry=null;
-  for (BiEntry<K,V> bucketEntry=hashTableKToV[keyBucket]; true; bucketEntry=bucketEntry.nextInKeyBucket) {
+  for (BiEntry<K,V> bucketEntry=hashTableKToV[keyBucket]; true; bucketEntry=bucketEntry.nextInKToVBucket) {
     if (bucketEntry == entry) {
       if (prevBucketEntry == null) {
-        hashTableKToV[keyBucket]=entry.nextInKeyBucket;
+        hashTableKToV[keyBucket]=entry.nextInKToVBucket;
       }
  else {
-        prevBucketEntry.nextInKeyBucket=entry.nextInKeyBucket;
+        prevBucketEntry.nextInKToVBucket=entry.nextInKToVBucket;
       }
       break;
     }
     prevBucketEntry=bucketEntry;
   }
-  int valueBucket=entry.smearedValueHash & mask;
+  int valueBucket=entry.valueHash & mask;
   prevBucketEntry=null;
-  for (BiEntry<K,V> bucketEntry=hashTableVToK[valueBucket]; true; bucketEntry=bucketEntry.nextInValueBucket) {
+  for (BiEntry<K,V> bucketEntry=hashTableVToK[valueBucket]; ; bucketEntry=bucketEntry.nextInVToKBucket) {
     if (bucketEntry == entry) {
       if (prevBucketEntry == null) {
-        hashTableVToK[valueBucket]=entry.nextInValueBucket;
+        hashTableVToK[valueBucket]=entry.nextInVToKBucket;
       }
  else {
-        prevBucketEntry.nextInValueBucket=entry.nextInValueBucket;
+        prevBucketEntry.nextInVToKBucket=entry.nextInVToKBucket;
       }
       break;
     }

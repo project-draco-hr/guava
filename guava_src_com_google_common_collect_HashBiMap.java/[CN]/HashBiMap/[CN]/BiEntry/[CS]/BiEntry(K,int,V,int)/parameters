@@ -1,4 +1,4 @@
 K key
-int smearedKeyHash
+int keyHash
 V value
-int smearedValueHash
+int valueHash

@@ -1,7 +1,7 @@
 {
   return new Itr<K>(){
     @Override K output(    BiEntry<K,V> entry){
-      return entry.getKey();
+      return entry.key;
     }
   }
 ;

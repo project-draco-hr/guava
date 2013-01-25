@@ -1,1 +1,1 @@
-ImmutableEntry<K,V>
+AbstractMapEntry<K,V>

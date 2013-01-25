@@ -1,9 +1,9 @@
 {
-  int keyBucket=entry.smearedKeyHash & mask;
-  entry.nextInKeyBucket=hashTableKToV[keyBucket];
+  int keyBucket=entry.keyHash & mask;
+  entry.nextInKToVBucket=hashTableKToV[keyBucket];
   hashTableKToV[keyBucket]=entry;
-  int valueBucket=entry.smearedValueHash & mask;
-  entry.nextInValueBucket=hashTableVToK[valueBucket];
+  int valueBucket=entry.valueHash & mask;
+  entry.nextInVToKBucket=hashTableVToK[valueBucket];
   hashTableVToK[valueBucket]=entry;
   size++;
   modCount++;

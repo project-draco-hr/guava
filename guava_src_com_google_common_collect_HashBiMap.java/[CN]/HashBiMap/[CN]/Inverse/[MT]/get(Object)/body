@@ -1,3 +1,4 @@
 {
-  return keyOrNull(seekByValue(value,Hashing.smearedHash(value)));
+  BiEntry<K,V> entry=seekByValue(value,hash(value));
+  return (entry == null) ? null : entry.key;
 }

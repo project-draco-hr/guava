@@ -1,7 +1,8 @@
 {
-  int smearedHash=Hashing.smearedHash(o);
-  for (ValueEntry<K,V> entry=hashTable[smearedHash & mask()]; entry != null; entry=entry.nextInValueBucket) {
-    if (entry.matchesValue(o,smearedHash)) {
+  int hash=(o == null) ? 0 : o.hashCode();
+  int row=Hashing.smear(hash) & (hashTable.length - 1);
+  for (ValueEntry<K,V> entry=hashTable[row]; entry != null; entry=entry.nextInValueSetHashRow) {
+    if (hash == entry.valueHash && Objects.equal(o,entry.getValue())) {
       return true;
     }
   }

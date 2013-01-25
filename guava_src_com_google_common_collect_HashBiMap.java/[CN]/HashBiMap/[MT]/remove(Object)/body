@@ -1,10 +1,10 @@
 {
-  BiEntry<K,V> entry=seekByKey(key,Hashing.smearedHash(key));
+  BiEntry<K,V> entry=seekByKey(key,hash(key));
   if (entry == null) {
     return null;
   }
  else {
     delete(entry);
-    return entry.getValue();
+    return entry.value;
   }
 }

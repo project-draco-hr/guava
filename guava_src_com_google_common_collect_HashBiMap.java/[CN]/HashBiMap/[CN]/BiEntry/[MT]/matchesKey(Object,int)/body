@@ -1,3 +1,0 @@
-{
-  return smearedKeyHash == smearedKHash && Objects.equal(getKey(),k);
-}
