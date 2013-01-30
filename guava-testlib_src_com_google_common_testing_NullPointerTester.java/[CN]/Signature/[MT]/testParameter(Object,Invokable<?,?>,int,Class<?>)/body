@@ -10,7 +10,7 @@
   }
  catch (  InvocationTargetException e) {
     Throwable cause=e.getCause();
-    if (cause instanceof NullPointerException || cause instanceof UnsupportedOperationException) {
+    if (policy.isExpectedType(cause)) {
       return;
     }
     AssertionFailedError error=new AssertionFailedError("wrong exception thrown from " + invokable + ": "+ cause);

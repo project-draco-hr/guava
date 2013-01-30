@@ -1,0 +1,12 @@
+{
+  NullPointerTester tester=new NullPointerTester();
+  tester.testAllPublicStaticMethods(ThrowsNpe.class);
+  tester.testAllPublicStaticMethods(ThrowsUoe.class);
+  try {
+    tester.testAllPublicStaticMethods(ThrowsIae.class);
+  }
+ catch (  AssertionFailedError expected) {
+    return;
+  }
+  fail();
+}
