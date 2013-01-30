@@ -1,6 +1,6 @@
 {
   if (m <= 0) {
-    throw new ArithmeticException("Modulus " + m + " must be > 0");
+    throw new ArithmeticException("Modulus must be positive");
   }
   long result=x % m;
   return (result >= 0) ? result : result + m;

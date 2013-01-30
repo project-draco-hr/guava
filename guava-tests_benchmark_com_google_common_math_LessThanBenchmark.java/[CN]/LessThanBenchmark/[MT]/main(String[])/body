@@ -1,0 +1,3 @@
+{
+  CaliperMain.main(LessThanBenchmark.class,args);
+}

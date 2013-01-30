@@ -10,11 +10,11 @@ case DOWN:
   return logFloor;
 case CEILING:
 case UP:
-return (x == floorPow) ? logFloor : logFloor + 1;
+return logFloor + lessThanBranchFree(floorPow,x);
 case HALF_DOWN:
 case HALF_UP:
 case HALF_EVEN:
-return (x <= halfPowersOf10[logFloor]) ? logFloor : logFloor + 1;
+return logFloor + lessThanBranchFree(halfPowersOf10[logFloor],x);
 default :
 throw new AssertionError();
 }

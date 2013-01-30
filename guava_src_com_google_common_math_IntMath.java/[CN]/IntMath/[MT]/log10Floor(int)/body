@@ -1,5 +1,4 @@
 {
   int y=maxLog10ForLeadingZeros[Integer.numberOfLeadingZeros(x)];
-  int sgn=(x - powersOf10[y]) >>> (Integer.SIZE - 1);
-  return y - sgn;
+  return y - lessThanBranchFree(x,powersOf10[y]);
 }

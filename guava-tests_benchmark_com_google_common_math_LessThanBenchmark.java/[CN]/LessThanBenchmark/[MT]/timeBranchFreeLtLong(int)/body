@@ -1,0 +1,11 @@
+{
+  int tmp=0;
+  for (int i=0; i < reps; i++) {
+    int j=i & SAMPLE_MASK;
+    long x=xLongs[j];
+    long y=yLongs[j];
+    int z=constant[j];
+    tmp+=z + LongMath.lessThanBranchFree(x,y);
+  }
+  return tmp;
+}

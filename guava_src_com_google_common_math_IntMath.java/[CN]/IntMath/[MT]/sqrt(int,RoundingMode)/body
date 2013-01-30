@@ -9,12 +9,12 @@ case DOWN:
   return sqrtFloor;
 case CEILING:
 case UP:
-return (sqrtFloor * sqrtFloor == x) ? sqrtFloor : sqrtFloor + 1;
+return sqrtFloor + lessThanBranchFree(sqrtFloor * sqrtFloor,x);
 case HALF_DOWN:
 case HALF_UP:
 case HALF_EVEN:
 int halfSquare=sqrtFloor * sqrtFloor + sqrtFloor;
-return (x <= halfSquare | halfSquare < 0) ? sqrtFloor : sqrtFloor + 1;
+return sqrtFloor + lessThanBranchFree(halfSquare,x);
 default :
 throw new AssertionError();
 }
