@@ -12,5 +12,6 @@
   }
   finally {
     isDispatching.remove();
+    eventsToDispatch.remove();
   }
 }
