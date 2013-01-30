@@ -1,4 +1,4 @@
 K key
 V value
-int valueHash
-ValueEntry<K,V> nextInValueSetHashRow
+int smearedValueHash
+ValueEntry<K,V> nextInValueBucket
