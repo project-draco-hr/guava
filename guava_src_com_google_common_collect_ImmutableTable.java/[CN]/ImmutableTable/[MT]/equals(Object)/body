@@ -1,12 +1,3 @@
 {
-  if (obj == this) {
-    return true;
-  }
- else   if (obj instanceof Table) {
-    Table<?,?,?> that=(Table<?,?,?>)obj;
-    return this.cellSet().equals(that.cellSet());
-  }
- else {
-    return false;
-  }
+  return Tables.equalsImpl(this,obj);
 }

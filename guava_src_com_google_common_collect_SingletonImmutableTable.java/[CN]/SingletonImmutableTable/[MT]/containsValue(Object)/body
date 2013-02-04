@@ -1,3 +1,3 @@
 {
-  return Objects.equal(this.singleValue,value);
+  return this.singleValue.equals(value);
 }

@@ -1,4 +1,0 @@
-{
-  checkNotNull(columnKey);
-  return Objects.firstNonNull((ImmutableMap<R,V>)columnMap.get(columnKey),ImmutableMap.<R,V>of());
-}

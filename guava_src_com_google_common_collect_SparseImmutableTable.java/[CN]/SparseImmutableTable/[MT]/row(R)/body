@@ -1,4 +1,0 @@
-{
-  checkNotNull(rowKey);
-  return Objects.firstNonNull((ImmutableMap<C,V>)rowMap.get(rowKey),ImmutableMap.<C,V>of());
-}
