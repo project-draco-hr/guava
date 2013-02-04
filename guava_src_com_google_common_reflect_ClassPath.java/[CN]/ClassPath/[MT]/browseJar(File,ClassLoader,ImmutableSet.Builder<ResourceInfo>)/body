@@ -13,7 +13,7 @@
     Enumeration<JarEntry> entries=jarFile.entries();
     while (entries.hasMoreElements()) {
       JarEntry entry=entries.nextElement();
-      if (entry.isDirectory() || entry.getName().startsWith("META-INF/")) {
+      if (entry.isDirectory() || entry.getName().equals(JarFile.MANIFEST_NAME)) {
         continue;
       }
       resources.add(ResourceInfo.of(entry.getName(),classloader));

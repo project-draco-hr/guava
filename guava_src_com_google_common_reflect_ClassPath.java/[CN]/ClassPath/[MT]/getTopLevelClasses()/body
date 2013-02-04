@@ -1,9 +1,3 @@
 {
-  ImmutableSet.Builder<ClassInfo> builder=ImmutableSet.builder();
-  for (  ResourceInfo resource : resources) {
-    if (resource instanceof ClassInfo) {
-      builder.add((ClassInfo)resource);
-    }
-  }
-  return builder.build();
+  return FluentIterable.from(resources).filter(ClassInfo.class).toSet();
 }

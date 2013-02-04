@@ -6,7 +6,9 @@
     }
  else {
       String resourceName=packagePrefix + name;
-      resources.add(ResourceInfo.of(resourceName,classloader));
+      if (!resourceName.equals(JarFile.MANIFEST_NAME)) {
+        resources.add(ResourceInfo.of(resourceName,classloader));
+      }
     }
   }
 }
