@@ -1,5 +1,5 @@
 {
-  logger.info("Service " + service + " has terminated. Previous state was "+ from+ " state.");
+  logger.log(Level.FINE,"Service {0} has terminated. Previous state was: {1}",new Object[]{service,from});
   state.monitor.enter();
   try {
     if (from == State.NEW) {

@@ -1,7 +1,7 @@
 {
 synchronized (watch) {
     watch.stop();
-    logger.log(Level.INFO,"Started " + service + " in "+ startupTimeMillis()+ " ms.");
+    logger.log(Level.FINE,"Started {0} in {1} ms.",new Object[]{service,startupTimeMillis()});
   }
   state.serviceFinishedStarting(service,currentlyHealthy);
 }
