@@ -1,4 +1,3 @@
 {
-  checkEntryNotNull(key,value);
-  return Maps.immutableEntry(key,value);
+  return new TerminalMapEntry<K,V>(key,value);
 }

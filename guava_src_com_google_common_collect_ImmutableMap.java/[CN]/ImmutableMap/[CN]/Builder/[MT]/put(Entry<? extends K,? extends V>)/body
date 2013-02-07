@@ -1,15 +1,4 @@
 {
-  K key=entry.getKey();
-  V value=entry.getValue();
-  ensureCapacity(size + 1);
-  Entry<K,V> immutableEntry;
-  if (entry instanceof ImmutableEntry) {
-    checkEntryNotNull(key,value);
-    immutableEntry=(Entry<K,V>)entry;
-  }
- else {
-    immutableEntry=entryOf(key,value);
-  }
-  entries[size++]=immutableEntry;
+  put(entry.getKey(),entry.getValue());
   return this;
 }

@@ -1,0 +1,3 @@
+{
+  return ImmutableMap.entryOf(key,value);
+}

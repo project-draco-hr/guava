@@ -14,5 +14,13 @@
     return result;
   }
   Entry<?,?>[] entries=map.entrySet().toArray(EMPTY_ENTRY_ARRAY);
-  return fromEntries(entries.length,entries);
+switch (entries.length) {
+case 0:
+    return of();
+case 1:
+  @SuppressWarnings("unchecked") Entry<K,V> onlyEntry=(Entry<K,V>)entries[0];
+return of(onlyEntry.getKey(),onlyEntry.getValue());
+default :
+return new RegularImmutableMap<K,V>(entries);
+}
 }
