@@ -1,0 +1,8 @@
+{
+  NullPointerTester tester=new NullPointerTester();
+  tester.testAllPublicStaticMethods(EvictingQueue.class);
+  tester.testAllPublicConstructors(EvictingQueue.class);
+  EvictingQueue<String> queue=EvictingQueue.create(5);
+  queue.add("one");
+  tester.testAllPublicInstanceMethods(queue);
+}

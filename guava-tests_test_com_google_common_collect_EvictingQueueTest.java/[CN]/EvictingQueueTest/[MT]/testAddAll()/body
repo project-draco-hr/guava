@@ -1,0 +1,14 @@
+{
+  EvictingQueue<String> queue=EvictingQueue.create(3);
+  assertEquals(0,queue.size());
+  assertTrue(queue.addAll(asList("one","two","three")));
+  assertEquals("one",queue.element());
+  assertEquals("one",queue.peek());
+  assertEquals(3,queue.size());
+  assertTrue(queue.addAll(asList("four")));
+  assertEquals("two",queue.element());
+  assertEquals("two",queue.peek());
+  assertEquals(3,queue.size());
+  assertEquals("two",queue.remove());
+  assertEquals(2,queue.size());
+}

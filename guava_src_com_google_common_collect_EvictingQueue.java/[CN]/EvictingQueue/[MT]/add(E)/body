@@ -1,0 +1,8 @@
+{
+  checkNotNull(e);
+  if (size() == maxSize) {
+    delegate.remove();
+  }
+  delegate.add(e);
+  return true;
+}
