@@ -1,18 +1,7 @@
 {
-  final Iterator<? extends Entry<K,? extends ImmutableCollection<V>>> mapIterator=map.entrySet().iterator();
-  return new UnmodifiableIterator<Entry<K,V>>(){
-    K key;
-    Iterator<V> valueIterator;
-    @Override public boolean hasNext(){
-      return (key != null && valueIterator.hasNext()) || mapIterator.hasNext();
-    }
-    @Override public Entry<K,V> next(){
-      if (key == null || !valueIterator.hasNext()) {
-        Entry<K,? extends ImmutableCollection<V>> entry=mapIterator.next();
-        key=entry.getKey();
-        valueIterator=entry.getValue().iterator();
-      }
-      return Maps.immutableEntry(key,valueIterator.next());
+  return new Itr<Entry<K,V>>(){
+    @Override Entry<K,V> output(    K key,    V value){
+      return Maps.immutableEntry(key,value);
     }
   }
 ;
