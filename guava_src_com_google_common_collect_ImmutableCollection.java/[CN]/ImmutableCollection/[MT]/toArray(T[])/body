@@ -1,3 +1,12 @@
 {
-  return ObjectArrays.toArrayImpl(this,other);
+  checkNotNull(other);
+  int size=size();
+  if (other.length < size) {
+    other=ObjectArrays.newArray(other,size);
+  }
+ else   if (other.length > size) {
+    other[size]=null;
+  }
+  copyIntoArray(other,0);
+  return other;
 }

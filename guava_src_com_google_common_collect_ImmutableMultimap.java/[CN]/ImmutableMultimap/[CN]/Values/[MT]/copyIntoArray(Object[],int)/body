@@ -1,0 +1,6 @@
+{
+  for (  ImmutableCollection<V> valueCollection : map.values()) {
+    offset=valueCollection.copyIntoArray(dst,offset);
+  }
+  return offset;
+}

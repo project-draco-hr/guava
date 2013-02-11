@@ -1,3 +1,9 @@
 {
-  return ObjectArrays.toArrayImpl(this);
+  int size=size();
+  if (size == 0) {
+    return ObjectArrays.EMPTY_ARRAY;
+  }
+  Object[] result=new Object[size()];
+  copyIntoArray(result,0);
+  return result;
 }
