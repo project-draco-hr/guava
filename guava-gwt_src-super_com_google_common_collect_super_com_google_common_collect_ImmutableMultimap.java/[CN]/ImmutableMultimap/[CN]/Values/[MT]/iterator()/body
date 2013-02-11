@@ -1,8 +1,3 @@
 {
-  return new Itr<V>(){
-    @Override V output(    K key,    V value){
-      return value;
-    }
-  }
-;
+  return multimap.valueIterator();
 }

@@ -1,3 +1,3 @@
 {
-  return new Multimaps.Values<K,V>(this);
+  return new Values();
 }
