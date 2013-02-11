@@ -1,6 +1,7 @@
 {
   int waiters=guard.waiterCount++;
   if (waiters == 0) {
-    activeGuards.add(guard);
+    guard.next=activeGuards;
+    activeGuards=guard;
   }
 }

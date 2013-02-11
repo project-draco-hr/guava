@@ -3,16 +3,18 @@
     throw new IllegalMonitorStateException();
   }
   final ReentrantLock lock=this.lock;
-  boolean reentrant=lock.isHeldByCurrentThread();
-  boolean success=false;
+  boolean signalBeforeWaiting=lock.isHeldByCurrentThread();
   lock.lockInterruptibly();
+  boolean satisfied=false;
   try {
-    waitInterruptibly(guard,reentrant);
-    success=true;
+    if (!guard.isSatisfied()) {
+      await(guard,signalBeforeWaiting);
+    }
+    satisfied=true;
   }
   finally {
-    if (!success) {
-      lock.unlock();
+    if (!satisfied) {
+      leave();
     }
   }
 }

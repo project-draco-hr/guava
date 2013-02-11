@@ -4,22 +4,21 @@
   if (!fair && lock.tryLock()) {
     return true;
   }
-  long startNanos=System.nanoTime();
-  long remainingNanos=timeoutNanos;
-  boolean interruptIgnored=false;
+  long deadline=System.nanoTime() + timeoutNanos;
+  boolean interrupted=Thread.interrupted();
   try {
     while (true) {
       try {
-        return lock.tryLock(remainingNanos,TimeUnit.NANOSECONDS);
+        return lock.tryLock(timeoutNanos,TimeUnit.NANOSECONDS);
       }
- catch (      InterruptedException ignored) {
-        interruptIgnored=true;
-        remainingNanos=(timeoutNanos - (System.nanoTime() - startNanos));
+ catch (      InterruptedException interrupt) {
+        interrupted=true;
+        timeoutNanos=deadline - System.nanoTime();
       }
     }
   }
   finally {
-    if (interruptIgnored) {
+    if (interrupted) {
       Thread.currentThread().interrupt();
     }
   }

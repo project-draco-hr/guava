@@ -1,49 +1,50 @@
 {
+  long timeoutNanos=unit.toNanos(time);
   if (guard.monitor != this) {
     throw new IllegalMonitorStateException();
   }
   final ReentrantLock lock=this.lock;
-  boolean reentrant=lock.isHeldByCurrentThread();
-  boolean interruptIgnored=false;
+  long deadline=System.nanoTime() + timeoutNanos;
+  boolean signalBeforeWaiting=lock.isHeldByCurrentThread();
+  boolean interrupted=Thread.interrupted();
   try {
-    long remainingNanos;
-    if (!fair && lock.tryLock()) {
-      remainingNanos=unit.toNanos(time);
-    }
- else {
-      long startNanos=System.nanoTime();
-      long timeoutNanos=unit.toNanos(time);
-      remainingNanos=timeoutNanos;
-      while (true) {
+    if (fair || !lock.tryLock()) {
+      boolean locked=false;
+      do {
         try {
-          if (lock.tryLock(remainingNanos,TimeUnit.NANOSECONDS)) {
-            break;
-          }
- else {
+          locked=lock.tryLock(timeoutNanos,TimeUnit.NANOSECONDS);
+          if (!locked) {
             return false;
           }
         }
- catch (        InterruptedException ignored) {
-          interruptIgnored=true;
+ catch (        InterruptedException interrupt) {
+          interrupted=true;
         }
- finally {
-          remainingNanos=(timeoutNanos - (System.nanoTime() - startNanos));
-        }
+        timeoutNanos=deadline - System.nanoTime();
       }
+ while (!locked);
     }
     boolean satisfied=false;
     try {
-      satisfied=waitUninterruptibly(guard,remainingNanos,reentrant);
+      while (true) {
+        try {
+          return satisfied=guard.isSatisfied() || awaitNanos(guard,timeoutNanos,signalBeforeWaiting);
+        }
+ catch (        InterruptedException interrupt) {
+          interrupted=true;
+          signalBeforeWaiting=false;
+          timeoutNanos=deadline - System.nanoTime();
+        }
+      }
     }
   finally {
       if (!satisfied) {
         lock.unlock();
       }
     }
-    return satisfied;
   }
   finally {
-    if (interruptIgnored) {
+    if (interrupted) {
       Thread.currentThread().interrupt();
     }
   }

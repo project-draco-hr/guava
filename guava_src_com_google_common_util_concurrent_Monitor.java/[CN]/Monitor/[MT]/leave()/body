@@ -2,7 +2,7 @@
   final ReentrantLock lock=this.lock;
   try {
     if (lock.getHoldCount() == 1) {
-      signalConditionsOfSatisfiedGuards(null);
+      signalNextWaiter();
     }
   }
   finally {

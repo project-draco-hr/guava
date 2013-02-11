@@ -6,12 +6,11 @@
   lock.lock();
   boolean satisfied=false;
   try {
-    satisfied=guard.isSatisfied();
+    return satisfied=guard.isSatisfied();
   }
   finally {
     if (!satisfied) {
       lock.unlock();
     }
   }
-  return satisfied;
 }

@@ -1,12 +1,3 @@
 {
-  if (guard.monitor != this) {
-    throw new IllegalMonitorStateException();
-  }
-  lock.lock();
-  try {
-    return guard.waiterCount > 0;
-  }
-  finally {
-    lock.unlock();
-  }
+  return getWaitQueueLength(guard) > 0;
 }

@@ -1,9 +1,8 @@
 {
-  if (guard.monitor != this) {
+  if (!((guard.monitor == this) & lock.isHeldByCurrentThread())) {
     throw new IllegalMonitorStateException();
   }
-  if (!lock.isHeldByCurrentThread()) {
-    throw new IllegalMonitorStateException();
+  if (!guard.isSatisfied()) {
+    await(guard,true);
   }
-  waitInterruptibly(guard,true);
 }

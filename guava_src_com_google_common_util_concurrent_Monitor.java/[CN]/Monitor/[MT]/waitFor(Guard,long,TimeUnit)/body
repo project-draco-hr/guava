@@ -1,9 +1,7 @@
 {
-  if (guard.monitor != this) {
+  long timeoutNanos=unit.toNanos(time);
+  if (!((guard.monitor == this) & lock.isHeldByCurrentThread())) {
     throw new IllegalMonitorStateException();
   }
-  if (!lock.isHeldByCurrentThread()) {
-    throw new IllegalMonitorStateException();
-  }
-  return waitInterruptibly(guard,unit.toNanos(time),true);
+  return guard.isSatisfied() || awaitNanos(guard,timeoutNanos,true);
 }

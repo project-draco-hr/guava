@@ -1,9 +1,32 @@
 {
-  if (guard.monitor != this) {
+  long timeoutNanos=unit.toNanos(time);
+  if (!((guard.monitor == this) & lock.isHeldByCurrentThread())) {
     throw new IllegalMonitorStateException();
   }
-  if (!lock.isHeldByCurrentThread()) {
-    throw new IllegalMonitorStateException();
+  if (guard.isSatisfied()) {
+    return true;
   }
-  return waitUninterruptibly(guard,unit.toNanos(time),true);
+  boolean signalBeforeWaiting=true;
+  long deadline=System.nanoTime() + timeoutNanos;
+  boolean interrupted=Thread.interrupted();
+  try {
+    while (true) {
+      try {
+        return awaitNanos(guard,timeoutNanos,signalBeforeWaiting);
+      }
+ catch (      InterruptedException interrupt) {
+        interrupted=true;
+        if (guard.isSatisfied()) {
+          return true;
+        }
+        signalBeforeWaiting=false;
+        timeoutNanos=deadline - System.nanoTime();
+      }
+    }
+  }
+  finally {
+    if (interrupted) {
+      Thread.currentThread().interrupt();
+    }
+  }
 }
