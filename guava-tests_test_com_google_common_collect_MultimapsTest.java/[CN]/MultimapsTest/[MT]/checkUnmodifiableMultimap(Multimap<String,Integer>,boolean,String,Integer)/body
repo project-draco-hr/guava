@@ -11,5 +11,4 @@
   ASSERT.that(unmodifiable.asMap().get("bar")).has().allOf(5,-1);
   assertNull(unmodifiable.asMap().get("missing"));
   assertFalse(unmodifiable.entries() instanceof Serializable);
-  assertFalse(unmodifiable.asMap().values() instanceof Serializable);
 }
