@@ -1,0 +1,16 @@
+{
+  return new TransformedIterator<Map.Entry<K,V1>,Map.Entry<K,V2>>(entryIterator){
+    @Override Entry<K,V2> transform(    final Entry<K,V1> entry){
+      return new AbstractMapEntry<K,V2>(){
+        @Override public K getKey(){
+          return entry.getKey();
+        }
+        @Override public V2 getValue(){
+          return transformer.transformEntry(entry.getKey(),entry.getValue());
+        }
+      }
+;
+    }
+  }
+;
+}
