@@ -1,1 +1,1 @@
-Multimaps.Entries<K,V>
+ForwardingCollection<Entry<K,V>>

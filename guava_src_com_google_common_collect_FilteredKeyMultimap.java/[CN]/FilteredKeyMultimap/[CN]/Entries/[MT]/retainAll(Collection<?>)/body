@@ -1,4 +1,0 @@
-{
-  Predicate<Entry<K,?>> combinedPredicate=Predicates.and(Predicates.compose(keyPredicate,Maps.<K>keyFunction()),Predicates.not(Predicates.in(c)));
-  return Iterators.removeIf(unfiltered.entries().iterator(),combinedPredicate);
-}
