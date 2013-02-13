@@ -8,14 +8,10 @@
     adapterExecutor.execute(new Runnable(){
       @Override public void run(){
         try {
-          delegate.get();
+          getUninterruptibly(delegate);
         }
  catch (        Error e) {
           throw e;
-        }
-catch (        InterruptedException e) {
-          Thread.currentThread().interrupt();
-          throw new AssertionError(e);
         }
 catch (        Throwable e) {
         }

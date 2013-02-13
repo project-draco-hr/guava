@@ -1,0 +1,23 @@
+{
+  final CountDownLatch submitSuccessful=new CountDownLatch(1);
+  ExecutorService executorService=new ThreadPoolExecutor(0,Integer.MAX_VALUE,60L,TimeUnit.SECONDS,new SynchronousQueue<Runnable>(),new ThreadFactoryBuilder().setDaemon(true).build()){
+    @Override protected void beforeExecute(    Thread t,    Runnable r){
+      submitSuccessful.countDown();
+    }
+  }
+;
+  NonListenableSettableFuture<String> abstractFuture=NonListenableSettableFuture.create();
+  ListenableFuture<String> listenableFuture=listenInPoolThread(abstractFuture,executorService);
+  SingleCallListener singleCallListener=new SingleCallListener();
+  singleCallListener.expectCall();
+  assertFalse(singleCallListener.wasCalled());
+  assertFalse(listenableFuture.isDone());
+  listenableFuture.addListener(singleCallListener,sameThreadExecutor());
+  submitSuccessful.await();
+  executorService.shutdownNow();
+  abstractFuture.set(DATA1);
+  assertEquals(DATA1,listenableFuture.get());
+  singleCallListener.waitForCall();
+  assertTrue(singleCallListener.wasCalled());
+  assertTrue(listenableFuture.isDone());
+}
