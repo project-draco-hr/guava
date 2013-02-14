@@ -1,0 +1,8 @@
+{
+  for (  Method method : Hashing.class.getDeclaredMethods()) {
+    if (method.getReturnType().equals(HashFunction.class) && method.getParameterTypes().length == 0) {
+      HashFunction hashFunction=(HashFunction)method.invoke(Hashing.class);
+      assertEquals("There should be 3 entries in KNOWN_HASHES for " + hashFunction.toString(),3,KNOWN_HASHES.row(hashFunction).size());
+    }
+  }
+}
