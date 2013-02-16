@@ -1,0 +1,9 @@
+{
+  ByteSource b1=ByteStreams.asByteSource(new byte[]{0,1,2,3});
+  ByteSource b2=ByteStreams.asByteSource(new byte[0]);
+  ByteSource b3=ByteStreams.asByteSource(new byte[]{4,5});
+  byte[] expected={0,1,2,3,4,5};
+  assertArrayEquals(expected,ByteSource.concat(ImmutableList.of(b1,b2,b3)).read());
+  assertArrayEquals(expected,ByteSource.concat(b1,b2,b3).read());
+  assertArrayEquals(expected,ByteSource.concat(ImmutableList.of(b1,b2,b3).iterator()).read());
+}
