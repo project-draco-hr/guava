@@ -1,0 +1,10 @@
+{
+  final Monitor monitor=this.monitor;
+  monitor.enterWhen(notEmpty);
+  try {
+    return q.poll();
+  }
+  finally {
+    monitor.leave();
+  }
+}

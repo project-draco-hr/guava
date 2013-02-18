@@ -1,0 +1,8 @@
+{
+  final E[] items=this.items;
+  E x=items[takeIndex];
+  items[takeIndex]=null;
+  takeIndex=inc(takeIndex);
+  --count;
+  return x;
+}

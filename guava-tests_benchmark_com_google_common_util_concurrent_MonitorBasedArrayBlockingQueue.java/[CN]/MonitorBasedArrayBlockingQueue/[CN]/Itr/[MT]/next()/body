@@ -1,0 +1,15 @@
+{
+  final Monitor monitor=MonitorBasedArrayBlockingQueue.this.monitor;
+  monitor.enter();
+  try {
+    if (nextIndex < 0)     throw new NoSuchElementException();
+    lastRet=nextIndex;
+    E x=nextItem;
+    nextIndex=inc(nextIndex);
+    checkNext();
+    return x;
+  }
+  finally {
+    monitor.leave();
+  }
+}

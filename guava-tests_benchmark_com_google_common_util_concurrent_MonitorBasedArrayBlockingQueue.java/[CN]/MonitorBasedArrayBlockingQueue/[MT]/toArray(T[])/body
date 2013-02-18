@@ -1,0 +1,20 @@
+{
+  final E[] items=this.items;
+  final Monitor monitor=this.monitor;
+  monitor.enter();
+  try {
+    if (a.length < count)     a=ObjectArrays.newArray(a,count);
+    int k=0;
+    int i=takeIndex;
+    while (k < count) {
+      @SuppressWarnings("unchecked") T t=(T)items[i];
+      a[k++]=t;
+      i=inc(i);
+    }
+    if (a.length > count)     a[count]=null;
+    return a;
+  }
+  finally {
+    monitor.leave();
+  }
+}

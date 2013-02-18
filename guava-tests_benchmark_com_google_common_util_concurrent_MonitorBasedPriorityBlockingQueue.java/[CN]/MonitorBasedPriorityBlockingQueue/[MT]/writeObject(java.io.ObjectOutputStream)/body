@@ -1,0 +1,9 @@
+{
+  monitor.enter();
+  try {
+    s.defaultWriteObject();
+  }
+  finally {
+    monitor.leave();
+  }
+}

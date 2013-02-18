@@ -1,0 +1,10 @@
+{
+  final Monitor monitor=this.monitor;
+  monitor.enter();
+  try {
+    return q.remove(o);
+  }
+  finally {
+    monitor.leave();
+  }
+}

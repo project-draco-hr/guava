@@ -1,0 +1,17 @@
+{
+  if (lastRet < 0)   throw new IllegalStateException();
+  Object x=array[lastRet];
+  lastRet=-1;
+  monitor.enter();
+  try {
+    for (Iterator<E> it=q.iterator(); it.hasNext(); ) {
+      if (it.next() == x) {
+        it.remove();
+        return;
+      }
+    }
+  }
+  finally {
+    monitor.leave();
+  }
+}

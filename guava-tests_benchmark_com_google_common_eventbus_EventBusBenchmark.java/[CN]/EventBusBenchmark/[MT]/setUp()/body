@@ -1,0 +1,4 @@
+{
+  eventBus=new EventBus("for benchmarking purposes");
+  eventBus.register(this);
+}

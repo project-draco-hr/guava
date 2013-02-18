@@ -1,0 +1,17 @@
+{
+  if (capacity <= 0)   throw new IllegalArgumentException();
+  this.items=newEArray(capacity);
+  monitor=new Monitor(fair);
+  notEmpty=new Monitor.Guard(monitor){
+    @Override public boolean isSatisfied(){
+      return count > 0;
+    }
+  }
+;
+  notFull=new Monitor.Guard(monitor){
+    @Override public boolean isSatisfied(){
+      return count < items.length;
+    }
+  }
+;
+}

@@ -1,0 +1,14 @@
+{
+  final Monitor monitor=this.monitor;
+  monitor.enter();
+  try {
+    boolean ok=q.offer(e);
+    if (!ok) {
+      throw new AssertionError();
+    }
+    return true;
+  }
+  finally {
+    monitor.leave();
+  }
+}

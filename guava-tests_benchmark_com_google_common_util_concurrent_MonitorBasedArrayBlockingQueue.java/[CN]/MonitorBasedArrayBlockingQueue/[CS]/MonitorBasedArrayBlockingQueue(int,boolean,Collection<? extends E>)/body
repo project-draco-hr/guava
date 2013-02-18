@@ -1,0 +1,5 @@
+{
+  this(capacity,fair);
+  if (capacity < c.size())   throw new IllegalArgumentException();
+  for (  E e : c)   add(e);
+}

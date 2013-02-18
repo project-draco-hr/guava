@@ -1,0 +1,14 @@
+{
+  final Monitor monitor=this.monitor;
+  if (monitor.enterIf(notEmpty)) {
+    try {
+      return items[takeIndex];
+    }
+  finally {
+      monitor.leave();
+    }
+  }
+ else {
+    return null;
+  }
+}

@@ -1,0 +1,6 @@
+{
+  if (cursor >= array.length)   throw new NoSuchElementException();
+  lastRet=cursor;
+  @SuppressWarnings("unchecked") E e=(E)array[cursor++];
+  return e;
+}

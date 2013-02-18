@@ -1,0 +1,14 @@
+{
+  final Monitor monitor=this.monitor;
+  if (monitor.enterWhen(notEmpty,timeout,unit)) {
+    try {
+      return extract();
+    }
+  finally {
+      monitor.leave();
+    }
+  }
+ else {
+    return null;
+  }
+}

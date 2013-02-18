@@ -1,0 +1,3 @@
+{
+  CaliperMain.main(EventBusBenchmark.class,args);
+}

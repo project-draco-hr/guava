@@ -1,0 +1,16 @@
+{
+  if (e == null)   throw new NullPointerException();
+  final Monitor monitor=this.monitor;
+  if (monitor.enterWhen(notFull,timeout,unit)) {
+    try {
+      insert(e);
+      return true;
+    }
+  finally {
+      monitor.leave();
+    }
+  }
+ else {
+    return false;
+  }
+}
