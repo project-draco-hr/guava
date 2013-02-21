@@ -1,7 +1,7 @@
 {
-  ASSERT.that(TypeToken.of(new TypeCapture<T>(){
+  ASSERT.that((List)TypeToken.of(new TypeCapture<T>(){
   }
-.capture()).getGenericInterfaces()).iteratesOverSequence(TypeToken.of(CharSequence.class),new TypeToken<Iterable<T>>(){
+.capture()).getGenericInterfaces()).iteratesAs(TypeToken.of(CharSequence.class),new TypeToken<Iterable<T>>(){
   }
 );
   assertHasArrayInterfaces(new TypeToken<T[]>(){
