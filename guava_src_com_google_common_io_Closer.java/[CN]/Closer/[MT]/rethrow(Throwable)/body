@@ -1,5 +1,6 @@
 {
+  checkNotNull(e);
   thrown=e;
   Throwables.propagateIfPossible(e,IOException.class);
-  throw Throwables.propagate(e);
+  throw new RuntimeException(e);
 }
