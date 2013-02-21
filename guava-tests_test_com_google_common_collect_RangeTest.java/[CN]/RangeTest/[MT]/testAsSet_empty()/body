@@ -1,6 +1,0 @@
-{
-  assertEquals(ImmutableSet.of(),Range.closedOpen(1,1).asSet(integers()));
-  assertEquals(ImmutableSet.of(),Range.openClosed(5,5).asSet(integers()));
-  assertEquals(ImmutableSet.of(),Range.lessThan(Integer.MIN_VALUE).asSet(integers()));
-  assertEquals(ImmutableSet.of(),Range.greaterThan(Integer.MAX_VALUE).asSet(integers()));
-}

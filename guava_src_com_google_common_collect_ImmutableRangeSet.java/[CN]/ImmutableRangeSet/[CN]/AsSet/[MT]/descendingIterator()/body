@@ -5,7 +5,7 @@
     @Override protected C computeNext(){
       while (!elemItr.hasNext()) {
         if (rangeItr.hasNext()) {
-          elemItr=rangeItr.next().asSet(domain).descendingIterator();
+          elemItr=ContiguousSet.create(rangeItr.next(),domain).descendingIterator();
         }
  else {
           return endOfData();

@@ -3,7 +3,7 @@
   if (result == null) {
     long total=0;
     for (    Range<C> range : ranges) {
-      total+=range.asSet(domain).size();
+      total+=ContiguousSet.create(range,domain).size();
       if (total >= Integer.MAX_VALUE) {
         break;
       }

@@ -4,10 +4,10 @@
     long total=0;
     for (    Range<C> range : ranges) {
       if (range.contains(c)) {
-        return Ints.saturatedCast(total + range.asSet(domain).indexOf(c));
+        return Ints.saturatedCast(total + ContiguousSet.create(range,domain).indexOf(c));
       }
  else {
-        total+=range.asSet(domain).size();
+        total+=ContiguousSet.create(range,domain).size();
       }
     }
     throw new AssertionError("impossible");
