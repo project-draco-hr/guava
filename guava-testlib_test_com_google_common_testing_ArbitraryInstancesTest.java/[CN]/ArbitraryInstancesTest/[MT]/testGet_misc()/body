@@ -7,7 +7,6 @@
   assertFalse(ArbitraryInstances.get(Optional.class).isPresent());
   ArbitraryInstances.get(Stopwatch.class).start();
   assertNotNull(ArbitraryInstances.get(Ticker.class));
-  assertNotNull(ArbitraryInstances.get(Constraint.class));
   assertNotNull(ArbitraryInstances.get(MapConstraint.class));
   assertFreshInstanceReturned(Random.class);
   assertEquals(ArbitraryInstances.get(Random.class).nextInt(),ArbitraryInstances.get(Random.class).nextInt());
