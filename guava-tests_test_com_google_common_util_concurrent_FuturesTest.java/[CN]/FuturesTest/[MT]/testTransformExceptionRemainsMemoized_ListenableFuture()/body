@@ -1,21 +1,24 @@
 {
-  SettableFuture<Integer> input=SettableFuture.create();
-  ListenableFuture<Integer> exceptionComposedFuture=Futures.transform(input,newOneTimeExceptionThrower());
-  ListenableFuture<Integer> errorComposedFuture=Futures.transform(input,newOneTimeErrorThrower());
+  SettableFuture<Integer> exceptionInput=SettableFuture.create();
+  ListenableFuture<Integer> exceptionComposedFuture=Futures.transform(exceptionInput,newOneTimeExceptionThrower());
+  exceptionInput.set(0);
+  runGetIdempotencyTest(exceptionComposedFuture,MyRuntimeException.class);
+  SettableFuture<Integer> errorInput=SettableFuture.create();
+  ListenableFuture<Integer> errorComposedFuture=Futures.transform(errorInput,newOneTimeErrorThrower());
   try {
-    input.set(0);
+    errorInput.set(0);
     fail();
   }
  catch (  MyError expected) {
   }
-  runGetIdempotencyTest(exceptionComposedFuture,MyRuntimeException.class);
   runGetIdempotencyTest(errorComposedFuture,MyError.class);
-  exceptionComposedFuture=Futures.transform(input,newOneTimeExceptionThrower());
+  exceptionComposedFuture=Futures.transform(exceptionInput,newOneTimeExceptionThrower());
   runGetIdempotencyTest(exceptionComposedFuture,MyRuntimeException.class);
   try {
-    Futures.transform(input,newOneTimeErrorThrower());
+    Futures.transform(errorInput,newOneTimeErrorThrower());
     fail();
   }
  catch (  MyError expected) {
   }
+  runGetIdempotencyTest(errorComposedFuture,MyError.class);
 }

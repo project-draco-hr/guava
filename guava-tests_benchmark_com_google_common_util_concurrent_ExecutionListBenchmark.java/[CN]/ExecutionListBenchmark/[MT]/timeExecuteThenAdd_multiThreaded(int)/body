@@ -1,0 +1,22 @@
+{
+  Runnable addTask=new Runnable(){
+    @Override public void run(){
+      for (int i=0; i < numListeners; i++) {
+        list.add(listener,SAME_THREAD_EXECUTOR);
+      }
+    }
+  }
+;
+  int returnValue=0;
+  for (int i=0; i < reps; i++) {
+    list=impl.newExecutionList();
+    listenerLatch=new CountDownLatch(numListeners * NUM_THREADS);
+    executorService.submit(executeTask);
+    for (int j=0; j < NUM_THREADS; j++) {
+      executorService.submit(addTask);
+    }
+    returnValue=(int)listenerLatch.getCount();
+    listenerLatch.await();
+  }
+  return returnValue;
+}

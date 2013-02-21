@@ -1,0 +1,15 @@
+{
+  return new ExecutionListWrapper(){
+    final NewExecutionListWithoutReverse list=new NewExecutionListWithoutReverse();
+    @Override public void add(    Runnable runnable,    Executor executor){
+      list.add(runnable,executor);
+    }
+    @Override public void execute(){
+      list.execute();
+    }
+    @Override public Object getImpl(){
+      return list;
+    }
+  }
+;
+}

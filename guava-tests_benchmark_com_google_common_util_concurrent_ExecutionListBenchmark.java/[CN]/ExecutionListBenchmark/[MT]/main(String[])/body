@@ -1,0 +1,3 @@
+{
+  CaliperMain.main(ExecutionListBenchmark.class,args);
+}

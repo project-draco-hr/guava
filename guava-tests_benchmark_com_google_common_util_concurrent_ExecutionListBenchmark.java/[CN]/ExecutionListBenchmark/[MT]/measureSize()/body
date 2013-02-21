@@ -1,0 +1,7 @@
+{
+  list=impl.newExecutionList();
+  for (int i=0; i < numListeners; i++) {
+    list.add(listener,SAME_THREAD_EXECUTOR);
+  }
+  return list.getImpl();
+}

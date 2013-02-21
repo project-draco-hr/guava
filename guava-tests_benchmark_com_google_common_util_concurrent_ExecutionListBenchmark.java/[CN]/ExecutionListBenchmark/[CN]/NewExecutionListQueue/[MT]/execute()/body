@@ -1,0 +1,16 @@
+{
+  RunnableExecutorPair list;
+synchronized (this) {
+    if (executed) {
+      return;
+    }
+    executed=true;
+    list=head;
+    head=null;
+    tail=null;
+  }
+  while (list != null) {
+    executeListener(list.runnable,list.executor);
+    list=list.next;
+  }
+}

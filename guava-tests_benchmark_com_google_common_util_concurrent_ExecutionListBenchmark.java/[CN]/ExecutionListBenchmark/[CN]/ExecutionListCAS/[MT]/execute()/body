@@ -1,0 +1,22 @@
+{
+  RunnableExecutorPair stack;
+  do {
+    stack=head;
+    if (stack == null) {
+      return;
+    }
+  }
+ while (!UNSAFE.compareAndSwapObject(this,HEAD_OFFSET,stack,null));
+  RunnableExecutorPair reversedStack=null;
+  while (stack != NULL_PAIR) {
+    RunnableExecutorPair head=stack;
+    stack=stack.next;
+    head.next=reversedStack;
+    reversedStack=head;
+  }
+  stack=reversedStack;
+  while (stack != null) {
+    stack.execute();
+    stack=stack.next;
+  }
+}

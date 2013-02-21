@@ -3,7 +3,15 @@
   Preconditions.checkNotNull(executor,"Executor was null.");
 synchronized (this) {
     if (!executed) {
-      runnables=new RunnableExecutorPair(runnable,executor,runnables);
+      RunnableExecutorPair newTail=new RunnableExecutorPair(runnable,executor);
+      if (head == null) {
+        head=newTail;
+        tail=newTail;
+      }
+ else {
+        tail.next=newTail;
+        tail=newTail;
+      }
       return;
     }
   }

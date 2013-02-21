@@ -1,0 +1,15 @@
+{
+  Preconditions.checkNotNull(runnable,"Runnable was null.");
+  Preconditions.checkNotNull(executor,"Executor was null.");
+  RunnableExecutorPair newHead=new RunnableExecutorPair(runnable,executor);
+  RunnableExecutorPair oldHead;
+  do {
+    oldHead=head;
+    if (oldHead == null) {
+      newHead.execute();
+      return;
+    }
+    newHead.next=oldHead;
+  }
+ while (!UNSAFE.compareAndSwapObject(this,HEAD_OFFSET,oldHead,newHead));
+}

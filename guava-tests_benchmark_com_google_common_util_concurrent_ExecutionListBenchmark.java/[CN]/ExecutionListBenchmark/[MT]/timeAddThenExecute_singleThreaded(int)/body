@@ -1,0 +1,14 @@
+{
+  int returnValue=0;
+  for (int i=0; i < reps; i++) {
+    list=impl.newExecutionList();
+    listenerLatch=new CountDownLatch(numListeners);
+    for (int j=0; j < numListeners; j++) {
+      list.add(listener,SAME_THREAD_EXECUTOR);
+      returnValue+=listenerLatch.getCount();
+    }
+    list.execute();
+    returnValue+=listenerLatch.getCount();
+  }
+  return returnValue;
+}

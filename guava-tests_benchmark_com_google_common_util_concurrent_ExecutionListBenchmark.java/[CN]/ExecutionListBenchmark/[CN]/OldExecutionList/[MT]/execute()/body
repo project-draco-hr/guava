@@ -1,0 +1,11 @@
+{
+synchronized (runnables) {
+    if (executed) {
+      return;
+    }
+    executed=true;
+  }
+  while (!runnables.isEmpty()) {
+    runnables.poll().execute();
+  }
+}

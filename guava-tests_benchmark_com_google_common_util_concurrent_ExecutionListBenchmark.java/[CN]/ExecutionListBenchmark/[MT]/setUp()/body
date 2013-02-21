@@ -1,0 +1,12 @@
+{
+  executorService=new ThreadPoolExecutor(NUM_THREADS,NUM_THREADS,Long.MAX_VALUE,TimeUnit.SECONDS,new ArrayBlockingQueue<Runnable>(1000));
+  final AtomicInteger integer=new AtomicInteger();
+  for (int i=0; i < NUM_THREADS * 10; i++) {
+    executorService.submit(new Runnable(){
+      @Override public void run(){
+        integer.getAndIncrement();
+      }
+    }
+);
+  }
+}
