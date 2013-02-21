@@ -1,4 +1,10 @@
 {
   Preconditions.checkElementIndex(index,size());
-  return cache.get(index);
+  L existing=locks.get(index);
+  if (existing != null) {
+    return existing;
+  }
+  L created=supplier.get();
+  existing=locks.putIfAbsent(index,created);
+  return firstNonNull(existing,created);
 }

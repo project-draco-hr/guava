@@ -1,4 +1,3 @@
 {
-  OrderedLockGraphNodesCreator nodeCreator=new OrderedLockGraphNodesCreator();
-  return new CycleDetectingLockFactory.WithExplicitOrdering<E>(policy,nodeCreator.createNodesFor(enumClass));
+  return new CycleDetectingLockFactory.WithExplicitOrdering<E>(policy,CycleDetectingLockFactory.createNodes(enumClass));
 }
