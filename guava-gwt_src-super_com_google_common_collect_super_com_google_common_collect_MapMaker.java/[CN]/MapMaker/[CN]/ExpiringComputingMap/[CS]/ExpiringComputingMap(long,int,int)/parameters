@@ -1,4 +1,3 @@
 long expirationMillis
 int maximumSize
 int initialCapacity
-float loadFactor

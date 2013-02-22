@@ -1,5 +1,5 @@
 {
-  super(initialCapacity,loadFactor,(maximumSize != -1));
+  super(initialCapacity,0.75f,(maximumSize != -1));
   this.expirationMillis=expirationMillis;
   this.computer=computer;
   this.maximumSize=maximumSize;

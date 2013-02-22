@@ -1,3 +1,3 @@
 {
-  return useCustomMap ? new ExpiringComputingMap<K,V>(expirationMillis,null,maximumSize,initialCapacity,loadFactor) : new ConcurrentHashMap<K,V>(initialCapacity,loadFactor);
+  return useCustomMap ? new ExpiringComputingMap<K,V>(expirationMillis,null,maximumSize,initialCapacity) : new ConcurrentHashMap<K,V>(initialCapacity);
 }

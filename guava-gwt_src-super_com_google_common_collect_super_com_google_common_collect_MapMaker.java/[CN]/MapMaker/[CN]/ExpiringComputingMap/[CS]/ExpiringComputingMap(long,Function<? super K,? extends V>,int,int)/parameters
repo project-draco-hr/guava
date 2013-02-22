@@ -2,4 +2,3 @@ long expirationMillis
 Function<? super K,? extends V> computer
 int maximumSize
 int initialCapacity
-float loadFactor
