@@ -1,0 +1,3 @@
+{
+  CaliperMain.main(SortedCopyBenchmark.class,args);
+}

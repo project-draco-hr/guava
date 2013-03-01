@@ -1,0 +1,9 @@
+{
+  int tmp=0;
+  for (int i=0; i < reps; i++) {
+    Integer[] copy=inputArrays[i & 0xFF].clone();
+    Arrays.sort(copy,Ordering.natural());
+    tmp+=copy[0];
+  }
+  return tmp;
+}

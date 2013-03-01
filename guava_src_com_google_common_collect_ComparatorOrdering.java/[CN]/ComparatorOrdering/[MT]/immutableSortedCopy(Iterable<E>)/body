@@ -1,8 +1,0 @@
-{
-  @SuppressWarnings("unchecked") E[] elements=(E[])Iterables.toArray(iterable);
-  for (  E e : elements) {
-    checkNotNull(e);
-  }
-  Arrays.sort(elements,comparator);
-  return ImmutableList.asImmutableList(elements);
-}
