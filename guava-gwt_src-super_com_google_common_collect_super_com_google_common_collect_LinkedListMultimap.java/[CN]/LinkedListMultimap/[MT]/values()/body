@@ -1,3 +1,24 @@
 {
-  return (List<V>)super.values();
+  List<V> result=valuesList;
+  if (result == null) {
+    valuesList=result=new AbstractSequentialList<V>(){
+      @Override public int size(){
+        return size;
+      }
+      @Override public ListIterator<V> listIterator(      int index){
+        final NodeIterator nodes=new NodeIterator(index);
+        return new TransformedListIterator<Node<K,V>,V>(nodes){
+          @Override V transform(          Node<K,V> node){
+            return node.value;
+          }
+          @Override public void set(          V value){
+            nodes.setValue(value);
+          }
+        }
+;
+      }
+    }
+;
+  }
+  return result;
 }

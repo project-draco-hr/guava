@@ -1,3 +1,6 @@
 {
-  Iterators.clear(new ValueForKeyIterator(key));
+  for (Iterator<V> i=new ValueForKeyIterator(key); i.hasNext(); ) {
+    i.next();
+    i.remove();
+  }
 }

@@ -1,3 +1,20 @@
 {
-  return (List<Entry<K,V>>)super.entries();
+  List<Entry<K,V>> result=entries;
+  if (result == null) {
+    entries=result=new AbstractSequentialList<Entry<K,V>>(){
+      @Override public int size(){
+        return size;
+      }
+      @Override public ListIterator<Entry<K,V>> listIterator(      int index){
+        return new TransformedListIterator<Node<K,V>,Entry<K,V>>(new NodeIterator(index)){
+          @Override Entry<K,V> transform(          Node<K,V> node){
+            return createEntry(node);
+          }
+        }
+;
+      }
+    }
+;
+  }
+  return result;
 }

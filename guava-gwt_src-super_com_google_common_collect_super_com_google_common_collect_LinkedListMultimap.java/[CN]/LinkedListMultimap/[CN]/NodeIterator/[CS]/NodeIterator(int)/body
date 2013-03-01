@@ -1,6 +1,6 @@
 {
   int size=size();
-  checkPositionIndex(index,size);
+  Preconditions.checkPositionIndex(index,size);
   if (index >= (size / 2)) {
     previous=tail;
     nextIndex=size;
