@@ -1,0 +1,17 @@
+{
+  int element1=1;
+  int element2=2;
+  BloomFilter<Integer> bf1=BloomFilter.create(Funnels.integerFunnel(),100);
+  bf1.put(element1);
+  assertTrue(bf1.mightContain(element1));
+  assertFalse(bf1.mightContain(element2));
+  BloomFilter<Integer> bf2=BloomFilter.create(Funnels.integerFunnel(),100);
+  bf2.put(element2);
+  assertFalse(bf2.mightContain(element1));
+  assertTrue(bf2.mightContain(element2));
+  bf1.mergeWith(bf2);
+  assertTrue(bf1.mightContain(element1));
+  assertTrue(bf1.mightContain(element2));
+  assertFalse(bf2.mightContain(element1));
+  assertTrue(bf2.mightContain(element2));
+}

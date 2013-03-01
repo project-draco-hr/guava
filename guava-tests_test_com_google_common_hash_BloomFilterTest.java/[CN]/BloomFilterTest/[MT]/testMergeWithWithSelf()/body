@@ -1,0 +1,9 @@
+{
+  BloomFilter<Integer> bf1=BloomFilter.create(Funnels.integerFunnel(),1);
+  try {
+    bf1.mergeWith(bf1);
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}
