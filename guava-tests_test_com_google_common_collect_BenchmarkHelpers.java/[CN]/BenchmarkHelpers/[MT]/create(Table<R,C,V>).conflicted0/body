@@ -1,3 +1,5 @@
 {
-  return HashBasedTable.create(contents);
+  Table<R,C,V> table=TreeBasedTable.create();
+  table.putAll(contents);
+  return table;
 }

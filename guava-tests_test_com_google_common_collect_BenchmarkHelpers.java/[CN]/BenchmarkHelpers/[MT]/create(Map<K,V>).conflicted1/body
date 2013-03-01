@@ -1,3 +1,3 @@
 {
-  return ImmutableMap.copyOf(map);
+  return new ConcurrentSkipListMap<K,V>(map);
 }
