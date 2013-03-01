@@ -1,3 +1,0 @@
-{
-  return keyOrNull(ceilingEntry(key));
-}

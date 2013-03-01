@@ -1,3 +1,5 @@
 {
-  super(unfiltered,entryPredicate);
+  this.unfiltered=checkNotNull(unfiltered);
+  this.entryPredicate=entryPredicate;
+  this.filteredDelegate=new FilteredEntryMap<K,V>(unfiltered,entryPredicate);
 }

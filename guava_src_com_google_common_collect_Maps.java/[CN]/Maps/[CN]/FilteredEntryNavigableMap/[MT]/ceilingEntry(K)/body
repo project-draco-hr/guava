@@ -1,3 +1,0 @@
-{
-  return tailMap(key,true).firstEntry();
-}

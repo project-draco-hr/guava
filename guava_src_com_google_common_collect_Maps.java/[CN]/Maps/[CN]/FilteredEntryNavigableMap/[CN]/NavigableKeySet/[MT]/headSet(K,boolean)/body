@@ -1,3 +1,0 @@
-{
-  return headMap(toElement,inclusive).navigableKeySet();
-}
