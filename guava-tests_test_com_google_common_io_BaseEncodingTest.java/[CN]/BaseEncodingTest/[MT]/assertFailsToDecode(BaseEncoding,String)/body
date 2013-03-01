@@ -5,4 +5,10 @@
   }
  catch (  IllegalArgumentException expected) {
   }
+  try {
+    encoding.decodeChecked(cannotDecode);
+    fail("Expected DecodingException");
+  }
+ catch (  DecodingException expected) {
+  }
 }

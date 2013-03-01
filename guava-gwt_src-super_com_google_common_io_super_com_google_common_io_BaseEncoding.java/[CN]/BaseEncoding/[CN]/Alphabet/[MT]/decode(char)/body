@@ -1,6 +1,6 @@
 {
   if (ch > Ascii.MAX || decodabet[ch] == -1) {
-    throw new IOException("Unrecognized character: " + ch);
+    throw new DecodingException("Unrecognized character: " + ch);
   }
   return decodabet[ch];
 }

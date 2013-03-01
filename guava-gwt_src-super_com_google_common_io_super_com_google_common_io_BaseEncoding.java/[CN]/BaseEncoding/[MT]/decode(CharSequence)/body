@@ -1,15 +1,8 @@
 {
-  chars=padding().trimTrailingFrom(chars);
-  ByteInput decodedInput=decodingStream(asCharInput(chars));
-  byte[] tmp=new byte[maxDecodedSize(chars.length())];
-  int index=0;
   try {
-    for (int i=decodedInput.read(); i != -1; i=decodedInput.read()) {
-      tmp[index++]=(byte)i;
-    }
+    return decodeChecked(chars);
   }
- catch (  IOException badInput) {
+ catch (  DecodingException badInput) {
     throw new IllegalArgumentException(badInput);
   }
-  return extract(tmp,index);
 }
