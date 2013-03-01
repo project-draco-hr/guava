@@ -1,0 +1,7 @@
+{
+  for (  StandardSystemProperty property : StandardSystemProperty.values()) {
+    if (property != StandardSystemProperty.JAVA_COMPILER) {
+      assertNotNull(property.value());
+    }
+  }
+}

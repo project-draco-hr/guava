@@ -1,0 +1,5 @@
+{
+  for (  StandardSystemProperty property : StandardSystemProperty.values()) {
+    assertEquals(System.getProperty(property.key()),property.value());
+  }
+}

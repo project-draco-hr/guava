@@ -1,0 +1,7 @@
+{
+  for (  StandardSystemProperty property : StandardSystemProperty.values()) {
+    String fieldName=property.name();
+    String expected=Ascii.toLowerCase(fieldName).replaceAll("_",".");
+    assertEquals(expected,property.key());
+  }
+}
