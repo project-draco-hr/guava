@@ -2,12 +2,11 @@
   int start=reversePosition(index);
   final ListIterator<T> forwardIterator=forwardList.listIterator(start);
   return new ListIterator<T>(){
-    boolean canRemove;
-    boolean canSet;
+    boolean canRemoveOrSet;
     @Override public void add(    T e){
       forwardIterator.add(e);
       forwardIterator.previous();
-      canSet=canRemove=false;
+      canRemoveOrSet=false;
     }
     @Override public boolean hasNext(){
       return forwardIterator.hasPrevious();
@@ -19,7 +18,7 @@
       if (!hasNext()) {
         throw new NoSuchElementException();
       }
-      canSet=canRemove=true;
+      canRemoveOrSet=true;
       return forwardIterator.previous();
     }
     @Override public int nextIndex(){
@@ -29,19 +28,19 @@
       if (!hasPrevious()) {
         throw new NoSuchElementException();
       }
-      canSet=canRemove=true;
+      canRemoveOrSet=true;
       return forwardIterator.next();
     }
     @Override public int previousIndex(){
       return nextIndex() - 1;
     }
     @Override public void remove(){
-      checkState(canRemove);
+      Iterators.checkRemove(canRemoveOrSet);
       forwardIterator.remove();
-      canRemove=canSet=false;
+      canRemoveOrSet=false;
     }
     @Override public void set(    T e){
-      checkState(canSet);
+      checkState(canRemoveOrSet);
       forwardIterator.set(e);
     }
   }

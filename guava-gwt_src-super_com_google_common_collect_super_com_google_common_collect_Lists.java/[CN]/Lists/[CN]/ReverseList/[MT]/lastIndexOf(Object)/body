@@ -1,4 +1,0 @@
-{
-  int index=forwardList.indexOf(o);
-  return (index >= 0) ? reverseIndex(index) : -1;
-}
