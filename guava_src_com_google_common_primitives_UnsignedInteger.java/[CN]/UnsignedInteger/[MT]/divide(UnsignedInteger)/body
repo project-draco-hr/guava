@@ -1,3 +1,0 @@
-{
-  return dividedBy(val);
-}
