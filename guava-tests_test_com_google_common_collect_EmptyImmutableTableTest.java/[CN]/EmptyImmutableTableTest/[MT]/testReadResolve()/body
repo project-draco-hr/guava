@@ -1,3 +1,0 @@
-{
-  assertSame(EmptyImmutableTable.INSTANCE,EmptyImmutableTable.INSTANCE.readResolve());
-}

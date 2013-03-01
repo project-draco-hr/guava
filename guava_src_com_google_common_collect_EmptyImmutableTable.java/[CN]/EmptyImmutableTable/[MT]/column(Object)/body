@@ -1,4 +1,0 @@
-{
-  checkNotNull(columnKey);
-  return ImmutableMap.of();
-}

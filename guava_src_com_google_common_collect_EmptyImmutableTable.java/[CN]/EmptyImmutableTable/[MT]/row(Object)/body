@@ -1,4 +1,0 @@
-{
-  checkNotNull(rowKey);
-  return ImmutableMap.of();
-}
