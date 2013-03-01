@@ -1,7 +1,4 @@
 {
-  boolean changed=false;
-  for (  Object obj : c) {
-    changed|=remove(obj);
-  }
-  return changed;
+  checkNotNull(c);
+  return Sets.removeAllImpl(this,c.iterator());
 }

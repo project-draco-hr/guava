@@ -1,4 +1,5 @@
 {
+  checkNotNull(c);
   boolean changed=false;
   for (  C columnKey : Lists.newArrayList(columnKeySet().iterator())) {
     if (!c.contains(Maps.immutableEntry(columnKey,column(columnKey)))) {
