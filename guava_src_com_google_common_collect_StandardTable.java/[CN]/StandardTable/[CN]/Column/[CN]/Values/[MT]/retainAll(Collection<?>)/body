@@ -1,10 +1,3 @@
 {
-  checkNotNull(c);
-  Predicate<Entry<R,V>> predicate=new Predicate<Entry<R,V>>(){
-    @Override public boolean apply(    Entry<R,V> entry){
-      return !c.contains(entry.getValue());
-    }
-  }
-;
-  return removePredicate(predicate);
+  return removeIf(Maps.<V>valuePredicateOnEntries(not(in(c))));
 }

@@ -1,9 +1,9 @@
 {
-  Iterator<Entry<K,V>> iterator=unfiltered.entrySet().iterator();
-  while (iterator.hasNext()) {
-    Entry<K,V> entry=iterator.next();
-    if (Objects.equal(o,entry.getValue()) && predicate.apply(entry)) {
-      iterator.remove();
+  Iterator<Entry<K,V>> unfilteredItr=unfiltered.entrySet().iterator();
+  while (unfilteredItr.hasNext()) {
+    Entry<K,V> entry=unfilteredItr.next();
+    if (predicate.apply(entry) && Objects.equal(entry.getValue(),o)) {
+      unfilteredItr.remove();
       return true;
     }
   }

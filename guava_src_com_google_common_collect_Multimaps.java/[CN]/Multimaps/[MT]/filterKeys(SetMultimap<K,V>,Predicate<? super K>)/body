@@ -5,7 +5,7 @@
   }
  else   if (unfiltered instanceof FilteredSetMultimap) {
     FilteredSetMultimap<K,V> prev=(FilteredSetMultimap<K,V>)unfiltered;
-    return filterFiltered(prev,Predicates.compose(keyPredicate,Maps.<K>keyFunction()));
+    return filterFiltered(prev,Maps.<K>keyPredicateOnEntries(keyPredicate));
   }
  else {
     return new FilteredKeySetMultimap<K,V>(unfiltered,keyPredicate);

@@ -1,4 +1,0 @@
-{
-  Set<C> result=keySet;
-  return (result == null) ? keySet=new Maps.KeySet<C,V>(this) : result;
-}

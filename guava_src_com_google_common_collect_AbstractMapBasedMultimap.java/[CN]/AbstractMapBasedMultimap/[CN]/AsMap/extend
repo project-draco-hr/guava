@@ -1,1 +1,1 @@
-AbstractMap<K,Collection<V>>
+ImprovedAbstractMap<K,Collection<V>>

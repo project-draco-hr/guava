@@ -2,7 +2,7 @@
   if (map == object) {
     return true;
   }
-  if (object instanceof Map) {
+ else   if (object instanceof Map) {
     Map<?,?> o=(Map<?,?>)object;
     return map.entrySet().equals(o.entrySet());
   }

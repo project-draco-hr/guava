@@ -1,9 +1,0 @@
-{
-  checkNotNull(value);
-  for (  Range<C> range : asRanges()) {
-    if (range.contains(value)) {
-      return range;
-    }
-  }
-  return null;
-}

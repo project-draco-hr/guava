@@ -3,10 +3,10 @@
   if (result == null) {
     return keySet=new Maps.KeySet<K,Collection<V>>(this){
       @Override public boolean removeAll(      Collection<?> c){
-        return removeIf(compose(in(c),Maps.<K>keyFunction()));
+        return removeIf(Maps.<K>keyPredicateOnEntries(in(c)));
       }
       @Override public boolean retainAll(      Collection<?> c){
-        return removeIf(compose(not(in(c)),Maps.<K>keyFunction()));
+        return removeIf(Maps.<K>keyPredicateOnEntries(not(in(c))));
       }
       @Override public boolean remove(      @Nullable Object o){
         return AsMap.this.remove(o) != null;

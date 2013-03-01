@@ -1,4 +1,4 @@
 {
-  checkArgument(predicate.apply(Maps.immutableEntry(key,value)));
+  checkArgument(apply(key,value));
   return unfiltered().forcePut(key,value);
 }

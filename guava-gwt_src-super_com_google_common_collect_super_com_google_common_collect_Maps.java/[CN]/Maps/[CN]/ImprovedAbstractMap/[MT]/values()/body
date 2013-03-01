@@ -1,4 +1,4 @@
 {
   Collection<V> result=values;
-  return (result == null) ? values=new Values<K,V>(this) : result;
+  return (result == null) ? values=createValues() : result;
 }

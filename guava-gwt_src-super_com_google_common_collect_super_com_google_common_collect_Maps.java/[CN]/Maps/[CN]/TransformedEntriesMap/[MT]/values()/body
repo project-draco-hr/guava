@@ -1,4 +1,0 @@
-{
-  Collection<V2> result=values;
-  return (result == null) ? values=new Values<K,V2>(this) : result;
-}

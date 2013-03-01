@@ -5,5 +5,5 @@
  else   if (unfiltered instanceof BiMap) {
     return filterValues((BiMap<K,V>)unfiltered,valuePredicate);
   }
-  return filterEntries(unfiltered,new ValuePredicate<K,V>(valuePredicate));
+  return filterEntries(unfiltered,Maps.<V>valuePredicateOnEntries(valuePredicate));
 }

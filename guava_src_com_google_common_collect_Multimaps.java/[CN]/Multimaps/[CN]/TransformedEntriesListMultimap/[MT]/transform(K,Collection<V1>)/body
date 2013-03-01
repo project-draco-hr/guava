@@ -1,8 +1,3 @@
 {
-  return Lists.transform((List<V1>)values,new Function<V1,V2>(){
-    @Override public V2 apply(    V1 value){
-      return transformer.transformEntry(key,value);
-    }
-  }
-);
+  return Lists.transform((List<V1>)values,Maps.asValueToValueFunction(transformer,key));
 }

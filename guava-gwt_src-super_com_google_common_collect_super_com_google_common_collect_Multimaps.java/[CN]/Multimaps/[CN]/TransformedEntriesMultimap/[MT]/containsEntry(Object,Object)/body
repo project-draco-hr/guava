@@ -1,4 +1,0 @@
-{
-  Collection<V2> values=get((K)key);
-  return values.contains(value);
-}

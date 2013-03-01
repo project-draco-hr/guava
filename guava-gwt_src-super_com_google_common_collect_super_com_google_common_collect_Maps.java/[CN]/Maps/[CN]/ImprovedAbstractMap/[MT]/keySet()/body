@@ -1,7 +1,4 @@
 {
   Set<K> result=keySet;
-  if (result == null) {
-    return keySet=new KeySet<K,V>(this);
-  }
-  return result;
+  return (result == null) ? keySet=createKeySet() : result;
 }

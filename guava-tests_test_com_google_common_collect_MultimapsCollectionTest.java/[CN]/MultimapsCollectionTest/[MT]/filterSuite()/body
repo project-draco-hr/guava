@@ -54,7 +54,7 @@
       return Multimaps.filterEntries(multimap,Predicates.not(Predicates.in(badEntries.entries())));
     }
   }
-).named("Multimaps.filterEntries[Maps.filterKeys[SetMultimap]]").withFeatures(CollectionSize.ANY,MapFeature.GENERAL_PURPOSE,MapFeature.ALLOWS_NULL_KEYS,MapFeature.ALLOWS_NULL_VALUES).suppressing(toSuppress).createTestSuite());
+).named("Multimaps.filterEntries[Multimaps.filterKeys[SetMultimap]]").withFeatures(CollectionSize.ANY,MapFeature.GENERAL_PURPOSE,MapFeature.ALLOWS_NULL_KEYS,MapFeature.ALLOWS_NULL_VALUES).suppressing(toSuppress).createTestSuite());
   suite.addTest(SetMultimapTestSuiteBuilder.using(new FilteredSetMultimapGenerator(){
     @Override SetMultimap<String,Integer> filter(    SetMultimap<String,Integer> multimap){
       ImmutableSetMultimap<String,Integer> badEntries=ImmutableSetMultimap.of("foo",314,"one",159,"two",265,"bar",358);
@@ -63,7 +63,7 @@
       return Multimaps.filterKeys(multimap,Predicates.not(Predicates.in(ImmutableSet.of("foo","bar"))));
     }
   }
-).named("Multimaps.filterKeys[Maps.filterEntries[SetMultimap]]").withFeatures(CollectionSize.ANY,MapFeature.GENERAL_PURPOSE,MapFeature.ALLOWS_NULL_KEYS,MapFeature.ALLOWS_NULL_VALUES).suppressing(toSuppress).createTestSuite());
+).named("Multimaps.filterKeys[Multimaps.filterEntries[SetMultimap]]").withFeatures(CollectionSize.ANY,MapFeature.GENERAL_PURPOSE,MapFeature.ALLOWS_NULL_KEYS,MapFeature.ALLOWS_NULL_VALUES).suppressing(toSuppress).createTestSuite());
   suite.addTest(SetMultimapTestSuiteBuilder.using(new FilteredSetMultimapGenerator(){
     @Override SetMultimap<String,Integer> filter(    SetMultimap<String,Integer> multimap){
       ImmutableSetMultimap<String,Integer> badEntries=ImmutableSetMultimap.of("foo",314,"bar",358);
@@ -73,6 +73,6 @@
       return multimap;
     }
   }
-).named("Multimaps.filterKeys[Maps.filterKeys[SetMultimap]]").withFeatures(CollectionSize.ANY,MapFeature.GENERAL_PURPOSE,MapFeature.ALLOWS_NULL_KEYS,MapFeature.ALLOWS_NULL_VALUES).suppressing(toSuppress).createTestSuite());
+).named("Multimaps.filterKeys[Multimaps.filterKeys[SetMultimap]]").withFeatures(CollectionSize.ANY,MapFeature.GENERAL_PURPOSE,MapFeature.ALLOWS_NULL_KEYS,MapFeature.ALLOWS_NULL_VALUES).suppressing(toSuppress).createTestSuite());
   return suite;
 }

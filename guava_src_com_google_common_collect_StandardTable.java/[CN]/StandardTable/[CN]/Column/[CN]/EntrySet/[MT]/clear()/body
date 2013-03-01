@@ -1,4 +1,3 @@
 {
-  Predicate<Entry<R,V>> predicate=Predicates.alwaysTrue();
-  removePredicate(predicate);
+  removeIf(alwaysTrue());
 }

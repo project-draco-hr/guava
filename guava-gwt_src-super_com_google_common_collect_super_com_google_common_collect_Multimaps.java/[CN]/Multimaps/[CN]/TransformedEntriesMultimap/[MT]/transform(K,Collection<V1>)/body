@@ -1,5 +1,5 @@
 {
-  Function<V1,V2> function=new ValueFunction<K,V1,V2>(key,transformer);
+  Function<? super V1,V2> function=Maps.asValueToValueFunction(transformer,key);
   if (values instanceof List) {
     return Lists.transform((List<V1>)values,function);
   }

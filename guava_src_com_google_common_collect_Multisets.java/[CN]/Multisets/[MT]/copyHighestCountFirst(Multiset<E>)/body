@@ -1,4 +1,4 @@
 {
-  List<Entry<E>> sortedEntries=Multisets.DECREASING_COUNT_ORDERING.sortedCopy(multiset.entrySet());
+  List<Entry<E>> sortedEntries=Multisets.DECREASING_COUNT_ORDERING.immutableSortedCopy(multiset.entrySet());
   return ImmutableMultiset.copyFromEntries(sortedEntries);
 }
