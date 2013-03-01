@@ -1,3 +1,0 @@
-{
-  return StandardTable.this.size();
-}

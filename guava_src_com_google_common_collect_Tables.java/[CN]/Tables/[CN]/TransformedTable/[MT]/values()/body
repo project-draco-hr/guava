@@ -1,3 +1,0 @@
-{
-  return (values == null) ? values=Collections2.transform(fromTable.values(),function) : values;
-}

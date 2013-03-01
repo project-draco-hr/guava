@@ -1,7 +1,0 @@
-{
-  if (obj instanceof Cell) {
-    Cell<?,?,?> cell=(Cell<?,?,?>)obj;
-    return containsMapping(cell.getRowKey(),cell.getColumnKey(),cell.getValue());
-  }
-  return false;
-}

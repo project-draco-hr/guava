@@ -1,3 +1,0 @@
-{
-  return contains(rowKey,columnKey) ? singleValue : null;
-}

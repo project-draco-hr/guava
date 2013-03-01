@@ -1,9 +1,0 @@
-{
-  Integer columnIndex=columnKeyToIndex.get(checkNotNull(columnKey));
-  if (columnIndex == null) {
-    return ImmutableMap.of();
-  }
- else {
-    return new Column(columnIndex);
-  }
-}

@@ -1,4 +1,3 @@
 {
-  CellSet result=cellSet;
-  return (result == null) ? cellSet=new CellSet() : result;
+  return super.cellSet();
 }

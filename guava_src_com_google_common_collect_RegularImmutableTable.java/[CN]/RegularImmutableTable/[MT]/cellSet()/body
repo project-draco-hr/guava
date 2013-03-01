@@ -1,4 +1,0 @@
-{
-  ImmutableSet<Cell<R,C,V>> result=cellSet;
-  return (result == null) ? cellSet=createCellSet() : result;
-}

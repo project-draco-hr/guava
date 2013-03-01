@@ -1,3 +1,0 @@
-{
-  return ImmutableSet.of(Tables.immutableCell(singleRowKey,singleColumnKey,singleValue));
-}

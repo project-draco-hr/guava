@@ -1,4 +1,0 @@
-{
-  CellSet result=cellSet;
-  return (result == null) ? cellSet=new CellSet() : result;
-}

@@ -1,3 +1,0 @@
-{
-  return rowMap.isEmpty() ? ImmutableSet.<Cell<R,C,V>>of() : new SparseCellSet();
-}

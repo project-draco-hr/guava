@@ -1,4 +1,0 @@
-{
-  Map<C,V> row=rowMap.get(rowKey);
-  return (row == null) ? null : row.get(columnKey);
-}

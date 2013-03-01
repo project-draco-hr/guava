@@ -1,7 +1,3 @@
 {
-  if ((rowKey == null) || (columnKey == null)) {
-    return false;
-  }
-  Map<C,V> map=safeGet(backingMap,rowKey);
-  return map != null && safeContainsKey(map,columnKey);
+  return rowKey != null && columnKey != null && super.contains(rowKey,columnKey);
 }

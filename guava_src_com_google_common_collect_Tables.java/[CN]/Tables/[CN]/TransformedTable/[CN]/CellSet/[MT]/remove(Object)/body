@@ -1,8 +1,0 @@
-{
-  if (contains(obj)) {
-    Cell<?,?,?> cell=(Cell<?,?,?>)obj;
-    fromTable.remove(cell.getRowKey(),cell.getColumnKey());
-    return true;
-  }
-  return false;
-}

@@ -1,9 +1,0 @@
-{
-  if (obj instanceof Cell) {
-    Cell<?,?,?> cell=(Cell<?,?,?>)obj;
-    Integer rowIndex=rowKeyToIndex.get(cell.getRowKey());
-    Integer columnIndex=columnKeyToIndex.get(cell.getColumnKey());
-    return rowIndex != null && columnIndex != null && Objects.equal(at(rowIndex,columnIndex),cell.getValue());
-  }
-  return false;
-}

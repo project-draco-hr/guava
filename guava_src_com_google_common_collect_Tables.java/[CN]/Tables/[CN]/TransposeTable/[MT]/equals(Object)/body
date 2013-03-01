@@ -1,3 +1,0 @@
-{
-  return Tables.equalsImpl(this,obj);
-}

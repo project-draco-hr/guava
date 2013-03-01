@@ -1,4 +1,0 @@
-{
-  checkNotNull(rowKey);
-  return containsRow(rowKey) ? ImmutableMap.of(singleColumnKey,singleValue) : ImmutableMap.<C,V>of();
-}

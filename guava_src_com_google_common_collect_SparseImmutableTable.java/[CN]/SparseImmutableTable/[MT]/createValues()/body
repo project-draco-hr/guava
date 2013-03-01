@@ -1,3 +1,0 @@
-{
-  return rowMap.isEmpty() ? ImmutableList.<V>of() : new SparseValues();
-}

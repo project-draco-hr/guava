@@ -1,7 +1,0 @@
-{
-  if (obj instanceof Cell) {
-    Cell<?,?,?> cell=(Cell<?,?,?>)obj;
-    return original.cellSet().contains(immutableCell(cell.getColumnKey(),cell.getRowKey(),cell.getValue()));
-  }
-  return false;
-}

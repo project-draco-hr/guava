@@ -1,11 +1,3 @@
 {
-  if (value == null) {
-    return false;
-  }
-  for (  Map<C,V> map : backingMap.values()) {
-    if (map.containsValue(value)) {
-      return true;
-    }
-  }
-  return false;
+  return value != null && super.containsValue(value);
 }

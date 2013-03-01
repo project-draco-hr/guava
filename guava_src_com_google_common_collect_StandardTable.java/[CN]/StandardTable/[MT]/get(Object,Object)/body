@@ -1,7 +1,3 @@
 {
-  if ((rowKey == null) || (columnKey == null)) {
-    return null;
-  }
-  Map<C,V> map=safeGet(backingMap,rowKey);
-  return map == null ? null : safeGet(map,columnKey);
+  return (rowKey == null || columnKey == null) ? null : super.get(rowKey,columnKey);
 }
