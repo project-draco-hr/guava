@@ -2,21 +2,21 @@
   checkNotNull(cause);
   lock.lock();
   try {
-switch (snapshot.state) {
+    State previous=state();
+switch (previous) {
 case NEW:
 case TERMINATED:
-      throw new IllegalStateException("Failed while in state:" + snapshot.state,cause);
+      throw new IllegalStateException("Failed while in state:" + previous,cause);
 case RUNNING:
 case STARTING:
 case STOPPING:
-    State previous=snapshot.state;
-  snapshot=new StateSnapshot(State.FAILED,false,cause);
-failed(previous,cause);
+    snapshot=new StateSnapshot(State.FAILED,false,cause);
+  failed(previous,cause);
 break;
 case FAILED:
 break;
 default :
-throw new AssertionError("Unexpected state: " + snapshot.state);
+throw new AssertionError("Unexpected state: " + previous);
 }
 }
   finally {

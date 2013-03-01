@@ -1,0 +1,23 @@
+{
+  ManualSwitchedService service=new ManualSwitchedService();
+  final AtomicInteger stopppingCount=new AtomicInteger();
+  service.addListener(new Listener(){
+    @Override public void starting(){
+    }
+    @Override public void running(){
+    }
+    @Override public void stopping(    State from){
+      stopppingCount.incrementAndGet();
+    }
+    @Override public void terminated(    State from){
+    }
+    @Override public void failed(    State from,    Throwable failure){
+    }
+  }
+,MoreExecutors.sameThreadExecutor());
+  service.start();
+  service.stop();
+  assertEquals(1,stopppingCount.get());
+  service.stop();
+  assertEquals(1,stopppingCount.get());
+}

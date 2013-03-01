@@ -3,7 +3,8 @@
   checkNotNull(executor,"executor");
   lock.lock();
   try {
-    if (snapshot.state != State.TERMINATED && snapshot.state != State.FAILED) {
+    State currentState=state();
+    if (currentState != State.TERMINATED && currentState != State.FAILED) {
       listeners.add(new ListenerExecutorPair(listener,executor));
     }
   }

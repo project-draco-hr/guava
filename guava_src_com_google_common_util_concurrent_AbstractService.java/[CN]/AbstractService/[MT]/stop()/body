@@ -1,7 +1,8 @@
 {
   lock.lock();
   try {
-switch (snapshot.state) {
+    State previous=state();
+switch (previous) {
 case NEW:
       snapshot=new StateSnapshot(State.TERMINATED);
     terminated(State.NEW);
@@ -20,7 +21,7 @@ case TERMINATED:
 case FAILED:
 break;
 default :
-throw new AssertionError("Unexpected state: " + snapshot.state);
+throw new AssertionError("Unexpected state: " + previous);
 }
 }
  catch (Throwable shutdownFailure) {
