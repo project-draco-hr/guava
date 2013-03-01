@@ -1,7 +1,3 @@
 {
-  int size=others.length + 6;
-  List<E> all=new ArrayList<E>(size);
-  Collections.addAll(all,e1,e2,e3,e4,e5,e6);
-  Collections.addAll(all,others);
-  return copyOf(all);
+  return new Builder<E>().add(e1).add(e2).add(e3).add(e4).add(e5).add(e6).add(others).build();
 }
