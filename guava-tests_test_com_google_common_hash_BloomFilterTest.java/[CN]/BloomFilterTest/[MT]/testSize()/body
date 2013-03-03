@@ -1,0 +1,8 @@
+{
+  double fpp=0.03;
+  for (int i=1; i < 10000; i++) {
+    long numBits=BloomFilter.optimalNumOfBits(i,fpp);
+    int arraySize=Ints.checkedCast(LongMath.divide(numBits,64,RoundingMode.CEILING));
+    assertEquals(arraySize * Long.SIZE,BloomFilter.create(Funnels.stringFunnel(),i,fpp).size());
+  }
+}
