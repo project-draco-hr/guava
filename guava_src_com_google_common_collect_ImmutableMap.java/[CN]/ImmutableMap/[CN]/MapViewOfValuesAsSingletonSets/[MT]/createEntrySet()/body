@@ -1,8 +1,5 @@
 {
-  return new ImmutableMapEntrySet<K,ImmutableSet<V>>(){
-    @Override ImmutableMap<K,ImmutableSet<V>> map(){
-      return MapViewOfValuesAsSingletonSets.this;
-    }
+  return new ImmutableMapEntrySet<K,ImmutableSet<V>>(MapViewOfValuesAsSingletonSets.this){
     @Override public UnmodifiableIterator<Entry<K,ImmutableSet<V>>> iterator(){
       final Iterator<Entry<K,V>> backingIterator=delegate.entrySet().iterator();
       return new UnmodifiableIterator<Entry<K,ImmutableSet<V>>>(){

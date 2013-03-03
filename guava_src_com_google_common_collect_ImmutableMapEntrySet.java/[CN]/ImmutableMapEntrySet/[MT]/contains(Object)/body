@@ -1,7 +1,7 @@
 {
   if (object instanceof Entry) {
     Entry<?,?> entry=(Entry<?,?>)object;
-    V value=map().get(entry.getKey());
+    V value=map.get(entry.getKey());
     return value != null && value.equals(entry.getValue());
   }
   return false;

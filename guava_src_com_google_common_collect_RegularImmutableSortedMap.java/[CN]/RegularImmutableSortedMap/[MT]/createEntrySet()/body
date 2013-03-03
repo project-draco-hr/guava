@@ -1,3 +1,8 @@
 {
-  return new EntrySet();
+  return new IndexedEntrySet<K,V>(this){
+    @Override Entry<K,V> getEntry(    int index){
+      return Maps.immutableEntry(keySet.asList().get(index),valueList.get(index));
+    }
+  }
+;
 }
