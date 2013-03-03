@@ -1,3 +1,4 @@
 {
-  return (ImmutableSet<K>)super.keySet();
+  ImmutableSet<K> result=keySet;
+  return (result == null) ? keySet=createKeySet() : result;
 }

@@ -1,3 +1,4 @@
 {
-  return (ImmutableSet<Entry<K,V>>)super.entrySet();
+  ImmutableSet<Entry<K,V>> result=entrySet;
+  return (result == null) ? entrySet=createEntrySet() : result;
 }

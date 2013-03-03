@@ -1,3 +1,4 @@
 {
-  return (ImmutableCollection<V>)super.values();
+  ImmutableCollection<V> result=values;
+  return (result == null) ? values=new ImmutableMapValues<K,V>(this) : result;
 }

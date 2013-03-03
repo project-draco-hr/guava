@@ -1,5 +1,0 @@
-{
-  for (  Entry<? extends K,? extends V> entry : checkNotNull(m).entrySet()) {
-    put(entry.getKey(),entry.getValue());
-  }
-}
