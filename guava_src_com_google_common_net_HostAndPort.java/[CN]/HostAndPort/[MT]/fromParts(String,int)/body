@@ -1,6 +1,6 @@
 {
-  checkArgument(isValidPort(port));
+  checkArgument(isValidPort(port),"Port out of range: %s",port);
   HostAndPort parsedHost=fromString(host);
-  checkArgument(!parsedHost.hasPort());
+  checkArgument(!parsedHost.hasPort(),"Host has a port: %s",host);
   return new HostAndPort(parsedHost.host,port,parsedHost.hasBracketlessColons);
 }
