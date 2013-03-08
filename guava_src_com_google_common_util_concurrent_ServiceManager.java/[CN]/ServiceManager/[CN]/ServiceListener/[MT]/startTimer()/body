@@ -2,7 +2,9 @@
 synchronized (watch) {
     if (!watch.isRunning()) {
       watch.start();
-      logger.log(Level.FINE,"Starting {0}.",service);
+      if (!(service instanceof NoOpService)) {
+        logger.log(Level.FINE,"Starting {0}.",service);
+      }
     }
   }
 }

@@ -3,7 +3,7 @@
   for (  Map.Entry<Service,ServiceListener> entry : services.entrySet()) {
     Service service=entry.getKey();
     State state=service.state();
-    if (state != State.NEW & state != State.STARTING) {
+    if (state != State.NEW & state != State.STARTING & !(service instanceof NoOpService)) {
       loadTimes.add(Maps.immutableEntry(service,entry.getValue().startupTimeMillis()));
     }
   }

@@ -1,7 +1,9 @@
 {
   ImmutableMultimap.Builder<State,Service> builder=ImmutableMultimap.builder();
   for (  Service service : services.keySet()) {
-    builder.put(service.state(),service);
+    if (!(service instanceof NoOpService)) {
+      builder.put(service.state(),service);
+    }
   }
   return builder.build();
 }
