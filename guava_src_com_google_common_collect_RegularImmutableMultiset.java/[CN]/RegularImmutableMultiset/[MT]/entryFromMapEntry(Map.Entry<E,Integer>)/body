@@ -1,3 +1,0 @@
-{
-  return Multisets.immutableEntry(entry.getKey(),entry.getValue());
-}

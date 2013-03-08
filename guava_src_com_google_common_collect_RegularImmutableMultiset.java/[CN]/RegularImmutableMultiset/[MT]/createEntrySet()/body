@@ -1,3 +1,0 @@
-{
-  return map.isEmpty() ? ImmutableSet.<Entry<E>>of() : new EntrySet();
-}
