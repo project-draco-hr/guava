@@ -1,0 +1,5 @@
+{
+  String simple="a,b,c";
+  List<String> letters=COMMA_SPLITTER.splitToList(simple);
+  ASSERT.that(letters).iteratesOverSequence("a","b","c");
+}
