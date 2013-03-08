@@ -6,5 +6,13 @@
     }
   }
   Entry<?,?>[] entries=map.entrySet().toArray(EMPTY_ENTRY_ARRAY);
-  return fromEntries(entries.length,entries);
+switch (entries.length) {
+case 0:
+    return of();
+case 1:
+  @SuppressWarnings("unchecked") Entry<K,V> entry=(Entry<K,V>)entries[0];
+return of(entry.getKey(),entry.getValue());
+default :
+return new RegularImmutableBiMap<K,V>(entries);
+}
 }

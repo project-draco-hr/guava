@@ -1,4 +1,0 @@
-K key
-V value
-BiMapEntry<K,V> nextInKToVBucket
-BiMapEntry<K,V> nextInVToKBucket

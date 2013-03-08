@@ -3,7 +3,7 @@
     return null;
   }
   int bucket=Hashing.smear(value.hashCode()) & mask;
-  for (BiMapEntry<K,V> entry=vToKTable[bucket]; entry != null; entry=entry.getNextInVToKBucket()) {
+  for (ImmutableMapEntry<K,V> entry=valueTable[bucket]; entry != null; entry=entry.getNextInValueBucket()) {
     if (value.equals(entry.getValue())) {
       return entry.getKey();
     }

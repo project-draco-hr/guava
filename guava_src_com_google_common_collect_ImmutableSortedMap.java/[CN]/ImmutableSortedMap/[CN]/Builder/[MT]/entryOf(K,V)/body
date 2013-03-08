@@ -1,3 +1,0 @@
-{
-  return ImmutableSortedMap.entryOf(key,value);
-}

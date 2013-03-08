@@ -1,1 +1,1 @@
-BiMapEntry<K,V>
+ImmutableMapEntry<K,V>

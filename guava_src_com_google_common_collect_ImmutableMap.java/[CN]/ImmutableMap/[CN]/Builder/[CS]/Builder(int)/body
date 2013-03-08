@@ -1,4 +1,4 @@
 {
-  this(new TerminalMapEntry[initialCapacity]);
+  this.entries=new TerminalEntry[initialCapacity];
   this.size=0;
 }

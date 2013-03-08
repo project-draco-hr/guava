@@ -1,3 +1,2 @@
 {
-  super(new ImmutableEntry[ImmutableCollection.Builder.DEFAULT_INITIAL_CAPACITY]);
 }
