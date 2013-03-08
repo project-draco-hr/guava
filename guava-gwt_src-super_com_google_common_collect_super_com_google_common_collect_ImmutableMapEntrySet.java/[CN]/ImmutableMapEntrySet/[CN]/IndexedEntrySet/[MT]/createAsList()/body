@@ -1,0 +1,11 @@
+{
+  return new ImmutableAsList<Entry<K,V>>(){
+    @Override public Entry<K,V> get(    int index){
+      return getEntry(index);
+    }
+    @Override ImmutableCollection<Entry<K,V>> delegateCollection(){
+      return IndexedEntrySet.this;
+    }
+  }
+;
+}

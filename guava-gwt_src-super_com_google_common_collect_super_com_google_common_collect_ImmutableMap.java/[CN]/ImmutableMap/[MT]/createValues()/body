@@ -1,3 +1,3 @@
 {
-  return new ImmutableMapValues<K,V>(this);
+  return new ForwardingImmutableCollection<V>(super.values());
 }
