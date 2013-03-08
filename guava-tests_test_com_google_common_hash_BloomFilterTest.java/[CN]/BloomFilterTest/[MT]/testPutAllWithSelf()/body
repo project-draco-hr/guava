@@ -1,8 +1,8 @@
 {
   BloomFilter<Integer> bf1=BloomFilter.create(Funnels.integerFunnel(),1);
   try {
-    assertFalse(bf1.canMergeWith(bf1));
-    bf1.mergeWith(bf1);
+    assertFalse(bf1.isCompatible(bf1));
+    bf1.putAll(bf1);
     fail();
   }
  catch (  IllegalArgumentException expected) {
