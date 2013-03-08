@@ -3,6 +3,12 @@
   suite.addTestSuite(SetsTest.class);
   suite.addTest(SetTestSuiteBuilder.using(new TestStringSetGenerator(){
     @Override protected Set<String> create(    String[] elements){
+      return Sets.newConcurrentHashSet(Arrays.asList(elements));
+    }
+  }
+).named("Sets.newConcurrentHashSet").withFeatures(CollectionSize.ANY,SetFeature.GENERAL_PURPOSE).createTestSuite());
+  suite.addTest(SetTestSuiteBuilder.using(new TestStringSetGenerator(){
+    @Override protected Set<String> create(    String[] elements){
       int size=elements.length;
       Set<String> set1=(size > 1) ? Sets.newHashSet(Arrays.asList(elements).subList(0,size - 1)) : Sets.newHashSet(elements);
       Set<String> set2=(size > 0) ? Sets.newHashSet(Arrays.asList(elements).subList(1,size)) : Sets.<String>newHashSet();
