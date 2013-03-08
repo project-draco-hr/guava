@@ -1,0 +1,15 @@
+{
+  SettableFuture<Foo> input=SettableFuture.create();
+  ListenableFuture<Foo> wrapper=Futures.nonCancellationPropagating(input);
+  Throwable failure=new Throwable("thrown");
+  assertFalse(wrapper.isDone());
+  input.setException(failure);
+  assertTrue(wrapper.isDone());
+  try {
+    wrapper.get();
+    fail("Expected ExecutionException");
+  }
+ catch (  ExecutionException e) {
+    assertSame(failure,e.getCause());
+  }
+}
