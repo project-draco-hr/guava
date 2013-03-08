@@ -1,0 +1,20 @@
+{
+  Service a=new NoOpDelayedSerivce(50);
+  ServiceManager manager=new ServiceManager(asList(a));
+  manager.startAsync();
+  try {
+    manager.awaitHealthy(1,TimeUnit.MILLISECONDS);
+    fail();
+  }
+ catch (  TimeoutException expected) {
+  }
+  manager.awaitHealthy(100,TimeUnit.MILLISECONDS);
+  manager.stopAsync();
+  try {
+    manager.awaitStopped(1,TimeUnit.MILLISECONDS);
+    fail();
+  }
+ catch (  TimeoutException expected) {
+  }
+  manager.awaitStopped(100,TimeUnit.MILLISECONDS);
+}

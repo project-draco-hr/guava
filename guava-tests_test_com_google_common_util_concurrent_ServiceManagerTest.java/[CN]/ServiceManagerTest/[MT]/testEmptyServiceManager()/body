@@ -1,0 +1,30 @@
+{
+  Logger logger=Logger.getLogger(ServiceManager.class.getName());
+  logger.setLevel(Level.FINEST);
+  TestLogHandler logHandler=new TestLogHandler();
+  logger.addHandler(logHandler);
+  ServiceManager manager=new ServiceManager(Arrays.<Service>asList());
+  RecordingListener listener=new RecordingListener();
+  manager.addListener(listener,MoreExecutors.sameThreadExecutor());
+  manager.startAsync().awaitHealthy();
+  assertTrue(manager.isHealthy());
+  assertTrue(listener.healthyCalled);
+  assertFalse(listener.stoppedCalled);
+  assertTrue(listener.failedServices.isEmpty());
+  manager.stopAsync().awaitStopped();
+  assertFalse(manager.isHealthy());
+  assertTrue(listener.stoppedCalled);
+  assertTrue(listener.failedServices.isEmpty());
+  assertEquals("ServiceManager{services=[]}",manager.toString());
+  assertTrue(manager.servicesByState().isEmpty());
+  assertTrue(manager.startupTimes().isEmpty());
+  Formatter logFormatter=new Formatter(){
+    @Override public String format(    LogRecord record){
+      return formatMessage(record);
+    }
+  }
+;
+  for (  LogRecord record : logHandler.getStoredLogRecords()) {
+    assertFalse(logFormatter.format(record).contains("NoOpService"));
+  }
+}

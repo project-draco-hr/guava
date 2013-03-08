@@ -1,0 +1,26 @@
+{
+  Service a=new NoOpService();
+  Service b=new FailStartService();
+  Service c=new NoOpService();
+  Service d=new FailStartService();
+  Service e=new NoOpService();
+  ServiceManager manager=new ServiceManager(asList(a,b,c,d,e));
+  RecordingListener listener=new RecordingListener();
+  manager.addListener(listener);
+  assertState(manager,Service.State.NEW,a,b,c,d,e);
+  try {
+    manager.startAsync().awaitHealthy();
+    fail();
+  }
+ catch (  IllegalStateException expected) {
+  }
+  assertFalse(listener.healthyCalled);
+  assertState(manager,Service.State.RUNNING,a,c,e);
+  assertEquals(ImmutableSet.of(b,d),listener.failedServices);
+  assertState(manager,Service.State.FAILED,b,d);
+  assertFalse(manager.isHealthy());
+  manager.stopAsync().awaitStopped();
+  assertFalse(manager.isHealthy());
+  assertFalse(listener.healthyCalled);
+  assertTrue(listener.stoppedCalled);
+}

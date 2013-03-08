@@ -1,0 +1,20 @@
+{
+  Service a=new NoOpService();
+  Service b=new NoOpService();
+  ServiceManager manager=new ServiceManager(asList(a,b));
+  RecordingListener listener=new RecordingListener();
+  manager.addListener(listener);
+  assertState(manager,Service.State.NEW,a,b);
+  assertFalse(manager.isHealthy());
+  manager.startAsync().awaitHealthy();
+  assertState(manager,Service.State.RUNNING,a,b);
+  assertTrue(manager.isHealthy());
+  assertTrue(listener.healthyCalled);
+  assertFalse(listener.stoppedCalled);
+  assertTrue(listener.failedServices.isEmpty());
+  manager.stopAsync().awaitStopped();
+  assertState(manager,Service.State.TERMINATED,a,b);
+  assertFalse(manager.isHealthy());
+  assertTrue(listener.stoppedCalled);
+  assertTrue(listener.failedServices.isEmpty());
+}

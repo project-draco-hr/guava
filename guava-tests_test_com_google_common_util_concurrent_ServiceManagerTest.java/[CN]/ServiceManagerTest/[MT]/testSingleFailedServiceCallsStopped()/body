@@ -1,0 +1,13 @@
+{
+  Service a=new FailStartService();
+  ServiceManager manager=new ServiceManager(asList(a));
+  RecordingListener listener=new RecordingListener();
+  manager.addListener(listener);
+  try {
+    manager.startAsync().awaitHealthy();
+    fail();
+  }
+ catch (  IllegalStateException expected) {
+  }
+  assertTrue(listener.stoppedCalled);
+}
