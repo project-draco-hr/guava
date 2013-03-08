@@ -3,19 +3,28 @@
   if (fitsInInt(x)) {
     return IntMath.sqrt((int)x,mode);
   }
-  long sqrtFloor=sqrtFloor(x);
+  long guess=(long)Math.sqrt(x);
+  long guessSquared=guess * guess;
 switch (mode) {
 case UNNECESSARY:
-    checkRoundingUnnecessary(sqrtFloor * sqrtFloor == x);
+    checkRoundingUnnecessary(guessSquared == x);
+  return guess;
 case FLOOR:
 case DOWN:
-  return sqrtFloor;
+if (x < guessSquared) {
+  return guess - 1;
+}
+return guess;
 case CEILING:
 case UP:
-return sqrtFloor + lessThanBranchFree(sqrtFloor * sqrtFloor,x);
+if (x > guessSquared) {
+return guess + 1;
+}
+return guess;
 case HALF_DOWN:
 case HALF_UP:
 case HALF_EVEN:
+long sqrtFloor=guess - ((x < guessSquared) ? 1 : 0);
 long halfSquare=sqrtFloor * sqrtFloor + sqrtFloor;
 return sqrtFloor + lessThanBranchFree(halfSquare,x);
 default :

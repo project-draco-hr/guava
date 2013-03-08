@@ -1,9 +1,9 @@
 {
   for (  long x : POSITIVE_LONG_CANDIDATES) {
-    long logFloor=LongMath.sqrt(x,FLOOR);
-    boolean isPerfectSquare=(logFloor * logFloor == x);
+    long sqrtFloor=LongMath.sqrt(x,FLOOR);
+    boolean isPerfectSquare=(sqrtFloor * sqrtFloor == x);
     try {
-      assertEquals(logFloor,LongMath.sqrt(x,UNNECESSARY));
+      assertEquals(sqrtFloor,LongMath.sqrt(x,UNNECESSARY));
       assertTrue(isPerfectSquare);
     }
  catch (    ArithmeticException e) {

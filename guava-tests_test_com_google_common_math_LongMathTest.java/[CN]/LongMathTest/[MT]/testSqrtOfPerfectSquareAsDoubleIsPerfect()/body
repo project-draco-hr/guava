@@ -1,0 +1,6 @@
+{
+  for (long n=0; n <= LongMath.FLOOR_SQRT_MAX_LONG; n++) {
+    long actual=(long)Math.sqrt(n * n);
+    assertTrue(actual == n);
+  }
+}
