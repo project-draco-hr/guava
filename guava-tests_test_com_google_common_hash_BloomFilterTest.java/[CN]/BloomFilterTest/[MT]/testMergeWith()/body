@@ -9,6 +9,7 @@
   bf2.put(element2);
   assertFalse(bf2.mightContain(element1));
   assertTrue(bf2.mightContain(element2));
+  assertTrue(bf1.canMergeWith(bf2));
   bf1.mergeWith(bf2);
   assertTrue(bf1.mightContain(element1));
   assertTrue(bf1.mightContain(element2));

@@ -1,0 +1,4 @@
+{
+  checkNotNull(that);
+  return (this != that) && (this.numHashFunctions == that.numHashFunctions) && (this.size() == that.size())&& (this.strategy.equals(that.strategy))&& (this.funnel.equals(that.funnel));
+}

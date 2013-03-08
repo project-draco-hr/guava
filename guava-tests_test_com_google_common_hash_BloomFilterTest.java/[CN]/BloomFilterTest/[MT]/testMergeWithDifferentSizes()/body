@@ -2,12 +2,14 @@
   BloomFilter<Integer> bf1=BloomFilter.create(Funnels.integerFunnel(),1);
   BloomFilter<Integer> bf2=BloomFilter.create(Funnels.integerFunnel(),10);
   try {
+    assertFalse(bf1.canMergeWith(bf2));
     bf1.mergeWith(bf2);
     fail();
   }
  catch (  IllegalArgumentException expected) {
   }
   try {
+    assertFalse(bf2.canMergeWith(bf1));
     bf2.mergeWith(bf1);
     fail();
   }

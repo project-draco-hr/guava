@@ -1,6 +1,7 @@
 {
   BloomFilter<Integer> bf1=BloomFilter.create(Funnels.integerFunnel(),1);
   try {
+    assertFalse(bf1.canMergeWith(bf1));
     bf1.mergeWith(bf1);
     fail();
   }
