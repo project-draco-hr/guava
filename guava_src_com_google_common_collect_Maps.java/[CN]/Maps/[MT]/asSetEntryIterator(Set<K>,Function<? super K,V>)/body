@@ -1,8 +1,0 @@
-{
-  return new TransformedIterator<K,Entry<K,V>>(set.iterator()){
-    @Override Entry<K,V> transform(    K key){
-      return Maps.immutableEntry(key,function.apply(key));
-    }
-  }
-;
-}
