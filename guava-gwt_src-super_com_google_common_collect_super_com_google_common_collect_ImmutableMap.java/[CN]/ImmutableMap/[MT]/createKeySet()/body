@@ -1,5 +1,3 @@
 {
-  return new ForwardingImmutableSet<K>(super.keySet()){
-  }
-;
+  return new ImmutableMapKeySet<K,V>(this);
 }

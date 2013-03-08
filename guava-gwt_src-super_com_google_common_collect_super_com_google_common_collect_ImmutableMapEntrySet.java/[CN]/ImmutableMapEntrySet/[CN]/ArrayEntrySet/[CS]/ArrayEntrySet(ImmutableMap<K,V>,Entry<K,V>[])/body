@@ -1,4 +1,0 @@
-{
-  super(map);
-  this.entries=entries;
-}
