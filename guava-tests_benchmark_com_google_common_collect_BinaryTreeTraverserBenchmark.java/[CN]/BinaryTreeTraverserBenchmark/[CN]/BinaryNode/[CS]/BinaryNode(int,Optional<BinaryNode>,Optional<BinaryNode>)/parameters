@@ -1,0 +1,3 @@
+int x
+Optional<BinaryNode> left
+Optional<BinaryNode> right

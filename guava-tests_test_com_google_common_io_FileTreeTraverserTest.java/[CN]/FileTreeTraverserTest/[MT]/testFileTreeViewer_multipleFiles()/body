@@ -1,0 +1,7 @@
+{
+  File a=newFile("a");
+  File b=newDir("b");
+  File c=newFile("c");
+  File d=newDir("d");
+  assertDirChildren(a,b,c,d);
+}

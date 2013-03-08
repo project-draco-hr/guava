@@ -1,0 +1,4 @@
+{
+  this.stack=Lists.newLinkedList();
+  stack.addLast(Iterators.singletonIterator(checkNotNull(root)));
+}

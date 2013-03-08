@@ -1,0 +1,4 @@
+{
+  ASSERT.that(iterationOrder(ADAPTER.preOrderTraversal(h))).is("hdabcegf");
+  ASSERT.that(binaryIterationOrder(BIN_ADAPTER.preOrderTraversal(bd))).is("dbacefg");
+}

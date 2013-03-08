@@ -1,0 +1,4 @@
+{
+  File file=newFile("test");
+  assertDirChildren(file);
+}

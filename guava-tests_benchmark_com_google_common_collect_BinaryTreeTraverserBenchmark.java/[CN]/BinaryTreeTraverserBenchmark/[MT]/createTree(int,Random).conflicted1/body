@@ -1,0 +1,7 @@
+{
+  Optional<BinaryNode> root=Optional.absent();
+  for (int i=0; i < size; i++) {
+    root=Optional.of(new BinaryNode(rng.nextInt(),Optional.<BinaryNode>absent(),root));
+  }
+  return root;
+}

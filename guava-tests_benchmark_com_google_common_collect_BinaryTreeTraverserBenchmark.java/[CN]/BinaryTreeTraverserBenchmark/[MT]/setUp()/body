@@ -1,0 +1,3 @@
+{
+  this.view=traversal.view(topology.createTree(size,rng).get(),useBinaryTraverser ? BINARY_VIEWER : VIEWER);
+}

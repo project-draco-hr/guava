@@ -1,0 +1,5 @@
+{
+  this.x=x;
+  this.left=left;
+  this.right=right;
+}

@@ -1,0 +1,10 @@
+{
+  if (size == 0) {
+    return Optional.absent();
+  }
+ else {
+    int leftChildSize=(size - 1) / 2;
+    int rightChildSize=size - 1 - leftChildSize;
+    return Optional.of(new BinaryNode(rng.nextInt(),createTree(leftChildSize,rng),createTree(rightChildSize,rng)));
+  }
+}

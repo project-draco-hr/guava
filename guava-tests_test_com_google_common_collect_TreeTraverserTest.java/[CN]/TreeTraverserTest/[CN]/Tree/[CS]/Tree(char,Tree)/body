@@ -1,0 +1,4 @@
+{
+  this.value=value;
+  this.children=Arrays.asList(children);
+}

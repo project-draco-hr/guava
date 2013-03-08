@@ -1,0 +1,4 @@
+{
+  this.queue=Lists.newLinkedList();
+  queue.add(checkNotNull(root));
+}

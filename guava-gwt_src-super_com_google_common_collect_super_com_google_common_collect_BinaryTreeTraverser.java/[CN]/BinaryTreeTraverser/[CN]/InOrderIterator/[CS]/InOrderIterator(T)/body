@@ -1,0 +1,4 @@
+{
+  this.stack=Lists.newLinkedList();
+  stack.addLast(new InOrderNode<T>(root));
+}
