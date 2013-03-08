@@ -1,0 +1,4 @@
+{
+  forward().descendingMultiset();
+  assertEquals("[descendingMultiset]",getCalls());
+}

@@ -1,0 +1,10 @@
+{
+  super.setUp();
+  @SuppressWarnings("unchecked") final SortedMultiset<String> sortedMultiset=createProxyInstance(SortedMultiset.class);
+  forward=new ForwardingSortedMultiset<String>(){
+    @Override protected SortedMultiset<String> delegate(){
+      return sortedMultiset;
+    }
+  }
+;
+}

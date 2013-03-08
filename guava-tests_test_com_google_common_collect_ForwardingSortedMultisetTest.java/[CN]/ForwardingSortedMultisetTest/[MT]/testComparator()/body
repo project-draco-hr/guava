@@ -1,0 +1,4 @@
+{
+  forward().comparator();
+  assertEquals("[comparator]",getCalls());
+}
