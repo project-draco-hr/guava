@@ -1,0 +1,9 @@
+{
+  Random rng=new Random();
+  for (int i=0; i < 0x100; i++) {
+    values[i]=new double[n];
+    for (int j=0; j < n; j++) {
+      values[i][j]=rng.nextDouble();
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  double mean=meanAlgorithm.mean(values);
+  double sumOfSquaresOfDeltas=0.0;
+  double c=0.0;
+  for (  double value : values) {
+    double delta=value - mean;
+    double deltaSquared=delta * delta;
+    double y=deltaSquared - c;
+    double t=sumOfSquaresOfDeltas + deltaSquared;
+    c=(t - sumOfSquaresOfDeltas) - y;
+    sumOfSquaresOfDeltas=t;
+  }
+  return new MeanAndVariance(mean,sumOfSquaresOfDeltas / values.length);
+}

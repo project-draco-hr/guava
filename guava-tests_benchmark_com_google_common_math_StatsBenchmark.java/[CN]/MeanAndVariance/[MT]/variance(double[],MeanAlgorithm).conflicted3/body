@@ -1,0 +1,3 @@
+{
+  return new MeanAndVariance(meanAlgorithm.mean(values),0.0);
+}

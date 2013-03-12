@@ -1,0 +1,7 @@
+{
+  int tmp=0;
+  for (int i=0; i < reps; i++) {
+    tmp+=varianceAlgorithm.variance(values[i & 0xFF],meanAlgorithm).hashCode();
+  }
+  return tmp;
+}
