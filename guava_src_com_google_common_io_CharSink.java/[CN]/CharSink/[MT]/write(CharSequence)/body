@@ -4,6 +4,7 @@
   try {
     Writer out=closer.register(openStream());
     out.append(charSequence);
+    out.flush();
   }
  catch (  Throwable e) {
     throw closer.rethrow(e);

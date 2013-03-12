@@ -7,6 +7,7 @@
     for (    CharSequence line : lines) {
       out.append(line).append(lineSeparator);
     }
+    out.flush();
   }
  catch (  Throwable e) {
     throw closer.rethrow(e);

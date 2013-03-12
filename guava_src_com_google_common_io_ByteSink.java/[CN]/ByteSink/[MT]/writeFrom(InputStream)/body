@@ -3,7 +3,9 @@
   Closer closer=Closer.create();
   try {
     OutputStream out=closer.register(openStream());
-    return ByteStreams.copy(input,out);
+    long written=ByteStreams.copy(input,out);
+    out.flush();
+    return written;
   }
  catch (  Throwable e) {
     throw closer.rethrow(e);
