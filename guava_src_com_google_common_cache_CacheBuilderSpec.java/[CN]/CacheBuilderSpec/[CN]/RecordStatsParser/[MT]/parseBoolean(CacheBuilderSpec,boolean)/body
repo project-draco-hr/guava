@@ -1,0 +1,4 @@
+{
+  checkArgument(spec.recordStats == null,"recordStats already set");
+  spec.recordStats=value;
+}

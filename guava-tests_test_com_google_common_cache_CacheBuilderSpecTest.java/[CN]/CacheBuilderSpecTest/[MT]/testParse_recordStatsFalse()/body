@@ -1,0 +1,9 @@
+{
+  CacheBuilderSpec spec=parse("recordStats=false");
+  assertFalse(spec.recordStats);
+  spec=parse("recordStats=FaLsE");
+  assertFalse(spec.recordStats);
+  spec=parse("recordStats=FALSE");
+  assertFalse(spec.recordStats);
+  assertCacheBuilderEquivalence(CacheBuilder.newBuilder(),CacheBuilder.from(spec));
+}

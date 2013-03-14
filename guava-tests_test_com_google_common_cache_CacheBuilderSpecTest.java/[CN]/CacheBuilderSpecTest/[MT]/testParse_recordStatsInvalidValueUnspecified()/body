@@ -1,0 +1,8 @@
+{
+  try {
+    parse("recordStats=Fals");
+    fail("Expected exception");
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}
