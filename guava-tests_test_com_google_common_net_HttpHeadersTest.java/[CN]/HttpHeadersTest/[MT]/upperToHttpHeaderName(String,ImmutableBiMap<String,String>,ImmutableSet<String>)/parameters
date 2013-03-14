@@ -1,0 +1,3 @@
+String constantName
+ImmutableBiMap<String,String> specialCases
+ImmutableSet<String> uppercaseAcronyms

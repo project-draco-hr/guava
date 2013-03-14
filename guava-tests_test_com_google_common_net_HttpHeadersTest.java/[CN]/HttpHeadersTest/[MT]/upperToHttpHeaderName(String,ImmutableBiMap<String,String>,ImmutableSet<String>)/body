@@ -1,10 +1,10 @@
 {
-  if (constantName.equals("ETAG")) {
-    return "ETag";
+  if (specialCases.containsKey(constantName)) {
+    return specialCases.get(constantName);
   }
   List<String> parts=Lists.newArrayList();
   for (  String part : SPLITTER.split(constantName)) {
-    if (!UPPERCASE_ACRONYMS.contains(part)) {
+    if (!uppercaseAcronyms.contains(part)) {
       part=part.charAt(0) + Ascii.toLowerCase(part.substring(1));
     }
     parts.add(part);

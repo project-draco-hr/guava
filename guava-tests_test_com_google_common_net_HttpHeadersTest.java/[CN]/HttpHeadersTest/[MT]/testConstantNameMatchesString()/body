@@ -1,7 +1,5 @@
 {
-  for (  Field field : HttpHeaders.class.getDeclaredFields()) {
-    if (!field.isSynthetic()) {
-      assertEquals(upperToHttpHeaderName(field.getName()),field.get(null));
-    }
-  }
+  ImmutableBiMap<String,String> specialCases=ImmutableBiMap.of("ETAG","ETag");
+  ImmutableSet<String> uppercaseAcronyms=ImmutableSet.of("ID","DNT","IP","MD5","P3P","TE","UID","URL","WWW","XSS");
+  assertConstantNameMatchesString(HttpHeaders.class,specialCases,uppercaseAcronyms);
 }
