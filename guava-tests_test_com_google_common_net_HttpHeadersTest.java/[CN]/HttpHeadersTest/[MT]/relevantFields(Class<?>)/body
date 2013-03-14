@@ -1,0 +1,9 @@
+{
+  ImmutableSet.Builder<Field> builder=ImmutableSet.builder();
+  for (  Field field : cls.getDeclaredFields()) {
+    if (!field.isSynthetic()) {
+      builder.add(field);
+    }
+  }
+  return builder.build();
+}
