@@ -1,3 +1,0 @@
-{
-  return Maps.valueIterator(ColumnMap.this.entrySet().iterator());
-}

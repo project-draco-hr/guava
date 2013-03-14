@@ -1,1 +1,1 @@
-TableCollection<Map<R,V>>
+Maps.Values<C,Map<R,V>>

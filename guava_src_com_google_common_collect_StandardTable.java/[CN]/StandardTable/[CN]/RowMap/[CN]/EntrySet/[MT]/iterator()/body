@@ -1,8 +1,8 @@
 {
-  return new TransformedIterator<R,Entry<R,Map<C,V>>>(backingMap.keySet().iterator()){
-    @Override Entry<R,Map<C,V>> transform(    R rowKey){
-      return Maps.immutableEntry(rowKey,row(rowKey));
+  return Maps.asMapEntryIterator(backingMap.keySet(),new Function<R,Map<C,V>>(){
+    @Override public Map<C,V> apply(    R rowKey){
+      return row(rowKey);
     }
   }
-;
+);
 }

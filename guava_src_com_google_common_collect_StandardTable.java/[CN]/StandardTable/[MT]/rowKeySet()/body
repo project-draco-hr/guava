@@ -1,4 +1,3 @@
 {
-  Set<R> result=rowKeySet;
-  return (result == null) ? rowKeySet=new RowKeySet() : result;
+  return rowMap().keySet();
 }

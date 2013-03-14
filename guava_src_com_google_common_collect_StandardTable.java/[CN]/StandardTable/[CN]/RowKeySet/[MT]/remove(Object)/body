@@ -1,3 +1,0 @@
-{
-  return (obj != null) && backingMap.remove(obj) != null;
-}

@@ -1,4 +1,3 @@
 {
-  RowSortedMap result=rowMap;
-  return (result == null) ? rowMap=new RowSortedMap() : result;
+  return (SortedMap<R,Map<C,V>>)super.rowMap();
 }

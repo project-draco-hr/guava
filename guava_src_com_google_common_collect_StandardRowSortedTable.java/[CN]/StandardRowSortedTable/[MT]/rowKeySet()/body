@@ -1,4 +1,3 @@
 {
-  SortedSet<R> result=rowKeySet;
-  return (result == null) ? rowKeySet=new RowKeySortedSet() : result;
+  return (SortedSet<R>)rowMap().keySet();
 }

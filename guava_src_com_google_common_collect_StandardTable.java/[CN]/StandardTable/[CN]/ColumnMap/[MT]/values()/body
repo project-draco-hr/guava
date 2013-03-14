@@ -1,4 +1,0 @@
-{
-  ColumnMapValues result=columnMapValues;
-  return (result == null) ? columnMapValues=new ColumnMapValues() : result;
-}
