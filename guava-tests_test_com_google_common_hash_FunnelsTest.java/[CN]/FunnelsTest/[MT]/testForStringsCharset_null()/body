@@ -1,0 +1,5 @@
+{
+  for (  Charset charset : Charset.availableCharsets().values()) {
+    assertNullsThrowException(Funnels.stringFunnel(charset));
+  }
+}

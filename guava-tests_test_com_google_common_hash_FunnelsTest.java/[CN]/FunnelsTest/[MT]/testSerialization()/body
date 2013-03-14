@@ -1,0 +1,8 @@
+{
+  assertSame(Funnels.byteArrayFunnel(),SerializableTester.reserialize(Funnels.byteArrayFunnel()));
+  assertSame(Funnels.integerFunnel(),SerializableTester.reserialize(Funnels.integerFunnel()));
+  assertSame(Funnels.longFunnel(),SerializableTester.reserialize(Funnels.longFunnel()));
+  assertSame(Funnels.stringFunnel(),SerializableTester.reserialize(Funnels.stringFunnel()));
+  assertEquals(Funnels.sequentialFunnel(Funnels.integerFunnel()),SerializableTester.reserialize(Funnels.sequentialFunnel(Funnels.integerFunnel())));
+  assertEquals(Funnels.stringFunnel(Charsets.US_ASCII),SerializableTester.reserialize(Funnels.stringFunnel(Charsets.US_ASCII)));
+}

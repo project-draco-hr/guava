@@ -1,0 +1,7 @@
+{
+  for (  Charset charset : Charset.availableCharsets().values()) {
+    PrimitiveSink bytePrimitiveSink=mock(PrimitiveSink.class);
+    Funnels.stringFunnel(charset).funnel("test",bytePrimitiveSink);
+    verify(bytePrimitiveSink).putString("test",charset);
+  }
+}
