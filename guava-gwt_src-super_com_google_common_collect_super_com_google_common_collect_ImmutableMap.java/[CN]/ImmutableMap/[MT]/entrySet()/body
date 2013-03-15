@@ -1,6 +1,3 @@
 {
-  if (cachedEntrySet != null) {
-    return cachedEntrySet;
-  }
-  return cachedEntrySet=createEntrySet();
+  return (ImmutableSet<Entry<K,V>>)super.entrySet();
 }
