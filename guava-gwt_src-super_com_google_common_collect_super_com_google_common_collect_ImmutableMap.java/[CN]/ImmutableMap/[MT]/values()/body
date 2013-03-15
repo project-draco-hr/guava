@@ -1,3 +1,6 @@
 {
-  return (ImmutableCollection<V>)super.values();
+  if (cachedValues != null) {
+    return cachedValues;
+  }
+  return cachedValues=createValues();
 }

@@ -1,3 +1,6 @@
 {
-  return (ImmutableSet<K>)super.keySet();
+  if (cachedKeySet != null) {
+    return cachedKeySet;
+  }
+  return cachedKeySet=createKeySet();
 }
