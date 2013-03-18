@@ -1,3 +1,0 @@
-{
-  return Hashing.md5().hashBytes(data).asLong();
-}

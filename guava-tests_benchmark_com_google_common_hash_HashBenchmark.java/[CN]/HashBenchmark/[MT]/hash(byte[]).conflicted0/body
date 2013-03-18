@@ -1,3 +1,0 @@
-{
-  return Hashing.murmur3_128().hashBytes(data).asLong();
-}

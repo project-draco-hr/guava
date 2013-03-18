@@ -1,4 +1,0 @@
-{
-  testData=new byte[size];
-  new Random().nextBytes(testData);
-}

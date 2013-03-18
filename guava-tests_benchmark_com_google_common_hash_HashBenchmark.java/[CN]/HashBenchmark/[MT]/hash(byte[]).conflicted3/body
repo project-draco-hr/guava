@@ -1,3 +1,0 @@
-{
-  return Hashing.goodFastHash(32).hashBytes(data).asInt();
-}

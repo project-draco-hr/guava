@@ -1,3 +1,0 @@
-{
-  return Hashing.murmur3_32().hashBytes(data).asInt();
-}
