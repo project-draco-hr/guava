@@ -1,0 +1,5 @@
+{
+  CacheBuilderSpec spec=parse("recordStats");
+  assertTrue(spec.recordStats);
+  assertCacheBuilderEquivalence(CacheBuilder.newBuilder().recordStats(),CacheBuilder.from(spec));
+}
