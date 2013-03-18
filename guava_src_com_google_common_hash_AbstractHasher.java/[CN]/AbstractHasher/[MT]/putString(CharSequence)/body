@@ -1,6 +1,3 @@
 {
-  for (int i=0, len=charSequence.length(); i < len; i++) {
-    putChar(charSequence.charAt(i));
-  }
-  return this;
+  return putUnencodedChars(charSequence);
 }
