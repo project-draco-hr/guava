@@ -4,7 +4,6 @@
     @Override public void run(){
       try {
         V newValue=getAndRecordStats(key,hash,loadingValueReference,loadingFuture);
-        loadingValueReference.set(newValue);
       }
  catch (      Throwable t) {
         logger.log(Level.WARNING,"Exception thrown during refresh",t);

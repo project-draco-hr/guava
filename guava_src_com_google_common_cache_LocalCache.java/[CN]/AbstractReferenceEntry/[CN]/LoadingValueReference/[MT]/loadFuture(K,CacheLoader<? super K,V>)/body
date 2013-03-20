@@ -6,10 +6,17 @@
       V newValue=loader.load(key);
       return set(newValue) ? futureValue : Futures.immediateFuture(newValue);
     }
- else {
-      ListenableFuture<V> newValue=loader.reload(key,previousValue);
-      return newValue != null ? newValue : Futures.<V>immediateFuture(null);
+    ListenableFuture<V> newValue=loader.reload(key,previousValue);
+    if (newValue == null) {
+      return Futures.immediateFuture(null);
     }
+    return Futures.transform(newValue,new Function<V,V>(){
+      @Override public V apply(      V newValue){
+        LoadingValueReference.this.set(newValue);
+        return newValue;
+      }
+    }
+);
   }
  catch (  Throwable t) {
     if (t instanceof InterruptedException) {
