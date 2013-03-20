@@ -1,6 +1,6 @@
 {
-  double value=random.nextDouble();
+  char value=(char)random.nextInt();
   for (  PrimitiveSink sink : sinks) {
-    sink.putDouble(value);
+    sink.putChar(value);
   }
 }

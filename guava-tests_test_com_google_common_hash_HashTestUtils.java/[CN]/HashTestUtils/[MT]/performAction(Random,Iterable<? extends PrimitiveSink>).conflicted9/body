@@ -1,9 +1,5 @@
 {
-  char[] value=new char[random.nextInt(128)];
-  for (int i=0; i < value.length; i++) {
-    value[i]=(char)random.nextInt();
-  }
-  String s=new String(value);
+  String s=new String(new char[]{randomHighSurrogate(random)});
   for (  PrimitiveSink sink : sinks) {
     sink.putString(s);
   }

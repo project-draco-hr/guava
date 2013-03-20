@@ -5,5 +5,5 @@
     chars[i]=random.nextBoolean() ? randomLowSurrogate(random) : randomHighSurrogate(random);
   }
   String string=new String(chars);
-  assertEquals(hashFunction.hashString(string),hashFunction.newHasher().putString(string).hash());
+  assertEquals(hashFunction.hashUnencodedChars(string),hashFunction.newHasher().putString(string).hash());
 }
