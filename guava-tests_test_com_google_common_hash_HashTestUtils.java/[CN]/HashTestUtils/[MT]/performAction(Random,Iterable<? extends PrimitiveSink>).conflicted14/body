@@ -5,6 +5,6 @@
   }
   String s=new String(value);
   for (  PrimitiveSink sink : sinks) {
-    sink.putString(s);
+    sink.putUnencodedChars(s);
   }
 }
