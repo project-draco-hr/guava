@@ -5,7 +5,7 @@
       for (      Optional<V> element : values) {
         result.add(element != null ? element.orNull() : null);
       }
-      return result;
+      return Collections.unmodifiableList(result);
     }
   }
 );
