@@ -1,6 +1,6 @@
 {
   checkNotNull(guardedResolver);
-  Type type=typeTable.get(var);
+  Type type=map.get(var);
   if (type == null) {
     Type[] bounds=var.getBounds();
     if (bounds.length == 0) {

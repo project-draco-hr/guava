@@ -1,11 +1,3 @@
 {
-  ImmutableMap.Builder<TypeVariable<?>,Type> builder=ImmutableMap.builder();
-  builder.putAll(typeTable);
-  for (  Map.Entry<? extends TypeVariable<?>,? extends Type> mapping : mappings.entrySet()) {
-    TypeVariable<?> variable=mapping.getKey();
-    Type type=mapping.getValue();
-    checkArgument(!variable.equals(type),"Type variable %s bound to itself",variable);
-    builder.put(variable,type);
-  }
-  return new TypeResolver(builder.build());
+  return new TypeResolver(typeTable.where(mappings));
 }

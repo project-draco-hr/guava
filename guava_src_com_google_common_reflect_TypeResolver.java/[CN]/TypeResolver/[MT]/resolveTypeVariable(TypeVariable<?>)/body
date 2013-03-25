@@ -1,13 +1,12 @@
 {
-  final TypeResolver unguarded=this;
-  TypeResolver guarded=new TypeResolver(typeTable){
-    @Override Type resolveTypeVariable(    TypeVariable<?> intermediateVar,    TypeResolver guardedResolver){
+  TypeResolver guarded=new TypeResolver(new TypeTable(typeTable){
+    @Override public Type resolveTypeVariable(    TypeVariable<?> intermediateVar,    TypeResolver guardedResolver){
       if (intermediateVar.getGenericDeclaration().equals(var.getGenericDeclaration())) {
         return intermediateVar;
       }
-      return unguarded.resolveTypeVariable(intermediateVar,guardedResolver);
+      return typeTable.resolveTypeVariable(intermediateVar,guardedResolver);
     }
   }
-;
-  return resolveTypeVariable(var,guarded);
+);
+  return typeTable.resolveTypeVariable(var,guarded);
 }
