@@ -1,0 +1,11 @@
+{
+  map.putInstance(String.class,"test");
+  assertEquals(TypeToken.of(String.class),map.entrySet().iterator().next().getKey());
+  assertEquals("test",map.entrySet().iterator().next().getValue());
+  try {
+    map.entrySet().iterator().next().setValue(1);
+    fail();
+  }
+ catch (  UnsupportedOperationException expected) {
+  }
+}

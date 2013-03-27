@@ -1,0 +1,12 @@
+{
+  map.putInstance(String.class,"test");
+  @SuppressWarnings("unchecked") Entry<Object,Object> entry=(Entry<Object,Object>)map.entrySet().toArray()[0];
+  assertEquals(TypeToken.of(String.class),entry.getKey());
+  assertEquals("test",entry.getValue());
+  try {
+    entry.setValue(1);
+    fail();
+  }
+ catch (  UnsupportedOperationException expected) {
+  }
+}
