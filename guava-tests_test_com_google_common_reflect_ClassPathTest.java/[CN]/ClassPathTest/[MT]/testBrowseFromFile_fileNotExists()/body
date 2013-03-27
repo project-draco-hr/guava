@@ -1,6 +1,0 @@
-{
-  ClassLoader classLoader=ClassPathTest.class.getClassLoader();
-  ImmutableSet.Builder<ResourceInfo> resources=ImmutableSet.builder();
-  ClassPath.browseFrom(new File("no/such/file/anywhere"),classLoader,resources);
-  ASSERT.that(resources.build()).isEmpty();
-}

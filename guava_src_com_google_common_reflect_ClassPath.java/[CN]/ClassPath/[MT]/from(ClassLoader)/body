@@ -1,7 +1,7 @@
 {
-  ImmutableSortedSet.Builder<ResourceInfo> resources=new ImmutableSortedSet.Builder<ResourceInfo>(Ordering.usingToString());
+  Scanner scanner=new Scanner();
   for (  Map.Entry<URI,ClassLoader> entry : getClassPathEntries(classloader).entrySet()) {
-    browse(entry.getKey(),entry.getValue(),resources);
+    scanner.scan(entry.getKey(),entry.getValue());
   }
-  return new ClassPath(resources.build());
+  return new ClassPath(scanner.getResources());
 }

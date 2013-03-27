@@ -1,5 +1,0 @@
-{
-  if (uri.getScheme().equals("file")) {
-    browseFrom(new File(uri),classloader,resources);
-  }
-}

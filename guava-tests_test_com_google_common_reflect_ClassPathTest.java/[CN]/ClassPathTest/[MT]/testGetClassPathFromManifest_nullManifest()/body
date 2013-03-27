@@ -1,3 +1,3 @@
 {
-  ASSERT.that(ClassPath.getClassPathFromManifest(new File("some.jar"),null)).isEmpty();
+  ASSERT.that(ClassPath.Scanner.getClassPathFromManifest(new File("some.jar"),null)).isEmpty();
 }

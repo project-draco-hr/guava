@@ -2,7 +2,7 @@
   for (  File f : directory.listFiles()) {
     String name=f.getName();
     if (f.isDirectory()) {
-      browseDirectory(f,classloader,packagePrefix + name + "/",resources);
+      scanDirectory(f,classloader,packagePrefix + name + "/");
     }
  else {
       String resourceName=packagePrefix + name;

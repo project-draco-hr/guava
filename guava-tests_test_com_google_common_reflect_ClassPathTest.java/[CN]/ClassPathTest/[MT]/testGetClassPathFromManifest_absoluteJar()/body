@@ -1,5 +1,5 @@
 {
   File jarFile=new File("base/some.jar");
   Manifest manifest=manifestClasspath("file:/with/absolute.jar");
-  ASSERT.that(ClassPath.getClassPathFromManifest(jarFile,manifest)).has().allOf(new File("/with/absolute.jar").toURI()).inOrder();
+  ASSERT.that(ClassPath.Scanner.getClassPathFromManifest(jarFile,manifest)).has().allOf(new File("/with/absolute.jar").toURI()).inOrder();
 }

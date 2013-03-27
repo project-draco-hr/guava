@@ -1,3 +1,0 @@
-{
-  browseDirectory(directory,classloader,"",resources);
-}
