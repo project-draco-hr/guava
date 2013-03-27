@@ -1,0 +1,52 @@
+{
+  CharSequenceReader reader=new CharSequenceReader("");
+  reader.close();
+  try {
+    reader.read();
+    fail();
+  }
+ catch (  IOException expected) {
+  }
+  try {
+    reader.read(new char[10]);
+    fail();
+  }
+ catch (  IOException expected) {
+  }
+  try {
+    reader.read(new char[10],0,10);
+    fail();
+  }
+ catch (  IOException expected) {
+  }
+  try {
+    reader.read(CharBuffer.allocate(10));
+    fail();
+  }
+ catch (  IOException expected) {
+  }
+  try {
+    reader.skip(10);
+    fail();
+  }
+ catch (  IOException expected) {
+  }
+  try {
+    reader.ready();
+    fail();
+  }
+ catch (  IOException expected) {
+  }
+  try {
+    reader.mark(10);
+    fail();
+  }
+ catch (  IOException expected) {
+  }
+  try {
+    reader.reset();
+    fail();
+  }
+ catch (  IOException expected) {
+  }
+}

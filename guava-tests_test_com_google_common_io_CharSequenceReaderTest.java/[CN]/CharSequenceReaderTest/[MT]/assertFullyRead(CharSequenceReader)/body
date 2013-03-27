@@ -1,0 +1,6 @@
+{
+  assertEquals(-1,reader.read());
+  assertEquals(-1,reader.read(new char[10],0,10));
+  assertEquals(-1,reader.read(CharBuffer.allocate(10)));
+  assertEquals(0,reader.skip(10));
+}

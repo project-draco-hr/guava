@@ -1,0 +1,6 @@
+{
+  assertReadsCorrectly("abc");
+  assertReadsCorrectly("abcde");
+  assertReadsCorrectly("abcdefghijkl");
+  assertReadsCorrectly("" + "abcdefghijklmnopqrstuvwxyz\n" + "ABCDEFGHIJKLMNOPQRSTUVWXYZ\r"+ "0123456789\r\n"+ "!@#$%^&*()-=_+\t[]{};':\",./<>?\\| ");
+}

@@ -1,0 +1,6 @@
+{
+  TestSuite suite=new TestSuite();
+  suite.addTest(ByteSourceTester.tests("ByteSource.wrap[byte[]]",SourceSinkFactories.byteArraySourceFactory(),true));
+  suite.addTestSuite(ByteSourceTest.class);
+  return suite;
+}

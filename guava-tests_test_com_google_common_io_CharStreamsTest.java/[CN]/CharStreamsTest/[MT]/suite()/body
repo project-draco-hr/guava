@@ -1,6 +1,0 @@
-{
-  TestSuite suite=new TestSuite();
-  suite.addTest(CharSourceTester.tests("CharStreams.asCharSource[String]",SourceSinkFactories.stringCharSourceFactory()));
-  suite.addTestSuite(CharStreamsTest.class);
-  return suite;
-}
