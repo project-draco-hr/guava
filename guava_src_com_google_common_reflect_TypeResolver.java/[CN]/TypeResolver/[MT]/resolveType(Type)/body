@@ -1,7 +1,7 @@
 {
   checkNotNull(type);
   if (type instanceof TypeVariable) {
-    return resolveTypeVariable((TypeVariable<?>)type);
+    return typeTable.resolve((TypeVariable<?>)type);
   }
  else   if (type instanceof ParameterizedType) {
     return resolveParameterizedType((ParameterizedType)type);
