@@ -1,3 +1,3 @@
 {
-  return new ByteArrayByteSource(b);
+  return ByteSource.wrap(b);
 }

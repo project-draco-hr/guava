@@ -1,4 +1,0 @@
-{
-  output.write(bytes);
-  return bytes.length;
-}

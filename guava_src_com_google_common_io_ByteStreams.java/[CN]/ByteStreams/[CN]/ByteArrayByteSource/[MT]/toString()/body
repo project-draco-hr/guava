@@ -1,3 +1,0 @@
-{
-  return "ByteStreams.asByteSource(" + BaseEncoding.base16().encode(bytes) + ")";
-}

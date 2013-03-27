@@ -1,3 +1,3 @@
 {
-  return CharStreams.asOutputSupplier(ByteStreams.asByteSink(out).asCharSink(charset));
+  return asOutputSupplier(ByteStreams.asByteSink(out).asCharSink(charset));
 }
