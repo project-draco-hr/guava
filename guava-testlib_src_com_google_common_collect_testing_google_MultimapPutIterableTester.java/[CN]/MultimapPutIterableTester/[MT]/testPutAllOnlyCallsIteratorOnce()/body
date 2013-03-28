@@ -1,0 +1,12 @@
+{
+  Iterable<V> iterable=new Iterable<V>(){
+    private boolean calledIteratorAlready=false;
+    @Override public Iterator<V> iterator(){
+      checkState(!calledIteratorAlready);
+      calledIteratorAlready=true;
+      return Iterators.forArray(sampleValues().e3);
+    }
+  }
+;
+  multimap().putAll(sampleKeys().e3,iterable);
+}
