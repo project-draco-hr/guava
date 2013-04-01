@@ -1,0 +1,4 @@
+{
+  assertNotPrimitive(type);
+  assertNotWrapper(type);
+}

@@ -1,0 +1,5 @@
+{
+  assertTrue(type.isPrimitive());
+  assertNotWrapper(type);
+  assertEquals(TypeToken.of(Primitives.wrap((Class<?>)type.getType())),type.wrap());
+}

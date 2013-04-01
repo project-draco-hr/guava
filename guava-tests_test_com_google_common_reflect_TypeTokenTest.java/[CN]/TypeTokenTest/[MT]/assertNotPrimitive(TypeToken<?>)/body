@@ -1,0 +1,4 @@
+{
+  assertFalse(type.isPrimitive());
+  assertSame(type,type.wrap());
+}

@@ -1,0 +1,17 @@
+{
+  for (  Class<?> type : Primitives.allPrimitiveTypes()) {
+    assertIsPrimitive(TypeToken.of(type));
+  }
+  for (  Class<?> type : Primitives.allWrapperTypes()) {
+    assertIsWrapper(TypeToken.of(type));
+  }
+  assertNotPrimitiveNorWrapper(TypeToken.of(String.class));
+  assertNotPrimitiveNorWrapper(TypeToken.of(Object[].class));
+  assertNotPrimitiveNorWrapper(TypeToken.of(Types.subtypeOf(Object.class)));
+  assertNotPrimitiveNorWrapper(new TypeToken<List<String>>(){
+  }
+);
+  assertNotPrimitiveNorWrapper(TypeToken.of(new TypeCapture<T>(){
+  }
+.capture()));
+}

@@ -1,0 +1,4 @@
+{
+  assertNotPrimitive(type);
+  assertEquals(TypeToken.of(Primitives.unwrap((Class<?>)type.getType())),type.unwrap());
+}
