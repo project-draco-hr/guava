@@ -1,0 +1,8 @@
+{
+  Writer nullWriter=CharStreams.nullWriter();
+  nullWriter.write('n');
+  String test="Test string for NullWriter";
+  nullWriter.write(test);
+  nullWriter.write(test,2,10);
+  assertSame(CharStreams.nullWriter(),CharStreams.nullWriter());
+}
