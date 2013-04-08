@@ -1,0 +1,9 @@
+{
+  MapMaker maker=new MapMaker().expireAfterWrite(1,HOURS);
+  try {
+    maker.expireAfterWrite(1,HOURS);
+    fail();
+  }
+ catch (  IllegalStateException expected) {
+  }
+}

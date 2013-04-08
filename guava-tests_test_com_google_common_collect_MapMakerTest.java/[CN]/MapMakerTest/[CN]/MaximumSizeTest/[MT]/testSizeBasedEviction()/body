@@ -1,0 +1,12 @@
+{
+  int numKeys=10;
+  int mapSize=5;
+  ConcurrentMap<Object,Object> map=new MapMaker().maximumSize(mapSize).makeMap();
+  for (int i=0; i < numKeys; i++) {
+    map.put(i,i);
+  }
+  assertEquals(mapSize,map.size());
+  for (int i=numKeys - mapSize; i < mapSize; i++) {
+    assertTrue(map.containsKey(i));
+  }
+}

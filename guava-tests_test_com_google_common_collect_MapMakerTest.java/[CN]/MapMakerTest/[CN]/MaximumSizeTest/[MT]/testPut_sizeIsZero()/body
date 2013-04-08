@@ -1,0 +1,6 @@
+{
+  ConcurrentMap<Object,Object> map=new MapMaker().maximumSize(0).makeMap();
+  assertEquals(0,map.size());
+  map.put(new Object(),new Object());
+  assertEquals(0,map.size());
+}

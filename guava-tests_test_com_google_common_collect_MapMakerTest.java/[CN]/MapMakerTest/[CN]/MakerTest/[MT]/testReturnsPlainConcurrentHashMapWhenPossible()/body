@@ -1,0 +1,4 @@
+{
+  Map<?,?> map=new MapMaker().initialCapacity(5).makeMap();
+  assertTrue(map instanceof ConcurrentHashMap);
+}
