@@ -5,7 +5,8 @@
       return factory.createSource(bytes).slice(off,len);
     }
     @Override public byte[] getExpected(    byte[] bytes){
-      return Arrays.copyOfRange(factory.getExpected(bytes),off,off + len);
+      byte[] baseExpected=factory.getExpected(bytes);
+      return Arrays.copyOfRange(baseExpected,off,Math.min(baseExpected.length,off + len));
     }
     @Override public void tearDown() throws IOException {
       factory.tearDown();

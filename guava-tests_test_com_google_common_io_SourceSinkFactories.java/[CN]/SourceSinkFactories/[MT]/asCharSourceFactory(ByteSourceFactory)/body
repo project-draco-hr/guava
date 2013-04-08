@@ -5,7 +5,7 @@
       return factory.createSource(string.getBytes(Charsets.UTF_8)).asCharSource(Charsets.UTF_8);
     }
     @Override public String getExpected(    String data){
-      return checkNotNull(data);
+      return new String(factory.getExpected(data.getBytes(Charsets.UTF_8)),Charsets.UTF_8);
     }
     @Override public void tearDown() throws IOException {
       factory.tearDown();
