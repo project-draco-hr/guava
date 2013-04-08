@@ -1,0 +1,11 @@
+{
+  final ExecutorService callbackExecutor=new ThreadPoolExecutor(1,1,0L,TimeUnit.MILLISECONDS,new LinkedBlockingQueue<Runnable>()){
+    @Override public void execute(    Runnable command){
+      Thread.yield();
+      super.execute(command);
+      Thread.yield();
+    }
+  }
+;
+  return callbackExecutor;
+}

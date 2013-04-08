@@ -1,0 +1,62 @@
+{
+  final int numThreads=20;
+  final ExecutorService executor=Executors.newFixedThreadPool(numThreads);
+  final CountDownLatch latch=new CountDownLatch(numThreads);
+  for (int i=0; i < numThreads; i++) {
+    executor.execute(new Runnable(){
+      @Override public void run(){
+        latch.countDown();
+      }
+    }
+);
+  }
+  latch.await();
+  final AtomicInteger integer=new AtomicInteger();
+  final int numTasks=10000;
+  final CountDownLatch taskLatch=new CountDownLatch(numTasks);
+  final CyclicBarrier startBarrier=new CyclicBarrier(numThreads);
+  executor.execute(new Runnable(){
+    @Override public void run(){
+      final ExecutorService callbackExecutor=singleThreadedExecutorService();
+      try {
+        startBarrier.await();
+      }
+ catch (      Exception e) {
+        throw new RuntimeException(e);
+      }
+      for (int i=0; i < numTasks; i++) {
+        final int expectedCount=i;
+        queue.add(new Runnable(){
+          @Override public void run(){
+            integer.compareAndSet(expectedCount,expectedCount + 1);
+            taskLatch.countDown();
+            if (taskLatch.getCount() == 0) {
+              callbackExecutor.shutdown();
+            }
+          }
+        }
+,callbackExecutor);
+      }
+    }
+  }
+);
+  for (int i=0; i < numThreads - 1; i++) {
+    executor.execute(new Runnable(){
+      @Override public void run(){
+        try {
+          startBarrier.await();
+        }
+ catch (        Exception e) {
+          throw new RuntimeException(e);
+        }
+        while (taskLatch.getCount() > 0) {
+          queue.execute();
+        }
+      }
+    }
+);
+  }
+  taskLatch.await();
+  assertEquals(numTasks,integer.get());
+  executor.shutdown();
+}

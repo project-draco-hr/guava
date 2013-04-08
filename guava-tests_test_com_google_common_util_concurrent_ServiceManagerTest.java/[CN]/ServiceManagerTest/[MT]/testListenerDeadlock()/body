@@ -1,0 +1,42 @@
+{
+  final CountDownLatch failEnter=new CountDownLatch(1);
+  Service failRunService=new AbstractService(){
+    @Override protected void doStart(){
+      new Thread(){
+        @Override public void run(){
+          notifyStarted();
+          notifyFailed(new Exception("boom"));
+        }
+      }
+.start();
+    }
+    @Override protected void doStop(){
+      notifyStopped();
+    }
+  }
+;
+  final ServiceManager manager=new ServiceManager(Arrays.asList(failRunService,new NoOpService()));
+  manager.addListener(new ServiceManager.Listener(){
+    @Override public void healthy(){
+    }
+    @Override public void stopped(){
+    }
+    @Override public void failure(    Service service){
+      failEnter.countDown();
+      Uninterruptibles.awaitUninterruptibly(new CountDownLatch(1));
+    }
+  }
+,MoreExecutors.sameThreadExecutor());
+  manager.startAsync();
+  failEnter.await();
+  assertFalse("State should be updated before calling listeners",manager.isHealthy());
+  Thread stoppingThread=new Thread(){
+    @Override public void run(){
+      manager.stopAsync().awaitStopped();
+    }
+  }
+;
+  stoppingThread.start();
+  stoppingThread.join(1000);
+  assertFalse("stopAsync has deadlocked!.",stoppingThread.isAlive());
+}

@@ -5,15 +5,10 @@
     for (    final ListenerExecutorPair pair : listeners) {
       queuedListeners.add(new Runnable(){
         @Override public void run(){
-          pair.execute(new Runnable(){
-            @Override public void run(){
-              pair.listener.healthy();
-            }
-          }
-);
+          pair.listener.healthy();
         }
       }
-);
+,pair.executor);
     }
   }
 }

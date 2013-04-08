@@ -1,10 +1,5 @@
 {
   if (!lock.isHeldByCurrentThread()) {
-synchronized (queuedListeners) {
-      Runnable listener;
-      while ((listener=queuedListeners.poll()) != null) {
-        listener.run();
-      }
-    }
+    queuedListeners.execute();
   }
 }
