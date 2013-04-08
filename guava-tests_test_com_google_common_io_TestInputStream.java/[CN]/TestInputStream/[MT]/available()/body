@@ -1,0 +1,4 @@
+{
+  throwIf(closed);
+  return options.contains(TestOption.AVAILABLE_ALWAYS_ZERO) ? 0 : in.available();
+}

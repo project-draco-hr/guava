@@ -6,6 +6,9 @@
       if (in.read() == -1) {
         return count;
       }
+ else       if (count == 0 && in.available() == 0) {
+        throw new IOException();
+      }
       count++;
     }
  else {
