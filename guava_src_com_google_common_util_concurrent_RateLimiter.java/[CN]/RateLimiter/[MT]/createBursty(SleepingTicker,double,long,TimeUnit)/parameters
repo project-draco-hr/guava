@@ -1,3 +1,4 @@
 SleepingTicker ticker
 double permitsPerSecond
-int maxBurstSize
+long maxBurstBuildup
+TimeUnit unit

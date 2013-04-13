@@ -1,5 +1,5 @@
 {
-  RateLimiter limiter=RateLimiter.createBursty(ticker,1.0,10);
+  RateLimiter limiter=RateLimiter.createBursty(ticker,1.0,10,TimeUnit.SECONDS);
   ticker.sleepMillis(10000);
   limiter.acquire(11);
   limiter.acquire(1);

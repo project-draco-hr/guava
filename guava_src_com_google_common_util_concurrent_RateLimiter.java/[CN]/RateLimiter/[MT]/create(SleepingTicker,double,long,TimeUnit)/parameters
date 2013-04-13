@@ -1,4 +1,4 @@
 SleepingTicker ticker
 double permitsPerSecond
 long warmupPeriod
-TimeUnit timeUnit
+TimeUnit unit
