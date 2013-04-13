@@ -1,4 +1,6 @@
 {
-  stack.push(closeable);
+  if (closeable != null) {
+    stack.push(closeable);
+  }
   return closeable;
 }
