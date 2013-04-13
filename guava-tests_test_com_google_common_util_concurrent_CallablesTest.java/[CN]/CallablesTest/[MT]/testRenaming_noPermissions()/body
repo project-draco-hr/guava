@@ -1,0 +1,26 @@
+{
+  System.setSecurityManager(new SecurityManager(){
+    @Override public void checkAccess(    Thread t){
+      throw new SecurityException();
+    }
+    @Override public void checkPermission(    Permission perm){
+    }
+  }
+);
+  try {
+    final String oldName=Thread.currentThread().getName();
+    Supplier<String> newName=Suppliers.ofInstance("MyCrazyThreadName");
+    Callable<Void> callable=new Callable<Void>(){
+      @Override public Void call() throws Exception {
+        assertEquals(Thread.currentThread().getName(),oldName);
+        return null;
+      }
+    }
+;
+    Callables.threadRenaming(callable,newName).call();
+    assertEquals(oldName,Thread.currentThread().getName());
+  }
+  finally {
+    System.setSecurityManager(null);
+  }
+}

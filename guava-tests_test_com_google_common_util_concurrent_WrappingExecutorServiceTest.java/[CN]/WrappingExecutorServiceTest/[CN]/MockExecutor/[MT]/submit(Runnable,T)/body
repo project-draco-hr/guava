@@ -1,0 +1,5 @@
+{
+  lastMethodCalled="submit";
+  assertTrue(task instanceof WrappedRunnable);
+  return inline.submit(task,result);
+}

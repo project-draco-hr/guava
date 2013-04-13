@@ -1,0 +1,15 @@
+{
+  MockExecutor mock=new MockExecutor();
+  TestExecutor testExecutor=new TestExecutor(mock);
+  assertFalse(testExecutor.awaitTermination(10,TimeUnit.MILLISECONDS));
+  mock.assertLastMethodCalled("awaitTermination");
+  assertFalse(testExecutor.isTerminated());
+  mock.assertLastMethodCalled("isTerminated");
+  assertFalse(testExecutor.isShutdown());
+  mock.assertLastMethodCalled("isShutdown");
+  testExecutor.shutdown();
+  mock.assertLastMethodCalled("shutdown");
+  List<Runnable> list=testExecutor.shutdownNow();
+  mock.assertLastMethodCalled("shutdownNow");
+  assertEquals(ImmutableList.of(),list);
+}

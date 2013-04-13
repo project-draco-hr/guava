@@ -1,0 +1,8 @@
+{
+  MockExecutor mock=new MockExecutor();
+  TestExecutor testExecutor=new TestExecutor(mock);
+  testExecutor.schedule(DO_NOTHING,10,TimeUnit.MINUTES);
+  mock.assertLastMethodCalled("scheduleRunnable",10,TimeUnit.MINUTES);
+  testExecutor.schedule(Executors.callable(DO_NOTHING),5,TimeUnit.SECONDS);
+  mock.assertLastMethodCalled("scheduleCallable",5,TimeUnit.SECONDS);
+}

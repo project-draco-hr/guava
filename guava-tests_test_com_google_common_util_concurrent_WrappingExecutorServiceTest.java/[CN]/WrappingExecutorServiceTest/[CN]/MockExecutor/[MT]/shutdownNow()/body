@@ -1,0 +1,4 @@
+{
+  lastMethodCalled="shutdownNow";
+  return ImmutableList.of();
+}

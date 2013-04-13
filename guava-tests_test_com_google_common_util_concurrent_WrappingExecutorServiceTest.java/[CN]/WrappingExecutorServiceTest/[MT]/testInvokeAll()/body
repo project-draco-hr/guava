@@ -1,0 +1,19 @@
+{
+  List<Callable<String>> tasks=createTasks(3);
+{
+    MockExecutor mock=new MockExecutor();
+    TestExecutor testExecutor=new TestExecutor(mock);
+    List<Future<String>> futures=testExecutor.invokeAll(tasks);
+    mock.assertLastMethodCalled("invokeAll");
+    checkResults(futures);
+  }
+{
+    MockExecutor mock=new MockExecutor();
+    TimeUnit unit=TimeUnit.SECONDS;
+    long timeout=5;
+    TestExecutor testExecutor=new TestExecutor(mock);
+    List<Future<String>> futures=testExecutor.invokeAll(tasks,timeout,unit);
+    mock.assertMethodWithTimeout("invokeAll",timeout,unit);
+    checkResults(futures);
+  }
+}

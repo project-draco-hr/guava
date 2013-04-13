@@ -1,0 +1,6 @@
+{
+  assertTaskWrapped(tasks);
+  lastMethodCalled="invokeAllTimeout";
+  lastTimeoutInMillis=unit.toMillis(timeout);
+  return inline.invokeAll(tasks,timeout,unit);
+}

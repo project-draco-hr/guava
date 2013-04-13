@@ -1,0 +1,4 @@
+{
+  lastMethodCalled="isTerminated";
+  return false;
+}

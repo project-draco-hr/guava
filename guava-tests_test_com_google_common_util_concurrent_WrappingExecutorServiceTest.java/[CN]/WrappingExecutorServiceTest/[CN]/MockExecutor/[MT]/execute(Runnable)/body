@@ -1,0 +1,5 @@
+{
+  lastMethodCalled="execute";
+  assertTrue(command instanceof WrappedRunnable);
+  inline.execute(command);
+}

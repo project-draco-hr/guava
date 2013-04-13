@@ -1,0 +1,5 @@
+{
+  assertTaskWrapped(tasks);
+  lastMethodCalled="invokeAny";
+  return inline.submit(Iterables.get(tasks,0)).get();
+}

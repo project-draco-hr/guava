@@ -1,0 +1,6 @@
+{
+  assertEquals(method,lastMethodCalled);
+  assertEquals(initialDelay,lastInitialDelay);
+  assertEquals(delay,lastDelay);
+  assertEquals(unit,lastUnit);
+}

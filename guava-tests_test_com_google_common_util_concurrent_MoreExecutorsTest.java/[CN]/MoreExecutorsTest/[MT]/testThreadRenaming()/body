@@ -1,0 +1,11 @@
+{
+  Executor renamingExecutor=renamingDecorator(sameThreadExecutor(),Suppliers.ofInstance("FooBar"));
+  String oldName=Thread.currentThread().getName();
+  renamingExecutor.execute(new Runnable(){
+    @Override public void run(){
+      assertEquals("FooBar",Thread.currentThread().getName());
+    }
+  }
+);
+  assertEquals(oldName,Thread.currentThread().getName());
+}

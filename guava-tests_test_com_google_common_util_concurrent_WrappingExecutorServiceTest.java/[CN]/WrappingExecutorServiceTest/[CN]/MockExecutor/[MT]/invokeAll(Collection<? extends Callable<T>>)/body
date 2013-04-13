@@ -1,0 +1,5 @@
+{
+  lastMethodCalled="invokeAll";
+  assertTaskWrapped(tasks);
+  return inline.invokeAll(tasks);
+}

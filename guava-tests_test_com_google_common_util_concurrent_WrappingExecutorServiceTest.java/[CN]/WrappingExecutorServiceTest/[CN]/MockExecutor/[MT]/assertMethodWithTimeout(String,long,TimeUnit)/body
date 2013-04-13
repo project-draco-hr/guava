@@ -1,0 +1,4 @@
+{
+  assertLastMethodCalled(method + "Timeout");
+  assertEquals(unit.toMillis(timeout),lastTimeoutInMillis);
+}

@@ -1,0 +1,7 @@
+{
+  assertTrue(command instanceof WrappedRunnable);
+  lastMethodCalled="scheduleRunnable";
+  lastDelay=delay;
+  lastUnit=unit;
+  return null;
+}

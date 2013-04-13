@@ -1,0 +1,7 @@
+{
+  List<Callable<String>> callables=Lists.newArrayList();
+  for (int i=0; i < n; i++) {
+    callables.add(Callables.returning(RESULT_VALUE + i));
+  }
+  return callables;
+}

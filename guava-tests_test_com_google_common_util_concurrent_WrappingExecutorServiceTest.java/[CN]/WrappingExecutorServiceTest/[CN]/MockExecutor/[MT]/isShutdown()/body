@@ -1,0 +1,4 @@
+{
+  lastMethodCalled="isShutdown";
+  return false;
+}

@@ -1,0 +1,4 @@
+{
+  Predicate<Object> p=Predicates.instanceOf(WrappedCallable.class);
+  assertTrue(Iterables.all(tasks,p));
+}

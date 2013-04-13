@@ -1,0 +1,8 @@
+{
+  assertTrue(command instanceof WrappedRunnable);
+  lastMethodCalled="scheduleAtFixedRate";
+  lastInitialDelay=initialDelay;
+  lastDelay=period;
+  lastUnit=unit;
+  return null;
+}

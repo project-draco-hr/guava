@@ -1,0 +1,19 @@
+{
+  List<Callable<String>> tasks=createTasks(3);
+{
+    MockExecutor mock=new MockExecutor();
+    TestExecutor testExecutor=new TestExecutor(mock);
+    String s=testExecutor.invokeAny(tasks);
+    assertEquals("ran0",s);
+    mock.assertLastMethodCalled("invokeAny");
+  }
+{
+    MockExecutor mock=new MockExecutor();
+    TimeUnit unit=TimeUnit.SECONDS;
+    long timeout=5;
+    TestExecutor testExecutor=new TestExecutor(mock);
+    String s=testExecutor.invokeAny(tasks,timeout,unit);
+    assertEquals(RESULT_VALUE + "0",s);
+    mock.assertMethodWithTimeout("invokeAny",timeout,unit);
+  }
+}

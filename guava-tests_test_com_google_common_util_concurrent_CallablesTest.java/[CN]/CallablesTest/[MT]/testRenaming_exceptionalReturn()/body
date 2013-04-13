@@ -1,0 +1,20 @@
+{
+  String oldName=Thread.currentThread().getName();
+  final Supplier<String> newName=Suppliers.ofInstance("MyCrazyThreadName");
+class MyException extends Exception {
+  }
+  Callable<Void> callable=new Callable<Void>(){
+    @Override public Void call() throws Exception {
+      assertEquals(Thread.currentThread().getName(),newName.get());
+      throw new MyException();
+    }
+  }
+;
+  try {
+    Callables.threadRenaming(callable,newName).call();
+    fail();
+  }
+ catch (  MyException expected) {
+  }
+  assertEquals(oldName,Thread.currentThread().getName());
+}
