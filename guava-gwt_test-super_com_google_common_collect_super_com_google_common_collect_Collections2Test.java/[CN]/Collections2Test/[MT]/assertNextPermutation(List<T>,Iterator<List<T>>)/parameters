@@ -1,0 +1,2 @@
+List<T> expectedPermutation
+Iterator<List<T>> permutations

@@ -1,0 +1,9 @@
+{
+  try {
+    Preconditions.checkArgument(false,new Message());
+    fail("no exception thrown");
+  }
+ catch (  IllegalArgumentException expected) {
+    verifySimpleMessage(expected);
+  }
+}

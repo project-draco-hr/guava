@@ -1,0 +1,5 @@
+{
+  TreeBasedTable<String,Integer,Character> table=makeTable();
+  populateTable(table);
+  return table.rowMap().tailMap("b");
+}

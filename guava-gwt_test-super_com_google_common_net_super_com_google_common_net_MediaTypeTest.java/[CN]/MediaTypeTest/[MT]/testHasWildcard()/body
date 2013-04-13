@@ -1,0 +1,10 @@
+{
+  assertFalse(PLAIN_TEXT_UTF_8.hasWildcard());
+  assertFalse(JPEG.hasWildcard());
+  assertTrue(ANY_TYPE.hasWildcard());
+  assertTrue(ANY_APPLICATION_TYPE.hasWildcard());
+  assertTrue(ANY_AUDIO_TYPE.hasWildcard());
+  assertTrue(ANY_IMAGE_TYPE.hasWildcard());
+  assertTrue(ANY_TEXT_TYPE.hasWildcard());
+  assertTrue(ANY_VIDEO_TYPE.hasWildcard());
+}

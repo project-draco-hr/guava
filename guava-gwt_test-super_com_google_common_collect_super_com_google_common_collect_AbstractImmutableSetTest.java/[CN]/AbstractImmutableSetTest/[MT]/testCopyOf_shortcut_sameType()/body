@@ -1,0 +1,4 @@
+{
+  Collection<String> c=of("a","b","c");
+  assertSame(c,copyOf(c));
+}

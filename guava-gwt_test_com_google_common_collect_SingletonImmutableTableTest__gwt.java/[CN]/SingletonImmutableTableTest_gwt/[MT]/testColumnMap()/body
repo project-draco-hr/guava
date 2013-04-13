@@ -1,0 +1,4 @@
+{
+  com.google.common.collect.SingletonImmutableTableTest testCase=new com.google.common.collect.SingletonImmutableTableTest();
+  testCase.testColumnMap();
+}

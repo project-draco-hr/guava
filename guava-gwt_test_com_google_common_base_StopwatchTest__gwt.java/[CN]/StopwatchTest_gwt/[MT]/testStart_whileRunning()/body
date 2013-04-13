@@ -1,0 +1,4 @@
+{
+  com.google.common.base.StopwatchTest testCase=new com.google.common.base.StopwatchTest();
+  testCase.testStart_whileRunning();
+}

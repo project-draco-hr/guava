@@ -1,0 +1,7 @@
+{
+  Iterator<String> mod=Lists.newArrayList("a","b","c").iterator();
+  UnmodifiableIterator<String> unmod=Iterators.unmodifiableIterator(mod);
+  assertNotSame(mod,unmod);
+  assertSame(unmod,Iterators.unmodifiableIterator(unmod));
+  assertSame(unmod,Iterators.unmodifiableIterator((Iterator<String>)unmod));
+}

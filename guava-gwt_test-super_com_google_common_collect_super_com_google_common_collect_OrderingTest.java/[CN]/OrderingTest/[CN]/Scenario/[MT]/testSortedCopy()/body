@@ -1,0 +1,8 @@
+{
+  List<T> shuffledList=Lists.newArrayList(strictlyOrderedList);
+  shuffledList=shuffledCopy(shuffledList,new Random(5));
+  assertEquals(strictlyOrderedList,ordering.sortedCopy(shuffledList));
+  if (!strictlyOrderedList.contains(null)) {
+    assertEquals(strictlyOrderedList,ordering.immutableSortedCopy(shuffledList));
+  }
+}

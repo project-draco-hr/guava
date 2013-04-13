@@ -1,0 +1,4 @@
+{
+  Set<String> set=of("a","b","c");
+  assertEquals(Sets.newHashSet("a","b","c"),set);
+}

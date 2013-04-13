@@ -1,0 +1,17 @@
+{
+  SortedSet<String> strings=new NonNavigableSortedSet();
+  Collections.addAll(strings,"one","two","three");
+  SortedMap<String,Integer> map=Maps.asMap(strings,LENGTH_FUNCTION);
+  assertNull(map.comparator());
+  assertEquals(ImmutableSortedMap.of("one",3,"two",3,"three",5),map);
+  assertNull(map.get("four"));
+  strings.add("four");
+  assertEquals(ImmutableSortedMap.of("one",3,"two",3,"three",5,"four",4),map);
+  assertEquals(Integer.valueOf(4),map.get("four"));
+  SortedMap<String,Integer> headMap=map.headMap("two");
+  assertEquals(ImmutableSortedMap.of("four",4,"one",3,"three",5),headMap);
+  strings.add("five");
+  strings.remove("one");
+  assertEquals(ImmutableSortedMap.of("five",4,"four",4,"three",5),headMap);
+  ASSERT.that(map.entrySet()).has().allOf(mapEntry("five",4),mapEntry("four",4),mapEntry("three",5),mapEntry("two",3)).inOrder();
+}

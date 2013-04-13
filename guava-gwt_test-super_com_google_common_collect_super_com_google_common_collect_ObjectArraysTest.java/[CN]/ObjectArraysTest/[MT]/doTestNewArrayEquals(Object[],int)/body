@@ -1,0 +1,3 @@
+{
+  checkArrayEquals(expected,ObjectArrays.newArray(expected,length));
+}

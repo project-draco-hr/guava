@@ -1,0 +1,7 @@
+{
+  TreeSet<Derived> set=Sets.newTreeSet();
+  assertTrue(set.isEmpty());
+  set.add(new Derived("foo"));
+  set.add(new Derived("bar"));
+  ASSERT.that(set).has().allOf(new Derived("bar"),new Derived("foo")).inOrder();
+}

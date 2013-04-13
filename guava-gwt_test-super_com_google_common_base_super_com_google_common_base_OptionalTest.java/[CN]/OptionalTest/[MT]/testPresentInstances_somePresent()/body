@@ -1,0 +1,4 @@
+{
+  List<Optional<String>> optionals=ImmutableList.of(Optional.of("a"),Optional.<String>absent(),Optional.of("c"));
+  ASSERT.that(Optional.presentInstances(optionals)).iteratesOverSequence("a","c");
+}

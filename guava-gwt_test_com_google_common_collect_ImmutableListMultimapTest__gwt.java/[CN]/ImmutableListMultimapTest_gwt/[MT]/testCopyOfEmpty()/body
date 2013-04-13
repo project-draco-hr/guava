@@ -1,0 +1,4 @@
+{
+  com.google.common.collect.ImmutableListMultimapTest testCase=new com.google.common.collect.ImmutableListMultimapTest();
+  testCase.testCopyOfEmpty();
+}

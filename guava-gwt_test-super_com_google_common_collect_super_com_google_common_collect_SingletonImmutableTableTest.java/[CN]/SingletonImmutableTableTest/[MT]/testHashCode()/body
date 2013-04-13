@@ -1,0 +1,3 @@
+{
+  assertEquals(Objects.hashCode('a',1,"blah"),testTable.hashCode());
+}

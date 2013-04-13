@@ -1,0 +1,10 @@
+{
+  Set<String> all=Sets.union(friends,enemies);
+  assertEquals(5,all.size());
+  ImmutableSet<String> immut=Sets.union(friends,enemies).immutableCopy();
+  HashSet<String> mut=Sets.union(friends,enemies).copyInto(new HashSet<String>());
+  enemies.add("Buck");
+  assertEquals(6,all.size());
+  assertEquals(5,immut.size());
+  assertEquals(5,mut.size());
+}

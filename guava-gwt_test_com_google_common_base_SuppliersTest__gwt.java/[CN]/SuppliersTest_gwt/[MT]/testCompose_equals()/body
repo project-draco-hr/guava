@@ -1,0 +1,4 @@
+{
+  com.google.common.base.SuppliersTest testCase=new com.google.common.base.SuppliersTest();
+  testCase.testCompose_equals();
+}

@@ -1,0 +1,9 @@
+{
+  try {
+    Preconditions.checkElementIndex(1,1);
+    fail();
+  }
+ catch (  IndexOutOfBoundsException expected) {
+    assertEquals("index (1) must be less than size (1)",expected.getMessage());
+  }
+}

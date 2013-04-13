@@ -1,0 +1,9 @@
+{
+  for (int n=0; n <= 70; n++) {
+    for (int k=0; k <= n; k++) {
+      BigInteger expectedBig=BigIntegerMath.binomial(n,k);
+      long expectedLong=fitsInLong(expectedBig) ? expectedBig.longValue() : Long.MAX_VALUE;
+      assertEquals(expectedLong,LongMath.binomial(n,k));
+    }
+  }
+}

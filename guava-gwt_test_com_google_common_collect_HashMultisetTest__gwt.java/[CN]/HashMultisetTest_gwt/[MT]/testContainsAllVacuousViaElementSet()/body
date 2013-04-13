@@ -1,0 +1,5 @@
+{
+  com.google.common.collect.HashMultisetTest testCase=new com.google.common.collect.HashMultisetTest();
+  testCase.setUp();
+  testCase.testContainsAllVacuousViaElementSet();
+}

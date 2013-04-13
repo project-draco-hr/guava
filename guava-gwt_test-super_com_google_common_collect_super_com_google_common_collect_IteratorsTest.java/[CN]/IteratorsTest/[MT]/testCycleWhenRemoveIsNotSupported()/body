@@ -1,0 +1,11 @@
+{
+  Iterable<String> iterable=asList("a","b");
+  Iterator<String> cycle=Iterators.cycle(iterable);
+  cycle.next();
+  try {
+    cycle.remove();
+    fail("no exception thrown");
+  }
+ catch (  UnsupportedOperationException expected) {
+  }
+}

@@ -1,0 +1,9 @@
+{
+  assertFalse(numberOrdering.isStrictlyOrdered(asList(5,3,0,9)));
+  assertFalse(numberOrdering.isStrictlyOrdered(asList(0,5,3,9)));
+  assertTrue(numberOrdering.isStrictlyOrdered(asList(0,3,5,9)));
+  assertFalse(numberOrdering.isStrictlyOrdered(asList(0,0,3,3)));
+  assertTrue(numberOrdering.isStrictlyOrdered(asList(0,3)));
+  assertTrue(numberOrdering.isStrictlyOrdered(Collections.singleton(1)));
+  assertTrue(numberOrdering.isStrictlyOrdered(Collections.<Integer>emptyList()));
+}

@@ -1,0 +1,4 @@
+{
+  com.google.common.collect.TableCollectionTest.TreeRowMapSubMapTests testCase=new com.google.common.collect.TableCollectionTest.TreeRowMapSubMapTests();
+  testCase.testEntrySetRemove();
+}

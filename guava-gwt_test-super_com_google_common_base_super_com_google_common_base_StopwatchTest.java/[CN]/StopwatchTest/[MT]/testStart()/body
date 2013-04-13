@@ -1,0 +1,4 @@
+{
+  assertSame(stopwatch,stopwatch.start());
+  assertTrue(stopwatch.isRunning());
+}

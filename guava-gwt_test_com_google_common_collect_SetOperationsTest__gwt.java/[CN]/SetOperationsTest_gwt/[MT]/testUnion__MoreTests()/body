@@ -1,0 +1,5 @@
+{
+  com.google.common.collect.SetOperationsTest.MoreTests testCase=new com.google.common.collect.SetOperationsTest.MoreTests();
+  testCase.setUp();
+  testCase.testUnion();
+}

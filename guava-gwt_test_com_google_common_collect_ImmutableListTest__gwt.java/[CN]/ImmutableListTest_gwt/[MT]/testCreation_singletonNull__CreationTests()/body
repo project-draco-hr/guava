@@ -1,0 +1,4 @@
+{
+  com.google.common.collect.ImmutableListTest.CreationTests testCase=new com.google.common.collect.ImmutableListTest.CreationTests();
+  testCase.testCreation_singletonNull();
+}

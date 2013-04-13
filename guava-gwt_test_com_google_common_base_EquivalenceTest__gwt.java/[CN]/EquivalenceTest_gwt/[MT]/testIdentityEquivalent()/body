@@ -1,0 +1,4 @@
+{
+  com.google.common.base.EquivalenceTest testCase=new com.google.common.base.EquivalenceTest();
+  testCase.testIdentityEquivalent();
+}

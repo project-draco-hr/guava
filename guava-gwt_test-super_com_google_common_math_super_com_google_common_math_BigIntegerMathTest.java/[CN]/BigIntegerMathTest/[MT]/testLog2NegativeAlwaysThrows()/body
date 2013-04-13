@@ -1,0 +1,10 @@
+{
+  for (  RoundingMode mode : ALL_ROUNDING_MODES) {
+    try {
+      BigIntegerMath.log2(BigInteger.valueOf(-1),mode);
+      fail("Expected IllegalArgumentException");
+    }
+ catch (    IllegalArgumentException expected) {
+    }
+  }
+}

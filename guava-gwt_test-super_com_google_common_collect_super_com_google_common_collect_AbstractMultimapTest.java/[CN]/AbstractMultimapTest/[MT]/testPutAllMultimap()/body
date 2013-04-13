@@ -1,0 +1,17 @@
+{
+  multimap.put("foo",2);
+  multimap.put("cow",5);
+  multimap.put(nullKey(),2);
+  Multimap<String,Integer> multimap2=create();
+  multimap2.put("foo",1);
+  multimap2.put("bar",3);
+  multimap2.put(nullKey(),nullValue());
+  multimap.putAll(multimap2);
+  assertTrue(multimap.containsEntry("foo",2));
+  assertTrue(multimap.containsEntry("cow",5));
+  assertTrue(multimap.containsEntry("foo",1));
+  assertTrue(multimap.containsEntry("bar",3));
+  assertTrue(multimap.containsEntry(nullKey(),nullValue()));
+  assertTrue(multimap.containsEntry(nullKey(),2));
+  assertSize(6);
+}

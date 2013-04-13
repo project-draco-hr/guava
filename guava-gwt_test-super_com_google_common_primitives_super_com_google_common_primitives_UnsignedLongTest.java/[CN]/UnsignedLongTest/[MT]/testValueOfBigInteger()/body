@@ -1,0 +1,14 @@
+{
+  BigInteger min=BigInteger.ZERO;
+  BigInteger max=UnsignedLong.MAX_VALUE.bigIntegerValue();
+  for (  BigInteger big : TEST_BIG_INTEGERS) {
+    boolean expectSuccess=big.compareTo(min) >= 0 && big.compareTo(max) <= 0;
+    try {
+      assertEquals(big,UnsignedLong.valueOf(big).bigIntegerValue());
+      assertTrue(expectSuccess);
+    }
+ catch (    IllegalArgumentException e) {
+      assertFalse(expectSuccess);
+    }
+  }
+}

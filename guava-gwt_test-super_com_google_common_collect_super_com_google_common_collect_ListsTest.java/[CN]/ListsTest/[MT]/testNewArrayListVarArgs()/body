@@ -1,0 +1,4 @@
+{
+  ArrayList<Integer> list=Lists.newArrayList(0,1,1);
+  assertEquals(SOME_COLLECTION,list);
+}

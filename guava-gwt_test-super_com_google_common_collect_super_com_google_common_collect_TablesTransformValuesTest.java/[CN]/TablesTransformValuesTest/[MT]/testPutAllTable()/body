@@ -1,0 +1,17 @@
+{
+  table=create("foo",1,'a',"bar",1,'b',"foo",3,'c');
+  Table<String,Integer,Character> other=HashBasedTable.create();
+  other.put("foo",1,'d');
+  other.put("bar",2,'e');
+  other.put("cat",2,'f');
+  try {
+    table.putAll(other);
+    fail("Expected UnsupportedOperationException");
+  }
+ catch (  UnsupportedOperationException expected) {
+  }
+  assertEquals((Character)'a',table.get("foo",1));
+  assertEquals((Character)'b',table.get("bar",1));
+  assertEquals((Character)'c',table.get("foo",3));
+  assertSize(3);
+}

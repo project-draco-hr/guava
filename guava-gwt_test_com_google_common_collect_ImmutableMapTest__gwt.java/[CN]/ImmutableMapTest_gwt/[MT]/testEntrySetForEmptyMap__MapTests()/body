@@ -1,0 +1,4 @@
+{
+  com.google.common.collect.ImmutableMapTest.MapTests testCase=new com.google.common.collect.ImmutableMapTest.MapTests();
+  testCase.testEntrySetForEmptyMap();
+}

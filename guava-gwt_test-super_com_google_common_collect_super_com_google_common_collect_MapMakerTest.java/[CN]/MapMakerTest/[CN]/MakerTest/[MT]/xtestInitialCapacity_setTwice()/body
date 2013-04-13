@@ -1,0 +1,9 @@
+{
+  MapMaker maker=new MapMaker().initialCapacity(16);
+  try {
+    maker.initialCapacity(16);
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}

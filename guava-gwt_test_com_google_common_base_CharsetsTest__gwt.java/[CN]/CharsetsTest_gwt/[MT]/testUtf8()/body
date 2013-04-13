@@ -1,0 +1,4 @@
+{
+  com.google.common.base.CharsetsTest testCase=new com.google.common.base.CharsetsTest();
+  testCase.testUtf8();
+}

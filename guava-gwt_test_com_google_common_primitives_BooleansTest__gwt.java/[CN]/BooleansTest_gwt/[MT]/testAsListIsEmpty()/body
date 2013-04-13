@@ -1,0 +1,4 @@
+{
+  com.google.common.primitives.BooleansTest testCase=new com.google.common.primitives.BooleansTest();
+  testCase.testAsListIsEmpty();
+}

@@ -1,0 +1,5 @@
+{
+  com.google.common.collect.HashBasedTableTest testCase=new com.google.common.collect.HashBasedTableTest();
+  testCase.setUp();
+  testCase.testClear();
+}

@@ -1,0 +1,15 @@
+{
+  assertEquals(1,matcher.indexIn(s));
+  assertEquals(1,matcher.indexIn(s,0));
+  assertEquals(1,matcher.indexIn(s,1));
+  assertEquals(-1,matcher.indexIn(s,2));
+  assertEquals(1,matcher.lastIndexIn(s));
+  assertTrue(matcher.matchesAnyOf(s));
+  assertFalse(matcher.matchesAllOf(s));
+  assertFalse(matcher.matchesNoneOf(s));
+  assertEquals(s.substring(0,1),matcher.removeFrom(s));
+  assertEquals(s.substring(0,1) + "z",matcher.replaceFrom(s,'z'));
+  assertEquals(s.substring(0,1) + "ZZ",matcher.replaceFrom(s,"ZZ"));
+  assertEquals(s.substring(0,1),matcher.trimFrom(s));
+  assertEquals(1,matcher.countIn(s));
+}

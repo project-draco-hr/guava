@@ -1,0 +1,12 @@
+{
+  table=sortedTable=create("a",2,'X',"a",2,'X',"b",3,'X',"b",2,'X',"c",10,'X',"c",10,'X',"c",20,'X',"d",15,'X',"d",20,'X',"d",1,'X',"e",5,'X');
+  SortedMap<Integer,Character> row=sortedTable.row("c");
+  Set<Map.Entry<Integer,Character>> entrySet=row.entrySet();
+  assertTrue(entrySet.contains(Maps.immutableEntry(10,'X')));
+  assertTrue(entrySet.contains(Maps.immutableEntry(20,'X')));
+  assertFalse(entrySet.contains(Maps.immutableEntry(15,'X')));
+  entrySet=row.tailMap(15).entrySet();
+  assertFalse(entrySet.contains(Maps.immutableEntry(10,'X')));
+  assertTrue(entrySet.contains(Maps.immutableEntry(20,'X')));
+  assertFalse(entrySet.contains(Maps.immutableEntry(15,'X')));
+}

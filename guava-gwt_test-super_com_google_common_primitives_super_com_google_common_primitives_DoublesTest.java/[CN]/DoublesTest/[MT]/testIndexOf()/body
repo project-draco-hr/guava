@@ -1,0 +1,14 @@
+{
+  assertEquals(-1,Doubles.indexOf(EMPTY,(double)1));
+  assertEquals(-1,Doubles.indexOf(ARRAY1,(double)2));
+  assertEquals(-1,Doubles.indexOf(ARRAY234,(double)1));
+  assertEquals(0,Doubles.indexOf(new double[]{(double)-1},(double)-1));
+  assertEquals(0,Doubles.indexOf(ARRAY234,(double)2));
+  assertEquals(1,Doubles.indexOf(ARRAY234,(double)3));
+  assertEquals(2,Doubles.indexOf(ARRAY234,(double)4));
+  assertEquals(1,Doubles.indexOf(new double[]{(double)2,(double)3,(double)2,(double)3},(double)3));
+  for (  double value : NUMBERS) {
+    assertEquals("" + value,1,Doubles.indexOf(new double[]{5.0,value},value));
+  }
+  assertEquals(-1,Doubles.indexOf(new double[]{5.0,NaN},NaN));
+}

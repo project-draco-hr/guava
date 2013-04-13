@@ -1,0 +1,10 @@
+{
+  List<Byte> none=Arrays.<Byte>asList();
+  assertTrue(Arrays.equals(EMPTY,Bytes.toArray(none)));
+  List<Byte> one=Arrays.asList((byte)1);
+  assertTrue(Arrays.equals(ARRAY1,Bytes.toArray(one)));
+  byte[] array={(byte)0,(byte)1,(byte)0x55};
+  List<Byte> three=Arrays.asList((byte)0,(byte)1,(byte)0x55);
+  assertTrue(Arrays.equals(array,Bytes.toArray(three)));
+  assertTrue(Arrays.equals(array,Bytes.toArray(Bytes.asList(array))));
+}

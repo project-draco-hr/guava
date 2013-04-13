@@ -1,0 +1,13 @@
+{
+  final List list=new ArrayList<Predicate>();
+  Iterable iterable=new Iterable<Predicate>(){
+    @Override public Iterator<Predicate> iterator(){
+      return list.iterator();
+    }
+  }
+;
+  Predicate<Object> predicate=Predicates.and(iterable);
+  assertTrue(predicate.apply(1));
+  list.add(Predicates.alwaysFalse());
+  assertTrue(predicate.apply(1));
+}

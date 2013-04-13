@@ -1,0 +1,4 @@
+{
+  com.google.common.collect.ContiguousSetTest testCase=new com.google.common.collect.ContiguousSetTest();
+  testCase.testHeadSet_tooSmall();
+}

@@ -1,0 +1,4 @@
+{
+  assertEquals("text/plain",MediaType.create("text","plain").toString());
+  assertEquals("text/plain; something=\"cr@zy\"; something-else=\"crazy with spaces\"",MediaType.create("text","plain").withParameter("something","cr@zy").withParameter("something-else","crazy with spaces").toString());
+}

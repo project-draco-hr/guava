@@ -1,0 +1,10 @@
+{
+  Multimap<String,Integer> map=create();
+  map.put("bar",1);
+  map.put("foo",2);
+  map.put("bar",3);
+  map.get("foo").remove(2);
+  map.get("bar").remove(1);
+  assertEquals("{bar=[3]}",map.toString());
+  assertEquals("[bar=3]",map.entries().toString());
+}

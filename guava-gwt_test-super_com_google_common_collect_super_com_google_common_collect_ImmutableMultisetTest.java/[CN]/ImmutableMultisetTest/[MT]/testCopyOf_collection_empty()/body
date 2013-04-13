@@ -1,0 +1,5 @@
+{
+  Collection<String> c=MinimalCollection.<String>of();
+  Multiset<String> multiset=ImmutableMultiset.copyOf(c);
+  assertTrue(multiset.isEmpty());
+}

@@ -1,0 +1,8 @@
+{
+  try {
+    BigIntegerMath.factorial(-1);
+    fail("Expected IllegalArgumentException");
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}

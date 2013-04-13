@@ -1,0 +1,10 @@
+{
+  List<Character> none=Arrays.<Character>asList();
+  assertTrue(Arrays.equals(EMPTY,Chars.toArray(none)));
+  List<Character> one=Arrays.asList((char)1);
+  assertTrue(Arrays.equals(ARRAY1,Chars.toArray(one)));
+  char[] array={(char)0,(char)1,'A'};
+  List<Character> three=Arrays.asList((char)0,(char)1,'A');
+  assertTrue(Arrays.equals(array,Chars.toArray(three)));
+  assertTrue(Arrays.equals(array,Chars.toArray(Chars.asList(array))));
+}

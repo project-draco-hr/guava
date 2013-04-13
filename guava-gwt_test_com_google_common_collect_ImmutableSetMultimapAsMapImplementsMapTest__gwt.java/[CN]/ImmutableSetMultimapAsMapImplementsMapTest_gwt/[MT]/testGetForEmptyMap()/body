@@ -1,0 +1,4 @@
+{
+  com.google.common.collect.ImmutableSetMultimapAsMapImplementsMapTest testCase=new com.google.common.collect.ImmutableSetMultimapAsMapImplementsMapTest();
+  testCase.testGetForEmptyMap();
+}

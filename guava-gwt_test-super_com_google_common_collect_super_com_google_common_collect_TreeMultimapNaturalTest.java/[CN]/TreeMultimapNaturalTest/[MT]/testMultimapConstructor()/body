@@ -1,0 +1,5 @@
+{
+  Multimap<String,Integer> multimap=createSample();
+  TreeMultimap<String,Integer> copy=TreeMultimap.create(multimap);
+  assertEquals(multimap,copy);
+}

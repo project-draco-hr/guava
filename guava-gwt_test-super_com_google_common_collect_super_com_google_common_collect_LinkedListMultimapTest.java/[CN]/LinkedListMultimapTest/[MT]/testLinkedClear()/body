@@ -1,0 +1,15 @@
+{
+  ListMultimap<String,Integer> map=create();
+  map.put("foo",1);
+  map.put("foo",2);
+  map.put("bar",3);
+  List<Integer> foos=map.get("foo");
+  Collection<Integer> values=map.values();
+  assertEquals(asList(1,2),foos);
+  ASSERT.that(values).has().allOf(1,2,3).inOrder();
+  map.clear();
+  assertEquals(Collections.emptyList(),foos);
+  ASSERT.that(values).isEmpty();
+  assertEquals("[]",map.entries().toString());
+  assertEquals("{}",map.toString());
+}

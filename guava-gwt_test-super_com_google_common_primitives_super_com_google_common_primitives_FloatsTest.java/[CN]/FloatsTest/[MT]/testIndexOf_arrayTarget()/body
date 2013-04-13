@@ -1,0 +1,21 @@
+{
+  assertEquals(0,Floats.indexOf(EMPTY,EMPTY));
+  assertEquals(0,Floats.indexOf(ARRAY234,EMPTY));
+  assertEquals(-1,Floats.indexOf(EMPTY,ARRAY234));
+  assertEquals(-1,Floats.indexOf(ARRAY234,ARRAY1));
+  assertEquals(-1,Floats.indexOf(ARRAY1,ARRAY234));
+  assertEquals(0,Floats.indexOf(ARRAY1,ARRAY1));
+  assertEquals(0,Floats.indexOf(ARRAY234,ARRAY234));
+  assertEquals(0,Floats.indexOf(ARRAY234,new float[]{(float)2,(float)3}));
+  assertEquals(1,Floats.indexOf(ARRAY234,new float[]{(float)3,(float)4}));
+  assertEquals(1,Floats.indexOf(ARRAY234,new float[]{(float)3}));
+  assertEquals(2,Floats.indexOf(ARRAY234,new float[]{(float)4}));
+  assertEquals(1,Floats.indexOf(new float[]{(float)2,(float)3,(float)3,(float)3,(float)3},new float[]{(float)3}));
+  assertEquals(2,Floats.indexOf(new float[]{(float)2,(float)3,(float)2,(float)3,(float)4,(float)2,(float)3},new float[]{(float)2,(float)3,(float)4}));
+  assertEquals(1,Floats.indexOf(new float[]{(float)2,(float)2,(float)3,(float)4,(float)2,(float)3,(float)4},new float[]{(float)2,(float)3,(float)4}));
+  assertEquals(-1,Floats.indexOf(new float[]{(float)4,(float)3,(float)2},new float[]{(float)2,(float)3,(float)4}));
+  for (  float value : NUMBERS) {
+    assertEquals("" + value,1,Floats.indexOf(new float[]{5f,value,value,5f},new float[]{value,value}));
+  }
+  assertEquals(-1,Floats.indexOf(new float[]{5f,NaN,NaN,5f},new float[]{NaN,NaN}));
+}

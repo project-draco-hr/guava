@@ -1,0 +1,4 @@
+{
+  com.google.common.collect.TableCollectionTest.HashColumnMapTests testCase=new com.google.common.collect.TableCollectionTest.HashColumnMapTests();
+  testCase.testClear();
+}

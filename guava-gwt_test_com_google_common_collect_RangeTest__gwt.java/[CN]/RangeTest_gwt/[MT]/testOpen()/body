@@ -1,0 +1,4 @@
+{
+  com.google.common.collect.RangeTest testCase=new com.google.common.collect.RangeTest();
+  testCase.testOpen();
+}

@@ -1,0 +1,10 @@
+{
+  for (  BoundType lBoundType : BoundType.values()) {
+    GeneralRange<Integer> range=GeneralRange.upTo(ORDERING,3,lBoundType);
+    for (    Integer i : IN_ORDER_VALUES) {
+      assertEquals(ORDERING.compare(i,3) < 0 || (ORDERING.compare(i,3) == 0 && lBoundType == CLOSED),range.contains(i));
+      assertEquals(ORDERING.compare(i,3) > 0 || (ORDERING.compare(i,3) == 0 && lBoundType == OPEN),range.tooHigh(i));
+      assertFalse(range.tooLow(i));
+    }
+  }
+}

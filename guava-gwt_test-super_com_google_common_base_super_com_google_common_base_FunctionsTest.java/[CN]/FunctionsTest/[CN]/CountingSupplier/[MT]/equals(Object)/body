@@ -1,0 +1,6 @@
+{
+  if (obj instanceof CountingSupplier) {
+    return this.value == ((CountingSupplier)obj).value;
+  }
+  return false;
+}

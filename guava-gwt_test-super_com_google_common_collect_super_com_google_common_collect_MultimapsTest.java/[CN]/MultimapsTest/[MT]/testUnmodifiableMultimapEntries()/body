@@ -1,0 +1,29 @@
+{
+  Multimap<String,Integer> mod=HashMultimap.create();
+  Multimap<String,Integer> unmod=Multimaps.unmodifiableMultimap(mod);
+  mod.put("foo",1);
+  Entry<String,Integer> entry=unmod.entries().iterator().next();
+  try {
+    entry.setValue(2);
+    fail("UnsupportedOperationException expected");
+  }
+ catch (  UnsupportedOperationException expected) {
+  }
+  entry=(Entry<String,Integer>)unmod.entries().toArray()[0];
+  try {
+    entry.setValue(2);
+    fail("UnsupportedOperationException expected");
+  }
+ catch (  UnsupportedOperationException expected) {
+  }
+  Entry<String,Integer>[] array=(Entry<String,Integer>[])new Entry<?,?>[2];
+  assertSame(array,unmod.entries().toArray(array));
+  try {
+    array[0].setValue(2);
+    fail("UnsupportedOperationException expected");
+  }
+ catch (  UnsupportedOperationException expected) {
+  }
+  assertFalse(unmod.entries().contains(nefariousMapEntry("pwnd",2)));
+  assertFalse(unmod.keys().contains("pwnd"));
+}

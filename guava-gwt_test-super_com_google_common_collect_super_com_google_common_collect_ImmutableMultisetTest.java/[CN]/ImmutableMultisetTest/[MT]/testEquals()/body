@@ -1,0 +1,3 @@
+{
+  new EqualsTester().addEqualityGroup(ImmutableMultiset.of(),ImmutableMultiset.of()).addEqualityGroup(ImmutableMultiset.of(1),ImmutableMultiset.of(1)).addEqualityGroup(ImmutableMultiset.of(1,1),ImmutableMultiset.of(1,1)).addEqualityGroup(ImmutableMultiset.of(1,2,1),ImmutableMultiset.of(2,1,1)).testEquals();
+}

@@ -1,0 +1,9 @@
+{
+  assertEquals(expected,permutationSet.size());
+  Iterator<List<T>> permutations=permutationSet.iterator();
+  for (int i=0; i < expected; i++) {
+    assertTrue(permutations.hasNext());
+    permutations.next();
+  }
+  assertNoMorePermutations(permutations);
+}

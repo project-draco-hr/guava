@@ -1,0 +1,4 @@
+{
+  com.google.common.base.PredicatesTest testCase=new com.google.common.base.PredicatesTest();
+  testCase.testAnd_applyNoArgs();
+}

@@ -1,0 +1,4 @@
+{
+  ImmutableSortedMap<String,Integer> map=ImmutableSortedMap.<String,Integer>naturalOrder().build();
+  assertEquals(Collections.<String,Integer>emptyMap(),map);
+}

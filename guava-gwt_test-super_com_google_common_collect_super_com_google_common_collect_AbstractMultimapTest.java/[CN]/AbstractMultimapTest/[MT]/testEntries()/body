@@ -1,0 +1,7 @@
+{
+  multimap.put("foo",1);
+  multimap.put("foo",nullValue());
+  multimap.put(nullKey(),3);
+  Collection<Entry<String,Integer>> entries=multimap.entries();
+  ASSERT.that(entries).has().allOf(Maps.immutableEntry("foo",1),Maps.immutableEntry("foo",nullValue()),Maps.immutableEntry(nullKey(),3));
+}

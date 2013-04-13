@@ -1,0 +1,9 @@
+{
+  Multiset<Color> ms=EnumMultiset.create(Color.class);
+  ms.add(Color.RED);
+  ms.add(Color.YELLOW);
+  ms.add(Color.RED);
+  assertEquals(0,ms.count(Color.BLUE));
+  assertEquals(1,ms.count(Color.YELLOW));
+  assertEquals(2,ms.count(Color.RED));
+}

@@ -1,0 +1,9 @@
+{
+  for (  short value : VALUES) {
+    assertEquals(value,Shorts.checkedCast((long)value));
+  }
+  assertCastFails(GREATEST + 1L);
+  assertCastFails(LEAST - 1L);
+  assertCastFails(Long.MAX_VALUE);
+  assertCastFails(Long.MIN_VALUE);
+}

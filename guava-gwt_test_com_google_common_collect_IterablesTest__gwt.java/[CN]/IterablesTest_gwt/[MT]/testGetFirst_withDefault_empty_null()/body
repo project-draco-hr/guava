@@ -1,0 +1,4 @@
+{
+  com.google.common.collect.IterablesTest testCase=new com.google.common.collect.IterablesTest();
+  testCase.testGetFirst_withDefault_empty_null();
+}

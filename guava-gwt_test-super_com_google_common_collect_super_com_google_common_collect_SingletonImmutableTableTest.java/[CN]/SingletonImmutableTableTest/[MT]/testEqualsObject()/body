@@ -1,0 +1,3 @@
+{
+  new EqualsTester().addEqualityGroup(testTable,HashBasedTable.create(testTable)).addEqualityGroup(ImmutableTable.of(),HashBasedTable.create()).addEqualityGroup(HashBasedTable.create(ImmutableTable.of('A',2,""))).testEquals();
+}

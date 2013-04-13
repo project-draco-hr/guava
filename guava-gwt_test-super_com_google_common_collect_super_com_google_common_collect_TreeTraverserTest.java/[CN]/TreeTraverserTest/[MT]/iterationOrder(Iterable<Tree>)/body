@@ -1,0 +1,7 @@
+{
+  StringBuilder builder=new StringBuilder();
+  for (  Tree t : iterable) {
+    builder.append(t.value);
+  }
+  return builder.toString();
+}

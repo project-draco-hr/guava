@@ -1,0 +1,4 @@
+{
+  assertEquals(Optional.<String>absent(),Optional.<Integer>absent());
+  assertEquals(Optional.absent().hashCode(),Optional.absent().hashCode());
+}

@@ -1,0 +1,9 @@
+{
+  for (  byte value : VALUES) {
+    assertEquals(value,SignedBytes.checkedCast((long)value));
+  }
+  assertCastFails(GREATEST + 1L);
+  assertCastFails(LEAST - 1L);
+  assertCastFails(Long.MAX_VALUE);
+  assertCastFails(Long.MIN_VALUE);
+}

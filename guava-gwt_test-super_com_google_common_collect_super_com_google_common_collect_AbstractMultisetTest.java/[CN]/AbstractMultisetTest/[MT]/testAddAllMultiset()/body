@@ -1,0 +1,6 @@
+{
+  c=ms=createSample();
+  Multiset<String> more=HashMultiset.create(asList("c","c","d","d","e"));
+  assertTrue(ms.addAll(more));
+  assertContents("a","b","b","c","c","c","d","d","d","d","d","e");
+}

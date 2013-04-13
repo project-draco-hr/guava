@@ -1,0 +1,8 @@
+{
+  try {
+    Lists.newArrayListWithExpectedSize(-1);
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}

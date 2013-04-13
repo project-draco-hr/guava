@@ -1,0 +1,6 @@
+{
+  new EqualsTester().addEqualityGroup(TRUE,Predicates.alwaysTrue()).addEqualityGroup(FALSE).addEqualityGroup(Predicates.not(TRUE)).testEquals();
+  new EqualsTester().addEqualityGroup(FALSE,Predicates.alwaysFalse()).addEqualityGroup(TRUE).addEqualityGroup(Predicates.not(FALSE)).testEquals();
+  new EqualsTester().addEqualityGroup(Predicates.isNull(),Predicates.isNull()).addEqualityGroup(Predicates.notNull()).addEqualityGroup(Predicates.not(Predicates.isNull())).testEquals();
+  new EqualsTester().addEqualityGroup(Predicates.notNull(),Predicates.notNull()).addEqualityGroup(Predicates.isNull()).addEqualityGroup(Predicates.not(Predicates.notNull())).testEquals();
+}

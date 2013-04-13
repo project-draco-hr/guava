@@ -1,0 +1,4 @@
+{
+  com.google.common.collect.ImmutableSortedSetTest testCase=new com.google.common.collect.ImmutableSortedSetTest();
+  testCase.testReuseBuilderWithDuplicateElements();
+}

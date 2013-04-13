@@ -1,0 +1,5 @@
+{
+  com.google.common.collect.TransposedTableTest testCase=new com.google.common.collect.TransposedTableTest();
+  testCase.setUp();
+  testCase.testRowNull();
+}

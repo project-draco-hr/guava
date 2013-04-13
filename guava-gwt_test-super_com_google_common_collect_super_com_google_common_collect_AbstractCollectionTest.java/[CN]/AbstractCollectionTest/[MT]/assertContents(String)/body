@@ -1,0 +1,3 @@
+{
+  ASSERT.that(c).has().allFrom(asList(expected));
+}

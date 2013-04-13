@@ -1,0 +1,4 @@
+{
+  com.google.common.collect.ImmutableSortedMapTest.CreationTests testCase=new com.google.common.collect.ImmutableSortedMapTest.CreationTests();
+  testCase.testImmutableMapCopyOfImmutableSortedMap();
+}

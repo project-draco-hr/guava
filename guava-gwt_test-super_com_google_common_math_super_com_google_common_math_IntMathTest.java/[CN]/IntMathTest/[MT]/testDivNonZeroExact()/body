@@ -1,0 +1,17 @@
+{
+  for (  int p : NONZERO_INTEGER_CANDIDATES) {
+    for (    int q : NONZERO_INTEGER_CANDIDATES) {
+      if (p == -2147483648 && q == -1 && intsCanGoOutOfRange()) {
+        continue;
+      }
+      boolean dividesEvenly=(p % q) == 0;
+      try {
+        assertEquals(p + "/" + q,p,IntMath.divide(p,q,UNNECESSARY) * q);
+        assertTrue(p + "/" + q+ " not expected to divide evenly",dividesEvenly);
+      }
+ catch (      ArithmeticException e) {
+        assertFalse(p + "/" + q+ " expected to divide evenly",dividesEvenly);
+      }
+    }
+  }
+}

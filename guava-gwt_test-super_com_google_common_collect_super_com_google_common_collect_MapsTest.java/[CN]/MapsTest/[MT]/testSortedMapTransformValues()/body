@@ -1,0 +1,5 @@
+{
+  SortedMap<String,Integer> map=sortedNotNavigable(ImmutableSortedMap.of("a",4,"b",9));
+  SortedMap<String,Double> transformed=transformValues(map,SQRT_FUNCTION);
+  assertEquals(ImmutableSortedMap.of("a",2.0,"b",3.0),transformed);
+}

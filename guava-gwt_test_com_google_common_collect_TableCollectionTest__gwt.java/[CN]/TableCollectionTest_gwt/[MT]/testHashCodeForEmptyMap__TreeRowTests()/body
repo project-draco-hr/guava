@@ -1,0 +1,4 @@
+{
+  com.google.common.collect.TableCollectionTest.TreeRowTests testCase=new com.google.common.collect.TableCollectionTest.TreeRowTests();
+  testCase.testHashCodeForEmptyMap();
+}

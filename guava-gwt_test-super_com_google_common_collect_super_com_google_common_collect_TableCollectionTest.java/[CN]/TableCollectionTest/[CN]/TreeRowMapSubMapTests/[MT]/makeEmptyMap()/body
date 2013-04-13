@@ -1,0 +1,3 @@
+{
+  return makeTable().rowMap().subMap("b","x");
+}

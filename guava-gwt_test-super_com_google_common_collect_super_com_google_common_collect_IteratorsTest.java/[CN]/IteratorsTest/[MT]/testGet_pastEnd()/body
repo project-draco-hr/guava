@@ -1,0 +1,13 @@
+{
+  List<String> list=newArrayList();
+  list.add("a");
+  list.add("b");
+  Iterator<String> iterator=list.iterator();
+  try {
+    get(iterator,5);
+    fail();
+  }
+ catch (  IndexOutOfBoundsException expected) {
+  }
+  assertFalse(iterator.hasNext());
+}

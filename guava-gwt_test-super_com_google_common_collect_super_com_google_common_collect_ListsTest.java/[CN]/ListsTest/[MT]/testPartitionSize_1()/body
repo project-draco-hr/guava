@@ -1,0 +1,5 @@
+{
+  List<Integer> list=asList(1,2,3);
+  assertEquals(1,Lists.partition(list,Integer.MAX_VALUE).size());
+  assertEquals(1,Lists.partition(list,Integer.MAX_VALUE - 1).size());
+}

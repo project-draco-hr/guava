@@ -1,0 +1,10 @@
+{
+  Iterator<String> iterator=asList("one","two","three","four","five","six").iterator();
+  try {
+    Iterators.getOnlyElement(iterator);
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+    assertEquals("expected one element but was: " + "<one, two, three, four, five, ...>",expected.getMessage());
+  }
+}

@@ -1,0 +1,22 @@
+{
+  SetMultimap<String,Integer> multimap=LinkedHashMultimap.create();
+  multimap.put("foo",1);
+  multimap.put("bar",2);
+  multimap.put("baz",3);
+  multimap.put("bar",4);
+  SetMultimap<String,Integer> filtered=Multimaps.filterKeys(multimap,Predicates.in(ImmutableSet.of("foo","bar")));
+  Set<Integer> bazSet=filtered.get("baz");
+  ASSERT.that(bazSet).isEmpty();
+  try {
+    bazSet.add(5);
+    fail("Expected IllegalArgumentException");
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+  try {
+    bazSet.addAll(ImmutableSet.of(6,7));
+    fail("Expected IllegalArgumentException");
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}

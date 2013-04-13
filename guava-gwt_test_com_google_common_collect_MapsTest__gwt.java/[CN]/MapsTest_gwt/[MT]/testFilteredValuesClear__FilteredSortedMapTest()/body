@@ -1,0 +1,4 @@
+{
+  com.google.common.collect.MapsTest.FilteredSortedMapTest testCase=new com.google.common.collect.MapsTest.FilteredSortedMapTest();
+  testCase.testFilteredValuesClear();
+}

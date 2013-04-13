@@ -1,0 +1,8 @@
+{
+  try {
+    list.get(index);
+    fail();
+  }
+ catch (  IndexOutOfBoundsException expected) {
+  }
+}

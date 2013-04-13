@@ -1,0 +1,5 @@
+{
+  List<Integer> fromList=Lists.newArrayList(SOME_LIST);
+  List<Integer> toList=Lists.reverse(fromList);
+  assertReverseView(fromList,toList);
+}

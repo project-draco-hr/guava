@@ -1,0 +1,10 @@
+{
+  for (  String name : INVALID_NAME) {
+    try {
+      InternetDomainName.from(name);
+      fail("Should have been invalid: '" + name + "'");
+    }
+ catch (    IllegalArgumentException expected) {
+    }
+  }
+}

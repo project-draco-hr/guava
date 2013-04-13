@@ -1,0 +1,5 @@
+{
+  String longDelimiter="a, b, c";
+  Iterable<String> letters=Splitter.on(", ").split(longDelimiter);
+  ASSERT.that(letters).iteratesOverSequence("a","b","c");
+}

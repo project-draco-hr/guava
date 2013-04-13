@@ -1,0 +1,6 @@
+{
+  Map<String,Integer> mapJapaneseToInteger=Maps.newHashMap();
+  Function<String,Integer> japaneseToInteger=Functions.forMap(mapJapaneseToInteger);
+  Function<Object,String> numberToSpanish=Functions.constant("Yo no se");
+  Function<String,String> japaneseToSpanish=Functions.compose(numberToSpanish,japaneseToInteger);
+}

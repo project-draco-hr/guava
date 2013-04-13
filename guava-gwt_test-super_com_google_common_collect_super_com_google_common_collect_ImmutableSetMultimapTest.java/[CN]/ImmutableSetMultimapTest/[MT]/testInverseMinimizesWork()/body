@@ -1,0 +1,5 @@
+{
+  ImmutableSetMultimap<String,Character> multimap=ImmutableSetMultimap.of("of",'o',"of",'f',"to",'t',"to",'o');
+  assertSame(multimap.inverse(),multimap.inverse());
+  assertSame(multimap,multimap.inverse().inverse());
+}

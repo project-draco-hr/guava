@@ -1,0 +1,18 @@
+{
+  @SuppressWarnings("unchecked") Iterator<Iterator<Integer>> input=asList(iterateOver(1,2),null,iterateOver(3)).iterator();
+  Iterator<Integer> result=Iterators.concat(input);
+  assertEquals(1,(int)result.next());
+  assertEquals(2,(int)result.next());
+  try {
+    result.hasNext();
+    fail("no exception thrown");
+  }
+ catch (  NullPointerException e) {
+  }
+  try {
+    result.next();
+    fail("no exception thrown");
+  }
+ catch (  NullPointerException e) {
+  }
+}

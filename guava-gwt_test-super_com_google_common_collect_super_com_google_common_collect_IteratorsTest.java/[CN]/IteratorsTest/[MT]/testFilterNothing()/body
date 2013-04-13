@@ -1,0 +1,13 @@
+{
+  Iterator<String> unfiltered=Collections.<String>emptyList().iterator();
+  Iterator<String> filtered=Iterators.filter(unfiltered,new Predicate<String>(){
+    @Override public boolean apply(    String s){
+      fail("Should never be evaluated");
+      return false;
+    }
+  }
+);
+  List<String> expected=Collections.emptyList();
+  List<String> actual=Lists.newArrayList(filtered);
+  assertEquals(expected,actual);
+}

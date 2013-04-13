@@ -1,0 +1,9 @@
+{
+  Multiset<String> superMultiset=HashMultiset.create(Arrays.asList("a","b","a"));
+  Multiset<String> subMultiset=HashMultiset.create(Arrays.asList("a","b"));
+  assertTrue(Multisets.containsOccurrences(superMultiset,subMultiset));
+  assertFalse(Multisets.containsOccurrences(subMultiset,superMultiset));
+  Multiset<String> diffMultiset=HashMultiset.create(Arrays.asList("a","b","c"));
+  assertFalse(Multisets.containsOccurrences(superMultiset,diffMultiset));
+  assertTrue(Multisets.containsOccurrences(diffMultiset,subMultiset));
+}

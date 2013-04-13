@@ -1,0 +1,13 @@
+{
+  for (  long a : UNSIGNED_INTS) {
+    for (    long b : UNSIGNED_INTS) {
+      try {
+        assertEquals((int)(a / b),UnsignedInts.divide((int)a,(int)b));
+        assertFalse(b == 0);
+      }
+ catch (      ArithmeticException e) {
+        assertEquals(0,b);
+      }
+    }
+  }
+}

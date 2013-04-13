@@ -1,0 +1,4 @@
+{
+  c.add("a");
+  assertTrue(c.contains(new String("a")));
+}

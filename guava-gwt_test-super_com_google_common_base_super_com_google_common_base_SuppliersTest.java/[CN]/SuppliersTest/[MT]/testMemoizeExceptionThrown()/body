@@ -1,0 +1,17 @@
+{
+  Supplier<Integer> exceptingSupplier=new Supplier<Integer>(){
+    @Override public Integer get(){
+      throw new NullPointerException();
+    }
+  }
+;
+  Supplier<Integer> memoizedSupplier=Suppliers.memoize(exceptingSupplier);
+  for (int i=0; i < 2; i++) {
+    try {
+      memoizedSupplier.get();
+      fail("failed to throw NullPointerException");
+    }
+ catch (    NullPointerException e) {
+    }
+  }
+}

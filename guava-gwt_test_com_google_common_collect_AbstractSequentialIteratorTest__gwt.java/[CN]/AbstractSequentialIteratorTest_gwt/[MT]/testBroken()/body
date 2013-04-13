@@ -1,0 +1,4 @@
+{
+  com.google.common.collect.AbstractSequentialIteratorTest testCase=new com.google.common.collect.AbstractSequentialIteratorTest();
+  testCase.testBroken();
+}

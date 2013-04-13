@@ -1,0 +1,17 @@
+{
+  List<String> list=newArrayList("a","b","c","d","e");
+  assertTrue(Iterators.removeIf(list.iterator(),new Predicate<String>(){
+    @Override public boolean apply(    String s){
+      return s.equals("b") || s.equals("d") || s.equals("f");
+    }
+  }
+));
+  assertEquals(newArrayList("a","c","e"),list);
+  assertFalse(Iterators.removeIf(list.iterator(),new Predicate<String>(){
+    @Override public boolean apply(    String s){
+      return s.equals("x") || s.equals("y") || s.equals("z");
+    }
+  }
+));
+  assertEquals(newArrayList("a","c","e"),list);
+}

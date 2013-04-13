@@ -1,0 +1,3 @@
+{
+  return makeTable().rowMap().headMap("x");
+}

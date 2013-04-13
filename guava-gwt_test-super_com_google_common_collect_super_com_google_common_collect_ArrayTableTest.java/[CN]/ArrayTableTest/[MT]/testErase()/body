@@ -1,0 +1,12 @@
+{
+  ArrayTable<String,Integer,Character> table=create("foo",1,'a',"bar",1,'b',"foo",3,'c');
+  assertEquals((Character)'b',table.erase("bar",1));
+  assertNull(table.get("bar",1));
+  assertEquals(9,table.size());
+  assertNull(table.erase("bar",1));
+  assertNull(table.erase("foo",2));
+  assertNull(table.erase("dog",1));
+  assertNull(table.erase("bar",5));
+  assertNull(table.erase(null,1));
+  assertNull(table.erase("bar",null));
+}

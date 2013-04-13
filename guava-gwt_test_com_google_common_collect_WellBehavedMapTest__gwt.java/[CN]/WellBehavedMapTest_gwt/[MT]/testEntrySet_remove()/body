@@ -1,0 +1,4 @@
+{
+  com.google.common.collect.WellBehavedMapTest testCase=new com.google.common.collect.WellBehavedMapTest();
+  testCase.testEntrySet_remove();
+}

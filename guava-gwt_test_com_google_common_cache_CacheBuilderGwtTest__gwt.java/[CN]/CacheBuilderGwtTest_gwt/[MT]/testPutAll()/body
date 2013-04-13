@@ -1,0 +1,5 @@
+{
+  com.google.common.cache.CacheBuilderGwtTest testCase=new com.google.common.cache.CacheBuilderGwtTest();
+  testCase.setUp();
+  testCase.testPutAll();
+}

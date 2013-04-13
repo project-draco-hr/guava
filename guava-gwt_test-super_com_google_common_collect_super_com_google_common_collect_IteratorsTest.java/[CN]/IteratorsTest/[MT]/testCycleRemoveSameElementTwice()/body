@@ -1,0 +1,11 @@
+{
+  Iterator<String> cycle=Iterators.cycle("a","b");
+  cycle.next();
+  cycle.remove();
+  try {
+    cycle.remove();
+    fail("no exception thrown");
+  }
+ catch (  IllegalStateException expected) {
+  }
+}

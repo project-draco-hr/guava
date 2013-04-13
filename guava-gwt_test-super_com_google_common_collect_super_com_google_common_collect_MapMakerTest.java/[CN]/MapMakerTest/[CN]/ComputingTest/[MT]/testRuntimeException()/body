@@ -1,0 +1,16 @@
+{
+  final RuntimeException e=new RuntimeException();
+  ConcurrentMap<Object,Object> map=new MapMaker().makeComputingMap(new Function<Object,Object>(){
+    @Override public Object apply(    Object from){
+      throw e;
+    }
+  }
+);
+  try {
+    map.get(new Object());
+    fail();
+  }
+ catch (  ComputationException ce) {
+    assertSame(e,ce.getCause());
+  }
+}

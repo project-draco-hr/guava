@@ -1,0 +1,5 @@
+{
+  assertEquals(0,Booleans.asList(EMPTY).size());
+  assertEquals(1,Booleans.asList(ARRAY_FALSE).size());
+  assertEquals(2,Booleans.asList(ARRAY_FALSE_TRUE).size());
+}

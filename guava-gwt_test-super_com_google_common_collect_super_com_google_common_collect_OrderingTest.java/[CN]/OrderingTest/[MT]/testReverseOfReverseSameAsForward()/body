@@ -1,0 +1,3 @@
+{
+  assertSame(numberOrdering,numberOrdering.reverse().reverse());
+}

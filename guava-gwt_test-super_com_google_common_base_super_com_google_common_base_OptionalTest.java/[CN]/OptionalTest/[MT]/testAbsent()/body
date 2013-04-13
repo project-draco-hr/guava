@@ -1,0 +1,4 @@
+{
+  Optional<String> optionalName=Optional.absent();
+  assertFalse(optionalName.isPresent());
+}

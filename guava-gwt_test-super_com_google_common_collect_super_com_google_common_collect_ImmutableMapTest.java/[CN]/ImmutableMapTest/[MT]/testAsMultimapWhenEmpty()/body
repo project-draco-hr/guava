@@ -1,0 +1,5 @@
+{
+  ImmutableMap<String,Integer> map=ImmutableMap.of();
+  ImmutableSetMultimap<String,Integer> expected=ImmutableSetMultimap.of();
+  assertEquals(expected,map.asMultimap());
+}

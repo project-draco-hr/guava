@@ -1,0 +1,3 @@
+{
+  testGetOnEmpty(Sets.<String>newHashSet());
+}

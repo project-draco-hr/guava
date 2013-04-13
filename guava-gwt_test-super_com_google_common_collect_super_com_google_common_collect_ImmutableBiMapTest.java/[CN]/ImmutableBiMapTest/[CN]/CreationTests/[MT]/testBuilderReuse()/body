@@ -1,0 +1,9 @@
+{
+  Builder<String,Integer> builder=new Builder<String,Integer>();
+  ImmutableBiMap<String,Integer> mapOne=builder.put("one",1).put("two",2).build();
+  ImmutableBiMap<String,Integer> mapTwo=builder.put("three",3).put("four",4).build();
+  assertMapEquals(mapOne,"one",1,"two",2);
+  assertMapEquals(mapOne.inverse(),1,"one",2,"two");
+  assertMapEquals(mapTwo,"one",1,"two",2,"three",3,"four",4);
+  assertMapEquals(mapTwo.inverse(),1,"one",2,"two",3,"three",4,"four");
+}

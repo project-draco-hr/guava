@@ -1,0 +1,21 @@
+{
+  Iterator<String> iterator=list.iterator();
+  assertTrue(iterator.hasNext());
+  assertEquals("1",iterator.next());
+  assertTrue(iterator.hasNext());
+  assertEquals("2",iterator.next());
+  assertTrue(iterator.hasNext());
+  assertEquals("3",iterator.next());
+  assertTrue(iterator.hasNext());
+  assertEquals("4",iterator.next());
+  assertFalse(iterator.hasNext());
+  try {
+    iterator.next();
+    fail("did not detect end of list");
+  }
+ catch (  NoSuchElementException expected) {
+  }
+  iterator.remove();
+  assertEquals(asList("1","2","3"),list);
+  assertFalse(iterator.hasNext());
+}

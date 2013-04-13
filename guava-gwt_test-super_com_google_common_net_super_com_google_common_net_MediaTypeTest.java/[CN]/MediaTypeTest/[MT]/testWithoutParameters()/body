@@ -1,0 +1,4 @@
+{
+  assertSame(MediaType.parse("image/gif"),MediaType.parse("image/gif").withoutParameters());
+  assertEquals(MediaType.parse("image/gif"),MediaType.parse("image/gif; foo=bar").withoutParameters());
+}

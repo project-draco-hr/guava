@@ -1,0 +1,6 @@
+{
+  byte[] out=new byte[array.length + 1];
+  out[0]=b;
+  System.arraycopy(array,0,out,1,array.length);
+  return out;
+}

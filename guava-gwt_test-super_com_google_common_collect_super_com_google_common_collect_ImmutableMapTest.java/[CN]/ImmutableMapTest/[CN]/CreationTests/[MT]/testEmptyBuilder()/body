@@ -1,0 +1,4 @@
+{
+  ImmutableMap<String,Integer> map=new Builder<String,Integer>().build();
+  assertEquals(Collections.<String,Integer>emptyMap(),map);
+}

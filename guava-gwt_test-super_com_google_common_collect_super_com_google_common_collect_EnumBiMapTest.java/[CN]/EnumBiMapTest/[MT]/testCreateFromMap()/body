@@ -1,0 +1,21 @@
+{
+  Map<Currency,Country> map=ImmutableMap.of(Currency.DOLLAR,Country.CANADA,Currency.PESO,Country.CHILE,Currency.FRANC,Country.SWITZERLAND);
+  EnumBiMap<Currency,Country> bimap=EnumBiMap.create(map);
+  assertEquals(Country.CANADA,bimap.get(Currency.DOLLAR));
+  assertEquals(Currency.DOLLAR,bimap.inverse().get(Country.CANADA));
+  try {
+    EnumBiMap.create(Collections.<Currency,Country>emptyMap());
+    fail("IllegalArgumentException expected");
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+  try {
+    EnumBiMap.create(EnumHashBiMap.<Currency,Country>create(Currency.class));
+    fail("IllegalArgumentException expected");
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+  Map<Currency,Country> emptyBimap=EnumBiMap.create(Currency.class,Country.class);
+  bimap=EnumBiMap.create(emptyBimap);
+  assertTrue(bimap.isEmpty());
+}

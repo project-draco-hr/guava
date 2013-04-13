@@ -1,0 +1,7 @@
+{
+  long size=0;
+  for (  Multiset.Entry<String> entry : multiset.entrySet()) {
+    size+=entry.getCount();
+  }
+  assertEquals((int)Math.min(size,Integer.MAX_VALUE),multiset.size());
+}

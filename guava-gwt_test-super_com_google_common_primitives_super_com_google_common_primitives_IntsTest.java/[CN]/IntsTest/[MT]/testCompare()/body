@@ -1,0 +1,7 @@
+{
+  for (  int x : VALUES) {
+    for (    int y : VALUES) {
+      assertEquals(x + ", " + y,Integer.valueOf(x).compareTo(y),Ints.compare(x,y));
+    }
+  }
+}

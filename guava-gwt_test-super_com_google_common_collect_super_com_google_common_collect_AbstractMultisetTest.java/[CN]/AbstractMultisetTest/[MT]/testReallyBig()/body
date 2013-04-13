@@ -1,0 +1,9 @@
+{
+  ms.add("a",Integer.MAX_VALUE - 1);
+  assertEquals(Integer.MAX_VALUE - 1,ms.size());
+  ms.add("b",3);
+  assertEquals(Integer.MAX_VALUE,ms.size());
+  ms.remove("a",4);
+  assertEquals(Integer.MAX_VALUE - 2,ms.size());
+  assertSize();
+}

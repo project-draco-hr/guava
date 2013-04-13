@@ -1,0 +1,4 @@
+{
+  com.google.common.collect.ImmutableSetMultimapTest testCase=new com.google.common.collect.ImmutableSetMultimapTest();
+  testCase.testMultimapReads();
+}

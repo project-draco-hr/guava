@@ -1,0 +1,4 @@
+{
+  com.google.common.collect.IterablesTest testCase=new com.google.common.collect.IterablesTest();
+  testCase.testGet_emptySortedSet();
+}

@@ -1,0 +1,4 @@
+{
+  SortedSet<String> set=ImmutableSortedSet.copyOf(STRING_LENGTH,asIterator("in","the","quick","brown","fox","jumped","over","a","lazy","dog"));
+  ASSERT.that(set).has().allOf("a","in","the","over","quick","jumped").inOrder();
+}

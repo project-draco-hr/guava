@@ -1,0 +1,16 @@
+{
+  ms.add("a");
+  ms.add("b");
+  ms.add("c");
+  Iterator<String> iterator=ms.iterator();
+  iterator.next();
+  iterator.next();
+  iterator.next();
+  try {
+    iterator.next();
+    fail();
+  }
+ catch (  NoSuchElementException expected) {
+  }
+  assertSize();
+}

@@ -1,0 +1,3 @@
+{
+  assertEquals(ImmutableMap.of(),INSTANCE.column(1));
+}

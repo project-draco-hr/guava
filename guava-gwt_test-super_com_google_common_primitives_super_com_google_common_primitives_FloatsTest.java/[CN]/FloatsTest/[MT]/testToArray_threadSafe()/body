@@ -1,0 +1,14 @@
+{
+  for (  int delta : new int[]{+1,0,-1}) {
+    for (int i=0; i < VALUES.length; i++) {
+      List<Float> list=Floats.asList(VALUES).subList(0,i);
+      Collection<Float> misleadingSize=Helpers.misleadingSizeCollection(delta);
+      misleadingSize.addAll(list);
+      float[] arr=Floats.toArray(misleadingSize);
+      assertEquals(i,arr.length);
+      for (int j=0; j < i; j++) {
+        assertEquals(VALUES[j],arr[j]);
+      }
+    }
+  }
+}

@@ -1,0 +1,5 @@
+{
+  Set<SomeEnum> units=EnumSet.of(SomeEnum.B,SomeEnum.D);
+  EnumSet<SomeEnum> otherUnits=Sets.complementOf(units);
+  verifySetContents(otherUnits,EnumSet.of(SomeEnum.A,SomeEnum.C));
+}

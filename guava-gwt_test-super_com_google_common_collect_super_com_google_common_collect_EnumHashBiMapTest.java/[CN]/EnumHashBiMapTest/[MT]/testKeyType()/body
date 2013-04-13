@@ -1,0 +1,4 @@
+{
+  EnumHashBiMap<Currency,String> bimap=EnumHashBiMap.create(Currency.class);
+  assertEquals(Currency.class,bimap.keyType());
+}

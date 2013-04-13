@@ -1,0 +1,8 @@
+{
+  try {
+    Doubles.max();
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}

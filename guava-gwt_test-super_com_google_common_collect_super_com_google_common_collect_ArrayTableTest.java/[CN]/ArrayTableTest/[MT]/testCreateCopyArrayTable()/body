@@ -1,0 +1,10 @@
+{
+  Table<String,Integer,Character> original=create("foo",1,'a',"bar",1,'b',"foo",3,'c');
+  Table<String,Integer,Character> copy=ArrayTable.create(original);
+  assertEquals(original,copy);
+  original.put("foo",1,'d');
+  assertEquals((Character)'d',original.get("foo",1));
+  assertEquals((Character)'a',copy.get("foo",1));
+  assertEquals(copy.rowKeySet(),original.rowKeySet());
+  assertEquals(copy.columnKeySet(),original.columnKeySet());
+}

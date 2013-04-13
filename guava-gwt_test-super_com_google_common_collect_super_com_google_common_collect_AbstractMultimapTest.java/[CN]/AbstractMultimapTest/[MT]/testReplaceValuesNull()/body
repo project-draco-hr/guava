@@ -1,0 +1,13 @@
+{
+  multimap.put(nullKey(),1);
+  multimap.put("bar",3);
+  Collection<Integer> values=asList(2,nullValue());
+  Collection<Integer> oldValues=multimap.replaceValues(nullKey(),values);
+  assertTrue(multimap.containsEntry(nullKey(),2));
+  assertTrue(multimap.containsEntry(nullKey(),nullValue()));
+  assertTrue(multimap.containsEntry("bar",3));
+  assertSize(3);
+  assertTrue(oldValues.contains(1));
+  assertEquals(1,oldValues.size());
+  checkRemovedCollection(oldValues);
+}

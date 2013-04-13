@@ -1,0 +1,4 @@
+{
+  table=create("foo",1,'a');
+  assertEquals("{foo={1=a}}",table.toString());
+}

@@ -1,0 +1,5 @@
+{
+  Queue<Integer> queue=new UnIterableQueue<Integer>(Lists.newLinkedList(asList(5,14)));
+  Iterator<Integer> consumingIterator=Iterables.consumingIterable(queue).iterator();
+  assertEquals(5,consumingIterator.next().intValue());
+}

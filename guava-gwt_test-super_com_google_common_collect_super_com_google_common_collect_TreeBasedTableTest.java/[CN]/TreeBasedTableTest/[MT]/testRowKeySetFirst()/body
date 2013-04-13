@@ -1,0 +1,4 @@
+{
+  sortedTable=create("foo",1,'a',"bar",1,'b',"foo",3,'c');
+  assertSame("bar",sortedTable.rowKeySet().first());
+}

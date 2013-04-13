@@ -1,0 +1,13 @@
+{
+  final List<String> list=newArrayList("a","b","c","d","e");
+  Iterable<String> iterable=new Iterable<String>(){
+    @Override public Iterator<String> iterator(){
+      return list.iterator();
+    }
+  }
+;
+  assertTrue(Iterables.removeAll(iterable,newArrayList("b","d","f")));
+  assertEquals(newArrayList("a","c","e"),list);
+  assertFalse(Iterables.removeAll(iterable,newArrayList("x","y","z")));
+  assertEquals(newArrayList("a","c","e"),list);
+}

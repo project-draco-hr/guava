@@ -1,0 +1,7 @@
+{
+  Collection<String> set=newLinkedHashSet(asList("a","b","c"));
+  Iterable<String> tail=skip(set,1);
+  set.remove("b");
+  set.addAll(newArrayList("A","B","C"));
+  ASSERT.that(tail).iteratesOverSequence("c","A","B","C");
+}

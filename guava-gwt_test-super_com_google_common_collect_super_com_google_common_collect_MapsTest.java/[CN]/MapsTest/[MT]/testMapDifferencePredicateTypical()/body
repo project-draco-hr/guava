@@ -1,0 +1,24 @@
+{
+  Map<Integer,String> left=ImmutableMap.of(1,"a",2,"b",3,"c",4,"d",5,"e");
+  Map<Integer,String> right=ImmutableMap.of(1,"A",3,"F",5,"G",6,"Z");
+  Equivalence<String> caseInsensitiveEquivalence=Equivalence.equals().onResultOf(new Function<String,String>(){
+    @Override public String apply(    String input){
+      return input.toLowerCase();
+    }
+  }
+);
+  MapDifference<Integer,String> diff1=Maps.difference(left,right,caseInsensitiveEquivalence);
+  assertFalse(diff1.areEqual());
+  assertEquals(ImmutableMap.of(2,"b",4,"d"),diff1.entriesOnlyOnLeft());
+  assertEquals(ImmutableMap.of(6,"Z"),diff1.entriesOnlyOnRight());
+  assertEquals(ImmutableMap.of(1,"a"),diff1.entriesInCommon());
+  assertEquals(ImmutableMap.of(3,ValueDifferenceImpl.create("c","F"),5,ValueDifferenceImpl.create("e","G")),diff1.entriesDiffering());
+  assertEquals("not equal: only on left={2=b, 4=d}: only on right={6=Z}: " + "value differences={3=(c, F), 5=(e, G)}",diff1.toString());
+  MapDifference<Integer,String> diff2=Maps.difference(right,left,caseInsensitiveEquivalence);
+  assertFalse(diff2.areEqual());
+  assertEquals(ImmutableMap.of(6,"Z"),diff2.entriesOnlyOnLeft());
+  assertEquals(ImmutableMap.of(2,"b",4,"d"),diff2.entriesOnlyOnRight());
+  assertEquals(ImmutableMap.of(1,"A"),diff2.entriesInCommon());
+  assertEquals(ImmutableMap.of(3,ValueDifferenceImpl.create("F","c"),5,ValueDifferenceImpl.create("G","e")),diff2.entriesDiffering());
+  assertEquals("not equal: only on left={6=Z}: only on right={2=b, 4=d}: " + "value differences={3=(F, c), 5=(G, e)}",diff2.toString());
+}

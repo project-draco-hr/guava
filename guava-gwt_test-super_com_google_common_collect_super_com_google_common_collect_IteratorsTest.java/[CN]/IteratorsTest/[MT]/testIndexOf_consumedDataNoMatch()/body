@@ -1,0 +1,5 @@
+{
+  Iterator<String> iterator=Lists.newArrayList("manny","mo","mo","jack").iterator();
+  assertEquals(-1,Iterators.indexOf(iterator,Predicates.equalTo("bob")));
+  assertFalse(iterator.hasNext());
+}

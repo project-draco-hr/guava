@@ -1,0 +1,2 @@
+LinkedHashSet<E> set
+Collection<E> contents

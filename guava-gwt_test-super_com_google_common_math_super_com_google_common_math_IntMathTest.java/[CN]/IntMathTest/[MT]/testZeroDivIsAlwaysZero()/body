@@ -1,0 +1,7 @@
+{
+  for (  int q : NONZERO_INTEGER_CANDIDATES) {
+    for (    RoundingMode mode : ALL_ROUNDING_MODES) {
+      assertEquals(0,IntMath.divide(0,q,mode));
+    }
+  }
+}

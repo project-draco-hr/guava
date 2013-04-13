@@ -1,0 +1,3 @@
+{
+  assertEquals(Optional.of("fallback"),Optional.absent().or(Optional.of("fallback")));
+}

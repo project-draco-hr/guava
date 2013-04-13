@@ -1,0 +1,4 @@
+{
+  multimap.put("foo",nullValue());
+  assertTrue(multimap.containsValue(nullValue()));
+}

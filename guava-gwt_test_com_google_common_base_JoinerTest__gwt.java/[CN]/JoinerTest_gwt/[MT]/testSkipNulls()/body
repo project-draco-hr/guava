@@ -1,0 +1,4 @@
+{
+  com.google.common.base.JoinerTest testCase=new com.google.common.base.JoinerTest();
+  testCase.testSkipNulls();
+}

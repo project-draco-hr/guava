@@ -1,0 +1,4 @@
+{
+  com.google.common.collect.MapsSortedTransformValuesTest testCase=new com.google.common.collect.MapsSortedTransformValuesTest();
+  testCase.testPutAllNewKey();
+}

@@ -1,0 +1,9 @@
+{
+  Set<String> presentAsSet=Optional.of("a").asSet();
+  try {
+    presentAsSet.add("b");
+    fail();
+  }
+ catch (  UnsupportedOperationException expected) {
+  }
+}

@@ -1,0 +1,8 @@
+{
+  Ordering<String> caseInsensitiveOrdering=Ordering.from(String.CASE_INSENSITIVE_ORDER);
+  assertEquals(0,caseInsensitiveOrdering.compare("A","a"));
+  assertTrue(caseInsensitiveOrdering.compare("a","B") < 0);
+  assertTrue(caseInsensitiveOrdering.compare("B","a") > 0);
+  @SuppressWarnings("deprecation") Ordering<String> orderingFromOrdering=Ordering.from(Ordering.<String>natural());
+  new EqualsTester().addEqualityGroup(caseInsensitiveOrdering,Ordering.from(String.CASE_INSENSITIVE_ORDER)).addEqualityGroup(orderingFromOrdering,Ordering.natural()).testEquals();
+}

@@ -1,0 +1,4 @@
+{
+  FluentIterable<? extends Number> numbers=getSomeNumbers();
+  Optional<? extends Number> first=numbers.first();
+}

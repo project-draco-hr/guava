@@ -1,0 +1,10 @@
+{
+  assertSame(inout,is('-').collapseFrom(inout,'_'));
+  assertSame(inout,is('-').or(is('#')).collapseFrom(inout,'_'));
+  assertSame(inout,isNot('x').collapseFrom(inout,'_'));
+  assertSame(inout,is('x').negate().collapseFrom(inout,'_'));
+  assertSame(inout,anyOf("-").collapseFrom(inout,'_'));
+  assertSame(inout,anyOf("-#").collapseFrom(inout,'_'));
+  assertSame(inout,anyOf("-#123").collapseFrom(inout,'_'));
+  assertSame(inout,CharMatcher.NONE.collapseFrom(inout,'_'));
+}

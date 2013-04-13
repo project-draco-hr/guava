@@ -1,0 +1,5 @@
+{
+  com.google.common.collect.TreeBasedTableTest testCase=new com.google.common.collect.TreeBasedTableTest();
+  testCase.setUp();
+  testCase.testColumnKeySet_oneRow();
+}

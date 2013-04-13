@@ -1,0 +1,5 @@
+{
+  for (  float value : NUMBERS) {
+    assertEquals(!(Float.isInfinite(value) || Float.isNaN(value)),Floats.isFinite(value));
+  }
+}

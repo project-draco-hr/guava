@@ -1,0 +1,4 @@
+{
+  com.google.common.collect.ImmutableSortedMapTest.MapTests testCase=new com.google.common.collect.ImmutableSortedMapTest.MapTests();
+  testCase.testPutAllNewKey();
+}

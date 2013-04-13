@@ -1,0 +1,4 @@
+{
+  String[] result=ObjectArrays.concat(new String[]{"foo","bar"},"baz");
+  ASSERT.that(result).has().allOf("foo","bar","baz").inOrder();
+}

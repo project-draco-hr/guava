@@ -1,0 +1,3 @@
+{
+  new EqualsTester().addEqualityGroup(EnumBiMap.create(ImmutableMap.of(Currency.DOLLAR,Country.CANADA)),EnumBiMap.create(ImmutableMap.of(Currency.DOLLAR,Country.CANADA))).addEqualityGroup(EnumBiMap.create(ImmutableMap.of(Currency.DOLLAR,Country.CHILE))).addEqualityGroup(EnumBiMap.create(ImmutableMap.of(Currency.FRANC,Country.CANADA))).testEquals();
+}

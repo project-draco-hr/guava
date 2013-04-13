@@ -1,0 +1,3 @@
+{
+  super(allowsNullValues,supportsRemove,supportsClear,supportsIteratorRemove);
+}

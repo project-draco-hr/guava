@@ -1,0 +1,47 @@
+{
+  ListIterator<String> iterator=list.listIterator(1);
+  assertEquals(1,iterator.nextIndex());
+  assertEquals("2",iterator.next());
+  assertEquals("3",iterator.next());
+  assertEquals("4",iterator.next());
+  assertEquals(4,iterator.nextIndex());
+  try {
+    iterator.next();
+    fail("did not detect end of list");
+  }
+ catch (  NoSuchElementException expected) {
+  }
+  assertEquals(3,iterator.previousIndex());
+  assertEquals("4",iterator.previous());
+  assertEquals("3",iterator.previous());
+  assertEquals("2",iterator.previous());
+  assertTrue(iterator.hasPrevious());
+  assertEquals("1",iterator.previous());
+  assertFalse(iterator.hasPrevious());
+  assertEquals(-1,iterator.previousIndex());
+  try {
+    iterator.previous();
+    fail("did not detect beginning of list");
+  }
+ catch (  NoSuchElementException expected) {
+  }
+  iterator.remove();
+  assertEquals(asList("2","3","4"),list);
+  assertFalse(list.isEmpty());
+  try {
+    iterator.add("1");
+    fail("transformed list iterator is addable");
+  }
+ catch (  UnsupportedOperationException expected) {
+  }
+catch (  IllegalStateException expected) {
+  }
+  try {
+    iterator.set("1");
+    fail("transformed list iterator is settable");
+  }
+ catch (  UnsupportedOperationException expected) {
+  }
+catch (  IllegalStateException expected) {
+  }
+}

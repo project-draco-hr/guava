@@ -1,0 +1,12 @@
+{
+  List<Integer> list=asList(1,2,3);
+  List<List<Integer>> partitions=Lists.partition(list,3);
+  list.set(0,3);
+  Iterator<List<Integer>> iterator=partitions.iterator();
+  list.set(1,4);
+  List<Integer> first=iterator.next();
+  list.set(2,5);
+  assertEquals(asList(3,4,5),first);
+  first.set(1,6);
+  assertEquals(asList(3,6,5),list);
+}

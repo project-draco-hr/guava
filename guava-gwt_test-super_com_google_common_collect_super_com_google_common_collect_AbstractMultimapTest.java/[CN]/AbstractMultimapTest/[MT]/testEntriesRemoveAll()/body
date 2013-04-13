@@ -1,0 +1,10 @@
+{
+  multimap.put("foo",1);
+  multimap.put("foo",2);
+  multimap.put("bar",3);
+  assertFalse(multimap.entries().removeAll(Collections.singleton(Maps.immutableEntry("foo",3))));
+  assertSize(3);
+  assertTrue(multimap.entries().removeAll(asList(Maps.immutableEntry("foo",3),Maps.immutableEntry("bar",3))));
+  assertSize(2);
+  assertFalse(multimap.containsKey("bar"));
+}

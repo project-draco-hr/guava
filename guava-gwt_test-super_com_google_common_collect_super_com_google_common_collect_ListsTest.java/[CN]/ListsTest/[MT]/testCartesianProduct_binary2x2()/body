@@ -1,0 +1,3 @@
+{
+  ASSERT.that(Lists.cartesianProduct(list(1,2),list(3,4))).has().allOf(list(1,3),list(1,4),list(2,3),list(2,4)).inOrder();
+}

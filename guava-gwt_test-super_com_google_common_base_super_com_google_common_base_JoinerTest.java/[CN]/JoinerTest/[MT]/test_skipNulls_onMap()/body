@@ -1,0 +1,9 @@
+{
+  Joiner j=Joiner.on(",").skipNulls();
+  try {
+    j.withKeyValueSeparator("/");
+    fail();
+  }
+ catch (  UnsupportedOperationException expected) {
+  }
+}

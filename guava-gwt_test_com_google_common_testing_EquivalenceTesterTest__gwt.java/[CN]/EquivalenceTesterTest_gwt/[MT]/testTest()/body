@@ -1,0 +1,5 @@
+{
+  com.google.common.testing.EquivalenceTesterTest testCase=new com.google.common.testing.EquivalenceTesterTest();
+  testCase.setUp();
+  testCase.testTest();
+}

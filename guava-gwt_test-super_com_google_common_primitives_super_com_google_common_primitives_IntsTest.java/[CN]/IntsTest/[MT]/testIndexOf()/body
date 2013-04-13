@@ -1,0 +1,10 @@
+{
+  assertEquals(-1,Ints.indexOf(EMPTY,(int)1));
+  assertEquals(-1,Ints.indexOf(ARRAY1,(int)2));
+  assertEquals(-1,Ints.indexOf(ARRAY234,(int)1));
+  assertEquals(0,Ints.indexOf(new int[]{(int)-1},(int)-1));
+  assertEquals(0,Ints.indexOf(ARRAY234,(int)2));
+  assertEquals(1,Ints.indexOf(ARRAY234,(int)3));
+  assertEquals(2,Ints.indexOf(ARRAY234,(int)4));
+  assertEquals(1,Ints.indexOf(new int[]{(int)2,(int)3,(int)2,(int)3},(int)3));
+}

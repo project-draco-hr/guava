@@ -1,0 +1,9 @@
+{
+  SortedSet<String> set=of();
+  try {
+    set.last();
+    fail();
+  }
+ catch (  NoSuchElementException expected) {
+  }
+}

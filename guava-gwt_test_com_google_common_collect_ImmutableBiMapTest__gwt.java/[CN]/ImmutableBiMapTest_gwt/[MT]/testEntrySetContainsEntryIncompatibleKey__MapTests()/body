@@ -1,0 +1,4 @@
+{
+  com.google.common.collect.ImmutableBiMapTest.MapTests testCase=new com.google.common.collect.ImmutableBiMapTest.MapTests();
+  testCase.testEntrySetContainsEntryIncompatibleKey();
+}

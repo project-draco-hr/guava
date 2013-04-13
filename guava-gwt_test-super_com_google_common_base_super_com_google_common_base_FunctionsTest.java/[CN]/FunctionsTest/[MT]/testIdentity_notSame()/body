@@ -1,0 +1,4 @@
+{
+  Function<Long,Long> identity=Functions.identity();
+  assertNotSame(new Long(135135L),identity.apply(new Long(135135L)));
+}

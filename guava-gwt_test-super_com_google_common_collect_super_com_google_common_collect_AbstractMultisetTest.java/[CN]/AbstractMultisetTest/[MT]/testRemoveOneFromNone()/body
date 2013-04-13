@@ -1,0 +1,4 @@
+{
+  assertEquals(0,ms.remove("a",1));
+  assertContents();
+}

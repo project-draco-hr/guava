@@ -1,0 +1,8 @@
+{
+  try {
+    LinkedListMultimap.create(-20);
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}

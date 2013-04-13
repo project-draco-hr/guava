@@ -1,0 +1,10 @@
+{
+  ListMultimap<String,Integer> multimap=create();
+  multimap.putAll("foo",asList(1,2,3,4,5));
+  List<Integer> list=multimap.get("foo");
+  ASSERT.that(multimap.get("foo")).has().allOf(1,2,3,4,5).inOrder();
+  List<Integer> sublist=list.subList(1,4);
+  ASSERT.that(sublist).has().allOf(2,3,4).inOrder();
+  sublist.set(1,6);
+  ASSERT.that(multimap.get("foo")).has().allOf(1,2,6,4,5).inOrder();
+}

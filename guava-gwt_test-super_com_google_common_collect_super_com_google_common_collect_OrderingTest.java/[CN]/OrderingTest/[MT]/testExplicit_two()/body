@@ -1,0 +1,15 @@
+{
+  Comparator<Integer> c=Ordering.explicit(42,5);
+  assertEquals(0,c.compare(5,5));
+  assertTrue(c.compare(5,42) > 0);
+  assertTrue(c.compare(42,5) < 0);
+  try {
+    c.compare(5,666);
+    fail();
+  }
+ catch (  IncomparableValueException expected) {
+    assertEquals(666,expected.value);
+  }
+  new EqualsTester().addEqualityGroup(c,Ordering.explicit(42,5)).addEqualityGroup(Ordering.explicit(5,42)).addEqualityGroup(Ordering.explicit(42)).testEquals();
+  reserializeAndAssert(c);
+}

@@ -1,0 +1,5 @@
+{
+  List<float[]> ordered=Arrays.asList(new float[]{},new float[]{LEAST},new float[]{LEAST,LEAST},new float[]{LEAST,(float)1},new float[]{(float)1},new float[]{(float)1,LEAST},new float[]{GREATEST,Float.MAX_VALUE},new float[]{GREATEST,GREATEST},new float[]{GREATEST,GREATEST,GREATEST});
+  Comparator<float[]> comparator=Floats.lexicographicalComparator();
+  Helpers.testComparator(comparator,ordered);
+}

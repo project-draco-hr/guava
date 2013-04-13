@@ -1,0 +1,4 @@
+{
+  multimap.put("foo",1);
+  assertTrue(multimap.containsEntry("foo",1));
+}

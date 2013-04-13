@@ -1,0 +1,30 @@
+{
+  BiMap<Integer,Integer> bimap=HashBiMap.create(N);
+  BiMap<Integer,Integer> inverse=bimap.inverse();
+  for (int i=0; i < N; i++) {
+    assertNull(bimap.put(2 * i,2 * i + 1));
+  }
+  for (int i=0; i < N; i++) {
+    assertEquals(2 * i + 1,(int)bimap.get(2 * i));
+  }
+  for (int i=0; i < N; i++) {
+    assertEquals(2 * i,(int)inverse.get(2 * i + 1));
+  }
+  for (int i=0; i < N; i++) {
+    int oldValue=bimap.get(2 * i);
+    assertEquals(2 * i + 1,(int)bimap.put(2 * i,oldValue - 2));
+  }
+  for (int i=0; i < N; i++) {
+    assertEquals(2 * i - 1,(int)bimap.get(2 * i));
+  }
+  for (int i=0; i < N; i++) {
+    assertEquals(2 * i,(int)inverse.get(2 * i - 1));
+  }
+  Set<Entry<Integer,Integer>> entries=bimap.entrySet();
+  for (  Entry<Integer,Integer> entry : entries) {
+    entry.setValue(entry.getValue() + 2 * N);
+  }
+  for (int i=0; i < N; i++) {
+    assertEquals(2 * N + 2 * i - 1,(int)bimap.get(2 * i));
+  }
+}

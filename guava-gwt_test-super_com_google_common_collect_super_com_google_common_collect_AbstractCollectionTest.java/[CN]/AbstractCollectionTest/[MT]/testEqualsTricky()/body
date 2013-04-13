@@ -1,0 +1,12 @@
+{
+  c.add("a");
+  c.add("a");
+  Collection<String> c2=create();
+  c2.add("a");
+  c2.add("a");
+  c2.add("b");
+  c2.add("b");
+  c2.remove("b");
+  c2.remove("b");
+  assertEquals(c,c2);
+}

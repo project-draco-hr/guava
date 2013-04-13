@@ -1,0 +1,4 @@
+{
+  assertEquals("[false]",Booleans.asList(ARRAY_FALSE).toString());
+  assertEquals("[false, true]",Booleans.asList(ARRAY_FALSE_TRUE).toString());
+}

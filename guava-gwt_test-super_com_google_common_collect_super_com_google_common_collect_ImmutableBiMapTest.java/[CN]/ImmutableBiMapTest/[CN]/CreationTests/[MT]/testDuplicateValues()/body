@@ -1,0 +1,10 @@
+{
+  ImmutableMap<String,Integer> map=new ImmutableMap.Builder<String,Integer>().put("one",1).put("two",2).put("uno",1).put("dos",2).build();
+  try {
+    ImmutableBiMap.copyOf(map);
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+    assertTrue(expected.getMessage().contains("1"));
+  }
+}

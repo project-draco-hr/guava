@@ -1,0 +1,8 @@
+{
+  Byte[] array=new Byte[elements.length];
+  int i=0;
+  for (  Object e : elements) {
+    array[i++]=(Byte)e;
+  }
+  return create(array);
+}

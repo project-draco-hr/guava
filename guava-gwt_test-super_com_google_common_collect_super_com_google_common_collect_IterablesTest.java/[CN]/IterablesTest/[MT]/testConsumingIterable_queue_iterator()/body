@@ -1,0 +1,9 @@
+{
+  final List<Integer> items=ImmutableList.of(4,8,15,16,23,42);
+  new IteratorTester<Integer>(3,UNMODIFIABLE,items,IteratorTester.KnownOrder.KNOWN_ORDER){
+    @Override protected Iterator<Integer> newTargetIterator(){
+      return Iterables.consumingIterable(Lists.newLinkedList(items)).iterator();
+    }
+  }
+.test();
+}

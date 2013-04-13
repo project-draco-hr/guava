@@ -1,0 +1,4 @@
+{
+  com.google.common.primitives.LongsTest testCase=new com.google.common.primitives.LongsTest();
+  testCase.testAsList_toArray_roundTrip();
+}

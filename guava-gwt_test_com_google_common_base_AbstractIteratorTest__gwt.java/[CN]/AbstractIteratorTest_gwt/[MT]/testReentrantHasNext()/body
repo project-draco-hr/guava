@@ -1,0 +1,4 @@
+{
+  com.google.common.base.AbstractIteratorTest testCase=new com.google.common.base.AbstractIteratorTest();
+  testCase.testReentrantHasNext();
+}

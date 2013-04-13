@@ -1,0 +1,6 @@
+{
+  assertEquals("",Booleans.join(",",EMPTY));
+  assertEquals("false",Booleans.join(",",ARRAY_FALSE));
+  assertEquals("false,true",Booleans.join(",",false,true));
+  assertEquals("falsetruefalse",Booleans.join("",false,true,false));
+}

@@ -1,0 +1,15 @@
+{
+  String[] array={"foo","bar","cat","dog"};
+  Iterator<String> iterator=Iterators.forArray(array,1,2,0);
+  assertTrue(iterator.hasNext());
+  assertEquals("bar",iterator.next());
+  assertTrue(iterator.hasNext());
+  assertEquals("cat",iterator.next());
+  assertFalse(iterator.hasNext());
+  try {
+    Iterators.forArray(array,2,3,0);
+    fail();
+  }
+ catch (  IndexOutOfBoundsException expected) {
+  }
+}

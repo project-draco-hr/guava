@@ -1,0 +1,4 @@
+{
+  com.google.common.collect.TableCollectionTest.TreeRowMapTests testCase=new com.google.common.collect.TableCollectionTest.TreeRowMapTests();
+  testCase.testPutNewKey();
+}

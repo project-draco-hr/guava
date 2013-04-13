@@ -1,0 +1,5 @@
+{
+  table=create("foo",1,'a',"bar",1,'b',"foo",3,'c');
+  assertEquals("{foo={1=a, 2=null, 3=c}, " + "bar={1=b, 2=null, 3=null}, " + "cat={1=null, 2=null, 3=null}}",table.toString());
+  assertEquals("{foo={1=a, 2=null, 3=c}, " + "bar={1=b, 2=null, 3=null}, " + "cat={1=null, 2=null, 3=null}}",table.rowMap().toString());
+}

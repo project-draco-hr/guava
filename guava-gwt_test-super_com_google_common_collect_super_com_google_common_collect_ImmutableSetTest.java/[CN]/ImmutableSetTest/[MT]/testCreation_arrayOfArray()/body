@@ -1,0 +1,5 @@
+{
+  String[] array=new String[]{"a"};
+  Set<String[]> set=ImmutableSet.<String[]>of(array);
+  assertEquals(Collections.singleton(array),set);
+}

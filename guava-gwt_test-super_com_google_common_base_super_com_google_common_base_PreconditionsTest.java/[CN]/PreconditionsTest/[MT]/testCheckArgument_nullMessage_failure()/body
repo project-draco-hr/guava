@@ -1,0 +1,9 @@
+{
+  try {
+    Preconditions.checkArgument(false,null);
+    fail("no exception thrown");
+  }
+ catch (  IllegalArgumentException expected) {
+    assertEquals("null",expected.getMessage());
+  }
+}

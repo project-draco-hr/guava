@@ -1,0 +1,16 @@
+{
+  SortedSet<String> sortedSet=Sets.newTreeSet(asList("foo","bar"));
+  SortedSet<String> constrained=Constraints.constrainedSortedSet(sortedSet,TEST_CONSTRAINT);
+  sortedSet.add(TEST_ELEMENT);
+  constrained.add("qux");
+  constrained.addAll(asList("cat","dog"));
+  assertTrue(sortedSet.equals(constrained));
+  assertTrue(constrained.equals(sortedSet));
+  assertEquals(sortedSet.toString(),constrained.toString());
+  assertEquals(sortedSet.hashCode(),constrained.hashCode());
+  ASSERT.that(sortedSet).has().allOf("bar","cat","dog","foo","qux",TEST_ELEMENT).inOrder();
+  ASSERT.that(constrained).has().allOf("bar","cat","dog","foo","qux",TEST_ELEMENT).inOrder();
+  assertNull(constrained.comparator());
+  assertEquals("bar",constrained.first());
+  assertEquals(TEST_ELEMENT,constrained.last());
+}

@@ -1,0 +1,4 @@
+{
+  com.google.common.base.CharMatcherTest testCase=new com.google.common.base.CharMatcherTest();
+  testCase.testGeneral();
+}

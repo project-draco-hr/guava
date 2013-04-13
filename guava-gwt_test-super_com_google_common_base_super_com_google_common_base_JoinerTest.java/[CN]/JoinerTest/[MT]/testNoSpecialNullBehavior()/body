@@ -1,0 +1,30 @@
+{
+  checkNoOutput(J,ITERABLE_);
+  checkResult(J,ITERABLE_1,"1");
+  checkResult(J,ITERABLE_12,"1-2");
+  checkResult(J,ITERABLE_123,"1-2-3");
+  try {
+    J.join(ITERABLE_NULL);
+    fail();
+  }
+ catch (  NullPointerException expected) {
+  }
+  try {
+    J.join(ITERABLE_1_NULL_2);
+    fail();
+  }
+ catch (  NullPointerException expected) {
+  }
+  try {
+    J.join(ITERABLE_NULL.iterator());
+    fail();
+  }
+ catch (  NullPointerException expected) {
+  }
+  try {
+    J.join(ITERABLE_1_NULL_2.iterator());
+    fail();
+  }
+ catch (  NullPointerException expected) {
+  }
+}

@@ -1,0 +1,7 @@
+{
+  List<String> list=newArrayList("a","b","c","d","e");
+  assertTrue(Iterators.removeAll(list.iterator(),newArrayList("b","d","f")));
+  assertEquals(newArrayList("a","c","e"),list);
+  assertFalse(Iterators.removeAll(list.iterator(),newArrayList("x","y","z")));
+  assertEquals(newArrayList("a","c","e"),list);
+}

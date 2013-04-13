@@ -1,0 +1,6 @@
+{
+  Multimap<String,Integer> setMultimap=HashMultimap.create();
+  Multimap<String,Integer> listMultimap=ArrayListMultimap.create();
+  assertTrue(setMultimap.equals(listMultimap));
+  assertTrue(listMultimap.equals(setMultimap));
+}

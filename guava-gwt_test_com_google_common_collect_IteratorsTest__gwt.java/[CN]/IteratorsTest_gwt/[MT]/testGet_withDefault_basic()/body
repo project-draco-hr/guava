@@ -1,0 +1,4 @@
+{
+  com.google.common.collect.IteratorsTest testCase=new com.google.common.collect.IteratorsTest();
+  testCase.testGet_withDefault_basic();
+}

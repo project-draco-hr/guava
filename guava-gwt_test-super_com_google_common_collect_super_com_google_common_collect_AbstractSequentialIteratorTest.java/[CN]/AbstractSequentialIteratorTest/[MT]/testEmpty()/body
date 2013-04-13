@@ -1,0 +1,16 @@
+{
+  Iterator<Object> empty=newEmpty();
+  assertFalse(empty.hasNext());
+  try {
+    empty.next();
+    fail();
+  }
+ catch (  NoSuchElementException expected) {
+  }
+  try {
+    empty.remove();
+    fail();
+  }
+ catch (  UnsupportedOperationException expected) {
+  }
+}

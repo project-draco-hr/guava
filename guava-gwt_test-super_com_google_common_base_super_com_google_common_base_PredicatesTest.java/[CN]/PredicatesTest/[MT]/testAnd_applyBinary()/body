@@ -1,0 +1,5 @@
+{
+  assertEvalsLikeOdd(Predicates.and(isOdd(),TRUE));
+  assertEvalsLikeOdd(Predicates.and(TRUE,isOdd()));
+  assertEvalsToFalse(Predicates.and(FALSE,NEVER_REACHED));
+}

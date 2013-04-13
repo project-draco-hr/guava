@@ -1,0 +1,4 @@
+{
+  String result=Preconditions.checkNotNull(NON_NULL_STRING,"%s",IGNORE_ME);
+  assertSame(NON_NULL_STRING,result);
+}

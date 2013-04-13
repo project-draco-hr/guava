@@ -1,0 +1,11 @@
+{
+  List<String> badCookieDomains=ImmutableList.of("co.uk","foo","com");
+  for (  String domain : badCookieDomains) {
+    try {
+      InternetDomainName.from(domain).topPrivateDomain();
+      fail(domain);
+    }
+ catch (    IllegalStateException expected) {
+    }
+  }
+}

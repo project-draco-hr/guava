@@ -1,0 +1,34 @@
+{
+  multimap.put("foo",1);
+  multimap.put("foo",3);
+  Collection<Entry<String,Collection<Integer>>> entries=multimap.asMap().entrySet();
+  Entry<String,Collection<Integer>> entry=entries.iterator().next();
+  Collection<Integer> values=entry.getValue();
+  multimap.put("foo",5);
+  assertEquals(3,values.size());
+  assertTrue(values.contains(5));
+  values.add(7);
+  assertSize(4);
+  assertTrue(multimap.containsValue(7));
+  multimap.put("bar",4);
+  assertEquals(2,entries.size());
+  assertSize(5);
+  assertTrue(entries.remove(entry));
+  assertSize(1);
+  assertFalse(multimap.containsKey("foo"));
+  assertTrue(multimap.containsKey("bar"));
+  assertFalse(entries.remove("foo"));
+  assertFalse(entries.remove(Maps.immutableEntry("foo",Collections.singleton(2))));
+  assertSize(1);
+  Iterator<Entry<String,Collection<Integer>>> iterator=entries.iterator();
+  assertTrue(iterator.hasNext());
+  iterator.next();
+  iterator.remove();
+  assertFalse(iterator.hasNext());
+  assertSize(0);
+  assertTrue(multimap.isEmpty());
+  multimap.put("bar",8);
+  assertSize(1);
+  entries.clear();
+  assertSize(0);
+}

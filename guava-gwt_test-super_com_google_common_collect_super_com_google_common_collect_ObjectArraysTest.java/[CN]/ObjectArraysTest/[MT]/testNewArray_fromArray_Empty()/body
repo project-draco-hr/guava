@@ -1,0 +1,5 @@
+{
+  String[] in=new String[0];
+  String[] empty=ObjectArrays.newArray(in,0);
+  assertEquals(0,empty.length);
+}

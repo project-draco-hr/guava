@@ -1,0 +1,4 @@
+{
+  com.google.common.io.BaseEncodingTest testCase=new com.google.common.io.BaseEncodingTest();
+  testCase.testBase32LenientPadding();
+}

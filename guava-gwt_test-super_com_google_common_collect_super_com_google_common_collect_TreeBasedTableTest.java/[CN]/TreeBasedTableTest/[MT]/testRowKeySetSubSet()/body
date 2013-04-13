@@ -1,0 +1,8 @@
+{
+  sortedTable=create("foo",1,'a',"bar",1,'b',"foo",3,'c',"dog",2,'d');
+  Set<String> set=sortedTable.rowKeySet().subSet("cat","egg");
+  assertEquals(Collections.singleton("dog"),set);
+  set.clear();
+  assertTrue(set.isEmpty());
+  assertEquals(ImmutableSet.of("bar","foo"),sortedTable.rowKeySet());
+}

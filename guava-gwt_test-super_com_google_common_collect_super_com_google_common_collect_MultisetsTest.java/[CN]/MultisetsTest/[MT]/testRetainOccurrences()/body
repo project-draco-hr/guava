@@ -1,0 +1,6 @@
+{
+  Multiset<String> multiset=TreeMultiset.create(Arrays.asList("a","b","a","c"));
+  Multiset<String> toRetain=HashMultiset.create(Arrays.asList("a","b","b"));
+  assertTrue(Multisets.retainOccurrences(multiset,toRetain));
+  ASSERT.that(multiset).has().allOf("a","b").inOrder();
+}

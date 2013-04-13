@@ -1,0 +1,11 @@
+{
+  Set<Object> zero=ImmutableSet.of();
+  Set<Set<Object>> one=powerSet(zero);
+  Set<Set<Set<Object>>> two=powerSet(one);
+  Set<Set<Set<Set<Object>>>> four=powerSet(two);
+  Set<Set<Set<Set<Set<Object>>>>> sixteen=powerSet(four);
+  Set<Set<Set<Set<Set<Set<Object>>>>>> sixtyFiveThousandish=powerSet(sixteen);
+  assertEquals(1 << 16,sixtyFiveThousandish.size());
+  assertTrue(powerSet(makeSetOfZeroToTwentyNine()).contains(makeSetOfZeroToTwentyNine()));
+  assertFalse(powerSet(makeSetOfZeroToTwentyNine()).contains(ImmutableSet.of(30)));
+}

@@ -1,0 +1,5 @@
+{
+  Supplier<Integer> supplier=Suppliers.ofInstance(14);
+  Function<Supplier<Integer>,Integer> supplierFunction=Suppliers.supplierFunction();
+  assertEquals(14,(int)supplierFunction.apply(supplier));
+}

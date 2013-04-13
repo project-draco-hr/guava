@@ -1,0 +1,9 @@
+{
+  Builder<String,Integer> builder=ImmutableSortedMap.<String,Integer>naturalOrder().put("one",1).put("one",2);
+  try {
+    builder.build();
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}

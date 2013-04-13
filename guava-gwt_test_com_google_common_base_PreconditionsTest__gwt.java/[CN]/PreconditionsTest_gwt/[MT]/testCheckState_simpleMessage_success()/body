@@ -1,0 +1,4 @@
+{
+  com.google.common.base.PreconditionsTest testCase=new com.google.common.base.PreconditionsTest();
+  testCase.testCheckState_simpleMessage_success();
+}

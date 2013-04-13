@@ -1,0 +1,3 @@
+{
+  assertSame(Collections.emptyList(),Doubles.asList(EMPTY));
+}

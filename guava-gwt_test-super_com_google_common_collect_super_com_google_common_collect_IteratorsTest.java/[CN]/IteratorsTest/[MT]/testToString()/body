@@ -1,0 +1,4 @@
+{
+  Iterator<String> iterator=Lists.newArrayList("yam","bam","jam","ham").iterator();
+  assertEquals("[yam, bam, jam, ham]",Iterators.toString(iterator));
+}

@@ -1,0 +1,4 @@
+{
+  com.google.common.collect.ImmutableSetTest testCase=new com.google.common.collect.ImmutableSetTest();
+  testCase.testCopyOf_collection_general();
+}

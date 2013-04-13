@@ -1,0 +1,4 @@
+{
+  com.google.common.primitives.CharsTest testCase=new com.google.common.primitives.CharsTest();
+  testCase.testAsList_subList_toArray_roundTrip();
+}

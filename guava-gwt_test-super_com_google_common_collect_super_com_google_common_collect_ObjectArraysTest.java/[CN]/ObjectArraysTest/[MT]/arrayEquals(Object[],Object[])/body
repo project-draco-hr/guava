@@ -1,0 +1,4 @@
+{
+  assertSame(array1.getClass(),array2.getClass());
+  return Arrays.equals(array1,array2);
+}

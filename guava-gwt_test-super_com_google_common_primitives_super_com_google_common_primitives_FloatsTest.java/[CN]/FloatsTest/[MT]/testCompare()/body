@@ -1,0 +1,7 @@
+{
+  for (  float x : VALUES) {
+    for (    float y : VALUES) {
+      assertEquals(x + ", " + y,Float.valueOf(x).compareTo(y),Floats.compare(x,y));
+    }
+  }
+}

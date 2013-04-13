@@ -1,0 +1,11 @@
+{
+  Comparator<Integer> c=Ordering.explicit(Collections.<Integer>emptyList());
+  try {
+    c.compare(0,0);
+    fail();
+  }
+ catch (  IncomparableValueException expected) {
+    assertEquals(0,expected.value);
+  }
+  reserializeAndAssert(c);
+}

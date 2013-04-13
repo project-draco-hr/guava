@@ -1,0 +1,4 @@
+{
+  com.google.common.collect.MapsTransformValuesTest testCase=new com.google.common.collect.MapsTransformValuesTest();
+  testCase.testValuesRemoveAllNullFromEmpty();
+}

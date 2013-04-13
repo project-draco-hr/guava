@@ -1,0 +1,9 @@
+{
+  Map<SomeEnum,Integer> original=Maps.newHashMap();
+  try {
+    Maps.newEnumMap(original);
+    fail("Empty map must result in an IllegalArgumentException");
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}

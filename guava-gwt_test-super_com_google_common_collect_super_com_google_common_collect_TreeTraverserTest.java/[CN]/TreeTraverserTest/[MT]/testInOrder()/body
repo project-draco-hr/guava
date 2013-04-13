@@ -1,0 +1,3 @@
+{
+  ASSERT.that(binaryIterationOrder(BIN_ADAPTER.inOrderTraversal(bd))).is("abcdegf");
+}

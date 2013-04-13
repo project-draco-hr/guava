@@ -1,0 +1,11 @@
+{
+  multimap.put("foo",1);
+  multimap.put("foo",nullValue());
+  multimap.put(nullKey(),3);
+  Set<String> keys=multimap.keySet();
+  assertTrue(keys.remove("foo"));
+  assertFalse(keys.remove("bar"));
+  assertSize(1);
+  assertFalse(multimap.containsKey("foo"));
+  assertTrue(multimap.containsEntry(nullKey(),3));
+}

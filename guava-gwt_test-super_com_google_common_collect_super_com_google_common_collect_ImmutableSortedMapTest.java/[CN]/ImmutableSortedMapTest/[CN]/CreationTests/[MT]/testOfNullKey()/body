@@ -1,0 +1,15 @@
+{
+  Integer n=null;
+  try {
+    ImmutableSortedMap.of(n,1);
+    fail();
+  }
+ catch (  NullPointerException expected) {
+  }
+  try {
+    ImmutableSortedMap.of("one",1,null,2);
+    fail();
+  }
+ catch (  NullPointerException expected) {
+  }
+}

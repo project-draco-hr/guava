@@ -1,0 +1,4 @@
+{
+  com.google.common.collect.TableCollectionTest.TransposeColumnTests testCase=new com.google.common.collect.TableCollectionTest.TransposeColumnTests();
+  testCase.testGetNull();
+}

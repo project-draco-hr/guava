@@ -1,0 +1,10 @@
+{
+  RemovalListener<Object,Object> testListener=nullRemovalListener();
+  CacheBuilder<Object,Object> builder=new CacheBuilder<Object,Object>().removalListener(testListener);
+  try {
+    builder=builder.removalListener(testListener);
+    fail();
+  }
+ catch (  IllegalStateException expected) {
+  }
+}

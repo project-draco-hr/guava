@@ -1,0 +1,17 @@
+{
+  multimap.put("foo",1);
+  multimap.put("foo",2);
+  multimap.put("bar",3);
+  Set<Entry<String,Integer>> copy=Sets.newHashSet(multimap.entries());
+  assertEquals(3,copy.size());
+  assertTrue(copy.contains(Maps.immutableEntry("foo",1)));
+  assertTrue(copy.contains(Maps.immutableEntry("foo",2)));
+  assertTrue(copy.contains(Maps.immutableEntry("bar",3)));
+  assertFalse(copy.contains(Maps.immutableEntry("bar",1)));
+  multimap.removeAll("foo");
+  assertEquals(3,copy.size());
+  assertTrue(copy.contains(Maps.immutableEntry("foo",1)));
+  assertTrue(copy.contains(Maps.immutableEntry("foo",2)));
+  assertTrue(copy.contains(Maps.immutableEntry("bar",3)));
+  assertFalse(copy.contains(Maps.immutableEntry("bar",1)));
+}

@@ -1,0 +1,20 @@
+{
+  Enumeration<Integer> enumer=enumerate(1);
+  Iterator<Integer> iter=Iterators.forEnumeration(enumer);
+  assertTrue(iter.hasNext());
+  assertTrue(iter.hasNext());
+  assertEquals(1,(int)iter.next());
+  try {
+    iter.remove();
+    fail();
+  }
+ catch (  UnsupportedOperationException expected) {
+  }
+  assertFalse(iter.hasNext());
+  try {
+    iter.next();
+    fail();
+  }
+ catch (  NoSuchElementException expected) {
+  }
+}

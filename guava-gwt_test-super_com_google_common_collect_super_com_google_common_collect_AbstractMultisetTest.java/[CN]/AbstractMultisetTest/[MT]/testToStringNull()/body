@@ -1,0 +1,8 @@
+{
+  ms.add("a",3);
+  ms.add("c",1);
+  ms.add("b",2);
+  ms.add(null,4);
+  assertNotNull(ms.toString());
+  assertSize();
+}

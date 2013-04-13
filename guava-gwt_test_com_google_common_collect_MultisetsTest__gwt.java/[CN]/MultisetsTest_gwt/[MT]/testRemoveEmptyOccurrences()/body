@@ -1,0 +1,4 @@
+{
+  com.google.common.collect.MultisetsTest testCase=new com.google.common.collect.MultisetsTest();
+  testCase.testRemoveEmptyOccurrences();
+}

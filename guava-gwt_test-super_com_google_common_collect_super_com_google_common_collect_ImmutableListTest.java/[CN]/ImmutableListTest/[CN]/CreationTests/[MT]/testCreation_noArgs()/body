@@ -1,0 +1,4 @@
+{
+  List<String> list=ImmutableList.of();
+  assertEquals(Collections.emptyList(),list);
+}

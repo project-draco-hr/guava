@@ -1,0 +1,5 @@
+{
+  Multiset<String> ms1=HashMultiset.create();
+  Multiset<String> ms2=HashMultiset.create(Arrays.asList("a","b","a"));
+  assertEquals(ms1,Multisets.difference(ms1,ms2));
+}

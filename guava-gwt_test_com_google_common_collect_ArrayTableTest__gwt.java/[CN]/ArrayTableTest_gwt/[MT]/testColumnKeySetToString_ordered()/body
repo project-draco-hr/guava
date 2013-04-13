@@ -1,0 +1,5 @@
+{
+  com.google.common.collect.ArrayTableTest testCase=new com.google.common.collect.ArrayTableTest();
+  testCase.setUp();
+  testCase.testColumnKeySetToString_ordered();
+}

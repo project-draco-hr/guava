@@ -1,0 +1,13 @@
+{
+  Joiner zeroForNull=J.useForNull("0");
+  checkNoOutput(zeroForNull,ITERABLE_);
+  checkResult(zeroForNull,ITERABLE_1,"1");
+  checkResult(zeroForNull,ITERABLE_12,"1-2");
+  checkResult(zeroForNull,ITERABLE_123,"1-2-3");
+  checkResult(zeroForNull,ITERABLE_NULL,"0");
+  checkResult(zeroForNull,ITERABLE_NULL_NULL,"0-0");
+  checkResult(zeroForNull,ITERABLE_NULL_1,"0-1");
+  checkResult(zeroForNull,ITERABLE_1_NULL,"1-0");
+  checkResult(zeroForNull,ITERABLE_1_NULL_2,"1-0-2");
+  checkResult(zeroForNull,ITERABLE_FOUR_NULLS,"0-0-0-0");
+}

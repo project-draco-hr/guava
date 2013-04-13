@@ -1,0 +1,5 @@
+{
+  com.google.common.collect.ArrayListMultimapTest testCase=new com.google.common.collect.ArrayListMultimapTest();
+  testCase.setUp();
+  testCase.testSize0();
+}

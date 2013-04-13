@@ -1,0 +1,4 @@
+{
+  ImmutableSortedMap.Builder<SelfComparableExample,Object> natural=ImmutableSortedMap.naturalOrder();
+  ImmutableSortedMap.Builder<SelfComparableExample,Object> reverse=ImmutableSortedMap.reverseOrder();
+}

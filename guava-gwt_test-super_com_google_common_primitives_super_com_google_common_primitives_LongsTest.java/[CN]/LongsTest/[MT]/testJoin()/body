@@ -1,0 +1,6 @@
+{
+  assertEquals("",Longs.join(",",EMPTY));
+  assertEquals("1",Longs.join(",",ARRAY1));
+  assertEquals("1,2",Longs.join(",",(long)1,(long)2));
+  assertEquals("123",Longs.join("",(long)1,(long)2,(long)3));
+}

@@ -1,0 +1,9 @@
+{
+  ArrayListMultimap<String,Integer> input=ArrayListMultimap.create();
+  input.put("foo",1);
+  input.put("bar",2);
+  input.put("foo",3);
+  Multimap<String,Integer> multimap=ImmutableListMultimap.copyOf(input);
+  assertEquals(multimap,input);
+  assertEquals(input,multimap);
+}

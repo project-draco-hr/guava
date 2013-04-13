@@ -1,0 +1,9 @@
+{
+  char[] array={(char)0,(char)1,(char)2};
+  List<Character> list=Chars.asList(array);
+  char[] newArray=Chars.toArray(list);
+  list.set(0,(char)4);
+  assertTrue(Arrays.equals(new char[]{(char)0,(char)1,(char)2},newArray));
+  newArray[1]=(char)5;
+  assertEquals((char)1,(char)list.get(1));
+}

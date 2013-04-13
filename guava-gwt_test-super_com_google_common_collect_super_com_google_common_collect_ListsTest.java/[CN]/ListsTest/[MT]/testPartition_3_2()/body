@@ -1,0 +1,7 @@
+{
+  List<Integer> source=asList(1,2,3);
+  List<List<Integer>> partitions=Lists.partition(source,2);
+  assertEquals(2,partitions.size());
+  assertEquals(asList(1,2),partitions.get(0));
+  assertEquals(asList(3),partitions.get(1));
+}

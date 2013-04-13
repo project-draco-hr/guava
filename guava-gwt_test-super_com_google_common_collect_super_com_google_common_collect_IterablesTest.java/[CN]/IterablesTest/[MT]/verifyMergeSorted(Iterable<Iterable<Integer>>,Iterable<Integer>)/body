@@ -1,0 +1,5 @@
+{
+  Iterable<Integer> expected=Ordering.natural().sortedCopy(unsortedExpected);
+  Iterable<Integer> mergedIterator=Iterables.mergeSorted(iterables,Ordering.natural());
+  assertEquals(Lists.newLinkedList(expected),Lists.newLinkedList(mergedIterator));
+}

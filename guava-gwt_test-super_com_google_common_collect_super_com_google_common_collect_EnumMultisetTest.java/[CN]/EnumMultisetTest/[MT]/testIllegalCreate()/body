@@ -1,0 +1,9 @@
+{
+  Collection<Color> empty=EnumSet.noneOf(Color.class);
+  try {
+    EnumMultiset.create(empty);
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}

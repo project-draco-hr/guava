@@ -1,0 +1,8 @@
+{
+  table=create("foo",1,'a',"bar",1,'b',"foo",3,'c');
+  assertTrue(table.containsValue('a'));
+  assertTrue(table.containsValue('b'));
+  assertTrue(table.containsValue('c'));
+  assertFalse(table.containsValue('x'));
+  assertTrue(table.containsValue(null));
+}

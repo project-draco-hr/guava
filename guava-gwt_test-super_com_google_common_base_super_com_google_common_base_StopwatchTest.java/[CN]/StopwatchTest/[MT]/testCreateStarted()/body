@@ -1,0 +1,4 @@
+{
+  Stopwatch startedStopwatch=Stopwatch.createStarted();
+  assertTrue(startedStopwatch.isRunning());
+}

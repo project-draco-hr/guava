@@ -1,0 +1,11 @@
+{
+  assertTrue(UnsignedLongs.compare(0,0xffffffffffffffffL) < 0);
+  assertTrue(UnsignedLongs.compare(0xffffffffffffffffL,0) > 0);
+  assertTrue(UnsignedLongs.compare(0xff1a618b7f65ea12L,0xffffffffffffffffL) < 0);
+  assertTrue(UnsignedLongs.compare(0xffffffffffffffffL,0xff1a618b7f65ea12L) > 0);
+  assertTrue(UnsignedLongs.compare(0x5a4316b8c153ac4dL,0xff1a618b7f65ea12L) < 0);
+  assertTrue(UnsignedLongs.compare(0xff1a618b7f65ea12L,0x5a4316b8c153ac4dL) > 0);
+  assertTrue(UnsignedLongs.compare(0x5a4316b8c153ac4dL,0x6cf78a4b139a4e2aL) < 0);
+  assertTrue(UnsignedLongs.compare(0x6cf78a4b139a4e2aL,0x5a4316b8c153ac4dL) > 0);
+  assertTrue(UnsignedLongs.compare(0xff1a618b7f65ea12L,0xff1a618b7f65ea12L) == 0);
+}

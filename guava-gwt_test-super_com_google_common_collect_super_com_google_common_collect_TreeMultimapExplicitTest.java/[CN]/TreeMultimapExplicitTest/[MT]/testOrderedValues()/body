@@ -1,0 +1,4 @@
+{
+  TreeMultimap<String,Integer> multimap=createPopulate();
+  ASSERT.that(multimap.values()).has().allOf(7,3,1,null,0,6,2).inOrder();
+}

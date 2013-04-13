@@ -1,0 +1,4 @@
+{
+  Table<String,Character,Integer> original=TreeBasedTable.create();
+  return Tables.transpose(original);
+}

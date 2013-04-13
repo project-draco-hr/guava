@@ -1,0 +1,5 @@
+{
+  assertEquals(ImmutableListMultimap.of(),MediaType.parse("text/plain").parameters());
+  assertEquals(ImmutableListMultimap.of("charset","utf-8"),MediaType.parse("application/atom+xml; charset=utf-8").parameters());
+  assertEquals(PARAMETERS,MediaType.parse("application/atom+xml; a=1; a=2; b=3").parameters());
+}

@@ -1,0 +1,2 @@
+Table<Integer,String,Character> table
+String[] elements

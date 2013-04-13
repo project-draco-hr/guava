@@ -1,0 +1,13 @@
+{
+  com.google.common.testing.TearDownStackTest testCase=new com.google.common.testing.TearDownStackTest();
+  try {
+    testCase.testThrowingTearDown();
+  }
+  finally {
+    try {
+      testCase.tearDown();
+    }
+ catch (    Throwable t) {
+    }
+  }
+}

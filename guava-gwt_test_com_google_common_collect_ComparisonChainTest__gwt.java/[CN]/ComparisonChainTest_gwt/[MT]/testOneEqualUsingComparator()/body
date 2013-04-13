@@ -1,0 +1,4 @@
+{
+  com.google.common.collect.ComparisonChainTest testCase=new com.google.common.collect.ComparisonChainTest();
+  testCase.testOneEqualUsingComparator();
+}

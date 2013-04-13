@@ -1,0 +1,10 @@
+{
+  Ticker testTicker=Ticker.systemTicker();
+  CacheBuilder<Object,Object> builder=new CacheBuilder<Object,Object>().ticker(testTicker);
+  try {
+    builder.ticker(testTicker);
+    fail();
+  }
+ catch (  IllegalStateException expected) {
+  }
+}

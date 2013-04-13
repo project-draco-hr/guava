@@ -1,0 +1,4 @@
+{
+  com.google.common.collect.ImmutableSortedMapTest.HeadMapInclusiveTests testCase=new com.google.common.collect.ImmutableSortedMapTest.HeadMapInclusiveTests();
+  testCase.testFirstKeyEmpty();
+}

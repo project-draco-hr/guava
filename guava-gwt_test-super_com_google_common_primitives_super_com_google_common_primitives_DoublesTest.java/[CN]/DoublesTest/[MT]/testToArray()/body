@@ -1,0 +1,10 @@
+{
+  List<Double> none=Arrays.<Double>asList();
+  assertTrue(Arrays.equals(EMPTY,Doubles.toArray(none)));
+  List<Double> one=Arrays.asList((double)1);
+  assertTrue(Arrays.equals(ARRAY1,Doubles.toArray(one)));
+  double[] array={(double)0,(double)1,Math.PI};
+  List<Double> three=Arrays.asList((double)0,(double)1,Math.PI);
+  assertTrue(Arrays.equals(array,Doubles.toArray(three)));
+  assertTrue(Arrays.equals(array,Doubles.toArray(Doubles.asList(array))));
+}

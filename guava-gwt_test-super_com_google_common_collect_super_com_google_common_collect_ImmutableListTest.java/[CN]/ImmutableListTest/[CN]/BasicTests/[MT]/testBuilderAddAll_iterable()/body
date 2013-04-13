@@ -1,0 +1,8 @@
+{
+  List<String> a=asList("a","b");
+  List<String> b=asList("c","d");
+  ImmutableList<String> list=new ImmutableList.Builder<String>().addAll(a).addAll(b).build();
+  assertEquals(asList("a","b","c","d"),list);
+  b.set(0,"f");
+  assertEquals(asList("a","b","c","d"),list);
+}

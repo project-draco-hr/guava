@@ -1,0 +1,6 @@
+{
+  Cell<String,Integer,Character> entry=Tables.immutableCell("foo",1,'a');
+  assertEquals("(foo,1)=a",entry.toString());
+  Cell<String,Integer,Character> nullEntry=Tables.immutableCell(null,null,null);
+  assertEquals("(null,null)=null",nullEntry.toString());
+}

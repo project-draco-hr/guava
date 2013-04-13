@@ -1,0 +1,4 @@
+{
+  com.google.common.collect.CountTest testCase=new com.google.common.collect.CountTest();
+  testCase.testGet();
+}

@@ -1,0 +1,6 @@
+{
+  ms.add("a",3);
+  ms.add("c",1);
+  ms.add("b",2);
+  assertEquals("[a x 3, c, b x 2]",ms.toString());
+}

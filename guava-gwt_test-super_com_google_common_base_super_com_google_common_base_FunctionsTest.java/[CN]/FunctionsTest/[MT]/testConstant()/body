@@ -1,0 +1,10 @@
+{
+  Function<Object,Object> f=Functions.<Object>constant("correct");
+  assertEquals("correct",f.apply(new Object()));
+  assertEquals("correct",f.apply(null));
+  Function<Object,String> g=Functions.constant(null);
+  assertEquals(null,g.apply(2));
+  assertEquals(null,g.apply(null));
+  new EqualsTester().addEqualityGroup(f,Functions.constant("correct")).addEqualityGroup(Functions.constant("incorrect")).addEqualityGroup(Functions.toStringFunction()).addEqualityGroup(g).testEquals();
+  new EqualsTester().addEqualityGroup(g,Functions.constant(null)).addEqualityGroup(Functions.constant("incorrect")).addEqualityGroup(Functions.toStringFunction()).addEqualityGroup(f).testEquals();
+}

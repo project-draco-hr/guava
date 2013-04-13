@@ -1,0 +1,11 @@
+{
+  multimap.put(nullKey(),1);
+  multimap.put(nullKey(),nullValue());
+  Collection<Integer> removed=multimap.removeAll(nullKey());
+  assertFalse(multimap.containsKey(nullKey()));
+  assertSize(0);
+  assertTrue(removed.contains(1));
+  assertTrue(removed.contains(nullValue()));
+  assertEquals(2,removed.size());
+  checkRemovedCollection(removed);
+}

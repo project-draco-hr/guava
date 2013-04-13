@@ -1,0 +1,6 @@
+{
+  Object toBeSupplied=new Object();
+  Supplier<Object> objectSupplier=Suppliers.ofInstance(toBeSupplied);
+  assertSame(toBeSupplied,objectSupplier.get());
+  assertSame(toBeSupplied,objectSupplier.get());
+}

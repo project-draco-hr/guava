@@ -1,0 +1,7 @@
+{
+  Collection<Predicate<Integer>> empty=Arrays.asList();
+  assertEvalsToTrue(Predicates.and(empty));
+  assertEvalsLikeOdd(Predicates.and(Arrays.asList(isOdd())));
+  assertEvalsLikeOdd(Predicates.and(Arrays.asList(TRUE,isOdd())));
+  assertEvalsToFalse(Predicates.and(Arrays.asList(FALSE,NEVER_REACHED)));
+}

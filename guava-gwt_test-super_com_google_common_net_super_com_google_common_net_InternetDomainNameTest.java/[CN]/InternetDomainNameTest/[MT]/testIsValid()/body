@@ -1,0 +1,10 @@
+{
+  final Iterable<String> validCases=Iterables.concat(VALID_NAME,PS,NO_PS,NON_PS);
+  final Iterable<String> invalidCases=Iterables.concat(INVALID_NAME,VALID_IP_ADDRS,INVALID_IP_ADDRS);
+  for (  String valid : validCases) {
+    assertTrue(valid,InternetDomainName.isValid(valid));
+  }
+  for (  String invalid : invalidCases) {
+    assertFalse(invalid,InternetDomainName.isValid(invalid));
+  }
+}

@@ -1,0 +1,7 @@
+{
+  ImmutableSet<Integer> elements=ImmutableSet.of();
+  Set<Set<Integer>> powerSet=powerSet(elements);
+  assertEquals(1,powerSet.size());
+  assertEquals(ImmutableSet.of(ImmutableSet.of()),powerSet);
+  assertEquals(0,powerSet.hashCode());
+}

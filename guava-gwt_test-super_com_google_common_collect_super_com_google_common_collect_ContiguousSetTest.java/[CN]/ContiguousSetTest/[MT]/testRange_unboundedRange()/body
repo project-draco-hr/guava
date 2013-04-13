@@ -1,0 +1,6 @@
+{
+  assertEquals(Range.closed(Integer.MIN_VALUE,Integer.MAX_VALUE),ContiguousSet.create(Range.<Integer>all(),integers()).range());
+  assertEquals(Range.atLeast(Integer.MIN_VALUE),ContiguousSet.create(Range.<Integer>all(),integers()).range(CLOSED,OPEN));
+  assertEquals(Range.all(),ContiguousSet.create(Range.<Integer>all(),integers()).range(OPEN,OPEN));
+  assertEquals(Range.atMost(Integer.MAX_VALUE),ContiguousSet.create(Range.<Integer>all(),integers()).range(OPEN,CLOSED));
+}

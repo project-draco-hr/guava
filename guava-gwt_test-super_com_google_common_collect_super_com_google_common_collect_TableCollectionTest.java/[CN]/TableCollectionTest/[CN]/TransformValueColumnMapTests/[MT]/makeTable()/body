@@ -1,0 +1,4 @@
+{
+  Table<Integer,String,String> original=HashBasedTable.create();
+  return Tables.transformValues(original,FIRST_CHARACTER);
+}

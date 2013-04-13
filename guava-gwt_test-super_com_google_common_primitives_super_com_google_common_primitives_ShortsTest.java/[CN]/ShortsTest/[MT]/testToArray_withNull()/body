@@ -1,0 +1,9 @@
+{
+  List<Short> list=Arrays.asList((short)0,(short)1,null);
+  try {
+    Shorts.toArray(list);
+    fail();
+  }
+ catch (  NullPointerException expected) {
+  }
+}

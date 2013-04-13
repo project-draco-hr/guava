@@ -1,0 +1,4 @@
+{
+  com.google.common.collect.ImmutableSetTest testCase=new com.google.common.collect.ImmutableSetTest();
+  testCase.testContainsAll_sameType();
+}

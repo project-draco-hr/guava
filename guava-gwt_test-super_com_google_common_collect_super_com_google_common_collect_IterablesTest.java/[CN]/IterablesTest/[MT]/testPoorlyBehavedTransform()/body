@@ -1,0 +1,17 @@
+{
+  List<String> input=asList("1",null,"3");
+  Iterable<Integer> result=Iterables.transform(input,new Function<String,Integer>(){
+    @Override public Integer apply(    String from){
+      return Integer.valueOf(from);
+    }
+  }
+);
+  Iterator<Integer> resultIterator=result.iterator();
+  resultIterator.next();
+  try {
+    resultIterator.next();
+    fail("Expected NFE");
+  }
+ catch (  NumberFormatException nfe) {
+  }
+}

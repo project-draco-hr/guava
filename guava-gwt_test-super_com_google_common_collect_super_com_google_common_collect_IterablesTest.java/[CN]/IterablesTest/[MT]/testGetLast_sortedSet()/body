@@ -1,0 +1,4 @@
+{
+  SortedSet<String> sortedSet=ImmutableSortedSet.of("b","c","a");
+  assertEquals("c",Iterables.getLast(sortedSet));
+}

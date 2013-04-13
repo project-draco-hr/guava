@@ -1,0 +1,4 @@
+{
+  com.google.common.collect.ImmutableListTest.BasicTests testCase=new com.google.common.collect.ImmutableListTest.BasicTests();
+  testCase.testBuilderAddAll_iterator();
+}

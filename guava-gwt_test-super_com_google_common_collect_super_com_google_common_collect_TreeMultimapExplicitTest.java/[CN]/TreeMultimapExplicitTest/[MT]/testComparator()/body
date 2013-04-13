@@ -1,0 +1,5 @@
+{
+  TreeMultimap<String,Integer> multimap=createPopulate();
+  assertEquals(DECREASING_INT_COMPARATOR,multimap.get("foo").comparator());
+  assertEquals(DECREASING_INT_COMPARATOR,multimap.get("missing").comparator());
+}

@@ -1,0 +1,4 @@
+{
+  com.google.common.base.ToStringHelperTest testCase=new com.google.common.base.ToStringHelperTest();
+  testCase.testToStringLenient_nullInteger();
+}

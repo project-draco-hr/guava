@@ -1,0 +1,5 @@
+{
+  com.google.common.collect.LinkedHashMultimapTest testCase=new com.google.common.collect.LinkedHashMultimapTest();
+  testCase.setUp();
+  testCase.testGetRemoveAddQuery();
+}

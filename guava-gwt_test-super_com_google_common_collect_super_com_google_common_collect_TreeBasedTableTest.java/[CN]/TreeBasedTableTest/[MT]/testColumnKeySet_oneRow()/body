@@ -1,0 +1,4 @@
+{
+  table=create("a",2,'X',"a",1,'X');
+  assertEquals("[1, 2]",table.columnKeySet().toString());
+}

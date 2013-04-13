@@ -1,0 +1,4 @@
+{
+  Iterable<String> iterable=Collections.emptyList();
+  assertEquals("bar",Iterables.getLast(iterable,"bar"));
+}

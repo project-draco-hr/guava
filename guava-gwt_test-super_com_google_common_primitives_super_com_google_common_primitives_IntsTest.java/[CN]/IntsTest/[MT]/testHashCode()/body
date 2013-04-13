@@ -1,0 +1,5 @@
+{
+  for (  int value : VALUES) {
+    assertEquals(((Integer)value).hashCode(),Ints.hashCode(value));
+  }
+}

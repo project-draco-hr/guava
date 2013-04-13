@@ -1,0 +1,4 @@
+{
+  Iterable<String> testCharacteringMotto=Splitter.on(CharMatcher.WHITESPACE).split("Testing\nrocks\tDebugging sucks");
+  ASSERT.that(testCharacteringMotto).iteratesOverSequence("Testing","rocks","Debugging","sucks");
+}

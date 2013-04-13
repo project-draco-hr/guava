@@ -1,0 +1,7 @@
+{
+  Builder<String,Integer> builder=new Builder<String,Integer>();
+  ImmutableMap<String,Integer> mapOne=builder.put("one",1).put("two",2).build();
+  ImmutableMap<String,Integer> mapTwo=builder.put("three",3).put("four",4).build();
+  assertMapEquals(mapOne,"one",1,"two",2);
+  assertMapEquals(mapTwo,"one",1,"two",2,"three",3,"four",4);
+}

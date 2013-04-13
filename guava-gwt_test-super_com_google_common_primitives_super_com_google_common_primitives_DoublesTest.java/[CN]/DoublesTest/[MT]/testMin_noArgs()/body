@@ -1,0 +1,8 @@
+{
+  try {
+    Doubles.min();
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}

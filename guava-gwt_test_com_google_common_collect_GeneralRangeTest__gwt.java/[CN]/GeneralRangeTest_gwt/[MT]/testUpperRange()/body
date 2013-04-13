@@ -1,0 +1,4 @@
+{
+  com.google.common.collect.GeneralRangeTest testCase=new com.google.common.collect.GeneralRangeTest();
+  testCase.testUpperRange();
+}

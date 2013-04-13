@@ -1,0 +1,8 @@
+{
+  try {
+    Ints.max();
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}

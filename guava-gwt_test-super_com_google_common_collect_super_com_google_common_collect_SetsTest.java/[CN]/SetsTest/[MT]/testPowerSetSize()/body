@@ -1,0 +1,8 @@
+{
+  assertPowerSetSize(1);
+  assertPowerSetSize(2,'a');
+  assertPowerSetSize(4,'a','b');
+  assertPowerSetSize(8,'a','b','c');
+  assertPowerSetSize(16,'a','b','d','e');
+  assertPowerSetSize(1 << 30,'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','1','2','3','4');
+}

@@ -1,0 +1,4 @@
+{
+  com.google.common.primitives.ShortsTest testCase=new com.google.common.primitives.ShortsTest();
+  testCase.testSaturatedCast();
+}

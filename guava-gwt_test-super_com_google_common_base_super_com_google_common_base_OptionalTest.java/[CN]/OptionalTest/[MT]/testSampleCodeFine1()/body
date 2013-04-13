@@ -1,0 +1,4 @@
+{
+  Optional<Number> optionalInt=(Optional)getSomeOptionalInt();
+  Number value=optionalInt.or(0.5);
+}

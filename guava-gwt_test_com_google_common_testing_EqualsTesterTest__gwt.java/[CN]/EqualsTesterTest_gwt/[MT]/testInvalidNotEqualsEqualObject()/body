@@ -1,0 +1,5 @@
+{
+  com.google.common.testing.EqualsTesterTest testCase=new com.google.common.testing.EqualsTesterTest();
+  testCase.setUp();
+  testCase.testInvalidNotEqualsEqualObject();
+}

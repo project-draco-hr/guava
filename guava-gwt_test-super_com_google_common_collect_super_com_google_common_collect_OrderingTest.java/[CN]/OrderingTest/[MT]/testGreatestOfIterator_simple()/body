@@ -1,0 +1,4 @@
+{
+  List<Integer> list=Arrays.asList(3,1,3,2,4,2,4,3);
+  assertEquals(Arrays.asList(4,4,3,3),numberOrdering.greatestOf(list.iterator(),4));
+}

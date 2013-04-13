@@ -1,0 +1,3 @@
+{
+  new EqualsTester().addEqualityGroup(Predicates.and(),Predicates.and()).addEqualityGroup(Predicates.and(FALSE)).addEqualityGroup(Predicates.or()).testEquals();
+}

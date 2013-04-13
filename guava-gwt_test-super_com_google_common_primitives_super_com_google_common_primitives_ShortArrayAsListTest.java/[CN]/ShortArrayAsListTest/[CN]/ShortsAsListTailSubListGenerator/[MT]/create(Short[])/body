@@ -1,0 +1,5 @@
+{
+  Short[] prefix={(short)86,(short)99};
+  Short[] all=concat(prefix,elements);
+  return asList(all).subList(2,elements.length + 2);
+}

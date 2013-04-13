@@ -1,0 +1,4 @@
+{
+  com.google.common.collect.TableCollectionTest.HashRowMapTests testCase=new com.google.common.collect.TableCollectionTest.HashRowMapTests();
+  testCase.testEntrySetAddAndAddAll();
+}

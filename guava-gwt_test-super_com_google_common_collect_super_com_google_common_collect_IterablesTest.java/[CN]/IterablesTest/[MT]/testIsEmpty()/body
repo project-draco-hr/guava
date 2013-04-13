@@ -1,0 +1,6 @@
+{
+  Iterable<String> emptyList=Collections.emptyList();
+  assertTrue(Iterables.isEmpty(emptyList));
+  Iterable<String> singletonList=Collections.singletonList("foo");
+  assertFalse(Iterables.isEmpty(singletonList));
+}

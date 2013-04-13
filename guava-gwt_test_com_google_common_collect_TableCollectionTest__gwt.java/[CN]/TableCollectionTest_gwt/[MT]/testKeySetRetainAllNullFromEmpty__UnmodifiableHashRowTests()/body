@@ -1,0 +1,4 @@
+{
+  com.google.common.collect.TableCollectionTest.UnmodifiableHashRowTests testCase=new com.google.common.collect.TableCollectionTest.UnmodifiableHashRowTests();
+  testCase.testKeySetRetainAllNullFromEmpty();
+}

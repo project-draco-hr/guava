@@ -1,0 +1,15 @@
+{
+  Builder<String,Integer> builder=new Builder<String,Integer>();
+  try {
+    builder.put(Maps.immutableEntry("one",(Integer)null));
+    fail();
+  }
+ catch (  NullPointerException expected) {
+  }
+  try {
+    builder.put(Maps.immutableEntry((String)null,1));
+    fail();
+  }
+ catch (  NullPointerException expected) {
+  }
+}

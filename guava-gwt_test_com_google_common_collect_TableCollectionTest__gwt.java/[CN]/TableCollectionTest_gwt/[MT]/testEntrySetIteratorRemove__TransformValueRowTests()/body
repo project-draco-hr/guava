@@ -1,0 +1,4 @@
+{
+  com.google.common.collect.TableCollectionTest.TransformValueRowTests testCase=new com.google.common.collect.TableCollectionTest.TransformValueRowTests();
+  testCase.testEntrySetIteratorRemove();
+}

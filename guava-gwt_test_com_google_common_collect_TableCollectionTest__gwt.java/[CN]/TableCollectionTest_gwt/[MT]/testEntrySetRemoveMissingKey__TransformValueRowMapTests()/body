@@ -1,0 +1,4 @@
+{
+  com.google.common.collect.TableCollectionTest.TransformValueRowMapTests testCase=new com.google.common.collect.TableCollectionTest.TransformValueRowMapTests();
+  testCase.testEntrySetRemoveMissingKey();
+}

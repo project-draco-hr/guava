@@ -1,0 +1,17 @@
+{
+  ListMultimap<String,Integer> multimap=create();
+  multimap.putAll("foo",asList(1,2,3,4,5));
+  List<Integer> list=multimap.get("foo");
+  ASSERT.that(multimap.get("foo")).has().allOf(1,2,3,4,5).inOrder();
+  List<Integer> sublist=list.subList(1,4);
+  ASSERT.that(sublist).has().allOf(2,3,4).inOrder();
+  sublist.remove(1);
+  assertEquals(4,multimap.size());
+  ASSERT.that(multimap.get("foo")).has().allOf(1,2,4,5).inOrder();
+  sublist.removeAll(Collections.singleton(4));
+  assertEquals(3,multimap.size());
+  ASSERT.that(multimap.get("foo")).has().allOf(1,2,5).inOrder();
+  sublist.remove(0);
+  assertEquals(2,multimap.size());
+  ASSERT.that(multimap.get("foo")).has().allOf(1,5).inOrder();
+}

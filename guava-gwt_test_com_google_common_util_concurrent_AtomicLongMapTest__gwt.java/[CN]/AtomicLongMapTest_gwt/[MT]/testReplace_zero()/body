@@ -1,0 +1,4 @@
+{
+  com.google.common.util.concurrent.AtomicLongMapTest testCase=new com.google.common.util.concurrent.AtomicLongMapTest();
+  testCase.testReplace_zero();
+}

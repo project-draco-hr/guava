@@ -1,0 +1,8 @@
+{
+  assertEquals(map.size(),alternatingKeysAndValues.length / 2);
+  int i=0;
+  for (  Entry<K,V> entry : map.entrySet()) {
+    assertEquals(alternatingKeysAndValues[i++],entry.getKey());
+    assertEquals(alternatingKeysAndValues[i++],entry.getValue());
+  }
+}

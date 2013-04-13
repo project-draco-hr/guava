@@ -1,0 +1,5 @@
+{
+  assertEquals("Foo",UPPER_UNDERSCORE.to(UPPER_CAMEL,"FOO"));
+  assertEquals("FooBar",UPPER_UNDERSCORE.to(UPPER_CAMEL,"FOO_BAR"));
+  assertEquals("HTTP",UPPER_UNDERSCORE.to(UPPER_CAMEL,"H_T_T_P"));
+}

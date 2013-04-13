@@ -1,0 +1,11 @@
+{
+  ms.add("a",Integer.MAX_VALUE);
+  ms.add("b",Integer.MAX_VALUE);
+  try {
+    ms.add("a");
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+  assertSize();
+}

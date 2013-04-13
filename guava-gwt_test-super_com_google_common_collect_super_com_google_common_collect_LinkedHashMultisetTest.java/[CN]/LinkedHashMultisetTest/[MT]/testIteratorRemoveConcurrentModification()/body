@@ -1,0 +1,17 @@
+{
+  ms.add("a");
+  ms.add("b");
+  Iterator<String> iterator=ms.iterator();
+  iterator.next();
+  ms.remove("a");
+  assertEquals(1,ms.size());
+  assertTrue(ms.contains("b"));
+  try {
+    iterator.remove();
+    fail();
+  }
+ catch (  ConcurrentModificationException expected) {
+  }
+  assertEquals(1,ms.size());
+  assertTrue(ms.contains("b"));
+}

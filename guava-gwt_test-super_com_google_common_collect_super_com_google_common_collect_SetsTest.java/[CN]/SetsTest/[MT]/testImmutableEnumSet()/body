@@ -1,0 +1,16 @@
+{
+  Set<SomeEnum> units=Sets.immutableEnumSet(SomeEnum.D,SomeEnum.B);
+  ASSERT.that(units).has().allOf(SomeEnum.B,SomeEnum.D).inOrder();
+  try {
+    units.remove(SomeEnum.B);
+    fail("ImmutableEnumSet should throw an exception on remove()");
+  }
+ catch (  UnsupportedOperationException expected) {
+  }
+  try {
+    units.add(SomeEnum.C);
+    fail("ImmutableEnumSet should throw an exception on add()");
+  }
+ catch (  UnsupportedOperationException expected) {
+  }
+}

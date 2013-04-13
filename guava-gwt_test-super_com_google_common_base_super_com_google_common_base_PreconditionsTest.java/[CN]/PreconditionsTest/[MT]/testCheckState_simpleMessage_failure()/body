@@ -1,0 +1,9 @@
+{
+  try {
+    Preconditions.checkState(false,new Message());
+    fail("no exception thrown");
+  }
+ catch (  IllegalStateException expected) {
+    verifySimpleMessage(expected);
+  }
+}

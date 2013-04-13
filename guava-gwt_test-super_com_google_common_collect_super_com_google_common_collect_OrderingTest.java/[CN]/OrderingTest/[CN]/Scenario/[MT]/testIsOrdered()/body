@@ -1,0 +1,4 @@
+{
+  assertTrue(ordering.isOrdered(strictlyOrderedList));
+  assertTrue(ordering.isStrictlyOrdered(strictlyOrderedList));
+}

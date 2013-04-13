@@ -1,0 +1,4 @@
+{
+  com.google.common.math.BigIntegerMathTest testCase=new com.google.common.math.BigIntegerMathTest();
+  testCase.testBinomialSmall();
+}

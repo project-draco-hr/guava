@@ -1,0 +1,15 @@
+{
+  SortedSet<String> set=of("e","f","b","d","c");
+  assertTrue(set.subSet("c","e") instanceof ImmutableSortedSet);
+  ASSERT.that(set.subSet("c","e")).has().allOf("c","d").inOrder();
+  ASSERT.that(set.subSet("a","g")).has().allOf("b","c","d","e","f").inOrder();
+  assertSame(of(),set.subSet("a","b"));
+  assertSame(of(),set.subSet("g","h"));
+  assertSame(of(),set.subSet("c","c"));
+  try {
+    set.subSet("e","c");
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}

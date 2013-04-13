@@ -1,0 +1,4 @@
+{
+  Supplier<Integer> nullSupplier=Suppliers.ofInstance(null);
+  assertNull(nullSupplier.get());
+}

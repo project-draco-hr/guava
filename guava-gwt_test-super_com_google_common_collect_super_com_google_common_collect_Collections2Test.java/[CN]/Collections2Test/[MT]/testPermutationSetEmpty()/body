@@ -1,0 +1,8 @@
+{
+  Collection<List<Integer>> permutationSet=Collections2.permutations(Collections.<Integer>emptyList());
+  assertEquals(1,permutationSet.size());
+  assertTrue(permutationSet.contains(Collections.<Integer>emptyList()));
+  Iterator<List<Integer>> permutations=permutationSet.iterator();
+  assertNextPermutation(Collections.<Integer>emptyList(),permutations);
+  assertNoMorePermutations(permutations);
+}

@@ -1,0 +1,4 @@
+{
+  multimap.put(nullKey(),nullValue());
+  assertFalse(multimap.isEmpty());
+}

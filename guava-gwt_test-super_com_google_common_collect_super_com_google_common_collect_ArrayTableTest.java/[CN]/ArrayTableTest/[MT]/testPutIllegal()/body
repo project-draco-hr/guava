@@ -1,0 +1,18 @@
+{
+  table=create("foo",1,'a',"bar",1,'b',"foo",3,'c');
+  try {
+    table.put("dog",1,'d');
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+    assertEquals("Row dog not in [foo, bar, cat]",expected.getMessage());
+  }
+  try {
+    table.put("foo",4,'d');
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+    assertEquals("Column 4 not in [1, 2, 3]",expected.getMessage());
+  }
+  assertFalse(table.containsValue('d'));
+}

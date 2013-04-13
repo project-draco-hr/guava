@@ -1,0 +1,23 @@
+{
+  ImmutableSetMultimap.Builder<String,Integer> builder=ImmutableSetMultimap.builder();
+  builder.put("bb",3);
+  builder.put("d",2);
+  builder.put("a",5);
+  builder.orderKeysBy(new Ordering<String>(){
+    @Override public int compare(    String left,    String right){
+      return left.length() - right.length();
+    }
+  }
+);
+  builder.put("cc",4);
+  builder.put("a",2);
+  builder.put("bb",6);
+  ImmutableSetMultimap<String,Integer> multimap=builder.build();
+  ASSERT.that(multimap.keySet()).has().allOf("d","a","bb","cc").inOrder();
+  ASSERT.that(multimap.values()).has().allOf(2,5,2,3,6,4).inOrder();
+  ASSERT.that(multimap.get("a")).has().allOf(5,2).inOrder();
+  ASSERT.that(multimap.get("bb")).has().allOf(3,6).inOrder();
+  assertFalse(multimap.get("a") instanceof ImmutableSortedSet);
+  assertFalse(multimap.get("x") instanceof ImmutableSortedSet);
+  assertFalse(multimap.asMap().get("a") instanceof ImmutableSortedSet);
+}

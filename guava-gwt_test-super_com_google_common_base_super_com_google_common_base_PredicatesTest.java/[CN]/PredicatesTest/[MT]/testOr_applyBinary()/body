@@ -1,0 +1,8 @@
+{
+  Predicate<Integer> falseOrFalse=Predicates.or(FALSE,FALSE);
+  Predicate<Integer> falseOrTrue=Predicates.or(FALSE,TRUE);
+  Predicate<Integer> trueOrAnything=Predicates.or(TRUE,NEVER_REACHED);
+  assertEvalsToFalse(falseOrFalse);
+  assertEvalsToTrue(falseOrTrue);
+  assertEvalsToTrue(trueOrAnything);
+}

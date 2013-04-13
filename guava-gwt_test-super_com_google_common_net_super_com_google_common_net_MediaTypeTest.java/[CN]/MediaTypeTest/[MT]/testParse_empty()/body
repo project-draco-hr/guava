@@ -1,0 +1,8 @@
+{
+  try {
+    MediaType.parse("");
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}

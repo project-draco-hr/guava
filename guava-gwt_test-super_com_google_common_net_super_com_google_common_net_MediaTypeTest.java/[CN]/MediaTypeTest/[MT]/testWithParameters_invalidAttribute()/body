@@ -1,0 +1,10 @@
+{
+  MediaType mediaType=MediaType.parse("text/plain");
+  ImmutableListMultimap<String,String> parameters=ImmutableListMultimap.of("a","1","@","2","b","3");
+  try {
+    mediaType.withParameters(parameters);
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}

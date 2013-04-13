@@ -1,0 +1,7 @@
+{
+  try {
+    ASSERT.that(actual).isNotEqualTo(unexpected);
+  }
+ catch (  ClassCastException accepted) {
+  }
+}

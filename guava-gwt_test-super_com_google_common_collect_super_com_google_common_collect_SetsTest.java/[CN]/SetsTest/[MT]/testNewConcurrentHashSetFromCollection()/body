@@ -1,0 +1,4 @@
+{
+  Set<Integer> set=Sets.newConcurrentHashSet(SOME_COLLECTION);
+  verifySetContents(set,SOME_COLLECTION);
+}

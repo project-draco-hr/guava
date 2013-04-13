@@ -1,0 +1,11 @@
+{
+  Constraint<? super String> constraint=Constraints.notNull();
+  assertSame(TEST_ELEMENT,constraint.checkElement(TEST_ELEMENT));
+  try {
+    constraint.checkElement(null);
+    fail("NullPointerException expected");
+  }
+ catch (  NullPointerException expected) {
+  }
+  assertEquals("Not null",constraint.toString());
+}

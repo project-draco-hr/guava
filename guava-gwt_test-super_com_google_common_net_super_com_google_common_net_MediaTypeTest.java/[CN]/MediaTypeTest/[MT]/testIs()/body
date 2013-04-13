@@ -1,0 +1,14 @@
+{
+  assertTrue(PLAIN_TEXT_UTF_8.is(ANY_TYPE));
+  assertTrue(JPEG.is(ANY_TYPE));
+  assertTrue(ANY_TEXT_TYPE.is(ANY_TYPE));
+  assertTrue(PLAIN_TEXT_UTF_8.is(ANY_TEXT_TYPE));
+  assertTrue(PLAIN_TEXT_UTF_8.withoutParameters().is(ANY_TEXT_TYPE));
+  assertFalse(JPEG.is(ANY_TEXT_TYPE));
+  assertTrue(PLAIN_TEXT_UTF_8.is(PLAIN_TEXT_UTF_8));
+  assertTrue(PLAIN_TEXT_UTF_8.is(PLAIN_TEXT_UTF_8.withoutParameters()));
+  assertFalse(PLAIN_TEXT_UTF_8.withoutParameters().is(PLAIN_TEXT_UTF_8));
+  assertFalse(PLAIN_TEXT_UTF_8.is(HTML_UTF_8));
+  assertFalse(PLAIN_TEXT_UTF_8.withParameter("charset","UTF-16").is(PLAIN_TEXT_UTF_8));
+  assertFalse(PLAIN_TEXT_UTF_8.is(PLAIN_TEXT_UTF_8.withParameter("charset","UTF-16")));
+}

@@ -1,0 +1,21 @@
+{
+  TreeMultiset<String> ms=TreeMultiset.create();
+  ms.add("a",1);
+  ms.add("b",3);
+  ms.add("c",2);
+  ms.add("d",1);
+  ms.add("e",3);
+  ms.add("f",2);
+  SortedSet<String> elementSet=ms.elementSet();
+  ASSERT.that(elementSet).has().allOf("a","b","c","d","e","f").inOrder();
+  SortedSet<String> subset=elementSet.subSet("b","f");
+  ASSERT.that(subset).has().allOf("b","c","d","e").inOrder();
+  assertTrue(subset.remove("c"));
+  ASSERT.that(elementSet).has().allOf("a","b","d","e","f").inOrder();
+  ASSERT.that(subset).has().allOf("b","d","e").inOrder();
+  assertEquals(10,ms.size());
+  assertFalse(subset.remove("a"));
+  ASSERT.that(elementSet).has().allOf("a","b","d","e","f").inOrder();
+  ASSERT.that(subset).has().allOf("b","d","e").inOrder();
+  assertEquals(10,ms.size());
+}

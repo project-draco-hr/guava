@@ -1,0 +1,18 @@
+{
+  multimap.put("foo",2);
+  multimap.put("cow",5);
+  multimap.put(nullKey(),2);
+  Collection<Integer> valuesFoo=multimap.get("foo");
+  Collection<Integer> valuesBar=multimap.get("bar");
+  Collection<Integer> valuesCow=multimap.get("cow");
+  Collection<Integer> valuesNull=multimap.get(nullKey());
+  Multimap<String,Integer> multimap2=create();
+  multimap2.put("foo",1);
+  multimap2.put("bar",3);
+  multimap2.put(nullKey(),nullValue());
+  multimap.putAll(multimap2);
+  ASSERT.that(valuesFoo).has().allOf(1,2);
+  ASSERT.that(valuesBar).has().item(3);
+  ASSERT.that(valuesCow).has().item(5);
+  ASSERT.that(valuesNull).has().allOf(nullValue(),2);
+}

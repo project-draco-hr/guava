@@ -1,0 +1,10 @@
+{
+  for (  int n : NEGATIVE_INTEGER_CANDIDATES) {
+    try {
+      LongMath.binomial(n,0);
+      fail("Expected IllegalArgumentException");
+    }
+ catch (    IllegalArgumentException expected) {
+    }
+  }
+}

@@ -1,0 +1,3 @@
+{
+  actsLikeIteratorHelper(Collections.singletonList(new Object()));
+}

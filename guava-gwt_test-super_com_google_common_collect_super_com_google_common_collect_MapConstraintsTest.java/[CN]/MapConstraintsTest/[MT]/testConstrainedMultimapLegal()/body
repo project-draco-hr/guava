@@ -1,0 +1,33 @@
+{
+  Multimap<String,Integer> multimap=LinkedListMultimap.create();
+  Multimap<String,Integer> constrained=MapConstraints.constrainedMultimap(multimap,TEST_CONSTRAINT);
+  multimap.put(TEST_KEY,TEST_VALUE);
+  constrained.put("foo",1);
+  multimap.get("bar").add(2);
+  constrained.get("baz").add(3);
+  multimap.get("qux").addAll(Arrays.asList(4));
+  constrained.get("zig").addAll(Arrays.asList(5));
+  multimap.putAll("zag",Arrays.asList(6));
+  constrained.putAll("bee",Arrays.asList(7));
+  multimap.putAll(new ImmutableMultimap.Builder<String,Integer>().put("bim",8).build());
+  constrained.putAll(new ImmutableMultimap.Builder<String,Integer>().put("bop",9).build());
+  multimap.putAll(new ImmutableMultimap.Builder<String,Integer>().put("dig",10).build());
+  constrained.putAll(new ImmutableMultimap.Builder<String,Integer>().put("dag",11).build());
+  assertTrue(multimap.equals(constrained));
+  assertTrue(constrained.equals(multimap));
+  ASSERT.that(ImmutableList.copyOf(multimap.entries())).is(ImmutableList.copyOf(constrained.entries()));
+  ASSERT.that(constrained.asMap().get("foo")).has().item(1);
+  assertNull(constrained.asMap().get("missing"));
+  assertEquals(multimap.asMap(),constrained.asMap());
+  assertEquals(multimap.values(),constrained.values());
+  assertEquals(multimap.keys(),constrained.keys());
+  assertEquals(multimap.keySet(),constrained.keySet());
+  assertEquals(multimap.toString(),constrained.toString());
+  assertEquals(multimap.hashCode(),constrained.hashCode());
+  ASSERT.that(multimap.entries()).has().allOf(Maps.immutableEntry(TEST_KEY,TEST_VALUE),Maps.immutableEntry("foo",1),Maps.immutableEntry("bar",2),Maps.immutableEntry("baz",3),Maps.immutableEntry("qux",4),Maps.immutableEntry("zig",5),Maps.immutableEntry("zag",6),Maps.immutableEntry("bee",7),Maps.immutableEntry("bim",8),Maps.immutableEntry("bop",9),Maps.immutableEntry("dig",10),Maps.immutableEntry("dag",11)).inOrder();
+  assertFalse(constrained.asMap().values() instanceof Serializable);
+  Iterator<Collection<Integer>> iterator=constrained.asMap().values().iterator();
+  iterator.next();
+  iterator.next().add(12);
+  assertTrue(multimap.containsEntry("foo",12));
+}

@@ -1,0 +1,3 @@
+{
+  assertSame("x",Strings.padStart("x",-1,'-'));
+}

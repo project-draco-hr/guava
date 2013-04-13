@@ -1,0 +1,6 @@
+{
+  Multiset<String> multiset=HashMultiset.create();
+  Multiset<String> toRetain=HashMultiset.create(Arrays.asList("a","b","a"));
+  assertFalse(Multisets.retainOccurrences(multiset,toRetain));
+  ASSERT.that(multiset).isEmpty();
+}

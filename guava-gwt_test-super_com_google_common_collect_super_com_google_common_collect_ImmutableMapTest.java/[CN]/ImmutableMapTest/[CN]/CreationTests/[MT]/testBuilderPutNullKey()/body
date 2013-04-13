@@ -1,0 +1,9 @@
+{
+  Builder<String,Integer> builder=new Builder<String,Integer>();
+  try {
+    builder.put(null,1);
+    fail();
+  }
+ catch (  NullPointerException expected) {
+  }
+}

@@ -1,0 +1,8 @@
+{
+  Table<String,Integer,Character> table=createTable();
+  for (  Object element : elements) {
+    @SuppressWarnings("unchecked") Cell<String,Integer,Character> cell=(Cell<String,Integer,Character>)element;
+    table.put(cell.getRowKey(),cell.getColumnKey(),cell.getValue());
+  }
+  return table.cellSet();
+}

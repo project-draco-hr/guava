@@ -1,0 +1,4 @@
+{
+  com.google.common.collect.ImmutableMapTest.CreationTests testCase=new com.google.common.collect.ImmutableMapTest.CreationTests();
+  testCase.testBuilderPutNullValueViaPutAll();
+}

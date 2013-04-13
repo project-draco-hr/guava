@@ -1,0 +1,17 @@
+{
+  Map<String,Integer> map=Maps.newLinkedHashMap();
+  Map<String,Integer> constrained=MapConstraints.constrainedMap(map,TEST_CONSTRAINT);
+  map.put(TEST_KEY,TEST_VALUE);
+  constrained.put("foo",1);
+  map.putAll(ImmutableMap.of("bar",2));
+  constrained.putAll(ImmutableMap.of("baz",3));
+  assertTrue(map.equals(constrained));
+  assertTrue(constrained.equals(map));
+  assertEquals(map.entrySet(),constrained.entrySet());
+  assertEquals(map.keySet(),constrained.keySet());
+  assertEquals(HashMultiset.create(map.values()),HashMultiset.create(constrained.values()));
+  assertFalse(map.values() instanceof Serializable);
+  assertEquals(map.toString(),constrained.toString());
+  assertEquals(map.hashCode(),constrained.hashCode());
+  ASSERT.that(map.entrySet()).has().allOf(Maps.immutableEntry(TEST_KEY,TEST_VALUE),Maps.immutableEntry("foo",1),Maps.immutableEntry("bar",2),Maps.immutableEntry("baz",3)).inOrder();
+}

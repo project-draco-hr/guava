@@ -1,0 +1,12 @@
+{
+  final Multimap<Integer,String> expectedIndex=new ImmutableListMultimap.Builder<Integer,String>().put(4,"Inky").put(6,"Blinky").put(5,"Pinky").put(5,"Pinky").put(5,"Clyde").build();
+  final List<String> badGuys=Arrays.asList("Inky","Blinky","Pinky","Pinky","Clyde");
+  final Function<String,Integer> stringLengthFunction=new Function<String,Integer>(){
+    @Override public Integer apply(    String input){
+      return input.length();
+    }
+  }
+;
+  Multimap<Integer,String> index=Multimaps.index(badGuys,stringLengthFunction);
+  assertEquals(expectedIndex,index);
+}

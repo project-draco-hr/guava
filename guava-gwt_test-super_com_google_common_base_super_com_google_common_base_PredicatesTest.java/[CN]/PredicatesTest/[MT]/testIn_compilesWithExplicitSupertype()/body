@@ -1,0 +1,5 @@
+{
+  Collection<Number> nums=ImmutableSet.of();
+  Predicate<Number> p1=Predicates.in(nums);
+  Predicate<Object> p2=Predicates.<Object>in(nums);
+}

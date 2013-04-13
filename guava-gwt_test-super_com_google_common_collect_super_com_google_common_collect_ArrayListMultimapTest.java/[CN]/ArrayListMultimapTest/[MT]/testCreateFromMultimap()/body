@@ -1,0 +1,5 @@
+{
+  Multimap<String,Integer> multimap=createSample();
+  ArrayListMultimap<String,Integer> copy=ArrayListMultimap.create(multimap);
+  assertEquals(multimap,copy);
+}

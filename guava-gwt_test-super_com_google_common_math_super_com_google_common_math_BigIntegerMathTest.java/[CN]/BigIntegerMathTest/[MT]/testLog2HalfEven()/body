@@ -1,0 +1,7 @@
+{
+  for (  BigInteger x : POSITIVE_BIGINTEGER_CANDIDATES) {
+    int halfEven=BigIntegerMath.log2(x,HALF_EVEN);
+    boolean floorWasEven=(BigIntegerMath.log2(x,FLOOR) & 1) == 0;
+    assertEquals(BigIntegerMath.log2(x,floorWasEven ? HALF_DOWN : HALF_UP),halfEven);
+  }
+}

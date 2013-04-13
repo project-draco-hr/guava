@@ -1,0 +1,26 @@
+{
+  try {
+    UnsignedInts.decode("0xfffffffff");
+    fail();
+  }
+ catch (  NumberFormatException expected) {
+  }
+  try {
+    UnsignedInts.decode("-5");
+    fail();
+  }
+ catch (  NumberFormatException expected) {
+  }
+  try {
+    UnsignedInts.decode("-0x5");
+    fail();
+  }
+ catch (  NumberFormatException expected) {
+  }
+  try {
+    UnsignedInts.decode("-05");
+    fail();
+  }
+ catch (  NumberFormatException expected) {
+  }
+}

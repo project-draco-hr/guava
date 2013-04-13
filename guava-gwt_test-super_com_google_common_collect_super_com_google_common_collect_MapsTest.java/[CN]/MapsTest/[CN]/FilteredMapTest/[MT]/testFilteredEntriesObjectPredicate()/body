@@ -1,0 +1,9 @@
+{
+  Map<String,Integer> unfiltered=createUnfiltered();
+  unfiltered.put("cat",3);
+  unfiltered.put("dog",2);
+  unfiltered.put("horse",5);
+  Predicate<Object> predicate=Predicates.alwaysFalse();
+  Map<String,Integer> filtered=Maps.filterEntries(unfiltered,predicate);
+  assertTrue(filtered.isEmpty());
+}

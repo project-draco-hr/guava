@@ -1,0 +1,12 @@
+{
+  Iterator<String> input=asList("1","2","3").iterator();
+  Iterator<Integer> result=Iterators.transform(input,new Function<String,Integer>(){
+    @Override public Integer apply(    String from){
+      return Integer.valueOf(from);
+    }
+  }
+);
+  List<Integer> actual=Lists.newArrayList(result);
+  List<Integer> expected=asList(1,2,3);
+  assertEquals(expected,actual);
+}

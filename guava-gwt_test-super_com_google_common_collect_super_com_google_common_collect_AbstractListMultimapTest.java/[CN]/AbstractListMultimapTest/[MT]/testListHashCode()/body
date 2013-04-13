@@ -1,0 +1,9 @@
+{
+  Multimap<String,Integer> map1=create();
+  map1.put("bar",1);
+  map1.put("foo",2);
+  map1.put("bar",3);
+  Multimap<String,Integer> map2=ArrayListMultimap.create();
+  map2.putAll(map1);
+  assertEquals(map1.hashCode(),map2.hashCode());
+}

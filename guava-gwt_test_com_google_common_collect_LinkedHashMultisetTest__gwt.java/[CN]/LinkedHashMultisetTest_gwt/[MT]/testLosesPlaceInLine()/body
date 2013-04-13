@@ -1,0 +1,5 @@
+{
+  com.google.common.collect.LinkedHashMultisetTest testCase=new com.google.common.collect.LinkedHashMultisetTest();
+  testCase.setUp();
+  testCase.testLosesPlaceInLine();
+}

@@ -1,0 +1,5 @@
+{
+  assertTrue(predicate.apply(0));
+  assertTrue(predicate.apply(1));
+  assertTrue(predicate.apply(null));
+}

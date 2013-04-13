@@ -1,0 +1,14 @@
+{
+  Multimap<String,Integer> unmodifiable=prepareUnmodifiableTests(multimap,permitsDuplicates,nullKey,nullValue);
+  UnmodifiableCollectionTests.assertMultimapIsUnmodifiable(unmodifiable,"test",123);
+  assertUnmodifiableIterableInTandem(unmodifiable.keys(),multimap.keys());
+  assertUnmodifiableIterableInTandem(unmodifiable.keySet(),multimap.keySet());
+  assertUnmodifiableIterableInTandem(unmodifiable.entries(),multimap.entries());
+  assertUnmodifiableIterableInTandem(unmodifiable.asMap().entrySet(),multimap.asMap().entrySet());
+  assertEquals(multimap.toString(),unmodifiable.toString());
+  assertEquals(multimap.hashCode(),unmodifiable.hashCode());
+  assertEquals(multimap,unmodifiable);
+  ASSERT.that(unmodifiable.asMap().get("bar")).has().allOf(5,-1);
+  assertNull(unmodifiable.asMap().get("missing"));
+  assertFalse(unmodifiable.entries() instanceof Serializable);
+}

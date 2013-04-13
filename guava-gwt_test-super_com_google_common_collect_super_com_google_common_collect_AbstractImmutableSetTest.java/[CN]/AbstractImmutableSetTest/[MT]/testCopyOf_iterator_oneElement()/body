@@ -1,0 +1,5 @@
+{
+  Iterator<String> iterator=Iterators.singletonIterator("a");
+  Set<String> set=copyOf(iterator);
+  assertEquals(Collections.singleton("a"),set);
+}

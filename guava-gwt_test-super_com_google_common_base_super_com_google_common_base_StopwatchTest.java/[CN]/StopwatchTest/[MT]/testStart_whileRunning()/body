@@ -1,0 +1,10 @@
+{
+  stopwatch.start();
+  try {
+    stopwatch.start();
+    fail();
+  }
+ catch (  IllegalStateException expected) {
+  }
+  assertTrue(stopwatch.isRunning());
+}

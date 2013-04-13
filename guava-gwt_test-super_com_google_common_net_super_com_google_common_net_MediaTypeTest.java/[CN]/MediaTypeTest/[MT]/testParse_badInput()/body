@@ -1,0 +1,98 @@
+{
+  try {
+    MediaType.parse("/");
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+  try {
+    MediaType.parse("text");
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+  try {
+    MediaType.parse("text/");
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+  try {
+    MediaType.parse("te<t/plain");
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+  try {
+    MediaType.parse("text/pl@in");
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+  try {
+    MediaType.parse("text/plain;");
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+  try {
+    MediaType.parse("text/plain; ");
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+  try {
+    MediaType.parse("text/plain; a");
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+  try {
+    MediaType.parse("text/plain; a=");
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+  try {
+    MediaType.parse("text/plain; a=@");
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+  try {
+    MediaType.parse("text/plain; a=\"@");
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+  try {
+    MediaType.parse("text/plain; a=1;");
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+  try {
+    MediaType.parse("text/plain; a=1; ");
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+  try {
+    MediaType.parse("text/plain; a=1; b");
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+  try {
+    MediaType.parse("text/plain; a=1; b=");
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+  try {
+    MediaType.parse("text/plain; a=\u2025");
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}

@@ -1,0 +1,3 @@
+{
+  assertEquals("a",Optional.of("a").or("default"));
+}

@@ -1,0 +1,4 @@
+{
+  com.google.common.collect.UnmodifiableMultimapAsMapImplementsMapTest testCase=new com.google.common.collect.UnmodifiableMultimapAsMapImplementsMapTest();
+  testCase.testSize();
+}

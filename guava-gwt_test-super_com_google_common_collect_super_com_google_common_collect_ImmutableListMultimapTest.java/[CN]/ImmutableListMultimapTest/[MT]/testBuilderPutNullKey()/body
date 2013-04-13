@@ -1,0 +1,29 @@
+{
+  Multimap<String,Integer> toPut=LinkedListMultimap.create();
+  toPut.put("foo",null);
+  ImmutableListMultimap.Builder<String,Integer> builder=ImmutableListMultimap.builder();
+  try {
+    builder.put(null,1);
+    fail();
+  }
+ catch (  NullPointerException expected) {
+  }
+  try {
+    builder.putAll(null,Arrays.asList(1,2,3));
+    fail();
+  }
+ catch (  NullPointerException expected) {
+  }
+  try {
+    builder.putAll(null,1,2,3);
+    fail();
+  }
+ catch (  NullPointerException expected) {
+  }
+  try {
+    builder.putAll(toPut);
+    fail();
+  }
+ catch (  NullPointerException expected) {
+  }
+}

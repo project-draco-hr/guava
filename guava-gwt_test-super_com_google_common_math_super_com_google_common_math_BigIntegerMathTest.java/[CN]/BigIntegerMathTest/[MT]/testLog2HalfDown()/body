@@ -1,0 +1,8 @@
+{
+  for (  BigInteger x : POSITIVE_BIGINTEGER_CANDIDATES) {
+    int result=BigIntegerMath.log2(x,HALF_DOWN);
+    BigInteger x2=x.pow(2);
+    assertTrue(ZERO.setBit(2 * result + 1).compareTo(x2) >= 0);
+    assertTrue(result == 0 || ZERO.setBit(2 * result - 1).compareTo(x2) < 0);
+  }
+}

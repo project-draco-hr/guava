@@ -1,0 +1,8 @@
+{
+  assertEquals("",UnsignedLongs.join(","));
+  assertEquals("1",UnsignedLongs.join(",",1));
+  assertEquals("1,2",UnsignedLongs.join(",",1,2));
+  assertEquals("18446744073709551615,9223372036854775808",UnsignedLongs.join(",",-1,Long.MIN_VALUE));
+  assertEquals("123",UnsignedLongs.join("",1,2,3));
+  assertEquals("184467440737095516159223372036854775808",UnsignedLongs.join("",-1,Long.MIN_VALUE));
+}

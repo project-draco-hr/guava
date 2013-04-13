@@ -1,0 +1,9 @@
+{
+  checkNotNull(e);
+  return new CacheLoader<K,V>(){
+    @Override public V load(    K key){
+      throw e;
+    }
+  }
+;
+}

@@ -1,0 +1,4 @@
+{
+  com.google.common.collect.ImmutableMapTest testCase=new com.google.common.collect.ImmutableMapTest();
+  testCase.testEquals();
+}

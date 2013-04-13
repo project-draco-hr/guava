@@ -1,0 +1,5 @@
+{
+  assertTrue(Iterables.elementsEqual(original.cellSet(),copy.cellSet()));
+  assertTrue(Iterables.elementsEqual(original.rowKeySet(),copy.rowKeySet()));
+  assertTrue(Iterables.elementsEqual(original.values(),copy.values()));
+}

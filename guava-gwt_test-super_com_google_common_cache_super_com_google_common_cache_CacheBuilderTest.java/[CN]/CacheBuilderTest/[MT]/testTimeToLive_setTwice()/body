@@ -1,0 +1,9 @@
+{
+  CacheBuilder<Object,Object> builder=new CacheBuilder<Object,Object>().expireAfterWrite(3600,SECONDS);
+  try {
+    builder.expireAfterWrite(3600,SECONDS);
+    fail();
+  }
+ catch (  IllegalStateException expected) {
+  }
+}

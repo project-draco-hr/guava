@@ -1,0 +1,9 @@
+{
+  Collection<String> collection=Lists.newArrayList("foo","bar");
+  Collection<String> constrained=Constraints.constrainedCollection(collection,TEST_CONSTRAINT);
+  collection.add(TEST_ELEMENT);
+  constrained.add("qux");
+  constrained.addAll(asList("cat","dog"));
+  ASSERT.that(collection).has().allOf("foo","bar",TEST_ELEMENT,"qux","cat","dog").inOrder();
+  ASSERT.that(constrained).has().allOf("foo","bar",TEST_ELEMENT,"qux","cat","dog").inOrder();
+}

@@ -1,0 +1,5 @@
+{
+  com.google.common.collect.TreeMultimapExplicitTest testCase=new com.google.common.collect.TreeMultimapExplicitTest();
+  testCase.setUp();
+  testCase.testModifyCollectionFromGet();
+}

@@ -1,0 +1,7 @@
+{
+  for (  int x : ALL_INTEGER_CANDIDATES) {
+    for (    int m : POSITIVE_INTEGER_CANDIDATES) {
+      assertEquals(valueOf(x).mod(valueOf(m)).intValue(),IntMath.mod(x,m));
+    }
+  }
+}

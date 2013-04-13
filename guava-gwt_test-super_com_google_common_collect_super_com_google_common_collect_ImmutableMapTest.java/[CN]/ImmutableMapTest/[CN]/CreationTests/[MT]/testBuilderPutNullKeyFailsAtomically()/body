@@ -1,0 +1,11 @@
+{
+  Builder<String,Integer> builder=new Builder<String,Integer>();
+  try {
+    builder.put(null,1);
+    fail();
+  }
+ catch (  NullPointerException expected) {
+  }
+  builder.put("foo",2);
+  assertMapEquals(builder.build(),"foo",2);
+}

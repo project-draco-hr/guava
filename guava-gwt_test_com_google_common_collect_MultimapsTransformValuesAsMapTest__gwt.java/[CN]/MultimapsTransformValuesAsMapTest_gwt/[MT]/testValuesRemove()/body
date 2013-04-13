@@ -1,0 +1,4 @@
+{
+  com.google.common.collect.MultimapsTransformValuesAsMapTest testCase=new com.google.common.collect.MultimapsTransformValuesAsMapTest();
+  testCase.testValuesRemove();
+}

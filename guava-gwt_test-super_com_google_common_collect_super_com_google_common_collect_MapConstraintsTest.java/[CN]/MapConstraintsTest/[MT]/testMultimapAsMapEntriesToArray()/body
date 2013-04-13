@@ -1,0 +1,19 @@
+{
+  Multimap<String,Integer> multimap=LinkedListMultimap.create();
+  Multimap<String,Integer> constrained=MapConstraints.constrainedMultimap(multimap,TEST_CONSTRAINT);
+  multimap.put("foo",1);
+  @SuppressWarnings("unchecked") Map.Entry<String,Collection<Integer>> entry=(Map.Entry<String,Collection<Integer>>)constrained.asMap().entrySet().toArray()[0];
+  try {
+    entry.setValue(Collections.<Integer>emptySet());
+    fail("UnsupportedOperationException expected");
+  }
+ catch (  UnsupportedOperationException expected) {
+  }
+  try {
+    entry.getValue().add(TEST_VALUE);
+    fail("TestValueException expected");
+  }
+ catch (  TestValueException expected) {
+  }
+  assertFalse(multimap.containsValue(TEST_VALUE));
+}

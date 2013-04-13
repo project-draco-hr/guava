@@ -1,0 +1,17 @@
+{
+  ImmutableSortedMap.Builder<String,Integer> builder=ImmutableSortedMap.naturalOrder();
+  final StringHolder holder=new StringHolder();
+  holder.string="one";
+  Entry<String,Integer> entry=new AbstractMapEntry<String,Integer>(){
+    @Override public String getKey(){
+      return holder.string;
+    }
+    @Override public Integer getValue(){
+      return 1;
+    }
+  }
+;
+  builder.put(entry);
+  holder.string="two";
+  assertMapEquals(builder.build(),"one",1);
+}

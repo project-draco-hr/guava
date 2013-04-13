@@ -1,0 +1,7 @@
+{
+  ImmutableTable.Builder<String,Integer,Character> builder=ImmutableTable.builder();
+  for (int i=0; i < data.length; i=i + 3) {
+    builder.put((String)data[i],(Integer)data[i + 1],(Character)data[i + 2]);
+  }
+  return builder.build();
+}

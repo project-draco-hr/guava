@@ -1,0 +1,4 @@
+{
+  Iterable<String> empty=Splitter.on('.').omitEmptyStrings().split("...");
+  ASSERT.that(empty);
+}

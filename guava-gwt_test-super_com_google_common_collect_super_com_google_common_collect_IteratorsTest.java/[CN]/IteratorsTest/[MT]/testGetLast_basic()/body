@@ -1,0 +1,6 @@
+{
+  List<String> list=newArrayList();
+  list.add("a");
+  list.add("b");
+  assertEquals("b",getLast(list.iterator()));
+}

@@ -1,0 +1,12 @@
+{
+  List<Integer> list=emptyList();
+  Iterator<Integer> iterator=peekingIterator(new ThrowsAtEndIterator<Integer>(list));
+  assertNextThrows(iterator);
+  list=Lists.newArrayList(1,2);
+  iterator=peekingIterator(new ThrowsAtEndIterator<Integer>(list));
+  assertTrue(iterator.hasNext());
+  iterator.next();
+  assertTrue(iterator.hasNext());
+  iterator.next();
+  assertNextThrows(iterator);
+}

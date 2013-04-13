@@ -1,0 +1,4 @@
+{
+  countLoad.incrementAndGet();
+  return key;
+}

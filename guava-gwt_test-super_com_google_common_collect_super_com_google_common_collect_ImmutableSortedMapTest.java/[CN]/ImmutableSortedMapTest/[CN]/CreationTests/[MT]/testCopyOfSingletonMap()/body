@@ -1,0 +1,6 @@
+{
+  ImmutableSortedMap<String,Integer> copy=ImmutableSortedMap.copyOf(Collections.singletonMap("one",1));
+  assertMapEquals(copy,"one",1);
+  assertSame(copy,ImmutableSortedMap.copyOf(copy));
+  assertSame(Ordering.natural(),copy.comparator());
+}

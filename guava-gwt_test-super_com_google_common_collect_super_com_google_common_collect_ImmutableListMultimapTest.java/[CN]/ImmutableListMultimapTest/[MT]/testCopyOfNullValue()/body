@@ -1,0 +1,10 @@
+{
+  ArrayListMultimap<String,Integer> input=ArrayListMultimap.create();
+  input.putAll("foo",Arrays.asList(1,null,3));
+  try {
+    ImmutableListMultimap.copyOf(input);
+    fail();
+  }
+ catch (  NullPointerException expected) {
+  }
+}

@@ -1,0 +1,7 @@
+{
+  int sum=0;
+  for (  int i : multimap.values()) {
+    sum+=i;
+  }
+  assertEquals(0,sum);
+}

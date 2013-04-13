@@ -1,0 +1,5 @@
+{
+  List<double[]> ordered=Arrays.asList(new double[]{},new double[]{LEAST},new double[]{LEAST,LEAST},new double[]{LEAST,(double)1},new double[]{(double)1},new double[]{(double)1,LEAST},new double[]{GREATEST,Double.MAX_VALUE},new double[]{GREATEST,GREATEST},new double[]{GREATEST,GREATEST,GREATEST});
+  Comparator<double[]> comparator=Doubles.lexicographicalComparator();
+  Helpers.testComparator(comparator,ordered);
+}

@@ -1,0 +1,14 @@
+{
+  CountingSupplier<LinkedList<Integer>> factory=new ListSupplier();
+  Map<Color,Collection<Integer>> map=Maps.newTreeMap();
+  ListMultimap<Color,Integer> multimap=Multimaps.newListMultimap(map,factory);
+  assertEquals(0,factory.count);
+  multimap.putAll(Color.BLUE,asList(3,1,4,1));
+  assertEquals(1,factory.count);
+  multimap.putAll(Color.RED,asList(2,7,1,8));
+  assertEquals(2,factory.count);
+  assertEquals("{BLUE=[3, 1, 4, 1], RED=[2, 7, 1, 8]}",multimap.toString());
+  assertFalse(multimap.get(Color.BLUE) instanceof RandomAccess);
+  assertTrue(multimap.keySet() instanceof SortedSet);
+  assertTrue(multimap.asMap() instanceof SortedMap);
+}

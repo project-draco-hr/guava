@@ -1,0 +1,4 @@
+{
+  assertFalse(ms.elementSet().removeAll(Collections.emptySet()));
+  assertSize();
+}

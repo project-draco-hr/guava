@@ -1,0 +1,5 @@
+{
+  Character[] suffix={Character.MIN_VALUE,Character.MAX_VALUE};
+  Character[] all=concat(elements,suffix);
+  return asList(all).subList(0,elements.length);
+}

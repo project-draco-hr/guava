@@ -1,0 +1,4 @@
+{
+  ImmutableMap<String,Integer> map=new Builder<String,Integer>().put("one",1).build();
+  assertMapEquals(map,"one",1);
+}

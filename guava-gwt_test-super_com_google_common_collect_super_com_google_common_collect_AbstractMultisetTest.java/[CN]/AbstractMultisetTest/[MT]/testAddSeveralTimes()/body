@@ -1,0 +1,7 @@
+{
+  assertTrue(ms.add("a"));
+  assertTrue(ms.add("b"));
+  assertTrue(ms.add("a"));
+  assertTrue(ms.add("b"));
+  assertContents("a","b","a","b");
+}

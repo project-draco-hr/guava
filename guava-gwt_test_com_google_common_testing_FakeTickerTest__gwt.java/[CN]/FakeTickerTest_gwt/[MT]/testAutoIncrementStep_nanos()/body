@@ -1,0 +1,4 @@
+{
+  com.google.common.testing.FakeTickerTest testCase=new com.google.common.testing.FakeTickerTest();
+  testCase.testAutoIncrementStep_nanos();
+}

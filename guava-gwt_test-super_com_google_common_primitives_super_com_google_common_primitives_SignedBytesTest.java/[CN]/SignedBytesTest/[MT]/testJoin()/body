@@ -1,0 +1,7 @@
+{
+  assertEquals("",SignedBytes.join(",",EMPTY));
+  assertEquals("1",SignedBytes.join(",",ARRAY1));
+  assertEquals("1,2",SignedBytes.join(",",(byte)1,(byte)2));
+  assertEquals("123",SignedBytes.join("",(byte)1,(byte)2,(byte)3));
+  assertEquals("-128,-1",SignedBytes.join(",",(byte)-128,(byte)-1));
+}

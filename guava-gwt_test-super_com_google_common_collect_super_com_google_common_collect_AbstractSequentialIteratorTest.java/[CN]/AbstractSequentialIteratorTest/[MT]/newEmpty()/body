@@ -1,0 +1,8 @@
+{
+  return new AbstractSequentialIterator<T>(null){
+    @Override protected T computeNext(    T previous){
+      throw new AssertionFailedError();
+    }
+  }
+;
+}

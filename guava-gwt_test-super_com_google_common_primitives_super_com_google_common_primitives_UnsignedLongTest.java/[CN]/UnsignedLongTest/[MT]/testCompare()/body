@@ -1,0 +1,9 @@
+{
+  for (  long a : TEST_LONGS) {
+    for (    long b : TEST_LONGS) {
+      UnsignedLong aUnsigned=UnsignedLong.fromLongBits(a);
+      UnsignedLong bUnsigned=UnsignedLong.fromLongBits(b);
+      assertEquals(aUnsigned.bigIntegerValue().compareTo(bUnsigned.bigIntegerValue()),aUnsigned.compareTo(bUnsigned));
+    }
+  }
+}

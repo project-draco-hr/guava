@@ -1,0 +1,13 @@
+{
+  ImmutableList<Integer> unsortedInts=ImmutableList.of(5,3,0,9,3);
+  ImmutableList<Integer> sortedInts=numberOrdering.immutableSortedCopy(unsortedInts);
+  assertEquals(Arrays.asList(0,3,3,5,9),sortedInts);
+  assertEquals(Collections.<Integer>emptyList(),numberOrdering.immutableSortedCopy(Collections.<Integer>emptyList()));
+  List<Integer> listWithNull=Arrays.asList(5,3,null,9);
+  try {
+    Ordering.natural().nullsFirst().immutableSortedCopy(listWithNull);
+    fail();
+  }
+ catch (  NullPointerException expected) {
+  }
+}

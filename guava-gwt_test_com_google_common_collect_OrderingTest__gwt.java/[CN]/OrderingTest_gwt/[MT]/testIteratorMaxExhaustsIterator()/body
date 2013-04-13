@@ -1,0 +1,4 @@
+{
+  com.google.common.collect.OrderingTest testCase=new com.google.common.collect.OrderingTest();
+  testCase.testIteratorMaxExhaustsIterator();
+}

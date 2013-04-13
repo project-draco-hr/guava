@@ -1,0 +1,4 @@
+{
+  com.google.common.collect.ConstraintsTest testCase=new com.google.common.collect.ConstraintsTest();
+  testCase.testNefariousAddAll();
+}

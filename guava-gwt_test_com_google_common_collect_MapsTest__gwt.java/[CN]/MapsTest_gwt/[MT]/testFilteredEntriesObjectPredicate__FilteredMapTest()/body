@@ -1,0 +1,4 @@
+{
+  com.google.common.collect.MapsTest.FilteredMapTest testCase=new com.google.common.collect.MapsTest.FilteredMapTest();
+  testCase.testFilteredEntriesObjectPredicate();
+}

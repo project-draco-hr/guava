@@ -1,0 +1,3 @@
+{
+  checkUnmodifiableMultimap(multimap,permitsDuplicates,null,null);
+}

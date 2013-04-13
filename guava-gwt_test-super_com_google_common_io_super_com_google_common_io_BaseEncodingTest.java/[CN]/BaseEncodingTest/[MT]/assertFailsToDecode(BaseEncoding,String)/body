@@ -1,0 +1,14 @@
+{
+  try {
+    encoding.decode(cannotDecode);
+    fail("Expected IllegalArgumentException");
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+  try {
+    encoding.decodeChecked(cannotDecode);
+    fail("Expected DecodingException");
+  }
+ catch (  DecodingException expected) {
+  }
+}

@@ -1,0 +1,4 @@
+{
+  com.google.common.base.EnumsTest testCase=new com.google.common.base.EnumsTest();
+  testCase.testGetIfPresent();
+}

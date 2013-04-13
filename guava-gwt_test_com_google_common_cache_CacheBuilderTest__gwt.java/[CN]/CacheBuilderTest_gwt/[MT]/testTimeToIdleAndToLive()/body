@@ -1,0 +1,4 @@
+{
+  com.google.common.cache.CacheBuilderTest testCase=new com.google.common.cache.CacheBuilderTest();
+  testCase.testTimeToIdleAndToLive();
+}

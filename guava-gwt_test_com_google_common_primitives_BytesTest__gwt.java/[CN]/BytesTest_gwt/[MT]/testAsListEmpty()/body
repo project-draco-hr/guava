@@ -1,0 +1,4 @@
+{
+  com.google.common.primitives.BytesTest testCase=new com.google.common.primitives.BytesTest();
+  testCase.testAsListEmpty();
+}

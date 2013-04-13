@@ -1,0 +1,13 @@
+{
+  doTestEmpty(CharMatcher.ANY);
+  doTestEmpty(CharMatcher.NONE);
+  doTestEmpty(is('a'));
+  doTestEmpty(isNot('a'));
+  doTestEmpty(anyOf(""));
+  doTestEmpty(anyOf("x"));
+  doTestEmpty(anyOf("xy"));
+  doTestEmpty(anyOf("CharMatcher"));
+  doTestEmpty(noneOf("CharMatcher"));
+  doTestEmpty(inRange('n','q'));
+  doTestEmpty(forPredicate(Predicates.equalTo('c')));
+}

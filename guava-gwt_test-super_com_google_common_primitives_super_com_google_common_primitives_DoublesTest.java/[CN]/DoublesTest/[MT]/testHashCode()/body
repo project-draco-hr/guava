@@ -1,0 +1,5 @@
+{
+  for (  double value : VALUES) {
+    assertEquals(((Double)value).hashCode(),Doubles.hashCode(value));
+  }
+}

@@ -1,0 +1,3 @@
+{
+  doTestNewArrayEquals(new Object[0],0);
+}

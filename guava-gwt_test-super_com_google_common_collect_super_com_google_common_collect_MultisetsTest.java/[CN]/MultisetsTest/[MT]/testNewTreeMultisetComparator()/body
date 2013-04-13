@@ -1,0 +1,6 @@
+{
+  TreeMultiset<String> multiset=TreeMultiset.create(Collections.reverseOrder());
+  multiset.add("bar",3);
+  multiset.add("foo",2);
+  ASSERT.that(multiset).has().allOf("foo","foo","bar","bar","bar").inOrder();
+}

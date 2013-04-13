@@ -1,0 +1,8 @@
+{
+  multimap.put("foo",1);
+  multimap.put("foo",nullValue());
+  multimap.put(nullKey(),3);
+  Collection<Integer> values=multimap.values();
+  ASSERT.that(values.toArray()).has().allOf(1,3,nullValue());
+  ASSERT.that(values.toArray(new Integer[3])).has().allOf(1,3,nullValue());
+}

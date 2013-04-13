@@ -1,0 +1,24 @@
+{
+  Ordering<Integer> comparator=Ordering.natural();
+  Helpers.testComparator(comparator,Integer.MIN_VALUE,-1,0,1,Integer.MAX_VALUE);
+  try {
+    comparator.compare(1,null);
+    fail();
+  }
+ catch (  NullPointerException expected) {
+  }
+  try {
+    comparator.compare(null,2);
+    fail();
+  }
+ catch (  NullPointerException expected) {
+  }
+  try {
+    comparator.compare(null,null);
+    fail();
+  }
+ catch (  NullPointerException expected) {
+  }
+  assertSame(comparator,reserialize(comparator));
+  assertEquals("Ordering.natural()",comparator.toString());
+}

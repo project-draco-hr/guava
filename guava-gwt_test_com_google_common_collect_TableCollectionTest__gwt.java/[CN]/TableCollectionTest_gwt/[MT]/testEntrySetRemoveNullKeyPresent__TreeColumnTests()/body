@@ -1,0 +1,4 @@
+{
+  com.google.common.collect.TableCollectionTest.TreeColumnTests testCase=new com.google.common.collect.TableCollectionTest.TreeColumnTests();
+  testCase.testEntrySetRemoveNullKeyPresent();
+}

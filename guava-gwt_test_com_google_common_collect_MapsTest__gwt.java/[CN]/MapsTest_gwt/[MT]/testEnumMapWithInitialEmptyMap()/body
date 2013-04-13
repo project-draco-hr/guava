@@ -1,0 +1,4 @@
+{
+  com.google.common.collect.MapsTest testCase=new com.google.common.collect.MapsTest();
+  testCase.testEnumMapWithInitialEmptyMap();
+}

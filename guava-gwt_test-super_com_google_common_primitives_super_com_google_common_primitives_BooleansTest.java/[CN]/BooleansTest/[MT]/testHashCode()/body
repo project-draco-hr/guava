@@ -1,0 +1,4 @@
+{
+  assertEquals(Boolean.TRUE.hashCode(),Booleans.hashCode(true));
+  assertEquals(Boolean.FALSE.hashCode(),Booleans.hashCode(false));
+}

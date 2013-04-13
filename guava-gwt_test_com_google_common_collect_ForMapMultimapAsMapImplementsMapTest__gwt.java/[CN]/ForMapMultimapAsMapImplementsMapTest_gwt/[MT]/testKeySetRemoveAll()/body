@@ -1,0 +1,4 @@
+{
+  com.google.common.collect.ForMapMultimapAsMapImplementsMapTest testCase=new com.google.common.collect.ForMapMultimapAsMapImplementsMapTest();
+  testCase.testKeySetRemoveAll();
+}

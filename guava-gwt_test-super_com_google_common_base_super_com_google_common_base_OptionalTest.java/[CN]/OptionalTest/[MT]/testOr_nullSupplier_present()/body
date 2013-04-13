@@ -1,0 +1,4 @@
+{
+  Supplier<String> nullSupplier=Suppliers.ofInstance(null);
+  assertEquals("a",Optional.of("a").or(nullSupplier));
+}

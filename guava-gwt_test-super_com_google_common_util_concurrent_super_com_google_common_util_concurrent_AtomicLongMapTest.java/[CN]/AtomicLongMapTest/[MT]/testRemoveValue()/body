@@ -1,0 +1,22 @@
+{
+  AtomicLongMap<String> map=AtomicLongMap.create();
+  String key="key";
+  assertEquals(0,map.size());
+  assertTrue(map.isEmpty());
+  assertFalse(map.remove(key,0L));
+  long newValue=random.nextInt(MAX_ADDEND);
+  for (int i=0; i < ITERATIONS; i++) {
+    map.put(key,newValue);
+    assertTrue(map.containsKey(key));
+    long before=map.get(key);
+    assertFalse(map.remove(key,newValue + 1));
+    assertFalse(map.remove(key,newValue - 1));
+    assertTrue(map.remove(key,newValue));
+    long after=map.get(key);
+    assertFalse(map.containsKey(key));
+    assertEquals(0L,after);
+    newValue+=newValue;
+  }
+  assertEquals(0,map.size());
+  assertTrue(map.isEmpty());
+}

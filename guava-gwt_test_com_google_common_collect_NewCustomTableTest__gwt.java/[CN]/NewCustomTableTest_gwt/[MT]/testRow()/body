@@ -1,0 +1,5 @@
+{
+  com.google.common.collect.NewCustomTableTest testCase=new com.google.common.collect.NewCustomTableTest();
+  testCase.setUp();
+  testCase.testRow();
+}

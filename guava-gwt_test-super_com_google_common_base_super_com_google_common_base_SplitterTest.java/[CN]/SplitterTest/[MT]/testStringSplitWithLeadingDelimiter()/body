@@ -1,0 +1,5 @@
+{
+  String leading=",a,b,c";
+  Iterable<String> letters=Splitter.on(',').split(leading);
+  ASSERT.that(letters).iteratesOverSequence("","a","b","c");
+}

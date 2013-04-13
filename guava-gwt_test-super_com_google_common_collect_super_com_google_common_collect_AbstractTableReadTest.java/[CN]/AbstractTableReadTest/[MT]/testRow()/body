@@ -1,0 +1,4 @@
+{
+  table=create("foo",1,'a',"bar",1,'b',"foo",3,'c');
+  assertEquals(ImmutableMap.of(1,'a',3,'c'),table.row("foo"));
+}

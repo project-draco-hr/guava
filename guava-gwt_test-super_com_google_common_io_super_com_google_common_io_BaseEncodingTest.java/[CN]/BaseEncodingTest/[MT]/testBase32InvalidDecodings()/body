@@ -1,0 +1,8 @@
+{
+  assertFailsToDecode(base32(),"\u007f");
+  assertFailsToDecode(base32(),"Wf2!");
+  assertFailsToDecode(base32(),"let's not talk of love or chains!");
+  assertFailsToDecode(base32(),"A");
+  assertFailsToDecode(base32(),"ABC");
+  assertFailsToDecode(base32(),"ABCDEF");
+}

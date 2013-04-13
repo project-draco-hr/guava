@@ -1,0 +1,5 @@
+{
+  assertEquals("",Strings.nullToEmpty(null));
+  assertEquals("",Strings.nullToEmpty(""));
+  assertEquals("a",Strings.nullToEmpty("a"));
+}

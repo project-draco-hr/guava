@@ -1,0 +1,4 @@
+{
+  com.google.common.collect.SubMapMultimapAsMapImplementsMapTest testCase=new com.google.common.collect.SubMapMultimapAsMapImplementsMapTest();
+  testCase.testValuesRetainAll();
+}

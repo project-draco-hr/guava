@@ -1,0 +1,15 @@
+{
+  ImmutableSortedSet<Integer> set=ContiguousSet.create(Range.closed(1,3),integers());
+  assertFalse(set.contains(0));
+  assertTrue(set.contains(1));
+  assertTrue(set.contains(2));
+  assertTrue(set.contains(3));
+  assertFalse(set.contains(4));
+  set=ContiguousSet.create(Range.open(0,4),integers());
+  assertFalse(set.contains(0));
+  assertTrue(set.contains(1));
+  assertTrue(set.contains(2));
+  assertTrue(set.contains(3));
+  assertFalse(set.contains(4));
+  assertFalse(set.contains("blah"));
+}

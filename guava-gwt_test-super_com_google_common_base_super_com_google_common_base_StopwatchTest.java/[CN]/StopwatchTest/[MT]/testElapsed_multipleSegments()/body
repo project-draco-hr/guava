@@ -1,0 +1,13 @@
+{
+  stopwatch.start();
+  ticker.advance(9);
+  stopwatch.stop();
+  ticker.advance(16);
+  stopwatch.start();
+  assertEquals(9,stopwatch.elapsed(NANOSECONDS));
+  ticker.advance(25);
+  assertEquals(34,stopwatch.elapsed(NANOSECONDS));
+  stopwatch.stop();
+  ticker.advance(36);
+  assertEquals(34,stopwatch.elapsed(NANOSECONDS));
+}

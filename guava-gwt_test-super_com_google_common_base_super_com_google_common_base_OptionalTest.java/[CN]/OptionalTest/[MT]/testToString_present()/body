@@ -1,0 +1,3 @@
+{
+  assertEquals("Optional.of(training)",Optional.of("training").toString());
+}

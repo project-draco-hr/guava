@@ -1,0 +1,9 @@
+{
+  ImmutableMap<Integer,String> outputMap=Maps.uniqueIndex(new Iterable<String>(){
+    @Override public Iterator<String> iterator(){
+      return INT_TO_STRING_MAP.values().iterator();
+    }
+  }
+,Functions.forMap(INT_TO_STRING_MAP.inverse()));
+  assertEquals(INT_TO_STRING_MAP,outputMap);
+}

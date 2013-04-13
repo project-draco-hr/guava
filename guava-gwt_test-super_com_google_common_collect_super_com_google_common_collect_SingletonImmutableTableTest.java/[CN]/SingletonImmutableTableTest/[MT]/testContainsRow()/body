@@ -1,0 +1,4 @@
+{
+  assertTrue(testTable.containsRow('a'));
+  assertFalse(testTable.containsRow('A'));
+}

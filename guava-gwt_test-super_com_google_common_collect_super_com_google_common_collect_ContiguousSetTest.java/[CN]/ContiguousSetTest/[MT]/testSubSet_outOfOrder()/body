@@ -1,0 +1,9 @@
+{
+  ImmutableSortedSet<Integer> set=ContiguousSet.create(Range.closed(1,3),integers());
+  try {
+    set.subSet(3,2);
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}

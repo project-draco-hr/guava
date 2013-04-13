@@ -1,0 +1,18 @@
+{
+  List<String> list=Lists.newArrayList("A","B","C");
+  Iterator<String> iterator=list.iterator();
+  PeekingIterator<?> peekingIterator=Iterators.peekingIterator(iterator);
+  assertEquals("A",peekingIterator.next());
+  assertEquals("B",peekingIterator.peek());
+  try {
+    peekingIterator.remove();
+    fail("remove() should throw IllegalStateException after a peek()");
+  }
+ catch (  IllegalStateException e) {
+  }
+  assertEquals("After remove() throws exception, peek should still be ok","B",peekingIterator.peek());
+  assertEquals("B",peekingIterator.next());
+  peekingIterator.remove();
+  assertEquals("Should have removed an element",2,list.size());
+  assertFalse("Second element should be gone",list.contains("B"));
+}

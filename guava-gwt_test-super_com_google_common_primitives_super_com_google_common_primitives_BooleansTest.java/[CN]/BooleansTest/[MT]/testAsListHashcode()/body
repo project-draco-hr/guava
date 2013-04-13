@@ -1,0 +1,6 @@
+{
+  assertEquals(1,Booleans.asList(EMPTY).hashCode());
+  assertEquals(Booleans.asList(ARRAY_FALSE).hashCode(),Booleans.asList(ARRAY_FALSE).hashCode());
+  List<Boolean> reference=Booleans.asList(ARRAY_FALSE);
+  assertEquals(Booleans.asList(ARRAY_FALSE).hashCode(),reference.hashCode());
+}

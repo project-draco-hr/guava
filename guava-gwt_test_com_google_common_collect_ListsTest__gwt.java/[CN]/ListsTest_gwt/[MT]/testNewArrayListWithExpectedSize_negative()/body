@@ -1,0 +1,4 @@
+{
+  com.google.common.collect.ListsTest testCase=new com.google.common.collect.ListsTest();
+  testCase.testNewArrayListWithExpectedSize_negative();
+}

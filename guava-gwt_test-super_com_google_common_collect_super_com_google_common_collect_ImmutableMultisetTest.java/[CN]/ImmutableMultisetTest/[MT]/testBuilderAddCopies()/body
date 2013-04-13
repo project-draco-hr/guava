@@ -1,0 +1,4 @@
+{
+  ImmutableMultiset<String> multiset=new ImmutableMultiset.Builder<String>().addCopies("a",2).addCopies("b",3).addCopies("c",0).build();
+  assertEquals(HashMultiset.create(asList("a","a","b","b","b")),multiset);
+}

@@ -1,0 +1,7 @@
+{
+  SortedSet<String> input=Sets.newTreeSet(STRING_LENGTH);
+  Collections.addAll(input,"in","the","quick","jumped","over","a");
+  SortedSet<String> set=ImmutableSortedSet.copyOfSorted(input);
+  ASSERT.that(set).has().allOf("a","in","the","over","quick","jumped").inOrder();
+  assertSame(STRING_LENGTH,set.comparator());
+}

@@ -1,0 +1,13 @@
+{
+  TreeMultiset<String> ms=TreeMultiset.create();
+  ms.add("c",1);
+  ms.add("a",3);
+  ms.add("b",2);
+  SortedSet<String> elementSet=ms.elementSet();
+  assertEquals("a",elementSet.first());
+  assertEquals("c",elementSet.last());
+  assertEquals(Ordering.natural(),elementSet.comparator());
+  ASSERT.that(elementSet.headSet("b")).has().allOf("a").inOrder();
+  ASSERT.that(elementSet.tailSet("b")).has().allOf("b","c").inOrder();
+  ASSERT.that(elementSet.subSet("a","c")).has().allOf("a","b").inOrder();
+}

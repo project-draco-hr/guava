@@ -1,0 +1,24 @@
+{
+  for (  String name : PS) {
+    final InternetDomainName domain=InternetDomainName.from(name);
+    assertTrue(name,domain.isPublicSuffix());
+    assertTrue(name,domain.hasPublicSuffix());
+    assertFalse(name,domain.isUnderPublicSuffix());
+    assertFalse(name,domain.isTopPrivateDomain());
+    assertEquals(domain,domain.publicSuffix());
+  }
+  for (  String name : NO_PS) {
+    final InternetDomainName domain=InternetDomainName.from(name);
+    assertFalse(name,domain.isPublicSuffix());
+    assertFalse(name,domain.hasPublicSuffix());
+    assertFalse(name,domain.isUnderPublicSuffix());
+    assertFalse(name,domain.isTopPrivateDomain());
+    assertNull(domain.publicSuffix());
+  }
+  for (  String name : NON_PS) {
+    final InternetDomainName domain=InternetDomainName.from(name);
+    assertFalse(name,domain.isPublicSuffix());
+    assertTrue(name,domain.hasPublicSuffix());
+    assertTrue(name,domain.isUnderPublicSuffix());
+  }
+}

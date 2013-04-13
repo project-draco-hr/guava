@@ -1,0 +1,9 @@
+{
+  List<String> list=newArrayList("a","b","c");
+  try {
+    Iterables.limit(list,-1);
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}

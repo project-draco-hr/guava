@@ -1,0 +1,4 @@
+{
+  com.google.common.base.OptionalTest testCase=new com.google.common.base.OptionalTest();
+  testCase.testEqualsAndHashCode_present();
+}

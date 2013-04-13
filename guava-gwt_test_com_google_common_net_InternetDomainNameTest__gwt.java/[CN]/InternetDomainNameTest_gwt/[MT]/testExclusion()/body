@@ -1,0 +1,4 @@
+{
+  com.google.common.net.InternetDomainNameTest testCase=new com.google.common.net.InternetDomainNameTest();
+  testCase.testExclusion();
+}

@@ -1,0 +1,9 @@
+{
+  double[] array={(double)0,(double)1,(double)2};
+  List<Double> list=Doubles.asList(array);
+  double[] newArray=Doubles.toArray(list);
+  list.set(0,(double)4);
+  assertTrue(Arrays.equals(new double[]{(double)0,(double)1,(double)2},newArray));
+  newArray[1]=(double)5;
+  assertEquals((double)1,(double)list.get(1));
+}

@@ -1,0 +1,4 @@
+{
+  com.google.common.base.CaseFormatTest testCase=new com.google.common.base.CaseFormatTest();
+  testCase.testUpperCamelToLowerCamel();
+}

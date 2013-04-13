@@ -1,0 +1,21 @@
+{
+  String[] array={"foo","bar"};
+  Iterator<String> iterator=Iterators.forArray(array);
+  assertTrue(iterator.hasNext());
+  assertEquals("foo",iterator.next());
+  assertTrue(iterator.hasNext());
+  try {
+    iterator.remove();
+    fail();
+  }
+ catch (  UnsupportedOperationException expected) {
+  }
+  assertEquals("bar",iterator.next());
+  assertFalse(iterator.hasNext());
+  try {
+    iterator.next();
+    fail();
+  }
+ catch (  NoSuchElementException expected) {
+  }
+}

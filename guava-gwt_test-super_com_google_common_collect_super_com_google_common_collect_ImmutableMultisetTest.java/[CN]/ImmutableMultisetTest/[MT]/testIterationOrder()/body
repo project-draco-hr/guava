@@ -1,0 +1,4 @@
+{
+  Collection<String> c=ImmutableMultiset.of("a","b","a");
+  ASSERT.that(c).has().allOf("a","a","b").inOrder();
+}

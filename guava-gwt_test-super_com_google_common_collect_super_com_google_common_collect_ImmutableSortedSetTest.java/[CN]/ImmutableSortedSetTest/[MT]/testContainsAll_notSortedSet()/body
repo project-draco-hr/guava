@@ -1,0 +1,12 @@
+{
+  SortedSet<String> set=of("a","b","f");
+  assertTrue(set.containsAll(Collections.emptyList()));
+  assertTrue(set.containsAll(asList("b")));
+  assertTrue(set.containsAll(asList("b","b")));
+  assertTrue(set.containsAll(asList("b","f")));
+  assertTrue(set.containsAll(asList("b","f","a")));
+  assertFalse(set.containsAll(asList("d")));
+  assertFalse(set.containsAll(asList("z")));
+  assertFalse(set.containsAll(asList("b","d")));
+  assertFalse(set.containsAll(asList("f","d","a")));
+}

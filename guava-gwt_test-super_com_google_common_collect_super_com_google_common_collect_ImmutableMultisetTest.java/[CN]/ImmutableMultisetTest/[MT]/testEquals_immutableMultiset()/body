@@ -1,0 +1,7 @@
+{
+  Collection<String> c=ImmutableMultiset.of("a","b","a");
+  assertEquals(c,ImmutableMultiset.of("a","b","a"));
+  assertEquals(c,ImmutableMultiset.of("a","a","b"));
+  ASSERT.that(c).isNotEqualTo(ImmutableMultiset.of("a","b"));
+  ASSERT.that(c).isNotEqualTo(ImmutableMultiset.of("a","b","c","d"));
+}

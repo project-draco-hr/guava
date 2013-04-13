@@ -1,0 +1,6 @@
+{
+  SortedSet<String> set=of("e","a","f","b","d","c");
+  SortedSet<String> headset=set.headSet("d");
+  SortedSet<String> copy=copyOf(headset);
+  assertEquals(headset,copy);
+}

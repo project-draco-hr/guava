@@ -1,0 +1,4 @@
+{
+  Set<Integer> mt=emptySet();
+  assertEmpty(Sets.cartesianProduct(mt,mt));
+}

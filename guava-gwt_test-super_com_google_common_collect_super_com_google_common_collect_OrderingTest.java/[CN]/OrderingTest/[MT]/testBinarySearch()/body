@@ -1,0 +1,4 @@
+{
+  List<Integer> ints=Lists.newArrayList(0,2,3,5,7,9);
+  assertEquals(4,numberOrdering.binarySearch(ints,7));
+}

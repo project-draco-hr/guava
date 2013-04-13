@@ -1,0 +1,10 @@
+{
+  List<Float> none=Arrays.<Float>asList();
+  assertTrue(Arrays.equals(EMPTY,Floats.toArray(none)));
+  List<Float> one=Arrays.asList((float)1);
+  assertTrue(Arrays.equals(ARRAY1,Floats.toArray(one)));
+  float[] array={(float)0,(float)1,(float)3};
+  List<Float> three=Arrays.asList((float)0,(float)1,(float)3);
+  assertTrue(Arrays.equals(array,Floats.toArray(three)));
+  assertTrue(Arrays.equals(array,Floats.toArray(Floats.asList(array))));
+}

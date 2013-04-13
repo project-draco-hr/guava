@@ -1,0 +1,20 @@
+{
+  Multimap<String,Integer> map=create();
+  map.put("bar",1);
+  map.put("foo",2);
+  map.put("bar",3);
+  Iterator<Map.Entry<String,Integer>> entries=map.entries().iterator();
+  Map.Entry<String,Integer> entry=entries.next();
+  assertEquals("bar",entry.getKey());
+  assertEquals(1,(int)entry.getValue());
+  entry=entries.next();
+  assertEquals("foo",entry.getKey());
+  assertEquals(2,(int)entry.getValue());
+  entry.setValue(4);
+  entry=entries.next();
+  assertEquals("bar",entry.getKey());
+  assertEquals(3,(int)entry.getValue());
+  assertFalse(entries.hasNext());
+  entries.remove();
+  assertEquals("{bar=[1], foo=[4]}",map.toString());
+}

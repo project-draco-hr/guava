@@ -1,0 +1,5 @@
+{
+  com.google.common.collect.LinkedListMultimapTest testCase=new com.google.common.collect.LinkedListMultimapTest();
+  testCase.setUp();
+  testCase.testRemoveAllRandomAccess();
+}

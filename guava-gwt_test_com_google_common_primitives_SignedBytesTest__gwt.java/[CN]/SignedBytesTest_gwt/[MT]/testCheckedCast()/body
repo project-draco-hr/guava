@@ -1,0 +1,4 @@
+{
+  com.google.common.primitives.SignedBytesTest testCase=new com.google.common.primitives.SignedBytesTest();
+  testCase.testCheckedCast();
+}

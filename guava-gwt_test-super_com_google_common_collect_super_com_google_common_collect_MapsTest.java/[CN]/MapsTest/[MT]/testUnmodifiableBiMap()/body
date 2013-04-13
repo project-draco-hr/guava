@@ -1,0 +1,71 @@
+{
+  BiMap<Integer,String> mod=HashBiMap.create();
+  mod.put(1,"one");
+  mod.put(2,"two");
+  mod.put(3,"three");
+  BiMap<Number,String> unmod=Maps.<Number,String>unmodifiableBiMap(mod);
+  assertSame(unmod.inverse(),unmod.inverse());
+  assertSame(unmod,unmod.inverse().inverse());
+  mod.put(4,"four");
+  assertEquals(true,unmod.get(4).equals("four"));
+  assertEquals(true,unmod.inverse().get("four").equals(4));
+  try {
+    unmod.put(4,"four");
+    fail("UnsupportedOperationException expected");
+  }
+ catch (  UnsupportedOperationException expected) {
+  }
+  try {
+    unmod.forcePut(4,"four");
+    fail("UnsupportedOperationException expected");
+  }
+ catch (  UnsupportedOperationException expected) {
+  }
+  try {
+    unmod.putAll(Collections.singletonMap(4,"four"));
+    fail("UnsupportedOperationException expected");
+  }
+ catch (  UnsupportedOperationException expected) {
+  }
+  BiMap<String,Number> inverse=unmod.inverse();
+  try {
+    inverse.put("four",4);
+    fail("UnsupportedOperationException expected");
+  }
+ catch (  UnsupportedOperationException expected) {
+  }
+  try {
+    inverse.forcePut("four",4);
+    fail("UnsupportedOperationException expected");
+  }
+ catch (  UnsupportedOperationException expected) {
+  }
+  try {
+    inverse.putAll(Collections.singletonMap("four",4));
+    fail("UnsupportedOperationException expected");
+  }
+ catch (  UnsupportedOperationException expected) {
+  }
+  Set<String> values=unmod.values();
+  try {
+    values.remove("four");
+    fail("UnsupportedOperationException expected");
+  }
+ catch (  UnsupportedOperationException expected) {
+  }
+  Set<Map.Entry<Number,String>> entries=unmod.entrySet();
+  Map.Entry<Number,String> entry=entries.iterator().next();
+  try {
+    entry.setValue("four");
+    fail("UnsupportedOperationException expected");
+  }
+ catch (  UnsupportedOperationException expected) {
+  }
+  @SuppressWarnings("unchecked") Map.Entry<Integer,String> entry2=(Map.Entry<Integer,String>)entries.toArray()[0];
+  try {
+    entry2.setValue("four");
+    fail("UnsupportedOperationException expected");
+  }
+ catch (  UnsupportedOperationException expected) {
+  }
+}

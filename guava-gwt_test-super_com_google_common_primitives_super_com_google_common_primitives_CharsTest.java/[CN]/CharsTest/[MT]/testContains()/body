@@ -1,0 +1,9 @@
+{
+  assertFalse(Chars.contains(EMPTY,(char)1));
+  assertFalse(Chars.contains(ARRAY1,(char)2));
+  assertFalse(Chars.contains(ARRAY234,(char)1));
+  assertTrue(Chars.contains(new char[]{(char)-1},(char)-1));
+  assertTrue(Chars.contains(ARRAY234,(char)2));
+  assertTrue(Chars.contains(ARRAY234,(char)3));
+  assertTrue(Chars.contains(ARRAY234,(char)4));
+}

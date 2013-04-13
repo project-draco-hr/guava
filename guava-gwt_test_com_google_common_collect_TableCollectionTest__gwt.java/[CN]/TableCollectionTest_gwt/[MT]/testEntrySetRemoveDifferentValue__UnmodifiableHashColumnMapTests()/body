@@ -1,0 +1,4 @@
+{
+  com.google.common.collect.TableCollectionTest.UnmodifiableHashColumnMapTests testCase=new com.google.common.collect.TableCollectionTest.UnmodifiableHashColumnMapTests();
+  testCase.testEntrySetRemoveDifferentValue();
+}

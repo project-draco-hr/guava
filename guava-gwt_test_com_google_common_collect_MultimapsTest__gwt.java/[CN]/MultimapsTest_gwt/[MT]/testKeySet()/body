@@ -1,0 +1,5 @@
+{
+  com.google.common.collect.MultimapsTest testCase=new com.google.common.collect.MultimapsTest();
+  testCase.setUp();
+  testCase.testKeySet();
+}

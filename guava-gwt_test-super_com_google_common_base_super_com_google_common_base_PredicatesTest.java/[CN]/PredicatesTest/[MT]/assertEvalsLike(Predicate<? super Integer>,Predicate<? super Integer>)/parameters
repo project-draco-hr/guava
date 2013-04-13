@@ -1,0 +1,2 @@
+Predicate<? super Integer> expected
+Predicate<? super Integer> actual

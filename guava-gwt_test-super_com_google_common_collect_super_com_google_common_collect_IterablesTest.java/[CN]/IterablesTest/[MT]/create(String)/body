@@ -1,0 +1,9 @@
+{
+  final List<String> list=asList(strings);
+  return new FluentIterable<String>(){
+    @Override public Iterator<String> iterator(){
+      return list.iterator();
+    }
+  }
+;
+}

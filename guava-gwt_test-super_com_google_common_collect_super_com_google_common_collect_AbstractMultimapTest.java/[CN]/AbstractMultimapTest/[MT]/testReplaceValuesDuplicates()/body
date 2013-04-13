@@ -1,0 +1,11 @@
+{
+  Collection<Integer> values=Lists.newArrayList(1,2,3,2,1);
+  multimap.put("bar",3);
+  Collection<Integer> oldValues=multimap.replaceValues("bar",values);
+  Collection<Integer> replacedValues=multimap.get("bar");
+  assertSize(multimap.size());
+  assertEquals(replacedValues.size(),multimap.size());
+  assertEquals(1,oldValues.size());
+  assertTrue(oldValues.contains(3));
+  checkRemovedCollection(oldValues);
+}

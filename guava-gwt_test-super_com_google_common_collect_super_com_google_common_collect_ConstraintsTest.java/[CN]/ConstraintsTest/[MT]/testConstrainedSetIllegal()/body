@@ -1,0 +1,18 @@
+{
+  Set<String> set=Sets.newLinkedHashSet(asList("foo","bar"));
+  Set<String> constrained=Constraints.constrainedSet(set,TEST_CONSTRAINT);
+  try {
+    constrained.add(TEST_ELEMENT);
+    fail("TestElementException expected");
+  }
+ catch (  TestElementException expected) {
+  }
+  try {
+    constrained.addAll(asList("baz",TEST_ELEMENT));
+    fail("TestElementException expected");
+  }
+ catch (  TestElementException expected) {
+  }
+  ASSERT.that(constrained).has().allOf("foo","bar").inOrder();
+  ASSERT.that(set).has().allOf("foo","bar").inOrder();
+}

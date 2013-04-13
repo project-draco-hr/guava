@@ -1,0 +1,4 @@
+{
+  Multimap<String,Integer> multimap=ImmutableSetMultimap.of();
+  UnmodifiableCollectionTests.assertMultimapIsUnmodifiable(multimap,"foo",1);
+}

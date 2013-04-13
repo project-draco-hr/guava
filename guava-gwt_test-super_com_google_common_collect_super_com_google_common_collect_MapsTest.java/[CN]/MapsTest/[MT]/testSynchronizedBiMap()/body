@@ -1,0 +1,9 @@
+{
+  BiMap<String,Integer> bimap=HashBiMap.create();
+  bimap.put("one",1);
+  BiMap<String,Integer> sync=Maps.synchronizedBiMap(bimap);
+  bimap.put("two",2);
+  sync.put("three",3);
+  assertEquals(ImmutableSet.of(1,2,3),bimap.inverse().keySet());
+  assertEquals(ImmutableSet.of(1,2,3),sync.inverse().keySet());
+}

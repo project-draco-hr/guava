@@ -1,0 +1,4 @@
+{
+  com.google.common.collect.TableCollectionTest.TreeRowMapTailMapTests testCase=new com.google.common.collect.TableCollectionTest.TreeRowMapTailMapTests();
+  testCase.testEntrySetRemove();
+}

@@ -1,0 +1,5 @@
+{
+  com.google.common.collect.TablesTransformValuesTest testCase=new com.google.common.collect.TablesTransformValuesTest();
+  testCase.setUp();
+  testCase.testContainsRow();
+}

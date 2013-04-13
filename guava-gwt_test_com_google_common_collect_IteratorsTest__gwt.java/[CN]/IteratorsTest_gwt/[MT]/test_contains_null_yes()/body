@@ -1,0 +1,4 @@
+{
+  com.google.common.collect.IteratorsTest testCase=new com.google.common.collect.IteratorsTest();
+  testCase.test_contains_null_yes();
+}

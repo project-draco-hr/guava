@@ -1,0 +1,5 @@
+{
+  Multiset<String> ms1=HashMultiset.create();
+  Multiset<String> ms2=HashMultiset.create(Arrays.asList("a","b","a"));
+  ASSERT.that(Multisets.sum(ms1,ms2)).has().allOf("a","b","a");
+}

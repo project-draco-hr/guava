@@ -1,0 +1,4 @@
+{
+  com.google.common.collect.TableCollectionTest.TransformValueColumnTests testCase=new com.google.common.collect.TableCollectionTest.TransformValueColumnTests();
+  testCase.testContainsKey();
+}

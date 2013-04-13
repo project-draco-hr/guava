@@ -1,0 +1,8 @@
+{
+  Map<String,Integer> hashMap=Maps.newLinkedHashMap();
+  hashMap.put("one",1);
+  hashMap.put("two",2);
+  ImmutableBiMap<String,Integer> bimap=ImmutableBiMap.copyOf(ImmutableMap.of("one",1,"two",2));
+  assertMapEquals(bimap,"one",1,"two",2);
+  assertMapEquals(bimap.inverse(),1,"one",2,"two");
+}

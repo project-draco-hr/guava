@@ -1,0 +1,7 @@
+{
+  assertEquals(0,countingSupplier.calls);
+  assertEquals(10,(int)memoizedSupplier.get());
+  assertEquals(1,countingSupplier.calls);
+  assertEquals(10,(int)memoizedSupplier.get());
+  assertEquals(1,countingSupplier.calls);
+}

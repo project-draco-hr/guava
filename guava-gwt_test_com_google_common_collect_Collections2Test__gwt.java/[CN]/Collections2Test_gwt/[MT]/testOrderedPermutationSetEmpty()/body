@@ -1,0 +1,4 @@
+{
+  com.google.common.collect.Collections2Test testCase=new com.google.common.collect.Collections2Test();
+  testCase.testOrderedPermutationSetEmpty();
+}

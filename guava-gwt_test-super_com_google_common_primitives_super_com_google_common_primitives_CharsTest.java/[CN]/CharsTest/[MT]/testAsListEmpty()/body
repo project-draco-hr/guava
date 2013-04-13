@@ -1,0 +1,3 @@
+{
+  assertSame(Collections.emptyList(),Chars.asList(EMPTY));
+}

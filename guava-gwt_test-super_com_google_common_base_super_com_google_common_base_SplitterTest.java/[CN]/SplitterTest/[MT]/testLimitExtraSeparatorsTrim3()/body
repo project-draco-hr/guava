@@ -1,0 +1,5 @@
+{
+  String text=",,a,,  , b ,, c,d ";
+  Iterable<String> items=COMMA_SPLITTER.limit(3).omitEmptyStrings().trimResults().split(text);
+  ASSERT.that(items).iteratesOverSequence("a","b","c,d");
+}

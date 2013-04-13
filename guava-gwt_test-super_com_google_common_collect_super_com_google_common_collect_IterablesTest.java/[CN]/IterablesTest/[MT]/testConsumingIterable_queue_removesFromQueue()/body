@@ -1,0 +1,9 @@
+{
+  Queue<Integer> queue=Lists.newLinkedList(asList(5,14));
+  Iterator<Integer> consumingIterator=Iterables.consumingIterable(queue).iterator();
+  assertEquals(5,queue.peek().intValue());
+  assertEquals(5,consumingIterator.next().intValue());
+  assertEquals(14,queue.peek().intValue());
+  assertTrue(consumingIterator.hasNext());
+  assertTrue(queue.isEmpty());
+}

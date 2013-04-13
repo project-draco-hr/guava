@@ -1,0 +1,12 @@
+{
+  Map<String,Long> in=ImmutableMap.of("1",1L,"2",2L,"3",3L);
+  AtomicLongMap<String> map=AtomicLongMap.create(in);
+  assertFalse(map.isEmpty());
+  assertSame(3,map.size());
+  assertTrue(map.containsKey("1"));
+  assertTrue(map.containsKey("2"));
+  assertTrue(map.containsKey("3"));
+  assertEquals(1L,map.get("1"));
+  assertEquals(2L,map.get("2"));
+  assertEquals(3L,map.get("3"));
+}

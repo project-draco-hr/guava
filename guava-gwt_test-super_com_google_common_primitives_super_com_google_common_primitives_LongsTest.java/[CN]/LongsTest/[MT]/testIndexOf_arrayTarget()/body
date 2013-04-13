@@ -1,0 +1,17 @@
+{
+  assertEquals(0,Longs.indexOf(EMPTY,EMPTY));
+  assertEquals(0,Longs.indexOf(ARRAY234,EMPTY));
+  assertEquals(-1,Longs.indexOf(EMPTY,ARRAY234));
+  assertEquals(-1,Longs.indexOf(ARRAY234,ARRAY1));
+  assertEquals(-1,Longs.indexOf(ARRAY1,ARRAY234));
+  assertEquals(0,Longs.indexOf(ARRAY1,ARRAY1));
+  assertEquals(0,Longs.indexOf(ARRAY234,ARRAY234));
+  assertEquals(0,Longs.indexOf(ARRAY234,new long[]{(long)2,(long)3}));
+  assertEquals(1,Longs.indexOf(ARRAY234,new long[]{(long)3,(long)4}));
+  assertEquals(1,Longs.indexOf(ARRAY234,new long[]{(long)3}));
+  assertEquals(2,Longs.indexOf(ARRAY234,new long[]{(long)4}));
+  assertEquals(1,Longs.indexOf(new long[]{(long)2,(long)3,(long)3,(long)3,(long)3},new long[]{(long)3}));
+  assertEquals(2,Longs.indexOf(new long[]{(long)2,(long)3,(long)2,(long)3,(long)4,(long)2,(long)3},new long[]{(long)2,(long)3,(long)4}));
+  assertEquals(1,Longs.indexOf(new long[]{(long)2,(long)2,(long)3,(long)4,(long)2,(long)3,(long)4},new long[]{(long)2,(long)3,(long)4}));
+  assertEquals(-1,Longs.indexOf(new long[]{(long)4,(long)3,(long)2},new long[]{(long)2,(long)3,(long)4}));
+}

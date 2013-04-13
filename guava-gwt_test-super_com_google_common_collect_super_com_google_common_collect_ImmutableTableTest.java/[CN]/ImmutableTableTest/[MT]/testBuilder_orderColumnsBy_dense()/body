@@ -1,0 +1,15 @@
+{
+  ImmutableTable.Builder<Character,Integer,String> builder=ImmutableTable.builder();
+  builder.orderColumnsBy(Ordering.natural());
+  builder.put('c',3,"foo");
+  builder.put('c',2,"bar");
+  builder.put('c',1,"baz");
+  builder.put('b',3,"cat");
+  builder.put('b',1,"dog");
+  builder.put('a',3,"foo");
+  builder.put('a',2,"bar");
+  builder.put('a',1,"baz");
+  Table<Character,Integer,String> table=builder.build();
+  ASSERT.that(table.columnKeySet()).has().allOf(1,2,3).inOrder();
+  ASSERT.that(table.row('c').keySet()).has().allOf(1,2,3).inOrder();
+}

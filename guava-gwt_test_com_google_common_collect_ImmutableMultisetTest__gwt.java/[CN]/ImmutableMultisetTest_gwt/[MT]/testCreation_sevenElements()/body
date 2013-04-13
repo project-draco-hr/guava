@@ -1,0 +1,4 @@
+{
+  com.google.common.collect.ImmutableMultisetTest testCase=new com.google.common.collect.ImmutableMultisetTest();
+  testCase.testCreation_sevenElements();
+}

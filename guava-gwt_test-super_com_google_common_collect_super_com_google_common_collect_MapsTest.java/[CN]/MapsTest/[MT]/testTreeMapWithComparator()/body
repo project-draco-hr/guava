@@ -1,0 +1,5 @@
+{
+  TreeMap<Integer,Integer> map=Maps.newTreeMap(SOME_COMPARATOR);
+  assertEquals(Collections.emptyMap(),map);
+  assertSame(SOME_COMPARATOR,map.comparator());
+}

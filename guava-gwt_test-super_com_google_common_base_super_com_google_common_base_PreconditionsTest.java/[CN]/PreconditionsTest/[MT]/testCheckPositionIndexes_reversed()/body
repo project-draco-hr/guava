@@ -1,0 +1,9 @@
+{
+  try {
+    Preconditions.checkPositionIndexes(1,0,1);
+    fail();
+  }
+ catch (  IndexOutOfBoundsException expected) {
+    assertEquals("end index (0) must not be less than start index (1)",expected.getMessage());
+  }
+}

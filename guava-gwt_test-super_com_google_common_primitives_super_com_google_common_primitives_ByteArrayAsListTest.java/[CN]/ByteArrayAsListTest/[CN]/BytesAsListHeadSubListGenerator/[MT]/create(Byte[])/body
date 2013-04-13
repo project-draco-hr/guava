@@ -1,0 +1,5 @@
+{
+  Byte[] suffix={Byte.MIN_VALUE,Byte.MAX_VALUE};
+  Byte[] all=concat(elements,suffix);
+  return asList(all).subList(0,elements.length);
+}

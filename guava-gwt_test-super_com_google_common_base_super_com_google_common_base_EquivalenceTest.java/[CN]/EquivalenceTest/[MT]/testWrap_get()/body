@@ -1,0 +1,5 @@
+{
+  String test="test";
+  Wrapper<String> wrapper=LENGTH_EQUIVALENCE.wrap(test);
+  assertSame(test,wrapper.get());
+}

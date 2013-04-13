@@ -1,0 +1,18 @@
+{
+  MapJoiner j=Joiner.on(";").withKeyValueSeparator(":");
+  assertEquals("",j.join(ImmutableMap.of()));
+  assertEquals(":",j.join(ImmutableMap.of("","")));
+  Map<String,String> mapWithNulls=Maps.newLinkedHashMap();
+  mapWithNulls.put("a",null);
+  mapWithNulls.put(null,"b");
+  try {
+    j.join(mapWithNulls);
+    fail();
+  }
+ catch (  NullPointerException expected) {
+  }
+  assertEquals("a:00;00:b",j.useForNull("00").join(mapWithNulls));
+  StringBuilder sb=new StringBuilder();
+  j.appendTo(sb,ImmutableMap.of(1,2,3,4,5,6));
+  assertEquals("1:2;3:4;5:6",sb.toString());
+}

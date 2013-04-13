@@ -1,0 +1,6 @@
+{
+  Object[] reference=list.toArray();
+  Object[] target=ObjectArrays.toArrayImpl(list);
+  assertEquals(reference.getClass(),target.getClass());
+  assertTrue(Arrays.equals(reference,target));
+}

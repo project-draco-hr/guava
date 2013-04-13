@@ -1,0 +1,5 @@
+{
+  Map<String,Integer> map=ImmutableMap.of("a",4,"b",9);
+  Map<String,Double> transformed=transformValues(map,SQRT_FUNCTION);
+  assertEquals(ImmutableMap.of("a",2.0,"b",3.0),transformed);
+}

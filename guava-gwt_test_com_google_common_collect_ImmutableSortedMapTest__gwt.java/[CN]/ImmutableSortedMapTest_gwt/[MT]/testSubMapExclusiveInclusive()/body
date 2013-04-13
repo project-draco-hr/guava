@@ -1,0 +1,4 @@
+{
+  com.google.common.collect.ImmutableSortedMapTest testCase=new com.google.common.collect.ImmutableSortedMapTest();
+  testCase.testSubMapExclusiveInclusive();
+}
