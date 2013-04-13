@@ -1,8 +1,7 @@
 {
-  final State state=state();
   return new Executor(){
     @Override public void execute(    Runnable command){
-      MoreExecutors.newThread(serviceName() + " " + state,command).start();
+      MoreExecutors.newThread(threadNameSupplier.get(),command).start();
     }
   }
 ;
