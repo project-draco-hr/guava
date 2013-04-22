@@ -1,4 +1,0 @@
-{
-  com.google.common.collect.ObjectArraysTest testCase=new com.google.common.collect.ObjectArraysTest();
-  testCase.testCloneEmptyArray();
-}

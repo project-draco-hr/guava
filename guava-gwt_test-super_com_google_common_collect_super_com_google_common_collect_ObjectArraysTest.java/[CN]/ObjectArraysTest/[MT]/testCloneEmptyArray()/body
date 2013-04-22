@@ -1,3 +1,0 @@
-{
-  checkArrayEquals(new String[0],Platform.clone(new String[0]));
-}
