@@ -15,18 +15,19 @@
     while (off < size && ((read=in.read(bytes,off,(int)size - off)) != -1)) {
       off+=read;
     }
-    byte[] result=bytes;
     if (off < size) {
-      result=Arrays.copyOf(bytes,off);
+      return Arrays.copyOf(bytes,off);
     }
- else     if (read != -1) {
-      ByteArrayOutputStream out=new ByteArrayOutputStream();
-      ByteStreams.copy(in,out);
-      byte[] moreBytes=out.toByteArray();
-      result=new byte[bytes.length + moreBytes.length];
-      System.arraycopy(bytes,0,result,0,bytes.length);
-      System.arraycopy(moreBytes,0,result,bytes.length,moreBytes.length);
+    int b=in.read();
+    if (b == -1) {
+      return bytes;
     }
+    InternalByteArrayOutputStream out=new InternalByteArrayOutputStream();
+    out.write(b);
+    ByteStreams.copy(in,out);
+    byte[] result=new byte[bytes.length + out.size()];
+    System.arraycopy(bytes,0,result,0,bytes.length);
+    out.writeTo(result,bytes.length);
     return result;
   }
  catch (  Throwable e) {
