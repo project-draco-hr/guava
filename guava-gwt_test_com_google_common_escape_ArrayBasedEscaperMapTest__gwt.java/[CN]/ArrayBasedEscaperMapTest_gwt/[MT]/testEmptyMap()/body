@@ -1,0 +1,4 @@
+{
+  com.google.common.escape.ArrayBasedEscaperMapTest testCase=new com.google.common.escape.ArrayBasedEscaperMapTest();
+  testCase.testEmptyMap();
+}

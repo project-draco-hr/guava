@@ -1,0 +1,14 @@
+{
+  UnicodeEscaper e=(UnicodeEscaper)urlFormParameterEscaper();
+  assertSame(e,urlFormParameterEscaper());
+  assertBasicUrlEscaper(e);
+  assertEscaping(e,"%21",'!');
+  assertEscaping(e,"%28",'(');
+  assertEscaping(e,"%29",')');
+  assertEscaping(e,"%7E",'~');
+  assertEscaping(e,"%27",'\'');
+  assertEscaping(e,"+",' ');
+  assertEscaping(e,"%2B",'+');
+  assertEquals("safe+with+spaces",e.escape("safe with spaces"));
+  assertEquals("foo%40bar.com",e.escape("foo@bar.com"));
+}

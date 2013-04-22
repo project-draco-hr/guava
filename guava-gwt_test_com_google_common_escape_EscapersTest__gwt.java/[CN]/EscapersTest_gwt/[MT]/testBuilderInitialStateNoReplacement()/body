@@ -1,0 +1,4 @@
+{
+  com.google.common.escape.EscapersTest testCase=new com.google.common.escape.EscapersTest();
+  testCase.testBuilderInitialStateNoReplacement();
+}

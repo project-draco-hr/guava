@@ -1,0 +1,4 @@
+{
+  com.google.common.escape.ArrayBasedCharEscaperTest testCase=new com.google.common.escape.ArrayBasedCharEscaperTest();
+  testCase.testDeleteUnsafeChars();
+}

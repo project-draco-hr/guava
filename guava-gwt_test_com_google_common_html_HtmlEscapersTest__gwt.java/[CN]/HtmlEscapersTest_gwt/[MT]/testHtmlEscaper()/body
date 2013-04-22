@@ -1,0 +1,4 @@
+{
+  com.google.common.html.HtmlEscapersTest testCase=new com.google.common.html.HtmlEscapersTest();
+  testCase.testHtmlEscaper();
+}

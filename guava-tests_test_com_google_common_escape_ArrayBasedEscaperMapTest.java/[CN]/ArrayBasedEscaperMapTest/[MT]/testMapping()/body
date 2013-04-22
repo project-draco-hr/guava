@@ -1,0 +1,16 @@
+{
+  Map<Character,String> map=ImmutableMap.of('\0',"zero",'a',"first",'b',"second",'z',"last",'\uFFFF',"biggest");
+  ArrayBasedEscaperMap fem=ArrayBasedEscaperMap.create(map);
+  char[][] replacementArray=fem.getReplacementArray();
+  assertEquals(65536,replacementArray.length);
+  assertNotNull(replacementArray[replacementArray.length - 1]);
+  for (int n=0; n < replacementArray.length; ++n) {
+    char c=(char)n;
+    if (replacementArray[n] != null) {
+      assertEquals(map.get(c),new String(replacementArray[n]));
+    }
+ else {
+      assertFalse(map.containsKey(c));
+    }
+  }
+}

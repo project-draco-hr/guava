@@ -1,0 +1,4 @@
+{
+  com.google.common.xml.XmlEscapersTest testCase=new com.google.common.xml.XmlEscapersTest();
+  testCase.testXmlAttributeEscaper();
+}

@@ -1,0 +1,10 @@
+{
+  CharEscaper wrappingEscaper=new ArrayBasedCharEscaper(NO_REPLACEMENTS,'Z','A'){
+    @Override protected char[] escapeUnsafe(    char c){
+      return ("{" + c + "}").toCharArray();
+    }
+  }
+;
+  EscaperAsserts.assertBasic(wrappingEscaper);
+  assertEquals("{[}{F}{O}{O}{]}",wrappingEscaper.escape("[FOO]"));
+}

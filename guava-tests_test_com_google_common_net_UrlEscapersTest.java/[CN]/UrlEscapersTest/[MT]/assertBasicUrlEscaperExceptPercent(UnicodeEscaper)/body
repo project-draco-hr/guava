@@ -1,0 +1,30 @@
+{
+  try {
+    e.escape((String)null);
+    fail("Escaping null string should throw exception");
+  }
+ catch (  NullPointerException x) {
+  }
+  assertUnescaped(e,'a');
+  assertUnescaped(e,'z');
+  assertUnescaped(e,'A');
+  assertUnescaped(e,'Z');
+  assertUnescaped(e,'0');
+  assertUnescaped(e,'9');
+  assertUnescaped(e,'-');
+  assertUnescaped(e,'_');
+  assertUnescaped(e,'.');
+  assertUnescaped(e,'*');
+  assertEscaping(e,"%00",'\u0000');
+  assertEscaping(e,"%7F",'\u007f');
+  assertEscaping(e,"%C2%80",'\u0080');
+  assertEscaping(e,"%DF%BF",'\u07ff');
+  assertEscaping(e,"%E0%A0%80",'\u0800');
+  assertEscaping(e,"%EF%BF%BF",'\uffff');
+  assertUnicodeEscaping(e,"%F0%90%80%80",'\uD800','\uDC00');
+  assertUnicodeEscaping(e,"%F4%8F%BF%BF",'\uDBFF','\uDFFF');
+  assertEquals("",e.escape(""));
+  assertEquals("safestring",e.escape("safestring"));
+  assertEquals("embedded%00null",e.escape("embedded\0null"));
+  assertEquals("max%EF%BF%BFchar",e.escape("max\uffffchar"));
+}

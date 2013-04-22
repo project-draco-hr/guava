@@ -1,0 +1,4 @@
+{
+  com.google.common.escape.ArrayBasedUnicodeEscaperTest testCase=new com.google.common.escape.ArrayBasedUnicodeEscaperTest();
+  testCase.testSafeRange();
+}

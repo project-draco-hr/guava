@@ -1,0 +1,5 @@
+{
+  UnicodeEscaper e=(UnicodeEscaper)urlPathSegmentEscaper();
+  assertPathEscaper(e);
+  assertUnescaped(e,'+');
+}

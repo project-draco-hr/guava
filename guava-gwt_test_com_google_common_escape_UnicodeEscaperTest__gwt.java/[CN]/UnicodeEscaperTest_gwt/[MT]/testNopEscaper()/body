@@ -1,0 +1,4 @@
+{
+  com.google.common.escape.UnicodeEscaperTest testCase=new com.google.common.escape.UnicodeEscaperTest();
+  testCase.testNopEscaper();
+}

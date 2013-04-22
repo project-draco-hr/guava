@@ -1,0 +1,3 @@
+CharEscaper xmlEscaper
+boolean shouldEscapeQuotes
+boolean shouldEscapeWhitespaceChars

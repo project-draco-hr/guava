@@ -1,0 +1,6 @@
+{
+  char[] cs={'a','b','c'};
+  CharEscaperBuilder builder=new CharEscaperBuilder().addEscapes(cs,"Z");
+  Escaper escaper=builder.toEscaper();
+  assertEquals("ZZZdef",escaper.escape("abcdef"));
+}

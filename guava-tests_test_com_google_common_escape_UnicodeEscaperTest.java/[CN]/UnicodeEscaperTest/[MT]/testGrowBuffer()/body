@@ -1,0 +1,9 @@
+{
+  StringBuffer input=new StringBuffer();
+  StringBuffer expected=new StringBuffer();
+  for (int i=256; i < 1024; i++) {
+    input.append((char)i);
+    expected.append("[" + i + "]");
+  }
+  assertEquals(expected.toString(),SIMPLE_ESCAPER.escape(input.toString()));
+}

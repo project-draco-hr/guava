@@ -1,0 +1,4 @@
+{
+  com.google.common.net.PercentEscaperTest testCase=new com.google.common.net.PercentEscaperTest();
+  testCase.testPlusForSpace();
+}

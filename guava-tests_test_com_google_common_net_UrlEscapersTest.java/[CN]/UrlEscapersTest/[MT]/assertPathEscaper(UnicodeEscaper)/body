@@ -1,0 +1,13 @@
+{
+  assertBasicUrlEscaper(e);
+  assertUnescaped(e,'!');
+  assertUnescaped(e,'\'');
+  assertUnescaped(e,'(');
+  assertUnescaped(e,')');
+  assertUnescaped(e,'~');
+  assertUnescaped(e,':');
+  assertUnescaped(e,'@');
+  assertEscaping(e,"%20",' ');
+  assertEquals("safe%20with%20spaces",e.escape("safe with spaces"));
+  assertEquals("foo@bar.com",e.escape("foo@bar.com"));
+}

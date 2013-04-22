@@ -1,0 +1,6 @@
+{
+  Escaper escaper=Escapers.nullEscaper();
+  EscaperAsserts.assertBasic(escaper);
+  String s="\0\n\t\\az09~\uD800\uDC00\uFFFF";
+  assertEquals("null escaper should have no effect",s,escaper.escape(s));
+}

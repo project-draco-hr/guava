@@ -1,0 +1,4 @@
+{
+  assertBasicUrlEscaperExceptPercent(e);
+  assertEscaping(e,"%25",'%');
+}
