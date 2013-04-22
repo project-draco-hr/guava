@@ -1,0 +1,4 @@
+{
+  int input=42;
+  assertEquals(Hashing.md5().hashBytes(Ints.toByteArray(input)),Hashing.md5().hashInt(Integer.reverseBytes(input)));
+}
