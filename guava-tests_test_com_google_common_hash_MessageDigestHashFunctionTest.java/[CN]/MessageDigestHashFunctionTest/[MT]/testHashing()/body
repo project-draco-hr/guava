@@ -1,6 +1,6 @@
 {
   for (  String stringToTest : INPUTS) {
-    for (    String algorithmToTest : ALGORITHMS) {
+    for (    String algorithmToTest : ALGORITHMS.keySet()) {
       assertMessageDigestHashing(HashTestUtils.ascii(stringToTest),algorithmToTest);
     }
   }
