@@ -1,0 +1,11 @@
+{
+  Type type=new TypeCapture<T[]>(){
+  }
+.capture();
+  assertVisited(type);
+  new BaseTypeVisitor(){
+    @Override void visitGenericArrayType(    GenericArrayType t){
+    }
+  }
+.visit(type);
+}

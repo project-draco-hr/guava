@@ -1,18 +1,20 @@
 {
   checkNotNull(type);
-  if (type instanceof Class) {
-    return ((Class<?>)type).getComponentType();
+  final AtomicReference<Type> result=new AtomicReference<Type>();
+  new TypeVisitor(){
+    @Override void visitTypeVariable(    TypeVariable<?> t){
+      result.set(subtypeOfComponentType(t.getBounds()));
+    }
+    @Override void visitWildcardType(    WildcardType t){
+      result.set(subtypeOfComponentType(t.getUpperBounds()));
+    }
+    @Override void visitGenericArrayType(    GenericArrayType t){
+      result.set(t.getGenericComponentType());
+    }
+    @Override void visitClass(    Class<?> t){
+      result.set(t.getComponentType());
+    }
   }
- else   if (type instanceof GenericArrayType) {
-    return ((GenericArrayType)type).getGenericComponentType();
-  }
- else   if (type instanceof WildcardType) {
-    return subtypeOfComponentType(((WildcardType)type).getUpperBounds());
-  }
- else   if (type instanceof TypeVariable) {
-    return subtypeOfComponentType(((TypeVariable<?>)type).getBounds());
-  }
- else {
-    return null;
-  }
+.visit(type);
+  return result.get();
 }

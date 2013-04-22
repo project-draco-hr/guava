@@ -1,5 +1,5 @@
 {
-  TypeToken<List> tokL=new TypeToken<List>(){
+  @SuppressWarnings("rawtypes") TypeToken<List> tokL=new TypeToken<List>(){
   }
 ;
   assertTrue(tokL.isAssignableFrom(List.class));

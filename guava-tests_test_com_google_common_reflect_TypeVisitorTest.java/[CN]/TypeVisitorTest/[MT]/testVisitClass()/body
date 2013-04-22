@@ -1,0 +1,8 @@
+{
+  assertVisited(String.class);
+  new BaseTypeVisitor(){
+    @Override void visitClass(    Class<?> t){
+    }
+  }
+.visit(String.class);
+}

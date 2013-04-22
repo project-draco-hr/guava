@@ -1,8 +1,8 @@
 {
-  TypeToken.TypeSet types=TypeToken.of(new TypeCapture<B>(){
+  TypeToken<?>.TypeSet types=TypeToken.of(new TypeCapture<B>(){
   }
 .capture()).getTypes();
-  ASSERT.that(types.rawTypes()).has().allOf(Interface1.class,Class1.class,Object.class);
-  ASSERT.that(types.interfaces().rawTypes()).has().allOf(Interface1.class).inOrder();
-  ASSERT.that(types.classes().rawTypes()).has().allOf(Class1.class,Object.class).inOrder();
+  assertThat(types.rawTypes()).has().allOf(Interface1.class,Class1.class,Object.class);
+  assertThat(types.interfaces().rawTypes()).has().allOf(Interface1.class).inOrder();
+  assertThat(types.classes().rawTypes()).has().allOf(Class1.class,Object.class).inOrder();
 }

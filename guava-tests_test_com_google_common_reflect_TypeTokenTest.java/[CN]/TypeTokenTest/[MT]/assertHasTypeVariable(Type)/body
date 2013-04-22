@@ -1,0 +1,8 @@
+{
+  try {
+    TypeToken.of(type).rejectTypeVariables();
+    fail("Should contain TypeVariable");
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}

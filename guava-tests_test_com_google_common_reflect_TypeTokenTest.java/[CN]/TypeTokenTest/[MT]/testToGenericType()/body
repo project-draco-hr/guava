@@ -3,7 +3,7 @@
   assertEquals(new TypeToken<int[]>(){
   }
 ,TypeToken.toGenericType(int[].class));
-  TypeToken<? extends Iterable> genericType=TypeToken.toGenericType(Iterable.class);
+  @SuppressWarnings("rawtypes") TypeToken<? extends Iterable> genericType=TypeToken.toGenericType(Iterable.class);
   assertEquals(Iterable.class,genericType.getRawType());
   assertEquals(Types.newParameterizedType(Iterable.class,Iterable.class.getTypeParameters()[0]),genericType.getType());
 }

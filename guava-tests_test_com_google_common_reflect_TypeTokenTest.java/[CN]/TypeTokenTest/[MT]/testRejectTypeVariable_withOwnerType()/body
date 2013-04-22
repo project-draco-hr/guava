@@ -1,0 +1,27 @@
+{
+  assertHasTypeVariable(new From<Integer>().new To<String>().type());
+  assertHasTypeVariable(new From<T>().new To<String>().type());
+  assertHasTypeVariable(new From<Integer>().new To<T>().type());
+  assertHasTypeVariable(new From<Integer>(){
+  }
+.new To<String>().type());
+  assertHasTypeVariable(new From<T>(){
+  }
+.new To<String>().type());
+  assertNoTypeVariable(new From<Integer>().new To<String>(){
+  }
+.type());
+  assertHasTypeVariable(new From<Integer>().new To<T>(){
+  }
+.type());
+  assertNoTypeVariable(new From<Integer>(){
+  }
+.new To<String>(){
+  }
+.type());
+  assertHasTypeVariable(new From<Integer>(){
+  }
+.new To<T>(){
+  }
+.type());
+}

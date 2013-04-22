@@ -1,0 +1,15 @@
+{
+  TypeVisitor visitor=new BaseTypeVisitor();
+  try {
+    visitor.visit(type);
+    fail("Type not visited");
+  }
+ catch (  UnsupportedOperationException expected) {
+  }
+  try {
+    visitor.visit(new Type[]{type});
+    fail("Type not visited");
+  }
+ catch (  UnsupportedOperationException expected) {
+  }
+}

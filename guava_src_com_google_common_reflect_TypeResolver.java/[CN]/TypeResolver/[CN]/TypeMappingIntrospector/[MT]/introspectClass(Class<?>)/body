@@ -1,6 +1,0 @@
-{
-  introspect(clazz.getGenericSuperclass());
-  for (  Type interfaceType : clazz.getGenericInterfaces()) {
-    introspect(interfaceType);
-  }
-}

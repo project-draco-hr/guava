@@ -1,8 +1,0 @@
-{
-  for (  Type paramType : types) {
-    if (containsTypeVariable(paramType)) {
-      return true;
-    }
-  }
-  return false;
-}

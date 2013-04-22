@@ -1,0 +1,9 @@
+{
+  WildcardType type=Types.subtypeOf(String.class);
+  assertVisited(type);
+  new BaseTypeVisitor(){
+    @Override void visitWildcardType(    WildcardType t){
+    }
+  }
+.visit(type);
+}

@@ -1,0 +1,15 @@
+{
+  Type type=new TypeCapture<EnumSet<E>>(){
+  }
+.capture();
+  assertVisited(type);
+  new BaseTypeVisitor(){
+    @Override void visitParameterizedType(    ParameterizedType t){
+      visit(t.getActualTypeArguments());
+    }
+    @Override void visitTypeVariable(    TypeVariable<?> t){
+      visit(t.getBounds());
+    }
+  }
+.visit(type);
+}

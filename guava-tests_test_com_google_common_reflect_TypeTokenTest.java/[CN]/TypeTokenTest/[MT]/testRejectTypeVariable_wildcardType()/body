@@ -1,0 +1,8 @@
+{
+  assertNoTypeVariable(new TypeCapture<Iterable<? extends String>>(){
+  }
+.capture());
+  assertNoTypeVariable(new TypeCapture<Iterable<? super String>>(){
+  }
+.capture());
+}

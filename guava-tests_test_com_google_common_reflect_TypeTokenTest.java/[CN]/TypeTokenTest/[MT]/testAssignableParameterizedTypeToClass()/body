@@ -1,10 +1,10 @@
 {
-  TypeToken<List> tokL=new TypeToken<List>(){
+  @SuppressWarnings("rawtypes") TypeToken<List> tokL=new TypeToken<List>(){
   }
 ;
   assertTrue(tokL.isAssignableFrom(StringList.class));
   assertTrue(tokL.isAssignableFrom(StringList.class.getGenericInterfaces()[0]));
-  TypeToken<Second> tokS=new TypeToken<Second>(){
+  @SuppressWarnings("rawtypes") TypeToken<Second> tokS=new TypeToken<Second>(){
   }
 ;
   assertTrue(tokS.isAssignableFrom(Second.class));

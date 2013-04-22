@@ -1,0 +1,5 @@
+{
+  assertNoTypeVariable(String.class);
+  assertNoTypeVariable(String[].class);
+  assertNoTypeVariable(int[].class);
+}

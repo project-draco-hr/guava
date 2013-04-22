@@ -1,22 +1,23 @@
 {
-  if (type instanceof Class) {
-    return ImmutableSet.<Class<?>>of((Class<?>)type);
+  checkNotNull(type);
+  final ImmutableSet.Builder<Class<?>> builder=ImmutableSet.builder();
+  new TypeVisitor(){
+    @Override void visitTypeVariable(    TypeVariable<?> t){
+      visit(t.getBounds());
+    }
+    @Override void visitWildcardType(    WildcardType t){
+      visit(t.getUpperBounds());
+    }
+    @Override void visitParameterizedType(    ParameterizedType t){
+      builder.add((Class<?>)t.getRawType());
+    }
+    @Override void visitClass(    Class<?> t){
+      builder.add(t);
+    }
+    @Override void visitGenericArrayType(    GenericArrayType t){
+      builder.add(Types.getArrayClass(getRawType(t.getGenericComponentType())));
+    }
   }
- else   if (type instanceof ParameterizedType) {
-    ParameterizedType parameterizedType=(ParameterizedType)type;
-    return ImmutableSet.<Class<?>>of((Class<?>)parameterizedType.getRawType());
-  }
- else   if (type instanceof GenericArrayType) {
-    GenericArrayType genericArrayType=(GenericArrayType)type;
-    return ImmutableSet.<Class<?>>of(Types.getArrayClass(getRawType(genericArrayType.getGenericComponentType())));
-  }
- else   if (type instanceof TypeVariable) {
-    return getRawTypes(((TypeVariable<?>)type).getBounds());
-  }
- else   if (type instanceof WildcardType) {
-    return getRawTypes(((WildcardType)type).getUpperBounds());
-  }
- else {
-    throw new AssertionError(type + " unsupported");
-  }
+.visit(type);
+  return builder.build();
 }

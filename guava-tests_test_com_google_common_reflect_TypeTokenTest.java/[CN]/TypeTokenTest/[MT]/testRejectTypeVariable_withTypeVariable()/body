@@ -1,0 +1,20 @@
+{
+  assertHasTypeVariable(new TypeCapture<T>(){
+  }
+.capture());
+  assertHasTypeVariable(new TypeCapture<T[]>(){
+  }
+.capture());
+  assertHasTypeVariable(new TypeCapture<Iterable<T>>(){
+  }
+.capture());
+  assertHasTypeVariable(new TypeCapture<Map<String,T>>(){
+  }
+.capture());
+  assertHasTypeVariable(new TypeCapture<Map<String,? extends T>>(){
+  }
+.capture());
+  assertHasTypeVariable(new TypeCapture<Map<String,? super T[]>>(){
+  }
+.capture());
+}

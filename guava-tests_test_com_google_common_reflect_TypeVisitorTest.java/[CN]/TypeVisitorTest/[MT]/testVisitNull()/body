@@ -1,0 +1,3 @@
+{
+  new BaseTypeVisitor().visit(((ParameterizedType)ArrayList.class.getGenericSuperclass()).getOwnerType());
+}

@@ -1,5 +1,0 @@
-{
-  assertFalse(Types.containsTypeVariable(String.class));
-  assertFalse(Types.containsTypeVariable(String[].class));
-  assertFalse(Types.containsTypeVariable(int[].class));
-}
