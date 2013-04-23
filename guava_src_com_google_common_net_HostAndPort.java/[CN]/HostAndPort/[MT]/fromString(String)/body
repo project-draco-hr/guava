@@ -4,10 +4,9 @@
   String portString=null;
   boolean hasBracketlessColons=false;
   if (hostPortString.startsWith("[")) {
-    Matcher matcher=BRACKET_PATTERN.matcher(hostPortString);
-    checkArgument(matcher.matches(),"Invalid bracketed host/port: %s",hostPortString);
-    host=matcher.group(1);
-    portString=matcher.group(2);
+    String[] hostAndPort=getHostAndPortFromBracketedHost(hostPortString);
+    host=hostAndPort[0];
+    portString=hostAndPort[1];
   }
  else {
     int colonPos=hostPortString.indexOf(':');

@@ -1,0 +1,4 @@
+{
+  com.google.common.net.HostAndPortTest testCase=new com.google.common.net.HostAndPortTest();
+  testCase.testFromStringWellFormed();
+}
