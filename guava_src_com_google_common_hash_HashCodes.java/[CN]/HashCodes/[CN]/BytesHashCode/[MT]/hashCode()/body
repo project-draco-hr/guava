@@ -4,7 +4,7 @@
   }
  else {
     int val=(bytes[0] & 0xFF);
-    for (int i=1; i < bytes.length; i++) {
+    for (int i=1; i < Math.min(bytes.length,4); i++) {
       val|=((bytes[i] & 0xFF) << (i * 8));
     }
     return val;

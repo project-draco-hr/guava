@@ -1,3 +1,7 @@
 {
-  return (bytes.length < 8) ? UnsignedInts.toLong(asInt()) : asLong();
+  long retVal=(bytes[0] & 0xFF);
+  for (int i=1; i < Math.min(bytes.length,8); i++) {
+    retVal|=(bytes[i] & 0xFFL) << (i * 8);
+  }
+  return retVal;
 }

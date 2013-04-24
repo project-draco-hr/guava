@@ -1,0 +1,5 @@
+{
+  byte[] bytez=new byte[size];
+  Arrays.fill(bytez,(byte)0x99);
+  return bytez;
+}
