@@ -1,7 +1,7 @@
 {
-  Optional<BinaryNode> root=Optional.absent();
+  int[] keys=new int[size];
   for (int i=0; i < size; i++) {
-    root=Optional.of(new BinaryNode(rng.nextInt(),Optional.<BinaryNode>absent(),root));
+    keys[i]=rng.nextInt();
   }
-  return root;
+  return createTreap(Ints.asList(keys));
 }
