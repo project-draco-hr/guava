@@ -1,5 +1,5 @@
 {
-  new EqualsTester().addEqualityGroup(hashFunction.newHasher().putUnencodedChars("abc").hash(),hashFunction.newHasher().putUnencodedChars("ab").putUnencodedChars("c").hash(),hashFunction.newHasher().putUnencodedChars("a").putUnencodedChars("bc").hash(),hashFunction.newHasher().putUnencodedChars("a").putUnencodedChars("b").putUnencodedChars("c").hash(),hashFunction.newHasher().putChar('a').putUnencodedChars("bc").hash(),hashFunction.newHasher().putUnencodedChars("ab").putChar('c').hash(),hashFunction.newHasher().putChar('a').putChar('b').putChar('c').hash()).testEquals();
+  new EqualsTester().addEqualityGroup(hashFunction.hashUnencodedChars("abc"),hashFunction.newHasher().putUnencodedChars("abc").hash(),hashFunction.newHasher().putUnencodedChars("ab").putUnencodedChars("c").hash(),hashFunction.newHasher().putUnencodedChars("a").putUnencodedChars("bc").hash(),hashFunction.newHasher().putUnencodedChars("a").putUnencodedChars("b").putUnencodedChars("c").hash(),hashFunction.newHasher().putChar('a').putUnencodedChars("bc").hash(),hashFunction.newHasher().putUnencodedChars("ab").putChar('c').hash(),hashFunction.newHasher().putChar('a').putChar('b').putChar('c').hash()).testEquals();
   int size=random.nextInt(2048);
   byte[] bytes=new byte[size];
   random.nextBytes(bytes);

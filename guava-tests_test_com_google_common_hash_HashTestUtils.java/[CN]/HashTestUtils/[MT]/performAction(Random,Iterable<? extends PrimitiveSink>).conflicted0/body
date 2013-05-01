@@ -1,6 +1,6 @@
 {
-  short value=(short)random.nextInt();
+  int value=random.nextInt();
   for (  PrimitiveSink sink : sinks) {
-    sink.putShort(value);
+    sink.putByte((byte)value);
   }
 }

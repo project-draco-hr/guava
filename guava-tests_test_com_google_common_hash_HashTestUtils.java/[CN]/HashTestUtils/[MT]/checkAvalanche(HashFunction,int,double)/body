@@ -8,8 +8,8 @@
     for (int j=0; j < trials; j++) {
       int key1=rand.nextInt();
       int key2=key1 ^ (1 << i);
-      int hash1=function.newHasher().putInt(key1).hash().asInt();
-      int hash2=function.newHasher().putInt(key2).hash().asInt();
+      int hash1=function.hashInt(key1).asInt();
+      int hash2=function.hashInt(key2).asInt();
       for (int k=0; k < hashBits; k++) {
         if ((hash1 & (1 << k)) == (hash2 & (1 << k))) {
           same[k]+=1;

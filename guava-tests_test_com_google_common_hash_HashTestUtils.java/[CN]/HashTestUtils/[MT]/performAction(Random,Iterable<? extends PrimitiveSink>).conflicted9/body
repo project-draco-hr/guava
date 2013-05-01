@@ -1,6 +1,6 @@
 {
-  String s=new String(new char[]{randomLowSurrogate(random)});
+  short value=(short)random.nextInt();
   for (  PrimitiveSink sink : sinks) {
-    sink.putUnencodedChars(s);
+    sink.putShort(value);
   }
 }
