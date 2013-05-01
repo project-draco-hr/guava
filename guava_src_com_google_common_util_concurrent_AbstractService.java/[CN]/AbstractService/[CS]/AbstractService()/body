@@ -1,7 +1,5 @@
 {
   addListener(new Listener(){
-    @Override public void starting(){
-    }
     @Override public void running(){
       startup.set(State.RUNNING);
     }
