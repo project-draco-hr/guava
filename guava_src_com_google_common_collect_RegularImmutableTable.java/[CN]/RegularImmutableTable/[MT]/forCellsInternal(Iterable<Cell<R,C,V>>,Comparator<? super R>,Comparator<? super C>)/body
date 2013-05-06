@@ -18,5 +18,5 @@
     Collections.sort(columnList,columnComparator);
     columnSpace=ImmutableSet.copyOf(columnList);
   }
-  return (cellList.size() > ((rowSpace.size() * columnSpace.size()) / 2)) ? new DenseImmutableTable<R,C,V>(cellList,rowSpace,columnSpace) : new SparseImmutableTable<R,C,V>(cellList,rowSpace,columnSpace);
+  return (cellList.size() > (((long)rowSpace.size() * columnSpace.size()) / 2)) ? new DenseImmutableTable<R,C,V>(cellList,rowSpace,columnSpace) : new SparseImmutableTable<R,C,V>(cellList,rowSpace,columnSpace);
 }
