@@ -3,10 +3,6 @@
   Service b=new NoOpService();
   final ServiceManager manager=new ServiceManager(asList(a,b));
   manager.addListener(new Listener(){
-    @Override public void healthy(){
-    }
-    @Override public void stopped(){
-    }
     @Override public void failure(    Service service){
       manager.stopAsync();
     }

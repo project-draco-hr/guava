@@ -1,0 +1,4 @@
+{
+  ServiceManager manager=new ServiceManager(Arrays.<Service>asList());
+  new NullPointerTester().setDefault(ServiceManager.Listener.class,new RecordingListener()).testAllPublicInstanceMethods(manager);
+}
