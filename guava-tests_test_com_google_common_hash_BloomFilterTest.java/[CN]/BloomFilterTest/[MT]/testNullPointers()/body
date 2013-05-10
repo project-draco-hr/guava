@@ -1,5 +1,5 @@
 {
   NullPointerTester tester=new NullPointerTester();
-  tester.testAllPublicInstanceMethods(BloomFilter.create(Funnels.stringFunnel(),100));
+  tester.testAllPublicInstanceMethods(BloomFilter.create(Funnels.unencodedCharsFunnel(),100));
   tester.testAllPublicStaticMethods(BloomFilter.class);
 }

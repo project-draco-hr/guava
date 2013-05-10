@@ -1,6 +1,6 @@
 {
   Long value=1234L;
-  PrimitiveSink bytePrimitiveSink=mock(PrimitiveSink.class);
-  Funnels.longFunnel().funnel(value,bytePrimitiveSink);
-  verify(bytePrimitiveSink).putLong(1234);
+  PrimitiveSink primitiveSink=mock(PrimitiveSink.class);
+  Funnels.longFunnel().funnel(value,primitiveSink);
+  verify(primitiveSink).putLong(1234);
 }

@@ -1,5 +1,5 @@
 {
-  BloomFilter<CharSequence> original=BloomFilter.create(Funnels.stringFunnel(),100);
+  BloomFilter<CharSequence> original=BloomFilter.create(Funnels.unencodedCharsFunnel(),100);
   BloomFilter<CharSequence> copy=original.copy();
   assertNotSame(original,copy);
   assertEquals(original,copy);

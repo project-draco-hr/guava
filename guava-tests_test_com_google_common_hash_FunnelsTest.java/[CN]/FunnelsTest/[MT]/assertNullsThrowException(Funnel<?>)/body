@@ -1,5 +1,5 @@
 {
-  PrimitiveSink bytePrimitiveSink=new AbstractStreamingHasher(4,4){
+  PrimitiveSink primitiveSink=new AbstractStreamingHasher(4,4){
     @Override HashCode makeHash(){
       throw new UnsupportedOperationException();
     }
@@ -11,7 +11,7 @@
   }
 ;
   try {
-    funnel.funnel(null,bytePrimitiveSink);
+    funnel.funnel(null,primitiveSink);
     fail();
   }
  catch (  NullPointerException ok) {

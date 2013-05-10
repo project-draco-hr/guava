@@ -1,5 +1,5 @@
 {
-  PrimitiveSink bytePrimitiveSink=mock(PrimitiveSink.class);
-  Funnels.stringFunnel().funnel("test",bytePrimitiveSink);
-  verify(bytePrimitiveSink).putUnencodedChars("test");
+  PrimitiveSink primitiveSink=mock(PrimitiveSink.class);
+  Funnels.unencodedCharsFunnel().funnel("test",primitiveSink);
+  verify(primitiveSink).putUnencodedChars("test");
 }
