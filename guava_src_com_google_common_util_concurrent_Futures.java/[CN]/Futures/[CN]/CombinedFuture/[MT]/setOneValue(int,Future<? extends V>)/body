@@ -15,17 +15,10 @@
     }
   }
 catch (  ExecutionException e) {
-    if (allMustSucceed) {
-      setException(e.getCause());
-    }
+    setExceptionOrLog(e.getCause());
   }
-catch (  RuntimeException e) {
-    if (allMustSucceed) {
-      setException(e);
-    }
-  }
-catch (  Error e) {
-    setException(e);
+catch (  Throwable t) {
+    setExceptionOrLog(t);
   }
  finally {
     int newRemaining=remaining.decrementAndGet();

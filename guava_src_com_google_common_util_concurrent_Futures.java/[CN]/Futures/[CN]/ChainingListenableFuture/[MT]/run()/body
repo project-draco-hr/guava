@@ -40,11 +40,8 @@ catch (        ExecutionException e) {
  catch (  UndeclaredThrowableException e) {
     setException(e.getCause());
   }
-catch (  Exception e) {
-    setException(e);
-  }
-catch (  Error e) {
-    setException(e);
+catch (  Throwable t) {
+    setException(t);
   }
  finally {
     function=null;

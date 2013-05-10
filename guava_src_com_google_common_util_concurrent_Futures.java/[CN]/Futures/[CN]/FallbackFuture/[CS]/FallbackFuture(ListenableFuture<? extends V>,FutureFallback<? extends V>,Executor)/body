@@ -29,10 +29,7 @@
         }
 ,sameThreadExecutor());
       }
- catch (      Exception e) {
-        setException(e);
-      }
-catch (      Error e) {
+ catch (      Throwable e) {
         setException(e);
       }
     }

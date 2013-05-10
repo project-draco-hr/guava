@@ -5,20 +5,10 @@
   runGetIdempotencyTest(exceptionComposedFuture,MyRuntimeException.class);
   SettableFuture<Integer> errorInput=SettableFuture.create();
   ListenableFuture<Integer> errorComposedFuture=Futures.transform(errorInput,newOneTimeErrorThrower());
-  try {
-    errorInput.set(0);
-    fail();
-  }
- catch (  MyError expected) {
-  }
+  errorInput.set(0);
   runGetIdempotencyTest(errorComposedFuture,MyError.class);
   exceptionComposedFuture=Futures.transform(exceptionInput,newOneTimeExceptionThrower());
   runGetIdempotencyTest(exceptionComposedFuture,MyRuntimeException.class);
-  try {
-    Futures.transform(errorInput,newOneTimeErrorThrower());
-    fail();
-  }
- catch (  MyError expected) {
-  }
+  runGetIdempotencyTest(Futures.transform(errorInput,newOneTimeErrorThrower()),MyError.class);
   runGetIdempotencyTest(errorComposedFuture,MyError.class);
 }

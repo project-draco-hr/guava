@@ -3,8 +3,5 @@
   if (result) {
     executionList.execute();
   }
-  if (throwable instanceof Error) {
-    throw (Error)throwable;
-  }
   return result;
 }

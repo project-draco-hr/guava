@@ -1,11 +1,5 @@
 {
   Error error=new Error();
-  try {
-    inputFuture.setException(error);
-    fail("Expected an Error to be thrown");
-  }
- catch (  Error expected) {
-    assertSame(error,expected);
-  }
+  inputFuture.setException(error);
   listener.assertException(error);
 }

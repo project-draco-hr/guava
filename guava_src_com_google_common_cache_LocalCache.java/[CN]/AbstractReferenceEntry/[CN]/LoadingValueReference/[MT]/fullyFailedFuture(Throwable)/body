@@ -1,5 +1,3 @@
 {
-  SettableFuture<V> future=SettableFuture.create();
-  setException(future,t);
-  return future;
+  return Futures.immediateFailedFuture(t);
 }

@@ -7,13 +7,13 @@
   }
 ;
   SettableFuture<String> inputFuture=SettableFuture.create();
-  Futures.transform(inputFuture,function);
+  ListenableFuture<Integer> outputFuture=Futures.transform(inputFuture,function);
+  inputFuture.set("value");
   try {
-    inputFuture.set("value");
+    outputFuture.get();
+    fail("should have thrown error");
   }
- catch (  Error expected) {
-    assertSame(error,expected);
-    return;
+ catch (  ExecutionException e) {
+    assertSame(error,e.getCause());
   }
-  fail("should have thrown error");
 }

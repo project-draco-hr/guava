@@ -1,8 +1,0 @@
-{
-  try {
-    return future.setException(t);
-  }
- catch (  Error e) {
-    return false;
-  }
-}
