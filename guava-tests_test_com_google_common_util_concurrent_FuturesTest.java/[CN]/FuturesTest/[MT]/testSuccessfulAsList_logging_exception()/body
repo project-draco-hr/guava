@@ -1,0 +1,6 @@
+{
+  assertEquals(Lists.newArrayList((Object)null),Futures.successfulAsList(immediateFailedFuture(new MyException())).get());
+  assertEquals("Nothing should be logged",0,combinedFutureLogHandler.getStoredLogRecords().size());
+  assertEquals(Lists.newArrayList(null,null,null),Futures.successfulAsList(immediateFailedFuture(new MyException()),immediateFailedFuture(new MyException()),immediateFailedFuture(new MyException())).get());
+  assertEquals("Nothing should be logged",0,combinedFutureLogHandler.getStoredLogRecords().size());
+}

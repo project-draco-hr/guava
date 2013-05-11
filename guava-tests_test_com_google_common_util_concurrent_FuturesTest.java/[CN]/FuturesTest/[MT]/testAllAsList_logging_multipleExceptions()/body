@@ -1,0 +1,12 @@
+{
+  try {
+    Futures.allAsList(immediateFailedFuture(new MyException()),immediateFailedFuture(new MyException())).get();
+    fail();
+  }
+ catch (  ExecutionException e) {
+    assertTrue(e.getCause() instanceof MyException);
+    List<LogRecord> logged=combinedFutureLogHandler.getStoredLogRecords();
+    assertEquals(1,logged.size());
+    assertTrue(logged.get(0).getThrown() instanceof MyException);
+  }
+}

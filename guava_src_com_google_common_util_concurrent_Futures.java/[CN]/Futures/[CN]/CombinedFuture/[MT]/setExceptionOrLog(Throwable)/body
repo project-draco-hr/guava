@@ -1,9 +1,0 @@
-{
-  boolean result=false;
-  if (allMustSucceed) {
-    result=super.setException(throwable);
-  }
-  if (!result) {
-    logger.log(Level.SEVERE,"ignoring failure from input future.",throwable);
-  }
-}

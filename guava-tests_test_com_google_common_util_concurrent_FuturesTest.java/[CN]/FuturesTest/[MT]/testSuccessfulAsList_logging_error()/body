@@ -1,0 +1,6 @@
+{
+  assertEquals(Lists.newArrayList((Object)null),Futures.successfulAsList(immediateFailedFuture(new MyError())).get());
+  List<LogRecord> logged=combinedFutureLogHandler.getStoredLogRecords();
+  assertEquals(1,logged.size());
+  assertTrue(logged.get(0).getThrown() instanceof MyError);
+}
