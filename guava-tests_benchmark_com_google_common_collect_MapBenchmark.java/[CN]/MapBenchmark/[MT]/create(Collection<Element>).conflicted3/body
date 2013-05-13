@@ -1,5 +1,5 @@
 {
-  Map<Element,Element> map=Maps.newHashMap();
+  Map<Element,Element> map=new MapMaker().concurrencyLevel(16).makeMap();
   for (  Element element : keys) {
     map.put(element,element);
   }

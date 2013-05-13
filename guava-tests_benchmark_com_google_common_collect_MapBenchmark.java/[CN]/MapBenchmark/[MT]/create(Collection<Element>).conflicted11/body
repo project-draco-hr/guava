@@ -1,3 +1,7 @@
 {
-  return Collections.synchronizedMap(Hash.create(keys));
+  ImmutableMap.Builder<Element,Element> builder=ImmutableMap.builder();
+  for (  Element element : keys) {
+    builder.put(element,element);
+  }
+  return builder.build();
 }
