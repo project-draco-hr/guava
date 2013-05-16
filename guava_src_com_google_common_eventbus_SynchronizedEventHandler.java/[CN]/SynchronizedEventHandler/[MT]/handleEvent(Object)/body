@@ -1,3 +1,5 @@
 {
-  super.handleEvent(event);
+synchronized (this) {
+    super.handleEvent(event);
+  }
 }
