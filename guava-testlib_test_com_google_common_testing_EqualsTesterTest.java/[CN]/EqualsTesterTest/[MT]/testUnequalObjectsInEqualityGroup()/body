@@ -4,7 +4,7 @@
     tester.testEquals();
   }
  catch (  AssertionFailedError e) {
-    assertErrorMessage(e,"foo [group 1, item 1] must be equal to bar [group 1, item 2]");
+    assertErrorMessage(e,"foo [group 1, item 1] must be Object#equals to bar [group 1, item 2]");
     return;
   }
   fail("should failed because of unequal objects in the same equality group");

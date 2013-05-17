@@ -5,7 +5,7 @@
     equalsTester.testEquals();
   }
  catch (  AssertionFailedError e) {
-    assertErrorMessage(e,obj + " must be unequal to null");
+    assertErrorMessage(e,obj + " must not be Object#equals to null");
     return;
   }
   fail("Should get equal to null error");

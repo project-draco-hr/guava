@@ -4,7 +4,7 @@
     tester.testEquals();
   }
  catch (  AssertionFailedError e) {
-    assertErrorMessage(e,"bar [group 1, item 2] must be equal to baz [group 1, item 3]");
+    assertErrorMessage(e,"bar [group 1, item 2] must be Object#equals to baz [group 1, item 3]");
     return;
   }
   fail("should failed because transitivity is broken");

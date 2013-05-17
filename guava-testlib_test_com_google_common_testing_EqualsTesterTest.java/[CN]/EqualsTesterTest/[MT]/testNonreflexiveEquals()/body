@@ -5,7 +5,7 @@
     equalsTester.testEquals();
   }
  catch (  AssertionFailedError e) {
-    assertErrorMessage(e,obj + " must be equal to itself");
+    assertErrorMessage(e,obj + " must be Object#equals to itself");
     return;
   }
   fail("Should get non-reflexive error");

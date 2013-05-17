@@ -4,7 +4,7 @@
     equalsTester.testEquals();
   }
  catch (  AssertionFailedError e) {
-    assertErrorMessage(e,equalObject1 + " [group 1, item 1] must be equal to " + notEqualObject1+ " [group 1, item 2]");
+    assertErrorMessage(e,equalObject1 + " [group 1, item 1] must be Object#equals to " + notEqualObject1+ " [group 1, item 2]");
     return;
   }
   fail("Should get not equal to equal object error");

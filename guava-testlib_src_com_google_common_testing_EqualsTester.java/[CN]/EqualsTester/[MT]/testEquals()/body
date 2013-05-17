@@ -1,13 +1,13 @@
 {
   RelationshipTester<Object> delegate=new RelationshipTester<Object>(new RelationshipAssertion<Object>(){
     @Override public void assertRelated(    Object item,    Object related){
-      assertEquals("$ITEM must be equal to $RELATED",item,related);
+      assertEquals("$ITEM must be Object#equals to $RELATED",item,related);
       int itemHash=item.hashCode();
       int relatedHash=related.hashCode();
-      assertEquals("the hash (" + itemHash + ") of $ITEM must be equal to the hash ("+ relatedHash+ ") of $RELATED",itemHash,relatedHash);
+      assertEquals("the Object#hashCode (" + itemHash + ") of $ITEM must be equal to the "+ "Object#hashCode ("+ relatedHash+ ") of $RELATED",itemHash,relatedHash);
     }
     @Override public void assertUnrelated(    Object item,    Object unrelated){
-      assertTrue("$ITEM must be unequal to $UNRELATED",!Objects.equal(item,unrelated));
+      assertTrue("$ITEM must not be Object#equals to $UNRELATED",!Objects.equal(item,unrelated));
     }
   }
 ,itemReporter);

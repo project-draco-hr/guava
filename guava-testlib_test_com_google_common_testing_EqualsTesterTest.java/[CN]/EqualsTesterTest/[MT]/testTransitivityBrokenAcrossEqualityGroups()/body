@@ -4,7 +4,7 @@
     tester.testEquals();
   }
  catch (  AssertionFailedError e) {
-    assertErrorMessage(e,"bar [group 1, item 2] must be unequal to x [group 2, item 2]");
+    assertErrorMessage(e,"bar [group 1, item 2] must not be Object#equals to x [group 2, item 2]");
     return;
   }
   fail("should failed because transitivity is broken");

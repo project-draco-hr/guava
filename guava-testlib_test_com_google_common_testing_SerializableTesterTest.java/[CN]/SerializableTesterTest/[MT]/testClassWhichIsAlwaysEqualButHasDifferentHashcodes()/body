@@ -6,7 +6,7 @@
     errorNotThrown=true;
   }
  catch (  AssertionFailedError error) {
-    assertContains("must be equal to the hash",error.getMessage());
+    assertContains("must be equal to the Object#hashCode",error.getMessage());
   }
   assertFalse(errorNotThrown);
 }

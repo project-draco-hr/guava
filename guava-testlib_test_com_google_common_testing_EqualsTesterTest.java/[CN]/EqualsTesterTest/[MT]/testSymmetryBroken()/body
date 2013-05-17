@@ -4,7 +4,7 @@
     tester.testEquals();
   }
  catch (  AssertionFailedError e) {
-    assertErrorMessage(e,"bar [group 1, item 2] must be equal to foo [group 1, item 1]");
+    assertErrorMessage(e,"bar [group 1, item 2] must be Object#equals to foo [group 1, item 1]");
     return;
   }
   fail("should failed because symmetry is broken");

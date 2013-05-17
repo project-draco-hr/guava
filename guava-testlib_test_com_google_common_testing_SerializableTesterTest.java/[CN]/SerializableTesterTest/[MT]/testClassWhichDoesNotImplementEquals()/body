@@ -6,7 +6,7 @@
     errorNotThrown=true;
   }
  catch (  AssertionFailedError error) {
-    assertContains("must be equal to",error.getMessage());
+    assertContains("must be Object#equals to",error.getMessage());
   }
   assertFalse(errorNotThrown);
 }

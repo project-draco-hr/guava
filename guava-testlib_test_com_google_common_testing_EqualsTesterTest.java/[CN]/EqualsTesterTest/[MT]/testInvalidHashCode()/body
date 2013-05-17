@@ -6,7 +6,7 @@
     equalsTester.testEquals();
   }
  catch (  AssertionFailedError e) {
-    assertErrorMessage(e,"the hash (" + a.hashCode() + ") of "+ a+ " [group 1, item 1] must be equal to the hash ("+ b.hashCode()+ ") of "+ b);
+    assertErrorMessage(e,"the Object#hashCode (" + a.hashCode() + ") of "+ a+ " [group 1, item 1] must be equal to the Object#hashCode ("+ b.hashCode()+ ") of "+ b);
     return;
   }
   fail("Should get invalid hashCode error");
