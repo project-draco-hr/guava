@@ -1,6 +1,6 @@
 {
   for (  Method method : Hashing.class.getDeclaredMethods()) {
-    if (method.getReturnType().equals(HashFunction.class) && method.getParameterTypes().length == 0) {
+    if (method.getReturnType().equals(HashFunction.class) && Modifier.isPublic(method.getModifiers()) && method.getParameterTypes().length == 0) {
       HashFunction hashFunction=(HashFunction)method.invoke(Hashing.class);
       assertTrue("There should be at least 3 entries in KNOWN_HASHES for " + hashFunction.toString(),KNOWN_HASHES.row(hashFunction).size() >= 3);
     }

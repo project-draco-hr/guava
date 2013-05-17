@@ -1,0 +1,3 @@
+{
+  assertSeedlessHashFunctionEquals(Hashing.class);
+}

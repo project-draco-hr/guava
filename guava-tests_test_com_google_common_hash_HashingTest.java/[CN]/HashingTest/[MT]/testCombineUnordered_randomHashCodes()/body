@@ -1,5 +1,5 @@
 {
-  Random random=new Random();
+  Random random=new Random(RANDOM_SEED);
   List<HashCode> hashCodes=Lists.newArrayList();
   for (int i=0; i < 10; i++) {
     hashCodes.add(HashCodes.fromLong(random.nextLong()));

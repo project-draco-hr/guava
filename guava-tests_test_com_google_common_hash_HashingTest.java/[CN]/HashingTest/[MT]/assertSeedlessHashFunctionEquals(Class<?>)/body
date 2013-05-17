@@ -1,0 +1,11 @@
+{
+  for (  Method method : clazz.getDeclaredMethods()) {
+    if (method.getReturnType().equals(HashFunction.class) && Modifier.isPublic(method.getModifiers()) && method.getParameterTypes().length == 0) {
+      HashFunction hashFunction1a=(HashFunction)method.invoke(clazz);
+      HashFunction hashFunction1b=(HashFunction)method.invoke(clazz);
+      new EqualsTester().addEqualityGroup(hashFunction1a,hashFunction1b).testEquals();
+      assertSame(hashFunction1a,hashFunction1b);
+      assertEquals(hashFunction1a.toString(),hashFunction1b.toString());
+    }
+  }
+}
