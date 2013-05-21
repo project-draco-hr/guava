@@ -1,5 +1,0 @@
-{
-  multimap.put("foo",1);
-  assertFalse(multimap.containsValue(2));
-  assertFalse(multimap.containsValue(nullValue()));
-}
