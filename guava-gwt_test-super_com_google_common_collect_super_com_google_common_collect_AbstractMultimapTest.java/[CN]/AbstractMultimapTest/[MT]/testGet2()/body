@@ -1,8 +1,0 @@
-{
-  multimap.put("foo",1);
-  multimap.put("foo",3);
-  Collection<Integer> values=multimap.get("foo");
-  assertEquals(2,values.size());
-  assertTrue(values.contains(1));
-  assertTrue(values.contains(3));
-}
