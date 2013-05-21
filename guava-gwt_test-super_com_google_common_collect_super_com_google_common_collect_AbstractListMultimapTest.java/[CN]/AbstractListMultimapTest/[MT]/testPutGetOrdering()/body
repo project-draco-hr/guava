@@ -1,9 +1,0 @@
-{
-  Multimap<String,Integer> multimap=create();
-  multimap.put("foo",1);
-  multimap.put("foo",3);
-  multimap.put("bar",3);
-  Iterator<Integer> values=multimap.get("foo").iterator();
-  assertEquals(Integer.valueOf(1),values.next());
-  assertEquals(Integer.valueOf(3),values.next());
-}
