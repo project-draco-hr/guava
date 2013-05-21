@@ -1,0 +1,5 @@
+{
+  SetMultimap<String,Integer> setMultimap=LinkedHashMultimap.create();
+  Map<String,Set<Integer>> map=Multimaps.asMap(setMultimap);
+  assertSame(setMultimap.asMap(),map);
+}
