@@ -1,0 +1,5 @@
+{
+  Multimap<K,V> target=getSubjectGenerator().create();
+  assertEquals(!multimap().isEmpty(),target.putAll(multimap()));
+  assertEquals(multimap(),target);
+}

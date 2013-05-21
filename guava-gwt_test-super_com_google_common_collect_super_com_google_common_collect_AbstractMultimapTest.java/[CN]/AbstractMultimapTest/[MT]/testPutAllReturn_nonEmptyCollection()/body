@@ -1,5 +1,0 @@
-{
-  Multimap<String,Integer> other=create();
-  other.putAll("bar",asList(7,8,9));
-  assertTrue(multimap.putAll(other));
-}

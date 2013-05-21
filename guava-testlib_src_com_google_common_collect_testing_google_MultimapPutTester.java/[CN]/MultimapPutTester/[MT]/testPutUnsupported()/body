@@ -1,0 +1,8 @@
+{
+  try {
+    multimap().put(sampleKeys().e3,sampleValues().e3);
+    fail("Expected UnsupportedOperationException");
+  }
+ catch (  UnsupportedOperationException expected) {
+  }
+}

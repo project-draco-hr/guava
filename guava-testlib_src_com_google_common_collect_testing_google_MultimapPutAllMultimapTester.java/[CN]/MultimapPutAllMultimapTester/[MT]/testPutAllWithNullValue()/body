@@ -1,0 +1,5 @@
+{
+  Multimap<K,V> source=getSubjectGenerator().create(Helpers.mapEntry(sampleKeys().e0,null));
+  assertTrue(multimap().putAll(source));
+  assertTrue(multimap().containsEntry(sampleKeys().e0,null));
+}
