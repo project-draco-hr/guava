@@ -1,0 +1,5 @@
+{
+  initMultimapWithNullValue();
+  assertEquals(getNumElements(),multimap().size());
+  assertFalse(multimap().isEmpty());
+}

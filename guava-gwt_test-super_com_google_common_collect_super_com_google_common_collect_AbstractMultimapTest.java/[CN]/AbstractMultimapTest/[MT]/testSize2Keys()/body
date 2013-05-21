@@ -1,5 +1,0 @@
-{
-  multimap.put("foo",1);
-  multimap.put("bar",5);
-  assertSize(2);
-}
