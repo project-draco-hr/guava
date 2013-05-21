@@ -3,7 +3,7 @@
   checkNotNull(lineSeparator);
   Closer closer=Closer.create();
   try {
-    BufferedWriter out=closer.register(openBufferedStream());
+    Writer out=closer.register(openBufferedStream());
     for (    CharSequence line : lines) {
       out.append(line).append(lineSeparator);
     }

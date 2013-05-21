@@ -1,5 +1,5 @@
 {
-  BufferedInputStream in=source.openBufferedStream();
+  InputStream in=source.openBufferedStream();
   assertTrue(source.wasStreamOpened());
   assertFalse(source.wasStreamClosed());
   ByteArrayOutputStream out=new ByteArrayOutputStream();

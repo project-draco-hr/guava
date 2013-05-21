@@ -1,5 +1,5 @@
 {
-  BufferedOutputStream out=sink.openBufferedStream();
+  OutputStream out=sink.openBufferedStream();
   try {
     ByteStreams.copy(new ByteArrayInputStream(data),out);
   }
