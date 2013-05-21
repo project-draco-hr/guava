@@ -1,6 +1,0 @@
-{
-  Collection<Integer> collection=Lists.newArrayList();
-  multimap.putAll("foo",collection);
-  assertSize(0);
-  assertTrue(multimap.isEmpty());
-}

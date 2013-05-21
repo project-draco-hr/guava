@@ -1,0 +1,4 @@
+{
+  assertFalse(multimap().putAll(sampleKeys().e3,Collections.<V>emptyList()));
+  expectUnchanged();
+}

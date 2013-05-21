@@ -1,0 +1,9 @@
+{
+  assertTrue(multimap().putAll(sampleKeys().e3,new Iterable<V>(){
+    @Override public Iterator<V> iterator(){
+      return Lists.newArrayList(sampleValues().e3,sampleValues().e4).iterator();
+    }
+  }
+));
+  assertGet(sampleKeys().e3,sampleValues().e3,sampleValues().e4);
+}

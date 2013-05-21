@@ -1,5 +1,10 @@
 {
-  Iterable<V> iterable=Collections.emptyList();
-  multimap().putAll(sampleKeys().e3,iterable);
+  Iterable<V> iterable=new Iterable<V>(){
+    @Override public Iterator<V> iterator(){
+      return Iterators.emptyIterator();
+    }
+  }
+;
+  assertFalse(multimap().putAll(sampleKeys().e3,iterable));
   expectUnchanged();
 }

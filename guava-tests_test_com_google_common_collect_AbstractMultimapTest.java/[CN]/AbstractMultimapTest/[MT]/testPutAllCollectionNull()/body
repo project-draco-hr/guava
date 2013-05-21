@@ -1,7 +1,0 @@
-{
-  Collection<Integer> collection=Lists.newArrayList(1,nullValue());
-  multimap.putAll(nullKey(),collection);
-  assertTrue(multimap.containsEntry(nullKey(),1));
-  assertTrue(multimap.containsEntry(nullKey(),nullValue()));
-  assertSize(2);
-}
