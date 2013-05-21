@@ -1,8 +1,0 @@
-{
-  try {
-    multimap.keySet().removeAll(null);
-    fail();
-  }
- catch (  NullPointerException expected) {
-  }
-}

@@ -1,7 +1,0 @@
-{
-  try {
-    multimap.entries().retainAll(null);
-  }
- catch (  NullPointerException expected) {
-  }
-}

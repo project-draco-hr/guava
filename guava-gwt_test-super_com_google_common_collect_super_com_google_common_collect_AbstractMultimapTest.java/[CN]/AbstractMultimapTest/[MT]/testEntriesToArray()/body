@@ -1,8 +1,0 @@
-{
-  multimap.put("foo",3);
-  Collection<Entry<String,Integer>> entries=multimap.entries();
-  Entry<?,?>[] array=new Entry<?,?>[3];
-  assertSame(array,entries.toArray(array));
-  assertEquals(Maps.immutableEntry("foo",3),array[0]);
-  assertNull(array[1]);
-}
