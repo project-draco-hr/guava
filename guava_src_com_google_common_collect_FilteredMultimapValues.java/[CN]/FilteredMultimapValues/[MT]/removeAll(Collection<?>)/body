@@ -1,0 +1,3 @@
+{
+  return Iterables.removeIf(multimap.unfiltered().entries(),Predicates.and(multimap.entryPredicate(),Maps.<V>valuePredicateOnEntries(Predicates.in(c))));
+}

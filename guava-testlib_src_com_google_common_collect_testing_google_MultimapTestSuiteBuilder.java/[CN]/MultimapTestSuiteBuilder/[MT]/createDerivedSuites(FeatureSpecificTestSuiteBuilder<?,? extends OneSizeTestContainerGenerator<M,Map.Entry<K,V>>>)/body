@@ -7,5 +7,6 @@
   derivedSuites.add(computeEntriesTestSuite(parentBuilder));
   derivedSuites.add(computeMultimapGetTestSuite(parentBuilder));
   derivedSuites.add(computeKeysTestSuite(parentBuilder));
+  derivedSuites.add(computeValuesTestSuite(parentBuilder));
   return derivedSuites;
 }
