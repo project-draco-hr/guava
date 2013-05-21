@@ -1,0 +1,5 @@
+{
+  for (  Collection<V> valueCollection : multimap().asMap().values()) {
+    assertTrue(valueCollection instanceof List);
+  }
+}

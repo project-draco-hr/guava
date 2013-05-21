@@ -1,0 +1,7 @@
+{
+  List<K> keys=new ArrayList<K>(multimap().keySet());
+  for (  K key : keys) {
+    resetCollection();
+    assertTrue(multimap().asMap().remove(key) instanceof List);
+  }
+}

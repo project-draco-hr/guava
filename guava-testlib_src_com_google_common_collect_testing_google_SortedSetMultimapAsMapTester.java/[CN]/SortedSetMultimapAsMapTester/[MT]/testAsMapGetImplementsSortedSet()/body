@@ -1,0 +1,6 @@
+{
+  for (  K key : multimap().keySet()) {
+    SortedSet<V> valueSet=(SortedSet<V>)multimap().asMap().get(key);
+    assertEquals(multimap().valueComparator(),valueSet.comparator());
+  }
+}

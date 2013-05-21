@@ -1,0 +1,6 @@
+{
+  for (  Collection<V> valueCollection : multimap().asMap().values()) {
+    SortedSet<V> valueSet=(SortedSet<V>)valueCollection;
+    assertEquals(multimap().valueComparator(),valueSet.comparator());
+  }
+}
