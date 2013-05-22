@@ -1,3 +1,3 @@
 {
-  return Arrays.<Class<? extends AbstractTester>>asList(MapClearTester.class,MapContainsKeyTester.class,MapContainsValueTester.class,MapCreationTester.class,MapEqualsTester.class,MapGetTester.class,MapHashCodeTester.class,MapIsEmptyTester.class,MapPutTester.class,MapPutAllTester.class,MapRemoveTester.class,MapSerializationTester.class,MapSizeTester.class);
+  return Arrays.<Class<? extends AbstractTester>>asList(MapClearTester.class,MapContainsKeyTester.class,MapContainsValueTester.class,MapCreationTester.class,MapEqualsTester.class,MapGetTester.class,MapHashCodeTester.class,MapIsEmptyTester.class,MapPutTester.class,MapPutAllTester.class,MapRemoveTester.class,MapSerializationTester.class,MapSizeTester.class,MapToStringTester.class);
 }

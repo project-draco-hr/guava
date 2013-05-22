@@ -1,0 +1,4 @@
+{
+  initCollectionWithNullElement();
+  testToString_minimal();
+}

@@ -1,6 +1,0 @@
-{
-  Multimap<String,Integer> map=create();
-  map.get("foo");
-  assertEquals("{}",map.toString());
-  assertEquals("[]",map.entries().toString());
-}

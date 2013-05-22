@@ -1,0 +1,3 @@
+{
+  assertEquals("map.toString() incorrect",expectedToString(getMap().entrySet()),getMap().toString());
+}

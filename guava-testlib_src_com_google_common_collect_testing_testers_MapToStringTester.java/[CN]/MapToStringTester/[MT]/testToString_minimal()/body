@@ -1,0 +1,3 @@
+{
+  assertNotNull("toString() should not return null",getMap().toString());
+}

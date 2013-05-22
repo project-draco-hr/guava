@@ -1,0 +1,3 @@
+{
+  assertEquals("emptyMap.toString should return {}","{}",getMap().toString());
+}

@@ -1,0 +1,4 @@
+{
+  initMapWithNullValue();
+  testToString_formatting();
+}
