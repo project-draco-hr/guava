@@ -1,0 +1,4 @@
+{
+  multimap().entries().clear();
+  assertCleared();
+}

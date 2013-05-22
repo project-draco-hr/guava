@@ -1,7 +1,0 @@
-{
-  multimap.put("foo",1);
-  multimap.put("bar",3);
-  multimap.clear();
-  assertEquals(0,multimap.keySet().size());
-  assertSize(0);
-}

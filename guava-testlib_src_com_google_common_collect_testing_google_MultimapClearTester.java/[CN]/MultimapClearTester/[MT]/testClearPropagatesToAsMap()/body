@@ -1,0 +1,5 @@
+{
+  Map<K,Collection<V>> asMap=multimap().asMap();
+  multimap().clear();
+  ASSERT.that(asMap).isEmpty();
+}

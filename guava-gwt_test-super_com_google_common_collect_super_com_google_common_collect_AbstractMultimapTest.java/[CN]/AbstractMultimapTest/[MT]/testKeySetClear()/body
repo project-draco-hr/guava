@@ -1,8 +1,0 @@
-{
-  multimap.put("foo",1);
-  multimap.put("foo",nullValue());
-  multimap.put(nullKey(),3);
-  multimap.keySet().clear();
-  assertTrue(multimap.isEmpty());
-  assertSize(0);
-}

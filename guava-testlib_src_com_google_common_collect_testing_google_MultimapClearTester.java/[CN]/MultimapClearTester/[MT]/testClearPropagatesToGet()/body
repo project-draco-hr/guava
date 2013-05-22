@@ -1,0 +1,8 @@
+{
+  for (  K key : sampleKeys()) {
+    resetContainer();
+    Collection<V> collection=multimap().get(key);
+    multimap().clear();
+    ASSERT.that(collection).isEmpty();
+  }
+}
