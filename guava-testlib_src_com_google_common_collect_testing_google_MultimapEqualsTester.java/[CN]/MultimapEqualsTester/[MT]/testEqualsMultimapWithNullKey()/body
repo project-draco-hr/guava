@@ -1,0 +1,6 @@
+{
+  Multimap<K,V> original=multimap();
+  initMultimapWithNullKey();
+  Multimap<K,V> withNull=multimap();
+  new EqualsTester().addEqualityGroup(original).addEqualityGroup(withNull,getSubjectGenerator().create(createArrayWithNullKey())).testEquals();
+}

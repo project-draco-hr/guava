@@ -1,6 +1,7 @@
 {
   List<Class<? extends AbstractTester>> testers=Helpers.copyToList(super.getTesters());
   testers.add(ListMultimapAsMapTester.class);
+  testers.add(ListMultimapEqualsTester.class);
   testers.add(ListMultimapPutTester.class);
   testers.add(ListMultimapPutAllTester.class);
   testers.add(ListMultimapRemoveTester.class);

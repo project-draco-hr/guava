@@ -1,0 +1,3 @@
+{
+  new EqualsTester().addEqualityGroup(multimap(),getSubjectGenerator().create(getSampleElements().toArray())).testEquals();
+}
