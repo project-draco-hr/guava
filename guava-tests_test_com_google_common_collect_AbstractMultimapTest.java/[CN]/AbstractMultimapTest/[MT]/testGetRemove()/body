@@ -1,7 +1,0 @@
-{
-  multimap.put("foo",1);
-  multimap.put("foo",3);
-  Collection<Integer> values=multimap.get("foo");
-  multimap.remove("foo",1);
-  ASSERT.that(values).has().item(3);
-}

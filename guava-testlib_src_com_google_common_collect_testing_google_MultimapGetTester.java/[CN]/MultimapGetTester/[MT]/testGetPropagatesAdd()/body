@@ -1,0 +1,7 @@
+{
+  Collection<V> result=multimap().get(sampleKeys().e0);
+  assertTrue(result.add(sampleValues().e3));
+  assertTrue(multimap().containsKey(sampleKeys().e0));
+  assertEquals(getNumElements() + 1,multimap().size());
+  assertTrue(multimap().containsEntry(sampleKeys().e0,sampleValues().e3));
+}
