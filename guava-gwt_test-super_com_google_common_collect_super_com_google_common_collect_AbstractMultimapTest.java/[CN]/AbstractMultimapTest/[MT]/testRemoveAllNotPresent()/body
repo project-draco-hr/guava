@@ -1,9 +1,0 @@
-{
-  multimap.put("foo",1);
-  multimap.put("foo",3);
-  Collection<Integer> removed=multimap.removeAll("bar");
-  assertSize(2);
-  assertNotNull(removed);
-  assertTrue(removed.isEmpty());
-  checkRemovedCollection(removed);
-}
