@@ -1,0 +1,3 @@
+{
+  assertTrue(navigableMap.headMap(a.getKey(),true).containsKey(a.getKey()));
+}
