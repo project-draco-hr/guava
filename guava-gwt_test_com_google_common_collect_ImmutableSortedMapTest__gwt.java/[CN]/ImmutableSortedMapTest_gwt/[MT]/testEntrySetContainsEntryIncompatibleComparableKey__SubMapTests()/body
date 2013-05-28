@@ -1,4 +1,0 @@
-{
-  com.google.common.collect.ImmutableSortedMapTest.SubMapTests testCase=new com.google.common.collect.ImmutableSortedMapTest.SubMapTests();
-  testCase.testEntrySetContainsEntryIncompatibleComparableKey();
-}

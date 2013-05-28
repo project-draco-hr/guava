@@ -1,4 +1,0 @@
-{
-  com.google.common.collect.ImmutableSortedMapTest.HeadMapTests testCase=new com.google.common.collect.ImmutableSortedMapTest.HeadMapTests();
-  testCase.testTailMapEntrySet();
-}

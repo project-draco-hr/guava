@@ -1,0 +1,3 @@
+{
+  assertFalse(getMap().entrySet().contains(Helpers.mapEntry(null,samples.e0.getValue())));
+}

@@ -1,0 +1,3 @@
+{
+  assertFalse(getMap().entrySet().contains(Helpers.mapEntry(IncomparableType.INSTANCE,samples.e0.getValue())));
+}

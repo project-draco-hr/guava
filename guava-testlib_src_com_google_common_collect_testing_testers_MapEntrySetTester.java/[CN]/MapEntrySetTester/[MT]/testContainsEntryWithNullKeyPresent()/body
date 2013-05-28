@@ -1,0 +1,4 @@
+{
+  initMapWithNullKey();
+  assertTrue(getMap().entrySet().contains(Helpers.mapEntry(null,getValueForNullKey())));
+}

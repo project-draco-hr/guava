@@ -1,7 +1,0 @@
-{
-  List<E> subList=new ArrayList<E>();
-  for (int i=fromIndex; i < toIndex; i++) {
-    subList.add(list.get(i));
-  }
-  return Collections.unmodifiableList(subList);
-}
