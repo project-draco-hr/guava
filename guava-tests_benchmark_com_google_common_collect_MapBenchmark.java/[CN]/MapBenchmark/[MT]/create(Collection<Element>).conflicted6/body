@@ -1,7 +1,7 @@
 {
-  Map<Element,Element> map=new ConcurrentHashMap<Element,Element>(keys.size(),0.75f,1);
+  ImmutableMap.Builder<Element,Element> builder=ImmutableMap.builder();
   for (  Element element : keys) {
-    map.put(element,element);
+    builder.put(element,element);
   }
-  return map;
+  return builder.build();
 }

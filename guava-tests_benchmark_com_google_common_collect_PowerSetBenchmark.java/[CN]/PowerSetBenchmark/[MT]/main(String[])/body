@@ -1,3 +1,0 @@
-{
-  CaliperMain.main(PowerSetBenchmark.class,args);
-}

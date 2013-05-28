@@ -1,3 +1,0 @@
-{
-  CaliperMain.main(ImmutableListCreationBenchmark.class,args);
-}

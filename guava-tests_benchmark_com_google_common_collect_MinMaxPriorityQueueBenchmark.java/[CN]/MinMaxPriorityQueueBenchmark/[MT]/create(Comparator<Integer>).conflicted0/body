@@ -1,3 +1,3 @@
 {
-  return MinMaxPriorityQueue.orderedBy(comparator).create();
+  return new InvertedMinMaxPriorityQueue<Integer>(comparator);
 }

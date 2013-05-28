@@ -1,7 +1,7 @@
 {
-  Map<Element,Element> map=new MapMaker().concurrencyLevel(1).makeMap();
+  ImmutableSortedMap.Builder<Element,Element> builder=ImmutableSortedMap.naturalOrder();
   for (  Element element : keys) {
-    map.put(element,element);
+    builder.put(element,element);
   }
-  return map;
+  return builder.build();
 }

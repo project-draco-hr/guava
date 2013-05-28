@@ -1,3 +1,0 @@
-{
-  CaliperMain.main(BinaryTreeTraverserBenchmark.class,args);
-}

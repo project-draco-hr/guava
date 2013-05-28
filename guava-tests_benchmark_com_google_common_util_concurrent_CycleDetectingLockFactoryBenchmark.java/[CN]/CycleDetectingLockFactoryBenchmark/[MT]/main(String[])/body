@@ -1,3 +1,0 @@
-{
-  CaliperMain.main(CycleDetectingLockFactoryBenchmark.class,args);
-}

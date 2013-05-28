@@ -1,3 +1,0 @@
-{
-  CaliperMain.main(MapMakerComparisonBenchmark.class,args);
-}
