@@ -1,0 +1,7 @@
+{
+  resetContainer(Helpers.mapEntry(sampleKeys().e0,sampleValues().e0),Helpers.mapEntry(sampleKeys().e1,sampleValues().e0),Helpers.mapEntry(sampleKeys().e0,sampleValues().e3));
+  Map<K,Collection<V>> expected=Maps.newHashMap();
+  expected.put(sampleKeys().e0,Lists.newArrayList(sampleValues().e0,sampleValues().e3));
+  expected.put(sampleKeys().e1,Lists.newArrayList(sampleValues().e0));
+  new EqualsTester().addEqualityGroup(expected,multimap().asMap()).testEquals();
+}

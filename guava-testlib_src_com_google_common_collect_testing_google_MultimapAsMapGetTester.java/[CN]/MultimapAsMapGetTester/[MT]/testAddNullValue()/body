@@ -1,0 +1,5 @@
+{
+  Collection<V> result=multimap().asMap().get(sampleKeys().e0);
+  assertTrue(result.add(null));
+  assertTrue(multimap().containsEntry(sampleKeys().e0,null));
+}

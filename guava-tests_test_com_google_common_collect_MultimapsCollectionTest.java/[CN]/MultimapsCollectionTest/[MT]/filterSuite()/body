@@ -1,5 +1,5 @@
 {
-  List<Method> toSuppress=ImmutableList.of(CollectionIteratorTester.getIteratorUnknownOrderRemoveSupportedMethod(),MultisetIteratorTester.getIteratorUnknownOrderRemoveSupportedMethod(),MultisetWritesTester.getEntrySetIteratorMethod(),MultimapEntriesTester.getIteratorRemoveMethod());
+  List<Method> toSuppress=ImmutableList.of(CollectionIteratorTester.getIteratorUnknownOrderRemoveSupportedMethod(),MultisetIteratorTester.getIteratorUnknownOrderRemoveSupportedMethod(),MultisetWritesTester.getEntrySetIteratorMethod(),MultimapAsMapTester.getAsMapEntrySetIteratorRemoveMethod(),MultimapEntriesTester.getIteratorRemoveMethod());
   TestSuite suite=new TestSuite("Multimaps.filter*");
   suite.addTest(SetMultimapTestSuiteBuilder.using(new FilteredSetMultimapGenerator(){
     @Override SetMultimap<String,Integer> filter(    SetMultimap<String,Integer> multimap){

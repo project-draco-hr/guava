@@ -1,0 +1,8 @@
+{
+  resetContainer(Helpers.mapEntry(sampleKeys().e0,sampleValues().e0),Helpers.mapEntry(sampleKeys().e0,sampleValues().e3));
+  Set<Entry<K,Collection<V>>> asMapEntrySet=multimap().asMap().entrySet();
+  Collection<V> valueCollection=Iterables.getOnlyElement(asMapEntrySet).getValue();
+  ASSERT.that(valueCollection).has().allOf(sampleValues().e0,sampleValues().e3);
+  assertTrue(multimap().put(sampleKeys().e0,sampleValues().e4));
+  ASSERT.that(valueCollection).has().allOf(sampleValues().e0,sampleValues().e3,sampleValues().e4);
+}

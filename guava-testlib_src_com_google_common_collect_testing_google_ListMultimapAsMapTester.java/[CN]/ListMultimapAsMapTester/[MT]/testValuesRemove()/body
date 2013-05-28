@@ -1,0 +1,6 @@
+{
+  resetContainer(Helpers.mapEntry(sampleKeys().e0,sampleValues().e0),Helpers.mapEntry(sampleKeys().e1,sampleValues().e0),Helpers.mapEntry(sampleKeys().e0,sampleValues().e3));
+  assertTrue(multimap().asMap().values().remove(Collections.singletonList(sampleValues().e0)));
+  assertEquals(2,multimap().size());
+  assertEquals(Collections.singletonMap(sampleKeys().e0,Lists.newArrayList(sampleValues().e0,sampleValues().e3)),multimap().asMap());
+}

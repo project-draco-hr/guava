@@ -1,0 +1,3 @@
+{
+  ASSERT.that(multimap().asMap().get(null)).isNull();
+}

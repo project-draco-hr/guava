@@ -1,0 +1,17 @@
+{
+  for (  K key : sampleKeys()) {
+    List<V> expectedValues=new ArrayList<V>();
+    for (    Entry<K,V> entry : getSampleElements()) {
+      if (entry.getKey().equals(key)) {
+        expectedValues.add(entry.getValue());
+      }
+    }
+    Collection<V> collection=multimap().asMap().get(key);
+    if (expectedValues.isEmpty()) {
+      ASSERT.that(collection).isNull();
+    }
+ else {
+      ASSERT.that(collection).has().allFrom(expectedValues);
+    }
+  }
+}

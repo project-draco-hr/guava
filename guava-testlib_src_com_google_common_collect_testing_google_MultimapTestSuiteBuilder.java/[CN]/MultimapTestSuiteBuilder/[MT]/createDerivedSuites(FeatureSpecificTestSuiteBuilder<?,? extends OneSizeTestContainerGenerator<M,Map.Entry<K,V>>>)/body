@@ -6,6 +6,7 @@
   derivedSuites.add(MapTestSuiteBuilder.using(new AsMapGenerator<K,V,M>(parentBuilder.getSubjectGenerator())).withFeatures(computeAsMapFeatures(parentBuilder.getFeatures())).named(parentBuilder.getName() + ".asMap").suppressing(parentBuilder.getSuppressedTests()).createTestSuite());
   derivedSuites.add(computeEntriesTestSuite(parentBuilder));
   derivedSuites.add(computeMultimapGetTestSuite(parentBuilder));
+  derivedSuites.add(computeMultimapAsMapGetTestSuite(parentBuilder));
   derivedSuites.add(computeKeysTestSuite(parentBuilder));
   derivedSuites.add(computeValuesTestSuite(parentBuilder));
   return derivedSuites;

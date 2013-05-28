@@ -1,0 +1,8 @@
+{
+  Set<Feature<?>> derivedFeatures=Helpers.copyToSet(computeMultimapGetFeatures(multimapFeatures));
+  if (derivedFeatures.remove(CollectionSize.ANY)) {
+    derivedFeatures.addAll(CollectionSize.ANY.getImpliedFeatures());
+  }
+  derivedFeatures.remove(CollectionSize.ZERO);
+  return derivedFeatures;
+}

@@ -1,8 +1,0 @@
-{
-  multimap.put("foo",1);
-  multimap.put("foo",nullValue());
-  multimap.put(nullKey(),3);
-  Set<String> keySet=multimap.asMap().keySet();
-  ASSERT.that(keySet.toArray()).has().allOf("foo",nullKey());
-  ASSERT.that(keySet.toArray(new String[2])).has().allOf("foo",nullKey());
-}

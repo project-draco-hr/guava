@@ -1,0 +1,8 @@
+{
+  Entry<K,V>[] array=multimapGenerator.createArray(elements.length);
+  K k=((TestMultimapGenerator<K,V,M>)multimapGenerator.getInnerGenerator()).sampleKeys().e0;
+  for (int i=0; i < elements.length; i++) {
+    array[i]=mapEntry(k,(V)elements[i]);
+  }
+  return multimapGenerator.create(array).asMap().get(k);
+}
