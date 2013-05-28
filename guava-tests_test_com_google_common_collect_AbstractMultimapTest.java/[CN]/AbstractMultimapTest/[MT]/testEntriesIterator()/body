@@ -1,9 +1,0 @@
-{
-  multimap.put("foo",3);
-  Iterator<Entry<String,Integer>> iterator=multimap.entries().iterator();
-  assertTrue(iterator.hasNext());
-  assertEquals(Maps.immutableEntry("foo",3),iterator.next());
-  iterator.remove();
-  assertFalse(iterator.hasNext());
-  assertSize(0);
-}

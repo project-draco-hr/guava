@@ -1,0 +1,9 @@
+{
+  Iterator<Entry<K,V>> iterator=multimap().entries().iterator();
+  Entry<K,V> entry=iterator.next();
+  K key=entry.getKey();
+  V value=entry.getValue();
+  multimap().removeAll(key);
+  assertEquals(key,entry.getKey());
+  assertEquals(value,entry.getValue());
+}

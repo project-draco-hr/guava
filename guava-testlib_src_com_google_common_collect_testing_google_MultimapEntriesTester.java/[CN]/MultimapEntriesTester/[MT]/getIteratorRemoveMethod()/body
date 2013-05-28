@@ -1,0 +1,3 @@
+{
+  return Helpers.getMethod(MultimapEntriesTester.class,"testIteratorRemovePropagatesToMultimap");
+}
