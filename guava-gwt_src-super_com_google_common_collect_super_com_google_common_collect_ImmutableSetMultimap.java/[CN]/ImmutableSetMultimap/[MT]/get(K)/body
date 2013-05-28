@@ -1,12 +1,4 @@
 {
   ImmutableSet<V> set=(ImmutableSet<V>)map.get(key);
-  if (set != null) {
-    return set;
-  }
- else   if (emptySet != null) {
-    return emptySet;
-  }
- else {
-    return ImmutableSet.<V>of();
-  }
+  return firstNonNull(set,emptySet);
 }

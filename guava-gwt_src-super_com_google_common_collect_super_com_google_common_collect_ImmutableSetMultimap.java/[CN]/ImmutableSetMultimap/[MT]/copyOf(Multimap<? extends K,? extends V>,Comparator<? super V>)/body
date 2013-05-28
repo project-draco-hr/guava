@@ -14,7 +14,7 @@
   for (  Entry<? extends K,? extends Collection<? extends V>> entry : multimap.asMap().entrySet()) {
     K key=entry.getKey();
     Collection<? extends V> values=entry.getValue();
-    ImmutableSet<V> set=(valueComparator == null) ? ImmutableSet.copyOf(values) : ImmutableSortedSet.copyOf(valueComparator,values);
+    ImmutableSet<V> set=valueSet(valueComparator,values);
     if (!set.isEmpty()) {
       builder.put(key,set);
       size+=set.size();

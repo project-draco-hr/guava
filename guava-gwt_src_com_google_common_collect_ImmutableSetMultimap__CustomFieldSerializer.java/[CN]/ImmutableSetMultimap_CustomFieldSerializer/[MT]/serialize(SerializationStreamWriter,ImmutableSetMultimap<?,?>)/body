@@ -1,3 +1,4 @@
 {
+  writer.writeObject(instance.valueComparator());
   Multimap_CustomFieldSerializerBase.serialize(writer,instance);
 }

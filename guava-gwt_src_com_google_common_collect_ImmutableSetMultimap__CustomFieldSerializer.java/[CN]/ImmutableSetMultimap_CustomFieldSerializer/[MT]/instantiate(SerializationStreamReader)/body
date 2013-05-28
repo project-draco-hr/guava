@@ -1,3 +1,8 @@
 {
-  return (ImmutableSetMultimap<Object,Object>)Multimap_CustomFieldSerializerBase.instantiate(reader,ImmutableSetMultimap.builder());
+  Comparator<Object> valueComparator=(Comparator<Object>)reader.readObject();
+  ImmutableSetMultimap.Builder<Object,Object> builder=ImmutableSetMultimap.builder();
+  if (valueComparator != null) {
+    builder.orderValuesBy(valueComparator);
+  }
+  return (ImmutableSetMultimap<Object,Object>)Multimap_CustomFieldSerializerBase.instantiate(reader,builder);
 }

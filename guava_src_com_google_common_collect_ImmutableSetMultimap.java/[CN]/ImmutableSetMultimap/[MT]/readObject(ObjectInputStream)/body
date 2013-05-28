@@ -1,5 +1,6 @@
 {
   stream.defaultReadObject();
+  Comparator<Object> valueComparator=(Comparator<Object>)stream.readObject();
   int keyCount=stream.readInt();
   if (keyCount < 0) {
     throw new InvalidObjectException("Invalid key count " + keyCount);
@@ -16,7 +17,7 @@
     for (int j=0; j < valueCount; j++) {
       array[j]=stream.readObject();
     }
-    ImmutableSet<Object> valueSet=ImmutableSet.copyOf(array);
+    ImmutableSet<Object> valueSet=valueSet(valueComparator,asList(array));
     if (valueSet.size() != array.length) {
       throw new InvalidObjectException("Duplicate key-value pairs exist for key " + key);
     }
@@ -32,4 +33,5 @@
   }
   FieldSettersHolder.MAP_FIELD_SETTER.set(this,tmpMap);
   FieldSettersHolder.SIZE_FIELD_SETTER.set(this,tmpSize);
+  FieldSettersHolder.EMPTY_SET_FIELD_SETTER.set(this,emptySet(valueComparator));
 }
