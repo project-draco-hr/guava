@@ -1,0 +1,7 @@
+{
+  TestSuite suite=new TestSuite("Maps.transform");
+  suite.addTest(transformMapSuite());
+  suite.addTest(transformSortedMapSuite());
+  suite.addTest(transformNavigableMapSuite());
+  return suite;
+}

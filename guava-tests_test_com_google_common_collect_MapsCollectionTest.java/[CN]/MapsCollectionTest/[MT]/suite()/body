@@ -147,5 +147,6 @@
   }
 ).named("Maps.asMap[NavigableSet, Function]").withFeatures(CollectionSize.ANY,MapFeature.SUPPORTS_REMOVE).createTestSuite());
   suite.addTest(filterSuite());
+  suite.addTest(transformSuite());
   return suite;
 }

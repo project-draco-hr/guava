@@ -1,0 +1,24 @@
+{
+  TestSuite suite=new TestSuite("TransformSortedMap");
+  suite.addTest(SortedMapTestSuiteBuilder.using(new TestStringSortedMapGenerator(){
+    @Override protected SortedMap<String,String> create(    Entry<String,String>[] entries){
+      SortedMap<String,String> map=new NonNavigableSortedMap();
+      for (      Entry<String,String> entry : entries) {
+        map.put(entry.getKey(),encode(entry.getValue()));
+      }
+      return Maps.transformValues(map,DECODE_FUNCTION);
+    }
+  }
+).named("Maps.transformValues[SortedMap, Function]").withFeatures(CollectionSize.ANY,CollectionFeature.KNOWN_ORDER,MapFeature.SUPPORTS_REMOVE).createTestSuite());
+  suite.addTest(SortedMapTestSuiteBuilder.using(new TestStringSortedMapGenerator(){
+    @Override protected SortedMap<String,String> create(    Entry<String,String>[] entries){
+      SortedMap<String,String> map=new NonNavigableSortedMap();
+      for (      Entry<String,String> entry : entries) {
+        map.put(entry.getKey(),encode(entry.getValue()));
+      }
+      return Maps.transformEntries(map,DECODE_ENTRY_TRANSFORMER);
+    }
+  }
+).named("Maps.transformEntries[SortedMap, EntryTransformer]").withFeatures(CollectionSize.ANY,CollectionFeature.KNOWN_ORDER,MapFeature.SUPPORTS_REMOVE).createTestSuite());
+  return suite;
+}
