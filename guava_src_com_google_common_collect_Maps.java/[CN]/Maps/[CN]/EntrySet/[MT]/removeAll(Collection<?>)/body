@@ -3,10 +3,6 @@
     return super.removeAll(checkNotNull(c));
   }
  catch (  UnsupportedOperationException e) {
-    boolean changed=true;
-    for (    Object o : c) {
-      changed|=remove(o);
-    }
-    return changed;
+    return Sets.removeAllImpl(this,c.iterator());
   }
 }
