@@ -1,0 +1,6 @@
+{
+  TestSuite suite=new TestSuite();
+  suite.addTest(MapTestSuiteBuilder.using(new ConstrainedMapGenerator()).named("Maps.constrainedMap[HashMap]").withFeatures(CollectionSize.ANY,MapFeature.ALLOWS_NULL_KEYS,MapFeature.ALLOWS_NULL_VALUES,MapFeature.GENERAL_PURPOSE).createTestSuite());
+  suite.addTestSuite(ConstrainedMapTest.class);
+  return suite;
+}

@@ -1,0 +1,4 @@
+{
+  com.google.common.collect.ConstrainedMapTest testCase=new com.google.common.collect.ConstrainedMapTest();
+  testCase.testPutWithForbiddenKeyAllowedValue();
+}
