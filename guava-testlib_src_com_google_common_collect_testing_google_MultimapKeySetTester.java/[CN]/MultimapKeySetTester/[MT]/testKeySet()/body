@@ -1,0 +1,5 @@
+{
+  for (  Map.Entry<K,V> entry : getSampleElements()) {
+    assertTrue(multimap().keySet().contains(entry.getKey()));
+  }
+}
