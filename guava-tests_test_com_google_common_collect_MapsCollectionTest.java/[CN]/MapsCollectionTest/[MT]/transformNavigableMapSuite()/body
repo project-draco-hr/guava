@@ -9,7 +9,7 @@
       return Maps.transformValues(map,DECODE_FUNCTION);
     }
   }
-).named("Maps.transformValues[NavigableMap, Function]").withFeatures(CollectionSize.ANY,CollectionFeature.KNOWN_ORDER,MapFeature.SUPPORTS_REMOVE).createTestSuite());
+).named("Maps.transformValues[NavigableMap, Function]").withFeatures(CollectionSize.ANY,CollectionFeature.KNOWN_ORDER,MapFeature.SUPPORTS_REMOVE,CollectionFeature.SUPPORTS_ITERATOR_REMOVE).createTestSuite());
   suite.addTest(NavigableMapTestSuiteBuilder.using(new TestStringSortedMapGenerator(){
     @Override protected NavigableMap<String,String> create(    Entry<String,String>[] entries){
       NavigableMap<String,String> map=new SafeTreeMap<String,String>();
@@ -19,6 +19,6 @@
       return Maps.transformEntries(map,DECODE_ENTRY_TRANSFORMER);
     }
   }
-).named("Maps.transformEntries[NavigableMap, EntryTransformer]").withFeatures(CollectionSize.ANY,CollectionFeature.KNOWN_ORDER,MapFeature.SUPPORTS_REMOVE).createTestSuite());
+).named("Maps.transformEntries[NavigableMap, EntryTransformer]").withFeatures(CollectionSize.ANY,CollectionFeature.KNOWN_ORDER,MapFeature.SUPPORTS_REMOVE,CollectionFeature.SUPPORTS_ITERATOR_REMOVE).createTestSuite());
   return suite;
 }

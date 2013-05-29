@@ -4,5 +4,5 @@
       return populate(new TreeMap<String,String>(),entries);
     }
   }
-).named("TreeMap, natural").withFeatures(MapFeature.GENERAL_PURPOSE,MapFeature.ALLOWS_NULL_VALUES,MapFeature.FAILS_FAST_ON_CONCURRENT_MODIFICATION,CollectionFeature.KNOWN_ORDER,CollectionFeature.SERIALIZABLE,CollectionSize.ANY).suppressing(suppressForTreeMapNatural()).createTestSuite();
+).named("TreeMap, natural").withFeatures(MapFeature.GENERAL_PURPOSE,MapFeature.ALLOWS_NULL_VALUES,MapFeature.FAILS_FAST_ON_CONCURRENT_MODIFICATION,CollectionFeature.SUPPORTS_ITERATOR_REMOVE,CollectionFeature.KNOWN_ORDER,CollectionFeature.SERIALIZABLE,CollectionSize.ANY).suppressing(suppressForTreeMapNatural()).createTestSuite();
 }

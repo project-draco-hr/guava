@@ -1,0 +1,8 @@
+{
+  Set<Entry<K,V>> entrySet=getMap().entrySet();
+  Iterator<Entry<K,V>> entryItr=entrySet.iterator();
+  assertEquals(samples.e0,entryItr.next());
+  entryItr.remove();
+  assertTrue(getMap().isEmpty());
+  assertFalse(entrySet.contains(samples.e0));
+}

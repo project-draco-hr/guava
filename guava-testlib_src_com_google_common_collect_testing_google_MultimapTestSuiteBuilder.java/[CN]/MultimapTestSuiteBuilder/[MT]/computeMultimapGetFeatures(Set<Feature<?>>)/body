@@ -5,6 +5,9 @@
       derivedFeatures.add(entry.getValue());
     }
   }
+  if (derivedFeatures.remove(MultimapFeature.VALUE_COLLECTIONS_SUPPORT_ITERATOR_REMOVE)) {
+    derivedFeatures.add(CollectionFeature.SUPPORTS_ITERATOR_REMOVE);
+  }
   if (!derivedFeatures.contains(CollectionFeature.SERIALIZABLE_INCLUDING_VIEWS)) {
     derivedFeatures.remove(CollectionFeature.SERIALIZABLE);
   }

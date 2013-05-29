@@ -9,7 +9,7 @@
       return Maps.transformValues(map,DECODE_FUNCTION);
     }
   }
-).named("Maps.transformValues[SortedMap, Function]").withFeatures(CollectionSize.ANY,CollectionFeature.KNOWN_ORDER,MapFeature.SUPPORTS_REMOVE).createTestSuite());
+).named("Maps.transformValues[SortedMap, Function]").withFeatures(CollectionSize.ANY,CollectionFeature.KNOWN_ORDER,MapFeature.SUPPORTS_REMOVE,CollectionFeature.SUPPORTS_ITERATOR_REMOVE).createTestSuite());
   suite.addTest(SortedMapTestSuiteBuilder.using(new TestStringSortedMapGenerator(){
     @Override protected SortedMap<String,String> create(    Entry<String,String>[] entries){
       SortedMap<String,String> map=new NonNavigableSortedMap();
@@ -19,6 +19,6 @@
       return Maps.transformEntries(map,DECODE_ENTRY_TRANSFORMER);
     }
   }
-).named("Maps.transformEntries[SortedMap, EntryTransformer]").withFeatures(CollectionSize.ANY,CollectionFeature.KNOWN_ORDER,MapFeature.SUPPORTS_REMOVE).createTestSuite());
+).named("Maps.transformEntries[SortedMap, EntryTransformer]").withFeatures(CollectionSize.ANY,CollectionFeature.KNOWN_ORDER,MapFeature.SUPPORTS_REMOVE,CollectionFeature.SUPPORTS_ITERATOR_REMOVE).createTestSuite());
   return suite;
 }

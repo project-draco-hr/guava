@@ -13,6 +13,6 @@
       return outer;
     }
   }
-).named("Maps.synchronizedNavigableMap[SafeTreeMap]").withFeatures(CollectionSize.ANY,CollectionFeature.KNOWN_ORDER,MapFeature.GENERAL_PURPOSE,MapFeature.ALLOWS_NULL_VALUES).createTestSuite());
+).named("Maps.synchronizedNavigableMap[SafeTreeMap]").withFeatures(CollectionSize.ANY,CollectionFeature.KNOWN_ORDER,MapFeature.GENERAL_PURPOSE,MapFeature.ALLOWS_NULL_VALUES,CollectionFeature.SUPPORTS_ITERATOR_REMOVE).createTestSuite());
   return suite;
 }

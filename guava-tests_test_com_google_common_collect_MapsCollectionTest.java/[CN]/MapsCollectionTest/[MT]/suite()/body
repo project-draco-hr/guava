@@ -50,7 +50,7 @@
       return new Integer[length];
     }
   }
-).named("Maps.asMap[Set, Function]").withFeatures(CollectionSize.ANY,MapFeature.SUPPORTS_REMOVE).createTestSuite());
+).named("Maps.asMap[Set, Function]").withFeatures(CollectionSize.ANY,MapFeature.SUPPORTS_REMOVE,CollectionFeature.SUPPORTS_ITERATOR_REMOVE).createTestSuite());
   suite.addTest(SortedMapTestSuiteBuilder.using(new TestMapGenerator<String,Integer>(){
     @Override public String[] createKeyArray(    int length){
       return new String[length];
@@ -88,7 +88,7 @@
       return insertionOrder;
     }
   }
-).named("Maps.asMap[SortedSet, Function]").withFeatures(CollectionSize.ANY,MapFeature.SUPPORTS_REMOVE).createTestSuite());
+).named("Maps.asMap[SortedSet, Function]").withFeatures(CollectionSize.ANY,CollectionFeature.SUPPORTS_ITERATOR_REMOVE,MapFeature.SUPPORTS_REMOVE).createTestSuite());
   suite.addTest(NavigableMapTestSuiteBuilder.using(new TestMapGenerator<String,Integer>(){
     @Override public String[] createKeyArray(    int length){
       return new String[length];
@@ -126,7 +126,7 @@
       return insertionOrder;
     }
   }
-).named("Maps.asMap[NavigableSet, Function]").withFeatures(CollectionSize.ANY,MapFeature.SUPPORTS_REMOVE).createTestSuite());
+).named("Maps.asMap[NavigableSet, Function]").withFeatures(CollectionSize.ANY,MapFeature.SUPPORTS_REMOVE,CollectionFeature.SUPPORTS_ITERATOR_REMOVE).createTestSuite());
   suite.addTest(filterSuite());
   suite.addTest(transformSuite());
   return suite;

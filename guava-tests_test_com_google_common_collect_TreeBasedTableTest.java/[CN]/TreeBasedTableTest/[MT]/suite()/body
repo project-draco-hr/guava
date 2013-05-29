@@ -14,6 +14,6 @@
       return table.row("b");
     }
   }
-).withFeatures(MapFeature.GENERAL_PURPOSE,CollectionSize.ANY).named("RowMapTestSuite").createTestSuite());
+).withFeatures(MapFeature.GENERAL_PURPOSE,CollectionFeature.SUPPORTS_ITERATOR_REMOVE,CollectionSize.ANY).named("RowMapTestSuite").createTestSuite());
   return suite;
 }

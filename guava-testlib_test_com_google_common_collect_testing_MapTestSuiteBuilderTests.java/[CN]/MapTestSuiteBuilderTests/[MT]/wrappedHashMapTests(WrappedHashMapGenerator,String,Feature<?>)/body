@@ -1,3 +1,5 @@
 {
-  return MapTestSuiteBuilder.using(generator).named(name).withFeatures(Lists.asList(MapFeature.GENERAL_PURPOSE,CollectionSize.ANY,features)).createTestSuite();
+  List<Feature<?>> featuresList=Lists.newArrayList(features);
+  Collections.addAll(featuresList,MapFeature.GENERAL_PURPOSE,CollectionFeature.SUPPORTS_ITERATOR_REMOVE,CollectionSize.ANY);
+  return MapTestSuiteBuilder.using(generator).named(name).withFeatures(featuresList).createTestSuite();
 }

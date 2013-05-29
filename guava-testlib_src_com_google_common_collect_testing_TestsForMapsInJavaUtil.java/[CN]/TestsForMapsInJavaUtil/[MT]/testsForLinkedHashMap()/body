@@ -4,5 +4,5 @@
       return populate(new LinkedHashMap<String,String>(),entries);
     }
   }
-).named("LinkedHashMap").withFeatures(MapFeature.GENERAL_PURPOSE,MapFeature.ALLOWS_NULL_KEYS,MapFeature.ALLOWS_NULL_VALUES,MapFeature.FAILS_FAST_ON_CONCURRENT_MODIFICATION,CollectionFeature.KNOWN_ORDER,CollectionFeature.SERIALIZABLE,CollectionSize.ANY).suppressing(suppressForLinkedHashMap()).createTestSuite();
+).named("LinkedHashMap").withFeatures(MapFeature.GENERAL_PURPOSE,MapFeature.ALLOWS_NULL_KEYS,MapFeature.ALLOWS_NULL_VALUES,MapFeature.FAILS_FAST_ON_CONCURRENT_MODIFICATION,CollectionFeature.SUPPORTS_ITERATOR_REMOVE,CollectionFeature.KNOWN_ORDER,CollectionFeature.SERIALIZABLE,CollectionSize.ANY).suppressing(suppressForLinkedHashMap()).createTestSuite();
 }

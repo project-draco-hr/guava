@@ -8,7 +8,7 @@
       return Maps.filterKeys(map,FILTER_KEYS);
     }
   }
-).named("Maps.filterKeys[SortedMap, Predicate]").withFeatures(MapFeature.ALLOWS_NULL_VALUES,MapFeature.GENERAL_PURPOSE,CollectionSize.ANY).suppressing(CollectionIteratorTester.getIteratorKnownOrderRemoveSupportedMethod()).createTestSuite());
+).named("Maps.filterKeys[SortedMap, Predicate]").withFeatures(MapFeature.ALLOWS_NULL_VALUES,MapFeature.GENERAL_PURPOSE,CollectionSize.ANY).createTestSuite());
   suite.addTest(SortedMapTestSuiteBuilder.using(new TestStringSortedMapGenerator(){
     @Override protected SortedMap<String,String> create(    Entry<String,String>[] entries){
       SortedMap<String,String> map=new NonNavigableSortedMap();
@@ -17,7 +17,7 @@
       return Maps.filterValues(map,FILTER_VALUES);
     }
   }
-).named("Maps.filterValues[SortedMap, Predicate]").withFeatures(MapFeature.ALLOWS_NULL_VALUES,MapFeature.GENERAL_PURPOSE,CollectionSize.ANY).suppressing(CollectionIteratorTester.getIteratorKnownOrderRemoveSupportedMethod()).createTestSuite());
+).named("Maps.filterValues[SortedMap, Predicate]").withFeatures(MapFeature.ALLOWS_NULL_VALUES,MapFeature.GENERAL_PURPOSE,CollectionSize.ANY).createTestSuite());
   suite.addTest(SortedMapTestSuiteBuilder.using(new TestStringSortedMapGenerator(){
     @Override protected SortedMap<String,String> create(    Entry<String,String>[] entries){
       SortedMap<String,String> map=new NonNavigableSortedMap();
@@ -26,6 +26,6 @@
       return Maps.filterEntries(map,FILTER_ENTRIES);
     }
   }
-).named("Maps.filterEntries[SortedMap, Predicate]").withFeatures(MapFeature.ALLOWS_NULL_VALUES,MapFeature.GENERAL_PURPOSE,CollectionSize.ANY).suppressing(CollectionIteratorTester.getIteratorKnownOrderRemoveSupportedMethod()).createTestSuite());
+).named("Maps.filterEntries[SortedMap, Predicate]").withFeatures(MapFeature.ALLOWS_NULL_VALUES,MapFeature.GENERAL_PURPOSE,CollectionSize.ANY).createTestSuite());
   return suite;
 }

@@ -29,7 +29,7 @@
       return Lists.newArrayList(Sets.newTreeSet(insertionOrder));
     }
   }
-).named("TreeMultiset[Ordering.natural].elementSet").withFeatures(CollectionSize.ANY,CollectionFeature.SUPPORTS_REMOVE,CollectionFeature.ALLOWS_NULL_QUERIES).createTestSuite());
+).named("TreeMultiset[Ordering.natural].elementSet").withFeatures(CollectionSize.ANY,CollectionFeature.REMOVE_OPERATIONS,CollectionFeature.ALLOWS_NULL_QUERIES).createTestSuite());
   suite.addTestSuite(TreeMultisetTest.class);
   return suite;
 }

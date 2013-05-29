@@ -1,6 +1,8 @@
 {
+  mapFeatures=new HashSet<Feature<?>>(mapFeatures);
   Set<Feature<?>> derivedFeatures=new HashSet<Feature<?>>();
-  if (mapFeatures.contains(CollectionFeature.SERIALIZABLE_INCLUDING_VIEWS)) {
+  mapFeatures.remove(CollectionFeature.SERIALIZABLE);
+  if (mapFeatures.remove(CollectionFeature.SERIALIZABLE_INCLUDING_VIEWS)) {
     derivedFeatures.add(CollectionFeature.SERIALIZABLE);
   }
   if (mapFeatures.contains(MapFeature.SUPPORTS_REMOVE)) {
@@ -12,8 +14,10 @@
   if (mapFeatures.contains(MapFeature.FAILS_FAST_ON_CONCURRENT_MODIFICATION)) {
     derivedFeatures.add(CollectionFeature.FAILS_FAST_ON_CONCURRENT_MODIFICATION);
   }
-  if (mapFeatures.contains(CollectionFeature.KNOWN_ORDER)) {
-    derivedFeatures.add(CollectionFeature.KNOWN_ORDER);
+  for (  CollectionFeature feature : CollectionFeature.values()) {
+    if (mapFeatures.contains(feature)) {
+      derivedFeatures.add(feature);
+    }
   }
   for (  CollectionSize size : CollectionSize.values()) {
     if (mapFeatures.contains(size)) {

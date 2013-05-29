@@ -1,8 +1,0 @@
-{
-  Iterator<Multiset.Entry<E>> iterator=getMultiset().entrySet().iterator();
-  assertTrue("non-empty multiset.entrySet() iterator.hasNext() returned false",iterator.hasNext());
-  assertEquals("multiset.entrySet() iterator.next() returned incorrect entry",Multisets.immutableEntry(samples.e0,1),iterator.next());
-  assertFalse("size 1 multiset.entrySet() iterator.hasNext() returned true " + "after next()",iterator.hasNext());
-  iterator.remove();
-  assertTrue("multiset isn't empty after multiset.entrySet() iterator.remove()",getMultiset().isEmpty());
-}

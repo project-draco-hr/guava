@@ -1,5 +1,0 @@
-{
-  int originalCount=getMultiset().count(samples.e0);
-  assertEquals("old count",originalCount,getMultiset().add(samples.e0,0));
-  expectUnchanged();
-}

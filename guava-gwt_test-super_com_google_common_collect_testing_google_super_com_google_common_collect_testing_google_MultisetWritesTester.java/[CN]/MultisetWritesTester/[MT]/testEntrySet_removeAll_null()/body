@@ -1,8 +1,0 @@
-{
-  try {
-    getMultiset().entrySet().removeAll(null);
-    fail("multiset.entrySet.removeAll(null) didn't throw an exception");
-  }
- catch (  NullPointerException expected) {
-  }
-}

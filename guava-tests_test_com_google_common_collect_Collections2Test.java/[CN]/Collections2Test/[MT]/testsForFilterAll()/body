@@ -6,5 +6,5 @@
       return Collections2.filter(unfiltered,NOT_YYY_ZZZ);
     }
   }
-).named("Collections2.filter").withFeatures(CollectionFeature.GENERAL_PURPOSE,CollectionFeature.ALLOWS_NULL_VALUES,CollectionFeature.KNOWN_ORDER,CollectionSize.ANY).suppressing(getIteratorKnownOrderRemoveSupportedMethod()).createTestSuite();
+).named("Collections2.filter").withFeatures(CollectionFeature.SUPPORTS_ADD,CollectionFeature.SUPPORTS_REMOVE,CollectionFeature.ALLOWS_NULL_VALUES,CollectionFeature.KNOWN_ORDER,CollectionSize.ANY).createTestSuite();
 }

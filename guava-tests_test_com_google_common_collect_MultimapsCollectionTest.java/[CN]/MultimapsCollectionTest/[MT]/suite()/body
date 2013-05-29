@@ -11,7 +11,7 @@
       return multimap;
     }
   }
-).named("synchronized ArrayListMultimap").withFeatures(MapFeature.ALLOWS_NULL_KEYS,MapFeature.ALLOWS_NULL_VALUES,MapFeature.GENERAL_PURPOSE,MapFeature.FAILS_FAST_ON_CONCURRENT_MODIFICATION,CollectionSize.ANY).createTestSuite());
+).named("synchronized ArrayListMultimap").withFeatures(MapFeature.ALLOWS_NULL_KEYS,MapFeature.ALLOWS_NULL_VALUES,MapFeature.GENERAL_PURPOSE,MapFeature.FAILS_FAST_ON_CONCURRENT_MODIFICATION,CollectionFeature.SUPPORTS_ITERATOR_REMOVE,CollectionSize.ANY).createTestSuite());
   suite.addTest(SetTestSuiteBuilder.using(new TestStringSetGenerator(){
     @Override protected Set<String> create(    String[] elements){
       PopulatableMapAsMultimap<Integer,String> multimap=PopulatableMapAsMultimap.create();

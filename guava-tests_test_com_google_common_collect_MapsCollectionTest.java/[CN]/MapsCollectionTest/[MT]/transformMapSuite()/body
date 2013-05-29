@@ -9,7 +9,7 @@
       return Maps.transformValues(map,DECODE_FUNCTION);
     }
   }
-).named("Maps.transformValues[Map, Function]").withFeatures(CollectionSize.ANY,CollectionFeature.KNOWN_ORDER,MapFeature.ALLOWS_NULL_KEYS,MapFeature.SUPPORTS_REMOVE).createTestSuite());
+).named("Maps.transformValues[Map, Function]").withFeatures(CollectionSize.ANY,CollectionFeature.KNOWN_ORDER,MapFeature.ALLOWS_NULL_KEYS,MapFeature.SUPPORTS_REMOVE,CollectionFeature.SUPPORTS_ITERATOR_REMOVE).createTestSuite());
   suite.addTest(MapTestSuiteBuilder.using(new TestStringMapGenerator(){
     @Override protected Map<String,String> create(    Entry<String,String>[] entries){
       Map<String,String> map=Maps.newLinkedHashMap();
@@ -19,6 +19,6 @@
       return Maps.transformEntries(map,DECODE_ENTRY_TRANSFORMER);
     }
   }
-).named("Maps.transformEntries[Map, EntryTransformer]").withFeatures(CollectionSize.ANY,CollectionFeature.KNOWN_ORDER,MapFeature.ALLOWS_NULL_KEYS,MapFeature.SUPPORTS_REMOVE).createTestSuite());
+).named("Maps.transformEntries[Map, EntryTransformer]").withFeatures(CollectionSize.ANY,CollectionFeature.KNOWN_ORDER,MapFeature.ALLOWS_NULL_KEYS,MapFeature.SUPPORTS_REMOVE,CollectionFeature.SUPPORTS_ITERATOR_REMOVE).createTestSuite());
   return suite;
 }

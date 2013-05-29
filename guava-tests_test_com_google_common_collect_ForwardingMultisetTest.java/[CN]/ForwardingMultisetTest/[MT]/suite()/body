@@ -101,6 +101,6 @@
 .elementSet();
     }
   }
-).named("standardElementSet tripwire").withFeatures(CollectionSize.ANY,CollectionFeature.ALLOWS_NULL_VALUES,CollectionFeature.SUPPORTS_REMOVE).createTestSuite());
+).named("standardElementSet tripwire").withFeatures(CollectionSize.ANY,CollectionFeature.ALLOWS_NULL_VALUES,CollectionFeature.REMOVE_OPERATIONS).createTestSuite());
   return suite;
 }

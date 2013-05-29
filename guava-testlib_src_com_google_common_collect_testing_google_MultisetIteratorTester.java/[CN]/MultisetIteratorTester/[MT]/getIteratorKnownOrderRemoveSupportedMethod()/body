@@ -1,3 +1,0 @@
-{
-  return Helpers.getMethod(MultisetIteratorTester.class,"testRemovingIteratorKnownOrder");
-}

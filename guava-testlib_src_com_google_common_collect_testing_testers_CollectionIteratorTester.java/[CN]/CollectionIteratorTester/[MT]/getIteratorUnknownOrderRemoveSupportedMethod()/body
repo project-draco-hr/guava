@@ -1,3 +1,0 @@
-{
-  return Helpers.getMethod(CollectionIteratorTester.class,"testIterator_unknownOrderRemoveSupported");
-}

@@ -1,15 +1,3 @@
 {
-  Set<Feature<?>> derivedFeatures=new HashSet<Feature<?>>();
-  if (mapFeatures.contains(MapFeature.SUPPORTS_REMOVE)) {
-    derivedFeatures.add(CollectionFeature.SUPPORTS_REMOVE);
-  }
-  if (mapFeatures.contains(MapFeature.REJECTS_DUPLICATES_AT_CREATION)) {
-    derivedFeatures.add(CollectionFeature.REJECTS_DUPLICATES_AT_CREATION);
-  }
-  for (  CollectionSize size : CollectionSize.values()) {
-    if (mapFeatures.contains(size)) {
-      derivedFeatures.add(size);
-    }
-  }
-  return derivedFeatures;
+  return MapTestSuiteBuilder.computeCommonDerivedCollectionFeatures(mapFeatures);
 }
