@@ -18,6 +18,6 @@
       return (Map)map;
     }
   }
-).named("MutableTypeToInstanceMap").withFeatures(MapFeature.SUPPORTS_REMOVE,MapFeature.RESTRICTS_KEYS,MapFeature.ALLOWS_NULL_VALUES,CollectionSize.ANY,MapFeature.ALLOWS_NULL_QUERIES).suppressing(remapTest).createTestSuite());
+).named("MutableTypeToInstanceMap").withFeatures(MapFeature.SUPPORTS_REMOVE,MapFeature.RESTRICTS_KEYS,MapFeature.ALLOWS_NULL_VALUES,CollectionFeature.SUPPORTS_ITERATOR_REMOVE,CollectionSize.ANY,MapFeature.ALLOWS_NULL_QUERIES).suppressing(remapTest).createTestSuite());
   return suite;
 }
