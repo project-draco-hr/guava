@@ -1,3 +1,7 @@
 {
-  return Collections.synchronizedMap(Hash.create(keys));
+  Map<Element,Element> map=Maps.newHashMap();
+  for (  Element element : keys) {
+    map.put(element,element);
+  }
+  return map;
 }

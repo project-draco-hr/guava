@@ -1,5 +1,3 @@
 {
-  MessageDigest md=algorithm.getMessageDigest();
-  md.update(input);
-  return md.digest();
+  return algorithm.getHashFunction().hashBytes(input).asBytes();
 }
