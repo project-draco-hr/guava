@@ -1,0 +1,4 @@
+{
+  int original=multimap().keys().remove(sampleKeys().e0,1);
+  assertEquals(Math.max(original - 1,0),multimap().get(sampleKeys().e0).size());
+}

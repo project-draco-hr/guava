@@ -1,0 +1,7 @@
+{
+  Multiset<K> keys=multimap().keys();
+  Iterator<Multiset.Entry<K>> itr=keys.entrySet().iterator();
+  assertEquals(Multisets.immutableEntry(sampleKeys().e0,1),itr.next());
+  itr.remove();
+  assertTrue(multimap().isEmpty());
+}

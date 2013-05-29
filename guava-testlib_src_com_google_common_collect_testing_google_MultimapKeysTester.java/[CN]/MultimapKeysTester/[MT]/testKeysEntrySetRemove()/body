@@ -1,0 +1,6 @@
+{
+  resetContainer(Helpers.mapEntry(sampleKeys().e0,sampleValues().e0),Helpers.mapEntry(sampleKeys().e0,sampleValues().e1),Helpers.mapEntry(sampleKeys().e1,sampleValues().e0));
+  assertTrue(multimap().keys().entrySet().remove(Multisets.immutableEntry(sampleKeys().e0,2)));
+  assertEquals(1,multimap().size());
+  assertTrue(multimap().containsEntry(sampleKeys().e1,sampleValues().e0));
+}

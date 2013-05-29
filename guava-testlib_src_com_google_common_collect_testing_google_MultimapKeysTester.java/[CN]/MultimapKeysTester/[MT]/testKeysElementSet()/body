@@ -1,0 +1,3 @@
+{
+  assertEquals(multimap().keySet(),multimap().keys().elementSet());
+}
