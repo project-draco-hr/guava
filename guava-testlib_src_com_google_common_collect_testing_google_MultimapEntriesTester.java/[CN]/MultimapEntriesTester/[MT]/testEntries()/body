@@ -1,0 +1,3 @@
+{
+  ASSERT.that(multimap().entries()).has().allFrom(getSampleElements());
+}
