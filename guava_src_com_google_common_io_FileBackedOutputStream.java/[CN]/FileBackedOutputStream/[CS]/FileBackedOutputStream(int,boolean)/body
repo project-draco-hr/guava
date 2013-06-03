@@ -4,9 +4,9 @@
   memory=new MemoryOutput();
   out=memory;
   if (resetOnFinalize) {
-    supplier=new InputSupplier<InputStream>(){
-      @Override public InputStream getInput() throws IOException {
-        return openStream();
+    source=new ByteSource(){
+      @Override public InputStream openStream() throws IOException {
+        return openInputStream();
       }
       @Override protected void finalize(){
         try {
@@ -20,9 +20,9 @@
 ;
   }
  else {
-    supplier=new InputSupplier<InputStream>(){
-      @Override public InputStream getInput() throws IOException {
-        return openStream();
+    source=new ByteSource(){
+      @Override public InputStream openStream() throws IOException {
+        return openInputStream();
       }
     }
 ;
