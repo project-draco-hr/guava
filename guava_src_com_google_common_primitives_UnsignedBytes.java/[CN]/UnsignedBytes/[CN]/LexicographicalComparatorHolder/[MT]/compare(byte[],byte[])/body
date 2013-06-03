@@ -4,29 +4,11 @@
   for (int i=0; i < minWords * Longs.BYTES; i+=Longs.BYTES) {
     long lw=theUnsafe.getLong(left,BYTE_ARRAY_BASE_OFFSET + (long)i);
     long rw=theUnsafe.getLong(right,BYTE_ARRAY_BASE_OFFSET + (long)i);
-    long diff=lw ^ rw;
-    if (diff != 0) {
-      if (!littleEndian) {
+    if (lw != rw) {
+      if (BIG_ENDIAN) {
         return UnsignedLongs.compare(lw,rw);
       }
-      int n=0;
-      int y;
-      int x=(int)diff;
-      if (x == 0) {
-        x=(int)(diff >>> 32);
-        n=32;
-      }
-      y=x << 16;
-      if (y == 0) {
-        n+=16;
-      }
- else {
-        x=y;
-      }
-      y=x << 8;
-      if (y == 0) {
-        n+=8;
-      }
+      int n=Long.numberOfTrailingZeros(lw ^ rw) & ~0x7;
       return (int)(((lw >>> n) & UNSIGNED_MASK) - ((rw >>> n) & UNSIGNED_MASK));
     }
   }
