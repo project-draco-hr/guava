@@ -1,0 +1,4 @@
+{
+  assertFalse(multimap().put(sampleKeys().e0,sampleValues().e0));
+  assertEquals(getNumElements(),multimap().size());
+}

@@ -1,7 +1,0 @@
-{
-  Multimap<String,Integer> multimap=getMultimap();
-  assertTrue(multimap.put("foo",1));
-  assertFalse(multimap.put("foo",1));
-  assertTrue(multimap.put("foo",3));
-  assertTrue(multimap.put("bar",5));
-}
