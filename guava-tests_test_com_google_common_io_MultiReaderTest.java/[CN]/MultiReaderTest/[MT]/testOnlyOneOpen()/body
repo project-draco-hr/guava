@@ -1,13 +1,13 @@
 {
   String testString="abcdefgh";
-  final InputSupplier<Reader> supplier=newReader(testString);
+  final CharSource source=newCharSource(testString);
   final int[] counter=new int[1];
-  InputSupplier<Reader> reader=new InputSupplier<Reader>(){
-    @Override public Reader getInput() throws IOException {
+  CharSource reader=new CharSource(){
+    @Override public Reader openStream() throws IOException {
       if (counter[0]++ != 0) {
-        throw new IllegalStateException("More than one supplier open");
+        throw new IllegalStateException("More than one source open");
       }
-      return new FilterReader(supplier.getInput()){
+      return new FilterReader(source.openStream()){
         @Override public void close() throws IOException {
           super.close();
           counter[0]--;
@@ -17,7 +17,7 @@
     }
   }
 ;
-  @SuppressWarnings("unchecked") Reader joinedReader=CharStreams.join(reader,reader,reader).getInput();
+  Reader joinedReader=CharSource.concat(reader,reader,reader).openStream();
   String result=CharStreams.toString(joinedReader);
   assertEquals(testString.length() * 3,result.length());
 }

@@ -1,0 +1,8 @@
+{
+  return new CharSink(){
+    @Override public Writer openStream(){
+      return new StringWriter();
+    }
+  }
+;
+}

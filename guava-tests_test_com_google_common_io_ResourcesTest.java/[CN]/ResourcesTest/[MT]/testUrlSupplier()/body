@@ -1,4 +1,0 @@
-{
-  byte[] data=ByteStreams.toByteArray(Resources.newInputStreamSupplier(classfile(Resources.class)));
-  assertEquals(0xCAFEBABE,new DataInputStream(new ByteArrayInputStream(data)).readInt());
-}

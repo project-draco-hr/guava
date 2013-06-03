@@ -1,4 +1,0 @@
-int input
-int offset
-long length
-int expectRead

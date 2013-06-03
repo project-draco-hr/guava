@@ -1,0 +1,10 @@
+{
+  try {
+    in.copyTo(out);
+    fail();
+  }
+ catch (  IOException expected) {
+    return CloserTest.getSuppressed(expected).length;
+  }
+  throw new AssertionError();
+}

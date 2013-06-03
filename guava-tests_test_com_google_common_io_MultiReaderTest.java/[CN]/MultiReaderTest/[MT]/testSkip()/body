@@ -1,7 +1,7 @@
 {
   String begin="abcde";
   String end="fghij";
-  @SuppressWarnings("unchecked") Reader joinedReader=CharStreams.join(newReader(begin),newReader(end)).getInput();
+  Reader joinedReader=CharSource.concat(newCharSource(begin),newCharSource(end)).openStream();
   String expected=begin + end;
   assertEquals(expected.charAt(0),joinedReader.read());
   CharStreams.skipFully(joinedReader,1);

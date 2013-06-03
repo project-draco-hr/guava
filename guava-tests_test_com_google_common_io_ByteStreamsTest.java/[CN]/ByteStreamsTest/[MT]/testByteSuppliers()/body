@@ -1,8 +1,0 @@
-{
-  byte[] range=newPreFilledByteArray(200);
-  assertEquals(range,ByteStreams.toByteArray(ByteStreams.newInputStreamSupplier(range)));
-  byte[] subRange=ByteStreams.toByteArray(ByteStreams.newInputStreamSupplier(range,100,50));
-  assertEquals(50,subRange.length);
-  assertEquals(100,subRange[0]);
-  assertEquals((byte)149,subRange[subRange.length - 1]);
-}

@@ -1,0 +1,8 @@
+{
+  return new ByteSink(){
+    @Override public OutputStream openStream(){
+      return new ByteArrayOutputStream();
+    }
+  }
+;
+}

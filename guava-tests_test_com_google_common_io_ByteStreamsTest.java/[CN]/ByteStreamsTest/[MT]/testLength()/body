@@ -1,7 +1,0 @@
-{
-  lengthHelper(Long.MAX_VALUE);
-  lengthHelper(7);
-  lengthHelper(1);
-  lengthHelper(0);
-  assertEquals(0,ByteStreams.length(ByteStreams.newInputStreamSupplier(new byte[0])));
-}

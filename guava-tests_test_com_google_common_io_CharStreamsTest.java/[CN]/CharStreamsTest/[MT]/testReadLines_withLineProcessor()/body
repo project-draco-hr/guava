@@ -1,5 +1,6 @@
 {
-  InputSupplier<StringReader> r=CharStreams.newReaderSupplier("a\nb\nc");
+  String text="a\nb\nc";
+  Reader r=new StringReader(text);
   LineProcessor<Integer> alwaysFalse=new LineProcessor<Integer>(){
     int seen;
     @Override public boolean processLine(    String line){
@@ -12,6 +13,7 @@
   }
 ;
   assertEquals("processLine was called more than once",1,CharStreams.readLines(r,alwaysFalse).intValue());
+  r=new StringReader(text);
   LineProcessor<Integer> alwaysTrue=new LineProcessor<Integer>(){
     int seen;
     @Override public boolean processLine(    String line){
@@ -24,6 +26,7 @@
   }
 ;
   assertEquals("processLine was not called for all the lines",3,CharStreams.readLines(r,alwaysTrue).intValue());
+  r=new StringReader(text);
   final StringBuilder sb=new StringBuilder();
   LineProcessor<Integer> conditional=new LineProcessor<Integer>(){
     int seen;

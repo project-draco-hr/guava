@@ -1,8 +1,8 @@
 {
-  InputSupplier<InputStream> supplier=newByteSupplier(0,10);
-  @SuppressWarnings("unchecked") InputSupplier<InputStream> joined=ByteStreams.join(supplier,supplier);
-  assertEquals(20,ByteStreams.length(joined));
-  InputStream in=joined.getInput();
+  ByteSource source=newByteSource(0,10);
+  ByteSource joined=ByteSource.concat(source,source);
+  assertEquals(20,joined.size());
+  InputStream in=joined.openStream();
   assertFalse(in.markSupported());
   assertEquals(10,in.available());
   int total=0;

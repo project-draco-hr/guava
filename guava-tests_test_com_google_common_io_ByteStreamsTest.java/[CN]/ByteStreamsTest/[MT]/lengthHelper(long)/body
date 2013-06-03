@@ -1,8 +1,0 @@
-{
-  assertEquals(100,ByteStreams.length(new InputSupplier<InputStream>(){
-    @Override public InputStream getInput(){
-      return new SlowSkipper(new ByteArrayInputStream(new byte[100]),skipLimit);
-    }
-  }
-));
-}

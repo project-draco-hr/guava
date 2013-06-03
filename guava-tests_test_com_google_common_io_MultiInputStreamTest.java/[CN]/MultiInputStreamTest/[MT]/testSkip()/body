@@ -1,6 +1,6 @@
 {
-  MultiInputStream multi=new MultiInputStream(Collections.singleton(new InputSupplier<InputStream>(){
-    @Override public InputStream getInput(){
+  MultiInputStream multi=new MultiInputStream(Collections.singleton(new ByteSource(){
+    @Override public InputStream openStream(){
       return new ByteArrayInputStream(newPreFilledByteArray(0,50)){
         @Override public long skip(        long n){
           return 0;

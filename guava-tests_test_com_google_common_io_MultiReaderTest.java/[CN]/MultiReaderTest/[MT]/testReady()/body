@@ -1,7 +1,7 @@
 {
-  InputSupplier<Reader> supplier=newReader("a");
-  Iterable<? extends InputSupplier<? extends Reader>> list=ImmutableList.of(supplier,supplier);
-  Reader joinedReader=CharStreams.join(list).getInput();
+  CharSource source=newCharSource("a");
+  Iterable<? extends CharSource> list=ImmutableList.of(source,source);
+  Reader joinedReader=CharSource.concat(list).openStream();
   assertTrue(joinedReader.ready());
   assertEquals('a',joinedReader.read());
   assertEquals('a',joinedReader.read());

@@ -1,10 +1,4 @@
 {
   final byte[] array=newPreFilledByteArray(1000);
   assertEquals(array,ByteStreams.readBytes(new ByteArrayInputStream(array),new TestByteProcessor()));
-  assertEquals(array,ByteStreams.readBytes(new InputSupplier<InputStream>(){
-    @Override public InputStream getInput(){
-      return new ByteArrayInputStream(array);
-    }
-  }
-,new TestByteProcessor()));
 }

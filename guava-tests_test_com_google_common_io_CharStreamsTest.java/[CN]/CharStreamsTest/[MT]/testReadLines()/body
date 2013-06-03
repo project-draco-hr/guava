@@ -1,0 +1,4 @@
+{
+  List<String> lines=CharStreams.readLines(new StringReader("a\nb\nc"));
+  assertEquals(ImmutableList.of("a","b","c"),lines);
+}

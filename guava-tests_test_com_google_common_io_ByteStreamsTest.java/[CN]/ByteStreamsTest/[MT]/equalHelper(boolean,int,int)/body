@@ -1,3 +1,0 @@
-{
-  equalHelper(expect,newPreFilledByteArray(size1),newPreFilledByteArray(size2));
-}

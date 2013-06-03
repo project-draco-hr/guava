@@ -1,2 +1,0 @@
-InputSupplier<? extends Reader> in
-OutputSupplier<? extends Writer> out

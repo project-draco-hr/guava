@@ -1,2 +1,0 @@
-InputSupplier<? extends InputStream> in
-OutputSupplier<OutputStream> out

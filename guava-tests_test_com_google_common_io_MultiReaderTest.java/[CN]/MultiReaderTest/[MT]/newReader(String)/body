@@ -1,8 +1,0 @@
-{
-  return new InputSupplier<Reader>(){
-    @Override public Reader getInput(){
-      return new StringReader(text);
-    }
-  }
-;
-}
