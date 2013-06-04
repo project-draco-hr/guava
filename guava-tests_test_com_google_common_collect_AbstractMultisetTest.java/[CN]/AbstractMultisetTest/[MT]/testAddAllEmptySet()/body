@@ -1,6 +1,0 @@
-{
-  c=ms=createSample();
-  assertFalse(ms.addAll(Collections.<String>emptySet()));
-  assertEquals(createSample(),ms);
-  assertSize();
-}

@@ -1,0 +1,7 @@
+{
+  int originalCount=getMultiset().count(samples.e0);
+  assertEquals(originalCount,getMultiset().add(samples.e0,2));
+  assertTrue(getMultiset().add(samples.e0));
+  assertEquals(originalCount + 3,getMultiset().add(samples.e0,1));
+  assertEquals(originalCount + 4,getMultiset().count(samples.e0));
+}

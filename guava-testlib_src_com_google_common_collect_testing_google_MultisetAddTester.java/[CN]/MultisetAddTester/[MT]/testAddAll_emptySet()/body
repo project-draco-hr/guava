@@ -1,0 +1,4 @@
+{
+  assertFalse(getMultiset().addAll(Collections.<E>emptySet()));
+  expectUnchanged();
+}

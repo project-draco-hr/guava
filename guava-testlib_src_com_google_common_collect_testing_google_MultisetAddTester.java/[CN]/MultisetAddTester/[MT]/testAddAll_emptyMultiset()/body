@@ -1,0 +1,4 @@
+{
+  assertFalse(getMultiset().addAll(getSubjectGenerator().create()));
+  expectUnchanged();
+}

@@ -1,7 +1,0 @@
-{
-  c=ms=createSample();
-  Multiset<String> empty=create();
-  assertFalse(ms.addAll(empty));
-  assertEquals(createSample(),ms);
-  assertSize();
-}

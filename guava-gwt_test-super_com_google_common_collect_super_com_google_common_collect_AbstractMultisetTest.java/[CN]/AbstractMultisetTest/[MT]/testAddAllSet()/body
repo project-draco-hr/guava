@@ -1,6 +1,0 @@
-{
-  c=ms=createSample();
-  Set<String> more=ImmutableSet.of("c","d","e");
-  assertTrue(ms.addAll(more));
-  assertContents("a","b","b","c","c","d","d","d","d","e");
-}
