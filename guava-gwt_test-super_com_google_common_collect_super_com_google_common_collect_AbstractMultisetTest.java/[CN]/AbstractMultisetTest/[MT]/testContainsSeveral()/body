@@ -1,5 +1,0 @@
-{
-  ms.add("a",3);
-  assertTrue(ms.contains(new String("a")));
-  assertSize();
-}

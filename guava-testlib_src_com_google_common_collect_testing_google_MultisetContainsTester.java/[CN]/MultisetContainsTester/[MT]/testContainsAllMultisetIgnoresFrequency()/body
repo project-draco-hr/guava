@@ -1,0 +1,3 @@
+{
+  assertTrue(getMultiset().containsAll(getSubjectGenerator().create(samples.e0,samples.e0,samples.e0)));
+}

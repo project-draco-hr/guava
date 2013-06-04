@@ -1,0 +1,3 @@
+{
+  assertTrue(getMultiset().containsAll(Arrays.asList(samples.e0,samples.e0,samples.e0)));
+}
