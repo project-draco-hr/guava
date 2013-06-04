@@ -1,4 +1,0 @@
-{
-  assertFalse(ms.elementSet().retainAll(asList("a")));
-  assertContents();
-}

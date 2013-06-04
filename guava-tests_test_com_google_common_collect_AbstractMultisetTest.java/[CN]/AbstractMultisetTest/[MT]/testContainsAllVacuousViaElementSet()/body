@@ -1,3 +1,0 @@
-{
-  assertTrue(ms.elementSet().containsAll(Collections.emptySet()));
-}

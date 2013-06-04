@@ -1,5 +1,0 @@
-{
-  ms.add("a");
-  assertTrue(ms.elementSet().retainAll(Collections.emptySet()));
-  assertContents();
-}

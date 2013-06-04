@@ -1,9 +1,0 @@
-{
-  try {
-    ms.elementSet().add("a");
-    fail();
-  }
- catch (  UnsupportedOperationException expected) {
-  }
-  assertSize();
-}
