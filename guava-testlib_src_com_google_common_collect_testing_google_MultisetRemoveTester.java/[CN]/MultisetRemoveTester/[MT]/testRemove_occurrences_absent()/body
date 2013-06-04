@@ -1,0 +1,3 @@
+{
+  assertEquals("multiset.remove(absent, 0) didn't return 0",0,getMultiset().remove(samples.e3,2));
+}

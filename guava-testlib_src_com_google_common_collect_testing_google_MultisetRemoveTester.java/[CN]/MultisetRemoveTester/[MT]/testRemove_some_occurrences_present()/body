@@ -1,0 +1,6 @@
+{
+  initThreeCopies();
+  assertEquals("multiset.remove(present, 2) didn't return the old count",3,getMultiset().remove(samples.e0,2));
+  assertTrue("multiset contains present after multiset.remove(present, 2)",getMultiset().contains(samples.e0));
+  assertEquals(1,getMultiset().count(samples.e0));
+}

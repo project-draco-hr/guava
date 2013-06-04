@@ -1,0 +1,3 @@
+{
+  assertEquals(0,getMultiset().remove(null,2));
+}

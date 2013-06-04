@@ -1,6 +1,0 @@
-{
-  ms.add("a");
-  ms.remove("a");
-  assertEquals(0,ms.count("a"));
-  assertSize();
-}
