@@ -1,4 +1,0 @@
-{
-  assertEquals(0,ms.count("a"));
-  assertSize();
-}

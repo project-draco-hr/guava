@@ -1,3 +1,0 @@
-{
-  assertTrue("multiset.entrySet() didn't contain [present, 1]",getMultiset().entrySet().contains(Multisets.immutableEntry(samples.e0,1)));
-}

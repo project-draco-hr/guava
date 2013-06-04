@@ -1,3 +1,0 @@
-{
-  return Arrays.asList(Helpers.getMethod(MultisetReadsTester.class,"testCount_3"));
-}

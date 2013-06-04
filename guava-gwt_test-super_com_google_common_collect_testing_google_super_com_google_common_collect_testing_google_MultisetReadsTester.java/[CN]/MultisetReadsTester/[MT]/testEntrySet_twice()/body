@@ -1,3 +1,0 @@
-{
-  assertEquals("calling multiset.entrySet() twice returned unequal sets",getMultiset().entrySet(),getMultiset().entrySet());
-}

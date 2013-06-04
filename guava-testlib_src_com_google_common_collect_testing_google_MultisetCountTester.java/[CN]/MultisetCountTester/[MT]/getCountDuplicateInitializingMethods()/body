@@ -1,0 +1,3 @@
+{
+  return Arrays.asList(Helpers.getMethod(MultisetCountTester.class,"testCount_3"));
+}

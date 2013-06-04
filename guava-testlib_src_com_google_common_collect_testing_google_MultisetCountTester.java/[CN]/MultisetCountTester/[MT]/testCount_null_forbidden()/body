@@ -1,0 +1,8 @@
+{
+  try {
+    getMultiset().count(null);
+    fail("Expected NullPointerException");
+  }
+ catch (  NullPointerException expected) {
+  }
+}

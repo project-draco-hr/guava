@@ -35,6 +35,6 @@
       return multimap.build().keys();
     }
   }
-).named("Multimaps.forMap.keys").withFeatures(FOR_MAP_FEATURES_ANY).suppressing(getReadsDuplicateInitializingMethods()).suppressing(getSetCountDuplicateInitializingMethods()).suppressing(getIteratorDuplicateInitializingMethods()).createTestSuite());
+).named("Multimaps.forMap.keys").withFeatures(FOR_MAP_FEATURES_ANY).suppressing(getCountDuplicateInitializingMethods()).suppressing(getSetCountDuplicateInitializingMethods()).suppressing(getIteratorDuplicateInitializingMethods()).createTestSuite());
   return suite;
 }

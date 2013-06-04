@@ -1,3 +1,0 @@
-{
-  assertTrue("multiset doesn't equal a multiset with the same elements",getMultiset().equals(HashMultiset.create(getSampleElements())));
-}

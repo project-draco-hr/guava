@@ -1,3 +1,0 @@
-{
-  assertEquals("multiset has incorrect hash code",1 ^ samples.e0.hashCode(),getMultiset().hashCode());
-}
