@@ -1,5 +1,0 @@
-{
-  ms.add("a");
-  assertEquals(1,ms.remove("a",1));
-  assertContents();
-}

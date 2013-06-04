@@ -1,0 +1,6 @@
+{
+  initThreeCopies();
+  List<E> contents=Helpers.copyToList(getMultiset());
+  assertFalse(getMultiset().retainAll(Collections.singleton(samples.e0)));
+  expectContents(contents);
+}
