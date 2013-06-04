@@ -1,0 +1,3 @@
+{
+  new EqualsTester().addEqualityGroup(getMultiset()).addEqualityGroup(getSubjectGenerator().create(createArrayWithNullElement()),getSubjectGenerator().create(createArrayWithNullElement())).testEquals();
+}
