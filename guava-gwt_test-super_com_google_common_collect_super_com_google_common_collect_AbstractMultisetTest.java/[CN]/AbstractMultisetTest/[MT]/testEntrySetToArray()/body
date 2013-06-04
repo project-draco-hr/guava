@@ -1,8 +1,0 @@
-{
-  ms.add("a",3);
-  Set<Multiset.Entry<String>> es=ms.entrySet();
-  Entry<?>[] array=new Entry<?>[3];
-  assertSame(array,es.toArray(array));
-  assertEquals(Multisets.immutableEntry("a",3),array[0]);
-  assertNull(array[1]);
-}
