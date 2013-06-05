@@ -1,0 +1,8 @@
+{
+  initThreeCopies();
+  assertEquals(3,getMultiset().count(samples.e0));
+  Iterator<Multiset.Entry<E>> entryItr=getMultiset().entrySet().iterator();
+  Multiset.Entry<E> entry=entryItr.next();
+  entryItr.remove();
+  assertEquals(0,entry.getCount());
+}

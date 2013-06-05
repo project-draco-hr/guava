@@ -1,6 +1,6 @@
 {
   TestSuite suite=new TestSuite();
-  suite.addTest(MultisetTestSuiteBuilder.using(linkedHashMultisetGenerator()).named("LinkedHashMultiset").withFeatures(CollectionSize.ANY,CollectionFeature.KNOWN_ORDER,CollectionFeature.ALLOWS_NULL_VALUES,CollectionFeature.SERIALIZABLE,CollectionFeature.GENERAL_PURPOSE).createTestSuite());
+  suite.addTest(MultisetTestSuiteBuilder.using(linkedHashMultisetGenerator()).named("LinkedHashMultiset").withFeatures(CollectionSize.ANY,CollectionFeature.KNOWN_ORDER,CollectionFeature.ALLOWS_NULL_VALUES,CollectionFeature.SERIALIZABLE,CollectionFeature.GENERAL_PURPOSE,MultisetFeature.ENTRIES_ARE_VIEWS).createTestSuite());
   suite.addTestSuite(LinkedHashMultisetTest.class);
   return suite;
 }

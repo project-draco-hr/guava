@@ -1,5 +1,0 @@
-{
-  ms=createSample();
-  ms.entrySet().clear();
-  assertContents();
-}
