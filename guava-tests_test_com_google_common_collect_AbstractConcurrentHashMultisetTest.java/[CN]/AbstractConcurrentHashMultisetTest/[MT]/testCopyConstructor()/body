@@ -1,7 +1,0 @@
-{
-  ms=ConcurrentHashMultiset.create(asList("a","b","a","c"));
-  assertEquals(4,ms.size());
-  assertEquals(2,ms.count("a"));
-  assertEquals(1,ms.count("b"));
-  assertEquals(1,ms.count("c"));
-}

@@ -1,7 +1,0 @@
-{
-  ms.add("a",3);
-  ms.add("b");
-  ms.add("c",2);
-  Multiset<Object> unmodifiable=Multisets.<Object>unmodifiableMultiset(ms);
-  UnmodifiableCollectionTests.assertMultisetIsUnmodifiable(unmodifiable,"a");
-}

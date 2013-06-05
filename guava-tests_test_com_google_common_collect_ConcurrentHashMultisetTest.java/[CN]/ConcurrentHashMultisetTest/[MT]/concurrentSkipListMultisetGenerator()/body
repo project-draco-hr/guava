@@ -1,0 +1,13 @@
+{
+  return new TestStringMultisetGenerator(){
+    @Override protected Multiset<String> create(    String[] elements){
+      Multiset<String> multiset=new ConcurrentHashMultiset<String>(new ConcurrentSkipListMap<String,AtomicInteger>());
+      Collections.addAll(multiset,elements);
+      return multiset;
+    }
+    @Override public List<String> order(    List<String> insertionOrder){
+      return Ordering.natural().sortedCopy(insertionOrder);
+    }
+  }
+;
+}

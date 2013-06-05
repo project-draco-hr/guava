@@ -1,4 +1,5 @@
 {
+  Multiset<String> ms=TreeMultiset.create();
   ms.add("a",3);
   ms.add("c",1);
   ms.add("b",2);

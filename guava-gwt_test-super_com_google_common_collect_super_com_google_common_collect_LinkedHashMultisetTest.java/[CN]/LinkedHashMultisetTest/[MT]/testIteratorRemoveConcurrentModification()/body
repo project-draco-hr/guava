@@ -1,4 +1,5 @@
 {
+  Multiset<String> ms=LinkedHashMultiset.create();
   ms.add("a");
   ms.add("b");
   Iterator<String> iterator=ms.iterator();

@@ -1,4 +1,0 @@
-{
-  super.assertContents(expected);
-  assertSize();
-}
