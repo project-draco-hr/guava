@@ -1,0 +1,4 @@
+{
+  getMultiset().elementSet().clear();
+  ASSERT.that(getMultiset()).isEmpty();
+}

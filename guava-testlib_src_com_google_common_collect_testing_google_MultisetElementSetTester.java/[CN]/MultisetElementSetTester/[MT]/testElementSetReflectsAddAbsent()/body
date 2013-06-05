@@ -1,0 +1,6 @@
+{
+  Set<E> elementSet=getMultiset().elementSet();
+  assertFalse(elementSet.contains(samples.e3));
+  getMultiset().add(samples.e3,4);
+  assertTrue(elementSet.contains(samples.e3));
+}
