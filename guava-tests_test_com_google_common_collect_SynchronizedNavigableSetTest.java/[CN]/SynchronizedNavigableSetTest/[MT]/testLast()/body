@@ -1,5 +1,0 @@
-{
-  NavigableSet<String> set=create();
-  set.add("a");
-  set.last();
-}

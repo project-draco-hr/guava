@@ -2,5 +2,5 @@
   NavigableSet<String> map=create();
   SortedSet<String> tailSet=map.tailSet("a");
   assertTrue(tailSet instanceof SynchronizedSortedSet);
-  assertSame(mutex,((SynchronizedSortedSet<String>)tailSet).mutex);
+  assertSame(MUTEX,((SynchronizedSortedSet<String>)tailSet).mutex);
 }

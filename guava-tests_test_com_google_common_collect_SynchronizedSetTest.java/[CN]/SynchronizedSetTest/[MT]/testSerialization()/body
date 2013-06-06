@@ -1,3 +1,0 @@
-{
-  SerializableTester.reserializeAndAssert(create());
-}

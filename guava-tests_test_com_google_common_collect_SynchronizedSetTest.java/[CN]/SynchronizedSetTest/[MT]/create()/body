@@ -1,5 +1,0 @@
-{
-  TestSet<E> inner=new TestSet<E>(new HashSet<E>(),mutex);
-  Set<E> outer=Synchronized.set(inner,inner.mutex);
-  return outer;
-}

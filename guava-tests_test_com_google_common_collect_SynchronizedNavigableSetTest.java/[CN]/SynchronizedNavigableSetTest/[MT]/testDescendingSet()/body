@@ -2,5 +2,5 @@
   NavigableSet<String> map=create();
   NavigableSet<String> descendingSet=map.descendingSet();
   assertTrue(descendingSet instanceof SynchronizedNavigableSet);
-  assertSame(mutex,((SynchronizedNavigableSet<String>)descendingSet).mutex);
+  assertSame(MUTEX,((SynchronizedNavigableSet<String>)descendingSet).mutex);
 }

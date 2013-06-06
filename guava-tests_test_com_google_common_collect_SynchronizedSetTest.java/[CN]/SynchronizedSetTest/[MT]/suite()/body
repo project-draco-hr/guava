@@ -1,0 +1,13 @@
+{
+  return SetTestSuiteBuilder.using(new TestStringSetGenerator(){
+    @Override protected Set<String> create(    String[] elements){
+      TestSet<String> inner=new TestSet<String>(new HashSet<String>(),MUTEX);
+      Set<String> outer=Synchronized.set(inner,inner.mutex);
+      for (      String e : elements) {
+        outer.add(e);
+      }
+      return outer;
+    }
+  }
+).named("Synchronized.set").withFeatures(CollectionFeature.GENERAL_PURPOSE,CollectionFeature.ALLOWS_NULL_VALUES,CollectionSize.ANY,CollectionFeature.SERIALIZABLE).createTestSuite();
+}

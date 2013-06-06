@@ -1,5 +1,5 @@
 {
-  TestSet<E> inner=new TestSet<E>(new TreeSet<E>((Comparator<E>)Ordering.natural().nullsFirst()),mutex);
-  NavigableSet<E> outer=Synchronized.navigableSet(inner,mutex);
+  TestSet<E> inner=new TestSet<E>(new TreeSet<E>((Comparator<E>)Ordering.natural().nullsFirst()),MUTEX);
+  NavigableSet<E> outer=Synchronized.navigableSet(inner,MUTEX);
   return outer;
 }
