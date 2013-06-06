@@ -1,7 +1,0 @@
-{
-  c.add("a");
-  String[] array=new String[3];
-  assertSame(array,c.toArray(array));
-  assertEquals("a",array[0]);
-  assertNull(array[1]);
-}

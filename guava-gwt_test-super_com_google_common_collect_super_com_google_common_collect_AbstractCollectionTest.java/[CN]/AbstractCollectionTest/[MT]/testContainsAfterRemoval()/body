@@ -1,5 +1,0 @@
-{
-  c.add("a");
-  c.remove("a");
-  assertFalse(c.contains("a"));
-}

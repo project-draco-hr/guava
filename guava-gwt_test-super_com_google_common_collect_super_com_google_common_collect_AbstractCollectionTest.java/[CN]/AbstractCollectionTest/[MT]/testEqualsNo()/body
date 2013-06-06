@@ -1,6 +1,0 @@
-{
-  c.add("a");
-  Collection<String> c2=create();
-  c2.add("b");
-  assertFalse(c.equals(c2));
-}

@@ -1,0 +1,11 @@
+{
+  Multiset<String> multiset=new NoRemoveMultiset<String>();
+  multiset.add("a");
+  try {
+    multiset.remove("a");
+    fail();
+  }
+ catch (  UnsupportedOperationException expected) {
+  }
+  assertTrue(multiset.contains("a"));
+}

@@ -1,5 +1,0 @@
-{
-  c.add("a");
-  assertTrue(c.retainAll(Collections.emptySet()));
-  assertContents();
-}

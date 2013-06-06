@@ -1,5 +1,0 @@
-{
-  c=createSample();
-  c.clear();
-  assertContents();
-}

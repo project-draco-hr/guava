@@ -1,4 +1,0 @@
-{
-  assertTrue(c.add("a"));
-  assertContents("a");
-}

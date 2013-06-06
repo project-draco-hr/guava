@@ -1,3 +1,0 @@
-{
-  assertTrue(c.containsAll(Collections.emptySet()));
-}

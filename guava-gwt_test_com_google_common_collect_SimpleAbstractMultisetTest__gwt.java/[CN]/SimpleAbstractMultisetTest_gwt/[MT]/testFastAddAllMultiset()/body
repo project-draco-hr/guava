@@ -1,5 +1,4 @@
 {
   com.google.common.collect.SimpleAbstractMultisetTest testCase=new com.google.common.collect.SimpleAbstractMultisetTest();
-  testCase.setUp();
   testCase.testFastAddAllMultiset();
 }

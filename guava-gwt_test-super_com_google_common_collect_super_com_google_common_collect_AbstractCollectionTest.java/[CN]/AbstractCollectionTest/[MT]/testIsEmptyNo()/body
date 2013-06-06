@@ -1,4 +1,0 @@
-{
-  c.add("a");
-  assertFalse(c.isEmpty());
-}

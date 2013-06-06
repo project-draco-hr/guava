@@ -1,5 +1,4 @@
 {
   com.google.common.collect.TreeMultisetTest testCase=new com.google.common.collect.TreeMultisetTest();
-  testCase.setUp();
   testCase.testElementSetSubsetRemoveAll();
 }

@@ -1,6 +1,0 @@
-{
-  c.add("a");
-  c.add("b");
-  c.add("b");
-  assertEquals(c,c);
-}

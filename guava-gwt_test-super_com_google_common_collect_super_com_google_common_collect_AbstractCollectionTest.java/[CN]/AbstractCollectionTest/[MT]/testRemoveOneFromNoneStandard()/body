@@ -1,4 +1,0 @@
-{
-  assertFalse(c.remove("a"));
-  assertContents();
-}
