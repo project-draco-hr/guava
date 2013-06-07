@@ -3,7 +3,7 @@
   for (  K k : sampleKeys()) {
     resetContainer();
     List<V> expectedValues=copyToList(multimap().get(k));
-    multimap().putAll(k,values);
+    assertTrue(multimap().putAll(k,values));
     expectedValues.addAll(values);
     assertGet(k,expectedValues);
   }

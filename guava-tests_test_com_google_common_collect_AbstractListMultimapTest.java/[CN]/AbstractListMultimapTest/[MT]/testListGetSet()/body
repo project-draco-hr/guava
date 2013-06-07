@@ -1,7 +1,0 @@
-{
-  ListMultimap<String,Integer> map=create();
-  map.put("bar",1);
-  map.get("bar").set(0,2);
-  assertEquals("{bar=[2]}",map.toString());
-  assertEquals("[bar=2]",map.entries().toString());
-}
