@@ -1,0 +1,4 @@
+{
+  Preconditions.checkNotNull(other,"other must not be null!");
+  return 0;
+}

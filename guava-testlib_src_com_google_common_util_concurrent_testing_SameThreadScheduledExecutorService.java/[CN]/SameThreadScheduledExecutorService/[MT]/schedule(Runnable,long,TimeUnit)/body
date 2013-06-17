@@ -1,0 +1,5 @@
+{
+  Preconditions.checkNotNull(command,"command must not be null");
+  Preconditions.checkNotNull(unit,"unit must not be null!");
+  return schedule(java.util.concurrent.Executors.callable(command),delay,unit);
+}

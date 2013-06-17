@@ -1,0 +1,13 @@
+{
+  taskDone=false;
+  Callable<Integer> task=new Callable<Integer>(){
+    @Override public Integer call(){
+      taskDone=true;
+      return 6;
+    }
+  }
+;
+  Future<Integer> future=TestingExecutors.sameThreadScheduledExecutor().schedule(task,10000,TimeUnit.MILLISECONDS);
+  assertTrue("Should run callable immediately",taskDone);
+  assertEquals(6,(int)future.get());
+}

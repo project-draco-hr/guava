@@ -1,0 +1,4 @@
+{
+  Preconditions.checkNotNull(tasks,"tasks must not be null!");
+  return delegate.invokeAny(tasks);
+}

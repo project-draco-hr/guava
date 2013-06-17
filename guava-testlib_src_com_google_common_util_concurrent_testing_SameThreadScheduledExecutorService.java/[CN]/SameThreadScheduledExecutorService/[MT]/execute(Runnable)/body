@@ -1,0 +1,4 @@
+{
+  Preconditions.checkNotNull(command,"command must not be null!");
+  delegate.execute(command);
+}

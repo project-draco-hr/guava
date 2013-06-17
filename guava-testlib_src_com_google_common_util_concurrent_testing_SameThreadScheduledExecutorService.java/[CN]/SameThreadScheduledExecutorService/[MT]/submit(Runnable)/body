@@ -1,0 +1,4 @@
+{
+  Preconditions.checkNotNull(task,"task must not be null!");
+  return delegate.submit(task);
+}

@@ -1,0 +1,4 @@
+{
+  Preconditions.checkNotNull(unit,"unit must not be null!");
+  return 0;
+}

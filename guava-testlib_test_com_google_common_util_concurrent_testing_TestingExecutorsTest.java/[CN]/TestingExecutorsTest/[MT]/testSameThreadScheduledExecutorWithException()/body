@@ -1,0 +1,15 @@
+{
+  Runnable runnable=new Runnable(){
+    @Override public void run(){
+      throw new RuntimeException("Oh no!");
+    }
+  }
+;
+  Future<?> future=TestingExecutors.sameThreadScheduledExecutor().submit(runnable);
+  try {
+    future.get();
+    fail("Should have thrown exception");
+  }
+ catch (  ExecutionException e) {
+  }
+}
