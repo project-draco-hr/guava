@@ -1,5 +1,5 @@
 {
-  List list=new ArrayList<Predicate>();
+  List<Predicate<Object>> list=newArrayList();
   Predicate<Object> predicate=Predicates.and(list);
   assertTrue(predicate.apply(1));
   list.add(Predicates.alwaysFalse());
