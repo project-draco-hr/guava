@@ -1,3 +1,3 @@
 {
-  return ByteStreams.asByteSource(ByteStreams.join(ImmutableList.copyOf(sources)));
+  return new ConcatenatedByteSource(sources);
 }

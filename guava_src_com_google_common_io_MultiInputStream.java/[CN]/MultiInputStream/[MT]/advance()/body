@@ -1,6 +1,6 @@
 {
   close();
   if (it.hasNext()) {
-    in=it.next().getInput();
+    in=it.next().openStream();
   }
 }
