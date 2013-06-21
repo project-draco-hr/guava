@@ -1,3 +1,0 @@
-{
-  return appendTo(appendable,castToIterator(parts));
-}

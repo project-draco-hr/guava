@@ -1,4 +1,0 @@
-{
-  Iterator<? extends Entry<?,?>> iterator=entries;
-  return appendTo(appendable,iterator);
-}
