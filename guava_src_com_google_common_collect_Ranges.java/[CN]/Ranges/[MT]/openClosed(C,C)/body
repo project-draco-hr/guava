@@ -1,3 +1,0 @@
-{
-  return Range.openClosed(lower,upper);
-}

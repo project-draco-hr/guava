@@ -1,3 +1,0 @@
-{
-  return Range.range(lower,lowerType,upper,upperType);
-}

@@ -1,4 +1,0 @@
-{
-  com.google.common.collect.RangesTest testCase=new com.google.common.collect.RangesTest();
-  testCase.testEncloseAll();
-}

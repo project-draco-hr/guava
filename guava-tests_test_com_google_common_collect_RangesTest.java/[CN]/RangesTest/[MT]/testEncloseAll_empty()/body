@@ -1,8 +1,0 @@
-{
-  try {
-    Ranges.encloseAll(ImmutableSet.<Integer>of());
-    fail();
-  }
- catch (  NoSuchElementException expected) {
-  }
-}
