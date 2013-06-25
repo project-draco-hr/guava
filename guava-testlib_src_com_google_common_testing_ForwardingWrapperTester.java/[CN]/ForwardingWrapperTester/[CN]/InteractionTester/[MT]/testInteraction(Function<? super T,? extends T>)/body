@@ -1,8 +1,12 @@
 {
   T proxy=Reflection.newProxy(interfaceType,this);
   T wrapper=wrapperFunction.apply(proxy);
+  boolean isPossibleChainingCall=interfaceType.isAssignableFrom(method.getReturnType());
   try {
-    assertEquals("Return value of " + method + " not forwarded",returnValue,method.invoke(wrapper,passedArgs));
+    Object actualReturnValue=method.invoke(wrapper,passedArgs);
+    if (!isPossibleChainingCall || wrapper != actualReturnValue) {
+      assertEquals("Return value of " + method + " not forwarded",returnValue,actualReturnValue);
+    }
   }
  catch (  IllegalAccessException e) {
     throw new RuntimeException(e);

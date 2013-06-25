@@ -1,0 +1,8 @@
+{
+  tester.testForwarding(ChainingCalls.class,new Function<ChainingCalls,ChainingCalls>(){
+    @Override public ChainingCalls apply(    ChainingCalls delegate){
+      return new ForwardingChainingCalls(delegate);
+    }
+  }
+);
+}
