@@ -2,5 +2,5 @@
   Set<Integer> set=Sets.newSetFromMap(new LinkedHashMap<Integer,Boolean>());
   set.addAll(SOME_COLLECTION);
   Set<Integer> copy=SerializableTester.reserializeAndAssert(set);
-  ASSERT.that(copy).has().allOf(0,1).inOrder();
+  ASSERT.that(copy).has().exactly(0,1).inOrder();
 }

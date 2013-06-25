@@ -4,10 +4,10 @@
   SortedMapDifference<Integer,String> diff1=Maps.difference(left,right);
   left.put(6,"z");
   assertFalse(diff1.areEqual());
-  ASSERT.that(diff1.entriesOnlyOnLeft().entrySet()).has().allOf(Maps.immutableEntry(2,"b"),Maps.immutableEntry(4,"d")).inOrder();
+  ASSERT.that(diff1.entriesOnlyOnLeft().entrySet()).has().exactly(Maps.immutableEntry(2,"b"),Maps.immutableEntry(4,"d")).inOrder();
   ASSERT.that(diff1.entriesOnlyOnRight().entrySet()).has().item(Maps.immutableEntry(6,"z"));
   ASSERT.that(diff1.entriesInCommon().entrySet()).has().item(Maps.immutableEntry(1,"a"));
-  ASSERT.that(diff1.entriesDiffering().entrySet()).has().allOf(Maps.immutableEntry(3,ValueDifferenceImpl.create("c","f")),Maps.immutableEntry(5,ValueDifferenceImpl.create("e","g"))).inOrder();
+  ASSERT.that(diff1.entriesDiffering().entrySet()).has().exactly(Maps.immutableEntry(3,ValueDifferenceImpl.create("c","f")),Maps.immutableEntry(5,ValueDifferenceImpl.create("e","g"))).inOrder();
   try {
     diff1.entriesInCommon().put(7,"x");
     fail();

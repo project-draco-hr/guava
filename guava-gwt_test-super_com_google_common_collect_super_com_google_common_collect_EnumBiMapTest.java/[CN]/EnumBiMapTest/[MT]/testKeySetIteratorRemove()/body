@@ -4,8 +4,8 @@
   Iterator<Currency> iter=bimap.keySet().iterator();
   assertEquals(Currency.DOLLAR,iter.next());
   iter.remove();
-  ASSERT.that(bimap.keySet()).has().allOf(Currency.FRANC,Currency.PESO).inOrder();
-  ASSERT.that(bimap.values()).has().allOf(Country.SWITZERLAND,Country.CHILE).inOrder();
-  ASSERT.that(bimap.inverse().keySet()).has().allOf(Country.CHILE,Country.SWITZERLAND).inOrder();
-  ASSERT.that(bimap.inverse().values()).has().allOf(Currency.PESO,Currency.FRANC).inOrder();
+  ASSERT.that(bimap.keySet()).has().exactly(Currency.FRANC,Currency.PESO).inOrder();
+  ASSERT.that(bimap.values()).has().exactly(Country.SWITZERLAND,Country.CHILE).inOrder();
+  ASSERT.that(bimap.inverse().keySet()).has().exactly(Country.CHILE,Country.SWITZERLAND).inOrder();
+  ASSERT.that(bimap.inverse().values()).has().exactly(Currency.PESO,Currency.FRANC).inOrder();
 }

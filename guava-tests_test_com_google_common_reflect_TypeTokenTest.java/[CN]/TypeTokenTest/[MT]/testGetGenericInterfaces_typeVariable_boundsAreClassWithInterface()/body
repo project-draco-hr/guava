@@ -1,7 +1,7 @@
 {
   assertThat(TypeToken.of(new TypeCapture<T>(){
   }
-.capture()).getGenericInterfaces()).has().allOf(new TypeToken<Iterable<String>>(){
+.capture()).getGenericInterfaces()).has().exactly(new TypeToken<Iterable<String>>(){
   }
 );
   assertHasArrayInterfaces(new TypeToken<T[]>(){

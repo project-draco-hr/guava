@@ -3,5 +3,5 @@
   assertEquals(expected.getName(),actual.getName());
   assertEquals(expected.getGenericDeclaration(),actual.getGenericDeclaration());
   assertEquals(actual.toString(),expected.hashCode(),actual.hashCode());
-  ASSERT.that(actual.getBounds()).has().allFrom(asList(expected.getBounds())).inOrder();
+  ASSERT.that(actual.getBounds()).has().exactlyAs(asList(expected.getBounds())).inOrder();
 }

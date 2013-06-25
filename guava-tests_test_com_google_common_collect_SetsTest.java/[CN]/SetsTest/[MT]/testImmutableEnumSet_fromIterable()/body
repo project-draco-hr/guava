@@ -4,5 +4,5 @@
   ImmutableSet<SomeEnum> one=Sets.immutableEnumSet(MinimalIterable.of(SomeEnum.B));
   ASSERT.that(one).has().item(SomeEnum.B);
   ImmutableSet<SomeEnum> two=Sets.immutableEnumSet(MinimalIterable.of(SomeEnum.D,SomeEnum.B));
-  ASSERT.that(two).has().allOf(SomeEnum.B,SomeEnum.D).inOrder();
+  ASSERT.that(two).has().exactly(SomeEnum.B,SomeEnum.D).inOrder();
 }

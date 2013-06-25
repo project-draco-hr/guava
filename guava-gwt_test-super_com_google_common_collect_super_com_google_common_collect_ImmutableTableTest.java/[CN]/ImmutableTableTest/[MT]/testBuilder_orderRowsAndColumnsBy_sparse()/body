@@ -12,9 +12,9 @@
   builder.put('r',4,"foo");
   builder.put('x',5,"bar");
   Table<Character,Integer,String> table=builder.build();
-  ASSERT.that(table.rowKeySet()).has().allOf('b','c','e','r','x').inOrder();
-  ASSERT.that(table.columnKeySet()).has().allOf(0,1,2,3,4,5,7).inOrder();
-  ASSERT.that(table.values()).has().allOf("cat","axe","baz","tub","dog","bar","foo","foo","bar").inOrder();
-  ASSERT.that(table.row('c').keySet()).has().allOf(0,3).inOrder();
-  ASSERT.that(table.column(5).keySet()).has().allOf('e','x').inOrder();
+  ASSERT.that(table.rowKeySet()).has().exactly('b','c','e','r','x').inOrder();
+  ASSERT.that(table.columnKeySet()).has().exactly(0,1,2,3,4,5,7).inOrder();
+  ASSERT.that(table.values()).has().exactly("cat","axe","baz","tub","dog","bar","foo","foo","bar").inOrder();
+  ASSERT.that(table.row('c').keySet()).has().exactly(0,3).inOrder();
+  ASSERT.that(table.column(5).keySet()).has().exactly('e','x').inOrder();
 }

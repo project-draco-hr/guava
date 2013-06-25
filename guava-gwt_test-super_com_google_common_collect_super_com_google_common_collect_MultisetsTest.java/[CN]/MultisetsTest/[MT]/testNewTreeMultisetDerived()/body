@@ -3,5 +3,5 @@
   assertTrue(set.isEmpty());
   set.add(new DerivedComparable("foo"),2);
   set.add(new DerivedComparable("bar"),3);
-  ASSERT.that(set).has().allOf(new DerivedComparable("bar"),new DerivedComparable("bar"),new DerivedComparable("bar"),new DerivedComparable("foo"),new DerivedComparable("foo")).inOrder();
+  ASSERT.that(set).has().exactly(new DerivedComparable("bar"),new DerivedComparable("bar"),new DerivedComparable("bar"),new DerivedComparable("foo"),new DerivedComparable("foo")).inOrder();
 }

@@ -1,4 +1,4 @@
 {
   initMultimapWithNullKey();
-  ASSERT.that(multimap().asMap().get(null)).has().allOf(getValueForNullKey());
+  ASSERT.that(multimap().asMap().get(null)).has().exactly(getValueForNullKey());
 }

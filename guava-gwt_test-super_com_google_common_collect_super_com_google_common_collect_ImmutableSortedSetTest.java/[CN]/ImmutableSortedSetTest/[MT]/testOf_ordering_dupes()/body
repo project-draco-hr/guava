@@ -1,4 +1,4 @@
 {
   SortedSet<String> set=of("e","a","e","f","b","b","d","a","c");
-  ASSERT.that(set).has().allOf("a","b","c","d","e","f").inOrder();
+  ASSERT.that(set).has().exactly("a","b","c","d","e","f").inOrder();
 }

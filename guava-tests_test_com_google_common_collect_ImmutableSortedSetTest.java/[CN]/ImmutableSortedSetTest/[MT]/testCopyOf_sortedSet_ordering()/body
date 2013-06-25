@@ -1,4 +1,4 @@
 {
   SortedSet<String> set=copyOf(Sets.newTreeSet(asList("e","a","f","b","d","c")));
-  ASSERT.that(set).has().allOf("a","b","c","d","e","f").inOrder();
+  ASSERT.that(set).has().exactly("a","b","c","d","e","f").inOrder();
 }

@@ -4,5 +4,5 @@
   rangeSet.add(Range.closed(3,6));
   testInvariants(rangeSet);
   ASSERT.that(rangeSet.asRanges()).has().item(Range.closed(1,6));
-  ASSERT.that(rangeSet.complement().asRanges()).has().allOf(Range.lessThan(1),Range.greaterThan(6)).inOrder();
+  ASSERT.that(rangeSet.complement().asRanges()).has().exactly(Range.lessThan(1),Range.greaterThan(6)).inOrder();
 }

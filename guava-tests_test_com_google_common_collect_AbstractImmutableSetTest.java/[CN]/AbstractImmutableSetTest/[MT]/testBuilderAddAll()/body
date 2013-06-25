@@ -2,5 +2,5 @@
   List<String> a=asList("a","b","c");
   List<String> b=asList("c","d","e");
   ImmutableSet<String> set=this.<String>builder().addAll(a).addAll(b).build();
-  ASSERT.that(set).has().allOf("a","b","c","d","e").inOrder();
+  ASSERT.that(set).has().exactly("a","b","c","d","e").inOrder();
 }

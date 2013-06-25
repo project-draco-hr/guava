@@ -11,7 +11,7 @@
       ASSERT.that(collection).isNull();
     }
  else {
-      ASSERT.that(collection).has().allFrom(expectedValues);
+      ASSERT.that(collection).has().exactlyAs(expectedValues);
     }
   }
 }

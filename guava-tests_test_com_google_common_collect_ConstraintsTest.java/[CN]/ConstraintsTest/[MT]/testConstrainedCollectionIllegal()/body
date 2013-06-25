@@ -13,6 +13,6 @@
   }
  catch (  TestElementException expected) {
   }
-  ASSERT.that(constrained).has().allOf("foo","bar").inOrder();
-  ASSERT.that(collection).has().allOf("foo","bar").inOrder();
+  ASSERT.that(constrained).has().exactly("foo","bar").inOrder();
+  ASSERT.that(collection).has().exactly("foo","bar").inOrder();
 }

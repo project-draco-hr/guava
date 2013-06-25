@@ -4,7 +4,7 @@
   NavigableMap<String,Integer> map=Maps.asMap(strings,LENGTH_FUNCTION);
   assertEquals(ImmutableMap.of("one",3,"two",3,"three",5),map);
   assertEquals(Integer.valueOf(3),map.remove("two"));
-  ASSERT.that(strings).has().allOf("one","three").inOrder();
+  ASSERT.that(strings).has().exactly("one","three").inOrder();
   assertEquals(mapEntry("three",5),map.subMap("one",false,"zzz",true).pollLastEntry());
   ASSERT.that(strings).has().item("one");
 }

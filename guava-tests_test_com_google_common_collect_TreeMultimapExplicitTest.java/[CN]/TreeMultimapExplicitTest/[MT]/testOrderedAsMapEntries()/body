@@ -3,11 +3,11 @@
   Iterator<Map.Entry<String,Collection<Integer>>> iterator=multimap.asMap().entrySet().iterator();
   Map.Entry<String,Collection<Integer>> entry=iterator.next();
   assertEquals(null,entry.getKey());
-  ASSERT.that(entry.getValue()).has().allOf(7,3,1);
+  ASSERT.that(entry.getValue()).has().exactly(7,3,1);
   entry=iterator.next();
   assertEquals("tree",entry.getKey());
-  ASSERT.that(entry.getValue()).has().allOf(null,0);
+  ASSERT.that(entry.getValue()).has().exactly(null,0);
   entry=iterator.next();
   assertEquals("google",entry.getKey());
-  ASSERT.that(entry.getValue()).has().allOf(6,2);
+  ASSERT.that(entry.getValue()).has().exactly(6,2);
 }

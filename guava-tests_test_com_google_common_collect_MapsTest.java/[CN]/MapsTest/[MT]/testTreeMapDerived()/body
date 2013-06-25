@@ -3,7 +3,7 @@
   assertEquals(Collections.emptyMap(),map);
   map.put(new Derived("foo"),1);
   map.put(new Derived("bar"),2);
-  ASSERT.that(map.keySet()).has().allOf(new Derived("bar"),new Derived("foo")).inOrder();
-  ASSERT.that(map.values()).has().allOf(2,1).inOrder();
+  ASSERT.that(map.keySet()).has().exactly(new Derived("bar"),new Derived("foo")).inOrder();
+  ASSERT.that(map.values()).has().exactly(2,1).inOrder();
   assertNull(map.comparator());
 }

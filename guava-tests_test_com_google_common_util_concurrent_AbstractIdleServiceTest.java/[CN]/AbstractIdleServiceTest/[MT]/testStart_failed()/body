@@ -17,5 +17,5 @@
   }
   assertEquals(1,service.startUpCalled);
   assertEquals(Service.State.FAILED,service.state());
-  ASSERT.that(service.transitionStates).has().allOf(Service.State.STARTING).inOrder();
+  ASSERT.that(service.transitionStates).has().exactly(Service.State.STARTING).inOrder();
 }

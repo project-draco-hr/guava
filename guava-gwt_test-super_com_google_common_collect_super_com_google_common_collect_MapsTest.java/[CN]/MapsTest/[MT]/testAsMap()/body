@@ -4,5 +4,5 @@
   assertEquals(ImmutableMap.of("one",3,"two",3,"three",5),map);
   assertEquals(Integer.valueOf(5),map.get("three"));
   assertNull(map.get("five"));
-  ASSERT.that(map.entrySet()).has().allOf(mapEntry("one",3),mapEntry("two",3),mapEntry("three",5)).inOrder();
+  ASSERT.that(map.entrySet()).has().exactly(mapEntry("one",3),mapEntry("two",3),mapEntry("three",5)).inOrder();
 }

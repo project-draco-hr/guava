@@ -5,6 +5,6 @@
   multimap.put("bar",3);
   multimap.trimToSize();
   assertEquals(3,multimap.size());
-  ASSERT.that(multimap.get("foo")).has().allOf(1,2).inOrder();
+  ASSERT.that(multimap.get("foo")).has().exactly(1,2).inOrder();
   ASSERT.that(multimap.get("bar")).has().item(3);
 }

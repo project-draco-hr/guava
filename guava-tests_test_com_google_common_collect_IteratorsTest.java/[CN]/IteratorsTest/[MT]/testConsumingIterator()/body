@@ -1,9 +1,9 @@
 {
   List<String> list=Lists.newArrayList("a","b");
   Iterator<String> consumingIterator=Iterators.consumingIterator(list.iterator());
-  ASSERT.that(list).has().allOf("a","b").inOrder();
+  ASSERT.that(list).has().exactly("a","b").inOrder();
   assertTrue(consumingIterator.hasNext());
-  ASSERT.that(list).has().allOf("a","b").inOrder();
+  ASSERT.that(list).has().exactly("a","b").inOrder();
   assertEquals("a",consumingIterator.next());
   ASSERT.that(list).has().item("b");
   assertTrue(consumingIterator.hasNext());

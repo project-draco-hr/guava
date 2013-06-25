@@ -3,7 +3,7 @@
   assertEquals(Collections.emptyMap(),map);
   map.put(new LegacyComparable("foo"),1);
   map.put(new LegacyComparable("bar"),2);
-  ASSERT.that(map.keySet()).has().allOf(new LegacyComparable("bar"),new LegacyComparable("foo")).inOrder();
-  ASSERT.that(map.values()).has().allOf(2,1).inOrder();
+  ASSERT.that(map.keySet()).has().exactly(new LegacyComparable("bar"),new LegacyComparable("foo")).inOrder();
+  ASSERT.that(map.values()).has().exactly(2,1).inOrder();
   assertNull(map.comparator());
 }

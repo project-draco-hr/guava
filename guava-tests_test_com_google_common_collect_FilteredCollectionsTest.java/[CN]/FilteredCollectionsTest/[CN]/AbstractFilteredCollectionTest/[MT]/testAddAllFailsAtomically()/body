@@ -9,6 +9,6 @@
     }
  catch (    IllegalArgumentException expected) {
     }
-    ASSERT.that(filteredToModify).has().allFrom(filtered);
+    ASSERT.that(filteredToModify).has().exactlyAs(filtered);
   }
 }

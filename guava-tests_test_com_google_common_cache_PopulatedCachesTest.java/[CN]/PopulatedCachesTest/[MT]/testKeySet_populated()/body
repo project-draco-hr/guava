@@ -3,9 +3,9 @@
     Set<Object> keys=cache.asMap().keySet();
     List<Entry<Object,Object>> warmed=warmUp(cache);
     Set<Object> expected=Maps.newHashMap(cache.asMap()).keySet();
-    ASSERT.that(keys).has().allFrom(expected);
-    ASSERT.that(keys.toArray()).has().allFrom(expected);
-    ASSERT.that(keys.toArray(new Object[0])).has().allFrom(expected);
+    ASSERT.that(keys).has().exactlyAs(expected);
+    ASSERT.that(keys.toArray()).has().exactlyAs(expected);
+    ASSERT.that(keys.toArray(new Object[0])).has().exactlyAs(expected);
     new EqualsTester().addEqualityGroup(cache.asMap().keySet(),keys).addEqualityGroup(ImmutableSet.of()).testEquals();
     assertEquals(WARMUP_SIZE,keys.size());
     for (int i=WARMUP_MIN; i < WARMUP_MAX; i++) {

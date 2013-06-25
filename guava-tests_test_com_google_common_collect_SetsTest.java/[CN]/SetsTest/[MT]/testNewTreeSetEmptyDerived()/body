@@ -3,5 +3,5 @@
   assertTrue(set.isEmpty());
   set.add(new Derived("foo"));
   set.add(new Derived("bar"));
-  ASSERT.that(set).has().allOf(new Derived("bar"),new Derived("foo")).inOrder();
+  ASSERT.that(set).has().exactly(new Derived("bar"),new Derived("foo")).inOrder();
 }

@@ -1,7 +1,7 @@
 {
-  ASSERT.that(multimap().get(key)).has().allFrom(values);
+  ASSERT.that(multimap().get(key)).has().exactlyAs(values);
   if (!values.isEmpty()) {
-    ASSERT.that(multimap().asMap().get(key)).has().allFrom(values);
+    ASSERT.that(multimap().asMap().get(key)).has().exactlyAs(values);
     assertFalse(multimap().isEmpty());
   }
  else {

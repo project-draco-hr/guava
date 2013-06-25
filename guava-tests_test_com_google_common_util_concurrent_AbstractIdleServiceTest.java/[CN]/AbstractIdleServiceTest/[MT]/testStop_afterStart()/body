@@ -7,5 +7,5 @@
   assertEquals(1,service.startUpCalled);
   assertEquals(1,service.shutDownCalled);
   assertEquals(Service.State.TERMINATED,service.state());
-  ASSERT.that(service.transitionStates).has().allOf(Service.State.STARTING,Service.State.STOPPING).inOrder();
+  ASSERT.that(service.transitionStates).has().exactly(Service.State.STARTING,Service.State.STOPPING).inOrder();
 }

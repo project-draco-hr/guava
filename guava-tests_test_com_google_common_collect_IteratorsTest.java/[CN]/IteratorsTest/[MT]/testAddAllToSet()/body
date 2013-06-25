@@ -2,6 +2,6 @@
   Set<String> alreadyThere=Sets.newLinkedHashSet(asList("already","there"));
   List<String> oneMore=Lists.newArrayList("there");
   boolean changed=Iterators.addAll(alreadyThere,oneMore.iterator());
-  ASSERT.that(alreadyThere).has().allOf("already","there").inOrder();
+  ASSERT.that(alreadyThere).has().exactly("already","there").inOrder();
   assertFalse(changed);
 }

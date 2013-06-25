@@ -31,6 +31,6 @@
   }
  catch (  TestElementException expected) {
   }
-  ASSERT.that(constrained).has().allOf("bar","foo").inOrder();
-  ASSERT.that(sortedSet).has().allOf("bar","foo").inOrder();
+  ASSERT.that(constrained).has().exactly("bar","foo").inOrder();
+  ASSERT.that(sortedSet).has().exactly("bar","foo").inOrder();
 }

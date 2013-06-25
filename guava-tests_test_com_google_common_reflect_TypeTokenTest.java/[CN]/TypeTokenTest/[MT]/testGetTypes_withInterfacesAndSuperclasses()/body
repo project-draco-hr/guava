@@ -6,19 +6,19 @@ abstract class Class3<T> extends Class2 implements Interface3<T> {
   TypeToken<Class3<String>>.TypeSet types=new TypeToken<Class3<String>>(){
   }
 .getTypes();
-  assertThat(types).has().allOf(new TypeToken<Class3<String>>(){
+  assertThat(types).has().exactly(new TypeToken<Class3<String>>(){
   }
 ,new TypeToken<Interface3<String>>(){
   }
 ,new TypeToken<Iterable<String>>(){
   }
 ,TypeToken.of(Class2.class),TypeToken.of(Interface12.class),TypeToken.of(Interface1.class),TypeToken.of(Interface2.class),TypeToken.of(Class1.class),TypeToken.of(Object.class));
-  assertThat(types.interfaces()).has().allOf(new TypeToken<Interface3<String>>(){
+  assertThat(types.interfaces()).has().exactly(new TypeToken<Interface3<String>>(){
   }
 ,TypeToken.of(Interface12.class),TypeToken.of(Interface1.class),TypeToken.of(Interface2.class),new TypeToken<Iterable<String>>(){
   }
 );
-  assertThat(types.classes()).has().allOf(new TypeToken<Class3<String>>(){
+  assertThat(types.classes()).has().exactly(new TypeToken<Class3<String>>(){
   }
 ,TypeToken.of(Class2.class),TypeToken.of(Class1.class),TypeToken.of(Object.class));
   assertSubtypeFirst(types);

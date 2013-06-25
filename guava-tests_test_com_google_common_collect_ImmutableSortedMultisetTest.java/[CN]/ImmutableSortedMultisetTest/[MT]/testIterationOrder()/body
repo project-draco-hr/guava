@@ -1,4 +1,4 @@
 {
   Collection<String> c=ImmutableSortedMultiset.of("a","b","a");
-  ASSERT.that(c).has().allOf("a","a","b").inOrder();
+  ASSERT.that(c).has().exactly("a","a","b").inOrder();
 }

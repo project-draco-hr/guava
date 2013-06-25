@@ -9,11 +9,11 @@
   assertTrue(constrained.equals(multiset));
   assertEquals(multiset.toString(),constrained.toString());
   assertEquals(multiset.hashCode(),constrained.hashCode());
-  ASSERT.that(multiset).has().allOf("foo","bar",TEST_ELEMENT,"qux","cat","dog","cow","cow");
-  ASSERT.that(constrained).has().allOf("foo","bar",TEST_ELEMENT,"qux","cat","dog","cow","cow");
+  ASSERT.that(multiset).has().exactly("foo","bar",TEST_ELEMENT,"qux","cat","dog","cow","cow");
+  ASSERT.that(constrained).has().exactly("foo","bar",TEST_ELEMENT,"qux","cat","dog","cow","cow");
   assertEquals(1,constrained.count("foo"));
   assertEquals(1,constrained.remove("foo",3));
   assertEquals(2,constrained.setCount("cow",0));
-  ASSERT.that(multiset).has().allOf("bar",TEST_ELEMENT,"qux","cat","dog");
-  ASSERT.that(constrained).has().allOf("bar",TEST_ELEMENT,"qux","cat","dog");
+  ASSERT.that(multiset).has().exactly("bar",TEST_ELEMENT,"qux","cat","dog");
+  ASSERT.that(constrained).has().exactly("bar",TEST_ELEMENT,"qux","cat","dog");
 }

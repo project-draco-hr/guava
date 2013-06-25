@@ -2,7 +2,7 @@
   TypeToken<?>.TypeSet types=TypeToken.of(new TypeCapture<B>(){
   }
 .capture()).getTypes();
-  assertThat(types.rawTypes()).has().allOf(Interface1.class,Class1.class,Object.class);
-  assertThat(types.interfaces().rawTypes()).has().allOf(Interface1.class).inOrder();
-  assertThat(types.classes().rawTypes()).has().allOf(Class1.class,Object.class).inOrder();
+  assertThat(types.rawTypes()).has().exactly(Interface1.class,Class1.class,Object.class);
+  assertThat(types.interfaces().rawTypes()).has().exactly(Interface1.class).inOrder();
+  assertThat(types.classes().rawTypes()).has().exactly(Class1.class,Object.class).inOrder();
 }

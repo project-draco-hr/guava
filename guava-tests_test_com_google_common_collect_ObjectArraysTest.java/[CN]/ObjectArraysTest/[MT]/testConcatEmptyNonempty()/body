@@ -1,5 +1,5 @@
 {
   String[] result=ObjectArrays.concat(new String[0],new String[]{"a","b"},String.class);
   assertEquals(String[].class,result.getClass());
-  ASSERT.that(result).has().allOf("a","b").inOrder();
+  ASSERT.that(result).has().exactly("a","b").inOrder();
 }

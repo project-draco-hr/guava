@@ -5,8 +5,8 @@
   table.put('a',2,"baz");
   ImmutableTable.Builder<Character,Integer,String> builder=ImmutableTable.builder();
   Table<Character,Integer,String> copy=builder.orderRowsBy(Ordering.natural()).orderColumnsBy(Ordering.natural()).putAll(table).build();
-  ASSERT.that(copy.rowKeySet()).has().allOf('a','b').inOrder();
-  ASSERT.that(copy.columnKeySet()).has().allOf(1,2).inOrder();
-  ASSERT.that(copy.values()).has().allOf("baz","bar","foo").inOrder();
-  ASSERT.that(copy.row('b').keySet()).has().allOf(1,2).inOrder();
+  ASSERT.that(copy.rowKeySet()).has().exactly('a','b').inOrder();
+  ASSERT.that(copy.columnKeySet()).has().exactly(1,2).inOrder();
+  ASSERT.that(copy.values()).has().exactly("baz","bar","foo").inOrder();
+  ASSERT.that(copy.row('b').keySet()).has().exactly(1,2).inOrder();
 }
