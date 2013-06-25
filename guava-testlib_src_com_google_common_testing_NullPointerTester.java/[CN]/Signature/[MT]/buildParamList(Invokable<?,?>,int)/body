@@ -5,9 +5,7 @@
     Parameter param=params.get(i);
     if (i != indexOfParamToSetToNull) {
       args[i]=getDefaultValue(param.getType());
-      if (!isPrimitiveOrNullable(param)) {
-        Assert.assertTrue("No default value found for " + param + " of "+ invokable,args[i] != null);
-      }
+      Assert.assertTrue("Can't find or create a sample instance for type '" + param.getType() + "'; please provide one using NullPointerTester.setDefault()",args[i] != null || isNullable(param));
     }
   }
   return args;

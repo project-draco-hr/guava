@@ -3,9 +3,9 @@
   if (defaultValue != null) {
     return defaultValue;
   }
-  @SuppressWarnings("unchecked") T nullValue=(T)ArbitraryInstances.get(type.getRawType());
-  if (nullValue != null) {
-    return nullValue;
+  @SuppressWarnings("unchecked") T arbitrary=(T)ArbitraryInstances.get(type.getRawType());
+  if (arbitrary != null) {
+    return arbitrary;
   }
   if (type.getRawType() == Class.class) {
     @SuppressWarnings("unchecked") T defaultClass=(T)getFirstTypeParameter(type.getType()).getRawType();
