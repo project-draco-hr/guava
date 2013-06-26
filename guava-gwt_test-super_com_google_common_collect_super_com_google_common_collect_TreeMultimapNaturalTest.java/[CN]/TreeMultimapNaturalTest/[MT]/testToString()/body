@@ -1,3 +1,6 @@
 {
-  assertEquals("{bar=[1, 2, 3], foo=[-1, 1, 2, 3, 4]}",createSample().toString());
+  SetMultimap<String,Integer> multimap=create();
+  multimap.putAll("bar",Arrays.asList(3,1,2));
+  multimap.putAll("foo",Arrays.asList(2,3,1,-1,4));
+  assertEquals("{bar=[1, 2, 3], foo=[-1, 1, 2, 3, 4]}",multimap.toString());
 }

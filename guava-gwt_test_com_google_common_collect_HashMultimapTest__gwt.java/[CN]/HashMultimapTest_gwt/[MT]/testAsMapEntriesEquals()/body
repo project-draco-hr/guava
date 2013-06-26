@@ -1,5 +1,4 @@
 {
   com.google.common.collect.HashMultimapTest testCase=new com.google.common.collect.HashMultimapTest();
-  testCase.setUp();
   testCase.testAsMapEntriesEquals();
 }

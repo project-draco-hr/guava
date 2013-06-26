@@ -1,0 +1,7 @@
+{
+  List<V> expected=Lists.newArrayList();
+  for (  Map.Entry<K,V> entry : getSampleElements()) {
+    expected.add(entry.getValue());
+  }
+  ASSERT.that(multimap().values()).has().exactlyAs(expected);
+}

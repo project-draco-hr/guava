@@ -1,4 +1,0 @@
-{
-  multimap=createSample();
-  assertEquals(multimap,SerializableTester.reserialize(multimap));
-}

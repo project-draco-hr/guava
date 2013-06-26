@@ -1,6 +1,0 @@
-{
-  Multimap<String,Integer> sample=create();
-  sample.putAll("foo",asList(3,-1,2,4,1));
-  sample.putAll("bar",asList(1,2,3,1));
-  return sample;
-}

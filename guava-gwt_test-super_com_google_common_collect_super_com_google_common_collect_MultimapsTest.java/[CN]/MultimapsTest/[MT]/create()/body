@@ -1,3 +1,0 @@
-{
-  return Multimaps.synchronizedSetMultimap(HashMultimap.<String,Integer>create());
-}

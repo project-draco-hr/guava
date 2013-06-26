@@ -1,5 +1,5 @@
 {
-  Multimap<String,Integer> multimap=getMultimap();
+  Multimap<String,Integer> multimap=create();
   multimap.put("foo",1);
   multimap.put("foo",3);
   Set<Map.Entry<String,Collection<Integer>>> set=multimap.asMap().entrySet();
