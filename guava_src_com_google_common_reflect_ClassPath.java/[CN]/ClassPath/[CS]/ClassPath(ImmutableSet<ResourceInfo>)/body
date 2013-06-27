@@ -1,4 +1,3 @@
 {
-  this.pathUris=pathUris;
   this.resources=resources;
 }

@@ -1,8 +1,7 @@
 {
   Scanner scanner=new Scanner();
-  ImmutableMap<URI,ClassLoader> classPathEntries=getClassPathEntries(classloader);
-  for (  Map.Entry<URI,ClassLoader> entry : classPathEntries.entrySet()) {
+  for (  Map.Entry<URI,ClassLoader> entry : getClassPathEntries(classloader).entrySet()) {
     scanner.scan(entry.getKey(),entry.getValue());
   }
-  return new ClassPath(classPathEntries.keySet(),scanner.getResources());
+  return new ClassPath(scanner.getResources());
 }
