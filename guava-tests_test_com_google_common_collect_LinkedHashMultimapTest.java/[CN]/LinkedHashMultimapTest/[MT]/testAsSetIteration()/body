@@ -3,7 +3,7 @@
   new IteratorTester<Entry<String,Collection<Integer>>>(6,MODIFIABLE,set,IteratorTester.KnownOrder.KNOWN_ORDER){
     private Multimap<String,Integer> multimap;
     @Override protected Iterator<Entry<String,Collection<Integer>>> newTargetIterator(){
-      multimap=create();
+      multimap=LinkedHashMultimap.create();
       multimap.putAll("foo",asList(2,3));
       multimap.putAll("bar",asList(4,5));
       multimap.putAll("foo",asList(6));

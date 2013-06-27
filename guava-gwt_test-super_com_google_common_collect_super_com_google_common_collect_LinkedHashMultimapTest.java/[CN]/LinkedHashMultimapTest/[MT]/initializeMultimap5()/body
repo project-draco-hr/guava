@@ -1,5 +1,5 @@
 {
-  Multimap<String,Integer> multimap=create();
+  Multimap<String,Integer> multimap=LinkedHashMultimap.create();
   multimap.put("foo",5);
   multimap.put("bar",4);
   multimap.put("foo",3);
