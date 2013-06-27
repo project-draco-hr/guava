@@ -1,0 +1,8 @@
+{
+  File temp1=createTempFile();
+  Files.write(ASCII,temp1,Charsets.UTF_8);
+  File temp2=createTempFile();
+  Files.write(ASCII,temp2,Charsets.UTF_8);
+  Files.copy(temp1,temp2);
+  assertEquals(ASCII,Files.toString(temp1,Charsets.UTF_8));
+}

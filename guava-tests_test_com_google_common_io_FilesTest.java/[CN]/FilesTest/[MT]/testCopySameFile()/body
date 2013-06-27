@@ -1,0 +1,11 @@
+{
+  File temp=createTempFile();
+  Files.write(ASCII,temp,Charsets.UTF_8);
+  try {
+    Files.copy(temp,temp);
+    fail("Expected an IAE to be thrown but wasn't");
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+  assertEquals(ASCII,Files.toString(temp,Charsets.UTF_8));
+}

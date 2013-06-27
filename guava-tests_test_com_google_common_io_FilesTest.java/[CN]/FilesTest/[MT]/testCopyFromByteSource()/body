@@ -1,0 +1,6 @@
+{
+  File i18nFile=getTestFile("i18n.txt");
+  File temp=createTempFile();
+  Files.copy(Files.asByteSource(i18nFile),temp);
+  assertEquals(I18N,Files.toString(temp,Charsets.UTF_8));
+}

@@ -1,0 +1,39 @@
+{
+  File temp=createTempFile();
+  LineProcessor<List<String>> collect=new LineProcessor<List<String>>(){
+    List<String> collector=new ArrayList<String>();
+    @Override public boolean processLine(    String line){
+      collector.add(line);
+      return true;
+    }
+    @Override public List<String> getResult(){
+      return collector;
+    }
+  }
+;
+  ASSERT.that(Files.readLines(temp,Charsets.UTF_8,collect)).isEmpty();
+  PrintWriter w=new PrintWriter(Files.newWriter(temp,Charsets.UTF_8));
+  w.println("hello");
+  w.println("");
+  w.println(" world  ");
+  w.println("");
+  w.close();
+  Files.readLines(temp,Charsets.UTF_8,collect);
+  ASSERT.that(collect.getResult()).has().exactly("hello",""," world  ","").inOrder();
+  LineProcessor<List<String>> collectNonEmptyLines=new LineProcessor<List<String>>(){
+    List<String> collector=new ArrayList<String>();
+    @Override public boolean processLine(    String line){
+      if (line.length() > 0) {
+        collector.add(line);
+      }
+      return true;
+    }
+    @Override public List<String> getResult(){
+      return collector;
+    }
+  }
+;
+  Files.readLines(temp,Charsets.UTF_8,collectNonEmptyLines);
+  ASSERT.that(collectNonEmptyLines.getResult()).has().exactly("hello"," world  ").inOrder();
+  assertTrue(temp.delete());
+}

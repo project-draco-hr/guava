@@ -1,0 +1,7 @@
+{
+  File file=first;
+  for (  String name : more) {
+    file=new File(file,name);
+  }
+  return file;
+}

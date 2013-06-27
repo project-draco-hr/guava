@@ -1,0 +1,10 @@
+{
+  File asciiFile=getTestFile("ascii.txt");
+  File i18nFile=getTestFile("i18n.txt");
+  String init="d41d8cd98f00b204e9800998ecf8427e";
+  assertEquals(init,Hashing.md5().newHasher().hash().toString());
+  String asciiHash="e5df5a39f2b8cb71b24e1d8038f93131";
+  assertEquals(asciiHash,Files.hash(asciiFile,Hashing.md5()).toString());
+  String i18nHash="7fa826962ce2079c8334cd4ebf33aea4";
+  assertEquals(i18nHash,Files.hash(i18nFile,Hashing.md5()).toString());
+}

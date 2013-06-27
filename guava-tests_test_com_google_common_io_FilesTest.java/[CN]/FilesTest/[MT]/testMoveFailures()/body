@@ -1,0 +1,13 @@
+{
+  File temp1=createTempFile();
+  File temp2=createTempFile();
+  moveHelper(false,new UnmovableFile(temp1,false,false),temp2);
+  moveHelper(false,new UnmovableFile(temp1,false,false),new UnmovableFile(temp2,true,false));
+  try {
+    File asciiFile=getTestFile("ascii.txt");
+    moveHelper(false,asciiFile,asciiFile);
+    fail("expected exception");
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}

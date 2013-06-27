@@ -1,0 +1,7 @@
+{
+  File temp=Files.createTempDir();
+  assertTrue(temp.exists());
+  assertTrue(temp.isDirectory());
+  assertEquals(0,temp.listFiles().length);
+  assertTrue(temp.delete());
+}

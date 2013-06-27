@@ -1,0 +1,22 @@
+{
+  File temp=createTempFile();
+  assertTrue(temp.exists());
+  assertTrue(temp.delete());
+  assertFalse(temp.exists());
+  Files.touch(temp);
+  assertTrue(temp.exists());
+  Files.touch(temp);
+  assertTrue(temp.exists());
+  try {
+    Files.touch(new File(temp.getPath()){
+      @Override public boolean setLastModified(      long t){
+        return false;
+      }
+      private static final long serialVersionUID=0;
+    }
+);
+    fail("expected exception");
+  }
+ catch (  IOException expected) {
+  }
+}

@@ -1,0 +1,5 @@
+{
+  File file=file(getTempDir(),"nonexistent.file");
+  assertTrue(file.getParentFile().exists());
+  Files.createParentDirs(file);
+}

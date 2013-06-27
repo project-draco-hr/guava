@@ -1,0 +1,6 @@
+{
+  File file=file("nonexistent.file");
+  assertNull(file.getParentFile());
+  assertNotNull(file.getCanonicalFile().getParentFile());
+  Files.createParentDirs(file);
+}

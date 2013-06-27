@@ -1,0 +1,22 @@
+{
+  File asciiFile=getTestFile("ascii.txt");
+  try {
+    Files.newReader(asciiFile,null);
+    fail("expected exception");
+  }
+ catch (  NullPointerException expected) {
+  }
+  try {
+    Files.newReader(null,Charsets.UTF_8);
+    fail("expected exception");
+  }
+ catch (  NullPointerException expected) {
+  }
+  BufferedReader r=Files.newReader(asciiFile,Charsets.US_ASCII);
+  try {
+    assertEquals(ASCII,r.readLine());
+  }
+  finally {
+    r.close();
+  }
+}

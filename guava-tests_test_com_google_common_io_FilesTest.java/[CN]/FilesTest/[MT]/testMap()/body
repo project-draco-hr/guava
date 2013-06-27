@@ -1,0 +1,9 @@
+{
+  int size=1024;
+  byte[] bytes=newPreFilledByteArray(size);
+  File file=createTempFile();
+  Files.write(bytes,file);
+  MappedByteBuffer actual=Files.map(file);
+  ByteBuffer expected=ByteBuffer.wrap(bytes);
+  assertTrue("ByteBuffers should be equal.",expected.equals(actual));
+}

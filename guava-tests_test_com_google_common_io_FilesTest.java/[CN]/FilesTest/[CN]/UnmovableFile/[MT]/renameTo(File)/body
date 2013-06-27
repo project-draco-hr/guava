@@ -1,0 +1,3 @@
+{
+  return canRename && super.renameTo(to);
+}

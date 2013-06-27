@@ -1,0 +1,6 @@
+{
+  File file=root();
+  assertNull(file.getParentFile());
+  assertNull(file.getCanonicalFile().getParentFile());
+  Files.createParentDirs(file);
+}

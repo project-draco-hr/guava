@@ -1,0 +1,13 @@
+{
+  File temp1=createTempFile();
+  File temp2=file(temp1.getPath());
+  assertEquals(temp1,temp2);
+  Files.write(ASCII,temp1,Charsets.UTF_8);
+  try {
+    Files.copy(temp1,temp2);
+    fail("Expected an IAE to be thrown but wasn't");
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+  assertEquals(ASCII,Files.toString(temp1,Charsets.UTF_8));
+}

@@ -1,0 +1,10 @@
+{
+  File i18nFile=getTestFile("i18n.txt");
+  File temp=createTempFile();
+  Files.copy(i18nFile,Charsets.UTF_8,Files.asCharSink(temp,Charsets.UTF_8));
+  assertEquals(I18N,Files.toString(temp,Charsets.UTF_8));
+  Files.copy(Files.asCharSource(i18nFile,Charsets.UTF_8),temp,Charsets.UTF_8);
+  assertEquals(I18N,Files.toString(temp,Charsets.UTF_8));
+  Files.copy(i18nFile,Charsets.UTF_8,Files.asCharSink(temp,Charsets.UTF_16LE));
+  assertEquals(I18N,Files.toString(temp,Charsets.UTF_16LE));
+}

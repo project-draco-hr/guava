@@ -1,0 +1,18 @@
+{
+  ByteProcessor<byte[]> processor=new ByteProcessor<byte[]>(){
+    private final ByteArrayOutputStream out=new ByteArrayOutputStream();
+    @Override public boolean processBytes(    byte[] buffer,    int offset,    int length) throws IOException {
+      if (length >= 0) {
+        out.write(buffer,offset,length);
+      }
+      return true;
+    }
+    @Override public byte[] getResult(){
+      return out.toByteArray();
+    }
+  }
+;
+  File asciiFile=getTestFile("ascii.txt");
+  byte[] result=Files.readBytes(asciiFile,processor);
+  assertEquals(Bytes.asList(Files.toByteArray(asciiFile)),Bytes.asList(result));
+}

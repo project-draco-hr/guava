@@ -1,0 +1,24 @@
+{
+  File temp=createTempFile();
+  try {
+    Files.newWriter(temp,null);
+    fail("expected exception");
+  }
+ catch (  NullPointerException expected) {
+  }
+  try {
+    Files.newWriter(null,Charsets.UTF_8);
+    fail("expected exception");
+  }
+ catch (  NullPointerException expected) {
+  }
+  BufferedWriter w=Files.newWriter(temp,Charsets.UTF_8);
+  try {
+    w.write(I18N);
+  }
+  finally {
+    w.close();
+  }
+  File i18nFile=getTestFile("i18n.txt");
+  assertTrue(Files.equal(i18nFile,temp));
+}

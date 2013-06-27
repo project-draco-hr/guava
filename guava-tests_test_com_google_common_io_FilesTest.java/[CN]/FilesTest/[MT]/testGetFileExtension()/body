@@ -1,0 +1,17 @@
+{
+  assertEquals("txt",Files.getFileExtension(".txt"));
+  assertEquals("txt",Files.getFileExtension("blah.txt"));
+  assertEquals("txt",Files.getFileExtension("blah..txt"));
+  assertEquals("txt",Files.getFileExtension(".blah.txt"));
+  assertEquals("txt",Files.getFileExtension("/tmp/blah.txt"));
+  assertEquals("gz",Files.getFileExtension("blah.tar.gz"));
+  assertEquals("",Files.getFileExtension("/"));
+  assertEquals("",Files.getFileExtension("."));
+  assertEquals("",Files.getFileExtension(".."));
+  assertEquals("",Files.getFileExtension("..."));
+  assertEquals("",Files.getFileExtension("blah"));
+  assertEquals("",Files.getFileExtension("blah."));
+  assertEquals("",Files.getFileExtension(".blah."));
+  assertEquals("",Files.getFileExtension("/foo.bar/blah"));
+  assertEquals("",Files.getFileExtension("/foo/.bar/blah"));
+}

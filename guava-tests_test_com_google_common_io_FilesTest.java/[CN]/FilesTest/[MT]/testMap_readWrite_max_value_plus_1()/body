@@ -1,0 +1,9 @@
+{
+  File file=createTempFile();
+  try {
+    Files.map(file,MapMode.READ_WRITE,(long)Integer.MAX_VALUE + 1);
+    fail("Should throw when size exceeds Integer.MAX_VALUE");
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}

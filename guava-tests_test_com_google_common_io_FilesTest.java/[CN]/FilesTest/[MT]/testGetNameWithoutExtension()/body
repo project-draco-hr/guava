@@ -1,0 +1,17 @@
+{
+  assertEquals("",Files.getNameWithoutExtension(".txt"));
+  assertEquals("blah",Files.getNameWithoutExtension("blah.txt"));
+  assertEquals("blah.",Files.getNameWithoutExtension("blah..txt"));
+  assertEquals(".blah",Files.getNameWithoutExtension(".blah.txt"));
+  assertEquals("blah",Files.getNameWithoutExtension("/tmp/blah.txt"));
+  assertEquals("blah.tar",Files.getNameWithoutExtension("blah.tar.gz"));
+  assertEquals("",Files.getNameWithoutExtension("/"));
+  assertEquals("",Files.getNameWithoutExtension("."));
+  assertEquals(".",Files.getNameWithoutExtension(".."));
+  assertEquals("..",Files.getNameWithoutExtension("..."));
+  assertEquals("blah",Files.getNameWithoutExtension("blah"));
+  assertEquals("blah",Files.getNameWithoutExtension("blah."));
+  assertEquals(".blah",Files.getNameWithoutExtension(".blah."));
+  assertEquals("blah",Files.getNameWithoutExtension("/foo.bar/blah"));
+  assertEquals("blah",Files.getNameWithoutExtension("/foo/.bar/blah"));
+}

@@ -1,0 +1,17 @@
+{
+  try {
+    Files.move(from,to);
+    if (success) {
+      assertFalse(from.exists());
+      assertTrue(to.exists());
+    }
+ else {
+      fail("expected exception");
+    }
+  }
+ catch (  IOException possiblyExpected) {
+    if (success) {
+      throw possiblyExpected;
+    }
+  }
+}

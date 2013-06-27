@@ -1,0 +1,3 @@
+{
+  return canDelete && super.delete();
+}

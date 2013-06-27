@@ -1,0 +1,21 @@
+{
+  if (testDir != null) {
+    return testDir;
+  }
+  URL testFileUrl=IoTestCase.class.getResource("testdata/i18n.txt");
+  if (testFileUrl == null) {
+    throw new RuntimeException("unable to locate testdata directory");
+  }
+  if (testFileUrl.getProtocol().equals("file")) {
+    try {
+      File testFile=new File(testFileUrl.toURI());
+      testDir=testFile.getParentFile();
+    }
+ catch (    Exception ignore) {
+    }
+  }
+  if (testDir == null) {
+    testDir=createTempDir();
+  }
+  return testDir;
+}

@@ -1,0 +1,11 @@
+{
+  File parent=getTestFile("ascii.txt");
+  assertTrue(parent.isFile());
+  File file=file(parent,"foo");
+  try {
+    Files.createParentDirs(file);
+    fail();
+  }
+ catch (  IOException expected) {
+  }
+}

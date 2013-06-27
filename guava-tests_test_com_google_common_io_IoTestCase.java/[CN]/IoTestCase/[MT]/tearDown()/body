@@ -1,0 +1,8 @@
+{
+  for (  File file : filesToDelete) {
+    if (file.exists()) {
+      delete(file);
+    }
+  }
+  filesToDelete.clear();
+}

@@ -1,0 +1,7 @@
+{
+  File asciiFile=getTestFile("ascii.txt");
+  File i18nFile=getTestFile("i18n.txt");
+  assertEquals(ASCII,Files.toString(asciiFile,Charsets.US_ASCII));
+  assertEquals(I18N,Files.toString(i18nFile,Charsets.UTF_8));
+  ASSERT.that(Files.toString(i18nFile,Charsets.US_ASCII)).isNotEqualTo(I18N);
+}

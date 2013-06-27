@@ -1,0 +1,19 @@
+{
+  File asciiFile=getTestFile("ascii.txt");
+  File i18nFile=getTestFile("i18n.txt");
+  assertFalse(Files.equal(asciiFile,i18nFile));
+  assertTrue(Files.equal(asciiFile,asciiFile));
+  File temp=createTempFile();
+  Files.copy(asciiFile,temp);
+  assertTrue(Files.equal(asciiFile,temp));
+  Files.copy(i18nFile,temp);
+  assertTrue(Files.equal(i18nFile,temp));
+  Files.copy(asciiFile,temp);
+  RandomAccessFile rf=new RandomAccessFile(temp,"rw");
+  rf.writeByte(0);
+  rf.close();
+  assertEquals(asciiFile.length(),temp.length());
+  assertFalse(Files.equal(asciiFile,temp));
+  assertTrue(Files.asByteSource(asciiFile).contentEquals(Files.asByteSource(asciiFile)));
+  assertTrue(Files.equal(asciiFile,new BadLengthFile(asciiFile,0)));
+}

@@ -1,0 +1,6 @@
+{
+  File i18nFile=getTestFile("i18n.txt");
+  ByteArrayOutputStream out=new ByteArrayOutputStream();
+  Files.copy(i18nFile,out);
+  assertEquals(I18N,out.toString("UTF-8"));
+}

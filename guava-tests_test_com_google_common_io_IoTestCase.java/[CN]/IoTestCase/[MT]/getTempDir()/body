@@ -1,0 +1,6 @@
+{
+  if (tempDir == null) {
+    tempDir=createTempDir();
+  }
+  return tempDir;
+}

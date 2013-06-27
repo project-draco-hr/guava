@@ -1,0 +1,11 @@
+{
+  File file=createTempFile();
+  boolean deleted=file.delete();
+  assertTrue(deleted);
+  try {
+    Files.map(file);
+    fail("Should have thrown FileNotFoundException.");
+  }
+ catch (  FileNotFoundException expected) {
+  }
+}

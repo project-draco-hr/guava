@@ -1,0 +1,8 @@
+{
+  File i18nFile=getTestFile("i18n.txt");
+  File temp1=createTempFile();
+  File temp2=createTempFile();
+  Files.copy(i18nFile,temp1);
+  moveHelper(true,new UnmovableFile(temp1,false,true),temp2);
+  assertTrue(Files.equal(temp2,i18nFile));
+}

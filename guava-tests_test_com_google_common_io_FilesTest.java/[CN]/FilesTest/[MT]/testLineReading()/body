@@ -1,0 +1,14 @@
+{
+  File temp=createTempFile();
+  assertNull(Files.readFirstLine(temp,Charsets.UTF_8));
+  assertTrue(Files.readLines(temp,Charsets.UTF_8).isEmpty());
+  PrintWriter w=new PrintWriter(Files.newWriter(temp,Charsets.UTF_8));
+  w.println("hello");
+  w.println("");
+  w.println(" world  ");
+  w.println("");
+  w.close();
+  assertEquals("hello",Files.readFirstLine(temp,Charsets.UTF_8));
+  assertEquals(ImmutableList.of("hello",""," world  ",""),Files.readLines(temp,Charsets.UTF_8));
+  assertTrue(temp.delete());
+}

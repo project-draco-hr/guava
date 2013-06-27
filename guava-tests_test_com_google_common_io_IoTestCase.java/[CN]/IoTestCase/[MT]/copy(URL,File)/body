@@ -1,0 +1,18 @@
+{
+  InputStream in=url.openStream();
+  try {
+    OutputStream out=new FileOutputStream(file);
+    try {
+      byte[] buf=new byte[4096];
+      for (int read=in.read(buf); read != -1; read=in.read(buf)) {
+        out.write(buf,0,read);
+      }
+    }
+  finally {
+      out.close();
+    }
+  }
+  finally {
+    in.close();
+  }
+}

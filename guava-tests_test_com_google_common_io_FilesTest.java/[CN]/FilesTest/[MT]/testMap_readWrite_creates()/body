@@ -1,0 +1,15 @@
+{
+  int size=1024;
+  byte[] expectedBytes=newPreFilledByteArray(1024);
+  File file=createTempFile();
+  boolean deleted=file.delete();
+  assertTrue(deleted);
+  assertFalse(file.exists());
+  MappedByteBuffer map=Files.map(file,MapMode.READ_WRITE,size);
+  map.put(expectedBytes);
+  assertTrue(file.exists());
+  assertTrue(file.isFile());
+  assertEquals(size,file.length());
+  byte[] actualBytes=Files.toByteArray(file);
+  assertTrue(Arrays.equals(expectedBytes,actualBytes));
+}

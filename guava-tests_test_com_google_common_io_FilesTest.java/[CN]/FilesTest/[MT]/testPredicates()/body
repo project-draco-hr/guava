@@ -1,0 +1,8 @@
+{
+  File asciiFile=getTestFile("ascii.txt");
+  File dir=asciiFile.getParentFile();
+  assertTrue(Files.isDirectory().apply(dir));
+  assertFalse(Files.isFile().apply(dir));
+  assertFalse(Files.isDirectory().apply(asciiFile));
+  assertTrue(Files.isFile().apply(asciiFile));
+}
