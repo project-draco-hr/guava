@@ -14,6 +14,6 @@
   List<Entry<K,V>> allEntries=new ArrayList<Entry<K,V>>();
   allEntries.addAll(extremeValues);
   allEntries.addAll(normalValues);
-  SortedMap<K,V> map=(SortedMap<K,V>)delegate.create((Object[])allEntries.toArray(new Entry[allEntries.size()]));
+  SortedMap<K,V> map=(SortedMap<K,V>)delegate.create((Object[])allEntries.toArray(new Entry<?,?>[allEntries.size()]));
   return createSubMap(map,firstExclusive,lastExclusive);
 }
