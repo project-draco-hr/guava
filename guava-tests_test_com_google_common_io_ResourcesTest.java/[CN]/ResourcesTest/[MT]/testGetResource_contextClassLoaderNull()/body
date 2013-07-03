@@ -1,0 +1,16 @@
+{
+  ClassLoader oldContextLoader=Thread.currentThread().getContextClassLoader();
+  try {
+    Thread.currentThread().setContextClassLoader(null);
+    assertNotNull(Resources.getResource("com/google/common/io/testdata/i18n.txt"));
+    try {
+      Resources.getResource("no such resource");
+      fail("Should get IllegalArgumentException");
+    }
+ catch (    IllegalArgumentException expected) {
+    }
+  }
+  finally {
+    Thread.currentThread().setContextClassLoader(oldContextLoader);
+  }
+}

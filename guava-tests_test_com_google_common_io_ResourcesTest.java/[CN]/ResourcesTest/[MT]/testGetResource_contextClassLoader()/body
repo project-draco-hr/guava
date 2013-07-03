@@ -1,0 +1,24 @@
+{
+  File tempFile=createTempFile();
+  PrintWriter writer=new PrintWriter(tempFile,"UTF-8");
+  writer.println("rud a chur ar an m??ar fhada");
+  writer.close();
+  try {
+    Resources.getResource(tempFile.getName());
+    fail("Should get IllegalArgumentException");
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+  URL baseUrl=tempFile.getParentFile().toURI().toURL();
+  URLClassLoader loader=new URLClassLoader(new URL[]{baseUrl});
+  ClassLoader oldContextLoader=Thread.currentThread().getContextClassLoader();
+  try {
+    Thread.currentThread().setContextClassLoader(loader);
+    URL url=Resources.getResource(tempFile.getName());
+    String text=Resources.toString(url,Charsets.UTF_8);
+    assertEquals("rud a chur ar an m??ar fhada\n",text);
+  }
+  finally {
+    Thread.currentThread().setContextClassLoader(oldContextLoader);
+  }
+}
