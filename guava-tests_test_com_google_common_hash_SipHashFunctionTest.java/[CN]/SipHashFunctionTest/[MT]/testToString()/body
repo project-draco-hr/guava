@@ -1,0 +1,5 @@
+{
+  assertEquals("Hashing.sipHash24(" + K0 + ", "+ K1+ ")",SIP_WITH_KEY.toString());
+  assertEquals("Hashing.sipHash24(" + K0 + ", "+ K1+ ")",SIP_WITHOUT_KEY.toString());
+  assertEquals("Hashing.sipHash24(20, 13)",Hashing.sipHash24(20,13).toString());
+}

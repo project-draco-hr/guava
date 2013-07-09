@@ -1,0 +1,8 @@
+{
+  assertSip(new byte[]{},0x726fdb47dd0e0e31L);
+  assertSip(new byte[]{0x61},0x2ba3e8e9a71148caL);
+  assertSip(new byte[1000000],0x28205108397aa742L);
+  assertSip("12345678",0x02130609caea37ebL);
+  assertSip("abcdef",0x2a6e77e733c7c05dL);
+  assertSip("SipHash",0x8325093242a96f60L);
+}

@@ -1,0 +1,6 @@
+{
+  assertEquals(expected,SIP_WITH_KEY.hashBytes(input).asLong());
+  assertEquals(expected,SIP_WITH_KEY.newHasher().putBytes(input).hash().asLong());
+  assertEquals(expected,SIP_WITHOUT_KEY.hashBytes(input).asLong());
+  assertEquals(expected,SIP_WITHOUT_KEY.newHasher().putBytes(input).hash().asLong());
+}

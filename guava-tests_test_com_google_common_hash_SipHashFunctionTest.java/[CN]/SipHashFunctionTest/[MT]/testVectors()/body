@@ -1,0 +1,9 @@
+{
+  for (int i=0; i < EXPECTED.length; ++i) {
+    byte[] msg=new byte[i];
+    for (int j=0; j < i; ++j) {
+      msg[j]=(byte)j;
+    }
+    assertSip(msg,EXPECTED[i]);
+  }
+}

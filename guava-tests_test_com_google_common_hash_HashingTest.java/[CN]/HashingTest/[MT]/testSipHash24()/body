@@ -1,0 +1,8 @@
+{
+  HashTestUtils.check2BitAvalanche(Hashing.sipHash24(),250,0.14);
+  HashTestUtils.checkAvalanche(Hashing.sipHash24(),250,0.10);
+  HashTestUtils.checkNo2BitCharacteristics(Hashing.sipHash24());
+  HashTestUtils.checkNoFunnels(Hashing.sipHash24());
+  HashTestUtils.assertInvariants(Hashing.sipHash24());
+  assertEquals("Hashing.sipHash24(506097522914230528, 1084818905618843912)",Hashing.sipHash24().toString());
+}
