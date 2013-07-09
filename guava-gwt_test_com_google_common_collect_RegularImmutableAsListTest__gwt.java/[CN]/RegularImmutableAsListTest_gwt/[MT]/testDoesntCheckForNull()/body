@@ -1,0 +1,4 @@
+{
+  com.google.common.collect.RegularImmutableAsListTest testCase=new com.google.common.collect.RegularImmutableAsListTest();
+  testCase.testDoesntCheckForNull();
+}
