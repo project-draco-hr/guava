@@ -1,3 +1,3 @@
 {
-  scanDirectory(directory,classloader,"");
+  scanDirectory(directory,classloader,"",ImmutableSet.<File>of());
 }

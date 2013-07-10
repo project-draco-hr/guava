@@ -1,3 +1,4 @@
 File directory
 ClassLoader classloader
 String packagePrefix
+ImmutableSet<File> ancestors
