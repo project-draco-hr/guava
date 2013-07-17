@@ -1,0 +1,3 @@
+{
+  assertEquals(expected.length == 0,source.isEmpty());
+}
