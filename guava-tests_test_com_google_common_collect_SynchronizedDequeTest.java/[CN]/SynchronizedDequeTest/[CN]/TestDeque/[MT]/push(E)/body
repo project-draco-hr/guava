@@ -1,0 +1,4 @@
+{
+  assertTrue(Thread.holdsLock(mutex));
+  delegate.push(e);
+}

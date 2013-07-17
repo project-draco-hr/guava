@@ -1,0 +1,6 @@
+{
+  TestDeque<String> inner=new TestDeque<String>();
+  Deque<String> outer=Synchronized.deque(inner,inner.mutex);
+  outer.add("foo");
+  return outer;
+}
