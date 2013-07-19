@@ -1,7 +1,7 @@
 {
   TestSuite suite=new TestSuite();
   suite.addTestSuite(ImmutableRangeSetTest.class);
-  suite.addTest(NavigableSetTestSuiteBuilder.using(new ImmutableRangeSetIntegerAsSetGenerator()).named("ImmutableRangeSet.asSet[DiscreteDomains.integers[]]").withFeatures(CollectionSize.ANY,CollectionFeature.REJECTS_DUPLICATES_AT_CREATION,CollectionFeature.ALLOWS_NULL_QUERIES,CollectionFeature.KNOWN_ORDER,CollectionFeature.NON_STANDARD_TOSTRING,CollectionFeature.SERIALIZABLE).createTestSuite());
-  suite.addTest(NavigableSetTestSuiteBuilder.using(new ImmutableRangeSetBigIntegerAsSetGenerator()).named("ImmutableRangeSet.asSet[DiscreteDomains.bigIntegers[]]").withFeatures(CollectionSize.ANY,CollectionFeature.REJECTS_DUPLICATES_AT_CREATION,CollectionFeature.ALLOWS_NULL_QUERIES,CollectionFeature.KNOWN_ORDER,CollectionFeature.NON_STANDARD_TOSTRING,CollectionFeature.SERIALIZABLE).createTestSuite());
+  suite.addTest(NavigableSetTestSuiteBuilder.using(new ImmutableRangeSetIntegerAsSetGenerator()).named("ImmutableRangeSet.asSet[DiscreteDomain.integers[]]").withFeatures(CollectionSize.ANY,CollectionFeature.REJECTS_DUPLICATES_AT_CREATION,CollectionFeature.ALLOWS_NULL_QUERIES,CollectionFeature.KNOWN_ORDER,CollectionFeature.NON_STANDARD_TOSTRING,CollectionFeature.SERIALIZABLE).createTestSuite());
+  suite.addTest(NavigableSetTestSuiteBuilder.using(new ImmutableRangeSetBigIntegerAsSetGenerator()).named("ImmutableRangeSet.asSet[DiscreteDomain.bigIntegers[]]").withFeatures(CollectionSize.ANY,CollectionFeature.REJECTS_DUPLICATES_AT_CREATION,CollectionFeature.ALLOWS_NULL_QUERIES,CollectionFeature.KNOWN_ORDER,CollectionFeature.NON_STANDARD_TOSTRING,CollectionFeature.SERIALIZABLE).createTestSuite());
   return suite;
 }

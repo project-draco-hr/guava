@@ -4,5 +4,5 @@
     Integer i=(Integer)o;
     builder.add(Range.singleton(i));
   }
-  return builder.build().asSet(DiscreteDomains.integers());
+  return builder.build().asSet(DiscreteDomain.integers());
 }
