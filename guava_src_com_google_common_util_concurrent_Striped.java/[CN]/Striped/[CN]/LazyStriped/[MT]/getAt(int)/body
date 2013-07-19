@@ -1,5 +1,7 @@
 {
-  Preconditions.checkElementIndex(index,size());
+  if (size != Integer.MAX_VALUE) {
+    Preconditions.checkElementIndex(index,size());
+  }
   L existing=locks.get(index);
   if (existing != null) {
     return existing;
