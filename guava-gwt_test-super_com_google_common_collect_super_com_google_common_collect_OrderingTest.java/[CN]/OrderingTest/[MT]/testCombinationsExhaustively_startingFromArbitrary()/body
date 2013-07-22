@@ -1,6 +1,0 @@
-{
-  Ordering<Object> arbitrary=Ordering.arbitrary();
-  Object[] array={1,"foo",new Object()};
-  Arrays.sort(array,arbitrary);
-  testExhaustively(arbitrary,array);
-}

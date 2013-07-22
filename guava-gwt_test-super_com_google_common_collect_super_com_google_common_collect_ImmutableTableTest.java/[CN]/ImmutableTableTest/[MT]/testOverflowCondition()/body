@@ -1,8 +1,0 @@
-{
-  ImmutableTable.Builder<Integer,Integer,String> builder=ImmutableTable.builder();
-  for (int i=1; i < 0x10000; i++) {
-    builder.put(i,0,"foo");
-    builder.put(0,i,"bar");
-  }
-  assertTrue(builder.build() instanceof SparseImmutableTable);
-}

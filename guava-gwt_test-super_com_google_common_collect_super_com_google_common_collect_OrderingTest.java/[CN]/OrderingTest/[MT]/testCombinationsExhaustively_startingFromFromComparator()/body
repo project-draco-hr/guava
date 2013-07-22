@@ -1,3 +1,0 @@
-{
-  testExhaustively(Ordering.from(String.CASE_INSENSITIVE_ORDER),"A","b","C","d");
-}
