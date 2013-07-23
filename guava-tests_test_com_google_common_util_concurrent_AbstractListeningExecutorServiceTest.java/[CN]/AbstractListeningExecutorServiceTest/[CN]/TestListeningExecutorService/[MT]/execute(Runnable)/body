@@ -1,0 +1,4 @@
+{
+  assertTrue(runnable instanceof ListenableFutureTask);
+  runnable.run();
+}

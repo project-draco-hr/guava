@@ -1,5 +1,3 @@
 {
-  ListenableFutureTask<T> ftask=ListenableFutureTask.create(task);
-  execute(ftask);
-  return ftask;
+  return (ListenableFuture<T>)super.submit(task);
 }

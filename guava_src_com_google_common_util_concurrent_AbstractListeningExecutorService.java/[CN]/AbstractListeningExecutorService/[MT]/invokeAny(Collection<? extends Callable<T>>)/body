@@ -1,8 +1,0 @@
-{
-  try {
-    return invokeAnyImpl(this,tasks,false,0);
-  }
- catch (  TimeoutException cannotHappen) {
-    throw new AssertionError();
-  }
-}

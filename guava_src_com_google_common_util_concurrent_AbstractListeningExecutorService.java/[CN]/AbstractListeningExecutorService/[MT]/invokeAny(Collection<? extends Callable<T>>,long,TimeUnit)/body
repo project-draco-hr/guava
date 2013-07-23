@@ -1,3 +1,0 @@
-{
-  return invokeAnyImpl(this,tasks,true,unit.toNanos(timeout));
-}
