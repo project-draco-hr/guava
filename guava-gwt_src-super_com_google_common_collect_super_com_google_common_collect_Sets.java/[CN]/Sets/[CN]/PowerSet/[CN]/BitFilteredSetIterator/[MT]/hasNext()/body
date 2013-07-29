@@ -1,3 +1,0 @@
-{
-  return remainingSetBits != 0;
-}

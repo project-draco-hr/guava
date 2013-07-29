@@ -1,15 +1,7 @@
 {
-  return new AbstractIndexedListIterator<Set<E>>(powerSetSize){
+  return new AbstractIndexedListIterator<Set<E>>(size()){
     @Override protected Set<E> get(    final int setBits){
-      return new AbstractSet<E>(){
-        @Override public int size(){
-          return Integer.bitCount(setBits);
-        }
-        @Override public Iterator<E> iterator(){
-          return new BitFilteredSetIterator<E>(inputList,setBits);
-        }
-      }
-;
+      return new SubSet<E>(inputSet,setBits);
     }
   }
 ;

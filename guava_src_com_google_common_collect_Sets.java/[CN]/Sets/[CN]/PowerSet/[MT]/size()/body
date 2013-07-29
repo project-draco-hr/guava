@@ -1,3 +1,3 @@
 {
-  return powerSetSize;
+  return 1 << inputSet.size();
 }

@@ -1,5 +1,3 @@
 {
-  ImmutableSet<E> input=ImmutableSet.copyOf(set);
-  checkArgument(input.size() <= 30,"Too many elements to create power set: %s > 30",input.size());
-  return new PowerSet<E>(input);
+  return new PowerSet<E>(set);
 }

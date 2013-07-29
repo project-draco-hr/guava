@@ -1,5 +1,0 @@
-{
-  this.inputSet=input;
-  this.inputList=input.asList();
-  this.powerSetSize=1 << input.size();
-}
