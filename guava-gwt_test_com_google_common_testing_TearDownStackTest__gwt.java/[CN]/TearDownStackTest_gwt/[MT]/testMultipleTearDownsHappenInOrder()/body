@@ -1,13 +1,27 @@
 {
   com.google.common.testing.TearDownStackTest testCase=new com.google.common.testing.TearDownStackTest();
+  Throwable failure=null;
   try {
     testCase.testMultipleTearDownsHappenInOrder();
   }
-  finally {
-    try {
-      testCase.tearDown();
+ catch (  Throwable t) {
+    failure=t;
+  }
+  try {
+    testCase.tearDown();
+  }
+ catch (  Throwable t) {
+    if (failure != null) {
+      failure=t;
     }
- catch (    Throwable t) {
-    }
+  }
+  if (failure instanceof Exception) {
+    throw (Exception)failure;
+  }
+  if (failure instanceof Error) {
+    throw (Error)failure;
+  }
+  if (failure != null) {
+    throw new RuntimeException(failure);
   }
 }
