@@ -2,7 +2,7 @@
   return new AbstractStreamingHasher(4,4){
     final ByteArrayOutputStream out=new ByteArrayOutputStream();
     @Override HashCode makeHash(){
-      return HashCodes.fromBytes(out.toByteArray());
+      return HashCode.fromBytes(out.toByteArray());
     }
     @Override protected void process(    ByteBuffer bb){
       while (bb.hasRemaining()) {

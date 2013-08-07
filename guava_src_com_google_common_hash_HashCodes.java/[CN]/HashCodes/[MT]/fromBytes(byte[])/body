@@ -1,4 +1,3 @@
 {
-  checkArgument(bytes.length >= 1,"A HashCode must contain at least 1 byte.");
-  return fromBytesNoCopy(bytes.clone());
+  return HashCode.fromBytes(bytes);
 }

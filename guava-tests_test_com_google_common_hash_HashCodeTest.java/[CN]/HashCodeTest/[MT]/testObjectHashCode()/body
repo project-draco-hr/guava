@@ -1,0 +1,4 @@
+{
+  HashCode hashCode42=HashCode.fromInt(42);
+  assertEquals(42,hashCode42.hashCode());
+}

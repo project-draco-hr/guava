@@ -7,5 +7,5 @@
   h2=fmix64(h2);
   h1+=h2;
   h2+=h1;
-  return HashCodes.fromBytesNoCopy(ByteBuffer.wrap(new byte[CHUNK_SIZE]).order(ByteOrder.LITTLE_ENDIAN).putLong(h1).putLong(h2).array());
+  return HashCode.fromBytesNoCopy(ByteBuffer.wrap(new byte[CHUNK_SIZE]).order(ByteOrder.LITTLE_ENDIAN).putLong(h1).putLong(h2).array());
 }

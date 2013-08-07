@@ -1,3 +1,0 @@
-{
-  assertEquals(0x9999999999999999L,HashCodes.fromBytesNoCopy(byteArrayWith9s(8)).padToLong());
-}

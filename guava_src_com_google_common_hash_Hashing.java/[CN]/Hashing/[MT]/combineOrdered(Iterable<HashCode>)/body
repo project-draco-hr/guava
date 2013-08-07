@@ -10,5 +10,5 @@
       resultBytes[i]=(byte)(resultBytes[i] * 37 ^ nextBytes[i]);
     }
   }
-  return HashCodes.fromBytesNoCopy(resultBytes);
+  return HashCode.fromBytesNoCopy(resultBytes);
 }

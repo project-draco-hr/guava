@@ -5,5 +5,5 @@
   h1^=h1 >>> 13;
   h1*=0xc2b2ae35;
   h1^=h1 >>> 16;
-  return HashCodes.fromInt(h1);
+  return HashCode.fromInt(h1);
 }

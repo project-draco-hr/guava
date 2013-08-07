@@ -1,0 +1,6 @@
+{
+  for (  ExpectedHashCode expected : expectedHashCodes) {
+    HashCode fromBytes=HashCode.fromBytes(expected.bytes);
+    assertExpectedHashCode(expected,fromBytes);
+  }
+}

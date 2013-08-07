@@ -1,0 +1,6 @@
+{
+  assertEquals(0x1111111111111111L,HashCode.fromLong(0x1111111111111111L).padToLong());
+  assertEquals(0x9999999999999999L,HashCode.fromLong(0x9999999999999999L).padToLong());
+  assertEquals(0x0000000011111111L,HashCode.fromInt(0x11111111).padToLong());
+  assertEquals(0x0000000099999999L,HashCode.fromInt(0x99999999).padToLong());
+}

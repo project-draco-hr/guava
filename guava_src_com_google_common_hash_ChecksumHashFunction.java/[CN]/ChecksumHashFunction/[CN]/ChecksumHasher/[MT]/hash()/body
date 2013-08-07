@@ -1,9 +1,9 @@
 {
   long value=checksum.getValue();
   if (bits == 32) {
-    return HashCodes.fromInt((int)value);
+    return HashCode.fromInt((int)value);
   }
  else {
-    return HashCodes.fromLong(value);
+    return HashCode.fromLong(value);
   }
 }

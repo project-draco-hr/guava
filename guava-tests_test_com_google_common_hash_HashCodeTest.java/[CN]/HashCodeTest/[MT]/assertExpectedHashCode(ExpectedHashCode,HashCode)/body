@@ -1,0 +1,21 @@
+{
+  assertTrue(Arrays.equals(expectedHashCode.bytes,hash.asBytes()));
+  byte[] bb=new byte[hash.bits() / 8];
+  hash.writeBytesTo(bb,0,bb.length);
+  assertTrue(Arrays.equals(expectedHashCode.bytes,bb));
+  assertEquals(expectedHashCode.asInt,hash.asInt());
+  if (expectedHashCode.asLong == null) {
+    try {
+      hash.asLong();
+      fail();
+    }
+ catch (    IllegalStateException expected) {
+    }
+  }
+ else {
+    assertEquals(expectedHashCode.asLong.longValue(),hash.asLong());
+  }
+  assertEquals(expectedHashCode.toString,hash.toString());
+  assertSideEffectFree(hash);
+  assertReadableBytes(hash);
+}

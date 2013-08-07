@@ -1,0 +1,8 @@
+{
+  for (  ExpectedHashCode expected : expectedHashCodes) {
+    if (expected.bytes.length == 8) {
+      HashCode fromLong=HashCode.fromLong(expected.asLong);
+      assertExpectedHashCode(expected,fromLong);
+    }
+  }
+}

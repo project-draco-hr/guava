@@ -1,0 +1,5 @@
+{
+  byte[] data=new byte[]{127,-128,5,-1,14};
+  assertEquals("7f8005ff0e",HashCode.fromBytes(data).toString());
+  assertEquals("7f8005ff0e",base16().lowerCase().encode(data));
+}

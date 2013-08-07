@@ -3,5 +3,5 @@
   for (  long x : longs) {
     bb.putLong(x);
   }
-  return HashCodes.fromBytes(bb.array());
+  return HashCode.fromBytes(bb.array());
 }

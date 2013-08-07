@@ -1,9 +1,0 @@
-{
-  byte[] bytes=new byte[]{(byte)0xcd,(byte)0xab,(byte)0x00,(byte)0x00};
-  HashCode hashCode=HashCodes.fromBytesNoCopy(bytes);
-  assertEquals(0x0000abcd,hashCode.asInt());
-  assertEquals("cdab0000",hashCode.toString());
-  bytes[0]=(byte)0x00;
-  assertEquals(0x0000ab00,hashCode.asInt());
-  assertEquals("00ab0000",hashCode.toString());
-}

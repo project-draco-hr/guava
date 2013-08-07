@@ -2,7 +2,7 @@
   Random random=new Random(7);
   List<HashCode> hashCodes=Lists.newArrayList();
   for (int i=0; i < 10; i++) {
-    hashCodes.add(HashCodes.fromLong(random.nextLong()));
+    hashCodes.add(HashCode.fromLong(random.nextLong()));
   }
   HashCode hashCode1=Hashing.combineOrdered(hashCodes);
   Collections.shuffle(hashCodes,random);
