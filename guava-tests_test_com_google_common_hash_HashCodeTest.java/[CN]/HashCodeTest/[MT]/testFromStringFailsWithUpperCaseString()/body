@@ -1,0 +1,9 @@
+{
+  String string=Hashing.sha1().hashString("foo").toString().toUpperCase();
+  try {
+    HashCode.fromString(string);
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}

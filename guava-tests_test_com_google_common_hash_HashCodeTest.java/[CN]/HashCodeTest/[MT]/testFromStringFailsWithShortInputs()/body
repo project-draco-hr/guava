@@ -1,0 +1,15 @@
+{
+  try {
+    HashCode.fromString("");
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+  try {
+    HashCode.fromString("7");
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+  HashCode.fromString("7f");
+}

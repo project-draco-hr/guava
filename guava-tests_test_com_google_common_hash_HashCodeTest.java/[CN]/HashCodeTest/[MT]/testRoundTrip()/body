@@ -1,0 +1,7 @@
+{
+  for (  ExpectedHashCode expected : expectedHashCodes) {
+    String string=HashCodes.fromBytes(expected.bytes).toString();
+    assertEquals(expected.toString,string);
+    assertEquals(expected.toString,HashCodes.fromBytes(BaseEncoding.base16().lowerCase().decode(string)).toString());
+  }
+}
