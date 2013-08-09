@@ -35,7 +35,7 @@
       return nextIndex() - 1;
     }
     @Override public void remove(){
-      Iterators.checkRemove(canRemoveOrSet);
+      checkRemove(canRemoveOrSet);
       forwardIterator.remove();
       canRemoveOrSet=false;
     }

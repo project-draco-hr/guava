@@ -1,4 +1,3 @@
 {
-  put(entry.getKey(),entry.getValue());
-  return this;
+  return put(entry.getKey(),entry.getValue());
 }

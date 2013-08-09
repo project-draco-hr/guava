@@ -1,3 +1,4 @@
 {
-  return new SingletonImmutableBiMap<K,V>(checkNotNull(k1),checkNotNull(v1));
+  checkEntryNotNull(k1,v1);
+  return new SingletonImmutableBiMap<K,V>(k1,v1);
 }

@@ -1,5 +1,5 @@
 {
-  checkState(lastReturned != null);
+  checkRemove(lastReturned != null);
   MapMakerInternalMap.this.remove(lastReturned.getKey());
   lastReturned=null;
 }

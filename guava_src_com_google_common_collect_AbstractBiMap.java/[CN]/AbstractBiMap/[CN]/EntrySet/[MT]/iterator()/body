@@ -27,7 +27,7 @@
 ;
     }
     @Override public void remove(){
-      checkState(entry != null);
+      checkRemove(entry != null);
       V value=entry.getValue();
       iterator.remove();
       removeFromInverseMap(value);

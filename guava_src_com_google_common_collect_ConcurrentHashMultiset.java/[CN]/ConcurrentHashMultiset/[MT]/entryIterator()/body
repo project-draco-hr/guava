@@ -25,7 +25,7 @@
       return last;
     }
     @Override public void remove(){
-      checkState(last != null);
+      checkRemove(last != null);
       ConcurrentHashMultiset.this.setCount(last.getElement(),0);
       last=null;
     }

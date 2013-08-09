@@ -1,5 +1,5 @@
 {
-  checkState(current != null);
+  checkRemove(current != null);
   if (current != next) {
     previous=current.previousSibling;
     nextIndex--;

@@ -24,7 +24,7 @@
     }
     @Override public void remove(){
       checkForComodification();
-      Iterators.checkRemove(toRemove != null);
+      checkRemove(toRemove != null);
       ValueSet.this.remove(toRemove.getValue());
       expectedModCount=modCount;
       toRemove=null;

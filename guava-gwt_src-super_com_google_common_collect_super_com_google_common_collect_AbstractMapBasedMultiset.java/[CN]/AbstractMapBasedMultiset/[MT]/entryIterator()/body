@@ -26,7 +26,7 @@
 ;
     }
     @Override public void remove(){
-      Iterators.checkRemove(toRemove != null);
+      checkRemove(toRemove != null);
       size-=toRemove.getValue().getAndSet(0);
       backingEntries.remove();
       toRemove=null;

@@ -1,7 +1,11 @@
 {
-  Collection<V> valueList=builderMultimap.get(checkNotNull(key));
+  if (key == null) {
+    throw new NullPointerException("null key in entry: null=" + Iterables.toString(values));
+  }
+  Collection<V> valueList=builderMultimap.get(key);
   for (  V value : values) {
-    valueList.add(checkNotNull(value));
+    checkEntryNotNull(key,value);
+    valueList.add(value);
   }
   return this;
 }

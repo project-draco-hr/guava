@@ -1,4 +1,4 @@
 {
   super(key,value);
-  ImmutableMap.checkEntryNotNull(key,value);
+  checkEntryNotNull(key,value);
 }

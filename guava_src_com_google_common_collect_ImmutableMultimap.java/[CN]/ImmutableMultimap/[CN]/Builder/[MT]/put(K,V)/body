@@ -1,4 +1,5 @@
 {
-  builderMultimap.put(checkNotNull(key),checkNotNull(value));
+  checkEntryNotNull(key,value);
+  builderMultimap.put(key,value);
   return this;
 }

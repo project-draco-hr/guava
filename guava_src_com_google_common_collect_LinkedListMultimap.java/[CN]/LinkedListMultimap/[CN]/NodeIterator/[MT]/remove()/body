@@ -1,6 +1,6 @@
 {
   checkForConcurrentModification();
-  checkState(current != null);
+  checkRemove(current != null);
   if (current != next) {
     previous=current.previous;
     nextIndex--;

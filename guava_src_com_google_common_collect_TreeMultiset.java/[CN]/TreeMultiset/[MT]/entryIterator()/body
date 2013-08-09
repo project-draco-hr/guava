@@ -29,7 +29,7 @@
       return result;
     }
     @Override public void remove(){
-      checkState(prevEntry != null);
+      checkRemove(prevEntry != null);
       setCount(prevEntry.getElement(),0);
       prevEntry=null;
     }

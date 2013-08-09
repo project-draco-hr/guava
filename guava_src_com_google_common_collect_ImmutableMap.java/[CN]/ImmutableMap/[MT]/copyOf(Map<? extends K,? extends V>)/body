@@ -6,12 +6,7 @@
     }
   }
  else   if (map instanceof EnumMap) {
-    EnumMap<?,?> enumMap=(EnumMap<?,?>)map;
-    for (    Map.Entry<?,?> entry : enumMap.entrySet()) {
-      checkEntryNotNull(entry.getKey(),entry.getValue());
-    }
-    @SuppressWarnings("unchecked") ImmutableMap<K,V> result=ImmutableEnumMap.asImmutable(new EnumMap(enumMap));
-    return result;
+    return copyOfEnumMapUnsafe(map);
   }
   Entry<?,?>[] entries=map.entrySet().toArray(EMPTY_ENTRY_ARRAY);
 switch (entries.length) {

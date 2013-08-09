@@ -10,7 +10,7 @@
       return entry.getKey();
     }
     @Override public void remove(){
-      Iterators.checkRemove(entry != null);
+      checkRemove(entry != null);
       Collection<V> collection=entry.getValue();
       entryIterator.remove();
       totalSize-=collection.size();

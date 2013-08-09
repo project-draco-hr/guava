@@ -1,5 +1,5 @@
 {
-  checkState(canRemove,"no calls to next() since the last call to remove()");
+  checkRemove(canRemove);
   int frequency=currentEntry.getValue().get();
   if (frequency <= 0) {
     throw new ConcurrentModificationException();

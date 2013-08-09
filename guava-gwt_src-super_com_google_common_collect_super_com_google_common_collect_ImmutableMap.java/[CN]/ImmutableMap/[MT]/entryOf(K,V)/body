@@ -1,3 +1,4 @@
 {
-  return Maps.immutableEntry(checkNotNull(key),checkNotNull(value));
+  checkEntryNotNull(key,value);
+  return Maps.immutableEntry(key,value);
 }

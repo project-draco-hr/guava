@@ -15,7 +15,7 @@
       return result;
     }
     @Override public void remove(){
-      Iterators.checkRemove(toRemove != null);
+      checkRemove(toRemove != null);
       LinkedHashMultimap.this.remove(toRemove.getKey(),toRemove.getValue());
       toRemove=null;
     }

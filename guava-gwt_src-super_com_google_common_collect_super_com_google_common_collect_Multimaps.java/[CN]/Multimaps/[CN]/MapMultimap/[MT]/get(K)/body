@@ -14,7 +14,7 @@
           return map.get(key);
         }
         @Override public void remove(){
-          checkState(i == 1);
+          checkRemove(i == 1);
           i=-1;
           map.remove(key);
         }
