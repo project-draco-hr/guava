@@ -1,6 +1,6 @@
 {
   checkNotNull(cause);
-  lock.lock();
+  monitor.enter();
   try {
     State previous=state();
 switch (previous) {
@@ -10,7 +10,7 @@ case TERMINATED:
 case RUNNING:
 case STARTING:
 case STOPPING:
-    snapshot=new StateSnapshot(State.FAILED,false,cause);
+    snapshot=new StateSnapshot(FAILED,false,cause);
   failed(previous,cause);
 break;
 case FAILED:
@@ -20,7 +20,7 @@ throw new AssertionError("Unexpected state: " + previous);
 }
 }
   finally {
-lock.unlock();
+monitor.leave();
 executeListeners();
 }
 }

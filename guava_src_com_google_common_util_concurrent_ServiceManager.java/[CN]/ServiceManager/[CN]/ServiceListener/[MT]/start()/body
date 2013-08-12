@@ -1,4 +1,4 @@
 {
   startTimer();
-  service.start();
+  service.startAsync();
 }

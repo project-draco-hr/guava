@@ -1,0 +1,11 @@
+{
+  assertLessThan(NEW,STARTING);
+  assertLessThan(NEW,TERMINATED);
+  assertLessThan(STARTING,RUNNING);
+  assertLessThan(STARTING,STOPPING);
+  assertLessThan(STARTING,FAILED);
+  assertLessThan(RUNNING,STOPPING);
+  assertLessThan(RUNNING,FAILED);
+  assertLessThan(STOPPING,FAILED);
+  assertLessThan(STOPPING,TERMINATED);
+}

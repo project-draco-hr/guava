@@ -1,18 +1,18 @@
 {
   addListener(new Listener(){
     @Override public void running(){
-      startup.set(State.RUNNING);
+      startup.set(RUNNING);
     }
     @Override public void stopping(    State from){
-      if (from == State.STARTING) {
-        startup.set(State.STOPPING);
+      if (from == STARTING) {
+        startup.set(STOPPING);
       }
     }
     @Override public void terminated(    State from){
-      if (from == State.NEW) {
-        startup.set(State.TERMINATED);
+      if (from == NEW) {
+        startup.set(TERMINATED);
       }
-      shutdown.set(State.TERMINATED);
+      shutdown.set(TERMINATED);
     }
     @Override public void failed(    State from,    Throwable failure){
 switch (from) {

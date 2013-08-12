@@ -1,6 +1,6 @@
 {
-  checkArgument(!shutdownWhenStartupFinishes || internalState == State.STARTING,"shudownWhenStartupFinishes can only be set if state is STARTING. Got %s instead.",internalState);
-  checkArgument(!(failure != null ^ internalState == State.FAILED),"A failure cause should be set if and only if the state is failed.  Got %s and %s " + "instead.",internalState,failure);
+  checkArgument(!shutdownWhenStartupFinishes || internalState == STARTING,"shudownWhenStartupFinishes can only be set if state is STARTING. Got %s instead.",internalState);
+  checkArgument(!(failure != null ^ internalState == FAILED),"A failure cause should be set if and only if the state is failed.  Got %s and %s " + "instead.",internalState,failure);
   this.state=internalState;
   this.shutdownWhenStartupFinishes=shutdownWhenStartupFinishes;
   this.failure=failure;

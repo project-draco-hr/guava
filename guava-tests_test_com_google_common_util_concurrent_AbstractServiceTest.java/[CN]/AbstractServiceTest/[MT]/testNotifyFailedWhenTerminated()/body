@@ -1,7 +1,7 @@
 {
   NoOpService service=new NoOpService();
-  service.startAndWait();
-  service.stopAndWait();
+  service.startAsync().awaitRunning();
+  service.stopAsync().awaitTerminated();
   try {
     service.notifyFailed(new Exception());
     fail();

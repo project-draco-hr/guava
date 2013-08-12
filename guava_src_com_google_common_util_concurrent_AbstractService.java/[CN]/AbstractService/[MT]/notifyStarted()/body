@@ -1,22 +1,22 @@
 {
-  lock.lock();
+  monitor.enter();
   try {
-    if (snapshot.state != State.STARTING) {
+    if (snapshot.state != STARTING) {
       IllegalStateException failure=new IllegalStateException("Cannot notifyStarted() when the service is " + snapshot.state);
       notifyFailed(failure);
       throw failure;
     }
     if (snapshot.shutdownWhenStartupFinishes) {
-      snapshot=new StateSnapshot(State.STOPPING);
+      snapshot=new StateSnapshot(STOPPING);
       doStop();
     }
  else {
-      snapshot=new StateSnapshot(State.RUNNING);
+      snapshot=new StateSnapshot(RUNNING);
       running();
     }
   }
   finally {
-    lock.unlock();
+    monitor.leave();
     executeListeners();
   }
 }

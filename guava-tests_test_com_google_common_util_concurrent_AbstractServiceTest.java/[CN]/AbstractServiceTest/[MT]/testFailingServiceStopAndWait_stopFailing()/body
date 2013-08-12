@@ -1,12 +1,13 @@
 {
   StopFailingService service=new StopFailingService();
   RecordingListener listener=RecordingListener.record(service);
-  service.startAndWait();
+  service.startAsync().awaitRunning();
   try {
-    service.stopAndWait();
+    service.stopAsync().awaitTerminated();
     fail();
   }
- catch (  UncheckedExecutionException e) {
+ catch (  IllegalStateException e) {
+    assertEquals(EXCEPTION,service.failureCause());
     assertEquals(EXCEPTION,e.getCause());
   }
   assertEquals(ImmutableList.of(State.STARTING,State.RUNNING,State.STOPPING,State.FAILED),listener.getStateHistory());

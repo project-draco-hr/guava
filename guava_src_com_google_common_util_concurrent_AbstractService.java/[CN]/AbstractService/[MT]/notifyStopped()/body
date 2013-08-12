@@ -1,17 +1,17 @@
 {
-  lock.lock();
+  monitor.enter();
   try {
     State previous=snapshot.state;
-    if (previous != State.STOPPING && previous != State.RUNNING) {
+    if (previous != STOPPING && previous != RUNNING) {
       IllegalStateException failure=new IllegalStateException("Cannot notifyStopped() when the service is " + previous);
       notifyFailed(failure);
       throw failure;
     }
-    snapshot=new StateSnapshot(State.TERMINATED);
+    snapshot=new StateSnapshot(TERMINATED);
     terminated(previous);
   }
   finally {
-    lock.unlock();
+    monitor.leave();
     executeListeners();
   }
 }

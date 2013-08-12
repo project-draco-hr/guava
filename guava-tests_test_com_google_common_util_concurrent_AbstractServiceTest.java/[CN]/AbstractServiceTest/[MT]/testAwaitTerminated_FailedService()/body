@@ -1,0 +1,26 @@
+{
+  final ManualSwitchedService service=new ManualSwitchedService();
+  final AtomicReference<Throwable> exception=Atomics.newReference();
+  Thread waiter=new Thread(){
+    @Override public void run(){
+      try {
+        service.awaitTerminated();
+        fail("Expected an IllegalStateException");
+      }
+ catch (      Throwable t) {
+        exception.set(t);
+      }
+    }
+  }
+;
+  waiter.start();
+  service.start();
+  service.notifyStarted();
+  assertEquals(State.RUNNING,service.state());
+  service.notifyFailed(EXCEPTION);
+  assertEquals(State.FAILED,service.state());
+  waiter.join(100);
+  assertFalse(waiter.isAlive());
+  assertTrue(exception.get() instanceof IllegalStateException);
+  assertEquals(EXCEPTION,exception.get().getCause());
+}

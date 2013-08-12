@@ -1,0 +1,15 @@
+{
+  final NoOpService service=new NoOpService();
+  Thread waiter=new Thread(){
+    @Override public void run(){
+      service.awaitTerminated();
+    }
+  }
+;
+  waiter.start();
+  service.startAsync().awaitRunning();
+  assertEquals(State.RUNNING,service.state());
+  service.stopAsync();
+  waiter.join(100);
+  assertFalse(waiter.isAlive());
+}

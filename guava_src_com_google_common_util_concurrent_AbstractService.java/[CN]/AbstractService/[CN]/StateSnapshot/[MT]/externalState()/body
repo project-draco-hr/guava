@@ -1,6 +1,6 @@
 {
-  if (shutdownWhenStartupFinishes && state == State.STARTING) {
-    return State.STOPPING;
+  if (shutdownWhenStartupFinishes && state == STARTING) {
+    return STOPPING;
   }
  else {
     return state;

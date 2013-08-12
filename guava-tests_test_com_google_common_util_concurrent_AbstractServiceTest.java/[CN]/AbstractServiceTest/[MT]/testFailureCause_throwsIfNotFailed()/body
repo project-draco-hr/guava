@@ -6,7 +6,7 @@
   }
  catch (  IllegalStateException e) {
   }
-  service.startAndWait();
+  service.startAsync().awaitRunning();
   try {
     service.failureCause();
     fail();
@@ -14,10 +14,10 @@
  catch (  IllegalStateException e) {
   }
   try {
-    service.stopAndWait();
+    service.stopAsync().awaitTerminated();
     fail();
   }
- catch (  UncheckedExecutionException e) {
+ catch (  IllegalStateException e) {
     assertEquals(EXCEPTION,service.failureCause());
     assertEquals(EXCEPTION,e.getCause());
   }

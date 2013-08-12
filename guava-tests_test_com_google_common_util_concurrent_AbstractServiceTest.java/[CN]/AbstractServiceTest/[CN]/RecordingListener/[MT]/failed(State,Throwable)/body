@@ -2,6 +2,7 @@
   assertEquals(from,Iterables.getLast(stateHistory));
   stateHistory.add(State.FAILED);
   assertEquals(State.FAILED,service.state());
+  assertEquals(failure,service.failureCause());
   if (from == State.STARTING) {
     try {
       service.startAndWait();

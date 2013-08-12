@@ -1,14 +1,15 @@
 {
   ManualSwitchedService service=new ManualSwitchedService();
   RecordingListener.record(service);
-  service.start();
+  service.startAsync();
   service.notifyFailed(new Exception("1"));
   service.notifyFailed(new Exception("2"));
+  assertEquals("1",service.failureCause().getMessage());
   try {
-    service.startAndWait();
+    service.awaitRunning();
     fail();
   }
- catch (  UncheckedExecutionException e) {
+ catch (  IllegalStateException e) {
     assertEquals("1",e.getCause().getMessage());
   }
 }

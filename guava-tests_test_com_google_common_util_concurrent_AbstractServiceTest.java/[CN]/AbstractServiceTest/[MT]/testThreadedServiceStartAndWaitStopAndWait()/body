@@ -4,7 +4,7 @@
   service.start().get();
   assertEquals(State.RUNNING,service.state());
   service.awaitRunChecks();
-  service.stopAndWait();
+  service.stopAsync().awaitTerminated();
   assertEquals(State.TERMINATED,service.state());
   throwIfSet(thrownByExecutionThread);
   assertEquals(ImmutableList.of(State.STARTING,State.RUNNING,State.STOPPING,State.TERMINATED),listener.getStateHistory());

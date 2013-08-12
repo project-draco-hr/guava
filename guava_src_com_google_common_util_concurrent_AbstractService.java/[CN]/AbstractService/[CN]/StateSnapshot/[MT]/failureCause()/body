@@ -1,4 +1,4 @@
 {
-  checkState(state == State.FAILED,"failureCause() is only valid if the service has failed, service is %s",state);
+  checkState(state == FAILED,"failureCause() is only valid if the service has failed, service is %s",state);
   return failure;
 }

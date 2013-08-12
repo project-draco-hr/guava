@@ -1,14 +1,14 @@
 {
   checkNotNull(listener,"listener");
   checkNotNull(executor,"executor");
-  lock.lock();
+  monitor.enter();
   try {
     State currentState=state();
-    if (currentState != State.TERMINATED && currentState != State.FAILED) {
+    if (currentState != TERMINATED && currentState != FAILED) {
       listeners.add(new ListenerExecutorPair(listener,executor));
     }
   }
   finally {
-    lock.unlock();
+    monitor.leave();
   }
 }

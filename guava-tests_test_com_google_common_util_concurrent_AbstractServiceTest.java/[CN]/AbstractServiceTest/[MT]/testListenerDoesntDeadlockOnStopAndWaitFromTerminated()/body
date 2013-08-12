@@ -6,10 +6,10 @@
     }
   }
 ,MoreExecutors.sameThreadExecutor());
-  service.startAndWait();
+  service.startAsync().awaitRunning();
   Thread thread=new Thread(){
     @Override public void run(){
-      service.stopAndWait();
+      service.stopAsync().awaitTerminated();
     }
   }
 ;

@@ -1,25 +1,25 @@
 {
-  lock.lock();
-  try {
-    State previous=state();
+  if (monitor.enterIf(isStoppable)) {
+    try {
+      State previous=state();
 switch (previous) {
 case NEW:
-      snapshot=new StateSnapshot(State.TERMINATED);
-    terminated(State.NEW);
-  break;
+        snapshot=new StateSnapshot(TERMINATED);
+      terminated(NEW);
+    break;
 case STARTING:
-snapshot=new StateSnapshot(State.STARTING,true,null);
-stopping(State.STARTING);
+  snapshot=new StateSnapshot(STARTING,true,null);
+stopping(STARTING);
 break;
 case RUNNING:
-snapshot=new StateSnapshot(State.STOPPING);
-stopping(State.RUNNING);
+snapshot=new StateSnapshot(STOPPING);
+stopping(RUNNING);
 doStop();
 break;
 case STOPPING:
 case TERMINATED:
 case FAILED:
-break;
+throw new AssertionError("isStoppable is incorrectly implemented, saw: " + previous);
 default :
 throw new AssertionError("Unexpected state: " + previous);
 }
@@ -28,8 +28,9 @@ throw new AssertionError("Unexpected state: " + previous);
 notifyFailed(shutdownFailure);
 }
  finally {
-lock.unlock();
+monitor.leave();
 executeListeners();
+}
 }
 return shutdown;
 }

@@ -1,18 +1,17 @@
 {
-  lock.lock();
-  try {
-    if (state() == State.NEW) {
-      snapshot=new StateSnapshot(State.STARTING);
+  if (monitor.enterIf(isStartable)) {
+    try {
+      snapshot=new StateSnapshot(STARTING);
       starting();
       doStart();
     }
-  }
- catch (  Throwable startupFailure) {
-    notifyFailed(startupFailure);
-  }
+ catch (    Throwable startupFailure) {
+      notifyFailed(startupFailure);
+    }
  finally {
-    lock.unlock();
-    executeListeners();
+      monitor.leave();
+      executeListeners();
+    }
   }
   return startup;
 }

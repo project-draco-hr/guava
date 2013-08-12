@@ -5,7 +5,12 @@
     checkState(state == State.NEW,"Service %s is %s, cannot start it.",service,state);
   }
   for (  ServiceListener service : services.values()) {
-    service.start();
+    try {
+      service.start();
+    }
+ catch (    IllegalStateException e) {
+      logger.log(Level.WARNING,"Unable to start Service " + service.service,e);
+    }
   }
   return this;
 }
