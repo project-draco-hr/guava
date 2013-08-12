@@ -1,0 +1,9 @@
+{
+  byte[] dest=new byte[3];
+  try {
+    HASH_ABCD.writeBytesTo(dest,0,4);
+    fail();
+  }
+ catch (  IndexOutOfBoundsException expected) {
+  }
+}

@@ -1,0 +1,5 @@
+{
+  byte[] dest=new byte[5];
+  HASH_ABCD.writeBytesTo(dest,0,4);
+  assertTrue(Arrays.equals(new byte[]{(byte)0xaa,(byte)0xbb,(byte)0xcc,(byte)0xdd,(byte)0x00},dest));
+}
