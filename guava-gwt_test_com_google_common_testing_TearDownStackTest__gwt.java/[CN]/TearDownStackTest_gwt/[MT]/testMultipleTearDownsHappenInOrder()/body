@@ -11,7 +11,7 @@
     testCase.tearDown();
   }
  catch (  Throwable t) {
-    if (failure != null) {
+    if (failure == null) {
       failure=t;
     }
   }
