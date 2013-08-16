@@ -1,0 +1,7 @@
+{
+  assertEquals(expected,matcher.toString());
+  assertEquals(expected,matcher.precomputed().toString());
+  assertEquals(expected,matcher.negate().negate().toString());
+  assertEquals(expected,matcher.negate().precomputed().negate().toString());
+  assertEquals(expected,matcher.negate().precomputed().negate().precomputed().toString());
+}

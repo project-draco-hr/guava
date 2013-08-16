@@ -8,6 +8,8 @@
  else {
     table.flip(Character.MIN_VALUE,Character.MAX_VALUE + 1);
     int negatedCharacters=DISTINCT_CHARS - totalCharacters;
-    return new NegatedFastMatcher(toString(),precomputedPositive(negatedCharacters,table,description + ".negate()"));
+    String suffix=".negate()";
+    String negatedDescription=description.endsWith(suffix) ? description.substring(0,description.length() - suffix.length()) : description + suffix;
+    return new NegatedFastMatcher(toString(),precomputedPositive(negatedCharacters,table,negatedDescription));
   }
 }
