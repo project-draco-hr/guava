@@ -1,0 +1,22 @@
+{
+  assertEquals(-1.375,DoubleMath.mean(ImmutableList.of(1.1,-2.2,4.4,-8.8)),1.0e-10);
+  assertEquals(1.1,DoubleMath.mean(ImmutableList.of(1.1)),1.0e-10);
+  try {
+    DoubleMath.mean(ImmutableList.<Double>of());
+    fail("Expected IllegalArgumentException");
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+  try {
+    DoubleMath.mean(ImmutableList.of(Double.NaN));
+    fail("Expected IllegalArgumentException");
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+  try {
+    DoubleMath.mean(ImmutableList.of(Double.POSITIVE_INFINITY));
+    fail("Expected IllegalArgumentException");
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}

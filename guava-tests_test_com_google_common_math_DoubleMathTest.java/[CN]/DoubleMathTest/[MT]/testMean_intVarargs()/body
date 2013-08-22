@@ -1,0 +1,4 @@
+{
+  assertEquals(-13.75,DoubleMath.mean(11,-22,44,-88),1.0e-10);
+  assertEquals(11.0,DoubleMath.mean(11),1.0e-10);
+}

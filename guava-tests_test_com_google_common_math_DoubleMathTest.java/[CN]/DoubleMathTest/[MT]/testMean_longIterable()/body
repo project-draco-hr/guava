@@ -1,0 +1,10 @@
+{
+  assertEquals(-13.75,DoubleMath.mean(ImmutableList.of(11L,-22L,44L,-88L)),1.0e-10);
+  assertEquals(11,DoubleMath.mean(ImmutableList.of(11L)),1.0e-10);
+  try {
+    DoubleMath.mean(ImmutableList.<Long>of());
+    fail("Expected IllegalArgumentException");
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}
