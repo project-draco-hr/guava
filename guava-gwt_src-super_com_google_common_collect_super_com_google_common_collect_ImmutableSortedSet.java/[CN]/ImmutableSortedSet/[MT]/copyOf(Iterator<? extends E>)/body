@@ -1,3 +1,3 @@
 {
-  return copyOfInternal(Ordering.natural(),elements);
+  return copyOfInternal((Ordering<E>)Ordering.natural(),(Iterator)elements);
 }
