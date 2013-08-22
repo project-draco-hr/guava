@@ -1,7 +1,7 @@
 {
   Class<?> finalizableReferenceClass=finalizableReferenceClassReference.get();
   if (finalizableReferenceClass == null) {
-    throw new ShutDown();
+    return null;
   }
   try {
     return finalizableReferenceClass.getMethod("finalizeReferent");

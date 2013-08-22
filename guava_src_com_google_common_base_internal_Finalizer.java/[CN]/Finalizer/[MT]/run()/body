@@ -1,13 +1,11 @@
 {
-  try {
-    while (true) {
-      try {
-        cleanUp(queue.remove());
-      }
- catch (      InterruptedException e) {
+  while (true) {
+    try {
+      if (!cleanUp(queue.remove())) {
+        break;
       }
     }
-  }
- catch (  ShutDown shutDown) {
+ catch (    InterruptedException e) {
+    }
   }
 }

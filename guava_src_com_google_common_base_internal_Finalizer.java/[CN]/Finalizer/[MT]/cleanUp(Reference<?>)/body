@@ -1,9 +1,12 @@
 {
   Method finalizeReferentMethod=getFinalizeReferentMethod();
+  if (finalizeReferentMethod == null) {
+    return false;
+  }
   do {
     reference.clear();
     if (reference == frqReference) {
-      throw new ShutDown();
+      return false;
     }
     try {
       finalizeReferentMethod.invoke(reference);
@@ -13,4 +16,5 @@
     }
   }
  while ((reference=queue.poll()) != null);
+  return true;
 }
