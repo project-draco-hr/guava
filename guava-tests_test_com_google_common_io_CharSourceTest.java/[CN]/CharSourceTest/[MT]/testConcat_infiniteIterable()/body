@@ -1,0 +1,12 @@
+{
+  CharSource source=CharSource.wrap("abcd");
+  Iterable<CharSource> cycle=Iterables.cycle(ImmutableList.of(source));
+  CharSource concatenated=CharSource.concat(cycle);
+  String expected="abcdabcd";
+  StringBuilder builder=new StringBuilder();
+  Reader reader=concatenated.openStream();
+  for (int i=0; i < 8; i++) {
+    builder.append((char)reader.read());
+  }
+  assertEquals(expected,builder.toString());
+}

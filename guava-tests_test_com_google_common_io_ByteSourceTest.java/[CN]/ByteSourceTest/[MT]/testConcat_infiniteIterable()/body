@@ -1,0 +1,7 @@
+{
+  ByteSource source=ByteSource.wrap(new byte[]{0,1,2,3});
+  Iterable<ByteSource> cycle=Iterables.cycle(ImmutableList.of(source));
+  ByteSource concatenated=ByteSource.concat(cycle);
+  byte[] expected={0,1,2,3,0,1,2,3};
+  assertArrayEquals(expected,concatenated.slice(0,8).read());
+}
