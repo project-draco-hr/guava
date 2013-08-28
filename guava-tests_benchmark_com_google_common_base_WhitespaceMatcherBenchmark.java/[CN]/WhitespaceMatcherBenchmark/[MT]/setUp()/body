@@ -1,0 +1,10 @@
+{
+  BitSet bitSet=new BitSet();
+  for (int i=0; i < OLD_WHITESPACE_TABLE.length(); i++) {
+    bitSet.set(OLD_WHITESPACE_TABLE.charAt(i));
+  }
+  bitSet.clear(0);
+  bitSet.clear(1);
+  matcher=useNew ? CharMatcher.WHITESPACE : OLD_WHITESPACE;
+  teststring=newTestString(new Random(1),bitSet,percentMatching);
+}

@@ -1,0 +1,8 @@
+{
+  final char[] result=new char[bitSet.cardinality()];
+  for (int j=0, c=bitSet.nextSetBit(0); j < result.length; ++j) {
+    result[j]=(char)c;
+    c=bitSet.nextSetBit(c + 1);
+  }
+  return new String(result);
+}

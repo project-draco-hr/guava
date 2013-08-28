@@ -13,5 +13,6 @@
   doTestSetBits(CharMatcher.ASCII);
   doTestSetBits(CharMatcher.DIGIT);
   doTestSetBits(CharMatcher.INVISIBLE);
+  doTestSetBits(CharMatcher.WHITESPACE);
   doTestSetBits(inRange('A','Z').and(inRange('F','K').negate()));
 }
