@@ -18,7 +18,9 @@
       return i;
     }
     @Override public String previous(){
-      if (!hasPrevious())       throw new NoSuchElementException();
+      if (!hasPrevious()) {
+        throw new NoSuchElementException();
+      }
       return array[--i];
     }
     @Override public int previousIndex(){
