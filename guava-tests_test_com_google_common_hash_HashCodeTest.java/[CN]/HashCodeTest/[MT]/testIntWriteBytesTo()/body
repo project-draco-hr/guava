@@ -1,0 +1,5 @@
+{
+  byte[] dest=new byte[4];
+  HashCodes.fromInt(42).writeBytesTo(dest,0,4);
+  assertTrue(Arrays.equals(HashCodes.fromInt(42).asBytes(),dest));
+}
