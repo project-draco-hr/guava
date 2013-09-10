@@ -1,0 +1,5 @@
+{
+  InputStream in=newTestStream(100);
+  byte[] b=ByteStreams.toByteArray(in,120);
+  assertEquals(100,b.length);
+}
