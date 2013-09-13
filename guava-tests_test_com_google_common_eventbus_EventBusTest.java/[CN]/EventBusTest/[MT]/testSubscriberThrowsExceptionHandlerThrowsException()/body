@@ -1,0 +1,21 @@
+{
+  final EventBus eventBus=new EventBus(new SubscriberExceptionHandler(){
+    @Override public void handleException(    Throwable exception,    SubscriberExceptionContext context){
+      throw new RuntimeException();
+    }
+  }
+);
+  final Object subscriber=new Object(){
+    @Subscribe public void throwExceptionOn(    String message){
+      throw new RuntimeException();
+    }
+  }
+;
+  eventBus.register(subscriber);
+  try {
+    eventBus.post(EVENT);
+  }
+ catch (  RuntimeException e) {
+    fail("Exception should not be thrown.");
+  }
+}
