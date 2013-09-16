@@ -1,7 +1,7 @@
 {
   Comparator<? super E> comparator=delegate.comparator();
   if (comparator == null) {
-    comparator=NATURAL_ORDER;
+    comparator=(Comparator<? super E>)NATURAL_ORDER;
   }
   return comparator;
 }

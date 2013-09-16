@@ -1,5 +1,5 @@
 {
-  Comparator keyComparator=(Comparator)in.readObject();
-  Comparator valueComparator=(Comparator)in.readObject();
+  Comparator<Object> keyComparator=(Comparator<Object>)in.readObject();
+  Comparator<Object> valueComparator=(Comparator<Object>)in.readObject();
   return (TreeMultimap<Object,Object>)Multimap_CustomFieldSerializerBase.populate(in,TreeMultimap.create(keyComparator,valueComparator));
 }
