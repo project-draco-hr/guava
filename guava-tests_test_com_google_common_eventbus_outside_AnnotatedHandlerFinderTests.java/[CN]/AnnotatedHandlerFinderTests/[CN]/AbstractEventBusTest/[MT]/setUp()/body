@@ -1,6 +1,0 @@
-{
-  handler=createHandler();
-  EventBus bus=new EventBus();
-  bus.register(handler);
-  bus.post(EVENT);
-}

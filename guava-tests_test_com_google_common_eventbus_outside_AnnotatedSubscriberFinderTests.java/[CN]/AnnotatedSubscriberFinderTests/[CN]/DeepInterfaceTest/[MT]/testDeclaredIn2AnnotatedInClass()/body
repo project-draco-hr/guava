@@ -1,0 +1,3 @@
+{
+  ASSERT.that(getSubscriber().declaredIn2AnnotatedInClassEvents).has().item(EVENT);
+}

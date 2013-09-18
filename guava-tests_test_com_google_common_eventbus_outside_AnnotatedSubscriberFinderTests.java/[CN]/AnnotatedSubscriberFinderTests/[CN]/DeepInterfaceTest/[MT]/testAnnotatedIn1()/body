@@ -1,0 +1,3 @@
+{
+  ASSERT.that(getSubscriber().annotatedIn1Events).has().item(EVENT);
+}

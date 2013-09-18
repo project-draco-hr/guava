@@ -1,0 +1,11 @@
+{
+  Method method=getExceptionThrowingMethod();
+  EventSubscriber subscriber=new EventSubscriber(this,method);
+  try {
+    subscriber.handleEvent(new Object());
+    fail("Subscribers whose methods throw must throw InvocationTargetException");
+  }
+ catch (  InvocationTargetException e) {
+    assertTrue("Expected exception must be wrapped.",e.getCause() instanceof IntentionalException);
+  }
+}

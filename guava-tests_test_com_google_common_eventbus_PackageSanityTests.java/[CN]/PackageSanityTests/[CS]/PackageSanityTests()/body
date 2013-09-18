@@ -1,4 +1,4 @@
 {
-  setDefault(EventHandler.class,new DummyHandler().toEventHandler());
-  setDefault(Method.class,DummyHandler.handlerMethod());
+  setDefault(EventSubscriber.class,new DummySubscriber().toEventSubscriber());
+  setDefault(Method.class,DummySubscriber.subscriberMethod());
 }

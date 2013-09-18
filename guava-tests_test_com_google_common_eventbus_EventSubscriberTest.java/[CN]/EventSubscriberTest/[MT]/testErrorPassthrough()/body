@@ -1,0 +1,10 @@
+{
+  Method method=getErrorThrowingMethod();
+  EventSubscriber subscriber=new EventSubscriber(this,method);
+  try {
+    subscriber.handleEvent(new Object());
+    fail("Subscribers whose methods throw Errors must rethrow them");
+  }
+ catch (  JudgmentError e) {
+  }
+}

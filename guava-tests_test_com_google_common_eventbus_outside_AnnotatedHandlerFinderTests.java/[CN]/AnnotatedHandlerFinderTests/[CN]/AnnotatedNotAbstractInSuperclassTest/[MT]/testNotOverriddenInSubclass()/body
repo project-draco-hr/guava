@@ -1,3 +1,0 @@
-{
-  ASSERT.that(getHandler().notOverriddenInSubclassEvents).has().item(EVENT);
-}

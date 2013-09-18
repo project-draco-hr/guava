@@ -1,3 +1,0 @@
-{
-  return DummyHandler.class.getMethod("handle",Object.class);
-}

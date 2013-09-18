@@ -1,7 +1,0 @@
-{
-  Method method=getRecordingMethod();
-  EventHandler handler=new EventHandler(this,method);
-  handler.handleEvent(FIXTURE_ARGUMENT);
-  assertTrue("Handler must call provided method.",methodCalled);
-  assertTrue("Handler argument must be *exactly* the provided object.",methodArgument == FIXTURE_ARGUMENT);
-}

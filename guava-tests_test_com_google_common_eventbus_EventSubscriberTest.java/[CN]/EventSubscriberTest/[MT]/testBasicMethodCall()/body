@@ -1,0 +1,7 @@
+{
+  Method method=getRecordingMethod();
+  EventSubscriber subscriber=new EventSubscriber(this,method);
+  subscriber.handleEvent(FIXTURE_ARGUMENT);
+  assertTrue("Subscriber must call provided method.",methodCalled);
+  assertTrue("Subscriber argument must be *exactly* the provided object.",methodArgument == FIXTURE_ARGUMENT);
+}

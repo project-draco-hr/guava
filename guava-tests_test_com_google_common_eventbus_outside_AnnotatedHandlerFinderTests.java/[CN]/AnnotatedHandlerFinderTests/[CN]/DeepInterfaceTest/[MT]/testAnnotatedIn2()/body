@@ -1,3 +1,0 @@
-{
-  ASSERT.that(getHandler().annotatedIn2Events).has().item(EVENT);
-}

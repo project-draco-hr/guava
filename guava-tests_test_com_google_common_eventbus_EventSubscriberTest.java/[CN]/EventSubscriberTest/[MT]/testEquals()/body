@@ -1,0 +1,5 @@
+{
+  Method charAt=String.class.getMethod("charAt",int.class);
+  Method concat=String.class.getMethod("concat",String.class);
+  new EqualsTester().addEqualityGroup(new EventSubscriber("foo",charAt),new EventSubscriber("foo",charAt)).addEqualityGroup(new EventSubscriber("bar",charAt)).addEqualityGroup(new EventSubscriber("foo",concat)).testEquals();
+}

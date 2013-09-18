@@ -1,0 +1,6 @@
+{
+  subscriber=createSubscriber();
+  EventBus bus=new EventBus();
+  bus.register(subscriber);
+  bus.post(EVENT);
+}

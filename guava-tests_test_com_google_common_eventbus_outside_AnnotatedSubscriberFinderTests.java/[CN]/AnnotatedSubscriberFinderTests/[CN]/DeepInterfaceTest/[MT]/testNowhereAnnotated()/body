@@ -1,0 +1,3 @@
+{
+  ASSERT.that(getSubscriber().nowhereAnnotatedEvents).isEmpty();
+}

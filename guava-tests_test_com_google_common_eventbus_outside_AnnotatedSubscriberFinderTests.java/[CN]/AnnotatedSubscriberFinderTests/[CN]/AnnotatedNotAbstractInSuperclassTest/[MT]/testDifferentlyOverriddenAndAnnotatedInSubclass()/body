@@ -1,0 +1,4 @@
+{
+  ASSERT.that(getSubscriber().differentlyOverriddenAnnotatedInSubclassGoodEvents).has().item(EVENT);
+  ASSERT.that(getSubscriber().differentlyOverriddenAnnotatedInSubclassBadEvents).isEmpty();
+}

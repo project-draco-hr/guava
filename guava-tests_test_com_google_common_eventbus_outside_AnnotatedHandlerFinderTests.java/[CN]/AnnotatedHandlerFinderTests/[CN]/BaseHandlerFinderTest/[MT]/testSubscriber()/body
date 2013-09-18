@@ -1,3 +1,0 @@
-{
-  ASSERT.that(getHandler().subscriberEvents).has().item(EVENT);
-}

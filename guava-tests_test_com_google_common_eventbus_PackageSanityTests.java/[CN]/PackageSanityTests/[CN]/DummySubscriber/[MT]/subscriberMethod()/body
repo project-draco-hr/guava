@@ -1,0 +1,3 @@
+{
+  return DummySubscriber.class.getMethod("handle",Object.class);
+}
