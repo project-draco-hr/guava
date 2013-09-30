@@ -11,6 +11,6 @@
   }
   String testResourceName="com/google/common/reflect/test.txt";
   ASSERT.that(byName.keySet()).has().allOf("com/google/common/reflect/ClassPath.class","com/google/common/reflect/ClassPathTest.class","com/google/common/reflect/ClassPathTest$Nested.class",testResourceName);
-  ASSERT.that(byToString.keySet()).has().allOf("com.google.common.reflect.ClassPath","com.google.common.reflect.ClassPathTest","com/google/common/reflect/ClassPathTest$Nested.class",testResourceName);
+  ASSERT.that(byToString.keySet()).has().allOf("com.google.common.reflect.ClassPath","com.google.common.reflect.ClassPathTest","com.google.common.reflect.ClassPathTest$Nested",testResourceName);
   assertEquals(getClass().getClassLoader().getResource(testResourceName),byName.get("com/google/common/reflect/test.txt").url());
 }

@@ -1,0 +1,28 @@
+{
+  Set<String> names=Sets.newHashSet();
+  Set<String> strings=Sets.newHashSet();
+  Set<Class<?>> classes=Sets.newHashSet();
+  Set<String> packageNames=Sets.newHashSet();
+  Set<String> simpleNames=Sets.newHashSet();
+  ClassPath classpath=ClassPath.from(getClass().getClassLoader());
+  for (  ClassInfo classInfo : classpath.getAllClasses()) {
+    if (!classInfo.getPackageName().equals(ClassPathTest.class.getPackage().getName())) {
+      continue;
+    }
+    names.add(classInfo.getName());
+    strings.add(classInfo.toString());
+    classes.add(classInfo.load());
+    packageNames.add(classInfo.getPackageName());
+    simpleNames.add(classInfo.getSimpleName());
+  }
+class LocalClass {
+  }
+  Class<?> anonymousClass=new Object(){
+  }
+.getClass();
+  ASSERT.that(names).has().allOf(anonymousClass.getName(),LocalClass.class.getName(),ClassPath.class.getName(),ClassPathTest.class.getName());
+  ASSERT.that(strings).has().allOf(anonymousClass.getName(),LocalClass.class.getName(),ClassPath.class.getName(),ClassPathTest.class.getName());
+  ASSERT.that(classes).has().allOf(anonymousClass,LocalClass.class,ClassPath.class,ClassPathTest.class);
+  ASSERT.that(packageNames).has().exactly(ClassPath.class.getPackage().getName());
+  ASSERT.that(simpleNames).has().allOf("","Local","ClassPath","ClassPathTest");
+}

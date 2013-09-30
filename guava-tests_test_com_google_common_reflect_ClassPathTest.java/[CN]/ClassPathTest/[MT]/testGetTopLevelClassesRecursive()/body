@@ -2,6 +2,9 @@
   Set<Class<?>> classes=Sets.newHashSet();
   ClassPath classpath=ClassPath.from(ClassPathTest.class.getClassLoader());
   for (  ClassInfo classInfo : classpath.getTopLevelClassesRecursive(ClassPathTest.class.getPackage().getName())) {
+    if (classInfo.getName().contains("ClassPathTest")) {
+      System.err.println("");
+    }
     classes.add(classInfo.load());
   }
   ASSERT.that(classes).has().allOf(ClassPathTest.class,ClassInSubPackage.class);

@@ -1,4 +1,9 @@
 {
   assertEquals("Foo",new ClassInfo("Foo.class",getClass().getClassLoader()).getSimpleName());
   assertEquals("Foo",new ClassInfo("a/b/Foo.class",getClass().getClassLoader()).getSimpleName());
+  assertEquals("Foo",new ClassInfo("a/b/Bar$Foo.class",getClass().getClassLoader()).getSimpleName());
+  assertEquals("",new ClassInfo("a/b/Bar$1.class",getClass().getClassLoader()).getSimpleName());
+  assertEquals("Foo",new ClassInfo("a/b/Bar$Foo.class",getClass().getClassLoader()).getSimpleName());
+  assertEquals("",new ClassInfo("a/b/Bar$1.class",getClass().getClassLoader()).getSimpleName());
+  assertEquals("Local",new ClassInfo("a/b/Bar$1Local.class",getClass().getClassLoader()).getSimpleName());
 }
