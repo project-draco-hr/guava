@@ -1,0 +1,8 @@
+{
+  String string=noWorkToDo ? charSequenceToUpperCase(testString) : testString;
+  int dummy=0;
+  for (int i=0; i < reps; i++) {
+    dummy+=charSequenceToUpperCase(string).length();
+  }
+  return dummy;
+}

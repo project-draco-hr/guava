@@ -1,5 +1,6 @@
 {
   assertEquals(UPPER,Ascii.toUpperCase(LOWER));
-  assertEquals(UPPER,Ascii.toUpperCase(UPPER));
+  assertSame(UPPER,Ascii.toUpperCase(UPPER));
   assertEquals(IGNORED,Ascii.toUpperCase(IGNORED));
+  assertEquals("FOOBAR",Ascii.toUpperCase("FoOBAr"));
 }
