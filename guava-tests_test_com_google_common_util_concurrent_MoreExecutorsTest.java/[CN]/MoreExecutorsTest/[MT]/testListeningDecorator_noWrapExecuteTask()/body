@@ -1,0 +1,11 @@
+{
+  ExecutorService delegate=mock(ExecutorService.class);
+  ListeningExecutorService service=listeningDecorator(delegate);
+  Runnable task=new Runnable(){
+    @Override public void run(){
+    }
+  }
+;
+  service.execute(task);
+  verify(delegate).execute(task);
+}

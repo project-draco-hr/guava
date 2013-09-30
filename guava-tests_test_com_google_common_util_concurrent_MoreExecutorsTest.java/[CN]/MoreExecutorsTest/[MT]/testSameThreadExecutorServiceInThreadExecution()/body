@@ -20,8 +20,8 @@
         assertTrue(future.isDone());
         assertEquals(1,threadLocalCount.get().intValue());
       }
- catch (      Throwable Throwable) {
-        throwableFromOtherThread.set(Throwable);
+ catch (      Throwable t) {
+        throwableFromOtherThread.set(t);
       }
     }
   }
