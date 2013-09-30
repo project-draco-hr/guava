@@ -1,0 +1,10 @@
+{
+  Iterator<Object> itr=new AbstractIterator<Object>(){
+    @Override public Object computeNext(){
+      return new Object();
+    }
+  }
+;
+  WeakReference<Object> ref=new WeakReference<Object>(itr.next());
+  GcFinalization.awaitClear(ref);
+}

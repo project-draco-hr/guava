@@ -1,0 +1,20 @@
+{
+  Iterator<Integer> iter=new AbstractIterator<Integer>(){
+    boolean haveBeenCalled;
+    @Override public Integer computeNext(){
+      if (haveBeenCalled) {
+        endOfData();
+      }
+      haveBeenCalled=true;
+      return 0;
+    }
+  }
+;
+  assertEquals(0,(int)iter.next());
+  try {
+    iter.remove();
+    fail("No exception thrown");
+  }
+ catch (  UnsupportedOperationException expected) {
+  }
+}

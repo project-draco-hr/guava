@@ -1,0 +1,16 @@
+{
+  final SomeUncheckedException exception=new SomeUncheckedException();
+  Iterator<Integer> iter=new AbstractIterator<Integer>(){
+    @Override public Integer computeNext(){
+      throw exception;
+    }
+  }
+;
+  try {
+    iter.hasNext();
+    fail("No exception thrown");
+  }
+ catch (  SomeUncheckedException e) {
+    assertSame(exception,e);
+  }
+}
