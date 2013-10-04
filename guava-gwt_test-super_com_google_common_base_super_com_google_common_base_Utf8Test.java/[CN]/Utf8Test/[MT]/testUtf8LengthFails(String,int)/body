@@ -1,0 +1,11 @@
+{
+  try {
+    Utf8.utf8Length(invalidString);
+    fail();
+  }
+ catch (  IllegalArgumentException ex) {
+    String message=ex.getMessage();
+    String expected="Unpaired surrogate at " + invalidCodePointIndex + " ("+ invalidString+ ")";
+    assertEquals(expected,message);
+  }
+}

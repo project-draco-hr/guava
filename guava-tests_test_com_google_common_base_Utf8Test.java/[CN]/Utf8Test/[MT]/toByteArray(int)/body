@@ -1,0 +1,7 @@
+{
+  byte[] realBytes=new byte[bytes.length];
+  for (int i=0; i < bytes.length; i++) {
+    realBytes[i]=(byte)bytes[i];
+  }
+  return realBytes;
+}

@@ -1,0 +1,7 @@
+{
+  long actual=0;
+  for (  long expected : generateFourByteShardsExpectedRunnables()) {
+    actual+=expected;
+  }
+  assertEquals(EXPECTED_FOUR_BYTE_ROUNDTRIPPABLE_COUNT,actual);
+}

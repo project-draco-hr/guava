@@ -1,0 +1,19 @@
+{
+  long[] expected=new long[128];
+  for (int i=0; i <= 63; i++) {
+    expected[i]=5300224;
+  }
+  for (int i=97; i <= 111; i++) {
+    expected[i]=2342912;
+  }
+  for (int i=113; i <= 117; i++) {
+    expected[i]=1048576;
+  }
+  expected[112]=786432;
+  expected[118]=786432;
+  expected[119]=1048576;
+  expected[120]=458752;
+  expected[121]=524288;
+  expected[122]=65536;
+  return expected;
+}

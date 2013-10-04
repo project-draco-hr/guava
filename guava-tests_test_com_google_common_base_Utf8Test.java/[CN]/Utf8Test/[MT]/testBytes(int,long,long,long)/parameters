@@ -1,0 +1,4 @@
+int numBytes
+long expectedCount
+long start
+long lim

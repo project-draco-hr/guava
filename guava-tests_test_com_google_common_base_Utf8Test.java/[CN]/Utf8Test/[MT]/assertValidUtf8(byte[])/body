@@ -1,0 +1,3 @@
+{
+  assertValidOrInvalidUtf8(bytes,false);
+}
