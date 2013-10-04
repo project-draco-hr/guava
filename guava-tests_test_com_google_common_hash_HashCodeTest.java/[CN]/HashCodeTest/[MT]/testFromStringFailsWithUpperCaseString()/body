@@ -1,5 +1,5 @@
 {
-  String string=Hashing.sha1().hashString("foo").toString().toUpperCase();
+  String string=Hashing.sha1().hashString("foo",Charsets.US_ASCII).toString().toUpperCase();
   try {
     HashCode.fromString(string);
     fail();

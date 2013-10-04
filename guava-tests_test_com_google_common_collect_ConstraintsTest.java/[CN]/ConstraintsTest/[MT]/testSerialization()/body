@@ -1,3 +1,0 @@
-{
-  assertSame(Constraints.notNull(),SerializableTester.reserialize(Constraints.notNull()));
-}

@@ -4,7 +4,7 @@
     byte[] bytes=new byte[64];
     random.nextBytes(bytes);
     String s=new String(bytes,UTF_16LE);
-    assertEquals(new Sink(4).putString(s).hash(),new Sink(4).putBytes(s.getBytes(UTF_16LE)).hash());
-    assertEquals(new Sink(4).putString(s).hash(),new Sink(4).putString(s,UTF_16LE).hash());
+    assertEquals(new Sink(4).putUnencodedChars(s).hash(),new Sink(4).putBytes(s.getBytes(UTF_16LE)).hash());
+    assertEquals(new Sink(4).putUnencodedChars(s).hash(),new Sink(4).putString(s,UTF_16LE).hash());
   }
 }

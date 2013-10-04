@@ -1,8 +1,0 @@
-{
-  List<String> list=Lists.newArrayList("foo","bar");
-  List<String> constrained=Constraints.constrainedList(list,TEST_CONSTRAINT);
-  Collection<String> onceIterable=onceIterableCollection("baz");
-  constrained.addAll(onceIterable);
-  ASSERT.that(constrained).has().exactly("foo","bar","baz").inOrder();
-  ASSERT.that(list).has().exactly("foo","bar","baz").inOrder();
-}

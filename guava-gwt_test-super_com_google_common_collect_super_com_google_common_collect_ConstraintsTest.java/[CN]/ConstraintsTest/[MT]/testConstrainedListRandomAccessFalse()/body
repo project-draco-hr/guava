@@ -1,7 +1,0 @@
-{
-  List<String> list=Lists.newLinkedList(asList("foo","bar"));
-  List<String> constrained=Constraints.constrainedList(list,TEST_CONSTRAINT);
-  list.add(TEST_ELEMENT);
-  constrained.add("qux");
-  assertFalse(constrained instanceof RandomAccess);
-}
