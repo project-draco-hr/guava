@@ -5,7 +5,7 @@
     Map<?,?> table=segmentTable(segment);
     segment.cleanUp();
     assertTrue(table.size() <= segment.count);
-    for (    Entry entry : table.entrySet()) {
+    for (    Entry<?,?> entry : table.entrySet()) {
       assertNotNull(entry.getKey());
       assertNotNull(entry.getValue());
       assertSame(entry.getValue(),cchm.get(entry.getKey()));

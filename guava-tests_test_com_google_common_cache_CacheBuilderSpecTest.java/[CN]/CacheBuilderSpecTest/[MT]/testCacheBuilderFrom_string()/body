@@ -1,5 +1,5 @@
 {
-  CacheBuilder fromString=CacheBuilder.from("initialCapacity=10,maximumSize=20,concurrencyLevel=30," + "weakKeys,weakValues,expireAfterAccess=10m");
-  CacheBuilder expected=CacheBuilder.newBuilder().initialCapacity(10).maximumSize(20).concurrencyLevel(30).weakKeys().weakValues().expireAfterAccess(10L,TimeUnit.MINUTES);
+  CacheBuilder<?,?> fromString=CacheBuilder.from("initialCapacity=10,maximumSize=20,concurrencyLevel=30," + "weakKeys,weakValues,expireAfterAccess=10m");
+  CacheBuilder<?,?> expected=CacheBuilder.newBuilder().initialCapacity(10).maximumSize(20).concurrencyLevel(30).weakKeys().weakValues().expireAfterAccess(10L,TimeUnit.MINUTES);
   assertCacheBuilderEquivalence(expected,fromString);
 }

@@ -9,6 +9,6 @@
   assertEquals(TimeUnit.SECONDS,spec.writeExpirationTimeUnit);
   assertEquals(15L,spec.writeExpirationDuration);
   assertNull(spec.accessExpirationTimeUnit);
-  CacheBuilder expected=CacheBuilder.newBuilder().initialCapacity(10).maximumSize(20).weakKeys().softValues().expireAfterWrite(15L,TimeUnit.SECONDS);
+  CacheBuilder<?,?> expected=CacheBuilder.newBuilder().initialCapacity(10).maximumSize(20).weakKeys().softValues().expireAfterWrite(15L,TimeUnit.SECONDS);
   assertCacheBuilderEquivalence(expected,CacheBuilder.from(spec));
 }

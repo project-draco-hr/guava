@@ -19,7 +19,7 @@
     }
   }
  else {
-    for (    Segment segment : map.segments) {
+    for (    Segment<?,?> segment : map.segments) {
       assertEquals(0,segment.recencyQueue.size());
     }
   }

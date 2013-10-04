@@ -10,7 +10,7 @@
     checkValidState(cchm);
     assertTrue(cchm.isEmpty());
     assertEquals(0,cchm.size());
-    for (    LocalCache.Segment segment : cchm.segments) {
+    for (    LocalCache.Segment<?,?> segment : cchm.segments) {
       assertEquals(0,segment.count);
       assertEquals(0,segmentSize(segment));
       assertTrue(segment.writeQueue.isEmpty());
