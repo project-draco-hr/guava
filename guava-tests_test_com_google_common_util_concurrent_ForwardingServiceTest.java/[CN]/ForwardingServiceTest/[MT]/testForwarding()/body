@@ -1,3 +1,0 @@
-{
-  ForwardingObjectTester.testForwardingObject(ForwardingService.class);
-}
