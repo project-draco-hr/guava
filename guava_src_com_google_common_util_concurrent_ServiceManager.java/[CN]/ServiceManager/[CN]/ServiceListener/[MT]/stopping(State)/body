@@ -1,12 +1,3 @@
 {
-  if (from == State.STARTING) {
-    state.monitor.enter();
-    try {
-      finishedStarting(false);
-    }
-  finally {
-      state.monitor.leave();
-      state.executeListeners();
-    }
-  }
+  maybeTransition(from,STOPPING);
 }

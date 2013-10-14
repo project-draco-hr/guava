@@ -1,0 +1,8 @@
+{
+  ServiceManagerState state=this.state.get();
+  if (state != null) {
+    state.transitionService(service,from,to);
+    return true;
+  }
+  return false;
+}

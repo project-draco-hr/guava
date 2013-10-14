@@ -1,0 +1,57 @@
+{
+  final NoOpService service1=new NoOpService();
+  Service service2=new Service(){
+    final NoOpService delegate=new NoOpService();
+    @Override public final void addListener(    Listener listener,    Executor executor){
+      service1.startAsync();
+      delegate.addListener(listener,executor);
+    }
+    @Override public final Service startAsync(){
+      return delegate.startAsync();
+    }
+    @Override public final ListenableFuture<State> start(){
+      return delegate.start();
+    }
+    @Override public final Service stopAsync(){
+      return delegate.stopAsync();
+    }
+    @Override public final ListenableFuture<State> stop(){
+      return delegate.stop();
+    }
+    @Override public State startAndWait(){
+      return delegate.startAndWait();
+    }
+    @Override public State stopAndWait(){
+      return delegate.stopAndWait();
+    }
+    @Override public final void awaitRunning(){
+      delegate.awaitRunning();
+    }
+    @Override public final void awaitRunning(    long timeout,    TimeUnit unit) throws TimeoutException {
+      delegate.awaitRunning(timeout,unit);
+    }
+    @Override public final void awaitTerminated(){
+      delegate.awaitTerminated();
+    }
+    @Override public final void awaitTerminated(    long timeout,    TimeUnit unit) throws TimeoutException {
+      delegate.awaitTerminated(timeout,unit);
+    }
+    @Override public final boolean isRunning(){
+      return delegate.isRunning();
+    }
+    @Override public final State state(){
+      return delegate.state();
+    }
+    @Override public final Throwable failureCause(){
+      return delegate.failureCause();
+    }
+  }
+;
+  try {
+    new ServiceManager(Arrays.asList(service1,service2));
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+    assertTrue(expected.getMessage().contains("started transitioning asynchronously"));
+  }
+}

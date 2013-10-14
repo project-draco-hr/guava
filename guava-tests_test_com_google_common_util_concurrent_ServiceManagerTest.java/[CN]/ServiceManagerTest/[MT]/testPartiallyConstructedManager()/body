@@ -1,0 +1,16 @@
+{
+  Logger logger=Logger.getGlobal();
+  logger.setLevel(Level.FINEST);
+  TestLogHandler logHandler=new TestLogHandler();
+  logger.addHandler(logHandler);
+  NoOpService service=new NoOpService();
+  service.startAsync();
+  try {
+    new ServiceManager(Arrays.asList(service));
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+  service.stopAsync();
+  assertEquals(0,logHandler.getStoredLogRecords().size());
+}

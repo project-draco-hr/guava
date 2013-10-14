@@ -1,3 +1,7 @@
 {
-  startTimer();
+  if (maybeTransition(NEW,STARTING)) {
+    if (!(service instanceof NoOpService)) {
+      logger.log(Level.FINE,"Starting {0}.",service);
+    }
+  }
 }
