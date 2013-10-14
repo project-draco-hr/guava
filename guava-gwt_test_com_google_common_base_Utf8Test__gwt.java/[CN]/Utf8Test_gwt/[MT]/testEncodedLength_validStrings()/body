@@ -1,4 +1,4 @@
 {
   com.google.common.base.Utf8Test testCase=new com.google.common.base.Utf8Test();
-  testCase.testLength_invalidStrings();
+  testCase.testEncodedLength_validStrings();
 }

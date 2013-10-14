@@ -1,0 +1,7 @@
+{
+  testEncodedLengthFails(newString(Character.MIN_HIGH_SURROGATE),0);
+  testEncodedLengthFails("foobar" + newString(Character.MIN_HIGH_SURROGATE),6);
+  testEncodedLengthFails(newString(Character.MIN_LOW_SURROGATE),0);
+  testEncodedLengthFails("foobar" + newString(Character.MIN_LOW_SURROGATE),6);
+  testEncodedLengthFails(newString(Character.MIN_HIGH_SURROGATE,Character.MIN_HIGH_SURROGATE),0);
+}
