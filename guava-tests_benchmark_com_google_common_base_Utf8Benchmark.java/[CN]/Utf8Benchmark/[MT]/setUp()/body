@@ -1,0 +1,18 @@
+{
+  final long seed=99;
+  final Random rnd=new Random(seed);
+  byteArrays=new byte[byteArrayCount][];
+  for (int i=0; i < byteArrayCount; i++) {
+    StringBuilder sb=new StringBuilder();
+    for (int j=0; j < charCount; j++) {
+      int codePoint;
+      do {
+        codePoint=rnd.nextInt(maxCodePoint.value);
+      }
+ while (isSurrogate(codePoint));
+      sb.appendCodePoint(codePoint);
+    }
+    byte[] bytes=sb.toString().getBytes(Charsets.UTF_8);
+    byteArrays[i]=bytes;
+  }
+}
