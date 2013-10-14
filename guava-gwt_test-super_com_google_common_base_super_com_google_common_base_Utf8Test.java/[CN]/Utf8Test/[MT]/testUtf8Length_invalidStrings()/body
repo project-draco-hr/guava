@@ -1,7 +1,0 @@
-{
-  testUtf8LengthFails(newString(Character.MIN_HIGH_SURROGATE),0);
-  testUtf8LengthFails("foobar" + newString(Character.MIN_HIGH_SURROGATE),6);
-  testUtf8LengthFails(newString(Character.MIN_LOW_SURROGATE),0);
-  testUtf8LengthFails("foobar" + newString(Character.MIN_LOW_SURROGATE),6);
-  testUtf8LengthFails(newString(Character.MIN_HIGH_SURROGATE,Character.MIN_HIGH_SURROGATE),0);
-}

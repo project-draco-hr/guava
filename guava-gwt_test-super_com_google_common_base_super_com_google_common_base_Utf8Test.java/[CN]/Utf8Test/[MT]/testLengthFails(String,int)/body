@@ -1,0 +1,9 @@
+{
+  try {
+    Utf8.length(invalidString);
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+    assertEquals("Unpaired surrogate at index " + invalidCodePointIndex,expected.getMessage());
+  }
+}

@@ -1,0 +1,7 @@
+{
+  testLengthFails(newString(Character.MIN_HIGH_SURROGATE),0);
+  testLengthFails("foobar" + newString(Character.MIN_HIGH_SURROGATE),6);
+  testLengthFails(newString(Character.MIN_LOW_SURROGATE),0);
+  testLengthFails("foobar" + newString(Character.MIN_LOW_SURROGATE),6);
+  testLengthFails(newString(Character.MIN_HIGH_SURROGATE,Character.MIN_HIGH_SURROGATE),0);
+}

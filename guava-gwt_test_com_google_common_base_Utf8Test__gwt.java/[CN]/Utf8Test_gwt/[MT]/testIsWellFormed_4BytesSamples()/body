@@ -1,0 +1,4 @@
+{
+  com.google.common.base.Utf8Test testCase=new com.google.common.base.Utf8Test();
+  testCase.testIsWellFormed_4BytesSamples();
+}

@@ -1,4 +1,0 @@
-{
-  assertTrue(not ^ Utf8.isValidUtf8(bytes));
-  assertTrue(not ^ Utf8.isValidUtf8(bytes,0,bytes.length));
-}
