@@ -7,9 +7,9 @@
     }
   }
 ,MoreExecutors.sameThreadExecutor());
-  service.start();
-  service.stop();
+  service.startAsync();
+  service.stopAsync();
   assertEquals(1,stopppingCount.get());
-  service.stop();
+  service.stopAsync();
   assertEquals(1,stopppingCount.get());
 }

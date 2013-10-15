@@ -1,7 +1,7 @@
 {
   NoOpService service=new NoOpService();
   service.startAsync().awaitRunning();
-  assertEquals(State.RUNNING,service.state());
   service.stopAsync().awaitTerminated();
+  service.stopAsync();
   assertEquals(State.TERMINATED,service.state());
 }

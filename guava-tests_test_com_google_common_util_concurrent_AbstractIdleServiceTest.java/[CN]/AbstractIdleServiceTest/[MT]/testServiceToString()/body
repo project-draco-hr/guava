@@ -1,8 +1,8 @@
 {
   AbstractIdleService service=new TestService();
   assertEquals("TestService [NEW]",service.toString());
-  service.startAndWait();
+  service.startAsync().awaitRunning();
   assertEquals("TestService [RUNNING]",service.toString());
-  service.stopAndWait();
+  service.stopAsync().awaitTerminated();
   assertEquals("TestService [TERMINATED]",service.toString());
 }

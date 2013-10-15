@@ -1,6 +1,6 @@
 {
   ManualSwitchedService service=new ManualSwitchedService();
-  service.start();
+  service.startAsync();
   service.notifyStarted();
   assertEquals(State.RUNNING,service.state());
   assertTrue(service.isRunning());

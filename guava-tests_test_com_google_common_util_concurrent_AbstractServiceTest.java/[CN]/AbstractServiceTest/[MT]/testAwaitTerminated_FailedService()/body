@@ -14,7 +14,7 @@
   }
 ;
   waiter.start();
-  service.start();
+  service.startAsync();
   service.notifyStarted();
   assertEquals(State.RUNNING,service.state());
   service.notifyFailed(EXCEPTION);

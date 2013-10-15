@@ -10,7 +10,7 @@
   }
 ;
   try {
-    service.start().get(1,TimeUnit.MILLISECONDS);
+    service.startAsync().awaitRunning(1,TimeUnit.MILLISECONDS);
     fail("Expected timeout");
   }
  catch (  TimeoutException e) {

@@ -1,7 +1,7 @@
 {
   TimeoutOnStartUp service=new TimeoutOnStartUp();
   try {
-    service.start().get(1,TimeUnit.MILLISECONDS);
+    service.startAsync().awaitRunning(1,TimeUnit.MILLISECONDS);
     fail();
   }
  catch (  TimeoutException e) {

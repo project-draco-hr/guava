@@ -2,8 +2,14 @@
   assertEquals(from,Iterables.getLast(stateHistory));
   stateHistory.add(State.STOPPING);
   if (from == State.STARTING) {
-    assertTrue(service.start().isDone());
-    assertEquals(State.STOPPING,service.startAndWait());
+    try {
+      service.awaitRunning();
+      fail();
+    }
+ catch (    IllegalStateException expected) {
+      assertNull(expected.getCause());
+      assertTrue(expected.getMessage().equals("Expected the service to be RUNNING, but was STOPPING"));
+    }
   }
   assertNotSame(from,service.state());
 }

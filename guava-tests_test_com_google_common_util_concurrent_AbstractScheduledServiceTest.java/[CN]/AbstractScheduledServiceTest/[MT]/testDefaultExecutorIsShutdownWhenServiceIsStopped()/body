@@ -21,10 +21,10 @@
     }
   }
 ;
-  service.start();
+  service.startAsync();
   assertFalse(service.executor().isShutdown());
-  service.startAndWait();
-  service.stop();
+  service.awaitRunning();
+  service.stopAsync();
   terminationLatch.await();
   assertTrue(service.executor().isShutdown());
   assertTrue(service.executor().awaitTermination(100,TimeUnit.MILLISECONDS));

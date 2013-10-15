@@ -1,7 +1,7 @@
 {
   NullService service=new NullService();
-  service.startAndWait();
+  service.startAsync().awaitRunning();
   assertFalse(future.isDone());
-  service.stopAndWait();
+  service.stopAsync().awaitTerminated();
   assertTrue(future.isCancelled());
 }

@@ -1,6 +1,6 @@
 {
   TestService service=new TestService();
-  service.startAndWait();
+  service.startAsync().awaitRunning();
   assertEquals(1,service.numberOfTimesExecutorCalled.get());
   for (int i=1; i < 10; i++) {
     service.runFirstBarrier.await();
@@ -8,8 +8,8 @@
     service.runSecondBarrier.await();
   }
   service.runFirstBarrier.await();
-  service.stop();
+  service.stopAsync();
   service.runSecondBarrier.await();
-  service.stopAndWait();
+  service.stopAsync().awaitTerminated();
   assertEquals(1,service.numberOfTimesExecutorCalled.get());
 }

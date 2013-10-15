@@ -7,7 +7,7 @@
   }
 ;
   try {
-    service.startAndWait();
+    service.startAsync().awaitRunning();
     fail();
   }
  catch (  RuntimeException e) {

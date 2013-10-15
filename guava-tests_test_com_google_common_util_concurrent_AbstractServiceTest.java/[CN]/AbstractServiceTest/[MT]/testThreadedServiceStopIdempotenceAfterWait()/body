@@ -1,11 +1,10 @@
 {
   ThreadedService service=new ThreadedService();
-  service.start().get();
-  service.start();
+  service.startAsync().awaitRunning();
   assertEquals(State.RUNNING,service.state());
   service.awaitRunChecks();
-  service.stop().get();
-  service.stop();
+  service.stopAsync().awaitTerminated();
+  service.stopAsync();
   assertEquals(State.TERMINATED,service.state());
   executionThread.join();
   throwIfSet(thrownByExecutionThread);

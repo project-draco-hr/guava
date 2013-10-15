@@ -2,10 +2,10 @@
   final NoOpThreadedService service=new NoOpThreadedService();
   service.addListener(new Listener(){
     @Override public void running(){
-      service.startAndWait();
+      service.awaitRunning();
     }
   }
 ,MoreExecutors.sameThreadExecutor());
-  service.start().get(10,TimeUnit.MILLISECONDS);
-  service.stop();
+  service.startAsync().awaitRunning(10,TimeUnit.MILLISECONDS);
+  service.stopAsync();
 }

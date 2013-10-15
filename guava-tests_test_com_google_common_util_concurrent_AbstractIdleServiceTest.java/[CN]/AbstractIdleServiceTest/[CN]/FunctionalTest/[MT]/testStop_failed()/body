@@ -6,9 +6,9 @@
     }
   }
 ;
-  service.startAndWait();
+  service.startAsync().awaitRunning();
   try {
-    service.stopAndWait();
+    service.stopAsync().awaitTerminated();
     fail();
   }
  catch (  RuntimeException e) {

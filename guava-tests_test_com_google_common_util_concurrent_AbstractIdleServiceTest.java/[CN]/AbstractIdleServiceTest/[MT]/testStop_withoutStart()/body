@@ -1,6 +1,6 @@
 {
   TestService service=new TestService();
-  service.stopAndWait();
+  service.stopAsync().awaitTerminated();
   assertEquals(0,service.startUpCalled);
   assertEquals(0,service.shutDownCalled);
   assertEquals(Service.State.TERMINATED,service.state());

@@ -1,11 +1,13 @@
 {
   NoOpService service=new NoOpService();
   RecordingListener listener=RecordingListener.record(service);
-  Future<State> stopResult=service.stop();
+  service.stopAsync();
   assertEquals(State.TERMINATED,service.state());
-  assertEquals(State.TERMINATED,stopResult.get());
-  Future<State> startResult=service.start();
-  assertEquals(State.TERMINATED,service.state());
-  assertEquals(State.TERMINATED,startResult.get());
+  try {
+    service.startAsync();
+    fail();
+  }
+ catch (  IllegalStateException expected) {
+  }
   assertEquals(State.TERMINATED,Iterables.getOnlyElement(listener.getStateHistory()));
 }

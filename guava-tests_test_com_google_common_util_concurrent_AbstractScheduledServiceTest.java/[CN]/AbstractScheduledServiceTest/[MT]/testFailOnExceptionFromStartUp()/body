@@ -2,10 +2,10 @@
   TestService service=new TestService();
   service.startUpException=new Exception();
   try {
-    service.startAndWait();
+    service.startAsync().awaitRunning();
     fail();
   }
- catch (  UncheckedExecutionException e) {
+ catch (  IllegalStateException e) {
     assertEquals(service.startUpException,e.getCause());
   }
   assertEquals(0,service.numberOfTimesRunCalled.get());

@@ -1,11 +1,11 @@
 {
   final StartFailingService service=new StartFailingService();
-  service.start();
+  service.startAsync();
   assertEquals(State.FAILED,service.state());
   service.addListener(new RecordingListener(service),MoreExecutors.sameThreadExecutor());
   Thread thread=new Thread(){
     @Override public void run(){
-      service.start();
+      service.stopAsync();
     }
   }
 ;

@@ -5,24 +5,19 @@
   assertEquals(failure,service.failureCause());
   if (from == State.STARTING) {
     try {
-      service.startAndWait();
+      service.awaitRunning();
       fail();
     }
- catch (    UncheckedExecutionException e) {
+ catch (    IllegalStateException e) {
       assertEquals(failure,e.getCause());
     }
   }
   try {
-    service.stopAndWait();
+    service.awaitTerminated();
     fail();
   }
- catch (  UncheckedExecutionException e) {
-    if (from == State.STOPPING) {
-      assertEquals(failure,e.getCause());
-    }
- else {
-      assertEquals(failure,e.getCause().getCause());
-    }
+ catch (  IllegalStateException e) {
+    assertEquals(failure,e.getCause());
   }
   completionLatch.countDown();
 }

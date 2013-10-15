@@ -25,10 +25,10 @@
   }
 ;
   try {
-    service.startAndWait();
+    service.startAsync().awaitRunning();
     fail("Expected service to fail during startup");
   }
- catch (  UncheckedExecutionException e) {
+ catch (  IllegalStateException expected) {
   }
   failureLatch.await();
   assertTrue(service.executor().isShutdown());

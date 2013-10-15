@@ -7,11 +7,11 @@
     }
   }
 ;
-  service.startAndWait();
+  service.startAsync().awaitRunning();
   assertEquals(1,service.startUpCalled);
   assertEquals(0,service.shutDownCalled);
   try {
-    service.stopAndWait();
+    service.stopAsync().awaitTerminated();
     fail();
   }
  catch (  RuntimeException e) {

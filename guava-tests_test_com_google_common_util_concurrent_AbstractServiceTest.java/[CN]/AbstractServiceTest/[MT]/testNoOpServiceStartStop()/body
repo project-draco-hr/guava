@@ -4,11 +4,11 @@
   assertEquals(State.NEW,service.state());
   assertFalse(service.isRunning());
   assertFalse(service.running);
-  service.start();
+  service.startAsync();
   assertEquals(State.RUNNING,service.state());
   assertTrue(service.isRunning());
   assertTrue(service.running);
-  service.stop();
+  service.stopAsync();
   assertEquals(State.TERMINATED,service.state());
   assertFalse(service.isRunning());
   assertFalse(service.running);

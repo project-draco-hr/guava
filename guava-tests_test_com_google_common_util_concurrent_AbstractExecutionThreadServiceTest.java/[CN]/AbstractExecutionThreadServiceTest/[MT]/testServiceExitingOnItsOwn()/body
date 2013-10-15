@@ -1,7 +1,7 @@
 {
   WaitOnRunService service=new WaitOnRunService();
   service.expectedShutdownState=Service.State.RUNNING;
-  service.start().get();
+  service.startAsync().awaitRunning();
   assertTrue(service.startUpCalled);
   assertEquals(Service.State.RUNNING,service.state());
   exitRun.countDown();
@@ -9,7 +9,7 @@
   assertTrue(service.shutDownCalled);
   assertEquals(Service.State.TERMINATED,service.state());
   assertNull(thrownByExecutionThread);
-  service.stop().get();
+  service.stopAsync().awaitTerminated();
   assertEquals(Service.State.TERMINATED,service.state());
   assertTrue(service.shutDownCalled);
 }

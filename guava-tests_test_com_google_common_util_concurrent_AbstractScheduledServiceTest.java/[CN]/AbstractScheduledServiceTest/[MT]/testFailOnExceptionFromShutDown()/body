@@ -1,15 +1,15 @@
 {
   TestService service=new TestService();
   service.shutDownException=new Exception();
-  service.startAndWait();
+  service.startAsync().awaitRunning();
   service.runFirstBarrier.await();
-  ListenableFuture<Service.State> stopHandle=service.stop();
+  service.stopAsync();
   service.runSecondBarrier.await();
   try {
-    stopHandle.get();
+    service.awaitTerminated();
     fail();
   }
- catch (  ExecutionException e) {
+ catch (  IllegalStateException e) {
     assertEquals(service.shutDownException,e.getCause());
   }
   assertEquals(Service.State.FAILED,service.state());

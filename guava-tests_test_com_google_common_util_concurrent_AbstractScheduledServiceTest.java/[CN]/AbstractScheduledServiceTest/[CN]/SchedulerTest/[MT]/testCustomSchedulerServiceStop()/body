@@ -1,11 +1,11 @@
 {
   TestAbstractScheduledCustomService service=new TestAbstractScheduledCustomService();
-  service.startAndWait();
+  service.startAsync().awaitRunning();
   service.firstBarrier.await();
   assertEquals(1,service.numIterations.get());
-  service.stop();
+  service.stopAsync();
   service.secondBarrier.await();
-  service.stopAndWait();
+  service.awaitTerminated();
   Thread.sleep(unit.toMillis(3 * delay));
   assertEquals(1,service.numIterations.get());
 }

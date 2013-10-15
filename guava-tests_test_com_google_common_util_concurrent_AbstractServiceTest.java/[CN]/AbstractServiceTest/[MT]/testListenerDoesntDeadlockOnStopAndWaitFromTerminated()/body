@@ -2,7 +2,7 @@
   final NoOpThreadedService service=new NoOpThreadedService();
   service.addListener(new Listener(){
     @Override public void terminated(    State from){
-      service.stopAndWait();
+      service.stopAsync().awaitTerminated();
     }
   }
 ,MoreExecutors.sameThreadExecutor());

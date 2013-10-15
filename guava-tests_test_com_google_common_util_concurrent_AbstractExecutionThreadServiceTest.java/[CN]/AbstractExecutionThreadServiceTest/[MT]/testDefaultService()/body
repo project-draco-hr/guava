@@ -1,9 +1,6 @@
 {
-  AbstractExecutionThreadService service=new AbstractExecutionThreadService(){
-    @Override protected void run() throws Exception {
-    }
-  }
-;
-  assertEquals(Service.State.RUNNING,service.startAndWait());
-  assertEquals(Service.State.TERMINATED,service.stopAndWait());
+  WaitOnRunService service=new WaitOnRunService();
+  service.startAsync().awaitRunning();
+  enterRun.await();
+  service.stopAsync().awaitTerminated();
 }

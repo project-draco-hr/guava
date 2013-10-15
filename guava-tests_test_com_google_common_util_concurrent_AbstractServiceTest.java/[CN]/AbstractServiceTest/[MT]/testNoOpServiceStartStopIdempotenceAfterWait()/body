@@ -1,9 +1,0 @@
-{
-  NoOpService service=new NoOpService();
-  service.start().get();
-  service.start();
-  assertEquals(State.RUNNING,service.state());
-  service.stop().get();
-  service.stop();
-  assertEquals(State.TERMINATED,service.state());
-}

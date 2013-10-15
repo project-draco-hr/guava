@@ -1,12 +1,12 @@
 {
   WaitOnRunService service=new WaitOnRunService();
-  assertFalse(service.startUpCalled);
   service.startAsync().awaitRunning();
-  assertTrue(service.startUpCalled);
-  assertEquals(Service.State.RUNNING,service.state());
   enterRun.await();
+  service.stopAsync();
+  service.stopAsync();
   service.stopAsync().awaitTerminated();
-  assertTrue(service.shutDownCalled);
+  assertEquals(Service.State.TERMINATED,service.state());
+  service.stopAsync().awaitTerminated();
   assertEquals(Service.State.TERMINATED,service.state());
   executionThread.join();
   assertNull(thrownByExecutionThread);

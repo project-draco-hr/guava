@@ -1,6 +1,6 @@
 {
   FakeService service=new FakeService();
-  assertEquals(Service.State.TERMINATED,service.stopAndWait());
+  service.stopAsync().awaitTerminated();
   assertEquals(Service.State.TERMINATED,service.state());
   assertEquals(0,service.startupCalled);
   assertEquals(0,service.runCalled);

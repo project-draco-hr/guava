@@ -1,7 +1,7 @@
 {
   TestService service=new TestService();
   service.runException=new Exception();
-  service.startAndWait();
+  service.startAsync().awaitRunning();
   service.runFirstBarrier.await();
   service.runSecondBarrier.await();
   try {

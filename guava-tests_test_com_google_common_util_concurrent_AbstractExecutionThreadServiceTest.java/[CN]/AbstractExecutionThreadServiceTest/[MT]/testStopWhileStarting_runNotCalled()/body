@@ -7,10 +7,10 @@
     }
   }
 ;
-  service.start();
-  ListenableFuture<Service.State> stopped=service.stop();
+  service.startAsync();
+  service.stopAsync();
   started.countDown();
-  assertEquals(Service.State.TERMINATED,stopped.get());
+  service.awaitTerminated();
   assertEquals(Service.State.TERMINATED,service.state());
   assertEquals(1,service.startupCalled);
   assertEquals(0,service.runCalled);

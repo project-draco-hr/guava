@@ -1,6 +1,6 @@
 {
   TestFailingCustomScheduledService service=new TestFailingCustomScheduledService();
-  service.startAndWait();
+  service.startAsync().awaitRunning();
   for (int i=1; i < 4; i++) {
     service.firstBarrier.await();
     assertEquals(i,service.numIterations.get());
@@ -8,10 +8,10 @@
   }
   Thread.sleep(1000);
   try {
-    service.stop().get(100,TimeUnit.SECONDS);
+    service.stopAsync().awaitTerminated(100,TimeUnit.SECONDS);
     fail();
   }
- catch (  ExecutionException e) {
+ catch (  IllegalStateException e) {
     assertEquals(State.FAILED,service.state());
   }
 }

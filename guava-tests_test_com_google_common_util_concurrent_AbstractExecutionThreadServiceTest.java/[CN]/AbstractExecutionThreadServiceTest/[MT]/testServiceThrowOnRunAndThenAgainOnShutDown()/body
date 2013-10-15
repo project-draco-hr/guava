@@ -1,7 +1,7 @@
 {
   ThrowOnRunService service=new ThrowOnRunService();
   service.throwOnShutDown=true;
-  service.start().get();
+  service.startAsync().awaitRunning();
   executionThread.join();
   assertTrue(service.shutDownCalled);
   assertEquals(Service.State.FAILED,service.state());

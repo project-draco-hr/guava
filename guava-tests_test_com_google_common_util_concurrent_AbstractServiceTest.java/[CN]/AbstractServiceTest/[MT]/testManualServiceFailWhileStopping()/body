@@ -1,9 +1,9 @@
 {
   ManualSwitchedService service=new ManualSwitchedService();
   RecordingListener listener=RecordingListener.record(service);
-  service.start();
+  service.startAsync();
   service.notifyStarted();
-  service.stop();
+  service.stopAsync();
   service.notifyFailed(EXCEPTION);
   assertEquals(ImmutableList.of(State.STARTING,State.RUNNING,State.STOPPING,State.FAILED),listener.getStateHistory());
 }

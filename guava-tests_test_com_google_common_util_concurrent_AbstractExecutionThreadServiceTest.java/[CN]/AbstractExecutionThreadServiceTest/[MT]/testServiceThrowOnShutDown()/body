@@ -1,8 +1,8 @@
 {
   ThrowOnShutDown service=new ThrowOnShutDown();
-  service.start().get();
+  service.startAsync().awaitRunning();
   assertEquals(Service.State.RUNNING,service.state());
-  service.stop();
+  service.stopAsync();
   enterRun.countDown();
   executionThread.join();
   assertEquals(Service.State.FAILED,service.state());

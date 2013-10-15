@@ -1,11 +1,10 @@
 {
   NoOpService service=new NoOpService();
   RecordingListener listener=RecordingListener.record(service);
-  service.start();
-  service.start();
+  service.startAsync().awaitRunning();
   assertEquals(State.RUNNING,service.state());
-  service.stop();
-  service.stop();
+  service.stopAsync();
+  service.stopAsync();
   assertEquals(State.TERMINATED,service.state());
   assertEquals(ImmutableList.of(State.STARTING,State.RUNNING,State.STOPPING,State.TERMINATED),listener.getStateHistory());
 }

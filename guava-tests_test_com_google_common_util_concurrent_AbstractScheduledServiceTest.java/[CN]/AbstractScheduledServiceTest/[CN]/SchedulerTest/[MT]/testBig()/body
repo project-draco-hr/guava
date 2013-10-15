@@ -12,13 +12,13 @@
   }
 ;
   service.useBarriers=false;
-  service.startAndWait();
+  service.startAsync().awaitRunning();
   Thread.sleep(50);
   service.useBarriers=true;
   service.firstBarrier.await();
   int numIterations=service.numIterations.get();
-  service.stop();
+  service.stopAsync();
   service.secondBarrier.await();
-  service.stopAndWait();
+  service.awaitTerminated();
   assertEquals(numIterations,service.numIterations.get());
 }
