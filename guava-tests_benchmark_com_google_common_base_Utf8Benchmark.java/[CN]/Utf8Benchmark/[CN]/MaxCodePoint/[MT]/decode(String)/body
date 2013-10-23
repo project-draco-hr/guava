@@ -9,6 +9,9 @@
  else     if (userFriendly.matches("(?i)(?:French|Latin|Western.*European)")) {
       return 0x90;
     }
+ else     if (userFriendly.matches("(?i)(?:Branch.*Prediction.*Hostile)")) {
+      return 0x100;
+    }
  else     if (userFriendly.matches("(?i)(?:Greek|Cyrillic|European|ISO.?8859)")) {
       return 0x800;
     }
