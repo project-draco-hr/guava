@@ -1,4 +1,4 @@
 {
-  Optional<Number> optionalInt=(Optional)getSomeOptionalInt();
+  Optional<Number> optionalInt=Optional.of((Number)1);
   Number value=optionalInt.or(0.5);
 }

@@ -13,8 +13,8 @@
   Class<?> sepFrqUserC=sepLoader.loadClass(frqUserC.getName());
   assertNotSame(frqUserC,sepFrqUserC);
   assertSame(sepLoader,sepFrqUserC.getClassLoader());
-  @SuppressWarnings("unchecked") Callable<WeakReference<Object>> sepFrqUser=(Callable<WeakReference<Object>>)sepFrqUserC.newInstance();
-  WeakReference<Object> finalizableWeakReference=sepFrqUser.call();
+  Callable<?> sepFrqUser=(Callable<?>)sepFrqUserC.newInstance();
+  WeakReference<?> finalizableWeakReference=(WeakReference<?>)sepFrqUser.call();
   GcFinalization.awaitClear(finalizableWeakReference);
   Field sepFrqUserFinalizedF=sepFrqUserC.getField("finalized");
   Semaphore finalizeCount=(Semaphore)sepFrqUserFinalizedF.get(null);

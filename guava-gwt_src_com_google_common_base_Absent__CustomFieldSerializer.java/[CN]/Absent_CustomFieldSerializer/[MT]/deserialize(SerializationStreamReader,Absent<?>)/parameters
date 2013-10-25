@@ -1,2 +1,2 @@
 SerializationStreamReader reader
-Absent instance
+Absent<?> instance
