@@ -1,4 +1,0 @@
-{
-  this.service=service;
-  this.state=new WeakReference<ServiceManagerState>(state);
-}

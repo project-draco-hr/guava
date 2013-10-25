@@ -1,5 +1,7 @@
 {
-  if (maybeTransition(NEW,STARTING)) {
+  ServiceManagerState state=this.state.get();
+  if (state != null) {
+    state.transitionService(service,NEW,STARTING);
     if (!(service instanceof NoOpService)) {
       logger.log(Level.FINE,"Starting {0}.",service);
     }
