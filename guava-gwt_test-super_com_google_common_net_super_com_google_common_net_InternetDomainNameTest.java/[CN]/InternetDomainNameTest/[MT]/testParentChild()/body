@@ -1,7 +1,7 @@
 {
   InternetDomainName origin=InternetDomainName.from("foo.com");
   InternetDomainName parent=origin.parent();
-  assertEquals("com",parent.name());
+  assertEquals("com",parent.toString());
   InternetDomainName child=parent.child(LOTS_OF_DELTAS);
   child.child(LOTS_OF_DELTAS);
 }

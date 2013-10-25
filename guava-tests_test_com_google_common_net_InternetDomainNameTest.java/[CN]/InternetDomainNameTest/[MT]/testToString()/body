@@ -6,6 +6,6 @@
     if (expectedName.endsWith(".")) {
       expectedName=expectedName.substring(0,expectedName.length() - 1);
     }
-    assertEquals(expectedName,domain.name());
+    assertEquals(expectedName,domain.toString());
   }
 }

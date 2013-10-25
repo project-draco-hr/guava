@@ -1,7 +1,7 @@
 {
-  assertEquals("com",InternetDomainName.from("google.com").parent().name());
-  assertEquals("uk",InternetDomainName.from("co.uk").parent().name());
-  assertEquals("google.com",InternetDomainName.from("www.google.com").parent().name());
+  assertEquals("com",InternetDomainName.from("google.com").parent().toString());
+  assertEquals("uk",InternetDomainName.from("co.uk").parent().toString());
+  assertEquals("google.com",InternetDomainName.from("www.google.com").parent().toString());
   try {
     InternetDomainName.from("com").parent();
     fail("'com' should throw ISE on .parent() call");
