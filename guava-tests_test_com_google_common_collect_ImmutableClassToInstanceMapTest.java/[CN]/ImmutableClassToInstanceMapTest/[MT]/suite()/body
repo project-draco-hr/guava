@@ -11,6 +11,6 @@
       return (Map)builder.build();
     }
   }
-).named("ImmutableClassToInstanceMap").withFeatures(MapFeature.REJECTS_DUPLICATES_AT_CREATION,MapFeature.RESTRICTS_KEYS,CollectionFeature.KNOWN_ORDER,CollectionSize.ANY,MapFeature.ALLOWS_NULL_QUERIES).createTestSuite());
+).named("ImmutableClassToInstanceMap").withFeatures(MapFeature.REJECTS_DUPLICATES_AT_CREATION,MapFeature.RESTRICTS_KEYS,CollectionFeature.KNOWN_ORDER,CollectionSize.ANY,MapFeature.ALLOWS_NULL_QUERIES,CollectionFeature.SERIALIZABLE).createTestSuite());
   return suite;
 }
