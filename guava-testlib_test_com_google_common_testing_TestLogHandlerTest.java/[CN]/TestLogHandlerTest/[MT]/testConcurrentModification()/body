@@ -2,7 +2,7 @@
   assertTrue(handler.getStoredLogRecords().isEmpty());
   ExampleClassUnderTest.foo();
   ExampleClassUnderTest.foo();
-  for (  LogRecord record : handler.getStoredLogRecords()) {
+  for (  LogRecord unused : handler.getStoredLogRecords()) {
     ExampleClassUnderTest.foo();
   }
 }

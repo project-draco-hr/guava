@@ -3,5 +3,5 @@
   Iterable<Integer> iterableToCopy=wrap == WrapWithIterable.WRAP ? unmodifiableIterable(concurrentlyMutatedList) : concurrentlyMutatedList;
   ImmutableList<Integer> copyOfIterable=ImmutableList.copyOf(iterableToCopy);
   assertTrue(concurrentlyMutatedList.getAllStates().contains(copyOfIterable));
-  assertEquals(copyOfIterable.size() == 0,copyOfIterable.isEmpty());
+  assertEquals(copyOfIterable.size() == 1,copyOfIterable instanceof SingletonImmutableList);
 }

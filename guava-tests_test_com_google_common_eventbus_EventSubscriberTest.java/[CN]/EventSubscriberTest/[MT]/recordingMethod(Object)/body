@@ -1,7 +1,5 @@
 {
-  if (methodCalled == true) {
-    throw new IllegalStateException("Method called more than once.");
-  }
+  assertFalse(methodCalled);
   methodCalled=true;
   methodArgument=arg;
 }

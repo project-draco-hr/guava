@@ -3,7 +3,7 @@
     @Override public Collection<String> create(    String[] elements){
       List<String> unfiltered=newLinkedList();
       unfiltered.add("yyy");
-      unfiltered.addAll(asList(elements));
+      Collections.addAll(unfiltered,elements);
       unfiltered.add("zzz");
       return Collections2.filter(unfiltered,NOT_YYY_ZZZ);
     }

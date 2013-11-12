@@ -4,7 +4,7 @@
   suite.addTest(NavigableSetTestSuiteBuilder.using(new TestStringSortedSetGenerator(){
     @Override protected NavigableSet<String> create(    String[] elements){
       NavigableSet<String> innermost=new SafeTreeSet<String>();
-      innermost.addAll(Arrays.asList(elements));
+      Collections.addAll(innermost,elements);
       TestSet<String> inner=new TestSet<String>(innermost,MUTEX);
       NavigableSet<String> outer=Synchronized.navigableSet(inner,MUTEX);
       return outer;

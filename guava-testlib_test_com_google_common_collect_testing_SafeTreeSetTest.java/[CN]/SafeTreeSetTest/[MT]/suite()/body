@@ -13,7 +13,7 @@
   suite.addTest(SetTestSuiteBuilder.using(new TestStringSetGenerator(){
     @Override protected Set<String> create(    String[] elements){
       NavigableSet<String> set=new SafeTreeSet<String>(Ordering.natural().nullsFirst());
-      set.addAll(Arrays.asList(elements));
+      Collections.addAll(set,elements);
       return set;
     }
     @Override public List<String> order(    List<String> insertionOrder){

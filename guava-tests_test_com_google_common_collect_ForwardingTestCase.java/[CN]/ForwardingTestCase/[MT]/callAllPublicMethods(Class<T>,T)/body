@@ -18,7 +18,7 @@
       }
     }
  catch (    Throwable cause) {
-      throw new InvocationTargetException(cause,method.toString() + " with args: " + Arrays.toString(parameters));
+      throw new InvocationTargetException(cause,method + " with args: " + Arrays.toString(parameters));
     }
   }
 }

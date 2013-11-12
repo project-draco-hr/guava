@@ -7,7 +7,7 @@
       int count=0;
       int maxCount=20;
       boolean diff=false;
-      while (diff == false) {
+      while (!diff) {
         int delta=(1 << i) | (1 << j);
         int key1=rand.nextInt();
         int key2=key1 ^ delta;
