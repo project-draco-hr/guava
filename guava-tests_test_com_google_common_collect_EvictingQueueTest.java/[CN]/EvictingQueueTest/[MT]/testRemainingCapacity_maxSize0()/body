@@ -1,0 +1,4 @@
+{
+  EvictingQueue<String> queue=EvictingQueue.create(0);
+  assertEquals(0,queue.remainingCapacity());
+}
