@@ -6,7 +6,7 @@
     }
  catch (    Throwable t) {
       if (suppressThrows) {
-        TearDownStack.logger.log(Level.INFO,"exception thrown during tearDown: " + t.getMessage(),t);
+        logger.log(Level.INFO,"exception thrown during tearDown",t);
       }
  else {
         exceptions.add(t);
