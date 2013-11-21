@@ -5,4 +5,5 @@ synchronized (mutex) {
     microsToWait=reserveNextTicket(permits,readSafeMicros());
   }
   ticker.sleepMicrosUninterruptibly(microsToWait);
+  return 1.0 * microsToWait / TimeUnit.SECONDS.toMicros(1L);
 }
