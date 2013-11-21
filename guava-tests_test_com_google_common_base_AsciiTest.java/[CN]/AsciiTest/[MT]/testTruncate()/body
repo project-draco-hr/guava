@@ -1,0 +1,6 @@
+{
+  assertEquals("foobar",Ascii.truncate("foobar",10));
+  assertEquals("fo...",Ascii.truncate("foobar",5));
+  assertEquals("foobar",Ascii.truncate("foobar",6));
+  assertEquals("",Ascii.truncate("",6));
+}

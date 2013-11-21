@@ -1,0 +1,4 @@
+{
+  com.google.common.base.AsciiTest testCase=new com.google.common.base.AsciiTest();
+  testCase.testTruncateWithCustomTruncationIndicator();
+}
