@@ -1,5 +1,5 @@
 {
-  ImmutableMap.Builder<String,TldType> builder=ImmutableMap.builder();
+  ImmutableSet.Builder<String> builder=ImmutableSet.builder();
   int encodedLen=encoded.length();
   int idx=0;
   while (idx < encodedLen) {
