@@ -1,24 +1,25 @@
 {
+  String truncated=null;
   try {
-    Ascii.truncate("foobar",2);
+    truncated=Ascii.truncate("foobar",2,"...");
     fail();
   }
  catch (  IllegalArgumentException expected) {
   }
   try {
-    Ascii.truncate("foobar",8,"1234567890");
+    truncated=Ascii.truncate("foobar",8,"1234567890");
     fail();
   }
  catch (  IllegalArgumentException expected) {
   }
   try {
-    Ascii.truncate("foobar",-1);
+    truncated=Ascii.truncate("foobar",-1,"...");
     fail();
   }
  catch (  IllegalArgumentException expected) {
   }
   try {
-    Ascii.truncate("foobar",-1,"");
+    truncated=Ascii.truncate("foobar",-1,"");
     fail();
   }
  catch (  IllegalArgumentException expected) {
