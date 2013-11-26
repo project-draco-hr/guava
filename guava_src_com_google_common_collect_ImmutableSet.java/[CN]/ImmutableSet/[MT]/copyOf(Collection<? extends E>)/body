@@ -6,7 +6,7 @@
     }
   }
  else   if (elements instanceof EnumSet) {
-    EnumSet<?> enumSet=EnumSet.copyOf((EnumSet<?>)elements);
+    EnumSet<? extends Enum<?>> enumSet=EnumSet.copyOf((EnumSet<? extends Enum<?>>)elements);
     @SuppressWarnings("unchecked") ImmutableSet<E> result=(ImmutableSet<E>)ImmutableEnumSet.asImmutable(enumSet);
     return result;
   }
