@@ -1,0 +1,11 @@
+{
+  assertTrue(Ascii.equalsIgnoreCase("",""));
+  assertFalse(Ascii.equalsIgnoreCase("","x"));
+  assertFalse(Ascii.equalsIgnoreCase("x",""));
+  assertTrue(Ascii.equalsIgnoreCase(LOWER,UPPER));
+  assertTrue(Ascii.equalsIgnoreCase(UPPER,LOWER));
+  assertTrue(Ascii.equalsIgnoreCase(new String(IGNORED),new String(IGNORED)));
+  assertFalse(Ascii.equalsIgnoreCase("\u00c1","\u00e1"));
+  assertFalse(Ascii.equalsIgnoreCase("@","`"));
+  assertFalse(Ascii.equalsIgnoreCase("[","{"));
+}

@@ -1,0 +1,9 @@
+{
+  String lhs=testString;
+  String rhs=testString.toUpperCase();
+  boolean dummy=false;
+  for (int i=0; i < reps; i++) {
+    dummy^=Ascii.equalsIgnoreCase(lhs,rhs);
+  }
+  return dummy;
+}

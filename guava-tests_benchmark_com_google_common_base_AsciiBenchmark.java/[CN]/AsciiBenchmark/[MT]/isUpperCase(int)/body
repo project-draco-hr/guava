@@ -1,0 +1,10 @@
+{
+  char[] chars=testString.toCharArray();
+  boolean dummy=false;
+  for (int i=0; i < reps; i++) {
+    for (int n=0; n < chars.length; n++) {
+      dummy^=Ascii.isUpperCase(chars[n]);
+    }
+  }
+  return dummy;
+}

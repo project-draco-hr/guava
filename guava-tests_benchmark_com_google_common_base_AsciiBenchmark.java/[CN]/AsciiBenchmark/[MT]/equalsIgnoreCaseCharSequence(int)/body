@@ -1,0 +1,12 @@
+{
+  String upperString=testString.toUpperCase();
+  CharSequence testSeq=new StringBuilder(testString);
+  CharSequence upperSeq=new StringBuilder(upperString);
+  CharSequence[] lhs=new CharSequence[]{testString,testSeq,testString,testSeq};
+  CharSequence[] rhs=new CharSequence[]{upperString,upperString,upperSeq,upperSeq};
+  boolean dummy=false;
+  for (int i=0; i < reps; i++) {
+    dummy^=Ascii.equalsIgnoreCase(lhs[i & 0x3],rhs[i & 0x3]);
+  }
+  return dummy;
+}

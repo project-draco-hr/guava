@@ -1,0 +1,5 @@
+{
+  assertEquals("pa\u00dfword".toUpperCase(),"PASSWORD");
+  assertFalse("pa\u00dfword".equalsIgnoreCase("PASSWORD"));
+  assertFalse(Ascii.equalsIgnoreCase("pa\u00dfword","PASSWORD"));
+}
