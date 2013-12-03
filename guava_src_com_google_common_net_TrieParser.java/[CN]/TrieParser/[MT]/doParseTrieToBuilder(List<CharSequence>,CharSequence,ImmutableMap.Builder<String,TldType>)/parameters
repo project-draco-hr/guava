@@ -1,3 +1,0 @@
-List<CharSequence> stack
-CharSequence encoded
-ImmutableMap.Builder<String,TldType> builder

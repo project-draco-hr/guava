@@ -12,7 +12,7 @@
   if (c == '!' || c == '?' || c == ':' || c == ',') {
     String domain=PREFIX_JOINER.join(stack);
     if (domain.length() > 0) {
-      builder.put(domain,TldType.fromCode(c));
+      builder.put(domain,PublicSuffixType.fromCode(c));
     }
   }
   idx++;
