@@ -1,8 +1,5 @@
 {
   new IteratorTester<E>(Platform.collectionIteratorTesterNumIterations(),features,elements,knownOrder){
-{
-      ignoreSunJavaBug6529795();
-    }
     @Override protected Iterator<E> newTargetIterator(){
       resetCollection();
       return collection.iterator();
