@@ -1,4 +1,3 @@
 {
-  String patternString=Objects.toStringHelper(pattern).add("pattern",pattern).add("pattern.flags",Integer.toHexString(pattern.flags())).toString();
-  return "Predicates.contains(" + patternString + ")";
+  return Objects.toStringHelper(this).add("pattern",pattern).add("pattern.flags",Integer.toHexString(pattern.flags())).toString();
 }

@@ -1,3 +1,3 @@
 {
-  return "Predicates.instanceOf(" + clazz.getName() + ")";
+  return "IsInstanceOf(" + clazz.getName() + ")";
 }
