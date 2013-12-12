@@ -1,0 +1,13 @@
+{
+  Method getMethod=List.class.getMethod("get",int.class);
+  Method setMethod=List.class.getMethod("set",int.class,Object.class);
+  new EqualsTester().addEqualityGroup(Invokable.from(getMethod),Invokable.from(getMethod)).addEqualityGroup(Invokable.from(setMethod)).addEqualityGroup(new TypeToken<List<Integer>>(){
+  }
+.method(getMethod)).addEqualityGroup(new TypeToken<List<String>>(){
+  }
+.method(getMethod)).addEqualityGroup(new TypeToken<List<Integer>>(){
+  }
+.method(setMethod)).addEqualityGroup(new TypeToken<List<String>>(){
+  }
+.method(setMethod)).testEquals();
+}

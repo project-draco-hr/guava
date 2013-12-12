@@ -1,0 +1,13 @@
+{
+  Constructor<?> defaultConstructor=ArrayList.class.getConstructor();
+  Constructor<?> oneArgConstructor=ArrayList.class.getConstructor(int.class);
+  new EqualsTester().addEqualityGroup(Invokable.from(defaultConstructor),Invokable.from(defaultConstructor)).addEqualityGroup(Invokable.from(oneArgConstructor)).addEqualityGroup(new TypeToken<ArrayList<Integer>>(){
+  }
+.constructor(defaultConstructor)).addEqualityGroup(new TypeToken<ArrayList<String>>(){
+  }
+.constructor(defaultConstructor)).addEqualityGroup(new TypeToken<ArrayList<Integer>>(){
+  }
+.constructor(oneArgConstructor)).addEqualityGroup(new TypeToken<ArrayList<String>>(){
+  }
+.constructor(oneArgConstructor)).testEquals();
+}
