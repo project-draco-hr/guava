@@ -1,0 +1,13 @@
+{
+  try {
+    Lists.transform(ImmutableList.of("foo","bar"),new Function<String,String>(){
+      @Override public String apply(      String input){
+        throw new IndexOutOfBoundsException();
+      }
+    }
+).toArray();
+    fail();
+  }
+ catch (  IndexOutOfBoundsException expected) {
+  }
+}
