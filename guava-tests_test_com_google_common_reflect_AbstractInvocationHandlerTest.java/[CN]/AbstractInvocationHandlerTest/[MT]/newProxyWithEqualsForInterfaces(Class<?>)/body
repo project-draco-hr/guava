@@ -1,0 +1,3 @@
+{
+  return Proxy.newProxyInstance(AbstractInvocationHandlerTest.class.getClassLoader(),interfaces,new DelegatingInvocationHandlerWithEquals("a string"));
+}
