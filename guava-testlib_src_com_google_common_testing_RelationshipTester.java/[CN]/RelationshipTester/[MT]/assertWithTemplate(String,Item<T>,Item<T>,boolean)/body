@@ -1,0 +1,5 @@
+{
+  if (!condition) {
+    throw new AssertionFailedError(template.replace("$RELATIONSHIP",relationshipName).replace("$HASH",hashName).replace("$ITEM",itemReporter.reportItem(item)).replace("$OTHER",itemReporter.reportItem(other)));
+  }
+}

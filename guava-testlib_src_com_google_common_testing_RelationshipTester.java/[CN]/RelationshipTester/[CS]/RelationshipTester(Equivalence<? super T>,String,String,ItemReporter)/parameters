@@ -1,0 +1,4 @@
+Equivalence<? super T> equivalence
+String relationshipName
+String hashName
+ItemReporter itemReporter

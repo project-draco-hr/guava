@@ -1,15 +1,4 @@
 {
   this.equivalence=checkNotNull(equivalence);
-  this.delegate=new RelationshipTester<T>(new RelationshipAssertion<T>(){
-    @Override public void assertRelated(    T item,    T related){
-      assertTrue("$ITEM must be equivalent to $RELATED",equivalence.equivalent(item,related));
-      int itemHash=equivalence.hash(item);
-      int relatedHash=equivalence.hash(related);
-      assertEquals("the hash (" + itemHash + ") of $ITEM must be equal to the hash ("+ relatedHash+ ") of $RELATED",itemHash,relatedHash);
-    }
-    @Override public void assertUnrelated(    T item,    T unrelated){
-      assertTrue("$ITEM must be inequivalent to $UNRELATED",!equivalence.equivalent(item,unrelated));
-    }
-  }
-);
+  this.delegate=new RelationshipTester<T>(equivalence,"equivalent","hash",new ItemReporter());
 }

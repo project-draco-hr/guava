@@ -1,4 +1,0 @@
-{
-  this.itemReporter=checkNotNull(reporter);
-  return this;
-}

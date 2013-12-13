@@ -1,0 +1,4 @@
+String template
+Item<T> item
+Item<T> other
+boolean condition

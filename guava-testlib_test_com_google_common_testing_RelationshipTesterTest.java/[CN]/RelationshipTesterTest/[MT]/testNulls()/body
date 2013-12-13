@@ -1,9 +1,3 @@
 {
-  new ClassSanityTester().setDefault(RelationshipAssertion.class,new RelationshipAssertion<Object>(){
-    @Override void assertRelated(    Object item,    Object related){
-    }
-    @Override void assertUnrelated(    Object item,    Object unrelated){
-    }
-  }
-).setDefault(ItemReporter.class,new ItemReporter()).testNulls(RelationshipTester.class);
+  new ClassSanityTester().setDefault(ItemReporter.class,new ItemReporter()).testNulls(RelationshipTester.class);
 }

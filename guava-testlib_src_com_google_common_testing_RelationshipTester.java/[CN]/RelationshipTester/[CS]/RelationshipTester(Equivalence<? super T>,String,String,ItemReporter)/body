@@ -1,0 +1,6 @@
+{
+  this.equivalence=checkNotNull(equivalence);
+  this.relationshipName=checkNotNull(relationshipName);
+  this.hashName=checkNotNull(hashName);
+  this.itemReporter=checkNotNull(itemReporter);
+}

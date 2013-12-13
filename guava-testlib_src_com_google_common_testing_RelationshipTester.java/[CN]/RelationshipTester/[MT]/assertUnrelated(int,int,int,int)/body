@@ -1,10 +1,5 @@
 {
-  T item=groups.get(groupNumber).get(itemNumber);
-  T unrelated=groups.get(unrelatedGroupNumber).get(unrelatedItemNumber);
-  try {
-    assertion.assertUnrelated(item,unrelated);
-  }
- catch (  AssertionFailedError e) {
-    throw new AssertionFailedError(e.getMessage().replace("$ITEM",itemReporter.reportItem(new Item(item,groupNumber,itemNumber))).replace("$UNRELATED",itemReporter.reportItem(new Item(unrelated,unrelatedGroupNumber,unrelatedItemNumber))));
-  }
+  Item<T> itemInfo=getItem(groupNumber,itemNumber);
+  Item<T> unrelatedInfo=getItem(unrelatedGroupNumber,unrelatedItemNumber);
+  assertWithTemplate("$ITEM must not be $RELATIONSHIP to $OTHER",itemInfo,unrelatedInfo,!equivalence.equivalent(itemInfo.value,unrelatedInfo.value));
 }
