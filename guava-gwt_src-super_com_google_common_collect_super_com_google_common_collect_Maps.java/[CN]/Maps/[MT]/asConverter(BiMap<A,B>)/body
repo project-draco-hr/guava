@@ -1,0 +1,20 @@
+{
+  checkNotNull(bimap);
+  return new Converter<A,B>(){
+    @Override protected B doForward(    A a){
+      return convert(bimap,a);
+    }
+    @Override protected A doBackward(    B b){
+      return convert(bimap.inverse(),b);
+    }
+    private <X,Y>Y convert(    BiMap<X,Y> bimap,    X input){
+      if (input == null) {
+        return null;
+      }
+      Y output=bimap.get(input);
+      checkArgument(output != null,"No non-null mapping present for input: %s",input);
+      return output;
+    }
+  }
+;
+}

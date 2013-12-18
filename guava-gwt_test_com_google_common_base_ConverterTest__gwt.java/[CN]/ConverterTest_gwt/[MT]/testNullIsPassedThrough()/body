@@ -1,0 +1,4 @@
+{
+  com.google.common.base.ConverterTest testCase=new com.google.common.base.ConverterTest();
+  testCase.testNullIsPassedThrough();
+}

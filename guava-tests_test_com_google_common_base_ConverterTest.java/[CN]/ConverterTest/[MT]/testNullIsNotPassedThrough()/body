@@ -1,0 +1,7 @@
+{
+  Converter<String,String> nullsAreHandled=sillyConverter(true);
+  assertEquals("forward",nullsAreHandled.convert("foo"));
+  assertEquals(null,nullsAreHandled.convert(null));
+  assertEquals("backward",nullsAreHandled.reverse().convert("foo"));
+  assertEquals(null,nullsAreHandled.reverse().convert(null));
+}

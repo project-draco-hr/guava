@@ -1,0 +1,11 @@
+{
+  return new Converter<String,String>(handleNullAutomatically){
+    @Override public String doForward(    String string){
+      return "forward";
+    }
+    @Override public String doBackward(    String string){
+      return "backward";
+    }
+  }
+;
+}

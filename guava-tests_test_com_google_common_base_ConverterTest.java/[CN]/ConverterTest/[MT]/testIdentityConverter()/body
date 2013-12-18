@@ -1,0 +1,9 @@
+{
+  Converter<String,String> stringIdentityConverter=Converter.identity();
+  assertSame(stringIdentityConverter,stringIdentityConverter.reverse());
+  assertSame(STR_TO_LONG,stringIdentityConverter.andThen(STR_TO_LONG));
+  assertSame(STR_VAL,stringIdentityConverter.convert(STR_VAL));
+  assertSame(STR_VAL,stringIdentityConverter.reverse().convert(STR_VAL));
+  assertEquals("Converter.identity()",stringIdentityConverter.toString());
+  assertSame(Converter.identity(),Converter.identity());
+}

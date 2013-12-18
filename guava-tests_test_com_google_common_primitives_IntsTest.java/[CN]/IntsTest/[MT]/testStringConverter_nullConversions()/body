@@ -1,0 +1,4 @@
+{
+  assertNull(Ints.stringConverter().convert(null));
+  assertNull(Ints.stringConverter().reverse().convert(null));
+}

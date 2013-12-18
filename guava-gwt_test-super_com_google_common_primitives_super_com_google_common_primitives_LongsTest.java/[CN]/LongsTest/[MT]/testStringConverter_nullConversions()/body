@@ -1,0 +1,4 @@
+{
+  assertNull(Longs.stringConverter().convert(null));
+  assertNull(Longs.stringConverter().reverse().convert(null));
+}

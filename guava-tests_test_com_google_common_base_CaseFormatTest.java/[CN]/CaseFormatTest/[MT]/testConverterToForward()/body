@@ -1,0 +1,6 @@
+{
+  assertEquals("FooBar",UPPER_UNDERSCORE.converterTo(UPPER_CAMEL).convert("FOO_BAR"));
+  assertEquals("fooBar",UPPER_UNDERSCORE.converterTo(LOWER_CAMEL).convert("FOO_BAR"));
+  assertEquals("FOO_BAR",UPPER_CAMEL.converterTo(UPPER_UNDERSCORE).convert("FooBar"));
+  assertEquals("FOO_BAR",LOWER_CAMEL.converterTo(UPPER_UNDERSCORE).convert("fooBar"));
+}

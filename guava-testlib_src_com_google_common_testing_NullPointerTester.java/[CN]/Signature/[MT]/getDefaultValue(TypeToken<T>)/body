@@ -15,6 +15,12 @@
     @SuppressWarnings("unchecked") T defaultType=(T)getFirstTypeParameter(type.getType());
     return defaultType;
   }
+  if (type.getRawType() == Converter.class) {
+    TypeToken<?> convertFromType=type.resolveType(Converter.class.getTypeParameters()[0]);
+    TypeToken<?> convertToType=type.resolveType(Converter.class.getTypeParameters()[1]);
+    @SuppressWarnings("unchecked") T defaultConverter=(T)defaultConverter(convertFromType,convertToType);
+    return defaultConverter;
+  }
   if (type.getRawType().isInterface()) {
     return newDefaultReturningProxy(type);
   }

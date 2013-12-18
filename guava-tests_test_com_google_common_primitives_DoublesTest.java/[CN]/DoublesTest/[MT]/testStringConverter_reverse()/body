@@ -1,0 +1,8 @@
+{
+  Converter<String,Double> converter=Doubles.stringConverter();
+  assertEquals("1.0",converter.reverse().convert(1.0));
+  assertEquals("0.0",converter.reverse().convert(0.0));
+  assertEquals("-1.0",converter.reverse().convert(-1.0));
+  assertEquals("1000000.0",converter.reverse().convert(1e6));
+  assertEquals("1.0E-6",converter.reverse().convert(1e-6));
+}

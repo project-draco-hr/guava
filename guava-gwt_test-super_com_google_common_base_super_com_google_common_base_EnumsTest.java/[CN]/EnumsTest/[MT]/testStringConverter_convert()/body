@@ -1,0 +1,8 @@
+{
+  Converter<String,TestEnum> converter=Enums.stringConverter(TestEnum.class);
+  assertEquals(TestEnum.CHEETO,converter.convert("CHEETO"));
+  assertEquals(TestEnum.HONDA,converter.convert("HONDA"));
+  assertEquals(TestEnum.POODLE,converter.convert("POODLE"));
+  assertNull(converter.convert(null));
+  assertNull(converter.reverse().convert(null));
+}

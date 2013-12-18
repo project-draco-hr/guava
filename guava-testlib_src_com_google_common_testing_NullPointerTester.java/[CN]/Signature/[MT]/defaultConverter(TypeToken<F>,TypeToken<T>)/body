@@ -1,0 +1,14 @@
+{
+  return new Converter<F,T>(){
+    @Override protected T doForward(    F a){
+      return doConvert(convertToType,a);
+    }
+    @Override protected F doBackward(    T b){
+      return doConvert(convertFromType,b);
+    }
+    private <S>S doConvert(    TypeToken<S> type,    Object in){
+      return in == null ? null : checkNotNull(getDefaultValue(type));
+    }
+  }
+;
+}

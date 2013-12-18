@@ -1,0 +1,12 @@
+{
+  BiMap<String,Integer> biMap=HashBiMap.create();
+  biMap.put("one",1);
+  biMap.put("two",2);
+  biMap.put("three",null);
+  try {
+    Maps.asConverter(biMap).convert("three");
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}

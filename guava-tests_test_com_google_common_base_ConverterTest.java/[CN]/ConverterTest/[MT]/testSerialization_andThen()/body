@@ -1,0 +1,6 @@
+{
+  Converter<String,Long> converterA=Longs.stringConverter();
+  Converter<Long,String> reverseConverter=Longs.stringConverter().reverse();
+  Converter<String,String> composedConverter=converterA.andThen(reverseConverter);
+  SerializableTester.reserializeAndAssert(composedConverter);
+}

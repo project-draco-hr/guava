@@ -1,0 +1,19 @@
+{
+  Converter<StringWrapper,String> first=new Converter<StringWrapper,String>(){
+    @Override public String doForward(    StringWrapper object){
+      return object.value;
+    }
+    @Override public StringWrapper doBackward(    String object){
+      return new StringWrapper(object);
+    }
+    @Override public String toString(){
+      return "StringWrapper";
+    }
+  }
+;
+  Converter<StringWrapper,Long> converter=first.andThen(STR_TO_LONG);
+  assertEquals(LONG_VAL,converter.convert(new StringWrapper(STR_VAL)));
+  assertEquals(STR_VAL,converter.reverse().convert(LONG_VAL).value);
+  assertEquals("StringWrapper.andThen(string2long)",converter.toString());
+  assertEquals(first.andThen(STR_TO_LONG),first.andThen(STR_TO_LONG));
+}

@@ -1,0 +1,8 @@
+{
+  runTester();
+  @SuppressWarnings("unchecked") Converter<String,Integer> defaultConverter=(Converter<String,Integer>)getDefaultParameterValue(0);
+  assertEquals(Integer.valueOf(0),defaultConverter.convert("anything"));
+  assertEquals("",defaultConverter.reverse().convert(123));
+  assertNull(defaultConverter.convert(null));
+  assertNull(defaultConverter.reverse().convert(null));
+}

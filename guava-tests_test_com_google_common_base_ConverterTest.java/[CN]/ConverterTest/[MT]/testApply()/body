@@ -1,0 +1,3 @@
+{
+  assertEquals(LONG_VAL,STR_TO_LONG.apply(STR_VAL));
+}

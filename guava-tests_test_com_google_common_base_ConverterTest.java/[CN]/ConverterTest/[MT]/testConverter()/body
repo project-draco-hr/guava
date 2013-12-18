@@ -1,0 +1,6 @@
+{
+  assertEquals(LONG_VAL,STR_TO_LONG.convert(STR_VAL));
+  assertEquals(STR_VAL,STR_TO_LONG.reverse().convert(LONG_VAL));
+  Iterable<Long> convertedValues=STR_TO_LONG.convertAll(STRINGS);
+  assertEquals(LONGS,ImmutableList.copyOf(convertedValues));
+}

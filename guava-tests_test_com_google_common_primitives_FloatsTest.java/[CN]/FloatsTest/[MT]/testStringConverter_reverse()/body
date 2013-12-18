@@ -1,0 +1,8 @@
+{
+  Converter<String,Float> converter=Floats.stringConverter();
+  assertEquals("1.0",converter.reverse().convert(1.0f));
+  assertEquals("0.0",converter.reverse().convert(0.0f));
+  assertEquals("-1.0",converter.reverse().convert(-1.0f));
+  assertEquals("1000000.0",converter.reverse().convert(1e6f));
+  assertEquals("1.0E-6",converter.reverse().convert(1e-6f));
+}

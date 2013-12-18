@@ -1,0 +1,15 @@
+{
+  checkNotNull(enumClass);
+  return new Converter<String,T>(){
+    @Override protected T doForward(    String value){
+      return value == null ? null : Enum.valueOf(enumClass,value);
+    }
+    @Override protected String doBackward(    T enumValue){
+      return enumValue == null ? null : enumValue.name();
+    }
+    @Override public String toString(){
+      return "Enums.stringConverter(" + enumClass + ")";
+    }
+  }
+;
+}

@@ -1,0 +1,10 @@
+{
+  Converter<String,Short> converter=Shorts.stringConverter();
+  assertEquals("1",converter.reverse().convert((short)1));
+  assertEquals("0",converter.reverse().convert((short)0));
+  assertEquals("-1",converter.reverse().convert((short)-1));
+  assertEquals("255",converter.reverse().convert((short)0xff));
+  assertEquals("255",converter.reverse().convert((short)0xFF));
+  assertEquals("-255",converter.reverse().convert((short)-0xFF));
+  assertEquals("438",converter.reverse().convert((short)0666));
+}

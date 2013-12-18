@@ -1,0 +1,10 @@
+{
+  Converter<Long,String> reverseConverter=STR_TO_LONG.reverse();
+  assertEquals(STR_VAL,reverseConverter.convert(LONG_VAL));
+  assertEquals(LONG_VAL,reverseConverter.reverse().convert(STR_VAL));
+  Iterable<String> convertedValues=reverseConverter.convertAll(LONGS);
+  assertEquals(STRINGS,ImmutableList.copyOf(convertedValues));
+  assertSame(STR_TO_LONG,reverseConverter.reverse());
+  assertEquals("string2long.reverse()",reverseConverter.toString());
+  new EqualsTester().addEqualityGroup(STR_TO_LONG,STR_TO_LONG.reverse().reverse()).addEqualityGroup(STR_TO_LONG.reverse(),STR_TO_LONG.reverse()).testEquals();
+}

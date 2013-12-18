@@ -1,0 +1,11 @@
+{
+  Converter<String,Long> converter=Longs.stringConverter();
+  assertEquals((Long)1L,converter.convert("1"));
+  assertEquals((Long)0L,converter.convert("0"));
+  assertEquals((Long)(-1L),converter.convert("-1"));
+  assertEquals((Long)255L,converter.convert("0xff"));
+  assertEquals((Long)255L,converter.convert("0xFF"));
+  assertEquals((Long)(-255L),converter.convert("-0xFF"));
+  assertEquals((Long)255L,converter.convert("#0000FF"));
+  assertEquals((Long)438L,converter.convert("0666"));
+}

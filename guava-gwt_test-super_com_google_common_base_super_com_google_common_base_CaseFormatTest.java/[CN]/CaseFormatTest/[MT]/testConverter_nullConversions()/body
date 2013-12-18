@@ -1,0 +1,8 @@
+{
+  for (  CaseFormat outer : CaseFormat.values()) {
+    for (    CaseFormat inner : CaseFormat.values()) {
+      assertNull(outer.converterTo(inner).convert(null));
+      assertNull(outer.converterTo(inner).reverse().convert(null));
+    }
+  }
+}
