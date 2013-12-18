@@ -1,4 +1,0 @@
-{
-  setupCloseable(true);
-  Closeables.closeQuietly(mockCloseable);
-}
