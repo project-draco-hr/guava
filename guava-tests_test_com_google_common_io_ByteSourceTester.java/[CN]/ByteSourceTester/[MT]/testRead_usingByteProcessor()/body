@@ -1,0 +1,14 @@
+{
+  byte[] readBytes=source.read(new ByteProcessor<byte[]>(){
+    final ByteArrayOutputStream out=new ByteArrayOutputStream();
+    @Override public boolean processBytes(    byte[] buf,    int off,    int len) throws IOException {
+      out.write(buf,off,len);
+      return true;
+    }
+    @Override public byte[] getResult(){
+      return out.toByteArray();
+    }
+  }
+);
+  assertExpectedBytes(readBytes);
+}

@@ -1,0 +1,16 @@
+{
+  TestCharSource lines=new TestCharSource(LINES);
+  List<String> list=lines.readLines(new LineProcessor<List<String>>(){
+    List<String> list=Lists.newArrayList();
+    @Override public boolean processLine(    String line) throws IOException {
+      list.add(line);
+      return false;
+    }
+    @Override public List<String> getResult(){
+      return list;
+    }
+  }
+);
+  assertEquals(ImmutableList.of("foo"),list);
+  assertTrue(lines.wasStreamOpened() && lines.wasStreamClosed());
+}

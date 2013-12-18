@@ -1,0 +1,16 @@
+{
+  ByteProcessor<Void> processor=new ByteProcessor<Void>(){
+    boolean firstCall=true;
+    @Override public boolean processBytes(    byte[] buf,    int off,    int len) throws IOException {
+      assertTrue("consume() called twice",firstCall);
+      firstCall=false;
+      return false;
+    }
+    @Override public Void getResult(){
+      return null;
+    }
+  }
+;
+  source.read(processor);
+  assertTrue(source.wasStreamOpened() && source.wasStreamClosed());
+}

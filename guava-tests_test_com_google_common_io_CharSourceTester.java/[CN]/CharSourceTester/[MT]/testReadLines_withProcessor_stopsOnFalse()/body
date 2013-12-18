@@ -1,0 +1,19 @@
+{
+  List<String> list=source.readLines(new LineProcessor<List<String>>(){
+    List<String> list=Lists.newArrayList();
+    @Override public boolean processLine(    String line) throws IOException {
+      list.add(line);
+      return false;
+    }
+    @Override public List<String> getResult(){
+      return list;
+    }
+  }
+);
+  if (expectedLines.isEmpty()) {
+    assertTrue(list.isEmpty());
+  }
+ else {
+    assertEquals(expectedLines.subList(0,1),list);
+  }
+}
