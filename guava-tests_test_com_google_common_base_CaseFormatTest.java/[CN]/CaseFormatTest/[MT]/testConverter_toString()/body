@@ -1,0 +1,3 @@
+{
+  assertEquals("LOWER_HYPHEN.converterTo(UPPER_CAMEL)",LOWER_HYPHEN.converterTo(UPPER_CAMEL).toString());
+}

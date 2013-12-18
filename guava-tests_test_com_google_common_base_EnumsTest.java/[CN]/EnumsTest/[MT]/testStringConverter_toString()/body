@@ -1,0 +1,3 @@
+{
+  assertEquals("Enums.stringConverter(com.google.common.base.EnumsTest$TestEnum.class)",Enums.stringConverter(TestEnum.class).toString());
+}

@@ -1,0 +1,7 @@
+{
+  for (  CaseFormat outer : CaseFormat.values()) {
+    for (    CaseFormat inner : CaseFormat.values()) {
+      SerializableTester.reserializeAndAssert(outer.converterTo(inner));
+    }
+  }
+}
