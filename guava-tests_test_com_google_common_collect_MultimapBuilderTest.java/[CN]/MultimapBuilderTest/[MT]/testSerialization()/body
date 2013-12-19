@@ -1,0 +1,7 @@
+{
+  for (  MultimapBuilderWithKeys<?> builderWithKeys : ImmutableList.of(MultimapBuilder.hashKeys(),MultimapBuilder.linkedHashKeys(),MultimapBuilder.treeKeys(),MultimapBuilder.enumKeys(RoundingMode.class))) {
+    for (    MultimapBuilder<?,?> builder : ImmutableList.of(builderWithKeys.arrayListValues(),builderWithKeys.linkedListValues(),builderWithKeys.hashSetValues(),builderWithKeys.linkedHashSetValues(),builderWithKeys.treeSetValues(),builderWithKeys.enumSetValues(RoundingMode.class))) {
+      SerializableTester.reserializeAndAssert(builder.build());
+    }
+  }
+}

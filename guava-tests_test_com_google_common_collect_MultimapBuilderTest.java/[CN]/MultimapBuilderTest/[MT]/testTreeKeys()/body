@@ -1,0 +1,5 @@
+{
+  ListMultimap<String,Integer> multimap=MultimapBuilder.treeKeys().arrayListValues().build();
+  assertTrue(multimap.keySet() instanceof SortedSet);
+  assertTrue(multimap.asMap() instanceof SortedMap);
+}

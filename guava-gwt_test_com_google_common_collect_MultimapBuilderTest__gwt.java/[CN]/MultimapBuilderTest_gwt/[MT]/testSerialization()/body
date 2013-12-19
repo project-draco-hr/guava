@@ -1,0 +1,4 @@
+{
+  com.google.common.collect.MultimapBuilderTest testCase=new com.google.common.collect.MultimapBuilderTest();
+  testCase.testSerialization();
+}

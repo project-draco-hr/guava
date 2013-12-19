@@ -1,0 +1,5 @@
+{
+  ListMultimap<String,Integer> a=MultimapBuilder.hashKeys().arrayListValues().build();
+  SortedSetMultimap<String,Integer> b=MultimapBuilder.linkedHashKeys().treeSetValues().build();
+  SetMultimap<String,Integer> c=MultimapBuilder.treeKeys(String.CASE_INSENSITIVE_ORDER).hashSetValues().build();
+}
