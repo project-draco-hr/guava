@@ -1,0 +1,3 @@
+{
+  assertSame(Runnables.doNothing(),Runnables.doNothing());
+}
