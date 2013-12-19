@@ -1,4 +1,4 @@
 {
   com.google.common.collect.MultimapBuilderTest testCase=new com.google.common.collect.MultimapBuilderTest();
-  testCase.testGenerics();
+  testCase.testTreeKeys_gwtCompatible();
 }
