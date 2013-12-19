@@ -1,0 +1,9 @@
+{
+  EasyMock.expect(hasher.putByte((byte)'y')).andReturn(hasher).once();
+  EasyMock.replay(hasher);
+  HashingInputStream in=new HashingInputStream(hashFunction,buffer);
+  int b=in.read();
+  assertEquals('y',b);
+  EasyMock.verify(hashFunction);
+  EasyMock.verify(hasher);
+}

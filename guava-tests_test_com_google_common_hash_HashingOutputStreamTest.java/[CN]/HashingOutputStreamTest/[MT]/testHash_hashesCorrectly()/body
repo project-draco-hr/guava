@@ -1,0 +1,7 @@
+{
+  byte[] buf=new byte[]{'y','a','m','s'};
+  HashCode expectedHash=Hashing.md5().hashBytes(buf);
+  HashingOutputStream out=new HashingOutputStream(Hashing.md5(),buffer);
+  out.write(buf);
+  assertEquals(expectedHash,out.hash());
+}

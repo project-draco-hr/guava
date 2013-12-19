@@ -1,0 +1,6 @@
+{
+  NullPointerTester tester=new NullPointerTester();
+  tester.testAllPublicInstanceMethods(new HashingOutputStream(Hashing.md5(),new ByteArrayOutputStream()));
+  tester.testAllPublicStaticMethods(HashingOutputStream.class);
+  tester.testAllPublicConstructors(HashingOutputStream.class);
+}
