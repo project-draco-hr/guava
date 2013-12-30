@@ -1,7 +1,7 @@
 {
   CollectionBenchmarkSampleData sampleData=new CollectionBenchmarkSampleData(isUserTypeFast,random,hitRate,size);
   if (sortedData) {
-    List<Element> valueList=Lists.newArrayList(sampleData.getValuesInSet());
+    List<Element> valueList=new ArrayList<>(sampleData.getValuesInSet());
     Collections.sort(valueList);
     values=valueList;
   }

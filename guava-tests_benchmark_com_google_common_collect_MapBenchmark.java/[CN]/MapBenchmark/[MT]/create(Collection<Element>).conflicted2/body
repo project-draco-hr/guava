@@ -1,5 +1,5 @@
 {
-  Map<Element,Element> map=Maps.newTreeMap();
+  Map<Element,Element> map=Maps.newLinkedHashMap();
   for (  Element element : keys) {
     map.put(element,element);
   }
