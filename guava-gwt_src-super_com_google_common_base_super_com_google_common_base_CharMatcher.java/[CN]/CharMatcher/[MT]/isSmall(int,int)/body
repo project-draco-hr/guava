@@ -1,3 +1,0 @@
-{
-  return totalCharacters <= SmallCharMatcher.MAX_SIZE && tableLength > (totalCharacters * 4 * Character.SIZE);
-}
