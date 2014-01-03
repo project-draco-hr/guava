@@ -1,3 +1,0 @@
-{
-  return forwardFunction.hashCode() * 31 + backwardFunction.hashCode();
-}

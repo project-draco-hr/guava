@@ -1,3 +1,0 @@
-{
-  return "Converter.from(" + forwardFunction + ", "+ backwardFunction+ ")";
-}

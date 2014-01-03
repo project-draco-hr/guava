@@ -1,0 +1,4 @@
+{
+  com.google.common.util.concurrent.RunnablesTest testCase=new com.google.common.util.concurrent.RunnablesTest();
+  testCase.testDoNothingRunnableIsSingleton();
+}
