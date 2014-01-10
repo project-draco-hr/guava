@@ -2,8 +2,7 @@
   Iterator<String> unfiltered=Collections.<String>emptyList().iterator();
   Iterator<String> filtered=Iterators.filter(unfiltered,new Predicate<String>(){
     @Override public boolean apply(    String s){
-      fail("Should never be evaluated");
-      return false;
+      throw new AssertionFailedError("Should never be evaluated");
     }
   }
 );

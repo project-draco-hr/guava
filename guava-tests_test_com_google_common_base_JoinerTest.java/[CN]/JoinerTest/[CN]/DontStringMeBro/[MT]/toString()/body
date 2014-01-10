@@ -1,4 +1,3 @@
 {
-  fail("shouldn't be invoked");
-  return null;
+  throw new AssertionFailedError("shouldn't be invoked");
 }

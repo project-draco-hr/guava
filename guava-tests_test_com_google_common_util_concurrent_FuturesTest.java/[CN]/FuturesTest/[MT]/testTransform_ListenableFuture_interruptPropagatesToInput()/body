@@ -2,8 +2,7 @@
   SettableFuture<Foo> input=SettableFuture.create();
   AsyncFunction<Foo,Bar> function=new AsyncFunction<Foo,Bar>(){
     @Override public ListenableFuture<Bar> apply(    Foo unused){
-      fail("Unexpeted call to apply.");
-      return null;
+      throw new AssertionFailedError("Unexpeted call to apply.");
     }
   }
 ;
