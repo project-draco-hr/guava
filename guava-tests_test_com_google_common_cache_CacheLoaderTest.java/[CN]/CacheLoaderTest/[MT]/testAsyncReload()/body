@@ -27,7 +27,7 @@
   assertEquals(1,reloadCount.get());
   assertEquals(1,loadAllCount.get());
   QueuingExecutor executor=new QueuingExecutor();
-  CacheLoader<Object,Object> asyncReloader=CacheLoader.asyncReload(baseLoader,executor);
+  CacheLoader<Object,Object> asyncReloader=CacheLoader.asyncReloading(baseLoader,executor);
   asyncReloader.load(new Object());
   asyncReloader.reload(new Object(),new Object());
   asyncReloader.loadAll(ImmutableList.of(new Object()));
