@@ -1,3 +1,0 @@
-{
-  return new ConverterComposition<A,B,C>(first,second);
-}
