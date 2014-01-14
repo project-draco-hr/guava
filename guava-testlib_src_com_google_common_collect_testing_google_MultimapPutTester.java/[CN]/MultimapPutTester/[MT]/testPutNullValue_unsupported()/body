@@ -1,0 +1,9 @@
+{
+  try {
+    multimap().put(sampleKeys().e1,null);
+    fail();
+  }
+ catch (  NullPointerException expected) {
+  }
+  expectUnchanged();
+}

@@ -1,0 +1,5 @@
+{
+  initMultimapWithNullValue();
+  assertFalse(multimap().put(getKeyForNullValue(),null));
+  expectContents(createArrayWithNullValue());
+}
