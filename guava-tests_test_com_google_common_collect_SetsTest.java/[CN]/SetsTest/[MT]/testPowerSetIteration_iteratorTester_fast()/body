@@ -1,6 +1,6 @@
 {
   ImmutableSet<Integer> elements=ImmutableSet.of(1,2);
-  Set<Set<Integer>> expected=newHashSet();
+  Set<Set<Integer>> expected=newLinkedHashSet();
   expected.add(ImmutableSet.<Integer>of());
   expected.add(ImmutableSet.of(1));
   expected.add(ImmutableSet.of(2));

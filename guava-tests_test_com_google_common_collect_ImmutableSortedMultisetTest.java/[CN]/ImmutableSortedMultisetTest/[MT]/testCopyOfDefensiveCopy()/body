@@ -1,7 +1,16 @@
 {
-  @SuppressWarnings("unchecked") Collection<String> toCopy=EasyMock.createMock(Collection.class);
-  EasyMock.expect(toCopy.toArray()).andReturn(new Object[0]);
-  EasyMock.replay(toCopy);
+class TestArrayList<E> extends ArrayList<E> {
+    boolean toArrayCalled=false;
+    @Override public Object[] toArray(){
+      toArrayCalled=true;
+      return super.toArray();
+    }
+    @Override public <T>T[] toArray(    T[] a){
+      toArrayCalled=true;
+      return super.toArray(a);
+    }
+  }
+  TestArrayList<String> toCopy=new TestArrayList<String>();
   ImmutableSortedMultiset<String> multiset=ImmutableSortedMultiset.copyOf(Ordering.natural(),toCopy);
-  EasyMock.verify(toCopy);
+  assertTrue(toCopy.toArrayCalled);
 }

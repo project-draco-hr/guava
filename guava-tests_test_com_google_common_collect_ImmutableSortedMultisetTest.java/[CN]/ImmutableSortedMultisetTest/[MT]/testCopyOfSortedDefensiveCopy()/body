@@ -1,10 +1,21 @@
 {
+class TestHashSet<E> extends HashSet<E> {
+    boolean toArrayCalled=false;
+    @Override public Object[] toArray(){
+      toArrayCalled=true;
+      return super.toArray();
+    }
+    @Override public <T>T[] toArray(    T[] a){
+      toArrayCalled=true;
+      return super.toArray(a);
+    }
+  }
   SortedMultiset<String> toCopy=EasyMock.createMock(SortedMultiset.class);
-  Set<Entry<String>> entrySet=EasyMock.createMock(Set.class);
+  TestHashSet<Entry<String>> entrySet=new TestHashSet<Entry<String>>();
   EasyMock.expect((Comparator<Comparable>)toCopy.comparator()).andReturn(Ordering.natural());
   EasyMock.expect(toCopy.entrySet()).andReturn(entrySet);
-  EasyMock.expect(entrySet.toArray()).andReturn(new Object[0]);
-  EasyMock.replay(toCopy,entrySet);
+  EasyMock.replay(toCopy);
   ImmutableSortedMultiset<String> multiset=ImmutableSortedMultiset.copyOfSorted(toCopy);
-  EasyMock.verify(toCopy,entrySet);
+  EasyMock.verify(toCopy);
+  assertTrue(entrySet.toArrayCalled);
 }
