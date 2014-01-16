@@ -1,3 +1,4 @@
 {
-  return new ReverseConverter<A,B>(this);
+  Converter<B,A> result=reverse;
+  return (result == null) ? reverse=new ReverseConverter<A,B>(this) : result;
 }

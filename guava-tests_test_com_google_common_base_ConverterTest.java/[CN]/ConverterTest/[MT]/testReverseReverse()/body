@@ -1,0 +1,4 @@
+{
+  Converter<String,Long> converter=STR_TO_LONG;
+  assertEquals(converter,converter.reverse().reverse());
+}
