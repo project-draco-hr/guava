@@ -1,0 +1,14 @@
+{
+  int dummy=0;
+  if (mutable) {
+    for (int i=0; i < reps; i++) {
+      dummy+=ORDERING.sortedCopy(input).get(0);
+    }
+  }
+ else {
+    for (int i=0; i < reps; i++) {
+      dummy+=ORDERING.immutableSortedCopy(input).get(0);
+    }
+  }
+  return dummy;
+}

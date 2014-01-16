@@ -1,10 +1,10 @@
 {
-  Random rng=new Random();
-  for (int i=0; i < 0x100; i++) {
-    Integer[] array=new Integer[n];
-    for (int j=0; j < n; j++) {
-      array[j]=rng.nextInt();
-    }
-    inputArrays[i]=array;
+  checkArgument(size > 0,"empty collection not supported");
+  List<Integer> temp=new ArrayList<Integer>(size);
+  Random random=new Random();
+  while (temp.size() < size) {
+    temp.add(random.nextInt());
   }
+  inputOrder.arrange(temp);
+  input=ImmutableList.copyOf(temp);
 }

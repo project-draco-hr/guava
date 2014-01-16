@@ -1,0 +1,18 @@
+{
+  int dummy=0;
+  if (mutable) {
+    for (int i=0; i < reps; i++) {
+      List<Integer> copy=new ArrayList<Integer>(input);
+      Collections.sort(copy);
+      dummy+=copy.get(0);
+    }
+  }
+ else {
+    for (int i=0; i < reps; i++) {
+      List<Integer> copy=new ArrayList<Integer>(input);
+      Collections.sort(copy);
+      dummy+=ImmutableList.copyOf(copy).get(0);
+    }
+  }
+  return dummy;
+}

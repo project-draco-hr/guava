@@ -1,0 +1,10 @@
+{
+  Random rng=new Random();
+  for (int i=0; i < 0x100; i++) {
+    Integer[] array=new Integer[n];
+    for (int j=0; j < n; j++) {
+      array[j]=rng.nextInt();
+    }
+    inputArrays[i]=array;
+  }
+}

@@ -1,0 +1,10 @@
+{
+  Collections.sort(list);
+  if (list.size() > 1) {
+    int i=(list.size() - 1) / 2;
+    while (list.get(i).equals(list.get(i + 1))) {
+      i++;
+    }
+    Collections.swap(list,i,i + 1);
+  }
+}
