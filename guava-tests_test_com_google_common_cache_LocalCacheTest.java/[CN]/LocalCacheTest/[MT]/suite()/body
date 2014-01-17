@@ -1,0 +1,15 @@
+{
+  TestSuite suite=new TestSuite();
+  suite.addTestSuite(LocalCacheTest.class);
+  suite.addTest(MapTestSuiteBuilder.using(new TestStringMapGenerator(){
+    @Override public Map<String,String> create(    Entry<String,String>[] entries){
+      LocalCache<String,String> map=makeLocalCache(createCacheBuilder());
+      for (      Entry<String,String> entry : entries) {
+        map.put(entry.getKey(),entry.getValue());
+      }
+      return map;
+    }
+  }
+).named("LocalCache with defaults").withFeatures(CollectionSize.ANY,MapFeature.GENERAL_PURPOSE,CollectionFeature.SUPPORTS_ITERATOR_REMOVE).createTestSuite());
+  return suite;
+}

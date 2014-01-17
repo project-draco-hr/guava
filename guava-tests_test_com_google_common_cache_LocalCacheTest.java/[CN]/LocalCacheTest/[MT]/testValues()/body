@@ -1,0 +1,9 @@
+{
+  LocalCache<Object,Object> map=makeLocalCache(createCacheBuilder());
+  map.put("foo","bar");
+  map.put("baz","bar");
+  map.put("quux","quux");
+  assertFalse(map.values() instanceof Set);
+  assertTrue(map.values().removeAll(ImmutableSet.of("bar")));
+  assertEquals(1,map.size());
+}
