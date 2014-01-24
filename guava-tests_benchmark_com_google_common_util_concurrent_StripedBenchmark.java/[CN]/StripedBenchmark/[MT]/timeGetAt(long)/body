@@ -1,0 +1,10 @@
+{
+  long rvalue=0;
+  int[] stripesLocal=stripes;
+  int mask=numStripes - 1;
+  Striped<Lock> stripedLocal=striped;
+  for (long i=0; i < reps; i++) {
+    rvalue+=stripedLocal.getAt(stripesLocal[(int)(i & mask)]).hashCode();
+  }
+  return rvalue;
+}

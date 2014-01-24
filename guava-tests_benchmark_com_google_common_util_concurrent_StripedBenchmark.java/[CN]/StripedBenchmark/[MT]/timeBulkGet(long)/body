@@ -1,0 +1,9 @@
+{
+  long rvalue=0;
+  List<Integer> bulkGetSetLocal=bulkGetSet;
+  Striped<Lock> stripedLocal=striped;
+  for (long i=0; i < reps; i++) {
+    rvalue+=stripedLocal.bulkGet(bulkGetSetLocal).hashCode();
+  }
+  return rvalue;
+}
