@@ -1,10 +1,11 @@
 {
   checkArgument(size > 0,"empty collection not supported");
-  List<Integer> temp=new ArrayList<Integer>(size);
+  Set<Integer> set=new LinkedHashSet<Integer>(size);
   Random random=new Random();
-  while (temp.size() < size) {
-    temp.add(random.nextInt());
+  while (set.size() < size) {
+    set.add(random.nextInt());
   }
-  inputOrder.arrange(temp);
-  input=ImmutableList.copyOf(temp);
+  List<Integer> list=new ArrayList<Integer>(set);
+  inputOrder.arrange(list);
+  input=ImmutableList.copyOf(list);
 }

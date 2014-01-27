@@ -1,0 +1,14 @@
+{
+  int dummy=0;
+  if (mutable) {
+    for (int i=0; i < reps; i++) {
+      dummy+=new TreeSet<Integer>(input).first();
+    }
+  }
+ else {
+    for (int i=0; i < reps; i++) {
+      dummy+=ImmutableSortedSet.copyOf(input).first();
+    }
+  }
+  return dummy;
+}
