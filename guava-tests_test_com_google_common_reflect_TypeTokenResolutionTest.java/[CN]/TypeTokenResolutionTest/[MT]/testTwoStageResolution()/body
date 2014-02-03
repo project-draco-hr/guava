@@ -1,0 +1,16 @@
+{
+class ForTwoStageResolution<A extends Number> {
+    <B extends A>void verifyTwoStageResolution(){
+      @SuppressWarnings({"unchecked","rawtypes"}) Type type=new TypeToken<B>(getClass()){
+      }
+.where(new TypeParameter<B>(){
+      }
+,(Class)Integer.class).getType();
+      assertEquals(Integer.class,type);
+    }
+  }
+  new ForTwoStageResolution<Integer>().verifyTwoStageResolution();
+  new ForTwoStageResolution<Integer>(){
+  }
+.verifyTwoStageResolution();
+}

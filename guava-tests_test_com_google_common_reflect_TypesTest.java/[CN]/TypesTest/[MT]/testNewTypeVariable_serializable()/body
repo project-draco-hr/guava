@@ -1,6 +1,6 @@
 {
   try {
-    SerializableTester.reserialize(Types.newTypeVariable(List.class,"E"));
+    SerializableTester.reserialize(Types.newArtificialTypeVariable(List.class,"E"));
     fail();
   }
  catch (  RuntimeException expected) {

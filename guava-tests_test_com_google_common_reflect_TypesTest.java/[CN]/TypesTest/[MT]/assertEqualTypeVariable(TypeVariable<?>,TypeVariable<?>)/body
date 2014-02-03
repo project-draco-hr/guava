@@ -2,6 +2,8 @@
   assertEquals(expected.toString(),actual.toString());
   assertEquals(expected.getName(),actual.getName());
   assertEquals(expected.getGenericDeclaration(),actual.getGenericDeclaration());
-  assertEquals(actual.toString(),expected.hashCode(),actual.hashCode());
+  if (!Types.NativeTypeVariableEquals.NATIVE_TYPE_VARIABLE_ONLY) {
+    assertEquals(actual.toString(),expected.hashCode(),actual.hashCode());
+  }
   ASSERT.that(actual.getBounds()).has().exactlyAs(asList(expected.getBounds())).inOrder();
 }

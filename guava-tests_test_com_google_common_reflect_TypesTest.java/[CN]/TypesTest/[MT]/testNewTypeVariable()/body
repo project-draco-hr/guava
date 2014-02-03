@@ -9,5 +9,5 @@
   assertEqualTypeVariable(noBoundJvmType,withBounds(noBoundJvmType,Object.class));
   assertEqualTypeVariable(objectBoundJvmType,objectBound);
   assertEqualTypeVariable(upperBoundJvmType,upperBound);
-  new EqualsTester().addEqualityGroup(noBoundJvmType,noBound).addEqualityGroup(objectBoundJvmType,objectBound).addEqualityGroup(upperBoundJvmType,upperBound,withBounds(upperBoundJvmType,CharSequence.class)).testEquals();
+  new TypeVariableEqualsTester().addEqualityGroup(noBoundJvmType,noBound).addEqualityGroup(objectBoundJvmType,objectBound).addEqualityGroup(upperBoundJvmType,upperBound).testEquals();
 }

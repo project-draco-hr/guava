@@ -4,7 +4,7 @@
   }
   new TypeVisitor(){
     @Override void visitTypeVariable(    TypeVariable<?> typeVariable){
-      mappings.put(typeVariable,to);
+      mappings.put(new TypeVariableKey(typeVariable),to);
     }
     @Override void visitWildcardType(    WildcardType fromWildcardType){
       WildcardType toWildcardType=expectArgument(WildcardType.class,to);

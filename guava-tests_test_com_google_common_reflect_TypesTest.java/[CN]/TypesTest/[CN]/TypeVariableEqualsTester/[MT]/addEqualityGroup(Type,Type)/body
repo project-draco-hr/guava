@@ -1,0 +1,10 @@
+{
+  if (Types.NativeTypeVariableEquals.NATIVE_TYPE_VARIABLE_ONLY) {
+    tester.addEqualityGroup(jvmType);
+    tester.addEqualityGroup((Object[])types);
+  }
+ else {
+    tester.addEqualityGroup(Lists.asList(jvmType,types).toArray());
+  }
+  return this;
+}

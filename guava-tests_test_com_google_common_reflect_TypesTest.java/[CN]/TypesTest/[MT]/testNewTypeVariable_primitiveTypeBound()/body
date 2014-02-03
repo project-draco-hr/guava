@@ -1,6 +1,6 @@
 {
   try {
-    Types.newTypeVariable(List.class,"E",int.class);
+    Types.newArtificialTypeVariable(List.class,"E",int.class);
     fail();
   }
  catch (  IllegalArgumentException expected) {
