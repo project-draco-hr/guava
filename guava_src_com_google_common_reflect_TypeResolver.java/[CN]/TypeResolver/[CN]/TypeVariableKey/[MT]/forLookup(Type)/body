@@ -1,8 +1,8 @@
 {
-  if (t instanceof TypeVariable<?>) {
+  if (t instanceof TypeVariable) {
     return new TypeVariableKey((TypeVariable<?>)t);
   }
  else {
-    return t;
+    return null;
   }
 }

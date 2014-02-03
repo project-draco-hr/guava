@@ -1,5 +1,5 @@
 {
-  if (type instanceof TypeVariable<?>) {
+  if (type instanceof TypeVariable) {
     return equalsTypeVariable((TypeVariable<?>)type);
   }
  else {
