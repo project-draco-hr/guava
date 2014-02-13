@@ -1,0 +1,20 @@
+{
+  final ExecutorService service=mock(ExecutorService.class);
+  when(service.awaitTermination(HALF_SECOND_NANOS,NANOSECONDS)).thenThrow(new InterruptedException());
+  final AtomicBoolean terminated=new AtomicBoolean();
+  final AtomicBoolean interrupted=new AtomicBoolean();
+  Thread thread=new Thread(new Runnable(){
+    @Override public void run(){
+      terminated.set(shutdownAndAwaitTermination(service,1L,SECONDS));
+      interrupted.set(Thread.currentThread().isInterrupted());
+    }
+  }
+);
+  thread.start();
+  thread.join();
+  verify(service).shutdown();
+  verify(service).awaitTermination(HALF_SECOND_NANOS,NANOSECONDS);
+  verify(service).shutdownNow();
+  assertTrue(interrupted.get());
+  assertFalse(terminated.get());
+}

@@ -1,0 +1,8 @@
+{
+  ExecutorService service=mock(ExecutorService.class);
+  when(service.awaitTermination(HALF_SECOND_NANOS,NANOSECONDS)).thenReturn(false).thenReturn(false);
+  assertFalse(shutdownAndAwaitTermination(service,1L,SECONDS));
+  verify(service).shutdown();
+  verify(service,times(2)).awaitTermination(HALF_SECOND_NANOS,NANOSECONDS);
+  verify(service).shutdownNow();
+}

@@ -1,0 +1,5 @@
+{
+  ExecutorService service=Executors.newSingleThreadExecutor();
+  assertTrue(shutdownAndAwaitTermination(service,1L,SECONDS));
+  assertTrue(service.isTerminated());
+}
