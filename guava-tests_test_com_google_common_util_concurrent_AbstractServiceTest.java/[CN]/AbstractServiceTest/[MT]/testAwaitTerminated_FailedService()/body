@@ -19,7 +19,7 @@
   assertEquals(State.RUNNING,service.state());
   service.notifyFailed(EXCEPTION);
   assertEquals(State.FAILED,service.state());
-  waiter.join(100);
+  waiter.join(LONG_TIMEOUT_MILLIS);
   assertFalse(waiter.isAlive());
   assertTrue(exception.get() instanceof IllegalStateException);
   assertEquals(EXCEPTION,exception.get().getCause());

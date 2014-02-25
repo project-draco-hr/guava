@@ -6,6 +6,6 @@
     }
   }
 ,MoreExecutors.sameThreadExecutor());
-  service.startAsync().awaitRunning(10,TimeUnit.MILLISECONDS);
+  service.startAsync().awaitRunning(LONG_TIMEOUT_MILLIS,TimeUnit.MILLISECONDS);
   service.stopAsync();
 }

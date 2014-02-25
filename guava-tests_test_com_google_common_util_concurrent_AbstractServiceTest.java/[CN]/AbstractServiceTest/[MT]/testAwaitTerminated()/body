@@ -10,6 +10,6 @@
   service.startAsync().awaitRunning();
   assertEquals(State.RUNNING,service.state());
   service.stopAsync();
-  waiter.join(100);
+  waiter.join(LONG_TIMEOUT_MILLIS);
   assertFalse(waiter.isAlive());
 }
