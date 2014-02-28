@@ -1,0 +1,8 @@
+{
+  try {
+    multimap().containsEntry(null,sampleValues().e3);
+    fail("Expected NullPointerException");
+  }
+ catch (  NullPointerException expected) {
+  }
+}

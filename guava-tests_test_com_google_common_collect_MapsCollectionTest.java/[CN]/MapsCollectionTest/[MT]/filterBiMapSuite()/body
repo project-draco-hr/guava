@@ -17,7 +17,7 @@
       return Maps.filterValues(map,FILTER_VALUES);
     }
   }
-).named("Maps.filterValues[BiMap, Predicate]").withFeatures(MapFeature.ALLOWS_NULL_KEYS,MapFeature.ALLOWS_NULL_VALUES,MapFeature.GENERAL_PURPOSE,CollectionSize.ANY).createTestSuite());
+).named("Maps.filterValues[BiMap, Predicate]").withFeatures(MapFeature.ALLOWS_NULL_KEYS,MapFeature.ALLOWS_NULL_VALUES,MapFeature.ALLOWS_ANY_NULL_QUERIES,MapFeature.GENERAL_PURPOSE,CollectionSize.ANY).createTestSuite());
   suite.addTest(BiMapTestSuiteBuilder.using(new TestStringBiMapGenerator(){
     @Override protected BiMap<String,String> create(    Entry<String,String>[] entries){
       BiMap<String,String> map=HashBiMap.create();
@@ -26,6 +26,6 @@
       return Maps.filterEntries(map,FILTER_ENTRIES);
     }
   }
-).named("Maps.filterEntries[BiMap, Predicate]").withFeatures(MapFeature.ALLOWS_NULL_KEYS,MapFeature.ALLOWS_NULL_VALUES,MapFeature.GENERAL_PURPOSE,CollectionSize.ANY).createTestSuite());
+).named("Maps.filterEntries[BiMap, Predicate]").withFeatures(MapFeature.ALLOWS_NULL_KEYS,MapFeature.ALLOWS_NULL_VALUES,MapFeature.ALLOWS_ANY_NULL_QUERIES,MapFeature.GENERAL_PURPOSE,CollectionSize.ANY).createTestSuite());
   return suite;
 }

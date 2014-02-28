@@ -1,6 +1,6 @@
 {
   TestSuite suite=new TestSuite();
-  suite.addTest(ListMultimapTestSuiteBuilder.using(new ImmutableListMultimapGenerator()).named("ImmutableListMultimap").withFeatures(MapFeature.ALLOWS_NULL_QUERIES,CollectionFeature.SERIALIZABLE,CollectionFeature.KNOWN_ORDER,CollectionSize.ANY).createTestSuite());
+  suite.addTest(ListMultimapTestSuiteBuilder.using(new ImmutableListMultimapGenerator()).named("ImmutableListMultimap").withFeatures(MapFeature.ALLOWS_ANY_NULL_QUERIES,CollectionFeature.SERIALIZABLE,CollectionFeature.KNOWN_ORDER,CollectionSize.ANY).createTestSuite());
   suite.addTestSuite(ImmutableListMultimapTest.class);
   return suite;
 }

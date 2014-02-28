@@ -3,5 +3,8 @@
   if (multimapFeatures.contains(MapFeature.ALLOWS_NULL_KEYS)) {
     result.add(CollectionFeature.ALLOWS_NULL_VALUES);
   }
+  if (multimapFeatures.contains(MapFeature.ALLOWS_NULL_KEY_QUERIES)) {
+    result.add(CollectionFeature.ALLOWS_NULL_QUERIES);
+  }
   return result;
 }

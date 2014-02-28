@@ -3,6 +3,7 @@
   derivedFeatures.remove(MapFeature.GENERAL_PURPOSE);
   derivedFeatures.remove(MapFeature.SUPPORTS_PUT);
   derivedFeatures.remove(MapFeature.ALLOWS_NULL_VALUES);
+  derivedFeatures.add(MapFeature.ALLOWS_NULL_VALUE_QUERIES);
   derivedFeatures.add(MapFeature.REJECTS_DUPLICATES_AT_CREATION);
   if (!derivedFeatures.contains(CollectionFeature.SERIALIZABLE_INCLUDING_VIEWS)) {
     derivedFeatures.remove(CollectionFeature.SERIALIZABLE);

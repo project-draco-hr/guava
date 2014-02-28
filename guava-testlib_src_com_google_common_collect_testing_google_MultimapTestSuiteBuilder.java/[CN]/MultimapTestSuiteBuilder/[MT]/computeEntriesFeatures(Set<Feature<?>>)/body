@@ -1,3 +1,7 @@
 {
-  return computeDerivedCollectionFeatures(multimapFeatures);
+  Set<Feature<?>> result=computeDerivedCollectionFeatures(multimapFeatures);
+  if (multimapFeatures.contains(MapFeature.ALLOWS_NULL_ENTRY_QUERIES)) {
+    result.add(CollectionFeature.ALLOWS_NULL_QUERIES);
+  }
+  return result;
 }

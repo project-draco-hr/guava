@@ -3,9 +3,6 @@
   if (!derivedFeatures.remove(CollectionFeature.SERIALIZABLE_INCLUDING_VIEWS)) {
     derivedFeatures.remove(CollectionFeature.SERIALIZABLE);
   }
-  if (derivedFeatures.remove(MapFeature.ALLOWS_NULL_QUERIES)) {
-    derivedFeatures.add(CollectionFeature.ALLOWS_NULL_QUERIES);
-  }
   if (derivedFeatures.remove(MapFeature.SUPPORTS_REMOVE)) {
     derivedFeatures.add(CollectionFeature.SUPPORTS_REMOVE);
   }

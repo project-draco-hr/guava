@@ -4,5 +4,5 @@
       return populate(new TreeMap<String,String>(arbitraryNullFriendlyComparator()),entries);
     }
   }
-).named("TreeMap, with comparator").withFeatures(MapFeature.GENERAL_PURPOSE,MapFeature.ALLOWS_NULL_KEYS,MapFeature.ALLOWS_NULL_VALUES,MapFeature.FAILS_FAST_ON_CONCURRENT_MODIFICATION,CollectionFeature.SUPPORTS_ITERATOR_REMOVE,CollectionFeature.KNOWN_ORDER,CollectionFeature.SERIALIZABLE,CollectionSize.ANY).suppressing(suppressForTreeMapWithComparator()).createTestSuite();
+).named("TreeMap, with comparator").withFeatures(MapFeature.GENERAL_PURPOSE,MapFeature.ALLOWS_NULL_KEYS,MapFeature.ALLOWS_NULL_VALUES,MapFeature.ALLOWS_ANY_NULL_QUERIES,MapFeature.FAILS_FAST_ON_CONCURRENT_MODIFICATION,CollectionFeature.SUPPORTS_ITERATOR_REMOVE,CollectionFeature.KNOWN_ORDER,CollectionFeature.SERIALIZABLE,CollectionSize.ANY).suppressing(suppressForTreeMapWithComparator()).createTestSuite();
 }

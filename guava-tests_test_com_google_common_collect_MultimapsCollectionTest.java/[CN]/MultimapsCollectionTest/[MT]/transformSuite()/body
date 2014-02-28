@@ -5,24 +5,24 @@
       return Multimaps.transformValues(multimap,FUNCTION);
     }
   }
-).named("Multimaps.transformValues[Multimap]").withFeatures(CollectionSize.ANY,MapFeature.SUPPORTS_REMOVE,CollectionFeature.SUPPORTS_ITERATOR_REMOVE,MapFeature.ALLOWS_NULL_KEYS).createTestSuite());
+).named("Multimaps.transformValues[Multimap]").withFeatures(CollectionSize.ANY,MapFeature.SUPPORTS_REMOVE,CollectionFeature.SUPPORTS_ITERATOR_REMOVE,MapFeature.ALLOWS_NULL_KEYS,MapFeature.ALLOWS_ANY_NULL_QUERIES).createTestSuite());
   suite.addTest(MultimapTestSuiteBuilder.using(new TransformedMultimapGenerator<Multimap<String,String>>(){
     @Override Multimap<String,String> transform(    Multimap<String,String> multimap){
       return Multimaps.transformEntries(multimap,ENTRY_TRANSFORMER);
     }
   }
-).named("Multimaps.transformEntries[Multimap]").withFeatures(CollectionSize.ANY,MapFeature.SUPPORTS_REMOVE,CollectionFeature.SUPPORTS_ITERATOR_REMOVE,MapFeature.ALLOWS_NULL_KEYS).createTestSuite());
+).named("Multimaps.transformEntries[Multimap]").withFeatures(CollectionSize.ANY,MapFeature.SUPPORTS_REMOVE,CollectionFeature.SUPPORTS_ITERATOR_REMOVE,MapFeature.ALLOWS_NULL_KEYS,MapFeature.ALLOWS_ANY_NULL_QUERIES).createTestSuite());
   suite.addTest(ListMultimapTestSuiteBuilder.using(new TransformedListMultimapGenerator(){
     @Override ListMultimap<String,String> transform(    Multimap<String,String> multimap){
       return Multimaps.transformValues((ListMultimap<String,String>)multimap,FUNCTION);
     }
   }
-).named("Multimaps.transformValues[ListMultimap]").withFeatures(CollectionSize.ANY,MapFeature.SUPPORTS_REMOVE,CollectionFeature.SUPPORTS_ITERATOR_REMOVE,MapFeature.ALLOWS_NULL_KEYS).createTestSuite());
+).named("Multimaps.transformValues[ListMultimap]").withFeatures(CollectionSize.ANY,MapFeature.SUPPORTS_REMOVE,CollectionFeature.SUPPORTS_ITERATOR_REMOVE,MapFeature.ALLOWS_NULL_KEYS,MapFeature.ALLOWS_ANY_NULL_QUERIES).createTestSuite());
   suite.addTest(ListMultimapTestSuiteBuilder.using(new TransformedListMultimapGenerator(){
     @Override ListMultimap<String,String> transform(    Multimap<String,String> multimap){
       return Multimaps.transformEntries((ListMultimap<String,String>)multimap,ENTRY_TRANSFORMER);
     }
   }
-).named("Multimaps.transformEntries[ListMultimap]").withFeatures(CollectionSize.ANY,MapFeature.SUPPORTS_REMOVE,CollectionFeature.SUPPORTS_ITERATOR_REMOVE,MapFeature.ALLOWS_NULL_KEYS).createTestSuite());
+).named("Multimaps.transformEntries[ListMultimap]").withFeatures(CollectionSize.ANY,MapFeature.SUPPORTS_REMOVE,CollectionFeature.SUPPORTS_ITERATOR_REMOVE,MapFeature.ALLOWS_NULL_KEYS,MapFeature.ALLOWS_ANY_NULL_QUERIES).createTestSuite());
   return suite;
 }

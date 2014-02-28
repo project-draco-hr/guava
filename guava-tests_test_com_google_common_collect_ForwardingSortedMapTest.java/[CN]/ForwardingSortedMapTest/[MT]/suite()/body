@@ -21,7 +21,7 @@
       return new StandardImplForwardingSortedMap<String,String>(map);
     }
   }
-).named("ForwardingSortedMap[SafeTreeMap] with natural comparator and " + "standard implementations").withFeatures(CollectionSize.ANY,CollectionFeature.KNOWN_ORDER,MapFeature.ALLOWS_NULL_VALUES,MapFeature.ALLOWS_NULL_KEYS,MapFeature.GENERAL_PURPOSE,CollectionFeature.SUPPORTS_ITERATOR_REMOVE).createTestSuite());
+).named("ForwardingSortedMap[SafeTreeMap] with natural comparator and " + "standard implementations").withFeatures(CollectionSize.ANY,CollectionFeature.KNOWN_ORDER,MapFeature.ALLOWS_NULL_VALUES,MapFeature.ALLOWS_NULL_KEYS,MapFeature.ALLOWS_ANY_NULL_QUERIES,MapFeature.GENERAL_PURPOSE,CollectionFeature.SUPPORTS_ITERATOR_REMOVE).createTestSuite());
   suite.addTest(SortedMapTestSuiteBuilder.using(new TestStringSortedMapGenerator(){
     @Override protected SortedMap<String,String> create(    Entry<String,String>[] entries){
       ImmutableSortedMap.Builder<String,String> builder=ImmutableSortedMap.naturalOrder();
@@ -31,6 +31,6 @@
       return new StandardImplForwardingSortedMap<String,String>(builder.build());
     }
   }
-).named("ForwardingSortedMap[ImmutableSortedMap] with standard " + "implementations").withFeatures(CollectionSize.ANY,MapFeature.REJECTS_DUPLICATES_AT_CREATION,MapFeature.ALLOWS_NULL_QUERIES).createTestSuite());
+).named("ForwardingSortedMap[ImmutableSortedMap] with standard " + "implementations").withFeatures(CollectionSize.ANY,MapFeature.REJECTS_DUPLICATES_AT_CREATION,MapFeature.ALLOWS_ANY_NULL_QUERIES).createTestSuite());
   return suite;
 }
