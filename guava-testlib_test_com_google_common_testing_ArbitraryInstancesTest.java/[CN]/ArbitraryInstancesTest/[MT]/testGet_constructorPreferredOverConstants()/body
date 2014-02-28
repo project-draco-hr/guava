@@ -1,0 +1,4 @@
+{
+  assertNotNull(ArbitraryInstances.get(WithPublicConstructorAndConstant.class));
+  assertTrue(ArbitraryInstances.get(WithPublicConstructorAndConstant.class) != ArbitraryInstances.get(WithPublicConstructorAndConstant.class));
+}

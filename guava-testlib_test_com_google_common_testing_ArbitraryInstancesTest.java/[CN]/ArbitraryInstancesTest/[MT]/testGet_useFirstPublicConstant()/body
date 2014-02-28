@@ -1,0 +1,3 @@
+{
+  assertSame(WithPublicConstants.FIRST,ArbitraryInstances.get(WithPublicConstants.class));
+}

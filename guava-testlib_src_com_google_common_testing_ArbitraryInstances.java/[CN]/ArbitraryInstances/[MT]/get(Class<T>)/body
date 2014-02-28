@@ -19,14 +19,14 @@
     return jvmDefault;
   }
   if (Modifier.isAbstract(type.getModifiers()) || !Modifier.isPublic(type.getModifiers())) {
-    return null;
+    return arbitraryConstantInstanceOrNull(type);
   }
   final Constructor<T> constructor;
   try {
     constructor=type.getConstructor();
   }
  catch (  NoSuchMethodException e) {
-    return null;
+    return arbitraryConstantInstanceOrNull(type);
   }
   constructor.setAccessible(true);
   try {
@@ -40,6 +40,6 @@ catch (  IllegalAccessException impossible) {
   }
 catch (  InvocationTargetException e) {
     logger.log(Level.WARNING,"Exception while invoking default constructor.",e.getCause());
-    return null;
+    return arbitraryConstantInstanceOrNull(type);
   }
 }

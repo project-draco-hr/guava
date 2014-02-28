@@ -1,0 +1,3 @@
+{
+  assertSame(FirstConstantIsNull.SECOND,ArbitraryInstances.get(FirstConstantIsNull.class));
+}

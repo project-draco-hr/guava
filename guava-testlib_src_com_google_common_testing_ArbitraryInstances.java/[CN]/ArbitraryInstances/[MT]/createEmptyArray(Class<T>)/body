@@ -1,3 +1,3 @@
 {
-  return (T)Array.newInstance(arrayType.getComponentType(),0);
+  return arrayType.cast(Array.newInstance(arrayType.getComponentType(),0));
 }
