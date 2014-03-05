@@ -1,0 +1,16 @@
+{
+  URLClassLoader myLoader=(URLClassLoader)getClass().getClassLoader();
+  URLClassLoader shadowLoader=new URLClassLoader(myLoader.getURLs(),null);
+  @SuppressWarnings("unchecked") Class<TestEnum> shadowTestEnum=(Class<TestEnum>)Class.forName(TestEnum.class.getName(),false,shadowLoader);
+  assertNotSame(shadowTestEnum,TestEnum.class);
+  Set<TestEnum> shadowConstants=new HashSet<TestEnum>();
+  for (  TestEnum constant : TestEnum.values()) {
+    Optional<TestEnum> result=Enums.getIfPresent(shadowTestEnum,constant.name());
+    assertTrue(result.isPresent());
+    shadowConstants.add(result.get());
+  }
+  assertEquals(ImmutableSet.copyOf(shadowTestEnum.getEnumConstants()),shadowConstants);
+  Optional<TestEnum> result=Enums.getIfPresent(shadowTestEnum,"blibby");
+  assertFalse(result.isPresent());
+  return new WeakReference<ClassLoader>(shadowLoader);
+}

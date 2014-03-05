@@ -1,0 +1,4 @@
+{
+  WeakReference<?> shadowLoaderReference=doTestClassUnloading();
+  GcFinalization.awaitClear(shadowLoaderReference);
+}
