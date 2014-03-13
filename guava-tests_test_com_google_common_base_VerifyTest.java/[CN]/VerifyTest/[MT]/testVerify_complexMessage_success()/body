@@ -1,0 +1,3 @@
+{
+  verify(true,"%s",IGNORE_ME);
+}

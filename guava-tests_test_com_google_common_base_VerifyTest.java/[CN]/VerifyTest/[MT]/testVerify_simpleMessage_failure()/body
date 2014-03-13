@@ -1,0 +1,9 @@
+{
+  try {
+    verify(false,"message");
+    fail();
+  }
+ catch (  VerifyException expected) {
+    assertEquals("message",expected.getMessage());
+  }
+}

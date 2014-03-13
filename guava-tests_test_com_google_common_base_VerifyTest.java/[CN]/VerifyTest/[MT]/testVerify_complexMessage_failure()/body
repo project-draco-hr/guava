@@ -1,0 +1,9 @@
+{
+  try {
+    verify(false,FORMAT,5);
+    fail();
+  }
+ catch (  VerifyException expected) {
+    checkMessage(expected);
+  }
+}

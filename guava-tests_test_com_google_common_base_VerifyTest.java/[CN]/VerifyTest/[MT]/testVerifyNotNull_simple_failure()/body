@@ -1,0 +1,8 @@
+{
+  try {
+    verifyNotNull(null);
+    fail();
+  }
+ catch (  VerifyException expected) {
+  }
+}

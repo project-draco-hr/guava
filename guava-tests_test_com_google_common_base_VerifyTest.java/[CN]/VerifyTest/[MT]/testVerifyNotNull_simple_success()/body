@@ -1,0 +1,4 @@
+{
+  String result=verifyNotNull(NON_NULL_STRING);
+  assertSame(NON_NULL_STRING,result);
+}

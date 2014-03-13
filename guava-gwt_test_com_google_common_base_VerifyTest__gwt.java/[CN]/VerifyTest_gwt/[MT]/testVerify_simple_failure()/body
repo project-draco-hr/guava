@@ -1,0 +1,4 @@
+{
+  com.google.common.base.VerifyTest testCase=new com.google.common.base.VerifyTest();
+  testCase.testVerify_simple_failure();
+}
