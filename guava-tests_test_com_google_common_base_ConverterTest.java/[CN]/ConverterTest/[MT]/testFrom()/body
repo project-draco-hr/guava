@@ -1,0 +1,14 @@
+{
+  Function<String,Integer> forward=new Function<String,Integer>(){
+    @Override public Integer apply(    String input){
+      return Integer.parseInt(input);
+    }
+  }
+;
+  Function<Object,String> backward=toStringFunction();
+  Converter<String,Number> converter=Converter.<String,Number>from(forward,backward);
+  assertNull(converter.convert(null));
+  assertNull(converter.reverse().convert(null));
+  assertEquals((Integer)5,converter.convert("5"));
+  assertEquals("5",converter.reverse().convert(5));
+}
