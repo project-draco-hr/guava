@@ -3,7 +3,7 @@
   ByteArrayDataInput in=ByteStreams.newDataInput(b);
   try {
     in.readInt();
-    fail();
+    fail("expected exception");
   }
  catch (  IllegalStateException expected) {
   }

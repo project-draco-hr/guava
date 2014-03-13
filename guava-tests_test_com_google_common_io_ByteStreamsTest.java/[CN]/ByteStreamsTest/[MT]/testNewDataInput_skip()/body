@@ -1,9 +1,5 @@
 {
   ByteArrayDataInput in=ByteStreams.newDataInput(new byte[2]);
-  in.skipBytes(2);
-  try {
-    in.skipBytes(1);
-  }
- catch (  IllegalStateException expected) {
-  }
+  assertEquals(2,in.skipBytes(2));
+  assertEquals(0,in.skipBytes(1));
 }

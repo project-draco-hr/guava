@@ -5,7 +5,7 @@
   }
   try {
     in.readByte();
-    fail();
+    fail("expected exception");
   }
  catch (  IllegalStateException ex) {
     assertTrue(ex.getCause() instanceof EOFException);

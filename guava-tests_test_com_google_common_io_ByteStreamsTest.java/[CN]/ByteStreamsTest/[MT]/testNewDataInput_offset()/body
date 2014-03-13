@@ -3,7 +3,7 @@
   assertEquals(0x56787654,in.readInt());
   try {
     in.readInt();
-    fail();
+    fail("expected exception");
   }
  catch (  IllegalStateException expected) {
   }
