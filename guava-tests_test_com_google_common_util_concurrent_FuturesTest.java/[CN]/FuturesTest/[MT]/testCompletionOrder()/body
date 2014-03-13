@@ -1,0 +1,18 @@
+{
+  SettableFuture<Long> future1=SettableFuture.create();
+  SettableFuture<Long> future2=SettableFuture.create();
+  SettableFuture<Long> future3=SettableFuture.create();
+  SettableFuture<Long> future4=SettableFuture.create();
+  SettableFuture<Long> future5=SettableFuture.create();
+  ImmutableList<ListenableFuture<Long>> futures=Futures.inCompletionOrder(ImmutableList.<ListenableFuture<Long>>of(future1,future2,future3,future4,future5));
+  future2.set(1L);
+  future5.set(2L);
+  future1.set(3L);
+  future3.set(4L);
+  future4.set(5L);
+  long expected=1L;
+  for (  ListenableFuture<Long> future : futures) {
+    assertEquals((Long)expected,future.get());
+    expected++;
+  }
+}

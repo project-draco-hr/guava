@@ -1,0 +1,9 @@
+{
+  AsyncSettableFuture<Object> async=AsyncSettableFuture.create();
+  async.cancel(true);
+  async.cancel(false);
+  MyFuture<Object> inner=new MyFuture<Object>();
+  assertFalse(async.setFuture(inner));
+  assertTrue(inner.isCancelled());
+  assertTrue(inner.myWasInterrupted());
+}

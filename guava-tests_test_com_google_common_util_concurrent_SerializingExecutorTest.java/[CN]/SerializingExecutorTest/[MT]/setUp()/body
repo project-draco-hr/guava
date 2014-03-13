@@ -1,0 +1,4 @@
+{
+  fakePool=new FakeExecutor();
+  e=new SerializingExecutor(fakePool);
+}

@@ -1,0 +1,11 @@
+{
+  AsyncSettableFuture<Integer> future=AsyncSettableFuture.create();
+  assertTrue(future.setValue(42));
+  assertTrue(future.isSet());
+  assertFalse(future.setValue(23));
+  assertFalse(future.setException(new Exception("bar")));
+  assertFalse(future.setFuture(SettableFuture.<Integer>create()));
+  assertTrue(future.isDone());
+  assertFalse(future.isCancelled());
+  assertEquals(42,(int)future.get());
+}

@@ -1,0 +1,14 @@
+{
+  SettableFuture<Long> future1=SettableFuture.create();
+  SettableFuture<String> future2=SettableFuture.create();
+  SettableFuture<Integer> future3=SettableFuture.create();
+  ImmutableList<? extends ListenableFuture<?>> inputs=ImmutableList.<ListenableFuture<?>>of(future1,future2,future3);
+  ImmutableList<ListenableFuture<Object>> futures=Futures.inCompletionOrder(inputs);
+  future2.set("1L");
+  future1.set(2L);
+  future3.set(3);
+  ImmutableList<?> expected=ImmutableList.of("1L",2L,3);
+  for (int i=0; i < expected.size(); i++) {
+    assertEquals(expected.get(i),futures.get(i).get());
+  }
+}

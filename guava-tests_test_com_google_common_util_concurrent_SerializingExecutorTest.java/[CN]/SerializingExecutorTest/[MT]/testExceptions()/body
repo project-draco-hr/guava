@@ -1,0 +1,14 @@
+{
+  final AtomicInteger numCalls=new AtomicInteger();
+  Runnable runMe=new Runnable(){
+    @Override public void run(){
+      numCalls.incrementAndGet();
+      throw new RuntimeException("FAKE EXCEPTION!");
+    }
+  }
+;
+  e.execute(runMe);
+  e.execute(runMe);
+  fakePool.runNext();
+  assertEquals(2,numCalls.get());
+}

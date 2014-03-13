@@ -1,0 +1,17 @@
+{
+  final List<Integer> callOrder=Lists.newArrayList();
+class FakeOp implements Runnable {
+    final int op;
+    FakeOp(    int op){
+      this.op=op;
+    }
+    @Override public void run(){
+      callOrder.add(op);
+    }
+  }
+  e.execute(new FakeOp(0));
+  e.execute(new FakeOp(1));
+  e.execute(new FakeOp(2));
+  fakePool.runNext();
+  assertEquals(ImmutableList.of(0,1,2),callOrder);
+}

@@ -1,0 +1,4 @@
+{
+  assertTrue("expected at least one task to run",hasNext());
+  tasks.remove().run();
+}

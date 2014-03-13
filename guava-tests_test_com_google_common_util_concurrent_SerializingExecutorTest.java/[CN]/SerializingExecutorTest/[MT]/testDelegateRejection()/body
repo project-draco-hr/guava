@@ -1,0 +1,29 @@
+{
+  final AtomicInteger numCalls=new AtomicInteger();
+  final AtomicBoolean reject=new AtomicBoolean(true);
+  final SerializingExecutor executor=new SerializingExecutor(new Executor(){
+    @Override public void execute(    Runnable r){
+      if (reject.get()) {
+        throw new RejectedExecutionException();
+      }
+      r.run();
+    }
+  }
+);
+  Runnable task=new Runnable(){
+    @Override public void run(){
+      numCalls.incrementAndGet();
+    }
+  }
+;
+  try {
+    executor.execute(task);
+    fail();
+  }
+ catch (  RejectedExecutionException expected) {
+  }
+  assertEquals(0,numCalls.get());
+  reject.set(false);
+  executor.execute(task);
+  assertEquals(2,numCalls.get());
+}
