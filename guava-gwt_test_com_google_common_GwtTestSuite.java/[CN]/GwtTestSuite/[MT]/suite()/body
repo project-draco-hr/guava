@@ -1,9 +1,6 @@
 {
   GWTTestSuite suite=new GWTTestSuite();
   for (  ClassInfo info : ClassPath.from(GwtTestSuite.class.getClassLoader()).getTopLevelClasses()) {
-    if (info.getName().equals("com.google.common.util.concurrent.AtomicLongMapTest_gwt")) {
-      continue;
-    }
     if (info.getName().endsWith("_gwt")) {
       Class<?> clazz=info.load();
       @SuppressWarnings("unchecked") Class<? extends GWTTestCase> cast=(Class<? extends GWTTestCase>)clazz;
