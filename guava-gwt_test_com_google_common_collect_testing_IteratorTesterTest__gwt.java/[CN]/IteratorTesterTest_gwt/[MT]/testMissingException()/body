@@ -1,0 +1,4 @@
+{
+  com.google.common.collect.testing.IteratorTesterTest testCase=new com.google.common.collect.testing.IteratorTesterTest();
+  testCase.testMissingException();
+}
