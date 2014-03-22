@@ -1,0 +1,6 @@
+{
+  long numBits=Integer.MAX_VALUE;
+  numBits++;
+  BitArray bitArray=new BitArray(numBits);
+  assertTrue("BitArray.bitSize() must return a positive number, but was " + bitArray.bitSize(),bitArray.bitSize() > 0);
+}
