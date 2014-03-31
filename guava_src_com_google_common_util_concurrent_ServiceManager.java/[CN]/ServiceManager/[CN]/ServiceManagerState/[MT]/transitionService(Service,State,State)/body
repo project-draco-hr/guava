@@ -27,7 +27,6 @@
     }
  else     if (states.count(TERMINATED) + states.count(FAILED) == numberOfServices) {
       fireStoppedListeners();
-      listeners.clear();
     }
   }
   finally {

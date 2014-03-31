@@ -1,4 +1,0 @@
-{
-  Executor executor=MoreExecutors.sameThreadExecutor();
-  addAndExecuteMultipleTimes(executor);
-}

@@ -1,0 +1,16 @@
+{
+  Object listenerInstance=new Object();
+  ListenerCallQueue<Object> queue=new ListenerCallQueue<Object>(listenerInstance,MoreExecutors.sameThreadExecutor());
+  AtomicInteger counter=new AtomicInteger();
+  queue.add(incrementingCallback(counter,1));
+  queue.add(THROWING_CALLBACK);
+  queue.add(incrementingCallback(counter,2));
+  queue.add(THROWING_CALLBACK);
+  queue.add(incrementingCallback(counter,3));
+  queue.add(THROWING_CALLBACK);
+  queue.add(incrementingCallback(counter,4));
+  queue.add(THROWING_CALLBACK);
+  assertEquals(0,counter.get());
+  queue.execute();
+  assertEquals(4,counter.get());
+}

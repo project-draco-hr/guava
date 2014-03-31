@@ -1,0 +1,8 @@
+{
+  return new Callback<Object>("incrementing"){
+    @Override void call(    Object listener){
+      assertEquals(expected,counter.incrementAndGet());
+    }
+  }
+;
+}

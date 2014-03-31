@@ -1,0 +1,20 @@
+{
+  ExecutorService service=Executors.newFixedThreadPool(4);
+  try {
+    ListenerCallQueue<Object> queue=new ListenerCallQueue<Object>(new Object(),service);
+    final CountDownLatch latch=new CountDownLatch(1);
+    AtomicInteger counter=new AtomicInteger();
+    queue.add(incrementingCallback(counter,1));
+    queue.add(incrementingCallback(counter,2));
+    queue.add(incrementingCallback(counter,3));
+    queue.add(incrementingCallback(counter,4));
+    queue.add(countDownCallback(latch));
+    assertEquals(0,counter.get());
+    queue.execute();
+    latch.await();
+    assertEquals(4,counter.get());
+  }
+  finally {
+    service.shutdown();
+  }
+}

@@ -4,7 +4,7 @@
   monitor.enter();
   try {
     if (!stoppedGuard.isSatisfied()) {
-      listeners.add(new ListenerExecutorPair(listener,executor));
+      listeners.add(new ListenerCallQueue<Listener>(listener,executor));
     }
   }
   finally {

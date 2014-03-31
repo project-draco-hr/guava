@@ -1,0 +1,8 @@
+{
+  return new Callback<Object>("countDown"){
+    @Override void call(    Object listener){
+      latch.countDown();
+    }
+  }
+;
+}
