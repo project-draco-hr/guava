@@ -1,0 +1,3 @@
+{
+  tester.setDistinctValues(type,value1,value2);
+}

@@ -5,7 +5,7 @@
     }
   }
 ;
-  for (  Map.Entry<Class<?>,Collection<Object>> entry : sampleInstances.asMap().entrySet()) {
+  for (  Map.Entry<Class<?>,Collection<Object>> entry : distinctValues.asMap().entrySet()) {
     generator.addSampleInstances((Class)entry.getKey(),entry.getValue());
   }
   return generator;

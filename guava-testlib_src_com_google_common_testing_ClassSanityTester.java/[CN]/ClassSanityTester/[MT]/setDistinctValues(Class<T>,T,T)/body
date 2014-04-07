@@ -1,0 +1,9 @@
+{
+  checkNotNull(type);
+  checkNotNull(value1);
+  checkNotNull(value2);
+  checkArgument(!Objects.equal(value1,value2),"Duplicate value provided.");
+  distinctValues.replaceValues(type,ImmutableList.of(value1,value2));
+  setDefault(type,value1);
+  return this;
+}
