@@ -11,7 +11,4 @@
   assertValueAndTypeEquals(ImmutableList.of(new FreshValueGenerator().generate(String.class)),new FreshValueGenerator().generate(new TypeToken<ImmutableList<?>>(){
   }
 ));
-  assertValueAndTypeEquals(ImmutableList.of(),new FreshValueGenerator().generate(new TypeToken<ImmutableList<EmptyEnum>>(){
-  }
-));
 }

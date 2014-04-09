@@ -1,0 +1,8 @@
+{
+  try {
+    tester.doTestEquals(ConstructorParameterWithOptionalNotInstantiable.class);
+    fail();
+  }
+ catch (  ParameterHasNoDistinctValueException expected) {
+  }
+}

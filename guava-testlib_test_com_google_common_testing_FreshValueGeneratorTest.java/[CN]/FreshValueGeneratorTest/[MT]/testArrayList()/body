@@ -11,7 +11,7 @@
   assertValueAndTypeEquals(Lists.newArrayList(new FreshValueGenerator().generate(String.class)),new FreshValueGenerator().generate(new TypeToken<ArrayList<?>>(){
   }
 ));
-  assertNotNull(new FreshValueGenerator().generate(new TypeToken<ArrayList<EmptyEnum>>(){
+  assertNotInstantiable(new TypeToken<ArrayList<EmptyEnum>>(){
   }
-));
+);
 }

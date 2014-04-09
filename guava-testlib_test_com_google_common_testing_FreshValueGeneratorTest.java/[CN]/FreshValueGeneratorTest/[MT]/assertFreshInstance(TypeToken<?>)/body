@@ -1,0 +1,7 @@
+{
+  FreshValueGenerator generator=new FreshValueGenerator();
+  Object value1=generator.generate(type);
+  Object value2=generator.generate(type);
+  assertNotNull("Null returned for " + type,value1);
+  assertFalse("Equal instance " + value1 + " returned for "+ type,value1.equals(value2));
+}

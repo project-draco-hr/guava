@@ -8,7 +8,7 @@
   assertValueAndTypeEquals(expected,new FreshValueGenerator().generate(new TypeToken<NavigableMap<String,Integer>>(){
   }
 ));
-  assertFreshInstance(new TypeToken<NavigableMap<EmptyEnum,String>>(){
+  assertNotInstantiable(new TypeToken<NavigableMap<EmptyEnum,String>>(){
   }
 );
 }

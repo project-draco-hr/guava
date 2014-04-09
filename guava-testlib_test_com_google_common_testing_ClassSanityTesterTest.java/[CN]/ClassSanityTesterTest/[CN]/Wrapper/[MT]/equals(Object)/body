@@ -1,0 +1,7 @@
+{
+  if (getClass().isInstance(obj)) {
+    Wrapper that=(Wrapper)obj;
+    return wrapped.equals(that.wrapped);
+  }
+  return false;
+}

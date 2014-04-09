@@ -5,7 +5,4 @@
   assertValueAndTypeEquals(newLinkedHashSet(new FreshValueGenerator().generate(Number.class)),new FreshValueGenerator().generate(new TypeToken<LinkedHashSet<? extends Number>>(){
   }
 ));
-  assertNotNull(new FreshValueGenerator().generate(new TypeToken<LinkedHashSet<EmptyEnum>>(){
-  }
-));
 }

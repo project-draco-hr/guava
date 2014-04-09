@@ -6,7 +6,4 @@
   assertValueAndTypeEquals(ImmutableListMultimap.of(generator.generate(String.class),generator.generate(int.class)),new FreshValueGenerator().generate(new TypeToken<ImmutableListMultimap<String,Integer>>(){
   }
 ));
-  assertValueAndTypeEquals(ImmutableListMultimap.of(),new FreshValueGenerator().generate(new TypeToken<ImmutableListMultimap<EmptyEnum,String>>(){
-  }
-));
 }

@@ -5,7 +5,7 @@
   assertValueAndTypeEquals(Lists.newArrayList(new FreshValueGenerator().generate(String.class)),new FreshValueGenerator().generate(new TypeToken<Collection<String>>(){
   }
 ));
-  assertFreshInstance(new TypeToken<Collection<EmptyEnum>>(){
+  assertNotInstantiable(new TypeToken<Collection<EmptyEnum>>(){
   }
 );
 }

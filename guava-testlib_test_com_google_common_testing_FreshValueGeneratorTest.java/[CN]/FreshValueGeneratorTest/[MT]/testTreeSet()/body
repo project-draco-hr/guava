@@ -7,7 +7,7 @@
   assertValueAndTypeEquals(expected,new FreshValueGenerator().generate(new TypeToken<TreeSet<? extends CharSequence>>(){
   }
 ));
-  assertNotNull(new FreshValueGenerator().generate(new TypeToken<TreeSet<EmptyEnum>>(){
+  assertNotInstantiable(new TypeToken<TreeSet<EmptyEnum>>(){
   }
-));
+);
 }

@@ -1,5 +1,0 @@
-{
-  NotInstantiable x=new NotInstantiable();
-  tester.setSampleInstances(NotInstantiable.class,ImmutableList.of(x));
-  assertNotNull(tester.instantiate(ConstructorParameterNotInstantiable.class));
-}

@@ -8,7 +8,4 @@
   assertValueAndTypeEquals(expected,new FreshValueGenerator().generate(new TypeToken<LinkedHashMap<String,Integer>>(){
   }
 ));
-  assertNotNull(new FreshValueGenerator().generate(new TypeToken<LinkedHashMap<EmptyEnum,String>>(){
-  }
-));
 }

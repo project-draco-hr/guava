@@ -11,7 +11,4 @@
   assertValueAndTypeEquals(ImmutableSet.of(new FreshValueGenerator().generate(Number.class)),new FreshValueGenerator().generate(new TypeToken<ImmutableSet<? extends Number>>(){
   }
 ));
-  assertValueAndTypeEquals(ImmutableSet.of(),new FreshValueGenerator().generate(new TypeToken<ImmutableSet<EmptyEnum>>(){
-  }
-));
 }

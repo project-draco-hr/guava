@@ -1,0 +1,8 @@
+{
+  try {
+    new ClassSanityTester().doTestEquals(SetWrapper.class);
+    fail();
+  }
+ catch (  ParameterNotInstantiableException expected) {
+  }
+}

@@ -8,7 +8,7 @@
   assertValueAndTypeEquals(ImmutableMultiset.of(new FreshValueGenerator().generate(Number.class)),new FreshValueGenerator().generate(new TypeToken<ImmutableMultiset<Number>>(){
   }
 ));
-  assertValueAndTypeEquals(ImmutableMultiset.of(),new FreshValueGenerator().generate(new TypeToken<ImmutableMultiset<EmptyEnum>>(){
+  assertNotInstantiable(new TypeToken<ImmutableMultiset<EmptyEnum>>(){
   }
-));
+);
 }

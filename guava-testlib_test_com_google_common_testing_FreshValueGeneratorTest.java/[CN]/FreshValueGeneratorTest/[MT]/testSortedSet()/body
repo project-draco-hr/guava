@@ -7,7 +7,7 @@
   assertValueAndTypeEquals(expected,new FreshValueGenerator().generate(new TypeToken<SortedSet<String>>(){
   }
 ));
-  assertFreshInstance(new TypeToken<SortedSet<EmptyEnum>>(){
+  assertNotInstantiable(new TypeToken<SortedSet<EmptyEnum>>(){
   }
 );
 }

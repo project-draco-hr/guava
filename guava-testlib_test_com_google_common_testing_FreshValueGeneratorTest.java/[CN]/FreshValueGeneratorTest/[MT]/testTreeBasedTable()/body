@@ -3,7 +3,7 @@
   }
 );
   FreshValueGenerator generator=new FreshValueGenerator();
-  TreeBasedTable<String,Integer,List<String>> expected=TreeBasedTable.create();
+  TreeBasedTable<String,Integer,Object> expected=TreeBasedTable.create();
   expected.put(generator.generate(String.class),generator.generate(int.class),generator.generate(new TypeToken<List<String>>(){
   }
 ));

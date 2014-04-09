@@ -7,7 +7,7 @@
   assertValueAndTypeEquals(expected,new FreshValueGenerator().generate(new TypeToken<Multiset<String>>(){
   }
 ));
-  assertFreshInstance(new TypeToken<Multiset<EmptyEnum>>(){
+  assertNotInstantiable(new TypeToken<Multiset<EmptyEnum>>(){
   }
 );
 }

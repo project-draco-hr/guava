@@ -8,7 +8,4 @@
 )),new FreshValueGenerator().generate(new TypeToken<ImmutableTable<String,Integer,ImmutableList<String>>>(){
   }
 ));
-  assertValueAndTypeEquals(ImmutableTable.of(),new FreshValueGenerator().generate(new TypeToken<ImmutableTable<EmptyEnum,String,Integer>>(){
-  }
-));
 }

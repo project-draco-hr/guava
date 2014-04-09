@@ -6,7 +6,4 @@
   assertValueAndTypeEquals(ImmutableSortedMap.of(generator.generate(String.class),generator.generate(int.class)),new FreshValueGenerator().generate(new TypeToken<ImmutableSortedMap<String,Integer>>(){
   }
 ));
-  assertValueAndTypeEquals(ImmutableSortedMap.of(),new FreshValueGenerator().generate(new TypeToken<ImmutableSortedMap<EmptyEnum,String>>(){
-  }
-));
 }

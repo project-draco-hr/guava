@@ -8,6 +8,7 @@
   }
   int numberOfParameters=factories.get(0).getParameters().size();
   List<ParameterNotInstantiableException> paramErrors=Lists.newArrayList();
+  List<ParameterHasNoDistinctValueException> distinctValueErrors=Lists.newArrayList();
   List<InvocationTargetException> instantiationExceptions=Lists.newArrayList();
   List<FactoryMethodReturnsNullException> nullErrors=Lists.newArrayList();
   for (  Invokable<?,?> factory : factories) {
@@ -19,6 +20,9 @@
  catch (      ParameterNotInstantiableException e) {
         paramErrors.add(e);
       }
+catch (      ParameterHasNoDistinctValueException e) {
+        distinctValueErrors.add(e);
+      }
 catch (      InvocationTargetException e) {
         instantiationExceptions.add(e);
       }
@@ -28,6 +32,7 @@ catch (      FactoryMethodReturnsNullException e) {
     }
   }
   throwFirst(paramErrors);
+  throwFirst(distinctValueErrors);
   throwFirst(instantiationExceptions);
   throwFirst(nullErrors);
 }

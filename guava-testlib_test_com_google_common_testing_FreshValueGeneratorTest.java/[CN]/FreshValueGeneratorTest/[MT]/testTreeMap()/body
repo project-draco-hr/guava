@@ -8,7 +8,7 @@
   assertValueAndTypeEquals(expected,new FreshValueGenerator().generate(new TypeToken<TreeMap<String,Integer>>(){
   }
 ));
-  assertNotNull(new FreshValueGenerator().generate(new TypeToken<LinkedHashSet<EmptyEnum>>(){
+  assertNotInstantiable(new TypeToken<LinkedHashSet<EmptyEnum>>(){
   }
-));
+);
 }

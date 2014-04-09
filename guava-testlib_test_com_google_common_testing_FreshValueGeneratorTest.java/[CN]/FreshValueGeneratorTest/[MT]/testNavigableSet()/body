@@ -7,7 +7,7 @@
   assertValueAndTypeEquals(expected,new FreshValueGenerator().generate(new TypeToken<NavigableSet<String>>(){
   }
 ));
-  assertFreshInstance(new TypeToken<NavigableSet<EmptyEnum>>(){
+  assertNotInstantiable(new TypeToken<NavigableSet<EmptyEnum>>(){
   }
 );
 }

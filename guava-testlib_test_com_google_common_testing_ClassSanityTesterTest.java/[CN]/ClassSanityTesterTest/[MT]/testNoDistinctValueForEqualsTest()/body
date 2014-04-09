@@ -1,0 +1,8 @@
+{
+  try {
+    tester.doTestEquals(ConstructorParameterSingleValue.class);
+    fail("should have failed");
+  }
+ catch (  ParameterHasNoDistinctValueException expected) {
+  }
+}

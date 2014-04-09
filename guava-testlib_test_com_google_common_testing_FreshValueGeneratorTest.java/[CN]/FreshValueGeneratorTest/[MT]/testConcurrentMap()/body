@@ -8,7 +8,7 @@
   assertValueAndTypeEquals(expected,new FreshValueGenerator().generate(new TypeToken<ConcurrentMap<String,Integer>>(){
   }
 ));
-  assertFreshInstance(new TypeToken<ConcurrentMap<EmptyEnum,String>>(){
+  assertNotInstantiable(new TypeToken<ConcurrentMap<EmptyEnum,String>>(){
   }
 );
 }

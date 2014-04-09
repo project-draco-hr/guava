@@ -5,7 +5,4 @@
   assertValueAndTypeEquals(ImmutableSortedSet.of(new FreshValueGenerator().generate(String.class)),new FreshValueGenerator().generate(new TypeToken<ImmutableSortedSet<String>>(){
   }
 ));
-  assertValueAndTypeEquals(ImmutableSortedSet.of(),new FreshValueGenerator().generate(new TypeToken<ImmutableSortedSet<EmptyEnum>>(){
-  }
-));
 }
