@@ -1,4 +1,0 @@
-{
-  checkNotNull(annotationType);
-  return FluentIterable.from(annotations).filter(annotationType).first().orNull();
-}

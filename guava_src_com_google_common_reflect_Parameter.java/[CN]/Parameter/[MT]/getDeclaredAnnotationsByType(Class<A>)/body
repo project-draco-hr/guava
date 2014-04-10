@@ -1,3 +1,0 @@
-{
-  return FluentIterable.from(annotations).filter(annotationType).toArray(annotationType);
-}
