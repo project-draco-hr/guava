@@ -1,5 +1,5 @@
 {
   String leading=",a,b,c";
   Iterable<String> letters=COMMA_SPLITTER.split(leading);
-  ASSERT.that(letters).iteratesOverSequence("","a","b","c");
+  ASSERT.that(letters).iteratesAs("","a","b","c");
 }

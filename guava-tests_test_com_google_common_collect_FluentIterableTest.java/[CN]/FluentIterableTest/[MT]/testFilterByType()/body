@@ -2,5 +2,5 @@
   HasBoth hasBoth=new HasBoth();
   FluentIterable<TypeA> alist=FluentIterable.from(asList(new TypeA(),new TypeA(),hasBoth,new TypeA()));
   Iterable<TypeB> blist=alist.filter(TypeB.class);
-  ASSERT.that(blist).iteratesOverSequence(hasBoth);
+  ASSERT.that(blist).iteratesAs(hasBoth);
 }

@@ -1,4 +1,4 @@
 {
   Iterable<String> notMuch=Splitter.on('.').split("");
-  ASSERT.that(notMuch).iteratesOverSequence("");
+  ASSERT.that(notMuch).iteratesAs("");
 }

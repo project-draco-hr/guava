@@ -1,4 +1,4 @@
 {
   Iterable<String> testPatterningMotto=Splitter.onPattern("-").split("Testing-rocks-Debugging-sucks");
-  ASSERT.that(testPatterningMotto).iteratesOverSequence("Testing","rocks","Debugging","sucks");
+  ASSERT.that(testPatterningMotto).iteratesAs("Testing","rocks","Debugging","sucks");
 }

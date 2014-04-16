@@ -1,4 +1,4 @@
 {
   Iterable<String> blankblank=Splitter.on(literalDotPattern()).split(".");
-  ASSERT.that(blankblank).iteratesOverSequence("","");
+  ASSERT.that(blankblank).iteratesAs("","");
 }

@@ -1,5 +1,5 @@
 {
   String simple="abcd";
   Iterable<String> letters=Splitter.fixedLength(1).limit(100).split(simple);
-  ASSERT.that(letters).iteratesOverSequence("a","b","c","d");
+  ASSERT.that(letters).iteratesAs("a","b","c","d");
 }

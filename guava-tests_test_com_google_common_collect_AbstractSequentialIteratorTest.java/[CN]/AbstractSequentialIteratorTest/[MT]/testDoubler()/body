@@ -5,5 +5,5 @@
     }
   }
 ;
-  ASSERT.that(doubled).iteratesOverSequence(2,4,8,16,32);
+  ASSERT.that(doubled).iteratesAs(2,4,8,16,32);
 }
