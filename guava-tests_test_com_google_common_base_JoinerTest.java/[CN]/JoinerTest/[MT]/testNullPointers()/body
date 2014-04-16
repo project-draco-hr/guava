@@ -1,5 +1,5 @@
 {
-  NullPointerTester tester=new NullPointerTester().setDefault(Object.class,ImmutableSet.of().iterator());
+  NullPointerTester tester=new NullPointerTester();
   tester.testAllPublicStaticMethods(Joiner.class);
   tester.testInstanceMethods(Joiner.on(","),NullPointerTester.Visibility.PACKAGE);
   tester.testInstanceMethods(Joiner.on(",").skipNulls(),NullPointerTester.Visibility.PACKAGE);
