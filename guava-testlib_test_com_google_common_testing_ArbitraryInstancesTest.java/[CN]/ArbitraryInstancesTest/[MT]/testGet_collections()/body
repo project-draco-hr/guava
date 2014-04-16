@@ -1,5 +1,5 @@
 {
-  assertEquals(Iterators.emptyIterator(),ArbitraryInstances.get(Iterator.class));
+  assertEquals(ImmutableSet.of().iterator(),ArbitraryInstances.get(Iterator.class));
   assertFalse(ArbitraryInstances.get(PeekingIterator.class).hasNext());
   assertFalse(ArbitraryInstances.get(ListIterator.class).hasNext());
   assertEquals(ImmutableSet.of(),ArbitraryInstances.get(Iterable.class));
