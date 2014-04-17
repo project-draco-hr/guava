@@ -1,10 +1,10 @@
 {
-  RateLimiter limiter=RateLimiter.createWithCapacity(ticker,1.0,10,TimeUnit.SECONDS);
-  ticker.sleepMillis(10000);
+  RateLimiter limiter=RateLimiter.createWithCapacity(stopwatch,1.0,10,SECONDS);
+  stopwatch.sleepMillis(10000);
   limiter.acquire(11);
   limiter.acquire(1);
   limiter.acquire(1);
-  ticker.sleepMillis(3000);
+  stopwatch.sleepMillis(3000);
   limiter.acquire(5);
   limiter.acquire(1);
   assertEvents("U10.00","R0.00","R1.00","R1.00","U3.00","R0.00","R3.00");

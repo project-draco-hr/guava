@@ -3,14 +3,14 @@
   checkPermits(permits);
   long microsToWait;
 synchronized (mutex) {
-    long nowMicros=readSafeMicros();
-    if (nextFreeTicketMicros > nowMicros + timeoutMicros) {
+    long nowMicros=stopwatch.readMicros();
+    if (!canAcquire(nowMicros,nowMicros + timeoutMicros)) {
       return false;
     }
  else {
       microsToWait=reserveNextTicket(permits,nowMicros);
     }
   }
-  ticker.sleepMicrosUninterruptibly(microsToWait);
+  stopwatch.sleepMicrosUninterruptibly(microsToWait);
   return true;
 }

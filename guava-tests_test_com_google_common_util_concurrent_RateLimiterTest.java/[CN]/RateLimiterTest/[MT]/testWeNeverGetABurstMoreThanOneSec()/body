@@ -1,9 +1,9 @@
 {
-  RateLimiter limiter=RateLimiter.create(ticker,1.0);
+  RateLimiter limiter=RateLimiter.create(stopwatch,1.0);
   int[] rates={1000,1,10,1000000,10,1};
   for (  int rate : rates) {
     int oneSecWorthOfWork=rate;
-    ticker.sleepMillis(rate * 1000);
+    stopwatch.sleepMillis(rate * 1000);
     limiter.setRate(rate);
     long burst=measureTotalTimeMillis(limiter,oneSecWorthOfWork,new Random());
     assertTrue(burst <= 1000);

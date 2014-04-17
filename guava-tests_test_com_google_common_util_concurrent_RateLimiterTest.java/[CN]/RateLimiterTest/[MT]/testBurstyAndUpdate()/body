@@ -1,5 +1,5 @@
 {
-  RateLimiter rateLimiter=RateLimiter.create(ticker,1.0);
+  RateLimiter rateLimiter=RateLimiter.create(stopwatch,1.0);
   rateLimiter.acquire(1);
   rateLimiter.acquire(1);
   rateLimiter.setRate(2.0);

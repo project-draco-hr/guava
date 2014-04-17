@@ -1,5 +1,5 @@
 {
-  NullPointerTester tester=new NullPointerTester().setDefault(RateLimiter.SleepingTicker.class,ticker);
+  NullPointerTester tester=new NullPointerTester().setDefault(SleepingStopwatch.class,stopwatch).setDefault(int.class,1);
   tester.testStaticMethods(RateLimiter.class,Visibility.PACKAGE);
-  tester.testInstanceMethods(RateLimiter.create(ticker,5.0),Visibility.PACKAGE);
+  tester.testInstanceMethods(RateLimiter.create(stopwatch,5.0),Visibility.PACKAGE);
 }

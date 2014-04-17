@@ -1,5 +1,5 @@
 {
-  RateLimiter limiter=RateLimiter.create(ticker,Double.POSITIVE_INFINITY,10,TimeUnit.SECONDS);
+  RateLimiter limiter=RateLimiter.create(stopwatch,Double.POSITIVE_INFINITY,10,SECONDS);
   limiter.acquire(Integer.MAX_VALUE / 4);
   limiter.acquire(Integer.MAX_VALUE / 2);
   limiter.acquire(Integer.MAX_VALUE);

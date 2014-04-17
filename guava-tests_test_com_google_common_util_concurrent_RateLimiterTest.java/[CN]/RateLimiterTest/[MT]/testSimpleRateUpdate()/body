@@ -1,5 +1,5 @@
 {
-  RateLimiter limiter=RateLimiter.create(5.0,5,TimeUnit.SECONDS);
+  RateLimiter limiter=RateLimiter.create(5.0,5,SECONDS);
   assertEquals(5.0,limiter.getRate());
   limiter.setRate(10.0);
   assertEquals(10.0,limiter.getRate());

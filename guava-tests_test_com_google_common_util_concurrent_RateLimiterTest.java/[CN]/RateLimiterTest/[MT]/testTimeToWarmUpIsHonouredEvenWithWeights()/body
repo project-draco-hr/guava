@@ -5,7 +5,7 @@
   for (int trial=0; trial < 100; trial++) {
     for (    double qps : qpsToTest) {
       long warmupMillis=(long)((2 * maxPermits / qps) * 1000.0);
-      RateLimiter rateLimiter=RateLimiter.create(ticker,qps,warmupMillis,TimeUnit.MILLISECONDS);
+      RateLimiter rateLimiter=RateLimiter.create(stopwatch,qps,warmupMillis,MILLISECONDS);
       assertEquals(warmupMillis,measureTotalTimeMillis(rateLimiter,maxPermits,random));
     }
   }

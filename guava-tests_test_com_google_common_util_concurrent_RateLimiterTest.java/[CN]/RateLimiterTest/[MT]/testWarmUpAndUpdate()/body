@@ -1,9 +1,9 @@
 {
-  RateLimiter limiter=RateLimiter.create(ticker,2.0,4000,TimeUnit.MILLISECONDS);
+  RateLimiter limiter=RateLimiter.create(stopwatch,2.0,4000,MILLISECONDS);
   for (int i=0; i < 8; i++) {
     limiter.acquire();
   }
-  ticker.sleepMillis(4500);
+  stopwatch.sleepMillis(4500);
   for (int i=0; i < 3; i++) {
     limiter.acquire();
   }
@@ -12,7 +12,7 @@
   for (int i=0; i < 4; i++) {
     limiter.acquire();
   }
-  ticker.sleepMillis(4250);
+  stopwatch.sleepMillis(4250);
   for (int i=0; i < 11; i++) {
     limiter.acquire();
   }

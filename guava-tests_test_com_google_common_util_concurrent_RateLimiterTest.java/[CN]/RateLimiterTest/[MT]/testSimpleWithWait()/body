@@ -1,7 +1,7 @@
 {
-  RateLimiter limiter=RateLimiter.create(ticker,5.0);
+  RateLimiter limiter=RateLimiter.create(stopwatch,5.0);
   limiter.acquire();
-  ticker.sleepMillis(200);
+  stopwatch.sleepMillis(200);
   limiter.acquire();
   limiter.acquire();
   assertEvents("R0.00","U0.20","R0.00","R0.20");
