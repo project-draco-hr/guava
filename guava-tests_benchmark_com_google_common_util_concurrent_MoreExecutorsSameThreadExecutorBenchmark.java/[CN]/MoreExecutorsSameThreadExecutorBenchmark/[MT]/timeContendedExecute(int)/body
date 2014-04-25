@@ -1,0 +1,13 @@
+{
+  final Executor executor=this.executor;
+  for (  Thread thread : threads) {
+    if (!thread.isAlive()) {
+      thread.start();
+    }
+  }
+  final CountingRunnable countingRunnable=this.countingRunnable;
+  for (int i=0; i < reps; i++) {
+    executor.execute(countingRunnable);
+  }
+  return countingRunnable.integer.get();
+}

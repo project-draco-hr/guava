@@ -1,0 +1,14 @@
+{
+  Impl impl=this.impl;
+  Callable<Integer> callable=Callables.returning(12);
+  int sum=0;
+  for (int i=0; i < reps; i++) {
+    ImmutableList<SettableFuture<Integer>> futures=getSettableFutureList();
+    ListenableFuture<Integer> combined=impl.combine(callable,INLINE_EXECUTOR,futures);
+    for (    SettableFuture<Integer> future : futures) {
+      future.set(i);
+    }
+    sum+=combined.get();
+  }
+  return sum;
+}

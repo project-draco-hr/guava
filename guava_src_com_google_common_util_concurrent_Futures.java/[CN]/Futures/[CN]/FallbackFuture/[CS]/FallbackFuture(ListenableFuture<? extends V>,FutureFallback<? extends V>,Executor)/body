@@ -27,7 +27,7 @@
             }
           }
         }
-,sameThreadExecutor());
+,INLINE_EXECUTOR);
       }
  catch (      Throwable e) {
         setException(e);

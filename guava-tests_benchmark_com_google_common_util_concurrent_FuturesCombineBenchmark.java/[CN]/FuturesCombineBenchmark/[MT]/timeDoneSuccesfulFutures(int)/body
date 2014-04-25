@@ -1,0 +1,14 @@
+{
+  ImmutableList.Builder<ListenableFuture<?>> futuresBuilder=ImmutableList.builder();
+  for (int i=0; i < numInputs; i++) {
+    futuresBuilder.add(Futures.immediateFuture(i));
+  }
+  ImmutableList<ListenableFuture<?>> futures=futuresBuilder.build();
+  Impl impl=this.impl;
+  Callable<Integer> callable=Callables.returning(12);
+  int sum=0;
+  for (int i=0; i < reps; i++) {
+    sum+=impl.combine(callable,INLINE_EXECUTOR,futures).get();
+  }
+  return sum;
+}
