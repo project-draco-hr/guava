@@ -4,7 +4,7 @@
     @Override long readMicros(){
       return stopwatch.elapsed(MICROSECONDS);
     }
-    @Override public void sleepMicrosUninterruptibly(    long micros){
+    @Override void sleepMicrosUninterruptibly(    long micros){
       if (micros > 0) {
         Uninterruptibles.sleepUninterruptibly(micros,MICROSECONDS);
       }
