@@ -1,0 +1,14 @@
+{
+  SettableFuture<Foo> input=SettableFuture.create();
+  ExecutorService executor=MoreExecutors.sameThreadExecutor();
+  ListenableFuture<String> transformed=Futures.transform(input,Functions.toStringFunction(),executor);
+  executor.shutdown();
+  input.set(new Foo());
+  try {
+    transformed.get(5,TimeUnit.SECONDS);
+    fail();
+  }
+ catch (  ExecutionException expected) {
+    assertTrue(expected.getCause() instanceof RejectedExecutionException);
+  }
+}
