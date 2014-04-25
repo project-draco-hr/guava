@@ -1,5 +1,5 @@
 {
-  long timeoutMicros=unit.toMicros(timeout);
+  long timeoutMicros=max(unit.toMicros(timeout),0);
   checkPermits(permits);
   long microsToWait;
 synchronized (mutex()) {

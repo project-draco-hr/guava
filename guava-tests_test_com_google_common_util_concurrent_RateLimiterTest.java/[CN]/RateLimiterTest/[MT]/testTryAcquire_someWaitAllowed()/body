@@ -1,0 +1,8 @@
+{
+  RateLimiter limiter=RateLimiter.create(stopwatch,5.0);
+  assertTrue(limiter.tryAcquire(0,SECONDS));
+  assertTrue(limiter.tryAcquire(200,MILLISECONDS));
+  assertFalse(limiter.tryAcquire(100,MILLISECONDS));
+  stopwatch.sleepMillis(100);
+  assertTrue(limiter.tryAcquire(100,MILLISECONDS));
+}
