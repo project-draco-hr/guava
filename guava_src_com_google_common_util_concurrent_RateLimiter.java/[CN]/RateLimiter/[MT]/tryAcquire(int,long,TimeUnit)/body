@@ -2,9 +2,9 @@
   long timeoutMicros=unit.toMicros(timeout);
   checkPermits(permits);
   long microsToWait;
-synchronized (mutex) {
+synchronized (mutex()) {
     long nowMicros=stopwatch.readMicros();
-    if (!canAcquire(nowMicros,nowMicros + timeoutMicros)) {
+    if (!canAcquire(nowMicros,timeoutMicros)) {
       return false;
     }
  else {

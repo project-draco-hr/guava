@@ -1,6 +1,6 @@
 {
   checkPermits(permits);
-synchronized (mutex) {
+synchronized (mutex()) {
     return reserveNextTicket(permits,stopwatch.readMicros());
   }
 }

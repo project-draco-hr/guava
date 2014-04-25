@@ -1,0 +1,3 @@
+{
+  return earliestAvailable(nowMicros) <= nowMicros + timeoutMicros;
+}
