@@ -16,7 +16,7 @@
       }
     }
  else {
-      assertEscaping(xmlEscaper,"",ch);
+      assertEscaping(xmlEscaper,"\uFFFD",ch);
     }
   }
   for (char ch=0x20; ch <= 0xFFFD; ch++) {
@@ -41,6 +41,8 @@
       assertEquals("char 0x" + Integer.toString(ch,16) + " should not be escaped",input,escaped);
     }
   }
-  assertUnescaped(xmlEscaper,'\uFFFE');
-  assertUnescaped(xmlEscaper,'\uFFFF');
+  assertEscaping(xmlEscaper,"\uFFFD",'\uFFFE');
+  assertEscaping(xmlEscaper,"\uFFFD",'\uFFFF');
+  assertEquals("0xFFFE is forbidden and should be replaced during escaping","[\uFFFD]",xmlEscaper.escape("[\ufffe]"));
+  assertEquals("0xFFFF is forbidden and should be replaced during escaping","[\uFFFD]",xmlEscaper.escape("[\uffff]"));
 }
