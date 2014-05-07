@@ -1,0 +1,5 @@
+{
+  Matcher matcher=Pattern.compile(".").matcher("X");
+  matcher.find();
+  return matcher.toMatchResult();
+}
