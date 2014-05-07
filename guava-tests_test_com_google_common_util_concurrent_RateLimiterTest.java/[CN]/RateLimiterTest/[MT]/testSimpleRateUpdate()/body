@@ -7,12 +7,12 @@
     limiter.setRate(0.0);
     fail();
   }
- catch (  IllegalArgumentException ok) {
+ catch (  IllegalArgumentException expected) {
   }
   try {
     limiter.setRate(-10.0);
     fail();
   }
- catch (  IllegalArgumentException ok) {
+ catch (  IllegalArgumentException expected) {
   }
 }

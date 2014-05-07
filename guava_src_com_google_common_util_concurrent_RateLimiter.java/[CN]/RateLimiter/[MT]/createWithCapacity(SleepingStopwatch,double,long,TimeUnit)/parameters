@@ -1,4 +1,0 @@
-SleepingStopwatch stopwatch
-double permitsPerSecond
-long maxBurstBuildup
-TimeUnit unit

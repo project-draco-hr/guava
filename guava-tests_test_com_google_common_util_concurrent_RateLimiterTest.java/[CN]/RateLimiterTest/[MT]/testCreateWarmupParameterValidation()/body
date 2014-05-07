@@ -1,0 +1,16 @@
+{
+  RateLimiter.create(1.0,1,NANOSECONDS);
+  RateLimiter.create(1.0,0,NANOSECONDS);
+  try {
+    RateLimiter.create(0.0,1,NANOSECONDS);
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+  try {
+    RateLimiter.create(1.0,-1,NANOSECONDS);
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}

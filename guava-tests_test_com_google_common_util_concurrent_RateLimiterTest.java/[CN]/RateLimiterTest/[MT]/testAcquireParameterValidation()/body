@@ -1,0 +1,39 @@
+{
+  RateLimiter limiter=RateLimiter.create(999);
+  try {
+    limiter.acquire(0);
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+  try {
+    limiter.acquire(-1);
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+  try {
+    limiter.tryAcquire(0);
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+  try {
+    limiter.tryAcquire(-1);
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+  try {
+    limiter.tryAcquire(0,1,SECONDS);
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+  try {
+    limiter.tryAcquire(-1,1,SECONDS);
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}
