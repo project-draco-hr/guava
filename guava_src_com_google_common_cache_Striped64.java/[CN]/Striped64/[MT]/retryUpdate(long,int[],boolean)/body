@@ -1,5 +1,11 @@
 {
-  int h=hc.code;
+  int h;
+  if (hc == null) {
+    threadHashCode.set(hc=new int[1]);
+    int r=rng.nextInt();
+    h=hc[0]=(r == 0) ? 1 : r;
+  }
+ else   h=hc[0];
   boolean collide=false;
   for (; ; ) {
     Cell[] as;
@@ -50,6 +56,7 @@
       h^=h << 13;
       h^=h >>> 17;
       h^=h << 5;
+      hc[0]=h;
     }
  else     if (busy == 0 && cells == as && casBusy()) {
       boolean init=false;
@@ -68,5 +75,4 @@
     }
  else     if (casBase(v=base,fn(v,x)))     break;
   }
-  hc.code=h;
 }
