@@ -1,0 +1,8 @@
+{
+  Class<?>[] parameterTypes=method.getParameterTypes();
+  Object[] params=new Object[parameterTypes.length];
+  for (int i=0; i < parameterTypes.length; i++) {
+    params[i]=PARAMETER_VALUES.get(parameterTypes[i]);
+  }
+  return params;
+}
