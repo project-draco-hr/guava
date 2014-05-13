@@ -8,7 +8,7 @@ synchronized (mutex()) {
       return false;
     }
  else {
-      microsToWait=reserveNextTicket(permits,nowMicros);
+      microsToWait=reserveAndGetWaitLength(permits,nowMicros);
     }
   }
   stopwatch.sleepMicrosUninterruptibly(microsToWait);

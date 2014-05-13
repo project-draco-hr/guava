@@ -1,0 +1,8 @@
+{
+  RateLimiter limiter=RateLimiter.create(stopwatch,5.0);
+  assertEquals(0.0,limiter.acquire(),EPSILON);
+  stopwatch.sleepMillis(400);
+  assertEquals(0.0,limiter.acquire(),EPSILON);
+  assertEquals(0.0,limiter.acquire(),EPSILON);
+  assertEquals(0.2,limiter.acquire(),EPSILON);
+}
