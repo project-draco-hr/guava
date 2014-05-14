@@ -1,8 +1,11 @@
 {
-  RateLimiter mock=mock(RateLimiter.class);
+  RateLimiter mockito=Mockito.mock(RateLimiter.class);
+  RateLimiter easyMock=EasyMock.createNiceMock(RateLimiter.class);
+  EasyMock.replay(easyMock);
   for (  Method method : RateLimiter.class.getMethods()) {
     if (!isStatic(method.getModifiers()) && !NOT_WORKING_ON_MOCKS.contains(method.getName()) && !method.getDeclaringClass().equals(Object.class)) {
-      method.invoke(mock,arbitraryParameters(method));
+      method.invoke(mockito,arbitraryParameters(method));
+      method.invoke(easyMock,arbitraryParameters(method));
     }
   }
 }
