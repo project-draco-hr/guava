@@ -5,5 +5,5 @@
 ;
   ImmutableTypeToInstanceMap<Iterable<?>[]> map=ImmutableTypeToInstanceMap.<Iterable<?>[]>builder().put(type,array).build();
   assertEquals(1,map.size());
-  ASSERT.that(map.getInstance(type)).has().exactly(array[0]).inOrder();
+  ASSERT.that(map.getInstance(type)).asList().has().exactly(array[0]).inOrder();
 }

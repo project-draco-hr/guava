@@ -1,4 +1,4 @@
 {
   String[] result=ObjectArrays.concat("foo",new String[]{});
-  ASSERT.that(result).has().item("foo");
+  ASSERT.that(result).asList().has().item("foo");
 }
