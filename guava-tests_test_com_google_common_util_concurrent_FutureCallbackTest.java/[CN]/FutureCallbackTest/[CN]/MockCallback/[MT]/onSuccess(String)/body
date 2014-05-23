@@ -1,0 +1,5 @@
+{
+  assertFalse(wasCalled);
+  wasCalled=true;
+  assertEquals(value,result);
+}

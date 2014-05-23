@@ -1,0 +1,6 @@
+{
+  Error error=new AssertionError("ASSERT!");
+  ListenableFuture<String> f=ThrowingFuture.throwingError(error);
+  MockCallback callback=new MockCallback(error);
+  Futures.addCallback(f,callback);
+}

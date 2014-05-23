@@ -1,0 +1,12 @@
+{
+  RuntimeException exception=new RuntimeException();
+  String result="result";
+  SettableFuture<String> future=SettableFuture.create();
+  @SuppressWarnings("unchecked") FutureCallback<String> callback=Mockito.mock(FutureCallback.class);
+  Futures.addCallback(future,callback);
+  Mockito.doThrow(exception).when(callback).onSuccess(result);
+  future.set(result);
+  assertEquals(result,future.get());
+  Mockito.verify(callback).onSuccess(result);
+  Mockito.verifyNoMoreInteractions(callback);
+}
