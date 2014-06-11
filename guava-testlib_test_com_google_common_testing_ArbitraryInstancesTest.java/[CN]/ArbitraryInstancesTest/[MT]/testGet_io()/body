@@ -16,4 +16,8 @@
   ArbitraryInstances.get(PrintWriter.class).println("test");
   assertNotNull(ArbitraryInstances.get(File.class));
   assertFreshInstanceReturned(ByteArrayOutputStream.class,OutputStream.class,Writer.class,StringWriter.class,PrintStream.class,PrintWriter.class);
+  assertEquals(ByteSource.empty(),ArbitraryInstances.get(ByteSource.class));
+  assertEquals(CharSource.empty(),ArbitraryInstances.get(CharSource.class));
+  assertNotNull(ArbitraryInstances.get(ByteSink.class));
+  assertNotNull(ArbitraryInstances.get(CharSink.class));
 }
