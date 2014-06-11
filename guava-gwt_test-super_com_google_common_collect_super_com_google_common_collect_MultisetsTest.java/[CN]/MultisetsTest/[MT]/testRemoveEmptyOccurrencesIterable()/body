@@ -1,0 +1,6 @@
+{
+  Multiset<String> multiset=TreeMultiset.create(Arrays.asList("a","b","a"));
+  Iterable<String> toRemove=ImmutableList.of();
+  assertFalse(Multisets.removeOccurrences(multiset,toRemove));
+  ASSERT.that(multiset).has().exactly("a","a","b").inOrder();
+}
