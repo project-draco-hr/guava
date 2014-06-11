@@ -1,4 +1,8 @@
 {
-  int digits=RANDOM_SOURCE.nextInt(numBits) + 1;
-  return new BigInteger(digits,RANDOM_SOURCE).add(BigInteger.ONE);
+  BigInteger result;
+  do {
+    result=randomNonNegativeBigInteger(numBits);
+  }
+ while (result.signum() == 0);
+  return result;
 }

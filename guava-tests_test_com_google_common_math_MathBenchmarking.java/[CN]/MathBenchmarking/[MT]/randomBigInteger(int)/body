@@ -1,4 +1,11 @@
 {
-  BigInteger result=randomNonNegativeBigInteger(numBits);
-  return RANDOM_SOURCE.nextBoolean() ? result : result.negate();
+  while (true) {
+    if (RANDOM_SOURCE.nextBoolean()) {
+      return randomNonNegativeBigInteger(numBits);
+    }
+    BigInteger neg=randomNonNegativeBigInteger(numBits).negate();
+    if (neg.signum() != 0) {
+      return neg;
+    }
+  }
 }
