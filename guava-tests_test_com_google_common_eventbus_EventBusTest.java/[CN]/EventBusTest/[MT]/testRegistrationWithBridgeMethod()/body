@@ -1,0 +1,11 @@
+{
+  final AtomicInteger calls=new AtomicInteger();
+  bus.register(new Callback<String>(){
+    @Subscribe @Override public void call(    String s){
+      calls.incrementAndGet();
+    }
+  }
+);
+  bus.post("hello");
+  assertEquals(1,calls.get());
+}
