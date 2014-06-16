@@ -1,0 +1,10 @@
+{
+  Funnel<byte[]> funnel=Funnels.byteArrayFunnel();
+  BloomFilter<byte[]> bf=BloomFilter.create(funnel,100);
+  for (int i=0; i < 100; i++) {
+    bf.put(Ints.toByteArray(i));
+  }
+  ByteArrayOutputStream out=new ByteArrayOutputStream();
+  bf.writeTo(out);
+  assertEquals(bf,BloomFilter.readFrom(new ByteArrayInputStream(out.toByteArray()),funnel));
+}
