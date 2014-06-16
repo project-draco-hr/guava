@@ -17,6 +17,8 @@
     return new BloomFilter<T>(new BitArray(data),numHashFunctions,funnel,strategy);
   }
  catch (  RuntimeException e) {
-    throw new IOException("Unable to deserialize BloomFilter from InputStream." + " strategyOrdinal: " + strategyOrdinal + " numHashFunctions: "+ numHashFunctions+ " dataLength: "+ dataLength,e);
+    IOException ioException=new IOException("Unable to deserialize BloomFilter from InputStream." + " strategyOrdinal: " + strategyOrdinal + " numHashFunctions: "+ numHashFunctions+ " dataLength: "+ dataLength);
+    ioException.initCause(e);
+    throw ioException;
   }
 }
