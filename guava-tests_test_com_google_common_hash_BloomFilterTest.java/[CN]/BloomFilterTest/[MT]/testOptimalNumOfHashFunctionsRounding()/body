@@ -1,0 +1,3 @@
+{
+  assertEquals(7,BloomFilter.optimalNumOfHashFunctions(319,3072));
+}
