@@ -1,7 +1,7 @@
 {
   ImmutableSet.Builder<Field> builder=ImmutableSet.builder();
   for (  Field field : cls.getDeclaredFields()) {
-    if (!field.isSynthetic() && field.getType() == String.class) {
+    if (!field.isSynthetic()) {
       builder.add(field);
     }
   }
