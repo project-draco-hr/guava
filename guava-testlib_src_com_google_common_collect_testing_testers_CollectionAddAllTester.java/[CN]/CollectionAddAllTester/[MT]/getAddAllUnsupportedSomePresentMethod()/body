@@ -1,0 +1,3 @@
+{
+  return Helpers.getMethod(CollectionAddAllTester.class,"testAddAll_unsupportedSomePresent");
+}
