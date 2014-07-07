@@ -14,6 +14,18 @@
  else   if (returnType.isArray()) {
     return Array.newInstance(returnType.getComponentType(),0);
   }
+ else   if ("java.util.function.Predicate".equals(returnType.getCanonicalName()) || ("java.util.function.Consumer".equals(returnType.getCanonicalName()))) {
+    InvocationHandler handler=new InvocationHandler(){
+      @Override public Object invoke(      Object proxy,      Method method,      Object[] args){
+        if ("test".equals(method.getName()) || "accept".equals(method.getName())) {
+          return getDefaultValue(method.getReturnType());
+        }
+        throw new IllegalStateException("Unexpected " + method + " invoked on "+ proxy);
+      }
+    }
+;
+    return Proxy.newProxyInstance(returnType.getClassLoader(),new Class[]{returnType},handler);
+  }
  else {
     return null;
   }
