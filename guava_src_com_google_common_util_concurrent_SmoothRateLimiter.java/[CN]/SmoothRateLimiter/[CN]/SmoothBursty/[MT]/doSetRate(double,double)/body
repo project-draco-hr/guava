@@ -1,5 +1,10 @@
 {
   double oldMaxPermits=this.maxPermits;
   maxPermits=maxBurstSeconds * permitsPerSecond;
-  storedPermits=(oldMaxPermits == 0.0) ? 0.0 : storedPermits * maxPermits / oldMaxPermits;
+  if (oldMaxPermits == Double.POSITIVE_INFINITY) {
+    storedPermits=maxPermits;
+  }
+ else {
+    storedPermits=(oldMaxPermits == 0.0) ? 0.0 : storedPermits * maxPermits / oldMaxPermits;
+  }
 }

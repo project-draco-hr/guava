@@ -4,14 +4,16 @@
   limiter.acquire(Integer.MAX_VALUE / 2);
   limiter.acquire(Integer.MAX_VALUE);
   assertEvents("R0.00","R0.00","R0.00");
-  limiter.setRate(1.0);
+  limiter.setRate(2.0);
   limiter.acquire();
   limiter.acquire();
   limiter.acquire();
-  assertEvents("R0.00","R1.00","R1.00");
+  limiter.acquire();
+  limiter.acquire();
+  assertEvents("R0.00","R0.00","R0.00","R0.50","R0.50");
   limiter.setRate(Double.POSITIVE_INFINITY);
   limiter.acquire();
   limiter.acquire();
   limiter.acquire();
-  assertEvents("R1.00","R0.00","R0.00");
+  assertEvents("R0.50","R0.00","R0.00");
 }

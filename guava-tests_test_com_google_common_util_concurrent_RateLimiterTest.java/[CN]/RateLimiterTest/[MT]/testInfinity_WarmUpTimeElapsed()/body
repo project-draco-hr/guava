@@ -1,0 +1,9 @@
+{
+  RateLimiter limiter=RateLimiter.create(stopwatch,Double.POSITIVE_INFINITY,10,SECONDS);
+  stopwatch.instant+=1000000;
+  limiter.setRate(1.0);
+  for (int i=0; i < 5; i++) {
+    limiter.acquire();
+  }
+  assertEvents("R0.00","R1.00","R1.00","R1.00","R1.00");
+}
