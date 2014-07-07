@@ -1,0 +1,5 @@
+{
+  super(threadName);
+  this.lockLikeObject=checkNotNull(lockLikeObject);
+  start();
+}

@@ -1,0 +1,8 @@
+{
+  thread1.callAndAssertReturns(enterCount != 0,"isOccupied");
+  thread1.callAndAssertReturns(enterCount != 0,"isOccupiedByCurrentThread");
+  thread1.callAndAssertReturns(enterCount,"getOccupiedDepth");
+  thread2.callAndAssertReturns(enterCount != 0,"isOccupied");
+  thread2.callAndAssertReturns(false,"isOccupiedByCurrentThread");
+  thread2.callAndAssertReturns(0,"getOccupiedDepth");
+}

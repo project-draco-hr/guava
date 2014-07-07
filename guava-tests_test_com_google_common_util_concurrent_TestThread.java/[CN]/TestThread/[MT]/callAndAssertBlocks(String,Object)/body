@@ -1,0 +1,9 @@
+{
+  checkNotNull(methodName);
+  checkNotNull(arguments);
+  assertEquals(false,invokeMethod("hasQueuedThread",this));
+  sendRequest(methodName,arguments);
+  Thread.sleep(DUE_DILIGENCE_MILLIS);
+  assertEquals(true,invokeMethod("hasQueuedThread",this));
+  assertNull(responseQueue.poll());
+}

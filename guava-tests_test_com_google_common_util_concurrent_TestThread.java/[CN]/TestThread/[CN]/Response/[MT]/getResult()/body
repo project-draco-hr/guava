@@ -1,0 +1,6 @@
+{
+  if (throwable != null) {
+    throw (AssertionFailedError)new AssertionFailedError().initCause(throwable);
+  }
+  return result;
+}

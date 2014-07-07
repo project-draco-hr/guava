@@ -1,0 +1,7 @@
+{
+  stop();
+  join();
+  if (uncaughtThrowable != null) {
+    throw (AssertionFailedError)new AssertionFailedError("Uncaught throwable in " + getName()).initCause(uncaughtThrowable);
+  }
+}

@@ -1,0 +1,4 @@
+{
+  this.methodName=checkNotNull(methodName);
+  this.arguments=checkNotNull(arguments);
+}

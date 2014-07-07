@@ -1,0 +1,8 @@
+{
+  Response response=responseQueue.poll(TIMEOUT_MILLIS,TimeUnit.MILLISECONDS);
+  if (response == null) {
+    throw new TimeoutException();
+  }
+  assertEquals(methodName,response.methodName);
+  return response;
+}

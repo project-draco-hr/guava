@@ -1,0 +1,3 @@
+{
+  return getMethod(methodName,arguments).invoke(lockLikeObject,arguments);
+}

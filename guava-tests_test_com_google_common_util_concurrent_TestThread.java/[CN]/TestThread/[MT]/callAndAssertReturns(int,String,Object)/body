@@ -1,0 +1,6 @@
+{
+  checkNotNull(methodName);
+  checkNotNull(arguments);
+  sendRequest(methodName,arguments);
+  assertEquals(expected,getResponse(methodName).getResult());
+}

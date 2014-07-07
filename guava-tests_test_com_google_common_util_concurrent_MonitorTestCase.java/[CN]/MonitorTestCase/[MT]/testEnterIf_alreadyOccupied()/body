@@ -1,0 +1,7 @@
+{
+  TestGuard guard=new TestGuard(true);
+  thread2.callAndAssertReturns(enter());
+  thread1.callAndAssertBlocks(enterIf(),guard);
+  thread2.callAndAssertReturns(leave());
+  thread1.assertPriorCallReturns(true,enterIf());
+}

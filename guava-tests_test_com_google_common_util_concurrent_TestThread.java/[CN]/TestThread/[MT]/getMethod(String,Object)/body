@@ -1,0 +1,14 @@
+{
+  METHODS:   for (  Method method : lockLikeObject.getClass().getMethods()) {
+    Class<?>[] parameterTypes=method.getParameterTypes();
+    if (method.getName().equals(methodName) && (parameterTypes.length == arguments.length)) {
+      for (int i=0; i < arguments.length; i++) {
+        if (!parameterTypes[i].isAssignableFrom(arguments[i].getClass())) {
+          continue METHODS;
+        }
+      }
+      return method;
+    }
+  }
+  throw new NoSuchMethodError(methodName);
+}

@@ -1,0 +1,4 @@
+{
+  super(MonitorTestCase.this.monitor);
+  this.satisfied=satisfied;
+}

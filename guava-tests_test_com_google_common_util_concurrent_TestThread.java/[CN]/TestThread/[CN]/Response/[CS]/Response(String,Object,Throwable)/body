@@ -1,0 +1,5 @@
+{
+  this.methodName=methodName;
+  this.result=result;
+  this.throwable=throwable;
+}

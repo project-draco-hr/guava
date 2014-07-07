@@ -1,0 +1,8 @@
+{
+  TestGuard guard=new TestGuard(false);
+  thread1.callAndAssertWaits(enterWhen(),guard);
+  monitor.enter();
+  guard.setSatisfied(true);
+  monitor.leave();
+  thread1.assertPriorCallReturns(enterWhen());
+}

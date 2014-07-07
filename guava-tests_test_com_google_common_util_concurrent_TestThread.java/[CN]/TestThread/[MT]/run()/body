@@ -1,0 +1,32 @@
+{
+  assertSame(this,Thread.currentThread());
+  try {
+    while (true) {
+      Request request=requestQueue.take();
+      Object result;
+      try {
+        result=invokeMethod(request.methodName,request.arguments);
+      }
+ catch (      ThreadDeath death) {
+        return;
+      }
+catch (      InvocationTargetException exception) {
+        responseQueue.put(new Response(request.methodName,null,exception.getTargetException()));
+        continue;
+      }
+catch (      Throwable throwable) {
+        responseQueue.put(new Response(request.methodName,null,throwable));
+        continue;
+      }
+      responseQueue.put(new Response(request.methodName,result,null));
+    }
+  }
+ catch (  ThreadDeath death) {
+    return;
+  }
+catch (  InterruptedException ignored) {
+  }
+catch (  Throwable uncaught) {
+    this.uncaughtThrowable=uncaught;
+  }
+}

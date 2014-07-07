@@ -1,0 +1,8 @@
+{
+  checkNotNull(methodName);
+  checkNotNull(conditionLikeObject);
+  sendRequest(methodName,conditionLikeObject);
+  Thread.sleep(DUE_DILIGENCE_MILLIS);
+  assertEquals(true,invokeMethod("hasWaiters",conditionLikeObject));
+  assertNull(responseQueue.poll());
+}

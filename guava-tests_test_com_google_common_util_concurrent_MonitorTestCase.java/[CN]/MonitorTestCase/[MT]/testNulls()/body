@@ -1,0 +1,4 @@
+{
+  monitor.enter();
+  new NullPointerTester().setDefault(TimeUnit.class,TimeUnit.SECONDS).setDefault(Monitor.Guard.class,new TestGuard(true)).testAllPublicInstanceMethods(monitor);
+}

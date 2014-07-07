@@ -1,0 +1,6 @@
+{
+  thread1.callAndAssertReturns(enter());
+  thread2.callAndAssertBlocks(enter());
+  thread1.callAndAssertReturns(leave());
+  thread2.assertPriorCallReturns(enter());
+}
