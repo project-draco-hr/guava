@@ -1,0 +1,11 @@
+{
+  final Object cachedKey=new Object();
+  final Object cachedValue=new Object();
+  Cache<Object,Object> cache=new AbstractCache<Object,Object>(){
+    @Override public Object getIfPresent(    Object key){
+      return cachedKey.equals(key) ? cachedValue : null;
+    }
+  }
+;
+  assertEquals(ImmutableMap.of(cachedKey,cachedValue),cache.getAllPresent(ImmutableList.of(cachedKey,new Object())));
+}
