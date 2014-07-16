@@ -4,6 +4,9 @@
   Method[] methods=getMostConcreteMethods(interfaceType);
   AccessibleObject.setAccessible(methods,true);
   for (  Method method : methods) {
+    if (!Modifier.isAbstract(method.getModifiers())) {
+      continue;
+    }
     if (method.getName().equals("equals") && method.getParameterTypes().length == 1 && method.getParameterTypes()[0] == Object.class) {
       continue;
     }
