@@ -1,4 +1,4 @@
 {
   List<Optional<Object>> optionals=ImmutableList.of(Optional.absent(),Optional.absent());
-  ASSERT.that(Optional.presentInstances(optionals)).isEmpty();
+  assertThat(Optional.presentInstances(optionals)).isEmpty();
 }
