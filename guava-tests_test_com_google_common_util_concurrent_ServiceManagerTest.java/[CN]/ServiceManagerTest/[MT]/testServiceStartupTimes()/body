@@ -1,6 +1,6 @@
 {
-  Service a=new NoOpDelayedSerivce(150);
-  Service b=new NoOpDelayedSerivce(353);
+  Service a=new NoOpDelayedService(150);
+  Service b=new NoOpDelayedService(353);
   ServiceManager serviceManager=new ServiceManager(asList(a,b));
   serviceManager.startAsync().awaitHealthy();
   ImmutableMap<Service,Long> startupTimes=serviceManager.startupTimes();

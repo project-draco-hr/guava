@@ -1,5 +1,5 @@
 {
-  Service a=new NoOpDelayedSerivce(50);
+  Service a=new NoOpDelayedService(50);
   ServiceManager manager=new ServiceManager(asList(a));
   manager.startAsync();
   try {
