@@ -1,0 +1,3 @@
+{
+  return CollectionTestSuiteBuilder.using(valueCollectionGenerator);
+}

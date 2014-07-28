@@ -1,0 +1,3 @@
+{
+  return SetTestSuiteBuilder.using(entrySetGenerator);
+}

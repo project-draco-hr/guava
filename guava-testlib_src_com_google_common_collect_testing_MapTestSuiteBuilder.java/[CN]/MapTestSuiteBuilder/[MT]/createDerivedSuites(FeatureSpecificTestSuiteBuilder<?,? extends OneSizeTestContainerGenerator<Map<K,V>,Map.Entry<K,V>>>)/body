@@ -3,8 +3,8 @@
   if (parentBuilder.getFeatures().contains(CollectionFeature.SERIALIZABLE)) {
     derivedSuites.add(MapTestSuiteBuilder.using(new ReserializedMapGenerator<K,V>(parentBuilder.getSubjectGenerator())).withFeatures(computeReserializedMapFeatures(parentBuilder.getFeatures())).named(parentBuilder.getName() + " reserialized").suppressing(parentBuilder.getSuppressedTests()).createTestSuite());
   }
-  derivedSuites.add(SetTestSuiteBuilder.using(new MapEntrySetGenerator<K,V>(parentBuilder.getSubjectGenerator())).withFeatures(computeEntrySetFeatures(parentBuilder.getFeatures())).named(parentBuilder.getName() + " entrySet").suppressing(parentBuilder.getSuppressedTests()).createTestSuite());
+  derivedSuites.add(createDerivedEntrySetSuite(new MapEntrySetGenerator<K,V>(parentBuilder.getSubjectGenerator())).withFeatures(computeEntrySetFeatures(parentBuilder.getFeatures())).named(parentBuilder.getName() + " entrySet").suppressing(parentBuilder.getSuppressedTests()).createTestSuite());
   derivedSuites.add(createDerivedKeySetSuite(keySetGenerator(parentBuilder.getSubjectGenerator())).withFeatures(computeKeySetFeatures(parentBuilder.getFeatures())).named(parentBuilder.getName() + " keys").suppressing(parentBuilder.getSuppressedTests()).createTestSuite());
-  derivedSuites.add(CollectionTestSuiteBuilder.using(new MapValueCollectionGenerator<K,V>(parentBuilder.getSubjectGenerator())).named(parentBuilder.getName() + " values").withFeatures(computeValuesCollectionFeatures(parentBuilder.getFeatures())).suppressing(parentBuilder.getSuppressedTests()).createTestSuite());
+  derivedSuites.add(createDerivedValueCollectionSuite(new MapValueCollectionGenerator<K,V>(parentBuilder.getSubjectGenerator())).named(parentBuilder.getName() + " values").withFeatures(computeValuesCollectionFeatures(parentBuilder.getFeatures())).suppressing(parentBuilder.getSuppressedTests()).createTestSuite());
   return derivedSuites;
 }
