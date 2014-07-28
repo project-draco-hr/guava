@@ -1,0 +1,5 @@
+{
+  ByteArrayOutputStream bytes=new ByteArrayOutputStream();
+  new ObjectOutputStream(bytes).writeObject(object);
+  return new ObjectInputStream(new ByteArrayInputStream(bytes.toByteArray())).readObject();
+}
