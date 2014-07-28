@@ -1,5 +1,5 @@
 {
-  assertThat(TypeToken.of(new TypeCapture<T>(){
+  makeUnmodifiable(TypeToken.of(new TypeCapture<T>(){
   }
 .capture()).getGenericInterfaces()).has().exactly(TypeToken.of(CharSequence.class),new TypeToken<Iterable<T>>(){
   }

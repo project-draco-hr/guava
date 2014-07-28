@@ -6,10 +6,10 @@
   List<Integer> foos=map.get("foo");
   Collection<Integer> values=map.values();
   assertEquals(asList(1,2),foos);
-  ASSERT.that(values).has().exactly(1,2,3).inOrder();
+  assertThat(values).has().exactly(1,2,3).inOrder();
   map.clear();
   assertEquals(Collections.emptyList(),foos);
-  ASSERT.that(values).isEmpty();
+  assertThat(values).isEmpty();
   assertEquals("[]",map.entries().toString());
   assertEquals("{}",map.toString());
 }

@@ -1,5 +1,5 @@
 {
   Collection<String> c=ImmutableMultiset.of("a","b","a");
   Collection<String> copy=SerializableTester.reserializeAndAssert(c);
-  ASSERT.that(copy).has().exactly("a","a","b").inOrder();
+  assertThat(copy).has().exactly("a","a","b").inOrder();
 }

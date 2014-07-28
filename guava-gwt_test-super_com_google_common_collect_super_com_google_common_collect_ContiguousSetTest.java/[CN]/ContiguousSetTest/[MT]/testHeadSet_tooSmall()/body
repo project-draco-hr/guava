@@ -1,3 +1,3 @@
 {
-  ASSERT.that(ContiguousSet.create(Range.closed(1,3),integers()).headSet(0)).isEmpty();
+  assertThat(ContiguousSet.create(Range.closed(1,3),integers()).headSet(0)).isEmpty();
 }

@@ -13,11 +13,11 @@
   strings.add("five");
   strings.remove("one");
   assertEquals(ImmutableSortedMap.of("five",4,"four",4,"three",5),headMap);
-  ASSERT.that(map.entrySet()).has().exactly(mapEntry("five",4),mapEntry("four",4),mapEntry("three",5),mapEntry("two",3)).inOrder();
+  assertThat(map.entrySet()).has().exactly(mapEntry("five",4),mapEntry("four",4),mapEntry("three",5),mapEntry("two",3)).inOrder();
   NavigableMap<String,Integer> tailMap=map.tailMap("s",true);
   NavigableMap<String,Integer> subMap=map.subMap("a",true,"t",false);
   strings.add("six");
   strings.remove("two");
-  ASSERT.that(tailMap.entrySet()).has().exactly(mapEntry("six",3),mapEntry("three",5)).inOrder();
-  ASSERT.that(subMap.entrySet()).has().exactly(mapEntry("five",4),mapEntry("four",4),mapEntry("six",3)).inOrder();
+  assertThat(tailMap.entrySet()).has().exactly(mapEntry("six",3),mapEntry("three",5)).inOrder();
+  assertThat(subMap.entrySet()).has().exactly(mapEntry("five",4),mapEntry("four",4),mapEntry("six",3)).inOrder();
 }

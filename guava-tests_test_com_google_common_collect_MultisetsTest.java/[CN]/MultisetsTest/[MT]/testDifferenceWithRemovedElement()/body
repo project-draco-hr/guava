@@ -1,5 +1,5 @@
 {
   Multiset<String> ms1=HashMultiset.create(Arrays.asList("a","b","a"));
   Multiset<String> ms2=HashMultiset.create(Arrays.asList("b"));
-  ASSERT.that(Multisets.difference(ms1,ms2)).has().exactly("a","a");
+  assertThat(Multisets.difference(ms1,ms2)).has().exactly("a","a");
 }

@@ -1,5 +1,5 @@
 {
   String leading=",a,b,c";
   Iterable<String> letters=COMMA_SPLITTER.split(leading);
-  ASSERT.that(letters).iteratesAs("","a","b","c");
+  assertThat(letters).iteratesAs("","a","b","c");
 }

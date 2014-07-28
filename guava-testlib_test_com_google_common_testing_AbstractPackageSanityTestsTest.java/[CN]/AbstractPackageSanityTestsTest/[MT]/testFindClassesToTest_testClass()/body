@@ -1,6 +1,6 @@
 {
-  ASSERT.that(findClassesToTest(ImmutableList.of(EmptyTest.class))).isEmpty();
-  ASSERT.that(findClassesToTest(ImmutableList.of(EmptyTests.class))).isEmpty();
-  ASSERT.that(findClassesToTest(ImmutableList.of(EmptyTestCase.class))).isEmpty();
-  ASSERT.that(findClassesToTest(ImmutableList.of(EmptyTestSuite.class))).isEmpty();
+  assertThat(findClassesToTest(ImmutableList.of(EmptyTest.class))).isEmpty();
+  assertThat(findClassesToTest(ImmutableList.of(EmptyTests.class))).isEmpty();
+  assertThat(findClassesToTest(ImmutableList.of(EmptyTestCase.class))).isEmpty();
+  assertThat(findClassesToTest(ImmutableList.of(EmptyTestSuite.class))).isEmpty();
 }

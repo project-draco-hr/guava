@@ -1,6 +1,6 @@
 {
   Map<String,String> m=COMMA_SPLITTER.trimResults().withKeyValueSeparator(Splitter.on(':').trimResults()).split("boy  : tom , girl: tina , cat  : kitty , dog: tommy ");
   ImmutableMap<String,String> expected=ImmutableMap.of("boy","tom","girl","tina","cat","kitty","dog","tommy");
-  ASSERT.that(m).isEqualTo(expected);
-  ASSERT.that(asList(m.entrySet())).is(asList(expected.entrySet()));
+  assertThat(m).isEqualTo(expected);
+  assertThat(asList(m.entrySet())).is(asList(expected.entrySet()));
 }

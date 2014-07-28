@@ -1,4 +1,4 @@
 {
   File jarFile=new File("base.jar");
-  ASSERT.that(ClassPath.Scanner.getClassPathFromManifest(jarFile,manifestClasspath(""))).isEmpty();
+  assertThat(ClassPath.Scanner.getClassPathFromManifest(jarFile,manifestClasspath(""))).isEmpty();
 }

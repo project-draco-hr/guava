@@ -1,6 +1,6 @@
 {
   ImmutableRangeSet<Integer> rangeSet=ImmutableRangeSet.<Integer>builder().add(Range.atMost(0)).add(Range.closedOpen(2,5)).build();
-  ASSERT.that(rangeSet.asRanges()).has().exactly(Range.atMost(0),Range.closedOpen(2,5)).inOrder();
+  assertThat(rangeSet.asRanges()).has().exactly(Range.atMost(0),Range.closedOpen(2,5)).inOrder();
   assertTrue(rangeSet.encloses(Range.closed(2,4)));
   assertTrue(rangeSet.encloses(Range.open(-5,-2)));
   assertFalse(rangeSet.encloses(Range.closed(1,8)));

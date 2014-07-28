@@ -5,10 +5,10 @@
     assertEquals(expected.ceilingEntry(key),navigableMap.ceilingEntry(key));
     assertEquals(expected.higherEntry(key),navigableMap.higherEntry(key));
     for (    boolean inclusive : new boolean[]{false,true}) {
-      ASSERT.that(navigableMap.headMap(key,inclusive).entrySet()).has().exactlyAs(expected.headMap(key,inclusive).entrySet()).inOrder();
-      ASSERT.that(navigableMap.tailMap(key,inclusive).entrySet()).has().exactlyAs(expected.tailMap(key,inclusive).entrySet()).inOrder();
-      ASSERT.that(navigableMap.headMap(key,inclusive).descendingMap().entrySet()).has().exactlyAs(expected.headMap(key,inclusive).descendingMap().entrySet()).inOrder();
-      ASSERT.that(navigableMap.tailMap(key,inclusive).descendingMap().entrySet()).has().exactlyAs(expected.tailMap(key,inclusive).descendingMap().entrySet()).inOrder();
+      assertThat(navigableMap.headMap(key,inclusive).entrySet()).has().exactlyAs(expected.headMap(key,inclusive).entrySet()).inOrder();
+      assertThat(navigableMap.tailMap(key,inclusive).entrySet()).has().exactlyAs(expected.tailMap(key,inclusive).entrySet()).inOrder();
+      assertThat(navigableMap.headMap(key,inclusive).descendingMap().entrySet()).has().exactlyAs(expected.headMap(key,inclusive).descendingMap().entrySet()).inOrder();
+      assertThat(navigableMap.tailMap(key,inclusive).descendingMap().entrySet()).has().exactlyAs(expected.tailMap(key,inclusive).descendingMap().entrySet()).inOrder();
     }
   }
 }

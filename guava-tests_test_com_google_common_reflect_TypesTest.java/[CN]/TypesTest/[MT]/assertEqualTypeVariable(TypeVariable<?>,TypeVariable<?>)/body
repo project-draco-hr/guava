@@ -5,5 +5,5 @@
   if (!Types.NativeTypeVariableEquals.NATIVE_TYPE_VARIABLE_ONLY) {
     assertEquals(actual.toString(),expected.hashCode(),actual.hashCode());
   }
-  ASSERT.that(actual.getBounds()).asList().has().exactlyAs(asList(expected.getBounds())).inOrder();
+  assertThat(actual.getBounds()).asList().has().exactlyAs(asList(expected.getBounds())).inOrder();
 }

@@ -1,13 +1,13 @@
 {
   ImmutableSortedSet<Integer> set=ContiguousSet.create(Range.closed(1,3),integers());
-  ASSERT.that(set.headSet(1)).isEmpty();
-  ASSERT.that(set.headSet(2)).has().item(1);
-  ASSERT.that(set.headSet(3)).has().exactly(1,2).inOrder();
-  ASSERT.that(set.headSet(4)).has().exactly(1,2,3).inOrder();
-  ASSERT.that(set.headSet(Integer.MAX_VALUE)).has().exactly(1,2,3).inOrder();
-  ASSERT.that(set.headSet(1,true)).has().item(1);
-  ASSERT.that(set.headSet(2,true)).has().exactly(1,2).inOrder();
-  ASSERT.that(set.headSet(3,true)).has().exactly(1,2,3).inOrder();
-  ASSERT.that(set.headSet(4,true)).has().exactly(1,2,3).inOrder();
-  ASSERT.that(set.headSet(Integer.MAX_VALUE,true)).has().exactly(1,2,3).inOrder();
+  assertThat(set.headSet(1)).isEmpty();
+  assertThat(set.headSet(2)).has().item(1);
+  assertThat(set.headSet(3)).has().exactly(1,2).inOrder();
+  assertThat(set.headSet(4)).has().exactly(1,2,3).inOrder();
+  assertThat(set.headSet(Integer.MAX_VALUE)).has().exactly(1,2,3).inOrder();
+  assertThat(set.headSet(1,true)).has().item(1);
+  assertThat(set.headSet(2,true)).has().exactly(1,2).inOrder();
+  assertThat(set.headSet(3,true)).has().exactly(1,2,3).inOrder();
+  assertThat(set.headSet(4,true)).has().exactly(1,2,3).inOrder();
+  assertThat(set.headSet(Integer.MAX_VALUE,true)).has().exactly(1,2,3).inOrder();
 }

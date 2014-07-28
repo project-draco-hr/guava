@@ -1,6 +1,6 @@
 {
   try {
-    ASSERT.that(actual).isNotEqualTo(unexpected);
+    assertThat(actual).isNotEqualTo(unexpected);
   }
  catch (  ClassCastException accepted) {
   }

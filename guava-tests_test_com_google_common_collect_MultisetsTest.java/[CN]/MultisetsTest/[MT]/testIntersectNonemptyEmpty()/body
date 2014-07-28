@@ -1,5 +1,5 @@
 {
   Multiset<String> ms1=HashMultiset.create(Arrays.asList("a","b","a"));
   Multiset<String> ms2=HashMultiset.create();
-  ASSERT.that(Multisets.intersection(ms1,ms2)).isEmpty();
+  assertThat(Multisets.intersection(ms1,ms2)).isEmpty();
 }

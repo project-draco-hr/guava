@@ -1,5 +1,5 @@
 {
-  ASSERT.that(new TypeToken<NoInterface>(){
+  assertThat(new TypeToken<NoInterface>(){
   }
 .getGenericInterfaces()).isEmpty();
   assertHasArrayInterfaces(new TypeToken<NoInterface[]>(){

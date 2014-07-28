@@ -1,4 +1,4 @@
 {
   initMultimapWithNullKey();
-  ASSERT.that(multimap().entries()).has().allOf(Helpers.mapEntry((K)null,getValueForNullKey()));
+  assertThat(multimap().entries()).has().allOf(Helpers.mapEntry((K)null,getValueForNullKey()));
 }

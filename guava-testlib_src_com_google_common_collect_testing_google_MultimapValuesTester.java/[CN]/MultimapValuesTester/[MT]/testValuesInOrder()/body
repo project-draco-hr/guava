@@ -3,5 +3,5 @@
   for (  Map.Entry<K,V> entry : getOrderedElements()) {
     expected.add(entry.getValue());
   }
-  ASSERT.that(multimap().values()).has().exactlyAs(expected).inOrder();
+  assertThat(multimap().values()).has().exactlyAs(expected).inOrder();
 }

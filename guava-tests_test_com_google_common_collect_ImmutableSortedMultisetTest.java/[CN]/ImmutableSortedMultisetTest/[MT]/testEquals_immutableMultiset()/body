@@ -2,6 +2,6 @@
   Collection<String> c=ImmutableSortedMultiset.of("a","b","a");
   assertEquals(c,ImmutableSortedMultiset.of("a","b","a"));
   assertEquals(c,ImmutableSortedMultiset.of("a","a","b"));
-  ASSERT.that(c).isNotEqualTo(ImmutableSortedMultiset.of("a","b"));
-  ASSERT.that(c).isNotEqualTo(ImmutableSortedMultiset.of("a","b","c","d"));
+  assertThat(c).isNotEqualTo(ImmutableSortedMultiset.of("a","b"));
+  assertThat(c).isNotEqualTo(ImmutableSortedMultiset.of("a","b","c","d"));
 }

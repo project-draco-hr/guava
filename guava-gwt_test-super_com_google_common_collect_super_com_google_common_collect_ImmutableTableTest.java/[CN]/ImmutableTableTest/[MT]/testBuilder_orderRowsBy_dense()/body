@@ -10,6 +10,6 @@
   builder.put('a',2,"bar");
   builder.put('a',1,"baz");
   Table<Character,Integer,String> table=builder.build();
-  ASSERT.that(table.rowKeySet()).has().exactly('a','b','c').inOrder();
-  ASSERT.that(table.column(1).keySet()).has().exactly('a','b','c').inOrder();
+  assertThat(table.rowKeySet()).has().exactly('a','b','c').inOrder();
+  assertThat(table.column(1).keySet()).has().exactly('a','b','c').inOrder();
 }

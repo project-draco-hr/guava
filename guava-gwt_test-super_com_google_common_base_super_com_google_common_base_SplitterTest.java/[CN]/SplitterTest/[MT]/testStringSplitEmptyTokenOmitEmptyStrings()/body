@@ -1,5 +1,5 @@
 {
   String emptyToken="a. .c";
   Iterable<String> letters=Splitter.on('.').omitEmptyStrings().trimResults().split(emptyToken);
-  ASSERT.that(letters).iteratesAs("a","c");
+  assertThat(letters).iteratesAs("a","c");
 }

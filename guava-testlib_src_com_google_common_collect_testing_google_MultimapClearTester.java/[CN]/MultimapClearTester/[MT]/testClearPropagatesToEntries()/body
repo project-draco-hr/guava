@@ -1,5 +1,5 @@
 {
   Collection<Entry<K,V>> entries=multimap().entries();
   multimap().clear();
-  ASSERT.that(entries).isEmpty();
+  assertThat(entries).isEmpty();
 }

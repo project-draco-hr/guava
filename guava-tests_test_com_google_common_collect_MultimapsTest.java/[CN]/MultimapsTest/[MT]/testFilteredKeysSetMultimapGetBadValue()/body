@@ -6,7 +6,7 @@
   multimap.put("bar",4);
   SetMultimap<String,Integer> filtered=Multimaps.filterKeys(multimap,Predicates.in(ImmutableSet.of("foo","bar")));
   Set<Integer> bazSet=filtered.get("baz");
-  ASSERT.that(bazSet).isEmpty();
+  assertThat(bazSet).isEmpty();
   try {
     bazSet.add(5);
     fail("Expected IllegalArgumentException");

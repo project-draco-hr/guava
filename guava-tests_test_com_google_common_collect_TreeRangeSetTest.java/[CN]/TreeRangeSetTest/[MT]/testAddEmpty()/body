@@ -2,6 +2,6 @@
   TreeRangeSet<Integer> rangeSet=TreeRangeSet.create();
   rangeSet.add(Range.closedOpen(3,3));
   testInvariants(rangeSet);
-  ASSERT.that(rangeSet.asRanges()).isEmpty();
-  ASSERT.that(rangeSet.complement().asRanges()).has().exactly(Range.<Integer>all()).inOrder();
+  assertThat(rangeSet.asRanges()).isEmpty();
+  assertThat(rangeSet.complement().asRanges()).has().exactly(Range.<Integer>all()).inOrder();
 }

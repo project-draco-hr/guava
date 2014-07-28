@@ -2,5 +2,5 @@
   TypeToken<?>.TypeSet types=TypeToken.of(new TypeCapture<A>(){
   }
 .capture()).getTypes();
-  assertThat(types.rawTypes()).has().exactly(Interface1.class,Interface2.class,Interface3.class,Iterable.class);
+  makeUnmodifiable(types.rawTypes()).has().exactly(Interface1.class,Interface2.class,Interface3.class,Iterable.class);
 }

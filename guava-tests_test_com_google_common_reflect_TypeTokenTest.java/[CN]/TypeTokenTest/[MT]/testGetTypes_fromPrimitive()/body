@@ -1,9 +1,9 @@
 {
   TypeToken<Integer>.TypeSet types=TypeToken.of(int.class).getTypes();
-  ASSERT.that(types).has().item(TypeToken.of(int.class));
-  ASSERT.that(types.rawTypes()).has().item(int.class);
-  ASSERT.that(types.interfaces()).isEmpty();
-  ASSERT.that(types.interfaces().rawTypes()).isEmpty();
-  ASSERT.that(types.classes()).has().item(TypeToken.of(int.class));
-  ASSERT.that(types.classes().rawTypes()).has().item(int.class);
+  assertThat(types).has().item(TypeToken.of(int.class));
+  assertThat(types.rawTypes()).has().item(int.class);
+  assertThat(types.interfaces()).isEmpty();
+  assertThat(types.interfaces().rawTypes()).isEmpty();
+  assertThat(types.classes()).has().item(TypeToken.of(int.class));
+  assertThat(types.classes().rawTypes()).has().item(int.class);
 }

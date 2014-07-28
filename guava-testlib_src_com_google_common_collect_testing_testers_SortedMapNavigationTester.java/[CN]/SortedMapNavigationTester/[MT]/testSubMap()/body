@@ -3,7 +3,7 @@
   Collections.sort(entries,Helpers.<K,V>entryComparator(navigableMap.comparator()));
   for (int i=0; i < entries.size(); i++) {
     for (int j=i + 1; j < entries.size(); j++) {
-      ASSERT.that(navigableMap.subMap(entries.get(i).getKey(),entries.get(j).getKey()).entrySet()).iteratesAs(entries.subList(i,j));
+      assertThat(navigableMap.subMap(entries.get(i).getKey(),entries.get(j).getKey()).entrySet()).iteratesAs(entries.subList(i,j));
     }
   }
 }

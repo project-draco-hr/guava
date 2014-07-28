@@ -4,6 +4,6 @@
   rangeSet.add(Range.closedOpen(4,6));
   rangeSet.add(Range.closedOpen(3,4));
   testInvariants(rangeSet);
-  ASSERT.that(rangeSet.asRanges()).has().item(Range.closedOpen(1,6));
-  ASSERT.that(rangeSet.complement().asRanges()).has().exactly(Range.lessThan(1),Range.atLeast(6)).inOrder();
+  assertThat(rangeSet.asRanges()).has().item(Range.closedOpen(1,6));
+  assertThat(rangeSet.complement().asRanges()).has().exactly(Range.lessThan(1),Range.atLeast(6)).inOrder();
 }

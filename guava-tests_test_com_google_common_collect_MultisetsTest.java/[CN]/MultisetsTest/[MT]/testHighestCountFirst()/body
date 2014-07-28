@@ -1,7 +1,7 @@
 {
   Multiset<String> multiset=HashMultiset.create(Arrays.asList("a","a","a","b","c","c"));
   ImmutableMultiset<String> sortedMultiset=Multisets.copyHighestCountFirst(multiset);
-  ASSERT.that(sortedMultiset.entrySet()).has().exactly(Multisets.immutableEntry("a",3),Multisets.immutableEntry("c",2),Multisets.immutableEntry("b",1)).inOrder();
-  ASSERT.that(sortedMultiset).has().exactly("a","a","a","c","c","b").inOrder();
-  ASSERT.that(Multisets.copyHighestCountFirst(ImmutableMultiset.of())).isEmpty();
+  assertThat(sortedMultiset.entrySet()).has().exactly(Multisets.immutableEntry("a",3),Multisets.immutableEntry("c",2),Multisets.immutableEntry("b",1)).inOrder();
+  assertThat(sortedMultiset).has().exactly("a","a","a","c","c","b").inOrder();
+  assertThat(Multisets.copyHighestCountFirst(ImmutableMultiset.of())).isEmpty();
 }

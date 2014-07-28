@@ -2,5 +2,5 @@
   Collection<V> result=multimap().asMap().get(sampleKeys().e0);
   result.clear();
   assertGet(sampleKeys().e0);
-  ASSERT.that(result).isEmpty();
+  assertThat(result).isEmpty();
 }

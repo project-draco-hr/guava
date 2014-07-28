@@ -5,5 +5,5 @@
 ;
   map.putInstance(type,array);
   assertEquals(1,map.size());
-  ASSERT.that(map.getInstance(type)).asList().has().exactly(array[0]).inOrder();
+  assertThat(map.getInstance(type)).asList().has().exactly(array[0]).inOrder();
 }

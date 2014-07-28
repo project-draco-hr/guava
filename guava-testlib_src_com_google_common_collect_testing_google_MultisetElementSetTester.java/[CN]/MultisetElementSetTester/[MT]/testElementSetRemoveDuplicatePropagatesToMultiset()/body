@@ -2,5 +2,5 @@
   initThreeCopies();
   Set<E> elementSet=getMultiset().elementSet();
   assertTrue(elementSet.remove(samples.e0));
-  ASSERT.that(getMultiset()).isEmpty();
+  assertThat(getMultiset()).isEmpty();
 }

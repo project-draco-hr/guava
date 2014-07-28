@@ -1,5 +1,5 @@
 {
   resetContainer(Helpers.mapEntry(sampleKeys().e0,sampleValues().e0),Helpers.mapEntry(sampleKeys().e0,sampleValues().e1),Helpers.mapEntry(sampleKeys().e0,sampleValues().e2));
-  ASSERT.that(multimap().removeAll(sampleKeys().e0)).has().exactly(sampleValues().e0,sampleValues().e1,sampleValues().e2);
+  assertThat(multimap().removeAll(sampleKeys().e0)).has().exactly(sampleValues().e0,sampleValues().e1,sampleValues().e2);
   assertTrue(multimap().isEmpty());
 }

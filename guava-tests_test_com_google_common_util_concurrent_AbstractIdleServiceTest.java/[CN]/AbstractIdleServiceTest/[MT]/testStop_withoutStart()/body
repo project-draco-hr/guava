@@ -4,5 +4,5 @@
   assertEquals(0,service.startUpCalled);
   assertEquals(0,service.shutDownCalled);
   assertEquals(Service.State.TERMINATED,service.state());
-  ASSERT.that(service.transitionStates).isEmpty();
+  assertThat(service.transitionStates).isEmpty();
 }

@@ -1,6 +1,6 @@
 {
   assertEquals(expected.toString(),actual.toString());
   assertEquals(actual.toString(),expected.hashCode(),actual.hashCode());
-  ASSERT.that(actual.getLowerBounds()).asList().has().exactlyAs(asList(expected.getLowerBounds())).inOrder();
-  ASSERT.that(actual.getUpperBounds()).asList().has().exactlyAs(asList(expected.getUpperBounds())).inOrder();
+  assertThat(actual.getLowerBounds()).asList().has().exactlyAs(asList(expected.getLowerBounds())).inOrder();
+  assertThat(actual.getUpperBounds()).asList().has().exactlyAs(asList(expected.getUpperBounds())).inOrder();
 }

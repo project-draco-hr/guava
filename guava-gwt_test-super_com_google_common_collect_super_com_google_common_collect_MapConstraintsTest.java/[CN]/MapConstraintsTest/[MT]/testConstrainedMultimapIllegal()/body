@@ -124,7 +124,7 @@
   }
  catch (  TestValueException expected) {
   }
-  ASSERT.that(ImmutableList.copyOf(multimap.entries())).is(ImmutableList.copyOf(constrained.entries()));
+  assertThat(ImmutableList.copyOf(multimap.entries())).is(ImmutableList.copyOf(constrained.entries()));
   assertEquals(multimap.asMap(),constrained.asMap());
   assertEquals(multimap.values(),constrained.values());
   assertEquals(multimap.keys(),constrained.keys());

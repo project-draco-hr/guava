@@ -1,16 +1,16 @@
 {
   ImmutableSortedSet<Integer> set=ContiguousSet.create(Range.closed(1,3),integers());
-  ASSERT.that(set.subSet(1,4)).has().exactly(1,2,3).inOrder();
-  ASSERT.that(set.subSet(2,4)).has().exactly(2,3).inOrder();
-  ASSERT.that(set.subSet(3,4)).has().item(3);
-  ASSERT.that(set.subSet(3,3)).isEmpty();
-  ASSERT.that(set.subSet(2,3)).has().item(2);
-  ASSERT.that(set.subSet(1,3)).has().exactly(1,2).inOrder();
-  ASSERT.that(set.subSet(1,2)).has().item(1);
-  ASSERT.that(set.subSet(2,2)).isEmpty();
-  ASSERT.that(set.subSet(Integer.MIN_VALUE,Integer.MAX_VALUE)).has().exactly(1,2,3).inOrder();
-  ASSERT.that(set.subSet(1,true,3,true)).has().exactly(1,2,3).inOrder();
-  ASSERT.that(set.subSet(1,false,3,true)).has().exactly(2,3).inOrder();
-  ASSERT.that(set.subSet(1,true,3,false)).has().exactly(1,2).inOrder();
-  ASSERT.that(set.subSet(1,false,3,false)).has().item(2);
+  assertThat(set.subSet(1,4)).has().exactly(1,2,3).inOrder();
+  assertThat(set.subSet(2,4)).has().exactly(2,3).inOrder();
+  assertThat(set.subSet(3,4)).has().item(3);
+  assertThat(set.subSet(3,3)).isEmpty();
+  assertThat(set.subSet(2,3)).has().item(2);
+  assertThat(set.subSet(1,3)).has().exactly(1,2).inOrder();
+  assertThat(set.subSet(1,2)).has().item(1);
+  assertThat(set.subSet(2,2)).isEmpty();
+  assertThat(set.subSet(Integer.MIN_VALUE,Integer.MAX_VALUE)).has().exactly(1,2,3).inOrder();
+  assertThat(set.subSet(1,true,3,true)).has().exactly(1,2,3).inOrder();
+  assertThat(set.subSet(1,false,3,true)).has().exactly(2,3).inOrder();
+  assertThat(set.subSet(1,true,3,false)).has().exactly(1,2).inOrder();
+  assertThat(set.subSet(1,false,3,false)).has().item(2);
 }

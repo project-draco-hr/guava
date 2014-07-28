@@ -1,5 +1,5 @@
 {
   sanityTests.ignoreClasses(Predicates.<Object>equalTo(PublicFoo.class));
-  ASSERT.that(findClassesToTest(ImmutableList.of(PublicFoo.class))).isEmpty();
-  ASSERT.that(findClassesToTest(ImmutableList.of(Foo.class))).has().item(Foo.class);
+  assertThat(findClassesToTest(ImmutableList.of(PublicFoo.class))).isEmpty();
+  assertThat(findClassesToTest(ImmutableList.of(Foo.class))).has().item(Foo.class);
 }

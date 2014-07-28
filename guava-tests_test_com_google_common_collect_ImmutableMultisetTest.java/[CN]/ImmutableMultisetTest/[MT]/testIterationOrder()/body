@@ -1,4 +1,4 @@
 {
   Collection<String> c=ImmutableMultiset.of("a","b","a");
-  ASSERT.that(c).has().exactly("a","a","b").inOrder();
+  assertThat(c).has().exactly("a","a","b").inOrder();
 }

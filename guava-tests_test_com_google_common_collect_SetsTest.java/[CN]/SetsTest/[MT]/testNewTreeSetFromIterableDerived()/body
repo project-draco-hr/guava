@@ -1,5 +1,5 @@
 {
   Iterable<Derived> iterable=Arrays.asList(new Derived("foo"),new Derived("bar"));
   TreeSet<Derived> set=Sets.newTreeSet(iterable);
-  ASSERT.that(set).has().exactly(new Derived("bar"),new Derived("foo")).inOrder();
+  assertThat(set).has().exactly(new Derived("bar"),new Derived("foo")).inOrder();
 }

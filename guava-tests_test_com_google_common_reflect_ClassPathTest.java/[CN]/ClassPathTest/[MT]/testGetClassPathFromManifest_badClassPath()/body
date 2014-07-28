@@ -1,5 +1,5 @@
 {
   File jarFile=new File("base.jar");
   Manifest manifest=manifestClasspath("an_invalid^path");
-  ASSERT.that(ClassPath.Scanner.getClassPathFromManifest(jarFile,manifest)).isEmpty();
+  assertThat(ClassPath.Scanner.getClassPathFromManifest(jarFile,manifest)).isEmpty();
 }

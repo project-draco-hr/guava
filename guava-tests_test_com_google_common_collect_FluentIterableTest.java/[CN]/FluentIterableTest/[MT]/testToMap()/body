@@ -1,3 +1,3 @@
 {
-  ASSERT.that(fluent(1,2,3).toMap(Functions.toStringFunction()).entrySet()).has().exactly(Maps.immutableEntry(1,"1"),Maps.immutableEntry(2,"2"),Maps.immutableEntry(3,"3")).inOrder();
+  assertThat(fluent(1,2,3).toMap(Functions.toStringFunction()).entrySet()).has().exactly(Maps.immutableEntry(1,"1"),Maps.immutableEntry(2,"2"),Maps.immutableEntry(3,"3")).inOrder();
 }

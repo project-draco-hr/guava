@@ -1,3 +1,3 @@
 {
-  ASSERT.that(getSubscriber().overriddenAndAnnotatedInSubclassEvents).has().item(EVENT);
+  assertThat(getSubscriber().overriddenAndAnnotatedInSubclassEvents).has().item(EVENT);
 }

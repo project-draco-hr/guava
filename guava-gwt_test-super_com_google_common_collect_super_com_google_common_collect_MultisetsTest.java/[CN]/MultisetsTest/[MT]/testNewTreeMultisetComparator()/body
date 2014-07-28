@@ -2,5 +2,5 @@
   TreeMultiset<String> multiset=TreeMultiset.create(Collections.reverseOrder());
   multiset.add("bar",3);
   multiset.add("foo",2);
-  ASSERT.that(multiset).has().exactly("foo","foo","bar","bar","bar").inOrder();
+  assertThat(multiset).has().exactly("foo","foo","bar","bar","bar").inOrder();
 }

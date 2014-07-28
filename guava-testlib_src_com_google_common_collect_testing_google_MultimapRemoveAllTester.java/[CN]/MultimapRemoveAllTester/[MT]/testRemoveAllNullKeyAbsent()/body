@@ -1,4 +1,4 @@
 {
-  ASSERT.that(multimap().removeAll(null)).isEmpty();
+  assertThat(multimap().removeAll(null)).isEmpty();
   expectUnchanged();
 }

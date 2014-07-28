@@ -7,7 +7,7 @@
   assertEquals("a",elementSet.first());
   assertEquals("c",elementSet.last());
   assertEquals(Ordering.natural(),elementSet.comparator());
-  ASSERT.that(elementSet.headSet("b")).has().exactly("a").inOrder();
-  ASSERT.that(elementSet.tailSet("b")).has().exactly("b","c").inOrder();
-  ASSERT.that(elementSet.subSet("a","c")).has().exactly("a","b").inOrder();
+  assertThat(elementSet.headSet("b")).has().exactly("a").inOrder();
+  assertThat(elementSet.tailSet("b")).has().exactly("b","c").inOrder();
+  assertThat(elementSet.subSet("a","c")).has().exactly("a","b").inOrder();
 }

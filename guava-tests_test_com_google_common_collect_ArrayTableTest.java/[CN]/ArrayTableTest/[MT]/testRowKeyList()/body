@@ -1,4 +1,4 @@
 {
   ArrayTable<String,Integer,Character> table=create("foo",1,'a',"bar",1,'b',"foo",3,'c');
-  ASSERT.that(table.rowKeyList()).has().exactly("foo","bar","cat").inOrder();
+  assertThat(table.rowKeyList()).has().exactly("foo","bar","cat").inOrder();
 }

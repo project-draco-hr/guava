@@ -4,7 +4,7 @@
     fail("Expected ConflictingRequirementsException");
   }
  catch (  ConflictingRequirementsException e) {
-    ASSERT.that(e.getConflicts()).has().item(ExampleBaseFeature.BASE_FEATURE_1);
+    assertThat(e.getConflicts()).has().item(ExampleBaseFeature.BASE_FEATURE_1);
     assertEquals(ExampleDerivedInterfaceTester_Conflict.class,e.getSource());
   }
 }

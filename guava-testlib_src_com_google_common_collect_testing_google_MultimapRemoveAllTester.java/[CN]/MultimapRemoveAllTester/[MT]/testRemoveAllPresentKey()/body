@@ -1,4 +1,4 @@
 {
-  ASSERT.that(multimap().removeAll(sampleKeys().e0)).has().exactly(sampleValues().e0).inOrder();
+  assertThat(multimap().removeAll(sampleKeys().e0)).has().exactly(sampleValues().e0).inOrder();
   expectMissing(samples.e0);
 }

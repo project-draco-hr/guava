@@ -1,5 +1,5 @@
 {
   String longDelimiter=", a, b, c";
   Iterable<String> letters=Splitter.on(", ").split(longDelimiter);
-  ASSERT.that(letters).iteratesAs("","a","b","c");
+  assertThat(letters).iteratesAs("","a","b","c");
 }

@@ -9,8 +9,8 @@
   builder.put("a",2);
   builder.put("b",6);
   ImmutableListMultimap<String,Integer> multimap=builder.build();
-  ASSERT.that(multimap.keySet()).has().exactly("d","c","b","a").inOrder();
-  ASSERT.that(multimap.values()).has().exactly(2,4,6,3,5,2).inOrder();
-  ASSERT.that(multimap.get("a")).has().exactly(5,2).inOrder();
-  ASSERT.that(multimap.get("b")).has().exactly(6,3).inOrder();
+  assertThat(multimap.keySet()).has().exactly("d","c","b","a").inOrder();
+  assertThat(multimap.values()).has().exactly(2,4,6,3,5,2).inOrder();
+  assertThat(multimap.get("a")).has().exactly(5,2).inOrder();
+  assertThat(multimap.get("b")).has().exactly(6,3).inOrder();
 }

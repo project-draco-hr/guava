@@ -3,5 +3,5 @@
   Invokable<T,?> invokable=new TypeToken<T>(getClass()){
   }
 .constructor(constructor);
-  ASSERT.that(invokable.getExceptionTypes()).has().item(TypeToken.of(AssertionError.class));
+  assertThat(invokable.getExceptionTypes()).has().item(TypeToken.of(AssertionError.class));
 }

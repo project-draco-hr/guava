@@ -1,7 +1,7 @@
 {
   NavigableSet<String> strings=ImmutableSortedSet.of();
   NavigableMap<String,Integer> map=Maps.asMap(strings,LENGTH_FUNCTION);
-  ASSERT.that(map.entrySet()).isEmpty();
+  assertThat(map.entrySet()).isEmpty();
   assertTrue(map.isEmpty());
   assertNull(map.get("five"));
 }

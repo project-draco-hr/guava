@@ -6,7 +6,7 @@
   Iterator<Map.Entry<String,Collection<Integer>>> entries=map.asMap().entrySet().iterator();
   Map.Entry<String,Collection<Integer>> entry=entries.next();
   assertEquals("bar",entry.getKey());
-  ASSERT.that(entry.getValue()).has().exactly(1,3).inOrder();
+  assertThat(entry.getValue()).has().exactly(1,3).inOrder();
   try {
     entry.setValue(Arrays.<Integer>asList());
     fail("UnsupportedOperationException expected");
@@ -16,7 +16,7 @@
   entries.remove();
   entry=entries.next();
   assertEquals("foo",entry.getKey());
-  ASSERT.that(entry.getValue()).has().item(2);
+  assertThat(entry.getValue()).has().item(2);
   assertFalse(entries.hasNext());
   assertEquals("{foo=[2]}",map.toString());
 }

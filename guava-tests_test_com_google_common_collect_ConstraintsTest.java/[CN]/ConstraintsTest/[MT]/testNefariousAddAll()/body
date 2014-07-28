@@ -3,6 +3,6 @@
   List<String> constrained=Constraints.constrainedList(list,TEST_CONSTRAINT);
   Collection<String> onceIterable=onceIterableCollection("baz");
   constrained.addAll(onceIterable);
-  ASSERT.that(constrained).has().exactly("foo","bar","baz").inOrder();
-  ASSERT.that(list).has().exactly("foo","bar","baz").inOrder();
+  assertThat(constrained).has().exactly("foo","bar","baz").inOrder();
+  assertThat(list).has().exactly("foo","bar","baz").inOrder();
 }

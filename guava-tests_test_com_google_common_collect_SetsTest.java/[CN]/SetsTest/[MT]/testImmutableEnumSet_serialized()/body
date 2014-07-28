@@ -1,6 +1,6 @@
 {
   Set<SomeEnum> units=Sets.immutableEnumSet(SomeEnum.D,SomeEnum.B);
-  ASSERT.that(units).has().exactly(SomeEnum.B,SomeEnum.D).inOrder();
+  assertThat(units).has().exactly(SomeEnum.B,SomeEnum.D).inOrder();
   Set<SomeEnum> copy=SerializableTester.reserializeAndAssert(units);
   assertTrue(copy instanceof ImmutableEnumSet);
 }

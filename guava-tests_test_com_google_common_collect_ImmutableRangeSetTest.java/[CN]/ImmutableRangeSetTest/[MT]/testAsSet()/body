@@ -3,7 +3,7 @@
   ImmutableSortedSet<Integer> expectedSet=ImmutableSortedSet.of(2,3,4,8,9,16,17);
   ImmutableSortedSet<Integer> asSet=rangeSet.asSet(DiscreteDomain.integers());
   assertEquals(expectedSet,asSet);
-  ASSERT.that(asSet).has().exactlyAs(expectedSet).inOrder();
+  assertThat(asSet).has().exactlyAs(expectedSet).inOrder();
   assertTrue(asSet.containsAll(expectedSet));
   SerializableTester.reserializeAndAssert(asSet);
 }

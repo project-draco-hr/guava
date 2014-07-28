@@ -1,5 +1,5 @@
 {
-  ASSERT.that(list).has().exactly("foo","bar","baz").inOrder();
+  assertThat(list).has().exactly("foo","bar","baz").inOrder();
   assertEquals(3,list.size());
   assertIndexIsOutOfBounds(list,-1);
   assertEquals("foo",list.get(0));

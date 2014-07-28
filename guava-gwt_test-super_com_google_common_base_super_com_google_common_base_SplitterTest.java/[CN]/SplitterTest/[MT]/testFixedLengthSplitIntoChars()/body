@@ -1,5 +1,5 @@
 {
   String simple="abcd";
   Iterable<String> letters=Splitter.fixedLength(1).split(simple);
-  ASSERT.that(letters).iteratesAs("a","b","c","d");
+  assertThat(letters).iteratesAs("a","b","c","d");
 }

@@ -1,5 +1,5 @@
 {
   String doubled="a,, b,c";
   Iterable<String> letters=Splitter.onPattern(",").split(doubled);
-  ASSERT.that(letters).iteratesAs("a",""," b","c");
+  assertThat(letters).iteratesAs("a",""," b","c");
 }

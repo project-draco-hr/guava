@@ -15,8 +15,8 @@
   constrained.putAll(new ImmutableMultimap.Builder<String,Integer>().put("dag",11).build());
   assertTrue(multimap.equals(constrained));
   assertTrue(constrained.equals(multimap));
-  ASSERT.that(ImmutableList.copyOf(multimap.entries())).is(ImmutableList.copyOf(constrained.entries()));
-  ASSERT.that(constrained.asMap().get("foo")).has().item(1);
+  assertThat(ImmutableList.copyOf(multimap.entries())).is(ImmutableList.copyOf(constrained.entries()));
+  assertThat(constrained.asMap().get("foo")).has().item(1);
   assertNull(constrained.asMap().get("missing"));
   assertEquals(multimap.asMap(),constrained.asMap());
   assertEquals(multimap.values(),constrained.values());
@@ -24,7 +24,7 @@
   assertEquals(multimap.keySet(),constrained.keySet());
   assertEquals(multimap.toString(),constrained.toString());
   assertEquals(multimap.hashCode(),constrained.hashCode());
-  ASSERT.that(multimap.entries()).has().exactly(Maps.immutableEntry(TEST_KEY,TEST_VALUE),Maps.immutableEntry("foo",1),Maps.immutableEntry("bar",2),Maps.immutableEntry("baz",3),Maps.immutableEntry("qux",4),Maps.immutableEntry("zig",5),Maps.immutableEntry("zag",6),Maps.immutableEntry("bee",7),Maps.immutableEntry("bim",8),Maps.immutableEntry("bop",9),Maps.immutableEntry("dig",10),Maps.immutableEntry("dag",11)).inOrder();
+  assertThat(multimap.entries()).has().exactly(Maps.immutableEntry(TEST_KEY,TEST_VALUE),Maps.immutableEntry("foo",1),Maps.immutableEntry("bar",2),Maps.immutableEntry("baz",3),Maps.immutableEntry("qux",4),Maps.immutableEntry("zig",5),Maps.immutableEntry("zag",6),Maps.immutableEntry("bee",7),Maps.immutableEntry("bim",8),Maps.immutableEntry("bop",9),Maps.immutableEntry("dig",10),Maps.immutableEntry("dag",11)).inOrder();
   assertFalse(constrained.asMap().values() instanceof Serializable);
   Iterator<Collection<Integer>> iterator=constrained.asMap().values().iterator();
   iterator.next();

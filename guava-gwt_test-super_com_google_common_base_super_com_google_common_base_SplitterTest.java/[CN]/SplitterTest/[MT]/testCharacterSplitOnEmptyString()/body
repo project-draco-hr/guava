@@ -1,4 +1,4 @@
 {
   Iterable<String> nothing=Splitter.on('.').split("");
-  ASSERT.that(nothing).iteratesAs("");
+  assertThat(nothing).iteratesAs("");
 }

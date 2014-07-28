@@ -1,10 +1,5 @@
 {
-  List<T> newList=Lists.newArrayList();
-  for (  T t : scenario.strictlyOrderedList) {
-    if (t != null) {
-      newList.add(t);
-    }
-  }
-  newList.add(null);
-  return new Scenario<T>(scenario.ordering.nullsLast(),newList,scenario.emptyArray);
+  List<T> newList=Lists.newArrayList(scenario.strictlyOrderedList);
+  Collections.reverse(newList);
+  return new Scenario<T>(scenario.ordering.reverse(),newList,scenario.emptyArray);
 }

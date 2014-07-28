@@ -1,4 +1,4 @@
 {
   getMultiset().elementSet().clear();
-  ASSERT.that(getMultiset()).isEmpty();
+  assertThat(getMultiset()).isEmpty();
 }

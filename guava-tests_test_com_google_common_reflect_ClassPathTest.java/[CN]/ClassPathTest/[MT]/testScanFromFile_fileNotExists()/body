@@ -2,5 +2,5 @@
   ClassLoader classLoader=ClassPathTest.class.getClassLoader();
   ClassPath.Scanner scanner=new ClassPath.Scanner();
   scanner.scanFrom(new File("no/such/file/anywhere"),classLoader);
-  ASSERT.that(scanner.getResources()).isEmpty();
+  assertThat(scanner.getResources()).isEmpty();
 }

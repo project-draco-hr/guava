@@ -2,5 +2,5 @@
   Multiset<String> multiset=TreeMultiset.create(Arrays.asList("a","b","a","c"));
   Multiset<String> toRemove=HashMultiset.create(Arrays.asList("a","b","b"));
   assertTrue(Multisets.removeOccurrences(multiset,toRemove));
-  ASSERT.that(multiset).has().exactly("a","c").inOrder();
+  assertThat(multiset).has().exactly("a","c").inOrder();
 }

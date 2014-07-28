@@ -1,5 +1,5 @@
 {
   String string="foo<bar>bletch";
   Iterable<String> words=Splitter.on(Pattern.compile("\\b")).split(string);
-  ASSERT.that(words).iteratesAs("foo","<","bar",">","bletch");
+  assertThat(words).iteratesAs("foo","<","bar",">","bletch");
 }

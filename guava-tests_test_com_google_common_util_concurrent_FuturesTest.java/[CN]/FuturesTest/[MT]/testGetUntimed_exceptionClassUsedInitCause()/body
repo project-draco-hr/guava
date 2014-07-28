@@ -4,7 +4,7 @@
     fail();
   }
  catch (  ExceptionWithoutThrowableConstructor expected) {
-    ASSERT.that(expected.getMessage()).contains("mymessage");
+    assertThat(expected.getMessage()).contains("mymessage");
     assertEquals(CHECKED_EXCEPTION,expected.getCause());
   }
 }

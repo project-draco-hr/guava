@@ -2,5 +2,5 @@
   HasBoth hasBoth=new HasBoth();
   Iterable<TypeA> alist=Lists.newArrayList(new TypeA(),new TypeA(),hasBoth,new TypeA());
   Iterable<TypeB> blist=Iterables.filter(alist,TypeB.class);
-  ASSERT.that(blist).iteratesAs(hasBoth);
+  assertThat(blist).iteratesAs(hasBoth);
 }

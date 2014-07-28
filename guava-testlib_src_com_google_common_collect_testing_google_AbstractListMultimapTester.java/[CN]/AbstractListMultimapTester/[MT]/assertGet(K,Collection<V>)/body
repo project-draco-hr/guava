@@ -1,11 +1,11 @@
 {
-  ASSERT.that(multimap().get(key)).has().exactlyAs(values).inOrder();
+  assertThat(multimap().get(key)).has().exactlyAs(values).inOrder();
   if (!values.isEmpty()) {
-    ASSERT.that(multimap().asMap().get(key)).has().exactlyAs(values).inOrder();
+    assertThat(multimap().asMap().get(key)).has().exactlyAs(values).inOrder();
     assertFalse(multimap().isEmpty());
   }
  else {
-    ASSERT.that(multimap().asMap().get(key)).isNull();
+    assertThat(multimap().asMap().get(key)).isNull();
   }
   assertEquals(values.size(),multimap().get(key).size());
   assertEquals(values.size() > 0,multimap().containsKey(key));

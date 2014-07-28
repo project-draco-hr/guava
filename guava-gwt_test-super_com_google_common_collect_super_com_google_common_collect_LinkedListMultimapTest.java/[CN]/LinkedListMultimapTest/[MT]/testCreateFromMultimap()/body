@@ -5,5 +5,5 @@
   multimap.put("foo",2);
   LinkedListMultimap<String,Integer> copy=LinkedListMultimap.create(multimap);
   assertEquals(multimap,copy);
-  ASSERT.that(copy.entries()).has().exactlyAs(multimap.entries()).inOrder();
+  assertThat(copy.entries()).has().exactlyAs(multimap.entries()).inOrder();
 }

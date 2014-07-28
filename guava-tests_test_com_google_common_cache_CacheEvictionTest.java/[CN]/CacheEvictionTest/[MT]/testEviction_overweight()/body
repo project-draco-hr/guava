@@ -3,11 +3,11 @@
   LoadingCache<Integer,Integer> cache=CacheBuilder.newBuilder().concurrencyLevel(1).maximumWeight(45).weigher(intKeyWeigher()).build(loader);
   CacheTesting.warmUp(cache,0,10);
   Set<Integer> keySet=cache.asMap().keySet();
-  ASSERT.that(keySet).has().exactly(0,1,2,3,4,5,6,7,8,9);
+  assertThat(keySet).has().exactly(0,1,2,3,4,5,6,7,8,9);
   getAll(cache,asList(45));
   CacheTesting.drainRecencyQueues(cache);
-  ASSERT.that(keySet).has().exactly(0,45);
+  assertThat(keySet).has().exactly(0,45);
   getAll(cache,asList(46));
   CacheTesting.drainRecencyQueues(cache);
-  ASSERT.that(keySet).has().item(0);
+  assertThat(keySet).has().item(0);
 }

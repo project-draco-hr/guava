@@ -7,5 +7,5 @@
   }
 ;
   Multimap<String,String> transformed=Multimaps.transformEntries(multimap,transformer);
-  ASSERT.that(transformed.entries()).has().exactly(immutableEntry("a","a"),immutableEntry("a","a"),immutableEntry("b","nob")).inOrder();
+  assertThat(transformed.entries()).has().exactly(immutableEntry("a","a"),immutableEntry("a","a"),immutableEntry("b","nob")).inOrder();
 }

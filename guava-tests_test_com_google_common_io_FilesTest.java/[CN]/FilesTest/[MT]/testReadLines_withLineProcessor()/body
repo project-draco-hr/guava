@@ -11,7 +11,7 @@
     }
   }
 ;
-  ASSERT.that(Files.readLines(temp,Charsets.UTF_8,collect)).isEmpty();
+  assertThat(Files.readLines(temp,Charsets.UTF_8,collect)).isEmpty();
   PrintWriter w=new PrintWriter(Files.newWriter(temp,Charsets.UTF_8));
   w.println("hello");
   w.println("");
@@ -19,7 +19,7 @@
   w.println("");
   w.close();
   Files.readLines(temp,Charsets.UTF_8,collect);
-  ASSERT.that(collect.getResult()).has().exactly("hello",""," world  ","").inOrder();
+  assertThat(collect.getResult()).has().exactly("hello",""," world  ","").inOrder();
   LineProcessor<List<String>> collectNonEmptyLines=new LineProcessor<List<String>>(){
     List<String> collector=new ArrayList<String>();
     @Override public boolean processLine(    String line){
@@ -34,6 +34,6 @@
   }
 ;
   Files.readLines(temp,Charsets.UTF_8,collectNonEmptyLines);
-  ASSERT.that(collectNonEmptyLines.getResult()).has().exactly("hello"," world  ").inOrder();
+  assertThat(collectNonEmptyLines.getResult()).has().exactly("hello"," world  ").inOrder();
   assertTrue(temp.delete());
 }

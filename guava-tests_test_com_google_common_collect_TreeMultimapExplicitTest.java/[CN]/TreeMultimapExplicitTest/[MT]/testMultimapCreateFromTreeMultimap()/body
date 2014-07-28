@@ -4,12 +4,12 @@
   tree.put("google",6);
   tree.put("tree",0);
   tree.put("tree",3);
-  ASSERT.that(tree.keySet()).has().exactly("tree","google").inOrder();
-  ASSERT.that(tree.get("google")).has().exactly(6,2).inOrder();
+  assertThat(tree.keySet()).has().exactly("tree","google").inOrder();
+  assertThat(tree.get("google")).has().exactly(6,2).inOrder();
   TreeMultimap<String,Integer> copy=TreeMultimap.create(tree);
   assertEquals(tree,copy);
-  ASSERT.that(copy.keySet()).has().exactly("google","tree").inOrder();
-  ASSERT.that(copy.get("google")).has().exactly(2,6).inOrder();
+  assertThat(copy.keySet()).has().exactly("google","tree").inOrder();
+  assertThat(copy.get("google")).has().exactly(2,6).inOrder();
   assertEquals(Ordering.natural(),copy.keyComparator());
   assertEquals(Ordering.natural(),copy.valueComparator());
   assertEquals(Ordering.natural(),copy.get("google").comparator());

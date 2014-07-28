@@ -1,8 +1,8 @@
 {
   Multimap<String,Integer> multimap=new ImmutableSetMultimap.Builder<String,Integer>().orderKeysBy(Ordering.natural().reverse()).orderValuesBy(Ordering.usingToString()).put("a",2).put("a",10).put("b",1).build();
   multimap=SerializableTester.reserialize(multimap);
-  ASSERT.that(multimap.keySet()).has().exactly("b","a").inOrder();
-  ASSERT.that(multimap.get("a")).has().exactly(10,2).inOrder();
+  assertThat(multimap.keySet()).has().exactly("b","a").inOrder();
+  assertThat(multimap.get("a")).has().exactly(10,2).inOrder();
   assertEquals(Ordering.usingToString(),((ImmutableSortedSet<Integer>)multimap.get("a")).comparator());
   assertEquals(Ordering.usingToString(),((ImmutableSortedSet<Integer>)multimap.get("z")).comparator());
 }

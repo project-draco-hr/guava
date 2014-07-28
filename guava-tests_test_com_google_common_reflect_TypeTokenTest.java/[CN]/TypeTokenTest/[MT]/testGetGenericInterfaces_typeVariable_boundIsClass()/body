@@ -1,5 +1,5 @@
 {
-  ASSERT.that(TypeToken.of(new TypeCapture<T>(){
+  assertThat(TypeToken.of(new TypeCapture<T>(){
   }
 .capture()).getGenericInterfaces()).isEmpty();
   assertHasArrayInterfaces(new TypeToken<T[]>(){

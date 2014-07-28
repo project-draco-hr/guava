@@ -8,7 +8,7 @@
   assertEquals(multimap.toString(),unmodifiable.toString());
   assertEquals(multimap.hashCode(),unmodifiable.hashCode());
   assertEquals(multimap,unmodifiable);
-  ASSERT.that(unmodifiable.asMap().get("bar")).has().exactly(5,-1);
+  assertThat(unmodifiable.asMap().get("bar")).has().exactly(5,-1);
   assertNull(unmodifiable.asMap().get("missing"));
   assertFalse(unmodifiable.entries() instanceof Serializable);
 }

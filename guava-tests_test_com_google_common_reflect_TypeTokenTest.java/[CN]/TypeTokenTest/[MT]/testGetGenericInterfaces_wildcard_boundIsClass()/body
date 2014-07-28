@@ -1,4 +1,4 @@
 {
-  ASSERT.that(TypeToken.of(Types.subtypeOf(Object.class)).getGenericInterfaces()).isEmpty();
-  ASSERT.that(TypeToken.of(Types.subtypeOf(Object[].class)).getGenericInterfaces()).isEmpty();
+  assertThat(TypeToken.of(Types.subtypeOf(Object.class)).getGenericInterfaces()).isEmpty();
+  assertThat(TypeToken.of(Types.subtypeOf(Object[].class)).getGenericInterfaces()).isEmpty();
 }

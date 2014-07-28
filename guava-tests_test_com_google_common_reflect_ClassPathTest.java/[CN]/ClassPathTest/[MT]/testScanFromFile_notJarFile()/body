@@ -8,5 +8,5 @@
   finally {
     notJar.delete();
   }
-  ASSERT.that(scanner.getResources()).isEmpty();
+  assertThat(scanner.getResources()).isEmpty();
 }

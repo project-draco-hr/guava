@@ -1,5 +1,5 @@
 {
   initThreeCopies();
   assertTrue(getMultiset().removeAll(Collections.singleton(samples.e0)));
-  ASSERT.that(getMultiset()).isEmpty();
+  assertThat(getMultiset()).isEmpty();
 }

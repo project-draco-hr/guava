@@ -4,5 +4,5 @@
   FluentIterable<String> tail=FluentIterable.from(set).skip(1);
   set.remove("b");
   set.addAll(Lists.newArrayList("X","Y","Z"));
-  ASSERT.that(tail).iteratesAs("c","X","Y","Z");
+  assertThat(tail).iteratesAs("c","X","Y","Z");
 }

@@ -3,5 +3,5 @@
   Collection<V> getCollection=multimap().get(key);
   @SuppressWarnings("unchecked") List<V> values=Arrays.asList(sampleValues().e0,sampleValues().e2,sampleValues().e3);
   multimap().replaceValues(key,values);
-  ASSERT.that(getCollection).has().exactly(sampleValues().e0,sampleValues().e2,sampleValues().e3);
+  assertThat(getCollection).has().exactly(sampleValues().e0,sampleValues().e2,sampleValues().e3);
 }

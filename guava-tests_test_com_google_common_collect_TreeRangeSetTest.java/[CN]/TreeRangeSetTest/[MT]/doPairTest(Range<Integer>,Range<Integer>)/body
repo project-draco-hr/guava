@@ -3,23 +3,23 @@
   rangeSet.add(a);
   rangeSet.add(b);
   if (a.isEmpty() && b.isEmpty()) {
-    ASSERT.that(rangeSet.asRanges()).isEmpty();
+    assertThat(rangeSet.asRanges()).isEmpty();
   }
  else   if (a.isEmpty()) {
-    ASSERT.that(rangeSet.asRanges()).has().item(b);
+    assertThat(rangeSet.asRanges()).has().item(b);
   }
  else   if (b.isEmpty()) {
-    ASSERT.that(rangeSet.asRanges()).has().item(a);
+    assertThat(rangeSet.asRanges()).has().item(a);
   }
  else   if (a.isConnected(b)) {
-    ASSERT.that(rangeSet.asRanges()).has().exactly(a.span(b)).inOrder();
+    assertThat(rangeSet.asRanges()).has().exactly(a.span(b)).inOrder();
   }
  else {
     if (a.lowerEndpoint() < b.lowerEndpoint()) {
-      ASSERT.that(rangeSet.asRanges()).has().exactly(a,b).inOrder();
+      assertThat(rangeSet.asRanges()).has().exactly(a,b).inOrder();
     }
  else {
-      ASSERT.that(rangeSet.asRanges()).has().exactly(b,a).inOrder();
+      assertThat(rangeSet.asRanges()).has().exactly(b,a).inOrder();
     }
   }
 }

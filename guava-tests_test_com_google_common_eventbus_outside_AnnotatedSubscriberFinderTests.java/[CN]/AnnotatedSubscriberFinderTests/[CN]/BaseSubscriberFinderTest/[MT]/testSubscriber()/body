@@ -1,3 +1,3 @@
 {
-  ASSERT.that(getSubscriber().subscriberEvents).has().item(EVENT);
+  assertThat(getSubscriber().subscriberEvents).has().item(EVENT);
 }

@@ -4,5 +4,5 @@
   temp.setLastModified(0);
   assertEquals(0,temp.lastModified());
   Files.touch(temp);
-  ASSERT.that(temp.lastModified()).isNotEqualTo(0);
+  assertThat(temp.lastModified()).isNotEqualTo(0);
 }

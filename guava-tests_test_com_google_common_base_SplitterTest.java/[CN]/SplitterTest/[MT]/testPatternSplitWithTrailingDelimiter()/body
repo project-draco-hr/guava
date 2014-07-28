@@ -1,5 +1,5 @@
 {
   String trailing="a,b,c,";
   Iterable<String> letters=Splitter.onPattern(",").split(trailing);
-  ASSERT.that(letters).iteratesAs("a","b","c","");
+  assertThat(letters).iteratesAs("a","b","c","");
 }

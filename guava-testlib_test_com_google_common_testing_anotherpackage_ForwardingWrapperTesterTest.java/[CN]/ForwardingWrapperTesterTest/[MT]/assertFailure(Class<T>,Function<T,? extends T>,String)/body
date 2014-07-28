@@ -4,7 +4,7 @@
   }
  catch (  AssertionError expected) {
     for (    String message : expectedMessages) {
-      ASSERT.that(expected.getMessage()).contains(message);
+      assertThat(expected.getMessage()).contains(message);
     }
     return;
   }

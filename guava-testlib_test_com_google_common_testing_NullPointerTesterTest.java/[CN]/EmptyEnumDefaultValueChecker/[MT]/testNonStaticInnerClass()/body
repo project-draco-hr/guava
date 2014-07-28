@@ -4,6 +4,6 @@
     fail();
   }
  catch (  IllegalArgumentException expected) {
-    ASSERT.that(expected.getMessage()).contains("inner class");
+    assertThat(expected.getMessage()).contains("inner class");
   }
 }
