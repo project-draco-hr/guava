@@ -5,6 +5,6 @@
   serviceManager.startAsync().awaitHealthy();
   ImmutableMap<Service,Long> startupTimes=serviceManager.startupTimes();
   assertEquals(2,startupTimes.size());
-  assertTrue(startupTimes.get(a) >= 150);
-  assertTrue(startupTimes.get(b) >= 353);
+  assertThat(startupTimes.get(a)).isInclusivelyInRange(150,Long.MAX_VALUE);
+  assertThat(startupTimes.get(b)).isInclusivelyInRange(353,Long.MAX_VALUE);
 }

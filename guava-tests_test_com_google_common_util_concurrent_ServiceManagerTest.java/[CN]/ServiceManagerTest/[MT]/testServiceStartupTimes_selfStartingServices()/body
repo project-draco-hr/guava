@@ -1,0 +1,22 @@
+{
+  final Service b=new NoOpDelayedSerivce(353){
+    @Override protected void doStart(){
+      super.doStart();
+      Uninterruptibles.sleepUninterruptibly(150,TimeUnit.MILLISECONDS);
+    }
+  }
+;
+  Service a=new NoOpDelayedSerivce(150){
+    @Override protected void doStart(){
+      b.startAsync();
+      super.doStart();
+    }
+  }
+;
+  ServiceManager serviceManager=new ServiceManager(asList(a,b));
+  serviceManager.startAsync().awaitHealthy();
+  ImmutableMap<Service,Long> startupTimes=serviceManager.startupTimes();
+  assertEquals(2,startupTimes.size());
+  assertThat(startupTimes.get(a)).isInclusivelyInRange(150,Long.MAX_VALUE);
+  assertThat(startupTimes.get(b)).isInclusivelyInRange(0,353 - 150);
+}
