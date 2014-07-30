@@ -3,7 +3,7 @@
   SettableFuture<String> future1=SettableFuture.create();
   SettableFuture<String> future2=SettableFuture.create();
   @SuppressWarnings("unchecked") ListenableFuture<List<String>> compound=Futures.successfulAsList(future1,future2);
-  compound.addListener(listener,MoreExecutors.sameThreadExecutor());
+  compound.addListener(listener,directExecutor());
   assertFalse(compound.isDone());
   future1.cancel(true);
   assertFalse(compound.isDone());

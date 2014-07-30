@@ -1,6 +1,6 @@
 {
   Object listenerInstance=new Object();
-  ListenerCallQueue<Object> queue=new ListenerCallQueue<Object>(listenerInstance,MoreExecutors.sameThreadExecutor());
+  ListenerCallQueue<Object> queue=new ListenerCallQueue<Object>(listenerInstance,directExecutor());
   AtomicInteger counter=new AtomicInteger();
   queue.add(incrementingCallback(counter,1));
   queue.add(THROWING_CALLBACK);

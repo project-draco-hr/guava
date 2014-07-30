@@ -6,7 +6,7 @@
       stopppingCount.incrementAndGet();
     }
   }
-,MoreExecutors.sameThreadExecutor());
+,directExecutor());
   service.startAsync();
   service.stopAsync();
   assertEquals(1,stopppingCount.get());

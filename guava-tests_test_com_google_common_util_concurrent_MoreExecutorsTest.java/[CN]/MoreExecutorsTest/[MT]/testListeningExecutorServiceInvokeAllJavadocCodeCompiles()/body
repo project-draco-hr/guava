@@ -1,5 +1,5 @@
 {
-  ListeningExecutorService executor=MoreExecutors.sameThreadExecutor();
+  ListeningExecutorService executor=newDirectExecutorService();
   List<Callable<T>> tasks=ImmutableList.of();
   @SuppressWarnings("unchecked") List<ListenableFuture<T>> futures=(List)executor.invokeAll(tasks);
 }

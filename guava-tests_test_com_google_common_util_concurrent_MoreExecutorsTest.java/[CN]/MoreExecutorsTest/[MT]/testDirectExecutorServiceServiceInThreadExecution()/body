@@ -1,5 +1,5 @@
 {
-  final ListeningExecutorService executor=MoreExecutors.sameThreadExecutor();
+  final ListeningExecutorService executor=newDirectExecutorService();
   final ThreadLocal<Integer> threadLocalCount=new ThreadLocal<Integer>(){
     @Override protected Integer initialValue(){
       return 0;

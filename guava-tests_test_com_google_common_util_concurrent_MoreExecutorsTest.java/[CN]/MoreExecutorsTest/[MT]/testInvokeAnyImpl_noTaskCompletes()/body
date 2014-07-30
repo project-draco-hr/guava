@@ -1,5 +1,5 @@
 {
-  ListeningExecutorService e=sameThreadExecutor();
+  ListeningExecutorService e=newDirectExecutorService();
   List<Callable<String>> l=new ArrayList<Callable<String>>();
   l.add(new NPETask());
   try {

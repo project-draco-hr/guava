@@ -6,5 +6,5 @@
       listenerLatch.countDown();
     }
   }
-,MoreExecutors.sameThreadExecutor());
+,directExecutor());
 }

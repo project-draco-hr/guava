@@ -2,7 +2,7 @@
   final StartFailingService service=new StartFailingService();
   service.startAsync();
   assertEquals(State.FAILED,service.state());
-  service.addListener(new RecordingListener(service),MoreExecutors.sameThreadExecutor());
+  service.addListener(new RecordingListener(service),directExecutor());
   Thread thread=new Thread(){
     @Override public void run(){
       service.stopAsync();

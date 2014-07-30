@@ -1,5 +1,5 @@
 {
-  ListeningExecutorService service=listeningDecorator(MoreExecutors.sameThreadExecutor());
+  ListeningExecutorService service=listeningDecorator(newDirectExecutorService());
   assertSame(service,listeningDecorator(service));
   List<Callable<String>> callables=ImmutableList.of(Callables.returning("x"));
   List<Future<String>> results;

@@ -10,7 +10,7 @@
       future2.set(DATA2);
     }
   }
-,sameThreadExecutor());
+,directExecutor());
   assertTrue(compound.cancel(false));
   assertTrue(compound.isCancelled());
   assertTrue(future1.isCancelled());

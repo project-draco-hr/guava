@@ -7,7 +7,7 @@
         integer.compareAndSet(expectedCount,expectedCount + 1);
       }
     }
-,MoreExecutors.sameThreadExecutor());
+,MoreExecutors.directExecutor());
   }
   list.execute();
   assertEquals(10,integer.get());

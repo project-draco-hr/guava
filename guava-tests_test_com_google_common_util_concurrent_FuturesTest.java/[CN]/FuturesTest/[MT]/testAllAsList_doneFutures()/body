@@ -8,7 +8,7 @@
   @SuppressWarnings("unchecked") ListenableFuture<List<String>> compound=Futures.allAsList(future1,future2,future3);
   SingleCallListener listener=new SingleCallListener();
   listener.expectCall();
-  compound.addListener(listener,MoreExecutors.sameThreadExecutor());
+  compound.addListener(listener,directExecutor());
   assertTrue(compound.isDone());
   assertTrue(listener.wasCalled());
   List<String> results=compound.get();

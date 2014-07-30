@@ -27,7 +27,7 @@
             }
           }
         }
-,INLINE_EXECUTOR);
+,directExecutor());
       }
  catch (      Throwable e) {
         setException(e);

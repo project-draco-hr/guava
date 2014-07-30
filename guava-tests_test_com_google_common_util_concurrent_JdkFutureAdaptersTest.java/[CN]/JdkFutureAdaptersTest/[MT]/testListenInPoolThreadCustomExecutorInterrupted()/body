@@ -12,7 +12,7 @@
   singleCallListener.expectCall();
   assertFalse(singleCallListener.wasCalled());
   assertFalse(listenableFuture.isDone());
-  listenableFuture.addListener(singleCallListener,sameThreadExecutor());
+  listenableFuture.addListener(singleCallListener,directExecutor());
   submitSuccessful.await();
   executorService.shutdownNow();
   abstractFuture.set(DATA1);

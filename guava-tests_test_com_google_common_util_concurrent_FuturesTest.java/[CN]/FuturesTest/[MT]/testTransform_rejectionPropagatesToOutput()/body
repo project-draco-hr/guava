@@ -1,6 +1,6 @@
 {
   SettableFuture<Foo> input=SettableFuture.create();
-  ExecutorService executor=MoreExecutors.sameThreadExecutor();
+  ExecutorService executor=newDirectExecutorService();
   ListenableFuture<String> transformed=Futures.transform(input,Functions.toStringFunction(),executor);
   executor.shutdown();
   input.set(new Foo());

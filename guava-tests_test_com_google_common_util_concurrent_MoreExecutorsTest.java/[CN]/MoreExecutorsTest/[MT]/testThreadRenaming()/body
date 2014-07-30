@@ -1,5 +1,5 @@
 {
-  Executor renamingExecutor=renamingDecorator(sameThreadExecutor(),Suppliers.ofInstance("FooBar"));
+  Executor renamingExecutor=renamingDecorator(newDirectExecutorService(),Suppliers.ofInstance("FooBar"));
   String oldName=Thread.currentThread().getName();
   renamingExecutor.execute(new Runnable(){
     @Override public void run(){

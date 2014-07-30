@@ -1,6 +1,6 @@
 {
   MockExecutor mock=new MockExecutor();
   TestExecutor testExecutor=new TestExecutor(mock);
-  testExecutor.execute(DO_NOTHING);
+  testExecutor.execute(doNothing());
   mock.assertLastMethodCalled("execute");
 }

@@ -13,5 +13,5 @@
       }
     }
   }
-,INLINE_EXECUTOR);
+,directExecutor());
 }

@@ -1,5 +1,5 @@
 {
-  final ExecutorService executor=MoreExecutors.sameThreadExecutor();
+  final ExecutorService executor=newDirectExecutorService();
   final CyclicBarrier barrier=new CyclicBarrier(2);
   final AtomicReference<Throwable> throwableFromOtherThread=new AtomicReference<Throwable>(null);
   final Runnable doNothingRunnable=new Runnable(){

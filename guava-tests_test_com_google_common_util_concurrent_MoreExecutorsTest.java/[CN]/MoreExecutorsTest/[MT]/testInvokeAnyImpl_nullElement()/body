@@ -1,5 +1,5 @@
 {
-  ListeningExecutorService e=sameThreadExecutor();
+  ListeningExecutorService e=newDirectExecutorService();
   List<Callable<Integer>> l=new ArrayList<Callable<Integer>>();
   l.add(new Callable<Integer>(){
     @Override public Integer call(){

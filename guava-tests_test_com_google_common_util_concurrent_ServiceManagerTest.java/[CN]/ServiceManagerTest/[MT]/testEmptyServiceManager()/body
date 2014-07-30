@@ -5,7 +5,7 @@
   logger.addHandler(logHandler);
   ServiceManager manager=new ServiceManager(Arrays.<Service>asList());
   RecordingListener listener=new RecordingListener();
-  manager.addListener(listener,MoreExecutors.sameThreadExecutor());
+  manager.addListener(listener);
   manager.startAsync().awaitHealthy();
   assertTrue(manager.isHealthy());
   assertTrue(listener.healthyCalled);

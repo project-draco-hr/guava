@@ -4,7 +4,7 @@
     list=impl.newExecutionList();
     listenerLatch=new CountDownLatch(numListeners);
     for (int j=0; j < numListeners; j++) {
-      list.add(listener,SAME_THREAD_EXECUTOR);
+      list.add(listener,directExecutor());
       returnValue+=listenerLatch.getCount();
     }
     list.execute();

@@ -5,7 +5,7 @@
       service.stopAsync().awaitTerminated();
     }
   }
-,MoreExecutors.sameThreadExecutor());
+,directExecutor());
   service.startAsync().awaitRunning();
   Thread thread=new Thread(){
     @Override public void run(){

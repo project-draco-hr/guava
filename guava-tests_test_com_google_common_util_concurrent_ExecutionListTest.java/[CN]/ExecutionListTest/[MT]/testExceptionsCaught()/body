@@ -1,5 +1,5 @@
 {
-  list.add(THROWING_RUNNABLE,sameThreadExecutor());
+  list.add(THROWING_RUNNABLE,directExecutor());
   list.execute();
-  list.add(THROWING_RUNNABLE,sameThreadExecutor());
+  list.add(THROWING_RUNNABLE,directExecutor());
 }

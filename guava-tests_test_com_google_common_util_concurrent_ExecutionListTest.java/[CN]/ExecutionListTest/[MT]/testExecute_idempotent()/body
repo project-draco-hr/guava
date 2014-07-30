@@ -5,7 +5,7 @@
       runCalled.getAndIncrement();
     }
   }
-,MoreExecutors.sameThreadExecutor());
+,directExecutor());
   list.execute();
   assertEquals(1,runCalled.get());
   list.execute();

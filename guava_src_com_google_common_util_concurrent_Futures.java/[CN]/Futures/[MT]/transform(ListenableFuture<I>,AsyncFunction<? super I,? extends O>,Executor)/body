@@ -1,6 +1,6 @@
 {
   checkNotNull(executor);
   ChainingListenableFuture<I,O> output=new ChainingListenableFuture<I,O>(function,input);
-  input.addListener(rejectionPropagatingRunnable(output,output,executor),INLINE_EXECUTOR);
+  input.addListener(rejectionPropagatingRunnable(output,output,executor),directExecutor());
   return output;
 }

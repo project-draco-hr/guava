@@ -4,7 +4,7 @@
   SettableFuture<String> future3=SettableFuture.create();
   @SuppressWarnings("unchecked") ListenableFuture<List<String>> compound=Futures.allAsList(future1,future2,future3);
   SingleCallListener listener=new SingleCallListener();
-  compound.addListener(listener,MoreExecutors.sameThreadExecutor());
+  compound.addListener(listener,directExecutor());
   assertFalse(compound.isDone());
   future1.set(DATA1);
   assertFalse(compound.isDone());

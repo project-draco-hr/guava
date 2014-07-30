@@ -1,5 +1,5 @@
 {
-  ListeningExecutorService e=sameThreadExecutor();
+  ListeningExecutorService e=newDirectExecutorService();
   try {
     List<Callable<String>> l=new ArrayList<Callable<String>>();
     l.add(new StringTask());

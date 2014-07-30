@@ -3,7 +3,7 @@
   listener.expectCall();
   List<ListenableFuture<String>> futures=ImmutableList.of();
   ListenableFuture<List<String>> compound=Futures.allAsList(futures);
-  compound.addListener(listener,MoreExecutors.sameThreadExecutor());
+  compound.addListener(listener,directExecutor());
   assertTrue(compound.isDone());
   assertTrue(compound.get().isEmpty());
   assertTrue(listener.wasCalled());

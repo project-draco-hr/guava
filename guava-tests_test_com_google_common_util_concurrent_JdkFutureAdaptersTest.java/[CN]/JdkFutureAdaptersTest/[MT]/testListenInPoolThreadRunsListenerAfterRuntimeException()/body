@@ -3,10 +3,10 @@
   assertFalse("Can't test the main listenInPoolThread path " + "if the input is already a ListenableFuture",ListenableFuture.class.isInstance(input));
   ListenableFuture<String> listenable=listenInPoolThread(input);
   RecordingRunnable earlyListener=new RecordingRunnable();
-  listenable.addListener(earlyListener,sameThreadExecutor());
+  listenable.addListener(earlyListener,directExecutor());
   input.allowGetToComplete.countDown();
   assertTrue(earlyListener.wasRun.await(1,SECONDS));
   RecordingRunnable lateListener=new RecordingRunnable();
-  listenable.addListener(lateListener,sameThreadExecutor());
+  listenable.addListener(lateListener,directExecutor());
   assertTrue(lateListener.wasRun.await(1,SECONDS));
 }

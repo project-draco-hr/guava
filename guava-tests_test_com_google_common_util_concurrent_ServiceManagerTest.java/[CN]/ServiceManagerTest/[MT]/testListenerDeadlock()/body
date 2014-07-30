@@ -25,7 +25,7 @@
       Uninterruptibles.awaitUninterruptibly(failLeave);
     }
   }
-,MoreExecutors.sameThreadExecutor());
+);
   manager.startAsync();
   afterStarted.countDown();
   failEnter.await();

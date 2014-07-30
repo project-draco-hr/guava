@@ -1,5 +1,5 @@
 {
-  ExecutorService executor=MoreExecutors.sameThreadExecutor();
+  ExecutorService executor=newDirectExecutorService();
   executor.shutdown();
   try {
     executor.execute(EMPTY_RUNNABLE);

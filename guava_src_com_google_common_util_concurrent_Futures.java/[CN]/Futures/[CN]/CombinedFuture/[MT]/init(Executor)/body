@@ -11,7 +11,7 @@
       CombinedFuture.this.combiner=null;
     }
   }
-,INLINE_EXECUTOR);
+,directExecutor());
   if (futures.isEmpty()) {
     set(combiner.combine(ImmutableList.<Optional<V>>of()));
     return;

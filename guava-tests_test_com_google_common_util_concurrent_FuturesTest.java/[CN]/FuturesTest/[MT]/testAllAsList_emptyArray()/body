@@ -2,7 +2,7 @@
   SingleCallListener listener=new SingleCallListener();
   listener.expectCall();
   @SuppressWarnings("unchecked") ListenableFuture<List<String>> compound=Futures.allAsList();
-  compound.addListener(listener,MoreExecutors.sameThreadExecutor());
+  compound.addListener(listener,directExecutor());
   assertTrue(compound.isDone());
   assertTrue(compound.get().isEmpty());
   assertTrue(listener.wasCalled());

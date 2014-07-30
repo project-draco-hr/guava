@@ -1,5 +1,5 @@
 {
-  ListeningExecutorService e=sameThreadExecutor();
+  ListeningExecutorService e=newDirectExecutorService();
   try {
     invokeAnyImpl(e,new ArrayList<Callable<String>>(),false,0);
     shouldThrow();

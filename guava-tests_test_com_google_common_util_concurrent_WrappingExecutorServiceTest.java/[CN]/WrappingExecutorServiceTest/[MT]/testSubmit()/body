@@ -2,14 +2,14 @@
 {
     MockExecutor mock=new MockExecutor();
     TestExecutor testExecutor=new TestExecutor(mock);
-    Future<?> f=testExecutor.submit(DO_NOTHING);
+    Future<?> f=testExecutor.submit(doNothing());
     mock.assertLastMethodCalled("submit");
     f.get();
   }
 {
     MockExecutor mock=new MockExecutor();
     TestExecutor testExecutor=new TestExecutor(mock);
-    Future<String> f=testExecutor.submit(DO_NOTHING,RESULT_VALUE);
+    Future<String> f=testExecutor.submit(doNothing(),RESULT_VALUE);
     mock.assertLastMethodCalled("submit");
     assertEquals(RESULT_VALUE,f.get());
   }
