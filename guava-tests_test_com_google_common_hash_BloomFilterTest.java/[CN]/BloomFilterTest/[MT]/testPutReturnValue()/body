@@ -1,6 +1,6 @@
 {
   for (int i=0; i < 10; i++) {
-    BloomFilter<CharSequence> bf=BloomFilter.create(Funnels.unencodedCharsFunnel(),100);
+    BloomFilter<String> bf=BloomFilter.create(Funnels.unencodedCharsFunnel(),100);
     for (int j=0; j < 10; j++) {
       String value=new Object().toString();
       boolean mightContain=bf.mightContain(value);

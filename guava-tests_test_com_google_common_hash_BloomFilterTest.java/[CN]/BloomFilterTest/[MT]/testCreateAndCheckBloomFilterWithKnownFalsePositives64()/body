@@ -1,6 +1,6 @@
 {
   int numInsertions=1000000;
-  BloomFilter<CharSequence> bf=BloomFilter.create(Funnels.unencodedCharsFunnel(),numInsertions,0.03,BloomFilterStrategies.MURMUR128_MITZ_64);
+  BloomFilter<String> bf=BloomFilter.create(Funnels.unencodedCharsFunnel(),numInsertions,0.03,BloomFilterStrategies.MURMUR128_MITZ_64);
   for (int i=0; i < numInsertions * 2; i+=2) {
     bf.put(Integer.toString(i));
   }

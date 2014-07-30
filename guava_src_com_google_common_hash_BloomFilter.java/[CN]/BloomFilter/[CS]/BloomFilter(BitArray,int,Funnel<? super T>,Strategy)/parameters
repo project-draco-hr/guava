@@ -1,4 +1,4 @@
 BitArray bits
 int numHashFunctions
-Funnel<T> funnel
+Funnel<? super T> funnel
 Strategy strategy
