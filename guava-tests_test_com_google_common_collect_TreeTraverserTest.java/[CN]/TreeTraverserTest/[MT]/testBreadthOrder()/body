@@ -1,4 +1,4 @@
 {
-  assertThat(iterationOrder(ADAPTER.breadthFirstTraversal(h))).is("hdegabcf");
-  assertThat(binaryIterationOrder(BIN_ADAPTER.breadthFirstTraversal(bd))).is("dbeacfg");
+  assertThat(iterationOrder(ADAPTER.breadthFirstTraversal(h))).isEqualTo("hdegabcf");
+  assertThat(binaryIterationOrder(BIN_ADAPTER.breadthFirstTraversal(bd))).isEqualTo("dbeacfg");
 }

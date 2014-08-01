@@ -7,7 +7,7 @@
  else {
     assertThat(multimap().asMap().get(key)).isNull();
   }
-  assertThat(multimap().get(key).size()).is((long)values.size());
+  assertThat(multimap().get(key).size()).isEqualTo((long)values.size());
   assertEquals(values.size() > 0,multimap().containsKey(key));
   assertEquals(values.size() > 0,multimap().keySet().contains(key));
   assertEquals(values.size() > 0,multimap().keys().contains(key));

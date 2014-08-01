@@ -1,4 +1,4 @@
 {
-  assertThat(iterationOrder(ADAPTER.preOrderTraversal(h))).is("hdabcegf");
-  assertThat(binaryIterationOrder(BIN_ADAPTER.preOrderTraversal(bd))).is("dbacefg");
+  assertThat(iterationOrder(ADAPTER.preOrderTraversal(h))).isEqualTo("hdabcegf");
+  assertThat(binaryIterationOrder(BIN_ADAPTER.preOrderTraversal(bd))).isEqualTo("dbacefg");
 }

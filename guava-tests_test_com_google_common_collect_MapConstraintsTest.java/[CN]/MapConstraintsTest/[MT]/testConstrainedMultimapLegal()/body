@@ -15,7 +15,7 @@
   constrained.putAll(new ImmutableMultimap.Builder<String,Integer>().put("dag",11).build());
   assertTrue(multimap.equals(constrained));
   assertTrue(constrained.equals(multimap));
-  assertThat(ImmutableList.copyOf(multimap.entries())).is(ImmutableList.copyOf(constrained.entries()));
+  assertThat(ImmutableList.copyOf(multimap.entries())).isEqualTo(ImmutableList.copyOf(constrained.entries()));
   assertThat(constrained.asMap().get("foo")).has().item(1);
   assertNull(constrained.asMap().get("missing"));
   assertEquals(multimap.asMap(),constrained.asMap());
