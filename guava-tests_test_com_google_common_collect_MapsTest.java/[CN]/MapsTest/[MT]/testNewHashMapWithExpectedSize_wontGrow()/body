@@ -10,6 +10,6 @@
     assertEquals("table size after adding " + size + " elements",initialBuckets,bucketsOf(map1));
     HashMap<Integer,Void> map2=Maps.newHashMapWithExpectedSize(size);
     map2.putAll(map1);
-    assertEquals("table size after adding " + size + "elements",initialBuckets,bucketsOf(map2));
+    assertEquals("table size after adding " + size + " elements: ",initialBuckets,bucketsOf(map2));
   }
 }
