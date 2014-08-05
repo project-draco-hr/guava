@@ -1,0 +1,3 @@
+{
+  return new SubscriberExceptionContext(eventBus,new Object(),this,subscriberMethod());
+}

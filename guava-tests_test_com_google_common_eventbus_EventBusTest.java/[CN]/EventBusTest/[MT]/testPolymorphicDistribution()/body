@@ -17,19 +17,19 @@
   bus.register(stringCatcher);
   bus.register(objCatcher);
   bus.register(compCatcher);
-  final Object OBJ_EVENT=new Object();
-  final Object COMP_EVENT=new Integer(6);
+  Object objEvent=new Object();
+  Object compEvent=new Integer(6);
   bus.post(EVENT);
-  bus.post(OBJ_EVENT);
-  bus.post(COMP_EVENT);
+  bus.post(objEvent);
+  bus.post(compEvent);
   List<String> stringEvents=stringCatcher.getEvents();
   assertEquals("Only one String should be delivered.",1,stringEvents.size());
   assertEquals("Correct string should be delivered.",EVENT,stringEvents.get(0));
   assertEquals("Three Objects should be delivered.",3,objectEvents.size());
   assertEquals("String fixture must be first object delivered.",EVENT,objectEvents.get(0));
-  assertEquals("Object fixture must be second object delivered.",OBJ_EVENT,objectEvents.get(1));
-  assertEquals("Comparable fixture must be thirdobject delivered.",COMP_EVENT,objectEvents.get(2));
+  assertEquals("Object fixture must be second object delivered.",objEvent,objectEvents.get(1));
+  assertEquals("Comparable fixture must be thirdobject delivered.",compEvent,objectEvents.get(2));
   assertEquals("Two Comparable<?>s should be delivered.",2,compEvents.size());
   assertEquals("String fixture must be first comparable delivered.",EVENT,compEvents.get(0));
-  assertEquals("Comparable fixture must be second comparable delivered.",COMP_EVENT,compEvents.get(1));
+  assertEquals("Comparable fixture must be second comparable delivered.",compEvent,compEvents.get(1));
 }

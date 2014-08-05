@@ -1,3 +1,0 @@
-{
-  assertTrue("Collection must contain " + element,collection.contains(element));
-}

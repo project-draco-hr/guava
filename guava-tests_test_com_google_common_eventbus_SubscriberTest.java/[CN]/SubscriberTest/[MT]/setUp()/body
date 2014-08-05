@@ -1,0 +1,5 @@
+{
+  bus=new EventBus();
+  methodCalled=false;
+  methodArgument=null;
+}

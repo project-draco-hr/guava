@@ -1,0 +1,7 @@
+{
+  Method method=getTestSubscriberMethod("recordingMethod");
+  Subscriber subscriber=Subscriber.create(bus,this,method);
+  subscriber.invokeSubscriberMethod(FIXTURE_ARGUMENT);
+  assertTrue("Subscriber must call provided method",methodCalled);
+  assertTrue("Subscriber argument must be exactly the provided object.",methodArgument == FIXTURE_ARGUMENT);
+}

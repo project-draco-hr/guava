@@ -1,0 +1,23 @@
+{
+  try {
+    registry.unregister(new StringSubscriber());
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+  StringSubscriber s1=new StringSubscriber();
+  registry.register(s1);
+  try {
+    registry.unregister(new StringSubscriber());
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+  registry.unregister(s1);
+  try {
+    registry.unregister(s1);
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}

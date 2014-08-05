@@ -1,0 +1,10 @@
+{
+  assertEquals(0,registry.getSubscribersForTesting(String.class).size());
+  registry.register(new StringSubscriber());
+  assertEquals(1,registry.getSubscribersForTesting(String.class).size());
+  registry.register(new StringSubscriber());
+  assertEquals(2,registry.getSubscribersForTesting(String.class).size());
+  registry.register(new ObjectSubscriber());
+  assertEquals(2,registry.getSubscribersForTesting(String.class).size());
+  assertEquals(1,registry.getSubscribersForTesting(Object.class).size());
+}

@@ -1,4 +1,7 @@
 {
-  setDefault(EventSubscriber.class,new DummySubscriber().toEventSubscriber());
+  DummySubscriber dummySubscriber=new DummySubscriber();
+  setDefault(Subscriber.class,dummySubscriber.toSubscriber());
   setDefault(Method.class,DummySubscriber.subscriberMethod());
+  setDefault(SubscriberExceptionContext.class,dummySubscriber.toContext());
+  setDefault(Dispatcher.class,Dispatcher.immediate());
 }

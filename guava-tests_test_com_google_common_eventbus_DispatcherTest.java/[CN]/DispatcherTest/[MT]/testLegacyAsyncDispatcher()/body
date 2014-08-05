@@ -1,0 +1,33 @@
+{
+  dispatcher=Dispatcher.legacyAsync();
+  final CyclicBarrier barrier=new CyclicBarrier(2);
+  final CountDownLatch latch=new CountDownLatch(2);
+  new Thread(new Runnable(){
+    @Override public void run(){
+      try {
+        barrier.await();
+      }
+ catch (      Exception e) {
+        throw new AssertionError(e);
+      }
+      dispatcher.dispatch(2,integerSubscribers.iterator());
+      latch.countDown();
+    }
+  }
+).start();
+  new Thread(new Runnable(){
+    @Override public void run(){
+      try {
+        barrier.await();
+      }
+ catch (      Exception e) {
+        throw new AssertionError(e);
+      }
+      dispatcher.dispatch("foo",stringSubscribers.iterator());
+      latch.countDown();
+    }
+  }
+).start();
+  Uninterruptibles.awaitUninterruptibly(latch);
+  assertThat(dispatchedSubscribers).has().exactly(i1,i2,i3,s1,s1,s1,s1,s2,s2,s2,s2);
+}

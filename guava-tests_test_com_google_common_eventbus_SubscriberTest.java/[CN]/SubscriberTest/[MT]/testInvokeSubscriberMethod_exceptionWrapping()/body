@@ -1,0 +1,11 @@
+{
+  Method method=getTestSubscriberMethod("exceptionThrowingMethod");
+  Subscriber subscriber=Subscriber.create(bus,this,method);
+  try {
+    subscriber.invokeSubscriberMethod(FIXTURE_ARGUMENT);
+    fail("Subscribers whose methods throw must throw InvocationTargetException");
+  }
+ catch (  InvocationTargetException expected) {
+    assertTrue(expected.getCause() instanceof IntentionalException);
+  }
+}

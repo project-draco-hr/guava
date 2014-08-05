@@ -1,0 +1,15 @@
+{
+  assertEquals(0,Iterators.size(registry.getSubscribers("")));
+  registry.register(new StringSubscriber());
+  assertEquals(1,Iterators.size(registry.getSubscribers("")));
+  registry.register(new StringSubscriber());
+  assertEquals(2,Iterators.size(registry.getSubscribers("")));
+  registry.register(new ObjectSubscriber());
+  assertEquals(3,Iterators.size(registry.getSubscribers("")));
+  assertEquals(1,Iterators.size(registry.getSubscribers(new Object())));
+  assertEquals(1,Iterators.size(registry.getSubscribers(1)));
+  registry.register(new IntegerSubscriber());
+  assertEquals(3,Iterators.size(registry.getSubscribers("")));
+  assertEquals(1,Iterators.size(registry.getSubscribers(new Object())));
+  assertEquals(2,Iterators.size(registry.getSubscribers(1)));
+}

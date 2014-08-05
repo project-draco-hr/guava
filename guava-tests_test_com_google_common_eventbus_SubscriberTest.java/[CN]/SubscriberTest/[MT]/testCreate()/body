@@ -1,0 +1,6 @@
+{
+  Subscriber s1=Subscriber.create(bus,this,getTestSubscriberMethod("recordingMethod"));
+  assertTrue(s1 instanceof Subscriber.SynchronizedSubscriber);
+  Subscriber s2=Subscriber.create(bus,this,getTestSubscriberMethod("threadSafeMethod"));
+  assertFalse(s2 instanceof Subscriber.SynchronizedSubscriber);
+}

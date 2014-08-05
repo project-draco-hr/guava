@@ -1,0 +1,4 @@
+{
+  dispatchedSubscribers.add(this);
+  dispatcher.dispatch("hello",stringSubscribers.iterator());
+}

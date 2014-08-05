@@ -1,0 +1,10 @@
+{
+  Method method=getTestSubscriberMethod("errorThrowingMethod");
+  Subscriber subscriber=Subscriber.create(bus,this,method);
+  try {
+    subscriber.invokeSubscriberMethod(FIXTURE_ARGUMENT);
+    fail("Subscribers whose methods throw Errors must rethrow them");
+  }
+ catch (  JudgmentError expected) {
+  }
+}

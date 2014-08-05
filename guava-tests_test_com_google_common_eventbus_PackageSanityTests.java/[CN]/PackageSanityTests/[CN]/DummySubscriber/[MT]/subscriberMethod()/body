@@ -1,3 +1,8 @@
 {
-  return DummySubscriber.class.getMethod("handle",Object.class);
+  try {
+    return DummySubscriber.class.getMethod("handle",Object.class);
+  }
+ catch (  NoSuchMethodException e) {
+    throw new AssertionError(e);
+  }
 }

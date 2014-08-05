@@ -1,0 +1,5 @@
+{
+  dispatcher=Dispatcher.immediate();
+  dispatcher.dispatch(1,integerSubscribers.iterator());
+  assertThat(dispatchedSubscribers).has().exactly(i1,s1,s2,i2,s1,s2,i3,s1,s2).inOrder();
+}

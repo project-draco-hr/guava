@@ -1,0 +1,10 @@
+{
+  StringSubscriber s1=new StringSubscriber();
+  StringSubscriber s2=new StringSubscriber();
+  registry.register(s1);
+  registry.register(s2);
+  registry.unregister(s1);
+  assertEquals(1,registry.getSubscribersForTesting(String.class).size());
+  registry.unregister(s2);
+  assertTrue(registry.getSubscribersForTesting(String.class).isEmpty());
+}
