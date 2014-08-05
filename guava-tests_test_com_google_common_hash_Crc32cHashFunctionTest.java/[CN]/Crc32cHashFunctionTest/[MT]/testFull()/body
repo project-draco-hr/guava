@@ -1,0 +1,5 @@
+{
+  byte[] fulls=new byte[32];
+  Arrays.fill(fulls,(byte)0xFF);
+  assertCrc(0x62a8ab43,fulls);
+}

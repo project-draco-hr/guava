@@ -1,0 +1,4 @@
+{
+  int actualCrc=Hashing.crc32c().hashBytes(data).asInt();
+  assertEquals(expectedCrc,actualCrc);
+}

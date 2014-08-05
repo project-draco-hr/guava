@@ -1,0 +1,7 @@
+{
+  byte[] ascending=new byte[32];
+  for (int i=0; i < 32; i++) {
+    ascending[i]=(byte)i;
+  }
+  assertCrc(0x46dd794e,ascending);
+}
