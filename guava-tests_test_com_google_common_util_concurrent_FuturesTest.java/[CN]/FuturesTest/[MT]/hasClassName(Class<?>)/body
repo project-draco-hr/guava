@@ -1,0 +1,8 @@
+{
+  return new Predicate<StackTraceElement>(){
+    @Override public boolean apply(    StackTraceElement element){
+      return element.getClassName().equals(clazz.getName());
+    }
+  }
+;
+}
