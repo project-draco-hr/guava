@@ -1,0 +1,3 @@
+{
+  assertSame(ImmutableClassToInstanceMap.of(),SerializableTester.reserialize(ImmutableClassToInstanceMap.of()));
+}

@@ -1,0 +1,4 @@
+{
+  ImmutableClassToInstanceMap<Number> map=ImmutableClassToInstanceMap.of(int.class,1);
+  assertEquals(1,map.size());
+}
