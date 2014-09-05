@@ -1,0 +1,56 @@
+{
+  String desc=method.toString();
+  assertTrue(desc,isAnyEnter(method) || isWaitFor(method));
+switch (method.getParameterTypes().length) {
+case 0:
+    assertFalse(desc,isGuarded(method));
+  assertFalse(desc,isTimed(method));
+break;
+case 1:
+assertTrue(desc,isGuarded(method));
+assertFalse(desc,isTimed(method));
+break;
+case 2:
+assertFalse(desc,isGuarded(method));
+assertTrue(desc,isTimed(method));
+break;
+case 3:
+assertTrue(desc,isGuarded(method));
+assertTrue(desc,isTimed(method));
+break;
+default :
+fail(desc);
+}
+if (method.getReturnType() == void.class) {
+assertFalse(desc,isBoolean(method));
+}
+ else {
+assertTrue(desc,isBoolean(method));
+}
+switch (method.getExceptionTypes().length) {
+case 0:
+assertFalse(desc,isInterruptible(method));
+break;
+case 1:
+assertTrue(desc,isInterruptible(method));
+break;
+default :
+fail(desc);
+}
+if (isEnterIf(method)) {
+assertTrue(desc,isGuarded(method));
+assertTrue(desc,isBoolean(method));
+}
+ else if (isTryEnter(method)) {
+assertFalse(desc,isTimed(method));
+assertTrue(desc,isBoolean(method));
+assertFalse(desc,isInterruptible(method));
+}
+ else if (isWaitFor(method)) {
+assertTrue(desc,isGuarded(method));
+assertEquals(desc,isTimed(method),isBoolean(method));
+}
+ else {
+assertEquals(desc,isTimed(method),isBoolean(method));
+}
+}

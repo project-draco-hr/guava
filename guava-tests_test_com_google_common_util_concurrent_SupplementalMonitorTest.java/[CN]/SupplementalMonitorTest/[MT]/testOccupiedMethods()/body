@@ -1,0 +1,25 @@
+{
+  Monitor monitor=new Monitor();
+  verifyOccupiedMethodsInCurrentThread(monitor,false,false,0);
+  verifyOccupiedMethodsInAnotherThread(monitor,false,false,0);
+  monitor.enter();
+  try {
+    verifyOccupiedMethodsInCurrentThread(monitor,true,true,1);
+    verifyOccupiedMethodsInAnotherThread(monitor,true,false,0);
+    monitor.enter();
+    try {
+      verifyOccupiedMethodsInCurrentThread(monitor,true,true,2);
+      verifyOccupiedMethodsInAnotherThread(monitor,true,false,0);
+    }
+  finally {
+      monitor.leave();
+    }
+    verifyOccupiedMethodsInCurrentThread(monitor,true,true,1);
+    verifyOccupiedMethodsInAnotherThread(monitor,true,false,0);
+  }
+  finally {
+    monitor.leave();
+  }
+  verifyOccupiedMethodsInCurrentThread(monitor,false,false,0);
+  verifyOccupiedMethodsInAnotherThread(monitor,false,false,0);
+}

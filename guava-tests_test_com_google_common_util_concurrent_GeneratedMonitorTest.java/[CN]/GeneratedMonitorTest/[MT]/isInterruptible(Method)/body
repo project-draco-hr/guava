@@ -1,0 +1,3 @@
+{
+  return Arrays.asList(method.getExceptionTypes()).contains(InterruptedException.class);
+}

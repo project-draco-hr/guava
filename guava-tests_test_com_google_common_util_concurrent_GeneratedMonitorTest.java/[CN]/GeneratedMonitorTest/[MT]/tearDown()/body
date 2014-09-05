@@ -1,0 +1,10 @@
+{
+  tearDownLatch.countDown();
+  assertTrue("Monitor still occupied in tearDown()",monitor.enter(UNEXPECTED_HANG_DELAY_MILLIS,TimeUnit.MILLISECONDS));
+  try {
+    guard.setSatisfied(true);
+  }
+  finally {
+    monitor.leave();
+  }
+}

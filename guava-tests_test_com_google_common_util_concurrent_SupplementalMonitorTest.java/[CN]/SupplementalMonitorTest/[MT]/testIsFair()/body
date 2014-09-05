@@ -1,0 +1,4 @@
+{
+  assertTrue(new Monitor(true).isFair());
+  assertFalse(new Monitor(false).isFair());
+}

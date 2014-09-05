@@ -1,0 +1,5 @@
+Method method
+Scenario scenario
+boolean fair
+Timeout timeout
+Outcome expectedOutcome

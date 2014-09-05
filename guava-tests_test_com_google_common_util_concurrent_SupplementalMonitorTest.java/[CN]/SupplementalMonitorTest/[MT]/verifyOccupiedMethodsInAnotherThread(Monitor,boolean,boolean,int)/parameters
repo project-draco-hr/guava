@@ -1,0 +1,4 @@
+Monitor monitor
+boolean expectedIsOccupied
+boolean expectedIsOccupiedByCurrentThread
+int expectedOccupiedDepth

@@ -1,0 +1,11 @@
+{
+  Monitor monitor1=new Monitor();
+  Monitor monitor2=new Monitor();
+  FlagGuard guard=new FlagGuard(monitor2);
+  try {
+    monitor1.getWaitQueueLength(guard);
+    fail("expected IllegalMonitorStateException");
+  }
+ catch (  IllegalMonitorStateException e) {
+  }
+}

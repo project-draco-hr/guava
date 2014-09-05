@@ -1,0 +1,8 @@
+{
+  if (isAnyEnter(method)) {
+    runEnterTest();
+  }
+ else {
+    runWaitTest();
+  }
+}

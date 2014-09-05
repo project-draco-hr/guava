@@ -1,0 +1,4 @@
+{
+  Class<?>[] parameterTypes=method.getParameterTypes();
+  return parameterTypes.length >= 1 && parameterTypes[0] == Monitor.Guard.class;
+}

@@ -1,0 +1,28 @@
+{
+  final boolean timed=isTimed(method);
+  return new TestCase(method.getName() + (timed ? "(0ms)" : "()") + "/WrongMonitor->IMSE"){
+    @Override protected void runTest() throws Throwable {
+      Monitor monitor1=new Monitor(fair1);
+      Monitor monitor2=new Monitor(fair2);
+      FlagGuard guard=new FlagGuard(monitor2);
+      Object[] arguments=(timed ? new Object[]{guard,0L,TimeUnit.MILLISECONDS} : new Object[]{guard});
+      boolean occupyMonitor=isWaitFor(method);
+      if (occupyMonitor) {
+        monitor1.enter();
+      }
+      try {
+        method.invoke(monitor1,arguments);
+        fail("expected IllegalMonitorStateException");
+      }
+ catch (      InvocationTargetException e) {
+        assertEquals(IllegalMonitorStateException.class,e.getTargetException().getClass());
+      }
+ finally {
+        if (occupyMonitor) {
+          monitor1.leave();
+        }
+      }
+    }
+  }
+;
+}

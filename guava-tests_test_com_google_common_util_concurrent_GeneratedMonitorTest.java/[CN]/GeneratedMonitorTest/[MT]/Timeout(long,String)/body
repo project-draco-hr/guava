@@ -1,0 +1,4 @@
+{
+  this.millis=millis;
+  this.label=label;
+}

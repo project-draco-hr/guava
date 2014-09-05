@@ -1,0 +1,13 @@
+{
+  TestSuite suite=new TestSuite();
+  Method[] methods=Monitor.class.getMethods();
+  sortMethods(methods);
+  for (  Method method : methods) {
+    if (isAnyEnter(method) || isWaitFor(method)) {
+      validateMethod(method);
+      addTests(suite,method);
+    }
+  }
+  assertEquals(548,suite.testCount());
+  return suite;
+}

@@ -1,0 +1,43 @@
+{
+  boolean guarded=isGuarded(method);
+  boolean timed=isTimed(method);
+  Object[] arguments=new Object[(guarded ? 1 : 0) + (timed ? 2 : 0)];
+  if (guarded) {
+    arguments[0]=guard;
+  }
+  if (timed) {
+    arguments[arguments.length - 2]=timeout.millis;
+    arguments[arguments.length - 1]=TimeUnit.MILLISECONDS;
+  }
+  try {
+    Object result;
+    doingCallLatch.countDown();
+    try {
+      result=method.invoke(monitor,arguments);
+    }
+  finally {
+      callCompletedLatch.countDown();
+    }
+    if (result == null) {
+      return Outcome.SUCCESS;
+    }
+ else     if ((Boolean)result) {
+      return Outcome.SUCCESS;
+    }
+ else {
+      return Outcome.FAILURE;
+    }
+  }
+ catch (  InvocationTargetException targetException) {
+    Throwable actualException=targetException.getTargetException();
+    if (actualException instanceof InterruptedException) {
+      return Outcome.INTERRUPT;
+    }
+ else {
+      throw new AssertionError("unexpected exception",targetException);
+    }
+  }
+catch (  IllegalAccessException e) {
+    throw new AssertionError("unexpected exception",e);
+  }
+}

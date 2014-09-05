@@ -1,0 +1,19 @@
+{
+  final boolean timed=isTimed(method);
+  String testName=method.getName() + (fair ? "(fair)" : "(nonfair)") + (timed ? "(0ms)" : "()")+ "/NotOccupying->IMSE";
+  return new TestCase(testName){
+    @Override protected void runTest() throws Throwable {
+      Monitor monitor=new Monitor(fair);
+      FlagGuard guard=new FlagGuard(monitor);
+      Object[] arguments=(timed ? new Object[]{guard,0L,TimeUnit.MILLISECONDS} : new Object[]{guard});
+      try {
+        method.invoke(monitor,arguments);
+        fail("expected IllegalMonitorStateException");
+      }
+ catch (      InvocationTargetException e) {
+        assertEquals(IllegalMonitorStateException.class,e.getTargetException().getClass());
+      }
+    }
+  }
+;
+}

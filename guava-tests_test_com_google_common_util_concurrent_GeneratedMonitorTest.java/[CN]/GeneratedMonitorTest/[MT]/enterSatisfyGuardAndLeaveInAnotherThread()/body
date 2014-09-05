@@ -1,0 +1,11 @@
+{
+  final CountDownLatch startedLatch=new CountDownLatch(1);
+  startThread(new Runnable(){
+    @Override public void run(){
+      startedLatch.countDown();
+      enterSatisfyGuardAndLeaveInCurrentThread();
+    }
+  }
+);
+  awaitUninterruptibly(startedLatch);
+}

@@ -1,0 +1,24 @@
+{
+  final Runnable runChosenTest=new Runnable(){
+    @Override public void run(){
+      runChosenTest();
+    }
+  }
+;
+  final FutureTask<Void> task=new FutureTask<Void>(runChosenTest,null);
+  startThread(new Runnable(){
+    @Override public void run(){
+      task.run();
+    }
+  }
+);
+  awaitUninterruptibly(doingCallLatch);
+  long hangDelayMillis=(expectedOutcome == Outcome.HANG) ? EXPECTED_HANG_DELAY_MILLIS : UNEXPECTED_HANG_DELAY_MILLIS;
+  boolean hung=!awaitUninterruptibly(callCompletedLatch,hangDelayMillis,TimeUnit.MILLISECONDS);
+  if (hung) {
+    assertEquals(expectedOutcome,Outcome.HANG);
+  }
+ else {
+    assertNull(task.get(UNEXPECTED_HANG_DELAY_MILLIS,TimeUnit.MILLISECONDS));
+  }
+}

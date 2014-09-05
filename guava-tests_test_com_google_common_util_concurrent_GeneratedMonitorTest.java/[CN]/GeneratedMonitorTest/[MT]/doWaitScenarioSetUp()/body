@@ -1,0 +1,24 @@
+{
+switch (scenario) {
+case SATISFIED_BEFORE_WAITING:
+    guard.setSatisfied(true);
+  break;
+case SATISFIED_WHILE_WAITING:
+guard.setSatisfied(false);
+enterSatisfyGuardAndLeaveInAnotherThread();
+break;
+case UNSATISFIED_BEFORE_AND_WHILE_WAITING:
+guard.setSatisfied(false);
+break;
+case SATISFIED_AND_INTERRUPTED_BEFORE_WAITING:
+guard.setSatisfied(true);
+Thread.currentThread().interrupt();
+break;
+case UNSATISFIED_AND_INTERRUPTED_BEFORE_WAITING:
+guard.setSatisfied(false);
+Thread.currentThread().interrupt();
+break;
+default :
+throw new AssertionError("unsupported scenario: " + scenario);
+}
+}

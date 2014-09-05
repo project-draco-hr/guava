@@ -1,0 +1,4 @@
+{
+  Class<?>[] parameterTypes=method.getParameterTypes();
+  return parameterTypes.length >= 2 && parameterTypes[parameterTypes.length - 2] == long.class && parameterTypes[parameterTypes.length - 1] == TimeUnit.class;
+}

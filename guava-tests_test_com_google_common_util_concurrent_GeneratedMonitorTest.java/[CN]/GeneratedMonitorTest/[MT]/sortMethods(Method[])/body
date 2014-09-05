@@ -1,0 +1,14 @@
+{
+  Arrays.sort(methods,new Comparator<Method>(){
+    @Override public int compare(    Method m1,    Method m2){
+      int nameComparison=m1.getName().compareTo(m2.getName());
+      if (nameComparison != 0) {
+        return nameComparison;
+      }
+ else {
+        return Ints.compare(m1.getParameterTypes().length,m2.getParameterTypes().length);
+      }
+    }
+  }
+);
+}

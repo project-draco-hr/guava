@@ -1,0 +1,30 @@
+{
+  if (isGuarded(method)) {
+    for (    boolean fair1 : new boolean[]{true,false}) {
+      for (      boolean fair2 : new boolean[]{true,false}) {
+        suite.addTest(generateGuardWithWrongMonitorTestCase(method,fair1,fair2));
+      }
+    }
+  }
+  if (isAnyEnter(method)) {
+    addTests(suite,method,Scenario.SATISFIED_AND_UNOCCUPIED_BEFORE_ENTERING,TimeoutsToUse.ANY,Outcome.SUCCESS);
+    addTests(suite,method,Scenario.UNSATISFIED_AND_UNOCCUPIED_BEFORE_ENTERING,TimeoutsToUse.FINITE,isGuarded(method) ? (isBoolean(method) ? Outcome.FAILURE : Outcome.HANG) : Outcome.SUCCESS);
+    addTests(suite,method,Scenario.UNSATISFIED_AND_UNOCCUPIED_BEFORE_ENTERING,TimeoutsToUse.INFINITE,isGuarded(method) ? (isTryEnter(method) || isEnterIf(method) ? Outcome.FAILURE : Outcome.HANG) : Outcome.SUCCESS);
+    addTests(suite,method,Scenario.SATISFIED_AND_OCCUPIED_BEFORE_ENTERING,TimeoutsToUse.FINITE,isBoolean(method) ? Outcome.FAILURE : Outcome.HANG);
+    addTests(suite,method,Scenario.SATISFIED_AND_OCCUPIED_BEFORE_ENTERING,TimeoutsToUse.INFINITE,isGuarded(method) ? Outcome.HANG : (isTryEnter(method) ? Outcome.FAILURE : Outcome.HANG));
+    addTests(suite,method,Scenario.SATISFIED_UNOCCUPIED_AND_INTERRUPTED_BEFORE_ENTERING,TimeoutsToUse.ANY,isInterruptible(method) ? Outcome.INTERRUPT : Outcome.SUCCESS);
+  }
+ else {
+    suite.addTest(generateWaitForWhenNotOccupyingTestCase(method,true));
+    suite.addTest(generateWaitForWhenNotOccupyingTestCase(method,false));
+    addTests(suite,method,Scenario.SATISFIED_BEFORE_WAITING,TimeoutsToUse.ANY,Outcome.SUCCESS);
+    addTests(suite,method,Scenario.SATISFIED_WHILE_WAITING,TimeoutsToUse.INFINITE,Outcome.SUCCESS);
+    addTests(suite,method,Scenario.SATISFIED_WHILE_WAITING,TimeoutsToUse.PAST,Outcome.FAILURE);
+    addTests(suite,method,Scenario.SATISFIED_AND_INTERRUPTED_BEFORE_WAITING,TimeoutsToUse.ANY,Outcome.SUCCESS);
+    addTests(suite,method,Scenario.UNSATISFIED_BEFORE_AND_WHILE_WAITING,TimeoutsToUse.FINITE,Outcome.FAILURE);
+    addTests(suite,method,Scenario.UNSATISFIED_BEFORE_AND_WHILE_WAITING,TimeoutsToUse.INFINITE,Outcome.HANG);
+    addTests(suite,method,Scenario.UNSATISFIED_AND_INTERRUPTED_BEFORE_WAITING,TimeoutsToUse.PAST,isInterruptible(method) ? Outcome.INTERRUPT : Outcome.FAILURE);
+    addTests(suite,method,Scenario.UNSATISFIED_AND_INTERRUPTED_BEFORE_WAITING,TimeoutsToUse.SMALL,isInterruptible(method) ? Outcome.INTERRUPT : Outcome.FAILURE);
+    addTests(suite,method,Scenario.UNSATISFIED_AND_INTERRUPTED_BEFORE_WAITING,TimeoutsToUse.INFINITE,isInterruptible(method) ? Outcome.INTERRUPT : Outcome.HANG);
+  }
+}

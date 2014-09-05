@@ -1,0 +1,9 @@
+{
+  monitor.enter();
+  try {
+    guard.setSatisfied(true);
+  }
+  finally {
+    monitor.leave();
+  }
+}

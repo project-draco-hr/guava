@@ -1,0 +1,8 @@
+{
+  try {
+    new FlagGuard(null);
+    fail("expected NullPointerException");
+  }
+ catch (  NullPointerException e) {
+  }
+}

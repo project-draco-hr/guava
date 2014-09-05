@@ -1,0 +1,3 @@
+{
+  return method.getName().startsWith("enter") || method.getName().startsWith("tryEnter");
+}

@@ -1,0 +1,19 @@
+{
+switch (scenario) {
+case SATISFIED_AND_UNOCCUPIED_BEFORE_ENTERING:
+    enterSatisfyGuardAndLeaveInCurrentThread();
+  break;
+case UNSATISFIED_AND_UNOCCUPIED_BEFORE_ENTERING:
+break;
+case SATISFIED_AND_OCCUPIED_BEFORE_ENTERING:
+enterSatisfyGuardAndLeaveInCurrentThread();
+enterAndRemainOccupyingInAnotherThread();
+break;
+case SATISFIED_UNOCCUPIED_AND_INTERRUPTED_BEFORE_ENTERING:
+enterSatisfyGuardAndLeaveInCurrentThread();
+Thread.currentThread().interrupt();
+break;
+default :
+throw new AssertionError("unsupported scenario: " + scenario);
+}
+}

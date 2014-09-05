@@ -1,0 +1,9 @@
+{
+  Monitor monitor=new Monitor();
+  try {
+    monitor.leave();
+    fail("expected IllegalMonitorStateException");
+  }
+ catch (  IllegalMonitorStateException e) {
+  }
+}

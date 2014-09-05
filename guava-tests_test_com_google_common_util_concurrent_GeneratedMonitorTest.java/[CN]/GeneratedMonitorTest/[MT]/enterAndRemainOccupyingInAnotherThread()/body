@@ -1,0 +1,18 @@
+{
+  final CountDownLatch enteredLatch=new CountDownLatch(1);
+  startThread(new Runnable(){
+    @Override public void run(){
+      monitor.enter();
+      try {
+        enteredLatch.countDown();
+        awaitUninterruptibly(tearDownLatch);
+        guard.setSatisfied(true);
+      }
+  finally {
+        monitor.leave();
+      }
+    }
+  }
+);
+  awaitUninterruptibly(enteredLatch);
+}

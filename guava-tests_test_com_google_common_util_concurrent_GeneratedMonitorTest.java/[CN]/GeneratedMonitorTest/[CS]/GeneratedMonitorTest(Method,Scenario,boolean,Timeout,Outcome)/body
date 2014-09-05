@@ -1,0 +1,12 @@
+{
+  super(nameFor(method,scenario,fair,timeout,expectedOutcome));
+  this.method=method;
+  this.scenario=scenario;
+  this.timeout=timeout;
+  this.expectedOutcome=expectedOutcome;
+  this.monitor=new Monitor(fair);
+  this.guard=new FlagGuard(monitor);
+  this.tearDownLatch=new CountDownLatch(1);
+  this.doingCallLatch=new CountDownLatch(1);
+  this.callCompletedLatch=new CountDownLatch(1);
+}
