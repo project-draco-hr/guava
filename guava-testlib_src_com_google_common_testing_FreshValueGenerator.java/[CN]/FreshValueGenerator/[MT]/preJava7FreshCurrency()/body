@@ -1,0 +1,14 @@
+{
+  for (Set<Locale> uselessLocales=Sets.newHashSet(); ; ) {
+    Locale locale=freshLocale();
+    if (uselessLocales.contains(locale)) {
+      return Currency.getInstance(Locale.US);
+    }
+    try {
+      return Currency.getInstance(locale);
+    }
+ catch (    IllegalArgumentException e) {
+      uselessLocales.add(locale);
+    }
+  }
+}

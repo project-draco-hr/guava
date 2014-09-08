@@ -1,14 +1,16 @@
 {
-  for (Set<Locale> uselessLocales=Sets.newHashSet(); ; ) {
-    Locale locale=freshLocale();
-    if (uselessLocales.contains(locale)) {
-      return Currency.getInstance(Locale.US);
-    }
-    try {
-      return Currency.getInstance(locale);
-    }
- catch (    IllegalArgumentException e) {
-      uselessLocales.add(locale);
-    }
+  try {
+    Method method=Currency.class.getMethod("getAvailableCurrencies");
+    @SuppressWarnings("unchecked") Set<Currency> currencies=(Set<Currency>)method.invoke(null);
+    return nextInstance(currencies,Currency.getInstance(Locale.US));
+  }
+ catch (  NoSuchMethodException notJava7) {
+    return preJava7FreshCurrency();
+  }
+catch (  InvocationTargetException cantCallGetAvailableCurrencies) {
+    return preJava7FreshCurrency();
+  }
+catch (  IllegalAccessException impossible) {
+    throw new AssertionError(impossible);
   }
 }
