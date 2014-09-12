@@ -1,5 +1,5 @@
 {
-  RateLimiter limiter=RateLimiter.create(stopwatch,2.0,4000,MILLISECONDS);
+  RateLimiter limiter=RateLimiter.create(stopwatch,2.0,4000,MILLISECONDS,3.0);
   for (int i=0; i < 8; i++) {
     limiter.acquire();
   }

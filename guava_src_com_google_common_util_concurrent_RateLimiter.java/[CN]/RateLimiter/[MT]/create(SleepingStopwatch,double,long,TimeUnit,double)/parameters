@@ -2,3 +2,4 @@ SleepingStopwatch stopwatch
 double permitsPerSecond
 long warmupPeriod
 TimeUnit unit
+double coldFactor

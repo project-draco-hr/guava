@@ -1,12 +1,15 @@
 {
   Random random=new Random();
-  int maxPermits=10;
+  int warmupPermits=10;
+  double[] coldFactorsToTest={2.0,3.0,10.0};
   double[] qpsToTest={4.0,2.0,1.0,0.5,0.1};
   for (int trial=0; trial < 100; trial++) {
-    for (    double qps : qpsToTest) {
-      long warmupMillis=(long)((2 * maxPermits / qps) * 1000.0);
-      RateLimiter rateLimiter=RateLimiter.create(stopwatch,qps,warmupMillis,MILLISECONDS);
-      assertEquals(warmupMillis,measureTotalTimeMillis(rateLimiter,maxPermits,random));
+    for (    double coldFactor : coldFactorsToTest) {
+      for (      double qps : qpsToTest) {
+        long warmupMillis=(long)((1 + coldFactor) * warmupPermits / (2.0 * qps) * 1000.0);
+        RateLimiter rateLimiter=RateLimiter.create(stopwatch,qps,warmupMillis,MILLISECONDS,coldFactor);
+        assertEquals(warmupMillis,measureTotalTimeMillis(rateLimiter,warmupPermits,random));
+      }
     }
   }
 }

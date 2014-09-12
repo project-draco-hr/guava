@@ -1,3 +1,4 @@
 SleepingStopwatch stopwatch
 long warmupPeriod
 TimeUnit timeUnit
+double coldFactor

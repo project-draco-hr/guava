@@ -1,0 +1,11 @@
+{
+  RateLimiter limiter=RateLimiter.create(stopwatch,5.0,4000,MILLISECONDS,1.0);
+  for (int i=0; i < 8; i++) {
+    limiter.acquire();
+  }
+  stopwatch.sleepMillis(340);
+  for (int i=0; i < 8; i++) {
+    limiter.acquire();
+  }
+  assertEvents("R0.00, R0.20, R0.20, R0.20, R0.20, R0.20, R0.20, R0.20","U0.34","R0.00, R0.20, R0.20, R0.20, R0.20, R0.20, R0.20, R0.20");
+}
