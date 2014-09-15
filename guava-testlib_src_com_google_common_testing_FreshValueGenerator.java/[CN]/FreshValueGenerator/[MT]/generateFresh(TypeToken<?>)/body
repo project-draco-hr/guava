@@ -1,0 +1,7 @@
+{
+  Object generated=generate(type);
+  if (generated != null) {
+    freshness.incrementAndGet();
+  }
+  return generated;
+}

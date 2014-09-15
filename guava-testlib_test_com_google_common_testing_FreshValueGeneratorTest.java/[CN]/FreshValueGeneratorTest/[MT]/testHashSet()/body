@@ -2,7 +2,4 @@
   assertFreshInstance(new TypeToken<HashSet<String>>(){
   }
 );
-  assertValueAndTypeEquals(newLinkedHashSet(new FreshValueGenerator().generate(Number.class)),new FreshValueGenerator().generate(new TypeToken<HashSet<? extends Number>>(){
-  }
-));
 }

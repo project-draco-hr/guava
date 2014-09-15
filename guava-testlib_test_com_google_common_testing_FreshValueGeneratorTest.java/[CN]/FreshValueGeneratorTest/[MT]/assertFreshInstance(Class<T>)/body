@@ -1,3 +1,0 @@
-{
-  assertFreshInstance(TypeToken.of(type));
-}

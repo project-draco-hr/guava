@@ -2,10 +2,4 @@
   assertFreshInstance(new TypeToken<LinkedHashMultimap<String,?>>(){
   }
 );
-  FreshValueGenerator generator=new FreshValueGenerator();
-  LinkedHashMultimap<String,Integer> expected=LinkedHashMultimap.create();
-  expected.put(generator.generate(String.class),generator.generate(int.class));
-  assertValueAndTypeEquals(expected,new FreshValueGenerator().generate(new TypeToken<LinkedHashMultimap<String,Integer>>(){
-  }
-));
 }

@@ -1,3 +1,0 @@
-{
-  return nextInstance(Arrays.asList(instances),defaultValue);
-}

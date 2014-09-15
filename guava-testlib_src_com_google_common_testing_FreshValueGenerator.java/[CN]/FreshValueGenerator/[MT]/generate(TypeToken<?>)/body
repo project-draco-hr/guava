@@ -1,12 +1,12 @@
 {
   Class<?> rawType=type.getRawType();
   List<Object> samples=sampleInstances.get(rawType);
-  Object sample=nextInstance(samples,null);
+  Object sample=pickInstance(samples,null);
   if (sample != null) {
     return sample;
   }
   if (rawType.isEnum()) {
-    return nextInstance(rawType.getEnumConstants(),null);
+    return pickInstance(rawType.getEnumConstants(),null);
   }
   if (type.isArray()) {
     TypeToken<?> componentType=type.getComponentType();
@@ -14,12 +14,24 @@
     Array.set(array,0,generate(componentType));
     return array;
   }
-  if (rawType == Optional.class && generatedOptionalTypes.add(type.getType())) {
-    return Optional.absent();
+  Method emptyGenerate=EMPTY_GENEREATORS.get(rawType);
+  if (emptyGenerate != null) {
+    if (emptyInstanceGenerated.containsKey(type.getType())) {
+      if (emptyInstanceGenerated.get(type.getType()).intValue() == freshness.get()) {
+        return invokeGeneratorMethod(emptyGenerate);
+      }
+ else {
+      }
+    }
+ else {
+      Object emptyInstance=invokeGeneratorMethod(emptyGenerate);
+      emptyInstanceGenerated.put(type.getType(),freshness.get());
+      return emptyInstance;
+    }
   }
-  Method generator=GENERATORS.get(rawType);
-  if (generator != null) {
-    ImmutableList<Parameter> params=Invokable.from(generator).getParameters();
+  Method generate=GENERATORS.get(rawType);
+  if (generate != null) {
+    ImmutableList<Parameter> params=Invokable.from(generate).getParameters();
     List<Object> args=Lists.newArrayListWithCapacity(params.size());
     TypeVariable<?>[] typeVars=rawType.getTypeParameters();
     for (int i=0; i < params.size(); i++) {
@@ -30,15 +42,7 @@
       }
       args.add(argValue);
     }
-    try {
-      return generator.invoke(this,args.toArray());
-    }
- catch (    InvocationTargetException e) {
-      Throwables.propagate(e.getCause());
-    }
-catch (    Exception e) {
-      throw Throwables.propagate(e);
-    }
+    return invokeGeneratorMethod(generate,args.toArray());
   }
   return defaultGenerate(rawType);
 }

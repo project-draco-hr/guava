@@ -2,15 +2,6 @@
   assertFreshInstance(new TypeToken<ArrayList<String>>(){
   }
 );
-  assertValueAndTypeEquals(Lists.newArrayList(new FreshValueGenerator().generate(String.class)),new FreshValueGenerator().generate(new TypeToken<ArrayList<String>>(){
-  }
-));
-  assertValueAndTypeEquals(Lists.newArrayList(new FreshValueGenerator().generate(int.class)),new FreshValueGenerator().generate(new TypeToken<ArrayList<Integer>>(){
-  }
-));
-  assertValueAndTypeEquals(Lists.newArrayList(new FreshValueGenerator().generate(String.class)),new FreshValueGenerator().generate(new TypeToken<ArrayList<?>>(){
-  }
-));
   assertNotInstantiable(new TypeToken<ArrayList<EmptyEnum>>(){
   }
 );

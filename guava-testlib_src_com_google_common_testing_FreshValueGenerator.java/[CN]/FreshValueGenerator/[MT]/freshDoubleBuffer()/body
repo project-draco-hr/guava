@@ -1,3 +1,0 @@
-{
-  return DoubleBuffer.allocate(freshInt());
-}

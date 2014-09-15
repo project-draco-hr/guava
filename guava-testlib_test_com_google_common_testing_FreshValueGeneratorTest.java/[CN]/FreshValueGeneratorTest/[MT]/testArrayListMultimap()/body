@@ -2,10 +2,4 @@
   assertFreshInstance(new TypeToken<ArrayListMultimap<String,?>>(){
   }
 );
-  FreshValueGenerator generator=new FreshValueGenerator();
-  ArrayListMultimap<String,Integer> expected=ArrayListMultimap.create();
-  expected.put(generator.generate(String.class),generator.generate(int.class));
-  assertValueAndTypeEquals(expected,new FreshValueGenerator().generate(new TypeToken<ArrayListMultimap<String,Integer>>(){
-  }
-));
 }

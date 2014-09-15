@@ -1,15 +1,15 @@
 {
   FreshValueGenerator generator=new FreshValueGenerator();
-  assertEquals(Optional.absent(),generator.generate(new TypeToken<Optional<String>>(){
+  assertEquals(Optional.absent(),generator.generateFresh(new TypeToken<Optional<String>>(){
   }
 ));
-  assertEquals(Optional.of("1"),generator.generate(new TypeToken<Optional<String>>(){
+  assertEquals(Optional.of("2"),generator.generateFresh(new TypeToken<Optional<String>>(){
   }
 ));
-  assertEquals(Optional.absent(),generator.generate(new TypeToken<Optional<OneConstantEnum>>(){
+  assertEquals(Optional.absent(),generator.generateFresh(new TypeToken<Optional<OneConstantEnum>>(){
   }
 ));
-  assertEquals(Optional.of(OneConstantEnum.CONSTANT1),generator.generate(new TypeToken<Optional<OneConstantEnum>>(){
+  assertEquals(Optional.of(OneConstantEnum.CONSTANT1),generator.generateFresh(new TypeToken<Optional<OneConstantEnum>>(){
   }
 ));
 }

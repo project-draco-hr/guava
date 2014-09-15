@@ -1,0 +1,11 @@
+{
+  try {
+    return generator.invoke(this,args);
+  }
+ catch (  InvocationTargetException e) {
+    throw Throwables.propagate(e.getCause());
+  }
+catch (  Exception e) {
+    throw Throwables.propagate(e);
+  }
+}

@@ -1,0 +1,3 @@
+{
+  return generateString().charAt(0);
+}

@@ -1,0 +1,8 @@
+{
+  if (obj instanceof ConstructorParameterMapOfNotInstantiable) {
+    return m.equals(((ConstructorParameterMapOfNotInstantiable)obj).m);
+  }
+ else {
+    return false;
+  }
+}

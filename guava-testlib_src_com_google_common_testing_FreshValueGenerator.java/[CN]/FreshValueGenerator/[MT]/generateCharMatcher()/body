@@ -1,0 +1,12 @@
+{
+  return new CharMatcher(){
+    @Override public boolean matches(    char c){
+      return false;
+    }
+    final String string=paramString(CharMatcher.class,generateInt());
+    @Override public String toString(){
+      return string;
+    }
+  }
+;
+}

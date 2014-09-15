@@ -2,12 +2,6 @@
   assertFreshInstance(new TypeToken<ImmutableSortedSet<String>>(){
   }
 );
-  assertValueAndTypeEquals(ImmutableMultiset.of(new FreshValueGenerator().generate(String.class)),new FreshValueGenerator().generate(new TypeToken<ImmutableMultiset<String>>(){
-  }
-));
-  assertValueAndTypeEquals(ImmutableMultiset.of(new FreshValueGenerator().generate(Number.class)),new FreshValueGenerator().generate(new TypeToken<ImmutableMultiset<Number>>(){
-  }
-));
   assertNotInstantiable(new TypeToken<ImmutableMultiset<EmptyEnum>>(){
   }
 );

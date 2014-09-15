@@ -3,4 +3,5 @@
   NotInstantiable y=new NotInstantiable();
   tester.setDistinctValues(NotInstantiable.class,x,y);
   assertNotNull(tester.instantiate(ConstructorParameterNotInstantiable.class));
+  tester.testEquals(ConstructorParameterMapOfNotInstantiable.class);
 }

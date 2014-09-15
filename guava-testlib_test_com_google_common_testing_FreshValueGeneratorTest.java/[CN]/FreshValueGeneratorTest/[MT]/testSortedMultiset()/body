@@ -2,12 +2,4 @@
   assertFreshInstance(new TypeToken<SortedMultiset<String>>(){
   }
 );
-  SortedMultiset<String> expected=TreeMultiset.create();
-  expected.add(new FreshValueGenerator().generate(String.class));
-  assertValueAndTypeEquals(expected,new FreshValueGenerator().generate(new TypeToken<SortedMultiset<String>>(){
-  }
-));
-  assertNotInstantiable(new TypeToken<Multiset<EmptyEnum>>(){
-  }
-);
 }

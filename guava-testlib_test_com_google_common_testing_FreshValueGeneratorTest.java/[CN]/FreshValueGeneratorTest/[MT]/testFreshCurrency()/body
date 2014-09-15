@@ -1,6 +1,6 @@
 {
   FreshValueGenerator generator=new FreshValueGenerator();
-  assertNotNull(generator.generate(Currency.class));
-  assertNotNull(generator.generate(Currency.class));
-  assertNotNull(generator.generate(Currency.class));
+  assertNotNull(generator.generateFresh(Currency.class));
+  assertNotNull(generator.generateFresh(Currency.class));
+  assertNotNull(generator.generateFresh(Currency.class));
 }

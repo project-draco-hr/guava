@@ -2,13 +2,4 @@
   assertFreshInstance(new TypeToken<ImmutableSet<String>>(){
   }
 );
-  assertValueAndTypeEquals(ImmutableSet.of(new FreshValueGenerator().generate(String.class)),new FreshValueGenerator().generate(new TypeToken<ImmutableSet<String>>(){
-  }
-));
-  assertValueAndTypeEquals(ImmutableSet.of(new FreshValueGenerator().generate(Number.class)),new FreshValueGenerator().generate(new TypeToken<ImmutableSet<Number>>(){
-  }
-));
-  assertValueAndTypeEquals(ImmutableSet.of(new FreshValueGenerator().generate(Number.class)),new FreshValueGenerator().generate(new TypeToken<ImmutableSet<? extends Number>>(){
-  }
-));
 }

@@ -1,3 +1,0 @@
-{
-  return freshHashBiMap(key,value);
-}

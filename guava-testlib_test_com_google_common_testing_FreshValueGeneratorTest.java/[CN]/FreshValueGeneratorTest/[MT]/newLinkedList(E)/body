@@ -1,5 +1,0 @@
-{
-  LinkedList<E> list=Lists.newLinkedList();
-  list.add(element);
-  return list;
-}

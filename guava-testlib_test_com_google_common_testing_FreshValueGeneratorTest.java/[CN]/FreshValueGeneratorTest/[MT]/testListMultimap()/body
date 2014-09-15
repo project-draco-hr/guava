@@ -2,13 +2,4 @@
   assertFreshInstance(new TypeToken<ListMultimap<String,?>>(){
   }
 );
-  FreshValueGenerator generator=new FreshValueGenerator();
-  ListMultimap<String,Integer> expected=ArrayListMultimap.create();
-  expected.put(generator.generate(String.class),generator.generate(int.class));
-  assertValueAndTypeEquals(expected,new FreshValueGenerator().generate(new TypeToken<ListMultimap<String,Integer>>(){
-  }
-));
-  assertNotInstantiable(new TypeToken<ListMultimap<EmptyEnum,String>>(){
-  }
-);
 }

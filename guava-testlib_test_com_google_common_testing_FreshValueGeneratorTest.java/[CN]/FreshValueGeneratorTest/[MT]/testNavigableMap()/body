@@ -2,13 +2,4 @@
   assertFreshInstance(new TypeToken<NavigableMap<?,?>>(){
   }
 );
-  FreshValueGenerator generator=new FreshValueGenerator();
-  TreeMap<String,Integer> expected=Maps.newTreeMap();
-  expected.put(generator.generate(String.class),generator.generate(int.class));
-  assertValueAndTypeEquals(expected,new FreshValueGenerator().generate(new TypeToken<NavigableMap<String,Integer>>(){
-  }
-));
-  assertNotInstantiable(new TypeToken<NavigableMap<EmptyEnum,String>>(){
-  }
-);
 }

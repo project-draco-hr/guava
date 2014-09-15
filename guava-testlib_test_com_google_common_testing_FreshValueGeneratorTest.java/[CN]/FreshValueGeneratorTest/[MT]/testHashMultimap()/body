@@ -2,10 +2,4 @@
   assertFreshInstance(new TypeToken<HashMultimap<String,?>>(){
   }
 );
-  FreshValueGenerator generator=new FreshValueGenerator();
-  HashMultimap<String,Integer> expected=HashMultimap.create();
-  expected.put(generator.generate(String.class),generator.generate(int.class));
-  assertValueAndTypeEquals(expected,new FreshValueGenerator().generate(new TypeToken<HashMultimap<String,Integer>>(){
-  }
-));
 }

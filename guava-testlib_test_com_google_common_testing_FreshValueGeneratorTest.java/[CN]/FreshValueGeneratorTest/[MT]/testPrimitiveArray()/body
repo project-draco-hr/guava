@@ -1,6 +1,6 @@
 {
   FreshValueGenerator generator=new FreshValueGenerator();
-  int[] a1=generator.generate(int[].class);
-  int[] a2=generator.generate(int[].class);
+  int[] a1=generator.generateFresh(int[].class);
+  int[] a2=generator.generateFresh(int[].class);
   assertTrue(a1[0] != a2[0]);
 }

@@ -2,12 +2,4 @@
   assertFreshInstance(new TypeToken<TreeSet<String>>(){
   }
 );
-  TreeSet<String> expected=Sets.newTreeSet();
-  expected.add(new FreshValueGenerator().generate(String.class));
-  assertValueAndTypeEquals(expected,new FreshValueGenerator().generate(new TypeToken<TreeSet<? extends CharSequence>>(){
-  }
-));
-  assertNotInstantiable(new TypeToken<TreeSet<EmptyEnum>>(){
-  }
-);
 }

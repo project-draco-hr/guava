@@ -1,3 +1,0 @@
-{
-  return nextInstance(Charset.availableCharsets().values(),Charsets.UTF_8);
-}

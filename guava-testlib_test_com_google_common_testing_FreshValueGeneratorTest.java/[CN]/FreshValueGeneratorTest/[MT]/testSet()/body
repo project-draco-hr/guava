@@ -2,9 +2,6 @@
   assertFreshInstance(new TypeToken<Set<String>>(){
   }
 );
-  assertValueAndTypeEquals(newLinkedHashSet(new FreshValueGenerator().generate(Number.class)),new FreshValueGenerator().generate(new TypeToken<Set<? extends Number>>(){
-  }
-));
   assertNotInstantiable(new TypeToken<Set<EmptyEnum>>(){
   }
 );

@@ -1,3 +1,0 @@
-{
-  return Primitives.wrap(type).cast(generate(TypeToken.of(type)));
-}

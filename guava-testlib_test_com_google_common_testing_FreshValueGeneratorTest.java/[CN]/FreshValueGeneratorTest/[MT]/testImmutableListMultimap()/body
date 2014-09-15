@@ -2,8 +2,4 @@
   assertFreshInstance(new TypeToken<ImmutableListMultimap<String,Integer>>(){
   }
 );
-  FreshValueGenerator generator=new FreshValueGenerator();
-  assertValueAndTypeEquals(ImmutableListMultimap.of(generator.generate(String.class),generator.generate(int.class)),new FreshValueGenerator().generate(new TypeToken<ImmutableListMultimap<String,Integer>>(){
-  }
-));
 }

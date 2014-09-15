@@ -2,7 +2,4 @@
   assertFreshInstance(new TypeToken<LinkedList<String>>(){
   }
 );
-  assertValueAndTypeEquals(newLinkedList(new FreshValueGenerator().generate(String.class)),new FreshValueGenerator().generate(new TypeToken<LinkedList<String>>(){
-  }
-));
 }

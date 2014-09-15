@@ -2,5 +2,5 @@
   this.interfaceType=interfaceType;
   this.method=method;
   this.passedArgs=getParameterValues(method);
-  this.returnValue=new FreshValueGenerator().generate(method.getReturnType());
+  this.returnValue=new FreshValueGenerator().generateFresh(method.getReturnType());
 }

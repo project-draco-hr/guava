@@ -2,9 +2,4 @@
   assertFreshInstance(new TypeToken<HashMultiset<String>>(){
   }
 );
-  HashMultiset<String> expected=HashMultiset.create();
-  expected.add(new FreshValueGenerator().generate(String.class));
-  assertValueAndTypeEquals(expected,new FreshValueGenerator().generate(new TypeToken<HashMultiset<String>>(){
-  }
-));
 }

@@ -1,3 +1,0 @@
-{
-  return LongBuffer.allocate(freshInt());
-}

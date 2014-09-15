@@ -1,0 +1,3 @@
+{
+  return pickInstance(Charset.availableCharsets().values(),Charsets.UTF_8);
+}

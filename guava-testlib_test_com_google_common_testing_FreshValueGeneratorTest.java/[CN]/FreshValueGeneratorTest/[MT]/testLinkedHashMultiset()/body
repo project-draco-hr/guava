@@ -2,9 +2,4 @@
   assertFreshInstance(new TypeToken<LinkedHashMultiset<String>>(){
   }
 );
-  LinkedHashMultiset<String> expected=LinkedHashMultiset.create();
-  expected.add(new FreshValueGenerator().generate(String.class));
-  assertValueAndTypeEquals(expected,new FreshValueGenerator().generate(new TypeToken<LinkedHashMultiset<String>>(){
-  }
-));
 }

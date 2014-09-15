@@ -2,7 +2,7 @@
   if (param.isAnnotationPresent(Nullable.class)) {
     return null;
   }
-  Object arg=generator.generate(param.getType());
+  Object arg=generator.generateFresh(param.getType());
   if (arg == null) {
     throw new ParameterNotInstantiableException(param);
   }

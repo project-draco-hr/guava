@@ -1,3 +1,0 @@
-{
-  return nextInstance(ImmutableList.of(int.class,long.class,void.class,Object.class,Object[].class,Iterable.class),Object.class);
-}

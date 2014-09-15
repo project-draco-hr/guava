@@ -1,0 +1,3 @@
+{
+  return generateLinkedHashMap(key,value);
+}

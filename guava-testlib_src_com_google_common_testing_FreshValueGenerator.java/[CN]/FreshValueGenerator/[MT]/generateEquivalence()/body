@@ -1,0 +1,15 @@
+{
+  return new Equivalence<T>(){
+    @Override protected boolean doEquivalent(    T a,    T b){
+      return false;
+    }
+    @Override protected int doHash(    T t){
+      return 0;
+    }
+    final String string=paramString(Equivalence.class,generateInt());
+    @Override public String toString(){
+      return string;
+    }
+  }
+;
+}

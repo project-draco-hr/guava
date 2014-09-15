@@ -1,8 +1,14 @@
 {
   assertEqualInstance(EmptyEnum.class,null);
   assertEqualInstance(OneConstantEnum.class,OneConstantEnum.CONSTANT1);
-  assertFreshInstance(TwoConstantEnum.class);
+  assertFreshInstance(TwoConstantEnum.class,2);
   assertFreshInstance(new TypeToken<Optional<OneConstantEnum>>(){
   }
-);
+,2);
+  assertFreshInstance(new TypeToken<List<OneConstantEnum>>(){
+  }
+,1);
+  assertFreshInstance(new TypeToken<List<TwoConstantEnum>>(){
+  }
+,2);
 }

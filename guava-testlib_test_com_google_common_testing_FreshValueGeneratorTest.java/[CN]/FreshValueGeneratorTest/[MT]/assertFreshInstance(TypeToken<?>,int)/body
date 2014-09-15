@@ -1,0 +1,8 @@
+{
+  FreshValueGenerator generator=new FreshValueGenerator();
+  EqualsTester tester=new EqualsTester();
+  for (int i=0; i < instances; i++) {
+    tester.addEqualityGroup(generator.generateFresh(type));
+  }
+  tester.testEquals();
+}

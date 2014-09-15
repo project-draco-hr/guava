@@ -1,5 +1,5 @@
 {
   for (  Class<?> type : types) {
-    assertFreshInstance(type);
+    assertFreshInstance(type,2);
   }
 }

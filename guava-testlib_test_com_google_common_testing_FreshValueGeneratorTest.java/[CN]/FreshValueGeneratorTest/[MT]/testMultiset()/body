@@ -2,12 +2,4 @@
   assertFreshInstance(new TypeToken<Multiset<String>>(){
   }
 );
-  Multiset<String> expected=HashMultiset.create();
-  expected.add(new FreshValueGenerator().generate(String.class));
-  assertValueAndTypeEquals(expected,new FreshValueGenerator().generate(new TypeToken<Multiset<String>>(){
-  }
-));
-  assertNotInstantiable(new TypeToken<Multiset<EmptyEnum>>(){
-  }
-);
 }

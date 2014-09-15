@@ -1,0 +1,3 @@
+{
+  return generateHashdMap(key,value);
+}

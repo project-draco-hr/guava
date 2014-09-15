@@ -2,14 +2,6 @@
   assertFreshInstance(new TypeToken<Table<String,?,?>>(){
   }
 );
-  FreshValueGenerator generator=new FreshValueGenerator();
-  Table<String,Integer,Object> expected=HashBasedTable.create();
-  expected.put(generator.generate(String.class),generator.generate(int.class),generator.generate(new TypeToken<List<String>>(){
-  }
-));
-  assertValueAndTypeEquals(expected,new FreshValueGenerator().generate(new TypeToken<Table<String,Integer,List<String>>>(){
-  }
-));
   assertNotInstantiable(new TypeToken<Table<EmptyEnum,String,Integer>>(){
   }
 );
