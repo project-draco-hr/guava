@@ -1,5 +1,15 @@
 {
   checkArgument(endInclusive >= startInclusive);
-  String description="CharMatcher.inRange('" + showCharacter(startInclusive) + "', '"+ showCharacter(endInclusive)+ "')";
-  return inRange(startInclusive,endInclusive,description);
+  return new FastMatcher(){
+    @Override public boolean matches(    char c){
+      return startInclusive <= c && c <= endInclusive;
+    }
+    @GwtIncompatible("java.util.BitSet") @Override void setBits(    BitSet table){
+      table.set(startInclusive,endInclusive + 1);
+    }
+    @Override public String toString(){
+      return "CharMatcher.inRange('" + showCharacter(startInclusive) + "', '"+ showCharacter(endInclusive)+ "')";
+    }
+  }
+;
 }

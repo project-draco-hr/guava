@@ -1,8 +1,0 @@
-{
-  return new FastMatcher(description){
-    @Override public boolean matches(    char c){
-      return startInclusive <= c && c <= endInclusive;
-    }
-  }
-;
-}

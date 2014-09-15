@@ -10,12 +10,7 @@ default :
 }
 final char[] chars=sequence.toString().toCharArray();
 Arrays.sort(chars);
-StringBuilder description=new StringBuilder("CharMatcher.anyOf(\"");
-for (char c : chars) {
-description.append(showCharacter(c));
-}
-description.append("\")");
-return new CharMatcher(description.toString()){
+return new CharMatcher(){
 @Override public boolean matches(char c){
 return Arrays.binarySearch(chars,c) >= 0;
 }
@@ -23,6 +18,14 @@ return Arrays.binarySearch(chars,c) >= 0;
 for (char c : chars) {
   table.set(c);
 }
+}
+@Override public String toString(){
+StringBuilder description=new StringBuilder("CharMatcher.anyOf(\"");
+for (char c : chars) {
+  description.append(showCharacter(c));
+}
+description.append("\")");
+return description.toString();
 }
 }
 ;

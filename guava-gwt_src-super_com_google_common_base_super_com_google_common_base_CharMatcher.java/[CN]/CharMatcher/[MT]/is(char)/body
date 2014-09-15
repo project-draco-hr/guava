@@ -1,6 +1,5 @@
 {
-  String description="CharMatcher.is('" + showCharacter(match) + "')";
-  return new FastMatcher(description){
+  return new FastMatcher(){
     @Override public boolean matches(    char c){
       return c == match;
     }
@@ -15,6 +14,9 @@
     }
     @Override public CharMatcher negate(){
       return isNot(match);
+    }
+    @Override public String toString(){
+      return "CharMatcher.is('" + showCharacter(match) + "')";
     }
   }
 ;

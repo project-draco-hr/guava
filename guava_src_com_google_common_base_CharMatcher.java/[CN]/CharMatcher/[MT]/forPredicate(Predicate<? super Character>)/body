@@ -3,13 +3,15 @@
   if (predicate instanceof CharMatcher) {
     return (CharMatcher)predicate;
   }
-  String description="CharMatcher.forPredicate(" + predicate + ")";
-  return new CharMatcher(description){
+  return new CharMatcher(){
     @Override public boolean matches(    char c){
       return predicate.apply(c);
     }
     @Override public boolean apply(    Character character){
       return predicate.apply(checkNotNull(character));
+    }
+    @Override public String toString(){
+      return "CharMatcher.forPredicate(" + predicate + ")";
     }
   }
 ;

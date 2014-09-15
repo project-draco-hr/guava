@@ -1,6 +1,5 @@
 {
-  String description="CharMatcher.is('" + showCharacter(match) + "')";
-  return new FastMatcher(description){
+  return new FastMatcher(){
     @Override public boolean matches(    char c){
       return c == match;
     }
@@ -18,6 +17,9 @@
     }
     @GwtIncompatible("java.util.BitSet") @Override void setBits(    BitSet table){
       table.set(match);
+    }
+    @Override public String toString(){
+      return "CharMatcher.is('" + showCharacter(match) + "')";
     }
   }
 ;
