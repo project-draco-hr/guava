@@ -6,6 +6,6 @@
     return emptyMap(comparator());
   }
  else {
-    return from(keySet.getSubSet(fromIndex,toIndex),valueList.subList(fromIndex,toIndex));
+    return new RegularImmutableSortedMap<K,V>((RegularImmutableSortedSet<K>)keySet.getSubSet(fromIndex,toIndex),valueList.subList(fromIndex,toIndex));
   }
 }
