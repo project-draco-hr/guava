@@ -1,3 +1,0 @@
-{
-  return object != null && super.contains(object);
-}
