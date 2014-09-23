@@ -14,6 +14,6 @@
     ImmutableMapEntry<K,V> newEntry=(existing == null) ? new TerminalEntry<K,V>(key,value) : new NonTerminalMapEntry<K,V>(key,value,existing);
     table[tableIndex]=newEntry;
     entries[entryIndex]=newEntry;
-    checkNoConflictInBucket(key,newEntry,existing);
+    checkNoConflictInKeyBucket(key,newEntry,existing);
   }
 }

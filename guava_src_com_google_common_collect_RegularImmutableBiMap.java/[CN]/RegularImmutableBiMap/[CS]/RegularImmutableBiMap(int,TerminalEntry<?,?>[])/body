@@ -14,13 +14,9 @@
     int keyBucket=Hashing.smear(keyHash) & mask;
     int valueBucket=Hashing.smear(valueHash) & mask;
     ImmutableMapEntry<K,V> nextInKeyBucket=keyTable[keyBucket];
-    for (ImmutableMapEntry<K,V> keyEntry=nextInKeyBucket; keyEntry != null; keyEntry=keyEntry.getNextInKeyBucket()) {
-      checkNoConflict(!key.equals(keyEntry.getKey()),"key",entry,keyEntry);
-    }
+    checkNoConflictInKeyBucket(key,entry,nextInKeyBucket);
     ImmutableMapEntry<K,V> nextInValueBucket=valueTable[valueBucket];
-    for (ImmutableMapEntry<K,V> valueEntry=nextInValueBucket; valueEntry != null; valueEntry=valueEntry.getNextInValueBucket()) {
-      checkNoConflict(!value.equals(valueEntry.getValue()),"value",entry,valueEntry);
-    }
+    checkNoConflictInValueBucket(value,entry,nextInValueBucket);
     ImmutableMapEntry<K,V> newEntry=(nextInKeyBucket == null && nextInValueBucket == null) ? entry : new NonTerminalBiMapEntry<K,V>(entry,nextInKeyBucket,nextInValueBucket);
     keyTable[keyBucket]=newEntry;
     valueTable[valueBucket]=newEntry;
