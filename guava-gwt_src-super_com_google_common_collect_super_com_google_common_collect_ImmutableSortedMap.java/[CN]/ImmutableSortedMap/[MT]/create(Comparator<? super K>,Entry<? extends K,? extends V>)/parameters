@@ -1,2 +1,0 @@
-Comparator<? super K> comparator
-Entry<? extends K,? extends V> entries

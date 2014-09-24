@@ -1,8 +1,0 @@
-{
-  checkNotNull(comparator);
-  SortedMap<K,V> delegate=newModifiableDelegate(comparator);
-  for (  Entry<? extends K,? extends V> entry : entries) {
-    delegate.put(entry.getKey(),entry.getValue());
-  }
-  return newView(unmodifiableSortedMap(delegate),comparator);
-}
