@@ -1,4 +1,4 @@
 {
   ImmutableSetMultimap<K,V> result=multimapView;
-  return (result == null) ? (multimapView=createMultimapView()) : result;
+  return (result == null) ? (multimapView=new ImmutableSetMultimap<K,V>(new MapViewOfValuesAsSingletonSets(),size(),null)) : result;
 }

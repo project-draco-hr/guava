@@ -1,0 +1,13 @@
+{
+  return new UnmodifiableIterator<Entry<K,V>>(){
+    private final Iterator<Entry<K,V>> backingIterator=delegate.entrySet().iterator();
+    @Override public boolean hasNext(){
+      return backingIterator.hasNext();
+    }
+    @Override public Entry<K,V> next(){
+      Entry<K,V> entry=backingIterator.next();
+      return Maps.immutableEntry(entry.getKey(),entry.getValue());
+    }
+  }
+;
+}
