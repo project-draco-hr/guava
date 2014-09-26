@@ -4,8 +4,8 @@ switch (size) {
 case 0:
     return of();
 case 1:
-  Entry<K,V> entry=getOnlyElement(entries);
-return of(entry.getKey(),entry.getValue());
+  Entry<? extends K,? extends V> entry=getOnlyElement(entries);
+return of((K)entry.getKey(),(V)entry.getValue());
 default :
 @SuppressWarnings("unchecked") Entry<K,V>[] entryArray=entries.toArray(new Entry[entries.size()]);
 return new RegularImmutableMap<K,V>(entryArray);

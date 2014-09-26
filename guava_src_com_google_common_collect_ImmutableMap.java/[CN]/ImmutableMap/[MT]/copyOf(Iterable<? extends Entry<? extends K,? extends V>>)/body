@@ -1,0 +1,12 @@
+{
+  Entry<?,?>[] entryArray=Iterables.toArray(entries,EMPTY_ENTRY_ARRAY);
+switch (entryArray.length) {
+case 0:
+    return of();
+case 1:
+  @SuppressWarnings("unchecked") Entry<K,V> onlyEntry=(Entry<K,V>)entryArray[0];
+return of(onlyEntry.getKey(),onlyEntry.getValue());
+default :
+return new RegularImmutableMap<K,V>(entryArray);
+}
+}

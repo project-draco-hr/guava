@@ -1,4 +1,0 @@
-{
-  @SuppressWarnings("unchecked") Entry<K,V>[] entryArray=(Entry[])entries.toArray(EMPTY_ENTRY_ARRAY);
-  return fromEntries(comparator,sameComparator,entryArray,entryArray.length);
-}

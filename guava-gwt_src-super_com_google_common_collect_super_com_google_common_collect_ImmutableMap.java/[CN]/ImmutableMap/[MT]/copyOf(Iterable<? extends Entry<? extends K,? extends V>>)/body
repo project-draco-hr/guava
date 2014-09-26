@@ -1,0 +1,8 @@
+{
+  if (entries instanceof Collection) {
+    return fromEntryList((Collection<? extends Entry<? extends K,? extends V>>)entries);
+  }
+ else {
+    return fromEntryList(Lists.newArrayList(entries.iterator()));
+  }
+}
