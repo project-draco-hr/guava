@@ -1,0 +1,7 @@
+{
+  RateLimiter r=RateLimiter.create(stopwatch,Double.MIN_VALUE);
+  assertTrue("Unable to acquire initial permit",r.tryAcquire());
+  assertFalse("Capable of acquiring an additional permit",r.tryAcquire());
+  stopwatch.sleepMillis(Integer.MAX_VALUE);
+  assertFalse("Capable of acquiring an additional permit after sleeping",r.tryAcquire());
+}
