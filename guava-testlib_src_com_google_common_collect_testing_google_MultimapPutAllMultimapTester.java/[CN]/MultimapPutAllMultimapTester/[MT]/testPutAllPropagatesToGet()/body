@@ -4,5 +4,5 @@
   int getCollectionSize=getCollection.size();
   assertTrue(multimap().putAll(source));
   assertEquals(getCollectionSize + 1,getCollection.size());
-  assertTrue(getCollection.contains(sampleValues().e3));
+  assertThat(getCollection).contains(sampleValues().e3);
 }

@@ -21,8 +21,8 @@
   assertSame(three,map.remove(two));
   assertNull(map.put(three,one));
   assertNull(map.put(one,two));
-  assertEquals(one,map.get(three));
-  assertEquals(two,map.get(one));
+  assertThat(map).containsEntry(three,one);
+  assertThat(map).containsEntry(one,two);
   map.clear();
   assertEquals(EMPTY_STATS,cache.stats());
 }
