@@ -1,6 +1,8 @@
 {
   Set<MethodSignature> required=getAllRequiredToFauxveride(ancestor);
   Set<MethodSignature> found=getAllFauxveridden(descendant,ancestor);
-  required.removeAll(found);
-  assertEquals("Must hide public static methods from ancestor classes",Collections.emptySet(),newTreeSet(required));
+  Set<MethodSignature> missing=ImmutableSortedSet.copyOf(difference(required,found));
+  if (!missing.isEmpty()) {
+    fail(String.format("%s should hide the public static methods declared in %s: %s",descendant.getSimpleName(),ancestor.getSimpleName(),missing));
+  }
 }
