@@ -2,10 +2,10 @@
   TypeToken<Interface1>.TypeSet types=new TypeToken<Interface1>(){
   }
 .getTypes();
-  assertThat(types).has().item(TypeToken.of(Interface1.class));
-  assertThat(types.rawTypes()).has().item(Interface1.class);
-  assertThat(types.interfaces()).has().item(TypeToken.of(Interface1.class));
-  assertThat(types.interfaces().rawTypes()).has().item(Interface1.class);
+  assertThat(types).contains(TypeToken.of(Interface1.class));
+  assertThat(types.rawTypes()).contains(Interface1.class);
+  assertThat(types.interfaces()).contains(TypeToken.of(Interface1.class));
+  assertThat(types.interfaces().rawTypes()).contains(Interface1.class);
   assertThat(types.classes()).isEmpty();
   assertThat(types.classes().rawTypes()).isEmpty();
 }

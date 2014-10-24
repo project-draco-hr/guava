@@ -2,6 +2,6 @@
   List<Entry<K,V>> entries=Helpers.copyToList(getSubjectGenerator().getSampleElements(getSubjectGenerator().getCollectionSize().getNumElements()));
   Collections.sort(entries,Helpers.<K,V>entryComparator(navigableMap.comparator()));
   for (int i=0; i < entries.size(); i++) {
-    assertThat(navigableMap.headMap(entries.get(i).getKey()).entrySet()).iteratesAs(entries.subList(0,i));
+    assertThat(navigableMap.headMap(entries.get(i).getKey()).entrySet()).containsExactlyElementsIn(entries.subList(0,i)).inOrder();
   }
 }

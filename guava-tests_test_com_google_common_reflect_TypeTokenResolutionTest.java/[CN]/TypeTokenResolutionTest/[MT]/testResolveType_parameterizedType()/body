@@ -6,5 +6,5 @@
   ParameterizedType resolved=(ParameterizedType)typeResolver.resolveType(parameterized.parameterizedType());
   assertEquals(TypeTokenResolutionTest.class,resolved.getOwnerType());
   assertEquals(Bar.class,resolved.getRawType());
-  assertThat(resolved.getActualTypeArguments()).asList().has().item(String.class);
+  assertThat(resolved.getActualTypeArguments()).asList().contains(String.class);
 }

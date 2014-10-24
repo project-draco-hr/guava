@@ -1,5 +1,5 @@
 {
   sanityTests.publicApiOnly();
   assertThat(findClassesToTest(ImmutableList.of(Foo.class))).isEmpty();
-  assertThat(findClassesToTest(ImmutableList.of(PublicFoo.class))).has().item(PublicFoo.class);
+  assertThat(findClassesToTest(ImmutableList.of(PublicFoo.class))).contains(PublicFoo.class);
 }

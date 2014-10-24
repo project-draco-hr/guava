@@ -7,7 +7,7 @@
   assertEquals(jvmType.toString(),ourType.toString());
   assertEquals(jvmType.hashCode(),ourType.hashCode());
   assertEquals(HashMap.class,ourType.getRawType());
-  assertThat(ourType.getActualTypeArguments()).asList().has().exactlyAs(asList(jvmType.getActualTypeArguments())).inOrder();
+  assertThat(ourType.getActualTypeArguments()).asList().containsExactlyElementsIn(asList(jvmType.getActualTypeArguments())).inOrder();
   assertEquals(Arrays.asList(String.class,Types.newArrayType(Types.newArrayType(int.class))),Arrays.asList(ourType.getActualTypeArguments()));
   assertEquals(null,ourType.getOwnerType());
 }

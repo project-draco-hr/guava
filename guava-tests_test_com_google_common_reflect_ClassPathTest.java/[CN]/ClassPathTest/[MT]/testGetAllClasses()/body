@@ -23,6 +23,6 @@ class LocalClass {
   assertThat(names).has().allOf(anonymousClass.getName(),LocalClass.class.getName(),ClassPath.class.getName(),ClassPathTest.class.getName());
   assertThat(strings).has().allOf(anonymousClass.getName(),LocalClass.class.getName(),ClassPath.class.getName(),ClassPathTest.class.getName());
   assertThat(classes).has().allOf(anonymousClass,LocalClass.class,ClassPath.class,ClassPathTest.class);
-  assertThat(packageNames).has().exactly(ClassPath.class.getPackage().getName());
+  assertThat(packageNames).containsExactly(ClassPath.class.getPackage().getName());
   assertThat(simpleNames).has().allOf("","Local","ClassPath","ClassPathTest");
 }

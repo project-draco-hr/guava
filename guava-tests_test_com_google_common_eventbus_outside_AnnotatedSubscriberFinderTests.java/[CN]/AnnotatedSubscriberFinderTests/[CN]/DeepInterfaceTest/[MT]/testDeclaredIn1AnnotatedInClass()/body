@@ -1,3 +1,3 @@
 {
-  assertThat(getSubscriber().declaredIn1AnnotatedInClassEvents).has().item(EVENT);
+  assertThat(getSubscriber().declaredIn1AnnotatedInClassEvents).contains(EVENT);
 }

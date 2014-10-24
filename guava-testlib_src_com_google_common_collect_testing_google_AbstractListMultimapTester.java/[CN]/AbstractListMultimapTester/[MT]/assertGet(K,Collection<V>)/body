@@ -1,7 +1,7 @@
 {
-  assertThat(multimap().get(key)).has().exactlyAs(values).inOrder();
+  assertThat(multimap().get(key)).containsExactlyElementsIn(values).inOrder();
   if (!values.isEmpty()) {
-    assertThat(multimap().asMap().get(key)).has().exactlyAs(values).inOrder();
+    assertThat(multimap().asMap().get(key)).containsExactlyElementsIn(values).inOrder();
     assertFalse(multimap().isEmpty());
   }
  else {

@@ -7,7 +7,7 @@
     Collection<V> expectedCollection=Helpers.copyToList(collection);
     multimap().put(key,sampleValues().e3);
     expectedCollection.add(sampleValues().e3);
-    assertThat(collection).has().exactlyAs(expectedCollection);
+    assertThat(collection).containsExactlyElementsIn(expectedCollection);
     assertEquals(size + 1,multimap().size());
   }
 }

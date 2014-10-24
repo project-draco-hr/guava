@@ -15,7 +15,7 @@
   assertThat(names).has().allOf(ClassPath.class.getName(),ClassPathTest.class.getName());
   assertThat(strings).has().allOf(ClassPath.class.getName(),ClassPathTest.class.getName());
   assertThat(classes).has().allOf(ClassPath.class,ClassPathTest.class);
-  assertThat(packageNames).has().item(ClassPath.class.getPackage().getName());
+  assertThat(packageNames).contains(ClassPath.class.getPackage().getName());
   assertThat(simpleNames).has().allOf("ClassPath","ClassPathTest");
   assertFalse(classes.contains(ClassInSubPackage.class));
 }

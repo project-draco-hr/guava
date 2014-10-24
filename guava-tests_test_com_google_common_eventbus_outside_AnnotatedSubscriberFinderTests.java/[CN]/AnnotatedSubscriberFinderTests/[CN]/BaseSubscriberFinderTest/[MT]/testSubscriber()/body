@@ -1,3 +1,3 @@
 {
-  assertThat(getSubscriber().subscriberEvents).has().item(EVENT);
+  assertThat(getSubscriber().subscriberEvents).contains(EVENT);
 }

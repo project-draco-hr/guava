@@ -1,4 +1,4 @@
 {
-  assertThat(getSubscriber().differentlyOverriddenNotAnnotatedInSubclassGoodEvents).has().item(EVENT);
+  assertThat(getSubscriber().differentlyOverriddenNotAnnotatedInSubclassGoodEvents).contains(EVENT);
   assertThat(getSubscriber().differentlyOverriddenNotAnnotatedInSubclassBadEvents).isEmpty();
 }

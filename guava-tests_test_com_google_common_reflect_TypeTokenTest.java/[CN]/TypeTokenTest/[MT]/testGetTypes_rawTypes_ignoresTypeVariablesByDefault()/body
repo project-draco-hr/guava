@@ -3,6 +3,6 @@
   }
 .capture()).getTypes();
   makeUnmodifiable(types.rawTypes()).has().exactly(Interface1.class,Class1.class,Object.class);
-  makeUnmodifiable(types.interfaces().rawTypes()).has().exactly(Interface1.class).inOrder();
+  makeUnmodifiable(types.interfaces().rawTypes()).containsExactly(Interface1.class);
   makeUnmodifiable(types.classes().rawTypes()).has().exactly(Class1.class,Object.class).inOrder();
 }

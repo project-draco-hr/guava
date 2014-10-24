@@ -1,4 +1,4 @@
 {
-  assertThat(findClassesToTest(ImmutableList.of(Foo.class,FooTest.class),"testNotThere")).has().exactly(Foo.class).inOrder();
-  assertThat(findClassesToTest(ImmutableList.of(Foo.class,FooTest.class),"testNotPublic")).has().exactly(Foo.class).inOrder();
+  assertThat(findClassesToTest(ImmutableList.of(Foo.class,FooTest.class),"testNotThere")).containsExactly(Foo.class);
+  assertThat(findClassesToTest(ImmutableList.of(Foo.class,FooTest.class),"testNotPublic")).containsExactly(Foo.class);
 }

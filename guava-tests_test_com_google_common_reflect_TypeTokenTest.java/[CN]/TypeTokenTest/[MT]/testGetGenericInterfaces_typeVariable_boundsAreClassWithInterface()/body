@@ -1,7 +1,7 @@
 {
   makeUnmodifiable(TypeToken.of(new TypeCapture<T>(){
   }
-.capture()).getGenericInterfaces()).has().exactly(new TypeToken<Iterable<String>>(){
+.capture()).getGenericInterfaces()).containsExactly(new TypeToken<Iterable<String>>(){
   }
 );
   assertHasArrayInterfaces(new TypeToken<T[]>(){
