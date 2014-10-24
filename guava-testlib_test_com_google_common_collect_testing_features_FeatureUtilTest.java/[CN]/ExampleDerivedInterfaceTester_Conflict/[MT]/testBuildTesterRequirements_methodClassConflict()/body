@@ -5,7 +5,7 @@
     fail("Expected ConflictingRequirementsException");
   }
  catch (  ConflictingRequirementsException e) {
-    assertThat(e.getConflicts()).has().item(ExampleBaseFeature.BASE_FEATURE_1);
+    assertThat(e.getConflicts()).contains(ExampleBaseFeature.BASE_FEATURE_1);
     assertEquals(method,e.getSource());
   }
 }

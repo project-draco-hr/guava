@@ -2,7 +2,7 @@
   SortedSet<String> set=ImmutableSortedSet.orderedBy(STRING_LENGTH).add("in","the","quick","jumped","over","a").build();
   assertTrue(set.tailSet("california") instanceof ImmutableSortedSet);
   assertTrue(set.tailSet("fish") instanceof ImmutableSortedSet);
-  assertThat(set.tailSet("fish")).has().exactly("over","quick","jumped").inOrder();
-  assertThat(set.tailSet("a")).has().exactly("a","in","the","over","quick","jumped").inOrder();
+  assertThat(set.tailSet("fish")).containsExactly("over","quick","jumped").inOrder();
+  assertThat(set.tailSet("a")).containsExactly("a","in","the","over","quick","jumped").inOrder();
   assertTrue(set.tailSet("california").isEmpty());
 }

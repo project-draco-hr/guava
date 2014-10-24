@@ -3,5 +3,5 @@
   assertTrue(set.isEmpty());
   set.add(new LegacyComparable("foo"),2);
   set.add(new LegacyComparable("bar"),3);
-  assertThat(set).has().exactly(new LegacyComparable("bar"),new LegacyComparable("bar"),new LegacyComparable("bar"),new LegacyComparable("foo"),new LegacyComparable("foo")).inOrder();
+  assertThat(set).containsExactly(new LegacyComparable("bar"),new LegacyComparable("bar"),new LegacyComparable("bar"),new LegacyComparable("foo"),new LegacyComparable("foo")).inOrder();
 }

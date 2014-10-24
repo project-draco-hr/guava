@@ -6,6 +6,6 @@
   multimap.put("c",4);
   multimap.remove("a",1);
   multimap=SerializableTester.reserializeAndAssert(multimap);
-  assertThat(multimap.keySet()).has().exactly("a","b","c").inOrder();
-  assertThat(multimap.entries()).has().exactly(mapEntry("b",2),mapEntry("a",3),mapEntry("c",4)).inOrder();
+  assertThat(multimap.keySet()).containsExactly("a","b","c").inOrder();
+  assertThat(multimap.entries()).containsExactly(mapEntry("b",2),mapEntry("a",3),mapEntry("c",4)).inOrder();
 }

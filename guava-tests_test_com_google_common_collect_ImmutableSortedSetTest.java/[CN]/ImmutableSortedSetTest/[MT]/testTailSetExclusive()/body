@@ -3,6 +3,6 @@
   ImmutableSortedSet<String> set=ImmutableSortedSet.copyOf(strings);
   Arrays.sort(strings);
   for (int i=0; i < strings.length; i++) {
-    assertThat(set.tailSet(strings[i],false)).has().exactlyAs(sortedNumberNames(i + 1,strings.length)).inOrder();
+    assertThat(set.tailSet(strings[i],false)).containsExactlyElementsIn(sortedNumberNames(i + 1,strings.length)).inOrder();
   }
 }

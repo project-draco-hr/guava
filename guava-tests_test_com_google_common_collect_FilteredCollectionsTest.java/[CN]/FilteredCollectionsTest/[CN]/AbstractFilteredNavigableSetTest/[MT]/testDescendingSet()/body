@@ -2,6 +2,6 @@
   for (  List<Integer> contents : SAMPLE_INPUTS) {
     NavigableSet<Integer> filtered=filter(createUnfiltered(contents),EVEN);
     NavigableSet<Integer> unfiltered=createUnfiltered(filtered);
-    assertThat(filtered.descendingSet()).has().exactlyAs(unfiltered.descendingSet()).inOrder();
+    assertThat(filtered.descendingSet()).containsExactlyElementsIn(unfiltered.descendingSet()).inOrder();
   }
 }

@@ -2,8 +2,8 @@
   SortedSet<String> set=ImmutableSortedSet.orderedBy(STRING_LENGTH).add("in","the","quick","jumped","over","a").build();
   assertTrue(set.subSet("the","quick") instanceof ImmutableSortedSet);
   assertTrue(set.subSet("","b") instanceof ImmutableSortedSet);
-  assertThat(set.subSet("the","quick")).has().exactly("the","over").inOrder();
-  assertThat(set.subSet("a","california")).has().exactly("a","in","the","over","quick","jumped").inOrder();
+  assertThat(set.subSet("the","quick")).containsExactly("the","over").inOrder();
+  assertThat(set.subSet("a","california")).containsExactly("a","in","the","over","quick","jumped").inOrder();
   assertTrue(set.subSet("","b").isEmpty());
   assertTrue(set.subSet("vermont","california").isEmpty());
   assertTrue(set.subSet("aaa","zzz").isEmpty());

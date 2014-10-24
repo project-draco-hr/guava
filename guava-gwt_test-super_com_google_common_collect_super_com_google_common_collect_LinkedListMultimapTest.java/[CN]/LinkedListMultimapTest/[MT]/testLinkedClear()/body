@@ -6,7 +6,7 @@
   List<Integer> foos=map.get("foo");
   Collection<Integer> values=map.values();
   assertEquals(asList(1,2),foos);
-  assertThat(values).has().exactly(1,2,3).inOrder();
+  assertThat(values).containsExactly(1,2,3).inOrder();
   map.clear();
   assertEquals(Collections.emptyList(),foos);
   assertThat(values).isEmpty();

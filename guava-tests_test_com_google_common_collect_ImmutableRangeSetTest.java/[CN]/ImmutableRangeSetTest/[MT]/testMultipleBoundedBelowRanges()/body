@@ -1,6 +1,6 @@
 {
   ImmutableRangeSet<Integer> rangeSet=ImmutableRangeSet.<Integer>builder().add(Range.greaterThan(6)).add(Range.closedOpen(1,3)).build();
-  assertThat(rangeSet.asRanges()).has().exactly(Range.closedOpen(1,3),Range.greaterThan(6)).inOrder();
+  assertThat(rangeSet.asRanges()).containsExactly(Range.closedOpen(1,3),Range.greaterThan(6)).inOrder();
   assertTrue(rangeSet.encloses(Range.closed(1,2)));
   assertTrue(rangeSet.encloses(Range.open(6,8)));
   assertFalse(rangeSet.encloses(Range.closed(1,8)));

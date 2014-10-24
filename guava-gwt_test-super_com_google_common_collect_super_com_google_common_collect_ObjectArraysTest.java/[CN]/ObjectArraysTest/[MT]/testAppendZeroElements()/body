@@ -1,4 +1,4 @@
 {
   String[] result=ObjectArrays.concat(new String[]{},"foo");
-  assertThat(result).asList().has().item("foo");
+  assertThat(result).asList().contains("foo");
 }

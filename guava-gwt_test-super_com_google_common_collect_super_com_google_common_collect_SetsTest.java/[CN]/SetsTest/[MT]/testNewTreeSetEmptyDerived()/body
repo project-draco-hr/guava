@@ -3,5 +3,5 @@
   assertTrue(set.isEmpty());
   set.add(new Derived("foo"));
   set.add(new Derived("bar"));
-  assertThat(set).has().exactly(new Derived("bar"),new Derived("foo")).inOrder();
+  assertThat(set).containsExactly(new Derived("bar"),new Derived("foo")).inOrder();
 }

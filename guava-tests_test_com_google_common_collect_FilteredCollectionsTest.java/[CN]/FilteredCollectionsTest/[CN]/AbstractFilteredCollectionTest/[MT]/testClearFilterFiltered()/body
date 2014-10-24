@@ -5,6 +5,6 @@
     C filtered2=filter(filtered1,PRIME_DIGIT);
     C inverseFiltered=filter(createUnfiltered(contents),Predicates.not(Predicates.and(EVEN,PRIME_DIGIT)));
     filtered2.clear();
-    assertThat(unfiltered).has().exactlyAs(inverseFiltered);
+    assertThat(unfiltered).containsExactlyElementsIn(inverseFiltered);
   }
 }

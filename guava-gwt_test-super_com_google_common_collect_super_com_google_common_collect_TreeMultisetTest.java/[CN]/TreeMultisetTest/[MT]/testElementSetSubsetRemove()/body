@@ -7,15 +7,15 @@
   ms.add("e",3);
   ms.add("f",2);
   SortedSet<String> elementSet=ms.elementSet();
-  assertThat(elementSet).has().exactly("a","b","c","d","e","f").inOrder();
+  assertThat(elementSet).containsExactly("a","b","c","d","e","f").inOrder();
   SortedSet<String> subset=elementSet.subSet("b","f");
-  assertThat(subset).has().exactly("b","c","d","e").inOrder();
+  assertThat(subset).containsExactly("b","c","d","e").inOrder();
   assertTrue(subset.remove("c"));
-  assertThat(elementSet).has().exactly("a","b","d","e","f").inOrder();
-  assertThat(subset).has().exactly("b","d","e").inOrder();
+  assertThat(elementSet).containsExactly("a","b","d","e","f").inOrder();
+  assertThat(subset).containsExactly("b","d","e").inOrder();
   assertEquals(10,ms.size());
   assertFalse(subset.remove("a"));
-  assertThat(elementSet).has().exactly("a","b","d","e","f").inOrder();
-  assertThat(subset).has().exactly("b","d","e").inOrder();
+  assertThat(elementSet).containsExactly("a","b","d","e","f").inOrder();
+  assertThat(subset).containsExactly("b","d","e").inOrder();
   assertEquals(10,ms.size());
 }

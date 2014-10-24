@@ -2,7 +2,7 @@
   ImmutableSet<SomeEnum> none=Sets.immutableEnumSet(MinimalIterable.<SomeEnum>of());
   assertThat(none).isEmpty();
   ImmutableSet<SomeEnum> one=Sets.immutableEnumSet(MinimalIterable.of(SomeEnum.B));
-  assertThat(one).has().item(SomeEnum.B);
+  assertThat(one).contains(SomeEnum.B);
   ImmutableSet<SomeEnum> two=Sets.immutableEnumSet(MinimalIterable.of(SomeEnum.D,SomeEnum.B));
-  assertThat(two).has().exactly(SomeEnum.B,SomeEnum.D).inOrder();
+  assertThat(two).containsExactly(SomeEnum.B,SomeEnum.D).inOrder();
 }

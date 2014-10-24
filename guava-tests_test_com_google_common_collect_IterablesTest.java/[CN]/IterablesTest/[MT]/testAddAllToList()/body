@@ -2,6 +2,6 @@
   List<String> alreadyThere=newArrayList("already","there");
   List<String> freshlyAdded=newArrayList("freshly","added");
   boolean changed=Iterables.addAll(alreadyThere,freshlyAdded);
-  assertThat(alreadyThere).has().exactly("already","there","freshly","added").inOrder();
+  assertThat(alreadyThere).containsExactly("already","there","freshly","added").inOrder();
   assertTrue(changed);
 }

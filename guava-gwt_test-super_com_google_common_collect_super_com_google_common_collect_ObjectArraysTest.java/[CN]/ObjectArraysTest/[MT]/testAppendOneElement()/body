@@ -1,4 +1,4 @@
 {
   String[] result=ObjectArrays.concat(new String[]{"foo"},"bar");
-  assertThat(result).asList().has().exactly("foo","bar").inOrder();
+  assertThat(result).asList().containsExactly("foo","bar").inOrder();
 }

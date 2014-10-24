@@ -1,6 +1,6 @@
 {
   Set<SomeEnum> units=Sets.immutableEnumSet(SomeEnum.D,SomeEnum.B);
-  assertThat(units).has().exactly(SomeEnum.B,SomeEnum.D).inOrder();
+  assertThat(units).containsExactly(SomeEnum.B,SomeEnum.D).inOrder();
   try {
     units.remove(SomeEnum.B);
     fail("ImmutableEnumSet should throw an exception on remove()");

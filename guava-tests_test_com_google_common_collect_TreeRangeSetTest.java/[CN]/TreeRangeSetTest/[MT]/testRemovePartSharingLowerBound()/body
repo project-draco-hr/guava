@@ -3,6 +3,6 @@
   rangeSet.add(Range.closed(3,5));
   rangeSet.remove(Range.closedOpen(3,5));
   testInvariants(rangeSet);
-  assertThat(rangeSet.asRanges()).has().item(Range.singleton(5));
-  assertThat(rangeSet.complement().asRanges()).has().exactly(Range.lessThan(5),Range.greaterThan(5)).inOrder();
+  assertThat(rangeSet.asRanges()).contains(Range.singleton(5));
+  assertThat(rangeSet.complement().asRanges()).containsExactly(Range.lessThan(5),Range.greaterThan(5)).inOrder();
 }

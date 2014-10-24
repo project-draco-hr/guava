@@ -9,6 +9,6 @@
     }
  catch (    IllegalArgumentException expected) {
     }
-    assertThat(filteredToModify).has().exactlyAs(filtered);
+    assertThat(filteredToModify).containsExactlyElementsIn(filtered);
   }
 }

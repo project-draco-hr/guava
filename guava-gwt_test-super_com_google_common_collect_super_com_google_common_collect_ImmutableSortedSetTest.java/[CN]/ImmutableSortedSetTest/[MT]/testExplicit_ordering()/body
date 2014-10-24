@@ -1,4 +1,4 @@
 {
   SortedSet<String> set=ImmutableSortedSet.orderedBy(STRING_LENGTH).add("in","the","quick","jumped","over","a").build();
-  assertThat(set).has().exactly("a","in","the","over","quick","jumped").inOrder();
+  assertThat(set).containsExactly("a","in","the","over","quick","jumped").inOrder();
 }

@@ -4,7 +4,7 @@
   Arrays.sort(strings);
   for (int i=0; i < strings.length; i++) {
     for (int j=i; j < strings.length; j++) {
-      assertThat(set.subSet(strings[i],false,strings[j],true)).has().exactlyAs(sortedNumberNames(i + 1,j + 1)).inOrder();
+      assertThat(set.subSet(strings[i],false,strings[j],true)).containsExactlyElementsIn(sortedNumberNames(i + 1,j + 1)).inOrder();
     }
   }
 }

@@ -6,6 +6,6 @@
     complement.add(Range.<Integer>all());
     complement.remove(range);
     assertEquals(complement,rangeSet.complement());
-    assertThat(rangeSet.complement().asRanges()).has().exactlyAs(complement.asRanges()).inOrder();
+    assertThat(rangeSet.complement().asRanges()).containsExactlyElementsIn(complement.asRanges()).inOrder();
   }
 }

@@ -11,7 +11,7 @@
   ms.add("a");
   ms.add("b");
   ms.add("d");
-  assertThat(ms).has().exactly("d","c","b","b","a").inOrder();
+  assertThat(ms).containsExactly("d","c","b","b","a").inOrder();
   SortedSet<String> elementSet=ms.elementSet();
   assertEquals("d",elementSet.first());
   assertEquals("a",elementSet.last());

@@ -2,6 +2,6 @@
   SortedSet<String> input=Sets.newTreeSet(STRING_LENGTH);
   Collections.addAll(input,"in","the","quick","jumped","over","a");
   SortedSet<String> set=ImmutableSortedSet.copyOfSorted(input);
-  assertThat(set).has().exactly("a","in","the","over","quick","jumped").inOrder();
+  assertThat(set).containsExactly("a","in","the","over","quick","jumped").inOrder();
   assertSame(STRING_LENGTH,set.comparator());
 }

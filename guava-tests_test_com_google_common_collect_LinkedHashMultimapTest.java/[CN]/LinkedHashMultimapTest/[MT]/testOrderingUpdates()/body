@@ -1,13 +1,13 @@
 {
   Multimap<String,Integer> multimap=initializeMultimap5();
-  assertThat(multimap.replaceValues("foo",asList(6,7))).has().exactly(5,3).inOrder();
-  assertThat(multimap.keySet()).has().exactly("foo","bar","cow").inOrder();
-  assertThat(multimap.removeAll("foo")).has().exactly(6,7).inOrder();
-  assertThat(multimap.keySet()).has().exactly("bar","cow").inOrder();
+  assertThat(multimap.replaceValues("foo",asList(6,7))).containsExactly(5,3).inOrder();
+  assertThat(multimap.keySet()).containsExactly("foo","bar","cow").inOrder();
+  assertThat(multimap.removeAll("foo")).containsExactly(6,7).inOrder();
+  assertThat(multimap.keySet()).containsExactly("bar","cow").inOrder();
   assertTrue(multimap.remove("bar",4));
-  assertThat(multimap.keySet()).has().exactly("bar","cow").inOrder();
+  assertThat(multimap.keySet()).containsExactly("bar","cow").inOrder();
   assertTrue(multimap.remove("bar",1));
-  assertThat(multimap.keySet()).has().item("cow");
+  assertThat(multimap.keySet()).contains("cow");
   multimap.put("bar",9);
-  assertThat(multimap.keySet()).has().exactly("cow","bar").inOrder();
+  assertThat(multimap.keySet()).containsExactly("cow","bar").inOrder();
 }

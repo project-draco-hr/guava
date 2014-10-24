@@ -6,20 +6,20 @@
     assertThat(rangeSet.asRanges()).isEmpty();
   }
  else   if (a.isEmpty()) {
-    assertThat(rangeSet.asRanges()).has().item(b);
+    assertThat(rangeSet.asRanges()).contains(b);
   }
  else   if (b.isEmpty()) {
-    assertThat(rangeSet.asRanges()).has().item(a);
+    assertThat(rangeSet.asRanges()).contains(a);
   }
  else   if (a.isConnected(b)) {
-    assertThat(rangeSet.asRanges()).has().exactly(a.span(b)).inOrder();
+    assertThat(rangeSet.asRanges()).containsExactly(a.span(b));
   }
  else {
     if (a.lowerEndpoint() < b.lowerEndpoint()) {
-      assertThat(rangeSet.asRanges()).has().exactly(a,b).inOrder();
+      assertThat(rangeSet.asRanges()).containsExactly(a,b).inOrder();
     }
  else {
-      assertThat(rangeSet.asRanges()).has().exactly(b,a).inOrder();
+      assertThat(rangeSet.asRanges()).containsExactly(b,a).inOrder();
     }
   }
 }

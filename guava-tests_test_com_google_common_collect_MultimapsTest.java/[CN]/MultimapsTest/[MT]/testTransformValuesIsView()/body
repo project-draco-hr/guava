@@ -9,5 +9,5 @@
 );
   Entry<String,String> entry=multimap.entries().iterator().next();
   entry.setValue("bbb");
-  assertThat(transformed.entries()).has().exactly(immutableEntry("a",3)).inOrder();
+  assertThat(transformed.entries()).containsExactly(immutableEntry("a",3));
 }

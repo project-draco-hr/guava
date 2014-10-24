@@ -2,11 +2,11 @@
   List<String> list=Lists.newArrayList("a","b");
   Iterator<String> consumingIterator=Iterators.consumingIterator(list.iterator());
   assertEquals("Iterators.consumingIterator(...)",consumingIterator.toString());
-  assertThat(list).has().exactly("a","b").inOrder();
+  assertThat(list).containsExactly("a","b").inOrder();
   assertTrue(consumingIterator.hasNext());
-  assertThat(list).has().exactly("a","b").inOrder();
+  assertThat(list).containsExactly("a","b").inOrder();
   assertEquals("a",consumingIterator.next());
-  assertThat(list).has().item("b");
+  assertThat(list).contains("b");
   assertTrue(consumingIterator.hasNext());
   assertEquals("b",consumingIterator.next());
   assertThat(list).isEmpty();

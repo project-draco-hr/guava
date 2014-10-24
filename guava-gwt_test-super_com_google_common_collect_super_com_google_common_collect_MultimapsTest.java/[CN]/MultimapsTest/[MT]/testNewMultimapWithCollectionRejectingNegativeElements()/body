@@ -34,5 +34,5 @@
   }
  catch (  IllegalArgumentException expected) {
   }
-  assertThat(multimap.entries()).has().exactly(Maps.immutableEntry(Color.RED,1),Maps.immutableEntry(Color.BLUE,2));
+  assertThat(multimap.entries()).containsExactly(Maps.immutableEntry(Color.RED,1),Maps.immutableEntry(Color.BLUE,2));
 }

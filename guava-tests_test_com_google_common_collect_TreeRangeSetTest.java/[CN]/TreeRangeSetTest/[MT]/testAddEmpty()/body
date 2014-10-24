@@ -3,5 +3,5 @@
   rangeSet.add(Range.closedOpen(3,3));
   testInvariants(rangeSet);
   assertThat(rangeSet.asRanges()).isEmpty();
-  assertThat(rangeSet.complement().asRanges()).has().exactly(Range.<Integer>all()).inOrder();
+  assertThat(rangeSet.complement().asRanges()).containsExactly(Range.<Integer>all());
 }

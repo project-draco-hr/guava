@@ -1,8 +1,8 @@
 {
   SortedSet<String> set=of("e","f","b","d","c");
   assertTrue(set.headSet("e") instanceof ImmutableSortedSet);
-  assertThat(set.headSet("e")).has().exactly("b","c","d").inOrder();
-  assertThat(set.headSet("g")).has().exactly("b","c","d","e","f").inOrder();
+  assertThat(set.headSet("e")).containsExactly("b","c","d").inOrder();
+  assertThat(set.headSet("g")).containsExactly("b","c","d","e","f").inOrder();
   assertSame(of(),set.headSet("a"));
   assertSame(of(),set.headSet("b"));
 }

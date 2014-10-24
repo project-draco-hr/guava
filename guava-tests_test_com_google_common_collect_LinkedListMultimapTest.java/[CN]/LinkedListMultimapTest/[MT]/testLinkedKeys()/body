@@ -5,7 +5,7 @@
   map.put("bar",3);
   map.put("bar",4);
   assertEquals("[bar=1, foo=2, bar=3, bar=4]",map.entries().toString());
-  assertThat(map.keys()).has().exactly("bar","foo","bar","bar").inOrder();
+  assertThat(map.keys()).containsExactly("bar","foo","bar","bar").inOrder();
   map.keys().remove("bar");
   assertEquals("{foo=[2], bar=[3, 4]}",map.toString());
 }

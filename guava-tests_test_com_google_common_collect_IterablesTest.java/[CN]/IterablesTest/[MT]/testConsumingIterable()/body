@@ -3,11 +3,11 @@
   Iterable<String> consumingIterable=Iterables.consumingIterable(list);
   assertEquals("Iterables.consumingIterable(...)",consumingIterable.toString());
   Iterator<String> consumingIterator=consumingIterable.iterator();
-  assertThat(list).has().exactly("a","b").inOrder();
+  assertThat(list).containsExactly("a","b").inOrder();
   assertTrue(consumingIterator.hasNext());
-  assertThat(list).has().exactly("a","b").inOrder();
+  assertThat(list).containsExactly("a","b").inOrder();
   assertEquals("a",consumingIterator.next());
-  assertThat(list).has().item("b");
+  assertThat(list).contains("b");
   assertTrue(consumingIterator.hasNext());
   assertEquals("b",consumingIterator.next());
   assertThat(list).isEmpty();

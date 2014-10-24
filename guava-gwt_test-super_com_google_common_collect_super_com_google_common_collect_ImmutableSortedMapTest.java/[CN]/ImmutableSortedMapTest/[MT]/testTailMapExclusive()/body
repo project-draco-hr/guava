@@ -1,4 +1,4 @@
 {
   Map<String,Integer> map=ImmutableSortedMap.of("one",1,"two",2,"three",3).tailMap("three",false);
-  assertThat(map.entrySet()).has().exactly(Maps.immutableEntry("two",2)).inOrder();
+  assertThat(map.entrySet()).containsExactly(Maps.immutableEntry("two",2));
 }
