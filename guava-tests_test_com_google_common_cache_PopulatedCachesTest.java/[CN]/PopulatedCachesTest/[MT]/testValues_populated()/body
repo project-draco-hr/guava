@@ -3,9 +3,9 @@
     Collection<Object> values=cache.asMap().values();
     List<Entry<Object,Object>> warmed=warmUp(cache);
     Collection<Object> expected=Maps.newHashMap(cache.asMap()).values();
-    assertThat(values).has().exactlyAs(expected);
-    assertThat(values.toArray()).asList().has().exactlyAs(expected);
-    assertThat(values.toArray(new Object[0])).asList().has().exactlyAs(expected);
+    assertThat(values).containsExactlyElementsIn(expected);
+    assertThat(values.toArray()).asList().containsExactlyElementsIn(expected);
+    assertThat(values.toArray(new Object[0])).asList().containsExactlyElementsIn(expected);
     assertEquals(WARMUP_SIZE,values.size());
     for (int i=WARMUP_MIN; i < WARMUP_MAX; i++) {
       Object value=warmed.get(i - WARMUP_MIN).getValue();

@@ -9,5 +9,5 @@
   assertThat(keySet).has().exactly(0,45);
   getAll(cache,asList(46));
   CacheTesting.drainRecencyQueues(cache);
-  assertThat(keySet).has().item(0);
+  assertThat(keySet).contains(0);
 }
