@@ -10,7 +10,7 @@
     assertNotNull(resource.url());
   }
   String testResourceName="com/google/common/reflect/test.txt";
-  assertThat(byName.keySet()).has().allOf("com/google/common/reflect/ClassPath.class","com/google/common/reflect/ClassPathTest.class","com/google/common/reflect/ClassPathTest$Nested.class",testResourceName);
-  assertThat(byToString.keySet()).has().allOf("com.google.common.reflect.ClassPath","com.google.common.reflect.ClassPathTest","com.google.common.reflect.ClassPathTest$Nested",testResourceName);
+  assertThat(byName.keySet()).containsAllOf("com/google/common/reflect/ClassPath.class","com/google/common/reflect/ClassPathTest.class","com/google/common/reflect/ClassPathTest$Nested.class",testResourceName);
+  assertThat(byToString.keySet()).containsAllOf("com.google.common.reflect.ClassPath","com.google.common.reflect.ClassPathTest","com.google.common.reflect.ClassPathTest$Nested",testResourceName);
   assertEquals(getClass().getClassLoader().getResource(testResourceName),byName.get("com/google/common/reflect/test.txt").url());
 }

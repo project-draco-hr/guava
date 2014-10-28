@@ -20,9 +20,9 @@ class LocalClass {
   Class<?> anonymousClass=new Object(){
   }
 .getClass();
-  assertThat(names).has().allOf(anonymousClass.getName(),LocalClass.class.getName(),ClassPath.class.getName(),ClassPathTest.class.getName());
-  assertThat(strings).has().allOf(anonymousClass.getName(),LocalClass.class.getName(),ClassPath.class.getName(),ClassPathTest.class.getName());
-  assertThat(classes).has().allOf(anonymousClass,LocalClass.class,ClassPath.class,ClassPathTest.class);
+  assertThat(names).containsAllOf(anonymousClass.getName(),LocalClass.class.getName(),ClassPath.class.getName(),ClassPathTest.class.getName());
+  assertThat(strings).containsAllOf(anonymousClass.getName(),LocalClass.class.getName(),ClassPath.class.getName(),ClassPathTest.class.getName());
+  assertThat(classes).containsAllOf(anonymousClass,LocalClass.class,ClassPath.class,ClassPathTest.class);
   assertThat(packageNames).containsExactly(ClassPath.class.getPackage().getName());
-  assertThat(simpleNames).has().allOf("","Local","ClassPath","ClassPathTest");
+  assertThat(simpleNames).containsAllOf("","Local","ClassPath","ClassPathTest");
 }

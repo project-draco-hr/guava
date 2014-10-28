@@ -12,10 +12,10 @@
     packageNames.add(classInfo.getPackageName());
     simpleNames.add(classInfo.getSimpleName());
   }
-  assertThat(names).has().allOf(ClassPath.class.getName(),ClassPathTest.class.getName());
-  assertThat(strings).has().allOf(ClassPath.class.getName(),ClassPathTest.class.getName());
-  assertThat(classes).has().allOf(ClassPath.class,ClassPathTest.class);
+  assertThat(names).containsAllOf(ClassPath.class.getName(),ClassPathTest.class.getName());
+  assertThat(strings).containsAllOf(ClassPath.class.getName(),ClassPathTest.class.getName());
+  assertThat(classes).containsAllOf(ClassPath.class,ClassPathTest.class);
   assertThat(packageNames).contains(ClassPath.class.getPackage().getName());
-  assertThat(simpleNames).has().allOf("ClassPath","ClassPathTest");
+  assertThat(simpleNames).containsAllOf("ClassPath","ClassPathTest");
   assertFalse(classes.contains(ClassInSubPackage.class));
 }

@@ -2,7 +2,7 @@
   TypeToken<?>.TypeSet types=TypeToken.of(new TypeCapture<B>(){
   }
 .capture()).getTypes();
-  makeUnmodifiable(types).has().exactly(TypeToken.of(Interface1.class),TypeToken.of(Class1.class),TypeToken.of(Object.class));
+  makeUnmodifiable(types).containsExactly(TypeToken.of(Interface1.class),TypeToken.of(Class1.class),TypeToken.of(Object.class));
   assertSubtypeFirst(types);
   makeUnmodifiable(types.interfaces()).containsExactly(TypeToken.of(Interface1.class));
   makeUnmodifiable(types.classes()).has().exactly(TypeToken.of(Class1.class),TypeToken.of(Object.class)).inOrder();

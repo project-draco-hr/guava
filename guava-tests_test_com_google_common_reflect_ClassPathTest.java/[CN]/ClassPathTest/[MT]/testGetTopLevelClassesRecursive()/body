@@ -7,5 +7,5 @@
     }
     classes.add(classInfo.load());
   }
-  assertThat(classes).has().allOf(ClassPathTest.class,ClassInSubPackage.class);
+  assertThat(classes).containsAllOf(ClassPathTest.class,ClassInSubPackage.class);
 }
