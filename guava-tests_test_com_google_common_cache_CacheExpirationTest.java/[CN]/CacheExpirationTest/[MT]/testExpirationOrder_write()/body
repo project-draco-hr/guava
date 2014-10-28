@@ -7,23 +7,23 @@
     ticker.advance(1,MILLISECONDS);
   }
   Set<Integer> keySet=cache.asMap().keySet();
-  assertThat(keySet).has().exactly(0,1,2,3,4,5,6,7,8,9);
+  assertThat(keySet).containsExactly(0,1,2,3,4,5,6,7,8,9);
   ticker.advance(1,MILLISECONDS);
-  assertThat(keySet).has().exactly(1,2,3,4,5,6,7,8,9);
+  assertThat(keySet).containsExactly(1,2,3,4,5,6,7,8,9);
   getAll(cache,asList(0,1,2));
   CacheTesting.drainRecencyQueues(cache);
   ticker.advance(1,MILLISECONDS);
-  assertThat(keySet).has().exactly(2,3,4,5,6,7,8,9,0);
+  assertThat(keySet).containsExactly(2,3,4,5,6,7,8,9,0);
   cache.get(2,Callables.returning(-2));
   CacheTesting.drainRecencyQueues(cache);
   ticker.advance(1,MILLISECONDS);
-  assertThat(keySet).has().exactly(3,4,5,6,7,8,9,0);
+  assertThat(keySet).containsExactly(3,4,5,6,7,8,9,0);
   cache.asMap().put(3,-3);
   ticker.advance(1,MILLISECONDS);
-  assertThat(keySet).has().exactly(4,5,6,7,8,9,0,3);
+  assertThat(keySet).containsExactly(4,5,6,7,8,9,0,3);
   cache.asMap().replace(4,-4);
   ticker.advance(1,MILLISECONDS);
-  assertThat(keySet).has().exactly(5,6,7,8,9,0,3,4);
+  assertThat(keySet).containsExactly(5,6,7,8,9,0,3,4);
   ticker.advance(1,MILLISECONDS);
-  assertThat(keySet).has().exactly(6,7,8,9,0,3,4);
+  assertThat(keySet).containsExactly(6,7,8,9,0,3,4);
 }
