@@ -1,9 +1,11 @@
 {
-  List<Composite<T>> composites=Lists.newArrayList();
+  List<Iterable<T>> words=Lists.newArrayList();
+  words.add(Collections.<T>emptyList());
   for (  T t : scenario.strictlyOrderedList) {
-    composites.add(new Composite<T>(t,1));
-    composites.add(new Composite<T>(t,2));
+    words.add(Arrays.asList(t));
+    for (    T s : scenario.strictlyOrderedList) {
+      words.add(Arrays.asList(t,s));
+    }
   }
-  Ordering<Composite<T>> ordering=scenario.ordering.onResultOf(Composite.<T>getValueFunction()).compound(Ordering.natural());
-  return new Scenario<Composite<T>>(ordering,composites,new Composite[0]);
+  return new Scenario<Iterable<T>>(scenario.ordering.lexicographical(),words,new Iterable[0]);
 }

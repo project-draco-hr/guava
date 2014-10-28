@@ -7,5 +7,5 @@
     }
   }
 ;
-  assertThat(FluentIterable.from(iterable).copyInto(list)).has().exactly(1,2,3,9,8,7).inOrder();
+  assertThat(FluentIterable.from(iterable).copyInto(list)).containsExactly(1,2,3,9,8,7).inOrder();
 }

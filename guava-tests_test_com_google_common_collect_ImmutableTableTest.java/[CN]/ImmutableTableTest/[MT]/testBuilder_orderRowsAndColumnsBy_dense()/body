@@ -11,9 +11,9 @@
   builder.put('a',2,"bar");
   builder.put('a',1,"baz");
   Table<Character,Integer,String> table=builder.build();
-  assertThat(table.rowKeySet()).has().exactly('a','b','c').inOrder();
-  assertThat(table.columnKeySet()).has().exactly(1,2,3).inOrder();
-  assertThat(table.values()).has().exactly("baz","bar","foo","dog","cat","baz","bar","foo").inOrder();
-  assertThat(table.row('c').keySet()).has().exactly(1,2,3).inOrder();
-  assertThat(table.column(1).keySet()).has().exactly('a','b','c').inOrder();
+  assertThat(table.rowKeySet()).containsExactly('a','b','c').inOrder();
+  assertThat(table.columnKeySet()).containsExactly(1,2,3).inOrder();
+  assertThat(table.values()).containsExactly("baz","bar","foo","dog","cat","baz","bar","foo").inOrder();
+  assertThat(table.row('c').keySet()).containsExactly(1,2,3).inOrder();
+  assertThat(table.column(1).keySet()).containsExactly('a','b','c').inOrder();
 }

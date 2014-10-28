@@ -7,8 +7,8 @@
   multimap.put(new DerivedComparable("bar"),new DerivedComparable("b"));
   multimap.put(new DerivedComparable("bar"),new DerivedComparable("a"));
   multimap.put(new DerivedComparable("bar"),new DerivedComparable("r"));
-  assertThat(multimap.keySet()).has().exactly(new DerivedComparable("bar"),new DerivedComparable("foo")).inOrder();
-  assertThat(multimap.values()).has().exactly(new DerivedComparable("a"),new DerivedComparable("b"),new DerivedComparable("r"),new DerivedComparable("f"),new DerivedComparable("o")).inOrder();
+  assertThat(multimap.keySet()).containsExactly(new DerivedComparable("bar"),new DerivedComparable("foo")).inOrder();
+  assertThat(multimap.values()).containsExactly(new DerivedComparable("a"),new DerivedComparable("b"),new DerivedComparable("r"),new DerivedComparable("f"),new DerivedComparable("o")).inOrder();
   assertEquals(Ordering.natural(),multimap.keyComparator());
   assertEquals(Ordering.natural(),multimap.valueComparator());
   SerializableTester.reserializeAndAssert(multimap);

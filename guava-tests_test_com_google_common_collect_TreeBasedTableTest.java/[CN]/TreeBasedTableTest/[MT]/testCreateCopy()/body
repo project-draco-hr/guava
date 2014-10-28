@@ -5,7 +5,7 @@
   original.put("bar",5,'c');
   original.put("cat",8,'d');
   table=TreeBasedTable.create(original);
-  assertThat(table.rowKeySet()).has().exactly("foo","cat","bar").inOrder();
-  assertThat(table.row("foo").keySet()).has().exactly(12,3).inOrder();
+  assertThat(table.rowKeySet()).containsExactly("foo","cat","bar").inOrder();
+  assertThat(table.row("foo").keySet()).containsExactly(12,3).inOrder();
   assertEquals(original,table);
 }

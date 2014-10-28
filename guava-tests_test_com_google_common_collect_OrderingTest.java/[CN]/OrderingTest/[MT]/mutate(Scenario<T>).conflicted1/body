@@ -1,11 +1,10 @@
 {
-  List<Composite<T>> composites=Lists.newArrayList();
+  List<T> newList=Lists.newArrayList();
   for (  T t : scenario.strictlyOrderedList) {
-    composites.add(new Composite<T>(t,1));
+    if (t != null) {
+      newList.add(t);
+    }
   }
-  for (  T t : scenario.strictlyOrderedList) {
-    composites.add(new Composite<T>(t,2));
-  }
-  Ordering<Composite<T>> ordering=Ordering.natural().compound(scenario.ordering.onResultOf(Composite.<T>getValueFunction()));
-  return new Scenario<Composite<T>>(ordering,composites,new Composite[0]);
+  newList.add(null);
+  return new Scenario<T>(scenario.ordering.nullsLast(),newList,scenario.emptyArray);
 }

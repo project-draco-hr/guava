@@ -5,8 +5,8 @@
   table.put('a',2,"baz");
   ImmutableTable.Builder<Character,Integer,String> builder=ImmutableTable.builder();
   Table<Character,Integer,String> copy=builder.orderRowsBy(Ordering.natural()).orderColumnsBy(Ordering.natural()).putAll(table).build();
-  assertThat(copy.rowKeySet()).has().exactly('a','b').inOrder();
-  assertThat(copy.columnKeySet()).has().exactly(1,2).inOrder();
-  assertThat(copy.values()).has().exactly("baz","bar","foo").inOrder();
-  assertThat(copy.row('b').keySet()).has().exactly(1,2).inOrder();
+  assertThat(copy.rowKeySet()).containsExactly('a','b').inOrder();
+  assertThat(copy.columnKeySet()).containsExactly(1,2).inOrder();
+  assertThat(copy.values()).containsExactly("baz","bar","foo").inOrder();
+  assertThat(copy.row('b').keySet()).containsExactly(1,2).inOrder();
 }

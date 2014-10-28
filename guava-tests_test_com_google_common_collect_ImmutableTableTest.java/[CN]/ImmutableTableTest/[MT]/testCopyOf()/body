@@ -6,6 +6,6 @@
   table.put('b',1,"bar");
   table.put('a',2,"baz");
   validateTableCopies(table);
-  assertThat(table.row('b').keySet()).has().exactly(1,2).inOrder();
-  assertThat(ImmutableTable.copyOf(table).row('b').keySet()).has().exactly(2,1).inOrder();
+  assertThat(table.row('b').keySet()).containsExactly(1,2).inOrder();
+  assertThat(ImmutableTable.copyOf(table).row('b').keySet()).containsExactly(2,1).inOrder();
 }

@@ -13,5 +13,5 @@
   strings.add("five");
   strings.remove("one");
   assertEquals(ImmutableSortedMap.of("five",4,"four",4,"three",5),headMap);
-  assertThat(map.entrySet()).has().exactly(mapEntry("five",4),mapEntry("four",4),mapEntry("three",5),mapEntry("two",3)).inOrder();
+  assertThat(map.entrySet()).containsExactly(mapEntry("five",4),mapEntry("four",4),mapEntry("three",5),mapEntry("two",3)).inOrder();
 }

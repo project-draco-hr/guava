@@ -5,7 +5,7 @@
   assertEquals(ImmutableMap.of("one",3,"two",3,"three",5),map);
   assertEquals(Integer.valueOf(5),map.get("three"));
   assertNull(map.get("five"));
-  assertThat(map.entrySet()).has().exactly(mapEntry("one",3),mapEntry("three",5),mapEntry("two",3)).inOrder();
-  assertThat(map.tailMap("onea").entrySet()).has().exactly(mapEntry("three",5),mapEntry("two",3)).inOrder();
-  assertThat(map.subMap("one","two").entrySet()).has().exactly(mapEntry("one",3),mapEntry("three",5)).inOrder();
+  assertThat(map.entrySet()).containsExactly(mapEntry("one",3),mapEntry("three",5),mapEntry("two",3)).inOrder();
+  assertThat(map.tailMap("onea").entrySet()).containsExactly(mapEntry("three",5),mapEntry("two",3)).inOrder();
+  assertThat(map.subMap("one","two").entrySet()).containsExactly(mapEntry("one",3),mapEntry("three",5)).inOrder();
 }

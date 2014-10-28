@@ -13,6 +13,6 @@
   }
  catch (  TestElementException expected) {
   }
-  assertThat(constrained).has().exactly("foo","bar").inOrder();
-  assertThat(collection).has().exactly("foo","bar").inOrder();
+  assertThat(constrained).containsExactly("foo","bar").inOrder();
+  assertThat(collection).containsExactly("foo","bar").inOrder();
 }

@@ -1,4 +1,4 @@
 {
   ImmutableSet<String> set=ImmutableSet.of("a","b","c","c","c","c","b","b","a","a","c","c","c","a");
-  assertThat(set).has().exactly("a","b","c").inOrder();
+  assertThat(set).containsExactly("a","b","c").inOrder();
 }

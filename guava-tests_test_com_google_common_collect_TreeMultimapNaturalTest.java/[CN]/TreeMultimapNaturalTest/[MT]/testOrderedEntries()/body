@@ -1,4 +1,4 @@
 {
   TreeMultimap<String,Integer> multimap=createPopulate();
-  assertThat(multimap.entries()).has().exactly(Maps.immutableEntry("foo",1),Maps.immutableEntry("foo",3),Maps.immutableEntry("foo",7),Maps.immutableEntry("google",2),Maps.immutableEntry("google",6),Maps.immutableEntry("tree",0),Maps.immutableEntry("tree",4)).inOrder();
+  assertThat(multimap.entries()).containsExactly(Maps.immutableEntry("foo",1),Maps.immutableEntry("foo",3),Maps.immutableEntry("foo",7),Maps.immutableEntry("google",2),Maps.immutableEntry("google",6),Maps.immutableEntry("tree",0),Maps.immutableEntry("tree",4)).inOrder();
 }

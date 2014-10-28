@@ -11,13 +11,13 @@
   assertTrue(constrained.equals(list));
   assertEquals(list.toString(),constrained.toString());
   assertEquals(list.hashCode(),constrained.hashCode());
-  assertThat(list).has().exactly("foo","cow","baz",TEST_ELEMENT,"box","fan","qux","cat","dog").inOrder();
-  assertThat(constrained).has().exactly("foo","cow","baz",TEST_ELEMENT,"box","fan","qux","cat","dog").inOrder();
+  assertThat(list).containsExactly("foo","cow","baz",TEST_ELEMENT,"box","fan","qux","cat","dog").inOrder();
+  assertThat(constrained).containsExactly("foo","cow","baz",TEST_ELEMENT,"box","fan","qux","cat","dog").inOrder();
   ListIterator<String> iterator=constrained.listIterator();
   iterator.next();
   iterator.set("sun");
   constrained.listIterator(2).add("sky");
-  assertThat(list).has().exactly("sun","cow","sky","baz",TEST_ELEMENT,"box","fan","qux","cat","dog").inOrder();
-  assertThat(constrained).has().exactly("sun","cow","sky","baz",TEST_ELEMENT,"box","fan","qux","cat","dog").inOrder();
+  assertThat(list).containsExactly("sun","cow","sky","baz",TEST_ELEMENT,"box","fan","qux","cat","dog").inOrder();
+  assertThat(constrained).containsExactly("sun","cow","sky","baz",TEST_ELEMENT,"box","fan","qux","cat","dog").inOrder();
   assertTrue(constrained instanceof RandomAccess);
 }

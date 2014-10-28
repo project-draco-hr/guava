@@ -9,10 +9,10 @@
   builder.put("a",2);
   builder.put("b",6);
   ImmutableSetMultimap<String,Integer> multimap=builder.build();
-  assertThat(multimap.keySet()).has().exactly("d","c","b","a").inOrder();
-  assertThat(multimap.values()).has().exactly(2,4,6,3,5,2).inOrder();
-  assertThat(multimap.get("a")).has().exactly(5,2).inOrder();
-  assertThat(multimap.get("b")).has().exactly(6,3).inOrder();
+  assertThat(multimap.keySet()).containsExactly("d","c","b","a").inOrder();
+  assertThat(multimap.values()).containsExactly(2,4,6,3,5,2).inOrder();
+  assertThat(multimap.get("a")).containsExactly(5,2).inOrder();
+  assertThat(multimap.get("b")).containsExactly(6,3).inOrder();
   assertTrue(multimap.get("a") instanceof ImmutableSortedSet);
   assertEquals(Collections.reverseOrder(),((ImmutableSortedSet<Integer>)multimap.get("a")).comparator());
   assertTrue(multimap.get("x") instanceof ImmutableSortedSet);

@@ -5,8 +5,8 @@
   assertEquals(Currency.DOLLAR,iter.next());
   assertEquals(Currency.FRANC,iter.next());
   iter.remove();
-  assertThat(bimap.keySet()).has().exactly(Currency.DOLLAR,Currency.PESO).inOrder();
-  assertThat(bimap.values()).has().exactly(Country.CANADA,Country.CHILE).inOrder();
-  assertThat(bimap.inverse().keySet()).has().exactly(Country.CANADA,Country.CHILE).inOrder();
-  assertThat(bimap.inverse().values()).has().exactly(Currency.DOLLAR,Currency.PESO).inOrder();
+  assertThat(bimap.keySet()).containsExactly(Currency.DOLLAR,Currency.PESO).inOrder();
+  assertThat(bimap.values()).containsExactly(Country.CANADA,Country.CHILE).inOrder();
+  assertThat(bimap.inverse().keySet()).containsExactly(Country.CANADA,Country.CHILE).inOrder();
+  assertThat(bimap.inverse().values()).containsExactly(Currency.DOLLAR,Currency.PESO).inOrder();
 }

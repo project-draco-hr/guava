@@ -11,6 +11,6 @@
   builder.put('r',4,"foo");
   builder.put('x',5,"bar");
   Table<Character,Integer,String> table=builder.build();
-  assertThat(table.columnKeySet()).has().exactly(0,1,2,3,4,5,7).inOrder();
-  assertThat(table.row('c').keySet()).has().exactly(0,3).inOrder();
+  assertThat(table.columnKeySet()).containsExactly(0,1,2,3,4,5,7).inOrder();
+  assertThat(table.row('c').keySet()).containsExactly(0,3).inOrder();
 }

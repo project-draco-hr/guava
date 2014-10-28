@@ -1,4 +1,4 @@
 {
   TreeMultimap<String,Integer> multimap=createPopulate();
-  assertThat(multimap.keySet()).has().exactly("foo","google","tree").inOrder();
+  assertThat(multimap.keySet()).containsExactly("foo","google","tree").inOrder();
 }

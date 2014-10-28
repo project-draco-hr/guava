@@ -7,8 +7,8 @@
   multimap.put(new LegacyComparable("bar"),new LegacyComparable("b"));
   multimap.put(new LegacyComparable("bar"),new LegacyComparable("a"));
   multimap.put(new LegacyComparable("bar"),new LegacyComparable("r"));
-  assertThat(multimap.keySet()).has().exactly(new LegacyComparable("bar"),new LegacyComparable("foo")).inOrder();
-  assertThat(multimap.values()).has().exactly(new LegacyComparable("a"),new LegacyComparable("b"),new LegacyComparable("r"),new LegacyComparable("f"),new LegacyComparable("o")).inOrder();
+  assertThat(multimap.keySet()).containsExactly(new LegacyComparable("bar"),new LegacyComparable("foo")).inOrder();
+  assertThat(multimap.values()).containsExactly(new LegacyComparable("a"),new LegacyComparable("b"),new LegacyComparable("r"),new LegacyComparable("f"),new LegacyComparable("o")).inOrder();
   assertEquals(Ordering.natural(),multimap.keyComparator());
   assertEquals(Ordering.natural(),multimap.valueComparator());
   SerializableTester.reserializeAndAssert(multimap);

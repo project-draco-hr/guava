@@ -1,5 +1,5 @@
 {
   Multiset<String> c=ImmutableSortedMultiset.of("a","b","a");
   Collection<String> copy=SerializableTester.reserializeAndAssert(c.elementSet());
-  assertThat(copy).has().exactly("a","b").inOrder();
+  assertThat(copy).containsExactly("a","b").inOrder();
 }

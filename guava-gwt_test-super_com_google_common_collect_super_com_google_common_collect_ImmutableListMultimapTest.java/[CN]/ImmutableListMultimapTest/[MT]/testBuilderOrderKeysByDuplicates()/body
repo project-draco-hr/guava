@@ -13,8 +13,8 @@
   builder.put("a",2);
   builder.put("bb",6);
   ImmutableListMultimap<String,Integer> multimap=builder.build();
-  assertThat(multimap.keySet()).has().exactly("d","a","bb","cc").inOrder();
-  assertThat(multimap.values()).has().exactly(2,5,2,3,6,4).inOrder();
-  assertThat(multimap.get("a")).has().exactly(5,2).inOrder();
-  assertThat(multimap.get("bb")).has().exactly(3,6).inOrder();
+  assertThat(multimap.keySet()).containsExactly("d","a","bb","cc").inOrder();
+  assertThat(multimap.values()).containsExactly(2,5,2,3,6,4).inOrder();
+  assertThat(multimap.get("a")).containsExactly(5,2).inOrder();
+  assertThat(multimap.get("bb")).containsExactly(3,6).inOrder();
 }

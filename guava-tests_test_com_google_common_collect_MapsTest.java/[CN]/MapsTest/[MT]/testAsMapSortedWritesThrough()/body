@@ -4,5 +4,5 @@
   SortedMap<String,Integer> map=Maps.asMap(strings,LENGTH_FUNCTION);
   assertEquals(ImmutableMap.of("one",3,"two",3,"three",5),map);
   assertEquals(Integer.valueOf(3),map.remove("two"));
-  assertThat(strings).has().exactly("one","three").inOrder();
+  assertThat(strings).containsExactly("one","three").inOrder();
 }

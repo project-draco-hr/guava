@@ -1,6 +1,6 @@
 {
   TreeMultimap<String,Integer> multimap=createPopulate();
-  assertThat(multimap.get(null)).has().exactly(7,3,1).inOrder();
-  assertThat(multimap.get("google")).has().exactly(6,2).inOrder();
-  assertThat(multimap.get("tree")).has().exactly(null,0).inOrder();
+  assertThat(multimap.get(null)).containsExactly(7,3,1).inOrder();
+  assertThat(multimap.get("google")).containsExactly(6,2).inOrder();
+  assertThat(multimap.get("tree")).containsExactly(null,0).inOrder();
 }

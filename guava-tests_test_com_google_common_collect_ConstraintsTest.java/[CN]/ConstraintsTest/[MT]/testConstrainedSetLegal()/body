@@ -8,6 +8,6 @@
   assertTrue(constrained.equals(set));
   assertEquals(set.toString(),constrained.toString());
   assertEquals(set.hashCode(),constrained.hashCode());
-  assertThat(set).has().exactly("foo","bar",TEST_ELEMENT,"qux","cat","dog").inOrder();
+  assertThat(set).containsExactly("foo","bar",TEST_ELEMENT,"qux","cat","dog").inOrder();
   assertThat(constrained).has().exactly("foo","bar",TEST_ELEMENT,"qux","cat","dog").inOrder();
 }

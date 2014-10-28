@@ -1,5 +1,5 @@
 {
   for (  ImmutableTable<Character,Integer,String> testInstance : getTestInstances()) {
-    assertThat(testInstance.values()).has().exactly("foo","bar","baz").inOrder();
+    assertThat(testInstance.values()).containsExactly("foo","bar","baz").inOrder();
   }
 }

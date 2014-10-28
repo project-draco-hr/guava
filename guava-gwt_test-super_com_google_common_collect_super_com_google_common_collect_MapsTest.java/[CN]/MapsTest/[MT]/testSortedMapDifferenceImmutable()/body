@@ -4,10 +4,10 @@
   SortedMapDifference<Integer,String> diff1=Maps.difference(left,right);
   left.put(6,"z");
   assertFalse(diff1.areEqual());
-  assertThat(diff1.entriesOnlyOnLeft().entrySet()).has().exactly(Maps.immutableEntry(2,"b"),Maps.immutableEntry(4,"d")).inOrder();
-  assertThat(diff1.entriesOnlyOnRight().entrySet()).has().item(Maps.immutableEntry(6,"z"));
-  assertThat(diff1.entriesInCommon().entrySet()).has().item(Maps.immutableEntry(1,"a"));
-  assertThat(diff1.entriesDiffering().entrySet()).has().exactly(Maps.immutableEntry(3,ValueDifferenceImpl.create("c","f")),Maps.immutableEntry(5,ValueDifferenceImpl.create("e","g"))).inOrder();
+  assertThat(diff1.entriesOnlyOnLeft().entrySet()).containsExactly(Maps.immutableEntry(2,"b"),Maps.immutableEntry(4,"d")).inOrder();
+  assertThat(diff1.entriesOnlyOnRight().entrySet()).contains(Maps.immutableEntry(6,"z"));
+  assertThat(diff1.entriesInCommon().entrySet()).contains(Maps.immutableEntry(1,"a"));
+  assertThat(diff1.entriesDiffering().entrySet()).containsExactly(Maps.immutableEntry(3,ValueDifferenceImpl.create("c","f")),Maps.immutableEntry(5,ValueDifferenceImpl.create("e","g"))).inOrder();
   try {
     diff1.entriesInCommon().put(7,"x");
     fail();

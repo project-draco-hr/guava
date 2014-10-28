@@ -61,6 +61,6 @@
   }
  catch (  TestElementException expected) {
   }
-  assertThat(constrained).has().exactly("foo","bar").inOrder();
-  assertThat(list).has().exactly("foo","bar").inOrder();
+  assertThat(constrained).containsExactly("foo","bar").inOrder();
+  assertThat(list).containsExactly("foo","bar").inOrder();
 }
