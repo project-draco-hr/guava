@@ -29,5 +29,5 @@
   }
 ).start();
   Uninterruptibles.awaitUninterruptibly(latch);
-  assertThat(dispatchedSubscribers).has().exactly(i1,i2,i3,s1,s1,s1,s1,s2,s2,s2,s2);
+  assertThat(dispatchedSubscribers).containsExactly(i1,i2,i3,s1,s1,s1,s1,s2,s2,s2,s2);
 }

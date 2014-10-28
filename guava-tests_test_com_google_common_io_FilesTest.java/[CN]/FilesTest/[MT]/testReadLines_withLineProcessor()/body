@@ -19,7 +19,7 @@
   w.println("");
   w.close();
   Files.readLines(temp,Charsets.UTF_8,collect);
-  assertThat(collect.getResult()).has().exactly("hello",""," world  ","").inOrder();
+  assertThat(collect.getResult()).containsExactly("hello",""," world  ","").inOrder();
   LineProcessor<List<String>> collectNonEmptyLines=new LineProcessor<List<String>>(){
     List<String> collector=new ArrayList<String>();
     @Override public boolean processLine(    String line){
@@ -34,6 +34,6 @@
   }
 ;
   Files.readLines(temp,Charsets.UTF_8,collectNonEmptyLines);
-  assertThat(collectNonEmptyLines.getResult()).has().exactly("hello"," world  ").inOrder();
+  assertThat(collectNonEmptyLines.getResult()).containsExactly("hello"," world  ").inOrder();
   assertTrue(temp.delete());
 }
