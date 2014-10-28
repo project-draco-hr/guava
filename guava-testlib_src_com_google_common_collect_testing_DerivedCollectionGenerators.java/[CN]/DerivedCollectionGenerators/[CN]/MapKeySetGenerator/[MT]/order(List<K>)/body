@@ -1,5 +1,5 @@
 {
-  V v=((TestMapGenerator<K,V>)mapGenerator.getInnerGenerator()).samples().e0.getValue();
+  V v=((TestMapGenerator<K,V>)mapGenerator.getInnerGenerator()).samples().e0().getValue();
   List<Entry<K,V>> entries=new ArrayList<Entry<K,V>>();
   for (  K element : insertionOrder) {
     entries.add(mapEntry(element,v));

@@ -1,6 +1,6 @@
 {
-  resetContainer(Helpers.mapEntry(sampleKeys().e0,sampleValues().e0),Helpers.mapEntry(sampleKeys().e0,sampleValues().e3));
+  resetContainer(Helpers.mapEntry(sampleKeys().e0(),sampleValues().e0()),Helpers.mapEntry(sampleKeys().e0(),sampleValues().e3()));
   Set<Entry<K,Collection<V>>> asMapEntrySet=multimap().asMap().entrySet();
-  assertTrue(multimap().put(sampleKeys().e1,sampleValues().e4));
+  assertTrue(multimap().put(sampleKeys().e1(),sampleValues().e4()));
   assertEquals(2,asMapEntrySet.size());
 }

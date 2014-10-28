@@ -1,6 +1,6 @@
 {
-  int key0Count=multimap().get(sampleKeys().e0).size();
-  assertEquals(key0Count > 0,multimap().keySet().remove(sampleKeys().e0));
+  int key0Count=multimap().get(sampleKeys().e0()).size();
+  assertEquals(key0Count > 0,multimap().keySet().remove(sampleKeys().e0()));
   assertEquals(getNumElements() - key0Count,multimap().size());
-  assertGet(sampleKeys().e0);
+  assertGet(sampleKeys().e0());
 }

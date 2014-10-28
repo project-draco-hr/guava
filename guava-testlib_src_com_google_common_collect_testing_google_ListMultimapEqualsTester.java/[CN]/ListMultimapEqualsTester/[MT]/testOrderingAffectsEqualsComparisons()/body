@@ -1,5 +1,5 @@
 {
-  ListMultimap<K,V> multimap1=getSubjectGenerator().create(Helpers.mapEntry(sampleKeys().e0,sampleValues().e0),Helpers.mapEntry(sampleKeys().e0,sampleValues().e1),Helpers.mapEntry(sampleKeys().e0,sampleValues().e0));
-  ListMultimap<K,V> multimap2=getSubjectGenerator().create(Helpers.mapEntry(sampleKeys().e0,sampleValues().e1),Helpers.mapEntry(sampleKeys().e0,sampleValues().e0),Helpers.mapEntry(sampleKeys().e0,sampleValues().e0));
+  ListMultimap<K,V> multimap1=getSubjectGenerator().create(Helpers.mapEntry(sampleKeys().e0(),sampleValues().e0()),Helpers.mapEntry(sampleKeys().e0(),sampleValues().e1()),Helpers.mapEntry(sampleKeys().e0(),sampleValues().e0()));
+  ListMultimap<K,V> multimap2=getSubjectGenerator().create(Helpers.mapEntry(sampleKeys().e0(),sampleValues().e1()),Helpers.mapEntry(sampleKeys().e0(),sampleValues().e0()),Helpers.mapEntry(sampleKeys().e0(),sampleValues().e0()));
   new EqualsTester().addEqualityGroup(multimap1).addEqualityGroup(multimap2).testEquals();
 }

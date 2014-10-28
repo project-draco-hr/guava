@@ -1,6 +1,6 @@
 {
   try {
-    getList().add(0,samples.e0);
+    getList().add(0,samples.e0());
     fail("add(n, present) should throw");
   }
  catch (  UnsupportedOperationException expected) {

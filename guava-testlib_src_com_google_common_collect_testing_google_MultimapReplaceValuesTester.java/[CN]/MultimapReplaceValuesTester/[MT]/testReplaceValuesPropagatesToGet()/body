@@ -1,7 +1,7 @@
 {
-  K key=sampleKeys().e0;
+  K key=sampleKeys().e0();
   Collection<V> getCollection=multimap().get(key);
-  @SuppressWarnings("unchecked") List<V> values=Arrays.asList(sampleValues().e0,sampleValues().e2,sampleValues().e3);
+  @SuppressWarnings("unchecked") List<V> values=Arrays.asList(sampleValues().e0(),sampleValues().e2(),sampleValues().e3());
   multimap().replaceValues(key,values);
-  assertThat(getCollection).containsExactly(sampleValues().e0,sampleValues().e2,sampleValues().e3);
+  assertThat(getCollection).containsExactly(sampleValues().e0(),sampleValues().e2(),sampleValues().e3());
 }

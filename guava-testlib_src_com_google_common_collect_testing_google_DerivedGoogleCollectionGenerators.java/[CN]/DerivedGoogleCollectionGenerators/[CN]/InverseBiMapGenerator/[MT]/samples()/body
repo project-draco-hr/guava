@@ -1,4 +1,4 @@
 {
   SampleElements<Entry<K,V>> samples=generator.samples();
-  return new SampleElements<Map.Entry<V,K>>(reverse(samples.e0),reverse(samples.e1),reverse(samples.e2),reverse(samples.e3),reverse(samples.e4));
+  return new SampleElements<Map.Entry<V,K>>(reverse(samples.e0()),reverse(samples.e1()),reverse(samples.e2()),reverse(samples.e3()),reverse(samples.e4()));
 }

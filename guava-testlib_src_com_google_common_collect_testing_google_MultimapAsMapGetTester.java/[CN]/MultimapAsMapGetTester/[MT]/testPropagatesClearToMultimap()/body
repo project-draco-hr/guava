@@ -1,6 +1,6 @@
 {
-  Collection<V> result=multimap().asMap().get(sampleKeys().e0);
+  Collection<V> result=multimap().asMap().get(sampleKeys().e0());
   result.clear();
-  assertGet(sampleKeys().e0);
+  assertGet(sampleKeys().e0());
   assertThat(result).isEmpty();
 }

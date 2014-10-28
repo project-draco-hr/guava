@@ -1,6 +1,6 @@
 {
   try {
-    getMultiset().setCount(samples.e3,-1,1);
+    getMultiset().setCount(samples.e3(),-1,1);
     fail("calling setCount() with a negative oldCount should throw " + "IllegalArgumentException");
   }
  catch (  IllegalArgumentException expected) {

@@ -8,5 +8,5 @@
  catch (  UnsupportedOperationException expected) {
   }
   expectUnchanged();
-  assertTrue(collection.contains(samples.e0));
+  assertTrue(collection.contains(samples.e0()));
 }

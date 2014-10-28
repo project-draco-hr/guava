@@ -1,7 +1,7 @@
 {
   try {
     Iterator<Entry<E>> iterator=getMultiset().entrySet().iterator();
-    assertSetCount(samples.e0,0);
+    assertSetCount(samples.e0(),0);
     iterator.next();
     fail("Expected ConcurrentModificationException");
   }

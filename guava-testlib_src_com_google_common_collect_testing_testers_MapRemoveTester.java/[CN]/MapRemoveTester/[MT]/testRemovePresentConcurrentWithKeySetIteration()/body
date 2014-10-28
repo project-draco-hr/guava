@@ -1,7 +1,7 @@
 {
   try {
     Iterator<K> iterator=getMap().keySet().iterator();
-    getMap().remove(samples.e0.getKey());
+    getMap().remove(samples.e0().getKey());
     iterator.next();
     fail("Expected ConcurrentModificationException");
   }

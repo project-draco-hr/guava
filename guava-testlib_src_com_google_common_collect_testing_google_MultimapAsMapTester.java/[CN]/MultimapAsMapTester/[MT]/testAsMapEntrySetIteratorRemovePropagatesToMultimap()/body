@@ -1,5 +1,5 @@
 {
-  resetContainer(Helpers.mapEntry(sampleKeys().e0,sampleValues().e0),Helpers.mapEntry(sampleKeys().e0,sampleValues().e3));
+  resetContainer(Helpers.mapEntry(sampleKeys().e0(),sampleValues().e0()),Helpers.mapEntry(sampleKeys().e0(),sampleValues().e3()));
   Set<Entry<K,Collection<V>>> asMapEntrySet=multimap().asMap().entrySet();
   Iterator<Entry<K,Collection<V>>> asMapEntryItr=asMapEntrySet.iterator();
   asMapEntryItr.next();

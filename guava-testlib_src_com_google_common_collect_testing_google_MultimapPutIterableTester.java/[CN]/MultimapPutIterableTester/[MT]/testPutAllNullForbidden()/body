@@ -1,6 +1,6 @@
 {
   try {
-    multimap().putAll(null,Collections.singletonList(sampleValues().e3));
+    multimap().putAll(null,Collections.singletonList(sampleValues().e3()));
     fail("Expected NullPointerException");
   }
  catch (  NullPointerException expected) {

@@ -1,6 +1,6 @@
 {
   try {
-    putAll(MinimalCollection.of(samples.e3,samples.e0));
+    putAll(MinimalCollection.of(samples.e3(),samples.e0()));
     fail("putAll(somePresent) should throw");
   }
  catch (  UnsupportedOperationException expected) {

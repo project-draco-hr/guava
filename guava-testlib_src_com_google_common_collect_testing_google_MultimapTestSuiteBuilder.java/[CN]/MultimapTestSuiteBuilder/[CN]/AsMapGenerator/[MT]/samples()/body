@@ -1,5 +1,5 @@
 {
   SampleElements<K> sampleKeys=((TestMultimapGenerator<K,V,M>)multimapGenerator.getInnerGenerator()).sampleKeys();
   SampleElements<V> sampleValues=((TestMultimapGenerator<K,V,M>)multimapGenerator.getInnerGenerator()).sampleValues();
-  return new SampleElements<Entry<K,Collection<V>>>(mapEntry(sampleKeys.e0,createCollection(sampleValues.e0)),mapEntry(sampleKeys.e1,createCollection(sampleValues.e1)),mapEntry(sampleKeys.e2,createCollection(sampleValues.e2)),mapEntry(sampleKeys.e3,createCollection(sampleValues.e3)),mapEntry(sampleKeys.e4,createCollection(sampleValues.e4)));
+  return new SampleElements<Entry<K,Collection<V>>>(mapEntry(sampleKeys.e0(),createCollection(sampleValues.e0())),mapEntry(sampleKeys.e1(),createCollection(sampleValues.e1())),mapEntry(sampleKeys.e2(),createCollection(sampleValues.e2())),mapEntry(sampleKeys.e3(),createCollection(sampleValues.e3())),mapEntry(sampleKeys.e4(),createCollection(sampleValues.e4())));
 }

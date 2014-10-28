@@ -1,6 +1,6 @@
 {
-  assertNull(navigableSet.lower(samples.e0));
-  assertEquals(a,navigableSet.floor(samples.e0));
-  assertEquals(a,navigableSet.ceiling(samples.e0));
-  assertNull(navigableSet.higher(samples.e0));
+  assertNull(navigableSet.lower(samples.e0()));
+  assertEquals(a,navigableSet.floor(samples.e0()));
+  assertEquals(a,navigableSet.ceiling(samples.e0()));
+  assertNull(navigableSet.higher(samples.e0()));
 }

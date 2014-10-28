@@ -1,4 +1,4 @@
 {
-  getMap().keySet().remove(samples.e0.getKey());
-  expectMissing(samples.e0);
+  getMap().keySet().remove(samples.e0().getKey());
+  expectMissing(samples.e0());
 }

@@ -1,6 +1,6 @@
 {
   int size=multimap().size();
-  K key=sampleKeys().e0;
+  K key=sampleKeys().e0();
   List<V> oldValues=new ArrayList<V>(multimap().get(key));
   @SuppressWarnings("unchecked") List<V> values=Collections.emptyList();
   assertEquals(oldValues,new ArrayList<V>(multimap().replaceValues(key,values)));

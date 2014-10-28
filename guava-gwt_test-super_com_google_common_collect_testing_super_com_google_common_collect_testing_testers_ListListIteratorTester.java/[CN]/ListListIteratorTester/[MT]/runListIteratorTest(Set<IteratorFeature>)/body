@@ -1,5 +1,5 @@
 {
-  new ListIteratorTester<E>(listListIteratorTesterNumIterations(),singleton(samples.e4),features,Helpers.copyToList(getOrderedElements()),0){
+  new ListIteratorTester<E>(listListIteratorTesterNumIterations(),singleton(samples.e4()),features,Helpers.copyToList(getOrderedElements()),0){
 {
       stopTestingWhenAddThrowsException();
     }

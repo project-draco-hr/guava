@@ -1,6 +1,6 @@
 {
   SampleElements<UnhashableObject> unhashables=new Unhashables();
-  Multimap<Integer,UnhashableObject> multimap=ImmutableMultimap.of(0,unhashables.e0);
+  Multimap<Integer,UnhashableObject> multimap=ImmutableMultimap.of(0,unhashables.e0());
   assertEquals(1,multimap.get(0).size());
-  assertTrue(multimap.get(0).contains(unhashables.e0));
+  assertTrue(multimap.get(0).contains(unhashables.e0()));
 }

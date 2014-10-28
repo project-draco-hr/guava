@@ -1,4 +1,4 @@
 {
-  assertTrue(getMultiset().addAll(Arrays.asList(samples.e3,samples.e4,samples.e3)));
-  expectAdded(samples.e3,samples.e4,samples.e3);
+  assertTrue(getMultiset().addAll(Arrays.asList(samples.e3(),samples.e4(),samples.e3())));
+  expectAdded(samples.e3(),samples.e4(),samples.e3());
 }

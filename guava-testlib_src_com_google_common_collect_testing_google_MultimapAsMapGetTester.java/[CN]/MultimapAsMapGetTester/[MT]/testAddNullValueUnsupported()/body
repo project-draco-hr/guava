@@ -1,5 +1,5 @@
 {
-  Collection<V> result=multimap().asMap().get(sampleKeys().e0);
+  Collection<V> result=multimap().asMap().get(sampleKeys().e0());
   try {
     result.add(null);
     fail("Expected NullPointerException");

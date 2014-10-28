@@ -1,6 +1,6 @@
 {
   try {
-    getMultiset().remove(samples.e0,-1);
+    getMultiset().remove(samples.e0(),-1);
     fail("Expected IllegalArgumentException");
   }
  catch (  IllegalArgumentException expected) {

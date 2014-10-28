@@ -1,6 +1,6 @@
 {
   Iterator<Entry<K,V>> iterator=multimap().entries().iterator();
-  assertEquals(Helpers.mapEntry(sampleKeys().e0,sampleValues().e0),iterator.next());
+  assertEquals(Helpers.mapEntry(sampleKeys().e0(),sampleValues().e0()),iterator.next());
   iterator.remove();
   assertTrue(multimap().isEmpty());
 }

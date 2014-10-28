@@ -1,5 +1,5 @@
 {
   List<E> subList=getList().subList(0,0);
-  subList.add(samples.e3);
-  expectAdded(0,samples.e3);
+  subList.add(samples.e3());
+  expectAdded(0,samples.e3());
 }

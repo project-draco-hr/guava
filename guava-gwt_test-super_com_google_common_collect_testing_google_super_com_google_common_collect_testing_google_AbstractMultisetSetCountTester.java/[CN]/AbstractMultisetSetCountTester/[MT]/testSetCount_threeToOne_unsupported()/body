@@ -1,4 +1,4 @@
 {
   initThreeCopies();
-  assertSetCountDecreasingFailure(samples.e0,1);
+  assertSetCountDecreasingFailure(samples.e0(),1);
 }

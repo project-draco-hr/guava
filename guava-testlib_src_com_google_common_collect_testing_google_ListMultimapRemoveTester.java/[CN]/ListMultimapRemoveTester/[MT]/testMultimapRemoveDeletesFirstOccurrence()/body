@@ -1,7 +1,7 @@
 {
-  K k=sampleKeys().e0;
-  V v0=sampleValues().e0;
-  V v1=sampleValues().e2;
+  K k=sampleKeys().e0();
+  V v0=sampleValues().e0();
+  V v1=sampleValues().e2();
   resetContainer(mapEntry(k,v0),mapEntry(k,v1),mapEntry(k,v0));
   List<V> list=multimap().get(k);
   multimap().remove(k,v0);

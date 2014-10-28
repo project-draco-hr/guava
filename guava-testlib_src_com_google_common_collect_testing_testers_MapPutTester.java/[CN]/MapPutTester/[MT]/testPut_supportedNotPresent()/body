@@ -1,4 +1,4 @@
 {
-  assertNull("put(notPresent, value) should return null",put(samples.e3));
-  expectAdded(samples.e3);
+  assertNull("put(notPresent, value) should return null",put(samples.e3()));
+  expectAdded(samples.e3());
 }

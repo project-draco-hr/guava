@@ -1,4 +1,4 @@
 {
-  assertTrue("multiset.entrySet.remove(presentEntry) returned false",getMultiset().entrySet().remove(Multisets.immutableEntry(samples.e0,1)));
-  assertFalse("multiset contains element after removing its entry",getMultiset().contains(samples.e0));
+  assertTrue("multiset.entrySet.remove(presentEntry) returned false",getMultiset().entrySet().remove(Multisets.immutableEntry(samples.e0(),1)));
+  assertFalse("multiset contains element after removing its entry",getMultiset().contains(samples.e0()));
 }

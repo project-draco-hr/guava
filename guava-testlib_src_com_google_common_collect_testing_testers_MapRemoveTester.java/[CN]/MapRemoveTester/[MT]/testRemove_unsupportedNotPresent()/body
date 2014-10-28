@@ -1,9 +1,9 @@
 {
   try {
-    assertNull("remove(notPresent) should return null or throw " + "UnsupportedOperationException",getMap().remove(samples.e3.getKey()));
+    assertNull("remove(notPresent) should return null or throw " + "UnsupportedOperationException",getMap().remove(samples.e3().getKey()));
   }
  catch (  UnsupportedOperationException tolerated) {
   }
   expectUnchanged();
-  expectMissing(samples.e3);
+  expectMissing(samples.e3());
 }

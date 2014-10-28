@@ -1,10 +1,10 @@
 {
   try {
-    collection.remove(samples.e0);
+    collection.remove(samples.e0());
     fail("remove(present) should throw UnsupportedOperationException");
   }
  catch (  UnsupportedOperationException expected) {
   }
   expectUnchanged();
-  assertTrue("remove(present) should not remove the element",collection.contains(samples.e0));
+  assertTrue("remove(present) should not remove the element",collection.contains(samples.e0()));
 }

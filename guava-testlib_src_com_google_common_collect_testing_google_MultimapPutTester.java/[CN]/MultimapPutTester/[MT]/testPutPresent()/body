@@ -1,8 +1,8 @@
 {
   int size=getNumElements();
-  K key=sampleKeys().e0;
-  V oldValue=sampleValues().e0;
-  V newValue=sampleValues().e3;
+  K key=sampleKeys().e0();
+  V oldValue=sampleValues().e0();
+  V newValue=sampleValues().e3();
   assertGet(key,oldValue);
   assertTrue(multimap().put(key,newValue));
   assertGet(key,oldValue,newValue);

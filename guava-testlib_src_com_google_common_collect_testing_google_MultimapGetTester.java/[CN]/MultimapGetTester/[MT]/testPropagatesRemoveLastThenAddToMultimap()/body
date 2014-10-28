@@ -1,14 +1,14 @@
 {
   int oldSize=getNumElements();
-  K k0=sampleKeys().e0;
-  V v0=sampleValues().e0;
+  K k0=sampleKeys().e0();
+  V v0=sampleValues().e0();
   Collection<V> result=multimap().get(k0);
   assertTrue(result.remove(v0));
   assertFalse(multimap().containsKey(k0));
   assertFalse(multimap().containsEntry(k0,v0));
   assertThat(result).isEmpty();
-  V v1=sampleValues().e1;
-  V v2=sampleValues().e2;
+  V v1=sampleValues().e1();
+  V v2=sampleValues().e2();
   assertTrue(result.add(v1));
   assertTrue(result.add(v2));
   assertThat(result).containsExactly(v1,v2);

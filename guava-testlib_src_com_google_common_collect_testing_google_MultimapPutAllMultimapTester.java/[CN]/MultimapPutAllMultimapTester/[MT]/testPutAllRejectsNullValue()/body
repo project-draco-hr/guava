@@ -1,5 +1,5 @@
 {
-  Multimap<K,V> source=getSubjectGenerator().create(Helpers.mapEntry(sampleKeys().e0,null));
+  Multimap<K,V> source=getSubjectGenerator().create(Helpers.mapEntry(sampleKeys().e0(),null));
   try {
     multimap().putAll(source);
     fail("Expected NullPointerException");

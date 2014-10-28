@@ -1,6 +1,6 @@
 {
   try {
-    getList().set(0,samples.e3);
+    getList().set(0,samples.e3());
     fail("set() should throw UnsupportedOperationException " + "or IndexOutOfBoundsException");
   }
  catch (  UnsupportedOperationException tolerated) {

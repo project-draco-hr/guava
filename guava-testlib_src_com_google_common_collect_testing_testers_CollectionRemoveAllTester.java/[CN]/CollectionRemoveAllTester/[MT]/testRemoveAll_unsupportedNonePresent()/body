@@ -1,6 +1,6 @@
 {
   try {
-    assertFalse("removeAll(disjointCollection) should return false or throw " + "UnsupportedOperationException",collection.removeAll(MinimalCollection.of(samples.e3)));
+    assertFalse("removeAll(disjointCollection) should return false or throw " + "UnsupportedOperationException",collection.removeAll(MinimalCollection.of(samples.e3())));
   }
  catch (  UnsupportedOperationException tolerated) {
   }

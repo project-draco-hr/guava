@@ -1,7 +1,7 @@
 {
-  resetContainer(Helpers.mapEntry(sampleKeys().e0,sampleValues().e0),Helpers.mapEntry(sampleKeys().e1,sampleValues().e0),Helpers.mapEntry(sampleKeys().e0,sampleValues().e3));
+  resetContainer(Helpers.mapEntry(sampleKeys().e0(),sampleValues().e0()),Helpers.mapEntry(sampleKeys().e1(),sampleValues().e0()),Helpers.mapEntry(sampleKeys().e0(),sampleValues().e3()));
   Set<Entry<K,Collection<V>>> expected=Sets.newHashSet();
-  expected.add(Helpers.mapEntry(sampleKeys().e0,(Collection<V>)Lists.newArrayList(sampleValues().e0,sampleValues().e3)));
-  expected.add(Helpers.mapEntry(sampleKeys().e1,(Collection<V>)Lists.newArrayList(sampleValues().e0)));
+  expected.add(Helpers.mapEntry(sampleKeys().e0(),(Collection<V>)Lists.newArrayList(sampleValues().e0(),sampleValues().e3())));
+  expected.add(Helpers.mapEntry(sampleKeys().e1(),(Collection<V>)Lists.newArrayList(sampleValues().e0())));
   new EqualsTester().addEqualityGroup(expected,multimap().asMap().entrySet()).testEquals();
 }

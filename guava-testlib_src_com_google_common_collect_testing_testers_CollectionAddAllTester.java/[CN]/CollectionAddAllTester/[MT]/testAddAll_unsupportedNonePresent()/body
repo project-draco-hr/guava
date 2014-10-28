@@ -6,5 +6,5 @@
  catch (  UnsupportedOperationException expected) {
   }
   expectUnchanged();
-  expectMissing(samples.e3,samples.e4);
+  expectMissing(samples.e3(),samples.e4());
 }

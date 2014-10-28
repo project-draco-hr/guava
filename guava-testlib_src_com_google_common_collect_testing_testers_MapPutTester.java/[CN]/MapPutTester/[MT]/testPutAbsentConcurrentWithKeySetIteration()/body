@@ -1,7 +1,7 @@
 {
   try {
     Iterator<K> iterator=getMap().keySet().iterator();
-    put(samples.e3);
+    put(samples.e3());
     iterator.next();
     fail("Expected ConcurrentModificationException");
   }

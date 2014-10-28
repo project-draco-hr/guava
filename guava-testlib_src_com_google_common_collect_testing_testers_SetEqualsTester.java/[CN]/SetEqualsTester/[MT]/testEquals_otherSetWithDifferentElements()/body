@@ -1,5 +1,5 @@
 {
   Collection<E> elements=getSampleElements(getNumElements() - 1);
-  elements.add(getSubjectGenerator().samples().e3);
+  elements.add(getSubjectGenerator().samples().e3());
   assertFalse("A Set should not equal another Set containing different elements.",getSet().equals(MinimalSet.from(elements)));
 }

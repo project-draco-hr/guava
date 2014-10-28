@@ -1,6 +1,6 @@
 {
   try {
-    setCountNoCheckReturnValue(samples.e3,-1);
+    setCountNoCheckReturnValue(samples.e3(),-1);
     fail("calling setCount() with a negative count should throw " + "IllegalArgumentException");
   }
  catch (  IllegalArgumentException expected) {

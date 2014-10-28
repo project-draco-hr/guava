@@ -1,11 +1,11 @@
 {
-  getMultiset().add(samples.e3,Integer.MAX_VALUE);
+  getMultiset().add(samples.e3(),Integer.MAX_VALUE);
   try {
-    getMultiset().add(samples.e3);
+    getMultiset().add(samples.e3());
     fail();
   }
  catch (  IllegalArgumentException expected) {
   }
-  assertEquals(Integer.MAX_VALUE,getMultiset().count(samples.e3));
+  assertEquals(Integer.MAX_VALUE,getMultiset().count(samples.e3()));
   assertEquals(Integer.MAX_VALUE,getMultiset().size());
 }

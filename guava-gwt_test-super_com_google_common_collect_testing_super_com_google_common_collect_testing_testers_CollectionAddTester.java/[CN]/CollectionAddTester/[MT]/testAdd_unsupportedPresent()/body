@@ -1,6 +1,6 @@
 {
   try {
-    assertFalse("add(present) should return false or throw",collection.add(samples.e0));
+    assertFalse("add(present) should return false or throw",collection.add(samples.e0()));
   }
  catch (  UnsupportedOperationException tolerated) {
   }

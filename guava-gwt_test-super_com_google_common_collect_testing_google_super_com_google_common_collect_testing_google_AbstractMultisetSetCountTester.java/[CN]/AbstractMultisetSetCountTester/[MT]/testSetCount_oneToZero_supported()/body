@@ -1,3 +1,3 @@
 {
-  assertSetCount(samples.e0,0);
+  assertSetCount(samples.e0(),0);
 }

@@ -1,3 +1,3 @@
 {
-  assertFalse("containsAll(disjoint) should return false",collection.containsAll(MinimalCollection.of(samples.e3)));
+  assertFalse("containsAll(disjoint) should return false",collection.containsAll(MinimalCollection.of(samples.e3())));
 }

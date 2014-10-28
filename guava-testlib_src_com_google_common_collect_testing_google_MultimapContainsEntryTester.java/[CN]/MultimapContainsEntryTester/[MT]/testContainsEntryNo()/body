@@ -1,3 +1,3 @@
 {
-  assertFalse(multimap().containsEntry(sampleKeys().e3,sampleValues().e3));
+  assertFalse(multimap().containsEntry(sampleKeys().e3(),sampleValues().e3()));
 }

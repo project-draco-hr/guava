@@ -1,6 +1,6 @@
 {
-  assertTrue(multimap().entries().remove(Helpers.mapEntry(sampleKeys().e0,sampleValues().e0)));
-  expectMissing(Helpers.mapEntry(sampleKeys().e0,sampleValues().e0));
+  assertTrue(multimap().entries().remove(Helpers.mapEntry(sampleKeys().e0(),sampleValues().e0())));
+  expectMissing(Helpers.mapEntry(sampleKeys().e0(),sampleValues().e0()));
   assertEquals(getNumElements() - 1,multimap().size());
-  assertFalse(multimap().containsEntry(sampleKeys().e0,sampleValues().e0));
+  assertFalse(multimap().containsEntry(sampleKeys().e0(),sampleValues().e0()));
 }

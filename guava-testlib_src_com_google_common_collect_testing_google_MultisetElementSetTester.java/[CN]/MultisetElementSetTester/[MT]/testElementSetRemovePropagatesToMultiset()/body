@@ -1,5 +1,5 @@
 {
   Set<E> elementSet=getMultiset().elementSet();
-  assertTrue(elementSet.remove(samples.e0));
-  assertFalse(getMultiset().contains(samples.e0));
+  assertTrue(elementSet.remove(samples.e0()));
+  assertFalse(getMultiset().contains(samples.e0()));
 }

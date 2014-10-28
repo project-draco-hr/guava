@@ -1,5 +1,5 @@
 {
-  MinimalCollection<E> elementsToAdd=MinimalCollection.of(samples.e3,samples.e4,samples.e3,samples.e4);
+  MinimalCollection<E> elementsToAdd=MinimalCollection.of(samples.e3(),samples.e4(),samples.e3(),samples.e4());
   assertTrue("add(hasDuplicates) should return true",getSet().addAll(elementsToAdd));
-  expectAdded(samples.e3,samples.e4);
+  expectAdded(samples.e3(),samples.e4());
 }

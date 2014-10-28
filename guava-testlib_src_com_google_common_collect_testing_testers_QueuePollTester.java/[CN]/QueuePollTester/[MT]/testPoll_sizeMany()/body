@@ -1,4 +1,4 @@
 {
-  assertEquals("sizeManyQueue.poll() should return first element",samples.e0,getQueue().poll());
-  expectMissing(samples.e0);
+  assertEquals("sizeManyQueue.poll() should return first element",samples.e0(),getQueue().poll());
+  expectMissing(samples.e0());
 }

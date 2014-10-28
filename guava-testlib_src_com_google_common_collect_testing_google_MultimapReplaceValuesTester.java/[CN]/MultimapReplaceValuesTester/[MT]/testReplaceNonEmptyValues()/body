@@ -1,6 +1,6 @@
 {
   List<K> keys=Helpers.copyToList(multimap().keySet());
-  @SuppressWarnings("unchecked") List<V> values=Arrays.asList(sampleValues().e0,sampleValues().e2,sampleValues().e3);
+  @SuppressWarnings("unchecked") List<V> values=Arrays.asList(sampleValues().e0(),sampleValues().e2(),sampleValues().e3());
   for (  K k : keys) {
     resetContainer();
     int size=multimap().size();

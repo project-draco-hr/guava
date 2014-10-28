@@ -1,4 +1,4 @@
 {
-  assertEquals("sizeManyQueue.remove() should return first element",samples.e0,getQueue().remove());
-  expectMissing(samples.e0);
+  assertEquals("sizeManyQueue.remove() should return first element",samples.e0(),getQueue().remove());
+  expectMissing(samples.e0());
 }

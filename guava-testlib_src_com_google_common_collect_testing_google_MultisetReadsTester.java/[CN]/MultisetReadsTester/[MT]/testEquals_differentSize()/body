@@ -1,5 +1,5 @@
 {
   Multiset<E> other=HashMultiset.create(getSampleElements());
-  other.add(samples.e0);
+  other.add(samples.e0());
   assertFalse("multiset equals a multiset with a different size",getMultiset().equals(other));
 }

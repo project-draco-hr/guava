@@ -1,4 +1,4 @@
 {
-  putAll(MinimalCollection.of(samples.e3,samples.e0));
-  expectAdded(samples.e3);
+  putAll(MinimalCollection.of(samples.e3(),samples.e0()));
+  expectAdded(samples.e3());
 }

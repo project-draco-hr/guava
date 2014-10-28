@@ -1,6 +1,6 @@
 {
   Multiset<E> other=HashMultiset.create(getSampleElements());
-  other.remove(samples.e0);
-  other.add(samples.e3);
+  other.remove(samples.e0());
+  other.add(samples.e3());
   assertFalse("multiset equals a multiset with different elements",getMultiset().equals(other));
 }

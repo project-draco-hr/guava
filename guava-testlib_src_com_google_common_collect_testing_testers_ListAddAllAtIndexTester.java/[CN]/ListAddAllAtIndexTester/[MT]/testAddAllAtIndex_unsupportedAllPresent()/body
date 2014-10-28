@@ -1,6 +1,6 @@
 {
   try {
-    getList().addAll(0,MinimalCollection.of(samples.e0));
+    getList().addAll(0,MinimalCollection.of(samples.e0()));
     fail("addAll(n, allPresent) should throw");
   }
  catch (  UnsupportedOperationException expected) {

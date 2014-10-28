@@ -1,12 +1,12 @@
 {
   int size=getNumElements();
   try {
-    multimap().putAll(sampleKeys().e3,Lists.newArrayList(null,sampleValues().e3));
+    multimap().putAll(sampleKeys().e3(),Lists.newArrayList(null,sampleValues().e3()));
     fail();
   }
  catch (  NullPointerException expected) {
   }
   expectUnchanged();
-  assertEquals(Lists.newArrayList(),Lists.newArrayList(multimap().get(sampleKeys().e3)));
+  assertEquals(Lists.newArrayList(),Lists.newArrayList(multimap().get(sampleKeys().e3())));
   assertEquals(size,multimap().size());
 }

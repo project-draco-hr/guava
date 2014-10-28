@@ -1,5 +1,5 @@
 {
-  K k=((TestMultimapGenerator<K,V,M>)multimapGenerator.getInnerGenerator()).sampleKeys().e0;
+  K k=((TestMultimapGenerator<K,V,M>)multimapGenerator.getInnerGenerator()).sampleKeys().e0();
   List<Entry<K,V>> entries=new ArrayList<Entry<K,V>>();
   for (  V v : insertionOrder) {
     entries.add(mapEntry(k,v));

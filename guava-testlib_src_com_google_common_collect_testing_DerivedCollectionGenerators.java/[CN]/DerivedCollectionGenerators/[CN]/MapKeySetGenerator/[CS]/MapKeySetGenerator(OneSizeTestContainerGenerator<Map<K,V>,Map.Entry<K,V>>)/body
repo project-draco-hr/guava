@@ -1,5 +1,5 @@
 {
   this.mapGenerator=mapGenerator;
   final SampleElements<Map.Entry<K,V>> mapSamples=this.mapGenerator.samples();
-  this.samples=new SampleElements<K>(mapSamples.e0.getKey(),mapSamples.e1.getKey(),mapSamples.e2.getKey(),mapSamples.e3.getKey(),mapSamples.e4.getKey());
+  this.samples=new SampleElements<K>(mapSamples.e0().getKey(),mapSamples.e1().getKey(),mapSamples.e2().getKey(),mapSamples.e3().getKey(),mapSamples.e4().getKey());
 }
