@@ -15,5 +15,5 @@
   assertTrue(compound.isDone());
   assertTrue(listener.wasCalled());
   List<String> results=compound.get();
-  assertThat(results).has().exactly(null,null,DATA3).inOrder();
+  assertThat(results).containsExactly(null,null,DATA3).inOrder();
 }
