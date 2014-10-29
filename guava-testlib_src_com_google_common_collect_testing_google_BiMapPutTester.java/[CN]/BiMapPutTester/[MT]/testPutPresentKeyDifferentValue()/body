@@ -1,8 +1,5 @@
 {
-  K k0=k0();
-  V v0=v0();
-  V v1=v1();
-  getMap().put(k0,v0);
-  getMap().put(k0,v1);
-  expectContents(Helpers.mapEntry(k0,v1));
+  getMap().put(k0(),v0());
+  getMap().put(k0(),v1());
+  expectContents(Helpers.mapEntry(k0(),v1()));
 }

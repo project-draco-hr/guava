@@ -1,10 +1,7 @@
 {
-  K k0=k0();
-  K k1=k1();
-  V v0=v0();
-  getMap().put(k0,v0);
+  getMap().put(k0(),v0());
   try {
-    getMap().put(k1,v0);
+    getMap().put(k1(),v0());
     fail("Expected IllegalArgumentException");
   }
  catch (  IllegalArgumentException expected) {
