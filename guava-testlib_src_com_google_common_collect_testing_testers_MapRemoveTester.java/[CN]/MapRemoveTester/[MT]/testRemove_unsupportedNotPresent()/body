@@ -1,6 +1,6 @@
 {
   try {
-    assertNull("remove(notPresent) should return null or throw " + "UnsupportedOperationException",getMap().remove(e3().getKey()));
+    assertNull("remove(notPresent) should return null or throw " + "UnsupportedOperationException",getMap().remove(k3()));
   }
  catch (  UnsupportedOperationException tolerated) {
   }

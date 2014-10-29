@@ -1,8 +1,8 @@
 {
-  K k0=e0().getKey();
-  V v0=e0().getValue();
-  K k1=e1().getKey();
-  V v1=e1().getValue();
+  K k0=k0();
+  V v0=v0();
+  K k1=k1();
+  V v1=v1();
   getMap().put(k0,v0);
   getMap().inverse().put(v1,k1);
   expectAdded(e0(),e1());

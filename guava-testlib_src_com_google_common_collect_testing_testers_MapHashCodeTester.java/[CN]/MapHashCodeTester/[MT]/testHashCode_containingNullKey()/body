@@ -1,4 +1,4 @@
 {
-  Map.Entry<K,V> entryWithNull=entry(null,e3().getValue());
+  Map.Entry<K,V> entryWithNull=entry(null,v3());
   runEntryWithNullTest(entryWithNull);
 }

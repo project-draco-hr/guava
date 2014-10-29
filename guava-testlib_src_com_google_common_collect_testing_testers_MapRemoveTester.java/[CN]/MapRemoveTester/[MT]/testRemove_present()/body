@@ -1,6 +1,6 @@
 {
   int initialSize=getMap().size();
-  assertEquals("remove(present) should return the associated value",e0().getValue(),getMap().remove(e0().getKey()));
+  assertEquals("remove(present) should return the associated value",v0(),getMap().remove(k0()));
   assertEquals("remove(present) should decrease a map's size by one.",initialSize - 1,getMap().size());
   expectMissing(e0());
 }

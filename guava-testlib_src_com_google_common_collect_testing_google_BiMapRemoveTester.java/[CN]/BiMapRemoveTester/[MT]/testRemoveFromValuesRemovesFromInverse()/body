@@ -1,4 +1,4 @@
 {
-  getMap().values().remove(e0().getValue());
+  getMap().values().remove(v0());
   expectMissing(e0());
 }

@@ -1,7 +1,7 @@
 {
   try {
     Iterator<Entry<K,V>> iterator=getMap().entrySet().iterator();
-    getMap().remove(e0().getKey());
+    getMap().remove(k0());
     iterator.next();
     fail("Expected ConcurrentModificationException");
   }

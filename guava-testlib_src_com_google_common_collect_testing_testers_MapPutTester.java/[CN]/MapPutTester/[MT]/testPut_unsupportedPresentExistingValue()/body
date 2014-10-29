@@ -1,6 +1,6 @@
 {
   try {
-    assertEquals("put(present, existingValue) should return present or throw",e0().getValue(),put(e0()));
+    assertEquals("put(present, existingValue) should return present or throw",v0(),put(e0()));
   }
  catch (  UnsupportedOperationException tolerated) {
   }

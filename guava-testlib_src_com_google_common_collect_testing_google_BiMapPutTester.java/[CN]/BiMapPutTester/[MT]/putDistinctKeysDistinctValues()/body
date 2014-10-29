@@ -1,5 +1,5 @@
 {
-  getMap().put(e0().getKey(),e0().getValue());
-  getMap().put(e1().getKey(),e1().getValue());
+  getMap().put(k0(),v0());
+  getMap().put(k1(),v1());
   expectAdded(e0(),e1());
 }

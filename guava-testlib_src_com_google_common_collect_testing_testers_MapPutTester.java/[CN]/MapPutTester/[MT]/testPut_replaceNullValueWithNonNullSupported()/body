@@ -1,5 +1,5 @@
 {
-  Entry<K,V> newEntry=entry(getKeyForNullValue(),e3().getValue());
+  Entry<K,V> newEntry=entry(getKeyForNullValue(),v3());
   initMapWithNullValue();
   assertNull("put(present, value) should return the associated value (null)",put(newEntry));
   Entry<K,V>[] expected=createArrayWithNullValue();
