@@ -5,5 +5,5 @@
   makeUnmodifiable(types).containsExactly(TypeToken.of(Interface1.class),TypeToken.of(Class1.class),TypeToken.of(Object.class));
   assertSubtypeFirst(types);
   makeUnmodifiable(types.interfaces()).containsExactly(TypeToken.of(Interface1.class));
-  makeUnmodifiable(types.classes()).has().exactly(TypeToken.of(Class1.class),TypeToken.of(Object.class)).inOrder();
+  makeUnmodifiable(types.classes()).containsExactly(TypeToken.of(Class1.class),TypeToken.of(Object.class)).inOrder();
 }
