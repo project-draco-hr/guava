@@ -9,7 +9,7 @@
   assertEquals(sortedSet.toString(),constrained.toString());
   assertEquals(sortedSet.hashCode(),constrained.hashCode());
   assertThat(sortedSet).containsExactly("bar","cat","dog","foo","qux",TEST_ELEMENT).inOrder();
-  assertThat(constrained).has().exactly("bar","cat","dog","foo","qux",TEST_ELEMENT).inOrder();
+  assertThat(constrained).containsExactly("bar","cat","dog","foo","qux",TEST_ELEMENT).inOrder();
   assertNull(constrained.comparator());
   assertEquals("bar",constrained.first());
   assertEquals(TEST_ELEMENT,constrained.last());

@@ -4,6 +4,6 @@
   collection.add(TEST_ELEMENT);
   constrained.add("qux");
   constrained.addAll(asList("cat","dog"));
-  assertThat(collection).has().exactly("foo","bar",TEST_ELEMENT,"qux","cat","dog").inOrder();
-  assertThat(constrained).has().exactly("foo","bar",TEST_ELEMENT,"qux","cat","dog").inOrder();
+  assertThat(collection).containsExactly("foo","bar",TEST_ELEMENT,"qux","cat","dog").inOrder();
+  assertThat(constrained).containsExactly("foo","bar",TEST_ELEMENT,"qux","cat","dog").inOrder();
 }
