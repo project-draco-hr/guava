@@ -1,4 +1,4 @@
 {
-  multimap().putAll(sampleKeys().e1(),Lists.newArrayList((V)null));
+  multimap().putAll(k1(),Lists.newArrayList((V)null));
   expectUnchanged();
 }

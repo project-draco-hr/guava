@@ -4,9 +4,9 @@
     @Override public Iterator<V> iterator(){
       checkState(!calledIteratorAlready);
       calledIteratorAlready=true;
-      return Iterators.forArray(sampleValues().e3());
+      return Iterators.forArray(v3());
     }
   }
 ;
-  multimap().putAll(sampleKeys().e3(),iterable);
+  multimap().putAll(k3(),iterable);
 }

@@ -1,6 +1,6 @@
 {
-  Collection<V> getResult=multimap().get(sampleKeys().e0());
-  multimap().removeAll(sampleKeys().e0());
+  Collection<V> getResult=multimap().get(k0());
+  multimap().removeAll(k0());
   assertThat(getResult).isEmpty();
   expectMissing(e0());
 }

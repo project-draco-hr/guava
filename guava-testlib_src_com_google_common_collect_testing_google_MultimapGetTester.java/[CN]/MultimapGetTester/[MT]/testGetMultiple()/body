@@ -1,4 +1,4 @@
 {
-  resetContainer(Helpers.mapEntry(sampleKeys().e0(),sampleValues().e0()),Helpers.mapEntry(sampleKeys().e0(),sampleValues().e1()),Helpers.mapEntry(sampleKeys().e0(),sampleValues().e2()));
-  assertGet(sampleKeys().e0(),sampleValues().e0(),sampleValues().e1(),sampleValues().e2());
+  resetContainer(Helpers.mapEntry(k0(),v0()),Helpers.mapEntry(k0(),v1()),Helpers.mapEntry(k0(),v2()));
+  assertGet(k0(),v0(),v1(),v2());
 }

@@ -1,7 +1,5 @@
 {
-  int size=multimap().size();
-  K key=sampleKeys().e0();
-  @SuppressWarnings("unchecked") List<V> values=Arrays.asList(sampleValues().e0(),null,sampleValues().e3());
-  multimap().replaceValues(key,values);
-  assertGet(key,values);
+  @SuppressWarnings("unchecked") List<V> values=Arrays.asList(v0(),null,v3());
+  multimap().replaceValues(k0(),values);
+  assertGet(k0(),values);
 }

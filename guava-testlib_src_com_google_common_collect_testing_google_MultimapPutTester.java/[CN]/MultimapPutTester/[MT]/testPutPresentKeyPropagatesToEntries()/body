@@ -1,6 +1,6 @@
 {
   Collection<Entry<K,V>> entries=multimap().entries();
-  assertFalse(entries.contains(Helpers.mapEntry(sampleKeys().e0(),sampleValues().e3())));
-  multimap().put(sampleKeys().e0(),sampleValues().e3());
-  assertThat(entries).contains(Helpers.mapEntry(sampleKeys().e0(),sampleValues().e3()));
+  assertFalse(entries.contains(Helpers.mapEntry(k0(),v3())));
+  multimap().put(k0(),v3());
+  assertThat(entries).contains(Helpers.mapEntry(k0(),v3()));
 }

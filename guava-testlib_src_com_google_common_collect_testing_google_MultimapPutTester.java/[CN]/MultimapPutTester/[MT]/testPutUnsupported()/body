@@ -1,6 +1,6 @@
 {
   try {
-    multimap().put(sampleKeys().e3(),sampleValues().e3());
+    multimap().put(k3(),v3());
     fail("Expected UnsupportedOperationException");
   }
  catch (  UnsupportedOperationException expected) {

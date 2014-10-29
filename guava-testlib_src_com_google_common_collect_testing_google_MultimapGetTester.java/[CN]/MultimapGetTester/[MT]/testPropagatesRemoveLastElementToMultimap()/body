@@ -1,5 +1,5 @@
 {
-  Collection<V> result=multimap().get(sampleKeys().e0());
-  assertTrue(result.remove(sampleValues().e0()));
-  assertGet(sampleKeys().e0());
+  Collection<V> result=multimap().get(k0());
+  assertTrue(result.remove(v0()));
+  assertGet(k0());
 }

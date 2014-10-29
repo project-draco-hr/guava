@@ -1,4 +1,4 @@
 {
-  Collection<V> result=multimap().asMap().get(sampleKeys().e0());
+  Collection<V> result=multimap().asMap().get(k0());
   assertFalse(result.remove(null));
 }

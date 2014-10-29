@@ -1,6 +1,6 @@
 {
-  multimap().entries().retainAll(Collections.singleton(Helpers.mapEntry(sampleKeys().e0(),sampleValues().e0())));
-  assertEquals(getSubjectGenerator().create(Helpers.mapEntry(sampleKeys().e0(),sampleValues().e0())),multimap());
+  multimap().entries().retainAll(Collections.singleton(Helpers.mapEntry(k0(),v0())));
+  assertEquals(getSubjectGenerator().create(Helpers.mapEntry(k0(),v0())),multimap());
   assertEquals(1,multimap().size());
-  assertTrue(multimap().containsEntry(sampleKeys().e0(),sampleValues().e0()));
+  assertTrue(multimap().containsEntry(k0(),v0()));
 }

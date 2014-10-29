@@ -5,8 +5,8 @@
     int size=getNumElements();
     Collection<V> collection=multimap().get(key);
     Collection<V> expectedCollection=Helpers.copyToList(collection);
-    multimap().put(key,sampleValues().e3());
-    expectedCollection.add(sampleValues().e3());
+    multimap().put(key,v3());
+    expectedCollection.add(v3());
     assertThat(collection).containsExactlyElementsIn(expectedCollection);
     assertEquals(size + 1,multimap().size());
   }

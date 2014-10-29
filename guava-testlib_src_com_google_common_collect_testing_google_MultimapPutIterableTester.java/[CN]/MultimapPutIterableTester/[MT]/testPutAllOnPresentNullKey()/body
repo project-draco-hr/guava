@@ -1,4 +1,4 @@
 {
-  assertTrue(multimap().putAll(null,Lists.newArrayList(sampleValues().e3(),sampleValues().e4())));
-  assertGet(null,sampleValues().e3(),sampleValues().e4());
+  assertTrue(multimap().putAll(null,Lists.newArrayList(v3(),v4())));
+  assertGet(null,v3(),v4());
 }

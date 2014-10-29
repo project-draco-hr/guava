@@ -1,8 +1,8 @@
 {
-  Multimap<K,V> source=getSubjectGenerator().create(Helpers.mapEntry(sampleKeys().e0(),sampleValues().e3()),Helpers.mapEntry(sampleKeys().e3(),sampleValues().e3()));
-  Collection<V> getCollection=multimap().get(sampleKeys().e0());
+  Multimap<K,V> source=getSubjectGenerator().create(Helpers.mapEntry(k0(),v3()),Helpers.mapEntry(k3(),v3()));
+  Collection<V> getCollection=multimap().get(k0());
   int getCollectionSize=getCollection.size();
   assertTrue(multimap().putAll(source));
   assertEquals(getCollectionSize + 1,getCollection.size());
-  assertThat(getCollection).contains(sampleValues().e3());
+  assertThat(getCollection).contains(v3());
 }

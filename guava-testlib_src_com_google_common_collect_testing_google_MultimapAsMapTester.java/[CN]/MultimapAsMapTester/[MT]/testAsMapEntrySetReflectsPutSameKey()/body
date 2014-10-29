@@ -1,8 +1,8 @@
 {
-  resetContainer(Helpers.mapEntry(sampleKeys().e0(),sampleValues().e0()),Helpers.mapEntry(sampleKeys().e0(),sampleValues().e3()));
+  resetContainer(Helpers.mapEntry(k0(),v0()),Helpers.mapEntry(k0(),v3()));
   Set<Entry<K,Collection<V>>> asMapEntrySet=multimap().asMap().entrySet();
   Collection<V> valueCollection=Iterables.getOnlyElement(asMapEntrySet).getValue();
-  assertThat(valueCollection).containsExactly(sampleValues().e0(),sampleValues().e3());
-  assertTrue(multimap().put(sampleKeys().e0(),sampleValues().e4()));
-  assertThat(valueCollection).containsExactly(sampleValues().e0(),sampleValues().e3(),sampleValues().e4());
+  assertThat(valueCollection).containsExactly(v0(),v3());
+  assertTrue(multimap().put(k0(),v4()));
+  assertThat(valueCollection).containsExactly(v0(),v3(),v4());
 }

@@ -1,7 +1,7 @@
 {
-  List<V> values=Collections.singletonList(sampleValues().e3());
+  List<V> values=Collections.singletonList(v3());
   try {
-    multimap().replaceValues(sampleKeys().e0(),values);
+    multimap().replaceValues(k0(),values);
     fail("Expected UnsupportedOperationException");
   }
  catch (  UnsupportedOperationException expected) {

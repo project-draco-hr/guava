@@ -1,13 +1,10 @@
 {
   int size=getNumElements();
-  K key=sampleKeys().e0();
-  V v1=sampleValues().e3();
-  V v2=sampleValues().e4();
-  List<V> values=Helpers.copyToList(multimap().get(key));
-  assertTrue(multimap().put(key,v1));
-  assertTrue(multimap().put(key,v2));
-  values.add(v1);
-  values.add(v2);
-  assertGet(key,values);
+  List<V> values=Helpers.copyToList(multimap().get(k0()));
+  assertTrue(multimap().put(k0(),v1()));
+  assertTrue(multimap().put(k0(),v2()));
+  values.add(v1());
+  values.add(v2());
+  assertGet(k0(),values);
   assertEquals(size + 2,multimap().size());
 }

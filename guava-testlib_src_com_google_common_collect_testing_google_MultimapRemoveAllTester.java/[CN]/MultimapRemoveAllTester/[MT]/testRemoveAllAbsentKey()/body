@@ -1,4 +1,4 @@
 {
-  assertThat(multimap().removeAll(sampleKeys().e3())).isEmpty();
+  assertThat(multimap().removeAll(k3())).isEmpty();
   expectUnchanged();
 }

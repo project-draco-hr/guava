@@ -1,9 +1,6 @@
 {
-  K k=sampleKeys().e0();
-  V v0=sampleValues().e0();
-  V v1=sampleValues().e2();
-  resetContainer(mapEntry(k,v0),mapEntry(k,v1),mapEntry(k,v0));
-  List<V> list=multimap().get(k);
-  multimap().remove(k,v0);
-  assertThat(list).containsExactly(v1,v0).inOrder();
+  resetContainer(mapEntry(k0(),v0()),mapEntry(k0(),v1()),mapEntry(k0(),v0()));
+  List<V> list=multimap().get(k0());
+  multimap().remove(k0(),v0());
+  assertThat(list).containsExactly(v1(),v0()).inOrder();
 }

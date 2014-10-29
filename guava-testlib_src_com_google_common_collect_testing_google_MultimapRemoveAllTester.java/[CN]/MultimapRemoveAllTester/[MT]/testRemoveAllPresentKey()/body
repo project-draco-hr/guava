@@ -1,4 +1,4 @@
 {
-  assertThat(multimap().removeAll(sampleKeys().e0())).containsExactly(sampleValues().e0());
+  assertThat(multimap().removeAll(k0())).containsExactly(v0());
   expectMissing(e0());
 }

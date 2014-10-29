@@ -1,6 +1,6 @@
 {
   try {
-    multimap().put(sampleKeys().e1(),null);
+    multimap().put(k1(),null);
     fail();
   }
  catch (  NullPointerException expected) {
