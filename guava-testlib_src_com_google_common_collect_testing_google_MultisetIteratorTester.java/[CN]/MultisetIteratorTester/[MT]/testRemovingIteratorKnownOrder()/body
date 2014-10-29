@@ -1,7 +1,7 @@
 {
-  new IteratorTester<E>(4,IteratorFeature.MODIFIABLE,getSubjectGenerator().order(Arrays.asList(samples.e0(),samples.e1(),samples.e1(),samples.e2())),IteratorTester.KnownOrder.KNOWN_ORDER){
+  new IteratorTester<E>(4,IteratorFeature.MODIFIABLE,getSubjectGenerator().order(Arrays.asList(e0(),e1(),e1(),e2())),IteratorTester.KnownOrder.KNOWN_ORDER){
     @Override protected Iterator<E> newTargetIterator(){
-      return getSubjectGenerator().create(samples.e0(),samples.e1(),samples.e1(),samples.e2()).iterator();
+      return getSubjectGenerator().create(e0(),e1(),e1(),e2()).iterator();
     }
   }
 .test();

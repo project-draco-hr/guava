@@ -1,4 +1,4 @@
 {
-  assertFalse("setCount() with a too-large oldCount should return false",getMultiset().setCount(samples.e0(),2,3));
+  assertFalse("setCount() with a too-large oldCount should return false",getMultiset().setCount(e0(),2,3));
   expectUnchanged();
 }

@@ -1,4 +1,4 @@
 {
-  assertTrue("add(notPresent) should return true",collection.add(samples.e3()));
-  expectAdded(samples.e3());
+  assertTrue("add(notPresent) should return true",collection.add(e3()));
+  expectAdded(e3());
 }

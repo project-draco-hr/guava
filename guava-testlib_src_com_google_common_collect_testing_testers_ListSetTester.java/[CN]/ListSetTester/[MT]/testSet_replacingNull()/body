@@ -3,5 +3,5 @@
   int i=aValidIndex();
   elements[i]=null;
   collection=getSubjectGenerator().create(elements);
-  doTestSet(samples.e3());
+  doTestSet(e3());
 }

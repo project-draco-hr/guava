@@ -1,6 +1,6 @@
 {
   try {
-    getList().set(-1,samples.e3());
+    getList().set(-1,e3());
     fail("set(-1) should throw IndexOutOfBoundsException");
   }
  catch (  IndexOutOfBoundsException expected) {

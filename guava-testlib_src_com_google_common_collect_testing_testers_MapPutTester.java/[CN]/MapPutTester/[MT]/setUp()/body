@@ -1,7 +1,7 @@
 {
   super.setUp();
-  nullKeyEntry=entry(null,samples.e3().getValue());
-  nullValueEntry=entry(samples.e3().getKey(),null);
+  nullKeyEntry=entry(null,e3().getValue());
+  nullValueEntry=entry(e3().getKey(),null);
   nullKeyValueEntry=entry(null,null);
-  presentKeyNullValueEntry=entry(samples.e0().getKey(),null);
+  presentKeyNullValueEntry=entry(e0().getKey(),null);
 }

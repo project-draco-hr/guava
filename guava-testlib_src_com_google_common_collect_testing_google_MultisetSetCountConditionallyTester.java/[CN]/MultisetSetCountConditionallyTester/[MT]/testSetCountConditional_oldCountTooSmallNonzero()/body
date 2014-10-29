@@ -1,5 +1,5 @@
 {
   initThreeCopies();
-  assertFalse("setCount() with a too-small oldCount should return false",getMultiset().setCount(samples.e0(),1,5));
-  expectContents(nCopies(3,samples.e0()));
+  assertFalse("setCount() with a too-small oldCount should return false",getMultiset().setCount(e0(),1,5));
+  expectContents(nCopies(3,e0()));
 }

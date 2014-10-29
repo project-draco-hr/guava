@@ -1,10 +1,10 @@
 {
   try {
-    getList().addAll(-1,MinimalCollection.of(samples.e3()));
+    getList().addAll(-1,MinimalCollection.of(e3()));
     fail("addAll(-1, e) should throw");
   }
  catch (  IndexOutOfBoundsException expected) {
   }
   expectUnchanged();
-  expectMissing(samples.e3());
+  expectMissing(e3());
 }

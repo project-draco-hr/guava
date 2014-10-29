@@ -1,6 +1,6 @@
 {
   try {
-    getMultiset().add(samples.e0(),-1);
+    getMultiset().add(e0(),-1);
     fail("multiset.add(E, -1) didn't throw an exception");
   }
  catch (  IllegalArgumentException required) {

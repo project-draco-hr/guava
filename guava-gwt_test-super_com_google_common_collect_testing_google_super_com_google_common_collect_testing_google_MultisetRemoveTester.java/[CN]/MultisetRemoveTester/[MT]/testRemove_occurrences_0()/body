@@ -1,4 +1,4 @@
 {
-  int oldCount=getMultiset().count(samples.e0());
-  assertEquals("multiset.remove(E, 0) didn't return the old count",oldCount,getMultiset().remove(samples.e0(),0));
+  int oldCount=getMultiset().count(e0());
+  assertEquals("multiset.remove(E, 0) didn't return the old count",oldCount,getMultiset().remove(e0(),0));
 }

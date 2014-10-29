@@ -1,6 +1,6 @@
 {
   List<E> subList=getList().subList(1,3);
-  subList.remove(samples.e2());
+  subList.remove(e2());
   List<E> expected=Helpers.copyToList(createSamplesArray());
   expected.remove(2);
   expectContents(expected);

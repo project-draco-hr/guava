@@ -1,6 +1,6 @@
 {
   try {
-    assertFalse("addAll(allPresent) should return false or throw",collection.addAll(MinimalCollection.of(samples.e0())));
+    assertFalse("addAll(allPresent) should return false or throw",collection.addAll(MinimalCollection.of(e0())));
   }
  catch (  UnsupportedOperationException tolerated) {
   }

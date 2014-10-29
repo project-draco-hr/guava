@@ -1,7 +1,7 @@
 {
   try {
     Iterator<Entry<K,V>> iterator=getMap().entrySet().iterator();
-    putAll(MinimalCollection.of(samples.e3(),samples.e0()));
+    putAll(MinimalCollection.of(e3(),e0()));
     iterator.next();
     fail("Expected ConcurrentModificationException");
   }

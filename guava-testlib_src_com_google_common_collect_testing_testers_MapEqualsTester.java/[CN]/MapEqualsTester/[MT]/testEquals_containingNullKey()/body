@@ -1,6 +1,6 @@
 {
   Collection<Map.Entry<K,V>> entries=getSampleEntries(getNumEntries() - 1);
-  entries.add(entry(null,samples.e3().getValue()));
+  entries.add(entry(null,e3().getValue()));
   resetContainer(getSubjectGenerator().create(entries.toArray()));
   assertTrue("A Map should equal any other Map containing the same entries," + " even if some keys are null.",getMap().equals(newHashMap(entries)));
 }

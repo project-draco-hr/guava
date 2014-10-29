@@ -1,3 +1,3 @@
 {
-  assertTrue("multiset.elementSet().contains(present) returned false",getMultiset().elementSet().contains(samples.e0()));
+  assertTrue("multiset.elementSet().contains(present) returned false",getMultiset().elementSet().contains(e0()));
 }

@@ -1,5 +1,5 @@
 {
-  getMap().put(samples.e0().getKey(),samples.e0().getValue());
-  getMap().put(samples.e1().getKey(),samples.e1().getValue());
-  expectAdded(samples.e0(),samples.e1());
+  getMap().put(e0().getKey(),e0().getValue());
+  getMap().put(e1().getKey(),e1().getValue());
+  expectAdded(e0(),e1());
 }

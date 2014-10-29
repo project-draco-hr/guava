@@ -1,6 +1,6 @@
 {
   E[] array=createSamplesArray();
-  array[getNumElements() / 2]=samples.e0();
+  array[getNumElements() / 2]=e0();
   collection=getSubjectGenerator().create(array);
-  assertEquals("lastIndexOf(duplicate) should return index of last occurrence",getNumElements() / 2,getList().lastIndexOf(samples.e0()));
+  assertEquals("lastIndexOf(duplicate) should return index of last occurrence",getNumElements() / 2,getList().lastIndexOf(e0()));
 }

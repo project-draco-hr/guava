@@ -1,6 +1,6 @@
 {
   try {
-    assertEquals("multiset.remove(absent, 2) didn't return 0 or throw an exception",0,getMultiset().remove(samples.e3(),2));
+    assertEquals("multiset.remove(absent, 2) didn't return 0 or throw an exception",0,getMultiset().remove(e3(),2));
   }
  catch (  UnsupportedOperationException ok) {
   }

@@ -1,5 +1,5 @@
 {
   List<E> subList=getList().subList(1,3);
-  getList().set(1,samples.e3());
-  assertEquals("A set() call to a list after a sublist has been created " + "should be reflected in the sublist",Arrays.asList(samples.e3(),samples.e2()),subList);
+  getList().set(1,e3());
+  assertEquals("A set() call to a list after a sublist has been created " + "should be reflected in the sublist",Arrays.asList(e3(),e2()),subList);
 }

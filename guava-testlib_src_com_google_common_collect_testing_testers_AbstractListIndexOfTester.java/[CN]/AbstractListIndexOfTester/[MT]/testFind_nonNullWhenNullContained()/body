@@ -1,4 +1,4 @@
 {
   initCollectionWithNullElement();
-  assertEquals(getMethodName() + "(notPresent) should return -1",-1,find(samples.e3()));
+  assertEquals(getMethodName() + "(notPresent) should return -1",-1,find(e3()));
 }

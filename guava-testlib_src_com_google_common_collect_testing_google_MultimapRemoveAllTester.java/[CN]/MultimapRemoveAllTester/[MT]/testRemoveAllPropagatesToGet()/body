@@ -2,5 +2,5 @@
   Collection<V> getResult=multimap().get(sampleKeys().e0());
   multimap().removeAll(sampleKeys().e0());
   assertThat(getResult).isEmpty();
-  expectMissing(samples.e0());
+  expectMissing(e0());
 }

@@ -1,5 +1,5 @@
 {
   Set<E> elementSet=getMultiset().elementSet();
-  assertFalse(elementSet.remove(samples.e3()));
+  assertFalse(elementSet.remove(e3()));
   expectUnchanged();
 }

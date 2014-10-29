@@ -1,4 +1,4 @@
 {
   expectReturnsTrue(partialOverlap);
-  expectContents(samples.e2());
+  expectContents(e2());
 }

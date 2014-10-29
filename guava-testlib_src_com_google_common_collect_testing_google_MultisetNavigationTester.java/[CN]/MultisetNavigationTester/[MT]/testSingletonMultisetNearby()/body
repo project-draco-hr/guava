@@ -1,6 +1,6 @@
 {
-  assertNull(sortedMultiset.headMultiset(samples.e0(),OPEN).lastEntry());
-  assertNull(sortedMultiset.tailMultiset(samples.e0(),OPEN).lastEntry());
-  assertEquals(a,sortedMultiset.headMultiset(samples.e0(),CLOSED).lastEntry());
-  assertEquals(a,sortedMultiset.tailMultiset(samples.e0(),CLOSED).firstEntry());
+  assertNull(sortedMultiset.headMultiset(e0(),OPEN).lastEntry());
+  assertNull(sortedMultiset.tailMultiset(e0(),OPEN).lastEntry());
+  assertEquals(a,sortedMultiset.headMultiset(e0(),CLOSED).lastEntry());
+  assertEquals(a,sortedMultiset.tailMultiset(e0(),CLOSED).firstEntry());
 }

@@ -1,10 +1,10 @@
 {
   initThreeCopies();
-  assertEquals(3,getMultiset().count(samples.e0()));
+  assertEquals(3,getMultiset().count(e0()));
   Multiset.Entry<E> entry=Iterables.getOnlyElement(getMultiset().entrySet());
   assertEquals(3,entry.getCount());
-  assertTrue(getMultiset().remove(samples.e0()));
+  assertTrue(getMultiset().remove(e0()));
   assertEquals(2,entry.getCount());
-  assertTrue(getMultiset().elementSet().remove(samples.e0()));
+  assertTrue(getMultiset().elementSet().remove(e0()));
   assertEquals(0,entry.getCount());
 }

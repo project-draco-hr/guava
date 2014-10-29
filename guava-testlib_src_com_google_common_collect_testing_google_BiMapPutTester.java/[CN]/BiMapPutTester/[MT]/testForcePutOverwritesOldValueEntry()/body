@@ -1,7 +1,7 @@
 {
-  K k0=samples.e0().getKey();
-  K k1=samples.e1().getKey();
-  V v0=samples.e0().getValue();
+  K k0=e0().getKey();
+  K k1=e1().getKey();
+  V v0=e0().getValue();
   getMap().put(k0,v0);
   getMap().forcePut(k1,v0);
   expectAdded(Helpers.mapEntry(k1,v0));

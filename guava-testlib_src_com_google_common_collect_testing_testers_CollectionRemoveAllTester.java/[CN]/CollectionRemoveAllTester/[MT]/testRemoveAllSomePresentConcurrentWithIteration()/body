@@ -1,7 +1,7 @@
 {
   try {
     Iterator<E> iterator=collection.iterator();
-    assertTrue(collection.removeAll(MinimalCollection.of(samples.e0(),samples.e3())));
+    assertTrue(collection.removeAll(MinimalCollection.of(e0(),e3())));
     iterator.next();
     fail("Expected ConcurrentModificationException");
   }

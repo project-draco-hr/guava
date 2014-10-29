@@ -1,5 +1,5 @@
 {
-  resetContainer(getSubjectGenerator().create(samples.e0(),samples.e2(),samples.e1(),samples.e0()));
-  assertTrue(getList().retainAll(Arrays.asList(samples.e0(),samples.e1())));
-  assertThat(getList()).containsExactly(samples.e0(),samples.e1(),samples.e0()).inOrder();
+  resetContainer(getSubjectGenerator().create(e0(),e2(),e1(),e0()));
+  assertTrue(getList().retainAll(Arrays.asList(e0(),e1())));
+  assertThat(getList()).containsExactly(e0(),e1(),e0()).inOrder();
 }

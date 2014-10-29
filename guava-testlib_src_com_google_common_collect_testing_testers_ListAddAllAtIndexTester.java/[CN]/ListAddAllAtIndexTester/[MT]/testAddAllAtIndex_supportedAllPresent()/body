@@ -1,4 +1,4 @@
 {
-  assertTrue("addAll(n, allPresent) should return true",getList().addAll(0,MinimalCollection.of(samples.e0())));
-  expectAdded(0,samples.e0());
+  assertTrue("addAll(n, allPresent) should return true",getList().addAll(0,MinimalCollection.of(e0())));
+  expectAdded(0,e0());
 }

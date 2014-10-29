@@ -1,4 +1,4 @@
 {
-  assertEquals("sizeManyQueue.element() should return first element",samples.e0(),getQueue().element());
+  assertEquals("sizeManyQueue.element() should return first element",e0(),getQueue().element());
   expectUnchanged();
 }

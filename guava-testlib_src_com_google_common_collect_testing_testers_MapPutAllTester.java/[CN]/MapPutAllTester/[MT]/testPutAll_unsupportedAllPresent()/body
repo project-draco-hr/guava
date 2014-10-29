@@ -1,6 +1,6 @@
 {
   try {
-    putAll(MinimalCollection.of(samples.e0()));
+    putAll(MinimalCollection.of(e0()));
   }
  catch (  UnsupportedOperationException tolerated) {
   }

@@ -1,5 +1,5 @@
 {
-  assertEquals("multiset.remove(present, 2) didn't return the old count",1,getMultiset().remove(samples.e0(),2));
-  assertFalse("multiset contains present after multiset.remove(present, 2)",getMultiset().contains(samples.e0()));
-  assertEquals(0,getMultiset().count(samples.e0()));
+  assertEquals("multiset.remove(present, 2) didn't return the old count",1,getMultiset().remove(e0(),2));
+  assertFalse("multiset contains present after multiset.remove(present, 2)",getMultiset().contains(e0()));
+  assertEquals(0,getMultiset().count(e0()));
 }

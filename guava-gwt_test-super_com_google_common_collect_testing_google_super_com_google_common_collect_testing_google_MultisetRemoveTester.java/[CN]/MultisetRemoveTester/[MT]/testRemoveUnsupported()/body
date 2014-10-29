@@ -1,6 +1,6 @@
 {
   try {
-    getMultiset().remove(samples.e0(),2);
+    getMultiset().remove(e0(),2);
     fail("Expected UnsupportedOperationException");
   }
  catch (  UnsupportedOperationException expected) {

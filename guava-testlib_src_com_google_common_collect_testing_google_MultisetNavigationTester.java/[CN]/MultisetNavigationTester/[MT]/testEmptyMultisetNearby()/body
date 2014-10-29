@@ -1,6 +1,6 @@
 {
   for (  BoundType type : BoundType.values()) {
-    assertNull(sortedMultiset.headMultiset(samples.e0(),type).lastEntry());
-    assertNull(sortedMultiset.tailMultiset(samples.e0(),type).firstEntry());
+    assertNull(sortedMultiset.headMultiset(e0(),type).lastEntry());
+    assertNull(sortedMultiset.tailMultiset(e0(),type).firstEntry());
   }
 }

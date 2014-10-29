@@ -1,7 +1,7 @@
 {
   try {
     Iterator<E> iterator=collection.iterator();
-    getList().add(0,samples.e3());
+    getList().add(0,e3());
     iterator.next();
     fail("Expected ConcurrentModificationException");
   }

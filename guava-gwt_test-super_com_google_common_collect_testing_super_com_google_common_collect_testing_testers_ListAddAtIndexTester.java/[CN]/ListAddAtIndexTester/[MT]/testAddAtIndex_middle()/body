@@ -1,4 +1,4 @@
 {
-  getList().add(getNumElements() / 2,samples.e3());
-  expectAdded(getNumElements() / 2,samples.e3());
+  getList().add(getNumElements() / 2,e3());
+  expectAdded(getNumElements() / 2,e3());
 }

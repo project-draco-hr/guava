@@ -1,4 +1,4 @@
 {
   initMapWithNullKey();
-  assertFalse("containsKey(notPresent) should return false",getMap().containsKey(samples.e3().getKey()));
+  assertFalse("containsKey(notPresent) should return false",getMap().containsKey(e3().getKey()));
 }

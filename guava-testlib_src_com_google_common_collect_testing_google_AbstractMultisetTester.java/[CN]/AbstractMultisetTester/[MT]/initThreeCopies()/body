@@ -1,3 +1,3 @@
 {
-  collection=getSubjectGenerator().create(samples.e0(),samples.e0(),samples.e0());
+  collection=getSubjectGenerator().create(e0(),e0(),e0());
 }

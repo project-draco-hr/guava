@@ -1,6 +1,6 @@
 {
   try {
-    getMap().put(samples.e0().getKey(),samples.e3().getValue());
+    getMap().put(e0().getKey(),e3().getValue());
     fail("put(present, differentValue) should throw");
   }
  catch (  UnsupportedOperationException expected) {

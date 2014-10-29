@@ -1,10 +1,10 @@
 {
   try {
-    getMap().remove(samples.e0().getKey());
+    getMap().remove(e0().getKey());
     fail("remove(present) should throw UnsupportedOperationException");
   }
  catch (  UnsupportedOperationException expected) {
   }
   expectUnchanged();
-  assertEquals("remove(present) should not remove the element",samples.e0().getValue(),get(samples.e0().getKey()));
+  assertEquals("remove(present) should not remove the element",e0().getValue(),get(e0().getKey()));
 }

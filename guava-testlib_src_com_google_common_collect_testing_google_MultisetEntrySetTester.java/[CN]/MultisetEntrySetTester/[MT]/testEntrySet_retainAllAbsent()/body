@@ -1,4 +1,4 @@
 {
-  assertTrue("multiset.entrySet.retainAll(missingEntry) returned true",getMultiset().entrySet().retainAll(Collections.singleton(Multisets.immutableEntry(samples.e0(),2))));
-  assertFalse("multiset contains element after retaining a different entry",getMultiset().contains(samples.e0()));
+  assertTrue("multiset.entrySet.retainAll(missingEntry) returned true",getMultiset().entrySet().retainAll(Collections.singleton(Multisets.immutableEntry(e0(),2))));
+  assertFalse("multiset contains element after retaining a different entry",getMultiset().contains(e0()));
 }
