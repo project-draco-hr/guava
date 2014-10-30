@@ -1,5 +1,5 @@
 {
   String longDelimiter="a, b, c/ ";
   Iterable<String> letters=Splitter.on(Pattern.compile("[,/]\\s")).split(longDelimiter);
-  assertThat(letters).iteratesAs("a","b","c","");
+  assertThat(letters).containsExactly("a","b","c","").inOrder();
 }

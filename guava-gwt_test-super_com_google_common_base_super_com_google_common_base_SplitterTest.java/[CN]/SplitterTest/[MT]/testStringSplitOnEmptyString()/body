@@ -1,4 +1,4 @@
 {
   Iterable<String> notMuch=Splitter.on('.').split("");
-  assertThat(notMuch).iteratesAs("");
+  assertThat(notMuch).containsExactly("").inOrder();
 }

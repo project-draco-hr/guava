@@ -1,5 +1,5 @@
 {
   String doubled="a,,b,c";
   Iterable<String> letters=Splitter.on(',').split(doubled);
-  assertThat(letters).iteratesAs("a","","b","c");
+  assertThat(letters).containsExactly("a","","b","c").inOrder();
 }

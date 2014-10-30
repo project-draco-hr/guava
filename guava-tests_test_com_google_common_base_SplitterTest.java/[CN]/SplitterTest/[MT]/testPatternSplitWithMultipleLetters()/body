@@ -1,4 +1,4 @@
 {
   Iterable<String> testPatterningMotto=Splitter.onPattern("-").split("Testing-rocks-Debugging-sucks");
-  assertThat(testPatterningMotto).iteratesAs("Testing","rocks","Debugging","sucks");
+  assertThat(testPatterningMotto).containsExactly("Testing","rocks","Debugging","sucks").inOrder();
 }

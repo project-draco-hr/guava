@@ -3,5 +3,5 @@
   Iterable<String> tail=skip(list,1);
   list.subList(1,3).clear();
   list.addAll(0,newArrayList("A","B","C"));
-  assertThat(tail).iteratesAs("B","C","a");
+  assertThat(tail).containsExactly("B","C","a").inOrder();
 }

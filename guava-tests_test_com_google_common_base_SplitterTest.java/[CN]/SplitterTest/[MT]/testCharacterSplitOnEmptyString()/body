@@ -1,4 +1,4 @@
 {
   Iterable<String> nothing=Splitter.on('.').split("");
-  assertThat(nothing).iteratesAs("");
+  assertThat(nothing).containsExactly("").inOrder();
 }

@@ -1,8 +1,8 @@
 {
   Map<String,String> m=Splitter.on(',').withKeyValueSeparator(":").split("boy:tom,girl:tina,cat:kitty,dog:tommy");
-  assertThat(m.keySet()).iteratesAs("boy","girl","cat","dog");
+  assertThat(m.keySet()).containsExactly("boy","girl","cat","dog").inOrder();
   assertThat(m).isEqualTo(ImmutableMap.of("boy","tom","girl","tina","cat","kitty","dog","tommy"));
   m=Splitter.on(',').withKeyValueSeparator(":").split("girl:tina,boy:tom,dog:tommy,cat:kitty");
-  assertThat(m.keySet()).iteratesAs("girl","boy","dog","cat");
+  assertThat(m.keySet()).containsExactly("girl","boy","dog","cat").inOrder();
   assertThat(m).isEqualTo(ImmutableMap.of("boy","tom","girl","tina","cat","kitty","dog","tommy"));
 }

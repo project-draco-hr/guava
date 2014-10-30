@@ -1,5 +1,5 @@
 {
   String fourCommasAndFourSpaces=",,,,    ";
   Iterable<String> threeCommasThenThreeSpaces=Splitter.on(", ").split(fourCommasAndFourSpaces);
-  assertThat(threeCommasThenThreeSpaces).iteratesAs(",,,","   ");
+  assertThat(threeCommasThenThreeSpaces).containsExactly(",,,","   ").inOrder();
 }

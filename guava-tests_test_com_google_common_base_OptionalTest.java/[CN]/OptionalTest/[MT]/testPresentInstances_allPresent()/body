@@ -1,4 +1,4 @@
 {
   List<Optional<String>> optionals=ImmutableList.of(Optional.of("a"),Optional.of("b"),Optional.of("c"));
-  assertThat(Optional.presentInstances(optionals)).iteratesAs("a","b","c");
+  assertThat(Optional.presentInstances(optionals)).containsExactly("a","b","c").inOrder();
 }

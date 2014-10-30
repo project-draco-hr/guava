@@ -1,5 +1,5 @@
 {
   String text=",,a,,  , b ,, c,d ";
   Iterable<String> items=COMMA_SPLITTER.limit(1).omitEmptyStrings().trimResults().split(text);
-  assertThat(items).iteratesAs("a,,  , b ,, c,d");
+  assertThat(items).containsExactly("a,,  , b ,, c,d").inOrder();
 }

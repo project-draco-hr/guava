@@ -1,5 +1,5 @@
 {
   String simple="abcd";
   Iterable<String> letters=Splitter.fixedLength(1).limit(1).split(simple);
-  assertThat(letters).iteratesAs("abcd");
+  assertThat(letters).containsExactly("abcd").inOrder();
 }

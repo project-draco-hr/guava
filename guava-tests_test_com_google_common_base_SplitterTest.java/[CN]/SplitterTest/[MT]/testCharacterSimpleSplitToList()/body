@@ -1,5 +1,5 @@
 {
   String simple="a,b,c";
   List<String> letters=COMMA_SPLITTER.splitToList(simple);
-  assertThat(letters).iteratesAs("a","b","c");
+  assertThat(letters).containsExactly("a","b","c").inOrder();
 }
