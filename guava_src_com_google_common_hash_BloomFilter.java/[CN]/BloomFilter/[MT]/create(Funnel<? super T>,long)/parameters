@@ -1,2 +1,2 @@
 Funnel<? super T> funnel
-int expectedInsertions
+long expectedInsertions
