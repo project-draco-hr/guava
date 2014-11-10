@@ -2,7 +2,6 @@
   AsyncSettableFuture<String> future=AsyncSettableFuture.create();
   SettableFuture<String> nested=SettableFuture.create();
   assertTrue(future.setFuture(nested));
-  assertTrue(future.isSet());
   assertFalse(future.setValue("x"));
   assertFalse(future.setException(new Exception("bar")));
   assertFalse(future.setFuture(SettableFuture.<String>create()));

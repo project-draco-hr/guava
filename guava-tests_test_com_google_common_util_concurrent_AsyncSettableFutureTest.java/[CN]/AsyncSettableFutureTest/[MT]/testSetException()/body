@@ -2,7 +2,6 @@
   AsyncSettableFuture<Object> future=AsyncSettableFuture.create();
   Exception e=new Exception("foobarbaz");
   assertTrue(future.setException(e));
-  assertTrue(future.isSet());
   assertFalse(future.setValue(23));
   assertFalse(future.setException(new Exception("quux")));
   assertFalse(future.setFuture(SettableFuture.create()));
