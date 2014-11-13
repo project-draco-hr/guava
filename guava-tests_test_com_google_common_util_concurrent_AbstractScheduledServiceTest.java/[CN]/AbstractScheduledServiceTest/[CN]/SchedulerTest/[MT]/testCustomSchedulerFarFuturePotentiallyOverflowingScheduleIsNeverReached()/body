@@ -1,0 +1,23 @@
+{
+  TestAbstractScheduledCustomService service=new TestAbstractScheduledCustomService(){
+    @Override protected Scheduler scheduler(){
+      return new AbstractScheduledService.CustomScheduler(){
+        @Override protected Schedule getNextSchedule() throws Exception {
+          return new Schedule(Long.MAX_VALUE,SECONDS);
+        }
+      }
+;
+    }
+  }
+;
+  service.startAsync().awaitRunning();
+  try {
+    service.firstBarrier.await(5,SECONDS);
+    fail();
+  }
+ catch (  TimeoutException expected) {
+  }
+  assertEquals(0,service.numIterations.get());
+  service.stopAsync();
+  service.awaitTerminated();
+}

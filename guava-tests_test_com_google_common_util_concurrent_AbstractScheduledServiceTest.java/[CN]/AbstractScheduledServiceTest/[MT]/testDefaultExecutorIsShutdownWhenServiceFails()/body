@@ -11,7 +11,7 @@
       return executor.get();
     }
     @Override protected Scheduler scheduler(){
-      return Scheduler.newFixedDelaySchedule(0,1,TimeUnit.MILLISECONDS);
+      return newFixedDelaySchedule(0,1,TimeUnit.MILLISECONDS);
     }
   }
 ;

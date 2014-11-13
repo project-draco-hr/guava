@@ -1,5 +1,5 @@
 {
-  Scheduler schedule=Scheduler.newFixedDelaySchedule(initialDelay,delay,unit);
+  Scheduler schedule=newFixedDelaySchedule(initialDelay,delay,unit);
   schedule.schedule(null,new ScheduledThreadPoolExecutor(10){
     @Override public ScheduledFuture<?> scheduleWithFixedDelay(    Runnable command,    long initialDelay,    long delay,    TimeUnit unit){
       assertSingleCallWithCorrectParameters(command,initialDelay,delay,unit);
