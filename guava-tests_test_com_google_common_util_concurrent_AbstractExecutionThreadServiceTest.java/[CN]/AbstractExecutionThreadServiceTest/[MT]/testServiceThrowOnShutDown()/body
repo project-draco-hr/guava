@@ -6,5 +6,5 @@
   enterRun.countDown();
   executionThread.join();
   assertEquals(Service.State.FAILED,service.state());
-  assertEquals("kaboom!",thrownByExecutionThread.getMessage());
+  assertEquals("kaboom!",service.failureCause().getMessage());
 }

@@ -12,5 +12,5 @@
   executionThread.join();
   assertTrue(service.startUpCalled);
   assertEquals(Service.State.FAILED,service.state());
-  assertTrue(thrownByExecutionThread.getMessage().equals("kaboom!"));
+  assertEquals("kaboom!",service.failureCause().getMessage());
 }

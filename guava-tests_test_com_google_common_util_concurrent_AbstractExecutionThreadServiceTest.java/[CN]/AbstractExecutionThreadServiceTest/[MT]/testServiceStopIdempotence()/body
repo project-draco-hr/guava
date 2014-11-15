@@ -9,5 +9,4 @@
   service.stopAsync().awaitTerminated();
   assertEquals(Service.State.TERMINATED,service.state());
   executionThread.join();
-  assertNull(thrownByExecutionThread);
 }

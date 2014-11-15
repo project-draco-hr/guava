@@ -8,9 +8,9 @@
   }
  catch (  IllegalStateException expected) {
     executionThread.join();
-    assertEquals(thrownByExecutionThread,expected.getCause());
+    assertEquals(service.failureCause(),expected.getCause());
+    assertEquals("kaboom!",expected.getCause().getMessage());
   }
   assertTrue(service.shutDownCalled);
   assertEquals(Service.State.FAILED,service.state());
-  assertEquals("kaboom!",thrownByExecutionThread.getMessage());
 }

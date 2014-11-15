@@ -8,8 +8,8 @@
     future.get();
     fail();
   }
- catch (  ExecutionException e) {
-    assertEquals(service.runException,e.getCause().getCause());
+ catch (  CancellationException expected) {
   }
+  assertEquals(service.runException,service.failureCause());
   assertEquals(service.state(),Service.State.FAILED);
 }

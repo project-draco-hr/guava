@@ -8,7 +8,6 @@
   executionThread.join();
   assertTrue(service.shutDownCalled);
   assertEquals(Service.State.TERMINATED,service.state());
-  assertNull(thrownByExecutionThread);
   service.stopAsync().awaitTerminated();
   assertEquals(Service.State.TERMINATED,service.state());
   assertTrue(service.shutDownCalled);

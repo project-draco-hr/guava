@@ -1,0 +1,20 @@
+{
+  final Error error=new Error();
+  final CountDownLatch latch=new CountDownLatch(1);
+  TestService service=new TestService();
+  service.addListener(new Service.Listener(){
+    @Override public void running(){
+      throw error;
+    }
+    @Override public void failed(    State from,    Throwable failure){
+      assertEquals(State.RUNNING,from);
+      assertEquals(error,failure);
+      latch.countDown();
+    }
+  }
+,directExecutor());
+  service.startAsync();
+  latch.await();
+  assertEquals(0,service.numberOfTimesRunCalled.get());
+  assertEquals(Service.State.FAILED,service.state());
+}

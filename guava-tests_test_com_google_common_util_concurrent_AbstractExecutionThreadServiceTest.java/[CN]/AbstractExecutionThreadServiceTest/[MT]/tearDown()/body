@@ -1,3 +1,4 @@
 {
   tearDownStack.runTearDown();
+  assertNull("exceptions should not be propagated to uncaught exception handlers",thrownByExecutionThread);
 }

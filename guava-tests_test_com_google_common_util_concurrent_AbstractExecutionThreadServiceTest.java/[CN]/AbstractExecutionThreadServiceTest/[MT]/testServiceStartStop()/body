@@ -9,5 +9,4 @@
   assertTrue(service.shutDownCalled);
   assertEquals(Service.State.TERMINATED,service.state());
   executionThread.join();
-  assertNull(thrownByExecutionThread);
 }
