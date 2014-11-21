@@ -1,0 +1,14 @@
+{
+  Facade<?> f=notDoneFuture;
+  long r=0;
+  for (int i=0; i < reps; i++) {
+    try {
+      f.get(500,TimeUnit.NANOSECONDS);
+      r+=1;
+    }
+ catch (    TimeoutException e) {
+      r+=2;
+    }
+  }
+  return r;
+}

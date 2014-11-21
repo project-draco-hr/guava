@@ -1,0 +1,3 @@
+{
+  return UNSAFE.compareAndSwapObject(future,VALUE_OFFSET,expected,v);
+}

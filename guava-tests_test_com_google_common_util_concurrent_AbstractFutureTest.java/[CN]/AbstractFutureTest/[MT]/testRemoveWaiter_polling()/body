@@ -1,0 +1,21 @@
+{
+  final AbstractFuture<String> future=new AbstractFuture<String>(){
+  }
+;
+  WaiterThread waiter=new WaiterThread(future);
+  waiter.start();
+  waiter.awaitWaiting();
+  PollingThread poller=new PollingThread(future);
+  poller.start();
+  PollingThread poller2=new PollingThread(future);
+  poller2.start();
+  PollingThread poller3=new PollingThread(future);
+  poller3.start();
+  poller.awaitInLoop();
+  poller2.awaitInLoop();
+  poller3.awaitInLoop();
+  waiter.interrupt();
+  waiter.join();
+  future.set(null);
+  poller.join();
+}

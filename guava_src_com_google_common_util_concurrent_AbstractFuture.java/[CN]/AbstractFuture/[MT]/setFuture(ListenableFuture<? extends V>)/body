@@ -1,0 +1,13 @@
+{
+  checkNotNull(future);
+  SetFuture valueToSet=new SetFuture(future);
+  if (ATOMIC_HELPER.casValue(this,null,valueToSet)) {
+    future.addListener(valueToSet,directExecutor());
+    return true;
+  }
+  Object obj=value;
+  if (obj instanceof Cancellation) {
+    future.cancel(((Cancellation)obj).wasInterrupted);
+  }
+  return false;
+}

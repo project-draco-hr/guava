@@ -1,0 +1,22 @@
+{
+  if (value != this) {
+    return;
+  }
+  Object valueToSet;
+  try {
+    V v=Uninterruptibles.getUninterruptibly(future);
+    valueToSet=v == null ? NULL : v;
+  }
+ catch (  ExecutionException exception) {
+    valueToSet=new Failure(exception.getCause());
+  }
+catch (  CancellationException cancellation) {
+    valueToSet=new Cancellation(false,cancellation);
+  }
+catch (  Throwable t) {
+    valueToSet=new Failure(t);
+  }
+  if (ATOMIC_HELPER.casValue(AbstractFuture.this,this,valueToSet)) {
+    complete();
+  }
+}

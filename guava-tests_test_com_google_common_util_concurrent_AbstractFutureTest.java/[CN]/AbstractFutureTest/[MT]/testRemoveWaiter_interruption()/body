@@ -1,0 +1,18 @@
+{
+  final AbstractFuture<String> future=new AbstractFuture<String>(){
+  }
+;
+  WaiterThread waiter1=new WaiterThread(future);
+  waiter1.start();
+  waiter1.awaitWaiting();
+  WaiterThread waiter2=new WaiterThread(future);
+  waiter2.start();
+  waiter2.awaitWaiting();
+  waiter1.interrupt();
+  waiter1.join();
+  waiter2.awaitWaiting();
+  LockSupport.unpark(waiter2);
+  waiter2.awaitWaiting();
+  future.set(null);
+  waiter2.join();
+}

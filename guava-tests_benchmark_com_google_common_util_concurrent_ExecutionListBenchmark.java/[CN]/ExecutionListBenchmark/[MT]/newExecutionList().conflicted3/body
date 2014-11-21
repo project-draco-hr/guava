@@ -1,6 +1,6 @@
 {
   return new ExecutionListWrapper(){
-    final ExecutionListCAS list=new ExecutionListCAS();
+    final ExecutionList list=new ExecutionList();
     @Override public void add(    Runnable runnable,    Executor executor){
       list.add(runnable,executor);
     }

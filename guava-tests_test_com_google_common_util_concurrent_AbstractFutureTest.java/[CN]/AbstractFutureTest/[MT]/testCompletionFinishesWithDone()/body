@@ -4,7 +4,7 @@
     final AbstractFuture<String> future=new AbstractFuture<String>(){
     }
 ;
-    final AtomicReference<String> errorMessage=new AtomicReference<String>();
+    final AtomicReference<String> errorMessage=Atomics.newReference();
     executor.execute(new Runnable(){
       @Override public void run(){
         future.set("success");

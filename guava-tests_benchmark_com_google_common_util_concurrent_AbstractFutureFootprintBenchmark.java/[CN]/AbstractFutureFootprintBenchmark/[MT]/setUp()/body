@@ -1,0 +1,5 @@
+{
+  if (state != State.NOT_DONE && (numListeners != 0 || numThreads != 0)) {
+    throw new SkipThisScenarioException();
+  }
+}

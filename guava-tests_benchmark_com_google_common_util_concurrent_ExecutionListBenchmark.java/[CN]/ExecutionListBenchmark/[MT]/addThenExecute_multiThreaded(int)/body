@@ -15,7 +15,7 @@
       executorService.submit(addTask);
     }
     executorService.submit(executeTask);
-    returnValue=(int)listenerLatch.getCount();
+    returnValue+=(int)listenerLatch.getCount();
     listenerLatch.await();
   }
   return returnValue;

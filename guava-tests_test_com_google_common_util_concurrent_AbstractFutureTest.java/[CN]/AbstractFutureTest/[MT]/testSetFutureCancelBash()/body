@@ -1,0 +1,120 @@
+{
+  final CyclicBarrier barrier=new CyclicBarrier(2 + 50 + 50+ 1);
+  final ExecutorService executor=Executors.newFixedThreadPool(barrier.getParties());
+  final AtomicReference<AbstractFuture<String>> currentFuture=Atomics.newReference();
+  final AtomicReference<AbstractFuture<String>> setFutureFuture=Atomics.newReference();
+  final AtomicBoolean setFutureSetSucess=new AtomicBoolean();
+  final AtomicBoolean setFutureCompletionSucess=new AtomicBoolean();
+  final AtomicBoolean cancellationSucess=new AtomicBoolean();
+  Callable<Void> cancelRunnable=new Callable<Void>(){
+    @Override public Void call(){
+      cancellationSucess.set(currentFuture.get().cancel(true));
+      awaitUnchecked(barrier);
+      return null;
+    }
+  }
+;
+  Callable<Void> setFutureCompleteSucessFullyRunnable=new Callable<Void>(){
+    @Override public Void call(){
+      AbstractFuture<String> future=setFutureFuture.get();
+      setFutureSetSucess.set(currentFuture.get().setFuture(future));
+      setFutureCompletionSucess.set(future.set("hello-async-world"));
+      awaitUnchecked(barrier);
+      return null;
+    }
+  }
+;
+  final Set<Object> finalResults=Collections.synchronizedSet(Sets.newIdentityHashSet());
+  Runnable collectResultsRunnable=new Runnable(){
+    @Override public void run(){
+      try {
+        String result=Uninterruptibles.getUninterruptibly(currentFuture.get());
+        finalResults.add(result);
+      }
+ catch (      ExecutionException e) {
+        finalResults.add(e.getCause());
+      }
+catch (      CancellationException e) {
+        finalResults.add(e.getCause());
+      }
+ finally {
+        awaitUnchecked(barrier);
+      }
+    }
+  }
+;
+  Runnable collectResultsTimedGetRunnable=new Runnable(){
+    @Override public void run(){
+      Future<String> future=currentFuture.get();
+      while (true) {
+        try {
+          String result=Uninterruptibles.getUninterruptibly(future,0,TimeUnit.SECONDS);
+          finalResults.add(result);
+          break;
+        }
+ catch (        ExecutionException e) {
+          finalResults.add(e.getCause());
+          break;
+        }
+catch (        CancellationException e) {
+          finalResults.add(e.getCause());
+          break;
+        }
+catch (        TimeoutException e) {
+        }
+      }
+      awaitUnchecked(barrier);
+    }
+  }
+;
+  List<Callable<?>> allTasks=new ArrayList<Callable<?>>();
+  allTasks.add(cancelRunnable);
+  allTasks.add(setFutureCompleteSucessFullyRunnable);
+  for (int k=0; k < 50; k++) {
+    final Runnable listener=k % 2 == 0 ? collectResultsRunnable : collectResultsTimedGetRunnable;
+    allTasks.add(Executors.callable(listener));
+    allTasks.add(new Callable<Void>(){
+      @Override public Void call() throws Exception {
+        currentFuture.get().addListener(listener,executor);
+        return null;
+      }
+    }
+);
+  }
+  assertEquals(allTasks.size() + 1,barrier.getParties());
+  for (int i=0; i < 1000; i++) {
+    Collections.shuffle(allTasks);
+    final AbstractFuture<String> future=new AbstractFuture<String>(){
+    }
+;
+    final AbstractFuture<String> setFuture=new AbstractFuture<String>(){
+    }
+;
+    currentFuture.set(future);
+    setFutureFuture.set(setFuture);
+    for (    Callable<?> task : allTasks) {
+      executor.submit(task);
+    }
+    awaitUnchecked(barrier);
+    assertThat(future.isDone()).isTrue();
+    Object result=Iterables.getOnlyElement(finalResults);
+    if (result instanceof CancellationException) {
+      assertTrue(future.isCancelled());
+      assertTrue(cancellationSucess.get());
+      if (!setFutureSetSucess.get() || !setFutureCompletionSucess.get()) {
+        assertTrue(setFuture.isCancelled());
+        assertTrue(setFuture.wasInterrupted());
+      }
+    }
+ else {
+      assertFalse(cancellationSucess.get());
+      assertTrue(setFutureSetSucess.get());
+      assertTrue(setFutureCompletionSucess.get());
+    }
+    setFutureSetSucess.set(false);
+    setFutureCompletionSucess.set(false);
+    cancellationSucess.set(false);
+    finalResults.clear();
+  }
+  executor.shutdown();
+}

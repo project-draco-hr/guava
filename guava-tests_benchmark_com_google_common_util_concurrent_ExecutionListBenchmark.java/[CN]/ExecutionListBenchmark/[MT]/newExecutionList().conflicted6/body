@@ -1,0 +1,17 @@
+{
+  return new ExecutionListWrapper(){
+    final OldAbstractFuture<Object> future=new OldAbstractFuture<Object>(){
+    }
+;
+    @Override public void add(    Runnable runnable,    Executor executor){
+      future.addListener(runnable,executor);
+    }
+    @Override public void execute(){
+      future.set(null);
+    }
+    @Override public Object getImpl(){
+      return future;
+    }
+  }
+;
+}

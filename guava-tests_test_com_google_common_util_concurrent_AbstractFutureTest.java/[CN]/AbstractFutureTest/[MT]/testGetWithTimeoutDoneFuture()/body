@@ -1,0 +1,9 @@
+{
+  AbstractFuture<String> future=new AbstractFuture<String>(){
+{
+      set("foo");
+    }
+  }
+;
+  assertEquals("foo",future.get(0,TimeUnit.SECONDS));
+}

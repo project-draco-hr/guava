@@ -1,0 +1,3 @@
+{
+  WAITER_NEXT_UPDATER.lazySet(waiter,next);
+}

@@ -1,0 +1,15 @@
+{
+  while (true) {
+    Thread.State state=t.getState();
+switch (state) {
+case RUNNABLE:
+case BLOCKED:
+      Thread.yield();
+    break;
+case WAITING:
+  return;
+default :
+throw new AssertionError("unexpected state: " + state);
+}
+}
+}

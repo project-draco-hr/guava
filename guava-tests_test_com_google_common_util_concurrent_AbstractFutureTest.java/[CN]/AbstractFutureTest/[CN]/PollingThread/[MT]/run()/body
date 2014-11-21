@@ -1,0 +1,19 @@
+{
+  while (true) {
+    try {
+      future.get(0,TimeUnit.SECONDS);
+      return;
+    }
+ catch (    InterruptedException e) {
+      return;
+    }
+catch (    ExecutionException e) {
+      return;
+    }
+catch (    TimeoutException e) {
+    }
+ finally {
+      completedIteration.countDown();
+    }
+  }
+}
