@@ -9,25 +9,7 @@
         return;
       }
       try {
-        running=fallback.create(t);
-        if (isCancelled()) {
-          running.cancel(wasInterrupted());
-          return;
-        }
-        addCallback(running,new FutureCallback<V>(){
-          @Override public void onSuccess(          V value){
-            set(value);
-          }
-          @Override public void onFailure(          Throwable t){
-            if (running.isCancelled()) {
-              cancel(false);
-            }
- else {
-              setException(t);
-            }
-          }
-        }
-,directExecutor());
+        setFuture(fallback.create(t));
       }
  catch (      Throwable e) {
         setException(e);

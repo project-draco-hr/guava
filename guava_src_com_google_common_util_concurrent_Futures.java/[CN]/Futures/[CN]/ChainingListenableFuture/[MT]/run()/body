@@ -12,30 +12,8 @@ catch (    ExecutionException e) {
       setException(e.getCause());
       return;
     }
-    final ListenableFuture<? extends O> outputFuture=this.outputFuture=Preconditions.checkNotNull(function.apply(sourceResult),"AsyncFunction may not return null.");
-    if (isCancelled()) {
-      outputFuture.cancel(wasInterrupted());
-      this.outputFuture=null;
-      return;
-    }
-    outputFuture.addListener(new Runnable(){
-      @Override public void run(){
-        try {
-          set(getUninterruptibly(outputFuture));
-        }
- catch (        CancellationException e) {
-          cancel(false);
-          return;
-        }
-catch (        ExecutionException e) {
-          setException(e.getCause());
-        }
- finally {
-          ChainingListenableFuture.this.outputFuture=null;
-        }
-      }
-    }
-,directExecutor());
+    ListenableFuture<? extends O> outputFuture=Preconditions.checkNotNull(function.apply(sourceResult),"AsyncFunction may not return null.");
+    setFuture(outputFuture);
   }
  catch (  UndeclaredThrowableException e) {
     setException(e.getCause());

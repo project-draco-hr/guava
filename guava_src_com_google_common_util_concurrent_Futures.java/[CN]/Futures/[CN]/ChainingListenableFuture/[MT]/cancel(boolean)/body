@@ -1,7 +1,9 @@
 {
   if (super.cancel(mayInterruptIfRunning)) {
-    cancel(inputFuture,mayInterruptIfRunning);
-    cancel(outputFuture,mayInterruptIfRunning);
+    ListenableFuture<? extends I> localInputFuture=inputFuture;
+    if (localInputFuture != null) {
+      inputFuture.cancel(mayInterruptIfRunning);
+    }
     return true;
   }
   return false;
