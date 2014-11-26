@@ -1,0 +1,21 @@
+{
+  final RuntimeException exception=new RuntimeException("you didn't say the magic word!");
+  AbstractFuture<String> evilFuture=new AbstractFuture<String>(){
+    @Override public void addListener(    Runnable r,    Executor e){
+      throw exception;
+    }
+  }
+;
+  AbstractFuture<String> normalFuture=new AbstractFuture<String>(){
+  }
+;
+  normalFuture.setFuture(evilFuture);
+  assertTrue(normalFuture.isDone());
+  try {
+    normalFuture.get();
+    fail();
+  }
+ catch (  ExecutionException e) {
+    assertSame(exception,e.getCause());
+  }
+}

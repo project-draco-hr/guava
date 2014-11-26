@@ -2,7 +2,19 @@
   checkNotNull(future);
   SetFuture valueToSet=new SetFuture(future);
   if (ATOMIC_HELPER.casValue(this,null,valueToSet)) {
-    future.addListener(valueToSet,directExecutor());
+    try {
+      future.addListener(valueToSet,directExecutor());
+    }
+ catch (    Throwable t) {
+      Failure failure;
+      try {
+        failure=new Failure(t);
+      }
+ catch (      Throwable oomMostLikely) {
+        failure=Failure.FALLBACK_INSTANCE;
+      }
+      ATOMIC_HELPER.casValue(this,valueToSet,failure);
+    }
     return true;
   }
   Object obj=value;
