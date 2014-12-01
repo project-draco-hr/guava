@@ -1,0 +1,7 @@
+{
+  int tmp=0;
+  for (int i=0; i < reps; i++) {
+    tmp+=System.identityHashCode(encoding.encoding.encode(inputs[i & 0xFFF]));
+  }
+  return tmp;
+}
