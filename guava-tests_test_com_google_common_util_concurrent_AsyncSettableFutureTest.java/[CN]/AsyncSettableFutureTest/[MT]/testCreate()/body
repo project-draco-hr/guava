@@ -1,5 +1,0 @@
-{
-  AsyncSettableFuture<Integer> future=AsyncSettableFuture.create();
-  assertFalse(future.isDone());
-  assertFalse(future.isCancelled());
-}

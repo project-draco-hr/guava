@@ -1,0 +1,21 @@
+{
+  SettableFuture<Foo> future=SettableFuture.create();
+  SettableFuture<FooChild> nested=SettableFuture.create();
+  assertTrue(future.setFuture(nested));
+  assertFalse(future.set(new Foo()));
+  assertFalse(future.setException(new Exception("bar")));
+  assertFalse(future.setFuture(SettableFuture.<Foo>create()));
+  assertFalse(future.isDone());
+  assertFalse(future.isCancelled());
+  try {
+    future.get(0,TimeUnit.MILLISECONDS);
+    fail("Expected TimeoutException");
+  }
+ catch (  TimeoutException expected) {
+  }
+  FooChild value=new FooChild();
+  nested.set(value);
+  assertTrue(future.isDone());
+  assertFalse(future.isCancelled());
+  assertSame(value,future.get());
+}

@@ -1,0 +1,5 @@
+{
+  SettableFuture<Object> async=SettableFuture.create();
+  async.cancel(true);
+  assertFalse(async.set(42));
+}

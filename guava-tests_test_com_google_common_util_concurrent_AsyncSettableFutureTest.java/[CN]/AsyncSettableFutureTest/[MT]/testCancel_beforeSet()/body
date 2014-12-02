@@ -1,5 +1,0 @@
-{
-  AsyncSettableFuture<Object> async=AsyncSettableFuture.create();
-  async.cancel(true);
-  assertFalse(async.setValue(42));
-}

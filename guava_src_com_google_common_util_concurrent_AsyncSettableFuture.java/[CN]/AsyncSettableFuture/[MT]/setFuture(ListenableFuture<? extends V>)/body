@@ -1,3 +1,0 @@
-{
-  return super.setFuture(checkNotNull(future));
-}

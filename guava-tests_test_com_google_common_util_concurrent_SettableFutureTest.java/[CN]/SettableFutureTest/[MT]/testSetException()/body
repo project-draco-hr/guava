@@ -1,0 +1,17 @@
+{
+  SettableFuture<Object> future=SettableFuture.create();
+  Exception e=new Exception("foobarbaz");
+  assertTrue(future.setException(e));
+  assertFalse(future.set(23));
+  assertFalse(future.setException(new Exception("quux")));
+  assertFalse(future.setFuture(SettableFuture.create()));
+  assertTrue(future.isDone());
+  assertFalse(future.isCancelled());
+  try {
+    future.get();
+    fail("Expected ExecutionException");
+  }
+ catch (  ExecutionException ee) {
+    assertSame(e,ee.getCause());
+  }
+}

@@ -1,0 +1,5 @@
+{
+  SettableFuture<Integer> future=SettableFuture.create();
+  assertFalse(future.isDone());
+  assertFalse(future.isCancelled());
+}

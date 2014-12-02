@@ -1,0 +1,13 @@
+{
+  SettableFuture<Object> async=SettableFuture.create();
+  SettableFuture<Object> inner=SettableFuture.create();
+  async.setFuture(inner);
+  inner.cancel(true);
+  assertTrue(async.isCancelled());
+  try {
+    async.get();
+    fail("Expected CancellationException");
+  }
+ catch (  CancellationException expected) {
+  }
+}
