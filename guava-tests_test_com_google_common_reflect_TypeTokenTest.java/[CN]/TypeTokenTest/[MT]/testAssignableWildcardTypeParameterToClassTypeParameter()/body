@@ -1,0 +1,15 @@
+{
+  TypeToken<?> wildcardType=new TypeToken<Iterable<? extends Object[]>>(){
+  }
+;
+  assertFalse(new TypeToken<Iterable<Object[]>>(){
+  }
+.isAssignableFrom(wildcardType));
+  assertFalse(new TypeToken<Iterable<Object>>(){
+  }
+.isAssignableFrom(wildcardType));
+  assertTrue(wildcardType.isAssignableFrom(wildcardType));
+  assertFalse(new TypeToken<Iterable<int[]>>(){
+  }
+.isAssignableFrom(wildcardType));
+}

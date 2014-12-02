@@ -1,15 +1,12 @@
 {
-  if (to.equals(from)) {
-    return true;
-  }
   if (to instanceof WildcardType) {
-    return isAssignableToWildcardType(from,(WildcardType)to);
-  }
-  if (from instanceof TypeVariable) {
-    return isAssignableFromAny(((TypeVariable<?>)from).getBounds(),to);
+    return isAssignableToAny(from,((WildcardType)to).getLowerBounds());
   }
   if (from instanceof WildcardType) {
     return isAssignableFromAny(((WildcardType)from).getUpperBounds(),to);
+  }
+  if (from instanceof TypeVariable) {
+    return from.equals(to) || isAssignableFromAny(((TypeVariable<?>)from).getBounds(),to);
   }
   if (from instanceof GenericArrayType) {
     return isAssignableFromGenericArrayType((GenericArrayType)from,to);

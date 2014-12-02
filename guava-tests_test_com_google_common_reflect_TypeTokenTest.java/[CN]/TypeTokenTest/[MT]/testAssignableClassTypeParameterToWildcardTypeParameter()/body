@@ -1,0 +1,29 @@
+{
+  TypeToken<?> subtypeOfArray=new TypeToken<Iterable<? extends Object[]>>(){
+  }
+;
+  TypeToken<?> supertypeOfArray=new TypeToken<Iterable<? super Object[]>>(){
+  }
+;
+  assertTrue(subtypeOfArray.isAssignableFrom(new TypeToken<Iterable<Object[]>>(){
+  }
+));
+  assertTrue(subtypeOfArray.isAssignableFrom(new TypeToken<Iterable<Object[][]>>(){
+  }
+));
+  assertTrue(subtypeOfArray.isAssignableFrom(new TypeToken<Iterable<String[]>>(){
+  }
+));
+  assertTrue(supertypeOfArray.isAssignableFrom(new TypeToken<Iterable<Object[]>>(){
+  }
+));
+  assertTrue(supertypeOfArray.isAssignableFrom(new TypeToken<Iterable<Object>>(){
+  }
+));
+  assertFalse(supertypeOfArray.isAssignableFrom(new TypeToken<Iterable<Object[][]>>(){
+  }
+));
+  assertFalse(supertypeOfArray.isAssignableFrom(new TypeToken<Iterable<String[]>>(){
+  }
+));
+}

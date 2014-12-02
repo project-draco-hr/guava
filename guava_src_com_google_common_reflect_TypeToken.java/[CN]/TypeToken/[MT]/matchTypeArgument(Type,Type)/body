@@ -3,7 +3,7 @@
     return true;
   }
   if (to instanceof WildcardType) {
-    return isAssignableToWildcardType(from,(WildcardType)to);
+    return isAssignableToAll(from,((WildcardType)to).getUpperBounds()) && areAssignableTo(((WildcardType)to).getLowerBounds(),from);
   }
   return false;
 }

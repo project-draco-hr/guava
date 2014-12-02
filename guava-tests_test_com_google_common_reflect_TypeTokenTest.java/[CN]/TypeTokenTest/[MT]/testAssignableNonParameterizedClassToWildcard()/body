@@ -1,0 +1,8 @@
+{
+  TypeToken<?> supertypeOfString=TypeToken.of(Types.supertypeOf(String.class));
+  assertFalse(supertypeOfString.isAssignableFrom(supertypeOfString));
+  assertFalse(supertypeOfString.isAssignableFrom(Object.class));
+  assertFalse(supertypeOfString.isAssignableFrom(CharSequence.class));
+  assertTrue(supertypeOfString.isAssignableFrom(String.class));
+  assertTrue(supertypeOfString.isAssignableFrom(Types.subtypeOf(String.class)));
+}
