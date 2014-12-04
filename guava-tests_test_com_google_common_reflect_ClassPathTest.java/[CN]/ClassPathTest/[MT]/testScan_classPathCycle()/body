@@ -3,7 +3,7 @@
   try {
     writeSelfReferencingJarFile(jarFile,"test.txt");
     ClassPath.Scanner scanner=new ClassPath.Scanner();
-    scanner.scan(jarFile.toURI(),ClassPathTest.class.getClassLoader());
+    scanner.scan(jarFile,ClassPathTest.class.getClassLoader());
     assertEquals(1,scanner.getResources().size());
   }
   finally {

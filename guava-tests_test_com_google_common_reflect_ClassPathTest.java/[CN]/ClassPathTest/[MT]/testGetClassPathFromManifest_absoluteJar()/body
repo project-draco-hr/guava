@@ -1,5 +1,5 @@
 {
   File jarFile=new File("base/some.jar");
   Manifest manifest=manifestClasspath("file:/with/absolute.jar");
-  assertThat(ClassPath.Scanner.getClassPathFromManifest(jarFile,manifest)).containsExactly(new File("/with/absolute.jar").toURI());
+  assertThat(ClassPath.Scanner.getClassPathFromManifest(jarFile,manifest)).containsExactly(fullpath("/with/absolute.jar"));
 }

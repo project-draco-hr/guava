@@ -7,8 +7,8 @@
     return;
   }
   try {
-    for (    URI uri : getClassPathFromManifest(file,jarFile.getManifest())) {
-      scan(uri,classloader);
+    for (    File path : getClassPathFromManifest(file,jarFile.getManifest())) {
+      scan(path,classloader);
     }
     Enumeration<JarEntry> entries=jarFile.entries();
     while (entries.hasMoreElements()) {

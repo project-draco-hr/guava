@@ -4,7 +4,7 @@
   ClassLoader parent=new ClassLoader(grandParent){
   }
 ;
-  assertEquals(ImmutableMap.of(url.toURI(),grandParent),ClassPath.getClassPathEntries(new ClassLoader(parent){
+  assertEquals(ImmutableMap.of(new File("/a"),grandParent),ClassPath.getClassPathEntries(new ClassLoader(parent){
   }
 ));
 }
