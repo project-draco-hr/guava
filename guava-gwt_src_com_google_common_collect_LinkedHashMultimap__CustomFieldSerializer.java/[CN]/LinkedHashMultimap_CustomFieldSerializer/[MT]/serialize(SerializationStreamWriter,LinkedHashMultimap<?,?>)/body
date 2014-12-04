@@ -1,5 +1,4 @@
 {
-  stream.writeInt(multimap.valueSetCapacity);
   stream.writeInt(multimap.keySet().size());
   for (  Object key : multimap.keySet()) {
     stream.writeObject(key);
