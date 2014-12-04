@@ -1,0 +1,15 @@
+{
+  if (runtimeType instanceof Class) {
+    Class<?> thisClass=(Class<?>)runtimeType;
+    if (!thisClass.isArray()) {
+      return thisClass.isAssignableFrom(Object[].class);
+    }
+    return of(subtype.getGenericComponentType()).extendsFrom(thisClass.getComponentType());
+  }
+ else   if (runtimeType instanceof GenericArrayType) {
+    return of(subtype.getGenericComponentType()).extendsFrom(((GenericArrayType)runtimeType).getGenericComponentType());
+  }
+ else {
+    return false;
+  }
+}

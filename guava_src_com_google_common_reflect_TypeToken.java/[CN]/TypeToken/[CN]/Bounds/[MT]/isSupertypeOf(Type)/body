@@ -1,0 +1,9 @@
+{
+  TypeToken<?> type=of(subtype);
+  for (  Type bound : bounds) {
+    if (type.extendsFrom(bound) == target) {
+      return target;
+    }
+  }
+  return !target;
+}

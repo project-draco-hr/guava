@@ -1,9 +1,0 @@
-{
-  if (from.equals(to)) {
-    return true;
-  }
-  if (to instanceof WildcardType) {
-    return isAssignableToAll(from,((WildcardType)to).getUpperBounds()) && areAssignableTo(((WildcardType)to).getLowerBounds(),from);
-  }
-  return false;
-}

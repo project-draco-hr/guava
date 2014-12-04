@@ -1,8 +1,8 @@
 {
   for (  Method method : RawTypeConsistencyTester.class.getDeclaredMethods()) {
-    assertEquals(method.getReturnType(),TypeToken.getRawType(method.getGenericReturnType()));
+    assertEquals(method.getReturnType(),TypeToken.of(method.getGenericReturnType()).getRawType());
     for (int i=0; i < method.getParameterTypes().length; i++) {
-      assertEquals(method.getParameterTypes()[i],TypeToken.getRawType(method.getGenericParameterTypes()[i]));
+      assertEquals(method.getParameterTypes()[i],TypeToken.of(method.getGenericParameterTypes()[i]).getRawType());
     }
   }
 }

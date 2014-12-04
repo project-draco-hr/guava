@@ -1,0 +1,16 @@
+{
+  assertTrue(TypeToken.of(Object[].class.getSuperclass()).isAssignableFrom(new TypeToken<T[]>(){
+  }
+));
+  for (  Class<?> interfaceType : Object[].class.getInterfaces()) {
+    assertTrue(TypeToken.of(interfaceType).isAssignableFrom(new TypeToken<T[]>(){
+    }
+));
+  }
+  assertTrue(TypeToken.of(Object.class).isAssignableFrom(new TypeToken<T[]>(){
+  }
+));
+  assertFalse(TypeToken.of(String.class).isAssignableFrom(new TypeToken<T[]>(){
+  }
+));
+}
