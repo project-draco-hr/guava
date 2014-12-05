@@ -5,17 +5,19 @@
   }
   try {
     checkState(future.isDone(),"Tried to set value from future which is not done");
-    V returnValue=getUninterruptibly(future);
-    if (localValues != null) {
-      localValues.set(index,Optional.fromNullable(returnValue));
+    if (future.isCancelled()) {
+      if (allMustSucceed) {
+        super.cancel(false);
+      }
+    }
+ else {
+      V returnValue=getUninterruptibly(future);
+      if (localValues != null) {
+        localValues.set(index,Optional.fromNullable(returnValue));
+      }
     }
   }
- catch (  CancellationException e) {
-    if (allMustSucceed) {
-      cancel(false);
-    }
-  }
-catch (  ExecutionException e) {
+ catch (  ExecutionException e) {
     setExceptionAndMaybeLog(e.getCause());
   }
 catch (  Throwable t) {
