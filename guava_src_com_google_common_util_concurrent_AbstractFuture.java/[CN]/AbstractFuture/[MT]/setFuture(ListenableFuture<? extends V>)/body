@@ -1,31 +1,25 @@
 {
   checkNotNull(future);
-  Object localValue=value;
-  if (localValue == null) {
-    if (future.isDone()) {
-      return completeWithFuture(future,null);
+  SetFuture valueToSet=new SetFuture(future);
+  if (ATOMIC_HELPER.casValue(this,null,valueToSet)) {
+    try {
+      future.addListener(valueToSet,directExecutor());
     }
-    SetFuture valueToSet=new SetFuture(future);
-    if (ATOMIC_HELPER.casValue(this,null,valueToSet)) {
+ catch (    Throwable t) {
+      Failure failure;
       try {
-        future.addListener(valueToSet,directExecutor());
+        failure=new Failure(t);
       }
- catch (      Throwable t) {
-        Failure failure;
-        try {
-          failure=new Failure(t);
-        }
- catch (        Throwable oomMostLikely) {
-          failure=Failure.FALLBACK_INSTANCE;
-        }
-        ATOMIC_HELPER.casValue(this,valueToSet,failure);
+ catch (      Throwable oomMostLikely) {
+        failure=Failure.FALLBACK_INSTANCE;
       }
-      return true;
+      ATOMIC_HELPER.casValue(this,valueToSet,failure);
     }
-    localValue=value;
+    return true;
   }
-  if (localValue instanceof Cancellation) {
-    future.cancel(((Cancellation)localValue).wasInterrupted);
+  Object obj=value;
+  if (obj instanceof Cancellation) {
+    future.cancel(((Cancellation)obj).wasInterrupted);
   }
   return false;
 }
