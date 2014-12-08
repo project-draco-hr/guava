@@ -1,0 +1,4 @@
+{
+  String encoding=charset.name().toUpperCase();
+  return (encoding.endsWith("SHIFT_JIS") || encoding.endsWith("WINDOWS-31J"));
+}
