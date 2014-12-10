@@ -1,0 +1,14 @@
+{
+  assertTrue(new Assignability<From,String>(){
+  }
+.isAssignable());
+  assertFalse(new Assignability<From,Number>(){
+  }
+.isAssignable());
+  assertTrue(new Assignability<From,Iterable<? extends CharSequence>>(){
+  }
+.isAssignable());
+  assertFalse(new Assignability<From,Iterable<Object>>(){
+  }
+.isAssignable());
+}

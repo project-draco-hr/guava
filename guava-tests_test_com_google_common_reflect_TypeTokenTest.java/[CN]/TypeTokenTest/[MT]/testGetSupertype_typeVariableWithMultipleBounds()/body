@@ -1,0 +1,10 @@
+{
+  assertEquals(Number.class,new TypeToken<T>(getClass()){
+  }
+.getSupertype(Number.class).getType());
+  assertEquals(new TypeToken<Iterable<A>>(){
+  }
+,new TypeToken<T>(getClass()){
+  }
+.getSupertype(Iterable.class));
+}
