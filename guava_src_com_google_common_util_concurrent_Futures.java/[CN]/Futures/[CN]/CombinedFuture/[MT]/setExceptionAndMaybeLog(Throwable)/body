@@ -3,11 +3,18 @@
   boolean firstTimeSeeingThisException=true;
   if (allMustSucceed) {
     visibleFromOutputFuture=super.setException(throwable);
-synchronized (seenExceptionsLock) {
-      if (seenExceptions == null) {
-        seenExceptions=Sets.newHashSet();
+    Set<Throwable> seenExceptionsLocal=seenExceptions;
+    if (seenExceptionsLocal == null) {
+      SEEN_EXCEPTIONS_UDPATER.compareAndSet(this,null,Sets.<Throwable>newConcurrentHashSet());
+      seenExceptionsLocal=seenExceptions;
+    }
+    Throwable currentThrowable=throwable;
+    while (currentThrowable != null) {
+      firstTimeSeeingThisException=seenExceptionsLocal.add(currentThrowable);
+      if (!firstTimeSeeingThisException) {
+        break;
       }
-      firstTimeSeeingThisException=seenExceptions.add(throwable);
+      currentThrowable=currentThrowable.getCause();
     }
   }
   if (throwable instanceof Error || (allMustSucceed && !visibleFromOutputFuture && firstTimeSeeingThisException)) {

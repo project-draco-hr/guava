@@ -1,0 +1,17 @@
+{
+  try {
+    MyException exception1=new MyException();
+    MyException exception2=new MyException();
+    MyException exception3=new MyException();
+    MyException sameInstance=new MyException();
+    exception1.initCause(sameInstance);
+    exception2.initCause(sameInstance);
+    exception3.initCause(exception2);
+    Futures.allAsList(immediateFailedFuture(exception1),immediateFailedFuture(exception3)).get();
+    fail();
+  }
+ catch (  ExecutionException e) {
+    assertTrue(e.getCause() instanceof MyException);
+    assertEquals("Nothing should be logged",0,combinedFutureLogHandler.getStoredLogRecords().size());
+  }
+}
