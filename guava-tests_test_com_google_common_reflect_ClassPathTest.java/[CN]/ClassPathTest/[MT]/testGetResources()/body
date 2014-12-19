@@ -7,7 +7,6 @@
     assertThat(resource.toString()).isNotEqualTo(JarFile.MANIFEST_NAME);
     byName.put(resource.getResourceName(),resource);
     byToString.put(resource.toString(),resource);
-    assertNotNull(resource.url());
   }
   String testResourceName="com/google/common/reflect/test.txt";
   assertThat(byName.keySet()).containsAllOf("com/google/common/reflect/ClassPath.class","com/google/common/reflect/ClassPathTest.class","com/google/common/reflect/ClassPathTest$Nested.class",testResourceName);
