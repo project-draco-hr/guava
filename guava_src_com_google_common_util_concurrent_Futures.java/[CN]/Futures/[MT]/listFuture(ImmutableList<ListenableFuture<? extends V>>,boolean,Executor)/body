@@ -1,5 +1,5 @@
 {
-  return new CombinedFuture<V,List<V>>(futures,allMustSucceed,listenerExecutor,new FutureCombiner<V,List<V>>(){
+  return new CollectionFuture<V,List<V>>(futures,allMustSucceed,listenerExecutor,new FutureCollector<V,List<V>>(){
     @Override public List<V> combine(    List<Optional<V>> values){
       List<V> result=Lists.newArrayList();
       for (      Optional<V> element : values) {

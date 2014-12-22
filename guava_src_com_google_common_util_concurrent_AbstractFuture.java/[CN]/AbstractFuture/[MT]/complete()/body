@@ -13,4 +13,5 @@
   for (; reversedList != null; reversedList=reversedList.next) {
     executeListener(reversedList.task,reversedList.executor);
   }
+  done();
 }

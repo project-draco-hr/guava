@@ -27,7 +27,7 @@ catch (  Throwable t) {
     int newRemaining=remaining.decrementAndGet();
     checkState(newRemaining >= 0,"Less than 0 remaining futures");
     if (newRemaining == 0) {
-      FutureCombiner<V,C> localCombiner=combiner;
+      FutureCollector<V,C> localCombiner=combiner;
       if (localCombiner != null && localValues != null) {
         set(localCombiner.combine(localValues));
       }

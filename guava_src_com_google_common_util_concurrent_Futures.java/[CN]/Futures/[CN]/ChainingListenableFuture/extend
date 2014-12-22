@@ -1,1 +1,1 @@
-AbstractFuture<O>
+AbstractFuture.TrustedFuture<O>

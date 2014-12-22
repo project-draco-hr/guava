@@ -1,12 +1,4 @@
 {
-  addListener(new Runnable(){
-    @Override public void run(){
-      CombinedFuture.this.futures=null;
-      CombinedFuture.this.values=null;
-      CombinedFuture.this.combiner=null;
-    }
-  }
-,directExecutor());
   if (futures.isEmpty()) {
     set(combiner.combine(ImmutableList.<Optional<V>>of()));
     return;
