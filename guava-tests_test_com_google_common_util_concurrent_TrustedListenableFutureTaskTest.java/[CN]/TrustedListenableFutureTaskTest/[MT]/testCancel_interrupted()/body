@@ -1,0 +1,48 @@
+{
+  final AtomicBoolean interruptedExceptionThrown=new AtomicBoolean();
+  final CountDownLatch enterLatch=new CountDownLatch(1);
+  final CountDownLatch exitLatch=new CountDownLatch(1);
+  final TrustedListenableFutureTask<Integer> task=TrustedListenableFutureTask.create(new Callable<Integer>(){
+    @Override public Integer call() throws Exception {
+      enterLatch.countDown();
+      try {
+        new CountDownLatch(1).await();
+        throw new AssertionError();
+      }
+ catch (      InterruptedException e) {
+        interruptedExceptionThrown.set(true);
+        throw e;
+      }
+ finally {
+      }
+    }
+  }
+);
+  assertFalse(task.isDone());
+  Thread thread=new Thread(new Runnable(){
+    @Override public void run(){
+      try {
+        task.run();
+      }
+  finally {
+        exitLatch.countDown();
+      }
+    }
+  }
+);
+  thread.start();
+  enterLatch.await();
+  assertFalse(task.isDone());
+  task.cancel(true);
+  assertTrue(task.isDone());
+  assertTrue(task.isCancelled());
+  assertTrue(task.wasInterrupted());
+  try {
+    task.get();
+    fail();
+  }
+ catch (  CancellationException expected) {
+  }
+  exitLatch.await();
+  assertTrue(interruptedExceptionThrown.get());
+}

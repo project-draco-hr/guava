@@ -1,0 +1,15 @@
+{
+  TrustedListenableFutureTask<Integer> task=TrustedListenableFutureTask.create(returning(2));
+  assertFalse(task.isDone());
+  task.cancel(false);
+  assertTrue(task.isDone());
+  assertTrue(task.isCancelled());
+  assertFalse(task.wasInterrupted());
+  try {
+    task.get();
+    fail();
+  }
+ catch (  CancellationException expected) {
+  }
+  assertFalse(Thread.currentThread().isInterrupted());
+}

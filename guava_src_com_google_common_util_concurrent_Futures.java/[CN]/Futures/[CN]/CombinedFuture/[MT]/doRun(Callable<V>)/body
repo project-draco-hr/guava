@@ -1,0 +1,11 @@
+{
+  try {
+    set(task.call());
+  }
+ catch (  ExecutionException e) {
+    setException(e.getCause());
+  }
+catch (  CancellationException e) {
+    cancel(false);
+  }
+}

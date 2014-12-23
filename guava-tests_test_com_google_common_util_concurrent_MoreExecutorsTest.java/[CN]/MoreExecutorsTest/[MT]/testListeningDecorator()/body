@@ -4,7 +4,7 @@
   List<Callable<String>> callables=ImmutableList.of(Callables.returning("x"));
   List<Future<String>> results;
   results=service.invokeAll(callables);
-  assertThat(getOnlyElement(results)).isInstanceOf(ListenableFutureTask.class);
+  assertThat(getOnlyElement(results)).isInstanceOf(TrustedListenableFutureTask.class);
   results=service.invokeAll(callables,1,SECONDS);
-  assertThat(getOnlyElement(results)).isInstanceOf(ListenableFutureTask.class);
+  assertThat(getOnlyElement(results)).isInstanceOf(TrustedListenableFutureTask.class);
 }

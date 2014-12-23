@@ -1,4 +1,4 @@
 {
-  assertTrue(runnable instanceof ListenableFutureTask);
+  assertTrue(runnable instanceof TrustedListenableFutureTask);
   runnable.run();
 }
