@@ -1,3 +1,0 @@
-{
-  return (Character.MIN_HIGH_SURROGATE <= c && c <= Character.MAX_LOW_SURROGATE);
-}
