@@ -1,8 +1,8 @@
 {
-  byte[] array=newPreFilledByteArray(6000);
+  byte[] array=newPreFilledByteArray(10000);
   assertEquals((Integer)42,ByteStreams.readBytes(new ByteArrayInputStream(array),new ByteProcessor<Integer>(){
     @Override public boolean processBytes(    byte[] buf,    int off,    int len){
-      assertEquals(copyOfRange(buf,off,off + len),newPreFilledByteArray(4096));
+      assertEquals(copyOfRange(buf,off,off + len),newPreFilledByteArray(8192));
       return false;
     }
     @Override public Integer getResult(){
