@@ -3,6 +3,6 @@
   Set<MethodSignature> found=getAllFauxveridden(descendant,ancestor);
   Set<MethodSignature> missing=ImmutableSortedSet.copyOf(difference(required,found));
   if (!missing.isEmpty()) {
-    fail(String.format("%s should hide the public static methods declared in %s: %s",descendant.getSimpleName(),ancestor.getSimpleName(),missing));
+    fail(rootLocaleFormat("%s should hide the public static methods declared in %s: %s",descendant.getSimpleName(),ancestor.getSimpleName(),missing));
   }
 }

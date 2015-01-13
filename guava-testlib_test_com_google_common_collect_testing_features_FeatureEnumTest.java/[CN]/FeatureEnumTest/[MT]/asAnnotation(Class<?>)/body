@@ -3,6 +3,6 @@
     return (Class<? extends Annotation>)clazz;
   }
  else {
-    throw new IllegalArgumentException(String.format("%s is not an annotation.",clazz));
+    throw new IllegalArgumentException(rootLocaleFormat("%s is not an annotation.",clazz));
   }
 }

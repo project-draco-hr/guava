@@ -20,5 +20,5 @@
     }
   }
  while (System.nanoTime() - deadline < 0);
-  throw new RuntimeException(String.format("Latch failed to count down within %d second timeout",timeoutSeconds));
+  throw formatRuntimeException("Latch failed to count down within %d second timeout",timeoutSeconds);
 }

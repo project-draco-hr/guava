@@ -1,5 +1,5 @@
 {
   if (a.compareTo(b) >= 0) {
-    fail(String.format("Expected %s to be less than %s",a,b));
+    fail(String.format(Locale.ROOT,"Expected %s to be less than %s",a,b));
   }
 }

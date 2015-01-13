@@ -3,7 +3,7 @@
     new NullPointerTester().testMethod(bar,method);
   }
  catch (  AssertionFailedError incorrectError) {
-    String errorMessage=String.format("Should not have flagged method %s for %s",method.getName(),bar);
+    String errorMessage=rootLocaleFormat("Should not have flagged method %s for %s",method.getName(),bar);
     assertNull(errorMessage,incorrectError);
   }
 }

@@ -1,3 +1,3 @@
 {
-  return String.format("Bar(%s, %s)",actionWhenFirstParamIsNull,actionWhenSecondParamIsNull);
+  return rootLocaleFormat("Bar(%s, %s)",actionWhenFirstParamIsNull,actionWhenSecondParamIsNull);
 }

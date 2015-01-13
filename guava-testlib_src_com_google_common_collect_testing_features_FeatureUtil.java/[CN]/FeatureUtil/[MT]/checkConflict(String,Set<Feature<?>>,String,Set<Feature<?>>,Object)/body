@@ -2,6 +2,6 @@
   Set<Feature<?>> conflictingFeatures;
   conflictingFeatures=intersection(newFeatures,earlierFeatures);
   if (!conflictingFeatures.isEmpty()) {
-    throw new ConflictingRequirementsException(String.format("Annotation requires to be %s features that earlier " + "annotations required to be %s.",newRequirement,earlierRequirement),conflictingFeatures,source);
+    throw new ConflictingRequirementsException(String.format(Locale.ROOT,"Annotation requires to be %s features that earlier " + "annotations required to be %s.",newRequirement,earlierRequirement),conflictingFeatures,source);
   }
 }

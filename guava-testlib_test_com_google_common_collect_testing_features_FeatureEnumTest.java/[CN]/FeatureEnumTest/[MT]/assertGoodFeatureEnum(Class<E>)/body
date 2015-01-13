@@ -6,10 +6,10 @@
         assertGoodTesterAnnotation(asAnnotation(containedClass));
       }
  else {
-        fail(String.format("Feature enum %s contains a class named " + "'Require' but it is not an annotation.",featureEnumClass));
+        fail(rootLocaleFormat("Feature enum %s contains a class named " + "'Require' but it is not an annotation.",featureEnumClass));
       }
       return;
     }
   }
-  fail(String.format("Feature enum %s should contain an " + "annotation named 'Require'.",featureEnumClass));
+  fail(rootLocaleFormat("Feature enum %s should contain an " + "annotation named 'Require'.",featureEnumClass));
 }

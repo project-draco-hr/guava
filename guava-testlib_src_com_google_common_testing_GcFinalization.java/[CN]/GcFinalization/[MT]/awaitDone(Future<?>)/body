@@ -27,5 +27,5 @@ catch (    TimeoutException tryHarder) {
     }
   }
  while (System.nanoTime() - deadline < 0);
-  throw new RuntimeException(String.format("Future not done within %d second timeout",timeoutSeconds));
+  throw formatRuntimeException("Future not done within %d second timeout",timeoutSeconds);
 }
