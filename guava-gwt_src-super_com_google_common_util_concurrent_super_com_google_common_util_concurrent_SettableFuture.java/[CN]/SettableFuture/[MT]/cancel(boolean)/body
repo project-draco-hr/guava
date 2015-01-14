@@ -1,0 +1,8 @@
+{
+  if (!state.canTransitionTo(State.CANCELLED)) {
+    return false;
+  }
+  state=State.CANCELLED;
+  notifyAndClearListeners();
+  return true;
+}

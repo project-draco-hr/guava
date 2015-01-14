@@ -1,0 +1,6 @@
+{
+  for (  Listener listener : listeners) {
+    listener.execute();
+  }
+  listeners=null;
+}

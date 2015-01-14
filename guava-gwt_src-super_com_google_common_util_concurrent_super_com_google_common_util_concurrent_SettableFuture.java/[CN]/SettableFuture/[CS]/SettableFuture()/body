@@ -1,0 +1,4 @@
+{
+  state=State.PENDING;
+  listeners=new ArrayList<Listener>();
+}

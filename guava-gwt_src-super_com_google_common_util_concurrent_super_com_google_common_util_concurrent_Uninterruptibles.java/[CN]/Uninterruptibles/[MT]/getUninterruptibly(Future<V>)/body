@@ -1,0 +1,8 @@
+{
+  try {
+    return future.get();
+  }
+ catch (  InterruptedException e) {
+    throw new IllegalStateException(e);
+  }
+}

@@ -1,0 +1,8 @@
+{
+  if (isDone()) {
+    executor.execute(runnable);
+  }
+ else {
+    listeners.add(new Listener(runnable,executor));
+  }
+}
