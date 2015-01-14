@@ -1,14 +1,16 @@
 {
   return new ExecutionListWrapper(){
-    final NewExecutionListWithoutReverse list=new NewExecutionListWithoutReverse();
+    final OldAbstractFuture<Object> future=new OldAbstractFuture<Object>(){
+    }
+;
     @Override public void add(    Runnable runnable,    Executor executor){
-      list.add(runnable,executor);
+      future.addListener(runnable,executor);
     }
     @Override public void execute(){
-      list.execute();
+      future.set(null);
     }
     @Override public Object getImpl(){
-      return list;
+      return future;
     }
   }
 ;
