@@ -1,15 +1,25 @@
 {
   running=input;
-  addCallback(running,new FutureCallback<V>(){
-    @Override public void onSuccess(    V value){
-      set(value);
-    }
-    @Override public void onFailure(    Throwable t){
-      if (isCancelled()) {
+  input.addListener(new Runnable(){
+    @Override public void run(){
+      ListenableFuture<? extends V> localRunning=running;
+      running=null;
+      if (localRunning == null | isCancelled()) {
         return;
       }
+      Throwable throwable;
       try {
-        setFuture(fallback.create(t));
+        set(getUninterruptibly(localRunning));
+        return;
+      }
+ catch (      ExecutionException e) {
+        throwable=e.getCause();
+      }
+catch (      Throwable e) {
+        throwable=e;
+      }
+      try {
+        setFuture(fallback.create(throwable));
       }
  catch (      Throwable e) {
         setException(e);
