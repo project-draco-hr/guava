@@ -1,9 +1,0 @@
-{
-  if (!state.canTransitionTo(State.FAILURE)) {
-    return false;
-  }
-  this.throwable=throwable;
-  this.state=State.FAILURE;
-  notifyAndClearListeners();
-  return true;
-}

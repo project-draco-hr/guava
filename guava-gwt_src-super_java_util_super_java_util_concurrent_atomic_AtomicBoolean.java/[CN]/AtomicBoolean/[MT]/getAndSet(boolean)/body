@@ -1,0 +1,5 @@
+{
+  boolean current=get();
+  set(newValue);
+  return current;
+}

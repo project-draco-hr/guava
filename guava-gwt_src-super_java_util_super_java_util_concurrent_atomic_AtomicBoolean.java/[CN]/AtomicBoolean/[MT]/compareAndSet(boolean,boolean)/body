@@ -1,0 +1,7 @@
+{
+  if (get() == expect) {
+    set(update);
+    return true;
+  }
+  return false;
+}

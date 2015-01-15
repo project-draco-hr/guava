@@ -1,0 +1,12 @@
+{
+  if (isCancelled()) {
+    future.cancel(mayInterruptIfRunning);
+  }
+  if (!state.permitsPublicUserToTransitionTo(State.DELEGATED)) {
+    return false;
+  }
+  state=State.DELEGATED;
+  this.delegate=future;
+  future.addListener(new SetFuture(future),directExecutor());
+  return true;
+}

@@ -1,9 +1,0 @@
-{
-  if (!state.canTransitionTo(State.VALUE)) {
-    return false;
-  }
-  this.value=value;
-  this.state=State.VALUE;
-  notifyAndClearListeners();
-  return true;
-}

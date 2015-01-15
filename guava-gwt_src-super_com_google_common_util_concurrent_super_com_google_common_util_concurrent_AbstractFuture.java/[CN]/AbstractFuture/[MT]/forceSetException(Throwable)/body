@@ -1,0 +1,5 @@
+{
+  this.throwable=throwable;
+  this.state=State.FAILURE;
+  notifyAndClearListeners();
+}

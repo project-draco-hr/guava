@@ -1,0 +1,28 @@
+{
+  try {
+    I sourceResult;
+    try {
+      sourceResult=getUninterruptibly(inputFuture);
+    }
+ catch (    CancellationException e) {
+      cancel(false);
+      return;
+    }
+catch (    ExecutionException e) {
+      setException(e.getCause());
+      return;
+    }
+    ListenableFuture<? extends O> outputFuture=Preconditions.checkNotNull(function.apply(sourceResult),"AsyncFunction may not return null.");
+    setFuture(outputFuture);
+  }
+ catch (  UndeclaredThrowableException e) {
+    setException(e.getCause());
+  }
+catch (  Throwable t) {
+    setException(t);
+  }
+ finally {
+    function=null;
+    inputFuture=null;
+  }
+}

@@ -1,0 +1,7 @@
+{
+  if (!state.permitsPublicUserToTransitionTo(State.VALUE)) {
+    return false;
+  }
+  forceSet(value);
+  return true;
+}

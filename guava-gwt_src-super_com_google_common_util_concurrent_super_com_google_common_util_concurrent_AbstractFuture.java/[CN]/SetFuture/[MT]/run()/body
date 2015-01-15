@@ -1,0 +1,17 @@
+{
+  if (isCancelled()) {
+    return;
+  }
+  try {
+    forceSet(getUninterruptibly(delegate));
+  }
+ catch (  ExecutionException exception) {
+    forceSetException(exception.getCause());
+  }
+catch (  CancellationException cancellation) {
+    cancel(false);
+  }
+catch (  Throwable t) {
+    forceSetException(t);
+  }
+}

@@ -1,0 +1,4 @@
+{
+  checkNotNull(function);
+  return transform(input,asAsyncFunction(function),executor);
+}
