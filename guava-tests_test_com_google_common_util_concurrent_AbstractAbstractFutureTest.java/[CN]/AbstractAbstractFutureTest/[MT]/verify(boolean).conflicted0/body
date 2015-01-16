@@ -1,5 +1,5 @@
 {
-  if (!actuallyRan) {
-    fail("Runnable was expected to run but it did not.");
+  if (actuallyRan) {
+    fail("Runnable was NOT expected to run but it did.");
   }
 }
