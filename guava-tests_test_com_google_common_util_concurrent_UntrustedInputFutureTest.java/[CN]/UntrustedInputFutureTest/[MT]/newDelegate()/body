@@ -1,0 +1,7 @@
+{
+  AbstractFuture<Integer> future=new AbstractFuture<Integer>(){
+  }
+;
+  assertFalse(future instanceof TrustedFuture);
+  return future;
+}

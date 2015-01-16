@@ -1,0 +1,12 @@
+{
+  future.cancel(true);
+  assertThat(future.set(3)).isFalse();
+  assertThat(future.isDone()).isTrue();
+  assertThat(future.isCancelled()).isTrue();
+  try {
+    future.get();
+    fail();
+  }
+ catch (  CancellationException expected) {
+  }
+}

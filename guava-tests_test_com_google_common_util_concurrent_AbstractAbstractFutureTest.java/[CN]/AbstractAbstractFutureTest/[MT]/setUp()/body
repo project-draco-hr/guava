@@ -1,0 +1,4 @@
+{
+  future=TestedFuture.create();
+  delegate=newDelegate();
+}

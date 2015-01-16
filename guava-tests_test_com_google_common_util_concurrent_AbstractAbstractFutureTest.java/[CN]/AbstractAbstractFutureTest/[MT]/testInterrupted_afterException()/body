@@ -1,0 +1,6 @@
+{
+  future.setException(new Exception());
+  assertThat(future.cancel(true)).isFalse();
+  assertThat(future.isDone()).isTrue();
+  assertThat(future.isCancelled()).isFalse();
+}

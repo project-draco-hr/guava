@@ -1,0 +1,9 @@
+{
+  RunnableVerifier before=new RunnableVerifier();
+  RunnableVerifier after=new RunnableVerifier();
+  future.addListener(before.expectedToRun(),directExecutor());
+  future.cancel(false);
+  future.addListener(after.expectedToRun(),directExecutor());
+  before.verify();
+  after.verify();
+}

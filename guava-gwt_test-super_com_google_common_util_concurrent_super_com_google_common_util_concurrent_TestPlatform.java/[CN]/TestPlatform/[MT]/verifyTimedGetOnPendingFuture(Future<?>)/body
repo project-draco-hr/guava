@@ -1,0 +1,10 @@
+{
+  try {
+    future.get(0,TimeUnit.SECONDS);
+    fail();
+  }
+ catch (  Exception e) {
+    assertThat(e).isInstanceOf(IllegalStateException.class);
+    assertThat(e).hasMessage("Cannot get() on a pending future.");
+  }
+}

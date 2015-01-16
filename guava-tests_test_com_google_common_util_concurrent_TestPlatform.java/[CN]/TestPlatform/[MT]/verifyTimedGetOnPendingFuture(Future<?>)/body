@@ -1,0 +1,11 @@
+{
+  try {
+    getUninterruptibly(future,0,TimeUnit.SECONDS);
+    fail();
+  }
+ catch (  TimeoutException expected) {
+  }
+catch (  ExecutionException e) {
+    failWithCause(e);
+  }
+}

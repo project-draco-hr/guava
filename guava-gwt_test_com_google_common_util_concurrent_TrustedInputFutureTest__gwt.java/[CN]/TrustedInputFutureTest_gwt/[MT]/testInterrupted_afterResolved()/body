@@ -1,0 +1,5 @@
+{
+  com.google.common.util.concurrent.TrustedInputFutureTest testCase=new com.google.common.util.concurrent.TrustedInputFutureTest();
+  testCase.setUp();
+  testCase.testInterrupted_afterResolved();
+}

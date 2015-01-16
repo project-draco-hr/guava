@@ -1,0 +1,10 @@
+{
+  assertThat(future.setFuture(delegate)).isTrue();
+  delegate.set(6);
+  assertThat(delegate.isDone()).isTrue();
+  assertThat(delegate.get()).isEqualTo(6);
+  assertThat(delegate.get(0,TimeUnit.SECONDS)).isEqualTo(6);
+  assertThat(future.isDone()).isTrue();
+  assertThat(future.get()).isEqualTo(6);
+  assertThat(future.get(0,TimeUnit.SECONDS)).isEqualTo(6);
+}
