@@ -3,6 +3,8 @@
   assertThat(future.cancel(false)).isTrue();
   assertThat(delegate.isDone()).isTrue();
   assertThat(delegate.isCancelled()).isTrue();
+  assertThat(delegate.wasInterrupted()).isFalse();
   assertThat(future.isDone()).isTrue();
   assertThat(future.isCancelled()).isTrue();
+  assertThat(future.wasInterrupted()).isFalse();
 }

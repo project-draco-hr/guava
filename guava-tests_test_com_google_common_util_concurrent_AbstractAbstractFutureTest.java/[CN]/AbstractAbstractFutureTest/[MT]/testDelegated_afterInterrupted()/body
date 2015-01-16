@@ -1,7 +1,7 @@
 {
-  future.cancel(false);
+  future.cancel(true);
   assertThat(future.setFuture(delegate)).isFalse();
   assertThat(future.isCancelled()).isTrue();
   assertThat(delegate.isCancelled()).isTrue();
-  assertThat(delegate.wasInterrupted()).isFalse();
+  assertThat(delegate.wasInterrupted()).isTrue();
 }
