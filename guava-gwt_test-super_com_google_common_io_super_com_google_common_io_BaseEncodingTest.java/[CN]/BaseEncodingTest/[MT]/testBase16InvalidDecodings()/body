@@ -1,0 +1,6 @@
+{
+  assertFailsToDecode(base16(),"\n","Unrecognized character: 0xa");
+  assertFailsToDecode(base16(),"EFG","Unrecognized character: G");
+  assertFailsToDecode(base16(),"A");
+  assertFailsToDecode(base16(),"ABC");
+}

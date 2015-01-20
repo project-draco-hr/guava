@@ -1,0 +1,20 @@
+{
+  try {
+    encoding.decode(cannotDecode);
+    fail("Expected IllegalArgumentException");
+  }
+ catch (  IllegalArgumentException expected) {
+    if (expectedMessage != null) {
+      assertThat(expected.getCause()).hasMessage(expectedMessage);
+    }
+  }
+  try {
+    encoding.decodeChecked(cannotDecode);
+    fail("Expected DecodingException");
+  }
+ catch (  DecodingException expected) {
+    if (expectedMessage != null) {
+      assertThat(expected).hasMessage(expectedMessage);
+    }
+  }
+}
