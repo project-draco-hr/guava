@@ -1,0 +1,6 @@
+{
+  ListenableFuture<Object> delegate=Futures.immediateFuture(null);
+  ScheduledExecutorService service=TestingExecutors.sameThreadScheduledExecutor();
+  ListenableFuture<Object> timeoutFuture=Futures.withTimeout(delegate,0,TimeUnit.MILLISECONDS,service);
+  timeoutFuture.get(1,TimeUnit.SECONDS);
+}

@@ -1,0 +1,28 @@
+{
+  TimeoutFuture<V> timeoutFuture=timeoutFutureRef;
+  if (timeoutFuture == null) {
+    return;
+  }
+  ListenableFuture<V> delegate=timeoutFuture.delegateRef;
+  if (delegate == null) {
+    return;
+  }
+  timeoutFutureRef=null;
+  Future<?> timer=timeoutFuture.timer;
+  timeoutFuture.delegateRef=null;
+  timeoutFuture.timer=null;
+  if (delegate.isDone()) {
+    timeoutFuture.setFuture(delegate);
+    if (timer != null) {
+      timer.cancel(false);
+    }
+  }
+ else {
+    try {
+      delegate.cancel(true);
+    }
+  finally {
+      timeoutFuture.setException(new TimeoutException("Future timed out: " + delegate));
+    }
+  }
+}
