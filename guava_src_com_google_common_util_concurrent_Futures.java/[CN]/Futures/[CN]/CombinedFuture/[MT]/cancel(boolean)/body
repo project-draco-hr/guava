@@ -1,8 +1,10 @@
 {
-  ImmutableList<ListenableFuture<?>> futures=this.futures;
+  ImmutableList<ListenableFuture<?>> localFutures=this.futures;
   if (super.cancel(mayInterruptIfRunning)) {
-    for (    ListenableFuture<?> future : futures) {
-      future.cancel(mayInterruptIfRunning);
+    if (localFutures != null) {
+      for (      ListenableFuture<?> future : localFutures) {
+        future.cancel(mayInterruptIfRunning);
+      }
     }
     return true;
   }
