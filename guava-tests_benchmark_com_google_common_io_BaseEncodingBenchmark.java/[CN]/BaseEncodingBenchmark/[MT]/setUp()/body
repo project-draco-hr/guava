@@ -1,7 +1,8 @@
 {
   Random rng=new Random();
-  for (int i=0; i < inputs.length; i++) {
-    inputs[i]=new byte[n];
-    rng.nextBytes(inputs[i]);
+  for (int i=0; i < encodingInputs.length; i++) {
+    encodingInputs[i]=new byte[n];
+    rng.nextBytes(encodingInputs[i]);
+    decodingInputs[i]=encoding.encoding.encode(encodingInputs[i]);
   }
 }

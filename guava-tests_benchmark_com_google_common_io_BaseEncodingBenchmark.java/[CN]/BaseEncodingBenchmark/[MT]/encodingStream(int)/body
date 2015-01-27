@@ -1,0 +1,11 @@
+{
+  int tmp=0;
+  for (int i=0; i < reps; i++) {
+    StringWriter target=new StringWriter(2 * n);
+    OutputStream encodingStream=encoding.encoding.encodingStream(target);
+    encodingStream.write(encodingInputs[i & INPUTS_MASK]);
+    encodingStream.close();
+    tmp+=target.getBuffer().length();
+  }
+  return tmp;
+}
