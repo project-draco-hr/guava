@@ -12,6 +12,6 @@ class FakeOp implements Runnable {
   e.execute(new FakeOp(0));
   e.execute(new FakeOp(1));
   e.execute(new FakeOp(2));
-  fakePool.runAll();
+  fakePool.runNext();
   assertEquals(ImmutableList.of(0,1,2),callOrder);
 }

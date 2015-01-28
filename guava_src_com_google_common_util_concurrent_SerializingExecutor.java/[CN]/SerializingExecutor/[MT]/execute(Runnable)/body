@@ -1,6 +1,25 @@
 {
+  Preconditions.checkNotNull(r,"'r' must not be null.");
+  boolean scheduleTaskRunner=false;
 synchronized (internalLock) {
-    queue.add(task);
+    waitQueue.add(r);
+    if (!isThreadScheduled) {
+      isThreadScheduled=true;
+      scheduleTaskRunner=true;
+    }
   }
-  startQueueWorker();
+  if (scheduleTaskRunner) {
+    boolean threw=true;
+    try {
+      executor.execute(taskRunner);
+      threw=false;
+    }
+  finally {
+      if (threw) {
+synchronized (internalLock) {
+          isThreadScheduled=false;
+        }
+      }
+    }
+  }
 }

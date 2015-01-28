@@ -9,6 +9,6 @@
 ;
   e.execute(runMe);
   e.execute(runMe);
-  fakePool.runAll();
+  fakePool.runNext();
   assertEquals(2,numCalls.get());
 }
