@@ -1,0 +1,13 @@
+{
+  try {
+    if (!isDone()) {
+      doRun(task);
+    }
+  }
+ catch (  Throwable t) {
+    setException(t);
+  }
+ finally {
+    task=null;
+  }
+}

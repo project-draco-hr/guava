@@ -1,0 +1,7 @@
+{
+  if (super.cancel(mayInterruptIfRunning)) {
+    task=null;
+    return true;
+  }
+  return false;
+}

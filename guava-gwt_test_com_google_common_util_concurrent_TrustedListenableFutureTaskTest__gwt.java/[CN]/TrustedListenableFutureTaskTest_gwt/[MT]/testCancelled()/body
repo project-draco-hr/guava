@@ -1,0 +1,4 @@
+{
+  com.google.common.util.concurrent.TrustedListenableFutureTaskTest testCase=new com.google.common.util.concurrent.TrustedListenableFutureTaskTest();
+  testCase.testCancelled();
+}

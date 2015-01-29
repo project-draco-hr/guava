@@ -1,0 +1,19 @@
+{
+  final Exception e=new Exception();
+  TrustedListenableFutureTask<Integer> task=TrustedListenableFutureTask.create(new Callable<Integer>(){
+    @Override public Integer call() throws Exception {
+      throw e;
+    }
+  }
+);
+  task.run();
+  assertTrue(task.isDone());
+  assertFalse(task.isCancelled());
+  try {
+    task.get();
+    fail();
+  }
+ catch (  ExecutionException executionException) {
+    assertEquals(e,executionException.getCause());
+  }
+}

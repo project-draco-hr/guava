@@ -3,4 +3,5 @@
     listener.execute();
   }
   listeners=null;
+  done();
 }
