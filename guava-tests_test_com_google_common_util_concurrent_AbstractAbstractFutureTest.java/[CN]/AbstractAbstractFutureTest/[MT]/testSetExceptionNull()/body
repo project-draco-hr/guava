@@ -1,6 +1,6 @@
 {
   try {
-    future.setFuture(null);
+    future.setException(null);
     fail();
   }
  catch (  NullPointerException expected) {

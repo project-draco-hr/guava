@@ -1,2 +1,2 @@
 AbstractFuture<Integer> future
-int expectedResult
+Integer expectedResult

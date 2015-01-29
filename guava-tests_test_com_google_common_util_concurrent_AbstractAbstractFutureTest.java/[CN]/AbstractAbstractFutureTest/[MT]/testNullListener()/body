@@ -1,0 +1,8 @@
+{
+  try {
+    future.addListener(null,directExecutor());
+    fail();
+  }
+ catch (  NullPointerException expected) {
+  }
+}

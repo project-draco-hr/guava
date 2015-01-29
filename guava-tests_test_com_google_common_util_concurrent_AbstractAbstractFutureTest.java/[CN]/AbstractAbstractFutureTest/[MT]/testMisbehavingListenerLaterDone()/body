@@ -1,12 +1,18 @@
 {
 class BadRunnableException extends RuntimeException {
   }
+  CountingRunnable before=new CountingRunnable();
   Runnable bad=new Runnable(){
     @Override public void run(){
       throw new BadRunnableException();
     }
   }
 ;
+  CountingRunnable after=new CountingRunnable();
+  future.addListener(before,directExecutor());
   future.addListener(bad,directExecutor());
+  future.addListener(after,directExecutor());
   future.set(1);
+  before.assertRun();
+  after.assertRun();
 }

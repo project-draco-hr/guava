@@ -1,0 +1,4 @@
+{
+  future.set(null);
+  assertSuccessful(future,null);
+}

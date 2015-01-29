@@ -1,4 +1,4 @@
 {
-  this.command=command;
-  this.executor=executor;
+  this.command=checkNotNull(command);
+  this.executor=checkNotNull(executor);
 }

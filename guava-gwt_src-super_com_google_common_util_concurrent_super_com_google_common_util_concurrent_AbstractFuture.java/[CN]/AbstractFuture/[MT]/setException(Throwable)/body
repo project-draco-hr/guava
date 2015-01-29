@@ -1,4 +1,5 @@
 {
+  checkNotNull(throwable);
   if (!state.permitsPublicUserToTransitionTo(State.FAILURE)) {
     return false;
   }
