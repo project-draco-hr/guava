@@ -15,7 +15,7 @@
     sample.oneDeclared();
     fail();
   }
- catch (  RuntimeException e) {
-    assertTrue(e.getCause() instanceof SomeOtherCheckedException);
+ catch (  RuntimeException expected) {
+    assertTrue(expected.getCause() instanceof SomeOtherCheckedException);
   }
 }

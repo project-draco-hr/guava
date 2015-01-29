@@ -1,0 +1,6 @@
+{
+  recursionCount=stackDepth - new Throwable().getStackTrace().length - 1;
+  if (recursionCount < 0) {
+    throw new SkipThisScenarioException();
+  }
+}

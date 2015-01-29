@@ -15,6 +15,6 @@
     sample.oneDeclared();
     fail();
   }
- catch (  SomeCheckedException e) {
+ catch (  SomeCheckedException expected) {
   }
 }

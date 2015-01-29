@@ -1,0 +1,14 @@
+{
+  boolean dummy=false;
+  for (int i=0; i < reps; i++) {
+    int f=0;
+    Throwable t=new Throwable();
+    for (    StackTraceElement ste : getStackTrace(t)) {
+      dummy|=ste == duh;
+      if (f++ == breakAt) {
+        break;
+      }
+    }
+  }
+  return dummy;
+}
