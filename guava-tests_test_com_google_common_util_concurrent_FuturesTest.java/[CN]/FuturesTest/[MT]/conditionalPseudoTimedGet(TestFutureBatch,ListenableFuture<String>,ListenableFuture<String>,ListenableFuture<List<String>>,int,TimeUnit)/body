@@ -1,3 +1,0 @@
-{
-  return (inputs.hasDelayed(iFuture,jFuture)) ? pseudoTimedGet(future,timeout,unit) : pseudoTimedGet(future,2500,MILLISECONDS);
-}

@@ -1,0 +1,3 @@
+{
+  return (inputs.hasDelayed(iFuture,jFuture)) ? pseudoTimedGetUninterruptibly(future,timeout,unit) : pseudoTimedGetUninterruptibly(future,2500,MILLISECONDS);
+}

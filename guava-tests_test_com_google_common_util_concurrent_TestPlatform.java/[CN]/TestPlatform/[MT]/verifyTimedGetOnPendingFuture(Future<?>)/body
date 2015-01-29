@@ -1,11 +1,11 @@
 {
   try {
-    getUninterruptibly(future,0,TimeUnit.SECONDS);
+    getUninterruptibly(future,0,SECONDS);
     fail();
   }
  catch (  TimeoutException expected) {
   }
 catch (  ExecutionException e) {
-    failWithCause(e);
+    throw failureWithCause(e,"");
   }
 }

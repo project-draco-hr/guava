@@ -23,7 +23,7 @@ catch (        TimeoutException e) {
           inputs.assertHasDelayed(iFuture,jFuture,e);
         }
         try {
-          List<String> result=conditionalPseudoTimedGet(inputs,iFuture,jFuture,future,20,MILLISECONDS);
+          List<String> result=conditionalPseudoTimedGetUninterruptibly(inputs,iFuture,jFuture,future,20,MILLISECONDS);
           assertTrue("Got " + result,Arrays.asList("a",null).containsAll(result));
         }
  catch (        CancellationException e) {

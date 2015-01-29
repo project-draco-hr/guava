@@ -7,17 +7,14 @@
   }
 );
   try {
-    return waiter.get(timeout,unit);
+    return getUninterruptibly(waiter,timeout,unit);
   }
  catch (  ExecutionException e) {
     propagateIfInstanceOf(e.getCause(),ExecutionException.class);
     propagateIfInstanceOf(e.getCause(),CancellationException.class);
-    AssertionFailedError error=new AssertionFailedError("Unexpected exception");
-    error.initCause(e);
-    throw error;
+    throw failureWithCause(e,"Unexpected exception");
   }
  finally {
     executor.shutdownNow();
-    assertTrue(executor.awaitTermination(10,SECONDS));
   }
 }

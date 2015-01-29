@@ -1,3 +1,12 @@
 {
-  verifyTimedGetOnPendingFuture(future);
+  checkNotNull(future);
+  try {
+    pseudoTimedGetUninterruptibly(future,10,MILLISECONDS);
+    fail();
+  }
+ catch (  TimeoutException expected) {
+  }
+catch (  ExecutionException e) {
+    throw failureWithCause(e,"");
+  }
 }
