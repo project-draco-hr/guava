@@ -1,0 +1,8 @@
+{
+  try {
+    Shorts.fromByteArray(new byte[]{0x01});
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}

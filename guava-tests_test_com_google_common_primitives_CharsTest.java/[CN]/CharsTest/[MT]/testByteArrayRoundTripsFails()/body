@@ -1,0 +1,8 @@
+{
+  try {
+    Chars.fromByteArray(new byte[]{0x11});
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}

@@ -1,10 +1,4 @@
 {
   assertEquals((short)0x2345,Shorts.fromByteArray(new byte[]{0x23,0x45}));
   assertEquals((short)0xFEDC,Shorts.fromByteArray(new byte[]{(byte)0xFE,(byte)0xDC}));
-  try {
-    Shorts.fromByteArray(new byte[]{0x01});
-    fail();
-  }
- catch (  IllegalArgumentException expected) {
-  }
 }

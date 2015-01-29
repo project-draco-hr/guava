@@ -1,10 +1,4 @@
 {
   assertEquals('\u2345',Chars.fromByteArray(new byte[]{0x23,0x45,(byte)0xDC}));
   assertEquals('\uFEDC',Chars.fromByteArray(new byte[]{(byte)0xFE,(byte)0xDC}));
-  try {
-    Chars.fromByteArray(new byte[Chars.BYTES - 1]);
-    fail();
-  }
- catch (  IllegalArgumentException expected) {
-  }
 }
