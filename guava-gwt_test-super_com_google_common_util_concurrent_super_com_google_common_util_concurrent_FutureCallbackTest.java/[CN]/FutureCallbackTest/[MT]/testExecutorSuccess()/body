@@ -1,0 +1,8 @@
+{
+  CountingSameThreadExecutor ex=new CountingSameThreadExecutor();
+  SettableFuture<String> f=SettableFuture.create();
+  MockCallback callback=new MockCallback("foo");
+  Futures.addCallback(f,callback,ex);
+  f.set("foo");
+  assertEquals(1,ex.runCount);
+}

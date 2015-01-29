@@ -1,0 +1,8 @@
+{
+  if (error != null) {
+    throw error;
+  }
+ else {
+    throw runtime;
+  }
+}

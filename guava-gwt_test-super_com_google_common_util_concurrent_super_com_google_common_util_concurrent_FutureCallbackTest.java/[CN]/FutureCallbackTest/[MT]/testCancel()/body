@@ -1,0 +1,17 @@
+{
+  SettableFuture<String> f=SettableFuture.create();
+  FutureCallback<String> callback=new FutureCallback<String>(){
+    private boolean called=false;
+    @Override public void onSuccess(    String result){
+      fail("Was not expecting onSuccess() to be called.");
+    }
+    @Override public synchronized void onFailure(    Throwable t){
+      assertFalse(called);
+      assertTrue(t instanceof CancellationException);
+      called=true;
+    }
+  }
+;
+  Futures.addCallback(f,callback);
+  f.cancel(true);
+}

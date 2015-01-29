@@ -1,0 +1,4 @@
+{
+  com.google.common.util.concurrent.FutureCallbackTest testCase=new com.google.common.util.concurrent.FutureCallbackTest();
+  testCase.testExecutorSuccess();
+}
