@@ -1,16 +1,5 @@
 {
-  try {
-    for (    long a : UNSIGNED_INTS) {
-      assertEquals((int)a,UnsignedInts.parseUnsignedInt(Long.toString(a)));
-    }
-  }
- catch (  NumberFormatException e) {
-    fail(e.getMessage());
-  }
-  try {
-    UnsignedInts.parseUnsignedInt(Long.toString(1L << 32));
-    fail("Expected NumberFormatException");
-  }
- catch (  NumberFormatException expected) {
+  for (  long a : UNSIGNED_INTS) {
+    assertEquals((int)a,UnsignedInts.parseUnsignedInt(Long.toString(a)));
   }
 }

@@ -4,16 +4,4 @@
       assertEquals((int)a,UnsignedInts.parseUnsignedInt(Long.toString(a,radix),radix));
     }
   }
-  for (int radix=Character.MIN_RADIX; radix <= Character.MAX_RADIX; radix++) {
-    String maxAsString=Long.toString((1L << 32) - 1,radix);
-    assertEquals(-1,UnsignedInts.parseUnsignedInt(maxAsString,radix));
-    try {
-      long overflow=1L << 32;
-      String overflowAsString=Long.toString(overflow,radix);
-      UnsignedInts.parseUnsignedInt(overflowAsString,radix);
-      fail();
-    }
- catch (    NumberFormatException expected) {
-    }
-  }
 }
