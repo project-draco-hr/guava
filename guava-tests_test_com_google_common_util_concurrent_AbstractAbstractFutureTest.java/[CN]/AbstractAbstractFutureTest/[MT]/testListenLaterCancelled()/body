@@ -1,0 +1,7 @@
+{
+  CountingRunnable listener=new CountingRunnable();
+  future.addListener(listener,directExecutor());
+  listener.assertNotRun();
+  future.cancel(false);
+  listener.assertRun();
+}

@@ -1,0 +1,5 @@
+{
+  delegate.set(5);
+  assertThat(future.setFuture(delegate)).isTrue();
+  assertSuccessful(future,5);
+}

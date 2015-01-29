@@ -1,4 +1,0 @@
-{
-  expectation=Expectation.EXPECTED_TO_RUN;
-  return this;
-}

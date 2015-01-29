@@ -1,7 +1,0 @@
-{
-  assertThat(future.set(1)).isTrue();
-  assertThat(future.isDone()).isTrue();
-  assertThat(future.isCancelled()).isFalse();
-  assertThat(future.get()).is(1);
-  assertThat(future.get(0,TimeUnit.SECONDS)).is(1);
-}

@@ -1,6 +1,0 @@
-{
-  future.set(7);
-  delegate.set(5);
-  assertThat(future.setFuture(delegate)).isFalse();
-  assertThat(future.get()).isEqualTo(7);
-}

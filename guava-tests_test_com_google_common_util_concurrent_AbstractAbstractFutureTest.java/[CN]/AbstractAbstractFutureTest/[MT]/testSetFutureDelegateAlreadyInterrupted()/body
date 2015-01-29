@@ -1,0 +1,5 @@
+{
+  delegate.cancel(true);
+  assertThat(future.setFuture(delegate)).isTrue();
+  assertCancelled(future,delegate instanceof TrustedFuture);
+}

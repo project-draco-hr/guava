@@ -1,0 +1,4 @@
+{
+  assertThat(future.setFuture(delegate)).isTrue();
+  assertSetAsynchronously(future);
+}

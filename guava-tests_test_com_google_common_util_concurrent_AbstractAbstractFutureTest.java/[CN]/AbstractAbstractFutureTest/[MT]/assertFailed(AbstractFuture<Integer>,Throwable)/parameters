@@ -1,0 +1,2 @@
+AbstractFuture<Integer> future
+Throwable expectedException

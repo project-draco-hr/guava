@@ -1,0 +1,6 @@
+{
+  assertDone(future);
+  assertThat(future.isCancelled()).isFalse();
+  assertThat(future.get()).is(expectedResult);
+  assertThat(future.get(0,SECONDS)).is(expectedResult);
+}

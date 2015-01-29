@@ -1,7 +1,0 @@
-{
-  future.set(3);
-  assertThat(future.setException(new Exception())).isFalse();
-  assertThat(future.isDone()).isTrue();
-  assertThat(future.isCancelled()).isFalse();
-  assertThat(future.get()).is(3);
-}

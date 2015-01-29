@@ -1,0 +1,4 @@
+{
+  assertThat(future.cancel(false)).isTrue();
+  assertCancelled(future,false);
+}

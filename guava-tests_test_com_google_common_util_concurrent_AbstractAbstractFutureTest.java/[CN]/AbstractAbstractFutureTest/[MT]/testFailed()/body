@@ -1,0 +1,5 @@
+{
+  Exception cause=new Exception();
+  assertThat(future.setException(cause)).isTrue();
+  assertFailed(future,cause);
+}

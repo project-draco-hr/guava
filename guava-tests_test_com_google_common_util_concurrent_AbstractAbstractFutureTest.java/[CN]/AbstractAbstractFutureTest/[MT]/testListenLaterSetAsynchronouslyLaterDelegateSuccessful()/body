@@ -1,0 +1,13 @@
+{
+  CountingRunnable before=new CountingRunnable();
+  CountingRunnable inBetween=new CountingRunnable();
+  CountingRunnable after=new CountingRunnable();
+  future.addListener(before,directExecutor());
+  future.setFuture(delegate);
+  future.addListener(inBetween,directExecutor());
+  delegate.set(1);
+  future.addListener(after,directExecutor());
+  before.assertRun();
+  inBetween.assertRun();
+  after.assertRun();
+}

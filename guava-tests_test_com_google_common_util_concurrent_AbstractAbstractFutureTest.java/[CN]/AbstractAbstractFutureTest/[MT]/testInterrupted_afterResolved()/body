@@ -1,6 +1,0 @@
-{
-  future.set(1);
-  assertThat(future.cancel(true)).isFalse();
-  assertThat(future.isDone()).isTrue();
-  assertThat(future.isCancelled()).isFalse();
-}

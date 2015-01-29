@@ -1,5 +1,0 @@
-{
-  com.google.common.util.concurrent.UntrustedInputFutureTest testCase=new com.google.common.util.concurrent.UntrustedInputFutureTest();
-  testCase.setUp();
-  testCase.testListenToResolved_misbehavingListener();
-}

@@ -1,7 +1,0 @@
-{
-  future.setFuture(delegate);
-  assertThat(future.set(3)).isFalse();
-  assertThat(future.isDone()).isFalse();
-  assertThat(future.isCancelled()).isFalse();
-  verifyGetOnPendingFuture(future);
-}

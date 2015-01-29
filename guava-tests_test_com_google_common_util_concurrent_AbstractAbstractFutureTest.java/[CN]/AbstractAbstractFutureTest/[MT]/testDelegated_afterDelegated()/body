@@ -1,8 +1,0 @@
-{
-  TestedFuture<Integer> delegated2=TestedFuture.create();
-  assertThat(future.setFuture(delegate)).isTrue();
-  assertThat(future.setFuture(delegated2)).isFalse();
-  delegate.set(1);
-  delegated2.set(2);
-  assertThat(future.get()).isEqualTo(1);
-}

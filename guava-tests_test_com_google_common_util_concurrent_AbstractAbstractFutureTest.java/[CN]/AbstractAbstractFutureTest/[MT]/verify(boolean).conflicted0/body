@@ -1,5 +1,0 @@
-{
-  if (actuallyRan) {
-    fail("Runnable was NOT expected to run but it did.");
-  }
-}

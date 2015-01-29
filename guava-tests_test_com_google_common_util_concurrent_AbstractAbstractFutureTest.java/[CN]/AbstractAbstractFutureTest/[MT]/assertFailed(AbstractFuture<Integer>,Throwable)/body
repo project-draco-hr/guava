@@ -1,0 +1,18 @@
+{
+  assertDone(future);
+  assertThat(future.isCancelled()).isFalse();
+  try {
+    future.get();
+    fail();
+  }
+ catch (  ExecutionException e) {
+    assertThat(e.getCause()).isSameAs(expectedException);
+  }
+  try {
+    future.get(0,SECONDS);
+    fail();
+  }
+ catch (  ExecutionException e) {
+    assertThat(e.getCause()).isSameAs(expectedException);
+  }
+}

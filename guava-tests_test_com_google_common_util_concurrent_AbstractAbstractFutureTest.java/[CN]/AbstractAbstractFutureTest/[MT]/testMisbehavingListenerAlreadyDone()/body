@@ -1,0 +1,12 @@
+{
+class BadRunnableException extends RuntimeException {
+  }
+  Runnable bad=new Runnable(){
+    @Override public void run(){
+      throw new BadRunnableException();
+    }
+  }
+;
+  future.set(1);
+  future.addListener(bad,directExecutor());
+}

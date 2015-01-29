@@ -1,17 +1,4 @@
 {
-  future.cancel(true);
-  assertThat(future.isDone()).isTrue();
-  assertThat(future.isCancelled()).isTrue();
-  try {
-    future.get();
-    fail();
-  }
- catch (  CancellationException expected) {
-  }
-  try {
-    future.get(0,TimeUnit.SECONDS);
-    fail();
-  }
- catch (  CancellationException expected) {
-  }
+  assertThat(future.cancel(true)).isTrue();
+  assertCancelled(future,true);
 }

@@ -1,0 +1,9 @@
+{
+  assertThat(future.isDone()).isFalse();
+  assertThat(future.isCancelled()).isFalse();
+  CountingRunnable listener=new CountingRunnable();
+  future.addListener(listener,directExecutor());
+  listener.assertNotRun();
+  verifyGetOnPendingFuture(future);
+  verifyTimedGetOnPendingFuture(future);
+}

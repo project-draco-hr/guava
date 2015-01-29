@@ -1,0 +1,4 @@
+{
+  assertThat(future.set(1)).isTrue();
+  assertSuccessful(future,1);
+}

@@ -1,8 +1,0 @@
-{
-  assertThat(future.setFuture(delegate)).isTrue();
-  delegate.cancel(true);
-  assertThat(delegate.isDone()).isTrue();
-  assertThat(delegate.isCancelled()).isTrue();
-  assertThat(future.isDone()).isTrue();
-  assertThat(future.isCancelled()).isTrue();
-}

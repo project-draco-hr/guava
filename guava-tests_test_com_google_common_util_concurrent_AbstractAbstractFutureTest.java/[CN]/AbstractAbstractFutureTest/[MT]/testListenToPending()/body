@@ -1,5 +1,0 @@
-{
-  RunnableVerifier before=new RunnableVerifier();
-  future.addListener(before.expectedToNotRun(),directExecutor());
-  before.verify();
-}
