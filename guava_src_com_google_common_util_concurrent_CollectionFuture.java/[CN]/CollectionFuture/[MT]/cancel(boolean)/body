@@ -1,0 +1,10 @@
+{
+  ImmutableCollection<? extends ListenableFuture<?>> futuresToCancel=futures;
+  boolean cancelled=super.cancel(mayInterruptIfRunning);
+  if (cancelled && futuresToCancel != null) {
+    for (    ListenableFuture<?> future : futuresToCancel) {
+      future.cancel(mayInterruptIfRunning);
+    }
+  }
+  return cancelled;
+}

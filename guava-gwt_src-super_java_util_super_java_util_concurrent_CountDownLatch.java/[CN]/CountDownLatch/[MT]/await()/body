@@ -1,0 +1,5 @@
+{
+  if (count > 0) {
+    throw new IllegalStateException("May not block. Count is " + count);
+  }
+}

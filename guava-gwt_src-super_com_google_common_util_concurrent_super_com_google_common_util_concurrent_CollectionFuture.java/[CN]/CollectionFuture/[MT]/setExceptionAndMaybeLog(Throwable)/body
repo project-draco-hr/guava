@@ -1,0 +1,23 @@
+{
+  boolean visibleFromOutputFuture=false;
+  boolean firstTimeSeeingThisException=true;
+  if (allMustSucceed) {
+    visibleFromOutputFuture=super.setException(throwable);
+    Set<Throwable> seenExceptionsLocal=seenExceptions;
+    if (seenExceptionsLocal == null) {
+      seenExceptions=Sets.<Throwable>newConcurrentHashSet();
+      seenExceptionsLocal=seenExceptions;
+    }
+    Throwable currentThrowable=throwable;
+    while (currentThrowable != null) {
+      firstTimeSeeingThisException=seenExceptionsLocal.add(currentThrowable);
+      if (!firstTimeSeeingThisException) {
+        break;
+      }
+      currentThrowable=currentThrowable.getCause();
+    }
+  }
+  if (throwable instanceof Error || (allMustSucceed && !visibleFromOutputFuture && firstTimeSeeingThisException)) {
+    logger.log(Level.SEVERE,"input future failed.",throwable);
+  }
+}
