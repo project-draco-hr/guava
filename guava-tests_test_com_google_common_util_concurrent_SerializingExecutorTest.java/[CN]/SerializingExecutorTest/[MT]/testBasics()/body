@@ -3,6 +3,7 @@
   Runnable intCounter=new Runnable(){
     @Override public void run(){
       totalCalls.incrementAndGet();
+      assertFalse(fakePool.hasNext());
     }
   }
 ;
@@ -11,14 +12,14 @@
   assertTrue(fakePool.hasNext());
   e.execute(intCounter);
   assertEquals(0,totalCalls.get());
-  fakePool.runNext();
+  fakePool.runAll();
   assertEquals(2,totalCalls.get());
   assertFalse(fakePool.hasNext());
   e.execute(intCounter);
   e.execute(intCounter);
   e.execute(intCounter);
   assertEquals(2,totalCalls.get());
-  fakePool.runNext();
+  fakePool.runAll();
   assertEquals(5,totalCalls.get());
   assertFalse(fakePool.hasNext());
 }

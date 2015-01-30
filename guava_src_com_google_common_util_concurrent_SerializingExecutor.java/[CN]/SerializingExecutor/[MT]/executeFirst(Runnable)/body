@@ -1,6 +1,6 @@
 {
 synchronized (internalLock) {
-    queue.add(task);
+    queue.addFirst(task);
   }
   startQueueWorker();
 }

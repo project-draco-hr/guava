@@ -1,0 +1,15 @@
+{
+  final AtomicInteger numCalls=new AtomicInteger();
+  Runnable runMe=new Runnable(){
+    @Override public void run(){
+      numCalls.incrementAndGet();
+    }
+  }
+;
+  Thread.currentThread().interrupt();
+  e.execute(runMe);
+  e.execute(runMe);
+  fakePool.runAll();
+  assertEquals(2,numCalls.get());
+  assertTrue(Thread.interrupted());
+}

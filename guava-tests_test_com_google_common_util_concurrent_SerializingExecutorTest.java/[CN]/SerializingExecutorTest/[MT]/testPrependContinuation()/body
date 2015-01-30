@@ -9,9 +9,9 @@ class FakeOp implements Runnable {
       callOrder.add(op);
     }
   }
-  e.execute(new FakeOp(0));
   e.execute(new FakeOp(1));
   e.execute(new FakeOp(2));
+  e.executeFirst(new FakeOp(0));
   fakePool.runAll();
   assertEquals(ImmutableList.of(0,1,2),callOrder);
 }
