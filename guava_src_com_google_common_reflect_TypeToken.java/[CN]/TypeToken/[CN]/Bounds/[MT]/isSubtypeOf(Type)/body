@@ -1,6 +1,6 @@
 {
   for (  Type bound : bounds) {
-    if (of(bound).extendsFrom(supertype) == target) {
+    if (of(bound).isSubtypeOf(supertype) == target) {
       return target;
     }
   }

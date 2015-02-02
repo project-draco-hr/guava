@@ -1,7 +1,7 @@
 {
   TypeToken<?> type=of(subtype);
   for (  Type bound : bounds) {
-    if (type.extendsFrom(bound) == target) {
+    if (type.isSubtypeOf(bound) == target) {
       return target;
     }
   }

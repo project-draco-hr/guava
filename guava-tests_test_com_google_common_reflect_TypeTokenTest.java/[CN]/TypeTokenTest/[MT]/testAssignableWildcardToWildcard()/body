@@ -1,8 +1,8 @@
 {
   TypeToken<?> subtypeOfArray=TypeToken.of(Types.subtypeOf(Object[].class));
   TypeToken<?> supertypeOfArray=TypeToken.of(Types.supertypeOf(Object[].class));
-  assertTrue(supertypeOfArray.isAssignableFrom(subtypeOfArray));
-  assertFalse(supertypeOfArray.isAssignableFrom(supertypeOfArray));
-  assertFalse(subtypeOfArray.isAssignableFrom(subtypeOfArray));
-  assertFalse(subtypeOfArray.isAssignableFrom(supertypeOfArray));
+  assertTrue(supertypeOfArray.isSupertypeOf(subtypeOfArray));
+  assertFalse(supertypeOfArray.isSupertypeOf(supertypeOfArray));
+  assertFalse(subtypeOfArray.isSupertypeOf(subtypeOfArray));
+  assertFalse(subtypeOfArray.isSupertypeOf(supertypeOfArray));
 }

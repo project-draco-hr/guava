@@ -1,3 +1,5 @@
 {
   assertTrue(from.getType() + " is expected to be assignable to " + to.getType(),to.isAssignableFrom(from));
+  assertTrue(to.getType() + " is expected to be a supertype of " + from.getType(),to.isSupertypeOf(from));
+  assertTrue(from.getType() + " is expected to be a subtype of " + to.getType(),from.isSubtypeOf(to));
 }

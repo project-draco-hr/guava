@@ -2,11 +2,11 @@
   @SuppressWarnings("rawtypes") TypeToken<List> tokL=new TypeToken<List>(){
   }
 ;
-  assertTrue(tokL.isAssignableFrom(StringList.class));
-  assertTrue(tokL.isAssignableFrom(StringList.class.getGenericInterfaces()[0]));
+  assertTrue(tokL.isSupertypeOf(StringList.class));
+  assertTrue(tokL.isSupertypeOf(StringList.class.getGenericInterfaces()[0]));
   @SuppressWarnings("rawtypes") TypeToken<Second> tokS=new TypeToken<Second>(){
   }
 ;
-  assertTrue(tokS.isAssignableFrom(Second.class));
-  assertTrue(tokS.isAssignableFrom(Third.class.getGenericSuperclass()));
+  assertTrue(tokS.isSupertypeOf(Second.class));
+  assertTrue(tokS.isSupertypeOf(Third.class.getGenericSuperclass()));
 }

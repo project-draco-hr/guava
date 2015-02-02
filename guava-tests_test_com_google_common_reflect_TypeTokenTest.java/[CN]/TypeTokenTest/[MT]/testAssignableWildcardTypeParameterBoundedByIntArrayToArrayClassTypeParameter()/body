@@ -4,12 +4,12 @@
 ;
   assertFalse(new TypeToken<Iterable<int[]>>(){
   }
-.isAssignableFrom(wildcardType));
+.isSupertypeOf(wildcardType));
   assertFalse(new TypeToken<Iterable<Object>>(){
   }
-.isAssignableFrom(wildcardType));
-  assertTrue(wildcardType.isAssignableFrom(wildcardType));
+.isSupertypeOf(wildcardType));
+  assertTrue(wildcardType.isSupertypeOf(wildcardType));
   assertFalse(new TypeToken<Iterable<Object[]>>(){
   }
-.isAssignableFrom(wildcardType));
+.isSupertypeOf(wildcardType));
 }

@@ -5,6 +5,6 @@
   TypeToken<ArrayList<String>[]> token=new TypeToken<ArrayList<String>[]>(){
   }
 ;
-  assertTrue(tokL.isAssignableFrom(tokL.getType()));
-  assertTrue(tokL.isAssignableFrom(token.getType()));
+  assertTrue(tokL.isSupertypeOf(tokL.getType()));
+  assertTrue(tokL.isSupertypeOf(token.getType()));
 }

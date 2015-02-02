@@ -1,17 +1,17 @@
 {
   assertTrue(new TypeToken<T[]>(){
   }
-.isAssignableFrom(new TypeToken<T[]>(){
+.isSupertypeOf(new TypeToken<T[]>(){
   }
 ));
   assertTrue(new TypeToken<T[]>(){
   }
-.isAssignableFrom(new TypeToken<T1[]>(){
+.isSupertypeOf(new TypeToken<T1[]>(){
   }
 ));
   assertFalse(new TypeToken<T[]>(){
   }
-.isAssignableFrom(new TypeToken<T[][]>(){
+.isSupertypeOf(new TypeToken<T[][]>(){
   }
 ));
 }

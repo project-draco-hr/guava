@@ -4,11 +4,11 @@
     if (!fromClass.isArray()) {
       return false;
     }
-    return of(fromClass.getComponentType()).extendsFrom(supertype.getGenericComponentType());
+    return of(fromClass.getComponentType()).isSubtypeOf(supertype.getGenericComponentType());
   }
  else   if (runtimeType instanceof GenericArrayType) {
     GenericArrayType fromArrayType=(GenericArrayType)runtimeType;
-    return of(fromArrayType.getGenericComponentType()).extendsFrom(supertype.getGenericComponentType());
+    return of(fromArrayType.getGenericComponentType()).isSubtypeOf(supertype.getGenericComponentType());
   }
  else {
     return false;

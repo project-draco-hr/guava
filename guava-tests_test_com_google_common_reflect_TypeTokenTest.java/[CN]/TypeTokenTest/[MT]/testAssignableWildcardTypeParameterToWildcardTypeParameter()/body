@@ -5,8 +5,8 @@
   TypeToken<?> supertypeOfArray=new TypeToken<Iterable<? super Object[]>>(){
   }
 ;
-  assertFalse(supertypeOfArray.isAssignableFrom(subtypeOfArray));
-  assertTrue(supertypeOfArray.isAssignableFrom(supertypeOfArray));
-  assertTrue(subtypeOfArray.isAssignableFrom(subtypeOfArray));
-  assertFalse(subtypeOfArray.isAssignableFrom(supertypeOfArray));
+  assertFalse(supertypeOfArray.isSupertypeOf(subtypeOfArray));
+  assertTrue(supertypeOfArray.isSupertypeOf(supertypeOfArray));
+  assertTrue(subtypeOfArray.isSupertypeOf(subtypeOfArray));
+  assertFalse(subtypeOfArray.isSupertypeOf(supertypeOfArray));
 }

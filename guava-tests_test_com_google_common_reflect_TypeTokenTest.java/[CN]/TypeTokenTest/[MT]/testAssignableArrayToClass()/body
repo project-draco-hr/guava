@@ -2,11 +2,11 @@
   @SuppressWarnings("rawtypes") TypeToken<List[]> tokL=new TypeToken<List[]>(){
   }
 ;
-  assertTrue(tokL.isAssignableFrom(List[].class));
-  assertFalse(tokL.isAssignableFrom(List.class));
+  assertTrue(tokL.isSupertypeOf(List[].class));
+  assertFalse(tokL.isSupertypeOf(List.class));
   @SuppressWarnings("rawtypes") TypeToken<Second[]> tokS=new TypeToken<Second[]>(){
   }
 ;
-  assertTrue(tokS.isAssignableFrom(Second[].class));
-  assertTrue(tokS.isAssignableFrom(Third[].class));
+  assertTrue(tokS.isSupertypeOf(Second[].class));
+  assertTrue(tokS.isSupertypeOf(Third[].class));
 }

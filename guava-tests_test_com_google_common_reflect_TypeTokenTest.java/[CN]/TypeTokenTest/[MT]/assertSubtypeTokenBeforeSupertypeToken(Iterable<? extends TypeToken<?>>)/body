@@ -3,7 +3,7 @@
   for (  TypeToken<?> left : types) {
     int j=0;
     for (    TypeToken<?> right : types) {
-      if (left.isAssignableFrom(right)) {
+      if (left.isSupertypeOf(right)) {
         assertTrue(left + " should be after " + right,i >= j);
       }
       j++;

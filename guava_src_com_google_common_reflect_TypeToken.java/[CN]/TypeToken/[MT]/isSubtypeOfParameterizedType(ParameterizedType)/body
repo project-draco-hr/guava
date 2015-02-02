@@ -1,6 +1,6 @@
 {
   Class<?> matchedClass=of(supertype).getRawType();
-  if (!this.extendsFromClass(matchedClass)) {
+  if (!this.someRawTypeIsSubclassOf(matchedClass)) {
     return false;
   }
   Type[] typeParams=matchedClass.getTypeParameters();

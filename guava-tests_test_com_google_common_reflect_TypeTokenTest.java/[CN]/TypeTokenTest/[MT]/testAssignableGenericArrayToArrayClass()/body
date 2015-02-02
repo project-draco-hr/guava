@@ -1,11 +1,11 @@
 {
-  assertTrue(TypeToken.of(Object[].class).isAssignableFrom(new TypeToken<T[]>(){
+  assertTrue(TypeToken.of(Object[].class).isSupertypeOf(new TypeToken<T[]>(){
   }
 ));
-  assertTrue(TypeToken.of(Object[].class).isAssignableFrom(new TypeToken<T[][]>(){
+  assertTrue(TypeToken.of(Object[].class).isSupertypeOf(new TypeToken<T[][]>(){
   }
 ));
-  assertTrue(TypeToken.of(Object[][].class).isAssignableFrom(new TypeToken<T[][]>(){
+  assertTrue(TypeToken.of(Object[][].class).isSupertypeOf(new TypeToken<T[][]>(){
   }
 ));
 }

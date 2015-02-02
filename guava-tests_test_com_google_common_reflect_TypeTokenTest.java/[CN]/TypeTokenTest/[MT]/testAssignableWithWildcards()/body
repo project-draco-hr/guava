@@ -19,27 +19,27 @@
 ;
   List<TypeToken<?>> allTokens=ImmutableList.of(unboundedToken,upperBoundToken,lowerBoundToken,concreteToken,subtypeToken,supertypeToken);
   for (  TypeToken<?> typeToken : allTokens) {
-    assertTrue(typeToken.toString(),unboundedToken.isAssignableFrom(typeToken));
+    assertTrue(typeToken.toString(),unboundedToken.isSupertypeOf(typeToken));
   }
-  assertFalse(upperBoundToken.isAssignableFrom(unboundedToken));
-  assertTrue(upperBoundToken.isAssignableFrom(upperBoundToken));
-  assertFalse(upperBoundToken.isAssignableFrom(lowerBoundToken));
-  assertTrue(upperBoundToken.isAssignableFrom(concreteToken));
-  assertTrue(upperBoundToken.isAssignableFrom(subtypeToken));
-  assertFalse(upperBoundToken.isAssignableFrom(supertypeToken));
-  assertFalse(lowerBoundToken.isAssignableFrom(unboundedToken));
-  assertFalse(lowerBoundToken.isAssignableFrom(upperBoundToken));
-  assertTrue(lowerBoundToken.isAssignableFrom(lowerBoundToken));
-  assertTrue(lowerBoundToken.isAssignableFrom(concreteToken));
-  assertFalse(lowerBoundToken.isAssignableFrom(subtypeToken));
-  assertTrue(lowerBoundToken.isAssignableFrom(supertypeToken));
+  assertFalse(upperBoundToken.isSupertypeOf(unboundedToken));
+  assertTrue(upperBoundToken.isSupertypeOf(upperBoundToken));
+  assertFalse(upperBoundToken.isSupertypeOf(lowerBoundToken));
+  assertTrue(upperBoundToken.isSupertypeOf(concreteToken));
+  assertTrue(upperBoundToken.isSupertypeOf(subtypeToken));
+  assertFalse(upperBoundToken.isSupertypeOf(supertypeToken));
+  assertFalse(lowerBoundToken.isSupertypeOf(unboundedToken));
+  assertFalse(lowerBoundToken.isSupertypeOf(upperBoundToken));
+  assertTrue(lowerBoundToken.isSupertypeOf(lowerBoundToken));
+  assertTrue(lowerBoundToken.isSupertypeOf(concreteToken));
+  assertFalse(lowerBoundToken.isSupertypeOf(subtypeToken));
+  assertTrue(lowerBoundToken.isSupertypeOf(supertypeToken));
   for (  TypeToken<?> typeToken : allTokens) {
-    assertEquals(typeToken.toString(),typeToken == concreteToken,concreteToken.isAssignableFrom(typeToken));
-  }
-  for (  TypeToken<?> typeToken : allTokens) {
-    assertEquals(typeToken.toString(),typeToken == subtypeToken,subtypeToken.isAssignableFrom(typeToken));
+    assertEquals(typeToken.toString(),typeToken == concreteToken,concreteToken.isSupertypeOf(typeToken));
   }
   for (  TypeToken<?> typeToken : allTokens) {
-    assertEquals(typeToken.toString(),typeToken == supertypeToken,supertypeToken.isAssignableFrom(typeToken));
+    assertEquals(typeToken.toString(),typeToken == subtypeToken,subtypeToken.isSupertypeOf(typeToken));
+  }
+  for (  TypeToken<?> typeToken : allTokens) {
+    assertEquals(typeToken.toString(),typeToken == supertypeToken,supertypeToken.isSupertypeOf(typeToken));
   }
 }

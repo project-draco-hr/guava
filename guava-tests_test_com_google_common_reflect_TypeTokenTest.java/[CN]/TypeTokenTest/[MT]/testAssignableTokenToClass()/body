@@ -2,37 +2,37 @@
   TypeToken<List> tokL=new TypeToken<List>(){
   }
 ;
-  assertTrue(tokL.isAssignableFrom(new TypeToken<List>(){
+  assertTrue(tokL.isSupertypeOf(new TypeToken<List>(){
   }
 ));
-  assertTrue(tokL.isAssignableFrom(new TypeToken<List<String>>(){
+  assertTrue(tokL.isSupertypeOf(new TypeToken<List<String>>(){
   }
 ));
-  assertTrue(tokL.isAssignableFrom(new TypeToken<List<?>>(){
+  assertTrue(tokL.isSupertypeOf(new TypeToken<List<?>>(){
   }
 ));
   TypeToken<Second> tokS=new TypeToken<Second>(){
   }
 ;
-  assertTrue(tokS.isAssignableFrom(new TypeToken<Second>(){
+  assertTrue(tokS.isSupertypeOf(new TypeToken<Second>(){
   }
 ));
-  assertTrue(tokS.isAssignableFrom(new TypeToken<Third>(){
+  assertTrue(tokS.isSupertypeOf(new TypeToken<Third>(){
   }
 ));
-  assertTrue(tokS.isAssignableFrom(new TypeToken<Third<String,Integer>>(){
+  assertTrue(tokS.isSupertypeOf(new TypeToken<Third<String,Integer>>(){
   }
 ));
   TypeToken<List[]> tokA=new TypeToken<List[]>(){
   }
 ;
-  assertTrue(tokA.isAssignableFrom(new TypeToken<List[]>(){
+  assertTrue(tokA.isSupertypeOf(new TypeToken<List[]>(){
   }
 ));
-  assertTrue(tokA.isAssignableFrom(new TypeToken<List<String>[]>(){
+  assertTrue(tokA.isSupertypeOf(new TypeToken<List<String>[]>(){
   }
 ));
-  assertTrue(tokA.isAssignableFrom(new TypeToken<List<?>[]>(){
+  assertTrue(tokA.isSupertypeOf(new TypeToken<List<?>[]>(){
   }
 ));
 }

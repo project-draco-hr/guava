@@ -1,7 +1,7 @@
 {
   return new TypeToken<To>(getClass()){
   }
-.isAssignableFrom(new TypeToken<From>(getClass()){
+.isSupertypeOf(new TypeToken<From>(getClass()){
   }
 );
 }

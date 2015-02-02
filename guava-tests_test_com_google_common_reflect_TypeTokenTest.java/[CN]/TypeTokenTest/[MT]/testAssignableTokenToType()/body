@@ -2,37 +2,37 @@
   TypeToken<List<String>> tokenL=new TypeToken<List<String>>(){
   }
 ;
-  assertTrue(tokenL.isAssignableFrom(new TypeToken<List<String>>(){
+  assertTrue(tokenL.isSupertypeOf(new TypeToken<List<String>>(){
   }
 ));
-  assertTrue(tokenL.isAssignableFrom(new TypeToken<ArrayList<String>>(){
+  assertTrue(tokenL.isSupertypeOf(new TypeToken<ArrayList<String>>(){
   }
 ));
-  assertTrue(tokenL.isAssignableFrom(new TypeToken<StringList>(){
+  assertTrue(tokenL.isSupertypeOf(new TypeToken<StringList>(){
   }
 ));
   TypeToken<First<String>> tokenF=new TypeToken<First<String>>(){
   }
 ;
-  assertTrue(tokenF.isAssignableFrom(new TypeToken<Second<String>>(){
+  assertTrue(tokenF.isSupertypeOf(new TypeToken<Second<String>>(){
   }
 ));
-  assertTrue(tokenF.isAssignableFrom(new TypeToken<Third<String,Integer>>(){
+  assertTrue(tokenF.isSupertypeOf(new TypeToken<Third<String,Integer>>(){
   }
 ));
-  assertFalse(tokenF.isAssignableFrom(new TypeToken<Third<Integer,String>>(){
+  assertFalse(tokenF.isSupertypeOf(new TypeToken<Third<Integer,String>>(){
   }
 ));
-  assertTrue(tokenF.isAssignableFrom(new TypeToken<Fourth<Integer,String>>(){
+  assertTrue(tokenF.isSupertypeOf(new TypeToken<Fourth<Integer,String>>(){
   }
 ));
-  assertFalse(tokenF.isAssignableFrom(new TypeToken<Fourth<String,Integer>>(){
+  assertFalse(tokenF.isSupertypeOf(new TypeToken<Fourth<String,Integer>>(){
   }
 ));
-  assertTrue(tokenF.isAssignableFrom(new TypeToken<ConcreteIS>(){
+  assertTrue(tokenF.isSupertypeOf(new TypeToken<ConcreteIS>(){
   }
 ));
-  assertFalse(tokenF.isAssignableFrom(new TypeToken<ConcreteSI>(){
+  assertFalse(tokenF.isSupertypeOf(new TypeToken<ConcreteSI>(){
   }
 ));
 }
