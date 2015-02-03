@@ -1,2 +1,2 @@
-Multiset<E> multisetToModify
+Multiset<?> multisetToModify
 Multiset<?> occurrencesToRemove
