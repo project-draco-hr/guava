@@ -1,5 +1,5 @@
 {
-  final JarFile jarFile;
+  JarFile jarFile;
   try {
     jarFile=new JarFile(file);
   }
@@ -13,11 +13,10 @@
     Enumeration<JarEntry> entries=jarFile.entries();
     while (entries.hasMoreElements()) {
       JarEntry entry=entries.nextElement();
-      String name=entry.getName();
-      if (entry.isDirectory() || name.equals(JarFile.MANIFEST_NAME)) {
+      if (entry.isDirectory() || entry.getName().equals(JarFile.MANIFEST_NAME)) {
         continue;
       }
-      entriesBuilder.add(new Entry(file,name,classloader,new URL("jar",null,file.toURI().toURL() + "!/" + name)));
+      resources.add(ResourceInfo.of(entry.getName(),classloader));
     }
   }
   finally {

@@ -1,4 +1,0 @@
-{
-  super(resourceName,loader);
-  this.className=className;
-}

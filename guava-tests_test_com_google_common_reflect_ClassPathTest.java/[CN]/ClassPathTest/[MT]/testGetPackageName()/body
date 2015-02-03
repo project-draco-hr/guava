@@ -1,4 +1,4 @@
 {
-  assertEquals("",classInfo("Foo.class",getClass().getClassLoader()).getPackageName());
-  assertEquals("a.b",classInfo("a/b/Foo.class",getClass().getClassLoader()).getPackageName());
+  assertEquals("",new ClassInfo("Foo.class",getClass().getClassLoader()).getPackageName());
+  assertEquals("a.b",new ClassInfo("a/b/Foo.class",getClass().getClassLoader()).getPackageName());
 }

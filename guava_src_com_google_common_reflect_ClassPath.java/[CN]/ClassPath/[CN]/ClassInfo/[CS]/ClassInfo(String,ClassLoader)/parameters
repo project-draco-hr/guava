@@ -1,3 +1,2 @@
 String resourceName
-String className
 ClassLoader loader
