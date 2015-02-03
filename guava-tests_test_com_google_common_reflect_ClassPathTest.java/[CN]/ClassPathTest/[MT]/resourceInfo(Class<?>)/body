@@ -1,3 +1,3 @@
 {
-  return ResourceInfo.of(cls.getName().replace('.','/') + ".class",cls.getClassLoader());
+  return classInfo(cls,cls.getClassLoader());
 }

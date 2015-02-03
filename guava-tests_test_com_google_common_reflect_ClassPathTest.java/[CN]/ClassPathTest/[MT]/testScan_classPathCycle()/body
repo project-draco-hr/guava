@@ -4,7 +4,7 @@
     writeSelfReferencingJarFile(jarFile,"test.txt");
     ClassPath.Scanner scanner=new ClassPath.Scanner();
     scanner.scan(jarFile,ClassPathTest.class.getClassLoader());
-    assertEquals(1,scanner.getResources().size());
+    assertEquals(1,scanner.getEntries().size());
   }
   finally {
     jarFile.delete();

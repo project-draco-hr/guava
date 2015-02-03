@@ -1,7 +1,7 @@
 {
-  Scanner scanner=new Scanner();
-  for (  Map.Entry<File,ClassLoader> entry : getClassPathEntries(classloader).entrySet()) {
-    scanner.scan(entry.getKey(),entry.getValue());
+  final ImmutableSortedSet.Builder<ResourceInfo> resources=new ImmutableSortedSet.Builder<ResourceInfo>(Ordering.usingToString());
+  for (  Entry entry : getAllEntries(classloader)) {
+    resources.add(entry.toResourceInfo());
   }
-  return new ClassPath(scanner.getResources());
+  return new ClassPath(resources.build());
 }
