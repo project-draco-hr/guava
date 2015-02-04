@@ -2,7 +2,7 @@
   List<Invokable<?,? extends T>> factories=Lists.newArrayList();
   for (  Method method : type.getRawType().getDeclaredMethods()) {
     Invokable<?,?> invokable=type.method(method);
-    if (!invokable.isPrivate() && !invokable.isSynthetic() && invokable.isStatic()&& type.isAssignableFrom(invokable.getReturnType())) {
+    if (!invokable.isPrivate() && !invokable.isSynthetic() && invokable.isStatic()&& type.isSupertypeOf(invokable.getReturnType())) {
       @SuppressWarnings("unchecked") Invokable<?,? extends T> factory=(Invokable<?,? extends T>)invokable;
       factories.add(factory);
     }
