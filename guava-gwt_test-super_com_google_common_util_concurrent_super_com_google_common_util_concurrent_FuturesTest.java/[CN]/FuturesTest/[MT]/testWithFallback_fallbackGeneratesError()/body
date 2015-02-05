@@ -1,0 +1,17 @@
+{
+  final Error error=new Error("deliberate");
+  FutureFallback<Integer> fallback=new FutureFallback<Integer>(){
+    @Override public ListenableFuture<Integer> create(    Throwable t) throws Exception {
+      throw error;
+    }
+  }
+;
+  ListenableFuture<Integer> failingFuture=Futures.immediateFailedFuture(new RuntimeException());
+  try {
+    Futures.withFallback(failingFuture,fallback).get();
+    fail("An Exception should have been thrown!");
+  }
+ catch (  ExecutionException expected) {
+    assertSame(error,expected.getCause());
+  }
+}

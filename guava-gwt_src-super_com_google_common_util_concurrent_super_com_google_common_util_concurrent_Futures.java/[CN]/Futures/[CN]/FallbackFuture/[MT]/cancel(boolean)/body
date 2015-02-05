@@ -1,0 +1,10 @@
+{
+  ListenableFuture<?> current=this.running;
+  if (super.cancel(mayInterruptIfRunning)) {
+    if (current != null) {
+      current.cancel(mayInterruptIfRunning);
+    }
+    return true;
+  }
+  return false;
+}

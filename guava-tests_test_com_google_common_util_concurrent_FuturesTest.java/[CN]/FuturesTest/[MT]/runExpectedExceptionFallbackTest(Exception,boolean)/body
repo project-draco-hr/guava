@@ -1,0 +1,23 @@
+{
+  FutureFallbackSpy<Integer> fallback=spy(new FutureFallback<Integer>(){
+    @Override public ListenableFuture<Integer> create(    Throwable t) throws Exception {
+      if (!wrapInFuture) {
+        throw expectedException;
+      }
+ else {
+        return Futures.immediateFailedFuture(expectedException);
+      }
+    }
+  }
+);
+  ListenableFuture<Integer> failingFuture=Futures.immediateFailedFuture(new RuntimeException());
+  ListenableFuture<Integer> faultToleranteFuture=Futures.withFallback(failingFuture,fallback);
+  try {
+    faultToleranteFuture.get();
+    fail("An Exception should have been thrown!");
+  }
+ catch (  ExecutionException ee) {
+    assertSame(expectedException,ee.getCause());
+  }
+  fallback.verifyCallCount(1);
+}

@@ -1,5 +1,4 @@
 {
   super.setUp();
   combinedFutureLogger.addHandler(combinedFutureLogHandler);
-  mocksControl=EasyMock.createControl();
 }
