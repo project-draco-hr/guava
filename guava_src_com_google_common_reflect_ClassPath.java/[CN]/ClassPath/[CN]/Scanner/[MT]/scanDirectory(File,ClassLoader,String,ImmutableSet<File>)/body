@@ -17,7 +17,7 @@
  else {
       String resourceName=packagePrefix + name;
       if (!resourceName.equals(JarFile.MANIFEST_NAME)) {
-        resources.add(ResourceInfo.of(resourceName,classloader));
+        entriesBuilder.add(new Entry(f,resourceName,classloader,f.toURI().toURL()));
       }
     }
   }

@@ -1,0 +1,7 @@
+{
+  this.file=file;
+  this.resourceName=resourceName;
+  this.classLoader=classLoader;
+  this.url=url;
+  this.className=resourceName.endsWith(CLASS_FILE_NAME_EXTENSION) ? Optional.of(ClassPath.getClassName(resourceName)) : Optional.<String>absent();
+}

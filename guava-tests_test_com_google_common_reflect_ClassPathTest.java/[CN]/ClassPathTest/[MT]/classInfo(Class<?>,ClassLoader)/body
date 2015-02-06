@@ -1,3 +1,4 @@
 {
-  return new ClassInfo(cls.getName().replace('.','/') + ".class",classLoader);
+  String name=cls.getName();
+  return classInfo(name,classLoader);
 }

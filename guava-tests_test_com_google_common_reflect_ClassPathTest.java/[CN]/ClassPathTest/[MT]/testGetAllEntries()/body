@@ -1,0 +1,12 @@
+{
+  Set<String> resourceNames=new HashSet<String>();
+  for (  Entry entry : ClassPath.getAllEntries(getClass().getClassLoader())) {
+    boolean first=resourceNames.add(entry.toString());
+    byte[] data=Resources.toByteArray(entry.url());
+    if (first) {
+      ResourceInfo resource=entry.toResourceInfo();
+      byte[] resourceData=ByteStreams.toByteArray(resource.url().openStream());
+      assertThat(data).isEqualTo(resourceData);
+    }
+  }
+}
