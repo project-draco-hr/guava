@@ -1,8 +1,0 @@
-{
-  if (className.isPresent()) {
-    return new ClassInfo(resourceName,className.get(),classLoader);
-  }
- else {
-    return new ResourceInfo(resourceName,classLoader);
-  }
-}
