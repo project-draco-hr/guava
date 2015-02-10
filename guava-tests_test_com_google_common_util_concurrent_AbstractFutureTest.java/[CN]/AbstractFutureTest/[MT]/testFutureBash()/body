@@ -147,11 +147,11 @@ catch (        TimeoutException e) {
         assertThat(numSuccessfulSetCalls.get()).isIn(Range.closed(1,2));
       }
  else {
-        assertThat(numSuccessfulSetCalls.get()).is(1);
+        assertThat(numSuccessfulSetCalls.get()).isEqualTo(1);
       }
     }
  else {
-      assertThat(numSuccessfulSetCalls.get()).is(1);
+      assertThat(numSuccessfulSetCalls.get()).isEqualTo(1);
     }
     numSuccessfulSetCalls.set(0);
     finalResults.clear();
