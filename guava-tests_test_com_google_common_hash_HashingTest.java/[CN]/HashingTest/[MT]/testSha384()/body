@@ -1,0 +1,7 @@
+{
+  HashTestUtils.checkAvalanche(Hashing.sha384(),100,0.4);
+  HashTestUtils.checkNo2BitCharacteristics(Hashing.sha384());
+  HashTestUtils.checkNoFunnels(Hashing.sha384());
+  HashTestUtils.assertInvariants(Hashing.sha384());
+  assertEquals("Hashing.sha384()",Hashing.sha384().toString());
+}
