@@ -1,0 +1,10 @@
+{
+  AsyncFunction<String,Integer> function=constantAsyncFunction(Futures.immediateFuture(1));
+  ListenableFuture<Integer> future=Futures.transformAsync(SettableFuture.<String>create(),function);
+  try {
+    future.get(1,TimeUnit.MILLISECONDS);
+    fail();
+  }
+ catch (  TimeoutException expected) {
+  }
+}

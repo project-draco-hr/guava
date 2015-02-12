@@ -1,0 +1,16 @@
+{
+switch (input) {
+case VALID_INPUT_DATA:
+    outputFuture.set(RESULT_DATA);
+  break;
+case SLOW_OUTPUT_VALID_INPUT_DATA:
+break;
+case SLOW_FUNC_VALID_INPUT_DATA:
+funcIsWaitingLatch.countDown();
+awaitUninterruptibly(funcCompletionLatch);
+break;
+default :
+throw new UndeclaredThrowableException(EXCEPTION);
+}
+return outputFuture;
+}

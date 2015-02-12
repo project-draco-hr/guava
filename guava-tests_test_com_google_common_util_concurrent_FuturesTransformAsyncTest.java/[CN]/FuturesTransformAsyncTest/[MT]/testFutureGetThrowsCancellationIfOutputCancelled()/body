@@ -1,0 +1,10 @@
+{
+  inputFuture.set(SLOW_OUTPUT_VALID_INPUT_DATA);
+  outputFuture.cancel(true);
+  try {
+    resultFuture.get();
+    fail("Result future must throw CancellationException" + " if function output future is cancelled.");
+  }
+ catch (  CancellationException expected) {
+  }
+}

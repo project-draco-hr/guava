@@ -1,0 +1,13 @@
+{
+  inputFuture.set(SLOW_OUTPUT_VALID_INPUT_DATA);
+  assertTrue(resultFuture.cancel(true));
+  assertTrue(resultFuture.isCancelled());
+  assertFalse(inputFuture.isCancelled());
+  assertTrue(outputFuture.isCancelled());
+  try {
+    resultFuture.get();
+    fail("Result future is cancelled and should have thrown a" + " CancellationException");
+  }
+ catch (  CancellationException expected) {
+  }
+}

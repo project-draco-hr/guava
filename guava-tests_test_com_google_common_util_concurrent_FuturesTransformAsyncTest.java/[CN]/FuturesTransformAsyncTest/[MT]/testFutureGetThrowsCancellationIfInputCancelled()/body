@@ -1,0 +1,9 @@
+{
+  inputFuture.cancel(true);
+  try {
+    resultFuture.get();
+    fail("Result future must throw CancellationException" + " if input future is cancelled.");
+  }
+ catch (  CancellationException expected) {
+  }
+}
