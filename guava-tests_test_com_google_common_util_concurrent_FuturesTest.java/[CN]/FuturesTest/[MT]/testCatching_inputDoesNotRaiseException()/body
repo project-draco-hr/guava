@@ -1,0 +1,6 @@
+{
+  Function<Throwable,Integer> fallback=unexpectedFunction();
+  ListenableFuture<Integer> originalFuture=Futures.immediateFuture(7);
+  ListenableFuture<Integer> faultToleranteFuture=Futures.catching(originalFuture,Throwable.class,fallback);
+  assertEquals(7,faultToleranteFuture.get().intValue());
+}

@@ -1,0 +1,12 @@
+{
+  Function<IOException,Integer> fallback=functionReturningOne();
+  ListenableFuture<Integer> originalFuture=immediateFailedFuture(new RuntimeException());
+  ListenableFuture<Integer> faultTolerantFuture=Futures.catching(originalFuture,IOException.class,fallback);
+  try {
+    faultTolerantFuture.get();
+    fail();
+  }
+ catch (  ExecutionException expected) {
+    assertTrue(expected.getCause() instanceof RuntimeException);
+  }
+}

@@ -1,0 +1,3 @@
+{
+  return new CatchingFuture<V,Throwable>(input,exceptionType,fallback,executor);
+}

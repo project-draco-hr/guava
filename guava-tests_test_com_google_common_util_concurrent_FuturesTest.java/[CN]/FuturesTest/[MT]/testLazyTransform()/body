@@ -2,9 +2,9 @@
   FunctionSpy<Object,String> spy=new FunctionSpy<Object,String>(Functions.constant("bar"));
   Future<String> input=Futures.immediateFuture("foo");
   Future<String> transformed=Futures.lazyTransform(input,spy);
-  assertEquals(0,spy.getApplyCount());
+  spy.verifyCallCount(0);
   assertEquals("bar",transformed.get());
-  assertEquals(1,spy.getApplyCount());
+  spy.verifyCallCount(1);
   assertEquals("bar",transformed.get());
-  assertEquals(2,spy.getApplyCount());
+  spy.verifyCallCount(2);
 }

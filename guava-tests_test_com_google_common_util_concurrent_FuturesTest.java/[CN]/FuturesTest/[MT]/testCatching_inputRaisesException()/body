@@ -1,0 +1,14 @@
+{
+  final RuntimeException raisedException=new RuntimeException();
+  FunctionSpy<Throwable,Integer> fallback=spy(new Function<Throwable,Integer>(){
+    @Override public Integer apply(    Throwable t){
+      assertThat(t).isSameAs(raisedException);
+      return 20;
+    }
+  }
+);
+  ListenableFuture<Integer> failingFuture=Futures.immediateFailedFuture(raisedException);
+  ListenableFuture<Integer> faultTolerantFuture=Futures.catching(failingFuture,Throwable.class,fallback);
+  assertEquals(20,faultTolerantFuture.get().intValue());
+  fallback.verifyCallCount(1);
+}

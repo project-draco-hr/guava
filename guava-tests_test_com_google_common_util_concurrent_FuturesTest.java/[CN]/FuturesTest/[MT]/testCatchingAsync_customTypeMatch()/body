@@ -1,0 +1,6 @@
+{
+  AsyncFunction<IOException,Integer> fallback=asyncFunctionReturningOne();
+  ListenableFuture<Integer> originalFuture=immediateFailedFuture(new FileNotFoundException());
+  ListenableFuture<Integer> faultTolerantFuture=Futures.catchingAsync(originalFuture,IOException.class,fallback);
+  assertEquals(1,(int)faultTolerantFuture.get());
+}

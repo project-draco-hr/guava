@@ -1,0 +1,4 @@
+{
+  com.google.common.util.concurrent.FuturesTest testCase=new com.google.common.util.concurrent.FuturesTest();
+  testCase.testCatchingAsync_fallbackReturnsCheckedException();
+}

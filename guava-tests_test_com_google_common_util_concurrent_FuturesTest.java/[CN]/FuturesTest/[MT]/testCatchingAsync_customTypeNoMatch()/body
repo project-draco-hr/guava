@@ -1,0 +1,12 @@
+{
+  AsyncFunction<IOException,Integer> fallback=asyncFunctionReturningOne();
+  ListenableFuture<Integer> originalFuture=immediateFailedFuture(new RuntimeException());
+  ListenableFuture<Integer> faultTolerantFuture=Futures.catchingAsync(originalFuture,IOException.class,fallback);
+  try {
+    faultTolerantFuture.get();
+    fail();
+  }
+ catch (  ExecutionException expected) {
+    assertTrue(expected.getCause() instanceof RuntimeException);
+  }
+}

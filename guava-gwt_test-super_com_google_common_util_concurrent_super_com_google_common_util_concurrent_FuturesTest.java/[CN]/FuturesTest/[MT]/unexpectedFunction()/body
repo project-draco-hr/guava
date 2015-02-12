@@ -1,0 +1,8 @@
+{
+  return new Function<X,V>(){
+    @Override public V apply(    X t){
+      throw new AssertionError("Unexpected fallback",t);
+    }
+  }
+;
+}

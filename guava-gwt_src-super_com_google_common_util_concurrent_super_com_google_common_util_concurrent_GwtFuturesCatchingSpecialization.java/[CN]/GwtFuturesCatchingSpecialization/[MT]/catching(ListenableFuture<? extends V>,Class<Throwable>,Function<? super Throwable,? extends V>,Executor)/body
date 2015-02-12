@@ -1,0 +1,3 @@
+{
+  return catchingAsync(input,exceptionType,asAsyncFunction(fallback),executor);
+}

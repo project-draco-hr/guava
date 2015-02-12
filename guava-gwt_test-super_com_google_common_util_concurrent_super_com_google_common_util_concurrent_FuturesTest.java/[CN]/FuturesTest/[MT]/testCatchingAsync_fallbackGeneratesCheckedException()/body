@@ -1,0 +1,6 @@
+{
+  Exception expectedException=new Exception(){
+  }
+;
+  runExpectedExceptionCatchingAsyncTest(expectedException,false);
+}
