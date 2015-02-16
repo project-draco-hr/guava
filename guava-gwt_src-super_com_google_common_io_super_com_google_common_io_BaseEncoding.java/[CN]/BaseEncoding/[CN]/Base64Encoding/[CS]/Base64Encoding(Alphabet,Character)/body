@@ -1,4 +1,0 @@
-{
-  super(alphabet,paddingChar);
-  checkArgument(alphabet.chars.length == 64);
-}

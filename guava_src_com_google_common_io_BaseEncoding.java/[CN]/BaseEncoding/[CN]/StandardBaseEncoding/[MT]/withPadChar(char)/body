@@ -3,6 +3,6 @@
     return this;
   }
  else {
-    return newInstance(alphabet,padChar);
+    return new StandardBaseEncoding(alphabet,padChar);
   }
 }
