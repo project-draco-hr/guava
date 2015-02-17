@@ -1,1 +1,1 @@
-AbstractFuture.TrustedFuture<V>
+ImmediateFuture<V>
