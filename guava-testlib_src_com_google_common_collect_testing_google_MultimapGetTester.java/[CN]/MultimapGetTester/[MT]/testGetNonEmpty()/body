@@ -1,5 +1,5 @@
 {
   Collection<V> result=multimap().get(k0());
   assertFalse(result.isEmpty());
-  assertContentsAnyOrder(result,v0());
+  assertThat(result).containsExactly(v0());
 }
