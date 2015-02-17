@@ -1,0 +1,3 @@
+{
+  return new CancellationException("Immediate cancelled future.");
+}

@@ -1,3 +1,0 @@
-{
-  throw AbstractFuture.cancellationExceptionWithCause("Task was cancelled.",thrown);
-}
