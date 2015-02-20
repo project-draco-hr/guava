@@ -1,0 +1,8 @@
+{
+  try {
+    Throwables.getCausalChain(null);
+    fail("Should have throw NPE");
+  }
+ catch (  NullPointerException expected) {
+  }
+}
