@@ -1,4 +1,5 @@
 {
   this.resourceName=checkNotNull(resourceName);
   this.loader=checkNotNull(loader);
+  this.urls=ImmutableList.copyOf(urls);
 }

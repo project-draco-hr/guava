@@ -1,3 +1,5 @@
 {
-  return ResourceInfo.of(cls.getName().replace('.','/') + ".class",cls.getClassLoader());
+  String resource=cls.getName().replace('.','/') + ".class";
+  ClassLoader loader=cls.getClassLoader();
+  return ResourceInfo.of(resource,list(loader.getResources(resource)),loader);
 }

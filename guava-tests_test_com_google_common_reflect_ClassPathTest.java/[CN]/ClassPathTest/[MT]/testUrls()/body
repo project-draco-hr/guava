@@ -1,0 +1,13 @@
+{
+  ClassLoader loader=ClassLoader.getSystemClassLoader();
+  for (  ResourceInfo resource : ClassPath.from(loader).getResources()) {
+    String resourceName=resource.getResourceName();
+    assertTrue(resourceName + " has different content when loaded by resource.url()",contentEquals(resource.url(),loader.getResource(resourceName)));
+    List<URL> urlsFromLoader=list(loader.getResources(resourceName));
+    List<URL> urlsFromClassPath=resource.urls();
+    assertEquals(urlsFromLoader.size(),urlsFromClassPath.size());
+    for (int i=0; i < urlsFromClassPath.size(); i++) {
+      assertTrue(resourceName + " #" + i+ "has different content when loaded by resource.url()",contentEquals(urlsFromLoader.get(i),urlsFromClassPath.get(i)));
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  if (resourceName.endsWith(CLASS_FILE_NAME_EXTENSION)) {
+    return new ClassInfo(resourceName,urls,loader);
+  }
+ else {
+    return new ResourceInfo(resourceName,urls,loader);
+  }
+}

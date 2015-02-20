@@ -16,7 +16,9 @@
       if (entry.isDirectory() || entry.getName().equals(JarFile.MANIFEST_NAME)) {
         continue;
       }
-      resources.add(ResourceInfo.of(entry.getName(),classloader));
+      String resourceName=entry.getName();
+      URL url=new URL("jar",null,file.toURI().toURL() + "!/" + resourceName);
+      resources.get(classloader).put(resourceName,url);
     }
   }
   finally {
