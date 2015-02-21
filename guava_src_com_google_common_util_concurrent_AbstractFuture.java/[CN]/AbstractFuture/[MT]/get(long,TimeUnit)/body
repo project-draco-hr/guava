@@ -8,7 +8,7 @@
     return getDoneValue(localValue);
   }
   final long endNanos=remainingNanos > 0 ? System.nanoTime() + remainingNanos : 0;
-  long_wait_loop:   while (remainingNanos > SPIN_THRESHOLD_NANOS) {
+  long_wait_loop:   if (remainingNanos >= SPIN_THRESHOLD_NANOS) {
     Waiter oldHead=waiters;
     if (oldHead != Waiter.TOMBSTONE) {
       Waiter node=new Waiter();
