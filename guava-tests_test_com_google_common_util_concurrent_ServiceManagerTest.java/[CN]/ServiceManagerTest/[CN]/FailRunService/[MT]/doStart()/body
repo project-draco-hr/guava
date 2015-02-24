@@ -1,4 +1,4 @@
 {
   super.doStart();
-  notifyFailed(new IllegalStateException("failed"));
+  notifyFailed(new IllegalStateException("run failure"));
 }
