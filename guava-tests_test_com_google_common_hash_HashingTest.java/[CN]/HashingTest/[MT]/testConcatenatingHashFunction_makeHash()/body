@@ -5,5 +5,7 @@
   ByteBuffer buffer=ByteBuffer.wrap(combined);
   buffer.put(md5Hash);
   buffer.put(murmur3Hash);
-  assertEquals(HashCode.fromBytes(combined),new ConcatenatedHashFunction(Hashing.md5(),Hashing.murmur3_32()).hashLong(42L));
+  HashCode expected=HashCode.fromBytes(combined);
+  assertEquals(expected,Hashing.concatenating(Hashing.md5(),Hashing.murmur3_32()).hashLong(42L));
+  assertEquals(expected,Hashing.concatenating(asList(Hashing.md5(),Hashing.murmur3_32())).hashLong(42L));
 }

@@ -1,4 +1,0 @@
-{
-  assertEquals(new ConcatenatedHashFunction(Hashing.md5()),new ConcatenatedHashFunction(Hashing.md5()));
-  assertEquals(new ConcatenatedHashFunction(Hashing.md5(),Hashing.murmur3_32()),new ConcatenatedHashFunction(Hashing.md5(),Hashing.murmur3_32()));
-}

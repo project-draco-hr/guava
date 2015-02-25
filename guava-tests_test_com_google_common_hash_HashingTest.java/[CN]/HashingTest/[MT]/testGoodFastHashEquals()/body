@@ -1,12 +1,12 @@
 {
-  HashFunction hashFunction1a=goodFastHash(1);
-  HashFunction hashFunction1b=goodFastHash(32);
-  HashFunction hashFunction2a=goodFastHash(33);
-  HashFunction hashFunction2b=goodFastHash(128);
-  HashFunction hashFunction3a=goodFastHash(129);
-  HashFunction hashFunction3b=goodFastHash(256);
-  HashFunction hashFunction4a=goodFastHash(257);
-  HashFunction hashFunction4b=goodFastHash(384);
+  HashFunction hashFunction1a=Hashing.goodFastHash(1);
+  HashFunction hashFunction1b=Hashing.goodFastHash(32);
+  HashFunction hashFunction2a=Hashing.goodFastHash(33);
+  HashFunction hashFunction2b=Hashing.goodFastHash(128);
+  HashFunction hashFunction3a=Hashing.goodFastHash(129);
+  HashFunction hashFunction3b=Hashing.goodFastHash(256);
+  HashFunction hashFunction4a=Hashing.goodFastHash(257);
+  HashFunction hashFunction4b=Hashing.goodFastHash(384);
   new EqualsTester().addEqualityGroup(hashFunction1a,hashFunction1b).addEqualityGroup(hashFunction2a,hashFunction2b).addEqualityGroup(hashFunction3a,hashFunction3b).addEqualityGroup(hashFunction4a,hashFunction4b).testEquals();
   assertEquals(hashFunction1a.toString(),hashFunction1b.toString());
   assertEquals(hashFunction2a.toString(),hashFunction2b.toString());

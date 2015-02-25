@@ -1,0 +1,3 @@
+{
+  new EqualsTester().addEqualityGroup(Hashing.concatenating(asList(Hashing.md5()))).addEqualityGroup(Hashing.concatenating(asList(Hashing.murmur3_32()))).addEqualityGroup(Hashing.concatenating(Hashing.md5(),Hashing.md5()),Hashing.concatenating(asList(Hashing.md5(),Hashing.md5()))).addEqualityGroup(Hashing.concatenating(Hashing.murmur3_32(),Hashing.md5()),Hashing.concatenating(asList(Hashing.murmur3_32(),Hashing.md5()))).addEqualityGroup(Hashing.concatenating(Hashing.md5(),Hashing.murmur3_32()),Hashing.concatenating(asList(Hashing.md5(),Hashing.murmur3_32()))).testEquals();
+}

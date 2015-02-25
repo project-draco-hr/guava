@@ -1,5 +1,0 @@
-{
-  assertEquals(Hashing.md5().bits(),new ConcatenatedHashFunction(Hashing.md5()).bits());
-  assertEquals(Hashing.md5().bits() + Hashing.murmur3_32().bits(),new ConcatenatedHashFunction(Hashing.md5(),Hashing.murmur3_32()).bits());
-  assertEquals(Hashing.md5().bits() + Hashing.murmur3_32().bits() + Hashing.murmur3_128().bits(),new ConcatenatedHashFunction(Hashing.md5(),Hashing.murmur3_32(),Hashing.murmur3_128()).bits());
-}
