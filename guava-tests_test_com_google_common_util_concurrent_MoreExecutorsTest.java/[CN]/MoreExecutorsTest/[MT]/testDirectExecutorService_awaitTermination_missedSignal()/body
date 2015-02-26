@@ -1,0 +1,22 @@
+{
+  final ExecutorService service=MoreExecutors.newDirectExecutorService();
+  Thread waiter=new Thread(){
+    @Override public void run(){
+      try {
+        service.awaitTermination(1,TimeUnit.DAYS);
+      }
+ catch (      InterruptedException e) {
+        return;
+      }
+    }
+  }
+;
+  waiter.start();
+  awaitTimedWaiting(waiter);
+  service.shutdown();
+  Uninterruptibles.joinUninterruptibly(waiter,10,TimeUnit.SECONDS);
+  if (waiter.isAlive()) {
+    waiter.interrupt();
+    fail("awaitTermination failed to trigger after shutdown()");
+  }
+}

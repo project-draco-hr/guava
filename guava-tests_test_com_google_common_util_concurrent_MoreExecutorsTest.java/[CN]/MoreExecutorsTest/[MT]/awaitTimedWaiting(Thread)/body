@@ -1,0 +1,17 @@
+{
+  while (true) {
+switch (thread.getState()) {
+case BLOCKED:
+case NEW:
+case RUNNABLE:
+case WAITING:
+      Thread.yield();
+    break;
+case TIMED_WAITING:
+  return;
+case TERMINATED:
+default :
+throw new AssertionError();
+}
+}
+}
