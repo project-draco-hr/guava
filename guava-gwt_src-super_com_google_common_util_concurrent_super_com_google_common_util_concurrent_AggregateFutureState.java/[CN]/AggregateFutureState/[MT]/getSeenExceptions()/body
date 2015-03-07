@@ -1,0 +1,6 @@
+{
+  if (seenExceptions == null) {
+    seenExceptions=Sets.<Throwable>newHashSet();
+  }
+  return seenExceptions;
+}

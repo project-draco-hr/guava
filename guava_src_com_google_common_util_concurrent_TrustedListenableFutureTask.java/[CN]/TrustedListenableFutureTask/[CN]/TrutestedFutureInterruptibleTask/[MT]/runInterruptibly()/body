@@ -1,0 +1,10 @@
+{
+  if (!isDone()) {
+    try {
+      doRun(callable);
+    }
+ catch (    Throwable t) {
+      setException(t);
+    }
+  }
+}

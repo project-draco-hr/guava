@@ -1,0 +1,8 @@
+{
+  Set<Throwable> seenExceptionsLocal=seenExceptions;
+  if (seenExceptionsLocal == null) {
+    SEEN_EXCEPTIONS_UDPATER.compareAndSet(this,null,Sets.<Throwable>newConcurrentHashSet());
+    seenExceptionsLocal=seenExceptions;
+  }
+  return seenExceptionsLocal;
+}

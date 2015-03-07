@@ -1,7 +1,6 @@
 {
-  Thread currentRunner=runner;
-  if (currentRunner != null) {
-    currentRunner.interrupt();
+  TrutestedFutureInterruptibleTask localTask=task;
+  if (localTask != null) {
+    localTask.interruptTask();
   }
-  doneInterrupting=true;
 }

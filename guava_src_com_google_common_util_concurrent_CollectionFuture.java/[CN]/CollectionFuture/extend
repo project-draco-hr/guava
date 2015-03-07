@@ -1,1 +1,1 @@
-AbstractFuture.TrustedFuture<C>
+AggregateFuture<V,C>

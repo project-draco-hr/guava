@@ -1,5 +1,0 @@
-{
-  this.futures=null;
-  this.values=null;
-  this.combiner=null;
-}

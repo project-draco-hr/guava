@@ -1,3 +1,0 @@
-{
-  return new TrustedListenableFutureTask<V>(Executors.callable(runnable,result));
-}
