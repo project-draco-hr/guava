@@ -1,3 +1,0 @@
-{
-  return Futures.combine(combiner,executor,futures);
-}

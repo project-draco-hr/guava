@@ -1,3 +1,0 @@
-Callable<V> combiner
-Executor executor
-Iterable<? extends ListenableFuture<?>> futures

@@ -1,9 +1,0 @@
-{
-  String[] params=new String[NUMBER_OF_RANDOM_PARAMETER_STRINGS];
-  Random random=new Random();
-  randomParams=new String[NUMBER_OF_RANDOM_PARAMETER_STRINGS];
-  for (int i=0; i < NUMBER_OF_RANDOM_PARAMETER_STRINGS; i++) {
-    params[i]=generateRandomParams(random);
-  }
-  return params;
-}
