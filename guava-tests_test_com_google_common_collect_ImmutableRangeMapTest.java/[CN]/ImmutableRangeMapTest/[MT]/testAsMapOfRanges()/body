@@ -6,6 +6,7 @@
         ImmutableMap<Range<Integer>,Integer> expectedAsMap=ImmutableMap.of(range1,1,range2,2);
         ImmutableMap<Range<Integer>,Integer> asMap=rangeMap.asMapOfRanges();
         assertEquals(expectedAsMap,asMap);
+        SerializableTester.reserializeAndAssert(asMap);
         for (        Range<Integer> query : RANGES) {
           assertEquals(expectedAsMap.get(query),asMap.get(query));
         }

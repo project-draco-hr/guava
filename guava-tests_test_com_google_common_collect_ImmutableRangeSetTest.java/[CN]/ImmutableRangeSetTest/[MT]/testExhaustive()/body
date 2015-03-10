@@ -28,5 +28,6 @@
       assertEquals(mutable.contains(i),built.contains(i));
     }
     SerializableTester.reserializeAndAssert(built);
+    SerializableTester.reserializeAndAssert(built.asRanges());
   }
 }
