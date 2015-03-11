@@ -1,5 +1,5 @@
 {
-  assertFailsToDecode(base32Hex(),"\u007f","Unrecognized character: 0x7f");
+  assertFailsToDecode(base32Hex(),"A\u007f","Unrecognized character: 0x7f");
   assertFailsToDecode(base32Hex(),"Wf2!","Unrecognized character: W");
   assertFailsToDecode(base32Hex(),"let's not talk of love or chains!");
   assertFailsToDecode(base32Hex(),"A");

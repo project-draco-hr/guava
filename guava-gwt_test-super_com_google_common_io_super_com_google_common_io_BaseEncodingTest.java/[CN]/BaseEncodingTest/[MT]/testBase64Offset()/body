@@ -1,0 +1,7 @@
+{
+  testEncodesWithOffset(base64(),"foobar",0,6,"Zm9vYmFy");
+  testEncodesWithOffset(base64(),"foobar",1,5,"b29iYXI=");
+  testEncodesWithOffset(base64(),"foobar",2,3,"b2Jh");
+  testEncodesWithOffset(base64(),"foobar",3,1,"Yg==");
+  testEncodesWithOffset(base64(),"foobar",4,0,"");
+}

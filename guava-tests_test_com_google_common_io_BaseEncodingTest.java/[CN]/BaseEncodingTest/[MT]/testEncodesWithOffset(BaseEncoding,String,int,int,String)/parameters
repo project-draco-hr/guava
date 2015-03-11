@@ -1,0 +1,5 @@
+BaseEncoding encoding
+String decoded
+int offset
+int len
+String encoded
