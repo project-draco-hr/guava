@@ -1,9 +1,0 @@
-{
-  try {
-    get(FAILED_FUTURE_CHECKED_EXCEPTION,0,SECONDS,TwoArgConstructorException.class);
-    fail();
-  }
- catch (  TwoArgConstructorException expected) {
-    assertEquals(CHECKED_EXCEPTION,expected.getCause());
-  }
-}

@@ -1,9 +1,0 @@
-{
-  try {
-    get(FAILED_FUTURE_UNCHECKED_EXCEPTION,TwoArgConstructorException.class);
-    fail();
-  }
- catch (  UncheckedExecutionException expected) {
-    assertEquals(UNCHECKED_EXCEPTION,expected.getCause());
-  }
-}

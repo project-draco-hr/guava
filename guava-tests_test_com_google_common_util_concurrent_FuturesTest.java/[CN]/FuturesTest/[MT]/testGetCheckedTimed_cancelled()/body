@@ -1,0 +1,10 @@
+{
+  SettableFuture<String> future=SettableFuture.create();
+  future.cancel(true);
+  try {
+    getChecked(future,0,SECONDS,TwoArgConstructorException.class);
+    fail();
+  }
+ catch (  CancellationException expected) {
+  }
+}

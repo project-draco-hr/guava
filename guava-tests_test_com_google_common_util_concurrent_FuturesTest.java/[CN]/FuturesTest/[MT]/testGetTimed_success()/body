@@ -1,3 +1,0 @@
-{
-  assertEquals("foo",get(immediateFuture("foo"),0,SECONDS,TwoArgConstructorException.class));
-}

@@ -1,8 +1,0 @@
-{
-  try {
-    get(FAILED_FUTURE_CHECKED_EXCEPTION,ExceptionWithSomePrivateConstructors.class);
-    fail();
-  }
- catch (  ExceptionWithSomePrivateConstructors expected) {
-  }
-}

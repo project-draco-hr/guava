@@ -1,0 +1,3 @@
+{
+  assertEquals("foo",getChecked(immediateFuture("foo"),TwoArgConstructorException.class));
+}

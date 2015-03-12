@@ -1,0 +1,15 @@
+{
+  SettableFuture<String> future=SettableFuture.create();
+  Thread.currentThread().interrupt();
+  try {
+    getChecked(future,TwoArgConstructorException.class);
+    fail();
+  }
+ catch (  TwoArgConstructorException expected) {
+    assertTrue(expected.getCause() instanceof InterruptedException);
+    assertTrue(Thread.currentThread().isInterrupted());
+  }
+ finally {
+    Thread.interrupted();
+  }
+}

@@ -1,9 +1,0 @@
-{
-  try {
-    get(RUNTIME_EXCEPTION_FUTURE,0,SECONDS,TwoArgConstructorException.class);
-    fail();
-  }
- catch (  RuntimeException expected) {
-    assertEquals(RUNTIME_EXCEPTION,expected);
-  }
-}

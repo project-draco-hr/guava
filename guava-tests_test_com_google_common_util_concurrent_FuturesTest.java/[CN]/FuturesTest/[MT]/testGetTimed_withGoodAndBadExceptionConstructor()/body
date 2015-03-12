@@ -1,9 +1,0 @@
-{
-  try {
-    get(FAILED_FUTURE_CHECKED_EXCEPTION,1,TimeUnit.SECONDS,ExceptionWithGoodAndBadConstructor.class);
-    fail();
-  }
- catch (  ExceptionWithGoodAndBadConstructor expected) {
-    assertSame(CHECKED_EXCEPTION,expected.getCause());
-  }
-}

@@ -1,0 +1,9 @@
+{
+  try {
+    getChecked(FAILED_FUTURE_CHECKED_EXCEPTION,ExceptionWithManyConstructors.class);
+    fail();
+  }
+ catch (  ExceptionWithManyConstructors expected) {
+    assertTrue(expected.usedExpectedConstructor);
+  }
+}

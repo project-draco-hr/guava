@@ -1,9 +1,0 @@
-{
-  try {
-    get(FAILED_FUTURE_OTHER_THROWABLE,0,SECONDS,TwoArgConstructorException.class);
-    fail();
-  }
- catch (  TwoArgConstructorException expected) {
-    assertEquals(OTHER_THROWABLE,expected.getCause());
-  }
-}

@@ -1,0 +1,10 @@
+{
+  try {
+    getChecked(FAILED_FUTURE_CHECKED_EXCEPTION,ExceptionWithoutThrowableConstructor.class);
+    fail();
+  }
+ catch (  ExceptionWithoutThrowableConstructor expected) {
+    assertThat(expected.getMessage()).contains("mymessage");
+    assertEquals(CHECKED_EXCEPTION,expected.getCause());
+  }
+}
