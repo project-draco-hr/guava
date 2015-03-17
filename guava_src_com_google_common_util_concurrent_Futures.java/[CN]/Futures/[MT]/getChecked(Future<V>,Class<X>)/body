@@ -1,6 +1,6 @@
 {
   checkNotNull(future);
-  checkArgument(!RuntimeException.class.isAssignableFrom(exceptionClass),"Futures.get exception type (%s) must not be a RuntimeException",exceptionClass);
+  checkArgument(!RuntimeException.class.isAssignableFrom(exceptionClass),"Futures.getChecked exception type (%s) must not be a RuntimeException",exceptionClass);
   try {
     return future.get();
   }
