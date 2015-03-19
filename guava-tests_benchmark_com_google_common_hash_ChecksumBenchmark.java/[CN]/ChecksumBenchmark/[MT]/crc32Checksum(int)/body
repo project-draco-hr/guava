@@ -3,7 +3,7 @@
   for (int i=0; i < reps; i++) {
     CRC32 checksum=new CRC32();
     checksum.update(testBytes);
-    result^=checksum.getValue();
+    result=(byte)(result ^ checksum.getValue());
   }
   return result;
 }
