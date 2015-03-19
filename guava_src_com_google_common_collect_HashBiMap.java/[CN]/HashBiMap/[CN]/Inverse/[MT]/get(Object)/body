@@ -1,4 +1,4 @@
 {
-  BiEntry<K,V> entry=seekByValue(value,hash(value));
+  BiEntry<K,V> entry=seekByValue(value,smearedHash(value));
   return (entry == null) ? null : entry.key;
 }

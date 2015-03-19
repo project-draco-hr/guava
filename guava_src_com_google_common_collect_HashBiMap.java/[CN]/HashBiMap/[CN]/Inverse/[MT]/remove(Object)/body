@@ -1,5 +1,5 @@
 {
-  BiEntry<K,V> entry=seekByValue(value,hash(value));
+  BiEntry<K,V> entry=seekByValue(value,smearedHash(value));
   if (entry == null) {
     return null;
   }

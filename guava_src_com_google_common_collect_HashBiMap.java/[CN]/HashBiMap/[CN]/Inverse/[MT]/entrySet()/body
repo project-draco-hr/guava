@@ -21,7 +21,7 @@ class InverseEntry extends AbstractMapEntry<V,K> {
           }
           @Override public K setValue(          K key){
             K oldKey=delegate.key;
-            int keyHash=hash(key);
+            int keyHash=smearedHash(key);
             if (keyHash == delegate.keyHash && Objects.equal(key,oldKey)) {
               return key;
             }

@@ -16,7 +16,7 @@ class MapEntry extends AbstractMapEntry<K,V> {
       }
       @Override public V setValue(      V value){
         V oldValue=delegate.value;
-        int valueHash=hash(value);
+        int valueHash=smearedHash(value);
         if (valueHash == delegate.valueHash && Objects.equal(value,oldValue)) {
           return value;
         }

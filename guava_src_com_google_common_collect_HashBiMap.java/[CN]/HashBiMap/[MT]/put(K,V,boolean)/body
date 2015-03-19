@@ -1,6 +1,6 @@
 {
-  int keyHash=hash(key);
-  int valueHash=hash(value);
+  int keyHash=smearedHash(key);
+  int valueHash=smearedHash(value);
   BiEntry<K,V> oldEntryForKey=seekByKey(key,keyHash);
   if (oldEntryForKey != null && valueHash == oldEntryForKey.valueHash && Objects.equal(value,oldEntryForKey.value)) {
     return value;
