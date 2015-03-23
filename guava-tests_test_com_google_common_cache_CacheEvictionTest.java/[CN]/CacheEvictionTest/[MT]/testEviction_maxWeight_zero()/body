@@ -1,0 +1,29 @@
+{
+  CountingRemovalListener<Integer,Integer> removalListener=countingRemovalListener();
+  IdentityLoader<Integer> loader=identityLoader();
+  Weigher<Integer,Integer> evensOnly=new Weigher<Integer,Integer>(){
+    @Override public int weigh(    Integer k,    Integer v){
+      return k % 2;
+    }
+  }
+;
+  LoadingCache<Integer,Integer> cache=CacheBuilder.newBuilder().concurrencyLevel(1).maximumWeight(0).weigher(evensOnly).removalListener(removalListener).build(loader);
+  assertThat(cache.getUnchecked(1)).isEqualTo(1);
+  assertThat(cache.asMap().keySet()).isEmpty();
+  CacheTesting.processPendingNotifications(cache);
+  assertThat(removalListener.getCount()).isEqualTo(1);
+  assertThat(cache.getUnchecked(2)).isEqualTo(2);
+  assertThat(cache.asMap().keySet()).containsExactly(2);
+  CacheTesting.processPendingNotifications(cache);
+  CacheTesting.checkValidState(cache);
+  assertThat(removalListener.getCount()).isEqualTo(1);
+  assertThat(cache.getUnchecked(4)).isEqualTo(4);
+  assertThat(cache.asMap().keySet()).containsExactly(2,4);
+  CacheTesting.processPendingNotifications(cache);
+  assertThat(removalListener.getCount()).isEqualTo(1);
+  assertThat(cache.getUnchecked(5)).isEqualTo(5);
+  assertThat(cache.asMap().keySet()).containsExactly(2,4);
+  CacheTesting.processPendingNotifications(cache);
+  assertThat(removalListener.getCount()).isEqualTo(2);
+  CacheTesting.checkValidState(cache);
+}
