@@ -1,0 +1,11 @@
+{
+  return new ImmutableAsList<E>(){
+    @Override public E get(    int index){
+      return entries[index].getElement();
+    }
+    @Override ImmutableCollection<E> delegateCollection(){
+      return ElementSet.this;
+    }
+  }
+;
+}
