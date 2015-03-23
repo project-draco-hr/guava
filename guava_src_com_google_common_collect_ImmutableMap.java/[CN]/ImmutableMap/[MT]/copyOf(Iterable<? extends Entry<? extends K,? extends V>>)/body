@@ -7,6 +7,6 @@ case 1:
   @SuppressWarnings("unchecked") Entry<K,V> onlyEntry=(Entry<K,V>)entryArray[0];
 return of(onlyEntry.getKey(),onlyEntry.getValue());
 default :
-return new RegularImmutableMap<K,V>(entryArray);
+return new RegularImmutableMap<K,V>(entryArray.length,entryArray);
 }
 }

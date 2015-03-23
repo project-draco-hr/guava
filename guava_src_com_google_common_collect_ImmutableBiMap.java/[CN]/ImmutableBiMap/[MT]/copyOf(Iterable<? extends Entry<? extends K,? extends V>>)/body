@@ -7,6 +7,6 @@ case 1:
   @SuppressWarnings("unchecked") Entry<K,V> entry=(Entry<K,V>)entryArray[0];
 return of(entry.getKey(),entry.getValue());
 default :
-return new RegularImmutableBiMap<K,V>(entryArray);
+return new RegularImmutableBiMap<K,V>(entryArray.length,entryArray);
 }
 }
