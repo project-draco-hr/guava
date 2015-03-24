@@ -2,7 +2,7 @@
   SettableFuture<String> future=SettableFuture.create();
   future.cancel(true);
   try {
-    getChecked(future,0,SECONDS,TwoArgConstructorException.class);
+    getChecked(future,TwoArgConstructorException.class,0,SECONDS);
     fail();
   }
  catch (  CancellationException expected) {

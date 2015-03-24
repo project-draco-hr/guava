@@ -1,6 +1,6 @@
 {
   try {
-    getChecked(FAILED_FUTURE_CHECKED_EXCEPTION,0,SECONDS,TwoArgConstructorException.class);
+    getChecked(FAILED_FUTURE_CHECKED_EXCEPTION,TwoArgConstructorException.class,0,SECONDS);
     fail();
   }
  catch (  TwoArgConstructorException expected) {

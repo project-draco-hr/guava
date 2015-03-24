@@ -1,6 +1,6 @@
 {
   try {
-    getChecked(FAILED_FUTURE_CHECKED_EXCEPTION,1,TimeUnit.SECONDS,ExceptionWithBadConstructor.class);
+    getChecked(FAILED_FUTURE_CHECKED_EXCEPTION,ExceptionWithBadConstructor.class,1,TimeUnit.SECONDS);
     fail();
   }
  catch (  IllegalArgumentException expected) {

@@ -1,6 +1,6 @@
 {
   try {
-    getChecked(FAILED_FUTURE_ERROR,0,SECONDS,TwoArgConstructorException.class);
+    getChecked(FAILED_FUTURE_ERROR,TwoArgConstructorException.class,0,SECONDS);
     fail();
   }
  catch (  ExecutionError expected) {

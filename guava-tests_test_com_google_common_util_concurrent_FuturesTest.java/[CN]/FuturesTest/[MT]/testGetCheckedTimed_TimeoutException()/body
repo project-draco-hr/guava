@@ -1,7 +1,7 @@
 {
   SettableFuture<String> future=SettableFuture.create();
   try {
-    getChecked(future,0,SECONDS,TwoArgConstructorException.class);
+    getChecked(future,TwoArgConstructorException.class,0,SECONDS);
     fail();
   }
  catch (  TwoArgConstructorException expected) {

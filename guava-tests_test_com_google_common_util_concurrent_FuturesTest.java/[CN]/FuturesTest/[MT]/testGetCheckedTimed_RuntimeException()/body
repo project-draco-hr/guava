@@ -1,6 +1,6 @@
 {
   try {
-    getChecked(RUNTIME_EXCEPTION_FUTURE,0,SECONDS,TwoArgConstructorException.class);
+    getChecked(RUNTIME_EXCEPTION_FUTURE,TwoArgConstructorException.class,0,SECONDS);
     fail();
   }
  catch (  RuntimeException expected) {

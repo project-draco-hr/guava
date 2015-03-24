@@ -1,6 +1,6 @@
 {
   try {
-    getChecked(FAILED_FUTURE_CHECKED_EXCEPTION,1,TimeUnit.SECONDS,ExceptionWithGoodAndBadConstructor.class);
+    getChecked(FAILED_FUTURE_CHECKED_EXCEPTION,ExceptionWithGoodAndBadConstructor.class,1,TimeUnit.SECONDS);
     fail();
   }
  catch (  ExceptionWithGoodAndBadConstructor expected) {
