@@ -1,0 +1,9 @@
+{
+  String stack=Throwables.getStackTraceAsString(new Throwable());
+  for (  String allowed : ALLOWED_CALLERS) {
+    if (stack.contains(allowed)) {
+      return true;
+    }
+  }
+  return false;
+}
