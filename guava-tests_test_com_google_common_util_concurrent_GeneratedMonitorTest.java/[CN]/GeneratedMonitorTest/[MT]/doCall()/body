@@ -34,10 +34,10 @@
       return Outcome.INTERRUPT;
     }
  else {
-      throw new AssertionError("unexpected exception",targetException);
+      throw newAssertionError("unexpected exception",targetException);
     }
   }
 catch (  IllegalAccessException e) {
-    throw new AssertionError("unexpected exception",e);
+    throw newAssertionError("unexpected exception",e);
   }
 }
