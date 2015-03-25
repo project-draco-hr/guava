@@ -1,3 +1,3 @@
 {
-  return getChecked(future,timeout,unit,exceptionClass);
+  return getChecked(future,exceptionClass,timeout,unit);
 }
