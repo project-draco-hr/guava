@@ -1,0 +1,10 @@
+{
+  ImmutableSet<Object>[] sets=this.sets;
+  Object[] queries=this.queries;
+  boolean result=false;
+  for (int i=0; i < reps; i++) {
+    int j=i & 0xFFF;
+    result^=sets[j].contains(queries[j]);
+  }
+  return result;
+}
