@@ -1,0 +1,4 @@
+{
+  super(new RegularImmutableMap<K,V>(new HashMap<K,V>()));
+  this.inverse=(ImmutableBiMap<V,K>)this;
+}
