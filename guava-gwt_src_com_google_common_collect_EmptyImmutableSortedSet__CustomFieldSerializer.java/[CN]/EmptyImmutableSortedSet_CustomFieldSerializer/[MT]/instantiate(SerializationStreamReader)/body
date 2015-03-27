@@ -1,4 +1,0 @@
-{
-  @SuppressWarnings("unchecked") Comparator<Object> comparator=(Comparator<Object>)reader.readObject();
-  return (EmptyImmutableSortedSet<Object>)ImmutableSortedSet.orderedBy(comparator).build();
-}

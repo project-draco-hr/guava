@@ -1,8 +1,8 @@
 {
   if (NATURAL_ORDER.equals(comparator)) {
-    return emptySet();
+    return of();
   }
  else {
-    return new EmptyImmutableSortedSet<E>(comparator);
+    return new RegularImmutableSortedSet<E>(ImmutableList.<E>of(),comparator);
   }
 }
