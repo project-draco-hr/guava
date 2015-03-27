@@ -1,3 +1,0 @@
-{
-  ImmutableSortedMap_CustomFieldSerializerBase.serialize(writer,instance);
-}
