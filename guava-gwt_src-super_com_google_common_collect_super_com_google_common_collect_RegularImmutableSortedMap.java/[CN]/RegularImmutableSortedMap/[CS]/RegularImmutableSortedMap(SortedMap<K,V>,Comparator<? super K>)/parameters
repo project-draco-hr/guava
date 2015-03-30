@@ -1,2 +1,0 @@
-SortedMap<K,V> delegate
-Comparator<? super K> comparator

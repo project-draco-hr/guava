@@ -1,6 +1,0 @@
-{
-  if (isEmpty()) {
-    return emptyMap(Ordering.from(comparator()).reverse());
-  }
-  return new RegularImmutableSortedMap<K,V>((RegularImmutableSortedSet<K>)keySet.descendingSet(),valueList.reverse(),this);
-}

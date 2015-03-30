@@ -31,6 +31,6 @@ checkNoConflict(comparator.compare(prevKey,key) != 0,"key",entryArray[i - 1],ent
 prevKey=key;
 }
 }
-return new RegularImmutableSortedMap<K,V>(new RegularImmutableSortedSet<K>(new RegularImmutableList<K>(keys),comparator),new RegularImmutableList<V>(values));
+return new ImmutableSortedMap<K,V>(new RegularImmutableSortedSet<K>(new RegularImmutableList<K>(keys),comparator),new RegularImmutableList<V>(values));
 }
 }

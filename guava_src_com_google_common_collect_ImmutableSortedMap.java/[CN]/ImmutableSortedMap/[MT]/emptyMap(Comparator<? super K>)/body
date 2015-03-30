@@ -3,6 +3,6 @@
     return of();
   }
  else {
-    return new RegularImmutableSortedMap<K,V>(ImmutableSortedSet.emptySet(comparator),ImmutableList.<V>of());
+    return new ImmutableSortedMap<K,V>(ImmutableSortedSet.emptySet(comparator),ImmutableList.<V>of());
   }
 }
