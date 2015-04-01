@@ -1,13 +1,19 @@
 {
-  checkPositionIndex(n,entriesToAdd.length);
+  checkPositionIndex(n,entryArray.length);
   int tableSize=Hashing.closedTableSize(n,MAX_LOAD_FACTOR);
-  this.mask=tableSize - 1;
+  int mask=tableSize - 1;
   ImmutableMapEntry<K,V>[] keyTable=createEntryArray(tableSize);
   ImmutableMapEntry<K,V>[] valueTable=createEntryArray(tableSize);
-  ImmutableMapEntry<K,V>[] entries=createEntryArray(n);
+  Entry<K,V>[] entries;
+  if (n == entryArray.length) {
+    entries=entryArray;
+  }
+ else {
+    entries=createEntryArray(n);
+  }
   int hashCode=0;
   for (int i=0; i < n; i++) {
-    @SuppressWarnings("unchecked") Entry<K,V> entry=(Entry<K,V>)entriesToAdd[i];
+    @SuppressWarnings("unchecked") Entry<K,V> entry=entryArray[i];
     K key=entry.getKey();
     V value=entry.getValue();
     checkEntryNotNull(key,value);
@@ -32,8 +38,5 @@
     entries[i]=newEntry;
     hashCode+=keyHash ^ valueHash;
   }
-  this.keyTable=keyTable;
-  this.valueTable=valueTable;
-  this.entries=entries;
-  this.hashCode=hashCode;
+  return new RegularImmutableBiMap<K,V>(keyTable,valueTable,entries,mask,hashCode);
 }

@@ -1,7 +1,0 @@
-{
-  this.keyTable=null;
-  this.valueTable=null;
-  this.entries=new ImmutableMapEntry[0];
-  this.mask=0;
-  this.hashCode=0;
-}

@@ -1,12 +1,12 @@
 {
-  Entry<?,?>[] entryArray=Iterables.toArray(entries,EMPTY_ENTRY_ARRAY);
+  @SuppressWarnings("unchecked") Entry<K,V>[] entryArray=(Entry<K,V>[])Iterables.toArray(entries,EMPTY_ENTRY_ARRAY);
 switch (entryArray.length) {
 case 0:
     return of();
 case 1:
-  @SuppressWarnings("unchecked") Entry<K,V> entry=(Entry<K,V>)entryArray[0];
+  Entry<K,V> entry=entryArray[0];
 return of(entry.getKey(),entry.getValue());
 default :
-return new RegularImmutableBiMap<K,V>(entryArray.length,entryArray);
+return RegularImmutableBiMap.fromEntries(entryArray);
 }
 }
