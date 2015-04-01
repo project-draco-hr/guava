@@ -20,5 +20,5 @@
   BiEntry<K,V> newEntry=new BiEntry<K,V>(key,keyHash,value,valueHash);
   insert(newEntry);
   rehashIfNecessary();
-  return (oldEntryForValue == null) ? null : oldEntryForValue.key;
+  return Maps.keyOrNull(oldEntryForValue);
 }
