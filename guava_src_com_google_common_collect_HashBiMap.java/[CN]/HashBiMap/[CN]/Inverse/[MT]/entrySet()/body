@@ -28,6 +28,7 @@ class InverseEntry extends AbstractMapEntry<V,K> {
             checkArgument(seekByKey(key,keyHash) == null,"value already present: %s",key);
             delete(delegate);
             BiEntry<K,V> newEntry=new BiEntry<K,V>(key,keyHash,delegate.value,delegate.valueHash);
+            delegate=newEntry;
             insert(newEntry);
             expectedModCount=modCount;
             return oldKey;
