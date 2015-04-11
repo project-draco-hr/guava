@@ -1,4 +1,4 @@
 {
-  super(resourceName,urls,loader);
+  super(resourceName,loader);
   this.className=getClassName(resourceName);
 }

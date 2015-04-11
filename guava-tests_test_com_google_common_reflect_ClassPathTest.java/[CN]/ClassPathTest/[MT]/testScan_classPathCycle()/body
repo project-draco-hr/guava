@@ -2,7 +2,7 @@
   File jarFile=File.createTempFile("with_circular_class_path",".jar");
   try {
     writeSelfReferencingJarFile(jarFile,"test.txt");
-    ClassPath.Scanner scanner=new ClassPath.Scanner();
+    ClassPath.DefaultScanner scanner=new ClassPath.DefaultScanner();
     scanner.scan(jarFile,ClassPathTest.class.getClassLoader());
     assertEquals(1,scanner.getResources().size());
   }

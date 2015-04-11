@@ -1,5 +1,5 @@
 {
-  assertThat(ClassPath.getClassPathEntries(new ClassLoader(null){
+  assertThat(ClassPath.Scanner.getClassPathEntries(new ClassLoader(null){
   }
 ).keySet()).isEmpty();
 }

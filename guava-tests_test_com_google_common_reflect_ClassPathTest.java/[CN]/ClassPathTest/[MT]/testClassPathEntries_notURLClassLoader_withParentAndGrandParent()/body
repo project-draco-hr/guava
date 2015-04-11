@@ -3,7 +3,7 @@
   URL url2=new URL("file:/b");
   URLClassLoader grandParent=new URLClassLoader(new URL[]{url1},null);
   URLClassLoader parent=new URLClassLoader(new URL[]{url2},grandParent);
-  assertEquals(ImmutableMap.of(new File("/a"),grandParent,new File("/b"),parent),ClassPath.getClassPathEntries(new ClassLoader(parent){
+  assertEquals(ImmutableMap.of(new File("/a"),grandParent,new File("/b"),parent),ClassPath.Scanner.getClassPathEntries(new ClassLoader(parent){
   }
 ));
 }

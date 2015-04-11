@@ -1,8 +1,4 @@
 {
-  File canonical=directory.getCanonicalFile();
-  if (!scannedUris.add(canonical)) {
-    return;
-  }
   File[] files=directory.listFiles();
   if (files == null) {
     logger.warning("Cannot read directory " + directory);
@@ -14,10 +10,7 @@
       scanDirectory(f,classloader,packagePrefix + name + "/");
     }
  else {
-      String resourceName=packagePrefix + name;
-      if (!resourceName.equals(JarFile.MANIFEST_NAME)) {
-        resources.get(classloader).put(resourceName,f.toURI().toURL());
-      }
+      onResourceFile(classloader,packagePrefix,f);
     }
   }
 }

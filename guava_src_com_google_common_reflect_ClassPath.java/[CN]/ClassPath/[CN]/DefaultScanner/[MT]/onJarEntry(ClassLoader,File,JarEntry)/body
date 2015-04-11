@@ -1,0 +1,4 @@
+{
+  String resourceName=entry.getName();
+  resources.get(classloader).add(resourceName);
+}

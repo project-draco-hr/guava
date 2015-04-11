@@ -2,5 +2,5 @@
   URL url1=new URL("file:/a");
   URL url2=new URL("file:/b");
   URLClassLoader classloader=new URLClassLoader(new URL[]{url1,url2},null);
-  assertEquals(ImmutableMap.of(new File("/a"),classloader,new File("/b"),classloader),ClassPath.getClassPathEntries(classloader));
+  assertEquals(ImmutableMap.of(new File("/a"),classloader,new File("/b"),classloader),ClassPath.Scanner.getClassPathEntries(classloader));
 }

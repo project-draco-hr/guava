@@ -1,8 +1,5 @@
 {
-  if (scannedUris.add(file)) {
-    if (!resources.containsKey(classloader)) {
-      resources.put(classloader,MultimapBuilder.treeKeys().arrayListValues().<String,URL>build());
-    }
+  if (scannedUris.add(file.getCanonicalFile())) {
     scanFrom(file,classloader);
   }
 }

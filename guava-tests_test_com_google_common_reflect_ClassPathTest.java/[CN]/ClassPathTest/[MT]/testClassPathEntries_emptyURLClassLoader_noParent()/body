@@ -1,3 +1,3 @@
 {
-  assertThat(ClassPath.getClassPathEntries(new URLClassLoader(new URL[0],null)).keySet()).isEmpty();
+  assertThat(ClassPath.Scanner.getClassPathEntries(new URLClassLoader(new URL[0],null)).keySet()).isEmpty();
 }

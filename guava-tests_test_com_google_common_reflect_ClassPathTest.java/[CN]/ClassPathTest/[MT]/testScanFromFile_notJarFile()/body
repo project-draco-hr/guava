@@ -1,9 +1,9 @@
 {
   ClassLoader classLoader=ClassPathTest.class.getClassLoader();
   File notJar=File.createTempFile("not_a_jar","txt");
-  ClassPath.Scanner scanner=new ClassPath.Scanner();
+  ClassPath.DefaultScanner scanner=new ClassPath.DefaultScanner();
   try {
-    scanner.scanFrom(notJar,classLoader);
+    scanner.scan(notJar,classLoader);
   }
   finally {
     notJar.delete();

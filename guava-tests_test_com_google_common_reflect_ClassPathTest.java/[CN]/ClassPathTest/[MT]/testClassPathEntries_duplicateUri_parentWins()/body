@@ -4,5 +4,5 @@
   URLClassLoader child=new URLClassLoader(new URL[]{url},parent){
   }
 ;
-  assertEquals(ImmutableMap.of(new File("/a"),parent),ClassPath.getClassPathEntries(child));
+  assertEquals(ImmutableMap.of(new File("/a"),parent),ClassPath.Scanner.getClassPathEntries(child));
 }

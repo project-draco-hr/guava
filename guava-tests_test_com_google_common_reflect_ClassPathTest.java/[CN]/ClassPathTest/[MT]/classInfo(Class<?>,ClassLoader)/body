@@ -1,4 +1,4 @@
 {
   String resource=cls.getName().replace('.','/') + ".class";
-  return new ClassInfo(resource,list(classLoader.getResources(resource)),classLoader);
+  return new ClassInfo(resource,classLoader);
 }
