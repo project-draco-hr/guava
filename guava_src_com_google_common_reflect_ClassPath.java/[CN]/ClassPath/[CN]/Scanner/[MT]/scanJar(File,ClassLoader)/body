@@ -16,7 +16,7 @@
       if (entry.isDirectory() || entry.getName().equals(JarFile.MANIFEST_NAME)) {
         continue;
       }
-      onJarEntry(classloader,file,entry);
+      onJarEntry(classloader,jarFile,entry);
     }
   }
   finally {
