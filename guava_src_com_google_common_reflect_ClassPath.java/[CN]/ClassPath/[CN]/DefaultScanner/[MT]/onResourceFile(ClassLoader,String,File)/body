@@ -1,6 +1,0 @@
-{
-  String resourceName=packagePath + file.getName();
-  if (!resourceName.equals(JarFile.MANIFEST_NAME)) {
-    resources.get(classloader).add(resourceName);
-  }
-}

@@ -1,0 +1,7 @@
+{
+  URI base=root.toURI();
+  for (  File entry : Files.fileTreeTraverser().preOrderTraversal(root)) {
+    String resourceName=new File(base.relativize(entry.toURI()).getPath()).getPath();
+    resources.add(resourceName);
+  }
+}

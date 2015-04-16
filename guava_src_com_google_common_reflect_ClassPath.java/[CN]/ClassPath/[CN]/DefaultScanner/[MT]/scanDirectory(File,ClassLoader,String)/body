@@ -10,7 +10,10 @@
       scanDirectory(f,classloader,packagePrefix + name + "/");
     }
  else {
-      onResourceFile(classloader,packagePrefix,f);
+      String resourceName=packagePrefix + name;
+      if (!resourceName.equals(JarFile.MANIFEST_NAME)) {
+        resources.get(classloader).add(resourceName);
+      }
     }
   }
 }
