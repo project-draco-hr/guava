@@ -1,5 +1,5 @@
 {
-  TrutestedFutureInterruptibleTask localTask=task;
+  TrustedFutureInterruptibleTask localTask=task;
   if (localTask != null) {
     localTask.interruptTask();
   }
