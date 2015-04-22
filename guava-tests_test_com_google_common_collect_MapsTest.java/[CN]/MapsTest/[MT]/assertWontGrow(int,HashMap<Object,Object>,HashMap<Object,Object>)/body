@@ -1,0 +1,10 @@
+{
+  map1.put(0,null);
+  int initialBuckets=bucketsOf(map1);
+  for (int i=1; i < size; i++) {
+    map1.put(i,null);
+  }
+  assertThat(bucketsOf(map1)).named("table size after adding " + size + " elements").isEqualTo(initialBuckets);
+  map2.putAll(map1);
+  assertThat(bucketsOf(map1)).named("table size after adding " + size + " elements").isEqualTo(initialBuckets);
+}

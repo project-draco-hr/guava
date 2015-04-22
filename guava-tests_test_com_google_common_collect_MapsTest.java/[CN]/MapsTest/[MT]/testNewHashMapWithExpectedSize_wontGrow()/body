@@ -1,15 +1,6 @@
 {
   assertTrue(bucketsOf(Maps.newHashMapWithExpectedSize(0)) <= 1);
   for (int size=1; size < 200; size++) {
-    HashMap<Integer,Void> map1=Maps.newHashMapWithExpectedSize(size);
-    map1.put(0,null);
-    int initialBuckets=bucketsOf(map1);
-    for (int i=1; i < size; i++) {
-      map1.put(i,null);
-    }
-    assertEquals("table size after adding " + size + " elements",initialBuckets,bucketsOf(map1));
-    HashMap<Integer,Void> map2=Maps.newHashMapWithExpectedSize(size);
-    map2.putAll(map1);
-    assertEquals("table size after adding " + size + " elements: ",initialBuckets,bucketsOf(map2));
+    assertWontGrow(size,Maps.newHashMapWithExpectedSize(size),Maps.newHashMapWithExpectedSize(size));
   }
 }

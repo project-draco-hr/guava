@@ -1,0 +1,3 @@
+int size
+HashMap<Object,Object> map1
+HashMap<Object,Object> map2
