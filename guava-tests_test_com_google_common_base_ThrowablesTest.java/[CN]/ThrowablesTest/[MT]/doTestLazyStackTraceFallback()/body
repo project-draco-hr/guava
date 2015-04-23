@@ -1,7 +1,7 @@
 {
   assertFalse(lazyStackTraceIsLazy());
   Exception e=new Exception();
-  assertThat(lazyStackTrace(e)).containsExactly(e.getStackTrace()).inOrder();
+  assertThat(lazyStackTrace(e)).containsExactly((Object[])e.getStackTrace()).inOrder();
   try {
     lazyStackTrace(e).set(0,null);
     fail();
