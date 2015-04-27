@@ -1,4 +1,4 @@
 {
-  NullPointerTester tester=new NullPointerTester().setDefault(HashCode.class,HashCode.fromLong(0));
+  NullPointerTester tester=new NullPointerTester().setDefault(byte[].class,"secret key".getBytes(UTF_8)).setDefault(HashCode.class,HashCode.fromLong(0));
   tester.testAllPublicStaticMethods(Hashing.class);
 }

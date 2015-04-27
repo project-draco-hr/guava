@@ -3,6 +3,6 @@
     HashFunction func=cell.getRowKey();
     String input=cell.getColumnKey();
     String expected=cell.getValue();
-    assertEquals(String.format(Locale.ROOT,"Known hash for hash(%s, UTF_8) failed",input),expected,func.hashString(input,Charsets.UTF_8).toString());
+    assertEquals(String.format(Locale.ROOT,"Known hash for hash(%s, UTF_8) failed",input),expected,func.hashString(input,UTF_8).toString());
   }
 }
