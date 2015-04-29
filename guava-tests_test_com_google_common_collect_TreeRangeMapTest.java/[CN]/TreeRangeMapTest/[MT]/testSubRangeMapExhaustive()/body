@@ -14,6 +14,8 @@
         RangeMap<Integer,Integer> subRangeMap=rangeMap.subRangeMap(subRange);
         assertEquals(expected,subRangeMap);
         assertEquals(expected.asMapOfRanges(),subRangeMap.asMapOfRanges());
+        assertEquals(expected.asDescendingMapOfRanges(),subRangeMap.asDescendingMapOfRanges());
+        assertEquals(ImmutableList.copyOf(subRangeMap.asMapOfRanges().entrySet()).reverse(),ImmutableList.copyOf(subRangeMap.asDescendingMapOfRanges().entrySet()));
         if (!expected.asMapOfRanges().isEmpty()) {
           assertEquals(expected.span(),subRangeMap.span());
         }
