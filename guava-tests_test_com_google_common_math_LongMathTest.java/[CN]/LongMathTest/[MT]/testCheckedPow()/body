@@ -1,5 +1,5 @@
 {
-  for (  long b : ALL_INTEGER_CANDIDATES) {
+  for (  long b : ALL_LONG_CANDIDATES) {
     for (    int exp : EXPONENTS) {
       BigInteger expectedResult=valueOf(b).pow(exp);
       boolean expectedSuccess=fitsInLong(expectedResult);

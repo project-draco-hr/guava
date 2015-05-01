@@ -1,6 +1,6 @@
 {
-  for (  long a : ALL_INTEGER_CANDIDATES) {
-    for (    long b : ALL_INTEGER_CANDIDATES) {
+  for (  long a : ALL_LONG_CANDIDATES) {
+    for (    long b : ALL_LONG_CANDIDATES) {
       BigInteger expectedResult=valueOf(a).subtract(valueOf(b));
       boolean expectedSuccess=fitsInLong(expectedResult);
       try {
