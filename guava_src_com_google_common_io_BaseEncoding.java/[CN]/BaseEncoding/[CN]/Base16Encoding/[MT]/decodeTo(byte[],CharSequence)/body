@@ -1,6 +1,5 @@
 {
   checkNotNull(target);
-  checkNotNull(chars);
   if (chars.length() % 2 == 1) {
     throw new DecodingException("Invalid input length " + chars.length());
   }

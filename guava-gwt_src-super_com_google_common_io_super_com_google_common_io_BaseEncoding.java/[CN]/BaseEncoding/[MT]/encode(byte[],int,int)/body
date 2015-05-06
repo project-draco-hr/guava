@@ -1,5 +1,4 @@
 {
-  checkNotNull(bytes);
   checkPositionIndexes(off,off + len,bytes.length);
   StringBuilder result=new StringBuilder(maxEncodedSize(len));
   try {
