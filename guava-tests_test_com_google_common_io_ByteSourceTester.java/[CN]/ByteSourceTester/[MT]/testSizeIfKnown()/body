@@ -1,0 +1,6 @@
+{
+  Optional<Long> sizeIfKnown=source.sizeIfKnown();
+  if (sizeIfKnown.isPresent()) {
+    assertEquals(expected.length,(long)sizeIfKnown.get());
+  }
+}

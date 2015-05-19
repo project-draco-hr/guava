@@ -1,0 +1,7 @@
+{
+  Optional<Long> unslicedSize=ByteSource.this.sizeIfKnown();
+  if (unslicedSize.isPresent()) {
+    return Optional.of(Math.min(offset + length,unslicedSize.get()) - offset);
+  }
+  return Optional.absent();
+}

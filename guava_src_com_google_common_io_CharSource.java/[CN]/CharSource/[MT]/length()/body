@@ -1,12 +1,12 @@
 {
   Optional<Long> lengthIfKnown=lengthIfKnown();
-  if (lengthIfKnown.isPresent() && lengthIfKnown.get() == 0L) {
-    return true;
+  if (lengthIfKnown.isPresent()) {
+    return lengthIfKnown.get();
   }
   Closer closer=Closer.create();
   try {
     Reader reader=closer.register(openStream());
-    return reader.read() == -1;
+    return countBySkipping(reader);
   }
  catch (  Throwable e) {
     throw closer.rethrow(e);
