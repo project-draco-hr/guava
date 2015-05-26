@@ -4,5 +4,6 @@
     fail();
   }
  catch (  IllegalArgumentException expected) {
+    assertThat(expected.getMessage()).contains("Multimaps.index");
   }
 }
