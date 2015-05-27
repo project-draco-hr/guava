@@ -1,8 +1,7 @@
 {
   String result=toString;
   if (result == null) {
-    result=computeToString();
-    toString=result;
+    toString=result=computeToString();
   }
   return result;
 }

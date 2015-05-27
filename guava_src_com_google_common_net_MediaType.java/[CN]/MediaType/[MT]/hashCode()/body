@@ -1,8 +1,3 @@
 {
-  int h=hashCode;
-  if (h == 0) {
-    h=Objects.hashCode(type,subtype,parametersAsMap());
-    hashCode=h;
-  }
-  return h;
+  return Objects.hashCode(type,subtype,parametersAsMap());
 }
