@@ -1,0 +1,3 @@
+{
+  return (ConcurrentMap<String,String>)super.create(entries);
+}

@@ -1,0 +1,4 @@
+{
+  assertNull("putIfAbsent(notPresent, value) should return null",putIfAbsent(e3()));
+  expectAdded(e3());
+}

@@ -1,0 +1,10 @@
+{
+  try {
+    putIfAbsent(e3());
+    fail("putIfAbsent(notPresent, value) should throw");
+  }
+ catch (  UnsupportedOperationException expected) {
+  }
+  expectUnchanged();
+  expectMissing(e3());
+}

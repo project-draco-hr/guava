@@ -1,0 +1,5 @@
+{
+  ConcurrentMapTestSuiteBuilder<K,V> result=new ConcurrentMapTestSuiteBuilder<K,V>();
+  result.usingGenerator(generator);
+  return result;
+}

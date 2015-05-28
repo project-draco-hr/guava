@@ -1,0 +1,4 @@
+{
+  assertEquals("putIfAbsent(present, value) should return existing value",v0(),getMap().putIfAbsent(k0(),v3()));
+  expectUnchanged();
+}

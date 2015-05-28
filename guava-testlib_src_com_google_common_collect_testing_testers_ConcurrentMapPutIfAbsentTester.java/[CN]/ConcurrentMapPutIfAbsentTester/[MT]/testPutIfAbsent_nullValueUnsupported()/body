@@ -1,0 +1,10 @@
+{
+  try {
+    getMap().putIfAbsent(k3(),null);
+    fail("putIfAbsent(key, null) should throw");
+  }
+ catch (  NullPointerException expected) {
+  }
+  expectUnchanged();
+  expectNullValueMissingWhenNullValuesUnsupported("Should not contain null value after unsupported put(key, null)");
+}

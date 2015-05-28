@@ -1,3 +1,7 @@
 {
-  assertFalse(getMap().entrySet().contains(Helpers.mapEntry(k0(),IncomparableType.INSTANCE)));
+  try {
+    assertFalse(getMap().entrySet().contains(Helpers.mapEntry(k0(),IncomparableType.INSTANCE)));
+  }
+ catch (  ClassCastException acceptable) {
+  }
 }

@@ -1,0 +1,9 @@
+{
+  try {
+    getMap().putIfAbsent(k0(),v3());
+    fail("putIfAbsent(present, differentValue) should throw");
+  }
+ catch (  UnsupportedOperationException expected) {
+  }
+  expectUnchanged();
+}
