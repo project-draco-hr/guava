@@ -1,0 +1,8 @@
+{
+  try {
+    assertFalse(getMap().remove(k0(),v3()));
+  }
+ catch (  UnsupportedOperationException tolerated) {
+  }
+  expectUnchanged();
+}

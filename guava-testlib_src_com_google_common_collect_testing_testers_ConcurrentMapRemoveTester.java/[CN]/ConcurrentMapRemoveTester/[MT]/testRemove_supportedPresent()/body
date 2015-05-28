@@ -1,0 +1,4 @@
+{
+  assertTrue(getMap().remove(k0(),v0()));
+  expectMissing(e0());
+}

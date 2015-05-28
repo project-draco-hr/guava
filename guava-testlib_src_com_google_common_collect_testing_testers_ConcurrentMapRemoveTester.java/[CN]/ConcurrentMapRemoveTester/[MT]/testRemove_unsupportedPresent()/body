@@ -1,0 +1,9 @@
+{
+  try {
+    getMap().remove(k0(),v0());
+    fail("Expected UnsupportedOperationException");
+  }
+ catch (  UnsupportedOperationException expected) {
+  }
+  expectUnchanged();
+}

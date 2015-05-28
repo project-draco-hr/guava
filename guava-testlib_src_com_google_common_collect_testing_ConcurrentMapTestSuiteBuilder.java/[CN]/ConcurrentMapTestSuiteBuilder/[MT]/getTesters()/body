@@ -1,5 +1,6 @@
 {
   List<Class<? extends AbstractTester>> testers=Helpers.copyToList(super.getTesters());
   testers.add(ConcurrentMapPutIfAbsentTester.class);
+  testers.add(ConcurrentMapRemoveTester.class);
   return testers;
 }
