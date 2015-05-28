@@ -1,4 +1,4 @@
 {
   oldSecurityManager=System.getSecurityManager();
-  System.setSecurityManager(new NoSetAccessibleSecurityManager());
+  System.setSecurityManager(securityManager);
 }

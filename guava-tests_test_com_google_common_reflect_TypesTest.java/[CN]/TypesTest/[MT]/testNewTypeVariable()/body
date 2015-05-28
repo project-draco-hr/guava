@@ -10,4 +10,5 @@
   assertEqualTypeVariable(objectBoundJvmType,objectBound);
   assertEqualTypeVariable(upperBoundJvmType,upperBound);
   new TypeVariableEqualsTester().addEqualityGroup(noBoundJvmType,noBound).addEqualityGroup(objectBoundJvmType,objectBound).addEqualityGroup(upperBoundJvmType,upperBound).testEquals();
+  assertTrue(securityManager.setAccessibleWasRefused);
 }

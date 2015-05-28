@@ -1,0 +1,8 @@
+{
+  for (  StackTraceElement stackTraceElement : new Throwable().getStackTrace()) {
+    if (stackTraceElement.getClassName().contains(classNameFragment) && stackTraceElement.getMethodName().equals(methodName)) {
+      return true;
+    }
+  }
+  return false;
+}
