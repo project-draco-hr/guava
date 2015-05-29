@@ -3,5 +3,6 @@
   testers.add(ConcurrentMapPutIfAbsentTester.class);
   testers.add(ConcurrentMapRemoveTester.class);
   testers.add(ConcurrentMapReplaceTester.class);
+  testers.add(ConcurrentMapReplaceEntryTester.class);
   return testers;
 }

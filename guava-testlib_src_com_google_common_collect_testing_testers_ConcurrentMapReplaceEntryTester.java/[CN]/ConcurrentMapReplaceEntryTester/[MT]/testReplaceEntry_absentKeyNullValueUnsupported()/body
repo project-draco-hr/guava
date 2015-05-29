@@ -1,0 +1,8 @@
+{
+  try {
+    assertFalse(getMap().replace(k3(),v3(),null));
+  }
+ catch (  NullPointerException tolerated) {
+  }
+  expectUnchanged();
+}

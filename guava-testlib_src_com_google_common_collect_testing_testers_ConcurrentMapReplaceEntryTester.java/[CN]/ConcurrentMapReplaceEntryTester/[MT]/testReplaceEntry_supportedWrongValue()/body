@@ -1,0 +1,4 @@
+{
+  assertFalse(getMap().replace(k0(),v3(),v4()));
+  expectUnchanged();
+}
