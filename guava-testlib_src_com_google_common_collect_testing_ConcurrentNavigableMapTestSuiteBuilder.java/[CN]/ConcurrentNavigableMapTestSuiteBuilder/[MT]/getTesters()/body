@@ -1,5 +1,5 @@
 {
   List<Class<? extends AbstractTester>> testers=Helpers.copyToList(super.getTesters());
-  testers.addAll(TESTERS);
+  testers.addAll(ConcurrentMapTestSuiteBuilder.TESTERS);
   return testers;
 }

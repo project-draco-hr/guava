@@ -3,5 +3,5 @@
   List<Feature<?>> features=new ArrayList<Feature<?>>();
   features.add(NoRecurse.DESCENDING);
   features.addAll(parentBuilder.getFeatures());
-  return NavigableMapTestSuiteBuilder.using(new DescendingTestMapGenerator<K,V>(delegate)).named(parentBuilder.getName() + " descending").withFeatures(features).suppressing(parentBuilder.getSuppressedTests()).createTestSuite();
+  return subSuiteUsing(new DescendingTestMapGenerator<K,V>(delegate)).named(parentBuilder.getName() + " descending").withFeatures(features).suppressing(parentBuilder.getSuppressedTests()).createTestSuite();
 }

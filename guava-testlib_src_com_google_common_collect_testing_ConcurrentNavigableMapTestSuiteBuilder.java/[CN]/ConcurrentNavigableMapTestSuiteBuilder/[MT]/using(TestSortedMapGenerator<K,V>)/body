@@ -1,0 +1,5 @@
+{
+  ConcurrentNavigableMapTestSuiteBuilder<K,V> result=new ConcurrentNavigableMapTestSuiteBuilder<K,V>();
+  result.usingGenerator(generator);
+  return result;
+}
