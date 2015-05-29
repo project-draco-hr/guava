@@ -1,0 +1,4 @@
+{
+  assertEquals(v0(),getMap().replace(k0(),v3()));
+  expectReplacement(entry(k0(),v3()));
+}

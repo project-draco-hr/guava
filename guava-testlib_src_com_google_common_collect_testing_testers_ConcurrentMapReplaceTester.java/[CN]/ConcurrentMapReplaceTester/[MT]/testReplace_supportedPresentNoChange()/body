@@ -1,0 +1,4 @@
+{
+  assertEquals(v0(),getMap().replace(k0(),v0()));
+  expectUnchanged();
+}

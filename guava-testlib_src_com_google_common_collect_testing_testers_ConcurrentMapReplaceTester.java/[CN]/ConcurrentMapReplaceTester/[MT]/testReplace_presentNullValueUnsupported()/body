@@ -1,0 +1,9 @@
+{
+  try {
+    getMap().replace(k0(),null);
+    fail("Expected NullPointerException");
+  }
+ catch (  NullPointerException expected) {
+  }
+  expectUnchanged();
+}
