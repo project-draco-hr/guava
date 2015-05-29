@@ -1,0 +1,4 @@
+{
+  NavigableMap<K,V> map=(NavigableMap<K,V>)delegate.create(entries);
+  return map.descendingMap();
+}

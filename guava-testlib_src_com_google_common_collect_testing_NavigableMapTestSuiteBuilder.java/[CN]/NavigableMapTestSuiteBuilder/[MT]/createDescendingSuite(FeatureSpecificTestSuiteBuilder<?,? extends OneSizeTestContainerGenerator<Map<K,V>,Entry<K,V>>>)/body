@@ -1,18 +1,7 @@
 {
-  final TestMapGenerator<K,V> delegate=(TestMapGenerator<K,V>)parentBuilder.getSubjectGenerator().getInnerGenerator();
+  final TestSortedMapGenerator<K,V> delegate=(TestSortedMapGenerator<K,V>)parentBuilder.getSubjectGenerator().getInnerGenerator();
   List<Feature<?>> features=new ArrayList<Feature<?>>();
   features.add(NoRecurse.DESCENDING);
   features.addAll(parentBuilder.getFeatures());
-  return NavigableMapTestSuiteBuilder.using(new ForwardingTestMapGenerator<K,V>(delegate){
-    @Override public Map<K,V> create(    Object... entries){
-      NavigableMap<K,V> map=(NavigableMap<K,V>)delegate.create(entries);
-      return map.descendingMap();
-    }
-    @Override public Iterable<Entry<K,V>> order(    List<Entry<K,V>> insertionOrder){
-      insertionOrder=castOrCopyToList(delegate.order(insertionOrder));
-      reverse(insertionOrder);
-      return insertionOrder;
-    }
-  }
-).named(parentBuilder.getName() + " descending").withFeatures(features).suppressing(parentBuilder.getSuppressedTests()).createTestSuite();
+  return NavigableMapTestSuiteBuilder.using(new DescendingTestMapGenerator<K,V>(delegate)).named(parentBuilder.getName() + " descending").withFeatures(features).suppressing(parentBuilder.getSuppressedTests()).createTestSuite();
 }

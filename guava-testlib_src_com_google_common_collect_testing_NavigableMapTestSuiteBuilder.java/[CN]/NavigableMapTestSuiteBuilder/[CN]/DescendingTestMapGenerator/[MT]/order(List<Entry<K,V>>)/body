@@ -1,0 +1,5 @@
+{
+  insertionOrder=castOrCopyToList(delegate.order(insertionOrder));
+  reverse(insertionOrder);
+  return insertionOrder;
+}
