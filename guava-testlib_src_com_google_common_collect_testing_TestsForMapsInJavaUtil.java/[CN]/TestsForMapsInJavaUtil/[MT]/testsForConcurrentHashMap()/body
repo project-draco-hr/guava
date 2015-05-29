@@ -1,6 +1,6 @@
 {
-  return ConcurrentMapTestSuiteBuilder.using(new TestStringConcurrentMapGenerator(){
-    @Override protected ConcurrentMap<String,String> create(    Entry<String,String>[] entries){
+  return ConcurrentMapTestSuiteBuilder.using(new TestStringMapGenerator(){
+    @Override protected Map<String,String> create(    Entry<String,String>[] entries){
       return populate(new ConcurrentHashMap<String,String>(),entries);
     }
   }
