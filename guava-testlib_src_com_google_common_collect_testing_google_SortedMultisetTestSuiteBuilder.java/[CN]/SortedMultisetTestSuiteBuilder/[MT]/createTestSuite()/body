@@ -1,5 +1,5 @@
 {
-  withFeatures(CollectionFeature.KNOWN_ORDER);
+  withFeatures(KNOWN_ORDER);
   TestSuite suite=super.createTestSuite();
   for (  TestSuite subSuite : createDerivedSuites(this)) {
     suite.addTest(subSuite);

@@ -1,7 +1,7 @@
 {
   TestSuite suite=new TestSuite();
   suite.addTestSuite(ImmutableSetMultimapTest.class);
-  suite.addTest(SetMultimapTestSuiteBuilder.using(new ImmutableSetMultimapGenerator()).named("ImmutableSetMultimap").withFeatures(MapFeature.ALLOWS_ANY_NULL_QUERIES,CollectionFeature.KNOWN_ORDER,CollectionFeature.SERIALIZABLE,CollectionSize.ANY).createTestSuite());
-  suite.addTest(SetMultimapTestSuiteBuilder.using(new ImmutableSetMultimapCopyOfEntriesGenerator()).named("ImmutableSetMultimap.copyOf[Iterable<Entry>]").withFeatures(MapFeature.ALLOWS_ANY_NULL_QUERIES,CollectionFeature.KNOWN_ORDER,CollectionFeature.SERIALIZABLE,CollectionSize.ANY).createTestSuite());
+  suite.addTest(SetMultimapTestSuiteBuilder.using(new ImmutableSetMultimapGenerator()).named("ImmutableSetMultimap").withFeatures(ALLOWS_ANY_NULL_QUERIES,KNOWN_ORDER,SERIALIZABLE,CollectionSize.ANY).createTestSuite());
+  suite.addTest(SetMultimapTestSuiteBuilder.using(new ImmutableSetMultimapCopyOfEntriesGenerator()).named("ImmutableSetMultimap.copyOf[Iterable<Entry>]").withFeatures(ALLOWS_ANY_NULL_QUERIES,KNOWN_ORDER,SERIALIZABLE,CollectionSize.ANY).createTestSuite());
   return suite;
 }

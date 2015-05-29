@@ -3,7 +3,7 @@
   if (!parentBuilder.getFeatures().contains(NoRecurse.DESCENDING)) {
     derivedSuites.add(createDescendingSuite(parentBuilder));
   }
-  if (parentBuilder.getFeatures().contains(CollectionFeature.SERIALIZABLE)) {
+  if (parentBuilder.getFeatures().contains(SERIALIZABLE)) {
     derivedSuites.add(createReserializedSuite(parentBuilder));
   }
   if (!parentBuilder.getFeatures().contains(NoRecurse.SUBMULTISET)) {

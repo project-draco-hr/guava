@@ -2,10 +2,10 @@
   final TestMultisetGenerator<E> delegate=(TestMultisetGenerator<E>)parentBuilder.getSubjectGenerator();
   Set<Feature<?>> features=new HashSet<Feature<?>>();
   features.add(NoRecurse.SUBMULTISET);
-  features.add(CollectionFeature.RESTRICTS_ELEMENTS);
+  features.add(RESTRICTS_ELEMENTS);
   features.addAll(parentBuilder.getFeatures());
-  if (!features.remove(CollectionFeature.SERIALIZABLE_INCLUDING_VIEWS)) {
-    features.remove(CollectionFeature.SERIALIZABLE);
+  if (!features.remove(SERIALIZABLE_INCLUDING_VIEWS)) {
+    features.remove(SERIALIZABLE);
   }
   SortedMultiset<E> emptyMultiset=(SortedMultiset<E>)delegate.create();
   final Comparator<? super E> comparator=emptyMultiset.comparator();

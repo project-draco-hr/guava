@@ -1,5 +1,5 @@
 {
-  new IteratorTester<E>(4,IteratorFeature.UNMODIFIABLE,getSubjectGenerator().order(Arrays.asList(e0(),e1(),e1(),e2())),IteratorTester.KnownOrder.KNOWN_ORDER){
+  new IteratorTester<E>(4,UNMODIFIABLE,getSubjectGenerator().order(Arrays.asList(e0(),e1(),e1(),e2())),IteratorTester.KnownOrder.KNOWN_ORDER){
     @Override protected Iterator<E> newTargetIterator(){
       return getSubjectGenerator().create(e0(),e1(),e1(),e2()).iterator();
     }

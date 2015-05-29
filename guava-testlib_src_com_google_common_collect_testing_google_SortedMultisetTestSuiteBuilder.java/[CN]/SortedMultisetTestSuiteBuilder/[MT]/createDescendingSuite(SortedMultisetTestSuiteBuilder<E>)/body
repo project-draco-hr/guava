@@ -3,8 +3,8 @@
   Set<Feature<?>> features=new HashSet<Feature<?>>();
   features.add(NoRecurse.DESCENDING);
   features.addAll(parentBuilder.getFeatures());
-  if (!features.remove(CollectionFeature.SERIALIZABLE_INCLUDING_VIEWS)) {
-    features.remove(CollectionFeature.SERIALIZABLE);
+  if (!features.remove(SERIALIZABLE_INCLUDING_VIEWS)) {
+    features.remove(SERIALIZABLE);
   }
   return SortedMultisetTestSuiteBuilder.using(new ForwardingTestMultisetGenerator<E>(delegate){
     @Override public SortedMultiset<E> create(    Object... entries){

@@ -1,7 +1,7 @@
 {
   final TestSetGenerator<E> delegate=(TestSetGenerator<E>)parentBuilder.getSubjectGenerator().getInnerGenerator();
   List<Feature<?>> features=new ArrayList<Feature<?>>();
-  features.add(CollectionFeature.DESCENDING_VIEW);
+  features.add(DESCENDING_VIEW);
   features.addAll(parentBuilder.getFeatures());
   return NavigableSetTestSuiteBuilder.using(new TestSetGenerator<E>(){
     @Override public SampleElements<E> samples(){

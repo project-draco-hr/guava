@@ -1,4 +1,4 @@
 {
-  withFeatures(CollectionFeature.KNOWN_ORDER);
+  withFeatures(KNOWN_ORDER);
   return super.createTestSuite();
 }
