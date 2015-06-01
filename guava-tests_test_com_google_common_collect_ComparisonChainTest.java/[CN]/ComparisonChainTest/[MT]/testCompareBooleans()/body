@@ -1,0 +1,3 @@
+{
+  assertEquals(0,ComparisonChain.start().compare(true,true).compare(true,Boolean.TRUE).compare(Boolean.TRUE,true).compare(Boolean.TRUE,Boolean.TRUE).result());
+}
