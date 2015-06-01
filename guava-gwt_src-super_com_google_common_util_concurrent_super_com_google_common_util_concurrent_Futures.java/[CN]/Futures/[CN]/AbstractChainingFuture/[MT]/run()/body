@@ -1,0 +1,28 @@
+{
+  try {
+    ListenableFuture<? extends I> localInputFuture=inputFuture;
+    F localFunction=function;
+    if (isCancelled() | localInputFuture == null | localFunction == null) {
+      return;
+    }
+    I sourceResult;
+    try {
+      sourceResult=getUninterruptibly(inputFuture);
+    }
+ catch (    CancellationException e) {
+      cancel(false);
+      return;
+    }
+catch (    ExecutionException e) {
+      setException(e.getCause());
+      return;
+    }
+    doTransform(localFunction,sourceResult);
+  }
+ catch (  UndeclaredThrowableException e) {
+    setException(e.getCause());
+  }
+catch (  Throwable t) {
+    setException(t);
+  }
+}

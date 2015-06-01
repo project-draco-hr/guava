@@ -1,3 +1,5 @@
 {
-  return catching(input,exceptionType,fallback,directExecutor());
+  CatchingFuture<V,X> future=new CatchingFuture<V,X>(input,exceptionType,fallback);
+  input.addListener(future,directExecutor());
+  return future;
 }

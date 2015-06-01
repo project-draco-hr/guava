@@ -1,3 +1,5 @@
 {
-  return catchingAsync(input,exceptionType,asAsyncFunction(fallback),executor);
+  CatchingFuture future=new CatchingFuture<V,Throwable>(input,exceptionType,fallback);
+  input.addListener(future,executor);
+  return future;
 }

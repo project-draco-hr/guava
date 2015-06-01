@@ -1,5 +1,5 @@
 {
-  ChainingListenableFuture<I,O> output=new ChainingListenableFuture<I,O>(function,input);
+  AsyncChainingFuture<I,O> output=new AsyncChainingFuture<I,O>(input,function);
   input.addListener(output,directExecutor());
   return output;
 }

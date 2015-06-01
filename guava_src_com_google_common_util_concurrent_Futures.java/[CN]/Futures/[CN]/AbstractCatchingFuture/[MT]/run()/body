@@ -1,0 +1,31 @@
+{
+  ListenableFuture<? extends V> localRunning=running;
+  Class<X> localExceptionType=exceptionType;
+  F localFallback=fallback;
+  if (localRunning == null | localExceptionType == null | localFallback == null | isCancelled()) {
+    return;
+  }
+  Throwable throwable;
+  try {
+    set(getUninterruptibly(localRunning));
+    return;
+  }
+ catch (  ExecutionException e) {
+    throwable=e.getCause();
+  }
+catch (  Throwable e) {
+    throwable=e;
+  }
+  try {
+    if (isInstanceOfThrowableClass(throwable,localExceptionType)) {
+      @SuppressWarnings("unchecked") X castThrowable=(X)throwable;
+      doFallback(localFallback,castThrowable);
+    }
+ else {
+      setException(throwable);
+    }
+  }
+ catch (  Throwable e) {
+    setException(e);
+  }
+}
