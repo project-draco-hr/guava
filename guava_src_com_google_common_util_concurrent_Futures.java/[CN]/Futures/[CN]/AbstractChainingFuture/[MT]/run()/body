@@ -7,7 +7,7 @@
     }
     I sourceResult;
     try {
-      sourceResult=getUninterruptibly(inputFuture);
+      sourceResult=getUninterruptibly(localInputFuture);
     }
  catch (    CancellationException e) {
       cancel(false);
