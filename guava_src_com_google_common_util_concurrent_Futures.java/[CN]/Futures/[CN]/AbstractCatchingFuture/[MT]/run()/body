@@ -5,6 +5,9 @@
   if (localInputFuture == null | localExceptionType == null | localFallback == null | isCancelled()) {
     return;
   }
+  inputFuture=null;
+  exceptionType=null;
+  fallback=null;
   Throwable throwable;
   try {
     set(getUninterruptibly(localInputFuture));
