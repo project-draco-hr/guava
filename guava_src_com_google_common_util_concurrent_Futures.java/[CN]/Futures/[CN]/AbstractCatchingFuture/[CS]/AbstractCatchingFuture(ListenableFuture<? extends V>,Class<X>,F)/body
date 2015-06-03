@@ -1,5 +1,5 @@
 {
   this.exceptionType=checkNotNull(exceptionType);
-  this.running=checkNotNull(input);
+  this.inputFuture=checkNotNull(inputFuture);
   this.fallback=checkNotNull(fallback);
 }

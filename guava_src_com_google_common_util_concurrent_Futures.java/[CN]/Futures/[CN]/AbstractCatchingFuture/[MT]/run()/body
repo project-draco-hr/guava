@@ -1,13 +1,13 @@
 {
-  ListenableFuture<? extends V> localRunning=running;
+  ListenableFuture<? extends V> localInputFuture=inputFuture;
   Class<X> localExceptionType=exceptionType;
   F localFallback=fallback;
-  if (localRunning == null | localExceptionType == null | localFallback == null | isCancelled()) {
+  if (localInputFuture == null | localExceptionType == null | localFallback == null | isCancelled()) {
     return;
   }
   Throwable throwable;
   try {
-    set(getUninterruptibly(localRunning));
+    set(getUninterruptibly(localInputFuture));
     return;
   }
  catch (  ExecutionException e) {
