@@ -1,5 +1,11 @@
 {
-  List<T> newList=Lists.newArrayList(scenario.strictlyOrderedList);
-  Collections.reverse(newList);
-  return new Scenario<T>(scenario.ordering.reverse(),newList,scenario.emptyArray);
+  List<Composite<T>> composites=Lists.newArrayList();
+  for (  T t : scenario.strictlyOrderedList) {
+    composites.add(new Composite<T>(t,1));
+  }
+  for (  T t : scenario.strictlyOrderedList) {
+    composites.add(new Composite<T>(t,2));
+  }
+  Ordering<Composite<T>> ordering=Ordering.natural().compound(scenario.ordering.onResultOf(Composite.<T>getValueFunction()));
+  return new Scenario<Composite<T>>(ordering,composites,new Composite[0]);
 }
