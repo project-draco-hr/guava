@@ -1,5 +1,5 @@
 {
-  Preconditions.checkNotNull(throwable);
+  checkNotNull(throwable);
   boolean completedWithFailure=false;
   boolean firstTimeSeeingThisException=true;
   if (allMustSucceed) {
@@ -7,14 +7,8 @@
     if (completedWithFailure) {
       releaseResourcesAfterFailure();
     }
-    Set<Throwable> seenExceptionsLocal=getSeenExceptions();
-    Throwable currentThrowable=throwable;
-    while (currentThrowable != null) {
-      firstTimeSeeingThisException=seenExceptionsLocal.add(currentThrowable);
-      if (!firstTimeSeeingThisException) {
-        break;
-      }
-      currentThrowable=currentThrowable.getCause();
+ else {
+      firstTimeSeeingThisException=addCausalChain(getOrInitSeenExceptions(),throwable);
     }
   }
   if (throwable instanceof Error | (allMustSucceed & !completedWithFailure & firstTimeSeeingThisException)) {

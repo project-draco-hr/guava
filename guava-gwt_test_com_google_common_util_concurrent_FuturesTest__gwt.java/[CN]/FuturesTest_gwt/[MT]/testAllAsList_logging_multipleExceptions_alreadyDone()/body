@@ -3,7 +3,7 @@
   testCase.setUp();
   Throwable failure=null;
   try {
-    testCase.testAllAsList_logging_multipleExceptions();
+    testCase.testAllAsList_logging_multipleExceptions_alreadyDone();
   }
  catch (  Throwable t) {
     failure=t;

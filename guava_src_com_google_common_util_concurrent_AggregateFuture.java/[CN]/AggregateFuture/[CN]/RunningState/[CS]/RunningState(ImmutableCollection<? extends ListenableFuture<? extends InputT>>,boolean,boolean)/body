@@ -1,6 +1,6 @@
 {
   super(futures.size());
-  this.futures=Preconditions.checkNotNull(futures);
+  this.futures=checkNotNull(futures);
   this.allMustSucceed=allMustSucceed;
   this.collectsValues=collectsValues;
 }

@@ -16,6 +16,6 @@
   }
  catch (  ExecutionException expected) {
     assertTrue(expected.getCause() instanceof MyException);
-    assertEquals(1,aggregateFutureLogHandler.getStoredLogRecords().size());
+    assertThat(aggregateFutureLogHandler.getStoredLogRecords()).isEmpty();
   }
 }

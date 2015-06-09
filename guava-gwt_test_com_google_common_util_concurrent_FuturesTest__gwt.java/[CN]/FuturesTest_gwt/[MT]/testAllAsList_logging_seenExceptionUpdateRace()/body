@@ -3,7 +3,7 @@
   testCase.setUp();
   Throwable failure=null;
   try {
-    testCase.testAllAsList_logging_seenExceptionUpdateRaceBuggy();
+    testCase.testAllAsList_logging_seenExceptionUpdateRace();
   }
  catch (  Throwable t) {
     failure=t;

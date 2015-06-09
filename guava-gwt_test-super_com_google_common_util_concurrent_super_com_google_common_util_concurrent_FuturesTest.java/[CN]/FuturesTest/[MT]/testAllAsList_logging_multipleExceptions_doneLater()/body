@@ -1,0 +1,18 @@
+{
+  SettableFuture<Object> future1=SettableFuture.create();
+  SettableFuture<Object> future2=SettableFuture.create();
+  SettableFuture<Object> future3=SettableFuture.create();
+  ListenableFuture<List<Object>> all=Futures.allAsList(future1,future2,future3);
+  future1.setException(new MyException());
+  future2.setException(new MyException());
+  future3.setException(new MyException());
+  try {
+    all.get();
+  }
+ catch (  ExecutionException e) {
+    List<LogRecord> logged=aggregateFutureLogHandler.getStoredLogRecords();
+    assertEquals(2,logged.size());
+    assertTrue(logged.get(0).getThrown() instanceof MyException);
+    assertTrue(logged.get(1).getThrown() instanceof MyException);
+  }
+}

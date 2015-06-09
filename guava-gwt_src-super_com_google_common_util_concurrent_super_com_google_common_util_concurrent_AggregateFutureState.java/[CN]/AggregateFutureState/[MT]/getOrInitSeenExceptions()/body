@@ -1,0 +1,7 @@
+{
+  if (seenExceptions == null) {
+    seenExceptions=newHashSet();
+    addInitialException(seenExceptions);
+  }
+  return seenExceptions;
+}
