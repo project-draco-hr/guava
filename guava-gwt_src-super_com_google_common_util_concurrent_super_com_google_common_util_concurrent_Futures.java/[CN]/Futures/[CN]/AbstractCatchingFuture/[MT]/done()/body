@@ -1,4 +1,5 @@
 {
+  maybePropagateCancellation(inputFuture);
   this.inputFuture=null;
   this.exceptionType=null;
   this.fallback=null;

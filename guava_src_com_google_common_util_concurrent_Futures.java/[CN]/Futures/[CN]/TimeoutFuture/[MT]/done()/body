@@ -1,0 +1,12 @@
+{
+  Future<?> localTimer=timer;
+  ListenableFuture<V> delegate=delegateRef;
+  if (delegate != null) {
+    delegateRef=null;
+    delegate.cancel(wasInterrupted());
+  }
+  if (localTimer != null) {
+    timer=null;
+    localTimer.cancel(false);
+  }
+}
