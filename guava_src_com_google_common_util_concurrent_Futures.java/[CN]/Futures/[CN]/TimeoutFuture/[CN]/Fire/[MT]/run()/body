@@ -8,21 +8,15 @@
     return;
   }
   timeoutFutureRef=null;
-  Future<?> timer=timeoutFuture.timer;
-  timeoutFuture.delegateRef=null;
-  timeoutFuture.timer=null;
   if (delegate.isDone()) {
     timeoutFuture.setFuture(delegate);
-    if (timer != null) {
-      timer.cancel(false);
-    }
   }
  else {
     try {
-      delegate.cancel(true);
+      timeoutFuture.setException(new TimeoutException("Future timed out: " + delegate));
     }
   finally {
-      timeoutFuture.setException(new TimeoutException("Future timed out: " + delegate));
+      delegate.cancel(true);
     }
   }
 }
