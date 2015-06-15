@@ -1,5 +1,5 @@
 {
-  if (related != null && isCancelled()) {
+  if (related != null & isCancelled()) {
     related.cancel(wasInterrupted());
   }
 }
