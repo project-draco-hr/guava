@@ -1,0 +1,9 @@
+{
+  ImmutableBiMap.Builder<String,Integer> builder=new Builder<String,Integer>().orderEntriesByValue(Ordering.natural());
+  try {
+    builder.orderEntriesByValue(Ordering.natural());
+    fail("Expected IllegalStateException");
+  }
+ catch (  IllegalStateException expected) {
+  }
+}

@@ -1,0 +1,4 @@
+{
+  ImmutableMap<String,Integer> map=new Builder<String,Integer>().orderEntriesByValue(Ordering.natural()).put("three",3).put("one",1).put("five",5).put("four",4).put("two",2).build();
+  assertMapEquals(map,"one",1,"two",2,"three",3,"four",4,"five",5);
+}

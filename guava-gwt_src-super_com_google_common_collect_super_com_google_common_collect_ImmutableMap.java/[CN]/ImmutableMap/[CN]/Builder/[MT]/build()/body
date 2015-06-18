@@ -1,3 +1,6 @@
 {
+  if (valueComparator != null) {
+    Collections.sort(entries,Ordering.from(valueComparator).onResultOf(Maps.<V>valueFunction()));
+  }
   return fromEntryList(entries);
 }
