@@ -1,7 +1,7 @@
 {
   Iterable<V> iterable=new Iterable<V>(){
     @Override public Iterator<V> iterator(){
-      return Iterators.emptyIterator();
+      return ImmutableSet.<V>of().iterator();
     }
   }
 ;
