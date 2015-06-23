@@ -1,5 +1,5 @@
 {
   Collection<V> result=multimap().get(k3());
-  assertTrue(result.isEmpty());
+  assertEmpty(result);
   assertEquals(0,result.size());
 }

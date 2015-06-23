@@ -1,0 +1,11 @@
+{
+  List<?> list=Arrays.asList("a","b");
+  Helpers.assertContains(list,"a");
+  Helpers.assertContains(list,"b");
+  try {
+    Helpers.assertContains(list,"c");
+    fail();
+  }
+ catch (  AssertionError expected) {
+  }
+}

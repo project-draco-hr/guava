@@ -4,6 +4,6 @@
   assertEquals(2,keys.count(k0()));
   assertEquals(1,keys.count(k1()));
   assertEquals(3,keys.size());
-  assertThat(keys).containsAllOf(k0(),k1());
-  assertThat(keys.entrySet()).containsAllOf(Multisets.immutableEntry(k0(),2),Multisets.immutableEntry(k1(),1));
+  assertContainsAllOf(keys,k0(),k1());
+  assertContainsAllOf(keys.entrySet(),Multisets.immutableEntry(k0(),2),Multisets.immutableEntry(k1(),1));
 }

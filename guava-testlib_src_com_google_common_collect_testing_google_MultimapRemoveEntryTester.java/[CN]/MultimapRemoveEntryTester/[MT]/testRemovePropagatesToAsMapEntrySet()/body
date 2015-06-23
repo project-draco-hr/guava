@@ -17,7 +17,7 @@
     Collection<V> expectedCollection=Helpers.copyToList(collection);
     multimap().remove(key,value);
     expectedCollection.remove(value);
-    assertThat(collection).containsExactlyElementsIn(expectedCollection);
+    assertEqualIgnoringOrder(expectedCollection,collection);
     assertEquals(!expectedCollection.isEmpty(),multimap().containsKey(key));
   }
 }

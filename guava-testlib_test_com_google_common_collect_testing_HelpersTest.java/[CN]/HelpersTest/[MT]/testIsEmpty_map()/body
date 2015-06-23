@@ -1,0 +1,11 @@
+{
+  Map<Object,Object> map=new HashMap<Object,Object>();
+  Helpers.assertEmpty(map);
+  map.put("a","b");
+  try {
+    Helpers.assertEmpty(map);
+    fail();
+  }
+ catch (  AssertionError expected) {
+  }
+}

@@ -1,0 +1,31 @@
+{
+  List<?> list=Arrays.asList("a","b","c");
+  Helpers.assertEqualInOrder(list,list);
+  List<?> fewer=Arrays.asList("a","b");
+  try {
+    Helpers.assertEqualInOrder(list,fewer);
+    fail();
+  }
+ catch (  AssertionError expected) {
+  }
+  try {
+    Helpers.assertEqualInOrder(fewer,list);
+    fail();
+  }
+ catch (  AssertionError expected) {
+  }
+  List<?> differentOrder=Arrays.asList("a","c","b");
+  try {
+    Helpers.assertEqualInOrder(list,differentOrder);
+    fail();
+  }
+ catch (  AssertionError expected) {
+  }
+  List<?> differentContents=Arrays.asList("a","b","C");
+  try {
+    Helpers.assertEqualInOrder(list,differentContents);
+    fail();
+  }
+ catch (  AssertionError expected) {
+  }
+}

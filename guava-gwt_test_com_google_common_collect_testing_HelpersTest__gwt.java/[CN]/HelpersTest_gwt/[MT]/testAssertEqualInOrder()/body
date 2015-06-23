@@ -1,0 +1,4 @@
+{
+  com.google.common.collect.testing.HelpersTest testCase=new com.google.common.collect.testing.HelpersTest();
+  testCase.testAssertEqualInOrder();
+}

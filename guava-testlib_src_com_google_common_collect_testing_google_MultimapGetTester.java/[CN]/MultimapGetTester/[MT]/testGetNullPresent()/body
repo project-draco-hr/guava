@@ -1,4 +1,4 @@
 {
   initMultimapWithNullKey();
-  assertThat(multimap().get(null)).contains(getValueForNullKey());
+  assertContains(multimap().get(null),getValueForNullKey());
 }

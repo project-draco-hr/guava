@@ -2,5 +2,5 @@
   Collection<Entry<K,V>> entries=multimap().entries();
   assertFalse(entries.contains(Helpers.mapEntry(k0(),v3())));
   multimap().put(k0(),v3());
-  assertThat(entries).contains(Helpers.mapEntry(k0(),v3()));
+  assertContains(entries,Helpers.mapEntry(k0(),v3()));
 }

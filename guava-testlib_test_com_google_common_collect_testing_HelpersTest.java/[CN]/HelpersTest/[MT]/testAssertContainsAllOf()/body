@@ -1,0 +1,25 @@
+{
+  List<?> list=Arrays.asList("a","a","b","c");
+  Helpers.assertContainsAllOf(list,"a");
+  Helpers.assertContainsAllOf(list,"a","a");
+  Helpers.assertContainsAllOf(list,"a","b","c");
+  Helpers.assertContainsAllOf(list,"a","b","c","a");
+  try {
+    Helpers.assertContainsAllOf(list,"d");
+    fail();
+  }
+ catch (  AssertionError expected) {
+  }
+  try {
+    Helpers.assertContainsAllOf(list,"a","b","c","d");
+    fail();
+  }
+ catch (  AssertionError expected) {
+  }
+  try {
+    Helpers.assertContainsAllOf(list,"a","a","a");
+    fail();
+  }
+ catch (  AssertionError expected) {
+  }
+}

@@ -4,11 +4,11 @@
   assertTrue(result.remove(v0()));
   assertFalse(multimap().containsKey(k0()));
   assertFalse(multimap().containsEntry(k0(),v0()));
-  assertThat(result).isEmpty();
+  assertEmpty(result);
   assertTrue(result.add(v1()));
   assertTrue(result.add(v2()));
-  assertThat(result).containsExactly(v1(),v2());
-  assertThat(multimap().get(k0())).containsExactly(v1(),v2());
+  assertContentsAnyOrder(result,v1(),v2());
+  assertContentsAnyOrder(multimap().get(k0()),v1(),v2());
   assertTrue(multimap().containsKey(k0()));
   assertFalse(multimap().containsEntry(k0(),v0()));
   assertTrue(multimap().containsEntry(k0(),v2()));

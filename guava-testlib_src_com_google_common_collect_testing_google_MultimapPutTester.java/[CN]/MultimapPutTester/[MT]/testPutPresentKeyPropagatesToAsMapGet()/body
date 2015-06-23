@@ -8,7 +8,7 @@
     Collection<V> expectedCollection=Helpers.copyToList(collection);
     multimap().put(key,v3());
     expectedCollection.add(v3());
-    assertThat(collection).containsExactlyElementsIn(expectedCollection);
+    assertEqualIgnoringOrder(expectedCollection,collection);
     assertEquals(size + 1,multimap().size());
   }
 }

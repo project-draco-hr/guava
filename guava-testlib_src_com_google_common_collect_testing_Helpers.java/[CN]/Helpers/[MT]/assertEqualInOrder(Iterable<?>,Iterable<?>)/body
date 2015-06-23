@@ -1,0 +1,12 @@
+{
+  Iterator<?> expectedIter=expected.iterator();
+  Iterator<?> actualIter=actual.iterator();
+  while (expectedIter.hasNext() && actualIter.hasNext()) {
+    if (!equal(expectedIter.next(),actualIter.next())) {
+      Assert.fail("contents were not equal and in the same order: " + "expected = " + expected + ", actual = "+ actual);
+    }
+  }
+  if (expectedIter.hasNext() || actualIter.hasNext()) {
+    Assert.fail("contents were not equal and in the same order: " + "expected = " + expected + ", actual = "+ actual);
+  }
+}

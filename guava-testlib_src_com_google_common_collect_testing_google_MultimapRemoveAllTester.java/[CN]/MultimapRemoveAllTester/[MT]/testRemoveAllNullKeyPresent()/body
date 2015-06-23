@@ -1,5 +1,5 @@
 {
   initMultimapWithNullKey();
-  assertThat(multimap().removeAll(null)).containsExactly(getValueForNullKey());
+  assertContentsAnyOrder(multimap().removeAll(null),getValueForNullKey());
   expectMissing(Helpers.mapEntry((K)null,getValueForNullKey()));
 }

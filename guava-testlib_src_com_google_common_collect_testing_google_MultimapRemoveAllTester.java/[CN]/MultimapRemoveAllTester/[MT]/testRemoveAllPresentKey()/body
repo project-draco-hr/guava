@@ -1,4 +1,4 @@
 {
-  assertThat(multimap().removeAll(k0())).containsExactly(v0());
+  assertContentsAnyOrder(multimap().removeAll(k0()),v0());
   expectMissing(e0());
 }

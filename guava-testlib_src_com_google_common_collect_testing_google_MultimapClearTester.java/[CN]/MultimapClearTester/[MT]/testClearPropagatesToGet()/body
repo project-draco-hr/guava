@@ -3,6 +3,6 @@
     resetContainer();
     Collection<V> collection=multimap().get(key);
     multimap().clear();
-    assertThat(collection).isEmpty();
+    assertEmpty(collection);
   }
 }

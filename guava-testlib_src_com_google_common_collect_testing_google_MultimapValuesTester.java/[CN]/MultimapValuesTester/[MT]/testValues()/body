@@ -3,5 +3,5 @@
   for (  Map.Entry<K,V> entry : getSampleElements()) {
     expected.add(entry.getValue());
   }
-  assertThat(multimap().values()).containsExactlyElementsIn(expected);
+  assertEqualIgnoringOrder(expected,multimap().values());
 }

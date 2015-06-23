@@ -1,12 +1,12 @@
 {
   assertEquals(0,multimap().size());
-  assertTrue(multimap().isEmpty());
+  assertEmpty(multimap());
   assertEquals(multimap(),getSubjectGenerator().create());
-  assertThat(multimap().entries()).isEmpty();
-  assertThat(multimap().asMap()).isEmpty();
-  assertThat(multimap().keySet()).isEmpty();
-  assertThat(multimap().keys()).isEmpty();
-  assertThat(multimap().values()).isEmpty();
+  assertEmpty(multimap().entries());
+  assertEmpty(multimap().asMap());
+  assertEmpty(multimap().keySet());
+  assertEmpty(multimap().keys());
+  assertEmpty(multimap().values());
   for (  K key : sampleKeys()) {
     assertGet(key);
   }

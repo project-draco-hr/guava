@@ -1,5 +1,5 @@
 {
-  assertThat(multimap().asMap().remove(k0())).containsExactly(v0()).inOrder();
+  assertContentsInOrder(multimap().asMap().remove(k0()),v0());
   assertGet(k0());
   assertEquals(getNumElements() - 1,multimap().size());
 }

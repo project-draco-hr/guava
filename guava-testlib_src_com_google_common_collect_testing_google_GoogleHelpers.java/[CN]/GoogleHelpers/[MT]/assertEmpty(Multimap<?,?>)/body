@@ -1,0 +1,5 @@
+{
+  if (!multimap.isEmpty()) {
+    fail("Not true that " + multimap + " is empty");
+  }
+}

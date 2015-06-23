@@ -1,6 +1,6 @@
 {
   Collection<V> getResult=multimap().get(k0());
   multimap().removeAll(k0());
-  assertThat(getResult).isEmpty();
+  assertEmpty(getResult);
   expectMissing(e0());
 }

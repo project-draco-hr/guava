@@ -2,5 +2,5 @@
   Collection<V> getCollection=multimap().get(k0());
   @SuppressWarnings("unchecked") List<V> values=Arrays.asList(v0(),v2(),v3());
   multimap().replaceValues(k0(),values);
-  assertThat(getCollection).containsExactly(v0(),v2(),v3());
+  assertContentsAnyOrder(getCollection,v0(),v2(),v3());
 }

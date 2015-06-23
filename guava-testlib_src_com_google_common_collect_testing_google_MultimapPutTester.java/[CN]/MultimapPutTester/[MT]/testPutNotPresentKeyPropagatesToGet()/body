@@ -1,8 +1,8 @@
 {
   int size=getNumElements();
   Collection<V> collection=multimap().get(k3());
-  assertThat(collection).isEmpty();
+  assertEmpty(collection);
   multimap().put(k3(),v3());
-  assertThat(collection).contains(v3());
+  assertContains(collection,v3());
   assertEquals(size + 1,multimap().size());
 }

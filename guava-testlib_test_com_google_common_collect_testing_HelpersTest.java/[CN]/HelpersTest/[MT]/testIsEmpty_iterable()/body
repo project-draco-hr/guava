@@ -1,0 +1,11 @@
+{
+  List<Object> list=new ArrayList<Object>();
+  Helpers.assertEmpty(list);
+  list.add("a");
+  try {
+    Helpers.assertEmpty(list);
+    fail();
+  }
+ catch (  AssertionError expected) {
+  }
+}

@@ -8,10 +8,10 @@
     }
     Collection<V> collection=multimap().asMap().get(key);
     if (expectedValues.isEmpty()) {
-      assertThat(collection).isNull();
+      assertNull(collection);
     }
  else {
-      assertThat(collection).containsExactlyElementsIn(expectedValues);
+      assertEqualIgnoringOrder(expectedValues,collection);
     }
   }
 }

@@ -3,5 +3,5 @@
   int getCollectionSize=getCollection.size();
   assertTrue(multimap().putAll(k0(),Lists.newArrayList(v3(),v4())));
   assertEquals(getCollectionSize + 2,getCollection.size());
-  assertThat(getCollection).containsAllOf(v3(),v4());
+  assertContainsAllOf(getCollection,v3(),v4());
 }

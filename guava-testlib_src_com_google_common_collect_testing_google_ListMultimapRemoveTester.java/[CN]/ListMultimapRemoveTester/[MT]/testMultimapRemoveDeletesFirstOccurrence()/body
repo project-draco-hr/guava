@@ -2,5 +2,5 @@
   resetContainer(mapEntry(k0(),v0()),mapEntry(k0(),v1()),mapEntry(k0(),v0()));
   List<V> list=multimap().get(k0());
   multimap().remove(k0(),v0());
-  assertThat(list).containsExactly(v1(),v0()).inOrder();
+  assertContentsInOrder(list,v1(),v0());
 }
