@@ -1,0 +1,3 @@
+{
+  return c >= MIN_SURROGATE && c <= MAX_SURROGATE;
+}
