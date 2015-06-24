@@ -9,9 +9,8 @@
  else {
       utf8Length+=2;
       if (MIN_SURROGATE <= c && c <= MAX_SURROGATE) {
-        int cp=Character.codePointAt(sequence,i);
-        if (cp < MIN_SUPPLEMENTARY_CODE_POINT) {
-          throw new IllegalArgumentException("Unpaired surrogate at index " + i);
+        if (Character.codePointAt(sequence,i) == c) {
+          throw new IllegalArgumentException(unpairedSurrogateMsg(i));
         }
         i++;
       }
