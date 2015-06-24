@@ -1,5 +1,5 @@
 {
-  return new ImmutableMapEntrySet<K,V>(){
+@WeakOuter class EntrySetImpl extends ImmutableMapEntrySet<K,V> {
     @Override ImmutableMap<K,V> map(){
       return IteratorBasedImmutableMap.this;
     }
@@ -7,5 +7,5 @@
       return entryIterator();
     }
   }
-;
+  return new EntrySetImpl();
 }
