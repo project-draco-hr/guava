@@ -1,3 +1,5 @@
 {
-  addCausalChain(seen,trustedGetException());
+  if (!isCancelled()) {
+    addCausalChain(seen,trustedGetException());
+  }
 }
