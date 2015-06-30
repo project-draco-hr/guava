@@ -14,11 +14,18 @@
       throw new IllegalArgumentException("value already present: " + value);
     }
   }
+  BiEntry<K,V> newEntry=new BiEntry<K,V>(key,keyHash,value,valueHash);
   if (oldEntryForKey != null) {
     delete(oldEntryForKey);
+    insert(newEntry,oldEntryForKey);
+    oldEntryForKey.prevInKeyInsertionOrder=null;
+    oldEntryForKey.nextInKeyInsertionOrder=null;
+    rehashIfNecessary();
+    return oldEntryForKey.value;
   }
-  BiEntry<K,V> newEntry=new BiEntry<K,V>(key,keyHash,value,valueHash);
-  insert(newEntry);
-  rehashIfNecessary();
-  return Maps.valueOrNull(oldEntryForKey);
+ else {
+    insert(newEntry,null);
+    rehashIfNecessary();
+    return null;
+  }
 }

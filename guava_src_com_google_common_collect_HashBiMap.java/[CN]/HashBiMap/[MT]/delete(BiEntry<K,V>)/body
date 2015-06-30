@@ -27,6 +27,18 @@
     }
     prevBucketEntry=bucketEntry;
   }
+  if (entry.prevInKeyInsertionOrder == null) {
+    firstInKeyInsertionOrder=entry.nextInKeyInsertionOrder;
+  }
+ else {
+    entry.prevInKeyInsertionOrder.nextInKeyInsertionOrder=entry.nextInKeyInsertionOrder;
+  }
+  if (entry.nextInKeyInsertionOrder == null) {
+    lastInKeyInsertionOrder=entry.prevInKeyInsertionOrder;
+  }
+ else {
+    entry.nextInKeyInsertionOrder.prevInKeyInsertionOrder=entry.prevInKeyInsertionOrder;
+  }
   size--;
   modCount++;
 }

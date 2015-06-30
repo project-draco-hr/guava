@@ -29,7 +29,7 @@ class InverseEntry extends AbstractMapEntry<V,K> {
             delete(delegate);
             BiEntry<K,V> newEntry=new BiEntry<K,V>(key,keyHash,delegate.value,delegate.valueHash);
             delegate=newEntry;
-            insert(newEntry);
+            insert(newEntry,null);
             expectedModCount=modCount;
             return oldKey;
           }

@@ -1,0 +1,7 @@
+{
+  BiMap<String,Integer> map=HashBiMap.create();
+  map.put("foo",1);
+  map.put("bar",2);
+  map.put("quux",3);
+  assertThat(map.entrySet()).containsExactly(Maps.immutableEntry("foo",1),Maps.immutableEntry("bar",2),Maps.immutableEntry("quux",3)).inOrder();
+}

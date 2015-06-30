@@ -18,7 +18,11 @@
     delete(oldEntryForValue);
   }
   BiEntry<K,V> newEntry=new BiEntry<K,V>(key,keyHash,value,valueHash);
-  insert(newEntry);
+  insert(newEntry,oldEntryForKey);
+  if (oldEntryForKey != null) {
+    oldEntryForKey.prevInKeyInsertionOrder=null;
+    oldEntryForKey.nextInKeyInsertionOrder=null;
+  }
   rehashIfNecessary();
   return Maps.keyOrNull(oldEntryForValue);
 }
