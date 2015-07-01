@@ -1,4 +1,6 @@
 {
   getMap().clear();
   assertTrue("After clear(), a map should be empty.",getMap().isEmpty());
+  assertEquals(0,getMap().size());
+  assertFalse(getMap().entrySet().iterator().hasNext());
 }
