@@ -6,5 +6,5 @@
   assertSame(inout,anyOf("-").collapseFrom(inout,'_'));
   assertSame(inout,anyOf("-#").collapseFrom(inout,'_'));
   assertSame(inout,anyOf("-#123").collapseFrom(inout,'_'));
-  assertSame(inout,CharMatcher.NONE.collapseFrom(inout,'_'));
+  assertSame(inout,CharMatcher.none().collapseFrom(inout,'_'));
 }

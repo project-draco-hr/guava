@@ -1,6 +1,6 @@
 {
-  doTestEmpty(CharMatcher.ANY);
-  doTestEmpty(CharMatcher.NONE);
+  doTestEmpty(CharMatcher.any());
+  doTestEmpty(CharMatcher.none());
   doTestEmpty(is('a'));
   doTestEmpty(isNot('a'));
   doTestEmpty(anyOf(""));

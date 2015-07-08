@@ -1,6 +1,6 @@
 {
-  doTestNull(CharMatcher.ANY);
-  doTestNull(CharMatcher.NONE);
+  doTestNull(CharMatcher.any());
+  doTestNull(CharMatcher.none());
   doTestNull(is('a'));
   doTestNull(isNot('a'));
   doTestNull(anyOf(""));

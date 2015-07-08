@@ -1,5 +1,5 @@
 {
-  doTestAllMatches(CharMatcher.ANY,"blah");
+  doTestAllMatches(CharMatcher.any(),"blah");
   doTestAllMatches(isNot('a'),"bcde");
   doTestAllMatches(is('a'),"aaaa");
   doTestAllMatches(noneOf("CharMatcher"),"zxqy");
@@ -8,8 +8,8 @@
   doTestAllMatches(anyOf("CharMatcher"),"ChMa");
   doTestAllMatches(inRange('m','p'),"mom");
   doTestAllMatches(forPredicate(Predicates.equalTo('c')),"ccc");
-  doTestAllMatches(CharMatcher.DIGIT,"0123456789\u0ED0\u1B59");
-  doTestAllMatches(CharMatcher.JAVA_DIGIT,"0123456789");
-  doTestAllMatches(CharMatcher.DIGIT.and(CharMatcher.ASCII),"0123456789");
-  doTestAllMatches(CharMatcher.SINGLE_WIDTH,"\t0123ABCdef~\u00A0\u2111");
+  doTestAllMatches(CharMatcher.digit(),"0123456789\u0ED0\u1B59");
+  doTestAllMatches(CharMatcher.javaDigit(),"0123456789");
+  doTestAllMatches(CharMatcher.digit().and(CharMatcher.ascii()),"0123456789");
+  doTestAllMatches(CharMatcher.singleWidth(),"\t0123ABCdef~\u00A0\u2111");
 }

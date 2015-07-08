@@ -1,5 +1,5 @@
 {
-  doTestNoMatches(CharMatcher.NONE,"blah");
+  doTestNoMatches(CharMatcher.none(),"blah");
   doTestNoMatches(is('a'),"bcde");
   doTestNoMatches(isNot('a'),"aaaa");
   doTestNoMatches(anyOf(""),"abcd");
@@ -10,8 +10,8 @@
   doTestNoMatches(inRange('p','x'),"mom");
   doTestNoMatches(forPredicate(Predicates.equalTo('c')),"abe");
   doTestNoMatches(inRange('A','Z').and(inRange('F','K').negate()),"F1a");
-  doTestNoMatches(CharMatcher.DIGIT,"\tAz()");
-  doTestNoMatches(CharMatcher.JAVA_DIGIT,"\tAz()");
-  doTestNoMatches(CharMatcher.DIGIT.and(CharMatcher.ASCII),"\tAz()");
-  doTestNoMatches(CharMatcher.SINGLE_WIDTH,"\u05bf\u3000");
+  doTestNoMatches(CharMatcher.digit(),"\tAz()");
+  doTestNoMatches(CharMatcher.javaDigit(),"\tAz()");
+  doTestNoMatches(CharMatcher.digit().and(CharMatcher.ascii()),"\tAz()");
+  doTestNoMatches(CharMatcher.singleWidth(),"\u05bf\u3000");
 }

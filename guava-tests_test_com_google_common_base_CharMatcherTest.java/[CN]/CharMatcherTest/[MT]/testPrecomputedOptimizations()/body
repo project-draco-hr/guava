@@ -8,6 +8,6 @@
   CharMatcher m3=inRange('A','Z');
   assertSame(m3,m3.precomputed());
   assertEquals(m3.toString(),m3.precomputed().toString());
-  assertSame(CharMatcher.NONE,CharMatcher.NONE.precomputed());
-  assertSame(CharMatcher.ANY,CharMatcher.ANY.precomputed());
+  assertSame(CharMatcher.none(),CharMatcher.none().precomputed());
+  assertSame(CharMatcher.any(),CharMatcher.any().precomputed());
 }
