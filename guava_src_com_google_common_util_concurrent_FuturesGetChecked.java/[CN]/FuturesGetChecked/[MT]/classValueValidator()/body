@@ -1,3 +1,0 @@
-{
-  return GetCheckedTypeValidatorHolder.ClassValueValidator.INSTANCE;
-}

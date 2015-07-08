@@ -1,3 +1,0 @@
-{
-  return !RuntimeException.class.isAssignableFrom(type);
-}

@@ -1,3 +1,0 @@
-{
-  return getChecked(bestGetCheckedTypeValidator(),future,exceptionClass);
-}

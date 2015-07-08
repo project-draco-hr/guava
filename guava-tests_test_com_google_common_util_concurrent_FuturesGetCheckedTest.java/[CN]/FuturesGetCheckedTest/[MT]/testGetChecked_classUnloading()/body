@@ -1,4 +1,0 @@
-{
-  WeakReference<?> classUsedByGetChecked=doTestClassUnloading();
-  GcFinalization.awaitClear(classUsedByGetChecked);
-}

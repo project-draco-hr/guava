@@ -1,8 +1,0 @@
-{
-  try {
-    getChecked(immediateFuture("x"),ExceptionWithBadConstructor.class);
-    fail();
-  }
- catch (  IllegalArgumentException expected) {
-  }
-}
