@@ -1,5 +1,6 @@
 {
   setDefault(RateLimiter.class,RateLimiter.create(1.0));
   setDefault(SleepingStopwatch.class,NO_OP_STOPWATCH);
+  setDefault(Class.class,IOException.class);
   setDefault(long.class,0L);
 }

@@ -1,0 +1,15 @@
+{
+  int tmp=0;
+  GetCheckedTypeValidator validator=this.validator.validator;
+  Future<Object> future=this.result.future;
+  Class<? extends Exception> exceptionType=this.exceptionType.exceptionType;
+  for (int i=0; i < reps; ++i) {
+    try {
+      tmp+=getChecked(validator,future,exceptionType).hashCode();
+    }
+ catch (    Exception e) {
+      tmp+=e.hashCode();
+    }
+  }
+  return tmp;
+}

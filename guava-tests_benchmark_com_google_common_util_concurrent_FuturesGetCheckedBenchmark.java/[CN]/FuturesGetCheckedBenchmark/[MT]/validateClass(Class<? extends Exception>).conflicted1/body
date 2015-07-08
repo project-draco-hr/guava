@@ -1,0 +1,3 @@
+{
+  checkExceptionClassValidity(exceptionClass);
+}
