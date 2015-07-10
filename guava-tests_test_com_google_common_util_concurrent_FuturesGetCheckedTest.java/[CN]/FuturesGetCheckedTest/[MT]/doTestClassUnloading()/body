@@ -1,0 +1,8 @@
+{
+  URLClassLoader myLoader=(URLClassLoader)getClass().getClassLoader();
+  URLClassLoader shadowLoader=new URLClassLoader(myLoader.getURLs(),null);
+  @SuppressWarnings("unchecked") Class<WillBeUnloadedException> shadowClass=(Class<WillBeUnloadedException>)Class.forName(WillBeUnloadedException.class.getName(),false,shadowLoader);
+  assertNotSame(shadowClass,WillBeUnloadedException.class);
+  getChecked(immediateFuture("foo"),shadowClass);
+  return new WeakReference<ClassLoader>(shadowLoader);
+}
