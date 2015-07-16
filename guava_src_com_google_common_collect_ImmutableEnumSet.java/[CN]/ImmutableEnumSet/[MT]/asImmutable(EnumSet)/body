@@ -5,6 +5,6 @@ case 0:
 case 1:
   return ImmutableSet.of(Iterables.getOnlyElement(set));
 default :
-return new ImmutableEnumSet<E>(set);
+return new ImmutableEnumSet(set);
 }
 }
