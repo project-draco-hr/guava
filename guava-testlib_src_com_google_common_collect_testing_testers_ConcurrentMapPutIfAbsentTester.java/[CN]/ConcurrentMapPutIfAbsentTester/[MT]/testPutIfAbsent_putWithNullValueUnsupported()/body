@@ -1,9 +1,8 @@
 {
   try {
     getMap().putIfAbsent(k0(),null);
-    fail("putIfAbsent(present, null) should throw");
   }
- catch (  NullPointerException expected) {
+ catch (  NullPointerException tolerated) {
   }
   expectUnchanged();
   expectNullValueMissingWhenNullValuesUnsupported("Should not contain null after unsupported putIfAbsent(present, null)");
