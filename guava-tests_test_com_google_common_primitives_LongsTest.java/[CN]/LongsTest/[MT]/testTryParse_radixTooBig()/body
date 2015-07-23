@@ -1,0 +1,8 @@
+{
+  try {
+    Longs.tryParse("0",Character.MAX_RADIX + 1);
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}
