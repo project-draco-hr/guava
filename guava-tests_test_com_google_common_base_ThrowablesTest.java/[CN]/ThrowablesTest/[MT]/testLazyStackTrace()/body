@@ -1,5 +1,4 @@
 {
-  assertTrue(lazyStackTraceIsLazy());
   Exception e=new Exception();
   StackTraceElement[] originalStackTrace=e.getStackTrace();
   assertThat(lazyStackTrace(e)).containsExactly((Object[])originalStackTrace).inOrder();
@@ -8,6 +7,9 @@
     fail();
   }
  catch (  UnsupportedOperationException expected) {
+  }
+  if (!lazyStackTraceIsLazy()) {
+    return;
   }
   e.setStackTrace(new StackTraceElement[0]);
   assertThat(lazyStackTrace(e)).containsExactly((Object[])originalStackTrace).inOrder();
