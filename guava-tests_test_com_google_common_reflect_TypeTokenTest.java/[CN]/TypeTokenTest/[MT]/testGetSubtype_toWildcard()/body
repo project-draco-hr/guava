@@ -1,0 +1,12 @@
+{
+  TypeToken<ForGetSubType.TwoTypeArgs<?,?>> superType=new TypeToken<ForGetSubType.TwoTypeArgs<?,?>>(){
+  }
+;
+  TypeToken<ForGetSubType.StringForFirstTypeArg<String>> subType=new TypeToken<ForGetSubType.StringForFirstTypeArg<String>>(){
+  }
+;
+  assertTrue(subType.isSubtypeOf(superType));
+  assertEquals(new TypeToken<ForGetSubType.StringForFirstTypeArg<?>>(){
+  }
+,superType.getSubtype(subType.getRawType()));
+}

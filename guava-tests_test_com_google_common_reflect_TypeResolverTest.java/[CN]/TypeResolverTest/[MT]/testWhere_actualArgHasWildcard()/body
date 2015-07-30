@@ -1,0 +1,15 @@
+{
+  TypeResolver resolver=new TypeResolver().where(new TypeCapture<Iterable<Map<?,V>>>(){
+  }
+.capture(),new TypeCapture<Iterable<Map<String,Integer>>>(){
+  }
+.capture());
+  assertEquals(new TypeCapture<K>(){
+  }
+.capture(),resolver.resolveType(new TypeCapture<K>(){
+  }
+.capture()));
+  assertEquals(Integer.class,resolver.resolveType(new TypeCapture<V>(){
+  }
+.capture()));
+}

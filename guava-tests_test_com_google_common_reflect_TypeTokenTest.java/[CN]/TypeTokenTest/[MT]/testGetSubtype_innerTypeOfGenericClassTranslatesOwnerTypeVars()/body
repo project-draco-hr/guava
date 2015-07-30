@@ -1,0 +1,13 @@
+{
+  TypeToken<ForGetSubType.TwoTypeArgs<?,?>.InnerType<?,?>> superType=new TypeToken<ForGetSubType.TwoTypeArgs<?,?>.InnerType<?,?>>(){
+  }
+;
+  TypeToken<ForGetSubType.StringForFirstTypeArg<Integer>.StringInnerType<Long>> subType=new TypeToken<ForGetSubType.StringForFirstTypeArg<Integer>.StringInnerType<Long>>(){
+  }
+;
+  assertTrue(subType.isSubtypeOf(superType));
+  TypeToken<ForGetSubType.StringForFirstTypeArg<?>.StringInnerType<?>> expected=new TypeToken<ForGetSubType.StringForFirstTypeArg<?>.StringInnerType<?>>(){
+  }
+;
+  assertEquals(expected,superType.getSubtype(subType.getRawType()));
+}

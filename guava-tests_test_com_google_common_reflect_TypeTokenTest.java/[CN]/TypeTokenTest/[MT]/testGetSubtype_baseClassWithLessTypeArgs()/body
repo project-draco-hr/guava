@@ -1,0 +1,12 @@
+{
+  TypeToken<ForGetSubType.SingleGenericExtendsBase<?>> superType=new TypeToken<ForGetSubType.SingleGenericExtendsBase<?>>(){
+  }
+;
+  TypeToken<ForGetSubType.DoubleGenericExtendsSingleGeneric<String,Integer>> subType=new TypeToken<ForGetSubType.DoubleGenericExtendsSingleGeneric<String,Integer>>(){
+  }
+;
+  assertTrue(subType.isSubtypeOf(superType));
+  assertEquals(new TypeToken<ForGetSubType.DoubleGenericExtendsSingleGeneric<?,?>>(){
+  }
+,superType.getSubtype(subType.getRawType()));
+}

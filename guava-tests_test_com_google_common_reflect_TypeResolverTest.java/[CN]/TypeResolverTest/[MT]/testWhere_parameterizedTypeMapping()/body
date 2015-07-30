@@ -7,12 +7,12 @@
 .capture(),new TypeCapture<List<String>>(){
   }
 .capture()).resolveType(t));
-  assertEquals(Types.subtypeOf(String.class),new TypeResolver().where(new TypeCapture<List<T>>(){
+  assertEquals(t,new TypeResolver().where(new TypeCapture<List<T>>(){
   }
 .capture(),new TypeCapture<List<? extends String>>(){
   }
 .capture()).resolveType(t));
-  assertEquals(Types.supertypeOf(String.class),new TypeResolver().where(new TypeCapture<List<T>>(){
+  assertEquals(t,new TypeResolver().where(new TypeCapture<List<T>>(){
   }
 .capture(),new TypeCapture<List<? super String>>(){
   }

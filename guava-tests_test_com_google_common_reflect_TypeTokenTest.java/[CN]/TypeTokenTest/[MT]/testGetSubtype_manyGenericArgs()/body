@@ -1,0 +1,12 @@
+{
+  TypeToken<ForGetSubType.FourTypeArgs<T,Integer,?,?>> superType=new TypeToken<ForGetSubType.FourTypeArgs<T,Integer,?,?>>(){
+  }
+;
+  TypeToken<ForGetSubType.ThreeTypeArgs<T,Integer,String>> subType=new TypeToken<ForGetSubType.ThreeTypeArgs<T,Integer,String>>(){
+  }
+;
+  assertTrue(subType.isSubtypeOf(superType));
+  assertEquals(new TypeToken<ForGetSubType.ThreeTypeArgs<T,Integer,?>>(){
+  }
+,superType.getSubtype(subType.getRawType()));
+}

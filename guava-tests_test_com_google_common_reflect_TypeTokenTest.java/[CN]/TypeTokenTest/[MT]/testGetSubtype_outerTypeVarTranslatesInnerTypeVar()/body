@@ -1,0 +1,8 @@
+{
+  TypeToken<ForGetSubType.StringForFirstTypeArg<List<?>>> type=new TypeToken<ForGetSubType.StringForFirstTypeArg<List<?>>>(){
+  }
+;
+  assertEquals(new TypeToken<ForGetSubType.OuterTypeVar<?>>(){
+  }
+,type.getSubtype(ForGetSubType.OuterTypeVar.class));
+}

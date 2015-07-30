@@ -1,0 +1,10 @@
+{
+  TypeToken<ForGetSubType.TwoTypeArgs<?,? extends Number>> superType=new TypeToken<ForGetSubType.TwoTypeArgs<?,? extends Number>>(){
+  }
+;
+  TypeToken<ForGetSubType.StringForFirstTypeArg<Integer>> subType=new TypeToken<ForGetSubType.StringForFirstTypeArg<Integer>>(){
+  }
+;
+  assertTrue(subType.isSubtypeOf(superType));
+  superType.getSubtype(subType.getRawType());
+}

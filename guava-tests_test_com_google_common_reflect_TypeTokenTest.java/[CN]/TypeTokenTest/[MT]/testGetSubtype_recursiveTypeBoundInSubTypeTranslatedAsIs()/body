@@ -1,0 +1,10 @@
+{
+  assertEquals(new TypeToken<ForGetSubType.Outer<?>.Sub<?>>(){
+  }
+,new TypeToken<ForGetSubType.BaseWithTypeVar<List<?>>>(){
+  }
+.getSubtype(ForGetSubType.Outer.Sub.class));
+  new TypeToken<ForGetSubType.BaseWithTypeVar<List<?>>>(){
+  }
+.getSubtype(ForGetSubType.Outer.Sub2.class);
+}

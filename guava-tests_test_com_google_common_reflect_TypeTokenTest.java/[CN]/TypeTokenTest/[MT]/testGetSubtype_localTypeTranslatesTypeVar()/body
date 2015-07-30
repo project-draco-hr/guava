@@ -1,0 +1,14 @@
+{
+class LocalType<T> extends ForGetSubType.TwoTypeArgs<String,String> {
+  }
+  TypeToken<ForGetSubType.TwoTypeArgs<String,String>> superType=new TypeToken<ForGetSubType.TwoTypeArgs<String,String>>(){
+  }
+;
+  TypeToken<LocalType<Integer>> subType=new TypeToken<LocalType<Integer>>(){
+  }
+;
+  assertTrue(subType.isSubtypeOf(superType));
+  assertEquals(new TypeToken<LocalType<?>>(){
+  }
+,superType.getSubtype(subType.getRawType()));
+}

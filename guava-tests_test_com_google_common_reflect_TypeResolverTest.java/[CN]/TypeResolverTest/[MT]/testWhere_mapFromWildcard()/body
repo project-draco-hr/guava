@@ -1,0 +1,12 @@
+{
+  Type subType=new TypeCapture<TypedKeyMap<T>>(){
+  }
+.capture();
+  assertEquals(new TypeCapture<TypedKeyMap<String>>(){
+  }
+.capture(),new TypeResolver().where(new TypeCapture<Map<Integer,T>>(){
+  }
+.capture(),new TypeCapture<Map<?,String>>(){
+  }
+.capture()).resolveType(subType));
+}

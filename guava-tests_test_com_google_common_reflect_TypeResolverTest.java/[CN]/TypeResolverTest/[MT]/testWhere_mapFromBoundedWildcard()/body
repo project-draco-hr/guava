@@ -1,0 +1,10 @@
+{
+  Type subType=new TypeCapture<TypedKeyMap<T>>(){
+  }
+.capture();
+  new TypeResolver().where(new TypeCapture<Map<Integer,T>>(){
+  }
+.capture(),new TypeCapture<Map<? extends Number,? extends Number>>(){
+  }
+.capture()).resolveType(subType);
+}
