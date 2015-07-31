@@ -1,0 +1,5 @@
+{
+  ArrayList<T> result=new ArrayList<T>(size());
+  Iterators.addAll(result,iterator());
+  return result;
+}
