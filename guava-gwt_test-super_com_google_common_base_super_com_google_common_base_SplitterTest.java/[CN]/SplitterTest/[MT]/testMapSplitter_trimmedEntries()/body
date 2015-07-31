@@ -2,5 +2,5 @@
   Map<String,String> m=COMMA_SPLITTER.trimResults().withKeyValueSeparator(":").split("boy  : tom , girl: tina , cat  : kitty , dog: tommy ");
   ImmutableMap<String,String> expected=ImmutableMap.of("boy  "," tom","girl"," tina","cat  "," kitty","dog"," tommy");
   assertThat(m).isEqualTo(expected);
-  assertThat(asList(m.entrySet())).isEqualTo(asList(expected.entrySet()));
+  assertThat(m.entrySet()).containsExactlyElementsIn(expected.entrySet()).inOrder();
 }
