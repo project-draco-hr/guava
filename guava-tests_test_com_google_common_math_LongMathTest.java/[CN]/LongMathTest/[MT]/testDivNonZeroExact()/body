@@ -1,13 +1,15 @@
 {
   for (  long p : NONZERO_LONG_CANDIDATES) {
     for (    long q : NONZERO_LONG_CANDIDATES) {
-      boolean dividesEvenly=(p % q) == 0L;
+      boolean expectedSuccess=(p % q) == 0L;
       try {
         assertEquals(p,LongMath.divide(p,q,UNNECESSARY) * q);
-        assertTrue(dividesEvenly);
+        assertTrue(expectedSuccess);
       }
  catch (      ArithmeticException e) {
-        assertFalse(dividesEvenly);
+        if (expectedSuccess) {
+          failFormat("expected divide(%s, %s, UNNECESSARY) to succeed; got ArithmeticException",p,q);
+        }
       }
     }
   }

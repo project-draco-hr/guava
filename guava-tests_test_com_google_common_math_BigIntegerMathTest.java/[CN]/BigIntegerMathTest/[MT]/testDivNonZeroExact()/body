@@ -3,7 +3,11 @@
     for (    BigInteger q : NONZERO_BIGINTEGER_CANDIDATES) {
       boolean dividesEvenly=p.remainder(q).equals(ZERO);
       try {
-        assertEquals(p,BigIntegerMath.divide(p,q,UNNECESSARY).multiply(q));
+        BigInteger quotient=BigIntegerMath.divide(p,q,UNNECESSARY);
+        BigInteger undone=quotient.multiply(q);
+        if (!p.equals(undone)) {
+          failFormat("expected %s.multiply(%s) = %s; got %s",quotient,q,p,undone);
+        }
         assertTrue(dividesEvenly);
       }
  catch (      ArithmeticException e) {

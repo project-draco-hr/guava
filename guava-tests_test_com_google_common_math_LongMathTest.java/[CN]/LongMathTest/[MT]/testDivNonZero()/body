@@ -3,7 +3,10 @@
     for (    long q : NONZERO_LONG_CANDIDATES) {
       for (      RoundingMode mode : ALL_SAFE_ROUNDING_MODES) {
         long expected=new BigDecimal(valueOf(p)).divide(new BigDecimal(valueOf(q)),0,mode).longValue();
-        assertEquals(expected,LongMath.divide(p,q,mode));
+        long actual=LongMath.divide(p,q,mode);
+        if (expected != actual) {
+          failFormat("expected divide(%s, %s, %s) = %s; got %s",p,q,mode,expected,actual);
+        }
       }
     }
   }

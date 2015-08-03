@@ -8,7 +8,9 @@
         assertTrue(expectedSuccess);
       }
  catch (      ArithmeticException e) {
-        assertFalse(expectedSuccess);
+        if (expectedSuccess) {
+          failFormat("expected checkedMultiply(%s, %s) = %s; got ArithmeticException",a,b,expectedResult);
+        }
       }
     }
   }
