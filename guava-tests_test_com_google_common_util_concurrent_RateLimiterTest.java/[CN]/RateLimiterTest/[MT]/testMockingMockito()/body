@@ -1,0 +1,4 @@
+{
+  RateLimiter mock=Mockito.mock(RateLimiter.class);
+  doTestMocking(mock);
+}

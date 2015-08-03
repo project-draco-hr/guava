@@ -1,0 +1,5 @@
+{
+  RateLimiter mock=EasyMock.createNiceMock(RateLimiter.class);
+  EasyMock.replay(mock);
+  doTestMocking(mock);
+}
