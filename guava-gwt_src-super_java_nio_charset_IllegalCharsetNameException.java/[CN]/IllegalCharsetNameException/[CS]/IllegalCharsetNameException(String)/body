@@ -1,4 +1,0 @@
-{
-  super(String.valueOf(charsetName));
-  this.charsetName=charsetName;
-}

@@ -1,3 +1,0 @@
-{
-  return Collections.unmodifiableSortedMap(AVAILABLE_CHARSETS);
-}
