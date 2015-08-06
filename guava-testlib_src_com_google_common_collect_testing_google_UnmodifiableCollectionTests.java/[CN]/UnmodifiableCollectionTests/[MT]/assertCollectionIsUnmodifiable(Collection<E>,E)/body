@@ -2,7 +2,7 @@
   Collection<E> siblingCollection=new ArrayList<E>();
   siblingCollection.add(sampleElement);
   Collection<E> copy=new ArrayList<E>();
-  copy.addAll(collection);
+  Iterators.addAll(copy,collection.iterator());
   try {
     collection.add(sampleElement);
     fail("add succeeded on unmodifiable collection");
