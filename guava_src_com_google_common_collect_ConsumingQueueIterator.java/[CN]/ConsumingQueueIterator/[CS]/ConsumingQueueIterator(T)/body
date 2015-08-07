@@ -1,4 +1,4 @@
 {
-  this.queue=Lists.newLinkedList();
+  this.queue=Platform.newFastestDeque(elements.length);
   Collections.addAll(queue,elements);
 }
