@@ -1,0 +1,7 @@
+{
+  checkConcurrentModification();
+  checkRemove(canRemove);
+  elements.remove(--index);
+  expectedModCount=++modCount;
+  canRemove=false;
+}

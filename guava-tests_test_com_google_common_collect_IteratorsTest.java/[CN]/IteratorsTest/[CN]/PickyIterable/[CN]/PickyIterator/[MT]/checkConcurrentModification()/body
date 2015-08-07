@@ -1,0 +1,5 @@
+{
+  if (expectedModCount != modCount) {
+    throw new ConcurrentModificationException();
+  }
+}

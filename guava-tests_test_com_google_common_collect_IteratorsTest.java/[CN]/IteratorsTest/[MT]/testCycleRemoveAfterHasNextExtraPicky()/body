@@ -1,0 +1,10 @@
+{
+  PickyIterable<String> iterable=new PickyIterable("a");
+  Iterator<String> cycle=Iterators.cycle(iterable);
+  assertTrue(cycle.hasNext());
+  assertEquals("a",cycle.next());
+  assertTrue(cycle.hasNext());
+  cycle.remove();
+  assertTrue(iterable.elements.isEmpty());
+  assertFalse(cycle.hasNext());
+}

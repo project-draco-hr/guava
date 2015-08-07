@@ -1,0 +1,4 @@
+{
+  checkConcurrentModification();
+  return index < elements.size();
+}
