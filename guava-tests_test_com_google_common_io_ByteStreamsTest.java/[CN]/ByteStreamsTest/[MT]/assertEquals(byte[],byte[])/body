@@ -1,4 +1,3 @@
 {
-  assertEquals("Arrays differed in size",expected.length,actual.length);
-  assertTrue("Array contents were different",Arrays.equals(expected,actual));
+  assertThat(actual).isEqualTo(expected);
 }
