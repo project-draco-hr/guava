@@ -1,11 +1,9 @@
 {
-  Service service=new TestService(){
-    @Override protected Executor executor(){
-      return new Executor(){
-        @Override public void execute(        Runnable command){
-        }
-      }
-;
+  Service service=new AbstractExecutionThreadService(){
+    @Override protected void run() throws Exception {
+    }
+    @Override protected ScheduledExecutorService executor(){
+      return TestingExecutors.noOpScheduledExecutor();
     }
     @Override protected String serviceName(){
       return "Foo";
