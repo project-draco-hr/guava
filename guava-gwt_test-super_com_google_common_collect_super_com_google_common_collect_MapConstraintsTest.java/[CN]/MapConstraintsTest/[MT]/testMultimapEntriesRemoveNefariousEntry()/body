@@ -6,6 +6,10 @@
   Collection<Map.Entry<String,Integer>> entries=constrained.entries();
   assertFalse(entries.remove(nefariousEntry));
   assertFalse(multimap.containsValue(TEST_VALUE));
-  assertFalse(entries.removeAll(Collections.singleton(nefariousEntry)));
+  try {
+    assertFalse(entries.removeAll(Collections.singleton(nefariousEntry)));
+  }
+ catch (  TestValueException tolerated) {
+  }
   assertFalse(multimap.containsValue(TEST_VALUE));
 }
