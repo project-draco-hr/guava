@@ -5,5 +5,8 @@
  catch (  AssertionError expected) {
     return;
   }
+catch (  UnsupportedOperationException expectedOnAndroid) {
+    return;
+  }
   fail("Should have thrown");
 }
