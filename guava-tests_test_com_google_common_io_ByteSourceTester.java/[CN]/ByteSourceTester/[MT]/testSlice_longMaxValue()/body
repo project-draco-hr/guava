@@ -1,7 +1,0 @@
-{
-  long size=source.read().length;
-  if (size >= 1) {
-    ByteSource sliced=source.slice(1,Long.MAX_VALUE);
-    assertEquals(size - 1,sliced.read().length);
-  }
-}

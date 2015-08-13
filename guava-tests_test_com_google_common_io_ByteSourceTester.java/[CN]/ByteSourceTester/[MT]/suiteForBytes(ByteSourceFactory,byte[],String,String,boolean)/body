@@ -9,7 +9,9 @@
     int off=expected.length == 0 ? 0 : random.nextInt(expected.length);
     int len=expected.length == 0 ? 4 : random.nextInt(expected.length - off);
     ByteSourceFactory sliced=SourceSinkFactories.asSlicedByteSourceFactory(factory,off,len);
-    suite.addTest(suiteForBytes(sliced,bytes,name + ".slice[int, int]",desc,false));
+    suite.addTest(suiteForBytes(sliced,bytes,name + ".slice[long, long]",desc,false));
+    ByteSourceFactory slicedLongMaxValue=SourceSinkFactories.asSlicedByteSourceFactory(factory,off,Long.MAX_VALUE);
+    suite.addTest(suiteForBytes(slicedLongMaxValue,bytes,name + ".slice[long, Long.MAX_VALUE]",desc,false));
   }
   return suite;
 }
