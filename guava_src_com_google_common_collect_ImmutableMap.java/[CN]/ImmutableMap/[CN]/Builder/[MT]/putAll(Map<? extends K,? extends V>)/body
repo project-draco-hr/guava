@@ -1,4 +1,3 @@
 {
-  ensureCapacity(size + map.size());
   return putAll(map.entrySet());
 }

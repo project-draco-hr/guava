@@ -1,4 +1,7 @@
 {
+  if (entries instanceof Collection) {
+    ensureCapacity(size + ((Collection<?>)entries).size());
+  }
   for (  Entry<? extends K,? extends V> entry : entries) {
     put(entry);
   }
