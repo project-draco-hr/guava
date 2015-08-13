@@ -14,7 +14,7 @@
     Array.set(array,0,generate(componentType));
     return array;
   }
-  Method emptyGenerate=EMPTY_GENEREATORS.get(rawType);
+  Method emptyGenerate=EMPTY_GENERATORS.get(rawType);
   if (emptyGenerate != null) {
     if (emptyInstanceGenerated.containsKey(type.getType())) {
       if (emptyInstanceGenerated.get(type.getType()).intValue() == freshness.get()) {
