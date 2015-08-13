@@ -6,7 +6,7 @@
     }
   }
   if (keyComparator != null) {
-    Multimap<K,V> sortedCopy=MultimapBuilder.linkedHashKeys().arrayListValues().<K,V>build();
+    Multimap<K,V> sortedCopy=new BuilderMultimap<K,V>();
     List<Map.Entry<K,Collection<V>>> entries=Ordering.from(keyComparator).<K>onKeys().immutableSortedCopy(builderMultimap.asMap().entrySet());
     for (    Map.Entry<K,Collection<V>> entry : entries) {
       sortedCopy.putAll(entry.getKey(),entry.getValue());
