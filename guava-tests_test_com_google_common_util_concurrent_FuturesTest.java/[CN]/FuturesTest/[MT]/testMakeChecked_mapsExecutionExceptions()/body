@@ -9,27 +9,27 @@
     fail();
   }
  catch (  ExecutionException e) {
-    assertTrue(e.getCause() instanceof IOException);
+    assertThat(e.getCause()).isInstanceOf(IOException.class);
   }
   try {
     checked.get(5,TimeUnit.SECONDS);
     fail();
   }
  catch (  ExecutionException e) {
-    assertTrue(e.getCause() instanceof IOException);
+    assertThat(e.getCause()).isInstanceOf(IOException.class);
   }
   try {
     checked.checkedGet();
     fail();
   }
  catch (  TestException e) {
-    assertTrue(e.getCause() instanceof IOException);
+    assertThat(e.getCause()).isInstanceOf(IOException.class);
   }
   try {
     checked.checkedGet(5,TimeUnit.SECONDS);
     fail();
   }
  catch (  TestException e) {
-    assertTrue(e.getCause() instanceof IOException);
+    assertThat(e.getCause()).isInstanceOf(IOException.class);
   }
 }

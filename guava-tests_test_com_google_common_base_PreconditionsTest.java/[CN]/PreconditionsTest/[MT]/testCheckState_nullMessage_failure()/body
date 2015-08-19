@@ -4,6 +4,6 @@
     fail("no exception thrown");
   }
  catch (  IllegalStateException expected) {
-    assertEquals("null",expected.getMessage());
+    assertThat(expected).hasMessage("null");
   }
 }

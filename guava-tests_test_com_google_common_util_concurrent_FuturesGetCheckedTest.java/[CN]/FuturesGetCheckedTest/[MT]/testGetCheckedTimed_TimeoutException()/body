@@ -5,6 +5,6 @@
     fail();
   }
  catch (  TwoArgConstructorException expected) {
-    assertTrue(expected.getCause() instanceof TimeoutException);
+    assertThat(expected.getCause()).isInstanceOf(TimeoutException.class);
   }
 }

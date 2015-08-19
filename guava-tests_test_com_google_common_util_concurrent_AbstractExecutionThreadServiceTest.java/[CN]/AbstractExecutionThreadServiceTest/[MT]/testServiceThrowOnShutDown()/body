@@ -6,5 +6,5 @@
   enterRun.countDown();
   executionThread.join();
   assertEquals(Service.State.FAILED,service.state());
-  assertEquals("kaboom!",service.failureCause().getMessage());
+  assertThat(service.failureCause()).hasMessage("kaboom!");
 }

@@ -1,11 +1,11 @@
 {
-  assertEquals(Optional.of(TestEnum.CHEETO),Enums.getIfPresent(TestEnum.class,"CHEETO"));
-  assertEquals(Optional.of(TestEnum.HONDA),Enums.getIfPresent(TestEnum.class,"HONDA"));
-  assertEquals(Optional.of(TestEnum.POODLE),Enums.getIfPresent(TestEnum.class,"POODLE"));
-  assertTrue(Enums.getIfPresent(TestEnum.class,"CHEETO").isPresent());
-  assertTrue(Enums.getIfPresent(TestEnum.class,"HONDA").isPresent());
-  assertTrue(Enums.getIfPresent(TestEnum.class,"POODLE").isPresent());
-  assertEquals(TestEnum.CHEETO,Enums.getIfPresent(TestEnum.class,"CHEETO").get());
-  assertEquals(TestEnum.HONDA,Enums.getIfPresent(TestEnum.class,"HONDA").get());
-  assertEquals(TestEnum.POODLE,Enums.getIfPresent(TestEnum.class,"POODLE").get());
+  assertThat(Enums.getIfPresent(TestEnum.class,"CHEETO")).hasValue(TestEnum.CHEETO);
+  assertThat(Enums.getIfPresent(TestEnum.class,"HONDA")).hasValue(TestEnum.HONDA);
+  assertThat(Enums.getIfPresent(TestEnum.class,"POODLE")).hasValue(TestEnum.POODLE);
+  assertThat(Enums.getIfPresent(TestEnum.class,"CHEETO")).isPresent();
+  assertThat(Enums.getIfPresent(TestEnum.class,"HONDA")).isPresent();
+  assertThat(Enums.getIfPresent(TestEnum.class,"POODLE")).isPresent();
+  assertThat(Enums.getIfPresent(TestEnum.class,"CHEETO")).hasValue(TestEnum.CHEETO);
+  assertThat(Enums.getIfPresent(TestEnum.class,"HONDA")).hasValue(TestEnum.HONDA);
+  assertThat(Enums.getIfPresent(TestEnum.class,"POODLE")).hasValue(TestEnum.POODLE);
 }

@@ -21,7 +21,7 @@
         fail();
       }
  catch (      ExecutionException e) {
-        assertEquals("2L",e.getCause().getMessage());
+        assertThat(e.getCause()).hasMessage("2L");
       }
     }
     expected++;

@@ -1,5 +1,5 @@
 {
-  assertEquals(0,ArbitraryInstances.get(int[].class).length);
-  assertEquals(0,ArbitraryInstances.get(Object[].class).length);
-  assertEquals(0,ArbitraryInstances.get(String[].class).length);
+  assertThat(ArbitraryInstances.get(int[].class)).isEmpty();
+  assertThat(ArbitraryInstances.get(Object[].class)).isEmpty();
+  assertThat(ArbitraryInstances.get(String[].class)).isEmpty();
 }

@@ -4,7 +4,7 @@
     fail();
   }
  catch (  ExecutionException e) {
-    assertTrue(e.getCause() instanceof MyException);
+    assertThat(e.getCause()).isInstanceOf(MyException.class);
     assertEquals("Nothing should be logged",0,aggregateFutureLogHandler.getStoredLogRecords().size());
   }
 }

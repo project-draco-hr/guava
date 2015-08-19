@@ -4,6 +4,6 @@
     fail();
   }
  catch (  IndexOutOfBoundsException expected) {
-    assertEquals("end index (2) must not be greater than size (1)",expected.getMessage());
+    assertThat(expected).hasMessage("end index (2) must not be greater than size (1)");
   }
 }

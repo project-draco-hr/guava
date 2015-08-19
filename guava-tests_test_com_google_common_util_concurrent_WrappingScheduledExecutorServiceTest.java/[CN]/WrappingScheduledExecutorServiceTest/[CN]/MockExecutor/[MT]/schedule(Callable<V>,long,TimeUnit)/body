@@ -1,5 +1,5 @@
 {
-  assertTrue(callable instanceof WrappedCallable);
+  assertThat(callable).isInstanceOf(WrappedCallable.class);
   lastMethodCalled="scheduleCallable";
   lastDelay=delay;
   lastUnit=unit;

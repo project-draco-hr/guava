@@ -5,6 +5,6 @@
     fail();
   }
  catch (  IllegalArgumentException expected) {
-    assertTrue(expected.getMessage().contains("1"));
+    assertThat(expected.getMessage()).contains("1");
   }
 }

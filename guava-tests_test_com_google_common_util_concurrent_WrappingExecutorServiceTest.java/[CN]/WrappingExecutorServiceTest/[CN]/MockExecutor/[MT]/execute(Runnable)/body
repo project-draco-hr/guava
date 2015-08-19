@@ -1,5 +1,5 @@
 {
   lastMethodCalled="execute";
-  assertTrue(command instanceof WrappedRunnable);
+  assertThat(command).isInstanceOf(WrappedRunnable.class);
   inline.execute(command);
 }

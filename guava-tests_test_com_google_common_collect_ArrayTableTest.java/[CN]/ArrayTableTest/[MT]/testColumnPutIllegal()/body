@@ -6,6 +6,6 @@
     fail();
   }
  catch (  IllegalArgumentException expected) {
-    assertEquals("Row dog not in [foo, bar, cat]",expected.getMessage());
+    assertThat(expected).hasMessage("Row dog not in [foo, bar, cat]");
   }
 }

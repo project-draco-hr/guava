@@ -4,7 +4,7 @@
     assertFalse(segment.isLocked());
     Map<?,?> table=segmentTable(segment);
     segment.cleanUp();
-    assertTrue(table.size() <= segment.count);
+    assertThat(table.size()).isAtMost(segment.count);
     for (    Entry<?,?> entry : table.entrySet()) {
       assertNotNull(entry.getKey());
       assertNotNull(entry.getValue());

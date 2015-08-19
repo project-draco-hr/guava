@@ -1,5 +1,5 @@
 {
   runTester();
   String[] defaultArray=(String[])getDefaultParameterValue(0);
-  assertEquals(0,defaultArray.length);
+  assertThat(defaultArray).isEmpty();
 }

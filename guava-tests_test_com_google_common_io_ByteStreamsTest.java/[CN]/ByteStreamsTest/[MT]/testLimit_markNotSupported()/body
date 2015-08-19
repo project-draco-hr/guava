@@ -5,6 +5,6 @@
     fail();
   }
  catch (  IOException expected) {
-    assertEquals("Mark not supported",expected.getMessage());
+    assertThat(expected).hasMessage("Mark not supported");
   }
 }

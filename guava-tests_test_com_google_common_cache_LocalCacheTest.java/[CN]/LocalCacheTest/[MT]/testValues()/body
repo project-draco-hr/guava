@@ -3,7 +3,7 @@
   map.put("foo","bar");
   map.put("baz","bar");
   map.put("quux","quux");
-  assertFalse(map.values() instanceof Set);
+  assertThat(map.values()).isNotInstanceOf(Set.class);
   assertTrue(map.values().removeAll(ImmutableSet.of("bar")));
   assertEquals(1,map.size());
 }

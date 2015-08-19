@@ -7,7 +7,7 @@
     shouldThrow();
   }
  catch (  ExecutionException success) {
-    assertTrue(success.getCause() instanceof NullPointerException);
+    assertThat(success.getCause()).isInstanceOf(NullPointerException.class);
   }
  finally {
     joinPool(e);

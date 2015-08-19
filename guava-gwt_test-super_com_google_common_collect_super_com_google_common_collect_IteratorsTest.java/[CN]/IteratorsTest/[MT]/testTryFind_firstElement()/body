@@ -1,5 +1,5 @@
 {
   Iterable<String> list=Lists.newArrayList("cool","pants");
   Iterator<String> iterator=list.iterator();
-  assertEquals("cool",Iterators.tryFind(iterator,Predicates.equalTo("cool")).get());
+  assertThat(Iterators.tryFind(iterator,Predicates.equalTo("cool"))).hasValue("cool");
 }

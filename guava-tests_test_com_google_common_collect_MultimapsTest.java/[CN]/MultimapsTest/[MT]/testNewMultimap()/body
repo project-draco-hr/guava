@@ -12,6 +12,6 @@
   assertEquals("[3, 1, 4]",ummodifiable.get(Color.BLUE).toString());
   Collection<Integer> collection=multimap.get(Color.BLUE);
   assertEquals(collection,collection);
-  assertFalse(multimap.keySet() instanceof SortedSet);
-  assertFalse(multimap.asMap() instanceof SortedMap);
+  assertThat(multimap.keySet()).isNotInstanceOf(SortedSet.class);
+  assertThat(multimap.asMap()).isNotInstanceOf(SortedMap.class);
 }

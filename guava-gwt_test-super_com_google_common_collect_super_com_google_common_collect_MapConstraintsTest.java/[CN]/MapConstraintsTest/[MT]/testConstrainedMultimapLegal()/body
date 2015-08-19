@@ -25,7 +25,7 @@
   assertEquals(multimap.toString(),constrained.toString());
   assertEquals(multimap.hashCode(),constrained.hashCode());
   assertThat(multimap.entries()).containsExactly(Maps.immutableEntry(TEST_KEY,TEST_VALUE),Maps.immutableEntry("foo",1),Maps.immutableEntry("bar",2),Maps.immutableEntry("baz",3),Maps.immutableEntry("qux",4),Maps.immutableEntry("zig",5),Maps.immutableEntry("zag",6),Maps.immutableEntry("bee",7),Maps.immutableEntry("bim",8),Maps.immutableEntry("bop",9),Maps.immutableEntry("dig",10),Maps.immutableEntry("dag",11)).inOrder();
-  assertFalse(constrained.asMap().values() instanceof Serializable);
+  assertThat(constrained.asMap().values()).isNotInstanceOf(Serializable.class);
   Iterator<Collection<Integer>> iterator=constrained.asMap().values().iterator();
   iterator.next();
   iterator.next().add(12);

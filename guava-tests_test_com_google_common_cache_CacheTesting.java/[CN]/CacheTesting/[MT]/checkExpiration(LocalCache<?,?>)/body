@@ -8,7 +8,7 @@
         if (prev != null) {
           assertSame(prev,current.getPreviousInWriteQueue());
           assertSame(prev.getNextInWriteQueue(),current);
-          assertTrue(prev.getWriteTime() <= current.getWriteTime());
+          assertThat(prev.getWriteTime()).isAtMost(current.getWriteTime());
         }
         Object key=current.getKey();
         if (key != null) {

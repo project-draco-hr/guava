@@ -1,4 +1,4 @@
 {
   assertEquals(Double.valueOf(expected),Doubles.tryParse(input));
-  assertTrue(Doubles.FLOATING_POINT_PATTERN.matcher(input).matches());
+  assertThat(input).matches(Doubles.FLOATING_POINT_PATTERN);
 }

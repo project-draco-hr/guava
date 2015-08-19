@@ -1,4 +1,4 @@
 {
   List<String> list=Lists.transform(SOME_SEQUENTIAL_LIST,SOME_FUNCTION);
-  assertFalse(list instanceof RandomAccess);
+  assertThat(list).isNotInstanceOf(RandomAccess.class);
 }

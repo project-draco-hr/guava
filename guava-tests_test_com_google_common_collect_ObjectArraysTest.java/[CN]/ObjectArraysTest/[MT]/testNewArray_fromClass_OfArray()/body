@@ -1,6 +1,6 @@
 {
   String[][] array=ObjectArrays.newArray(String[].class,1);
   assertEquals(String[][].class,array.getClass());
-  assertEquals(1,array.length);
+  assertThat(array).hasLength(1);
   assertNull(array[0]);
 }

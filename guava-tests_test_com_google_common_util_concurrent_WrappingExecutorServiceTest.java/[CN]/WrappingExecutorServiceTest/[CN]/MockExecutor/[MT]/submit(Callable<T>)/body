@@ -1,5 +1,5 @@
 {
   lastMethodCalled="submit";
-  assertTrue(task instanceof WrappedCallable);
+  assertThat(task).isInstanceOf(WrappedCallable.class);
   return inline.submit(task);
 }

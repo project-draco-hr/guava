@@ -10,7 +10,7 @@
   assertEquals(map.entrySet(),constrained.entrySet());
   assertEquals(map.keySet(),constrained.keySet());
   assertEquals(HashMultiset.create(map.values()),HashMultiset.create(constrained.values()));
-  assertFalse(map.values() instanceof Serializable);
+  assertThat(map.values()).isNotInstanceOf(Serializable.class);
   assertEquals(map.toString(),constrained.toString());
   assertEquals(map.hashCode(),constrained.hashCode());
   assertThat(map.entrySet()).containsExactly(Maps.immutableEntry(TEST_KEY,TEST_VALUE),Maps.immutableEntry("foo",1),Maps.immutableEntry("bar",2),Maps.immutableEntry("baz",3)).inOrder();

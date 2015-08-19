@@ -1,7 +1,7 @@
 {
   ArrayTable<String,Integer,Character> table=create("foo",1,'a',"bar",1,'b',"foo",3,'c');
   Character[][] array=table.toArray(Character.class);
-  assertEquals(3,array.length);
+  assertThat(array).hasLength(3);
   assertThat(array[0]).asList().containsExactly('a',null,'c').inOrder();
   assertThat(array[1]).asList().containsExactly('b',null,null).inOrder();
   assertThat(array[2]).asList().containsExactly(null,null,null).inOrder();

@@ -4,6 +4,6 @@
     fail();
   }
  catch (  IllegalArgumentException expected) {
-    assertEquals("Unpaired surrogate at index " + invalidCodePointIndex,expected.getMessage());
+    assertThat(expected).hasMessage("Unpaired surrogate at index " + invalidCodePointIndex);
   }
 }

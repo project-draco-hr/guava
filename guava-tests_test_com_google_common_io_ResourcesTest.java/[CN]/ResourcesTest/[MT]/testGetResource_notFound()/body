@@ -4,6 +4,6 @@
     fail();
   }
  catch (  IllegalArgumentException e) {
-    assertEquals("resource no such resource not found.",e.getMessage());
+    assertThat(e).hasMessage("resource no such resource not found.");
   }
 }

@@ -6,6 +6,6 @@
     fail("expected exception");
   }
  catch (  IllegalStateException ex) {
-    assertTrue(ex.getCause() instanceof EOFException);
+    assertThat(ex.getCause()).isInstanceOf(EOFException.class);
   }
 }

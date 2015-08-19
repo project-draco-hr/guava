@@ -4,6 +4,6 @@
     fail();
   }
  catch (  IllegalArgumentException e) {
-    assertEquals("resource com/google/common/io/testdata/i18n.txt" + " relative to com.google.common.io.ResourcesTest not found.",e.getMessage());
+    assertThat(e).hasMessage("resource com/google/common/io/testdata/i18n.txt" + " relative to com.google.common.io.ResourcesTest not found.");
   }
 }

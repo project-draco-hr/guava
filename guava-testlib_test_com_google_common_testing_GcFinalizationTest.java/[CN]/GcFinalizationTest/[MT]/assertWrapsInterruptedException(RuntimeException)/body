@@ -1,4 +1,4 @@
 {
-  assertTrue(e.getMessage().contains("Unexpected interrupt"));
-  assertTrue(e.getCause() instanceof InterruptedException);
+  assertThat(e.getMessage()).contains("Unexpected interrupt");
+  assertThat(e.getCause()).isInstanceOf(InterruptedException.class);
 }

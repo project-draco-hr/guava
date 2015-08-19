@@ -1,4 +1,4 @@
 {
-  assertTrue(runnable instanceof TrustedListenableFutureTask);
+  assertThat(runnable).isInstanceOf(TrustedListenableFutureTask.class);
   runnable.run();
 }

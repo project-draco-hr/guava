@@ -7,10 +7,10 @@
     fail();
   }
  catch (  IllegalStateException expected) {
-    assertEquals("kaboom!",expected.getCause().getMessage());
+    assertThat(expected.getCause()).hasMessage("kaboom!");
   }
   executionThread.join();
   assertTrue(service.startUpCalled);
   assertEquals(Service.State.FAILED,service.state());
-  assertEquals("kaboom!",service.failureCause().getMessage());
+  assertThat(service.failureCause()).hasMessage("kaboom!");
 }

@@ -3,6 +3,6 @@
   Service b=new FailStartService();
   ServiceManager manager=new ServiceManager(asList(a,b));
   String toString=manager.toString();
-  assertTrue(toString.contains("NoOpService"));
-  assertTrue(toString.contains("FailStartService"));
+  assertThat(toString).contains("NoOpService");
+  assertThat(toString).contains("FailStartService");
 }

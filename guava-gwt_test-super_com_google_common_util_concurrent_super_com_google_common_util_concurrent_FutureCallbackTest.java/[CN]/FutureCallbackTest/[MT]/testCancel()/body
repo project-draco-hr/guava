@@ -7,7 +7,7 @@
     }
     @Override public synchronized void onFailure(    Throwable t){
       assertFalse(called);
-      assertTrue(t instanceof CancellationException);
+      assertThat(t).isInstanceOf(CancellationException.class);
       called=true;
     }
   }

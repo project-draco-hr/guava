@@ -1,4 +1,4 @@
 {
   Set<String> set=ImmutableSet.of("a","b","c");
-  assertEquals("a",FluentIterable.from(set).first().get());
+  assertThat(FluentIterable.from(set).first()).hasValue("a");
 }

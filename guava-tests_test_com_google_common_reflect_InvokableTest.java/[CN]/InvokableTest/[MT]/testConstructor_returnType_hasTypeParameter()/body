@@ -2,7 +2,7 @@
   @SuppressWarnings("rawtypes") Class<WithConstructorAndTypeParameter> type=WithConstructorAndTypeParameter.class;
   @SuppressWarnings("rawtypes") Constructor<WithConstructorAndTypeParameter> constructor=type.getDeclaredConstructor();
   Invokable<?,?> factory=Invokable.from(constructor);
-  assertEquals(2,factory.getTypeParameters().length);
+  assertThat(factory.getTypeParameters()).hasLength(2);
   assertEquals(type.getTypeParameters()[0],factory.getTypeParameters()[0]);
   assertEquals(constructor.getTypeParameters()[0],factory.getTypeParameters()[1]);
   ParameterizedType returnType=(ParameterizedType)factory.getReturnType().getType();

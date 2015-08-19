@@ -14,6 +14,6 @@
     fail("we can't represent such a large BF!");
   }
  catch (  IllegalArgumentException expected) {
-    assertEquals("Could not create BloomFilter of 3327428144502 bits",expected.getMessage());
+    assertThat(expected).hasMessage("Could not create BloomFilter of 3327428144502 bits");
   }
 }

@@ -4,6 +4,6 @@
     fail();
   }
  catch (  VerifyException expected) {
-    assertEquals("message",expected.getMessage());
+    assertThat(expected).hasMessage("message");
   }
 }

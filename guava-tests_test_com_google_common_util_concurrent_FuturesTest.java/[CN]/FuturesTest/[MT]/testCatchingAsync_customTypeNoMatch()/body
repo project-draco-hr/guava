@@ -7,6 +7,6 @@
     fail();
   }
  catch (  ExecutionException expected) {
-    assertTrue(expected.getCause() instanceof RuntimeException);
+    assertThat(expected.getCause()).isInstanceOf(RuntimeException.class);
   }
 }

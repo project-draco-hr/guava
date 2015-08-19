@@ -4,9 +4,9 @@
     fail();
   }
  catch (  ExecutionException e) {
-    assertTrue(e.getCause() instanceof MyException);
+    assertThat(e.getCause()).isInstanceOf(MyException.class);
     List<LogRecord> logged=aggregateFutureLogHandler.getStoredLogRecords();
-    assertEquals(1,logged.size());
-    assertTrue(logged.get(0).getThrown() instanceof MyException);
+    assertThat(logged).hasSize(1);
+    assertThat(logged.get(0).getThrown()).isInstanceOf(MyException.class);
   }
 }

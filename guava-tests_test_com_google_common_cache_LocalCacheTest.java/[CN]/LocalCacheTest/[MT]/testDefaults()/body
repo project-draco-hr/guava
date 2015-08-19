@@ -13,7 +13,7 @@
   assertSame(DISCARDING_QUEUE,map.removalNotificationQueue);
   assertSame(NULL_TICKER,map.ticker);
   assertEquals(4,map.concurrencyLevel);
-  assertEquals(4,map.segments.length);
+  assertThat(map.segments).hasLength(4);
   assertEquals(16 / map.segments.length,map.segments[0].table.length());
   assertFalse(map.evictsBySize());
   assertFalse(map.expires());

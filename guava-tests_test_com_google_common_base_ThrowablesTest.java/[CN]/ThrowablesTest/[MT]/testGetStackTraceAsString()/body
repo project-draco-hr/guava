@@ -9,5 +9,5 @@ class StackTraceException extends Exception {
   String secondLine="\\s*at " + ThrowablesTest.class.getName() + "\\..*";
   String moreLines="(?:.*\n?)*";
   String expected=firstLine + "\n" + secondLine+ "\n"+ moreLines;
-  assertTrue(getStackTraceAsString(e).matches(expected));
+  assertThat(getStackTraceAsString(e)).matches(expected);
 }

@@ -2,8 +2,8 @@
   assertTrue(collection.isEmpty());
   assertEquals(0,collection.size());
   assertFalse(collection.iterator().hasNext());
-  assertEquals(0,collection.toArray().length);
-  assertEquals(0,collection.toArray(new Object[0]).length);
+  assertThat(collection.toArray()).isEmpty();
+  assertThat(collection.toArray(new Object[0])).isEmpty();
   if (collection instanceof Set) {
     new EqualsTester().addEqualityGroup(ImmutableSet.of(),collection).addEqualityGroup(ImmutableSet.of("")).testEquals();
   }

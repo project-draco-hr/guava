@@ -6,6 +6,6 @@
     fail("Subscribers whose methods throw must throw InvocationTargetException");
   }
  catch (  InvocationTargetException expected) {
-    assertTrue(expected.getCause() instanceof IntentionalException);
+    assertThat(expected.getCause()).isInstanceOf(IntentionalException.class);
   }
 }

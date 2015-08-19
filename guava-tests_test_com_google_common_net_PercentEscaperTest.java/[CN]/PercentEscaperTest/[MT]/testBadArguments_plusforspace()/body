@@ -11,6 +11,6 @@
     fail(msg);
   }
  catch (  IllegalArgumentException expected) {
-    assertEquals(msg,expected.getMessage());
+    assertThat(expected).hasMessage(msg);
   }
 }

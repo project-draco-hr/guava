@@ -10,5 +10,5 @@
   assertEquals(multimap,unmodifiable);
   assertThat(unmodifiable.asMap().get("bar")).containsExactly(5,-1);
   assertNull(unmodifiable.asMap().get("missing"));
-  assertFalse(unmodifiable.entries() instanceof Serializable);
+  assertThat(unmodifiable.entries()).isNotInstanceOf(Serializable.class);
 }

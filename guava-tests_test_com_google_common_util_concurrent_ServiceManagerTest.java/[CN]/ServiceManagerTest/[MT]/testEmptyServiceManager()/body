@@ -25,6 +25,6 @@
   }
 ;
   for (  LogRecord record : logHandler.getStoredLogRecords()) {
-    assertFalse(logFormatter.format(record).contains("NoOpService"));
+    assertThat(logFormatter.format(record)).doesNotContain("NoOpService");
   }
 }

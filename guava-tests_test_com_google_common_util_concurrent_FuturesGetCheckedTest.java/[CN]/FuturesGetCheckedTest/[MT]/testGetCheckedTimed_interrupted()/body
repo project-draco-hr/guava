@@ -6,7 +6,7 @@
     fail();
   }
  catch (  TwoArgConstructorException expected) {
-    assertTrue(expected.getCause() instanceof InterruptedException);
+    assertThat(expected.getCause()).isInstanceOf(InterruptedException.class);
     assertTrue(Thread.currentThread().isInterrupted());
   }
  finally {

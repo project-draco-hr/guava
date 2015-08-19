@@ -1,5 +1,5 @@
 {
-  assertFalse(Enums.getIfPresent(TestEnum.class,"cHEETO").isPresent());
-  assertFalse(Enums.getIfPresent(TestEnum.class,"Honda").isPresent());
-  assertFalse(Enums.getIfPresent(TestEnum.class,"poodlE").isPresent());
+  assertThat(Enums.getIfPresent(TestEnum.class,"cHEETO")).isAbsent();
+  assertThat(Enums.getIfPresent(TestEnum.class,"Honda")).isAbsent();
+  assertThat(Enums.getIfPresent(TestEnum.class,"poodlE")).isAbsent();
 }

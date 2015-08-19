@@ -1,5 +1,5 @@
 {
-  assertTrue(command instanceof WrappedRunnable);
+  assertThat(command).isInstanceOf(WrappedRunnable.class);
   lastMethodCalled="scheduleAtFixedRate";
   lastInitialDelay=initialDelay;
   lastDelay=period;

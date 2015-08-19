@@ -21,7 +21,7 @@
     fail();
   }
  catch (  TestException e) {
-    assertTrue(e.getCause() instanceof InterruptedException);
+    assertThat(e.getCause()).isInstanceOf(InterruptedException.class);
   }
   Thread.currentThread().interrupt();
   try {
@@ -29,6 +29,6 @@
     fail();
   }
  catch (  TestException e) {
-    assertTrue(e.getCause() instanceof InterruptedException);
+    assertThat(e.getCause()).isInstanceOf(InterruptedException.class);
   }
 }

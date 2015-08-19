@@ -1,4 +1,4 @@
 {
   Set<String> set=Sets.newHashSet();
-  assertEquals(Optional.absent(),FluentIterable.from(set).last());
+  assertThat(FluentIterable.from(set).last()).isAbsent();
 }

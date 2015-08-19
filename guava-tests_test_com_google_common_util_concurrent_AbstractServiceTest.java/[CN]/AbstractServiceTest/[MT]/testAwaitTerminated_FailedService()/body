@@ -21,6 +21,6 @@
   assertEquals(State.FAILED,service.state());
   waiter.join(LONG_TIMEOUT_MILLIS);
   assertFalse(waiter.isAlive());
-  assertTrue(exception.get() instanceof IllegalStateException);
+  assertThat(exception.get()).isInstanceOf(IllegalStateException.class);
   assertEquals(EXCEPTION,exception.get().getCause());
 }

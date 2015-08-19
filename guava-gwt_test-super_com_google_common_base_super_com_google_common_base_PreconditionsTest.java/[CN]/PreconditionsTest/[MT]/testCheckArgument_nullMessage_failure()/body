@@ -4,6 +4,6 @@
     fail("no exception thrown");
   }
  catch (  IllegalArgumentException expected) {
-    assertEquals("null",expected.getMessage());
+    assertThat(expected).hasMessage("null");
   }
 }

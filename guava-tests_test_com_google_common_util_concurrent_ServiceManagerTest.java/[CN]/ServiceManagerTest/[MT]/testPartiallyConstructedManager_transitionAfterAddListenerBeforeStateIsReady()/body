@@ -40,6 +40,6 @@
     fail();
   }
  catch (  IllegalArgumentException expected) {
-    assertTrue(expected.getMessage().contains("started transitioning asynchronously"));
+    assertThat(expected.getMessage()).contains("started transitioning asynchronously");
   }
 }

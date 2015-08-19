@@ -6,11 +6,11 @@
   Set<TestEnum> shadowConstants=new HashSet<TestEnum>();
   for (  TestEnum constant : TestEnum.values()) {
     Optional<TestEnum> result=Enums.getIfPresent(shadowTestEnum,constant.name());
-    assertTrue(result.isPresent());
+    assertThat(result).isPresent();
     shadowConstants.add(result.get());
   }
   assertEquals(ImmutableSet.copyOf(shadowTestEnum.getEnumConstants()),shadowConstants);
   Optional<TestEnum> result=Enums.getIfPresent(shadowTestEnum,"blibby");
-  assertFalse(result.isPresent());
+  assertThat(result).isAbsent();
   return new WeakReference<ClassLoader>(shadowLoader);
 }

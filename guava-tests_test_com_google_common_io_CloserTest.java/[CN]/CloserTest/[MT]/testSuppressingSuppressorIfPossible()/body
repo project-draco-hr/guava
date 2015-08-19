@@ -16,7 +16,7 @@
       throw closer.rethrow(thrownException,IOException.class);
     }
  finally {
-      assertEquals(0,getSuppressed(thrownException).length);
+      assertThat(getSuppressed(thrownException)).isEmpty();
       closer.close();
     }
   }

@@ -1,6 +1,6 @@
 {
   Handler throwingHandler=new Handler(){
-    @Override public void publish(    @Nullable LogRecord record){
+    @Override public void publish(    LogRecord record){
       AssertionFailedError error=new AssertionFailedError();
       error.initCause(record.getThrown());
       throw error;

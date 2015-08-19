@@ -5,6 +5,6 @@
     fail();
   }
  catch (  UnsupportedOperationException expected) {
-    assertEquals("readLine is not supported",expected.getMessage());
+    assertThat(expected).hasMessage("readLine is not supported");
   }
 }

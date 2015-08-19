@@ -3,5 +3,5 @@
   }
 ;
   assertEquals(List[].class,token.getRawType());
-  assertTrue(token.getType() instanceof GenericArrayType);
+  assertThat(token.getType()).isInstanceOf(GenericArrayType.class);
 }

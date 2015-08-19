@@ -1,8 +1,8 @@
 {
   assertEquals(0,ArbitraryInstances.get(ArrayList.class).size());
   assertEquals(0,ArbitraryInstances.get(HashMap.class).size());
-  assertEquals("",ArbitraryInstances.get(Appendable.class).toString());
-  assertEquals("",ArbitraryInstances.get(StringBuilder.class).toString());
-  assertEquals("",ArbitraryInstances.get(StringBuffer.class).toString());
+  assertThat(ArbitraryInstances.get(Appendable.class).toString()).isEmpty();
+  assertThat(ArbitraryInstances.get(StringBuilder.class).toString()).isEmpty();
+  assertThat(ArbitraryInstances.get(StringBuffer.class).toString()).isEmpty();
   assertFreshInstanceReturned(ArrayList.class,HashMap.class,Appendable.class,StringBuilder.class,StringBuffer.class,Throwable.class,Exception.class);
 }

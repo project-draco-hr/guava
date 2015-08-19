@@ -1,4 +1,4 @@
 {
   List<String> list=Collections.emptyList();
-  assertEquals(Optional.absent(),FluentIterable.from(list).last());
+  assertThat(FluentIterable.from(list).last()).isAbsent();
 }

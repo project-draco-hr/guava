@@ -19,13 +19,13 @@
     fail();
   }
  catch (  TestException expected) {
-    assertTrue(expected.getCause() instanceof CancellationException);
+    assertThat(expected.getCause()).isInstanceOf(CancellationException.class);
   }
   try {
     checked.checkedGet(5,TimeUnit.SECONDS);
     fail();
   }
  catch (  TestException expected) {
-    assertTrue(expected.getCause() instanceof CancellationException);
+    assertThat(expected.getCause()).isInstanceOf(CancellationException.class);
   }
 }

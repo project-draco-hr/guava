@@ -8,7 +8,7 @@
   multimap.putAll(Color.RED,asList(2,7,1,8));
   assertEquals(2,factory.count);
   assertEquals("{BLUE=[3, 1, 4, 1], RED=[2, 7, 1, 8]}",multimap.toString());
-  assertFalse(multimap.get(Color.BLUE) instanceof RandomAccess);
+  assertThat(multimap.get(Color.BLUE)).isNotInstanceOf(RandomAccess.class);
   assertTrue(multimap.keySet() instanceof SortedSet);
   assertTrue(multimap.asMap() instanceof SortedMap);
 }

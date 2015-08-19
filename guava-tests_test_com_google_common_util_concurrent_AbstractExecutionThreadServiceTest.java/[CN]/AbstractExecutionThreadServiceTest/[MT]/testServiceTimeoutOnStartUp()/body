@@ -5,6 +5,6 @@
     fail();
   }
  catch (  TimeoutException e) {
-    assertTrue(e.getMessage().contains(Service.State.STARTING.toString()));
+    assertThat(e.getMessage()).contains(Service.State.STARTING.toString());
   }
 }

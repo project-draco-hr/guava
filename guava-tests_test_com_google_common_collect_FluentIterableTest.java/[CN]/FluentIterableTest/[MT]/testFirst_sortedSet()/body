@@ -1,4 +1,4 @@
 {
   SortedSet<String> sortedSet=ImmutableSortedSet.of("b","c","a");
-  assertEquals("a",FluentIterable.from(sortedSet).first().get());
+  assertThat(FluentIterable.from(sortedSet).first()).hasValue("a");
 }

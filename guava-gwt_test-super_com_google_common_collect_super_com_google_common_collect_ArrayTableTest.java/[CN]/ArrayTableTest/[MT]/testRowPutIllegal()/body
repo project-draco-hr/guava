@@ -6,6 +6,6 @@
     fail();
   }
  catch (  IllegalArgumentException expected) {
-    assertEquals("Column 4 not in [1, 2, 3]",expected.getMessage());
+    assertThat(expected).hasMessage("Column 4 not in [1, 2, 3]");
   }
 }

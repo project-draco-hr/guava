@@ -4,6 +4,6 @@
     fail();
   }
  catch (  IndexOutOfBoundsException expected) {
-    assertEquals("index (-1) must not be negative",expected.getMessage());
+    assertThat(expected).hasMessage("index (-1) must not be negative");
   }
 }

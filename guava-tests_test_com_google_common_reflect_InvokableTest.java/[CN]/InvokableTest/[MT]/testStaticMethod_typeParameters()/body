@@ -1,6 +1,6 @@
 {
   Invokable<?,?> delegate=Prepender.method("prepend",String.class,Iterable.class);
   TypeVariable<?>[] variables=delegate.getTypeParameters();
-  assertEquals(1,variables.length);
+  assertThat(variables).hasLength(1);
   assertEquals("T",variables[0].getName());
 }
