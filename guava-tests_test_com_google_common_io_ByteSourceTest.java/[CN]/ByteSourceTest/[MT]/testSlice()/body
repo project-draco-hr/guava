@@ -19,10 +19,5 @@
   assertCorrectSlice(100,5,100,95);
   assertCorrectSlice(100,100,0,0);
   assertCorrectSlice(100,100,10,0);
-  try {
-    assertCorrectSlice(100,101,10,0);
-    fail();
-  }
- catch (  EOFException expected) {
-  }
+  assertCorrectSlice(100,101,10,0);
 }

@@ -1,0 +1,4 @@
+{
+  byte[] b=new byte[1];
+  return read(b) == -1 ? -1 : UnsignedBytes.toInt(b[0]);
+}

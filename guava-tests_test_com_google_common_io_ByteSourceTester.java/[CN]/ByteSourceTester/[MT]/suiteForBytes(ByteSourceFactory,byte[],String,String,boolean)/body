@@ -12,6 +12,8 @@
     suite.addTest(suiteForBytes(sliced,bytes,name + ".slice[long, long]",desc,false));
     ByteSourceFactory slicedLongMaxValue=SourceSinkFactories.asSlicedByteSourceFactory(factory,off,Long.MAX_VALUE);
     suite.addTest(suiteForBytes(slicedLongMaxValue,bytes,name + ".slice[long, Long.MAX_VALUE]",desc,false));
+    ByteSourceFactory slicedOffsetPastEnd=SourceSinkFactories.asSlicedByteSourceFactory(factory,expected.length + 2,expected.length + 10);
+    suite.addTest(suiteForBytes(slicedOffsetPastEnd,bytes,name + ".slice[size + 2, long]",desc,false));
   }
   return suite;
 }

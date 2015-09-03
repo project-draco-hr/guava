@@ -1,0 +1,7 @@
+{
+  AppendableByteSource source=new AppendableByteSource(newPreFilledByteArray(5));
+  ByteSource slice=source.slice(10,5);
+  InputStream in=slice.openStream();
+  source.append(newPreFilledByteArray(5,10));
+  assertEquals(-1,in.read());
+}

@@ -1,0 +1,16 @@
+{
+  long totalSkipped=0;
+  while (totalSkipped < n) {
+    long skipped=in.skip(n - totalSkipped);
+    if (skipped == 0) {
+      if (in.read() == -1) {
+        break;
+      }
+ else {
+        skipped=1;
+      }
+    }
+    totalSkipped+=skipped;
+  }
+  return totalSkipped;
+}

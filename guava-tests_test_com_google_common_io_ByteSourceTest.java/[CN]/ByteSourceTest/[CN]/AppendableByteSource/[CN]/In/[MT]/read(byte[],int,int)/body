@@ -1,0 +1,9 @@
+{
+  if (pos >= bytes.length) {
+    return -1;
+  }
+  int lenToRead=Math.min(len,bytes.length - pos);
+  System.arraycopy(bytes,pos,b,off,lenToRead);
+  pos+=lenToRead;
+  return lenToRead;
+}

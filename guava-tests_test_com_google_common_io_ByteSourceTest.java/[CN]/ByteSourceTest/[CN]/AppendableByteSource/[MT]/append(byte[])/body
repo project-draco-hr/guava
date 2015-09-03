@@ -1,0 +1,5 @@
+{
+  byte[] newBytes=Arrays.copyOf(bytes,bytes.length + b.length);
+  System.arraycopy(b,0,newBytes,bytes.length,b.length);
+  bytes=newBytes;
+}
