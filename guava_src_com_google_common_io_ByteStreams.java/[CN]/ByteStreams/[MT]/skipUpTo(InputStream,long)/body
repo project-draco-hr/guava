@@ -1,13 +1,12 @@
 {
   long totalSkipped=0;
   while (totalSkipped < n) {
-    long skipped=in.skip(n - totalSkipped);
+    long remaining=n - totalSkipped;
+    long skipped=skipSafely(in,remaining);
     if (skipped == 0) {
-      if (in.read() == -1) {
+      int skip=(int)Math.min(remaining,skipBuffer.length);
+      if ((skipped=in.read(skipBuffer,0,skip)) == -1) {
         break;
-      }
- else {
-        skipped=1;
       }
     }
     totalSkipped+=skipped;
