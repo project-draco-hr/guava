@@ -1,0 +1,5 @@
+{
+  byte[] key="Jefe".getBytes(UTF_8);
+  String data="what do ya want for nothing?";
+  checkSha1("effcdf6ae5eb2fa2d27416d5f184df9c259a7c79",key,data);
+}

@@ -1,0 +1,3 @@
+{
+  return new MacHashFunction("HmacSHA512",key,hmacToString("hmacSha512",key));
+}

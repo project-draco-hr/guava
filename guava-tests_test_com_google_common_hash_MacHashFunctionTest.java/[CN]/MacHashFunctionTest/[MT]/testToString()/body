@@ -1,0 +1,11 @@
+{
+  byte[] keyData="secret key".getBytes(UTF_8);
+  assertEquals("Hashing.hmacMd5(Key[algorithm=HmacMD5, format=RAW])",Hashing.hmacMd5(MD5_KEY).toString());
+  assertEquals("Hashing.hmacMd5(Key[algorithm=HmacMD5, format=RAW])",Hashing.hmacMd5(keyData).toString());
+  assertEquals("Hashing.hmacSha1(Key[algorithm=HmacSHA1, format=RAW])",Hashing.hmacSha1(SHA1_KEY).toString());
+  assertEquals("Hashing.hmacSha1(Key[algorithm=HmacSHA1, format=RAW])",Hashing.hmacSha1(keyData).toString());
+  assertEquals("Hashing.hmacSha256(Key[algorithm=HmacSHA256, format=RAW])",Hashing.hmacSha256(SHA256_KEY).toString());
+  assertEquals("Hashing.hmacSha256(Key[algorithm=HmacSHA256, format=RAW])",Hashing.hmacSha256(keyData).toString());
+  assertEquals("Hashing.hmacSha512(Key[algorithm=HmacSHA512, format=RAW])",Hashing.hmacSha512(SHA512_KEY).toString());
+  assertEquals("Hashing.hmacSha512(Key[algorithm=HmacSHA512, format=RAW])",Hashing.hmacSha512(keyData).toString());
+}

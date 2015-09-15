@@ -1,0 +1,3 @@
+{
+  checkSha1(expected,key,data.getBytes(UTF_8));
+}

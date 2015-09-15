@@ -1,0 +1,3 @@
+{
+  return String.format("Hashing.%s(Key[algorithm=%s, format=%s])",methodName,key.getAlgorithm(),key.getFormat());
+}

@@ -1,0 +1,5 @@
+{
+  byte[] key=fillByteArray(80,0xaa);
+  String data="Test Using Larger Than Block-Size Key - Hash Key First";
+  checkMd5("6b1ab7fe4bd7bf8f0b62e6ce61b9d0cd",key,data);
+}

@@ -1,0 +1,5 @@
+{
+  byte[] key=fillByteArray(16,0x0c);
+  String data="Test With Truncation";
+  checkMd5("56461ef2342edc00f9bab995690efd4c",key,data);
+}

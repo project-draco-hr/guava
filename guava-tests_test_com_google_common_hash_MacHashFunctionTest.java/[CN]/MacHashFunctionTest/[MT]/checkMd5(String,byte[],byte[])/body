@@ -1,0 +1,3 @@
+{
+  checkHmac(expected,Hashing.hmacMd5(key),data);
+}

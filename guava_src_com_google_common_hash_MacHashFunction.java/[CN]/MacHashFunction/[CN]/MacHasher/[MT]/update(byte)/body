@@ -1,0 +1,4 @@
+{
+  checkNotDone();
+  mac.update(b);
+}

@@ -1,0 +1,5 @@
+{
+  byte[] array=new byte[size];
+  Arrays.fill(array,(byte)toFillWith);
+  return array;
+}

@@ -1,0 +1,3 @@
+{
+  return hmacSha256(new SecretKeySpec(checkNotNull(key),"HmacSHA256"));
+}

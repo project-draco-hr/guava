@@ -1,0 +1,5 @@
+{
+  byte[] key=fillByteArray(20,0x0c);
+  String data="Test With Truncation";
+  checkSha1("4c1a03424b55e07fe7f27be1d58bb9324a9a5a04",key,data);
+}

@@ -1,0 +1,3 @@
+{
+  assertEquals(HashCode.fromString(expected),hashFunc.hashBytes(data));
+}

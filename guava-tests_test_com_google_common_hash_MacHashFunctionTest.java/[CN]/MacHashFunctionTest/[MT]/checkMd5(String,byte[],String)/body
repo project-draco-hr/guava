@@ -1,0 +1,3 @@
+{
+  checkMd5(expected,key,data.getBytes(UTF_8));
+}

@@ -1,0 +1,5 @@
+{
+  byte[] key=fillByteArray(80,0xaa);
+  String data="Test Using Larger Than Block-Size Key - Hash Key First";
+  checkSha1("aa4ae5e15272d00e95705637ce8a3b55ed402112",key,data);
+}

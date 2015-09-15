@@ -1,0 +1,5 @@
+{
+  byte[] key=base16().lowerCase().decode("0102030405060708090a0b0c0d0e0f10111213141516171819");
+  byte[] data=fillByteArray(50,0xcd);
+  checkMd5("697eaf0aca3a3aea3a75164746ffaa79",key,data);
+}

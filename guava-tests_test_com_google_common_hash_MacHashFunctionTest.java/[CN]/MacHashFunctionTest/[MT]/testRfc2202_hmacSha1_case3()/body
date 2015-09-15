@@ -1,0 +1,5 @@
+{
+  byte[] key=fillByteArray(20,0xaa);
+  byte[] data=fillByteArray(50,0xdd);
+  checkSha1("125d7342b9ac11cd91a39af48aa17b4f63f175d3",key,data);
+}

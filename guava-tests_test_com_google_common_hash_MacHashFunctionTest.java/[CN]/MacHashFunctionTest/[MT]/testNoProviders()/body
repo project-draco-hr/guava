@@ -1,0 +1,13 @@
+{
+  ProviderList providers=Providers.getProviderList();
+  Providers.setProviderList(ProviderList.newList());
+  try {
+    Hashing.hmacMd5(MD5_KEY);
+    fail("expected ISE");
+  }
+ catch (  IllegalStateException expected) {
+  }
+ finally {
+    Providers.setProviderList(providers);
+  }
+}

@@ -1,0 +1,5 @@
+{
+  byte[] key=fillByteArray(16,0xaa);
+  byte[] data=fillByteArray(50,0xdd);
+  checkMd5("56be34521d144c88dbb8c733f0e8b3f6",key,data);
+}

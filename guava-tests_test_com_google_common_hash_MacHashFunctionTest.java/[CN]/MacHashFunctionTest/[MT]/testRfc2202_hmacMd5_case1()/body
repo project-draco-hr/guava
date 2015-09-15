@@ -1,0 +1,5 @@
+{
+  byte[] key=fillByteArray(16,0x0b);
+  String data="Hi There";
+  checkMd5("9294727a3638bb1c13f48ef8158bfc9d",key,data);
+}

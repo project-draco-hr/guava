@@ -1,0 +1,7 @@
+{
+  Mac mac=Mac.getInstance("HmacSHA1");
+  mac.init(SHA1_KEY);
+  mac.update("hello".getBytes(UTF_8));
+  mac.update("world".getBytes(UTF_8));
+  assertEquals(HashCode.fromBytes(mac.doFinal()),Hashing.hmacSha1(SHA1_KEY).newHasher().putString("hello",UTF_8).putString("world",UTF_8).hash());
+}

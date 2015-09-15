@@ -1,0 +1,10 @@
+{
+  Hasher hasher=Hashing.hmacMd5(MD5_KEY).newHasher();
+  assertEquals("9753980fe94daa8ecaa82216519393a9",hasher.putString("The quick brown fox jumps over the lazy dog",UTF_8).hash().toString());
+  try {
+    hasher.hash();
+    fail();
+  }
+ catch (  IllegalStateException expected) {
+  }
+}

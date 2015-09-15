@@ -1,0 +1,5 @@
+{
+  byte[] key=fillByteArray(20,0x0b);
+  String data="Hi There";
+  checkSha1("b617318655057264e28bc0b6fb378c8ef146be00",key,data);
+}

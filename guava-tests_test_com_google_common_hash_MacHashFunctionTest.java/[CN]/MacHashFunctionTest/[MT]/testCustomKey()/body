@@ -1,0 +1,15 @@
+{
+  SecretKey customKey=new SecretKey(){
+    @Override public String getAlgorithm(){
+      return "HmacMD5";
+    }
+    @Override public byte[] getEncoded(){
+      return new byte[8];
+    }
+    @Override public String getFormat(){
+      return "RAW";
+    }
+  }
+;
+  assertEquals("ad262969c53bc16032f160081c4a07a0",Hashing.hmacMd5(customKey).hashString("The quick brown fox jumps over the lazy dog",UTF_8).toString());
+}

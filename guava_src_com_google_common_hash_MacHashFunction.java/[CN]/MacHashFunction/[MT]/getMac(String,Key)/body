@@ -1,0 +1,13 @@
+{
+  try {
+    Mac mac=Mac.getInstance(algorithmName);
+    mac.init(key);
+    return mac;
+  }
+ catch (  NoSuchAlgorithmException e) {
+    throw new IllegalStateException(e);
+  }
+catch (  InvalidKeyException e) {
+    throw new IllegalArgumentException(e);
+  }
+}

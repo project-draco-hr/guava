@@ -1,0 +1,7 @@
+{
+  Mac mac=Mac.getInstance(algorithm);
+  mac.init(key);
+  mac.update(input);
+  assertEquals(HashCode.fromBytes(mac.doFinal()),hashFunc.hashBytes(input));
+  assertEquals(HashCode.fromBytes(mac.doFinal(input)),hashFunc.hashBytes(input));
+}

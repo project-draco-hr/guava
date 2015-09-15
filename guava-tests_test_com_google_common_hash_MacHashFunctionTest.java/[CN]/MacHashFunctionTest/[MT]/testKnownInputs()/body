@@ -1,0 +1,11 @@
+{
+  String knownOutput="9753980fe94daa8ecaa82216519393a9";
+  String input="The quick brown fox jumps over the lazy dog";
+  Mac mac=Mac.getInstance("HmacMD5");
+  mac.init(MD5_KEY);
+  mac.update(input.getBytes(UTF_8));
+  assertEquals(knownOutput,HashCode.fromBytes(mac.doFinal()).toString());
+  assertEquals(knownOutput,HashCode.fromBytes(mac.doFinal(input.getBytes(UTF_8))).toString());
+  assertEquals(knownOutput,Hashing.hmacMd5(MD5_KEY).hashString(input,UTF_8).toString());
+  assertEquals(knownOutput,Hashing.hmacMd5(MD5_KEY).hashBytes(input.getBytes(UTF_8)).toString());
+}

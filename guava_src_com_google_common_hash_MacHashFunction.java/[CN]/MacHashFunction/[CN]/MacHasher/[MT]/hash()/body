@@ -1,0 +1,5 @@
+{
+  checkNotDone();
+  done=true;
+  return HashCode.fromBytesNoCopy(mac.doFinal());
+}

@@ -1,0 +1,20 @@
+{
+  SecretKey badKey=new SecretKey(){
+    @Override public String getAlgorithm(){
+      return "HmacMD5";
+    }
+    @Override public byte[] getEncoded(){
+      return null;
+    }
+    @Override public String getFormat(){
+      return "RAW";
+    }
+  }
+;
+  try {
+    Hashing.hmacMd5(badKey);
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}

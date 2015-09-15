@@ -1,0 +1,3 @@
+{
+  return new MacHashFunction("HmacSHA256",key,hmacToString("hmacSha256",key));
+}
