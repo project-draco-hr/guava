@@ -39,7 +39,7 @@
       populateTypeMappings(mappings,fromArrayType.getGenericComponentType(),componentType);
     }
     @Override void visitClass(    Class<?> fromClass){
-      throw new IllegalArgumentException("No type mapping from " + fromClass);
+      throw new IllegalArgumentException("No type mapping from " + fromClass + " to "+ to);
     }
   }
 .visit(from);
