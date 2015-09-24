@@ -5,6 +5,6 @@
     fail();
   }
  catch (  IllegalArgumentException expected) {
-    assertThat(expected).hasMessage("expected one element but was: " + "<one, two, three, four, five, ...>");
+    assertThat(expected).hasMessage("expected one element but was: <one, two, three, four, five, ...>");
   }
 }
