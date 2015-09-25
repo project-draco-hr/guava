@@ -1,15 +1,13 @@
 {
-  InterruptibleFuture future=new InterruptibleFuture();
+  Future<?> future=newFutureInstance();
   assertTrue(future.cancel(false));
   assertTrue(future.isCancelled());
   assertTrue(future.isDone());
-  assertFalse(future.wasInterrupted());
-  assertFalse(future.interruptTaskWasCalled);
   try {
     future.get();
     fail("Expected CancellationException");
   }
  catch (  CancellationException e) {
-    assertNull(e.getCause());
+    assertNotNull(e.getCause());
   }
 }

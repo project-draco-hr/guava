@@ -1,4 +1,4 @@
 {
   this.wasInterrupted=wasInterrupted;
-  this.cause=checkNotNull(cause);
+  this.cause=cause;
 }

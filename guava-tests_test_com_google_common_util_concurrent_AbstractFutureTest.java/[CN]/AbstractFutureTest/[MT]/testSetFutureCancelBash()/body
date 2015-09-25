@@ -35,7 +35,7 @@
         finalResults.add(e.getCause());
       }
 catch (      CancellationException e) {
-        finalResults.add(e.getCause());
+        finalResults.add(CancellationException.class);
       }
  finally {
         awaitUnchecked(barrier);
@@ -57,7 +57,7 @@ catch (      CancellationException e) {
           break;
         }
 catch (        CancellationException e) {
-          finalResults.add(e.getCause());
+          finalResults.add(CancellationException.class);
           break;
         }
 catch (        TimeoutException e) {
@@ -98,7 +98,7 @@ catch (        TimeoutException e) {
     awaitUnchecked(barrier);
     assertThat(future.isDone()).isTrue();
     Object result=Iterables.getOnlyElement(finalResults);
-    if (result instanceof CancellationException) {
+    if (result == CancellationException.class) {
       assertTrue(future.isCancelled());
       assertTrue(cancellationSucess.get());
       if (!setFutureSetSucess.get() || !setFutureCompletionSucess.get()) {

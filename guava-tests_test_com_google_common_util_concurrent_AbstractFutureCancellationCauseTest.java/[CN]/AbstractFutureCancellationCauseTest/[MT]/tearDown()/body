@@ -1,0 +1,5 @@
+{
+  classReloader.close();
+  Thread.currentThread().setContextClassLoader(oldClassLoader);
+  System.clearProperty("guava.concurrent.generate_cancellation_cause");
+}

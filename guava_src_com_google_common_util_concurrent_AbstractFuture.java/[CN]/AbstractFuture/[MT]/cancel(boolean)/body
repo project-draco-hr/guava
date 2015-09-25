@@ -1,7 +1,8 @@
 {
   Object localValue=value;
   if (localValue == null | localValue instanceof AbstractFuture.SetFuture) {
-    Object valueToSet=new Cancellation(mayInterruptIfRunning,newCancellationCause());
+    Throwable cause=GENERATE_CANCELLATION_CAUSES ? newCancellationCause() : null;
+    Object valueToSet=new Cancellation(mayInterruptIfRunning,cause);
     do {
       if (ATOMIC_HELPER.casValue(this,localValue,valueToSet)) {
         if (mayInterruptIfRunning) {

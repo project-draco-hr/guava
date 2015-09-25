@@ -1,0 +1,3 @@
+{
+  return (Future<?>)classReloader.loadClass(SettableFuture.class.getName()).getMethod("create").invoke(null);
+}
