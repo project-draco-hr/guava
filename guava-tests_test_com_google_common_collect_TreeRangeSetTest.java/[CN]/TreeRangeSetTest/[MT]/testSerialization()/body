@@ -1,0 +1,6 @@
+{
+  RangeSet<Integer> rangeSet=TreeRangeSet.create();
+  rangeSet.add(Range.closed(3,10));
+  rangeSet.remove(Range.open(5,7));
+  SerializableTester.reserializeAndAssert(rangeSet);
+}
