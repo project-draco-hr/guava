@@ -1,5 +1,3 @@
 {
-  AsyncCatchingFuture<V,X> future=new AsyncCatchingFuture<V,X>(input,exceptionType,fallback);
-  input.addListener(future,rejectionPropagatingExecutor(executor,future));
-  return future;
+  return AbstractCatchingFuture.create(input,exceptionType,fallback,executor);
 }

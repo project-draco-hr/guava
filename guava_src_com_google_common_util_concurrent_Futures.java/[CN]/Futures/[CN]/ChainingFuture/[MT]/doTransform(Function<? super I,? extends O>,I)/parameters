@@ -1,2 +1,0 @@
-Function<? super I,? extends O> function
-I input

@@ -1,4 +1,0 @@
-{
-  V replacement=fallback.apply(cause);
-  set(replacement);
-}

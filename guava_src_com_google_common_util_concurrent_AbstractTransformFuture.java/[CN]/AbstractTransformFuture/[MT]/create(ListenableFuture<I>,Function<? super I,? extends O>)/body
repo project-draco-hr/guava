@@ -1,0 +1,6 @@
+{
+  checkNotNull(function);
+  TransformFuture<I,O> output=new TransformFuture<I,O>(input,function);
+  input.addListener(output,directExecutor());
+  return output;
+}

@@ -1,6 +1,3 @@
 {
-  checkNotNull(function);
-  ChainingFuture<I,O> output=new ChainingFuture<I,O>(input,function);
-  input.addListener(output,rejectionPropagatingExecutor(executor,output));
-  return output;
+  return AbstractTransformFuture.create(input,function,executor);
 }

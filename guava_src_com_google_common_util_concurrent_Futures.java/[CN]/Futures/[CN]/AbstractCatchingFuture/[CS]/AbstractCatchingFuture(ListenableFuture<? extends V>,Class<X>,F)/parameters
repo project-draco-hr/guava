@@ -1,3 +1,0 @@
-ListenableFuture<? extends V> inputFuture
-Class<X> exceptionType
-F fallback

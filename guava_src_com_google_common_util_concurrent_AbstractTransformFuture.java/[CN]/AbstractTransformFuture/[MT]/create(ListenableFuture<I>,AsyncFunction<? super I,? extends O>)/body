@@ -1,0 +1,5 @@
+{
+  AsyncTransformFuture<I,O> output=new AsyncTransformFuture<I,O>(input,function);
+  input.addListener(output,directExecutor());
+  return output;
+}

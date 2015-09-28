@@ -1,9 +1,0 @@
-{
-  maybePropagateCancellation(delegateRef);
-  Future<?> localTimer=timer;
-  if (localTimer != null) {
-    localTimer.cancel(false);
-  }
-  delegateRef=null;
-  timer=null;
-}

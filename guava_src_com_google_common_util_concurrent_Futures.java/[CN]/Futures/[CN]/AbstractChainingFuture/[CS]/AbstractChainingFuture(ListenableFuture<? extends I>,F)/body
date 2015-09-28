@@ -1,4 +1,0 @@
-{
-  this.inputFuture=checkNotNull(inputFuture);
-  this.function=checkNotNull(function);
-}

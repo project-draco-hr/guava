@@ -1,0 +1,6 @@
+{
+  checkNotNull(executor);
+  AsyncTransformFuture<I,O> output=new AsyncTransformFuture<I,O>(input,function);
+  input.addListener(output,rejectionPropagatingExecutor(executor,output));
+  return output;
+}
