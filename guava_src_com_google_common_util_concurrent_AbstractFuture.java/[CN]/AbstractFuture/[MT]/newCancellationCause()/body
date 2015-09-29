@@ -1,3 +1,0 @@
-{
-  return new CancellationException("Future.cancel() was called.");
-}
