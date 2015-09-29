@@ -1,0 +1,3 @@
+{
+  assertEquals("[yam, bam, jam, ham]",FluentIterable.of("yam","bam","jam","ham").toString());
+}

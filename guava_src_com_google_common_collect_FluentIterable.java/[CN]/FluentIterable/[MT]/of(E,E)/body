@@ -1,0 +1,3 @@
+{
+  return from(Lists.asList(element,elements));
+}
