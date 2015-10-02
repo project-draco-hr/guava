@@ -1,11 +1,11 @@
 {
   checkNotNull(unfiltered);
-  checkNotNull(predicate);
+  checkNotNull(retainIfTrue);
   return new AbstractIterator<T>(){
     @Override protected T computeNext(){
       while (unfiltered.hasNext()) {
         T element=unfiltered.next();
-        if (predicate.apply(element)) {
+        if (retainIfTrue.apply(element)) {
           return element;
         }
       }

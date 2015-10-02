@@ -1,9 +1,9 @@
 {
   checkNotNull(unfiltered);
-  checkNotNull(type);
+  checkNotNull(desiredType);
   return new FluentIterable<T>(){
     @Override public Iterator<T> iterator(){
-      return Iterators.filter(unfiltered.iterator(),type);
+      return Iterators.filter(unfiltered.iterator(),desiredType);
     }
   }
 ;

@@ -1,9 +1,9 @@
 {
   checkNotNull(unfiltered);
-  checkNotNull(predicate);
+  checkNotNull(retainIfTrue);
   return new FluentIterable<T>(){
     @Override public Iterator<T> iterator(){
-      return Iterators.filter(unfiltered.iterator(),predicate);
+      return Iterators.filter(unfiltered.iterator(),retainIfTrue);
     }
   }
 ;

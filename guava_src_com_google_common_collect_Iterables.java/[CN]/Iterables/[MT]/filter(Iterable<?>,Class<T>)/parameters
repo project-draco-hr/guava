@@ -1,2 +1,2 @@
 Iterable<?> unfiltered
-Class<T> type
+Class<T> desiredType

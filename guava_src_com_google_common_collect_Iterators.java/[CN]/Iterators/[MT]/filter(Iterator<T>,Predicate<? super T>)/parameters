@@ -1,2 +1,2 @@
 Iterator<T> unfiltered
-Predicate<? super T> predicate
+Predicate<? super T> retainIfTrue
