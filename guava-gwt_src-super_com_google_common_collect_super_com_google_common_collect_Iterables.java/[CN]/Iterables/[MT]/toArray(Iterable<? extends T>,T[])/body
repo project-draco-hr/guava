@@ -1,4 +1,4 @@
 {
-  Collection<? extends T> collection=toCollection(iterable);
+  Collection<? extends T> collection=castOrCopyToCollection(iterable);
   return collection.toArray(array);
 }
