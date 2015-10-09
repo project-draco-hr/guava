@@ -17,4 +17,6 @@
   }
  catch (  IllegalArgumentException expected) {
   }
+catch (  NullPointerException toleratedOnAndroid) {
+  }
 }
