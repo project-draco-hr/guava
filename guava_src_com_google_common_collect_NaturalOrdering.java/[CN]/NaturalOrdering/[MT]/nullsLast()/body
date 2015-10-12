@@ -1,0 +1,7 @@
+{
+  Ordering<Comparable> result=nullsLast;
+  if (result == null) {
+    result=nullsLast=super.nullsLast();
+  }
+  return (Ordering<S>)result;
+}
