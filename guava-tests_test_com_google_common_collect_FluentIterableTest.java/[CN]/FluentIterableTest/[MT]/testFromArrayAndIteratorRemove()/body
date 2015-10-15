@@ -1,0 +1,9 @@
+{
+  FluentIterable<TimeUnit> units=FluentIterable.from(TimeUnit.values());
+  try {
+    Iterables.removeIf(units,Predicates.equalTo(TimeUnit.SECONDS));
+    fail("Expected an UnsupportedOperationException to be thrown but it wasn't.");
+  }
+ catch (  UnsupportedOperationException expected) {
+  }
+}

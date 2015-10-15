@@ -1,0 +1,4 @@
+{
+  FluentIterable<TimeUnit> units=FluentIterable.of(TimeUnit.values());
+  assertTrue(Iterables.removeIf(units,Predicates.equalTo(TimeUnit.SECONDS)));
+}
