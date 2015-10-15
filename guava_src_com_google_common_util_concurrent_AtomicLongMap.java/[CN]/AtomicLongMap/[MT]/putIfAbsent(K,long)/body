@@ -1,5 +1,5 @@
 {
-  for (; ; ) {
+  while (true) {
     AtomicLong atomic=map.get(key);
     if (atomic == null) {
       atomic=map.putIfAbsent(key,new AtomicLong(newValue));

@@ -1,5 +1,5 @@
 {
-  outer:   for (; ; ) {
+  outer:   while (true) {
     AtomicLong atomic=map.get(key);
     if (atomic == null) {
       atomic=map.putIfAbsent(key,new AtomicLong(newValue));
@@ -7,7 +7,7 @@
         return 0L;
       }
     }
-    for (; ; ) {
+    while (true) {
       long oldValue=atomic.get();
       if (oldValue == 0L) {
         if (map.replace(key,atomic,new AtomicLong(newValue))) {
