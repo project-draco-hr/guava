@@ -1,9 +1,0 @@
-{
-  assertFalse(Shorts.contains(EMPTY,(short)1));
-  assertFalse(Shorts.contains(ARRAY1,(short)2));
-  assertFalse(Shorts.contains(ARRAY234,(short)1));
-  assertTrue(Shorts.contains(new short[]{(short)-1},(short)-1));
-  assertTrue(Shorts.contains(ARRAY234,(short)2));
-  assertTrue(Shorts.contains(ARRAY234,(short)3));
-  assertTrue(Shorts.contains(ARRAY234,(short)4));
-}

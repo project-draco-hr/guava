@@ -1,3 +1,0 @@
-{
-  return Iterables.contains(iterable,target);
-}

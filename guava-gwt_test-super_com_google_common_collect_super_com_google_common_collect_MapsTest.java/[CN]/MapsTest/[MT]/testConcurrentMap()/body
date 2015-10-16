@@ -1,4 +1,0 @@
-{
-  ConcurrentMap<Integer,Integer> map=Maps.newConcurrentMap();
-  assertEquals(Collections.emptyMap(),map);
-}

@@ -1,9 +1,0 @@
-{
-  try {
-    collection.addAll(MinimalCollection.of(e3(),e0()));
-    fail("addAll(somePresent) should throw");
-  }
- catch (  UnsupportedOperationException expected) {
-  }
-  expectUnchanged();
-}

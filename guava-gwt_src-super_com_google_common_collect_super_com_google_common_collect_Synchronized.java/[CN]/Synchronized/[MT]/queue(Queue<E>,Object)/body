@@ -1,3 +1,0 @@
-{
-  return (queue instanceof SynchronizedQueue) ? queue : new SynchronizedQueue<E>(queue,mutex);
-}

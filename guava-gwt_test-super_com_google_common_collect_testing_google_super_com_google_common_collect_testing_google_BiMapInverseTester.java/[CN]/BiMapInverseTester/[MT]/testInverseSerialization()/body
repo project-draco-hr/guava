@@ -1,8 +1,0 @@
-{
-  BiMapPair<K,V> pair=new BiMapPair<K,V>(getMap());
-  BiMapPair<K,V> copy=SerializableTester.reserialize(pair);
-  assertEquals(pair.forward,copy.forward);
-  assertEquals(pair.backward,copy.backward);
-  assertSame(copy.backward,copy.forward.inverse());
-  assertSame(copy.forward,copy.backward.inverse());
-}

@@ -1,8 +1,0 @@
-{
-  TreeBasedTable<String,Integer,Character> table=TreeBasedTable.create();
-  table.put("foo",4,'a');
-  table.put("cat",1,'b');
-  table.clear();
-  populate(table,data);
-  return table;
-}

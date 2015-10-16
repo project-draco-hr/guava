@@ -1,8 +1,0 @@
-{
-  FakeTicker ticker=new FakeTicker();
-  assertEquals(0,ticker.read());
-  assertSame(ticker,ticker.advance(10));
-  assertEquals(10,ticker.read());
-  ticker.advance(1,TimeUnit.MILLISECONDS);
-  assertEquals(1000010L,ticker.read());
-}

@@ -1,3 +1,0 @@
-{
-  assertEquals(Optional.of("a"),Optional.of("a").transform(Functions.identity()));
-}

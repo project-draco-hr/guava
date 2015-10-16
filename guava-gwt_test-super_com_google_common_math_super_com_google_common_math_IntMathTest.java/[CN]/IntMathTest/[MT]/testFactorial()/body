@@ -1,7 +1,0 @@
-{
-  for (int n=0; n <= 50; n++) {
-    BigInteger expectedBig=BigIntegerMath.factorial(n);
-    int expectedInt=fitsInInt(expectedBig) ? expectedBig.intValue() : Integer.MAX_VALUE;
-    assertEquals(expectedInt,IntMath.factorial(n));
-  }
-}

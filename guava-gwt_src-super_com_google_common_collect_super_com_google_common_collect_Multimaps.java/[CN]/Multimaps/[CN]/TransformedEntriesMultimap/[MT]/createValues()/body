@@ -1,3 +1,0 @@
-{
-  return Collections2.transform(fromMultimap.entries(),Maps.<K,V1,V2>asEntryToValueFunction(transformer));
-}

@@ -1,6 +1,0 @@
-{
-  CacheLoader<Object,Integer> loader=constantLoader(1);
-  LoadingCache<String,Integer> cache=CacheBuilder.newBuilder().removalListener(countingRemovalListener()).build(loader);
-  assertEquals(Integer.valueOf(1),cache.getUnchecked("one"));
-  assertEquals(1,cache.size());
-}

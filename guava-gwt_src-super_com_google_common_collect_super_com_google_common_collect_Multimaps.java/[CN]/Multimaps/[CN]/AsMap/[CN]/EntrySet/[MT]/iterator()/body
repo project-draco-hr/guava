@@ -1,8 +1,0 @@
-{
-  return Maps.asMapEntryIterator(multimap.keySet(),new Function<K,Collection<V>>(){
-    @Override public Collection<V> apply(    K key){
-      return multimap.get(key);
-    }
-  }
-);
-}

@@ -1,9 +1,0 @@
-{
-  Iterator<String> iterator=asList("a",null,"b").iterator();
-  try {
-    ImmutableList.copyOf(iterator);
-    fail();
-  }
- catch (  NullPointerException expected) {
-  }
-}

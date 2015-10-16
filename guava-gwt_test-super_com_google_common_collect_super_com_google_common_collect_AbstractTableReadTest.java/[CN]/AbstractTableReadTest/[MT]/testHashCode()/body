@@ -1,5 +1,0 @@
-{
-  table=create("foo",1,'a',"bar",1,'b',"foo",3,'c');
-  int expected=Objects.hashCode("foo",1,'a') + Objects.hashCode("bar",1,'b') + Objects.hashCode("foo",3,'c');
-  assertEquals(expected,table.hashCode());
-}

@@ -1,8 +1,0 @@
-{
-  Multiset<String> multiset=TreeMultiset.create(Collections.reverseOrder());
-  multiset.add("foo",2);
-  multiset.add("bar");
-  assertEquals(3,multiset.size());
-  assertEquals(2,multiset.count("foo"));
-  assertEquals("[foo x 2, bar]",multiset.toString());
-}

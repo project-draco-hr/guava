@@ -1,8 +1,0 @@
-{
-  Object value=new Object();
-  ExecutorSpy spy=new ExecutorSpy(directExecutor());
-  assertFalse(spy.wasExecuted);
-  ListenableFuture<Object> future=Futures.transform(Futures.immediateFuture(value),Functions.identity(),spy);
-  assertSame(value,future.get());
-  assertTrue(spy.wasExecuted);
-}

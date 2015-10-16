@@ -1,3 +1,0 @@
-{
-  return Iterables.removeIf(unfiltered.entrySet(),Predicates.<Entry<K,V>>and(predicate,Maps.<K>keyPredicateOnEntries(keyPredicate)));
-}

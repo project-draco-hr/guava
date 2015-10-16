@@ -1,8 +1,0 @@
-{
-  if (expected.equals(in)) {
-    assertSame(in,out);
-  }
- else {
-    assertEquals(expected,out);
-  }
-}

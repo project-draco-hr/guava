@@ -1,8 +1,0 @@
-{
-  try {
-    SignedBytes.max();
-    fail();
-  }
- catch (  IllegalArgumentException expected) {
-  }
-}

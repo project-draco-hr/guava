@@ -1,3 +1,0 @@
-{
-  return (from.length() == 0) ? from : from.substring(1);
-}

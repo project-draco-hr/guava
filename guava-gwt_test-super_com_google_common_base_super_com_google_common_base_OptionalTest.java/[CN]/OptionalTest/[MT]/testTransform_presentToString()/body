@@ -1,3 +1,0 @@
-{
-  assertEquals(Optional.of("42"),Optional.of(42).transform(Functions.toStringFunction()));
-}

@@ -1,5 +1,0 @@
-{
-  for (  long value : TEST_LONGS) {
-    assertEquals(UnsignedLongs.toString(value),value,UnsignedLong.fromLongBits(value).longValue());
-  }
-}

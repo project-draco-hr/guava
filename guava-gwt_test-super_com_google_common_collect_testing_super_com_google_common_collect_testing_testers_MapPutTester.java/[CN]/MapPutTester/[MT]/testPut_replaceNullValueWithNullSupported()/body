@@ -1,5 +1,0 @@
-{
-  initMapWithNullValue();
-  assertNull("put(present, null) should return the associated value (null)",getMap().put(getKeyForNullValue(),null));
-  expectContents(createArrayWithNullValue());
-}

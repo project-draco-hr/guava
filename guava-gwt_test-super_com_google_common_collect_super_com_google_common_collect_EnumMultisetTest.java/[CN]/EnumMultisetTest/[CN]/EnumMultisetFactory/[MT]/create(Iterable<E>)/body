@@ -1,3 +1,0 @@
-{
-  return EnumMultiset.create(elements);
-}

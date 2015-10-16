@@ -1,3 +1,0 @@
-{
-  assertFailsToDecode(encoding,cannotDecode,null);
-}

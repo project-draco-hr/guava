@@ -1,7 +1,0 @@
-{
-  assertNull(Callables.returning(null).call());
-  Object value=new Object();
-  Callable<Object> callable=Callables.returning(value);
-  assertSame(value,callable.call());
-  assertSame(value,callable.call());
-}

@@ -1,9 +1,0 @@
-{
-  final List<String> list=asList(elements);
-  return new Iterable<String>(){
-    @Override public Iterator<String> iterator(){
-      return list.iterator();
-    }
-  }
-;
-}

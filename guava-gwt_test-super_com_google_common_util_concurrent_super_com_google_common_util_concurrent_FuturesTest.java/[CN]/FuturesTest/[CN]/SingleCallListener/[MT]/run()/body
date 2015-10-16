@@ -1,5 +1,0 @@
-{
-  assertTrue("Listener called before it was expected",expectCall);
-  assertFalse("Listener called more than once",wasCalled());
-  calledCountDown.countDown();
-}

@@ -1,5 +1,0 @@
-{
-  long result=(long)a - b;
-  checkNoOverflow(result == (int)result);
-  return (int)result;
-}

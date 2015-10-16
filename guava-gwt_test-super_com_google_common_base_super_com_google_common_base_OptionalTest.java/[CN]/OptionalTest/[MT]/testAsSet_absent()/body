@@ -1,3 +1,0 @@
-{
-  assertTrue("Returned set should be empty",Optional.absent().asSet().isEmpty());
-}

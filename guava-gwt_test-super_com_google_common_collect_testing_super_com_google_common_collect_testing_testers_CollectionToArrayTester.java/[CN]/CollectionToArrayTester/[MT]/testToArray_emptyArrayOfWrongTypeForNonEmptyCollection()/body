@@ -1,9 +1,0 @@
-{
-  try {
-    WrongType[] array=new WrongType[0];
-    collection.toArray(array);
-    fail("toArray(notAssignableTo[]) should throw");
-  }
- catch (  ArrayStoreException expected) {
-  }
-}

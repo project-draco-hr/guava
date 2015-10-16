@@ -1,7 +1,0 @@
-{
-  E[] elements=createSamplesArray();
-  int i=aValidIndex();
-  elements[i]=null;
-  collection=getSubjectGenerator().create(elements);
-  doTestSet(e3());
-}

@@ -1,9 +1,0 @@
-{
-  List<Integer> list=Arrays.asList((int)0,(int)1,null);
-  try {
-    Ints.toArray(list);
-    fail();
-  }
- catch (  NullPointerException expected) {
-  }
-}

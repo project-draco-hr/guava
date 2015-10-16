@@ -1,3 +1,0 @@
-{
-  SerializableTester.reserializeAndAssert(getList().subList(0,getNumElements()));
-}

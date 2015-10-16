@@ -1,8 +1,0 @@
-{
-  try {
-    initMapWithNullValue();
-    fail("Creating a map containing a null value should fail");
-  }
- catch (  NullPointerException expected) {
-  }
-}

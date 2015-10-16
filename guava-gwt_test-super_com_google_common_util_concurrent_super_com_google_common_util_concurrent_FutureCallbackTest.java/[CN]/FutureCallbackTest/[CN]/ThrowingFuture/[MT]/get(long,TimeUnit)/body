@@ -1,4 +1,0 @@
-{
-  throwOnGet();
-  throw new AssertionError("Unreachable");
-}

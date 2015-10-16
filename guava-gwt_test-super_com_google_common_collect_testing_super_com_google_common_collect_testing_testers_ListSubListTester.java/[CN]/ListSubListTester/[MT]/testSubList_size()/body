@@ -1,9 +1,0 @@
-{
-  List<E> list=getList();
-  int size=getNumElements();
-  assertEquals(list.subList(0,size).size(),size);
-  assertEquals(list.subList(0,size - 1).size(),size - 1);
-  assertEquals(list.subList(1,size).size(),size - 1);
-  assertEquals(list.subList(size,size).size(),0);
-  assertEquals(list.subList(0,0).size(),0);
-}

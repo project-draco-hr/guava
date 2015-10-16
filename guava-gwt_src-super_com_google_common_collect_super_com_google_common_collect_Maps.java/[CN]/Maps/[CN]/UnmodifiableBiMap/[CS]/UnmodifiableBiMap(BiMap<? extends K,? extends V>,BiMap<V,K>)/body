@@ -1,5 +1,0 @@
-{
-  unmodifiableMap=Collections.unmodifiableMap(delegate);
-  this.delegate=delegate;
-  this.inverse=inverse;
-}

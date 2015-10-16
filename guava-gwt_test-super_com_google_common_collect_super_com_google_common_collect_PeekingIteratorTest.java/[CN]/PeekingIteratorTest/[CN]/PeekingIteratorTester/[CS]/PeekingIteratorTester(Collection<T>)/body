@@ -1,4 +1,0 @@
-{
-  super(master.size() + 3,MODIFIABLE,master,IteratorTester.KnownOrder.KNOWN_ORDER);
-  this.master=master;
-}

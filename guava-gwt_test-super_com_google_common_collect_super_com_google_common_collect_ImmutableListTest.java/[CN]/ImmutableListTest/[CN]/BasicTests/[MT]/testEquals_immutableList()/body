@@ -1,7 +1,0 @@
-{
-  Collection<String> c=ImmutableList.of("a","b","c");
-  assertTrue(c.equals(ImmutableList.of("a","b","c")));
-  assertFalse(c.equals(ImmutableList.of("a","c","b")));
-  assertFalse(c.equals(ImmutableList.of("a","b")));
-  assertFalse(c.equals(ImmutableList.of("a","b","c","d")));
-}

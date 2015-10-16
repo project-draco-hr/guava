@@ -1,7 +1,0 @@
-{
-  Joiner onChar=Joiner.on('-');
-  checkNoOutput(onChar,ITERABLE_);
-  checkResult(onChar,ITERABLE_1,"1");
-  checkResult(onChar,ITERABLE_12,"1-2");
-  checkResult(onChar,ITERABLE_123,"1-2-3");
-}

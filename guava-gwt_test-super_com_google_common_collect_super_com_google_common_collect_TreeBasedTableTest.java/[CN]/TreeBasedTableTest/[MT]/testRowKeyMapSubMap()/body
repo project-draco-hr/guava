@@ -1,8 +1,0 @@
-{
-  sortedTable=create("foo",1,'a',"bar",1,'b',"foo",3,'c',"dog",2,'d');
-  Map<String,Map<Integer,Character>> map=sortedTable.rowMap().subMap("cat","egg");
-  assertEquals(ImmutableMap.of(2,'d'),map.get("dog"));
-  map.clear();
-  assertTrue(map.isEmpty());
-  assertEquals(ImmutableSet.of("bar","foo"),sortedTable.rowKeySet());
-}

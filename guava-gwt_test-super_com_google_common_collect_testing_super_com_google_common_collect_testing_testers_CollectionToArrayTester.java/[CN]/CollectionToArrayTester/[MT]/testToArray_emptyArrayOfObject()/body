@@ -1,7 +1,0 @@
-{
-  Object[] in=new Object[0];
-  Object[] array=collection.toArray(in);
-  assertEquals("toArray(emptyObject[]) should return an array of type Object",Object[].class,array.getClass());
-  assertEquals("toArray(emptyObject[]).length",getNumElements(),array.length);
-  expectArrayContentsAnyOrder(createSamplesArray(),array);
-}

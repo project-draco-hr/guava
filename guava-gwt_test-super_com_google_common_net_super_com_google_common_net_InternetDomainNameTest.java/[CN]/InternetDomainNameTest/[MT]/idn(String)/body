@@ -1,3 +1,0 @@
-{
-  return InternetDomainName.from(domain);
-}

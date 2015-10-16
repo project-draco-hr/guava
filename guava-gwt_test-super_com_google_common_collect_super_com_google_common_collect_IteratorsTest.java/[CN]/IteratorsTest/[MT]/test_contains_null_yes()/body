@@ -1,4 +1,0 @@
-{
-  Iterator<String> set=asList("a",null,"b").iterator();
-  assertTrue(Iterators.contains(set,null));
-}

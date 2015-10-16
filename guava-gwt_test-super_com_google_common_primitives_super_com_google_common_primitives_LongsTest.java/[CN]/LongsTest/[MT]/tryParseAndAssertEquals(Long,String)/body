@@ -1,3 +1,0 @@
-{
-  assertEquals(expected,Longs.tryParse(value));
-}

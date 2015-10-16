@@ -1,4 +1,0 @@
-{
-  table=create("foo",1,'a',"bar",1,'b',"foo",3,'c');
-  SerializableTester.reserializeAndAssert(table);
-}

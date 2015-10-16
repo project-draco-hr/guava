@@ -1,9 +1,0 @@
-{
-  try {
-    ImmutableBiMap.of("one",1,"one",1);
-    fail();
-  }
- catch (  IllegalArgumentException expected) {
-    assertThat(expected.getMessage()).contains("one");
-  }
-}

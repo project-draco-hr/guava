@@ -1,4 +1,0 @@
-{
-  HashMap<Integer,Integer> map=Maps.newHashMap();
-  assertEquals(Collections.emptyMap(),map);
-}

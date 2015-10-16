@@ -1,4 +1,0 @@
-{
-  for (  @SuppressWarnings("unused") Object obj : iterable) {
-  }
-}

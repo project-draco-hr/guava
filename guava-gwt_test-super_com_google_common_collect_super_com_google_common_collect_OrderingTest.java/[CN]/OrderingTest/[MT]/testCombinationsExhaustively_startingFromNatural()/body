@@ -1,3 +1,0 @@
-{
-  testExhaustively(Ordering.<String>natural(),"a","b","d");
-}

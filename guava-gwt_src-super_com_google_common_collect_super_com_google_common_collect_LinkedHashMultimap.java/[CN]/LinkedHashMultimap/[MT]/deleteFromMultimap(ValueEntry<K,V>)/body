@@ -1,3 +1,0 @@
-{
-  succeedsInMultimap(entry.getPredecessorInMultimap(),entry.getSuccessorInMultimap());
-}

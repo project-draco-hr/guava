@@ -1,4 +1,0 @@
-{
-  Collections.sort(insertionOrder,Collections.reverseOrder());
-  return insertionOrder;
-}

@@ -1,4 +1,0 @@
-{
-  Iterator<String> iterator=Iterators.emptyIterator();
-  assertNull(Iterators.getNext(iterator,null));
-}

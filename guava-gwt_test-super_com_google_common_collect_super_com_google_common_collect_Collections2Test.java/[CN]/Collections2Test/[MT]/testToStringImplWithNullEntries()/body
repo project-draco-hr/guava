@@ -1,6 +1,0 @@
-{
-  List<String> list=Lists.newArrayList();
-  list.add("foo");
-  list.add(null);
-  assertEquals(list.toString(),Collections2.toStringImpl(list));
-}

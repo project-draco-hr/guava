@@ -1,7 +1,0 @@
-{
-  assertEquals(5,Lists.computeArrayListCapacity(0));
-  assertEquals(13,Lists.computeArrayListCapacity(8));
-  assertEquals(89,Lists.computeArrayListCapacity(77));
-  assertEquals(22000005,Lists.computeArrayListCapacity(20000000));
-  assertEquals(Integer.MAX_VALUE,Lists.computeArrayListCapacity(Integer.MAX_VALUE - 1000));
-}

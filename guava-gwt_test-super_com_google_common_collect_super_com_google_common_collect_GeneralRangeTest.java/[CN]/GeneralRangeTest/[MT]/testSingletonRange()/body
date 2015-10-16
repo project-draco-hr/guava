@@ -1,6 +1,0 @@
-{
-  GeneralRange<Integer> range=GeneralRange.range(ORDERING,3,CLOSED,3,CLOSED);
-  for (  Integer i : IN_ORDER_VALUES) {
-    assertEquals(ORDERING.compare(i,3) == 0,range.contains(i));
-  }
-}

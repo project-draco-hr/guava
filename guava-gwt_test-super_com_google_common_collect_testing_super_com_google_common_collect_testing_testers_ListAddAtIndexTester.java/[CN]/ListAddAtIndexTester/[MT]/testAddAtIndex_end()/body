@@ -1,4 +1,0 @@
-{
-  getList().add(getNumElements(),e3());
-  expectAdded(getNumElements(),e3());
-}

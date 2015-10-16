@@ -1,5 +1,0 @@
-{
-  ImmutableSortedSet<LegacyComparable> set0=ImmutableSortedSet.of();
-  @SuppressWarnings("unchecked") ImmutableSortedSet<LegacyComparable> set1=ImmutableSortedSet.of(LegacyComparable.Z);
-  @SuppressWarnings("unchecked") ImmutableSortedSet<LegacyComparable> set2=ImmutableSortedSet.of(LegacyComparable.Z,LegacyComparable.Y);
-}

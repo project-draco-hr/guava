@@ -1,4 +1,0 @@
-{
-  super(columnKeyToIndex);
-  this.rowIndex=rowIndex;
-}

@@ -1,6 +1,0 @@
-{
-  Predicate<Integer> isOne=Predicates.equalTo(1);
-  assertTrue(isOne.apply(1));
-  assertFalse(isOne.apply(2));
-  assertFalse(isOne.apply(null));
-}

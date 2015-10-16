@@ -1,3 +1,0 @@
-{
-  return filterEntries(unfiltered,Maps.<K>keyPredicateOnEntries(keyPredicate));
-}

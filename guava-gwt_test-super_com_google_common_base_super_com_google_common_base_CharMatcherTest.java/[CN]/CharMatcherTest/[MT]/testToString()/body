@@ -1,8 +1,0 @@
-{
-  assertToStringWorks("CharMatcher.none()",CharMatcher.anyOf(""));
-  assertToStringWorks("CharMatcher.is('\\u0031')",CharMatcher.anyOf("1"));
-  assertToStringWorks("CharMatcher.isNot('\\u0031')",CharMatcher.isNot('1'));
-  assertToStringWorks("CharMatcher.anyOf(\"\\u0031\\u0032\")",CharMatcher.anyOf("12"));
-  assertToStringWorks("CharMatcher.anyOf(\"\\u0031\\u0032\\u0033\")",CharMatcher.anyOf("321"));
-  assertToStringWorks("CharMatcher.inRange('\\u0031', '\\u0033')",CharMatcher.inRange('1','3'));
-}

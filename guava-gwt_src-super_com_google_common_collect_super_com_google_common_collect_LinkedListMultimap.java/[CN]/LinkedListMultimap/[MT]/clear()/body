@@ -1,7 +1,0 @@
-{
-  head=null;
-  tail=null;
-  keyToKeyList.clear();
-  size=0;
-  modCount++;
-}

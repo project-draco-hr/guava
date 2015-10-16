@@ -1,8 +1,0 @@
-{
-  try {
-    Doubles.stringConverter().convert("notanumber");
-    fail();
-  }
- catch (  NumberFormatException expected) {
-  }
-}

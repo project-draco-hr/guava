@@ -1,4 +1,0 @@
-{
-  assertThat(MediaType.parse("text/plain").charset()).isAbsent();
-  assertThat(MediaType.parse("text/plain; charset=utf-8").charset()).hasValue(UTF_8);
-}

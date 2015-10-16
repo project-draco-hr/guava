@@ -1,8 +1,0 @@
-{
-  try {
-    UnsignedInts.max();
-    fail();
-  }
- catch (  IllegalArgumentException expected) {
-  }
-}

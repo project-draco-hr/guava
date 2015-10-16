@@ -1,5 +1,0 @@
-{
-  Ordering<Number> reverseOrder=numberOrdering.reverse();
-  Helpers.testComparator(reverseOrder,Integer.MAX_VALUE,1,0,-1,Integer.MIN_VALUE);
-  new EqualsTester().addEqualityGroup(reverseOrder,numberOrdering.reverse()).addEqualityGroup(Ordering.natural().reverse()).addEqualityGroup(Collections.reverseOrder()).testEquals();
-}

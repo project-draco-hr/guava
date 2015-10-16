@@ -1,3 +1,0 @@
-{
-  return new BiMapConverter<A,B>(bimap);
-}

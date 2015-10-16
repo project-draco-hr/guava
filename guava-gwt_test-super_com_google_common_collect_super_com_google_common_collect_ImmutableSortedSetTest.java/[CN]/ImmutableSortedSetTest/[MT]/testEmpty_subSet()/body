@@ -1,4 +1,0 @@
-{
-  SortedSet<String> set=of();
-  assertSame(set,set.subSet("c","f"));
-}

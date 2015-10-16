@@ -1,6 +1,0 @@
-{
-  ImmutableSet.Builder<String> builder=this.<String>builder().add("a").add("b");
-  assertThat(builder.build()).containsExactly("a","b").inOrder();
-  builder.add("c","d");
-  assertThat(builder.build()).containsExactly("a","b","c","d").inOrder();
-}

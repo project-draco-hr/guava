@@ -1,3 +1,0 @@
-{
-  return (expireAfterAccessNanos == UNSET_INT) ? DEFAULT_EXPIRATION_NANOS : expireAfterAccessNanos;
-}

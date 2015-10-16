@@ -1,6 +1,0 @@
-{
-  assertSame(EMPTY,Bytes.ensureCapacity(EMPTY,0,1));
-  assertSame(ARRAY1,Bytes.ensureCapacity(ARRAY1,0,1));
-  assertSame(ARRAY1,Bytes.ensureCapacity(ARRAY1,1,1));
-  assertTrue(Arrays.equals(new byte[]{(byte)1,(byte)0,(byte)0},Bytes.ensureCapacity(ARRAY1,2,1)));
-}

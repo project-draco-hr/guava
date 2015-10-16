@@ -1,3 +1,0 @@
-{
-  return "foo".subSequence(start,end);
-}

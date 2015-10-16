@@ -1,9 +1,0 @@
-{
-  checkNotNull(iterator);
-  checkArgument(numberToAdvance >= 0,"numberToAdvance must be nonnegative");
-  int i;
-  for (i=0; i < numberToAdvance && iterator.hasNext(); i++) {
-    iterator.next();
-  }
-  return i;
-}

@@ -1,9 +1,0 @@
-{
-  assertFalse(Longs.contains(EMPTY,(long)1));
-  assertFalse(Longs.contains(ARRAY1,(long)2));
-  assertFalse(Longs.contains(ARRAY234,(long)1));
-  assertTrue(Longs.contains(new long[]{(long)-1},(long)-1));
-  assertTrue(Longs.contains(ARRAY234,(long)2));
-  assertTrue(Longs.contains(ARRAY234,(long)3));
-  assertTrue(Longs.contains(ARRAY234,(long)4));
-}

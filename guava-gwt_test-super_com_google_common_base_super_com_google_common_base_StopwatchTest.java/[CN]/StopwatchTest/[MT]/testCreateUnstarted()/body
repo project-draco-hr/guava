@@ -1,5 +1,0 @@
-{
-  Stopwatch unstartedStopwatch=Stopwatch.createUnstarted();
-  assertFalse(unstartedStopwatch.isRunning());
-  assertEquals(0,unstartedStopwatch.elapsed(NANOSECONDS));
-}

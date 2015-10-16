@@ -1,8 +1,0 @@
-{
-  try {
-    COMMA_SPLITTER.split(null);
-    fail();
-  }
- catch (  NullPointerException expected) {
-  }
-}

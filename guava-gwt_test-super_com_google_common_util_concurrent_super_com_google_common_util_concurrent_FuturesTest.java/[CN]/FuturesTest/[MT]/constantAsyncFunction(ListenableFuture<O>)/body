@@ -1,8 +1,0 @@
-{
-  return new AsyncFunction<I,O>(){
-    @Override public ListenableFuture<O> apply(    I input){
-      return output;
-    }
-  }
-;
-}

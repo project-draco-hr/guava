@@ -1,3 +1,0 @@
-{
-  return iterable instanceof Collection ? ((Collection<?>)iterable).isEmpty() : iterable.iterator().hasNext();
-}

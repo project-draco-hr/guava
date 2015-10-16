@@ -1,8 +1,0 @@
-{
-  checkConcurrentModification();
-  if (!hasNext()) {
-    throw new NoSuchElementException();
-  }
-  canRemove=true;
-  return elements.get(index++);
-}

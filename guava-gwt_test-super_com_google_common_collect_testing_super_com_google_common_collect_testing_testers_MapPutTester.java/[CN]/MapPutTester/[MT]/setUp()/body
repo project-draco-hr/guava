@@ -1,7 +1,0 @@
-{
-  super.setUp();
-  nullKeyEntry=entry(null,v3());
-  nullValueEntry=entry(k3(),null);
-  nullKeyValueEntry=entry(null,null);
-  presentKeyNullValueEntry=entry(k0(),null);
-}

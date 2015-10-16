@@ -1,4 +1,0 @@
-{
-  Integer index=inputSet.get(o);
-  return index != null && (mask & (1 << index)) != 0;
-}

@@ -1,3 +1,0 @@
-{
-  doTestNewArrayEquals(new String[10],10);
-}

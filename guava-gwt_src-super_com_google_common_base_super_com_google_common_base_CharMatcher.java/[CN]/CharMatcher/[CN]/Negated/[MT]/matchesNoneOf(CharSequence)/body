@@ -1,3 +1,0 @@
-{
-  return original.matchesAllOf(sequence);
-}

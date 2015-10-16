@@ -1,3 +1,0 @@
-{
-  keyToKeyList=new HashMap<K,KeyList<K,V>>(expectedKeys);
-}

@@ -1,9 +1,0 @@
-{
-  byte[] array={(byte)0,(byte)1,(byte)2};
-  List<Byte> list=Bytes.asList(array);
-  byte[] newArray=Bytes.toArray(list);
-  list.set(0,(byte)4);
-  assertTrue(Arrays.equals(new byte[]{(byte)0,(byte)1,(byte)2},newArray));
-  newArray[1]=(byte)5;
-  assertEquals((byte)1,(byte)list.get(1));
-}

@@ -1,3 +1,0 @@
-{
-  assertThat(binaryIterationOrder(BIN_ADAPTER.inOrderTraversal(bd))).isEqualTo("abcdegf");
-}

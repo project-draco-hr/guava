@@ -1,3 +1,0 @@
-{
-  return MoreObjects.firstNonNull(keyStrength,Strength.STRONG);
-}

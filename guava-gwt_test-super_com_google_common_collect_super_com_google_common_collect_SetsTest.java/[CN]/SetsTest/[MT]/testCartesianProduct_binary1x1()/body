@@ -1,3 +1,0 @@
-{
-  assertThat(Sets.cartesianProduct(set(1),set(2))).contains(list(1,2));
-}

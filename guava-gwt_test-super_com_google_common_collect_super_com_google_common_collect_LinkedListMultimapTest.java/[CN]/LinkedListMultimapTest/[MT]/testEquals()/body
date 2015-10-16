@@ -1,3 +1,0 @@
-{
-  new EqualsTester().addEqualityGroup(LinkedListMultimap.create(),LinkedListMultimap.create(),LinkedListMultimap.create(1)).testEquals();
-}

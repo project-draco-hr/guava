@@ -1,8 +1,0 @@
-{
-  try {
-    result.set(0,1);
-    fail();
-  }
- catch (  UnsupportedOperationException expected) {
-  }
-}

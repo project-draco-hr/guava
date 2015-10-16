@@ -1,4 +1,0 @@
-{
-  count++;
-  return Iterators.forArray("a","b","a");
-}

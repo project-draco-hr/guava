@@ -1,5 +1,0 @@
-{
-  ArrayList<E> list=newArrayList();
-  Iterators.addAll(list,elements);
-  return list;
-}

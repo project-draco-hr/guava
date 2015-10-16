@@ -1,6 +1,0 @@
-{
-  assertEquals(MediaType.parse("text/plain; a=1"),MediaType.parse("text/plain").withParameter("a","1"));
-  assertEquals(MediaType.parse("text/plain; a=1"),MediaType.parse("text/plain; a=1; a=2").withParameter("a","1"));
-  assertEquals(MediaType.parse("text/plain; a=3"),MediaType.parse("text/plain; a=1; a=2").withParameter("a","3"));
-  assertEquals(MediaType.parse("text/plain; a=1; a=2; b=3"),MediaType.parse("text/plain; a=1; a=2").withParameter("b","3"));
-}

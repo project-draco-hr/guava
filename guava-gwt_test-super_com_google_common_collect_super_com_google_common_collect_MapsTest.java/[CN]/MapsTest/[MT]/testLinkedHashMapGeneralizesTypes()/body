@@ -1,8 +1,0 @@
-{
-  Map<String,Integer> original=new LinkedHashMap<String,Integer>();
-  original.put("a",1);
-  original.put("b",2);
-  original.put("c",3);
-  HashMap<Object,Object> map=Maps.<Object,Object>newLinkedHashMap(original);
-  assertEquals(original,map);
-}

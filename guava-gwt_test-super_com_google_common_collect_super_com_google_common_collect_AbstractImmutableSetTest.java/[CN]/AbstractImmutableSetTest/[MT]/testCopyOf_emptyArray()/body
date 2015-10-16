@@ -1,6 +1,0 @@
-{
-  String[] array=new String[0];
-  Set<String> set=copyOf(array);
-  assertEquals(Collections.<String>emptySet(),set);
-  assertSame(of(),set);
-}

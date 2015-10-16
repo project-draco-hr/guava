@@ -1,9 +1,0 @@
-{
-  Collection<String> c=MinimalCollection.of("a",null,"b");
-  try {
-    ImmutableMultiset.copyOf(c);
-    fail();
-  }
- catch (  NullPointerException expected) {
-  }
-}

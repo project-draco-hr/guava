@@ -1,9 +1,0 @@
-{
-  float[] array={(float)0,(float)1,(float)2};
-  List<Float> list=Floats.asList(array);
-  float[] newArray=Floats.toArray(list);
-  list.set(0,(float)4);
-  assertTrue(Arrays.equals(new float[]{(float)0,(float)1,(float)2},newArray));
-  newArray[1]=(float)5;
-  assertEquals((float)1,(float)list.get(1));
-}

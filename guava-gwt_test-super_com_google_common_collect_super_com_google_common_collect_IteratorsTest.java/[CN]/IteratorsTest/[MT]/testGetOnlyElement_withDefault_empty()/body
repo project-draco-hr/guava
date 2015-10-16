@@ -1,4 +1,0 @@
-{
-  Iterator<String> iterator=Iterators.emptyIterator();
-  assertEquals("bar",Iterators.getOnlyElement(iterator,"bar"));
-}

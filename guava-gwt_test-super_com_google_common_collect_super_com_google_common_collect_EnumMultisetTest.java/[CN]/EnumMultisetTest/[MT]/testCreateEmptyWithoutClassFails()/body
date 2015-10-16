@@ -1,8 +1,0 @@
-{
-  try {
-    EnumMultiset.create(ImmutableList.<Color>of());
-    fail("Expected IllegalArgumentException");
-  }
- catch (  IllegalArgumentException expected) {
-  }
-}

@@ -1,6 +1,0 @@
-{
-  InternetDomainName googleDomain=InternetDomainName.from("google.com");
-  assertEquals(googleDomain,googleDomain.topPrivateDomain());
-  assertEquals(googleDomain,googleDomain.child("mail").topPrivateDomain());
-  assertEquals(googleDomain,googleDomain.child("foo.bar").topPrivateDomain());
-}

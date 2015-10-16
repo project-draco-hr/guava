@@ -1,3 +1,0 @@
-{
-  return new SortedKeySet<K,V>(map().tailMap(fromElement));
-}

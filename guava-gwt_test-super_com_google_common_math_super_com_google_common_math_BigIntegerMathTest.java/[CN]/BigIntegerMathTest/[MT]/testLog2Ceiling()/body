@@ -1,9 +1,0 @@
-{
-  for (  BigInteger x : POSITIVE_BIGINTEGER_CANDIDATES) {
-    for (    RoundingMode mode : asList(CEILING,UP)) {
-      int result=BigIntegerMath.log2(x,mode);
-      assertTrue(ZERO.setBit(result).compareTo(x) >= 0);
-      assertTrue(result == 0 || ZERO.setBit(result - 1).compareTo(x) < 0);
-    }
-  }
-}

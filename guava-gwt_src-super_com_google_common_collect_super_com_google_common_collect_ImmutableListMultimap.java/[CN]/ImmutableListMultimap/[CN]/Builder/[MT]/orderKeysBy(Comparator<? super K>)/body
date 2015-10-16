@@ -1,4 +1,0 @@
-{
-  super.orderKeysBy(keyComparator);
-  return this;
-}

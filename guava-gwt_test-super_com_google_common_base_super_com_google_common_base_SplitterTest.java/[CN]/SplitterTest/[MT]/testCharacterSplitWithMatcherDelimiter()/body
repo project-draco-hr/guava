@@ -1,4 +1,0 @@
-{
-  Iterable<String> testCharacteringMotto=Splitter.on(CharMatcher.WHITESPACE).split("Testing\nrocks\tDebugging sucks");
-  assertThat(testCharacteringMotto).containsExactly("Testing","rocks","Debugging","sucks").inOrder();
-}

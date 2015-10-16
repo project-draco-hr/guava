@@ -1,4 +1,0 @@
-{
-  assertTrue(testTable.containsValue("blah"));
-  assertFalse(testTable.containsValue(""));
-}

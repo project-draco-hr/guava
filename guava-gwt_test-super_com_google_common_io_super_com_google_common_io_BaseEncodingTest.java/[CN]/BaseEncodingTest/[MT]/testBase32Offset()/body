@@ -1,7 +1,0 @@
-{
-  testEncodesWithOffset(base32(),"foobar",0,6,"MZXW6YTBOI======");
-  testEncodesWithOffset(base32(),"foobar",1,5,"N5XWEYLS");
-  testEncodesWithOffset(base32(),"foobar",2,3,"N5RGC===");
-  testEncodesWithOffset(base32(),"foobar",3,1,"MI======");
-  testEncodesWithOffset(base32(),"foobar",4,0,"");
-}

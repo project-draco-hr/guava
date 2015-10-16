@@ -1,3 +1,0 @@
-{
-  testGetOnAbc(ImmutableSortedSet.of("b","c","a"));
-}

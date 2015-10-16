@@ -1,5 +1,0 @@
-{
-  this.ordering=ordering;
-  this.strictlyOrderedList=strictlyOrderedList;
-  this.emptyArray=emptyArray;
-}

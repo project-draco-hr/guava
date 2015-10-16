@@ -1,3 +1,0 @@
-{
-  assertEquals("multiset.remove(wrongType, 1) didn't return 0",0,getMultiset().remove(WrongType.VALUE,1));
-}

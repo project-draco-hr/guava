@@ -1,4 +1,0 @@
-{
-  initCollectionWithNullElement();
-  assertSetCount(null,0);
-}

@@ -1,9 +1,0 @@
-{
-  SortedSet<String> set=of("a","b","c");
-  assertEquals(set,Sets.newTreeSet(asList("a","b","c")));
-  assertEquals(Sets.newTreeSet(asList("a","b","c")),set);
-  assertFalse(set.equals(Sets.newTreeSet(asList("a","b","d"))));
-  assertFalse(Sets.newTreeSet(asList("a","b","d")).equals(set));
-  assertFalse(set.equals(Sets.newHashSet(4,5,6)));
-  assertFalse(Sets.newHashSet(4,5,6).equals(set));
-}

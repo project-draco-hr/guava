@@ -1,3 +1,0 @@
-{
-  assertNull(INSTANCE.get('a',1));
-}

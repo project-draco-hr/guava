@@ -1,5 +1,0 @@
-{
-  Function<String,String> identity=Functions.identity();
-  assertNull(identity.apply(null));
-  assertSame("foo",identity.apply("foo"));
-}

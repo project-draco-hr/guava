@@ -1,5 +1,0 @@
-{
-  assertEquals("[]",Splitter.on(',').split("").toString());
-  assertEquals("[a, b, c]",Splitter.on(',').split("a,b,c").toString());
-  assertEquals("[yam, bam, jam, ham]",Splitter.on(", ").split("yam, bam, jam, ham").toString());
-}

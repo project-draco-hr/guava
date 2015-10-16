@@ -1,3 +1,0 @@
-{
-  return newSetFromMap(new ConcurrentHashMap<E,Boolean>());
-}

@@ -1,5 +1,0 @@
-{
-  assertEquals(LEAST,Ints.max(LEAST));
-  assertEquals(GREATEST,Ints.max(GREATEST));
-  assertEquals((int)9,Ints.max((int)8,(int)6,(int)7,(int)5,(int)3,(int)0,(int)9));
-}

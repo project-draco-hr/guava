@@ -1,3 +1,0 @@
-{
-  this(LinkedHashMultiset.<E>create());
-}

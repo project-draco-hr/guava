@@ -1,5 +1,0 @@
-{
-  Object[] array=new Object[getNumElements()];
-  assertSame("toArray(sameSizeObject[]) should return the given array",array,collection.toArray(array));
-  expectArrayContentsAnyOrder(createSamplesArray(),array);
-}

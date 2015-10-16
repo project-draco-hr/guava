@@ -1,5 +1,0 @@
-{
-  MediaType newType=MediaType.createTextType("yams");
-  assertEquals("text",newType.type());
-  assertEquals("yams",newType.subtype());
-}

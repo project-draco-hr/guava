@@ -1,3 +1,0 @@
-{
-  return removeIf(not(in(c)));
-}

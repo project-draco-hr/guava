@@ -1,9 +1,0 @@
-{
-  List<Character> list=Arrays.asList((char)0,(char)1,null);
-  try {
-    Chars.toArray(list);
-    fail();
-  }
- catch (  NullPointerException expected) {
-  }
-}

@@ -1,3 +1,0 @@
-{
-  new EqualsTester().addEqualityGroup(Equivalence.equals(),Equivalence.equals()).addEqualityGroup(Equivalence.identity(),Equivalence.identity()).testEquals();
-}

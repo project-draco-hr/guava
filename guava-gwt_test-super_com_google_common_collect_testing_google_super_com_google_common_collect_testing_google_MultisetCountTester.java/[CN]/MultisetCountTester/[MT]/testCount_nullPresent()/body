@@ -1,4 +1,0 @@
-{
-  initCollectionWithNullElement();
-  assertEquals(1,getMultiset().count(null));
-}

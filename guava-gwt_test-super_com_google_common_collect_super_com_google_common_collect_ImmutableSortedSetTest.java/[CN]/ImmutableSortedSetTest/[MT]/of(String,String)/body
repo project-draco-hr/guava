@@ -1,3 +1,0 @@
-{
-  return ImmutableSortedSet.of(e1,e2);
-}

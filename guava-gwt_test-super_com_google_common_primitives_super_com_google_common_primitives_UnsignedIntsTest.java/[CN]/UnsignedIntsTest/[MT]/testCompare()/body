@@ -1,9 +1,0 @@
-{
-  for (  long a : UNSIGNED_INTS) {
-    for (    long b : UNSIGNED_INTS) {
-      int cmpAsLongs=Longs.compare(a,b);
-      int cmpAsUInt=UnsignedInts.compare((int)a,(int)b);
-      assertEquals(Integer.signum(cmpAsLongs),Integer.signum(cmpAsUInt));
-    }
-  }
-}

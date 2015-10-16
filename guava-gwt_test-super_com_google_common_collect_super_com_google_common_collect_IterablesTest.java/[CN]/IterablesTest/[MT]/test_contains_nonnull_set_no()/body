@@ -1,4 +1,0 @@
-{
-  Iterable<String> set=Sets.newHashSet("a","b");
-  assertFalse(Iterables.contains(set,"c"));
-}

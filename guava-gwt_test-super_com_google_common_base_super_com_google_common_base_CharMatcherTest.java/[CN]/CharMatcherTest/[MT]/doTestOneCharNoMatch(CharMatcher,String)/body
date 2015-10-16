@@ -1,7 +1,0 @@
-{
-  reallyTestOneCharNoMatch(matcher,s);
-  reallyTestOneCharMatch(matcher.negate(),s);
-  reallyTestOneCharNoMatch(matcher.precomputed(),s);
-  reallyTestOneCharMatch(matcher.negate().precomputed(),s);
-  reallyTestOneCharMatch(matcher.precomputed().negate(),s);
-}

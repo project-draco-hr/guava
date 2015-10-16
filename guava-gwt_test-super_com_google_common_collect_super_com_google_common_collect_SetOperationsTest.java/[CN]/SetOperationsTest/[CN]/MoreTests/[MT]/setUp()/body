@@ -1,4 +1,0 @@
-{
-  friends=Sets.newHashSet("Tom","Joe","Dave");
-  enemies=Sets.newHashSet("Dick","Harry","Tom");
-}

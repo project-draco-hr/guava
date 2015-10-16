@@ -1,3 +1,0 @@
-{
-  return Multisets.equalsImpl(this,object);
-}

@@ -1,5 +1,0 @@
-{
-  assertEquals("foo",LOWER_CAMEL.to(LOWER_UNDERSCORE,"foo"));
-  assertEquals("foo_bar",LOWER_CAMEL.to(LOWER_UNDERSCORE,"fooBar"));
-  assertEquals("h_t_t_p",LOWER_CAMEL.to(LOWER_UNDERSCORE,"hTTP"));
-}

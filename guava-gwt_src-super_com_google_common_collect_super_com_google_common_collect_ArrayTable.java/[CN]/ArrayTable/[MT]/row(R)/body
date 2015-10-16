@@ -1,5 +1,0 @@
-{
-  checkNotNull(rowKey);
-  Integer rowIndex=rowKeyToIndex.get(rowKey);
-  return (rowIndex == null) ? ImmutableMap.<C,V>of() : new Row(rowIndex);
-}

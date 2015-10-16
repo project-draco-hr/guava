@@ -1,3 +1,0 @@
-{
-  return TreeMultimap.create(StringLength.COMPARATOR,DECREASING_INT_COMPARATOR);
-}

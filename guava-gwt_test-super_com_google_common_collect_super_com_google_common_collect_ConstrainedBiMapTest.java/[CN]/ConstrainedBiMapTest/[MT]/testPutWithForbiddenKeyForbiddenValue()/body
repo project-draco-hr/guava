@@ -1,9 +1,0 @@
-{
-  BiMap<String,String> map=MapConstraints.constrainedBiMap(HashBiMap.<String,String>create(),TEST_CONSTRAINT);
-  try {
-    map.put(TEST_KEY,TEST_VALUE);
-    fail("Expected IllegalArgumentException");
-  }
- catch (  IllegalArgumentException expected) {
-  }
-}

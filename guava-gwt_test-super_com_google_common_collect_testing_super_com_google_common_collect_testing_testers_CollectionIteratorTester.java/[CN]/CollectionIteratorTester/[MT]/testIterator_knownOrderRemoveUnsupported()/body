@@ -1,3 +1,0 @@
-{
-  runIteratorTest(UNMODIFIABLE,IteratorTester.KnownOrder.KNOWN_ORDER,getOrderedElements());
-}

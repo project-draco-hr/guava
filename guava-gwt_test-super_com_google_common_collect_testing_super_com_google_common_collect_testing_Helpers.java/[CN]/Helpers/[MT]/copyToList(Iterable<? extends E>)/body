@@ -1,5 +1,0 @@
-{
-  List<E> list=new ArrayList<E>();
-  addAll(list,elements);
-  return list;
-}

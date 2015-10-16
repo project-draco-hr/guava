@@ -1,4 +1,0 @@
-{
-  Object[] array=collection.toArray();
-  assertEquals(Object[].class,array.getClass());
-}

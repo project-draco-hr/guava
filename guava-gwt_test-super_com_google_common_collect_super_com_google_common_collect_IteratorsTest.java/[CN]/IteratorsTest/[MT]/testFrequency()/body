@@ -1,8 +1,0 @@
-{
-  List<String> list=newArrayList("a",null,"b",null,"a",null);
-  assertEquals(2,Iterators.frequency(list.iterator(),"a"));
-  assertEquals(1,Iterators.frequency(list.iterator(),"b"));
-  assertEquals(0,Iterators.frequency(list.iterator(),"c"));
-  assertEquals(0,Iterators.frequency(list.iterator(),4.2));
-  assertEquals(3,Iterators.frequency(list.iterator(),null));
-}

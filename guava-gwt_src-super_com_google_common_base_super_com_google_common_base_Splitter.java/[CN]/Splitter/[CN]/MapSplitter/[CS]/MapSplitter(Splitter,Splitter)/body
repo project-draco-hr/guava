@@ -1,4 +1,0 @@
-{
-  this.outerSplitter=outerSplitter;
-  this.entrySplitter=checkNotNull(entrySplitter);
-}

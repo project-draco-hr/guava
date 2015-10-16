@@ -1,5 +1,0 @@
-{
-  assertFalse(invoked);
-  invoked=true;
-  return "A message";
-}

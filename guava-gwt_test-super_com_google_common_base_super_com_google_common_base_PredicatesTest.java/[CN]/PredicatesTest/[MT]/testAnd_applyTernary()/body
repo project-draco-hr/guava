@@ -1,6 +1,0 @@
-{
-  assertEvalsLikeOdd(Predicates.and(isOdd(),TRUE,TRUE));
-  assertEvalsLikeOdd(Predicates.and(TRUE,isOdd(),TRUE));
-  assertEvalsLikeOdd(Predicates.and(TRUE,TRUE,isOdd()));
-  assertEvalsToFalse(Predicates.and(TRUE,FALSE,NEVER_REACHED));
-}

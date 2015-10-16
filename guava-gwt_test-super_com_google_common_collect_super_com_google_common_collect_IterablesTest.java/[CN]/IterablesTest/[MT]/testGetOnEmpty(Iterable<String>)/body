@@ -1,8 +1,0 @@
-{
-  try {
-    Iterables.get(iterable,0);
-    fail();
-  }
- catch (  IndexOutOfBoundsException expected) {
-  }
-}

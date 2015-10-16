@@ -1,3 +1,0 @@
-{
-  assertEquals("a",Optional.of("a").or(Suppliers.ofInstance("fallback")));
-}

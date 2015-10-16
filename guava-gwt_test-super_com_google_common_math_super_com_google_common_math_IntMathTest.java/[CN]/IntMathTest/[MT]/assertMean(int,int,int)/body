@@ -1,4 +1,0 @@
-{
-  assertEquals("The expectedMean should be the same as computeMeanSafely",expectedMean,computeMeanSafely(x,y));
-  assertMean(x,y);
-}

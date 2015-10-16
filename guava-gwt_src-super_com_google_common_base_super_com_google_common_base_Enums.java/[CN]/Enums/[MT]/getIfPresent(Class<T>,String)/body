@@ -1,5 +1,0 @@
-{
-  checkNotNull(enumClass);
-  checkNotNull(value);
-  return Platform.getEnumIfPresent(enumClass,value);
-}

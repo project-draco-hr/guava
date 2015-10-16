@@ -1,4 +1,0 @@
-{
-  checkNonnegative(initialArraySize,"initialArraySize");
-  return new ArrayList<E>(initialArraySize);
-}

@@ -1,5 +1,0 @@
-{
-  Collection<String> c=of("a","b","c");
-  assertTrue(c.equals(of("a","b","c")));
-  assertFalse(c.equals(of("a","b","d")));
-}

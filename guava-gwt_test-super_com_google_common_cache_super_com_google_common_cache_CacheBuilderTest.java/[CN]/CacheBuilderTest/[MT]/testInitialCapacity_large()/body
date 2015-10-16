@@ -1,3 +1,0 @@
-{
-  CacheBuilder.newBuilder().initialCapacity(Integer.MAX_VALUE);
-}

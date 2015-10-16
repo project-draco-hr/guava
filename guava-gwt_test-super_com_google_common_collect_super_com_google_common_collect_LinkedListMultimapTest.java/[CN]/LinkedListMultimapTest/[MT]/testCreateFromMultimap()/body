@@ -1,9 +1,0 @@
-{
-  Multimap<String,Integer> multimap=LinkedListMultimap.create();
-  multimap.put("foo",1);
-  multimap.put("bar",3);
-  multimap.put("foo",2);
-  LinkedListMultimap<String,Integer> copy=LinkedListMultimap.create(multimap);
-  assertEquals(multimap,copy);
-  assertThat(copy.entries()).containsExactlyElementsIn(multimap.entries()).inOrder();
-}

@@ -1,8 +1,0 @@
-{
-  for (int i=0; i < strictlyOrderedList.size(); i++) {
-    assertEquals(i,ordering.binarySearch(strictlyOrderedList,strictlyOrderedList.get(i)));
-  }
-  List<T> newList=Lists.newArrayList(strictlyOrderedList);
-  T valueNotInList=newList.remove(1);
-  assertEquals(-2,ordering.binarySearch(newList,valueNotInList));
-}

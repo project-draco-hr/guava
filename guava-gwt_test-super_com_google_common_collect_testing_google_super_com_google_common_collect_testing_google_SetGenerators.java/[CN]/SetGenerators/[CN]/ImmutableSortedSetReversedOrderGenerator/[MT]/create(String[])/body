@@ -1,3 +1,0 @@
-{
-  return ImmutableSortedSet.<String>reverseOrder().addAll(Arrays.asList(elements).iterator()).build();
-}

@@ -1,9 +1,0 @@
-{
-  Collection<String> c=MinimalCollection.of("a","b","a");
-  List<String> list=ImmutableList.copyOf(c);
-  assertEquals(asList("a","b","a"),list);
-  List<String> mutableList=asList("a","b");
-  list=ImmutableList.copyOf(mutableList);
-  mutableList.set(0,"c");
-  assertEquals(asList("a","b"),list);
-}

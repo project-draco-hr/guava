@@ -1,4 +1,0 @@
-{
-  List<String> list=ImmutableList.of("a");
-  assertEquals(Collections.singletonList("a"),list);
-}

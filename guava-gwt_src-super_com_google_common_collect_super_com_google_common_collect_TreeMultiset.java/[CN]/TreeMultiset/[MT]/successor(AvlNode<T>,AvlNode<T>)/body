@@ -1,4 +1,0 @@
-{
-  a.succ=b;
-  b.pred=a;
-}

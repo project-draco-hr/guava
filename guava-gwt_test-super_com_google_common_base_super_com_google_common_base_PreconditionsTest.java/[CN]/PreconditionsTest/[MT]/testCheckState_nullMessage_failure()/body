@@ -1,9 +1,0 @@
-{
-  try {
-    Preconditions.checkState(false,null);
-    fail("no exception thrown");
-  }
- catch (  IllegalStateException expected) {
-    assertThat(expected).hasMessage("null");
-  }
-}

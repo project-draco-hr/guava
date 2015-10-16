@@ -1,3 +1,0 @@
-{
-  assertEqualIgnoringOrder(Arrays.asList(expected),actual);
-}

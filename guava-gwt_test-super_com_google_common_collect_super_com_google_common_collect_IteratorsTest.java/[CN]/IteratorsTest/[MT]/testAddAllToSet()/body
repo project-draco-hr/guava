@@ -1,7 +1,0 @@
-{
-  Set<String> alreadyThere=Sets.newLinkedHashSet(asList("already","there"));
-  List<String> oneMore=Lists.newArrayList("there");
-  boolean changed=Iterators.addAll(alreadyThere,oneMore.iterator());
-  assertThat(alreadyThere).containsExactly("already","there").inOrder();
-  assertFalse(changed);
-}

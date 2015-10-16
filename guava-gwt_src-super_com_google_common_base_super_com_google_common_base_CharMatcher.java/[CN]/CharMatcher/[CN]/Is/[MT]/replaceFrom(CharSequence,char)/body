@@ -1,3 +1,0 @@
-{
-  return sequence.toString().replace(match,replacement);
-}

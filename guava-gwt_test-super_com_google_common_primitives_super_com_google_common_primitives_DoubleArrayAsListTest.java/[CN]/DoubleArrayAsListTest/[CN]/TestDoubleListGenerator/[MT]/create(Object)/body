@@ -1,8 +1,0 @@
-{
-  Double[] array=new Double[elements.length];
-  int i=0;
-  for (  Object e : elements) {
-    array[i++]=(Double)e;
-  }
-  return create(array);
-}

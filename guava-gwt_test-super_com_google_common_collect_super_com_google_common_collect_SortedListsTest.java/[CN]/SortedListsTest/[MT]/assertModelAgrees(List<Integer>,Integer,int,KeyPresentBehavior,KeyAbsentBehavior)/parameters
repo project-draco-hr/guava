@@ -1,5 +1,0 @@
-List<Integer> list
-Integer key
-int answer
-KeyPresentBehavior presentBehavior
-KeyAbsentBehavior absentBehavior

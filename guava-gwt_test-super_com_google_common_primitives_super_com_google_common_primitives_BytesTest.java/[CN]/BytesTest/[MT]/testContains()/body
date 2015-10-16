@@ -1,9 +1,0 @@
-{
-  assertFalse(Bytes.contains(EMPTY,(byte)1));
-  assertFalse(Bytes.contains(ARRAY1,(byte)2));
-  assertFalse(Bytes.contains(ARRAY234,(byte)1));
-  assertTrue(Bytes.contains(new byte[]{(byte)-1},(byte)-1));
-  assertTrue(Bytes.contains(ARRAY234,(byte)2));
-  assertTrue(Bytes.contains(ARRAY234,(byte)3));
-  assertTrue(Bytes.contains(ARRAY234,(byte)4));
-}

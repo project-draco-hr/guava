@@ -1,4 +1,0 @@
-{
-  this.axes=axes;
-  this.delegate=delegate;
-}

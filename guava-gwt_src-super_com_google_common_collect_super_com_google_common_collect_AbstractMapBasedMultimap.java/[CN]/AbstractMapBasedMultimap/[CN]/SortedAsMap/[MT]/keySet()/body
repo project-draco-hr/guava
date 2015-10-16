@@ -1,4 +1,0 @@
-{
-  SortedSet<K> result=sortedKeySet;
-  return (result == null) ? sortedKeySet=createKeySet() : result;
-}

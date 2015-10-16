@@ -1,6 +1,0 @@
-{
-  for (  String column : elements) {
-    table.put(1,column,'a');
-    table.put(2,column,'b');
-  }
-}

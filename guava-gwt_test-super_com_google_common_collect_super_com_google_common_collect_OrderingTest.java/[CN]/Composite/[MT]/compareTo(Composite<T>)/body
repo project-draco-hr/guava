@@ -1,3 +1,0 @@
-{
-  return Ints.compare(rank,that.rank);
-}

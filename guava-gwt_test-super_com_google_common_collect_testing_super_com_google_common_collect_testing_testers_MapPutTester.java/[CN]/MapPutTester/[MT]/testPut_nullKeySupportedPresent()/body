@@ -1,8 +1,0 @@
-{
-  Entry<K,V> newEntry=entry(null,v3());
-  initMapWithNullKey();
-  assertEquals("put(present, value) should return the associated value",getValueForNullKey(),put(newEntry));
-  Entry<K,V>[] expected=createArrayWithNullKey();
-  expected[getNullLocation()]=newEntry;
-  expectContents(expected);
-}

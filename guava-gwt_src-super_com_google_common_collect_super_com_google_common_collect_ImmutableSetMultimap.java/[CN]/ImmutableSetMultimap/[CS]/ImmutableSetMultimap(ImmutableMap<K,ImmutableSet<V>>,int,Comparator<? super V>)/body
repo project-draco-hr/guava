@@ -1,4 +1,0 @@
-{
-  super(map,size);
-  this.emptySet=emptySet(valueComparator);
-}

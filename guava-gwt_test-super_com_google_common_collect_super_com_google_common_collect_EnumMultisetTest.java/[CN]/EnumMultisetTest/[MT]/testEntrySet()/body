@@ -1,9 +1,0 @@
-{
-  Multiset<Color> ms=EnumMultiset.create(Color.class);
-  ms.add(Color.BLUE,3);
-  ms.add(Color.YELLOW,1);
-  ms.add(Color.RED,2);
-  Set<Object> uniqueEntries=Sets.newIdentityHashSet();
-  uniqueEntries.addAll(ms.entrySet());
-  assertEquals(3,uniqueEntries.size());
-}

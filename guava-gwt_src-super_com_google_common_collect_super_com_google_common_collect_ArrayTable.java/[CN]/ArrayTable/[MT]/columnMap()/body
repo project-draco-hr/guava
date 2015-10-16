@@ -1,4 +1,0 @@
-{
-  ColumnMap map=columnMap;
-  return (map == null) ? columnMap=new ColumnMap() : map;
-}

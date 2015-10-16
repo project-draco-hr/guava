@@ -1,6 +1,0 @@
-{
-  EnumMap<SomeEnum,Integer> map=Maps.newEnumMap(SomeEnum.class);
-  assertEquals(Collections.emptyMap(),map);
-  map.put(SomeEnum.SOME_INSTANCE,0);
-  assertEquals(Collections.singletonMap(SomeEnum.SOME_INSTANCE,0),map);
-}

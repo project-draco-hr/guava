@@ -1,9 +1,0 @@
-{
-  assertThat(list).containsExactly("foo","bar","baz").inOrder();
-  assertEquals(3,list.size());
-  assertIndexIsOutOfBounds(list,-1);
-  assertEquals("foo",list.get(0));
-  assertEquals("bar",list.get(1));
-  assertEquals("baz",list.get(2));
-  assertIndexIsOutOfBounds(list,3);
-}

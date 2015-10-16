@@ -1,7 +1,0 @@
-{
-  testEncodedLengthFails(newString(MIN_HIGH_SURROGATE),0);
-  testEncodedLengthFails("foobar" + newString(MIN_HIGH_SURROGATE),6);
-  testEncodedLengthFails(newString(MIN_LOW_SURROGATE),0);
-  testEncodedLengthFails("foobar" + newString(MIN_LOW_SURROGATE),6);
-  testEncodedLengthFails(newString(MIN_HIGH_SURROGATE,MIN_HIGH_SURROGATE),0);
-}

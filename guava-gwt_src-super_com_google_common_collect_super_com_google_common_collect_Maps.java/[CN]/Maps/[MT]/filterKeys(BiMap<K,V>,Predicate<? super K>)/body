@@ -1,4 +1,0 @@
-{
-  checkNotNull(keyPredicate);
-  return filterEntries(unfiltered,Maps.<K>keyPredicateOnEntries(keyPredicate));
-}

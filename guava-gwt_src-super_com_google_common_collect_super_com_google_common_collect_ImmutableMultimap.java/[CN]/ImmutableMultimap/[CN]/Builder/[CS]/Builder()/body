@@ -1,3 +1,0 @@
-{
-  this(MultimapBuilder.linkedHashKeys().arrayListValues().<K,V>build());
-}

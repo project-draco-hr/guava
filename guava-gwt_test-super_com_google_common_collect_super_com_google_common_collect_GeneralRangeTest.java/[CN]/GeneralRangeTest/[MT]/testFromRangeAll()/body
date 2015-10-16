@@ -1,3 +1,0 @@
-{
-  assertEquals(GeneralRange.all(Ordering.natural()),GeneralRange.from(Range.all()));
-}

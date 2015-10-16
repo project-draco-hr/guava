@@ -1,5 +1,0 @@
-{
-  Entry<K,V>[] entries=createSamplesArray();
-  entries[0]=entry(k1(),v0());
-  return entries;
-}

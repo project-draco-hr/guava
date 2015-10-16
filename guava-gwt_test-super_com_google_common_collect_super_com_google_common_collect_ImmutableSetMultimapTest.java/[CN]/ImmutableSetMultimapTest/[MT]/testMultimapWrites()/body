@@ -1,4 +1,0 @@
-{
-  Multimap<String,Integer> multimap=createMultimap();
-  UnmodifiableCollectionTests.assertMultimapIsUnmodifiable(multimap,"bar",2);
-}

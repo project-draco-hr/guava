@@ -1,9 +1,0 @@
-{
-  if (backingSet().remove(key)) {
-    @SuppressWarnings("unchecked") K k=(K)key;
-    return function.apply(k);
-  }
- else {
-    return null;
-  }
-}

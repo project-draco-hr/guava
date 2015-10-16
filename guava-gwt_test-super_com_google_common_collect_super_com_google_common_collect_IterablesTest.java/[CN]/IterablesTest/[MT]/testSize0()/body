@@ -1,4 +1,0 @@
-{
-  Iterable<String> iterable=Collections.emptySet();
-  assertEquals(0,Iterables.size(iterable));
-}

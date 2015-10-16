@@ -1,3 +1,0 @@
-{
-  return "CharMatcher.inRange('" + showCharacter(startInclusive) + "', '"+ showCharacter(endInclusive)+ "')";
-}

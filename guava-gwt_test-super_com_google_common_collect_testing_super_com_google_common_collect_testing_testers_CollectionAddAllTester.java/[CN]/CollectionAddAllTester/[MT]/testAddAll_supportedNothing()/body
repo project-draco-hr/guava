@@ -1,4 +1,0 @@
-{
-  assertFalse("addAll(nothing) should return false",collection.addAll(emptyCollection()));
-  expectUnchanged();
-}

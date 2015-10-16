@@ -1,3 +1,0 @@
-{
-  return Iterators.contains(valueIterator(map.entrySet().iterator()),value);
-}

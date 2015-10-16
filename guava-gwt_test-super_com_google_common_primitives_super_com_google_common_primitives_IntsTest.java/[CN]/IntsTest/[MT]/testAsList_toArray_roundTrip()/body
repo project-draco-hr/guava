@@ -1,9 +1,0 @@
-{
-  int[] array={(int)0,(int)1,(int)2};
-  List<Integer> list=Ints.asList(array);
-  int[] newArray=Ints.toArray(list);
-  list.set(0,(int)4);
-  assertTrue(Arrays.equals(new int[]{(int)0,(int)1,(int)2},newArray));
-  newArray[1]=(int)5;
-  assertEquals((int)1,(int)list.get(1));
-}

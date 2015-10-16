@@ -1,5 +1,0 @@
-{
-  Multiset<String> ms1=HashMultiset.create();
-  Multiset<String> ms2=HashMultiset.create(Arrays.asList("a","b","a"));
-  assertThat(Multisets.sum(ms1,ms2)).containsExactly("a","b","a");
-}

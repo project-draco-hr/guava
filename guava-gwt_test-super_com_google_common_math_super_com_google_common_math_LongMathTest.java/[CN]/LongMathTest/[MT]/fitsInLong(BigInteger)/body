@@ -1,3 +1,0 @@
-{
-  return big.bitLength() <= 63;
-}

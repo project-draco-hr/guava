@@ -1,3 +1,0 @@
-{
-  testComparator(comparator,Arrays.asList(valuesInExpectedOrder));
-}

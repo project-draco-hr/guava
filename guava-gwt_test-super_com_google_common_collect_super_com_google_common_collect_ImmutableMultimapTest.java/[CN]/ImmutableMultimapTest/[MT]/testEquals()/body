@@ -1,3 +1,0 @@
-{
-  new EqualsTester().addEqualityGroup(ImmutableMultimap.of(),ImmutableMultimap.of()).addEqualityGroup(ImmutableMultimap.of(1,"a"),ImmutableMultimap.of(1,"a")).addEqualityGroup(ImmutableMultimap.of(1,"a",2,"b"),ImmutableMultimap.of(2,"b",1,"a")).testEquals();
-}

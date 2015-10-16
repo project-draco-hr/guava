@@ -1,5 +1,0 @@
-{
-  checkNotNull(a);
-  checkNotNull(b);
-  return concat(new ConsumingQueueIterator<Iterator<? extends T>>(a,b));
-}

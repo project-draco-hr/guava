@@ -1,4 +1,0 @@
-{
-  Iterable<String> iterable=Collections.emptyList();
-  assertNull(Iterables.getLast(iterable,null));
-}

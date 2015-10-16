@@ -1,4 +1,0 @@
-{
-  checkPositionIndexes(fromIndex,toIndex,size());
-  return reverse(forwardList.subList(reversePosition(toIndex),reversePosition(fromIndex)));
-}

@@ -1,9 +1,0 @@
-{
-  CacheBuilder<Object,Object> builder=new CacheBuilder<Object,Object>().initialCapacity(16);
-  try {
-    builder.initialCapacity(16);
-    fail();
-  }
- catch (  IllegalStateException expected) {
-  }
-}

@@ -1,8 +1,0 @@
-{
-  try {
-    UnsignedInts.min();
-    fail();
-  }
- catch (  IllegalArgumentException expected) {
-  }
-}

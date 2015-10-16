@@ -1,8 +1,0 @@
-{
-  try {
-    copyOf((String[])null);
-    fail();
-  }
- catch (  NullPointerException expected) {
-  }
-}

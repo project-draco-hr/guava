@@ -1,5 +1,0 @@
-{
-  checkNonnegative(position);
-  advance(iterator,position);
-  return getNext(iterator,defaultValue);
-}

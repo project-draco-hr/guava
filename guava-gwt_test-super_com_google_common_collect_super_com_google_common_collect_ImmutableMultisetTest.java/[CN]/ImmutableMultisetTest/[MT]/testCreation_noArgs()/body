@@ -1,4 +1,0 @@
-{
-  Multiset<String> multiset=ImmutableMultiset.of();
-  assertTrue(multiset.isEmpty());
-}

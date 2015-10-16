@@ -1,7 +1,0 @@
-{
-  assertSame("",Strings.padEnd("",0,'-'));
-  assertSame("x",Strings.padEnd("x",0,'-'));
-  assertSame("x",Strings.padEnd("x",1,'-'));
-  assertSame("xx",Strings.padEnd("xx",0,'-'));
-  assertSame("xx",Strings.padEnd("xx",2,'-'));
-}

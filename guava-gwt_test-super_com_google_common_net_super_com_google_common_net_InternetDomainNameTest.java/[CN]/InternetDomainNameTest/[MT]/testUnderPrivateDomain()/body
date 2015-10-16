@@ -1,9 +1,0 @@
-{
-  for (  String name : UNDER_PRIVATE_DOMAIN) {
-    final InternetDomainName domain=InternetDomainName.from(name);
-    assertFalse(name,domain.isPublicSuffix());
-    assertTrue(name,domain.hasPublicSuffix());
-    assertTrue(name,domain.isUnderPublicSuffix());
-    assertFalse(name,domain.isTopPrivateDomain());
-  }
-}

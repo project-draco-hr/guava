@@ -1,4 +1,0 @@
-{
-  this.distinctElements=1 + TreeMultiset.distinctElements(left) + TreeMultiset.distinctElements(right);
-  this.totalCount=elemCount + totalCount(left) + totalCount(right);
-}

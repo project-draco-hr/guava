@@ -1,8 +1,0 @@
-{
-  try {
-    setCountNoCheckReturnValue(null,1);
-    fail("adding null with setCount() should throw NullPointerException");
-  }
- catch (  NullPointerException expected) {
-  }
-}

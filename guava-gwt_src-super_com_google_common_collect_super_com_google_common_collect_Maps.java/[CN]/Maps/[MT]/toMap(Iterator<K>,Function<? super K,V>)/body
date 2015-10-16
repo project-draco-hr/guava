@@ -1,9 +1,0 @@
-{
-  checkNotNull(valueFunction);
-  Map<K,V> builder=newLinkedHashMap();
-  while (keys.hasNext()) {
-    K key=keys.next();
-    builder.put(key,valueFunction.apply(key));
-  }
-  return ImmutableMap.copyOf(builder);
-}

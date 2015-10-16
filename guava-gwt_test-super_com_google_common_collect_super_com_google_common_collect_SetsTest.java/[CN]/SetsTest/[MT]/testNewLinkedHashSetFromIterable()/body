@@ -1,9 +1,0 @@
-{
-  LinkedHashSet<Integer> set=Sets.newLinkedHashSet(new Iterable<Integer>(){
-    @Override public Iterator<Integer> iterator(){
-      return LONGER_LIST.iterator();
-    }
-  }
-);
-  verifyLinkedHashSetContents(set,LONGER_LIST);
-}

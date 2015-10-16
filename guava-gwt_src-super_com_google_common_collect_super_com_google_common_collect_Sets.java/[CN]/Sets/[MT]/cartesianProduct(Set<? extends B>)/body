@@ -1,3 +1,0 @@
-{
-  return cartesianProduct(Arrays.asList(sets));
-}

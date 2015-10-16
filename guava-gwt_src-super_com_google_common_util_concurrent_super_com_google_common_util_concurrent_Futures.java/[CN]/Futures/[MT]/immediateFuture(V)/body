@@ -1,7 +1,0 @@
-{
-  if (value == null) {
-    @SuppressWarnings({"unchecked","rawtypes"}) ListenableFuture<V> typedNull=(ListenableFuture)ImmediateSuccessfulFuture.NULL;
-    return typedNull;
-  }
-  return new ImmediateSuccessfulFuture<V>(value);
-}

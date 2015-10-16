@@ -1,4 +1,0 @@
-{
-  ImmutableSortedMap.Builder<SuperComparableExample,Object> natural=ImmutableSortedMap.naturalOrder();
-  ImmutableSortedMap.Builder<SuperComparableExample,Object> reverse=ImmutableSortedMap.reverseOrder();
-}

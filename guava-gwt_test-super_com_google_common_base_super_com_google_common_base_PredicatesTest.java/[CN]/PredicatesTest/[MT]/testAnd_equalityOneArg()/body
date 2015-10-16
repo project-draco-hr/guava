@@ -1,4 +1,0 @@
-{
-  Object[] notEqualObjects={Predicates.and(NEVER_REACHED,FALSE)};
-  new EqualsTester().addEqualityGroup(Predicates.and(NEVER_REACHED),Predicates.and(NEVER_REACHED)).addEqualityGroup(notEqualObjects).addEqualityGroup(Predicates.and(isOdd())).addEqualityGroup(Predicates.and()).addEqualityGroup(Predicates.or(NEVER_REACHED)).testEquals();
-}

@@ -1,3 +1,0 @@
-{
-  this.bimap=checkNotNull(bimap);
-}

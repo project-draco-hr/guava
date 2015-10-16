@@ -1,7 +1,0 @@
-{
-  for (  long a : POSITIVE_LONG_CANDIDATES) {
-    for (    long b : POSITIVE_LONG_CANDIDATES) {
-      assertEquals(valueOf(a).gcd(valueOf(b)),valueOf(LongMath.gcd(a,b)));
-    }
-  }
-}

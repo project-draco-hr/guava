@@ -1,4 +1,0 @@
-{
-  Collection<String> set=ImmutableSet.of("a","b");
-  assertEquals(emptyList(),newArrayList(skip(set,20)));
-}

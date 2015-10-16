@@ -1,3 +1,0 @@
-{
-  return ImmutableMultiset.this.hashCode();
-}

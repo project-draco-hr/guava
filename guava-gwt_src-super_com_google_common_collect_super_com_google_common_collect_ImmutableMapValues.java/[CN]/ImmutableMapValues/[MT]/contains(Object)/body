@@ -1,3 +1,0 @@
-{
-  return object != null && Iterators.contains(iterator(),object);
-}

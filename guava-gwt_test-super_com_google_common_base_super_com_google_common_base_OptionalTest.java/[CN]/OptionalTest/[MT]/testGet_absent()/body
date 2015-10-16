@@ -1,9 +1,0 @@
-{
-  Optional<String> optional=Optional.absent();
-  try {
-    optional.get();
-    fail();
-  }
- catch (  IllegalStateException expected) {
-  }
-}

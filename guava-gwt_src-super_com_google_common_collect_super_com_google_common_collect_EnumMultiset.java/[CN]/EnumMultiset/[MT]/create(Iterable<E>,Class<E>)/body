@@ -1,5 +1,0 @@
-{
-  EnumMultiset<E> result=create(type);
-  Iterables.addAll(result,elements);
-  return result;
-}

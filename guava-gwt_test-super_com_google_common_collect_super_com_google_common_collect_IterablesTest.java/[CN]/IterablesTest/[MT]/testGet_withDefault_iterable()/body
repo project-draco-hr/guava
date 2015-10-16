@@ -1,4 +1,0 @@
-{
-  Set<String> set=ImmutableSet.of("a","b","c");
-  assertEquals("b",Iterables.get(set,1,"d"));
-}

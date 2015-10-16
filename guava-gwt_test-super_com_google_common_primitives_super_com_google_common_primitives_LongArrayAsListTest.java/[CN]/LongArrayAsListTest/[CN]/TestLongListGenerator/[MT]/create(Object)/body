@@ -1,8 +1,0 @@
-{
-  Long[] array=new Long[elements.length];
-  int i=0;
-  for (  Object e : elements) {
-    array[i++]=(Long)e;
-  }
-  return create(array);
-}

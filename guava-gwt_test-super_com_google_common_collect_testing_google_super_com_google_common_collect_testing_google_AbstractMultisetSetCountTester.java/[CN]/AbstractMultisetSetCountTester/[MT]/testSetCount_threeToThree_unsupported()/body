@@ -1,7 +1,0 @@
-{
-  try {
-    assertThreeToThree();
-  }
- catch (  UnsupportedOperationException tolerated) {
-  }
-}

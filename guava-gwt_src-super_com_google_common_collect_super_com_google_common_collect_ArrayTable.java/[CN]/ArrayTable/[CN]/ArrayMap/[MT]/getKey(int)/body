@@ -1,3 +1,0 @@
-{
-  return keyIndex.keySet().asList().get(index);
-}

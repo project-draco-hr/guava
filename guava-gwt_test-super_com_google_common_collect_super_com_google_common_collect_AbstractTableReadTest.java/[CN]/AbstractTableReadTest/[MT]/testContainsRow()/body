@@ -1,7 +1,0 @@
-{
-  table=create("foo",1,'a',"bar",1,'b',"foo",3,'c');
-  assertTrue(table.containsRow("foo"));
-  assertTrue(table.containsRow("bar"));
-  assertFalse(table.containsRow("cat"));
-  assertFalse(table.containsRow(null));
-}

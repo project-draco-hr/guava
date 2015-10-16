@@ -1,5 +1,0 @@
-{
-  MediaType newType=MediaType.createApplicationType("yams");
-  assertEquals("application",newType.type());
-  assertEquals("yams",newType.subtype());
-}

@@ -1,3 +1,0 @@
-{
-  assertEquals("toArray() ordered contents: ",expected,Arrays.asList(actual));
-}

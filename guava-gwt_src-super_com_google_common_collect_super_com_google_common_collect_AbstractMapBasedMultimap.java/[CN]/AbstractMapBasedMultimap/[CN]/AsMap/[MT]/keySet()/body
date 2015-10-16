@@ -1,3 +1,0 @@
-{
-  return AbstractMapBasedMultimap.this.keySet();
-}

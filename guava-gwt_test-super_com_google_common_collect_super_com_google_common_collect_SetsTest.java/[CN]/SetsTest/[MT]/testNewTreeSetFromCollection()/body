@@ -1,4 +1,0 @@
-{
-  TreeSet<Integer> set=Sets.newTreeSet(SOME_COLLECTION);
-  verifySortedSetContents(set,SOME_COLLECTION,null);
-}

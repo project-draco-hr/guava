@@ -1,5 +1,0 @@
-{
-  char[] array=new char[sequence.length()];
-  Arrays.fill(array,replacement);
-  return new String(array);
-}

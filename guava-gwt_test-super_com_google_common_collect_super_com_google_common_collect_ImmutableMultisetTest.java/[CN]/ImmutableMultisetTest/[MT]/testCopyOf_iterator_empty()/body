@@ -1,5 +1,0 @@
-{
-  Iterator<String> iterator=Iterators.emptyIterator();
-  Multiset<String> multiset=ImmutableMultiset.copyOf(iterator);
-  assertTrue(multiset.isEmpty());
-}

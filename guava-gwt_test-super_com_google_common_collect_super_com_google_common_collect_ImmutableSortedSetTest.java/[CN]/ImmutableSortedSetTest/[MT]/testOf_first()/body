@@ -1,4 +1,0 @@
-{
-  SortedSet<String> set=of("e","f","b","d","c");
-  assertEquals("b",set.first());
-}

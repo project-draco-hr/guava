@@ -1,3 +1,0 @@
-{
-  return (valueComparator == null) ? ImmutableSet.<V>of() : ImmutableSortedSet.<V>emptySet(valueComparator);
-}

@@ -1,6 +1,0 @@
-{
-  EnumMap<SomeEnum,Integer> original=Maps.newEnumMap(SomeEnum.class);
-  EnumMap<SomeEnum,Integer> copy=Maps.newEnumMap(original);
-  assertEquals(original,copy);
-  assertNotSame(original,copy);
-}

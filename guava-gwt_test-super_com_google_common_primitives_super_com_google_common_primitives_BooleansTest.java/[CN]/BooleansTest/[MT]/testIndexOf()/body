@@ -1,9 +1,0 @@
-{
-  assertEquals(-1,Booleans.indexOf(EMPTY,ARRAY_FALSE));
-  assertEquals(-1,Booleans.indexOf(ARRAY_FALSE,ARRAY_FALSE_TRUE));
-  assertEquals(0,Booleans.indexOf(ARRAY_FALSE_FALSE,ARRAY_FALSE));
-  assertEquals(0,Booleans.indexOf(ARRAY_FALSE,ARRAY_FALSE));
-  assertEquals(0,Booleans.indexOf(ARRAY_FALSE_TRUE,ARRAY_FALSE));
-  assertEquals(1,Booleans.indexOf(ARRAY_FALSE_TRUE,ARRAY_TRUE));
-  assertEquals(0,Booleans.indexOf(ARRAY_TRUE,new boolean[0]));
-}

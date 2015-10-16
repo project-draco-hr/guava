@@ -1,9 +1,0 @@
-{
-  MapDifference<Integer,Integer> diff=Maps.difference(EMPTY,EMPTY);
-  assertTrue(diff.areEqual());
-  assertEquals(EMPTY,diff.entriesOnlyOnLeft());
-  assertEquals(EMPTY,diff.entriesOnlyOnRight());
-  assertEquals(EMPTY,diff.entriesInCommon());
-  assertEquals(EMPTY,diff.entriesDiffering());
-  assertEquals("equal",diff.toString());
-}

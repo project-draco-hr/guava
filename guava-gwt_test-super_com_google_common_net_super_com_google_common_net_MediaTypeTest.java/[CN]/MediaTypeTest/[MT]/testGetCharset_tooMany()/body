@@ -1,9 +1,0 @@
-{
-  MediaType mediaType=MediaType.parse("text/plain; charset=utf-8; charset=utf-16");
-  try {
-    mediaType.charset();
-    fail();
-  }
- catch (  IllegalStateException expected) {
-  }
-}

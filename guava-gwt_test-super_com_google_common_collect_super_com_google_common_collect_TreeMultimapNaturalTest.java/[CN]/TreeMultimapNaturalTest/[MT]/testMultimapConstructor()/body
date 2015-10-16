@@ -1,7 +1,0 @@
-{
-  SetMultimap<String,Integer> multimap=create();
-  multimap.putAll("bar",Arrays.asList(3,1,2));
-  multimap.putAll("foo",Arrays.asList(2,3,1,-1,4));
-  TreeMultimap<String,Integer> copy=TreeMultimap.create(multimap);
-  assertEquals(multimap,copy);
-}

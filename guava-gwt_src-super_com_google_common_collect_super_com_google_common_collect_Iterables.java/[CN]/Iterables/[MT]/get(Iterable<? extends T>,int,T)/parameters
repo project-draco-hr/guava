@@ -1,3 +1,0 @@
-Iterable<? extends T> iterable
-int position
-T defaultValue

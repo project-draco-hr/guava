@@ -1,5 +1,0 @@
-{
-  Multiset<E> multiset=LinkedHashMultiset.create();
-  Collections.addAll(multiset,elements);
-  return copyFromEntries(multiset.entrySet());
-}

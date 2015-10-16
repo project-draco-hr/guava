@@ -1,3 +1,0 @@
-{
-  return multiset().headMultiset(toElement,OPEN).elementSet();
-}

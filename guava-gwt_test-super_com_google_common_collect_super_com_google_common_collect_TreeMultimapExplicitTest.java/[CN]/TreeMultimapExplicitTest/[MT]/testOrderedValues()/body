@@ -1,4 +1,0 @@
-{
-  TreeMultimap<String,Integer> multimap=createPopulate();
-  assertThat(multimap.values()).containsExactly(7,3,1,null,0,6,2).inOrder();
-}

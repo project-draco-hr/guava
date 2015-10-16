@@ -1,5 +1,0 @@
-{
-  if (!map.isEmpty()) {
-    Assert.fail("Not true that " + map + " is empty");
-  }
-}

@@ -1,6 +1,0 @@
-{
-  TreeMultiset<String> multiset=TreeMultiset.create(Collections.reverseOrder());
-  multiset.add("bar",3);
-  multiset.add("foo",2);
-  assertThat(multiset).containsExactly("foo","foo","bar","bar","bar").inOrder();
-}

@@ -1,9 +1,0 @@
-{
-  assertEquals(GREATEST,Floats.max(GREATEST));
-  assertEquals(LEAST,Floats.max(LEAST));
-  assertEquals((float)9,Floats.max((float)8,(float)6,(float)7,(float)5,(float)3,(float)0,(float)9));
-  assertEquals(0f,Floats.max(-0f,0f));
-  assertEquals(0f,Floats.max(0f,-0f));
-  assertEquals(GREATEST,Floats.max(NUMBERS));
-  assertTrue(Float.isNaN(Floats.max(VALUES)));
-}

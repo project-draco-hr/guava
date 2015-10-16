@@ -1,6 +1,0 @@
-{
-  Ordering<Object> ordering=Ordering.usingToString();
-  Helpers.testComparator(ordering,1,12,124,2);
-  assertEquals("Ordering.usingToString()",ordering.toString());
-  assertSame(ordering,reserialize(ordering));
-}

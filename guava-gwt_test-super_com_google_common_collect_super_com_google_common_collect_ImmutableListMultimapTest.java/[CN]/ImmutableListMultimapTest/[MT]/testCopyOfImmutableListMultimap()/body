@@ -1,4 +1,0 @@
-{
-  Multimap<String,Integer> multimap=createMultimap();
-  assertSame(multimap,ImmutableListMultimap.copyOf(multimap));
-}

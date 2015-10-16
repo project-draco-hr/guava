@@ -1,3 +1,0 @@
-{
-  assertEquals("multiset.count(missing) didn't return 0",0,getMultiset().count(e3()));
-}

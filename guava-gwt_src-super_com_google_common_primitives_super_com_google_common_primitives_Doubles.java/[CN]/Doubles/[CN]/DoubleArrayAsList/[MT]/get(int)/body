@@ -1,4 +1,0 @@
-{
-  checkElementIndex(index,size());
-  return array[start + index];
-}

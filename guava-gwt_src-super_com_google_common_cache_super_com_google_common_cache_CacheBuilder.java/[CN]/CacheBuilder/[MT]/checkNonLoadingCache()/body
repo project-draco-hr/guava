@@ -1,3 +1,0 @@
-{
-  checkState(refreshNanos == UNSET_INT,"refreshAfterWrite requires a LoadingCache");
-}

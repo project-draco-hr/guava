@@ -1,9 +1,0 @@
-{
-  Map<String,String> map=MapConstraints.constrainedMap(new HashMap<String,String>(),TEST_CONSTRAINT);
-  try {
-    map.put(TEST_KEY,TEST_VALUE);
-    fail("Expected IllegalArgumentException");
-  }
- catch (  IllegalArgumentException expected) {
-  }
-}

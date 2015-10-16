@@ -1,3 +1,0 @@
-{
-  return new AsMap<K,V>(this);
-}

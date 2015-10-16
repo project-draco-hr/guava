@@ -1,8 +1,0 @@
-{
-  try {
-    Chars.min();
-    fail();
-  }
- catch (  IllegalArgumentException expected) {
-  }
-}

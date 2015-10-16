@@ -1,3 +1,0 @@
-ImmutableMap<K,ImmutableSet<V>> map
-int size
-Comparator<? super V> valueComparator

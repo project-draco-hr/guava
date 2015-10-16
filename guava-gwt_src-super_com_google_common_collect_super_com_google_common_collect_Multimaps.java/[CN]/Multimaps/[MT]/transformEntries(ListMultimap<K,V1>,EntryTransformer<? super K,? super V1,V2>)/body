@@ -1,3 +1,0 @@
-{
-  return new TransformedEntriesListMultimap<K,V1,V2>(fromMap,transformer);
-}

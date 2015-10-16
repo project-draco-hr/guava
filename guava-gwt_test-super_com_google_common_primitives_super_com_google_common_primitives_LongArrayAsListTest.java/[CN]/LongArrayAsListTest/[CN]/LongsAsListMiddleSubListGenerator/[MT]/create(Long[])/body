@@ -1,6 +1,0 @@
-{
-  Long[] prefix={Long.MIN_VALUE,Long.MAX_VALUE};
-  Long[] suffix={(long)86,(long)99};
-  Long[] all=concat(concat(prefix,elements),suffix);
-  return asList(all).subList(2,elements.length + 2);
-}

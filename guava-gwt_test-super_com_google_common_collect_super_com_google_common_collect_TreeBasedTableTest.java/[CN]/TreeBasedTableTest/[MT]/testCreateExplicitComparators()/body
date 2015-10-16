@@ -1,9 +1,0 @@
-{
-  table=TreeBasedTable.create(Collections.reverseOrder(),Ordering.usingToString());
-  table.put("foo",3,'a');
-  table.put("foo",12,'b');
-  table.put("bar",5,'c');
-  table.put("cat",8,'d');
-  assertThat(table.rowKeySet()).containsExactly("foo","cat","bar").inOrder();
-  assertThat(table.row("foo").keySet()).containsExactly(12,3).inOrder();
-}

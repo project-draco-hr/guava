@@ -1,3 +1,0 @@
-{
-  super(Maps.<E,Count>newLinkedHashMapWithExpectedSize(distinctElements));
-}

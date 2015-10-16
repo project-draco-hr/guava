@@ -1,4 +1,0 @@
-{
-  Collection<String> c=ImmutableList.of("a","b","c");
-  assertSame(c,ImmutableList.copyOf(c));
-}

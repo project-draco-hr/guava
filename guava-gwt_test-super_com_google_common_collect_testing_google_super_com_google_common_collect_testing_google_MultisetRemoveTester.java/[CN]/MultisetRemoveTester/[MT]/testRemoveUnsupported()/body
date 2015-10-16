@@ -1,8 +1,0 @@
-{
-  try {
-    getMultiset().remove(e0(),2);
-    fail("Expected UnsupportedOperationException");
-  }
- catch (  UnsupportedOperationException expected) {
-  }
-}

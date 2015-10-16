@@ -1,6 +1,0 @@
-{
-  if (!iterator.hasNext()) {
-    throw new ThrowsAtEndException();
-  }
-  return iterator.next();
-}

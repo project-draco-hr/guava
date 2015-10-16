@@ -1,5 +1,0 @@
-{
-  String trailing="a,b,c,";
-  Iterable<String> letters=COMMA_SPLITTER.split(trailing);
-  assertThat(letters).containsExactly("a","b","c","").inOrder();
-}

@@ -1,5 +1,0 @@
-{
-  assertEquals(LEAST,Chars.min(LEAST));
-  assertEquals(GREATEST,Chars.min(GREATEST));
-  assertEquals((char)0,Chars.min((char)8,(char)6,(char)7,(char)5,(char)3,(char)0,(char)9));
-}

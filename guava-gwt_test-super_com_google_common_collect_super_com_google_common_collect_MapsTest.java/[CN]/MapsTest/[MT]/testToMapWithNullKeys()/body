@@ -1,9 +1,0 @@
-{
-  Iterable<String> strings=Arrays.asList("one",null,"three");
-  try {
-    Maps.toMap(strings,Functions.constant("foo"));
-    fail();
-  }
- catch (  NullPointerException expected) {
-  }
-}

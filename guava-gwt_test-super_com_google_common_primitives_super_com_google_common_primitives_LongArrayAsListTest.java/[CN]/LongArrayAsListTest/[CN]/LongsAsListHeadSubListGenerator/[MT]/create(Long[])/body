@@ -1,5 +1,0 @@
-{
-  Long[] suffix={Long.MIN_VALUE,Long.MAX_VALUE};
-  Long[] all=concat(elements,suffix);
-  return asList(all).subList(0,elements.length);
-}

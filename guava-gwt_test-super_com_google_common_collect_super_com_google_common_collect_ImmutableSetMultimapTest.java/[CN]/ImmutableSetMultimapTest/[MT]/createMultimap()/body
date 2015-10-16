@@ -1,3 +1,0 @@
-{
-  return ImmutableSetMultimap.<String,Integer>builder().put("foo",1).put("bar",2).put("foo",3).build();
-}

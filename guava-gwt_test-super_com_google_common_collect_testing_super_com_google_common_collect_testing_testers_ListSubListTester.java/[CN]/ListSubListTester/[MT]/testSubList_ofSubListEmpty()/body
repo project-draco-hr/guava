@@ -1,4 +1,0 @@
-{
-  List<E> subList=getList().subList(0,0).subList(0,0);
-  assertEquals("subList(0, 0).subList(0, 0) should be an empty list",emptyList(),subList);
-}

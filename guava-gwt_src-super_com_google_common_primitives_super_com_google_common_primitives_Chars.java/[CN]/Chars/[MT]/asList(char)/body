@@ -1,6 +1,0 @@
-{
-  if (backingArray.length == 0) {
-    return Collections.emptyList();
-  }
-  return new CharArrayAsList(backingArray);
-}

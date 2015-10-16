@@ -1,5 +1,0 @@
-{
-  ListMultimap<String,Integer> listMultimap=ArrayListMultimap.create();
-  Map<String,List<Integer>> map=Multimaps.asMap(listMultimap);
-  assertSame(listMultimap.asMap(),map);
-}

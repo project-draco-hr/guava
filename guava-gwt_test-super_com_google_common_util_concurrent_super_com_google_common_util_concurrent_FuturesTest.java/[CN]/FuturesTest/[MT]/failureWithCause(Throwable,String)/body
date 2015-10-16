@@ -1,5 +1,0 @@
-{
-  AssertionFailedError failure=new AssertionFailedError(message);
-  failure.initCause(cause);
-  return failure;
-}

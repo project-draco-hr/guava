@@ -1,5 +1,0 @@
-{
-  int expectedMean=computeMeanSafely(x,y);
-  assertEquals(expectedMean,IntMath.mean(x,y));
-  assertEquals("The mean of x and y should equal the mean of y and x",expectedMean,IntMath.mean(y,x));
-}

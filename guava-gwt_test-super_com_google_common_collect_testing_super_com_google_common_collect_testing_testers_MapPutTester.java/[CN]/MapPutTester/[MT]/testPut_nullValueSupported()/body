@@ -1,4 +1,0 @@
-{
-  assertNull("put(key, null) should return null",put(nullValueEntry));
-  expectAdded(nullValueEntry);
-}

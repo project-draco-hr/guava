@@ -1,8 +1,0 @@
-{
-  Predicate<Integer> vacuouslyFalse=Predicates.or(Collections.<Predicate<Integer>>emptyList());
-  Predicate<Integer> troo=Predicates.or(Collections.singletonList(TRUE));
-  Predicate<Integer> trueAndFalse=Predicates.or(Arrays.asList(TRUE,FALSE));
-  assertEvalsToFalse(vacuouslyFalse);
-  assertEvalsToTrue(troo);
-  assertEvalsToTrue(trueAndFalse);
-}

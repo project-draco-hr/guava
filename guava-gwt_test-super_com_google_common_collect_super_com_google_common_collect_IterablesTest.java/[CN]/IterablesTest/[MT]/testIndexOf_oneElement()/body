@@ -1,5 +1,0 @@
-{
-  List<String> list=Lists.newArrayList("bob");
-  assertEquals(0,Iterables.indexOf(list,Predicates.equalTo("bob")));
-  assertEquals(-1,Iterables.indexOf(list,Predicates.equalTo("jack")));
-}

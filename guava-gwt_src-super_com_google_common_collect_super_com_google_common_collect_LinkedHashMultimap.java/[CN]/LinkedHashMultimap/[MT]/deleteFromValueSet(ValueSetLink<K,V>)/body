@@ -1,3 +1,0 @@
-{
-  succeedsInValueSet(entry.getPredecessorInValueSet(),entry.getSuccessorInValueSet());
-}

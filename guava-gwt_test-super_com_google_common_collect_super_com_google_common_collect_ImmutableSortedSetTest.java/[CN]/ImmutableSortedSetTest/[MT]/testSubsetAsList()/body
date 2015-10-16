@@ -1,6 +1,0 @@
-{
-  ImmutableSet<String> set=ImmutableSortedSet.of("a","e","i","o","u").subSet("c","r");
-  ImmutableList<String> list=set.asList();
-  assertEquals(ImmutableList.of("e","i","o"),list);
-  assertEquals(list,ImmutableList.copyOf(set));
-}

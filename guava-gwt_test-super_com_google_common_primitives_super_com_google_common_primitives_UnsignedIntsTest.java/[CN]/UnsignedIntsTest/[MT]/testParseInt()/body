@@ -1,5 +1,0 @@
-{
-  for (  long a : UNSIGNED_INTS) {
-    assertEquals((int)a,UnsignedInts.parseUnsignedInt(Long.toString(a)));
-  }
-}

@@ -1,3 +1,0 @@
-{
-  return new EntrySetSerializedForm<E>(ImmutableMultiset.this);
-}

@@ -1,7 +1,0 @@
-{
-  String[] array=new String[]{"a"};
-  Multiset<String[]> multiset=ImmutableMultiset.<String[]>of(array);
-  Multiset<String[]> expected=HashMultiset.create();
-  expected.add(array);
-  assertEquals(expected,multiset);
-}

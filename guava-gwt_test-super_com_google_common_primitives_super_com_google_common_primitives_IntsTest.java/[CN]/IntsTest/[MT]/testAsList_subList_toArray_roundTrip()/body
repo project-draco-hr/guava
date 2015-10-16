@@ -1,6 +1,0 @@
-{
-  int[] array={(int)0,(int)1,(int)2,(int)3};
-  List<Integer> list=Ints.asList(array);
-  assertTrue(Arrays.equals(new int[]{(int)1,(int)2},Ints.toArray(list.subList(1,3))));
-  assertTrue(Arrays.equals(new int[]{},Ints.toArray(list.subList(2,2))));
-}

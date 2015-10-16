@@ -1,3 +1,0 @@
-{
-  new EqualsTester().addEqualityGroup(Equivalence.identity().onResultOf(Functions.toStringFunction()),Equivalence.identity().onResultOf(Functions.toStringFunction())).addEqualityGroup(Equivalence.equals().onResultOf(Functions.toStringFunction())).addEqualityGroup(Equivalence.identity().onResultOf(Functions.identity())).testEquals();
-}

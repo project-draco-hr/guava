@@ -1,3 +1,0 @@
-{
-  return (paddingChar == null) ? this : newInstance(alphabet,null);
-}

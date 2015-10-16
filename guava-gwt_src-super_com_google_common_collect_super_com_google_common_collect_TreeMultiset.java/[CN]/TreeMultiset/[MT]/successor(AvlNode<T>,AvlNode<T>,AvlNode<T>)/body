@@ -1,4 +1,0 @@
-{
-  successor(a,b);
-  successor(b,c);
-}

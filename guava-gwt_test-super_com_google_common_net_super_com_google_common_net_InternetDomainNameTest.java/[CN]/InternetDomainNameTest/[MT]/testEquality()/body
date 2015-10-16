@@ -1,3 +1,0 @@
-{
-  new EqualsTester().addEqualityGroup(idn("google.com"),idn("google.com"),idn("GOOGLE.COM")).addEqualityGroup(idn("www.google.com")).addEqualityGroup(UNICODE_EXAMPLE).addEqualityGroup(PUNYCODE_EXAMPLE).testEquals();
-}

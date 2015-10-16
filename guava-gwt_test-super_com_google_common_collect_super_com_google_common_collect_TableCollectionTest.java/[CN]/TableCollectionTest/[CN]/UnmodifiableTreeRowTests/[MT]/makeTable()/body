@@ -1,4 +1,0 @@
-{
-  RowSortedTable<Character,String,Integer> table=TreeBasedTable.create();
-  return Tables.unmodifiableRowSortedTable(table);
-}

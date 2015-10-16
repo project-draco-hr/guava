@@ -1,9 +1,0 @@
-{
-  assertEquals(4,UnsignedLongs.remainder(14,5));
-  assertEquals(0,UnsignedLongs.remainder(0,50));
-  assertEquals(1,UnsignedLongs.remainder(0xfffffffffffffffeL,0xfffffffffffffffdL));
-  assertEquals(0xfffffffffffffffdL,UnsignedLongs.remainder(0xfffffffffffffffdL,0xfffffffffffffffeL));
-  assertEquals(65534L,UnsignedLongs.remainder(0xfffffffffffffffeL,65535));
-  assertEquals(0,UnsignedLongs.remainder(0xfffffffffffffffeL,2));
-  assertEquals(4,UnsignedLongs.remainder(0xfffffffffffffffeL,5));
-}

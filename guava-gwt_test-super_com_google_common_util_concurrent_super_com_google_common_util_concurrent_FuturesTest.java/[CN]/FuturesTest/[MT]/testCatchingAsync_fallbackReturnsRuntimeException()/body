@@ -1,4 +1,0 @@
-{
-  RuntimeException expectedException=new RuntimeException();
-  runExpectedExceptionCatchingAsyncTest(expectedException,true);
-}

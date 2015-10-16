@@ -1,6 +1,0 @@
-{
-  assertEquals("",CharMatcher.any().collapseFrom("",'_'));
-  assertEquals("_",CharMatcher.any().collapseFrom("a",'_'));
-  assertEquals("_",CharMatcher.any().collapseFrom("ab",'_'));
-  assertEquals("_",CharMatcher.any().collapseFrom("abcd",'_'));
-}

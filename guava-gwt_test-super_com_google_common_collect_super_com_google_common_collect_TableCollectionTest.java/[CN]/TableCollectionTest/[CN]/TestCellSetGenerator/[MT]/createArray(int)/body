@@ -1,3 +1,0 @@
-{
-  return (Cell<String,Integer,Character>[])new Cell<?,?,?>[length];
-}

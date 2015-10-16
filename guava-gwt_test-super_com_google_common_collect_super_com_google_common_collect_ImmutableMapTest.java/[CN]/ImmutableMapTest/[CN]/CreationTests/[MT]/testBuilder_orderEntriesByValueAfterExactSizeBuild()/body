@@ -1,7 +1,0 @@
-{
-  Builder<String,Integer> builder=new Builder<String,Integer>(2).put("four",4).put("one",1);
-  ImmutableMap<String,Integer> keyOrdered=builder.build();
-  ImmutableMap<String,Integer> valueOrdered=builder.orderEntriesByValue(Ordering.natural()).build();
-  assertMapEquals(keyOrdered,"four",4,"one",1);
-  assertMapEquals(valueOrdered,"one",1,"four",4);
-}

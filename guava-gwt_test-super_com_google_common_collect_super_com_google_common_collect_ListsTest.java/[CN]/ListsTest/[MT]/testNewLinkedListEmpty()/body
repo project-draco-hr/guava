@@ -1,4 +1,0 @@
-{
-  LinkedList<Integer> list=Lists.newLinkedList();
-  assertEquals(Collections.emptyList(),list);
-}

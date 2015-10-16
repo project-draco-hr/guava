@@ -1,3 +1,0 @@
-List<E> list
-int index
-Iterable<? extends E> elements

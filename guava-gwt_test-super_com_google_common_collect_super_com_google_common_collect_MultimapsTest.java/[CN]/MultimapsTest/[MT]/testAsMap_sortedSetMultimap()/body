@@ -1,5 +1,0 @@
-{
-  SortedSetMultimap<String,Integer> sortedSetMultimap=TreeMultimap.create();
-  Map<String,SortedSet<Integer>> map=Multimaps.asMap(sortedSetMultimap);
-  assertSame(sortedSetMultimap.asMap(),map);
-}

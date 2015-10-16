@@ -1,3 +1,0 @@
-{
-  assertEquals(ImmutableSet.of(1),testTable.columnKeySet());
-}

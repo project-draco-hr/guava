@@ -1,3 +1,0 @@
-{
-  return Platform.mapsTransformEntriesSortedMap(fromMap,transformer);
-}

@@ -1,4 +1,0 @@
-{
-  testEncodes(encoding,decoded,encoded);
-  testDecodes(encoding,encoded,decoded);
-}

@@ -1,9 +1,0 @@
-{
-  Iterable<Integer> doubled=new Iterable<Integer>(){
-    @Override public Iterator<Integer> iterator(){
-      return newDoubler(2,32);
-    }
-  }
-;
-  assertThat(doubled).containsExactly(2,4,8,16,32).inOrder();
-}

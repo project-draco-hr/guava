@@ -1,5 +1,0 @@
-{
-  LinkedList<E> list=newLinkedList();
-  Iterables.addAll(list,elements);
-  return list;
-}

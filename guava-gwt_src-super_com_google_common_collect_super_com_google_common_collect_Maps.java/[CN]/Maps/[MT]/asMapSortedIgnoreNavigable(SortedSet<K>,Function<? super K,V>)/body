@@ -1,3 +1,0 @@
-{
-  return new SortedAsMapView<K,V>(set,function);
-}

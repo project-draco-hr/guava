@@ -1,6 +1,0 @@
-{
-  List<Integer> ints=Lists.newArrayList(9,0,3,5);
-  Iterator<Integer> iterator=ints.iterator();
-  assertEquals(0,(int)numberOrdering.min(iterator));
-  assertFalse(iterator.hasNext());
-}

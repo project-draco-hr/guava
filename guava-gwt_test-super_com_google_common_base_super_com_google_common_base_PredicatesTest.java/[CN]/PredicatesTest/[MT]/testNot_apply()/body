@@ -1,5 +1,0 @@
-{
-  assertEvalsToTrue(Predicates.not(FALSE));
-  assertEvalsToFalse(Predicates.not(TRUE));
-  assertEvalsLikeOdd(Predicates.not(Predicates.not(isOdd())));
-}

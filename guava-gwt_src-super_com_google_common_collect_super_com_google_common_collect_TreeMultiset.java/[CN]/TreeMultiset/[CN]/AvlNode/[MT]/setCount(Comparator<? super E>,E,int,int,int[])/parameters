@@ -1,5 +1,0 @@
-Comparator<? super E> comparator
-E e
-int expectedCount
-int newCount
-int[] result

@@ -1,5 +1,0 @@
-{
-  Iterator<String> iterator=asList("a","b","a","c").iterator();
-  ImmutableMultiset<String> multiset=new ImmutableMultiset.Builder<String>().addAll(iterator).build();
-  assertEquals(HashMultiset.create(asList("a","b","a","c")),multiset);
-}

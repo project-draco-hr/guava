@@ -1,4 +1,0 @@
-{
-  HashSet<Integer> set=Sets.newHashSet();
-  verifySetContents(set,EMPTY_COLLECTION);
-}

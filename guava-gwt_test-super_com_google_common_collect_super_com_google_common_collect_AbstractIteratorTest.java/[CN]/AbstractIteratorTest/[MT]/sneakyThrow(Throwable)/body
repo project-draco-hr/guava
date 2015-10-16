@@ -1,8 +1,0 @@
-{
-class SneakyThrower<T extends Throwable> {
-    @SuppressWarnings("unchecked") void throwIt(    Throwable t) throws T {
-      throw (T)t;
-    }
-  }
-  new SneakyThrower<Error>().throwIt(t);
-}

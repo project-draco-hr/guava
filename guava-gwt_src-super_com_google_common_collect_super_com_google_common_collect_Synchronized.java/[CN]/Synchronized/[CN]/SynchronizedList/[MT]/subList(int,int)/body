@@ -1,5 +1,0 @@
-{
-synchronized (mutex) {
-    return list(delegate().subList(fromIndex,toIndex),mutex);
-  }
-}

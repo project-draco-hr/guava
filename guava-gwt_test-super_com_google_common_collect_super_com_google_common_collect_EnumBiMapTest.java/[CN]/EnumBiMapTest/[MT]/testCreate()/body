@@ -1,9 +1,0 @@
-{
-  EnumBiMap<Currency,Country> bimap=EnumBiMap.create(Currency.class,Country.class);
-  assertTrue(bimap.isEmpty());
-  assertEquals("{}",bimap.toString());
-  assertEquals(HashBiMap.create(),bimap);
-  bimap.put(Currency.DOLLAR,Country.CANADA);
-  assertEquals(Country.CANADA,bimap.get(Currency.DOLLAR));
-  assertEquals(Currency.DOLLAR,bimap.inverse().get(Country.CANADA));
-}

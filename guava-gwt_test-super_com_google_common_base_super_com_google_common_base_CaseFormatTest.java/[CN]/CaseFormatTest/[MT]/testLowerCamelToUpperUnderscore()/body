@@ -1,4 +1,0 @@
-{
-  assertEquals("FOO",LOWER_CAMEL.to(UPPER_UNDERSCORE,"foo"));
-  assertEquals("FOO_BAR",LOWER_CAMEL.to(UPPER_UNDERSCORE,"fooBar"));
-}

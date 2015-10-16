@@ -1,9 +1,0 @@
-{
-  Iterator<String> iterator=asList("a",null,"b").iterator();
-  try {
-    ImmutableMultiset.copyOf(iterator);
-    fail();
-  }
- catch (  NullPointerException expected) {
-  }
-}

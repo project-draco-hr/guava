@@ -1,4 +1,0 @@
-{
-  assertNull(Floats.stringConverter().convert(null));
-  assertNull(Floats.stringConverter().reverse().convert(null));
-}

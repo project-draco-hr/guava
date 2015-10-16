@@ -1,5 +1,0 @@
-{
-  String doubled="a..b.c";
-  Iterable<String> letters=Splitter.on('.').omitEmptyStrings().split(doubled);
-  assertThat(letters).containsExactly("a","b","c").inOrder();
-}

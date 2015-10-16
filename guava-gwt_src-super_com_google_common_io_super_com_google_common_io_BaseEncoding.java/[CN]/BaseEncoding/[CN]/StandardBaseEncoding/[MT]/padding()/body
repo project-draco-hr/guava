@@ -1,3 +1,0 @@
-{
-  return (paddingChar == null) ? CharMatcher.NONE : CharMatcher.is(paddingChar.charValue());
-}

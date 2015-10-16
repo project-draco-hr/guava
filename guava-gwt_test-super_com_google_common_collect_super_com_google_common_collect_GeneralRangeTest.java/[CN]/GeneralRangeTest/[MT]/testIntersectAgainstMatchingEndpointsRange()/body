@@ -1,4 +1,0 @@
-{
-  GeneralRange<Integer> range=GeneralRange.range(ORDERING,2,CLOSED,4,OPEN);
-  assertEquals(GeneralRange.range(ORDERING,2,OPEN,4,OPEN),range.intersect(GeneralRange.range(ORDERING,2,OPEN,4,CLOSED)));
-}

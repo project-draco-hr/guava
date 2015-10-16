@@ -1,4 +1,0 @@
-{
-  count++;
-  return asList("a","b","a").iterator();
-}

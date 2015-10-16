@@ -1,7 +1,0 @@
-{
-  long[] temp=new long[values.length];
-  for (int i=0; i < values.length; i++) {
-    temp[i]=checkNotNull(values[i]);
-  }
-  return Longs.asList(temp);
-}

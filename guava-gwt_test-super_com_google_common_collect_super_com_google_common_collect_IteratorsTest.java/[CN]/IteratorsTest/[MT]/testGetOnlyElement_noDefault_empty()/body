@@ -1,9 +1,0 @@
-{
-  Iterator<String> iterator=Iterators.emptyIterator();
-  try {
-    Iterators.getOnlyElement(iterator);
-    fail();
-  }
- catch (  NoSuchElementException expected) {
-  }
-}

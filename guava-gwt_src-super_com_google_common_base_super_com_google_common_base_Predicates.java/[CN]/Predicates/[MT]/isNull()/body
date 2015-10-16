@@ -1,3 +1,0 @@
-{
-  return ObjectPredicate.IS_NULL.withNarrowedType();
-}

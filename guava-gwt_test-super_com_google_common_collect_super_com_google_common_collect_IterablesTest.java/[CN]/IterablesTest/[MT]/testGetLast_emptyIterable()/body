@@ -1,9 +1,0 @@
-{
-  Set<String> set=Sets.newHashSet();
-  try {
-    Iterables.getLast(set);
-    fail();
-  }
- catch (  NoSuchElementException e) {
-  }
-}

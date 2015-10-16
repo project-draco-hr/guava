@@ -1,7 +1,0 @@
-{
-  for (  int a : POSITIVE_INTEGER_CANDIDATES) {
-    assertEquals(a,IntMath.gcd(a,0));
-    assertEquals(a,IntMath.gcd(0,a));
-  }
-  assertEquals(0,IntMath.gcd(0,0));
-}

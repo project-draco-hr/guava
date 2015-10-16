@@ -1,5 +1,0 @@
-{
-  Set<String> set=of();
-  assertEquals(Collections.<String>emptySet(),set);
-  assertSame(of(),set);
-}

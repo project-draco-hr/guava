@@ -1,4 +1,0 @@
-{
-  ImmutableMap<String,Integer> map=ImmutableMap.of("one",1);
-  assertNull(map.get(null));
-}

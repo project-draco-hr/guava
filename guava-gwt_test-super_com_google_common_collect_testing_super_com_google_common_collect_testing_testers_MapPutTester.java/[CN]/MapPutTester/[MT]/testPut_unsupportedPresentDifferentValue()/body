@@ -1,9 +1,0 @@
-{
-  try {
-    getMap().put(k0(),v3());
-    fail("put(present, differentValue) should throw");
-  }
- catch (  UnsupportedOperationException expected) {
-  }
-  expectUnchanged();
-}

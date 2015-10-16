@@ -1,3 +1,0 @@
-{
-  new EqualsTester().addEqualityGroup(Suppliers.ofInstance("foo"),Suppliers.ofInstance("foo")).addEqualityGroup(Suppliers.ofInstance("bar")).testEquals();
-}

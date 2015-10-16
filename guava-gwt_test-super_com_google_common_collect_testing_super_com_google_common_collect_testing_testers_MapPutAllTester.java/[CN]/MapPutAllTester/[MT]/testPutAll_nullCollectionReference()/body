@@ -1,8 +1,0 @@
-{
-  try {
-    getMap().putAll(null);
-    fail("putAll(null) should throw NullPointerException");
-  }
- catch (  NullPointerException expected) {
-  }
-}

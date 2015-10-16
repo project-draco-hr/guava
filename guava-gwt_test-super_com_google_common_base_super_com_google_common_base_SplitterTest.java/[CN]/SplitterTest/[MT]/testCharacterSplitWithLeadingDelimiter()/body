@@ -1,5 +1,0 @@
-{
-  String leading=",a,b,c";
-  Iterable<String> letters=COMMA_SPLITTER.split(leading);
-  assertThat(letters).containsExactly("","a","b","c").inOrder();
-}

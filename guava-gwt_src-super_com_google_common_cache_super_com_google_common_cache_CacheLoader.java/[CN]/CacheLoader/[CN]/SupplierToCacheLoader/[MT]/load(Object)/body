@@ -1,4 +1,0 @@
-{
-  checkNotNull(key);
-  return computingSupplier.get();
-}

@@ -1,3 +1,0 @@
-{
-  return ImmutableMultimap.this.size();
-}

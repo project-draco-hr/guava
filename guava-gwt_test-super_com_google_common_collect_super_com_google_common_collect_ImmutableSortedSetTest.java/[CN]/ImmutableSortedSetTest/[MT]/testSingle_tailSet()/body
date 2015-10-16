@@ -1,7 +1,0 @@
-{
-  SortedSet<String> set=of("e");
-  assertTrue(set.tailSet("c") instanceof ImmutableSortedSet);
-  assertThat(set.tailSet("c")).contains("e");
-  assertThat(set.tailSet("e")).contains("e");
-  assertSame(of(),set.tailSet("g"));
-}

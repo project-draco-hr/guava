@@ -1,7 +1,0 @@
-{
-  Collection<String> set=newLinkedHashSet(asList("a","b","c"));
-  Iterable<String> tail=skip(set,2);
-  set.remove("a");
-  set.remove("b");
-  assertFalse(tail.iterator().hasNext());
-}

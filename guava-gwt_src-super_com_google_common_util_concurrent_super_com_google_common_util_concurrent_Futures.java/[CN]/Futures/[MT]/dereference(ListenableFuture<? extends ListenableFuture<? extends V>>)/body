@@ -1,3 +1,0 @@
-{
-  return transformAsync((ListenableFuture)nested,(AsyncFunction)DEREFERENCER);
-}

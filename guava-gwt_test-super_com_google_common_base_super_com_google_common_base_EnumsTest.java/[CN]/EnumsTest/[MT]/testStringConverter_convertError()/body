@@ -1,9 +1,0 @@
-{
-  Converter<String,TestEnum> converter=Enums.stringConverter(TestEnum.class);
-  try {
-    converter.convert("xxx");
-    fail();
-  }
- catch (  IllegalArgumentException expected) {
-  }
-}

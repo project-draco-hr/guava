@@ -1,8 +1,0 @@
-{
-  try {
-    Strings.padStart(null,5,'0');
-    fail();
-  }
- catch (  NullPointerException expected) {
-  }
-}

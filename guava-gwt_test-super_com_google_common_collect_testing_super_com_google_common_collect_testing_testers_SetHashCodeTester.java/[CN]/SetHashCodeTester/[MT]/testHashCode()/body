@@ -1,7 +1,0 @@
-{
-  int expectedHashCode=0;
-  for (  E element : getSampleElements()) {
-    expectedHashCode+=((element == null) ? 0 : element.hashCode());
-  }
-  assertEquals("A Set's hashCode() should be the sum of those of its elements.",expectedHashCode,getSet().hashCode());
-}

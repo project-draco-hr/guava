@@ -1,3 +1,0 @@
-{
-  assertEquals(ImmutableSet.of(Tables.immutableCell('a',1,"blah")),testTable.cellSet());
-}

@@ -1,7 +1,0 @@
-{
-  for (  long a : TEST_LONGS) {
-    UnsignedLong aUnsigned=UnsignedLong.fromLongBits(a);
-    int intValue=aUnsigned.bigIntegerValue().intValue();
-    assertEquals(intValue,aUnsigned.intValue());
-  }
-}

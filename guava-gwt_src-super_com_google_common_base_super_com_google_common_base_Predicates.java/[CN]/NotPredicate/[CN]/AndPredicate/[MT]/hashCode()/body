@@ -1,3 +1,0 @@
-{
-  return components.hashCode() + 0x12472c2c;
-}

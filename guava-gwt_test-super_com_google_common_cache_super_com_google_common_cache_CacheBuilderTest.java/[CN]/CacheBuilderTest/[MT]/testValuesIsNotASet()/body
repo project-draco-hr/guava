@@ -1,3 +1,0 @@
-{
-  assertThat(new CacheBuilder<Object,Object>().build().asMap().values()).isNotInstanceOf(Set.class);
-}

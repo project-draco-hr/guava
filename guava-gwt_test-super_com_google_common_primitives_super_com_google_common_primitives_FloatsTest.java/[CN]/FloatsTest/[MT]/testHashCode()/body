@@ -1,5 +1,0 @@
-{
-  for (  float value : VALUES) {
-    assertEquals(((Float)value).hashCode(),Floats.hashCode(value));
-  }
-}

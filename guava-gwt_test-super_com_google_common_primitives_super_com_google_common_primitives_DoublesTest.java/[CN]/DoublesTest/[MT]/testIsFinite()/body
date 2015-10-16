@@ -1,5 +1,0 @@
-{
-  for (  double value : NUMBERS) {
-    assertEquals(!(Double.isNaN(value) || Double.isInfinite(value)),Doubles.isFinite(value));
-  }
-}

@@ -1,4 +1,0 @@
-{
-  ImmutableTable.Builder<Character,Integer,String> builder=new ImmutableTable.Builder<Character,Integer,String>();
-  assertEquals(ImmutableTable.of('a',1,"foo"),builder.put(Tables.immutableCell('a',1,"foo")).build());
-}

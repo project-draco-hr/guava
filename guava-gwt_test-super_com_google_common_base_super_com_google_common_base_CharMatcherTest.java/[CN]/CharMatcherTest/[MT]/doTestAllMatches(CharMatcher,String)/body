@@ -1,9 +1,0 @@
-{
-  reallyTestAllMatches(matcher,s);
-  reallyTestNoMatches(matcher.negate(),s);
-  reallyTestAllMatches(matcher.precomputed(),s);
-  reallyTestNoMatches(matcher.negate().precomputed(),s);
-  reallyTestNoMatches(matcher.precomputed().negate(),s);
-  reallyTestAllMatches(forPredicate(matcher),s);
-  reallyTestAllMatches(matcher,new StringBuilder(s));
-}

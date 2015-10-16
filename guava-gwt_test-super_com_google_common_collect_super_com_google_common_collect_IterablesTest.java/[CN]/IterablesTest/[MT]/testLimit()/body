@@ -1,9 +1,0 @@
-{
-  Iterable<String> iterable=newArrayList("foo","bar","baz");
-  Iterable<String> limited=Iterables.limit(iterable,2);
-  List<String> expected=ImmutableList.of("foo","bar");
-  List<String> actual=newArrayList(limited);
-  assertEquals(expected,actual);
-  assertCanIterateAgain(limited);
-  assertEquals("[foo, bar]",limited.toString());
-}

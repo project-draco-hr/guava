@@ -1,3 +1,0 @@
-{
-  assertFalse(Utf8.isWellFormed(toByteArray(bytes)));
-}

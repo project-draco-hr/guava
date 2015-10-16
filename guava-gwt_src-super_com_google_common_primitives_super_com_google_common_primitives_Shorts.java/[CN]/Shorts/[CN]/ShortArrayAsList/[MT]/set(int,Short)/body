@@ -1,6 +1,0 @@
-{
-  checkElementIndex(index,size());
-  short oldValue=array[start + index];
-  array[start + index]=checkNotNull(element);
-  return oldValue;
-}

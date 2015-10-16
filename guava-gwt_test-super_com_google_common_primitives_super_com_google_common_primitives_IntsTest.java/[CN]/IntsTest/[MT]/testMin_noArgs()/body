@@ -1,8 +1,0 @@
-{
-  try {
-    Ints.min();
-    fail();
-  }
- catch (  IllegalArgumentException expected) {
-  }
-}

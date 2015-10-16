@@ -1,3 +1,0 @@
-{
-  SerializableTester.reserializeAndAssert(Enums.stringConverter(TestEnum.class));
-}

@@ -1,4 +1,0 @@
-{
-  Iterable<String> empty=Splitter.on('.').omitEmptyStrings().split("...");
-  assertThat(empty).isEmpty();
-}

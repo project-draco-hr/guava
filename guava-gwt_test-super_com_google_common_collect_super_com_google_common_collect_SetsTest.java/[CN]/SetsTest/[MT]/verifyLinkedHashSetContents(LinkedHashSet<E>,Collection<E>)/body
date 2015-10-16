@@ -1,4 +1,0 @@
-{
-  assertEquals("LinkedHashSet should have preserved order for iteration",new ArrayList<E>(set),new ArrayList<E>(contents));
-  verifySetContents(set,contents);
-}

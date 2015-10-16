@@ -1,4 +1,0 @@
-{
-  ImmutableSortedSet.Builder<SelfComparableExample> natural=ImmutableSortedSet.naturalOrder();
-  ImmutableSortedSet.Builder<SelfComparableExample> reverse=ImmutableSortedSet.reverseOrder();
-}

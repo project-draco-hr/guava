@@ -1,6 +1,0 @@
-{
-  AsyncFunction<Throwable,Integer> fallback=asyncFunctionReturningOne();
-  ListenableFuture<Integer> originalFuture=immediateFailedFuture(new IOException());
-  ListenableFuture<Integer> faultTolerantFuture=Futures.catchingAsync(originalFuture,Throwable.class,fallback);
-  assertEquals(1,(int)faultTolerantFuture.get());
-}

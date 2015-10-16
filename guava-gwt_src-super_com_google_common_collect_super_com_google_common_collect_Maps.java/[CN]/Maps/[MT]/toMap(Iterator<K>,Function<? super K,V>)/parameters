@@ -1,2 +1,0 @@
-Iterator<K> keys
-Function<? super K,V> valueFunction

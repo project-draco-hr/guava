@@ -1,6 +1,0 @@
-{
-  Map<String,String> m=Splitter.on(",").withKeyValueSeparator(":^&").split("boy:^&tom,girl:^&tina,cat:^&kitty,dog:^&tommy");
-  ImmutableMap<String,String> expected=ImmutableMap.of("boy","tom","girl","tina","cat","kitty","dog","tommy");
-  assertThat(m).isEqualTo(expected);
-  assertThat(m.entrySet()).containsExactlyElementsIn(expected.entrySet()).inOrder();
-}

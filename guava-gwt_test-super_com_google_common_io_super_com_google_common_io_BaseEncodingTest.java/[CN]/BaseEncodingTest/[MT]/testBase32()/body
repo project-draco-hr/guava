@@ -1,9 +1,0 @@
-{
-  testEncodingWithCasing(base32(),"","");
-  testEncodingWithCasing(base32(),"f","MY======");
-  testEncodingWithCasing(base32(),"fo","MZXQ====");
-  testEncodingWithCasing(base32(),"foo","MZXW6===");
-  testEncodingWithCasing(base32(),"foob","MZXW6YQ=");
-  testEncodingWithCasing(base32(),"fooba","MZXW6YTB");
-  testEncodingWithCasing(base32(),"foobar","MZXW6YTBOI======");
-}

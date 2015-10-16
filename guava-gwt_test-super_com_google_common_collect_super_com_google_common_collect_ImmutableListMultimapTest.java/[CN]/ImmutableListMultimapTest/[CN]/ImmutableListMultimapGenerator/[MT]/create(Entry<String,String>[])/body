@@ -1,7 +1,0 @@
-{
-  ImmutableListMultimap.Builder<String,String> builder=ImmutableListMultimap.builder();
-  for (  Entry<String,String> entry : entries) {
-    builder.put(entry.getKey(),entry.getValue());
-  }
-  return builder.build();
-}

@@ -1,4 +1,0 @@
-{
-  LinkedHashSet<Integer> set=Sets.newLinkedHashSet(LONGER_LIST);
-  verifyLinkedHashSetContents(set,LONGER_LIST);
-}

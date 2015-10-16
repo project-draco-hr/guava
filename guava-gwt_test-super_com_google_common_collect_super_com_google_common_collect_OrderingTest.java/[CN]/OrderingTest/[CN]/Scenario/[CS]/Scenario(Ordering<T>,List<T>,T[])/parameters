@@ -1,3 +1,0 @@
-Ordering<T> ordering
-List<T> strictlyOrderedList
-T[] emptyArray

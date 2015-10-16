@@ -1,3 +1,0 @@
-{
-  checkArrayEquals(new String[10],ObjectArrays.newArray(new String[]{"a","b","c","d","e"},10));
-}

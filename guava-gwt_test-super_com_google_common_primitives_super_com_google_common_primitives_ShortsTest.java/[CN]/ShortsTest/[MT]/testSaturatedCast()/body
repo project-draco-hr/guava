@@ -1,9 +1,0 @@
-{
-  for (  short value : VALUES) {
-    assertEquals(value,Shorts.saturatedCast((long)value));
-  }
-  assertEquals(GREATEST,Shorts.saturatedCast(GREATEST + 1L));
-  assertEquals(LEAST,Shorts.saturatedCast(LEAST - 1L));
-  assertEquals(GREATEST,Shorts.saturatedCast(Long.MAX_VALUE));
-  assertEquals(LEAST,Shorts.saturatedCast(Long.MIN_VALUE));
-}

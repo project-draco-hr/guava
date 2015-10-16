@@ -1,3 +1,0 @@
-{
-  assertThat(Enums.getIfPresent(TestEnum.class,"WOMBAT")).isAbsent();
-}

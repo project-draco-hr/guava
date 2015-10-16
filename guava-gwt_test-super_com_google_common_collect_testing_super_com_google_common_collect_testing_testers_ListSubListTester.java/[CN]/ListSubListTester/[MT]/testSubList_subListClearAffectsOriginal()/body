@@ -1,6 +1,0 @@
-{
-  List<E> subList=getList().subList(0,1);
-  subList.clear();
-  List<E> expected=Arrays.asList(createSamplesArray()).subList(1,getNumElements());
-  expectContents(expected);
-}

@@ -1,4 +1,0 @@
-{
-  ImmutableSet<Entry<K,V>> result=entries;
-  return result == null ? (entries=new EntrySet<K,V>(this)) : result;
-}

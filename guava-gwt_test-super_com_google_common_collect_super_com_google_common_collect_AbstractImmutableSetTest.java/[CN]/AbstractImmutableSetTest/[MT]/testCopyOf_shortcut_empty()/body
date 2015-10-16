@@ -1,5 +1,0 @@
-{
-  Collection<String> c=of();
-  assertEquals(Collections.<String>emptySet(),copyOf(c));
-  assertSame(c,copyOf(c));
-}

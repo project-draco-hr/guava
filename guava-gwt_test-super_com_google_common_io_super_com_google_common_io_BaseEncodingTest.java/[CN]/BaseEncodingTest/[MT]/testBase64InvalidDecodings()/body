@@ -1,9 +1,0 @@
-{
-  assertFailsToDecode(base64(),"A\u007f","Unrecognized character: 0x7f");
-  assertFailsToDecode(base64(),"Wf2!","Unrecognized character: !");
-  assertFailsToDecode(base64(),"let's not talk of love or chains!");
-  assertFailsToDecode(base64(),"12345","Invalid input length 5");
-  assertFailsToDecode(base64(),"AB=C","Unrecognized character: =");
-  assertFailsToDecode(base64(),"A=BCD","Invalid input length 5");
-  assertFailsToDecode(base64(),"?","Invalid input length 1");
-}

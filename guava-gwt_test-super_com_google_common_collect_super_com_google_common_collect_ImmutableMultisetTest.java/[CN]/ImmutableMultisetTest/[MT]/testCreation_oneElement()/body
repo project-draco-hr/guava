@@ -1,4 +1,0 @@
-{
-  Multiset<String> multiset=ImmutableMultiset.of("a");
-  assertEquals(HashMultiset.create(asList("a")),multiset);
-}

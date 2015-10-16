@@ -1,5 +1,0 @@
-{
-  Multimap<String,Integer> multimap=Multimaps.newMultimap(new HashMap<String,Collection<Integer>>(),new QueueSupplier());
-  Map<String,Collection<Integer>> map=Multimaps.asMap(multimap);
-  assertSame(multimap.asMap(),map);
-}

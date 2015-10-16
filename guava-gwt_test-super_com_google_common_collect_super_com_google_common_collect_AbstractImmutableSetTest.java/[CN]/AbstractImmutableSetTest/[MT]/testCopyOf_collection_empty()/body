@@ -1,6 +1,0 @@
-{
-  Collection<String> c=MinimalCollection.<String>of();
-  Set<String> set=copyOf(c);
-  assertEquals(Collections.<String>emptySet(),set);
-  assertSame(of(),set);
-}

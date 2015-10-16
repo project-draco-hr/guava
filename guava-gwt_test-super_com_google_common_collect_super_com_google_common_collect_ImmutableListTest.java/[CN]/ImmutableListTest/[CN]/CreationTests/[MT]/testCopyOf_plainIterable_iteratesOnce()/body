@@ -1,5 +1,0 @@
-{
-  CountingIterable iterable=new CountingIterable();
-  ImmutableList.copyOf(iterable);
-  assertEquals(1,iterable.count);
-}

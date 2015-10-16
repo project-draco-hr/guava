@@ -1,4 +1,0 @@
-{
-  ImmutableSortedMap<String,Integer> map=ImmutableSortedMap.of("one",1);
-  assertNull(map.get(null));
-}

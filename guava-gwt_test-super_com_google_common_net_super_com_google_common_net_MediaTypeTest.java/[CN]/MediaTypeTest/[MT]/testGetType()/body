@@ -1,4 +1,0 @@
-{
-  assertEquals("text",MediaType.parse("text/plain").type());
-  assertEquals("application",MediaType.parse("application/atom+xml; charset=utf-8").type());
-}

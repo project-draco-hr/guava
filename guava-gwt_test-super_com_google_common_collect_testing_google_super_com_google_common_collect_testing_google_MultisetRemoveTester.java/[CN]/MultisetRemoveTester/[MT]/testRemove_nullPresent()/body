@@ -1,6 +1,0 @@
-{
-  initCollectionWithNullElement();
-  assertEquals(1,getMultiset().remove(null,2));
-  assertFalse("multiset contains present after multiset.remove(present, 2)",getMultiset().contains(null));
-  assertEquals(0,getMultiset().count(null));
-}

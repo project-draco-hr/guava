@@ -1,9 +1,0 @@
-{
-  assertFalse("Expected no more permutations, but there was one.",permutations.hasNext());
-  try {
-    permutations.next();
-    fail("Expected NoSuchElementException.");
-  }
- catch (  NoSuchElementException expected) {
-  }
-}

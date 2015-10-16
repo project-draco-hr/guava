@@ -1,6 +1,0 @@
-{
-  assertSame(EMPTY,Floats.ensureCapacity(EMPTY,0,1));
-  assertSame(ARRAY1,Floats.ensureCapacity(ARRAY1,0,1));
-  assertSame(ARRAY1,Floats.ensureCapacity(ARRAY1,1,1));
-  assertTrue(Arrays.equals(new float[]{(float)1,(float)0,(float)0},Floats.ensureCapacity(ARRAY1,2,1)));
-}

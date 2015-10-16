@@ -1,3 +1,0 @@
-{
-  EquivalenceTester.of(Equivalence.identity()).addEquivalenceGroup(new Integer(42)).addEquivalenceGroup(new Integer(42)).addEquivalenceGroup("a").test();
-}

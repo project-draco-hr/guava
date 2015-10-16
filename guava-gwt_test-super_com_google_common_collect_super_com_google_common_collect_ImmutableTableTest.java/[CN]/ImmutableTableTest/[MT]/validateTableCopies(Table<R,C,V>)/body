@@ -1,8 +1,0 @@
-{
-  Table<R,C,V> copy=ImmutableTable.copyOf(original);
-  assertEquals(original,copy);
-  validateViewOrdering(original,copy);
-  Table<R,C,V> built=ImmutableTable.<R,C,V>builder().putAll(original).build();
-  assertEquals(original,built);
-  validateViewOrdering(original,built);
-}

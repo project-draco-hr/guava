@@ -1,4 +1,0 @@
-{
-  Iterable<String> iterable=Collections.singletonList("foo");
-  assertEquals("foo",Iterables.getLast(iterable,"bar"));
-}

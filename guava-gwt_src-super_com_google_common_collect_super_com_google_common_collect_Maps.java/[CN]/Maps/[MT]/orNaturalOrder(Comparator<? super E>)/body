@@ -1,6 +1,0 @@
-{
-  if (comparator != null) {
-    return comparator;
-  }
-  return (Comparator<E>)Ordering.natural();
-}

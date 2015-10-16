@@ -1,4 +1,0 @@
-{
-  checkNotNull(other);
-  return compare(value,other.value);
-}

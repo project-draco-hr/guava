@@ -1,3 +1,0 @@
-{
-  return (concurrencyLevel == UNSET_INT) ? DEFAULT_CONCURRENCY_LEVEL : concurrencyLevel;
-}

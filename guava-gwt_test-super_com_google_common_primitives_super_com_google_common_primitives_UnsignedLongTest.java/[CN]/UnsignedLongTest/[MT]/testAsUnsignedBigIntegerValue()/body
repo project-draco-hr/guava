@@ -1,6 +1,0 @@
-{
-  for (  long value : TEST_LONGS) {
-    BigInteger expected=(value >= 0) ? BigInteger.valueOf(value) : BigInteger.valueOf(value).add(BigInteger.ZERO.setBit(64));
-    assertEquals(UnsignedLongs.toString(value),expected,UnsignedLong.fromLongBits(value).bigIntegerValue());
-  }
-}

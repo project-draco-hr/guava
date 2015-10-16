@@ -1,9 +1,0 @@
-{
-  Multimap<String,Integer> multimap=LinkedHashMultimap.create();
-  multimap.put("a",1);
-  multimap.put("b",2);
-  multimap.put("a",3);
-  multimap.put("c",4);
-  LinkedHashMultimap<String,Integer> copy=LinkedHashMultimap.create(multimap);
-  new EqualsTester().addEqualityGroup(multimap,copy).testEquals();
-}

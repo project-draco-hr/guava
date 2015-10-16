@@ -1,6 +1,0 @@
-{
-  assertSame(EMPTY,Booleans.ensureCapacity(EMPTY,0,1));
-  assertSame(ARRAY_FALSE,Booleans.ensureCapacity(ARRAY_FALSE,0,1));
-  assertSame(ARRAY_FALSE,Booleans.ensureCapacity(ARRAY_FALSE,1,1));
-  assertTrue(Arrays.equals(new boolean[]{true,false,false},Booleans.ensureCapacity(new boolean[]{true},2,1)));
-}

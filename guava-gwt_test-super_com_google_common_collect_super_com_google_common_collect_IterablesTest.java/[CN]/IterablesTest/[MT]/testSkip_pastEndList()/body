@@ -1,4 +1,0 @@
-{
-  Collection<String> list=newArrayList("a","b");
-  assertEquals(emptyList(),newArrayList(skip(list,20)));
-}

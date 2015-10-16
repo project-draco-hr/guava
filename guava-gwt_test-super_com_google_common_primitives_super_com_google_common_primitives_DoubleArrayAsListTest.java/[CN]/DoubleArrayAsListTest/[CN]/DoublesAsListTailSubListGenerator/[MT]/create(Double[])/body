@@ -1,5 +1,0 @@
-{
-  Double[] prefix={(double)86,(double)99};
-  Double[] all=concat(prefix,elements);
-  return asList(all).subList(2,elements.length + 2);
-}

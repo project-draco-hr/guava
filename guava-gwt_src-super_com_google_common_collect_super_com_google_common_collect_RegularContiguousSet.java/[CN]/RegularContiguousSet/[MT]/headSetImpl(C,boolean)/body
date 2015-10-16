@@ -1,3 +1,0 @@
-{
-  return intersectionInCurrentDomain(Range.upTo(toElement,BoundType.forBoolean(inclusive)));
-}

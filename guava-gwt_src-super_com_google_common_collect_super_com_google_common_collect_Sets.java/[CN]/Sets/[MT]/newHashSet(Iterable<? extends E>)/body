@@ -1,3 +1,0 @@
-{
-  return (elements instanceof Collection) ? new HashSet<E>(Collections2.cast(elements)) : newHashSet(elements.iterator());
-}

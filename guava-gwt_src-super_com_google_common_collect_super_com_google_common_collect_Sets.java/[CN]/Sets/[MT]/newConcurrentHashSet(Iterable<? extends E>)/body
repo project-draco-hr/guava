@@ -1,5 +1,0 @@
-{
-  Set<E> set=newConcurrentHashSet();
-  Iterables.addAll(set,elements);
-  return set;
-}

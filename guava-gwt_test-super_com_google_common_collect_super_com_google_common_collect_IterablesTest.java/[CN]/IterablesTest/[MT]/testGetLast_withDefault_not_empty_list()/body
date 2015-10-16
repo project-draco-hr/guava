@@ -1,5 +1,0 @@
-{
-  List<String> diesOnIteratorList=new DiesOnIteratorArrayList();
-  diesOnIteratorList.add("bar");
-  assertEquals("bar",Iterables.getLast(diesOnIteratorList,"qux"));
-}

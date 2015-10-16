@@ -1,8 +1,0 @@
-{
-  try {
-    Lists.newArrayListWithCapacity(-1);
-    fail();
-  }
- catch (  IllegalArgumentException expected) {
-  }
-}

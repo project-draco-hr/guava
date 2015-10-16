@@ -1,3 +1,0 @@
-{
-  return (ImmutableSet<String>)ImmutableSet.of(elements[0],elements[0]);
-}

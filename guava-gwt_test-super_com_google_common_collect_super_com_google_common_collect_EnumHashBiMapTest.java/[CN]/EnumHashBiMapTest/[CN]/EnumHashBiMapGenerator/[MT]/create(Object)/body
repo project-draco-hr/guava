@@ -1,8 +1,0 @@
-{
-  BiMap<Country,String> result=EnumHashBiMap.create(Country.class);
-  for (  Object o : entries) {
-    Entry<Country,String> entry=(Entry<Country,String>)o;
-    result.put(entry.getKey(),entry.getValue());
-  }
-  return result;
-}

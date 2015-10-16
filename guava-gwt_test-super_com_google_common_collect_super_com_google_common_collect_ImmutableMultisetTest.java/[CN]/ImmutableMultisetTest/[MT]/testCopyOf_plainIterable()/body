@@ -1,6 +1,0 @@
-{
-  CountingIterable iterable=new CountingIterable();
-  Multiset<String> multiset=ImmutableMultiset.copyOf(iterable);
-  assertEquals(HashMultiset.create(asList("a","b","a")),multiset);
-  assertEquals(1,iterable.count);
-}

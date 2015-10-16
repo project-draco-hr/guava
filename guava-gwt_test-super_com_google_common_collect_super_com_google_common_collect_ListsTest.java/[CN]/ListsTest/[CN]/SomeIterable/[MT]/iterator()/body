@@ -1,3 +1,0 @@
-{
-  return SOME_COLLECTION.iterator();
-}

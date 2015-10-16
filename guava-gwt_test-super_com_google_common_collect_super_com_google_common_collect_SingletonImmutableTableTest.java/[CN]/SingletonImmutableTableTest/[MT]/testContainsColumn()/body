@@ -1,4 +1,0 @@
-{
-  assertTrue(testTable.containsColumn(1));
-  assertFalse(testTable.containsColumn(2));
-}

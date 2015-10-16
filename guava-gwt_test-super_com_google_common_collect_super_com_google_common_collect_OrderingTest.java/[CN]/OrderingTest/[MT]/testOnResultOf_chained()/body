@@ -1,9 +1,0 @@
-{
-  Comparator<String> comparator=DECREASING_INTEGER.onResultOf(StringLengthFunction.StringLength);
-  assertTrue(comparator.compare("to","be") == 0);
-  assertTrue(comparator.compare("not","or") < 0);
-  assertTrue(comparator.compare("to","that") > 0);
-  new EqualsTester().addEqualityGroup(comparator,DECREASING_INTEGER.onResultOf(StringLengthFunction.StringLength)).addEqualityGroup(DECREASING_INTEGER.onResultOf(Functions.constant(1))).addEqualityGroup(Ordering.natural()).testEquals();
-  reserializeAndAssert(comparator);
-  assertEquals("Ordering.natural().reverse().onResultOf(StringLength)",comparator.toString());
-}

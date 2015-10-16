@@ -1,7 +1,0 @@
-{
-  ImmutableBiMap<String,Integer> biMap=ImmutableBiMap.of("one",1,"two",2);
-  Converter<String,Integer> converter=Maps.asConverter(biMap);
-  for (  Entry<String,Integer> entry : biMap.entrySet()) {
-    assertSame(entry.getKey(),converter.reverse().convert(entry.getValue()));
-  }
-}

@@ -1,7 +1,0 @@
-{
-  int[] largeExpectedSizes=new int[]{Integer.MAX_VALUE / 2 - 1,Integer.MAX_VALUE / 2,Integer.MAX_VALUE / 2 + 1,Integer.MAX_VALUE - 1,Integer.MAX_VALUE};
-  for (  int expectedSize : largeExpectedSizes) {
-    int capacity=Maps.capacity(expectedSize);
-    assertTrue("capacity (" + capacity + ") must be >= expectedSize ("+ expectedSize+ ")",capacity >= expectedSize);
-  }
-}

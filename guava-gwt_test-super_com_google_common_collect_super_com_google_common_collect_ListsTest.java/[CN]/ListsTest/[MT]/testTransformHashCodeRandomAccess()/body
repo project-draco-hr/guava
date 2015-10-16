@@ -1,4 +1,0 @@
-{
-  List<String> list=Lists.transform(SOME_LIST,SOME_FUNCTION);
-  assertEquals(SOME_STRING_LIST.hashCode(),list.hashCode());
-}

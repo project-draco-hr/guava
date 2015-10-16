@@ -1,8 +1,0 @@
-{
-  try {
-    base64().upperCase();
-    fail();
-  }
- catch (  IllegalStateException expected) {
-  }
-}

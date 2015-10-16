@@ -1,5 +1,0 @@
-{
-  Iterator<String> iterator=Iterators.singletonIterator("a");
-  Multiset<String> multiset=ImmutableMultiset.copyOf(iterator);
-  assertEquals(HashMultiset.create(asList("a")),multiset);
-}

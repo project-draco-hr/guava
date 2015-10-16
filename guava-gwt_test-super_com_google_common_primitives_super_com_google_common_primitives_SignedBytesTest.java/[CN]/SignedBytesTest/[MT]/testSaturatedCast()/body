@@ -1,9 +1,0 @@
-{
-  for (  byte value : VALUES) {
-    assertEquals(value,SignedBytes.saturatedCast((long)value));
-  }
-  assertEquals(GREATEST,SignedBytes.saturatedCast(GREATEST + 1L));
-  assertEquals(LEAST,SignedBytes.saturatedCast(LEAST - 1L));
-  assertEquals(GREATEST,SignedBytes.saturatedCast(Long.MAX_VALUE));
-  assertEquals(LEAST,SignedBytes.saturatedCast(Long.MIN_VALUE));
-}

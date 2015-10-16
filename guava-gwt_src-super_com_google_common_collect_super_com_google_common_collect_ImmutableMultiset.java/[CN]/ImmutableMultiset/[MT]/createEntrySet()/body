@@ -1,3 +1,0 @@
-{
-  return isEmpty() ? ImmutableSet.<Entry<E>>of() : new EntrySet();
-}

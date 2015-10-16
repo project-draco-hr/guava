@@ -1,3 +1,0 @@
-{
-  Preconditions.checkState(true,IGNORE_ME);
-}

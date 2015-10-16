@@ -1,6 +1,0 @@
-{
-  char[] array={(char)0,(char)1,(char)2,(char)3};
-  List<Character> list=Chars.asList(array);
-  assertTrue(Arrays.equals(new char[]{(char)1,(char)2},Chars.toArray(list.subList(1,3))));
-  assertTrue(Arrays.equals(new char[]{},Chars.toArray(list.subList(2,2))));
-}

@@ -1,4 +1,0 @@
-{
-  assertTrue("add(present) should return true",getList().add(e0()));
-  expectAdded(e0());
-}

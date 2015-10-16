@@ -1,3 +1,0 @@
-{
-  new EqualsTester().addEqualityGroup(Predicates.and(Arrays.asList(TRUE,NEVER_REACHED)),Predicates.and(Arrays.asList(TRUE,NEVER_REACHED)),Predicates.and(TRUE,NEVER_REACHED)).addEqualityGroup(Predicates.and(FALSE,NEVER_REACHED)).addEqualityGroup(Predicates.or(TRUE,NEVER_REACHED)).testEquals();
-}

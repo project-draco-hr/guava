@@ -1,8 +1,0 @@
-{
-  SettableFuture<Integer> primary=SettableFuture.create();
-  AsyncFunction<Throwable,Integer> fallback=unexpectedAsyncFunction();
-  ListenableFuture<Integer> derived=Futures.catchingAsync(primary,Throwable.class,fallback);
-  derived.cancel(false);
-  assertTrue(primary.isCancelled());
-  assertFalse(primary.wasInterrupted());
-}

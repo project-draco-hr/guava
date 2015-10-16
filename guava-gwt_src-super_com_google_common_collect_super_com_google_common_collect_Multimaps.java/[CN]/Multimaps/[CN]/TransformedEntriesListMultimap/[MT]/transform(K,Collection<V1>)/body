@@ -1,3 +1,0 @@
-{
-  return Lists.transform((List<V1>)values,Maps.asValueToValueFunction(transformer,key));
-}

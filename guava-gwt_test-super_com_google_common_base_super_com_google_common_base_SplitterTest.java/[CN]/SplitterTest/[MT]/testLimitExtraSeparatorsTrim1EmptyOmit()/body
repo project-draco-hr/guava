@@ -1,5 +1,0 @@
-{
-  String text="";
-  Iterable<String> items=COMMA_SPLITTER.omitEmptyStrings().limit(1).split(text);
-  assertThat(items).isEmpty();
-}

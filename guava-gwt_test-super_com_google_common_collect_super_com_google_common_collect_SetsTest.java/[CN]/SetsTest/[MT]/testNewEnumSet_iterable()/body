@@ -1,4 +1,0 @@
-{
-  Set<SomeEnum> set=ImmutableSet.of(SomeEnum.A,SomeEnum.B,SomeEnum.C);
-  assertEquals(set,newEnumSet(unmodifiableIterable(set),SomeEnum.class));
-}

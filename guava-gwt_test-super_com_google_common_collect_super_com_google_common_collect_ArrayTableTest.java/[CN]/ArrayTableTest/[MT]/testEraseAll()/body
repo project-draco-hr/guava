@@ -1,8 +1,0 @@
-{
-  ArrayTable<String,Integer,Character> table=create("foo",1,'a',"bar",1,'b',"foo",3,'c');
-  table.eraseAll();
-  assertEquals(9,table.size());
-  assertNull(table.get("bar",1));
-  assertTrue(table.containsRow("foo"));
-  assertFalse(table.containsValue('a'));
-}

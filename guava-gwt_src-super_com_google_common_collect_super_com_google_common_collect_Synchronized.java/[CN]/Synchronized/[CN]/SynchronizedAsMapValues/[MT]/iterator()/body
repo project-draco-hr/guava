@@ -1,8 +1,0 @@
-{
-  return new TransformedIterator<Collection<V>,Collection<V>>(super.iterator()){
-    @Override Collection<V> transform(    Collection<V> from){
-      return typePreservingCollection(from,mutex);
-    }
-  }
-;
-}

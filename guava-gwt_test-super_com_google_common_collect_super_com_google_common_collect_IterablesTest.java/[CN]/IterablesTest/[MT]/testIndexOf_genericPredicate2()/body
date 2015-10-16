@@ -1,4 +1,0 @@
-{
-  List<String> sequences=Lists.newArrayList("bob","charlie","henry","apple","lemon");
-  assertEquals(3,Iterables.indexOf(sequences,STARTSWITH_A));
-}

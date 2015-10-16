@@ -1,6 +1,0 @@
-{
-  Entry<K,V>[] entries=createSamplesArray();
-  entries[getNullLocation()]=entry(null,null);
-  resetMap(entries);
-  expectContents(entries);
-}

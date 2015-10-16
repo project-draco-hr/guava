@@ -1,7 +1,0 @@
-{
-  try {
-    assertThat(actual).isNotEqualTo(unexpected);
-  }
- catch (  ClassCastException accepted) {
-  }
-}

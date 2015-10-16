@@ -1,3 +1,0 @@
-{
-  super("CharMatcher.invisible()",RANGE_STARTS.toCharArray(),RANGE_ENDS.toCharArray());
-}

@@ -1,8 +1,0 @@
-{
-  int[] bases={2,5,7,8,10,16};
-  for (  long a : UNSIGNED_INTS) {
-    for (    int base : bases) {
-      assertEquals(UnsignedInts.toString((int)a,base),Long.toString(a,base));
-    }
-  }
-}

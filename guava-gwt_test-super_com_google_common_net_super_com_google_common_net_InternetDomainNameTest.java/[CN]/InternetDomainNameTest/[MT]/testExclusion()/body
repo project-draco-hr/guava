@@ -1,6 +1,0 @@
-{
-  InternetDomainName domain=InternetDomainName.from("foo.teledata.mz");
-  assertTrue(domain.hasPublicSuffix());
-  assertEquals("mz",domain.publicSuffix().toString());
-  assertFalse(domain.publicSuffix().isPublicSuffix());
-}

@@ -1,4 +1,0 @@
-{
-  table=create();
-  assertEquals("[]",table.columnKeySet().toString());
-}

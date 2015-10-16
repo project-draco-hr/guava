@@ -1,5 +1,0 @@
-{
-  ImmutableBiMap<String,Integer> bimap=ImmutableBiMap.of();
-  assertEquals(Collections.<String,Integer>emptyMap(),bimap);
-  assertEquals(Collections.<String,Integer>emptyMap(),bimap.inverse());
-}

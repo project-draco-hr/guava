@@ -1,3 +1,0 @@
-{
-  assertEquals("subList(0, size) should be equal to the original list",getList(),getList().subList(0,getNumElements()));
-}

@@ -1,3 +1,0 @@
-{
-  return Multisets.immutableEntry(getElement(),getCount()).toString();
-}

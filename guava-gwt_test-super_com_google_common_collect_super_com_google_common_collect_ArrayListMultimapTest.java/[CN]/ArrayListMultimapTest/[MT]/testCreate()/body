@@ -1,4 +1,0 @@
-{
-  ArrayListMultimap<String,Integer> multimap=ArrayListMultimap.create();
-  assertEquals(3,multimap.expectedValuesPerKey);
-}

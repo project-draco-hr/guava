@@ -1,4 +1,0 @@
-{
-  checkPositionIndexes(fromIndex,toIndex,size());
-  return charactersOf(string.substring(fromIndex,toIndex));
-}

@@ -1,4 +1,0 @@
-{
-  WrongType[] array=new WrongType[0];
-  assertSame("toArray(sameSizeNotAssignableTo[]) should return the given array",array,collection.toArray(array));
-}

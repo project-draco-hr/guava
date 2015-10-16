@@ -1,3 +1,0 @@
-{
-  return new FilteredEntryMap<K,V>(map.unfiltered,Predicates.<Entry<K,V>>and(map.predicate,entryPredicate));
-}

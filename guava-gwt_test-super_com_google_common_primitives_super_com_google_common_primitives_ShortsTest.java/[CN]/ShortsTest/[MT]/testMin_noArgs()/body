@@ -1,8 +1,0 @@
-{
-  try {
-    Shorts.min();
-    fail();
-  }
- catch (  IllegalArgumentException expected) {
-  }
-}

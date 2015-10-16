@@ -1,3 +1,0 @@
-{
-  return Iterators.transform(entryIterator,Maps.<V>valueFunction());
-}

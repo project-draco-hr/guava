@@ -1,4 +1,0 @@
-{
-  Iterable<String> iterable=Collections.singleton("a");
-  assertEquals(1,Iterables.size(iterable));
-}

@@ -1,3 +1,0 @@
-{
-  forwardList.add(reversePosition(index),element);
-}

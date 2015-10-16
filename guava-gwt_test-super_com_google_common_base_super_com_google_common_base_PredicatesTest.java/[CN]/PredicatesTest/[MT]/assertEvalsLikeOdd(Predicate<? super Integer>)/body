@@ -1,3 +1,0 @@
-{
-  assertEvalsLike(isOdd(),predicate);
-}

@@ -1,6 +1,0 @@
-{
-  assertEquals(Optional.of("training"),Optional.of("training"));
-  assertFalse(Optional.of("a").equals(Optional.of("b")));
-  assertFalse(Optional.of("a").equals(Optional.absent()));
-  assertEquals(Optional.of("training").hashCode(),Optional.of("training").hashCode());
-}

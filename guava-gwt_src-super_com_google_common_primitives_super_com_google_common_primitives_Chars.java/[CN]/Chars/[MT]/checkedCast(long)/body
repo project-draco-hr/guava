@@ -1,7 +1,0 @@
-{
-  char result=(char)value;
-  if (result != value) {
-    throw new IllegalArgumentException("Out of range: " + value);
-  }
-  return result;
-}

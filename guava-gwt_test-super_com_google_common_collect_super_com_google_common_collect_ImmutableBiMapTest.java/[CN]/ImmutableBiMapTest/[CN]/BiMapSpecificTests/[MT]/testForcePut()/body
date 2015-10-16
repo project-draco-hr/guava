@@ -1,9 +1,0 @@
-{
-  ImmutableBiMap<String,Integer> bimap=ImmutableBiMap.copyOf(ImmutableMap.of("one",1,"two",2));
-  try {
-    bimap.forcePut("three",3);
-    fail();
-  }
- catch (  UnsupportedOperationException expected) {
-  }
-}

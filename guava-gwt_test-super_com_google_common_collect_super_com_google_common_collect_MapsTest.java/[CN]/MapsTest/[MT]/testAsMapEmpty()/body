@@ -1,7 +1,0 @@
-{
-  Set<String> strings=ImmutableSet.of();
-  Map<String,Integer> map=Maps.asMap(strings,LENGTH_FUNCTION);
-  assertThat(map.entrySet()).isEmpty();
-  assertTrue(map.isEmpty());
-  assertNull(map.get("five"));
-}

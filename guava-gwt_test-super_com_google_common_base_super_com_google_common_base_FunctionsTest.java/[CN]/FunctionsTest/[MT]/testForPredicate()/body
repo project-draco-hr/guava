@@ -1,7 +1,0 @@
-{
-  Function<Object,Boolean> alwaysTrue=Functions.forPredicate(Predicates.alwaysTrue());
-  Function<Object,Boolean> alwaysFalse=Functions.forPredicate(Predicates.alwaysFalse());
-  assertTrue(alwaysTrue.apply(0));
-  assertFalse(alwaysFalse.apply(0));
-  new EqualsTester().addEqualityGroup(alwaysTrue,Functions.forPredicate(Predicates.alwaysTrue())).addEqualityGroup(alwaysFalse).addEqualityGroup(Functions.identity()).testEquals();
-}

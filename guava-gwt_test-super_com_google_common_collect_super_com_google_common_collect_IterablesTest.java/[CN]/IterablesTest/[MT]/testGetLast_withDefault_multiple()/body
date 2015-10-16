@@ -1,4 +1,0 @@
-{
-  Iterable<String> iterable=asList("foo","bar");
-  assertEquals("bar",Iterables.getLast(iterable,"qux"));
-}

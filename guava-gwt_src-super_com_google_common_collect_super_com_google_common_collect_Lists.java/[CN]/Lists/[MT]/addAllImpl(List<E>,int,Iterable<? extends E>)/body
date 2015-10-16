@@ -1,9 +1,0 @@
-{
-  boolean changed=false;
-  ListIterator<E> listIterator=list.listIterator(index);
-  for (  E e : elements) {
-    listIterator.add(e);
-    changed=true;
-  }
-  return changed;
-}

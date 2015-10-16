@@ -1,4 +1,0 @@
-{
-  this(table.rowKeySet(),table.columnKeySet());
-  putAll(table);
-}

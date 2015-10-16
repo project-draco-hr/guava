@@ -1,4 +1,0 @@
-Comparator<? super E> comparator
-E e
-int count
-int[] result

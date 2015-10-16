@@ -1,7 +1,0 @@
-{
-  if (obj instanceof Set) {
-    Set<?> set=(Set<?>)obj;
-    return inputSet.keySet().containsAll(set);
-  }
-  return false;
-}

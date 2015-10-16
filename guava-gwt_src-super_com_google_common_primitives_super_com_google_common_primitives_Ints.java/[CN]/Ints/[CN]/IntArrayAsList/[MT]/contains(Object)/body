@@ -1,3 +1,0 @@
-{
-  return (target instanceof Integer) && Ints.indexOf(array,(Integer)target,start,end) != -1;
-}

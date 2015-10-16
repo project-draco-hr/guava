@@ -1,3 +1,0 @@
-{
-  return hashTable.length - 1;
-}

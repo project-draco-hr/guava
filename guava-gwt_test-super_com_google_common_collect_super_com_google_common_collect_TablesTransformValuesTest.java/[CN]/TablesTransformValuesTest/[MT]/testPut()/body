@@ -1,9 +1,0 @@
-{
-  try {
-    table.put("foo",1,'a');
-    fail("Expected UnsupportedOperationException");
-  }
- catch (  UnsupportedOperationException expected) {
-  }
-  assertSize(0);
-}

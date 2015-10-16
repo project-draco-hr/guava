@@ -1,4 +1,0 @@
-{
-  ImmutableSortedMap<String,Integer> map=ImmutableSortedMap.<String,Integer>naturalOrder().put("one",1).put("two",2).put("three",3).put("four",4).put("five",5).build();
-  assertMapEquals(map,"five",5,"four",4,"one",1,"three",3,"two",2);
-}

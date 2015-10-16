@@ -1,9 +1,0 @@
-{
-  try {
-    Preconditions.checkElementIndex(-1,1);
-    fail();
-  }
- catch (  IndexOutOfBoundsException expected) {
-    assertThat(expected).hasMessage("index (-1) must not be negative");
-  }
-}

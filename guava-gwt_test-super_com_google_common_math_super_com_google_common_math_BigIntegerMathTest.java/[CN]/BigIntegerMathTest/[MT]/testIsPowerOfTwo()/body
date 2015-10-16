@@ -1,6 +1,0 @@
-{
-  for (  BigInteger x : ALL_BIGINTEGER_CANDIDATES) {
-    boolean expected=x.signum() > 0 & x.and(x.subtract(ONE)).equals(ZERO);
-    assertEquals(expected,BigIntegerMath.isPowerOfTwo(x));
-  }
-}

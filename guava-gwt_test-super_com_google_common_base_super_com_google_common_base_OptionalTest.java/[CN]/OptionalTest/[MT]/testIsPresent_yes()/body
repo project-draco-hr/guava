@@ -1,3 +1,0 @@
-{
-  assertTrue(Optional.of("training").isPresent());
-}

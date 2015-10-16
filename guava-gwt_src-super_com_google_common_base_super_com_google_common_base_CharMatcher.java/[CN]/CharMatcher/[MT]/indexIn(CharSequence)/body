@@ -1,3 +1,0 @@
-{
-  return indexIn(sequence,0);
-}

@@ -1,5 +1,0 @@
-{
-  CountingIterable iterable=new CountingIterable();
-  copyOf(iterable);
-  assertEquals(1,iterable.count);
-}

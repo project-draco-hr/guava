@@ -1,6 +1,0 @@
-{
-  Set<Object> sumToEighthMaxIntElements=newHashSet(objectWithHashCode(1 << 29),objectWithHashCode(0));
-  assertPowerSetHashCode(1 << 30,sumToEighthMaxIntElements);
-  Set<Object> sumToQuarterMaxIntElements=newHashSet(objectWithHashCode(1 << 30),objectWithHashCode(0));
-  assertPowerSetHashCode(1 << 31,sumToQuarterMaxIntElements);
-}

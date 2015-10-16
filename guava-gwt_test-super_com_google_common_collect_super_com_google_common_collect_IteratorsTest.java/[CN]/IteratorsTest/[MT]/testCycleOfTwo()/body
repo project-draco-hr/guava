@@ -1,9 +1,0 @@
-{
-  Iterator<String> cycle=Iterators.cycle("a","b");
-  for (int i=0; i < 3; i++) {
-    assertTrue(cycle.hasNext());
-    assertEquals("a",cycle.next());
-    assertTrue(cycle.hasNext());
-    assertEquals("b",cycle.next());
-  }
-}

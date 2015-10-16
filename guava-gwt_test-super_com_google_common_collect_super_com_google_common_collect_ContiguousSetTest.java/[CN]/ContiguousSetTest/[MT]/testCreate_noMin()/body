@@ -1,9 +1,0 @@
-{
-  Range<Integer> range=Range.lessThan(0);
-  try {
-    ContiguousSet.create(range,RangeTest.UNBOUNDED_DOMAIN);
-    fail();
-  }
- catch (  IllegalArgumentException expected) {
-  }
-}

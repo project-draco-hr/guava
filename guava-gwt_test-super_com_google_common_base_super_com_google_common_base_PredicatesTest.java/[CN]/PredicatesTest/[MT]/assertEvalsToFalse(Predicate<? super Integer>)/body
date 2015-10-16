@@ -1,5 +1,0 @@
-{
-  assertFalse(predicate.apply(0));
-  assertFalse(predicate.apply(1));
-  assertFalse(predicate.apply(null));
-}

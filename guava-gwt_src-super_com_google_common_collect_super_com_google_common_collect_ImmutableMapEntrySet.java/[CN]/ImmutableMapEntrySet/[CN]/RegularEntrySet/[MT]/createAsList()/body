@@ -1,3 +1,0 @@
-{
-  return new RegularImmutableAsList<Entry<K,V>>(this,entries);
-}

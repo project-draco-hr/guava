@@ -1,3 +1,0 @@
-{
-  assertEquals("Radix: " + radix,value,Longs.tryParse(Long.toString(value,radix),radix));
-}

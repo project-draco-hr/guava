@@ -1,6 +1,0 @@
-{
-  assertEquals(ImmutableSet.of(),ContiguousSet.create(Range.closedOpen(1,1),integers()));
-  assertEquals(ImmutableSet.of(),ContiguousSet.create(Range.openClosed(5,5),integers()));
-  assertEquals(ImmutableSet.of(),ContiguousSet.create(Range.lessThan(Integer.MIN_VALUE),integers()));
-  assertEquals(ImmutableSet.of(),ContiguousSet.create(Range.greaterThan(Integer.MAX_VALUE),integers()));
-}

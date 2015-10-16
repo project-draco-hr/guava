@@ -1,7 +1,0 @@
-{
-  List<Integer> source=Lists.newLinkedList(asList(1,2,3));
-  List<List<Integer>> partitions=Lists.partition(source,2);
-  assertThat(partitions).isNotInstanceOf(RandomAccess.class);
-  assertThat(partitions.get(0)).isNotInstanceOf(RandomAccess.class);
-  assertThat(partitions.get(1)).isNotInstanceOf(RandomAccess.class);
-}

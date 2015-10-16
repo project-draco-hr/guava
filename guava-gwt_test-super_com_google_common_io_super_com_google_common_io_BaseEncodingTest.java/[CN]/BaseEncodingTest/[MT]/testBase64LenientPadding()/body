@@ -1,7 +1,0 @@
-{
-  testDecodes(base64(),"Zg","f");
-  testDecodes(base64(),"Zg=","f");
-  testDecodes(base64(),"Zg==","f");
-  testDecodes(base64(),"Zg===","f");
-  testDecodes(base64(),"Zg====","f");
-}

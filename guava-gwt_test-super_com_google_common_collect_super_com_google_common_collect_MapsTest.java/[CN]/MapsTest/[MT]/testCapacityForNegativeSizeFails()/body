@@ -1,8 +1,0 @@
-{
-  try {
-    Maps.capacity(-1);
-    fail("Negative expected size must result in IllegalArgumentException");
-  }
- catch (  IllegalArgumentException expected) {
-  }
-}

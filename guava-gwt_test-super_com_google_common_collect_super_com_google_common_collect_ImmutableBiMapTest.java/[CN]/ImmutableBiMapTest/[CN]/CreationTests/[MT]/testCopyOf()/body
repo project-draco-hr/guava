@@ -1,9 +1,0 @@
-{
-  Map<String,Integer> original=new LinkedHashMap<String,Integer>();
-  original.put("one",1);
-  original.put("two",2);
-  original.put("three",3);
-  ImmutableBiMap<String,Integer> copy=ImmutableBiMap.copyOf(original);
-  assertMapEquals(copy,"one",1,"two",2,"three",3);
-  assertSame(copy,ImmutableBiMap.copyOf(copy));
-}

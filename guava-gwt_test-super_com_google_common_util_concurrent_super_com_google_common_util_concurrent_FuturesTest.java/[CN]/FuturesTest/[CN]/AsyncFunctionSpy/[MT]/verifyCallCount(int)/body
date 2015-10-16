@@ -1,3 +1,0 @@
-{
-  assertThat(count).isEqualTo(expected);
-}

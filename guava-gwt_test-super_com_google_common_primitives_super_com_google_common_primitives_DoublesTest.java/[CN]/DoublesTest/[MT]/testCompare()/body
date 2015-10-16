@@ -1,7 +1,0 @@
-{
-  for (  double x : VALUES) {
-    for (    double y : VALUES) {
-      assertEquals(x + ", " + y,Double.valueOf(x).compareTo(y),Doubles.compare(x,y));
-    }
-  }
-}

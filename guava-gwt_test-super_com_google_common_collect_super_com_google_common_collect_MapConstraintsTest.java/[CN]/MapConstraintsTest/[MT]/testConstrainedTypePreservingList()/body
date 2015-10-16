@@ -1,8 +1,0 @@
-{
-  ListMultimap<String,Integer> multimap=MapConstraints.constrainedListMultimap(LinkedListMultimap.<String,Integer>create(),TEST_CONSTRAINT);
-  multimap.put("foo",1);
-  Map.Entry<String,Collection<Integer>> entry=multimap.asMap().entrySet().iterator().next();
-  assertTrue(entry.getValue() instanceof List);
-  assertFalse(multimap.entries() instanceof Set);
-  assertFalse(multimap.get("foo") instanceof RandomAccess);
-}

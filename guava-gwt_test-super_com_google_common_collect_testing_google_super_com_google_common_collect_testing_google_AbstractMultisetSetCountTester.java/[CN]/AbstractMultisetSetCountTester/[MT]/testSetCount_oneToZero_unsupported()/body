@@ -1,3 +1,0 @@
-{
-  assertSetCountDecreasingFailure(e0(),0);
-}

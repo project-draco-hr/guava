@@ -1,8 +1,0 @@
-{
-  Iterable<String> list=newArrayList("cool","pants");
-  assertThat(Iterables.tryFind(list,Predicates.equalTo("cool"))).hasValue("cool");
-  assertThat(Iterables.tryFind(list,Predicates.equalTo("pants"))).hasValue("pants");
-  assertThat(Iterables.tryFind(list,Predicates.alwaysTrue())).hasValue("cool");
-  assertThat(Iterables.tryFind(list,Predicates.alwaysFalse())).isAbsent();
-  assertCanIterateAgain(list);
-}

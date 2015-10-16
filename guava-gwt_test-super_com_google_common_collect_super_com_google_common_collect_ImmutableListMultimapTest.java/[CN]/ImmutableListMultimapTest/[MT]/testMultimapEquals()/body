@@ -1,7 +1,0 @@
-{
-  Multimap<String,Integer> multimap=createMultimap();
-  Multimap<String,Integer> arrayListMultimap=ArrayListMultimap.create();
-  arrayListMultimap.putAll("foo",Arrays.asList(1,3));
-  arrayListMultimap.put("bar",2);
-  new EqualsTester().addEqualityGroup(multimap,createMultimap(),arrayListMultimap,ImmutableListMultimap.<String,Integer>builder().put("bar",2).put("foo",1).put("foo",3).build()).addEqualityGroup(ImmutableListMultimap.<String,Integer>builder().put("bar",2).put("foo",3).put("foo",1).build()).addEqualityGroup(ImmutableListMultimap.<String,Integer>builder().put("foo",2).put("foo",3).put("foo",1).build()).addEqualityGroup(ImmutableListMultimap.<String,Integer>builder().put("bar",2).put("foo",3).build()).testEquals();
-}

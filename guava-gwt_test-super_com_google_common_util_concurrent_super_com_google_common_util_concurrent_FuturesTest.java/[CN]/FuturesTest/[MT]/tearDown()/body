@@ -1,5 +1,0 @@
-{
-  clearInterrupt();
-  aggregateFutureLogger.removeHandler(aggregateFutureLogHandler);
-  super.tearDown();
-}

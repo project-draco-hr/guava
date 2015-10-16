@@ -1,3 +1,0 @@
-{
-  return ObjectPredicate.ALWAYS_TRUE.withNarrowedType();
-}

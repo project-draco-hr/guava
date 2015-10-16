@@ -1,3 +1,0 @@
-{
-  return ImmutableSortedSet.orderedBy(STRING_REVERSED).add(elements).build();
-}

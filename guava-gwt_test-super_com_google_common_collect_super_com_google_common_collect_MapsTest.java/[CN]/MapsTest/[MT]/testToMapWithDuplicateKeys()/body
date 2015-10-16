@@ -1,6 +1,0 @@
-{
-  Iterable<String> strings=ImmutableList.of("one","two","three","two","one");
-  ImmutableMap<String,Integer> map=Maps.toMap(strings,LENGTH_FUNCTION);
-  assertEquals(ImmutableMap.of("one",3,"two",3,"three",5),map);
-  assertThat(map.entrySet()).containsExactly(mapEntry("one",3),mapEntry("two",3),mapEntry("three",5)).inOrder();
-}

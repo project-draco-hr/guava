@@ -1,3 +1,0 @@
-{
-  return iterator.hasNext() ? getLast(iterator) : defaultValue;
-}

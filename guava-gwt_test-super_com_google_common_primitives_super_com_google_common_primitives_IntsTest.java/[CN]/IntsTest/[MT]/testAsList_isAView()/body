@@ -1,8 +1,0 @@
-{
-  int[] array={(int)0,(int)1};
-  List<Integer> list=Ints.asList(array);
-  list.set(0,(int)2);
-  assertTrue(Arrays.equals(new int[]{(int)2,(int)1},array));
-  array[1]=(int)3;
-  assertEquals(Arrays.asList((int)2,(int)3),list);
-}

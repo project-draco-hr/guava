@@ -1,5 +1,0 @@
-{
-  Ordering<Integer> ordering=Ordering.natural().nullsLast();
-  Helpers.testComparator(ordering,0,1,Integer.MAX_VALUE,null);
-  new EqualsTester().addEqualityGroup(ordering,Ordering.natural().nullsLast()).addEqualityGroup(numberOrdering.nullsLast()).addEqualityGroup(Ordering.natural()).testEquals();
-}

@@ -1,6 +1,0 @@
-{
-  doTestOneCharMatch(matcher,"" + match);
-  doTestOneCharNoMatch(matcher,"" + noMatch);
-  doTestMatchThenNoMatch(matcher,"" + match + noMatch);
-  doTestNoMatchThenMatch(matcher,"" + noMatch + match);
-}

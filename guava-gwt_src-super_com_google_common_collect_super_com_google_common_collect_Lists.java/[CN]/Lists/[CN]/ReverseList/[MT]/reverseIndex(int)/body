@@ -1,5 +1,0 @@
-{
-  int size=size();
-  checkElementIndex(index,size);
-  return (size - 1) - index;
-}

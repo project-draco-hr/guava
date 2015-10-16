@@ -1,8 +1,0 @@
-{
-  try {
-    getList().subList(-1,0);
-    fail("subList(-1, 0) should throw");
-  }
- catch (  IndexOutOfBoundsException expected) {
-  }
-}

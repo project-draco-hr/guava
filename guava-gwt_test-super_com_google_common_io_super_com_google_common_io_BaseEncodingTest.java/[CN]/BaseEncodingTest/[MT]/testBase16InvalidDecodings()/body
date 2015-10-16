@@ -1,7 +1,0 @@
-{
-  assertFailsToDecode(base16(),"\n\n","Unrecognized character: 0xa");
-  assertFailsToDecode(base16(),"EFGH","Unrecognized character: G");
-  assertFailsToDecode(base16(),"A","Invalid input length 1");
-  assertFailsToDecode(base16(),"ABC");
-  assertFailsToDecode(base16(),"?","Invalid input length 1");
-}

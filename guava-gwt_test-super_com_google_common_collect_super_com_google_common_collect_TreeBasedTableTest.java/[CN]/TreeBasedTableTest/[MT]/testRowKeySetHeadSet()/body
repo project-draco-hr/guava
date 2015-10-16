@@ -1,8 +1,0 @@
-{
-  sortedTable=create("foo",1,'a',"bar",1,'b',"foo",3,'c');
-  Set<String> set=sortedTable.rowKeySet().headSet("cat");
-  assertEquals(Collections.singleton("bar"),set);
-  set.clear();
-  assertTrue(set.isEmpty());
-  assertEquals(Collections.singleton("foo"),sortedTable.rowKeySet());
-}

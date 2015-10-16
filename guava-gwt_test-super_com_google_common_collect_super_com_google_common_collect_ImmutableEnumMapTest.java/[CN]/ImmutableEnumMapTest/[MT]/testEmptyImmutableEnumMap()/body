@@ -1,4 +1,0 @@
-{
-  ImmutableMap<AnEnum,String> map=Maps.immutableEnumMap(ImmutableMap.<AnEnum,String>of());
-  assertEquals(ImmutableMap.of(),map);
-}

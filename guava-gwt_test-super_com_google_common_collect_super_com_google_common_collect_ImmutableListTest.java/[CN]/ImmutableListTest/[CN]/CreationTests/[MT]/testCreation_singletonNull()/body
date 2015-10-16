@@ -1,8 +1,0 @@
-{
-  try {
-    ImmutableList.of((String)null);
-    fail();
-  }
- catch (  NullPointerException expected) {
-  }
-}

@@ -1,9 +1,0 @@
-{
-  Map<IntegerDiv10,String> original=ImmutableMap.of(new IntegerDiv10(3),"three",new IntegerDiv10(20),"twenty",new IntegerDiv10(11),"eleven",new IntegerDiv10(35),"thirty five",new IntegerDiv10(12),"twelve");
-  try {
-    ImmutableSortedMap.copyOf(original);
-    fail("Expected IllegalArgumentException");
-  }
- catch (  IllegalArgumentException expected) {
-  }
-}

@@ -1,3 +1,0 @@
-{
-  return compose(keyPredicate,Maps.<K>keyFunction());
-}

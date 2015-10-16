@@ -1,9 +1,0 @@
-{
-  assertEquals(out,is('-').trimFrom(in));
-  assertEquals(out,is('-').or(is('#')).trimFrom(in));
-  assertEquals(out,isNot('x').trimFrom(in));
-  assertEquals(out,is('x').negate().trimFrom(in));
-  assertEquals(out,anyOf("-").trimFrom(in));
-  assertEquals(out,anyOf("-#").trimFrom(in));
-  assertEquals(out,anyOf("-#123").trimFrom(in));
-}

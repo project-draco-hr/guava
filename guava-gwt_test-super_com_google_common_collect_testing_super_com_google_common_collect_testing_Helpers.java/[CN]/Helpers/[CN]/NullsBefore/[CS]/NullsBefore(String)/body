@@ -1,6 +1,0 @@
-{
-  if (justAfterNull == null) {
-    throw new NullPointerException();
-  }
-  this.justAfterNull=justAfterNull;
-}

@@ -1,5 +1,0 @@
-{
-  List<byte[]> ordered=Arrays.asList(new byte[]{},new byte[]{LEAST},new byte[]{LEAST,LEAST},new byte[]{LEAST,(byte)1},new byte[]{(byte)1},new byte[]{(byte)1,LEAST},new byte[]{GREATEST,GREATEST - (byte)1},new byte[]{GREATEST,GREATEST},new byte[]{GREATEST,GREATEST,GREATEST});
-  Comparator<byte[]> comparator=SignedBytes.lexicographicalComparator();
-  Helpers.testComparator(comparator,ordered);
-}

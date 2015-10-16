@@ -1,4 +1,0 @@
-{
-  super.setUp();
-  aggregateFutureLogger.addHandler(aggregateFutureLogHandler);
-}

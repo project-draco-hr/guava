@@ -1,5 +1,0 @@
-{
-  checkNotNull(iterators,"iterators");
-  checkNotNull(comparator,"comparator");
-  return new MergingIterator<T>(iterators,comparator);
-}

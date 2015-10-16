@@ -1,9 +1,0 @@
-{
-  TreeMap<Derived,Integer> map=Maps.newTreeMap();
-  assertEquals(Collections.emptyMap(),map);
-  map.put(new Derived("foo"),1);
-  map.put(new Derived("bar"),2);
-  assertThat(map.keySet()).containsExactly(new Derived("bar"),new Derived("foo")).inOrder();
-  assertThat(map.values()).containsExactly(2,1).inOrder();
-  assertNull(map.comparator());
-}

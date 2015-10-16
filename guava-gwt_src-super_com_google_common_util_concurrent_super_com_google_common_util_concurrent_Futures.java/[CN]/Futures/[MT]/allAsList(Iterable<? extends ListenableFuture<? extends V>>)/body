@@ -1,3 +1,0 @@
-{
-  return new ListFuture<V>(ImmutableList.copyOf(futures),true);
-}

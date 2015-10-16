@@ -1,8 +1,0 @@
-{
-  try {
-    collection.addAll(null);
-    fail("addAll(null) should throw NullPointerException");
-  }
- catch (  NullPointerException expected) {
-  }
-}

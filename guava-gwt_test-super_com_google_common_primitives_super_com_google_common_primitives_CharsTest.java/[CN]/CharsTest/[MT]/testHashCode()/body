@@ -1,5 +1,0 @@
-{
-  for (  char value : VALUES) {
-    assertEquals(((Character)value).hashCode(),Chars.hashCode(value));
-  }
-}

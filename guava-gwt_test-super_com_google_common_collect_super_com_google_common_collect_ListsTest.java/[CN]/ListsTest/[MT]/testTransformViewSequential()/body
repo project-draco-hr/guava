@@ -1,5 +1,0 @@
-{
-  List<Integer> fromList=Lists.newLinkedList(SOME_SEQUENTIAL_LIST);
-  List<String> toList=Lists.transform(fromList,SOME_FUNCTION);
-  assertTransformView(fromList,toList);
-}

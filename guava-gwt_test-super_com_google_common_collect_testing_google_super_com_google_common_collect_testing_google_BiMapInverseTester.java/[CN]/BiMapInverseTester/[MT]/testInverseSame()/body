@@ -1,3 +1,0 @@
-{
-  assertSame(getMap(),getMap().inverse().inverse());
-}

@@ -1,4 +1,0 @@
-{
-  assertEquals(MediaType.parse("text/plain; charset=utf-8"),MediaType.parse("text/plain").withCharset(UTF_8));
-  assertEquals(MediaType.parse("text/plain; charset=utf-8"),MediaType.parse("text/plain; charset=utf-16").withCharset(UTF_8));
-}

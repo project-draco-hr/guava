@@ -1,3 +1,0 @@
-{
-  return copyToList(Arrays.asList(elements));
-}

@@ -1,4 +1,0 @@
-{
-  assertEquals(0xffffffffffffffffL,UnsignedLongs.parseUnsignedLong("ffffffffffffffff",16));
-  assertEquals(0x1234567890abcdefL,UnsignedLongs.parseUnsignedLong("1234567890abcdef",16));
-}

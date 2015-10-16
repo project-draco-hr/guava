@@ -1,3 +1,0 @@
-{
-  return a.length() - b.length();
-}

@@ -1,3 +1,0 @@
-{
-  return (valueComparator == null) ? new ImmutableSet.Builder<V>() : new ImmutableSortedSet.Builder<V>(valueComparator);
-}

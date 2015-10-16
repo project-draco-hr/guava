@@ -1,3 +1,0 @@
-{
-  return NEGATIVE_INFINITY < value & value < POSITIVE_INFINITY;
-}

@@ -1,3 +1,0 @@
-{
-  return value / 10 - o.value / 10;
-}

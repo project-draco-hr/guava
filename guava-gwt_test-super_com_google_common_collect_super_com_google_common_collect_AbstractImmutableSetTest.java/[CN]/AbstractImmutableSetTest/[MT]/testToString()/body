@@ -1,4 +1,0 @@
-{
-  Set<String> set=of("a","b","c","d","e","f","g");
-  assertEquals("[a, b, c, d, e, f, g]",set.toString());
-}

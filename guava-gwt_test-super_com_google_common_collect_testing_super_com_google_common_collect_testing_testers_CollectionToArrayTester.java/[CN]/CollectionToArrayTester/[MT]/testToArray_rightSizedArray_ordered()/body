@@ -1,5 +1,0 @@
-{
-  E[] array=getSubjectGenerator().createArray(getNumElements());
-  assertSame("toArray(sameSizeE[]) should return the given array",array,collection.toArray(array));
-  expectArrayContentsInOrder(getOrderedElements(),array);
-}

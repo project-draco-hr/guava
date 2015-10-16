@@ -1,7 +1,0 @@
-{
-  TreeSet<LegacyComparable> set=Sets.newTreeSet();
-  assertTrue(set.isEmpty());
-  set.add(new LegacyComparable("foo"));
-  set.add(new LegacyComparable("bar"));
-  assertThat(set).containsExactly(new LegacyComparable("bar"),new LegacyComparable("foo")).inOrder();
-}

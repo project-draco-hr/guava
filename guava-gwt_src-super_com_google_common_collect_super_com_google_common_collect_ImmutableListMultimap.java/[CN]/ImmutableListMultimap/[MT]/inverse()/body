@@ -1,4 +1,0 @@
-{
-  ImmutableListMultimap<V,K> result=inverse;
-  return (result == null) ? (inverse=invert()) : result;
-}

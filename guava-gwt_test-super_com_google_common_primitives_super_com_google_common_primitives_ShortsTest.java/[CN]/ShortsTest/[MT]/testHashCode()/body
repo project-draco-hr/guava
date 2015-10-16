@@ -1,5 +1,0 @@
-{
-  for (  short value : VALUES) {
-    assertEquals(((Short)value).hashCode(),Shorts.hashCode(value));
-  }
-}

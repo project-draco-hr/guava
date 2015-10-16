@@ -1,3 +1,0 @@
-{
-  return anyOf(sequence).negate();
-}

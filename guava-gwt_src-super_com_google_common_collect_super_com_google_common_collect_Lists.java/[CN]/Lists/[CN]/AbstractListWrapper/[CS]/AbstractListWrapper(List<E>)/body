@@ -1,3 +1,0 @@
-{
-  this.backingList=checkNotNull(backingList);
-}

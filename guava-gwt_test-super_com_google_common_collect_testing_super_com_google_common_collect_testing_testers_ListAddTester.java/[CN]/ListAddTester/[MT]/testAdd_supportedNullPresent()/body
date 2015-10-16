@@ -1,8 +1,0 @@
-{
-  E[] array=createArrayWithNullElement();
-  collection=getSubjectGenerator().create(array);
-  assertTrue("add(nullPresent) should return true",getList().add(null));
-  List<E> expected=Helpers.copyToList(array);
-  expected.add(null);
-  expectContents(expected);
-}

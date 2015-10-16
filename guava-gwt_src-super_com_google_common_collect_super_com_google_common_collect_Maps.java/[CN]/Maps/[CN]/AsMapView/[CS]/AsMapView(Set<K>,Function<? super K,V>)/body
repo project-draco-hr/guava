@@ -1,4 +1,0 @@
-{
-  this.set=checkNotNull(set);
-  this.function=checkNotNull(function);
-}

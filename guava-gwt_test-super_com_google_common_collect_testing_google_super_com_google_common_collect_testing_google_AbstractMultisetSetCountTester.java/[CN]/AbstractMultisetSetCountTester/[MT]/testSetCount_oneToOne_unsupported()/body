@@ -1,7 +1,0 @@
-{
-  try {
-    assertOneToOne();
-  }
- catch (  UnsupportedOperationException tolerated) {
-  }
-}

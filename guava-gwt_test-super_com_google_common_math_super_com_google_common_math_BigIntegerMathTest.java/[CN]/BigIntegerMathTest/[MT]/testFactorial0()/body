@@ -1,3 +1,0 @@
-{
-  assertEquals(BigInteger.ONE,BigIntegerMath.factorial(0));
-}

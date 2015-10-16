@@ -1,3 +1,0 @@
-{
-  return alphabet.charsPerChunk * divide(bytes,alphabet.bytesPerChunk,CEILING);
-}

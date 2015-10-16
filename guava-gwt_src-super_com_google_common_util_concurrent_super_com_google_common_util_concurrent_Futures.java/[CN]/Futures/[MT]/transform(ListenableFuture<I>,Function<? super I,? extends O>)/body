@@ -1,3 +1,0 @@
-{
-  return AbstractTransformFuture.create(input,function);
-}

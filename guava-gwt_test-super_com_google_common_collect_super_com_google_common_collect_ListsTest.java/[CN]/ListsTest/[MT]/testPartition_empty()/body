@@ -1,6 +1,0 @@
-{
-  List<Integer> source=Collections.emptyList();
-  List<List<Integer>> partitions=Lists.partition(source,1);
-  assertTrue(partitions.isEmpty());
-  assertEquals(0,partitions.size());
-}

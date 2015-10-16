@@ -1,3 +1,0 @@
-{
-  return uniqueIndex(values.iterator(),keyFunction);
-}

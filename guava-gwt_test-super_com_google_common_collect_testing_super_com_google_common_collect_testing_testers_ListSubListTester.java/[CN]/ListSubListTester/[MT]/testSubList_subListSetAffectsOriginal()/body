@@ -1,7 +1,0 @@
-{
-  List<E> subList=getList().subList(0,1);
-  subList.set(0,e3());
-  List<E> expected=Helpers.copyToList(createSamplesArray());
-  expected.set(0,e3());
-  expectContents(expected);
-}

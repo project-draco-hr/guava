@@ -1,8 +1,0 @@
-{
-  Short[] array=new Short[elements.length];
-  short i=0;
-  for (  Object e : elements) {
-    array[i++]=(Short)e;
-  }
-  return create(array);
-}

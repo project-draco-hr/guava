@@ -1,4 +1,0 @@
-boolean allowsNullValues
-boolean supportsRemove
-boolean supportsClear
-boolean supportsIteratorRemove

@@ -1,3 +1,0 @@
-{
-  return Ordering.natural().onResultOf(CharAtFunction.values()[index]);
-}

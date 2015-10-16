@@ -1,7 +1,0 @@
-{
-  assertEquals("yoho",is('a').replaceFrom("yaha",'o'));
-  assertEquals("yh",is('a').replaceFrom("yaha",""));
-  assertEquals("yoho",is('a').replaceFrom("yaha","o"));
-  assertEquals("yoohoo",is('a').replaceFrom("yaha","oo"));
-  assertEquals("12 &gt; 5",is('>').replaceFrom("12 > 5","&gt;"));
-}

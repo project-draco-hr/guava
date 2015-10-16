@@ -1,6 +1,0 @@
-{
-  ImmutableSet<String> set=this.<String>builder().add("a").add("a","a").add("a","a","a").add("a","a","a","a").build();
-  assertTrue(set.contains("a"));
-  assertFalse(set.contains("b"));
-  assertEquals(1,set.size());
-}

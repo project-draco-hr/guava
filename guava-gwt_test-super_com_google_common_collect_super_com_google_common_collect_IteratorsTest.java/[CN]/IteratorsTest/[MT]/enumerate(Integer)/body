@@ -1,5 +1,0 @@
-{
-  Vector<Integer> vector=new Vector<Integer>();
-  vector.addAll(asList(ints));
-  return vector.elements();
-}

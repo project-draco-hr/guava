@@ -1,3 +1,0 @@
-{
-  return new FilteredMapValues<K,V>(this,unfiltered,predicate);
-}

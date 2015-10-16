@@ -1,4 +1,0 @@
-{
-  long sqrtMaxLong=(long)Math.sqrt(Long.MAX_VALUE);
-  assertTrue(sqrtMaxLong <= LongMath.FLOOR_SQRT_MAX_LONG);
-}

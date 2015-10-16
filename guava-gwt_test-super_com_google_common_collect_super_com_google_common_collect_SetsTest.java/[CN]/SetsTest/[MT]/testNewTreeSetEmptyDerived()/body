@@ -1,7 +1,0 @@
-{
-  TreeSet<Derived> set=Sets.newTreeSet();
-  assertTrue(set.isEmpty());
-  set.add(new Derived("foo"));
-  set.add(new Derived("bar"));
-  assertThat(set).containsExactly(new Derived("bar"),new Derived("foo")).inOrder();
-}

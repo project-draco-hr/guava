@@ -1,5 +1,0 @@
-{
-  Comparator<String> comparator=createExplicitComparator(elements);
-  ImmutableSet<String> set=ImmutableSortedSet.copyOf(comparator,Arrays.asList(elements));
-  return set.asList();
-}

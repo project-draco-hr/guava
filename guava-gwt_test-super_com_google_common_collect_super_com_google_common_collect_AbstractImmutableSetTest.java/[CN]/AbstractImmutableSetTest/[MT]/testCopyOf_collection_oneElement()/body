@@ -1,5 +1,0 @@
-{
-  Collection<String> c=MinimalCollection.of("a");
-  Set<String> set=copyOf(c);
-  assertEquals(Collections.singleton("a"),set);
-}

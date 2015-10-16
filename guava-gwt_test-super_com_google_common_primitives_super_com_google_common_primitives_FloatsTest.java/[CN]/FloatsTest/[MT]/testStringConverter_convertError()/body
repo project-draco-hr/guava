@@ -1,8 +1,0 @@
-{
-  try {
-    Floats.stringConverter().convert("notanumber");
-    fail();
-  }
- catch (  NumberFormatException expected) {
-  }
-}

@@ -1,6 +1,0 @@
-{
-  ArrayList<Integer> list=Lists.newArrayListWithExpectedSize(0);
-  assertEquals(Collections.emptyList(),list);
-  ArrayList<Integer> bigger=Lists.newArrayListWithExpectedSize(256);
-  assertEquals(Collections.emptyList(),bigger);
-}

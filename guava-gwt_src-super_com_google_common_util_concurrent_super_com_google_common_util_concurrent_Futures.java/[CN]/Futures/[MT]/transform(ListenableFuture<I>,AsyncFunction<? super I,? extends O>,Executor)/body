@@ -1,3 +1,0 @@
-{
-  return transformAsync(input,function,executor);
-}

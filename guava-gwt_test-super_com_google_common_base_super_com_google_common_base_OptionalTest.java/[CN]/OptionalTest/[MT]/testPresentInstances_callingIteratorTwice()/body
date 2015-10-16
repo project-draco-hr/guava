@@ -1,6 +1,0 @@
-{
-  List<Optional<String>> optionals=ImmutableList.of(Optional.of("a"),Optional.<String>absent(),Optional.of("c"));
-  Iterable<String> onlyPresent=Optional.presentInstances(optionals);
-  assertThat(onlyPresent).containsExactly("a","c").inOrder();
-  assertThat(onlyPresent).containsExactly("a","c").inOrder();
-}

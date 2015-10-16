@@ -1,6 +1,0 @@
-{
-  Iterator<Integer> source=asList(1,2,3).iterator();
-  Iterator<List<Integer>> partitions=Iterators.paddedPartition(source,2);
-  assertTrue(partitions.next() instanceof RandomAccess);
-  assertTrue(partitions.next() instanceof RandomAccess);
-}

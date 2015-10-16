@@ -1,5 +1,0 @@
-{
-  List<Integer> fromList=Lists.newArrayList(SOME_LIST);
-  List<String> list=Lists.transform(fromList,SOME_FUNCTION);
-  assertTransformListIterator(list);
-}

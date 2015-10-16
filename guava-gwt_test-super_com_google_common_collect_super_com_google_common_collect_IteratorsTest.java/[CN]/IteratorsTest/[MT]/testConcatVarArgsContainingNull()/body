@@ -1,8 +1,0 @@
-{
-  try {
-    Iterators.concat(iterateOver(1,2),null,iterateOver(3),iterateOver(4),iterateOver(5));
-    fail("no exception thrown");
-  }
- catch (  NullPointerException e) {
-  }
-}

@@ -1,6 +1,0 @@
-{
-  List<Integer> result=numberOrdering.leastOf(Arrays.asList(3,4,5,-1),1);
-  assertTrue(result instanceof RandomAccess);
-  assertListImmutable(result);
-  assertEquals(ImmutableList.of(-1),result);
-}

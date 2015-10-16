@@ -1,9 +1,0 @@
-{
-  Iterable<Integer> source=Collections.singleton(1);
-  try {
-    Iterables.partition(source,0);
-    fail();
-  }
- catch (  IllegalArgumentException expected) {
-  }
-}

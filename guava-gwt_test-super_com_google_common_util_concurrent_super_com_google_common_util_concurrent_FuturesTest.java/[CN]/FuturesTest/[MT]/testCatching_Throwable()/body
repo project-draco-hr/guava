@@ -1,6 +1,0 @@
-{
-  Function<Throwable,Integer> fallback=functionReturningOne();
-  ListenableFuture<Integer> originalFuture=immediateFailedFuture(new IOException());
-  ListenableFuture<Integer> faultTolerantFuture=Futures.catching(originalFuture,Throwable.class,fallback);
-  assertEquals(1,(int)faultTolerantFuture.get());
-}

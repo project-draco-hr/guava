@@ -1,4 +1,0 @@
-{
-  sort(insertionOrder,Helpers.<K,V>entryComparator(NATURAL_ORDER));
-  return insertionOrder;
-}

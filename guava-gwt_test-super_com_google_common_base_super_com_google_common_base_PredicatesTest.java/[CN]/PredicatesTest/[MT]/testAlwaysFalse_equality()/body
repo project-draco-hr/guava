@@ -1,3 +1,0 @@
-{
-  new EqualsTester().addEqualityGroup(FALSE,Predicates.alwaysFalse()).addEqualityGroup(isOdd()).addEqualityGroup(Predicates.alwaysTrue()).testEquals();
-}

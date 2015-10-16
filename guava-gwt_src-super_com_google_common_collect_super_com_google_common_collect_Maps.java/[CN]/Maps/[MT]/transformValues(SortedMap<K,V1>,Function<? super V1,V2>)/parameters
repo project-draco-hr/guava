@@ -1,2 +1,0 @@
-SortedMap<K,V1> fromMap
-Function<? super V1,V2> function

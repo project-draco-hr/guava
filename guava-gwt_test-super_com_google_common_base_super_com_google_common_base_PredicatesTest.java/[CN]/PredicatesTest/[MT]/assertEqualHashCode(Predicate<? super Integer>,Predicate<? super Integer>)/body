@@ -1,3 +1,0 @@
-{
-  assertEquals(actual + " should hash like " + expected,expected.hashCode(),actual.hashCode());
-}

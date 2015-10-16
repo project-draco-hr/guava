@@ -1,8 +1,0 @@
-{
-  try {
-    assertFalse("add(present) should return false or throw",collection.add(e0()));
-  }
- catch (  UnsupportedOperationException tolerated) {
-  }
-  expectUnchanged();
-}

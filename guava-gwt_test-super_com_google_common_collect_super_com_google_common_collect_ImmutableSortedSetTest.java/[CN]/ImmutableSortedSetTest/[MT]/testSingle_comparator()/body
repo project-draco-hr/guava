@@ -1,4 +1,0 @@
-{
-  SortedSet<String> set=of("e");
-  assertSame(Ordering.natural(),set.comparator());
-}

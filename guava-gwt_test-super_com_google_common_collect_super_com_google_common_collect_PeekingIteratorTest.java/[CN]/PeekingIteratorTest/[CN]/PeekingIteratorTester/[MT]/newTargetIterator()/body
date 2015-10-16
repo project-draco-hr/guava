@@ -1,5 +1,0 @@
-{
-  targetList=Lists.newArrayList(master);
-  Iterator<T> iterator=targetList.iterator();
-  return Iterators.peekingIterator(iterator);
-}

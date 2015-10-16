@@ -1,4 +1,0 @@
-{
-  assertSame(comparator,set.comparator());
-  verifySetContents(set,iterable);
-}

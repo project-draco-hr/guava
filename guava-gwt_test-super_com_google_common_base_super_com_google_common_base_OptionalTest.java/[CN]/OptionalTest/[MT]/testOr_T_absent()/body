@@ -1,3 +1,0 @@
-{
-  assertEquals("default",Optional.absent().or("default"));
-}

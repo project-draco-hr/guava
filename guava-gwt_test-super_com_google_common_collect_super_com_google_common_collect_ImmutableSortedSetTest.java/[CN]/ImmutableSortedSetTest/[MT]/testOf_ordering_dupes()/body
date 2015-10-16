@@ -1,4 +1,0 @@
-{
-  SortedSet<String> set=of("e","a","e","f","b","b","d","a","c");
-  assertThat(set).containsExactly("a","b","c","d","e","f").inOrder();
-}

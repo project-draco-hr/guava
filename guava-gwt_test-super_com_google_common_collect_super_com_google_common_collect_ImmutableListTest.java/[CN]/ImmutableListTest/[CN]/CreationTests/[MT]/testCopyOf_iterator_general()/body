@@ -1,5 +1,0 @@
-{
-  Iterator<String> iterator=asList("a","b","a").iterator();
-  List<String> list=ImmutableList.copyOf(iterator);
-  assertEquals(asList("a","b","a"),list);
-}

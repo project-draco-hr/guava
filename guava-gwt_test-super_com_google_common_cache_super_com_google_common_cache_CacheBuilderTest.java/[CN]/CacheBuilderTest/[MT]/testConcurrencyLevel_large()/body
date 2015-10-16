@@ -1,3 +1,0 @@
-{
-  CacheBuilder.newBuilder().concurrencyLevel(Integer.MAX_VALUE);
-}

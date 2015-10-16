@@ -1,4 +1,0 @@
-{
-  Optional<String> optionalName=Optional.fromNullable("bob");
-  assertEquals("bob",optionalName.get());
-}

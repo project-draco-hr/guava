@@ -1,3 +1,0 @@
-{
-  return WHITESPACE.trimFrom(string);
-}

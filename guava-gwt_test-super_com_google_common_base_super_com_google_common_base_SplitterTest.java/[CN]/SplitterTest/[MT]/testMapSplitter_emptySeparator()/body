@@ -1,8 +1,0 @@
-{
-  try {
-    COMMA_SPLITTER.withKeyValueSeparator("");
-    fail();
-  }
- catch (  IllegalArgumentException expected) {
-  }
-}

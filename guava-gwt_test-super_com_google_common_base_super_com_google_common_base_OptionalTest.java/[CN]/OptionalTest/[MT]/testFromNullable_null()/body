@@ -1,3 +1,0 @@
-{
-  assertSame(Optional.absent(),Optional.fromNullable(null));
-}

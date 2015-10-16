@@ -1,8 +1,0 @@
-{
-  assertSame(CharMatcher.any(),CharMatcher.none().negate());
-  assertSame(CharMatcher.none(),CharMatcher.any().negate());
-  assertSame(WHATEVER,CharMatcher.any().and(WHATEVER));
-  assertSame(CharMatcher.any(),CharMatcher.any().or(WHATEVER));
-  assertSame(CharMatcher.none(),CharMatcher.none().and(WHATEVER));
-  assertSame(WHATEVER,CharMatcher.none().or(WHATEVER));
-}

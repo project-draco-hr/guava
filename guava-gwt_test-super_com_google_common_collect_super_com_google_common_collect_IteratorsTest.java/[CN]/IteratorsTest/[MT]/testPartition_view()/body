@@ -1,8 +1,0 @@
-{
-  List<Integer> list=asList(1,2);
-  Iterator<List<Integer>> partitions=Iterators.partition(list.iterator(),1);
-  list.set(0,3);
-  List<Integer> first=partitions.next();
-  list.set(0,4);
-  assertEquals(ImmutableList.of(3),first);
-}

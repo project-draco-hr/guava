@@ -1,3 +1,0 @@
-{
-  return right != null && Range.compareOrThrow(left,right) == 0;
-}

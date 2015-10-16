@@ -1,4 +1,0 @@
-{
-  assertEquals("foo",LOWER_UNDERSCORE.to(LOWER_HYPHEN,"foo"));
-  assertEquals("foo-bar",LOWER_UNDERSCORE.to(LOWER_HYPHEN,"foo_bar"));
-}

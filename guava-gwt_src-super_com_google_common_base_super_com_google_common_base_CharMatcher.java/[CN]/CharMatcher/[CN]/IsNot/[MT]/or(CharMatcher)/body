@@ -1,3 +1,0 @@
-{
-  return other.matches(match) ? any() : this;
-}

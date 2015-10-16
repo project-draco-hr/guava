@@ -1,7 +1,0 @@
-{
-  Iterator<String> unfiltered=Lists.newArrayList("foo","bar").iterator();
-  Iterator<String> filtered=Iterators.filter(unfiltered,Predicates.equalTo("foo"));
-  List<String> expected=Collections.singletonList("foo");
-  List<String> actual=Lists.newArrayList(filtered);
-  assertEquals(expected,actual);
-}

@@ -1,8 +1,0 @@
-{
-  try {
-    Splitter.fixedLength(0);
-    fail();
-  }
- catch (  IllegalArgumentException expected) {
-  }
-}

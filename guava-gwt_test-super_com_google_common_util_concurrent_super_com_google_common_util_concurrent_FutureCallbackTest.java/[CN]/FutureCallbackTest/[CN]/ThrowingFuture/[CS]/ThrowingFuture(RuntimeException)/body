@@ -1,4 +1,0 @@
-{
-  this.runtime=Preconditions.checkNotNull(e);
-  this.error=null;
-}

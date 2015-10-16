@@ -1,6 +1,0 @@
-{
-  SettableFuture<String> f=SettableFuture.create();
-  MockCallback callback=new MockCallback("foo");
-  Futures.addCallback(f,callback);
-  f.set("foo");
-}

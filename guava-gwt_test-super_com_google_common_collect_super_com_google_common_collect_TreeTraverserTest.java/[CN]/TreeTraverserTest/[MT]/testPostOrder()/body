@@ -1,4 +1,0 @@
-{
-  assertThat(iterationOrder(ADAPTER.postOrderTraversal(h))).isEqualTo("abcdefgh");
-  assertThat(binaryIterationOrder(BIN_ADAPTER.postOrderTraversal(bd))).isEqualTo("acbgfed");
-}

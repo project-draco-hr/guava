@@ -1,7 +1,0 @@
-{
-  for (int c=0; c <= Character.MAX_VALUE; c++) {
-    if (breakingWhitespace().matches((char)c)) {
-      assertTrue(Integer.toHexString(c),whitespace().matches((char)c));
-    }
-  }
-}

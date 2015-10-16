@@ -1,3 +1,0 @@
-{
-  return FloatConverter.INSTANCE;
-}

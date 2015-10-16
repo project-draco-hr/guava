@@ -1,8 +1,0 @@
-{
-  StringBuilder description=new StringBuilder("CharMatcher.anyOf(\"");
-  for (  char c : chars) {
-    description.append(showCharacter(c));
-  }
-  description.append("\")");
-  return description.toString();
-}

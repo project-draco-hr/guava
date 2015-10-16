@@ -1,8 +1,0 @@
-{
-  try {
-    UnsignedLongs.parseUnsignedLong("18446744073709551616");
-    fail();
-  }
- catch (  NumberFormatException expected) {
-  }
-}

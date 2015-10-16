@@ -1,7 +1,0 @@
-{
-  TreeBasedTable<String,String,String> table=TreeBasedTable.create();
-  table.put("a","b","c");
-  table.put("c","b","a");
-  table.put("a","a","d");
-  return table.row("b");
-}

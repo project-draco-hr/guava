@@ -1,4 +1,0 @@
-{
-  EnumSet<SomeEnum> copy=newEnumSet(Collections.<SomeEnum>emptySet(),SomeEnum.class);
-  assertEquals(EnumSet.noneOf(SomeEnum.class),copy);
-}

@@ -1,9 +1,0 @@
-{
-  Set<SomeEnum> set=Collections.emptySet();
-  try {
-    Sets.complementOf(set);
-    fail();
-  }
- catch (  IllegalArgumentException expected) {
-  }
-}

@@ -1,3 +1,0 @@
-{
-  return new FilteredEntrySortedMap<K,V>(sortedMap().headMap(toKey),predicate);
-}

@@ -1,5 +1,0 @@
-{
-  assertEquals(MIN_VALUE,Longs.max(MIN_VALUE));
-  assertEquals(MAX_VALUE,Longs.max(MAX_VALUE));
-  assertEquals((long)9,Longs.max((long)8,(long)6,(long)7,(long)5,(long)3,(long)0,(long)9));
-}

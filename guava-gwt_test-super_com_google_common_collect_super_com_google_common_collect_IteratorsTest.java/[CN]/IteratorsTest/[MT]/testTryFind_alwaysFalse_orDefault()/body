@@ -1,6 +1,0 @@
-{
-  Iterable<String> list=Lists.newArrayList("cool","pants");
-  Iterator<String> iterator=list.iterator();
-  assertEquals("woot",Iterators.tryFind(iterator,Predicates.alwaysFalse()).or("woot"));
-  assertFalse(iterator.hasNext());
-}

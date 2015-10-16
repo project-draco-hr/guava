@@ -1,9 +1,0 @@
-{
-  try {
-    Maps.uniqueIndex(ImmutableSet.of("one","uno"),Functions.constant(1));
-    fail();
-  }
- catch (  IllegalArgumentException expected) {
-    assertThat(expected.getMessage()).contains("Multimaps.index");
-  }
-}

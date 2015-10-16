@@ -1,3 +1,0 @@
-{
-  return map.entrySet().asList().get(index).getKey();
-}

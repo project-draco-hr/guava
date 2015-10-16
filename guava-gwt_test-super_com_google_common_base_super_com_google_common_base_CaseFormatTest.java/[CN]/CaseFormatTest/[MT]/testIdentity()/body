@@ -1,9 +1,0 @@
-{
-  for (  CaseFormat from : CaseFormat.values()) {
-    assertSame(from + " to " + from,"foo",from.to(from,"foo"));
-    for (    CaseFormat to : CaseFormat.values()) {
-      assertEquals(from + " to " + to,"",from.to(to,""));
-      assertEquals(from + " to " + to," ",from.to(to," "));
-    }
-  }
-}

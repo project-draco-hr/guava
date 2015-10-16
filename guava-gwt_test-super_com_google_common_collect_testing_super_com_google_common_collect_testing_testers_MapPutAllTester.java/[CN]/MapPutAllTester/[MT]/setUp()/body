@@ -1,5 +1,0 @@
-{
-  super.setUp();
-  containsNullKey=singletonList(entry(null,v3()));
-  containsNullValue=singletonList(entry(k3(),null));
-}

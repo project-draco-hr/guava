@@ -1,7 +1,0 @@
-{
-  SettableFuture<String> f=SettableFuture.create();
-  Exception e=new IllegalArgumentException("foo not found");
-  MockCallback callback=new MockCallback(e);
-  Futures.addCallback(f,callback);
-  f.setException(e);
-}

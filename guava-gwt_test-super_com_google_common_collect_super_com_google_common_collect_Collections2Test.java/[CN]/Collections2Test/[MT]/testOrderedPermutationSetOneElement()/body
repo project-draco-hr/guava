@@ -1,6 +1,0 @@
-{
-  List<Integer> list=newArrayList(1);
-  Iterator<List<Integer>> permutations=Collections2.orderedPermutations(list).iterator();
-  assertNextPermutation(newArrayList(1),permutations);
-  assertNoMorePermutations(permutations);
-}

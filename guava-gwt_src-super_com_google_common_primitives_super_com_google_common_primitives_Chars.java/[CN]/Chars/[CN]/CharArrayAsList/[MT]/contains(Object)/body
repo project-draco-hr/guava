@@ -1,3 +1,0 @@
-{
-  return (target instanceof Character) && Chars.indexOf(array,(Character)target,start,end) != -1;
-}

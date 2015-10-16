@@ -1,5 +1,0 @@
-{
-  ImmutableMap<String,Integer> copy=ImmutableMap.copyOf(Collections.<String,Integer>emptyMap());
-  assertEquals(Collections.<String,Integer>emptyMap(),copy);
-  assertSame(copy,ImmutableMap.copyOf(copy));
-}

@@ -1,5 +1,0 @@
-{
-  Converter<String,TestEnum> converter=Enums.stringConverter(TestEnum.class);
-  assertNull(converter.convert(null));
-  assertNull(converter.reverse().convert(null));
-}

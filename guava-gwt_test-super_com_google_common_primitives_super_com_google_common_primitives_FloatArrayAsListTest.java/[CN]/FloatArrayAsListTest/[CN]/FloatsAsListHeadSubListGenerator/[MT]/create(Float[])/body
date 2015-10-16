@@ -1,5 +1,0 @@
-{
-  Float[] suffix={Float.MIN_VALUE,Float.MAX_VALUE};
-  Float[] all=concat(elements,suffix);
-  return asList(all).subList(0,elements.length);
-}

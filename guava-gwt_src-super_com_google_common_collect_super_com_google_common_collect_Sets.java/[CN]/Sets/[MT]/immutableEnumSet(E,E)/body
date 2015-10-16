@@ -1,3 +1,0 @@
-{
-  return ImmutableEnumSet.asImmutable(EnumSet.of(anElement,otherElements));
-}

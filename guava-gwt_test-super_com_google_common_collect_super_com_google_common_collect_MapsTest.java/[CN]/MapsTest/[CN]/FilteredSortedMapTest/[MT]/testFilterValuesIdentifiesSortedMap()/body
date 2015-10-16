@@ -1,4 +1,0 @@
-{
-  SortedMap<String,Integer> map=createUnfiltered();
-  assertTrue(Maps.filterValues((Map<String,Integer>)map,EVEN) instanceof SortedMap);
-}

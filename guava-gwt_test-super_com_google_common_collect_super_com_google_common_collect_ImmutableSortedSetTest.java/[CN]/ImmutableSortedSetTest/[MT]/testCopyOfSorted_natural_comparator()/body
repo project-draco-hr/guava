@@ -1,5 +1,0 @@
-{
-  SortedSet<String> input=Sets.newTreeSet(asList("in","the","quick","jumped","over","a"));
-  SortedSet<String> set=ImmutableSortedSet.copyOfSorted(input);
-  assertSame(Ordering.natural(),set.comparator());
-}

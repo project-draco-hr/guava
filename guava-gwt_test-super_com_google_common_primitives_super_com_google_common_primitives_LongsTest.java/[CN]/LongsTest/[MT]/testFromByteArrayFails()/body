@@ -1,8 +1,0 @@
-{
-  try {
-    Longs.fromByteArray(new byte[Longs.BYTES - 1]);
-    fail();
-  }
- catch (  IllegalArgumentException expected) {
-  }
-}

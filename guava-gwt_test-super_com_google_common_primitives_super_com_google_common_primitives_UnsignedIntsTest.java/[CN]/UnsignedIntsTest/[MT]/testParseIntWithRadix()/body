@@ -1,7 +1,0 @@
-{
-  for (  long a : UNSIGNED_INTS) {
-    for (int radix=Character.MIN_RADIX; radix <= Character.MAX_RADIX; radix++) {
-      assertEquals((int)a,UnsignedInts.parseUnsignedInt(Long.toString(a,radix),radix));
-    }
-  }
-}

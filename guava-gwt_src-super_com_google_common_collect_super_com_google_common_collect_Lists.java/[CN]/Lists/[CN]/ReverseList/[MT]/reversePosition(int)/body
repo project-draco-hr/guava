@@ -1,5 +1,0 @@
-{
-  int size=size();
-  checkPositionIndex(index,size);
-  return size - index;
-}

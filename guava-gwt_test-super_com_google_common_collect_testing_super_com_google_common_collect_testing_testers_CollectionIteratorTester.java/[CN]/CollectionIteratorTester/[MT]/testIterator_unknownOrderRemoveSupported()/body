@@ -1,3 +1,0 @@
-{
-  runIteratorTest(MODIFIABLE,IteratorTester.KnownOrder.UNKNOWN_ORDER,getSampleElements());
-}

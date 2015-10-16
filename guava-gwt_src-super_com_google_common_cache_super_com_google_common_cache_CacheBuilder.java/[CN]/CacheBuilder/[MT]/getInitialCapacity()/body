@@ -1,3 +1,0 @@
-{
-  return (initialCapacity == UNSET_INT) ? DEFAULT_INITIAL_CAPACITY : initialCapacity;
-}

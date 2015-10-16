@@ -1,7 +1,0 @@
-{
-  testEncodesWithOffset(base16(),"foobar",0,6,"666F6F626172");
-  testEncodesWithOffset(base16(),"foobar",1,5,"6F6F626172");
-  testEncodesWithOffset(base16(),"foobar",2,3,"6F6261");
-  testEncodesWithOffset(base16(),"foobar",3,1,"62");
-  testEncodesWithOffset(base16(),"foobar",4,0,"");
-}

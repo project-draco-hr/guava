@@ -1,8 +1,0 @@
-{
-  for (  char c : chars) {
-    if (Ascii.isLowerCase(c)) {
-      return true;
-    }
-  }
-  return false;
-}

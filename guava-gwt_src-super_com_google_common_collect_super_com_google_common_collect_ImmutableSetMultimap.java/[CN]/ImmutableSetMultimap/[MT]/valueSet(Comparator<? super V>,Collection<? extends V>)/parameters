@@ -1,2 +1,0 @@
-Comparator<? super V> valueComparator
-Collection<? extends V> values

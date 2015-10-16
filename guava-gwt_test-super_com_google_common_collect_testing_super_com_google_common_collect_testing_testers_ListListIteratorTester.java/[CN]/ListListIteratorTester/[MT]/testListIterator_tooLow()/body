@@ -1,8 +1,0 @@
-{
-  try {
-    getList().listIterator(-1);
-    fail();
-  }
- catch (  IndexOutOfBoundsException expected) {
-  }
-}

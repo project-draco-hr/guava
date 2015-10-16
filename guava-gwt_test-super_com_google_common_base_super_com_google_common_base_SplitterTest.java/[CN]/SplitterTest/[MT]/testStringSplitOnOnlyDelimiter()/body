@@ -1,4 +1,0 @@
-{
-  Iterable<String> blankblank=Splitter.on('.').split(".");
-  assertThat(blankblank).containsExactly("","").inOrder();
-}

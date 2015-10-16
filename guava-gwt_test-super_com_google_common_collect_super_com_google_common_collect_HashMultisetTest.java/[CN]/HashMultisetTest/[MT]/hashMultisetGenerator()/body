@@ -1,8 +1,0 @@
-{
-  return new TestStringMultisetGenerator(){
-    @Override protected Multiset<String> create(    String[] elements){
-      return HashMultiset.create(asList(elements));
-    }
-  }
-;
-}

@@ -1,5 +1,0 @@
-{
-  FluentIterable<? extends Number> numbers=getSomeNumbers();
-  @SuppressWarnings("unchecked") Optional<Number> first=(Optional)numbers.first();
-  Number value=first.or(0.5);
-}

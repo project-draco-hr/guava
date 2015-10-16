@@ -1,8 +1,0 @@
-{
-  Predicate<Integer> p1=Predicates.isNull();
-  Predicate<Integer> p2=isOdd();
-  assertEqualHashCode(Predicates.not(p1),Predicates.not(p1));
-  assertEqualHashCode(Predicates.and(p1,p2),Predicates.and(p1,p2));
-  assertEqualHashCode(Predicates.or(p1,p2),Predicates.or(p1,p2));
-  assertTrue(Predicates.and(p1,p2).hashCode() != Predicates.or(p1,p2).hashCode());
-}

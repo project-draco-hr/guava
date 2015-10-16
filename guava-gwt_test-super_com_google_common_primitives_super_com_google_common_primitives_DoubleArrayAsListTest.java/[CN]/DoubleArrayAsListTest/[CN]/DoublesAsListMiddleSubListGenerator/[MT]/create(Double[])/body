@@ -1,6 +1,0 @@
-{
-  Double[] prefix={Double.MIN_VALUE,Double.MAX_VALUE};
-  Double[] suffix={(double)86,(double)99};
-  Double[] all=concat(concat(prefix,elements),suffix);
-  return asList(all).subList(2,elements.length + 2);
-}

@@ -1,4 +1,0 @@
-{
-  Iterable<String> set=iterable("a","b");
-  assertFalse(Iterables.contains(set,null));
-}

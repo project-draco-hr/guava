@@ -1,9 +1,0 @@
-{
-  Builder<String,Integer> builder=new Builder<String,Integer>();
-  try {
-    builder.putAll(Collections.<String,Integer>singletonMap("one",null));
-    fail();
-  }
- catch (  NullPointerException expected) {
-  }
-}

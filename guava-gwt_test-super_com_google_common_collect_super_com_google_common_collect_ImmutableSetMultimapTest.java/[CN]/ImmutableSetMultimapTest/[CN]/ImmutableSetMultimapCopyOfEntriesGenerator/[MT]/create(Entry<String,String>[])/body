@@ -1,3 +1,0 @@
-{
-  return ImmutableSetMultimap.copyOf(Arrays.asList(entries));
-}

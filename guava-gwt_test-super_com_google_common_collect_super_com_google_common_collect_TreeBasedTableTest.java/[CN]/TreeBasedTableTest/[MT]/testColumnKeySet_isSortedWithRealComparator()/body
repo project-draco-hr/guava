@@ -1,4 +1,0 @@
-{
-  table=create(String.CASE_INSENSITIVE_ORDER,Ordering.natural().reverse(),"a",2,'X',"a",2,'X',"b",3,'X',"b",2,'X',"c",10,'X',"c",10,'X',"c",20,'X',"d",15,'X',"d",20,'X',"d",1,'X',"e",5,'X');
-  assertEquals("[20, 15, 10, 5, 3, 2, 1]",table.columnKeySet().toString());
-}

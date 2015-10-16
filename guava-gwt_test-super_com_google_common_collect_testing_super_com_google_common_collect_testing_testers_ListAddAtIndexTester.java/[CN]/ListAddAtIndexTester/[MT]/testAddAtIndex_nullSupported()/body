@@ -1,4 +1,0 @@
-{
-  getList().add(0,null);
-  expectAdded(0,(E)null);
-}

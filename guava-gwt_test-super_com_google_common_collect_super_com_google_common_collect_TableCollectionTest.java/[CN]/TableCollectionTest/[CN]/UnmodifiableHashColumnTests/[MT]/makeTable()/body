@@ -1,4 +1,0 @@
-{
-  Table<String,Character,Integer> table=HashBasedTable.create();
-  return Tables.unmodifiableTable(table);
-}

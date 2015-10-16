@@ -1,3 +1,0 @@
-{
-  return "Enums.stringConverter(" + enumClass.getName() + ".class)";
-}

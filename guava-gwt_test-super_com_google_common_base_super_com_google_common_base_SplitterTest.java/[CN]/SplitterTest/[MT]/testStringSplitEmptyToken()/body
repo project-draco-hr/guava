@@ -1,5 +1,0 @@
-{
-  String emptyToken="a. .c";
-  Iterable<String> letters=Splitter.on('.').trimResults().split(emptyToken);
-  assertThat(letters).containsExactly("a","","c").inOrder();
-}

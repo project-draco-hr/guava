@@ -1,3 +1,0 @@
-{
-  return (o instanceof IntHolder) && ((IntHolder)o).value == value;
-}

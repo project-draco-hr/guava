@@ -1,7 +1,0 @@
-{
-  E[] empty=getSubjectGenerator().createArray(0);
-  E[] array=collection.toArray(empty);
-  assertEquals("toArray(emptyT[]) should return an array of type T",empty.getClass(),array.getClass());
-  assertEquals("toArray(emptyT[]).length:",getNumElements(),array.length);
-  expectArrayContentsAnyOrder(createSamplesArray(),array);
-}

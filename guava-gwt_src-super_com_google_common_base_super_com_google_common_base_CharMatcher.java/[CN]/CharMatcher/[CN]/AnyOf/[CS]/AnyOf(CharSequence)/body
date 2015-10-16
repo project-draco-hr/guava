@@ -1,4 +1,0 @@
-{
-  this.chars=chars.toString().toCharArray();
-  Arrays.sort(this.chars);
-}

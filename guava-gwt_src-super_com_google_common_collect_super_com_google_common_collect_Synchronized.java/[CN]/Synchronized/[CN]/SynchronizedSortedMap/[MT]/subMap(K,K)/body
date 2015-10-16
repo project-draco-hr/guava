@@ -1,5 +1,0 @@
-{
-synchronized (mutex) {
-    return sortedMap(delegate().subMap(fromKey,toKey),mutex);
-  }
-}

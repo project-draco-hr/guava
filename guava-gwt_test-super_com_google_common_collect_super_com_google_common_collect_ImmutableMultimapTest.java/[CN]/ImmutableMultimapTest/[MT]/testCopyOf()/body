@@ -1,8 +1,0 @@
-{
-  ImmutableSetMultimap<String,String> setMultimap=ImmutableSetMultimap.of("k1","v1");
-  ImmutableMultimap<String,String> setMultimapCopy=ImmutableMultimap.copyOf(setMultimap);
-  assertSame("copyOf(ImmutableSetMultimap) should not create a new instance",setMultimap,setMultimapCopy);
-  ImmutableListMultimap<String,String> listMultimap=ImmutableListMultimap.of("k1","v1");
-  ImmutableMultimap<String,String> listMultimapCopy=ImmutableMultimap.copyOf(listMultimap);
-  assertSame("copyOf(ImmutableListMultimap) should not create a new instance",listMultimap,listMultimapCopy);
-}

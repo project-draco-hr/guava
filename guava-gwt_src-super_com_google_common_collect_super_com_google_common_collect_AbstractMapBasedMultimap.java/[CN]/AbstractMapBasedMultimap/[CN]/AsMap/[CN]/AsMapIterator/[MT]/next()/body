@@ -1,5 +1,0 @@
-{
-  Map.Entry<K,Collection<V>> entry=delegateIterator.next();
-  collection=entry.getValue();
-  return wrapEntry(entry);
-}

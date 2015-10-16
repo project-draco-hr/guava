@@ -1,8 +1,0 @@
-{
-  assertEquals(multimap.size(),alternatingKeysAndValues.length / 2);
-  int i=0;
-  for (  Entry<K,V> entry : multimap.entries()) {
-    assertEquals(alternatingKeysAndValues[i++],entry.getKey());
-    assertEquals(alternatingKeysAndValues[i++],entry.getValue());
-  }
-}

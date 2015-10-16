@@ -1,3 +1,0 @@
-{
-  return new FilteredSortedSet<E>(((SortedSet<E>)unfiltered).headSet(toElement),predicate);
-}

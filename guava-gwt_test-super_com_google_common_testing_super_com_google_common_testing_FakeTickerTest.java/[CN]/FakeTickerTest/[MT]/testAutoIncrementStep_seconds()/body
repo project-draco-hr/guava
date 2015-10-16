@@ -1,6 +1,0 @@
-{
-  FakeTicker ticker=new FakeTicker().setAutoIncrementStep(3,TimeUnit.SECONDS);
-  assertEquals(0,ticker.read());
-  assertEquals(3000000000L,ticker.read());
-  assertEquals(6000000000L,ticker.read());
-}

@@ -1,6 +1,0 @@
-{
-  if (key == null) {
-    keyComparator().compare(key,key);
-  }
-  return super.createCollection(key);
-}

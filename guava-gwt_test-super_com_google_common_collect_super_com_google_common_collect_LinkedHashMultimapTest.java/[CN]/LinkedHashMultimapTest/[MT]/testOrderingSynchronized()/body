@@ -1,4 +1,0 @@
-{
-  Multimap<String,Integer> multimap=initializeMultimap5();
-  assertOrderingReadOnly(Multimaps.synchronizedMultimap(multimap));
-}

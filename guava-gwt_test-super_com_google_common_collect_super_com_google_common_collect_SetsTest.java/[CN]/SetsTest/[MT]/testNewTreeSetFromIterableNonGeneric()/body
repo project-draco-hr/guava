@@ -1,5 +1,0 @@
-{
-  Iterable<LegacyComparable> iterable=Arrays.asList(new LegacyComparable("foo"),new LegacyComparable("bar"));
-  TreeSet<LegacyComparable> set=Sets.newTreeSet(iterable);
-  assertThat(set).containsExactly(new LegacyComparable("bar"),new LegacyComparable("foo")).inOrder();
-}

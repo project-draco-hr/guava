@@ -1,4 +1,0 @@
-{
-  checkNotNull(other);
-  return this;
-}

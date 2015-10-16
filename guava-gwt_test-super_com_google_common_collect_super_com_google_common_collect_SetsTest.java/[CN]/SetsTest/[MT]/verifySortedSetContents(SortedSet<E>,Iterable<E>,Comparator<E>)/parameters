@@ -1,3 +1,0 @@
-SortedSet<E> set
-Iterable<E> iterable
-Comparator<E> comparator

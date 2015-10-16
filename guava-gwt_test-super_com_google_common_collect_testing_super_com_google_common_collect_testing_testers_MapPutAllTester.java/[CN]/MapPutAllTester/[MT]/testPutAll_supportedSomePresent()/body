@@ -1,4 +1,0 @@
-{
-  putAll(MinimalCollection.of(e3(),e0()));
-  expectAdded(e3());
-}

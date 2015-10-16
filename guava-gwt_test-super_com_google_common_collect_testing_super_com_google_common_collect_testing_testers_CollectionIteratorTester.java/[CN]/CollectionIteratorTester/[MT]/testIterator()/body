@@ -1,7 +1,0 @@
-{
-  List<E> iteratorElements=new ArrayList<E>();
-  for (  E element : collection) {
-    iteratorElements.add(element);
-  }
-  Helpers.assertEqualIgnoringOrder(Arrays.asList(createSamplesArray()),iteratorElements);
-}

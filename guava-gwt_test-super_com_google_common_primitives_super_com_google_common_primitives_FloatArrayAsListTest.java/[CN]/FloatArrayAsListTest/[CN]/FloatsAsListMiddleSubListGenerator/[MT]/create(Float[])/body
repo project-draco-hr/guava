@@ -1,6 +1,0 @@
-{
-  Float[] prefix={Float.MIN_VALUE,Float.MAX_VALUE};
-  Float[] suffix={(float)86,(float)99};
-  Float[] all=concat(concat(prefix,elements),suffix);
-  return asList(all).subList(2,elements.length + 2);
-}

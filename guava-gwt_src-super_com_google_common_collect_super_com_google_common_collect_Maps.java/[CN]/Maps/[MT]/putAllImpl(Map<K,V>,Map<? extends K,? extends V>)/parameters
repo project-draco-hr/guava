@@ -1,2 +1,0 @@
-Map<K,V> self
-Map<? extends K,? extends V> map

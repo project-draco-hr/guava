@@ -1,1 +1,0 @@
-Table<? extends R,? extends C,? extends V> table

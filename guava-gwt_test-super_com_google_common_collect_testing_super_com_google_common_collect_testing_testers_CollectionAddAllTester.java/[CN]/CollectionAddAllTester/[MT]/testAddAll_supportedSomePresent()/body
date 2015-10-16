@@ -1,5 +1,0 @@
-{
-  assertTrue("addAll(somePresent) should return true",collection.addAll(MinimalCollection.of(e3(),e0())));
-  assertTrue("should contain " + e3(),collection.contains(e3()));
-  assertTrue("should contain " + e0(),collection.contains(e0()));
-}

@@ -1,3 +1,0 @@
-{
-  EquivalenceTester.of(Equivalence.equals()).addEquivalenceGroup(new Integer(42),42).addEquivalenceGroup("a").test();
-}

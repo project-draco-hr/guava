@@ -1,4 +1,0 @@
-{
-  table=create("a",2,'X',"a",2,'X',"b",3,'X',"b",2,'X',"c",10,'X',"c",10,'X',"c",20,'X',"d",15,'X',"d",20,'X',"d",1,'X',"e",5,'X');
-  assertEquals("[1, 2, 3, 5, 10, 15, 20]",table.columnKeySet().toString());
-}

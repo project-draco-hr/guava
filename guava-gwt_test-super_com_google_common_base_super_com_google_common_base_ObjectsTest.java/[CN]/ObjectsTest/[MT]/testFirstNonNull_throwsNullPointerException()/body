@@ -1,8 +1,0 @@
-{
-  try {
-    Objects.firstNonNull(null,null);
-    fail("expected NullPointerException");
-  }
- catch (  NullPointerException expected) {
-  }
-}

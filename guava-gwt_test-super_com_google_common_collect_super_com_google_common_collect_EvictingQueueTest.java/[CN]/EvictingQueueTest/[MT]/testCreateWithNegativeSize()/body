@@ -1,8 +1,0 @@
-{
-  try {
-    EvictingQueue.create(-1);
-    fail();
-  }
- catch (  IllegalArgumentException expected) {
-  }
-}

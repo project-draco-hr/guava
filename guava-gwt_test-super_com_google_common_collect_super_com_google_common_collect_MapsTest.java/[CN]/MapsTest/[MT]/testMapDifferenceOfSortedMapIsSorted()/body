@@ -1,5 +1,0 @@
-{
-  Map<Integer,Integer> map=SORTED_SINGLETON;
-  MapDifference<Integer,Integer> difference=Maps.difference(map,EMPTY);
-  assertTrue(difference instanceof SortedMapDifference);
-}

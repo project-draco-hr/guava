@@ -1,6 +1,0 @@
-{
-  FutureFallback<Integer> fallback=unexpectedFallback();
-  ListenableFuture<Integer> originalFuture=Futures.immediateFuture(7);
-  ListenableFuture<Integer> faultToleranteFuture=Futures.withFallback(originalFuture,fallback);
-  assertEquals(7,faultToleranteFuture.get().intValue());
-}

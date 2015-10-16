@@ -1,9 +1,0 @@
-{
-  Multiset<String> multiset=ImmutableMultiset.of("a","b","a","c","b","a");
-  assertEquals(3,Iterables.frequency(multiset,"a"));
-  assertEquals(2,Iterables.frequency(multiset,"b"));
-  assertEquals(1,Iterables.frequency(multiset,"c"));
-  assertEquals(0,Iterables.frequency(multiset,"d"));
-  assertEquals(0,Iterables.frequency(multiset,4.2));
-  assertEquals(0,Iterables.frequency(multiset,null));
-}

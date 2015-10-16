@@ -1,6 +1,0 @@
-{
-  ImmutableBiMap<String,Integer> copy=ImmutableBiMap.copyOf(Collections.<String,Integer>emptyMap());
-  assertEquals(Collections.<String,Integer>emptyMap(),copy);
-  assertSame(copy,ImmutableBiMap.copyOf(copy));
-  assertSame(ImmutableBiMap.of(),copy);
-}

@@ -1,3 +1,0 @@
-{
-  assertEquals(expected,powerSet(elements).hashCode());
-}

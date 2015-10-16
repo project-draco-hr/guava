@@ -1,5 +1,0 @@
-{
-  Predicate<Integer> notNull=Predicates.notNull();
-  assertFalse(notNull.apply(null));
-  assertTrue(notNull.apply(1));
-}

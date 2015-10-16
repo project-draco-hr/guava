@@ -1,3 +1,0 @@
-{
-  checkArrayEquals(new Long[5],ObjectArrays.newArray(new Long[0],5));
-}

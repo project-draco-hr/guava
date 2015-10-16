@@ -1,3 +1,0 @@
-{
-  assertSame("x",Strings.padEnd("x",-1,'-'));
-}

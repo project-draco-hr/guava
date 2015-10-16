@@ -1,5 +1,0 @@
-{
-  Float[] prefix={(float)86,(float)99};
-  Float[] all=concat(prefix,elements);
-  return asList(all).subList(2,elements.length + 2);
-}

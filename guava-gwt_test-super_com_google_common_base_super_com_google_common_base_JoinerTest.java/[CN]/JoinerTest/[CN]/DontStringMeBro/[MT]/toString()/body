@@ -1,3 +1,0 @@
-{
-  throw new AssertionFailedError("shouldn't be invoked");
-}

@@ -1,5 +1,0 @@
-{
-  table=ArrayTable.create(ImmutableList.of("foo"),ImmutableList.of(1));
-  table.put("foo",1,'a');
-  assertEquals("{foo={1=a}}",table.toString());
-}

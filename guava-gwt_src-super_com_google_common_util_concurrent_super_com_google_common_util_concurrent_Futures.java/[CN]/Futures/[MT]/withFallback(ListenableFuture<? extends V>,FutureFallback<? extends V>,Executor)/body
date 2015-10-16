@@ -1,3 +1,0 @@
-{
-  return catchingAsync(input,Throwable.class,asAsyncFunction(fallback),executor);
-}

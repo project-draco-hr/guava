@@ -1,9 +1,0 @@
-{
-  try {
-    getList().set(aValidIndex(),e3());
-    fail("set() should throw UnsupportedOperationException");
-  }
- catch (  UnsupportedOperationException expected) {
-  }
-  expectUnchanged();
-}

@@ -1,4 +1,0 @@
-{
-  assertEquals("Foo",LOWER_HYPHEN.to(UPPER_CAMEL,"foo"));
-  assertEquals("FooBar",LOWER_HYPHEN.to(UPPER_CAMEL,"foo-bar"));
-}

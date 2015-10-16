@@ -1,4 +1,0 @@
-{
-  TreeSet<Integer> set=Sets.newTreeSet(SOME_COMPARATOR);
-  verifySortedSetContents(set,EMPTY_COLLECTION,SOME_COMPARATOR);
-}

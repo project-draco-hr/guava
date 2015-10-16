@@ -1,5 +1,0 @@
-{
-  Iterable<Integer> iterable0=ImmutableList.of(1,2,3);
-  Iterable<Iterable<Integer>> iterables=ImmutableList.of(iterable0);
-  verifyMergeSorted(iterables,iterable0);
-}

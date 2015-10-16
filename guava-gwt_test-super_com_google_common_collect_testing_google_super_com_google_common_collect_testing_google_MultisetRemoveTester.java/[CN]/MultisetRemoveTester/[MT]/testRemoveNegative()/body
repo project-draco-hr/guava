@@ -1,9 +1,0 @@
-{
-  try {
-    getMultiset().remove(e0(),-1);
-    fail("Expected IllegalArgumentException");
-  }
- catch (  IllegalArgumentException expected) {
-  }
-  expectUnchanged();
-}

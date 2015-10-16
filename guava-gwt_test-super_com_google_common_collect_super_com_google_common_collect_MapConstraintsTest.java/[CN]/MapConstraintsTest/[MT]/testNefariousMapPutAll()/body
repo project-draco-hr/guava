@@ -1,7 +1,0 @@
-{
-  Map<String,Integer> map=Maps.newLinkedHashMap();
-  Map<String,Integer> constrained=MapConstraints.constrainedMap(map,TEST_CONSTRAINT);
-  Map<String,Integer> onceIterable=onceIterableMap("foo",1);
-  constrained.putAll(onceIterable);
-  assertEquals((Integer)1,constrained.get("foo"));
-}

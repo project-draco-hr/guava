@@ -1,8 +1,0 @@
-{
-  @SuppressWarnings("unchecked") ImmutableSortedSet.Builder<LegacyComparable> builder=ImmutableSortedSet.<LegacyComparable>reverseOrder();
-  builder.addAll(LegacyComparable.VALUES_FORWARD);
-  builder.add(LegacyComparable.X);
-  builder.add(LegacyComparable.Y,LegacyComparable.Z);
-  ImmutableSortedSet<LegacyComparable> set=builder.build();
-  assertTrue(Iterables.elementsEqual(LegacyComparable.VALUES_BACKWARD,set));
-}

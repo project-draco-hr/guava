@@ -1,6 +1,0 @@
-{
-  if (value != expected) {
-    throw new ConcurrentModificationException();
-  }
-  value=newValue;
-}

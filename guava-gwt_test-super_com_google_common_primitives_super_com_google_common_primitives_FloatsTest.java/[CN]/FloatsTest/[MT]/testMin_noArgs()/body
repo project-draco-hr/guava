@@ -1,8 +1,0 @@
-{
-  try {
-    Floats.min();
-    fail();
-  }
- catch (  IllegalArgumentException expected) {
-  }
-}

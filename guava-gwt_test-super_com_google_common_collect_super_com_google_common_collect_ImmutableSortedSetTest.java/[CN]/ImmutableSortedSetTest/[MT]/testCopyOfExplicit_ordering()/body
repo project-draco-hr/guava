@@ -1,4 +1,0 @@
-{
-  SortedSet<String> set=ImmutableSortedSet.copyOf(STRING_LENGTH,asList("in","the","quick","jumped","over","a"));
-  assertThat(set).containsExactly("a","in","the","over","quick","jumped").inOrder();
-}

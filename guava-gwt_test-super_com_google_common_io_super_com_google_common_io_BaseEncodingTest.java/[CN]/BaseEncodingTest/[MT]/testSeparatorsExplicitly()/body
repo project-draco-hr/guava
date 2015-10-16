@@ -1,5 +1,0 @@
-{
-  testEncodes(base64().withSeparator("\n",3),"foobar","Zm9\nvYm\nFy");
-  testEncodes(base64().withSeparator("$",4),"foobar","Zm9v$YmFy");
-  testEncodes(base32().withSeparator("*",4),"foobar","MZXW*6YTB*OI==*====");
-}

@@ -1,4 +1,0 @@
-{
-  UnmodifiableIterator<T> filteredIterator=filter(iterator,predicate);
-  return filteredIterator.hasNext() ? Optional.of(filteredIterator.next()) : Optional.<T>absent();
-}

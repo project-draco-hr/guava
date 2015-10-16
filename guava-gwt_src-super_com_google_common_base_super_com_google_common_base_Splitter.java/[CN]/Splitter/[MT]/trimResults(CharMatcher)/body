@@ -1,4 +1,0 @@
-{
-  checkNotNull(trimmer);
-  return new Splitter(strategy,omitEmptyStrings,trimmer,limit);
-}

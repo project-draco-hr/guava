@@ -1,8 +1,0 @@
-{
-  try {
-    MediaType.create("te><t","plaintext");
-    fail();
-  }
- catch (  IllegalArgumentException expected) {
-  }
-}

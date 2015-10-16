@@ -1,8 +1,0 @@
-{
-  assertFalse(Booleans.asList(EMPTY).contains("wrong type"));
-  assertFalse(Booleans.asList(EMPTY).contains(true));
-  assertFalse(Booleans.asList(ARRAY_FALSE).contains(true));
-  assertTrue(Booleans.asList(ARRAY_TRUE).contains(true));
-  assertTrue(Booleans.asList(ARRAY_FALSE_TRUE).contains(false));
-  assertTrue(Booleans.asList(ARRAY_FALSE_TRUE).contains(true));
-}

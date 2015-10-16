@@ -1,9 +1,0 @@
-{
-  List<String> list=newArrayList("a","b","c");
-  try {
-    skip(list,-1);
-    fail();
-  }
- catch (  IllegalArgumentException expected) {
-  }
-}

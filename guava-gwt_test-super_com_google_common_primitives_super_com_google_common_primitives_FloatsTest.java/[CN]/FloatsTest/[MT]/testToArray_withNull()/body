@@ -1,9 +1,0 @@
-{
-  List<Float> list=Arrays.asList((float)0,(float)1,null);
-  try {
-    Floats.toArray(list);
-    fail();
-  }
- catch (  NullPointerException expected) {
-  }
-}

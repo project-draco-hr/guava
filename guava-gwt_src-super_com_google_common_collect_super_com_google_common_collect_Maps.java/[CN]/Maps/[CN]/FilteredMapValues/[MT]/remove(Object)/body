@@ -1,3 +1,0 @@
-{
-  return Iterables.removeFirstMatching(unfiltered.entrySet(),Predicates.<Entry<K,V>>and(predicate,Maps.<V>valuePredicateOnEntries(equalTo(o)))) != null;
-}

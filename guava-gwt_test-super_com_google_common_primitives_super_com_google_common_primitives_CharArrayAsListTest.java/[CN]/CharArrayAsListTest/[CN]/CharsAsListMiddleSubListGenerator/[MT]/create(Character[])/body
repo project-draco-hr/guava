@@ -1,6 +1,0 @@
-{
-  Character[] prefix={Character.MIN_VALUE,Character.MAX_VALUE};
-  Character[] suffix={(char)86,(char)99};
-  Character[] all=concat(concat(prefix,elements),suffix);
-  return asList(all).subList(2,elements.length + 2);
-}

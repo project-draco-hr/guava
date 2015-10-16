@@ -1,8 +1,0 @@
-{
-  TrustedListenableFutureTask<Integer> task=TrustedListenableFutureTask.create(returning(2));
-  assertFalse(task.isDone());
-  task.run();
-  assertTrue(task.isDone());
-  assertFalse(task.isCancelled());
-  assertEquals(2,task.get().intValue());
-}

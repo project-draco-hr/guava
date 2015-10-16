@@ -1,8 +1,0 @@
-{
-  try {
-    return super.removeAll(checkNotNull(c));
-  }
- catch (  UnsupportedOperationException e) {
-    return Sets.removeAllImpl(this,c.iterator());
-  }
-}

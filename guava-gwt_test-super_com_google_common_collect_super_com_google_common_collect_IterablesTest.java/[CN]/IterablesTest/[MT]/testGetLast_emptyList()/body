@@ -1,9 +1,0 @@
-{
-  List<String> list=Collections.emptyList();
-  try {
-    Iterables.getLast(list);
-    fail();
-  }
- catch (  NoSuchElementException e) {
-  }
-}

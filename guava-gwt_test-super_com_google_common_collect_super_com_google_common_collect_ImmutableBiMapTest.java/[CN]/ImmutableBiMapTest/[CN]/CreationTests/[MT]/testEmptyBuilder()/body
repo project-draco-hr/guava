@@ -1,6 +1,0 @@
-{
-  ImmutableBiMap<String,Integer> map=new Builder<String,Integer>().build();
-  assertEquals(Collections.<String,Integer>emptyMap(),map);
-  assertEquals(Collections.<Integer,String>emptyMap(),map.inverse());
-  assertSame(ImmutableBiMap.of(),map);
-}

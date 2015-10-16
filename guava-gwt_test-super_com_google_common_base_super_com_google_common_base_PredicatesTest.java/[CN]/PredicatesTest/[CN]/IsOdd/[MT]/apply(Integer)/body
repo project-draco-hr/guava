@@ -1,3 +1,0 @@
-{
-  return (i.intValue() & 1) == 1;
-}

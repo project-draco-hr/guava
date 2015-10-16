@@ -1,4 +1,0 @@
-{
-  EnumSet<SomeEnum> set=EnumSet.of(SomeEnum.A,SomeEnum.D);
-  assertEquals(set,newEnumSet(set,SomeEnum.class));
-}

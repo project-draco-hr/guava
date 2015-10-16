@@ -1,9 +1,0 @@
-{
-  try {
-    getList().add(0,e0());
-    fail("add(n, present) should throw");
-  }
- catch (  UnsupportedOperationException expected) {
-  }
-  expectUnchanged();
-}

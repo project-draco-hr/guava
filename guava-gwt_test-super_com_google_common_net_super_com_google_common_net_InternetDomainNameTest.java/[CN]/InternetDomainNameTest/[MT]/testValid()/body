@@ -1,5 +1,0 @@
-{
-  for (  String name : VALID_NAME) {
-    InternetDomainName.from(name);
-  }
-}

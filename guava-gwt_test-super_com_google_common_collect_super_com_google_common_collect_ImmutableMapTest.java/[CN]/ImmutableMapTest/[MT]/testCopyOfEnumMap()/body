@@ -1,6 +1,0 @@
-{
-  EnumMap<AnEnum,String> map=new EnumMap<AnEnum,String>(AnEnum.class);
-  map.put(AnEnum.B,"foo");
-  map.put(AnEnum.C,"bar");
-  assertTrue(ImmutableMap.copyOf(map) instanceof ImmutableEnumMap);
-}

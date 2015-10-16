@@ -1,3 +1,0 @@
-{
-  new EqualsTester().addEqualityGroup(Suppliers.compose(Functions.constant(1),Suppliers.ofInstance("foo")),Suppliers.compose(Functions.constant(1),Suppliers.ofInstance("foo"))).addEqualityGroup(Suppliers.compose(Functions.constant(2),Suppliers.ofInstance("foo"))).addEqualityGroup(Suppliers.compose(Functions.constant(1),Suppliers.ofInstance("bar"))).testEquals();
-}

@@ -1,8 +1,0 @@
-{
-  BiMap<Country,Currency> result=EnumBiMap.create(Country.class,Currency.class);
-  for (  Object object : entries) {
-    Entry<Country,Currency> entry=(Entry<Country,Currency>)object;
-    result.put(entry.getKey(),entry.getValue());
-  }
-  return result;
-}

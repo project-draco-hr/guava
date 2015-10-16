@@ -1,4 +1,0 @@
-{
-  assertTrue("expectCall is false",expectCall);
-  calledCountDown.await();
-}

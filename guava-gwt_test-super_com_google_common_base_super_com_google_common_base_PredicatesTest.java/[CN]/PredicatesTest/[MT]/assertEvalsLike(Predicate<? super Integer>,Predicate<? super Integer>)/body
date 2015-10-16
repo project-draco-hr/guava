@@ -1,5 +1,0 @@
-{
-  assertEvalsLike(expected,actual,0);
-  assertEvalsLike(expected,actual,1);
-  assertEvalsLike(expected,actual,null);
-}

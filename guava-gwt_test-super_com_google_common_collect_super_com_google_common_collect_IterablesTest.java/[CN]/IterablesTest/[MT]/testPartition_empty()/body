@@ -1,5 +1,0 @@
-{
-  Iterable<Integer> source=Collections.emptySet();
-  Iterable<List<Integer>> partitions=Iterables.partition(source,1);
-  assertTrue(Iterables.isEmpty(partitions));
-}

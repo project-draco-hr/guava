@@ -1,7 +1,0 @@
-{
-  Predicate[] array={Predicates.alwaysFalse()};
-  Predicate<Object> predicate=Predicates.and(array);
-  assertFalse(predicate.apply(1));
-  array[0]=Predicates.alwaysTrue();
-  assertFalse(predicate.apply(1));
-}

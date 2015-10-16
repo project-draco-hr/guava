@@ -1,4 +1,0 @@
-{
-  Multimap<String,Integer> multimap=initializeMultimap5();
-  assertEquals("[foo x 2, bar x 2, cow]",multimap.keys().toString());
-}

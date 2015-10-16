@@ -1,3 +1,0 @@
-{
-  Preconditions.checkArgument(true,"%s",IGNORE_ME);
-}

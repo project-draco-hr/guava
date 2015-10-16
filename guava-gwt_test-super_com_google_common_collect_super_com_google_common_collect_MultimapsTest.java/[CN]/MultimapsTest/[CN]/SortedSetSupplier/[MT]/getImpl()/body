@@ -1,3 +1,0 @@
-{
-  return Sets.newTreeSet(INT_COMPARATOR);
-}

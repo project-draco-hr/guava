@@ -1,9 +1,0 @@
-{
-  Set<Character> positive=Sets.newHashSetWithExpectedSize(chars.length);
-  for (  char c : chars) {
-    positive.add(c);
-  }
-  for (int c=0; c <= Character.MAX_VALUE; c++) {
-    assertFalse(positive.contains(new Character((char)c)) ^ m.matches((char)c));
-  }
-}

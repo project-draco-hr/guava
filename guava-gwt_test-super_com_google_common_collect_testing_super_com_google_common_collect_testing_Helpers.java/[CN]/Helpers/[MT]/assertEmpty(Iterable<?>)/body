@@ -1,5 +1,0 @@
-{
-  if (!isEmpty(iterable)) {
-    Assert.fail("Not true that " + iterable + " is empty");
-  }
-}

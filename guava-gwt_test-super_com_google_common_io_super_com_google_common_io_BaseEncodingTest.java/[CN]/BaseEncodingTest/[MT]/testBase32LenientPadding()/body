@@ -1,8 +1,0 @@
-{
-  testDecodes(base32(),"MZXW6","foo");
-  testDecodes(base32(),"MZXW6=","foo");
-  testDecodes(base32(),"MZXW6==","foo");
-  testDecodes(base32(),"MZXW6===","foo");
-  testDecodes(base32(),"MZXW6====","foo");
-  testDecodes(base32(),"MZXW6=====","foo");
-}

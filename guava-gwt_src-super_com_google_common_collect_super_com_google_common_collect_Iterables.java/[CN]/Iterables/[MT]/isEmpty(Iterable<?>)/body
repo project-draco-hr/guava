@@ -1,6 +1,0 @@
-{
-  if (iterable instanceof Collection) {
-    return ((Collection<?>)iterable).isEmpty();
-  }
-  return !iterable.iterator().hasNext();
-}

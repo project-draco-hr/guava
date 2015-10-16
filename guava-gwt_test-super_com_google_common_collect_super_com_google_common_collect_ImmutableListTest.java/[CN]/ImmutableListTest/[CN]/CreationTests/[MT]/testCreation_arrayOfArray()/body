@@ -1,5 +1,0 @@
-{
-  String[] array=new String[]{"a"};
-  List<String[]> list=ImmutableList.<String[]>of(array);
-  assertEquals(Collections.singletonList(array),list);
-}

@@ -1,9 +1,0 @@
-{
-  ArrayListMultimap<Object,Object> input=ArrayListMultimap.create();
-  input.put("foo",1);
-  input.put("bar",2);
-  input.put("foo",3);
-  input.put("foo",1);
-  ImmutableSetMultimap<Object,Object> copy=ImmutableSetMultimap.copyOf(input);
-  assertEquals(3,copy.size());
-}

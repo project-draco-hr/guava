@@ -1,4 +1,0 @@
-{
-  Iterator<String> cycle=Iterators.<String>cycle();
-  assertFalse(cycle.hasNext());
-}

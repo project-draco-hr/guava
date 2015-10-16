@@ -1,8 +1,0 @@
-{
-  List<String> list=newArrayList();
-  list.add("a");
-  list.add("b");
-  Iterator<String> iterator=list.iterator();
-  advance(iterator,5);
-  assertFalse(iterator.hasNext());
-}

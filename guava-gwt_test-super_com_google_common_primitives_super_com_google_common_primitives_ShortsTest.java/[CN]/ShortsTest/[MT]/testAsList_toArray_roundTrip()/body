@@ -1,9 +1,0 @@
-{
-  short[] array={(short)0,(short)1,(short)2};
-  List<Short> list=Shorts.asList(array);
-  short[] newArray=Shorts.toArray(list);
-  list.set(0,(short)4);
-  assertTrue(Arrays.equals(new short[]{(short)0,(short)1,(short)2},newArray));
-  newArray[1]=(short)5;
-  assertEquals((short)1,(short)list.get(1));
-}

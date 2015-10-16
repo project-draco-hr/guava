@@ -1,3 +1,0 @@
-{
-  assertThat(testTable.values()).contains("blah");
-}

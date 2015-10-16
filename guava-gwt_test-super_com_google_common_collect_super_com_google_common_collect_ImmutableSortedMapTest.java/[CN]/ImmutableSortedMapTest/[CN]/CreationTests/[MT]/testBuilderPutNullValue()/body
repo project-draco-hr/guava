@@ -1,9 +1,0 @@
-{
-  Builder<String,Integer> builder=ImmutableSortedMap.naturalOrder();
-  try {
-    builder.put("one",null);
-    fail();
-  }
- catch (  NullPointerException expected) {
-  }
-}

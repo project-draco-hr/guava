@@ -1,4 +1,0 @@
-{
-  Set<String> set=of("a");
-  assertEquals(Collections.singleton("a"),set);
-}

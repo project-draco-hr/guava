@@ -1,8 +1,0 @@
-{
-  try {
-    ImmutableList.copyOf((Iterator<String>)null);
-    fail();
-  }
- catch (  NullPointerException expected) {
-  }
-}

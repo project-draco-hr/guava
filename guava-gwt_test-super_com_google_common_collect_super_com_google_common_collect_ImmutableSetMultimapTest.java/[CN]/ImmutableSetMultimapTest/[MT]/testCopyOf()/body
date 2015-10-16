@@ -1,9 +1,0 @@
-{
-  HashMultimap<String,Integer> input=HashMultimap.create();
-  input.put("foo",1);
-  input.put("bar",2);
-  input.put("foo",3);
-  Multimap<String,Integer> multimap=ImmutableSetMultimap.copyOf(input);
-  assertEquals(multimap,input);
-  assertEquals(input,multimap);
-}

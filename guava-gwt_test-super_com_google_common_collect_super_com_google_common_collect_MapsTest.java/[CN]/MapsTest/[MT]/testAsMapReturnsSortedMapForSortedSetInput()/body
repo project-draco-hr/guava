@@ -1,4 +1,0 @@
-{
-  Set<String> set=new NonNavigableSortedSet();
-  assertTrue(Maps.asMap(set,Functions.identity()) instanceof SortedMap);
-}

@@ -1,9 +1,0 @@
-{
-  ImmutableTable.Builder<Character,Integer,String> builder=new ImmutableTable.Builder<Character,Integer,String>().put('a',1,"foo").put('a',1,"bar");
-  try {
-    builder.build();
-    fail();
-  }
- catch (  IllegalArgumentException e) {
-  }
-}

@@ -1,4 +1,0 @@
-{
-  putAll(containsNullValue);
-  expectAdded(containsNullValue.get(0));
-}

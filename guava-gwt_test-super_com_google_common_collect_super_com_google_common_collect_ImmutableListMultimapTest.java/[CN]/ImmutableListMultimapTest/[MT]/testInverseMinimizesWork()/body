@@ -1,5 +1,0 @@
-{
-  ImmutableListMultimap<String,Character> multimap=ImmutableListMultimap.<String,Character>builder().put("foo",'f').put("foo",'o').put("foo",'o').put("poo",'p').put("poo",'o').put("poo",'o').build();
-  assertSame(multimap.inverse(),multimap.inverse());
-  assertSame(multimap,multimap.inverse().inverse());
-}

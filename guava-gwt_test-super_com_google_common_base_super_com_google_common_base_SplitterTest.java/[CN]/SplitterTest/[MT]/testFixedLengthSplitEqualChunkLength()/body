@@ -1,5 +1,0 @@
-{
-  String simple="abcdef";
-  Iterable<String> letters=Splitter.fixedLength(2).split(simple);
-  assertThat(letters).containsExactly("ab","cd","ef").inOrder();
-}

@@ -1,5 +1,0 @@
-{
-  CountingSupplier countingSupplier=new CountingSupplier();
-  Supplier<Integer> memoizedSupplier=Suppliers.memoize(countingSupplier);
-  checkMemoize(countingSupplier,memoizedSupplier);
-}

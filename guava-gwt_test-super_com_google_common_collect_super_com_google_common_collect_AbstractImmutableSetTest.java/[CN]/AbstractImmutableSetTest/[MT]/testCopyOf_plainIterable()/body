@@ -1,7 +1,0 @@
-{
-  CountingIterable iterable=new CountingIterable();
-  Set<String> set=copyOf(iterable);
-  assertEquals(2,set.size());
-  assertTrue(set.contains("a"));
-  assertTrue(set.contains("b"));
-}

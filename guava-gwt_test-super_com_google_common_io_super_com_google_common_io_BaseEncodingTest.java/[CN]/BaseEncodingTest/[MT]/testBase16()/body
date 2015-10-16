@@ -1,9 +1,0 @@
-{
-  testEncodingWithCasing(base16(),"","");
-  testEncodingWithCasing(base16(),"f","66");
-  testEncodingWithCasing(base16(),"fo","666F");
-  testEncodingWithCasing(base16(),"foo","666F6F");
-  testEncodingWithCasing(base16(),"foob","666F6F62");
-  testEncodingWithCasing(base16(),"fooba","666F6F6261");
-  testEncodingWithCasing(base16(),"foobar","666F6F626172");
-}

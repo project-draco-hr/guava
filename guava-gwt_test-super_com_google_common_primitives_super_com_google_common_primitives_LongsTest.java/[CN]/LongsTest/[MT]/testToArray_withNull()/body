@@ -1,9 +1,0 @@
-{
-  List<Long> list=Arrays.asList((long)0,(long)1,null);
-  try {
-    Longs.toArray(list);
-    fail();
-  }
- catch (  NullPointerException expected) {
-  }
-}

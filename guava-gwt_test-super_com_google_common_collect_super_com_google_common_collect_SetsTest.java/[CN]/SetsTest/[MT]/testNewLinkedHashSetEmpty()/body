@@ -1,4 +1,0 @@
-{
-  LinkedHashSet<Integer> set=Sets.newLinkedHashSet();
-  verifyLinkedHashSetContents(set,EMPTY_COLLECTION);
-}

@@ -1,3 +1,0 @@
-{
-  return new ValueDifferenceImpl<V>(left,right);
-}

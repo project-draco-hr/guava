@@ -1,8 +1,0 @@
-{
-  try {
-    Longs.stringConverter().convert("notanumber");
-    fail();
-  }
- catch (  NumberFormatException expected) {
-  }
-}

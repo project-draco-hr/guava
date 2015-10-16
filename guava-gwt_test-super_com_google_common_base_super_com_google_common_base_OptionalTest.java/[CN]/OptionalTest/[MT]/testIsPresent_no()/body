@@ -1,3 +1,0 @@
-{
-  assertFalse(Optional.absent().isPresent());
-}

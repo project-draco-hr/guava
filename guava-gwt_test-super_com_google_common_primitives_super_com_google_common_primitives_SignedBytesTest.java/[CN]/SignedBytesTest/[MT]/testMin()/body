@@ -1,5 +1,0 @@
-{
-  assertEquals(LEAST,SignedBytes.min(LEAST));
-  assertEquals(GREATEST,SignedBytes.min(GREATEST));
-  assertEquals((byte)-128,SignedBytes.min((byte)0,(byte)-128,(byte)-1,(byte)127,(byte)1));
-}

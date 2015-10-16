@@ -1,8 +1,0 @@
-{
-  return new TransformedIterator<K,Entry<K,V>>(set.iterator()){
-    @Override Entry<K,V> transform(    final K key){
-      return immutableEntry(key,function.apply(key));
-    }
-  }
-;
-}

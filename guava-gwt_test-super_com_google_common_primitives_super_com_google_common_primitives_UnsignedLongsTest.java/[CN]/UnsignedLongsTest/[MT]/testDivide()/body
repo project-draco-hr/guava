@@ -1,9 +1,0 @@
-{
-  assertEquals(2,UnsignedLongs.divide(14,5));
-  assertEquals(0,UnsignedLongs.divide(0,50));
-  assertEquals(1,UnsignedLongs.divide(0xfffffffffffffffeL,0xfffffffffffffffdL));
-  assertEquals(0,UnsignedLongs.divide(0xfffffffffffffffdL,0xfffffffffffffffeL));
-  assertEquals(281479271743488L,UnsignedLongs.divide(0xfffffffffffffffeL,65535));
-  assertEquals(0x7fffffffffffffffL,UnsignedLongs.divide(0xfffffffffffffffeL,2));
-  assertEquals(3689348814741910322L,UnsignedLongs.divide(0xfffffffffffffffeL,5));
-}

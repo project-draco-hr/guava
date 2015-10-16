@@ -1,3 +1,0 @@
-{
-  return "Predicates.and(" + COMMA_JOINER.join(components) + ")";
-}

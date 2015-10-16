@@ -1,4 +1,0 @@
-{
-  LinkedHashMap<Integer,Integer> map=Maps.newLinkedHashMap();
-  assertEquals(Collections.emptyMap(),map);
-}

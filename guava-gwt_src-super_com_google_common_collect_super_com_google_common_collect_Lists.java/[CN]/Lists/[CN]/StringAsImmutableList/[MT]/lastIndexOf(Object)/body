@@ -1,3 +1,0 @@
-{
-  return (object instanceof Character) ? string.lastIndexOf((Character)object) : -1;
-}

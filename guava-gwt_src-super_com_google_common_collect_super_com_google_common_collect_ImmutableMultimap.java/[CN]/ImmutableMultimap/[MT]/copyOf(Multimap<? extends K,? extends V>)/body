@@ -1,9 +1,0 @@
-{
-  if (multimap instanceof ImmutableMultimap) {
-    @SuppressWarnings("unchecked") ImmutableMultimap<K,V> kvMultimap=(ImmutableMultimap<K,V>)multimap;
-    if (!kvMultimap.isPartialView()) {
-      return kvMultimap;
-    }
-  }
-  return ImmutableListMultimap.copyOf(multimap);
-}

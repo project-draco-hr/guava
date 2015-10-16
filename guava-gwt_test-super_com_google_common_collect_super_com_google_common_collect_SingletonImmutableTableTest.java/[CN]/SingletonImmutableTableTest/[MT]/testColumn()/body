@@ -1,4 +1,0 @@
-{
-  assertEquals(ImmutableMap.of(),testTable.column(0));
-  assertEquals(ImmutableMap.of('a',"blah"),testTable.column(1));
-}

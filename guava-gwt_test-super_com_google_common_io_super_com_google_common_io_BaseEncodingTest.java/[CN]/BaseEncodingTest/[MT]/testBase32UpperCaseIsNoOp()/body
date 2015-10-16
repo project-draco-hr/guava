@@ -1,3 +1,0 @@
-{
-  assertSame(base32(),base32().upperCase());
-}

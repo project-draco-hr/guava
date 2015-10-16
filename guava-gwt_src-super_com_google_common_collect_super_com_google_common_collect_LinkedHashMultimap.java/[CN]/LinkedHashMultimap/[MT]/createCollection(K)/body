@@ -1,3 +1,0 @@
-{
-  return new ValueSet(key,valueSetCapacity);
-}

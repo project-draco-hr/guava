@@ -1,4 +1,0 @@
-{
-  super(Ordering.natural());
-  this.domain=domain;
-}

@@ -1,9 +1,0 @@
-{
-  List<String> list=newArrayList();
-  try {
-    getLast(list.iterator());
-    fail();
-  }
- catch (  NoSuchElementException expected) {
-  }
-}

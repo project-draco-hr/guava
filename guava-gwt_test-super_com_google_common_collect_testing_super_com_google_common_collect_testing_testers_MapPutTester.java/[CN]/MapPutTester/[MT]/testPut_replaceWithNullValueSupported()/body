@@ -1,4 +1,0 @@
-{
-  assertEquals("put(present, null) should return the associated value",v0(),put(presentKeyNullValueEntry));
-  expectReplacement(presentKeyNullValueEntry);
-}

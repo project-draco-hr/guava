@@ -1,3 +1,0 @@
-{
-  assertIteratorIsUnmodifiable(COMMA_SPLITTER.split("a,b").iterator());
-}

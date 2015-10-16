@@ -1,5 +1,0 @@
-{
-  for (  V[] row : array) {
-    Arrays.fill(row,null);
-  }
-}

@@ -1,4 +1,0 @@
-{
-  ArrayTable<String,Integer,Character> table=create("foo",1,'a',"bar",1,'b',"foo",3,'c');
-  assertThat(table.rowKeyList()).containsExactly("foo","bar","cat").inOrder();
-}

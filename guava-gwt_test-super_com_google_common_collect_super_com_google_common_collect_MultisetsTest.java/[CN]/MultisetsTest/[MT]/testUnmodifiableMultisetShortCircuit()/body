@@ -1,9 +1,0 @@
-{
-  Multiset<String> mod=HashMultiset.create();
-  Multiset<String> unmod=Multisets.unmodifiableMultiset(mod);
-  assertNotSame(mod,unmod);
-  assertSame(unmod,Multisets.unmodifiableMultiset(unmod));
-  ImmutableMultiset<String> immutable=ImmutableMultiset.of("a","a","b","a");
-  assertSame(immutable,Multisets.unmodifiableMultiset(immutable));
-  assertSame(immutable,Multisets.unmodifiableMultiset((Multiset<String>)immutable));
-}

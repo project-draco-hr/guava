@@ -1,9 +1,0 @@
-{
-  doTestGeneral(is('a'),'a','b');
-  doTestGeneral(isNot('a'),'b','a');
-  doTestGeneral(anyOf("x"),'x','z');
-  doTestGeneral(anyOf("xy"),'y','z');
-  doTestGeneral(anyOf("CharMatcher"),'C','z');
-  doTestGeneral(noneOf("CharMatcher"),'z','C');
-  doTestGeneral(inRange('p','x'),'q','z');
-}

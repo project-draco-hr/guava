@@ -1,4 +1,0 @@
-{
-  SortedSet<String> set=copyOf(Sets.<String>newTreeSet());
-  assertSame(Ordering.natural(),set.comparator());
-}

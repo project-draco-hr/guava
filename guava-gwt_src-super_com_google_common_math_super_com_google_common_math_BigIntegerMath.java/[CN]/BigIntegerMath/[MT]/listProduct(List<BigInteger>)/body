@@ -1,3 +1,0 @@
-{
-  return listProduct(nums,0,nums.size());
-}

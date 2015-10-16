@@ -1,3 +1,0 @@
-{
-  return removeAllImpl(this,c);
-}

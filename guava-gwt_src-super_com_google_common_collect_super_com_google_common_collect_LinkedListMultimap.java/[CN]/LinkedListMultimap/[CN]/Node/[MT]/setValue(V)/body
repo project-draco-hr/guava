@@ -1,5 +1,0 @@
-{
-  V result=value;
-  this.value=newValue;
-  return result;
-}

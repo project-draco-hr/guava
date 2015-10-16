@@ -1,3 +1,0 @@
-{
-  assertEquals(getBytes(decoded),encoding.decode(encoded));
-}

@@ -1,2 +1,0 @@
-Ordering<? super T> ordering
-T strictlyOrderedElements

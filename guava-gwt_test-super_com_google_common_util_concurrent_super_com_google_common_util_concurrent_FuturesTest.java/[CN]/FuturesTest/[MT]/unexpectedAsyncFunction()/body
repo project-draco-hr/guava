@@ -1,8 +1,0 @@
-{
-  return new AsyncFunction<X,V>(){
-    @Override public ListenableFuture<V> apply(    X t){
-      throw newAssertionError("Unexpected fallback",t);
-    }
-  }
-;
-}

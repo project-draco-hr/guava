@@ -1,6 +1,0 @@
-{
-  HashMap<SomeEnum,Integer> original=Maps.newHashMap();
-  original.put(SomeEnum.SOME_INSTANCE,0);
-  EnumMap<SomeEnum,Integer> copy=Maps.newEnumMap(original);
-  assertEquals(original,copy);
-}

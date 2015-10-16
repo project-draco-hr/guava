@@ -1,4 +1,0 @@
-{
-  assertEvalsToTrue(Predicates.or(TRUE));
-  assertEvalsToFalse(Predicates.or(FALSE));
-}

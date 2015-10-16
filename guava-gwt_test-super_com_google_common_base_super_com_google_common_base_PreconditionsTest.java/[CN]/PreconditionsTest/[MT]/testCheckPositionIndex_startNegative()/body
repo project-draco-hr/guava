@@ -1,9 +1,0 @@
-{
-  try {
-    Preconditions.checkPositionIndexes(-1,1,1);
-    fail();
-  }
- catch (  IndexOutOfBoundsException expected) {
-    assertThat(expected).hasMessage("start index (-1) must not be negative");
-  }
-}

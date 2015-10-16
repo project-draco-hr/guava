@@ -1,3 +1,0 @@
-{
-  return Platform.mapsFilterSortedMap(unfiltered,entryPredicate);
-}

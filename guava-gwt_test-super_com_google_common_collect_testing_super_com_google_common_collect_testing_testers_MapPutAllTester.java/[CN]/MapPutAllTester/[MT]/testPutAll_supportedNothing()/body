@@ -1,4 +1,0 @@
-{
-  getMap().putAll(emptyMap());
-  expectUnchanged();
-}

@@ -1,3 +1,0 @@
-{
-  return ((n <= FLOOR_SQRT_MAX_LONG) ? SMALL : LARGE).testWitness(base,n);
-}

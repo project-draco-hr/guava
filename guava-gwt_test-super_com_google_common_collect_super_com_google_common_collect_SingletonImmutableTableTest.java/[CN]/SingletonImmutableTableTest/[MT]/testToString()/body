@@ -1,3 +1,0 @@
-{
-  assertEquals("{a={1=blah}}",testTable.toString());
-}

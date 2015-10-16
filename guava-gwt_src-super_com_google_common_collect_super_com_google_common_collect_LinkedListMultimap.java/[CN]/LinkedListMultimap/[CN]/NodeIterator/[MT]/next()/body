@@ -1,8 +1,0 @@
-{
-  checkForConcurrentModification();
-  checkElement(next);
-  previous=current=next;
-  next=next.next;
-  nextIndex++;
-  return current;
-}

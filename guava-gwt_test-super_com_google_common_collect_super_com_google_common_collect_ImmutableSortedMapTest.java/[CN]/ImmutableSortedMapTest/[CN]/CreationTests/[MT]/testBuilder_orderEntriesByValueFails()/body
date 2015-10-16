@@ -1,9 +1,0 @@
-{
-  ImmutableSortedMap.Builder<String,Integer> builder=ImmutableSortedMap.naturalOrder();
-  try {
-    builder.orderEntriesByValue(Ordering.natural());
-    fail("Expected UnsupportedOperationException");
-  }
- catch (  UnsupportedOperationException expected) {
-  }
-}

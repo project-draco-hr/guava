@@ -1,3 +1,0 @@
-{
-  assertEquals("subList(0, 0) should be empty",emptyList(),getList().subList(0,0));
-}

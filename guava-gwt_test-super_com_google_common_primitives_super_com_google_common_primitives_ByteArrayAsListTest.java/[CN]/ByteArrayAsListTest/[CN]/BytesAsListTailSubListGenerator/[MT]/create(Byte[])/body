@@ -1,5 +1,0 @@
-{
-  Byte[] prefix={(byte)86,(byte)99};
-  Byte[] all=concat(prefix,elements);
-  return asList(all).subList(2,elements.length + 2);
-}

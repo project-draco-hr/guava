@@ -1,5 +1,0 @@
-{
-  List<String> list=new DiesOnIteratorArrayList();
-  list.add("a");
-  assertEquals("a",Iterables.get(list,0,"b"));
-}

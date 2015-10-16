@@ -1,5 +1,0 @@
-{
-  Multimap<String,Integer> multimap=LinkedHashMultimap.create();
-  multimap.putAll(initializeMultimap5());
-  assertOrderingReadOnly(multimap);
-}

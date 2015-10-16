@@ -1,7 +1,0 @@
-{
-  List<Predicate<Object>> list=newArrayList();
-  Predicate<Object> predicate=Predicates.and(list);
-  assertTrue(predicate.apply(1));
-  list.add(Predicates.alwaysFalse());
-  assertTrue(predicate.apply(1));
-}
