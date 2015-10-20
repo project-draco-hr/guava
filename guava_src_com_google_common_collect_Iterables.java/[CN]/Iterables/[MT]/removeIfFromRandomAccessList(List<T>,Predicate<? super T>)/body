@@ -12,6 +12,10 @@
           slowRemoveIfForRemainingElements(list,predicate,to,from);
           return true;
         }
+catch (        IllegalArgumentException e) {
+          slowRemoveIfForRemainingElements(list,predicate,to,from);
+          return true;
+        }
       }
       to++;
     }
