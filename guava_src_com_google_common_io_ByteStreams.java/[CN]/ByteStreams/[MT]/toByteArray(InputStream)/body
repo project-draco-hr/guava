@@ -1,5 +1,5 @@
 {
-  ByteArrayOutputStream out=new ByteArrayOutputStream();
+  ByteArrayOutputStream out=new ByteArrayOutputStream(Math.max(32,in.available()));
   copy(in,out);
   return out.toByteArray();
 }
