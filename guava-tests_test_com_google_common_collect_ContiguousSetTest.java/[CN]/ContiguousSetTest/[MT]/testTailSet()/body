@@ -3,9 +3,9 @@
   assertThat(set.tailSet(Integer.MIN_VALUE)).containsExactly(1,2,3).inOrder();
   assertThat(set.tailSet(1)).containsExactly(1,2,3).inOrder();
   assertThat(set.tailSet(2)).containsExactly(2,3).inOrder();
-  assertThat(set.tailSet(3)).contains(3);
+  assertThat(set.tailSet(3)).containsExactly(3).inOrder();
   assertThat(set.tailSet(Integer.MIN_VALUE,false)).containsExactly(1,2,3).inOrder();
   assertThat(set.tailSet(1,false)).containsExactly(2,3).inOrder();
-  assertThat(set.tailSet(2,false)).contains(3);
+  assertThat(set.tailSet(2,false)).containsExactly(3).inOrder();
   assertThat(set.tailSet(3,false)).isEmpty();
 }
