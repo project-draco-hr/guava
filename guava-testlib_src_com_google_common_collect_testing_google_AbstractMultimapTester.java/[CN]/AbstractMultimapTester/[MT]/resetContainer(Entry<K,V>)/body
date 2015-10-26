@@ -1,4 +1,4 @@
 {
-  multimap=super.resetContainer(getSubjectGenerator().create(newContents));
+  multimap=super.resetContainer(getSubjectGenerator().create((Object[])newContents));
   return multimap;
 }

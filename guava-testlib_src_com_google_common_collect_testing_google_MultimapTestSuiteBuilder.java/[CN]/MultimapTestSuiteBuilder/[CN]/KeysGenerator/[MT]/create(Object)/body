@@ -9,5 +9,5 @@
     }
     entries[i]=mapEntry((K)elements[i],valueItr.next());
   }
-  return multimapGenerator.create(entries).keys();
+  return multimapGenerator.create((Object[])entries).keys();
 }

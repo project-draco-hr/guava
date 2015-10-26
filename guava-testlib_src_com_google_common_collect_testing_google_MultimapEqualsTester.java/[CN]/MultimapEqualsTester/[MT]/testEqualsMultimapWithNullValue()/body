@@ -2,5 +2,5 @@
   Multimap<K,V> original=multimap();
   initMultimapWithNullValue();
   Multimap<K,V> withNull=multimap();
-  new EqualsTester().addEqualityGroup(original).addEqualityGroup(withNull,getSubjectGenerator().create(createArrayWithNullValue())).testEquals();
+  new EqualsTester().addEqualityGroup(original).addEqualityGroup(withNull,getSubjectGenerator().create((Object[])createArrayWithNullValue())).testEquals();
 }
