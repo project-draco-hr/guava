@@ -1,6 +1,6 @@
 {
   try {
-    Objects.firstNonNull(null,null);
+    firstNonNull(null,null);
     fail("expected NullPointerException");
   }
  catch (  NullPointerException expected) {

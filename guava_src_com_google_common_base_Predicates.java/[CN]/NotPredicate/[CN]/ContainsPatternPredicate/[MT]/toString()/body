@@ -1,4 +1,4 @@
 {
-  String patternString=Objects.toStringHelper(pattern).add("pattern",pattern.pattern()).add("pattern.flags",pattern.flags()).toString();
+  String patternString=MoreObjects.toStringHelper(pattern).add("pattern",pattern.pattern()).add("pattern.flags",pattern.flags()).toString();
   return "Predicates.contains(" + patternString + ")";
 }
