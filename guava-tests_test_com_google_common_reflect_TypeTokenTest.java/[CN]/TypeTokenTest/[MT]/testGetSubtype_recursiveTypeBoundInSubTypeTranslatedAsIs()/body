@@ -1,10 +1,20 @@
 {
-  assertEquals(new TypeToken<ForGetSubType.Outer<?>.Sub<?>>(){
+class BaseWithTypeVar<T> {
   }
-,new TypeToken<ForGetSubType.BaseWithTypeVar<List<?>>>(){
+class Outer<O> {
+class Sub<X> extends BaseWithTypeVar<List<X>> {
+    }
+class Sub2<Y extends Sub2<Y>> extends BaseWithTypeVar<List<Y>> {
+    }
   }
-.getSubtype(ForGetSubType.Outer.Sub.class));
-  new TypeToken<ForGetSubType.BaseWithTypeVar<List<?>>>(){
+  ParameterizedType subtype=(ParameterizedType)new TypeToken<BaseWithTypeVar<List<?>>>(){
   }
-.getSubtype(ForGetSubType.Outer.Sub2.class);
+.getSubtype(Outer.Sub.class).getType();
+  assertEquals(Outer.Sub.class,subtype.getRawType());
+  assertThat(subtype.getActualTypeArguments()[0]).isInstanceOf(WildcardType.class);
+  ParameterizedType owner=(ParameterizedType)subtype.getOwnerType();
+  assertEquals(Outer.class,owner.getRawType());
+  new TypeToken<BaseWithTypeVar<List<?>>>(){
+  }
+.getSubtype(Outer.Sub2.class);
 }

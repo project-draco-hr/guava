@@ -2,15 +2,15 @@
   if (from.equals(to)) {
     return;
   }
-  if (to instanceof WildcardType != from instanceof WildcardType) {
-    return;
-  }
   new TypeVisitor(){
     @Override void visitTypeVariable(    TypeVariable<?> typeVariable){
       mappings.put(new TypeVariableKey(typeVariable),to);
     }
     @Override void visitWildcardType(    WildcardType fromWildcardType){
-      WildcardType toWildcardType=expectArgument(WildcardType.class,to);
+      if (!(to instanceof WildcardType)) {
+        return;
+      }
+      WildcardType toWildcardType=(WildcardType)to;
       Type[] fromUpperBounds=fromWildcardType.getUpperBounds();
       Type[] toUpperBounds=toWildcardType.getUpperBounds();
       Type[] fromLowerBounds=fromWildcardType.getLowerBounds();
@@ -24,6 +24,9 @@
       }
     }
     @Override void visitParameterizedType(    ParameterizedType fromParameterizedType){
+      if (to instanceof WildcardType) {
+        return;
+      }
       ParameterizedType toParameterizedType=expectArgument(ParameterizedType.class,to);
       checkArgument(fromParameterizedType.getRawType().equals(toParameterizedType.getRawType()),"Inconsistent raw type: %s vs. %s",fromParameterizedType,to);
       Type[] fromArgs=fromParameterizedType.getActualTypeArguments();
@@ -34,11 +37,17 @@
       }
     }
     @Override void visitGenericArrayType(    GenericArrayType fromArrayType){
+      if (to instanceof WildcardType) {
+        return;
+      }
       Type componentType=Types.getComponentType(to);
       checkArgument(componentType != null,"%s is not an array type.",to);
       populateTypeMappings(mappings,fromArrayType.getGenericComponentType(),componentType);
     }
     @Override void visitClass(    Class<?> fromClass){
+      if (to instanceof WildcardType) {
+        return;
+      }
       throw new IllegalArgumentException("No type mapping from " + fromClass + " to "+ to);
     }
   }

@@ -8,6 +8,6 @@
   }
   checkArgument(getRawType().isAssignableFrom(subclass),"%s isn't a subclass of %s",subclass,this);
   Type resolvedTypeArgs=resolveTypeArgsForSubclass(subclass);
-  @SuppressWarnings("unchecked") TypeToken<? extends T> subtype=(TypeToken<? extends T>)of(replaceTypeVariablesWithWildcard(resolvedTypeArgs,subclass));
+  @SuppressWarnings("unchecked") TypeToken<? extends T> subtype=(TypeToken<? extends T>)of(resolvedTypeArgs);
   return subtype;
 }

@@ -1,0 +1,15 @@
+{
+class Bar<T> {
+  }
+class SubBar<T> extends Bar<T> {
+    @SuppressWarnings("unused") Bar<T> delegate;
+    TypeToken<SubBar<T>> fieldTypeAsSubBar(){
+      return new TypeToken<SubBar<T>>(){
+      }
+;
+    }
+  }
+  Field delegateField=SubBar.class.getDeclaredField("delegate");
+  TypeToken<?> barType=TypeToken.of(delegateField.getGenericType());
+  assertThat(barType.getSubtype(SubBar.class)).isEqualTo(new SubBar<Void>().fieldTypeAsSubBar());
+}

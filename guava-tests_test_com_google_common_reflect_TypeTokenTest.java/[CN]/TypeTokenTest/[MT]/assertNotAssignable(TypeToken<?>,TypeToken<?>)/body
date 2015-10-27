@@ -1,5 +1,5 @@
 {
-  assertFalse(from.getType() + " shouldn't be assignable to " + to.getType(),to.isAssignableFrom(from));
+  assertFalse(from.getType() + " shouldn't be assignable to " + to.getType(),to.isSupertypeOf(from));
   assertFalse(to.getType() + " shouldn't be a supertype of " + from.getType(),to.isSupertypeOf(from));
   assertFalse(from.getType() + " shouldn't be a subtype of " + to.getType(),from.isSubtypeOf(to));
 }

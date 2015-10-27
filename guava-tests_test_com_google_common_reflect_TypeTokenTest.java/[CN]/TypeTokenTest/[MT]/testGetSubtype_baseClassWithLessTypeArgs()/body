@@ -1,12 +1,16 @@
 {
-  TypeToken<ForGetSubType.SingleGenericExtendsBase<?>> superType=new TypeToken<ForGetSubType.SingleGenericExtendsBase<?>>(){
+class SingleGenericExtendsBase<T> extends Base {
+  }
+class DoubleGenericExtendsSingleGeneric<T1,TUnused> extends SingleGenericExtendsBase<T1> {
+  }
+  TypeToken<SingleGenericExtendsBase<?>> superType=new TypeToken<SingleGenericExtendsBase<?>>(){
   }
 ;
-  TypeToken<ForGetSubType.DoubleGenericExtendsSingleGeneric<String,Integer>> subType=new TypeToken<ForGetSubType.DoubleGenericExtendsSingleGeneric<String,Integer>>(){
+  TypeToken<DoubleGenericExtendsSingleGeneric<String,Integer>> subType=new TypeToken<DoubleGenericExtendsSingleGeneric<String,Integer>>(){
   }
 ;
   assertTrue(subType.isSubtypeOf(superType));
-  assertEquals(new TypeToken<ForGetSubType.DoubleGenericExtendsSingleGeneric<?,?>>(){
-  }
-,superType.getSubtype(subType.getRawType()));
+  ParameterizedType actualSubType=(ParameterizedType)superType.getSubtype(subType.getRawType()).getType();
+  assertEquals(DoubleGenericExtendsSingleGeneric.class,actualSubType.getRawType());
+  assertThat(actualSubType.getActualTypeArguments()[0]).isInstanceOf(WildcardType.class);
 }

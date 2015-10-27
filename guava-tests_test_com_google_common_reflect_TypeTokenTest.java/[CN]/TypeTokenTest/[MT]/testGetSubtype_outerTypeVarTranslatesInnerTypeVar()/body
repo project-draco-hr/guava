@@ -1,8 +1,14 @@
 {
-  TypeToken<ForGetSubType.StringForFirstTypeArg<List<?>>> type=new TypeToken<ForGetSubType.StringForFirstTypeArg<List<?>>>(){
+class TwoTypeArgs<K,V> {
+  }
+class StringForFirstTypeArg<V> extends TwoTypeArgs<String,V> {
+  }
+class OuterTypeVar<V> extends StringForFirstTypeArg<List<V>> {
+  }
+  TypeToken<StringForFirstTypeArg<List<?>>> type=new TypeToken<StringForFirstTypeArg<List<?>>>(){
   }
 ;
-  assertEquals(new TypeToken<ForGetSubType.OuterTypeVar<?>>(){
+  assertEquals(new TypeToken<OuterTypeVar<?>>(){
   }
-,type.getSubtype(ForGetSubType.OuterTypeVar.class));
+,type.getSubtype(OuterTypeVar.class));
 }

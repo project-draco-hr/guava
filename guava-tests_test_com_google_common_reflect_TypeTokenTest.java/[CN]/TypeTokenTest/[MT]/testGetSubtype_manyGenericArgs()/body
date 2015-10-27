@@ -1,12 +1,16 @@
 {
-  TypeToken<ForGetSubType.FourTypeArgs<T,Integer,?,?>> superType=new TypeToken<ForGetSubType.FourTypeArgs<T,Integer,?,?>>(){
+class FourTypeArgs<T1,T2,T3,T4> {
+  }
+class ThreeTypeArgs<T1,T2,T3> extends FourTypeArgs<T1,T2,T3,String> {
+  }
+  TypeToken<FourTypeArgs<T,Integer,?,?>> superType=new TypeToken<FourTypeArgs<T,Integer,?,?>>(){
   }
 ;
-  TypeToken<ForGetSubType.ThreeTypeArgs<T,Integer,String>> subType=new TypeToken<ForGetSubType.ThreeTypeArgs<T,Integer,String>>(){
+  TypeToken<ThreeTypeArgs<T,Integer,String>> subType=new TypeToken<ThreeTypeArgs<T,Integer,String>>(){
   }
 ;
   assertTrue(subType.isSubtypeOf(superType));
-  assertEquals(new TypeToken<ForGetSubType.ThreeTypeArgs<T,Integer,?>>(){
+  assertEquals(new TypeToken<ThreeTypeArgs<T,Integer,?>>(){
   }
 ,superType.getSubtype(subType.getRawType()));
 }

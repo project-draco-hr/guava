@@ -1,13 +1,14 @@
 {
-  TypeToken<ForGetSubType.TwoTypeArgs<?,?>.InnerType<?,?>> superType=new TypeToken<ForGetSubType.TwoTypeArgs<?,?>.InnerType<?,?>>(){
+  TypeToken<TwoTypeArgs<?,?>.InnerType<?,?>> superType=new TypeToken<TwoTypeArgs<?,?>.InnerType<?,?>>(){
   }
 ;
-  TypeToken<ForGetSubType.StringForFirstTypeArg<Integer>.StringInnerType<Long>> subType=new TypeToken<ForGetSubType.StringForFirstTypeArg<Integer>.StringInnerType<Long>>(){
+  TypeToken<StringForFirstTypeArg<Integer>.StringInnerType<Long>> subType=new TypeToken<StringForFirstTypeArg<Integer>.StringInnerType<Long>>(){
   }
 ;
   assertTrue(subType.isSubtypeOf(superType));
-  TypeToken<ForGetSubType.StringForFirstTypeArg<?>.StringInnerType<?>> expected=new TypeToken<ForGetSubType.StringForFirstTypeArg<?>.StringInnerType<?>>(){
-  }
-;
-  assertEquals(expected,superType.getSubtype(subType.getRawType()));
+  ParameterizedType actualSubType=(ParameterizedType)superType.getSubtype(subType.getRawType()).getType();
+  assertEquals(StringForFirstTypeArg.StringInnerType.class,actualSubType.getRawType());
+  assertThat(actualSubType.getActualTypeArguments()[0]).isInstanceOf(WildcardType.class);
+  ParameterizedType actualOwnerType=(ParameterizedType)actualSubType.getOwnerType();
+  assertEquals(StringForFirstTypeArg.class,actualOwnerType.getRawType());
 }

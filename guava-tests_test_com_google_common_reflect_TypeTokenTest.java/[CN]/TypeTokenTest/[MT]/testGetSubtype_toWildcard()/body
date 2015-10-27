@@ -1,12 +1,16 @@
 {
-  TypeToken<ForGetSubType.TwoTypeArgs<?,?>> superType=new TypeToken<ForGetSubType.TwoTypeArgs<?,?>>(){
+class TwoTypeArgs<K,V> {
+  }
+class StringForFirstTypeArg<V> extends TwoTypeArgs<String,V> {
+  }
+  TypeToken<TwoTypeArgs<?,?>> superType=new TypeToken<TwoTypeArgs<?,?>>(){
   }
 ;
-  TypeToken<ForGetSubType.StringForFirstTypeArg<String>> subType=new TypeToken<ForGetSubType.StringForFirstTypeArg<String>>(){
+  TypeToken<StringForFirstTypeArg<String>> subType=new TypeToken<StringForFirstTypeArg<String>>(){
   }
 ;
   assertTrue(subType.isSubtypeOf(superType));
-  assertEquals(new TypeToken<ForGetSubType.StringForFirstTypeArg<?>>(){
+  assertEquals(new TypeToken<StringForFirstTypeArg<?>>(){
   }
 ,superType.getSubtype(subType.getRawType()));
 }
