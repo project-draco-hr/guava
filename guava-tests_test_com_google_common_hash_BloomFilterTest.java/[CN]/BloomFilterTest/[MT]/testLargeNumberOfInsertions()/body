@@ -1,4 +1,4 @@
 {
-  BloomFilter.create(Funnels.unencodedCharsFunnel(),42L + Integer.MAX_VALUE,0.28);
-  BloomFilter.create(Funnels.unencodedCharsFunnel(),50L * Integer.MAX_VALUE,0.99);
+  BloomFilter.create(Funnels.unencodedCharsFunnel(),30L + Integer.MAX_VALUE,0.28);
+  BloomFilter.create(Funnels.unencodedCharsFunnel(),45L * Integer.MAX_VALUE,0.99);
 }
