@@ -3,7 +3,6 @@
   for (  Set<Range<Integer>> subset : Sets.powerSet(ranges)) {
     RangeSet<Integer> mutable=TreeRangeSet.create();
     ImmutableRangeSet.Builder<Integer> builder=ImmutableRangeSet.builder();
-    int expectedRanges=0;
     for (    Range<Integer> range : subset) {
       boolean overlaps=false;
       for (      Range<Integer> other : mutable.asRanges()) {
