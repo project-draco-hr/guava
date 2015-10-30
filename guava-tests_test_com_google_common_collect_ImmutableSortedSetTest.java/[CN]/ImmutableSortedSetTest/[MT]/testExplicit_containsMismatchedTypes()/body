@@ -1,4 +1,4 @@
 {
   SortedSet<String> set=ImmutableSortedSet.orderedBy(STRING_LENGTH).add("in","the","quick","jumped","over","a").build();
-  assertFalse(set.contains(3.7));
+  assertFalse(set.contains((Object)3.7));
 }

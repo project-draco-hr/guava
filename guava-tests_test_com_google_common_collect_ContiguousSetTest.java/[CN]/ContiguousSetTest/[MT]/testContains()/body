@@ -11,5 +11,5 @@
   assertTrue(set.contains(2));
   assertTrue(set.contains(3));
   assertFalse(set.contains(4));
-  assertFalse(set.contains("blah"));
+  assertFalse(set.contains((Object)"blah"));
 }

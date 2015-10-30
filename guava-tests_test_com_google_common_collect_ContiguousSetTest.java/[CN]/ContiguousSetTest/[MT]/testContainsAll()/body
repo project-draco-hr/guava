@@ -6,5 +6,5 @@
   for (  Set<Integer> subset : Sets.powerSet(ImmutableSet.of(1,2,3))) {
     assertFalse(set.containsAll(Sets.union(subset,ImmutableSet.of(9))));
   }
-  assertFalse(set.containsAll(ImmutableSet.of("blah")));
+  assertFalse(set.containsAll((Collection<?>)ImmutableSet.of("blah")));
 }

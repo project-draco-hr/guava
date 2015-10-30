@@ -1,4 +1,4 @@
 {
-  forward.removeFirstOccurrence(Object.class);
+  forward.removeFirstOccurrence((Object)Object.class);
   assertEquals("[removeFirstOccurrence(Object)]",getCalls());
 }
