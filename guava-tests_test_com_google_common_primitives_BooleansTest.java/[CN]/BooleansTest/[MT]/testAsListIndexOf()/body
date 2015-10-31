@@ -1,5 +1,5 @@
 {
-  assertEquals(-1,Booleans.asList(EMPTY).indexOf("wrong type"));
+  assertEquals(-1,Booleans.asList(EMPTY).indexOf((Object)"wrong type"));
   assertEquals(-1,Booleans.asList(EMPTY).indexOf(true));
   assertEquals(-1,Booleans.asList(ARRAY_FALSE).indexOf(true));
   assertEquals(0,Booleans.asList(ARRAY_FALSE).indexOf(false));
