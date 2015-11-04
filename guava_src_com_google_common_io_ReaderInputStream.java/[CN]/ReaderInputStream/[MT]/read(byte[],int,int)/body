@@ -1,0 +1,51 @@
+{
+  checkPositionIndexes(off,off + len,b.length);
+  if (len == 0) {
+    return 0;
+  }
+  int totalBytesRead=0;
+  boolean doneEncoding=endOfInput;
+  DRAINING:   while (true) {
+    if (draining) {
+      totalBytesRead+=drain(b,off + totalBytesRead,len - totalBytesRead);
+      if (totalBytesRead == len || doneFlushing) {
+        return (totalBytesRead > 0) ? totalBytesRead : -1;
+      }
+      draining=false;
+      byteBuffer.clear();
+    }
+    while (true) {
+      CoderResult result;
+      if (doneFlushing) {
+        result=CoderResult.UNDERFLOW;
+      }
+ else       if (doneEncoding) {
+        result=encoder.flush(byteBuffer);
+      }
+ else {
+        result=encoder.encode(charBuffer,byteBuffer,endOfInput);
+      }
+      if (result.isOverflow()) {
+        startDraining(true);
+        continue DRAINING;
+      }
+ else       if (result.isUnderflow()) {
+        if (doneEncoding) {
+          doneFlushing=true;
+          startDraining(false);
+          continue DRAINING;
+        }
+ else         if (endOfInput) {
+          doneEncoding=true;
+        }
+ else {
+          readMoreChars();
+        }
+      }
+ else       if (result.isError()) {
+        result.throwException();
+        return 0;
+      }
+    }
+  }
+}

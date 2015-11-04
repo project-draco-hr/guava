@@ -1,0 +1,3 @@
+{
+  return CharSource.this.toString() + ".asByteSource(" + charset+ ")";
+}

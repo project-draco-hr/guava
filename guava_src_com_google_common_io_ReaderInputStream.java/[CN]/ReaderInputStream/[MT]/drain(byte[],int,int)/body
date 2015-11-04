@@ -1,0 +1,5 @@
+{
+  int remaining=Math.min(len,byteBuffer.remaining());
+  byteBuffer.get(b,off,remaining);
+  return remaining;
+}

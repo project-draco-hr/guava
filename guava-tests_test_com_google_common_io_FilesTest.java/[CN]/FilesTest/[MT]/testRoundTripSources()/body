@@ -1,0 +1,5 @@
+{
+  File asciiFile=getTestFile("ascii.txt");
+  ByteSource byteSource=Files.asByteSource(asciiFile);
+  assertSame(byteSource,byteSource.asCharSource(Charsets.UTF_8).asByteSource(Charsets.UTF_8));
+}

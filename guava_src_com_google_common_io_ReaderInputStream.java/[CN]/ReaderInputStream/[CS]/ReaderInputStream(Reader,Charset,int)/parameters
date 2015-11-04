@@ -1,0 +1,3 @@
+Reader reader
+Charset charset
+int bufferSize

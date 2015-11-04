@@ -1,0 +1,3 @@
+{
+  return (read(singleByte) == 1) ? UnsignedBytes.toInt(singleByte[0]) : -1;
+}

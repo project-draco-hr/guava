@@ -1,7 +1,0 @@
-{
-  TestSuite suite=new TestSuite(name);
-  for (  Map.Entry<String,String> entry : TEST_STRINGS.entrySet()) {
-    suite.addTest(suiteForString(factory,entry.getValue(),name,entry.getKey()));
-  }
-  return suite;
-}

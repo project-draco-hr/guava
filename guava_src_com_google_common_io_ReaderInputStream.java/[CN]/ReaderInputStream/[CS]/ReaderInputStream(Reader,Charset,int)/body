@@ -1,0 +1,3 @@
+{
+  this(reader,charset.newEncoder().onMalformedInput(CodingErrorAction.REPLACE).onUnmappableCharacter(CodingErrorAction.REPLACE),bufferSize);
+}

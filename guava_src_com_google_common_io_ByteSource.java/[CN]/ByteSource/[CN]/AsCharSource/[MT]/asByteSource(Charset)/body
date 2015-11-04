@@ -1,0 +1,6 @@
+{
+  if (charset.equals(this.charset)) {
+    return ByteSource.this;
+  }
+  return super.asByteSource(charset);
+}

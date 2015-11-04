@@ -3,7 +3,7 @@
   suite.addTest(ByteSourceTester.tests("Files.asByteSource[File]",SourceSinkFactories.fileByteSourceFactory(),true));
   suite.addTest(ByteSinkTester.tests("Files.asByteSink[File]",SourceSinkFactories.fileByteSinkFactory()));
   suite.addTest(ByteSinkTester.tests("Files.asByteSink[File, APPEND]",SourceSinkFactories.appendingFileByteSinkFactory()));
-  suite.addTest(CharSourceTester.tests("Files.asCharSource[File, Charset]",SourceSinkFactories.fileCharSourceFactory()));
+  suite.addTest(CharSourceTester.tests("Files.asCharSource[File, Charset]",SourceSinkFactories.fileCharSourceFactory(),false));
   suite.addTest(CharSinkTester.tests("Files.asCharSink[File, Charset]",SourceSinkFactories.fileCharSinkFactory()));
   suite.addTest(CharSinkTester.tests("Files.asCharSink[File, Charset, APPEND]",SourceSinkFactories.appendingFileCharSinkFactory()));
   suite.addTestSuite(FilesTest.class);

@@ -1,0 +1,5 @@
+CharSourceFactory factory
+byte[] bytes
+String name
+String desc
+boolean slice

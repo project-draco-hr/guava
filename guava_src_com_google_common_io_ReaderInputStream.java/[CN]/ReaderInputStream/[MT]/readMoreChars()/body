@@ -1,0 +1,18 @@
+{
+  if (availableCapacity(charBuffer) == 0) {
+    if (charBuffer.position() > 0) {
+      charBuffer.compact().flip();
+    }
+ else {
+      charBuffer=grow(charBuffer);
+    }
+  }
+  int limit=charBuffer.limit();
+  int numChars=reader.read(charBuffer.array(),limit,availableCapacity(charBuffer));
+  if (numChars == -1) {
+    endOfInput=true;
+  }
+ else {
+    charBuffer.limit(limit + numChars);
+  }
+}

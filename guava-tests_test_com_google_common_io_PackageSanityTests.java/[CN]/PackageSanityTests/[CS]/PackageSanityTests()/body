@@ -4,4 +4,5 @@
   setDefault(String.class,"abcd");
   setDefault(Method.class,AbstractPackageSanityTests.class.getDeclaredMethods()[0]);
   setDefault(MapMode.class,MapMode.READ_ONLY);
+  setDefault(CharsetEncoder.class,Charsets.UTF_8.newEncoder());
 }
