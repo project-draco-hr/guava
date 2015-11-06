@@ -6,26 +6,26 @@
     Helpers.assertEqualInOrder(list,fewer);
     fail();
   }
- catch (  AssertionError expected) {
+ catch (  AssertionFailedError expected) {
   }
   try {
     Helpers.assertEqualInOrder(fewer,list);
     fail();
   }
- catch (  AssertionError expected) {
+ catch (  AssertionFailedError expected) {
   }
   List<?> differentOrder=Arrays.asList("a","c","b");
   try {
     Helpers.assertEqualInOrder(list,differentOrder);
     fail();
   }
- catch (  AssertionError expected) {
+ catch (  AssertionFailedError expected) {
   }
   List<?> differentContents=Arrays.asList("a","b","C");
   try {
     Helpers.assertEqualInOrder(list,differentContents);
     fail();
   }
- catch (  AssertionError expected) {
+ catch (  AssertionFailedError expected) {
   }
 }

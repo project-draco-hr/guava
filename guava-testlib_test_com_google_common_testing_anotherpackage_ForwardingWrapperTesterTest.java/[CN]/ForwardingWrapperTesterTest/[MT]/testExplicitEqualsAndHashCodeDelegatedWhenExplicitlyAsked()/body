@@ -2,7 +2,7 @@
   try {
     new ForwardingWrapperTester().includingEquals().testForwarding(Equals.class,NoDelegateToEquals.WRAPPER);
   }
- catch (  AssertionError expected) {
+ catch (  AssertionFailedError expected) {
     return;
   }
   fail("Should have failed");

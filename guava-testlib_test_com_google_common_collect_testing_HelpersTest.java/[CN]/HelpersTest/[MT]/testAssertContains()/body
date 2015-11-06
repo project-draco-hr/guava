@@ -6,6 +6,6 @@
     Helpers.assertContains(list,"c");
     fail();
   }
- catch (  AssertionError expected) {
+ catch (  AssertionFailedError expected) {
   }
 }

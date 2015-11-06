@@ -2,7 +2,7 @@
   try {
     tester.forAllPublicStaticMethods(GoodEqualsFactory.class).testEqualsAndSerializable();
   }
- catch (  AssertionError expected) {
+ catch (  AssertionFailedError expected) {
     return;
   }
   fail("should have failed");

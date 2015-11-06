@@ -2,7 +2,7 @@
   try {
     tester.testForwarding(interfaceType,wrapperFunction);
   }
- catch (  AssertionError expected) {
+ catch (  AssertionFailedError expected) {
     for (    String message : expectedMessages) {
       assertThat(expected.getMessage()).contains(message);
     }

@@ -2,7 +2,7 @@
   try {
     tester.forAllPublicStaticMethods(BadSerializableFactory.class).testSerializable();
   }
- catch (  AssertionError expected) {
+ catch (  AssertionFailedError expected) {
     return;
   }
   fail();

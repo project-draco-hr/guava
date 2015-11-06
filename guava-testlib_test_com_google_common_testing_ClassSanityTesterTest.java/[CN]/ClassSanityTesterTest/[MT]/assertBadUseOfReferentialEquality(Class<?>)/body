@@ -6,5 +6,5 @@
     assertThat(expected.getMessage()).contains(cls.getSimpleName() + "(");
     return;
   }
-  fail("should have failed");
+  fail("should have failed for " + cls);
 }

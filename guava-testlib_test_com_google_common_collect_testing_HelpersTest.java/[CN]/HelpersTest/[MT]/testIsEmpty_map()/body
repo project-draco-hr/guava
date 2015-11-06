@@ -6,6 +6,6 @@
     Helpers.assertEmpty(map);
     fail();
   }
- catch (  AssertionError expected) {
+ catch (  AssertionFailedError expected) {
   }
 }

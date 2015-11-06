@@ -8,18 +8,18 @@
     Helpers.assertContainsAllOf(list,"d");
     fail();
   }
- catch (  AssertionError expected) {
+ catch (  AssertionFailedError expected) {
   }
   try {
     Helpers.assertContainsAllOf(list,"a","b","c","d");
     fail();
   }
- catch (  AssertionError expected) {
+ catch (  AssertionFailedError expected) {
   }
   try {
     Helpers.assertContainsAllOf(list,"a","a","a");
     fail();
   }
- catch (  AssertionError expected) {
+ catch (  AssertionFailedError expected) {
   }
 }

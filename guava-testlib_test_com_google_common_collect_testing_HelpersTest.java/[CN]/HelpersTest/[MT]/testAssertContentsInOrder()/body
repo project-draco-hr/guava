@@ -5,24 +5,24 @@
     Helpers.assertContentsInOrder(list,"a","b");
     fail();
   }
- catch (  AssertionError expected) {
+ catch (  AssertionFailedError expected) {
   }
   try {
     Helpers.assertContentsInOrder(list,"a","b","c","d");
     fail();
   }
- catch (  AssertionError expected) {
+ catch (  AssertionFailedError expected) {
   }
   try {
     Helpers.assertContentsInOrder(list,"a","c","b");
     fail();
   }
- catch (  AssertionError expected) {
+ catch (  AssertionFailedError expected) {
   }
   try {
     Helpers.assertContentsInOrder(list,"a","B","c");
     fail();
   }
- catch (  AssertionError expected) {
+ catch (  AssertionFailedError expected) {
   }
 }
