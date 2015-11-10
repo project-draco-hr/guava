@@ -1,0 +1,3 @@
+{
+  return (source[offset] & 0xFF) | ((source[offset + 1] & 0xFF) << 8) | ((source[offset + 2] & 0xFF) << 16)| ((source[offset + 3] & 0xFF) << 24);
+}

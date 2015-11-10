@@ -1,0 +1,6 @@
+{
+  long mask=0xFFL;
+  for (int i=0; i < 8; mask<<=8, i++) {
+    sink[offset + i]=(byte)((value & mask) >> (i * 8));
+  }
+}

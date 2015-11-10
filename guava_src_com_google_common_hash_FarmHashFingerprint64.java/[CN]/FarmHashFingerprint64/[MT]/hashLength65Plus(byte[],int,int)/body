@@ -1,0 +1,37 @@
+{
+  final int seed=81;
+  long x=seed;
+  long y=seed * K1 + 113;
+  long z=shiftMix(y * K2 + 113) * K2;
+  long[] v=new long[2], w=new long[2];
+  x=x * K2 + load64(bytes,offset);
+  int end=offset + ((length - 1) / 64) * 64;
+  int last64offset=end + ((length - 1) & 63) - 63;
+  do {
+    x=rotateRight(x + y + v[0]+ load64(bytes,offset + 8),37) * K1;
+    y=rotateRight(y + v[1] + load64(bytes,offset + 48),42) * K1;
+    x^=w[1];
+    y+=v[0] + load64(bytes,offset + 40);
+    z=rotateRight(z + w[0],33) * K1;
+    weakHashLength32WithSeeds(bytes,offset,v[1] * K1,x + w[0],v);
+    weakHashLength32WithSeeds(bytes,offset + 32,z + w[1],y + load64(bytes,offset + 16),w);
+    long tmp=x;
+    x=z;
+    z=tmp;
+    offset+=64;
+  }
+ while (offset != end);
+  long mul=K1 + ((z & 0xFF) << 1);
+  offset=last64offset;
+  w[0]+=((length - 1) & 63);
+  v[0]+=w[0];
+  w[0]+=v[0];
+  x=rotateRight(x + y + v[0]+ load64(bytes,offset + 8),37) * mul;
+  y=rotateRight(y + v[1] + load64(bytes,offset + 48),42) * mul;
+  x^=w[1] * 9;
+  y+=v[0] * 9 + load64(bytes,offset + 40);
+  z=rotateRight(z + w[0],33) * mul;
+  weakHashLength32WithSeeds(bytes,offset,v[1] * mul,x + w[0],v);
+  weakHashLength32WithSeeds(bytes,offset + 32,z + w[1],y + load64(bytes,offset + 16),w);
+  return hashLength16(hashLength16(v[0],w[0],mul) + shiftMix(y) * K0 + x,hashLength16(v[1],w[1],mul) + z,mul);
+}

@@ -1,0 +1,27 @@
+{
+  int iterations=800;
+  byte[] buf=new byte[iterations * 4];
+  int bufLen=0;
+  long h=0;
+  for (int i=0; i < iterations; ++i) {
+    h^=fingerprint(buf,i);
+    h=remix(h);
+    buf[bufLen++]=getChar(h);
+    h^=fingerprint(buf,i * i % bufLen);
+    h=remix(h);
+    buf[bufLen++]=getChar(h);
+    h^=fingerprint(buf,i * i * i % bufLen);
+    h=remix(h);
+    buf[bufLen++]=getChar(h);
+    h^=fingerprint(buf,bufLen);
+    h=remix(h);
+    buf[bufLen++]=getChar(h);
+    int x0=buf[bufLen - 1] & 0xff;
+    int x1=buf[bufLen - 2] & 0xff;
+    int x2=buf[bufLen - 3] & 0xff;
+    int x3=buf[bufLen / 2] & 0xff;
+    buf[((x0 << 16) + (x1 << 8) + x2) % bufLen]^=x3;
+    buf[((x1 << 16) + (x2 << 8) + x3) % bufLen]^=i % 256;
+  }
+  assertEquals(0x7a1d67c50ec7e167L,h);
+}

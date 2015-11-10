@@ -1,0 +1,14 @@
+{
+  long part1=load64(bytes,offset);
+  long part2=load64(bytes,offset + 8);
+  long part3=load64(bytes,offset + 16);
+  long part4=load64(bytes,offset + 24);
+  seedA+=part1;
+  seedB=rotateRight(seedB + seedA + part4,21);
+  long c=seedA;
+  seedA+=part2;
+  seedA+=part3;
+  seedB+=rotateRight(seedA,44);
+  output[0]=seedA + part4;
+  output[1]=seedB + c;
+}

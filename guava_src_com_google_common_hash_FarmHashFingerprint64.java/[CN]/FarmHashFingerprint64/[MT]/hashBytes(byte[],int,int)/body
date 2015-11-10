@@ -1,0 +1,4 @@
+{
+  checkPositionIndexes(off,off + len,input.length);
+  return HashCode.fromLong(fingerprint(input,off,len));
+}

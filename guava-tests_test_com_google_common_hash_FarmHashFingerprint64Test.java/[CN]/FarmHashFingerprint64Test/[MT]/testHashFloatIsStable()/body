@@ -1,0 +1,8 @@
+{
+  Hasher hasher=HASH_FN.newHasher();
+  hasher.putFloat(0x01000101f).putFloat(0f);
+  assertEquals(0x49f9d18ee8ae1b28L,hasher.hash().asLong());
+  hasher=HASH_FN.newHasher();
+  hasher.putDouble(0x0000000001000101d);
+  assertEquals(0x388ee898bad75cbfL,hasher.hash().asLong());
+}

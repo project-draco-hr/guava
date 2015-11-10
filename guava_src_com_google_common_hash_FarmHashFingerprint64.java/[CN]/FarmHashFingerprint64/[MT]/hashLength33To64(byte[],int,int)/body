@@ -1,0 +1,14 @@
+{
+  long mul=K2 + length * 2;
+  long a=load64(bytes,offset) * K2;
+  long b=load64(bytes,offset + 8);
+  long c=load64(bytes,offset + length - 8) * mul;
+  long d=load64(bytes,offset + length - 16) * K2;
+  long y=rotateRight(a + b,43) + rotateRight(c,30) + d;
+  long z=hashLength16(y,a + rotateRight(b + K2,18) + c,mul);
+  long e=load64(bytes,offset + 16) * mul;
+  long f=load64(bytes,offset + 24);
+  long g=(y + load64(bytes,offset + length - 32)) * mul;
+  long h=(z + load64(bytes,offset + length - 24)) * mul;
+  return hashLength16(rotateRight(e + f,43) + rotateRight(g,30) + h,e + rotateRight(f + a,18) + g,mul);
+}

@@ -1,0 +1,8 @@
+{
+  long a=(u ^ v) * mul;
+  a^=(a >>> 47);
+  long b=(v ^ a) * mul;
+  b^=(b >>> 47);
+  b*=mul;
+  return b;
+}

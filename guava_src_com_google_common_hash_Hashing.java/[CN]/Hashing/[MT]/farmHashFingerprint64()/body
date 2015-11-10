@@ -1,0 +1,3 @@
+{
+  return FarmHashFingerprint64Holder.FARMHASH_FINGERPRINT_64;
+}
