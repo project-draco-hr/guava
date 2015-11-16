@@ -1,10 +1,10 @@
 {
   return new SleepingStopwatch(){
     final Stopwatch stopwatch=Stopwatch.createStarted();
-    @Override long readMicros(){
+    @Override protected long readMicros(){
       return stopwatch.elapsed(MICROSECONDS);
     }
-    @Override void sleepMicrosUninterruptibly(    long micros){
+    @Override protected void sleepMicrosUninterruptibly(    long micros){
       if (micros > 0) {
         Uninterruptibles.sleepUninterruptibly(micros,MICROSECONDS);
       }
