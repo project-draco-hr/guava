@@ -1,3 +1,0 @@
-{
-  return LISTENERS_UPDATER.compareAndSet(future,curr,next);
-}

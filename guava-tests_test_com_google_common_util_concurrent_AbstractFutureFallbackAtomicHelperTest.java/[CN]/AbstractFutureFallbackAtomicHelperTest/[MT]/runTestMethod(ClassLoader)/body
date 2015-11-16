@@ -1,0 +1,4 @@
+{
+  Class<?> test=classLoader.loadClass(AbstractFutureTest.class.getName());
+  test.getMethod(getName()).invoke(test.newInstance());
+}

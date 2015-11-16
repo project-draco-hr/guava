@@ -1,0 +1,20 @@
+{
+  checkHelperVersion(getClass().getClassLoader(),"UnsafeAtomicHelper");
+  checkHelperVersion(NO_UNSAFE,"SafeAtomicHelper");
+  checkHelperVersion(NO_ATOMIC_REFERENCE_FIELD_UPDATER,"SynchronizedHelper");
+  ClassLoader oldClassLoader=Thread.currentThread().getContextClassLoader();
+  Thread.currentThread().setContextClassLoader(NO_UNSAFE);
+  try {
+    runTestMethod(NO_UNSAFE);
+  }
+  finally {
+    Thread.currentThread().setContextClassLoader(oldClassLoader);
+  }
+  Thread.currentThread().setContextClassLoader(NO_ATOMIC_REFERENCE_FIELD_UPDATER);
+  try {
+    runTestMethod(NO_ATOMIC_REFERENCE_FIELD_UPDATER);
+  }
+  finally {
+    Thread.currentThread().setContextClassLoader(oldClassLoader);
+  }
+}

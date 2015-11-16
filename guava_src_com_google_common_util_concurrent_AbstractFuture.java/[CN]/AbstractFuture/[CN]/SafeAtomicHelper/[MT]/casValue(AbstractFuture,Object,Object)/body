@@ -1,3 +1,0 @@
-{
-  return VALUE_UPDATER.compareAndSet(future,expected,v);
-}
