@@ -1,0 +1,3 @@
+{
+  return "UnsignedBytes.lexicographicalComparator() (sun.misc.Unsafe version)";
+}
