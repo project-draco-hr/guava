@@ -1,0 +1,9 @@
+{
+  FakeTicker ticker=new FakeTicker();
+  QueuingRemovalListener<Integer,Integer> listener=TestingRemovalListeners.queuingRemovalListener();
+  Cache<Integer,Integer> cache=CacheBuilder.newBuilder().expireAfterAccess(1,TimeUnit.MINUTES).removalListener(listener).ticker(ticker).build();
+  cache.put(1,1);
+  ticker.advance(10,TimeUnit.MINUTES);
+  cache.invalidateAll();
+  assertThat(listener.poll().getCause()).isEqualTo(RemovalCause.EXPIRED);
+}

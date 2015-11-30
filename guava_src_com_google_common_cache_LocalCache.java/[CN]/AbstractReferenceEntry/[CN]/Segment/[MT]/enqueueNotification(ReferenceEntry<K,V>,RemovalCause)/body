@@ -1,3 +1,0 @@
-{
-  enqueueNotification(entry.getKey(),entry.getHash(),entry.getValueReference(),cause);
-}

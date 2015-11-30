@@ -1,5 +1,5 @@
 {
-  enqueueNotification(entry,RemovalCause.COLLECTED);
+  enqueueNotification(entry.getKey(),entry.getHash(),entry.getValueReference().get(),entry.getValueReference().getWeight(),RemovalCause.COLLECTED);
   writeQueue.remove(entry);
   accessQueue.remove(entry);
 }

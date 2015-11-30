@@ -1,4 +1,0 @@
-K key
-int hash
-ValueReference<K,V> valueReference
-RemovalCause cause

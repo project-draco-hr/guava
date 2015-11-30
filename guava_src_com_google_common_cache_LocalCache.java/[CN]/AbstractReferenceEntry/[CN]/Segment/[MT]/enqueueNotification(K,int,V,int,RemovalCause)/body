@@ -1,10 +1,9 @@
 {
-  totalWeight-=valueReference.getWeight();
+  totalWeight-=weight;
   if (cause.wasEvicted()) {
     statsCounter.recordEviction();
   }
   if (map.removalNotificationQueue != DISCARDING_QUEUE) {
-    V value=valueReference.get();
     RemovalNotification<K,V> notification=RemovalNotification.create(key,value,cause);
     map.removalNotificationQueue.offer(notification);
   }

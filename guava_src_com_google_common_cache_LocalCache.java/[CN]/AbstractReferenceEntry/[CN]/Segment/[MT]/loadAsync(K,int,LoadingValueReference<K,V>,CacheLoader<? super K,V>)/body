@@ -3,7 +3,7 @@
   loadingFuture.addListener(new Runnable(){
     @Override public void run(){
       try {
-        V newValue=getAndRecordStats(key,hash,loadingValueReference,loadingFuture);
+        getAndRecordStats(key,hash,loadingValueReference,loadingFuture);
       }
  catch (      Throwable t) {
         logger.log(Level.WARNING,"Exception thrown during refresh",t);

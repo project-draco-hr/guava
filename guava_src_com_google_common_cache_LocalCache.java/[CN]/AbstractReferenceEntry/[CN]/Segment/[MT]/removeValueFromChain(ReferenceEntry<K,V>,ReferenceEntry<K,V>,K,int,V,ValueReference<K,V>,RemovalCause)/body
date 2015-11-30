@@ -1,5 +1,5 @@
 {
-  enqueueNotification(key,hash,valueReference,cause);
+  enqueueNotification(key,hash,value,valueReference.getWeight(),cause);
   writeQueue.remove(entry);
   accessQueue.remove(entry);
   if (valueReference.isLoading()) {

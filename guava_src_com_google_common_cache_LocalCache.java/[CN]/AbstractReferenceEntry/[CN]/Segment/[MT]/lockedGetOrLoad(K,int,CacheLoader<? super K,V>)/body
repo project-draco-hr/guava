@@ -21,10 +21,10 @@
  else {
           V value=valueReference.get();
           if (value == null) {
-            enqueueNotification(entryKey,hash,valueReference,RemovalCause.COLLECTED);
+            enqueueNotification(entryKey,hash,value,valueReference.getWeight(),RemovalCause.COLLECTED);
           }
  else           if (map.isExpired(e,now)) {
-            enqueueNotification(entryKey,hash,valueReference,RemovalCause.EXPIRED);
+            enqueueNotification(entryKey,hash,value,valueReference.getWeight(),RemovalCause.EXPIRED);
           }
  else {
             recordLockedRead(e,now);
