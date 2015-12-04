@@ -1,0 +1,12 @@
+{
+  ImmutableSortedMap<Integer,Integer> map=ImmutableSortedMap.<Integer,Integer>reverseOrder().put(2,0).put(4,0).put(6,0).put(8,0).put(10,0).build();
+  try {
+    Maps.subMap(map,Range.closed(4,8));
+    fail("IllegalArgumentException expected");
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+  assertEquals(ImmutableSortedMap.of(2,0,4,0),Maps.subMap(map,Range.atLeast(4)));
+  assertEquals(ImmutableSortedMap.of(8,0,10,0),Maps.subMap(map,Range.atMost(8)));
+  assertEquals(ImmutableSortedMap.of(2,0,4,0,6,0,8,0,10,0),Maps.subMap(map,Range.<Integer>all()));
+}

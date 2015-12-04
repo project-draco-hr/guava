@@ -1,0 +1,4 @@
+{
+  ImmutableSortedSet<Integer> set=ImmutableSortedSet.of(2,4,6,8,10);
+  assertEquals(set,Sets.subSet(set,Range.<Integer>all()));
+}

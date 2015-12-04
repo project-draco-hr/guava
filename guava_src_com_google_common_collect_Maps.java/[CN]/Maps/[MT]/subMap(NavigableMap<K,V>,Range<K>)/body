@@ -1,0 +1,15 @@
+{
+  if (map.comparator() != null && map.comparator() != Ordering.natural() && range.hasLowerBound() && range.hasUpperBound()) {
+    checkArgument(map.comparator().compare(range.lowerEndpoint(),range.upperEndpoint()) <= 0,"map is using a custom comparator which is inconsistent with the natural ordering.");
+  }
+  if (range.hasLowerBound() && range.hasUpperBound()) {
+    return map.subMap(range.lowerEndpoint(),range.lowerBoundType() == BoundType.CLOSED,range.upperEndpoint(),range.upperBoundType() == BoundType.CLOSED);
+  }
+ else   if (range.hasLowerBound()) {
+    return map.tailMap(range.lowerEndpoint(),range.lowerBoundType() == BoundType.CLOSED);
+  }
+ else   if (range.hasUpperBound()) {
+    return map.headMap(range.upperEndpoint(),range.upperBoundType() == BoundType.CLOSED);
+  }
+  return checkNotNull(map);
+}

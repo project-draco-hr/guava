@@ -1,0 +1,20 @@
+{
+  ImmutableSortedMap<Integer,Integer> map=ImmutableSortedMap.of(2,0,4,0,6,0,8,0,10,0);
+  ImmutableSortedMap<Integer,Integer> empty=ImmutableSortedMap.of();
+  assertEquals(map,Maps.subMap(map,Range.atLeast(0)));
+  assertEquals(ImmutableSortedMap.of(4,0,6,0,8,0,10,0),Maps.subMap(map,Range.atLeast(4)));
+  assertEquals(ImmutableSortedMap.of(8,0,10,0),Maps.subMap(map,Range.atLeast(7)));
+  assertEquals(empty,Maps.subMap(map,Range.atLeast(20)));
+  assertEquals(map,Maps.subMap(map,Range.greaterThan(0)));
+  assertEquals(ImmutableSortedMap.of(6,0,8,0,10,0),Maps.subMap(map,Range.greaterThan(4)));
+  assertEquals(ImmutableSortedMap.of(8,0,10,0),Maps.subMap(map,Range.greaterThan(7)));
+  assertEquals(empty,Maps.subMap(map,Range.greaterThan(20)));
+  assertEquals(empty,Maps.subMap(map,Range.lessThan(0)));
+  assertEquals(ImmutableSortedMap.of(2,0),Maps.subMap(map,Range.lessThan(4)));
+  assertEquals(ImmutableSortedMap.of(2,0,4,0,6,0),Maps.subMap(map,Range.lessThan(7)));
+  assertEquals(map,Maps.subMap(map,Range.lessThan(20)));
+  assertEquals(empty,Maps.subMap(map,Range.atMost(0)));
+  assertEquals(ImmutableSortedMap.of(2,0,4,0),Maps.subMap(map,Range.atMost(4)));
+  assertEquals(ImmutableSortedMap.of(2,0,4,0,6,0),Maps.subMap(map,Range.atMost(7)));
+  assertEquals(map,Maps.subMap(map,Range.atMost(20)));
+}

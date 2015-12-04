@@ -1,0 +1,24 @@
+{
+  ImmutableSortedMap<Integer,Integer> map=ImmutableSortedMap.of(2,0,4,0,6,0,8,0,10,0);
+  ImmutableSortedMap<Integer,Integer> empty=ImmutableSortedMap.of();
+  assertEquals(map,Maps.subMap(map,Range.closed(0,12)));
+  assertEquals(ImmutableSortedMap.of(2,0,4,0),Maps.subMap(map,Range.closed(0,4)));
+  assertEquals(ImmutableSortedMap.of(2,0,4,0,6,0),Maps.subMap(map,Range.closed(2,6)));
+  assertEquals(ImmutableSortedMap.of(4,0,6,0),Maps.subMap(map,Range.closed(3,7)));
+  assertEquals(empty,Maps.subMap(map,Range.closed(20,30)));
+  assertEquals(map,Maps.subMap(map,Range.open(0,12)));
+  assertEquals(ImmutableSortedMap.of(2,0),Maps.subMap(map,Range.open(0,4)));
+  assertEquals(ImmutableSortedMap.of(4,0),Maps.subMap(map,Range.open(2,6)));
+  assertEquals(ImmutableSortedMap.of(4,0,6,0),Maps.subMap(map,Range.open(3,7)));
+  assertEquals(empty,Maps.subMap(map,Range.open(20,30)));
+  assertEquals(map,Maps.subMap(map,Range.openClosed(0,12)));
+  assertEquals(ImmutableSortedMap.of(2,0,4,0),Maps.subMap(map,Range.openClosed(0,4)));
+  assertEquals(ImmutableSortedMap.of(4,0,6,0),Maps.subMap(map,Range.openClosed(2,6)));
+  assertEquals(ImmutableSortedMap.of(4,0,6,0),Maps.subMap(map,Range.openClosed(3,7)));
+  assertEquals(empty,Maps.subMap(map,Range.openClosed(20,30)));
+  assertEquals(map,Maps.subMap(map,Range.closedOpen(0,12)));
+  assertEquals(ImmutableSortedMap.of(2,0),Maps.subMap(map,Range.closedOpen(0,4)));
+  assertEquals(ImmutableSortedMap.of(2,0,4,0),Maps.subMap(map,Range.closedOpen(2,6)));
+  assertEquals(ImmutableSortedMap.of(4,0,6,0),Maps.subMap(map,Range.closedOpen(3,7)));
+  assertEquals(empty,Maps.subMap(map,Range.closedOpen(20,30)));
+}

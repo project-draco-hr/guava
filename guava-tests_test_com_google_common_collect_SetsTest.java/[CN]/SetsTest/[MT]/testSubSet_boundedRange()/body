@@ -1,0 +1,24 @@
+{
+  ImmutableSortedSet<Integer> set=ImmutableSortedSet.of(2,4,6,8,10);
+  ImmutableSortedSet<Integer> empty=ImmutableSortedSet.of();
+  assertEquals(set,Sets.subSet(set,Range.closed(0,12)));
+  assertEquals(ImmutableSortedSet.of(2,4),Sets.subSet(set,Range.closed(0,4)));
+  assertEquals(ImmutableSortedSet.of(2,4,6),Sets.subSet(set,Range.closed(2,6)));
+  assertEquals(ImmutableSortedSet.of(4,6),Sets.subSet(set,Range.closed(3,7)));
+  assertEquals(empty,Sets.subSet(set,Range.closed(20,30)));
+  assertEquals(set,Sets.subSet(set,Range.open(0,12)));
+  assertEquals(ImmutableSortedSet.of(2),Sets.subSet(set,Range.open(0,4)));
+  assertEquals(ImmutableSortedSet.of(4),Sets.subSet(set,Range.open(2,6)));
+  assertEquals(ImmutableSortedSet.of(4,6),Sets.subSet(set,Range.open(3,7)));
+  assertEquals(empty,Sets.subSet(set,Range.open(20,30)));
+  assertEquals(set,Sets.subSet(set,Range.openClosed(0,12)));
+  assertEquals(ImmutableSortedSet.of(2,4),Sets.subSet(set,Range.openClosed(0,4)));
+  assertEquals(ImmutableSortedSet.of(4,6),Sets.subSet(set,Range.openClosed(2,6)));
+  assertEquals(ImmutableSortedSet.of(4,6),Sets.subSet(set,Range.openClosed(3,7)));
+  assertEquals(empty,Sets.subSet(set,Range.openClosed(20,30)));
+  assertEquals(set,Sets.subSet(set,Range.closedOpen(0,12)));
+  assertEquals(ImmutableSortedSet.of(2),Sets.subSet(set,Range.closedOpen(0,4)));
+  assertEquals(ImmutableSortedSet.of(2,4),Sets.subSet(set,Range.closedOpen(2,6)));
+  assertEquals(ImmutableSortedSet.of(4,6),Sets.subSet(set,Range.closedOpen(3,7)));
+  assertEquals(empty,Sets.subSet(set,Range.closedOpen(20,30)));
+}
