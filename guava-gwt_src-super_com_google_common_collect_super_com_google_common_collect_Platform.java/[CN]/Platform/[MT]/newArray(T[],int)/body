@@ -1,3 +1,5 @@
 {
-  return GwtPlatform.newArray(reference,length);
+  T[] clone=Arrays.copyOf(reference,0);
+  resizeArray(clone,length);
+  return clone;
 }

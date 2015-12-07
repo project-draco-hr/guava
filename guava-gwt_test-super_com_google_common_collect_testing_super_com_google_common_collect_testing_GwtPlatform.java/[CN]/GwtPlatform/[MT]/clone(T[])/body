@@ -1,3 +1,0 @@
-{
-  return (T[])Arrays.copyOfRange(array,0,array.length);
-}
