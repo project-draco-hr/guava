@@ -1,9 +1,8 @@
 {
-  Timer timer=new Timer(){
+  setTimeout(new Callback(){
     @Override public void run(){
       remove(key,value);
     }
   }
-;
-  timer.schedule((int)expirationMillis);
+,(int)expirationMillis);
 }
