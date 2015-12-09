@@ -1,6 +1,13 @@
 {
+  boolean isAndroid=System.getProperties().getProperty("java.runtime.name").contains("Android");
   for (  BigInteger p : NONZERO_BIGINTEGER_CANDIDATES) {
     for (    BigInteger q : NONZERO_BIGINTEGER_CANDIDATES) {
+      if (isAndroid && p.equals(BAD_FOR_ANDROID_P) && q.equals(BAD_FOR_ANDROID_Q)) {
+        continue;
+      }
+      if (isAndroid && p.equals(BAD_FOR_GINGERBREAD_P) && q.equals(BAD_FOR_GINGERBREAD_Q)) {
+        continue;
+      }
       boolean dividesEvenly=p.remainder(q).equals(ZERO);
       try {
         BigInteger quotient=BigIntegerMath.divide(p,q,UNNECESSARY);
