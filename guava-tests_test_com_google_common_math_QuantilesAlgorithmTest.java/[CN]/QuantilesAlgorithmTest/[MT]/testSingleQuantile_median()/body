@@ -1,0 +1,6 @@
+{
+  double referenceValue=REFERENCE_ALGORITHM.singleQuantile(1,2,dataset.clone());
+  for (  QuantilesAlgorithm algorithm : NON_REFERENCE_ALGORITHMS) {
+    assertWithMessage("Mismatch between %s and %s",algorithm,REFERENCE_ALGORITHM).that(algorithm.singleQuantile(1,2,dataset.clone())).isWithin(ALLOWED_ERROR).of(referenceValue);
+  }
+}

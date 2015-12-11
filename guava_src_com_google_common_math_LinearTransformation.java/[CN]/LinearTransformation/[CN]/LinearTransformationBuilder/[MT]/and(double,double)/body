@@ -1,0 +1,10 @@
+{
+  checkArgument(isFinite(x2) && isFinite(y2));
+  if (x2 == x1) {
+    checkArgument(y2 != y1);
+    return new VerticalLinearTransformation(x1);
+  }
+ else {
+    return withSlope((y2 - y1) / (x2 - x1));
+  }
+}

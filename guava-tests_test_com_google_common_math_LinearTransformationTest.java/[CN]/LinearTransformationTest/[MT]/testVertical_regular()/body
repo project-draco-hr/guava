@@ -1,0 +1,5 @@
+{
+  double x=1.2;
+  LinearTransformation transformation=LinearTransformation.vertical(x);
+  assertVerticalLinearTransformation(transformation,x);
+}

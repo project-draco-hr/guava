@@ -1,0 +1,49 @@
+{
+  try {
+    EMPTY_PAIRED_STATS.pearsonsCorrelationCoefficient();
+    fail("Expected IllegalStateException");
+  }
+ catch (  IllegalStateException expected) {
+  }
+  try {
+    ONE_VALUE_PAIRED_STATS.pearsonsCorrelationCoefficient();
+    fail("Expected IllegalStateException");
+  }
+ catch (  IllegalStateException expected) {
+  }
+  try {
+    createSingleStats(Double.POSITIVE_INFINITY,1.23).pearsonsCorrelationCoefficient();
+    fail("Expected IllegalStateException");
+  }
+ catch (  IllegalStateException expected) {
+  }
+  assertThat(TWO_VALUES_PAIRED_STATS.pearsonsCorrelationCoefficient()).isWithin(ALLOWED_ERROR).of(TWO_VALUES_PAIRED_STATS.populationCovariance() / (TWO_VALUES_PAIRED_STATS.xStats().populationStandardDeviation() * TWO_VALUES_PAIRED_STATS.yStats().populationStandardDeviation()));
+  for (  ManyValues values : ALL_MANY_VALUES) {
+    PairedStats stats=createPairedStatsOf(MANY_VALUES,values.asIterable());
+    double pearsonsCorrelationCoefficient=stats.pearsonsCorrelationCoefficient();
+    if (values.hasAnyNonFinite()) {
+      assertThat(pearsonsCorrelationCoefficient).named("Pearson's correlation coefficient of " + values).isNaN();
+    }
+ else {
+      assertThat(pearsonsCorrelationCoefficient).named("Pearson's correlation coefficient of " + values).isWithin(ALLOWED_ERROR).of(stats.populationCovariance() / (stats.xStats().populationStandardDeviation() * stats.yStats().populationStandardDeviation()));
+    }
+  }
+  try {
+    HORIZONTAL_VALUES_PAIRED_STATS.pearsonsCorrelationCoefficient();
+    fail("Expected IllegalStateException");
+  }
+ catch (  IllegalStateException expected) {
+  }
+  try {
+    VERTICAL_VALUES_PAIRED_STATS.pearsonsCorrelationCoefficient();
+    fail("Expected IllegalStateException");
+  }
+ catch (  IllegalStateException expected) {
+  }
+  try {
+    CONSTANT_VALUES_PAIRED_STATS.pearsonsCorrelationCoefficient();
+    fail("Expected IllegalStateException");
+  }
+ catch (  IllegalStateException expected) {
+  }
+}

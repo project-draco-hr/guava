@@ -1,0 +1,43 @@
+{
+  try {
+    Stats.meanOf();
+    fail("Expected IllegalArgumentException");
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+  try {
+    Stats.meanOf(ImmutableList.<Number>of());
+    fail("Expected IllegalArgumentException");
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+  assertThat(Stats.meanOf(ONE_VALUE)).isWithin(ALLOWED_ERROR).of(ONE_VALUE);
+  assertThat(Stats.meanOf(POSITIVE_INFINITY)).isPositiveInfinity();
+  assertThat(Stats.meanOf(NEGATIVE_INFINITY)).isNegativeInfinity();
+  assertThat(Stats.meanOf(NaN)).isNaN();
+  assertThat(Stats.meanOf(TWO_VALUES)).isWithin(ALLOWED_ERROR).of(TWO_VALUES_MEAN);
+  for (  ManyValues values : ALL_MANY_VALUES) {
+    double mean=Stats.meanOf(values.asArray());
+    if (values.hasAnyNaN()) {
+      assertThat(mean).named("mean of " + values).isNaN();
+    }
+ else     if (values.hasAnyPositiveInfinity() && values.hasAnyNegativeInfinity()) {
+      assertThat(mean).named("mean of " + values).isNaN();
+    }
+ else     if (values.hasAnyPositiveInfinity()) {
+      assertThat(mean).named("mean of " + values).isPositiveInfinity();
+    }
+ else     if (values.hasAnyNegativeInfinity()) {
+      assertThat(mean).named("mean of " + values).isNegativeInfinity();
+    }
+ else {
+      assertThat(mean).named("mean of " + values).isWithin(ALLOWED_ERROR).of(MANY_VALUES_MEAN);
+    }
+  }
+  assertThat(Stats.meanOf(MANY_VALUES)).isWithin(ALLOWED_ERROR).of(MANY_VALUES_MEAN);
+  assertThat(Stats.meanOf(MANY_VALUES.iterator())).isWithin(ALLOWED_ERROR).of(MANY_VALUES_MEAN);
+  assertThat(Stats.meanOf(INTEGER_MANY_VALUES)).isWithin(ALLOWED_ERROR).of(INTEGER_MANY_VALUES_MEAN);
+  assertThat(Stats.meanOf(Ints.toArray(INTEGER_MANY_VALUES))).isWithin(ALLOWED_ERROR).of(INTEGER_MANY_VALUES_MEAN);
+  assertThat(Stats.meanOf(LONG_MANY_VALUES)).isWithin(ALLOWED_ERROR).of(LONG_MANY_VALUES_MEAN);
+  assertThat(Stats.meanOf(Longs.toArray(LONG_MANY_VALUES))).isWithin(ALLOWED_ERROR).of(LONG_MANY_VALUES_MEAN);
+}

@@ -1,0 +1,11 @@
+{
+  ArrayList<Integer> indexes=new ArrayList<Integer>();
+  ImmutableMap.Builder<Integer,Double> expectedBuilder=ImmutableMap.builder();
+  for (int index=0; index <= 100; index++) {
+    indexes.add(index);
+    expectedBuilder.put(index,expectedLargeDatasetPercentile(index));
+  }
+  Random random=new Random(770683168895677741L);
+  Collections.shuffle(indexes,random);
+  assertQuantilesMap(expectedBuilder.build(),percentiles().indexes(Ints.toArray(indexes)).compute(PSEUDORANDOM_DATASET));
+}

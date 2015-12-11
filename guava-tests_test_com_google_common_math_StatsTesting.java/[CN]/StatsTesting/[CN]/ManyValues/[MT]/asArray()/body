@@ -1,0 +1,3 @@
+{
+  return Doubles.toArray(values);
+}

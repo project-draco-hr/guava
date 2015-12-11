@@ -1,0 +1,3 @@
+{
+  new EqualsTester().addEqualityGroup(Stats.of(1.0,1.0,5.0,5.0),Stats.of(1.0,1.0,5.0,5.0),Stats.of(ImmutableList.of(1.0,1.0,5.0,5.0)),Stats.of(ImmutableList.of(1.0,1.0,5.0,5.0).iterator()),SerializableTester.reserialize(Stats.of(1.0,1.0,5.0,5.0))).addEqualityGroup(Stats.of(1.0,5.0)).addEqualityGroup(Stats.of(1.0,5.0,1.0,6.0)).addEqualityGroup(Stats.of(2.0,6.0,2.0,6.0)).addEqualityGroup(new Stats(5,-5.5,55.5,-5.55,5.55),new Stats(5,-5.5,55.5,-5.55,5.55)).addEqualityGroup(new Stats(6,-5.5,55.5,-5.55,5.55)).addEqualityGroup(new Stats(5,-5.6,55.5,-5.55,5.55)).addEqualityGroup(new Stats(5,-5.5,55.6,-5.55,5.55)).addEqualityGroup(new Stats(5,-5.5,55.5,-5.56,5.55)).addEqualityGroup(new Stats(5,-5.5,55.5,-5.55,5.56)).testEquals();
+}

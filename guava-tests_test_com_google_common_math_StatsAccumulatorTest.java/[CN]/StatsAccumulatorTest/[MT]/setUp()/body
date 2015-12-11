@@ -1,0 +1,29 @@
+{
+  super.setUp();
+  emptyAccumulator=new StatsAccumulator();
+  emptyAccumulatorByAddAllEmptyIterable=new StatsAccumulator();
+  emptyAccumulatorByAddAllEmptyIterable.addAll(ImmutableList.<Double>of());
+  oneValueAccumulator=new StatsAccumulator();
+  oneValueAccumulator.add(ONE_VALUE);
+  twoValuesAccumulator=new StatsAccumulator();
+  twoValuesAccumulator.addAll(TWO_VALUES);
+  manyValuesAccumulatorByAddAllIterable=new StatsAccumulator();
+  manyValuesAccumulatorByAddAllIterable.addAll(MANY_VALUES);
+  manyValuesAccumulatorByAddAllIterator=new StatsAccumulator();
+  manyValuesAccumulatorByAddAllIterator.addAll(MANY_VALUES.iterator());
+  manyValuesAccumulatorByAddAllVarargs=new StatsAccumulator();
+  manyValuesAccumulatorByAddAllVarargs.addAll(Doubles.toArray(MANY_VALUES));
+  manyValuesAccumulatorByRepeatedAdd=new StatsAccumulator();
+  for (  double value : MANY_VALUES) {
+    manyValuesAccumulatorByRepeatedAdd.add(value);
+  }
+  manyValuesAccumulatorByAddAndAddAll=new StatsAccumulator();
+  manyValuesAccumulatorByAddAndAddAll.add(MANY_VALUES.get(0));
+  manyValuesAccumulatorByAddAndAddAll.addAll(MANY_VALUES.subList(1,MANY_VALUES.size()));
+  integerManyValuesAccumulatorByAddAllIterable=new StatsAccumulator();
+  integerManyValuesAccumulatorByAddAllIterable.addAll(INTEGER_MANY_VALUES);
+  longManyValuesAccumulatorByAddAllIterator=new StatsAccumulator();
+  longManyValuesAccumulatorByAddAllIterator.addAll(LONG_MANY_VALUES.iterator());
+  longManyValuesAccumulatorByAddAllVarargs=new StatsAccumulator();
+  longManyValuesAccumulatorByAddAllVarargs.addAll(Longs.toArray(LONG_MANY_VALUES));
+}

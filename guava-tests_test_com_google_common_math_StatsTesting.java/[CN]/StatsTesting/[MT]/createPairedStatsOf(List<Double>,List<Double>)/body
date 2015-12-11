@@ -1,0 +1,3 @@
+{
+  return createFilledPairedStatsAccumulator(xValues,yValues).snapshot();
+}

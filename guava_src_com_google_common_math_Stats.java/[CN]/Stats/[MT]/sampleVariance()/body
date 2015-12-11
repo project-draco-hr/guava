@@ -1,0 +1,7 @@
+{
+  checkState(count > 1);
+  if (isNaN(sumOfSquaresOfDeltas)) {
+    return NaN;
+  }
+  return ensureNonNegative(sumOfSquaresOfDeltas) / (count - 1);
+}

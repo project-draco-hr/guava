@@ -1,0 +1,8 @@
+{
+  try {
+    LinearTransformation.mapping(Double.POSITIVE_INFINITY,3.4);
+    fail("Expected IllegalArgumentException from mapping(x, y) with infinite x");
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}

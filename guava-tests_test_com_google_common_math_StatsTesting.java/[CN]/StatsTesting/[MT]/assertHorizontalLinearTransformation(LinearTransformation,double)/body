@@ -1,0 +1,13 @@
+{
+  assertThat(transformation.isHorizontal()).isTrue();
+  assertThat(transformation.isVertical()).isFalse();
+  assertThat(transformation.transformX(-1.0)).isWithin(ALLOWED_ERROR).of(y);
+  assertThat(transformation.transformX(1.0)).isWithin(ALLOWED_ERROR).of(y);
+  try {
+    transformation.transformY(0.0);
+    fail("Expected IllegalStateException");
+  }
+ catch (  IllegalStateException expected) {
+  }
+  assertThat(transformation.slope()).isWithin(ALLOWED_ERROR).of(0.0);
+}

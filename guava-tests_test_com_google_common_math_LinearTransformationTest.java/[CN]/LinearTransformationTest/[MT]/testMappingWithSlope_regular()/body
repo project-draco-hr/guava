@@ -1,0 +1,8 @@
+{
+  double x1=1.2;
+  double y1=3.4;
+  double xDelta=-5.6;
+  double slope=-7.8;
+  LinearTransformation transformation=LinearTransformation.mapping(x1,y1).withSlope(slope);
+  assertDiagonalLinearTransformation(transformation,x1,y1,xDelta,xDelta * slope);
+}

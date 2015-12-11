@@ -1,0 +1,11 @@
+{
+  checkArgument(xDelta != 0.0);
+  checkArgument(yDelta != 0.0);
+  assertThat(transformation.isHorizontal()).isFalse();
+  assertThat(transformation.isVertical()).isFalse();
+  assertThat(transformation.transformX(x1)).isWithin(ALLOWED_ERROR).of(y1);
+  assertThat(transformation.transformX(x1 + xDelta)).isWithin(ALLOWED_ERROR).of(y1 + yDelta);
+  assertThat(transformation.transformY(y1)).isWithin(ALLOWED_ERROR).of(x1);
+  assertThat(transformation.transformY(y1 + yDelta)).isWithin(ALLOWED_ERROR).of(x1 + xDelta);
+  assertThat(transformation.slope()).isWithin(ALLOWED_ERROR).of(yDelta / xDelta);
+}

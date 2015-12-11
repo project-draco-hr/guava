@@ -1,0 +1,43 @@
+{
+  try {
+    emptyAccumulator.pearsonsCorrelationCoefficient();
+    fail("Expected IllegalStateException");
+  }
+ catch (  IllegalStateException expected) {
+  }
+  try {
+    oneValueAccumulator.pearsonsCorrelationCoefficient();
+    fail("Expected IllegalStateException");
+  }
+ catch (  IllegalStateException expected) {
+  }
+  assertThat(twoValuesAccumulator.pearsonsCorrelationCoefficient()).isWithin(ALLOWED_ERROR).of(twoValuesAccumulator.populationCovariance() / (twoValuesAccumulator.xStats().populationStandardDeviation() * twoValuesAccumulator.yStats().populationStandardDeviation()));
+  for (  ManyValues values : ALL_MANY_VALUES) {
+    PairedStatsAccumulator accumulator=createFilledPairedStatsAccumulator(MANY_VALUES,values.asIterable());
+    double pearsonsCorrelationCoefficient=accumulator.pearsonsCorrelationCoefficient();
+    if (values.hasAnyNonFinite()) {
+      assertThat(pearsonsCorrelationCoefficient).named("Pearson's correlation coefficient of " + values).isNaN();
+    }
+ else {
+      assertThat(pearsonsCorrelationCoefficient).named("Pearson's correlation coefficient of " + values).isWithin(ALLOWED_ERROR).of(accumulator.populationCovariance() / (accumulator.xStats().populationStandardDeviation() * accumulator.yStats().populationStandardDeviation()));
+    }
+  }
+  try {
+    horizontalValuesAccumulator.pearsonsCorrelationCoefficient();
+    fail("Expected IllegalStateException");
+  }
+ catch (  IllegalStateException expected) {
+  }
+  try {
+    verticalValuesAccumulator.pearsonsCorrelationCoefficient();
+    fail("Expected IllegalStateException");
+  }
+ catch (  IllegalStateException expected) {
+  }
+  try {
+    constantValuesAccumulator.pearsonsCorrelationCoefficient();
+    fail("Expected IllegalStateException");
+  }
+ catch (  IllegalStateException expected) {
+  }
+}

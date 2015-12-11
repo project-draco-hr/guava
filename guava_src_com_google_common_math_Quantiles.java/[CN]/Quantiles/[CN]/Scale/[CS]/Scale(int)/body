@@ -1,0 +1,4 @@
+{
+  checkArgument(scale > 0,"Quantile scale must be positive");
+  this.scale=scale;
+}

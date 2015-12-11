@@ -1,0 +1,8 @@
+{
+  if (value > 0.0) {
+    return value;
+  }
+ else {
+    return Double.MIN_VALUE;
+  }
+}

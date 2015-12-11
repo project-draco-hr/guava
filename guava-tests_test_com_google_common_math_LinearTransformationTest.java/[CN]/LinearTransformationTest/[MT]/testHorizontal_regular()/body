@@ -1,0 +1,5 @@
+{
+  double y=1.2;
+  LinearTransformation transformation=LinearTransformation.horizontal(y);
+  assertHorizontalLinearTransformation(transformation,y);
+}

@@ -1,0 +1,3 @@
+{
+  return String.format("y = %g * x + %g",slope,yIntercept);
+}

@@ -1,0 +1,5 @@
+{
+  this.xStats=xStats;
+  this.yStats=yStats;
+  this.sumOfProductsOfDeltas=sumOfProductsOfDeltas;
+}

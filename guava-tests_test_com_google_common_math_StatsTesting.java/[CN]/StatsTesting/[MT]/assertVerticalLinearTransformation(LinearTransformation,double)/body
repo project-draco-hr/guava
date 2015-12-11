@@ -1,0 +1,18 @@
+{
+  assertThat(transformation.isHorizontal()).isFalse();
+  assertThat(transformation.isVertical()).isTrue();
+  try {
+    transformation.transformX(0.0);
+    fail("Expected IllegalStateException");
+  }
+ catch (  IllegalStateException expected) {
+  }
+  assertThat(transformation.transformY(-1.0)).isWithin(ALLOWED_ERROR).of(x);
+  assertThat(transformation.transformY(1.0)).isWithin(ALLOWED_ERROR).of(x);
+  try {
+    transformation.slope();
+    fail("Expected IllegalStateException");
+  }
+ catch (  IllegalStateException expected) {
+  }
+}

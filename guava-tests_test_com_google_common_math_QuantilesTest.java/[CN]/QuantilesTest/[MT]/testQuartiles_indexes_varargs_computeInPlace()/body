@@ -1,0 +1,6 @@
+{
+  double[] dataset=Doubles.toArray(SIXTEEN_SQUARES_DOUBLES);
+  ImmutableMap<Integer,Double> expected=ImmutableMap.of(1,SIXTEEN_SQUARES_QUARTILE_1,3,SIXTEEN_SQUARES_QUARTILE_3);
+  assertQuantilesMap(expected,quartiles().indexes(1,3).computeInPlace(dataset));
+  assertDatasetAnyOrder(SIXTEEN_SQUARES_DOUBLES,dataset);
+}

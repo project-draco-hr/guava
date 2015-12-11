@@ -1,0 +1,8 @@
+{
+  try {
+    LinearTransformation.vertical(Double.NEGATIVE_INFINITY);
+    fail("Expected IllegalArgumentException from vertical(x) with infinite x");
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}

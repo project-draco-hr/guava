@@ -1,0 +1,12 @@
+{
+  checkState(count() > 1);
+  if (isNaN(sumOfProductsOfDeltas)) {
+    return NaN;
+  }
+  double xSumOfSquaresOfDeltas=xStats().sumOfSquaresOfDeltas();
+  double ySumOfSquaresOfDeltas=yStats().sumOfSquaresOfDeltas();
+  checkState(xSumOfSquaresOfDeltas > 0.0);
+  checkState(ySumOfSquaresOfDeltas > 0.0);
+  double productOfSumsOfSquaresOfDeltas=ensurePositive(xSumOfSquaresOfDeltas * ySumOfSquaresOfDeltas);
+  return ensureInUnitRange(sumOfProductsOfDeltas / Math.sqrt(productOfSumsOfSquaresOfDeltas));
+}

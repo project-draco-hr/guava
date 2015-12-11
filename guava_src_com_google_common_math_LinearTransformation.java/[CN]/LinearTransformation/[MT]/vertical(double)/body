@@ -1,0 +1,4 @@
+{
+  checkArgument(isFinite(x));
+  return new VerticalLinearTransformation(x);
+}

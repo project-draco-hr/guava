@@ -1,0 +1,39 @@
+{
+  try {
+    emptyAccumulator.min();
+    fail("Expected IllegalStateException");
+  }
+ catch (  IllegalStateException expected) {
+  }
+  try {
+    emptyAccumulatorByAddAllEmptyIterable.min();
+    fail("Expected IllegalStateException");
+  }
+ catch (  IllegalStateException expected) {
+  }
+  assertThat(oneValueAccumulator.min()).isWithin(ALLOWED_ERROR).of(ONE_VALUE);
+  assertThat(twoValuesAccumulator.min()).isWithin(ALLOWED_ERROR).of(TWO_VALUES_MIN);
+  assertThat(manyValuesAccumulatorByAddAllIterable.min()).isWithin(ALLOWED_ERROR).of(MANY_VALUES_MIN);
+  assertThat(manyValuesAccumulatorByAddAllIterator.min()).isWithin(ALLOWED_ERROR).of(MANY_VALUES_MIN);
+  assertThat(manyValuesAccumulatorByAddAllVarargs.min()).isWithin(ALLOWED_ERROR).of(MANY_VALUES_MIN);
+  for (  ManyValues values : ALL_MANY_VALUES) {
+    StatsAccumulator accumulator=new StatsAccumulator();
+    for (    double value : values.asIterable()) {
+      accumulator.add(value);
+    }
+    double min=accumulator.min();
+    if (values.hasAnyNaN()) {
+      assertThat(min).named("min of " + values).isNaN();
+    }
+ else     if (values.hasAnyNegativeInfinity()) {
+      assertThat(min).named("min of " + values).isNegativeInfinity();
+    }
+ else {
+      assertThat(min).named("min of " + values).isWithin(ALLOWED_ERROR).of(MANY_VALUES_MIN);
+    }
+  }
+  assertThat(manyValuesAccumulatorByAddAndAddAll.min()).isWithin(ALLOWED_ERROR).of(MANY_VALUES_MIN);
+  assertThat(integerManyValuesAccumulatorByAddAllIterable.min()).isWithin(ALLOWED_ERROR).of(INTEGER_MANY_VALUES_MIN);
+  assertThat(longManyValuesAccumulatorByAddAllIterator.min()).isWithin(ALLOWED_ERROR).of(LONG_MANY_VALUES_MIN);
+  assertThat(longManyValuesAccumulatorByAddAllVarargs.min()).isWithin(ALLOWED_ERROR).of(LONG_MANY_VALUES_MIN);
+}

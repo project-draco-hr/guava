@@ -1,0 +1,6 @@
+{
+  assertStatsApproxEqual(EMPTY_STATS_ITERABLE,emptyAccumulator.xStats());
+  assertStatsApproxEqual(ONE_VALUE_STATS,oneValueAccumulator.xStats());
+  assertStatsApproxEqual(TWO_VALUES_STATS,twoValuesAccumulator.xStats());
+  assertStatsApproxEqual(MANY_VALUES_STATS_ITERABLE,manyValuesAccumulator.xStats());
+}

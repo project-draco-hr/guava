@@ -1,0 +1,8 @@
+{
+  checkArgument(xValues.size() == yValues.size());
+  PairedStatsAccumulator accumulator=new PairedStatsAccumulator();
+  for (int index=0; index < xValues.size(); index++) {
+    accumulator.add(xValues.get(index),yValues.get(index));
+  }
+  return accumulator;
+}

@@ -1,0 +1,6 @@
+{
+  double x1=1.2;
+  double y=5.6;
+  LinearTransformation transformation=LinearTransformation.mapping(x1,y).withSlope(0.0);
+  assertHorizontalLinearTransformation(transformation,y);
+}

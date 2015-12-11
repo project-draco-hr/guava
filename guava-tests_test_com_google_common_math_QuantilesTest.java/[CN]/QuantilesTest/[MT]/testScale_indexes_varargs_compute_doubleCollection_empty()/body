@@ -1,0 +1,9 @@
+{
+  Quantiles.ScaleAndIndexes intermediate=Quantiles.scale(10).indexes(1,3,5);
+  try {
+    intermediate.compute(EMPTY_DATASET);
+    fail("Expected IllegalArgumentException");
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}

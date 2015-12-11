@@ -1,0 +1,7 @@
+{
+  double x=1.2;
+  double y1=3.4;
+  double yDelta=5.6;
+  LinearTransformation transformation=LinearTransformation.mapping(x,y1).and(x,y1 + yDelta);
+  assertVerticalLinearTransformation(transformation,x);
+}

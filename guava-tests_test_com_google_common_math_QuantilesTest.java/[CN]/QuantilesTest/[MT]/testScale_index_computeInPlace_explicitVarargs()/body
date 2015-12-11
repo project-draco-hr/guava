@@ -1,0 +1,3 @@
+{
+  assertQuantile(1,45.6,Quantiles.scale(10).index(5).computeInPlace(78.9,12.3,45.6));
+}

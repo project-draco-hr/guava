@@ -1,0 +1,12 @@
+{
+  int mid=(from + to) >>> 1;
+  boolean toLessThanMid=(array[to] < array[mid]);
+  boolean midLessThanFrom=(array[mid] < array[from]);
+  boolean toLessThanFrom=(array[to] < array[from]);
+  if (toLessThanMid == midLessThanFrom) {
+    swap(array,mid,from);
+  }
+ else   if (toLessThanMid != toLessThanFrom) {
+    swap(array,from,to);
+  }
+}

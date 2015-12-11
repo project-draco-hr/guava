@@ -1,0 +1,8 @@
+{
+  Random random=new Random(2211275185798966364L);
+  ImmutableList.Builder<Double> largeDatasetBuilder=ImmutableList.builder();
+  for (int i=0; i < PSEUDORANDOM_DATASET_SIZE; i++) {
+    largeDatasetBuilder.add(random.nextGaussian());
+  }
+  return largeDatasetBuilder.build();
+}

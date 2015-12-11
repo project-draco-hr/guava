@@ -1,0 +1,4 @@
+{
+  LinearTransformation transformation=LinearTransformation.forNaN();
+  assertLinearTransformationNaN(transformation);
+}

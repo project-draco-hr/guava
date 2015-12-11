@@ -1,0 +1,3 @@
+{
+  return Iterables.any(values,Predicates.equalTo(POSITIVE_INFINITY));
+}

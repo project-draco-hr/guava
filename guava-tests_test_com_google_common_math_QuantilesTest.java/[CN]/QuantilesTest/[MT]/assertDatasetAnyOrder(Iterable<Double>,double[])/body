@@ -1,0 +1,3 @@
+{
+  assertThat(Doubles.asList(actual)).containsExactlyElementsIn(expected);
+}

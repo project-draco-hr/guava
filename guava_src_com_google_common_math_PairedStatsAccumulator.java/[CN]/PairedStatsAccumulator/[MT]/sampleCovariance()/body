@@ -1,0 +1,4 @@
+{
+  checkState(count() > 1);
+  return sumOfProductsOfDeltas / (count() - 1);
+}

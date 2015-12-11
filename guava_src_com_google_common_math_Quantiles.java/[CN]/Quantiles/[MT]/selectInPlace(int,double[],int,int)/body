@@ -1,0 +1,23 @@
+{
+  if (required == from) {
+    int min=from;
+    for (int index=from + 1; index <= to; index++) {
+      if (array[min] > array[index]) {
+        min=index;
+      }
+    }
+    if (min != from) {
+      swap(array,min,from);
+    }
+    return;
+  }
+  while (to > from) {
+    int partitionPoint=partition(array,from,to);
+    if (partitionPoint >= required) {
+      to=partitionPoint - 1;
+    }
+    if (partitionPoint <= required) {
+      from=partitionPoint + 1;
+    }
+  }
+}

@@ -1,0 +1,4 @@
+{
+  ImmutableMap<Integer,Double> expected=ImmutableMap.of(0,SIXTEEN_SQUARES_MIN,10,SIXTEEN_SQUARES_MAX,5,SIXTEEN_SQUARES_MEDIAN,1,SIXTEEN_SQUARES_DECILE_1,8,SIXTEEN_SQUARES_DECILE_8);
+  assertQuantilesMap(expected,Quantiles.scale(10).indexes(0,10,5,1,8,1).compute(SIXTEEN_SQUARES_DOUBLES));
+}

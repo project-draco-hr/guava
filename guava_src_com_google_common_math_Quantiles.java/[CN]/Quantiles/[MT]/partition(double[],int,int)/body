@@ -1,0 +1,13 @@
+{
+  movePivotToStartOfSlice(array,from,to);
+  double pivot=array[from];
+  int partitionPoint=to;
+  for (int i=to; i > from; i--) {
+    if (array[i] > pivot) {
+      swap(array,partitionPoint,i);
+      partitionPoint--;
+    }
+  }
+  swap(array,from,partitionPoint);
+  return partitionPoint;
+}

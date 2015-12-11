@@ -1,0 +1,6 @@
+{
+  assertThat(actual.keySet()).isEqualTo(expected.keySet());
+  for (  int index : expected.keySet()) {
+    assertQuantile(index,expected.get(index),actual.get(index));
+  }
+}

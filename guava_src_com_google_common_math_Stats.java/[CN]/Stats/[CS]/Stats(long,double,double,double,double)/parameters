@@ -1,0 +1,5 @@
+long count
+double mean
+double sumOfSquaresOfDeltas
+double min
+double max

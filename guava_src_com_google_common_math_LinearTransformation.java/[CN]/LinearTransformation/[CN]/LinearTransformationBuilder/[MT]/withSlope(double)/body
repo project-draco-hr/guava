@@ -1,0 +1,10 @@
+{
+  checkArgument(!Double.isNaN(slope));
+  if (isFinite(slope)) {
+    double yIntercept=y1 - x1 * slope;
+    return new RegularLinearTransformation(slope,yIntercept);
+  }
+ else {
+    return new VerticalLinearTransformation(x1);
+  }
+}

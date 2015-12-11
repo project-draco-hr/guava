@@ -1,0 +1,12 @@
+{
+  if (lower == NEGATIVE_INFINITY) {
+    if (upper == POSITIVE_INFINITY) {
+      return NaN;
+    }
+    return NEGATIVE_INFINITY;
+  }
+  if (upper == POSITIVE_INFINITY) {
+    return POSITIVE_INFINITY;
+  }
+  return lower + (upper - lower) * remainder / scale;
+}

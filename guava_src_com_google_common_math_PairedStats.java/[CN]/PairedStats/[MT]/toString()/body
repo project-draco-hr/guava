@@ -1,0 +1,3 @@
+{
+  return MoreObjects.toStringHelper(this).add("xStats",xStats).add("yStats",yStats).add("populationCovariance",populationCovariance()).toString();
+}

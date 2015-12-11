@@ -1,0 +1,5 @@
+{
+  for (  Number value : values) {
+    add(value.doubleValue());
+  }
+}

@@ -1,0 +1,47 @@
+{
+  try {
+    EMPTY_STATS_VARARGS.mean();
+    fail("Expected IllegalStateException");
+  }
+ catch (  IllegalStateException expected) {
+  }
+  try {
+    EMPTY_STATS_ITERABLE.mean();
+    fail("Expected IllegalStateException");
+  }
+ catch (  IllegalStateException expected) {
+  }
+  assertThat(ONE_VALUE_STATS.mean()).isWithin(ALLOWED_ERROR).of(ONE_VALUE);
+  assertThat(Stats.of(POSITIVE_INFINITY).mean()).isPositiveInfinity();
+  assertThat(Stats.of(NEGATIVE_INFINITY).mean()).isNegativeInfinity();
+  assertThat(Stats.of(NaN).mean()).isNaN();
+  assertThat(TWO_VALUES_STATS.mean()).isWithin(ALLOWED_ERROR).of(TWO_VALUES_MEAN);
+  for (  ManyValues values : ALL_MANY_VALUES) {
+    double mean=Stats.of(values.asArray()).mean();
+    if (values.hasAnyNaN()) {
+      assertThat(mean).named("mean of " + values).isNaN();
+    }
+ else     if (values.hasAnyPositiveInfinity() && values.hasAnyNegativeInfinity()) {
+      assertThat(mean).named("mean of " + values).isNaN();
+    }
+ else     if (values.hasAnyPositiveInfinity()) {
+      assertThat(mean).named("mean of " + values).isPositiveInfinity();
+    }
+ else     if (values.hasAnyNegativeInfinity()) {
+      assertThat(mean).named("mean of " + values).isNegativeInfinity();
+    }
+ else {
+      assertThat(mean).named("mean of " + values).isWithin(ALLOWED_ERROR).of(MANY_VALUES_MEAN);
+    }
+  }
+  assertThat(MANY_VALUES_STATS_ITERABLE.mean()).isWithin(ALLOWED_ERROR).of(MANY_VALUES_MEAN);
+  assertThat(MANY_VALUES_STATS_ITERATOR.mean()).isWithin(ALLOWED_ERROR).of(MANY_VALUES_MEAN);
+  assertThat(MANY_VALUES_STATS_SNAPSHOT.mean()).isWithin(ALLOWED_ERROR).of(MANY_VALUES_MEAN);
+  assertThat(LARGE_VALUES_STATS.mean()).isWithin(ALLOWED_ERROR * Double.MAX_VALUE).of(LARGE_VALUES_MEAN);
+  assertThat(INTEGER_MANY_VALUES_STATS_VARARGS.mean()).isWithin(ALLOWED_ERROR).of(INTEGER_MANY_VALUES_MEAN);
+  assertThat(INTEGER_MANY_VALUES_STATS_ITERABLE.mean()).isWithin(ALLOWED_ERROR).of(INTEGER_MANY_VALUES_MEAN);
+  assertThat(LARGE_INTEGER_VALUES_STATS.mean()).isWithin(ALLOWED_ERROR * Integer.MAX_VALUE).of(LARGE_INTEGER_VALUES_MEAN);
+  assertThat(LONG_MANY_VALUES_STATS_ITERATOR.mean()).isWithin(ALLOWED_ERROR).of(LONG_MANY_VALUES_MEAN);
+  assertThat(LONG_MANY_VALUES_STATS_SNAPSHOT.mean()).isWithin(ALLOWED_ERROR).of(LONG_MANY_VALUES_MEAN);
+  assertThat(LARGE_LONG_VALUES_STATS.mean()).isWithin(ALLOWED_ERROR * Long.MAX_VALUE).of(LARGE_LONG_VALUES_MEAN);
+}

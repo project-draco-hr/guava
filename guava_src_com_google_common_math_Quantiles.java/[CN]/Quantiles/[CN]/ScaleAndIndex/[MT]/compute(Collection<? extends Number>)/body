@@ -1,0 +1,3 @@
+{
+  return computeInPlace(Doubles.toArray(dataset));
+}

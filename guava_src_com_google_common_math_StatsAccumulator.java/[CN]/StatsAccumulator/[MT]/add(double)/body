@@ -1,0 +1,28 @@
+{
+  count++;
+  if (count == 1) {
+    mean=value;
+    min=value;
+    max=value;
+    if (!isFinite(value)) {
+      sumOfSquaresOfDeltas=NaN;
+    }
+  }
+ else {
+    if (isFinite(value) && isFinite(mean)) {
+      double nextMean=mean + (value - mean) / count;
+      sumOfSquaresOfDeltas+=(value - mean) * (value - nextMean);
+      mean=nextMean;
+    }
+ else {
+      mean=calculateNewMeanNonFinite(mean,value);
+      sumOfSquaresOfDeltas=NaN;
+    }
+    if (value < min || isNaN(value)) {
+      min=value;
+    }
+    if (value > max || isNaN(value)) {
+      max=value;
+    }
+  }
+}

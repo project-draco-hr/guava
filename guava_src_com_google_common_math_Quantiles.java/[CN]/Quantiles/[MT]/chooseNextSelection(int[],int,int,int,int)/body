@@ -1,0 +1,26 @@
+{
+  if (requiredFrom == requiredTo) {
+    return requiredFrom;
+  }
+  int centerFloor=(from + to) >>> 1;
+  int low=requiredFrom;
+  int high=requiredTo;
+  while (high > low + 1) {
+    int mid=(low + high) >>> 1;
+    if (allRequired[mid] > centerFloor) {
+      high=mid;
+    }
+ else     if (allRequired[mid] < centerFloor) {
+      low=mid;
+    }
+ else {
+      return mid;
+    }
+  }
+  if (from + to - allRequired[low] - allRequired[high] > 0) {
+    return high;
+  }
+ else {
+    return low;
+  }
+}

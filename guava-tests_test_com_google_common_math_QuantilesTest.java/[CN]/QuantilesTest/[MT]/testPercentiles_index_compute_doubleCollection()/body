@@ -1,0 +1,6 @@
+{
+  for (int index=0; index <= 100; index++) {
+    double expected=expectedLargeDatasetPercentile(index);
+    assertQuantile(index,expected,percentiles().index(index).compute(PSEUDORANDOM_DATASET));
+  }
+}

@@ -1,0 +1,3 @@
+{
+  assertThat(actual).hasValuesWithin(0.0).of(Doubles.toArray(expected));
+}

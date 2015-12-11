@@ -1,0 +1,5 @@
+{
+  Map<Integer,Double> actual=Quantiles.scale(10).indexes(0,1,2,8,9,10).compute(ONE_TO_FIVE_AND_POSITIVE_INFINITY);
+  Map<Integer,Double> expected=ImmutableMap.<Integer,Double>builder().put(0,1.0).put(1,1.5).put(2,2.0).put(8,5.0).put(9,POSITIVE_INFINITY).put(10,POSITIVE_INFINITY).build();
+  assertQuantilesMap(expected,actual);
+}

@@ -1,0 +1,7 @@
+{
+  double dummy=0.0;
+  for (int i=0; i < reps; i++) {
+    dummy+=algorithm.multipleQuantiles(ImmutableSet.of(90,99),100,dataset(i)).get(90);
+  }
+  return dummy;
+}

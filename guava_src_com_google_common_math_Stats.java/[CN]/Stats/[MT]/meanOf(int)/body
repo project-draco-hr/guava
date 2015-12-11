@@ -1,0 +1,14 @@
+{
+  checkArgument(values.length > 0);
+  double mean=values[0];
+  for (int index=1; index < values.length; index++) {
+    double value=values[index];
+    if (isFinite(value) && isFinite(mean)) {
+      mean+=(value - mean) / (index + 1);
+    }
+ else {
+      mean=calculateNewMeanNonFinite(mean,value);
+    }
+  }
+  return mean;
+}

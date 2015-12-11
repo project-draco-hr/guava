@@ -1,0 +1,8 @@
+{
+  double x1=1.2;
+  double y1=3.4;
+  double xDelta=5.6;
+  double yDelta=7.8;
+  LinearTransformation transformation=LinearTransformation.mapping(x1,y1).and(x1 + xDelta,y1 + yDelta);
+  assertDiagonalLinearTransformation(transformation,x1,y1,xDelta,yDelta);
+}

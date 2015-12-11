@@ -1,0 +1,24 @@
+{
+  try {
+    EMPTY_STATS_VARARGS.populationStandardDeviation();
+    fail("Expected IllegalStateException");
+  }
+ catch (  IllegalStateException expected) {
+  }
+  try {
+    EMPTY_STATS_ITERABLE.populationStandardDeviation();
+    fail("Expected IllegalStateException");
+  }
+ catch (  IllegalStateException expected) {
+  }
+  assertThat(ONE_VALUE_STATS.populationStandardDeviation()).isWithin(0.0).of(0.0);
+  assertThat(TWO_VALUES_STATS.populationStandardDeviation()).isWithin(ALLOWED_ERROR).of(sqrt(TWO_VALUES_SUM_OF_SQUARES_OF_DELTAS / 2));
+  assertThat(MANY_VALUES_STATS_VARARGS.populationStandardDeviation()).isWithin(ALLOWED_ERROR).of(sqrt(MANY_VALUES_SUM_OF_SQUARES_OF_DELTAS / MANY_VALUES_COUNT));
+  assertThat(MANY_VALUES_STATS_ITERABLE.populationStandardDeviation()).isWithin(ALLOWED_ERROR).of(sqrt(MANY_VALUES_SUM_OF_SQUARES_OF_DELTAS / MANY_VALUES_COUNT));
+  assertThat(MANY_VALUES_STATS_ITERATOR.populationStandardDeviation()).isWithin(ALLOWED_ERROR).of(sqrt(MANY_VALUES_SUM_OF_SQUARES_OF_DELTAS / MANY_VALUES_COUNT));
+  assertThat(MANY_VALUES_STATS_SNAPSHOT.populationStandardDeviation()).isWithin(ALLOWED_ERROR).of(sqrt(MANY_VALUES_SUM_OF_SQUARES_OF_DELTAS / MANY_VALUES_COUNT));
+  assertThat(INTEGER_MANY_VALUES_STATS_VARARGS.populationStandardDeviation()).isWithin(ALLOWED_ERROR).of(sqrt(INTEGER_MANY_VALUES_SUM_OF_SQUARES_OF_DELTAS / INTEGER_MANY_VALUES_COUNT));
+  assertThat(INTEGER_MANY_VALUES_STATS_ITERABLE.populationStandardDeviation()).isWithin(ALLOWED_ERROR).of(sqrt(INTEGER_MANY_VALUES_SUM_OF_SQUARES_OF_DELTAS / INTEGER_MANY_VALUES_COUNT));
+  assertThat(LONG_MANY_VALUES_STATS_ITERATOR.populationStandardDeviation()).isWithin(ALLOWED_ERROR).of(sqrt(LONG_MANY_VALUES_SUM_OF_SQUARES_OF_DELTAS / LONG_MANY_VALUES_COUNT));
+  assertThat(LONG_MANY_VALUES_STATS_SNAPSHOT.populationStandardDeviation()).isWithin(ALLOWED_ERROR).of(sqrt(LONG_MANY_VALUES_SUM_OF_SQUARES_OF_DELTAS / LONG_MANY_VALUES_COUNT));
+}

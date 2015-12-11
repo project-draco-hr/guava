@@ -1,0 +1,5 @@
+{
+  StatsAccumulator acummulator=new StatsAccumulator();
+  acummulator.addAll(values);
+  return acummulator.snapshot();
+}

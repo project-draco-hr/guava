@@ -1,0 +1,41 @@
+{
+  assertThat(actualStats.count()).isEqualTo(expectedStats.count());
+  if (expectedStats.count() == 0) {
+    try {
+      actualStats.mean();
+      fail("Expected IllegalStateException");
+    }
+ catch (    IllegalStateException expected) {
+    }
+    try {
+      actualStats.populationVariance();
+      fail("Expected IllegalStateException");
+    }
+ catch (    IllegalStateException expected) {
+    }
+    try {
+      actualStats.min();
+      fail("Expected IllegalStateException");
+    }
+ catch (    IllegalStateException expected) {
+    }
+    try {
+      actualStats.max();
+      fail("Expected IllegalStateException");
+    }
+ catch (    IllegalStateException expected) {
+    }
+  }
+ else   if (expectedStats.count() == 1) {
+    assertThat(actualStats.mean()).isWithin(ALLOWED_ERROR).of(expectedStats.mean());
+    assertThat(actualStats.populationVariance()).isWithin(0.0).of(0.0);
+    assertThat(actualStats.min()).isWithin(ALLOWED_ERROR).of(expectedStats.min());
+    assertThat(actualStats.max()).isWithin(ALLOWED_ERROR).of(expectedStats.max());
+  }
+ else {
+    assertThat(actualStats.mean()).isWithin(ALLOWED_ERROR).of(expectedStats.mean());
+    assertThat(actualStats.populationVariance()).isWithin(ALLOWED_ERROR).of(expectedStats.populationVariance());
+    assertThat(actualStats.min()).isWithin(ALLOWED_ERROR).of(expectedStats.min());
+    assertThat(actualStats.max()).isWithin(ALLOWED_ERROR).of(expectedStats.max());
+  }
+}

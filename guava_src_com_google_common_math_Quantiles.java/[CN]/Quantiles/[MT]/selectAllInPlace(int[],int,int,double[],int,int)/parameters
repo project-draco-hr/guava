@@ -1,0 +1,6 @@
+int[] allRequired
+int requiredFrom
+int requiredTo
+double[] array
+int from
+int to

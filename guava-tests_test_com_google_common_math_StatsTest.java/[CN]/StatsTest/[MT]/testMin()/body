@@ -1,0 +1,40 @@
+{
+  try {
+    EMPTY_STATS_VARARGS.min();
+    fail("Expected IllegalStateException");
+  }
+ catch (  IllegalStateException expected) {
+  }
+  try {
+    EMPTY_STATS_ITERABLE.min();
+    fail("Expected IllegalStateException");
+  }
+ catch (  IllegalStateException expected) {
+  }
+  assertThat(ONE_VALUE_STATS.min()).isWithin(ALLOWED_ERROR).of(ONE_VALUE);
+  assertThat(Stats.of(POSITIVE_INFINITY).min()).isPositiveInfinity();
+  assertThat(Stats.of(NEGATIVE_INFINITY).min()).isNegativeInfinity();
+  assertThat(Stats.of(NaN).min()).isNaN();
+  assertThat(TWO_VALUES_STATS.min()).isWithin(ALLOWED_ERROR).of(TWO_VALUES_MIN);
+  assertThat(MANY_VALUES_STATS_VARARGS.min()).isWithin(ALLOWED_ERROR).of(MANY_VALUES_MIN);
+  assertThat(MANY_VALUES_STATS_ITERABLE.min()).isWithin(ALLOWED_ERROR).of(MANY_VALUES_MIN);
+  assertThat(MANY_VALUES_STATS_ITERATOR.min()).isWithin(ALLOWED_ERROR).of(MANY_VALUES_MIN);
+  for (  ManyValues values : ALL_MANY_VALUES) {
+    StatsAccumulator accumulator=new StatsAccumulator();
+    accumulator.addAll(values.asIterable());
+    double min=accumulator.snapshot().min();
+    if (values.hasAnyNaN()) {
+      assertThat(min).named("min of " + values).isNaN();
+    }
+ else     if (values.hasAnyNegativeInfinity()) {
+      assertThat(min).named("min of " + values).isNegativeInfinity();
+    }
+ else {
+      assertThat(min).named("min of " + values).isWithin(ALLOWED_ERROR).of(MANY_VALUES_MIN);
+    }
+  }
+  assertThat(INTEGER_MANY_VALUES_STATS_VARARGS.min()).isWithin(ALLOWED_ERROR).of(INTEGER_MANY_VALUES_MIN);
+  assertThat(INTEGER_MANY_VALUES_STATS_ITERABLE.min()).isWithin(ALLOWED_ERROR).of(INTEGER_MANY_VALUES_MIN);
+  assertThat(LONG_MANY_VALUES_STATS_ITERATOR.min()).isWithin(ALLOWED_ERROR).of(LONG_MANY_VALUES_MIN);
+  assertThat(LONG_MANY_VALUES_STATS_SNAPSHOT.min()).isWithin(ALLOWED_ERROR).of(LONG_MANY_VALUES_MIN);
+}

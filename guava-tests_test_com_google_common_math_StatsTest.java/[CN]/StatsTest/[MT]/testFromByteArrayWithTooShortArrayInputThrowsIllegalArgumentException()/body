@@ -1,0 +1,9 @@
+{
+  byte[] tooShortByteArray=ByteBuffer.allocate(Stats.BYTES - 1).put(MANY_VALUES_STATS_VARARGS.toByteArray(),0,Stats.BYTES - 1).array();
+  try {
+    Stats.fromByteArray(tooShortByteArray);
+    fail("Expected IllegalArgumentException");
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}

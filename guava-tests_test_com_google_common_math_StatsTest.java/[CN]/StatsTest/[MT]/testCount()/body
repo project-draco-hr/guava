@@ -1,0 +1,14 @@
+{
+  assertThat(EMPTY_STATS_VARARGS.count()).isEqualTo(0);
+  assertThat(EMPTY_STATS_ITERABLE.count()).isEqualTo(0);
+  assertThat(ONE_VALUE_STATS.count()).isEqualTo(1);
+  assertThat(TWO_VALUES_STATS.count()).isEqualTo(2);
+  assertThat(MANY_VALUES_STATS_VARARGS.count()).isEqualTo(MANY_VALUES_COUNT);
+  assertThat(MANY_VALUES_STATS_ITERABLE.count()).isEqualTo(MANY_VALUES_COUNT);
+  assertThat(MANY_VALUES_STATS_ITERATOR.count()).isEqualTo(MANY_VALUES_COUNT);
+  assertThat(MANY_VALUES_STATS_SNAPSHOT.count()).isEqualTo(MANY_VALUES_COUNT);
+  assertThat(INTEGER_MANY_VALUES_STATS_VARARGS.count()).isEqualTo(INTEGER_MANY_VALUES_COUNT);
+  assertThat(INTEGER_MANY_VALUES_STATS_ITERABLE.count()).isEqualTo(INTEGER_MANY_VALUES_COUNT);
+  assertThat(LONG_MANY_VALUES_STATS_ITERATOR.count()).isEqualTo(LONG_MANY_VALUES_COUNT);
+  assertThat(LONG_MANY_VALUES_STATS_SNAPSHOT.count()).isEqualTo(LONG_MANY_VALUES_COUNT);
+}

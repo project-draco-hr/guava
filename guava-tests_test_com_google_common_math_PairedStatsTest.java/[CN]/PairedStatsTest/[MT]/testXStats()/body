@@ -1,0 +1,6 @@
+{
+  assertStatsApproxEqual(EMPTY_STATS_ITERABLE,EMPTY_PAIRED_STATS.xStats());
+  assertStatsApproxEqual(ONE_VALUE_STATS,ONE_VALUE_PAIRED_STATS.xStats());
+  assertStatsApproxEqual(TWO_VALUES_STATS,TWO_VALUES_PAIRED_STATS.xStats());
+  assertStatsApproxEqual(MANY_VALUES_STATS_ITERABLE,MANY_VALUES_PAIRED_STATS.xStats());
+}

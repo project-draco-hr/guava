@@ -1,0 +1,8 @@
+{
+  for (int index=0; index <= 100; index++) {
+    double[] dataset=Doubles.toArray(PSEUDORANDOM_DATASET);
+    double expected=expectedLargeDatasetPercentile(index);
+    assertQuantile(index,expected,percentiles().index(index).computeInPlace(dataset));
+    assertDatasetAnyOrder(PSEUDORANDOM_DATASET,dataset);
+  }
+}

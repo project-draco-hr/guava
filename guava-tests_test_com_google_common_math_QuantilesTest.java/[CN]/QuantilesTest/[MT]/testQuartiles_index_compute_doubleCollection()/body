@@ -1,0 +1,3 @@
+{
+  assertQuantile(1,SIXTEEN_SQUARES_QUARTILE_1,quartiles().index(1).compute(SIXTEEN_SQUARES_DOUBLES));
+}

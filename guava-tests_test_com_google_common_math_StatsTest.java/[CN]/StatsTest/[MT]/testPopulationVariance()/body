@@ -1,0 +1,37 @@
+{
+  try {
+    EMPTY_STATS_VARARGS.populationVariance();
+    fail("Expected IllegalStateException");
+  }
+ catch (  IllegalStateException expected) {
+  }
+  try {
+    EMPTY_STATS_ITERABLE.populationVariance();
+    fail("Expected IllegalStateException");
+  }
+ catch (  IllegalStateException expected) {
+  }
+  assertThat(ONE_VALUE_STATS.populationVariance()).isWithin(0.0).of(0.0);
+  assertThat(Stats.of(POSITIVE_INFINITY).populationVariance()).isNaN();
+  assertThat(Stats.of(NEGATIVE_INFINITY).populationVariance()).isNaN();
+  assertThat(Stats.of(NaN).populationVariance()).isNaN();
+  assertThat(TWO_VALUES_STATS.populationVariance()).isWithin(ALLOWED_ERROR).of(TWO_VALUES_SUM_OF_SQUARES_OF_DELTAS / 2);
+  assertThat(MANY_VALUES_STATS_VARARGS.populationVariance()).isWithin(ALLOWED_ERROR).of(MANY_VALUES_SUM_OF_SQUARES_OF_DELTAS / MANY_VALUES_COUNT);
+  for (  ManyValues values : ALL_MANY_VALUES) {
+    double populationVariance=Stats.of(values.asIterable()).populationVariance();
+    if (values.hasAnyNonFinite()) {
+      assertThat(populationVariance).named("population variance of " + values).isNaN();
+    }
+ else {
+      assertThat(populationVariance).named("population variance of " + values).isWithin(ALLOWED_ERROR).of(MANY_VALUES_SUM_OF_SQUARES_OF_DELTAS / MANY_VALUES_COUNT);
+    }
+  }
+  assertThat(MANY_VALUES_STATS_ITERATOR.populationVariance()).isWithin(ALLOWED_ERROR).of(MANY_VALUES_SUM_OF_SQUARES_OF_DELTAS / MANY_VALUES_COUNT);
+  assertThat(MANY_VALUES_STATS_SNAPSHOT.populationVariance()).isWithin(ALLOWED_ERROR).of(MANY_VALUES_SUM_OF_SQUARES_OF_DELTAS / MANY_VALUES_COUNT);
+  assertThat(INTEGER_MANY_VALUES_STATS_VARARGS.populationVariance()).isWithin(ALLOWED_ERROR).of(INTEGER_MANY_VALUES_SUM_OF_SQUARES_OF_DELTAS / INTEGER_MANY_VALUES_COUNT);
+  assertThat(INTEGER_MANY_VALUES_STATS_ITERABLE.populationVariance()).isWithin(ALLOWED_ERROR).of(INTEGER_MANY_VALUES_SUM_OF_SQUARES_OF_DELTAS / INTEGER_MANY_VALUES_COUNT);
+  assertThat(LARGE_INTEGER_VALUES_STATS.populationVariance()).isWithin(ALLOWED_ERROR * Integer.MAX_VALUE * Integer.MAX_VALUE).of(LARGE_INTEGER_VALUES_POPULATION_VARIANCE);
+  assertThat(LONG_MANY_VALUES_STATS_ITERATOR.populationVariance()).isWithin(ALLOWED_ERROR).of(LONG_MANY_VALUES_SUM_OF_SQUARES_OF_DELTAS / LONG_MANY_VALUES_COUNT);
+  assertThat(LONG_MANY_VALUES_STATS_SNAPSHOT.populationVariance()).isWithin(ALLOWED_ERROR).of(LONG_MANY_VALUES_SUM_OF_SQUARES_OF_DELTAS / LONG_MANY_VALUES_COUNT);
+  assertThat(LARGE_LONG_VALUES_STATS.populationVariance()).isWithin(ALLOWED_ERROR * Long.MAX_VALUE * Long.MAX_VALUE).of(LARGE_LONG_VALUES_POPULATION_VARIANCE);
+}

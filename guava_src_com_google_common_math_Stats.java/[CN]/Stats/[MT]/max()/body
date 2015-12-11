@@ -1,0 +1,4 @@
+{
+  checkState(count != 0);
+  return max;
+}

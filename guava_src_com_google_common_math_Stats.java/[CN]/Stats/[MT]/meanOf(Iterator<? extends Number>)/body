@@ -1,0 +1,16 @@
+{
+  checkArgument(values.hasNext());
+  long count=1;
+  double mean=values.next().doubleValue();
+  while (values.hasNext()) {
+    double value=values.next().doubleValue();
+    count++;
+    if (isFinite(value) && isFinite(mean)) {
+      mean+=(value - mean) / count;
+    }
+ else {
+      mean=calculateNewMeanNonFinite(mean,value);
+    }
+  }
+  return mean;
+}

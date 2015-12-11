@@ -1,0 +1,3 @@
+{
+  return createPairedStatsOf(ImmutableList.of(x),ImmutableList.of(y));
+}

@@ -1,0 +1,5 @@
+int[] allRequired
+int requiredFrom
+int requiredTo
+int from
+int to

@@ -1,0 +1,3 @@
+{
+  return scale(2).index(1);
+}

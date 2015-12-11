@@ -1,0 +1,14 @@
+{
+  if (expected == POSITIVE_INFINITY) {
+    assertThat(actual).named("quantile at index " + index).isPositiveInfinity();
+  }
+ else   if (expected == NEGATIVE_INFINITY) {
+    assertThat(actual).named("quantile at index " + index).isNegativeInfinity();
+  }
+ else   if (Double.isNaN(expected)) {
+    assertThat(actual).named("quantile at index " + index).isNaN();
+  }
+ else {
+    assertThat(actual).named("quantile at index " + index).isWithin(ALLOWED_ERROR).of(expected);
+  }
+}

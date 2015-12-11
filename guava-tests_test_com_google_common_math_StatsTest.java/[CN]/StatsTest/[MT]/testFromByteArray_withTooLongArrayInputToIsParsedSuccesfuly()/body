@@ -1,0 +1,4 @@
+{
+  byte[] tooLongByteArray=ByteBuffer.allocate(Stats.BYTES + 2).put(MANY_VALUES_STATS_VARARGS.toByteArray()).putChar('.').array();
+  assertThat(Stats.fromByteArray(tooLongByteArray)).isEqualTo(MANY_VALUES_STATS_VARARGS);
+}

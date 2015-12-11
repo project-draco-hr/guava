@@ -1,0 +1,39 @@
+{
+  try {
+    EMPTY_PAIRED_STATS.leastSquaresFit();
+    fail("Expected IllegalStateException");
+  }
+ catch (  IllegalStateException expected) {
+  }
+  try {
+    ONE_VALUE_PAIRED_STATS.leastSquaresFit();
+    fail("Expected IllegalStateException");
+  }
+ catch (  IllegalStateException expected) {
+  }
+  try {
+    createSingleStats(Double.POSITIVE_INFINITY,1.23).leastSquaresFit();
+    fail("Expected IllegalStateException");
+  }
+ catch (  IllegalStateException expected) {
+  }
+  assertDiagonalLinearTransformation(TWO_VALUES_PAIRED_STATS.leastSquaresFit(),TWO_VALUES_PAIRED_STATS.xStats().mean(),TWO_VALUES_PAIRED_STATS.yStats().mean(),TWO_VALUES_PAIRED_STATS.xStats().populationVariance(),TWO_VALUES_PAIRED_STATS.populationCovariance());
+  for (  ManyValues values : ALL_MANY_VALUES) {
+    PairedStats stats=createPairedStatsOf(values.asIterable(),OTHER_MANY_VALUES);
+    LinearTransformation fit=stats.leastSquaresFit();
+    if (values.hasAnyNonFinite()) {
+      assertLinearTransformationNaN(fit);
+    }
+ else {
+      assertDiagonalLinearTransformation(fit,stats.xStats().mean(),stats.yStats().mean(),stats.xStats().populationVariance(),stats.populationCovariance());
+    }
+  }
+  assertHorizontalLinearTransformation(HORIZONTAL_VALUES_PAIRED_STATS.leastSquaresFit(),HORIZONTAL_VALUES_PAIRED_STATS.yStats().mean());
+  assertVerticalLinearTransformation(VERTICAL_VALUES_PAIRED_STATS.leastSquaresFit(),VERTICAL_VALUES_PAIRED_STATS.xStats().mean());
+  try {
+    CONSTANT_VALUES_PAIRED_STATS.leastSquaresFit();
+    fail("Expected IllegalStateException");
+  }
+ catch (  IllegalStateException expected) {
+  }
+}

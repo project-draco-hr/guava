@@ -1,0 +1,3 @@
+{
+  assertQuantile(1,NEGATIVE_INFINITY,Quantiles.scale(10).index(1).compute(ONE_TO_FIVE_AND_NEGATIVE_INFINITY));
+}

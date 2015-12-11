@@ -1,0 +1,33 @@
+{
+  try {
+    emptyAccumulator.leastSquaresFit();
+    fail("Expected IllegalStateException");
+  }
+ catch (  IllegalStateException expected) {
+  }
+  try {
+    oneValueAccumulator.leastSquaresFit();
+    fail("Expected IllegalStateException");
+  }
+ catch (  IllegalStateException expected) {
+  }
+  assertDiagonalLinearTransformation(twoValuesAccumulator.leastSquaresFit(),twoValuesAccumulator.xStats().mean(),twoValuesAccumulator.yStats().mean(),twoValuesAccumulator.xStats().populationVariance(),twoValuesAccumulator.populationCovariance());
+  for (  ManyValues values : ALL_MANY_VALUES) {
+    PairedStatsAccumulator accumulator=createFilledPairedStatsAccumulator(values.asIterable(),OTHER_MANY_VALUES);
+    LinearTransformation fit=accumulator.leastSquaresFit();
+    if (values.hasAnyNonFinite()) {
+      assertLinearTransformationNaN(fit);
+    }
+ else {
+      assertDiagonalLinearTransformation(fit,accumulator.xStats().mean(),accumulator.yStats().mean(),accumulator.xStats().populationVariance(),accumulator.populationCovariance());
+    }
+  }
+  assertHorizontalLinearTransformation(horizontalValuesAccumulator.leastSquaresFit(),horizontalValuesAccumulator.yStats().mean());
+  assertVerticalLinearTransformation(verticalValuesAccumulator.leastSquaresFit(),verticalValuesAccumulator.xStats().mean());
+  try {
+    constantValuesAccumulator.leastSquaresFit();
+    fail("Expected IllegalStateException");
+  }
+ catch (  IllegalStateException expected) {
+  }
+}

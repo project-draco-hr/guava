@@ -1,0 +1,5 @@
+{
+  if (index < 0 || index > scale) {
+    throw new IllegalArgumentException("Quantile indexes must be between 0 and the scale, which is " + scale);
+  }
+}

@@ -1,0 +1,8 @@
+{
+  try {
+    LinearTransformation.mapping(1.2,Double.NaN);
+    fail("Expected IllegalArgumentException from mapping(x, y) with NaN y");
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}

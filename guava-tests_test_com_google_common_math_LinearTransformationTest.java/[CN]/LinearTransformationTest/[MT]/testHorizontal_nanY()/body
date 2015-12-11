@@ -1,0 +1,8 @@
+{
+  try {
+    LinearTransformation.horizontal(Double.NaN);
+    fail("Expected IllegalArgumentException from horizontal(y) with NaN y");
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}

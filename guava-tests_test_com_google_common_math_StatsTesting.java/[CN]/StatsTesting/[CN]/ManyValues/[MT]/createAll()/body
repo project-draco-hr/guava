@@ -1,0 +1,17 @@
+{
+  ImmutableList.Builder<ManyValues> builder=ImmutableList.builder();
+  double[] values=new double[5];
+  for (  double first : ImmutableList.of(1.1,POSITIVE_INFINITY,NEGATIVE_INFINITY,NaN)) {
+    values[0]=first;
+    values[1]=-44.44;
+    for (    double third : ImmutableList.of(33.33,POSITIVE_INFINITY,NEGATIVE_INFINITY,NaN)) {
+      values[2]=third;
+      values[3]=555.555;
+      for (      double fifth : ImmutableList.of(-2.2,POSITIVE_INFINITY,NEGATIVE_INFINITY,NaN)) {
+        values[4]=fifth;
+        builder.add(new ManyValues(values));
+      }
+    }
+  }
+  return builder.build();
+}

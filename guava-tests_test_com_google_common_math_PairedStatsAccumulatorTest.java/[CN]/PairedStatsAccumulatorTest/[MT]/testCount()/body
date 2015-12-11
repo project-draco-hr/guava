@@ -1,0 +1,6 @@
+{
+  assertThat(emptyAccumulator.count()).isEqualTo(0);
+  assertThat(oneValueAccumulator.count()).isEqualTo(1);
+  assertThat(twoValuesAccumulator.count()).isEqualTo(2);
+  assertThat(manyValuesAccumulator.count()).isEqualTo(MANY_VALUES_COUNT);
+}

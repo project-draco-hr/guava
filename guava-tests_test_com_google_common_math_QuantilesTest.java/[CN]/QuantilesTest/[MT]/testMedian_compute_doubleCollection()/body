@@ -1,0 +1,3 @@
+{
+  assertQuantile(1,SIXTEEN_SQUARES_MEDIAN,median().compute(SIXTEEN_SQUARES_DOUBLES));
+}

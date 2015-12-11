@@ -1,0 +1,5 @@
+{
+  checkIndex(index,scale);
+  this.scale=scale;
+  this.index=index;
+}

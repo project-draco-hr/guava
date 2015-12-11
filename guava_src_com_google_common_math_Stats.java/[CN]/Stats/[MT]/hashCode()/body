@@ -1,0 +1,3 @@
+{
+  return Objects.hashCode(count,mean,sumOfSquaresOfDeltas,min,max);
+}

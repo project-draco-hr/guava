@@ -1,0 +1,6 @@
+{
+  checkNotNull(byteArray);
+  checkArgument(byteArray.length >= BYTES,"Expected at least Stats.BYTES = %s, got %s",BYTES,byteArray.length);
+  ByteBuffer buff=ByteBuffer.wrap(byteArray).order(ByteOrder.LITTLE_ENDIAN);
+  return new Stats(buff.getLong(),buff.getDouble(),buff.getDouble(),buff.getDouble(),buff.getDouble());
+}

@@ -1,0 +1,4 @@
+{
+  this.slope=slope;
+  this.yIntercept=yIntercept;
+}

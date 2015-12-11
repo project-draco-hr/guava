@@ -1,0 +1,3 @@
+{
+  this.values=ImmutableList.copyOf(Doubles.asList(values));
+}

@@ -1,0 +1,8 @@
+{
+  try {
+    LinearTransformation.horizontal(Double.POSITIVE_INFINITY);
+    fail("Expected IllegalArgumentException from horizontal(y) with infinite y");
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}

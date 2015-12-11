@@ -1,0 +1,6 @@
+{
+  assertThat(EMPTY_PAIRED_STATS.count()).isEqualTo(0);
+  assertThat(ONE_VALUE_PAIRED_STATS.count()).isEqualTo(1);
+  assertThat(TWO_VALUES_PAIRED_STATS.count()).isEqualTo(2);
+  assertThat(MANY_VALUES_PAIRED_STATS.count()).isEqualTo(MANY_VALUES_COUNT);
+}

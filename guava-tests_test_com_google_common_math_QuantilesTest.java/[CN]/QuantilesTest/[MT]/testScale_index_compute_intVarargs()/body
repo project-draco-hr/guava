@@ -1,0 +1,5 @@
+{
+  int[] dataset=Ints.toArray(SIXTEEN_SQUARES_INTEGERS);
+  assertQuantile(1,SIXTEEN_SQUARES_DECILE_1,Quantiles.scale(10).index(1).compute(dataset));
+  assertDatasetInOrder(SIXTEEN_SQUARES_INTEGERS,dataset);
+}

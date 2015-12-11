@@ -1,0 +1,13 @@
+{
+  if (index % 2 == 0) {
+    int position=IntMath.divide(199 * index,2,UNNECESSARY);
+    return PSEUDORANDOM_DATASET_SORTED.get(position);
+  }
+ else {
+    int positionFloor=IntMath.divide(199 * index,2,FLOOR);
+    int positionCeil=IntMath.divide(199 * index,2,CEILING);
+    double lowerValue=PSEUDORANDOM_DATASET_SORTED.get(positionFloor);
+    double upperValue=PSEUDORANDOM_DATASET_SORTED.get(positionCeil);
+    return (lowerValue + upperValue) / 2.0;
+  }
+}

@@ -1,0 +1,11 @@
+{
+  if (isFinite(previousMean)) {
+    return value;
+  }
+ else   if (isFinite(value) || previousMean == value) {
+    return previousMean;
+  }
+ else {
+    return NaN;
+  }
+}

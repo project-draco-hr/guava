@@ -1,0 +1,7 @@
+{
+  int scale=Integer.MAX_VALUE;
+  int otherIndex=(Integer.MAX_VALUE - 1) / 3;
+  double otherValue=16.0 * 5.0 / Integer.MAX_VALUE + 25.0 * (1.0 - 5.0 / Integer.MAX_VALUE);
+  ImmutableMap<Integer,Double> expected=ImmutableMap.of(0,SIXTEEN_SQUARES_MIN,scale,SIXTEEN_SQUARES_MAX,otherIndex,otherValue);
+  assertQuantilesMap(expected,Quantiles.scale(scale).indexes(0,scale,otherIndex).compute(SIXTEEN_SQUARES_DOUBLES));
+}
