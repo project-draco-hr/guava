@@ -1,0 +1,12 @@
+{
+  directedGraph.addNode(N1);
+  assertTrue(directedGraph.addEdge(E15,N1,N5));
+  assertTrue(directedGraph.addEdge(E41,N4,N1));
+  assertTrue(directedGraph.addEdge(E23,N2,N3));
+  assertThat(directedGraph.nodes()).containsExactly(N1,N5,N4,N2,N3).inOrder();
+  assertThat(directedGraph.edges()).containsExactly(E15,E41,E23).inOrder();
+  assertThat(directedGraph.edgesConnecting(N1,N5)).containsExactly(E15);
+  assertThat(directedGraph.edgesConnecting(N4,N1)).containsExactly(E41);
+  assertThat(directedGraph.edgesConnecting(N2,N3)).containsExactly(E23);
+  assertThat(directedGraph.edgesConnecting(N3,N2)).isEmpty();
+}

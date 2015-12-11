@@ -1,0 +1,4 @@
+{
+  directedGraph.addNode(node);
+  return this;
+}

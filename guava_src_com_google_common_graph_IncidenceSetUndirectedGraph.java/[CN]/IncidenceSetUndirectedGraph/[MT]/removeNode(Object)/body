@@ -1,0 +1,12 @@
+{
+  checkNotNull(node,"node");
+  Set<E> incidentEdges=nodeToIncidentEdges.get(node);
+  if (incidentEdges == null) {
+    return false;
+  }
+  for (  Object edge : incidentEdges.toArray()) {
+    removeEdge(edge);
+  }
+  nodeToIncidentEdges.remove(node);
+  return true;
+}

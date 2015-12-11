@@ -1,0 +1,7 @@
+{
+  DirectedGraph<Integer,String> directedGraph=Graphs.createDirected();
+  directedGraph.addEdge(E12,N1,N2);
+  directedGraph.addEdge(E23,N2,N3);
+  directedGraph.addEdge(E13,N1,N3);
+  assertThat(isCyclic(directedGraph)).isFalse();
+}

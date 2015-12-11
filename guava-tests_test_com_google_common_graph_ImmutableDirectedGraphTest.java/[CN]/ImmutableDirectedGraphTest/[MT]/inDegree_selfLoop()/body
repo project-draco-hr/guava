@@ -1,0 +1,6 @@
+{
+  addEdge(E11,N1,N1);
+  assertEquals(1,immutableGraph.inDegree(N1));
+  addEdge(E41,N4,N1);
+  assertEquals(2,immutableGraph.inDegree(N1));
+}

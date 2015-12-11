@@ -1,0 +1,5 @@
+{
+  addNode(N1);
+  addNode(N2);
+  assertThat(graph.edgesConnecting(N1,N2)).isEmpty();
+}

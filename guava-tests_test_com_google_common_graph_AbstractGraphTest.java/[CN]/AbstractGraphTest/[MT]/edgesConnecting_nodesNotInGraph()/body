@@ -1,0 +1,25 @@
+{
+  addNode(N1);
+  addNode(N2);
+  try {
+    graph.edgesConnecting(N1,NODE_NOT_IN_GRAPH);
+    fail(ERROR_NODE_NOT_IN_GRAPH);
+  }
+ catch (  IllegalArgumentException e) {
+    assertNodeNotInGraphErrorMessage(e);
+  }
+  try {
+    graph.edgesConnecting(NODE_NOT_IN_GRAPH,N2);
+    fail(ERROR_NODE_NOT_IN_GRAPH);
+  }
+ catch (  IllegalArgumentException e) {
+    assertNodeNotInGraphErrorMessage(e);
+  }
+  try {
+    graph.edgesConnecting(NODE_NOT_IN_GRAPH,NODE_NOT_IN_GRAPH);
+    fail(ERROR_NODE_NOT_IN_GRAPH);
+  }
+ catch (  IllegalArgumentException e) {
+    assertNodeNotInGraphErrorMessage(e);
+  }
+}

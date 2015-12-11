@@ -1,0 +1,4 @@
+{
+  addEdge(E12,N1,N2);
+  assertThat(graph.incidentNodes(E12)).containsExactly(N1,N2);
+}

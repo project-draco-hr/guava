@@ -1,0 +1,8 @@
+{
+  Set<E> adjacentEdges=Sets.newLinkedHashSet();
+  for (  N node : incidentNodes(edge)) {
+    adjacentEdges.addAll(incidentEdges(node));
+  }
+  adjacentEdges.remove(edge);
+  return Collections.unmodifiableSet(adjacentEdges);
+}

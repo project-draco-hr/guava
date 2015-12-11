@@ -1,0 +1,5 @@
+{
+  assertTrue(addEdge(E12,N1,N2));
+  assertTrue(addEdge(E12_A,N1,N2));
+  assertThat(immutableGraph.edges()).containsExactly(E12,E12_A).inOrder();
+}

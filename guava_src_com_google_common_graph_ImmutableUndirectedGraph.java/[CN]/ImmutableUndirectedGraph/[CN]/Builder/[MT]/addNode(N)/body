@@ -1,0 +1,4 @@
+{
+  undirectedGraph.addNode(node);
+  return this;
+}

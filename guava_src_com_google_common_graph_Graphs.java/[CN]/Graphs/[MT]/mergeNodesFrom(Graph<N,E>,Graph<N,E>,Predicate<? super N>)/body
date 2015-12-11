@@ -1,0 +1,18 @@
+{
+  checkNotNull(original,"original");
+  checkNotNull(copy,"copy");
+  checkNotNull(nodePredicate,"nodePredicate");
+  if (nodePredicate.equals(Predicates.<N>alwaysFalse())) {
+    return;
+  }
+  if (nodePredicate.equals(Predicates.<N>alwaysTrue())) {
+    mergeNodesFrom(original,copy);
+  }
+ else {
+    for (    N node : original.nodes()) {
+      if (nodePredicate.apply(node)) {
+        copy.addNode(node);
+      }
+    }
+  }
+}

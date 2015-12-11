@@ -1,0 +1,3 @@
+{
+  return Objects.hashCode(expectedNodeCount,expectedEdgeCount,multigraph,selfLoopsAllowed);
+}

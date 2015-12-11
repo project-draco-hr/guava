@@ -1,0 +1,8 @@
+{
+  try {
+    addEdge(Graphs.<Integer,String>createDirected(),E11,ImmutableSet.<Integer>of(N1,N2,N3));
+    fail("Should have rejected adding an edge to a Graph with > 2 nodes");
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}

@@ -1,0 +1,12 @@
+{
+  checkNotNull(edge,"edge");
+  checkNotNull(node,"node");
+  Set<N> incidentNodes=undirectedGraph.incidentNodes(edge);
+  checkArgument(incidentNodes.contains(node),"Edge %s is not incident to node %s",edge,node);
+  for (  N incidentNode : incidentNodes) {
+    if (!incidentNode.equals(node)) {
+      return incidentNode;
+    }
+  }
+  return (N)node;
+}

@@ -1,0 +1,5 @@
+{
+  addEdge(E12,N1,N2);
+  expectedException.expect(UnsupportedOperationException.class);
+  graph.predecessors(N2).add(N1);
+}

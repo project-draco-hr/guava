@@ -1,0 +1,6 @@
+{
+  checkNotNull(edge,"edge");
+  Set<N> incidentNodes=edgeToIncidentNodes.get(edge);
+  checkArgument(incidentNodes != null,EDGE_NOT_IN_GRAPH,edge);
+  return Collections.unmodifiableSet(incidentNodes);
+}

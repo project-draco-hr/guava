@@ -1,0 +1,12 @@
+{
+  addNode(N2);
+  Set<Integer> predecessors=undirectedGraph.predecessors(N2);
+  try {
+    predecessors.add(N1);
+    fail(ERROR_MODIFIABLE_SET);
+  }
+ catch (  UnsupportedOperationException e) {
+    addEdge(E12,N1,N2);
+    assertThat(undirectedGraph.predecessors(N2)).containsExactlyElementsIn(predecessors);
+  }
+}

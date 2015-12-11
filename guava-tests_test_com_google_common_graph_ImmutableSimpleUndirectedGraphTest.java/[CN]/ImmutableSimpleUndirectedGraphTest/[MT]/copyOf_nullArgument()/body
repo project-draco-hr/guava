@@ -1,0 +1,8 @@
+{
+  try {
+    ImmutableUndirectedGraph.copyOf(null);
+    fail("Should have rejected a null graph");
+  }
+ catch (  NullPointerException expected) {
+  }
+}

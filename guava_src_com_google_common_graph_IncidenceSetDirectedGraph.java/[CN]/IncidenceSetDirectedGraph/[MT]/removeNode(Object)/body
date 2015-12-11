@@ -1,0 +1,11 @@
+{
+  checkNotNull(node,"node");
+  if (!containsNode(node)) {
+    return false;
+  }
+  for (  Object edge : incidentEdges(node).toArray()) {
+    removeEdge(edge);
+  }
+  nodeToIncidentEdges.remove(node);
+  return true;
+}

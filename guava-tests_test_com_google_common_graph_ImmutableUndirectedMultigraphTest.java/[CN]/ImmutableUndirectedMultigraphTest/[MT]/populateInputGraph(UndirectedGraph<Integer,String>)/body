@@ -1,0 +1,5 @@
+{
+  super.populateInputGraph(graph);
+  graph.addEdge(E11_A,N1,N1);
+  graph.addEdge(E12_A,N1,N2);
+}

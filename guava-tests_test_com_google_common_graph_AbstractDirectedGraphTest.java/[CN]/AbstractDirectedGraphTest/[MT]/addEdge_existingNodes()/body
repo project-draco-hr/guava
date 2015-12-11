@@ -1,0 +1,8 @@
+{
+  addNode(N1);
+  addNode(N2);
+  assertTrue(addEdge(E12,N1,N2));
+  assertThat(directedGraph.edges()).contains(E12);
+  assertThat(directedGraph.edgesConnecting(N1,N2)).containsExactly(E12);
+  assertThat(directedGraph.edgesConnecting(N2,N1)).isEmpty();
+}

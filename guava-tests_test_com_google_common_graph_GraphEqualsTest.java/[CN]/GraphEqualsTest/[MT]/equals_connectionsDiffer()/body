@@ -1,0 +1,8 @@
+{
+  graph.addEdge(E12,N1,N2);
+  graph.addEdge(E13,N1,N3);
+  Graph<Integer,String> g2=createGraph();
+  g2.addEdge(E13,N1,N2);
+  g2.addEdge(E12,N1,N3);
+  assertThat(graph.equals(g2)).isFalse();
+}

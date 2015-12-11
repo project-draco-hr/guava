@@ -1,0 +1,4 @@
+{
+  assertTrue(addNode(N1));
+  assertThat(graph.nodes()).contains(N1);
+}

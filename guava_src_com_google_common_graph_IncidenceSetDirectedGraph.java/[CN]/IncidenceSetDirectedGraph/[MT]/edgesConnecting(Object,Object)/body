@@ -1,0 +1,11 @@
+{
+  checkNotNull(node1,"node1");
+  checkNotNull(node2,"node2");
+  IncidentEdges<E> incidentEdgesN1=nodeToIncidentEdges.get(node1);
+  checkArgument(incidentEdgesN1 != null,NODE_NOT_IN_GRAPH,node1);
+  IncidentEdges<E> incidentEdgesN2=nodeToIncidentEdges.get(node2);
+  checkArgument(incidentEdgesN2 != null,NODE_NOT_IN_GRAPH,node2);
+  Set<E> outEdges=incidentEdgesN1.outEdges();
+  Set<E> inEdges=incidentEdgesN2.inEdges();
+  return outEdges.size() <= inEdges.size() ? Sets.intersection(outEdges,inEdges) : Sets.intersection(inEdges,outEdges);
+}

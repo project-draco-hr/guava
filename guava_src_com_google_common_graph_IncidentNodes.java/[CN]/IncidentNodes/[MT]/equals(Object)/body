@@ -1,0 +1,7 @@
+{
+  if (object instanceof IncidentNodes<?>) {
+    IncidentNodes<?> that=(IncidentNodes<?>)object;
+    return this.source.equals(that.source) && this.target.equals(that.target);
+  }
+  return false;
+}

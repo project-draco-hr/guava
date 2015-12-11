@@ -1,0 +1,10 @@
+{
+  checkNotNull(graph,"graph");
+  return new Predicate<E>(){
+    @Override public boolean apply(    E edge){
+      checkState(graph.edges().contains(edge),"Graph does not contain edge %s",edge);
+      return graph.incidentNodes(edge).size() != 1;
+    }
+  }
+;
+}

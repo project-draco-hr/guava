@@ -1,0 +1,23 @@
+{
+  UndirectedGraph<Integer,String> undirectedGraph=Graphs.createUndirected();
+  assertThat(undirectedGraph.nodes()).isEmpty();
+  assertThat(undirectedGraph.edges()).isEmpty();
+  assertThat(undirectedGraph.addEdge(E12,N1,N2)).isTrue();
+  assertThat(undirectedGraph.edgesConnecting(N1,N2)).isEqualTo(ImmutableSet.of(E12));
+  assertThat(undirectedGraph.edgesConnecting(N2,N1)).isEqualTo(ImmutableSet.of(E12));
+  try {
+    undirectedGraph.addEdge(E12_A,N1,N2);
+    fail(ERROR_ADDED_PARALLEL_EDGE);
+  }
+ catch (  IllegalArgumentException e) {
+    assertThat(e.getMessage()).contains(ERROR_PARALLEL_EDGE);
+  }
+  try {
+    undirectedGraph.addEdge(E21,N2,N1);
+    fail(ERROR_ADDED_PARALLEL_EDGE);
+  }
+ catch (  IllegalArgumentException e) {
+    assertThat(e.getMessage()).contains(ERROR_PARALLEL_EDGE);
+  }
+  assertThat(undirectedGraph.addEdge(E11,N1,N1)).isTrue();
+}

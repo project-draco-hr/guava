@@ -1,0 +1,11 @@
+{
+  checkNotNull(edge,"edge");
+  IncidentNodes<N> endpoints=edgeToIncidentNodes.get(edge);
+  if (endpoints == null) {
+    return false;
+  }
+  nodeToIncidentEdges.get(endpoints.source()).outEdges().remove(edge);
+  nodeToIncidentEdges.get(endpoints.target()).inEdges().remove(edge);
+  edgeToIncidentNodes.remove(edge);
+  return true;
+}

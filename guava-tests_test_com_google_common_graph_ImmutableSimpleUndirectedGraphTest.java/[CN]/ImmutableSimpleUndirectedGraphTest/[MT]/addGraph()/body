@@ -1,0 +1,5 @@
+{
+  UndirectedGraph<Integer,String> graph=Graphs.createUndirected(immutableGraph.config());
+  populateInputGraph(graph);
+  assertThat(builder.addGraph(graph).build()).isEqualTo(graph);
+}

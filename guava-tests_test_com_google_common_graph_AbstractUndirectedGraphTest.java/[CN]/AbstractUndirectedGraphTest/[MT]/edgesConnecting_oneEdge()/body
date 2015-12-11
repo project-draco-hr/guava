@@ -1,0 +1,5 @@
+{
+  addEdge(E12,N1,N2);
+  assertThat(undirectedGraph.edgesConnecting(N1,N2)).containsExactly(E12);
+  assertThat(undirectedGraph.edgesConnecting(N2,N1)).containsExactly(E12);
+}

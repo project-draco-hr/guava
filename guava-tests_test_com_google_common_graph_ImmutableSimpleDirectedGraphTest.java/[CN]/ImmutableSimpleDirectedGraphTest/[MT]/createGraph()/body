@@ -1,0 +1,4 @@
+{
+  builder=ImmutableDirectedGraph.builder(Graphs.config().noSelfLoops());
+  return builder.build();
+}

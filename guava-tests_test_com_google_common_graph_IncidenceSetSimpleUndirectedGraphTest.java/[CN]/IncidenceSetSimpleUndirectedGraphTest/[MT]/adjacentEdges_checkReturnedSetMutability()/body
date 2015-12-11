@@ -1,0 +1,12 @@
+{
+  addEdge(E12,N1,N2);
+  Set<String> adjacentEdges=undirectedGraph.adjacentEdges(E12);
+  try {
+    adjacentEdges.add(E23);
+    fail(ERROR_MODIFIABLE_SET);
+  }
+ catch (  UnsupportedOperationException e) {
+    addEdge(E23,N2,N3);
+    assertThat(undirectedGraph.adjacentEdges(E12)).containsExactlyElementsIn(adjacentEdges);
+  }
+}

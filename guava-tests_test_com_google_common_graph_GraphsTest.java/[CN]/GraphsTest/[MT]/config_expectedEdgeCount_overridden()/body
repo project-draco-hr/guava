@@ -1,0 +1,7 @@
+{
+  GraphConfig oldConfig=config().expectedEdgeCount(EDGE_COUNT);
+  assertThat(oldConfig.getExpectedEdgeCount().get()).isEqualTo(EDGE_COUNT);
+  GraphConfig newConfig=oldConfig.expectedEdgeCount(EDGE_COUNT + 1);
+  assertThat(oldConfig.getExpectedEdgeCount().get()).isEqualTo(EDGE_COUNT);
+  assertThat(newConfig.getExpectedEdgeCount().get()).isEqualTo(EDGE_COUNT + 1);
+}

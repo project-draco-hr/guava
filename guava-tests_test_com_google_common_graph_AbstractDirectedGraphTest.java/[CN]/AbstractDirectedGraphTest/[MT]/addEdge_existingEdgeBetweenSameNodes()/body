@@ -1,0 +1,6 @@
+{
+  addEdge(E12,N1,N2);
+  ImmutableSet<String> edges=ImmutableSet.copyOf(directedGraph.edges());
+  assertFalse(addEdge(E12,N1,N2));
+  assertThat(directedGraph.edges()).containsExactlyElementsIn(edges);
+}

@@ -1,0 +1,9 @@
+{
+  Graph<Integer,String> g1=createGraph(MULTIGRAPH);
+  Graph<Integer,String> g2=createGraph(MULTIGRAPH);
+  g1.addEdge(E12,N1,N2);
+  g1.addEdge(E12_A,N1,N2);
+  g2.addEdge(E12_A,N1,N2);
+  g2.addEdge(E12,N1,N2);
+  assertThat(g1.equals(g2)).isTrue();
+}

@@ -1,0 +1,4 @@
+Graph<N,E> original
+Graph<N,E> copy
+Predicate<? super N> nodePredicate
+Predicate<? super E> edgePredicate

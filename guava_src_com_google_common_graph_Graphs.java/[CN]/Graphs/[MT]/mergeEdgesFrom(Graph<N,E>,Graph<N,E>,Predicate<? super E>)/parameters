@@ -1,0 +1,3 @@
+Graph<N,E> original
+Graph<N,E> copy
+Predicate<? super E> edgePredicate

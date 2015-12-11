@@ -1,0 +1,4 @@
+{
+  builder=ImmutableUndirectedGraph.builder(Graphs.config().noSelfLoops());
+  return builder.build();
+}

@@ -1,0 +1,16 @@
+{
+  DirectedGraph<Integer,String> directedGraph=Graphs.createDirected();
+  assertThat(directedGraph.nodes()).isEmpty();
+  assertThat(directedGraph.edges()).isEmpty();
+  assertThat(directedGraph.addEdge(E12,N1,N2)).isTrue();
+  assertThat(directedGraph.edgesConnecting(N1,N2)).isEqualTo(ImmutableSet.of(E12));
+  assertThat(directedGraph.edgesConnecting(N2,N1)).isEmpty();
+  try {
+    directedGraph.addEdge(E12_A,N1,N2);
+    fail(ERROR_ADDED_PARALLEL_EDGE);
+  }
+ catch (  IllegalArgumentException e) {
+    assertThat(e.getMessage()).contains(ERROR_PARALLEL_EDGE);
+  }
+  assertThat(directedGraph.addEdge(E11,N1,N1)).isTrue();
+}

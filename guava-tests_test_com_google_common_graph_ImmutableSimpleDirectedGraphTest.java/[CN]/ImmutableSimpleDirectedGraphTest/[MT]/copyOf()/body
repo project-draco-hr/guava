@@ -1,0 +1,5 @@
+{
+  DirectedGraph<Integer,String> graph=Graphs.createDirected(immutableGraph.config());
+  populateInputGraph(graph);
+  assertThat(ImmutableDirectedGraph.copyOf(graph)).isEqualTo(graph);
+}

@@ -1,0 +1,24 @@
+{
+  checkNotNull(edge,"edge");
+  checkNotNull(node1,"node1");
+  checkNotNull(node2,"node2");
+  checkArgument(config.isSelfLoopsAllowed() || !node1.equals(node2),SELF_LOOPS_NOT_ALLOWED,node1);
+  ImmutableSet<N> endpoints=ImmutableSet.of(node1,node2);
+  Set<N> incidentNodes=edgeToIncidentNodes.get(edge);
+  if (incidentNodes != null) {
+    checkArgument(incidentNodes.equals(endpoints),REUSING_EDGE,edge,incidentNodes,endpoints);
+    return false;
+  }
+ else   if (!config.isMultigraph() && containsNode(node1) && containsNode(node2)) {
+    E edgeConnecting=Iterables.getOnlyElement(edgesConnecting(node1,node2),null);
+    checkArgument(edgeConnecting == null,ADDING_PARALLEL_EDGE,node1,node2,edgeConnecting);
+  }
+  addNode(node1);
+  addNode(node2);
+  edgeToIncidentNodes.put(edge,endpoints);
+  nodeToIncidentEdges.get(node1).add(edge);
+  if (!node1.equals(node2)) {
+    nodeToIncidentEdges.get(node2).add(edge);
+  }
+  return true;
+}

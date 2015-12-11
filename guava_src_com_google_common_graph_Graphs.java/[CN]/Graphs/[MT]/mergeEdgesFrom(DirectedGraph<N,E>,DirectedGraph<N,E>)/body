@@ -1,0 +1,7 @@
+{
+  checkNotNull(original,"original");
+  checkNotNull(copy,"copy");
+  for (  E edge : original.edges()) {
+    copy.addEdge(edge,original.source(edge),original.target(edge));
+  }
+}

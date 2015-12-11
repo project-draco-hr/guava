@@ -1,0 +1,3 @@
+{
+  assertThat(graph.toString()).isEqualTo(String.format("config: %s, nodes: %s, edges: {}",graph.config(),graph.nodes()));
+}

@@ -1,0 +1,13 @@
+{
+  List<String> properties=Lists.newArrayList();
+  if (multigraph) {
+    properties.add("multigraph");
+  }
+  if (selfLoopsAllowed) {
+    properties.add("self-loops allowed");
+  }
+ else {
+    properties.add("self-loops disallowed");
+  }
+  return Joiner.on(',').join(properties);
+}

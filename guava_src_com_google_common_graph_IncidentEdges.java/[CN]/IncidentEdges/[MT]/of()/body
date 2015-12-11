@@ -1,0 +1,3 @@
+{
+  return new IncidentEdges<E>(new LinkedHashSet<E>(),new LinkedHashSet<E>());
+}

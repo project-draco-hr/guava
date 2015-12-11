@@ -1,0 +1,5 @@
+{
+  setDistinctValues(GraphConfig.class,CONFIG_A,CONFIG_B);
+  setDistinctValues(DirectedGraph.class,IMMUTABLE_DIRECTED_A,IMMUTABLE_DIRECTED_B);
+  setDistinctValues(UndirectedGraph.class,IMMUTABLE_UNDIRECTED_A,IMMUTABLE_UNDIRECTED_B);
+}

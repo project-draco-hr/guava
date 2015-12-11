@@ -1,0 +1,4 @@
+{
+  addNode(N1);
+  assertThat(graph.incidentEdges(N1)).isEmpty();
+}

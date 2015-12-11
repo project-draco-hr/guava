@@ -1,0 +1,6 @@
+{
+  builder.addNode(n1);
+  builder.addNode(n2);
+  graph=immutableGraph=builder.addEdge(e,n1,n2).build();
+  return true;
+}

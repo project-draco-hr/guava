@@ -1,0 +1,10 @@
+{
+  try {
+    DirectedGraph multigraph=Graphs.createDirected(Graphs.MULTIGRAPH);
+    ImmutableDirectedGraph.Builder immutableGraphBuilder=ImmutableDirectedGraph.builder();
+    immutableGraphBuilder.addGraph(multigraph);
+    fail("Should have rejected a graph with an incompatible multigraph configuration");
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}

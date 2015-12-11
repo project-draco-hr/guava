@@ -1,0 +1,12 @@
+{
+  addNode(N1);
+  Set<String> incidentEdges=directedGraph.incidentEdges(N1);
+  try {
+    incidentEdges.add(E12);
+    fail(ERROR_MODIFIABLE_SET);
+  }
+ catch (  UnsupportedOperationException e) {
+    addEdge(E12,N1,N2);
+    assertThat(directedGraph.incidentEdges(N1)).containsExactlyElementsIn(incidentEdges);
+  }
+}

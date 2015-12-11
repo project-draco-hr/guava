@@ -1,0 +1,5 @@
+{
+  this.nodeToIncidentEdges=Maps.newLinkedHashMapWithExpectedSize(config.getExpectedNodeCount().or(11));
+  this.edgeToIncidentNodes=Maps.newLinkedHashMapWithExpectedSize(config.getExpectedEdgeCount().or(11));
+  this.config=config;
+}

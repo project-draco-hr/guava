@@ -1,0 +1,4 @@
+{
+  graph=immutableGraph=builder.addNode(n).build();
+  return true;
+}

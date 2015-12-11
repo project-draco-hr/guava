@@ -1,0 +1,8 @@
+{
+  checkNotNull(edge,"edge");
+  Set<N> incidentNodes=edgeToIncidentNodes.get(edge);
+  checkArgument(incidentNodes != null,EDGE_NOT_IN_GRAPH,edge);
+  Object[] endpoints=incidentNodes.toArray();
+  Set<E> endpointsIncidentEdges=endpoints.length == 1 ? incidentEdges(endpoints[0]) : Sets.union(incidentEdges(endpoints[0]),incidentEdges(endpoints[1]));
+  return Sets.difference(endpointsIncidentEdges,ImmutableSet.of(edge));
+}

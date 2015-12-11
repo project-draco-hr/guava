@@ -1,0 +1,3 @@
+Graph<N,E> graph
+E edge
+Iterable<N> nodes

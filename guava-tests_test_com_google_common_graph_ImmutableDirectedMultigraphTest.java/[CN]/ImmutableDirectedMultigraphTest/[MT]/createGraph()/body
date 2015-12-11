@@ -1,0 +1,4 @@
+{
+  builder=ImmutableDirectedGraph.builder(Graphs.MULTIGRAPH);
+  return builder.build();
+}

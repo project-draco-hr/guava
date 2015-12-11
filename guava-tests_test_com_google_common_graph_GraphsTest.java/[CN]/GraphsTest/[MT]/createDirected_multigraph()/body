@@ -1,0 +1,7 @@
+{
+  DirectedGraph<Integer,String> directedMultigraph=Graphs.createDirected(config().multigraph());
+  assertThat(directedMultigraph.addEdge(E12,N1,N2)).isTrue();
+  assertThat(directedMultigraph.addEdge(E12_A,N1,N2)).isTrue();
+  assertThat(directedMultigraph.edgesConnecting(N1,N2)).isEqualTo(ImmutableSet.of(E12,E12_A));
+  assertThat(directedMultigraph.edgesConnecting(N2,N1)).isEmpty();
+}

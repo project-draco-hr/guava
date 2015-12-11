@@ -1,0 +1,5 @@
+{
+  ImmutableSet<String> edges=ImmutableSet.copyOf(graph.edges());
+  assertFalse(graph.removeEdge(EDGE_NOT_IN_GRAPH));
+  assertThat(graph.edges()).containsExactlyElementsIn(edges);
+}

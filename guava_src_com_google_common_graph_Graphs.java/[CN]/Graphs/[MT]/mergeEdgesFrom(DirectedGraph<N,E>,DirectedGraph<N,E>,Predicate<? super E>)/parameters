@@ -1,0 +1,3 @@
+DirectedGraph<N,E> original
+DirectedGraph<N,E> copy
+Predicate<? super E> edgePredicate

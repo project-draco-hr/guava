@@ -1,0 +1,4 @@
+{
+  addEdge(E11,N1,N1);
+  assertEquals(N1,immutableGraph.target(E11));
+}

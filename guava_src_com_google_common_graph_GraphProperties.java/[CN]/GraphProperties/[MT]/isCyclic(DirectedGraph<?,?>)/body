@@ -1,0 +1,12 @@
+{
+  checkNotNull(graph,"Directed graph passed can't be null.");
+  Map<Object,NodeVisitState> nodeToVisitState=Maps.newHashMap();
+  for (  Object node : graph.nodes()) {
+    if (nodeToVisitState.get(node) == null) {
+      if (isSubgraphCyclic(graph,nodeToVisitState,node)) {
+        return true;
+      }
+    }
+  }
+  return false;
+}

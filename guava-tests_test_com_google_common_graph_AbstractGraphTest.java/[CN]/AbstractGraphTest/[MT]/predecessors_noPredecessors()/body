@@ -1,0 +1,4 @@
+{
+  addNode(N1);
+  assertThat(graph.predecessors(N1)).isEmpty();
+}

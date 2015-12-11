@@ -1,0 +1,7 @@
+{
+  DirectedGraph<Integer,String> directedGraph=Graphs.createDirected();
+  assertThat(addEdge(directedGraph,E11,ImmutableSet.of(N1))).isTrue();
+  assertThat(directedGraph.edges()).containsExactly(E11);
+  assertThat(directedGraph.nodes()).containsExactly(N1);
+  assertThat(directedGraph.incidentNodes(E11)).containsExactly(N1);
+}

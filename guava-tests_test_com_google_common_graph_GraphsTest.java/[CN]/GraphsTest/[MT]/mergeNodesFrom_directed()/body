@@ -1,0 +1,14 @@
+{
+  DirectedGraph<Integer,String> directedGraph=buildDirectedTestGraph();
+  directedGraph.addNode(N3);
+  DirectedGraph<Integer,String> actualGraph=Graphs.createDirected();
+  actualGraph.addNode(N4);
+  actualGraph.addNode(N2);
+  mergeNodesFrom(directedGraph,actualGraph);
+  DirectedGraph<Integer,String> expectedGraph=Graphs.createDirected();
+  expectedGraph.addNode(N1);
+  expectedGraph.addNode(N2);
+  expectedGraph.addNode(N3);
+  expectedGraph.addNode(N4);
+  assertThat(actualGraph).isEqualTo(expectedGraph);
+}

@@ -1,0 +1,17 @@
+{
+  addEdge(E12,N1,N2);
+  try {
+    addEdge(EDGE_NOT_IN_GRAPH,N1,N2);
+    fail(ERROR_ADDED_PARALLEL_EDGE);
+  }
+ catch (  IllegalArgumentException e) {
+    assertThat(e.getMessage()).contains(ERROR_PARALLEL_EDGE);
+  }
+  try {
+    addEdge(EDGE_NOT_IN_GRAPH,N2,N1);
+    fail(ERROR_ADDED_PARALLEL_EDGE);
+  }
+ catch (  IllegalArgumentException e) {
+    assertThat(e.getMessage()).contains(ERROR_PARALLEL_EDGE);
+  }
+}

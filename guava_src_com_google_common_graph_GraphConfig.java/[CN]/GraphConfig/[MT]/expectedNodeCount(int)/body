@@ -1,0 +1,4 @@
+{
+  checkArgument(expectedNodeCount >= 0,"The expected number of nodes can't be negative");
+  return new GraphConfig(multigraph,selfLoopsAllowed,Optional.of(expectedNodeCount),expectedEdgeCount);
+}

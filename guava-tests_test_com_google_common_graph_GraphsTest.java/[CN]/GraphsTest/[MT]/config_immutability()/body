@@ -1,0 +1,10 @@
+{
+  config().multigraph();
+  assertThat(config().isMultigraph()).isFalse();
+  config().expectedNodeCount(NODE_COUNT);
+  assertThat(config().getExpectedNodeCount()).isAbsent();
+  config().expectedEdgeCount(EDGE_COUNT);
+  assertThat(config().getExpectedEdgeCount()).isAbsent();
+  config().noSelfLoops();
+  assertThat(config().isSelfLoopsAllowed()).isTrue();
+}

@@ -1,0 +1,11 @@
+{
+  UndirectedGraph<Integer,String> graph=Graphs.createUndirected(immutableGraph.config());
+  populateInputGraph(graph);
+  builder.addEdge(E12,N5,N1);
+  try {
+    builder.addGraph(graph);
+    fail("Should have rejected a graph whose edge definitions were inconsistent with existing" + "builder state");
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}

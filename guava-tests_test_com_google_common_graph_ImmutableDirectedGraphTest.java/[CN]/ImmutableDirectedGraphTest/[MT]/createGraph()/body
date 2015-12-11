@@ -1,0 +1,4 @@
+{
+  builder=ImmutableDirectedGraph.builder();
+  return builder.build();
+}

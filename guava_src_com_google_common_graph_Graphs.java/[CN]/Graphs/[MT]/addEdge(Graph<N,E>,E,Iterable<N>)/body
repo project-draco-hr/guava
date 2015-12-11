@@ -1,0 +1,19 @@
+{
+  checkNotNull(graph,"graph");
+  checkNotNull(nodes,"nodes");
+  checkNotNull(edge,"edge");
+  if (graph instanceof Hypergraph) {
+    return ((Hypergraph<N,E>)graph).addEdge(edge,nodes);
+  }
+  Iterator<N> it=nodes.iterator();
+  checkArgument(it.hasNext(),"'graph' is not a Hypergraph, and 'nodes' has < 1 elements: %s",nodes);
+  N n1=it.next();
+  if (it.hasNext()) {
+    N n2=it.next();
+    checkArgument(!it.hasNext(),"'graph' is not a Hypergraph, and 'nodes' has > 2 elements: %s",nodes);
+    return graph.addEdge(edge,n1,n2);
+  }
+ else {
+    return graph.addEdge(edge,n1,n1);
+  }
+}

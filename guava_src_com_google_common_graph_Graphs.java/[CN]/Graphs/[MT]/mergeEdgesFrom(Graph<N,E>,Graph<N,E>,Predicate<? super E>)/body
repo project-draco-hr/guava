@@ -1,0 +1,18 @@
+{
+  checkNotNull(original,"original");
+  checkNotNull(copy,"copy");
+  checkNotNull(edgePredicate,"edgePredicate");
+  if (edgePredicate.equals(Predicates.<E>alwaysFalse())) {
+    return;
+  }
+  if (edgePredicate.equals(Predicates.<E>alwaysTrue())) {
+    mergeEdgesFrom(original,copy);
+  }
+ else {
+    for (    E edge : original.edges()) {
+      if (edgePredicate.apply(edge)) {
+        addEdge(copy,edge,original.incidentNodes(edge));
+      }
+    }
+  }
+}

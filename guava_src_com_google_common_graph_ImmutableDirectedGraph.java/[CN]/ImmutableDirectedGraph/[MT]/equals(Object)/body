@@ -1,0 +1,3 @@
+{
+  return (object instanceof DirectedGraph) && Graphs.equal(this,(DirectedGraph)object);
+}

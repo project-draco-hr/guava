@@ -1,0 +1,6 @@
+{
+  GraphConfig configA1=Graphs.config().expectedNodeCount(5);
+  GraphConfig configA2=Graphs.config().expectedNodeCount(5);
+  GraphConfig configB=Graphs.config().expectedNodeCount(10);
+  new EqualsTester().addEqualityGroup(configA1,configA2).addEqualityGroup(configB).testEquals();
+}

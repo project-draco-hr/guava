@@ -1,0 +1,8 @@
+{
+  checkNotNull(node,"node");
+  if (containsNode(node)) {
+    return false;
+  }
+  nodeToIncidentEdges.put(node,IncidentEdges.<E>of());
+  return true;
+}

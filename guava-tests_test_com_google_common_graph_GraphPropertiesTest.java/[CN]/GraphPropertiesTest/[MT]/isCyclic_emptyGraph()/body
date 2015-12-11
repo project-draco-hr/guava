@@ -1,0 +1,4 @@
+{
+  DirectedGraph<Integer,String> directedGraph=Graphs.createDirected();
+  assertThat(isCyclic(directedGraph)).isFalse();
+}
