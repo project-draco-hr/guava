@@ -1,0 +1,5 @@
+{
+  byte[] hardcodedExpected=utf16ExpectedWithBom;
+  byte[] computedExpected="r\u00C9sum\u00C9".getBytes(Charsets.UTF_16);
+  assertEquals(hardcodedExpected,computedExpected);
+}
