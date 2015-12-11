@@ -1,0 +1,6 @@
+{
+  for (  PairedStats pairedStats : ALL_PAIRED_STATS) {
+    byte[] pairedStatsByteArray=pairedStats.toByteArray();
+    assertThat(PairedStats.fromByteArray(pairedStatsByteArray)).isEqualTo(pairedStats);
+  }
+}

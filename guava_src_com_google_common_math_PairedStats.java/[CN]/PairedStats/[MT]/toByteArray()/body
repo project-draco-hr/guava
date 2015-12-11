@@ -1,0 +1,7 @@
+{
+  ByteBuffer buffer=ByteBuffer.allocate(BYTES).order(ByteOrder.LITTLE_ENDIAN);
+  xStats.writeTo(buffer);
+  yStats.writeTo(buffer);
+  buffer.putDouble(sumOfProductsOfDeltas);
+  return buffer.array();
+}

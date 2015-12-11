@@ -1,3 +1,5 @@
 {
-  return ByteBuffer.allocate(BYTES).order(ByteOrder.LITTLE_ENDIAN).putLong(count).putDouble(mean).putDouble(sumOfSquaresOfDeltas).putDouble(min).putDouble(max).array();
+  ByteBuffer buff=ByteBuffer.allocate(BYTES).order(ByteOrder.LITTLE_ENDIAN);
+  writeTo(buff);
+  return buff.array();
 }

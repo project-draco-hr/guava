@@ -1,0 +1,9 @@
+{
+  checkNotNull(byteArray);
+  checkArgument(byteArray.length == BYTES,"Expected PairedStats.BYTES = %s, got %s",BYTES,byteArray.length);
+  ByteBuffer buffer=ByteBuffer.wrap(byteArray).order(ByteOrder.LITTLE_ENDIAN);
+  Stats xStats=Stats.readFrom(buffer);
+  Stats yStats=Stats.readFrom(buffer);
+  double sumOfProductsOfDeltas=buffer.getDouble();
+  return new PairedStats(xStats,yStats,sumOfProductsOfDeltas);
+}

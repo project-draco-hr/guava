@@ -1,5 +1,6 @@
 {
-  byte[] tooShortByteArray=ByteBuffer.allocate(Stats.BYTES - 1).put(MANY_VALUES_STATS_VARARGS.toByteArray(),0,Stats.BYTES - 1).array();
+  byte[] buffer=MANY_VALUES_STATS_VARARGS.toByteArray();
+  byte[] tooShortByteArray=ByteBuffer.allocate(buffer.length - 1).order(ByteOrder.LITTLE_ENDIAN).put(buffer,0,Stats.BYTES - 1).array();
   try {
     Stats.fromByteArray(tooShortByteArray);
     fail("Expected IllegalArgumentException");

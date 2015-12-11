@@ -1,0 +1,5 @@
+{
+  checkNotNull(buffer);
+  checkArgument(buffer.remaining() >= BYTES,"Expected at least Stats.BYTES = %s remaining , got %s",BYTES,buffer.remaining());
+  return new Stats(buffer.getLong(),buffer.getDouble(),buffer.getDouble(),buffer.getDouble(),buffer.getDouble());
+}

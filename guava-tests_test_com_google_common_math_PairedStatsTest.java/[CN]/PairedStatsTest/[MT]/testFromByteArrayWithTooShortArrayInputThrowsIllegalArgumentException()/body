@@ -1,0 +1,10 @@
+{
+  byte[] buffer=MANY_VALUES_PAIRED_STATS.toByteArray();
+  byte[] tooShortByteArray=ByteBuffer.allocate(buffer.length - 1).order(ByteOrder.LITTLE_ENDIAN).put(buffer,0,buffer.length - 1).array();
+  try {
+    PairedStats.fromByteArray(tooShortByteArray);
+    fail("Expected IllegalArgumentException");
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}

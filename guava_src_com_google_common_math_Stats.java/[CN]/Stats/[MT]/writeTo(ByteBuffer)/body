@@ -1,0 +1,5 @@
+{
+  checkNotNull(buffer);
+  checkArgument(buffer.remaining() >= BYTES,"Expected at least Stats.BYTES = %s remaining , got %s",BYTES,buffer.remaining());
+  buffer.putLong(count).putDouble(mean).putDouble(sumOfSquaresOfDeltas).putDouble(min).putDouble(max);
+}

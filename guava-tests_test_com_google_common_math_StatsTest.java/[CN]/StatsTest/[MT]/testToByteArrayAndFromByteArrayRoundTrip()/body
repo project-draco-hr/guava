@@ -1,7 +1,6 @@
 {
   for (  Stats stats : ALL_STATS) {
     byte[] statsByteArray=stats.toByteArray();
-    assertThat(statsByteArray.length).isEqualTo(Stats.BYTES);
     assertThat(Stats.fromByteArray(statsByteArray)).isEqualTo(stats);
   }
 }
