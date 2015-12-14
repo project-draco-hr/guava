@@ -1,0 +1,7 @@
+{
+  long naiveDifference=a - b;
+  if ((a ^ b) >= 0 | (a ^ naiveDifference) >= 0) {
+    return naiveDifference;
+  }
+  return Long.MAX_VALUE + ((naiveDifference >>> (Long.SIZE - 1)) ^ 1);
+}

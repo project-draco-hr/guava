@@ -1,0 +1,5 @@
+{
+  if (expected != actual) {
+    fail("Expected for " + a + " "+ op+ " "+ b+ " = "+ expected+ ", but got "+ actual);
+  }
+}

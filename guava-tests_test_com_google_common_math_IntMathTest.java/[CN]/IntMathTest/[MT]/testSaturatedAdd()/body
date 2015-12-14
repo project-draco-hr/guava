@@ -1,0 +1,7 @@
+{
+  for (  int a : ALL_INTEGER_CANDIDATES) {
+    for (    int b : ALL_INTEGER_CANDIDATES) {
+      assertOperationEquals(a,b,"s+",saturatedCast(valueOf(a).add(valueOf(b))),IntMath.saturatedAdd(a,b));
+    }
+  }
+}

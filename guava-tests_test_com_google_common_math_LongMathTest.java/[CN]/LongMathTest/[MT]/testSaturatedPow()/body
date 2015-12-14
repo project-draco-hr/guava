@@ -1,0 +1,7 @@
+{
+  for (  long a : ALL_LONG_CANDIDATES) {
+    for (    int b : EXPONENTS) {
+      assertOperationEquals(a,b,"s^",saturatedCast(valueOf(a).pow(b)),LongMath.saturatedPow(a,b));
+    }
+  }
+}

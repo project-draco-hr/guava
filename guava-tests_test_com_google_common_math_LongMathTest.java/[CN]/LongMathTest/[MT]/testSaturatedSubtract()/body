@@ -1,0 +1,7 @@
+{
+  for (  long a : ALL_LONG_CANDIDATES) {
+    for (    long b : ALL_LONG_CANDIDATES) {
+      assertOperationEquals(a,b,"s-",saturatedCast(valueOf(a).subtract(valueOf(b))),LongMath.saturatedSubtract(a,b));
+    }
+  }
+}

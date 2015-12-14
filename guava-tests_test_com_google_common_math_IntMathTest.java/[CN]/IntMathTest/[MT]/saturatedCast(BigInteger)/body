@@ -1,0 +1,9 @@
+{
+  if (big.compareTo(MAX_INT) > 0) {
+    return Integer.MAX_VALUE;
+  }
+  if (big.compareTo(MIN_INT) < 0) {
+    return Integer.MIN_VALUE;
+  }
+  return big.intValue();
+}

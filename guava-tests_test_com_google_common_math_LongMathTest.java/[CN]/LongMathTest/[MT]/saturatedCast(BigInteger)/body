@@ -1,0 +1,9 @@
+{
+  if (big.compareTo(MAX_LONG) > 0) {
+    return Long.MAX_VALUE;
+  }
+  if (big.compareTo(MIN_LONG) < 0) {
+    return Long.MIN_VALUE;
+  }
+  return big.longValue();
+}

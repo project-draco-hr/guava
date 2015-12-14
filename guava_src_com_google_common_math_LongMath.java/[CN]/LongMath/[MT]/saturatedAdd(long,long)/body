@@ -1,0 +1,7 @@
+{
+  long naiveSum=a + b;
+  if ((a ^ b) < 0 | (a ^ naiveSum) >= 0) {
+    return naiveSum;
+  }
+  return Long.MAX_VALUE + ((naiveSum >>> (Long.SIZE - 1)) ^ 1);
+}
