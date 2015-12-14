@@ -1,0 +1,4 @@
+{
+  V result=get(key);
+  return (result != null) ? result : defaultValue;
+}
