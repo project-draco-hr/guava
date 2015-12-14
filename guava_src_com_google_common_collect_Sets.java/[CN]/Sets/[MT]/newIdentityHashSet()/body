@@ -1,3 +1,3 @@
 {
-  return Sets.newSetFromMap(Maps.<E,Boolean>newIdentityHashMap());
+  return Collections.newSetFromMap(Maps.<E,Boolean>newIdentityHashMap());
 }
