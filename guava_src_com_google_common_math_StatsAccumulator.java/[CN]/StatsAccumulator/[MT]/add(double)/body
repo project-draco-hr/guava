@@ -10,9 +10,9 @@
   }
  else {
     if (isFinite(value) && isFinite(mean)) {
-      double nextMean=mean + (value - mean) / count;
-      sumOfSquaresOfDeltas+=(value - mean) * (value - nextMean);
-      mean=nextMean;
+      double delta=value - mean;
+      mean+=delta / count;
+      sumOfSquaresOfDeltas+=delta * (value - mean);
     }
  else {
       mean=calculateNewMeanNonFinite(mean,value);
