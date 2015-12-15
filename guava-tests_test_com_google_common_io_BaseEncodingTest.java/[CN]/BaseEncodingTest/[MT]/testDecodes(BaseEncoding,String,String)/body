@@ -1,3 +1,4 @@
 {
+  assertTrue(encoding.canDecode(encoded));
   assertEquals(getBytes(decoded),encoding.decode(encoded));
 }

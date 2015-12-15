@@ -1,4 +1,5 @@
 {
+  assertFalse(encoding.canDecode(cannotDecode));
   try {
     encoding.decode(cannotDecode);
     fail("Expected IllegalArgumentException");
