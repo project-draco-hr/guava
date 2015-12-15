@@ -9,7 +9,7 @@
         return UnsignedLongs.compare(lw,rw);
       }
       int n=Long.numberOfTrailingZeros(lw ^ rw) & ~0x7;
-      return (int)(((lw >>> n) & UNSIGNED_MASK) - ((rw >>> n) & UNSIGNED_MASK));
+      return ((int)((lw >>> n) & UNSIGNED_MASK)) - ((int)((rw >>> n) & UNSIGNED_MASK));
     }
   }
   for (int i=minWords * Longs.BYTES; i < minLength; i++) {
