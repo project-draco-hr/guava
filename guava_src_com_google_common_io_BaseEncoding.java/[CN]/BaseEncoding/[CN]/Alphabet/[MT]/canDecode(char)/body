@@ -1,0 +1,3 @@
+{
+  return ch <= Ascii.MAX && decodabet[ch] != -1;
+}

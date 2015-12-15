@@ -1,9 +1,0 @@
-{
-  try {
-    decodeChecked(chars);
-    return true;
-  }
- catch (  DecodingException badInput) {
-    return false;
-  }
-}
