@@ -1,4 +1,4 @@
 {
-  super.done();
+  super.afterDone();
   this.task=null;
 }
