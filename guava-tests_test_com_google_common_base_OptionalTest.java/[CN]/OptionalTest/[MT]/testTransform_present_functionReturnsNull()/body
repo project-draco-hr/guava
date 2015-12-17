@@ -1,6 +1,6 @@
 {
   try {
-    Optional.of("a").transform(new Function<String,String>(){
+    Optional<String> unused=Optional.of("a").transform(new Function<String,String>(){
       @Override public String apply(      String input){
         return null;
       }

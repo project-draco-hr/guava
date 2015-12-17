@@ -6,7 +6,7 @@
     try {
       BigInteger overflow=max.add(ONE);
       String overflowAsString=overflow.toString(radix);
-      UnsignedLongs.parseUnsignedLong(overflowAsString,radix);
+      long unused=UnsignedLongs.parseUnsignedLong(overflowAsString,radix);
       fail();
     }
  catch (    NumberFormatException expected) {

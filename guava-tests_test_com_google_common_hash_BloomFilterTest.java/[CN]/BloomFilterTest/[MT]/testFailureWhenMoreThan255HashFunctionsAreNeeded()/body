@@ -2,7 +2,7 @@
   try {
     int n=1000;
     double p=0.00000000000000000000000000000000000000000000000000000000000000000000000000000001;
-    BloomFilter.create(Funnels.unencodedCharsFunnel(),n,p);
+    BloomFilter<String> unused=BloomFilter.create(Funnels.unencodedCharsFunnel(),n,p);
     fail();
   }
  catch (  IllegalArgumentException expected) {

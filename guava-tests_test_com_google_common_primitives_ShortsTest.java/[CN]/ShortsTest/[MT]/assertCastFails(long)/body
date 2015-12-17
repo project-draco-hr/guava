@@ -1,6 +1,6 @@
 {
   try {
-    Shorts.checkedCast(value);
+    short unused=Shorts.checkedCast(value);
     fail("Cast to short should have failed: " + value);
   }
  catch (  IllegalArgumentException ex) {

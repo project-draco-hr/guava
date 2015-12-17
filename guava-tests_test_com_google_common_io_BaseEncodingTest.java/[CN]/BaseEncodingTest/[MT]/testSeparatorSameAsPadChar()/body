@@ -1,12 +1,12 @@
 {
   try {
-    base64().withSeparator("=",3);
+    BaseEncoding unused=base64().withSeparator("=",3);
     fail("Expected IllegalArgumentException");
   }
  catch (  IllegalArgumentException expected) {
   }
   try {
-    base64().withPadChar('#').withSeparator("!#!",3);
+    BaseEncoding unused=base64().withPadChar('#').withSeparator("!#!",3);
     fail("Expected IllegalArgumentException");
   }
  catch (  IllegalArgumentException expected) {

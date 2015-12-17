@@ -1,6 +1,6 @@
 {
   try {
-    Chars.max();
+    char unused=Chars.max();
     fail();
   }
  catch (  IllegalArgumentException expected) {

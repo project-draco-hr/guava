@@ -1,6 +1,6 @@
 {
   try {
-    Doubles.max();
+    double unused=Doubles.max();
     fail();
   }
  catch (  IllegalArgumentException expected) {

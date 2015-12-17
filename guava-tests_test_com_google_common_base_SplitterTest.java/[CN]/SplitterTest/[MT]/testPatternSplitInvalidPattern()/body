@@ -1,6 +1,6 @@
 {
   try {
-    Splitter.on(Pattern.compile("a*"));
+    Splitter unused=Splitter.on(Pattern.compile("a*"));
     fail();
   }
  catch (  IllegalArgumentException expected) {

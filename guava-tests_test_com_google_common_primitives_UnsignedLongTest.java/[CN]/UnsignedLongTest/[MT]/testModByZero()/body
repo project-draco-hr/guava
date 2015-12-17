@@ -1,7 +1,7 @@
 {
   for (  long a : TEST_LONGS) {
     try {
-      UnsignedLong.fromLongBits(a).mod(UnsignedLong.ZERO);
+      UnsignedLong unused=UnsignedLong.fromLongBits(a).mod(UnsignedLong.ZERO);
       fail("Expected ArithmeticException");
     }
  catch (    ArithmeticException expected) {

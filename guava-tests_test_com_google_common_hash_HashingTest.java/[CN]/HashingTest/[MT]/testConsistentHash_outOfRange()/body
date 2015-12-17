@@ -1,6 +1,6 @@
 {
   try {
-    Hashing.consistentHash(5L,0);
+    int unused=Hashing.consistentHash(5L,0);
     fail();
   }
  catch (  IllegalArgumentException expected) {

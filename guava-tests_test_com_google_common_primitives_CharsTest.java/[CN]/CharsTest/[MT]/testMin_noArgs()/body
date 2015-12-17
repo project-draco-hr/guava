@@ -1,6 +1,6 @@
 {
   try {
-    Chars.min();
+    char unused=Chars.min();
     fail();
   }
  catch (  IllegalArgumentException expected) {

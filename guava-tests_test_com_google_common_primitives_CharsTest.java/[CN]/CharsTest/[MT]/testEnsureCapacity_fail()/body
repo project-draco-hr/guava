@@ -1,12 +1,12 @@
 {
   try {
-    Chars.ensureCapacity(ARRAY1,-1,1);
+    char[] unused=Chars.ensureCapacity(ARRAY1,-1,1);
     fail();
   }
  catch (  IllegalArgumentException expected) {
   }
   try {
-    Chars.ensureCapacity(ARRAY1,1,-1);
+    char[] unused=Chars.ensureCapacity(ARRAY1,1,-1);
     fail();
   }
  catch (  IllegalArgumentException expected) {

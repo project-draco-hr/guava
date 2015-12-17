@@ -1,6 +1,6 @@
 {
   try {
-    FluentIterable.from(asList("one","two","three","four")).uniqueIndex(new Function<String,Integer>(){
+    ImmutableMap<Integer,String> unused=FluentIterable.from(asList("one","two","three","four")).uniqueIndex(new Function<String,Integer>(){
       @Override public Integer apply(      String input){
         return input.length();
       }

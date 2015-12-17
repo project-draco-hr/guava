@@ -1,6 +1,6 @@
 {
   try {
-    COMMA_SPLITTER.withKeyValueSeparator("=").split("a=1,b,c=2");
+    Map<String,String> unused=COMMA_SPLITTER.withKeyValueSeparator("=").split("a=1,b,c=2");
     fail();
   }
  catch (  IllegalArgumentException expected) {

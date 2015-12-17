@@ -1,7 +1,7 @@
 {
   for (  int a : TEST_INTS) {
     try {
-      UnsignedInteger ignored=UnsignedInteger.fromIntBits(a).dividedBy(UnsignedInteger.ZERO);
+      UnsignedInteger unused=UnsignedInteger.fromIntBits(a).dividedBy(UnsignedInteger.ZERO);
       fail("Expected ArithmeticException");
     }
  catch (    ArithmeticException expected) {

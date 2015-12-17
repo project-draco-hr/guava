@@ -1,6 +1,6 @@
 {
   try {
-    directedGraph.target(EDGE_NOT_IN_GRAPH);
+    Integer unused=directedGraph.target(EDGE_NOT_IN_GRAPH);
     fail(ERROR_EDGE_NOT_IN_GRAPH);
   }
  catch (  IllegalArgumentException e) {

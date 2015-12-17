@@ -1,12 +1,12 @@
 {
   try {
-    Longs.ensureCapacity(ARRAY1,-1,1);
+    long[] unused=Longs.ensureCapacity(ARRAY1,-1,1);
     fail();
   }
  catch (  IllegalArgumentException expected) {
   }
   try {
-    Longs.ensureCapacity(ARRAY1,1,-1);
+    long[] unused=Longs.ensureCapacity(ARRAY1,1,-1);
     fail();
   }
  catch (  IllegalArgumentException expected) {

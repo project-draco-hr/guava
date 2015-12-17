@@ -1,24 +1,24 @@
 {
   try {
-    UnsignedLongs.decode("0xfffffffffffffffff");
+    long unused=UnsignedLongs.decode("0xfffffffffffffffff");
     fail();
   }
  catch (  NumberFormatException expected) {
   }
   try {
-    UnsignedLongs.decode("-5");
+    long unused=UnsignedLongs.decode("-5");
     fail();
   }
  catch (  NumberFormatException expected) {
   }
   try {
-    UnsignedLongs.decode("-0x5");
+    long unused=UnsignedLongs.decode("-0x5");
     fail();
   }
  catch (  NumberFormatException expected) {
   }
   try {
-    UnsignedLongs.decode("-05");
+    long unused=UnsignedLongs.decode("-05");
     fail();
   }
  catch (  NumberFormatException expected) {

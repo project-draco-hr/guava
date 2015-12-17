@@ -1,6 +1,6 @@
 {
   try {
-    graph.adjacentNodes(NODE_NOT_IN_GRAPH);
+    Set<Integer> unused=graph.adjacentNodes(NODE_NOT_IN_GRAPH);
     fail(ERROR_NODE_NOT_IN_GRAPH);
   }
  catch (  IllegalArgumentException e) {

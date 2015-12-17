@@ -1,6 +1,6 @@
 {
   try {
-    COMMA_SPLITTER.split(null);
+    Iterable<String> unused=COMMA_SPLITTER.split(null);
     fail();
   }
  catch (  NullPointerException expected) {

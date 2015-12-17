@@ -1,4 +1,4 @@
 {
   List<Integer> input=asList(1,2,3);
-  FluentIterable.from(input).transformAndConcat(new RepeatedStringValueOfWildcardFunction());
+  FluentIterable<String> unused=FluentIterable.from(input).transformAndConcat(new RepeatedStringValueOfWildcardFunction());
 }

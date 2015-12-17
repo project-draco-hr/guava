@@ -1,6 +1,6 @@
 {
   try {
-    UnsignedBytes.checkedCast(value);
+    byte unused=UnsignedBytes.checkedCast(value);
     fail("Cast to byte should have failed: " + value);
   }
  catch (  IllegalArgumentException ex) {

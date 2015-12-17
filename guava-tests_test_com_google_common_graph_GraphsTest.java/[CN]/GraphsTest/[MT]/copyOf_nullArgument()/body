@@ -1,12 +1,12 @@
 {
   try {
-    copyOf((DirectedGraph)null);
+    DirectedGraph<Object,Object> unused=copyOf((DirectedGraph)null);
     fail("Should have rejected a null graph");
   }
  catch (  NullPointerException expected) {
   }
   try {
-    copyOf((UndirectedGraph)null);
+    UndirectedGraph<Object,Object> unused=copyOf((UndirectedGraph)null);
     fail("Should have rejected a null graph");
   }
  catch (  NullPointerException expected) {

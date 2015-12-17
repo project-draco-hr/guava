@@ -1,6 +1,6 @@
 {
   try {
-    fluent(1,2,3).index(Functions.constant(null));
+    ImmutableListMultimap<Object,Integer> unused=fluent(1,2,3).index(Functions.constant(null));
     fail();
   }
  catch (  NullPointerException expected) {

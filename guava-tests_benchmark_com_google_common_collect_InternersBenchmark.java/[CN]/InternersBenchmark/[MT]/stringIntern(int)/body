@@ -1,6 +1,6 @@
 {
   for (int i=0; i < reps; i++) {
-    Double.toHexString(Math.random()).intern();
+    String unused=Double.toHexString(Math.random()).intern();
   }
   return reps;
 }

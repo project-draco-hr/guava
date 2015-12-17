@@ -1,6 +1,6 @@
 {
   try {
-    Strings.repeat(null,5);
+    String unused=Strings.repeat(null,5);
     fail();
   }
  catch (  NullPointerException expected) {

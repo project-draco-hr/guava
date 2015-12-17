@@ -1,6 +1,6 @@
 {
   try {
-    Ints.checkedCast(value);
+    int unused=Ints.checkedCast(value);
     fail("Cast to int should have failed: " + value);
   }
  catch (  IllegalArgumentException ex) {

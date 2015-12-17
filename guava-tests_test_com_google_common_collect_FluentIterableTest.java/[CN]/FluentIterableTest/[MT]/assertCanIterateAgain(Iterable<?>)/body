@@ -1,4 +1,3 @@
 {
-  for (  @SuppressWarnings("unused") Object obj : iterable) {
-  }
+  Object unused=Iterables.getLast(iterable);
 }

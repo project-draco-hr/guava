@@ -1,7 +1,7 @@
 {
   List<Boolean> list=Arrays.asList(false,true,null);
   try {
-    Booleans.toArray(list);
+    boolean[] unused=Booleans.toArray(list);
     fail();
   }
  catch (  NullPointerException expected) {

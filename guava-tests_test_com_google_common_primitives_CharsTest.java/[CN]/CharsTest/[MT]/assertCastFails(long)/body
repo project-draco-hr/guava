@@ -1,6 +1,6 @@
 {
   try {
-    Chars.checkedCast(value);
+    char unused=Chars.checkedCast(value);
     fail("Cast to char should have failed: " + value);
   }
  catch (  IllegalArgumentException ex) {

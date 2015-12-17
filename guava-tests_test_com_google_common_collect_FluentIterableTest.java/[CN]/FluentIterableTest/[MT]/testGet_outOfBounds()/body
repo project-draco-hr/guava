@@ -1,12 +1,12 @@
 {
   try {
-    FluentIterable.from(Lists.newArrayList("a","b","c")).get(-1);
+    String unused=FluentIterable.from(Lists.newArrayList("a","b","c")).get(-1);
     fail();
   }
  catch (  IndexOutOfBoundsException expected) {
   }
   try {
-    FluentIterable.from(Lists.newArrayList("a","b","c")).get(3);
+    String unused=FluentIterable.from(Lists.newArrayList("a","b","c")).get(3);
     fail();
   }
  catch (  IndexOutOfBoundsException expected) {

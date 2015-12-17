@@ -1,4 +1,4 @@
 {
-  BloomFilter.create(Funnels.unencodedCharsFunnel(),Integer.MAX_VALUE / 2,0.28);
-  BloomFilter.create(Funnels.unencodedCharsFunnel(),45L * Integer.MAX_VALUE,0.99);
+  BloomFilter<String> unused=BloomFilter.create(Funnels.unencodedCharsFunnel(),Integer.MAX_VALUE / 2,0.28);
+  unused=BloomFilter.create(Funnels.unencodedCharsFunnel(),45L * Integer.MAX_VALUE,0.99);
 }

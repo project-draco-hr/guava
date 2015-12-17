@@ -1,6 +1,6 @@
 {
   try {
-    Doubles.min();
+    double unused=Doubles.min();
     fail();
   }
  catch (  IllegalArgumentException expected) {

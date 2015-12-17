@@ -1,6 +1,6 @@
 {
   try {
-    FluentIterable.<Integer>from(asList(1,2)).append((List<Integer>)null);
+    FluentIterable<Integer> unused=FluentIterable.<Integer>from(asList(1,2)).append((List<Integer>)null);
     fail("Appending null iterable should throw NPE.");
   }
  catch (  NullPointerException expected) {

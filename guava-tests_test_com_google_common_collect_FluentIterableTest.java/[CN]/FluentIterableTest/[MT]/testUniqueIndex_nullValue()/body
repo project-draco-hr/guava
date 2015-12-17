@@ -1,6 +1,6 @@
 {
   try {
-    fluent(1,null,2).uniqueIndex(new Function<Integer,Object>(){
+    ImmutableMap<Object,Integer> unused=fluent(1,null,2).uniqueIndex(new Function<Integer,Object>(){
       @Override public Object apply(      @Nullable Integer input){
         return String.valueOf(input);
       }

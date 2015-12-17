@@ -1,12 +1,12 @@
 {
   try {
-    Booleans.ensureCapacity(ARRAY_FALSE,-1,1);
+    boolean[] unused=Booleans.ensureCapacity(ARRAY_FALSE,-1,1);
     fail();
   }
  catch (  IllegalArgumentException expected) {
   }
   try {
-    Booleans.ensureCapacity(ARRAY_FALSE,1,-1);
+    boolean[] unused=Booleans.ensureCapacity(ARRAY_FALSE,1,-1);
     fail();
   }
  catch (  IllegalArgumentException expected) {

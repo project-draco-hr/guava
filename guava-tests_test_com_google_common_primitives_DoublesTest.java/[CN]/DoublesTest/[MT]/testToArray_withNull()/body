@@ -1,7 +1,7 @@
 {
   List<Double> list=Arrays.asList((double)0,(double)1,null);
   try {
-    Doubles.toArray(list);
+    double[] unused=Doubles.toArray(list);
     fail();
   }
  catch (  NullPointerException expected) {

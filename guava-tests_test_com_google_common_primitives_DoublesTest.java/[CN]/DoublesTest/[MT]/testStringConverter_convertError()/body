@@ -1,6 +1,6 @@
 {
   try {
-    Doubles.stringConverter().convert("notanumber");
+    double unused=Doubles.stringConverter().convert("notanumber");
     fail();
   }
  catch (  NumberFormatException expected) {

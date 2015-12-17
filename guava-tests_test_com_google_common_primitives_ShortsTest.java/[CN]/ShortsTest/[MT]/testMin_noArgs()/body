@@ -1,6 +1,6 @@
 {
   try {
-    Shorts.min();
+    short unused=Shorts.min();
     fail();
   }
  catch (  IllegalArgumentException expected) {

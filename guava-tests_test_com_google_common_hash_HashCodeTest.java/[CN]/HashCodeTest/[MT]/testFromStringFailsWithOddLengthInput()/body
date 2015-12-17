@@ -1,6 +1,6 @@
 {
   try {
-    HashCode.fromString("7f8");
+    HashCode unused=HashCode.fromString("7f8");
     fail();
   }
  catch (  IllegalArgumentException expected) {

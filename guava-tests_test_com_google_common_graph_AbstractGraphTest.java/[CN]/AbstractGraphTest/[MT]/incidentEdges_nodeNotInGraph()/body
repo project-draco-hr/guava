@@ -1,6 +1,6 @@
 {
   try {
-    graph.incidentEdges(NODE_NOT_IN_GRAPH);
+    Set<String> unused=graph.incidentEdges(NODE_NOT_IN_GRAPH);
     fail(ERROR_NODE_NOT_IN_GRAPH);
   }
  catch (  IllegalArgumentException e) {

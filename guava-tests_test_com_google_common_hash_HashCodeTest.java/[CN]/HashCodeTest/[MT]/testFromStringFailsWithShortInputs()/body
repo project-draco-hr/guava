@@ -1,15 +1,15 @@
 {
   try {
-    HashCode.fromString("");
+    HashCode unused=HashCode.fromString("");
     fail();
   }
  catch (  IllegalArgumentException expected) {
   }
   try {
-    HashCode.fromString("7");
+    HashCode unused=HashCode.fromString("7");
     fail();
   }
  catch (  IllegalArgumentException expected) {
   }
-  HashCode.fromString("7f");
+  HashCode unused=HashCode.fromString("7f");
 }

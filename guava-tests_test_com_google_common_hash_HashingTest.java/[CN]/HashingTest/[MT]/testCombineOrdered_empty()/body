@@ -1,6 +1,6 @@
 {
   try {
-    Hashing.combineOrdered(Collections.<HashCode>emptySet());
+    HashCode unused=Hashing.combineOrdered(Collections.<HashCode>emptySet());
     fail();
   }
  catch (  IllegalArgumentException expected) {

@@ -1,24 +1,24 @@
 {
   try {
-    UnsignedInts.decode("0xfffffffff");
+    int unused=UnsignedInts.decode("0xfffffffff");
     fail();
   }
  catch (  NumberFormatException expected) {
   }
   try {
-    UnsignedInts.decode("-5");
+    int unused=UnsignedInts.decode("-5");
     fail();
   }
  catch (  NumberFormatException expected) {
   }
   try {
-    UnsignedInts.decode("-0x5");
+    int unused=UnsignedInts.decode("-0x5");
     fail();
   }
  catch (  NumberFormatException expected) {
   }
   try {
-    UnsignedInts.decode("-05");
+    int unused=UnsignedInts.decode("-05");
     fail();
   }
  catch (  NumberFormatException expected) {

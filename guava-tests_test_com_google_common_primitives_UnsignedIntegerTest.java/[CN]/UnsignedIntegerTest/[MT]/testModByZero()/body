@@ -1,7 +1,7 @@
 {
   for (  int a : TEST_INTS) {
     try {
-      UnsignedInteger.fromIntBits(a).mod(UnsignedInteger.ZERO);
+      UnsignedInteger unused=UnsignedInteger.fromIntBits(a).mod(UnsignedInteger.ZERO);
       fail("Expected ArithmeticException");
     }
  catch (    ArithmeticException expected) {

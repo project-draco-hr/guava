@@ -1,6 +1,6 @@
 {
   try {
-    Shorts.max();
+    short unused=Shorts.max();
     fail();
   }
  catch (  IllegalArgumentException expected) {

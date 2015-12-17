@@ -1,6 +1,6 @@
 {
   try {
-    FluentIterable.from(asList("a","b","c")).skip(-1);
+    FluentIterable<String> unused=FluentIterable.from(asList("a","b","c")).skip(-1);
     fail("Skipping negative number of elements should throw IllegalArgumentException.");
   }
  catch (  IllegalArgumentException expected) {

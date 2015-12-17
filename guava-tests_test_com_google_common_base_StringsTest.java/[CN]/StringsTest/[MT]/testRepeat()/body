@@ -9,13 +9,13 @@
     assertEquals(2 * i,Strings.repeat(input,i).length());
   }
   try {
-    Strings.repeat("x",-1);
+    String unused=Strings.repeat("x",-1);
     fail();
   }
  catch (  IllegalArgumentException expected) {
   }
   try {
-    Strings.repeat("12345678",(1 << 30) + 3);
+    String unused=Strings.repeat("12345678",(1 << 30) + 3);
     fail();
   }
  catch (  ArrayIndexOutOfBoundsException expected) {

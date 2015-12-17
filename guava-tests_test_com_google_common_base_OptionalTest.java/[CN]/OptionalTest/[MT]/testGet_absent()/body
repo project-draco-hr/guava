@@ -1,7 +1,7 @@
 {
   Optional<String> optional=Optional.absent();
   try {
-    optional.get();
+    String unused=optional.get();
     fail();
   }
  catch (  IllegalStateException expected) {

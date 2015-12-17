@@ -10,7 +10,7 @@
   }
   assertEquals(3327428144502L,BloomFilter.optimalNumOfBits(Integer.MAX_VALUE,Double.MIN_VALUE));
   try {
-    BloomFilter.create(HashTestUtils.BAD_FUNNEL,Integer.MAX_VALUE,Double.MIN_VALUE);
+    BloomFilter<String> unused=BloomFilter.create(HashTestUtils.BAD_FUNNEL,Integer.MAX_VALUE,Double.MIN_VALUE);
     fail("we can't represent such a large BF!");
   }
  catch (  IllegalArgumentException expected) {

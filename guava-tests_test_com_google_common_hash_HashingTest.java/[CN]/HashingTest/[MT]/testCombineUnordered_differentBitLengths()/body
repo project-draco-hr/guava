@@ -1,6 +1,6 @@
 {
   try {
-    Hashing.combineUnordered(ImmutableList.of(HashCode.fromInt(32),HashCode.fromLong(32L)));
+    HashCode unused=Hashing.combineUnordered(ImmutableList.of(HashCode.fromInt(32),HashCode.fromLong(32L)));
     fail();
   }
  catch (  IllegalArgumentException expected) {

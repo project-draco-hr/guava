@@ -1,6 +1,6 @@
 {
   try {
-    Floats.min();
+    float unused=Floats.min();
     fail();
   }
  catch (  IllegalArgumentException expected) {

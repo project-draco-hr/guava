@@ -1,12 +1,12 @@
 {
   try {
-    Doubles.ensureCapacity(ARRAY1,-1,1);
+    double[] unused=Doubles.ensureCapacity(ARRAY1,-1,1);
     fail();
   }
  catch (  IllegalArgumentException expected) {
   }
   try {
-    Doubles.ensureCapacity(ARRAY1,1,-1);
+    double[] unused=Doubles.ensureCapacity(ARRAY1,1,-1);
     fail();
   }
  catch (  IllegalArgumentException expected) {
