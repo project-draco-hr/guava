@@ -1,0 +1,2 @@
+boolean allMustSucceed
+ImmutableList<ListenableFuture<? extends V>> futures

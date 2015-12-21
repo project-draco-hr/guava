@@ -1,0 +1,18 @@
+{
+  final SettableFuture<Integer> futureInteger=SettableFuture.create();
+  final SettableFuture<Boolean> futureBoolean=SettableFuture.create();
+  AsyncCallable<String> combiner=new AsyncCallable<String>(){
+    @Override public ListenableFuture<String> call() throws Exception {
+      assertTrue(futureInteger.isDone());
+      assertTrue(futureBoolean.isDone());
+      return Futures.immediateFuture(createCombinedResult(futureInteger.get(),futureBoolean.get()));
+    }
+  }
+;
+  ListenableFuture<String> futureResult=Futures.whenAllComplete(futureInteger,futureBoolean).callAsync(combiner);
+  Integer integerPartial=1;
+  futureInteger.set(integerPartial);
+  Boolean booleanPartial=true;
+  futureBoolean.set(booleanPartial);
+  assertEquals(createCombinedResult(integerPartial,booleanPartial),futureResult.get());
+}

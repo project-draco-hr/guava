@@ -1,0 +1,33 @@
+{
+  SettableFuture<String> stringFuture=SettableFuture.create();
+  SettableFuture<Boolean> booleanFuture=SettableFuture.create();
+  final CountDownLatch inFunction=new CountDownLatch(1);
+  final CountDownLatch shouldCompleteFunction=new CountDownLatch(1);
+  final SettableFuture<String> resultFuture=SettableFuture.create();
+  AsyncCallable<String> combiner=new AsyncCallable<String>(){
+    @Override public ListenableFuture<String> call() throws Exception {
+      inFunction.countDown();
+      shouldCompleteFunction.await();
+      return resultFuture;
+    }
+  }
+;
+  ListenableFuture<String> futureResult=Futures.whenAllComplete(stringFuture,booleanFuture).callAsync(combiner,newSingleThreadExecutor());
+  stringFuture.set("value");
+  booleanFuture.set(true);
+  inFunction.await();
+  futureResult.cancel(false);
+  shouldCompleteFunction.countDown();
+  try {
+    futureResult.get();
+    fail();
+  }
+ catch (  CancellationException expected) {
+  }
+  try {
+    resultFuture.get();
+    fail();
+  }
+ catch (  CancellationException expected) {
+  }
+}

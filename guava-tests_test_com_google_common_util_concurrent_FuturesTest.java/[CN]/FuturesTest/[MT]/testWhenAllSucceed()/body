@@ -1,0 +1,25 @@
+{
+class PartialResultException extends Exception {
+  }
+  final SettableFuture<Integer> futureInteger=SettableFuture.create();
+  final SettableFuture<Boolean> futureBoolean=SettableFuture.create();
+  AsyncCallable<String> combiner=new AsyncCallable<String>(){
+    @Override public ListenableFuture<String> call() throws Exception {
+      throw new AssertionFailedError("AsyncCallable should not have been called.");
+    }
+  }
+;
+  ListenableFuture<String> futureResult=Futures.whenAllSucceed(futureInteger,futureBoolean).callAsync(combiner);
+  PartialResultException partialResultException=new PartialResultException();
+  futureInteger.setException(partialResultException);
+  Boolean booleanPartial=true;
+  futureBoolean.set(booleanPartial);
+  assertTrue(futureResult.isDone());
+  try {
+    futureResult.get();
+    fail();
+  }
+ catch (  ExecutionException expected) {
+    assertSame(partialResultException,expected.getCause());
+  }
+}

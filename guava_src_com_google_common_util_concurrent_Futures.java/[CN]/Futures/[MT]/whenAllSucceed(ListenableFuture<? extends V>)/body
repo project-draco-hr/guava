@@ -1,0 +1,3 @@
+{
+  return new FutureCombiner<V>(true,ImmutableList.copyOf(futures));
+}

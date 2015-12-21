@@ -1,0 +1,4 @@
+{
+  super(listenerExecutor);
+  this.callable=checkNotNull(callable);
+}

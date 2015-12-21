@@ -1,0 +1,3 @@
+{
+  init(new CombinedFutureRunningState(futures,allMustSucceed,new CallableInterruptibleTask(callable,listenerExecutor)));
+}

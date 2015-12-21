@@ -1,0 +1,3 @@
+{
+  this.listenerExecutor=checkNotNull(listenerExecutor);
+}

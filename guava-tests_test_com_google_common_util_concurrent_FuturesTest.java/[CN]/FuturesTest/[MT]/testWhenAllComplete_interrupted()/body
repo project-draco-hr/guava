@@ -1,0 +1,34 @@
+{
+  SettableFuture<String> stringFuture=SettableFuture.create();
+  SettableFuture<Boolean> booleanFuture=SettableFuture.create();
+  final CountDownLatch inFunction=new CountDownLatch(1);
+  final CountDownLatch shouldCompleteFunction=new CountDownLatch(1);
+  final CountDownLatch gotException=new CountDownLatch(1);
+  AsyncCallable<String> combiner=new AsyncCallable<String>(){
+    @Override public ListenableFuture<String> call() throws Exception {
+      inFunction.countDown();
+      try {
+        shouldCompleteFunction.await();
+      }
+ catch (      InterruptedException expected) {
+        gotException.countDown();
+        throw expected;
+      }
+      return Futures.immediateFuture("a");
+    }
+  }
+;
+  ListenableFuture<String> futureResult=Futures.whenAllComplete(stringFuture,booleanFuture).callAsync(combiner,newSingleThreadExecutor());
+  stringFuture.set("value");
+  booleanFuture.set(true);
+  inFunction.await();
+  futureResult.cancel(true);
+  shouldCompleteFunction.countDown();
+  try {
+    futureResult.get();
+    fail();
+  }
+ catch (  CancellationException expected) {
+  }
+  gotException.await();
+}

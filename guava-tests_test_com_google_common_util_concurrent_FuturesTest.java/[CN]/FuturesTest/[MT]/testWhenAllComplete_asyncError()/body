@@ -1,0 +1,25 @@
+{
+  final Exception thrown=new RuntimeException("test");
+  final SettableFuture<Integer> futureInteger=SettableFuture.create();
+  final SettableFuture<Boolean> futureBoolean=SettableFuture.create();
+  AsyncCallable<String> combiner=new AsyncCallable<String>(){
+    @Override public ListenableFuture<String> call() throws Exception {
+      assertTrue(futureInteger.isDone());
+      assertTrue(futureBoolean.isDone());
+      return Futures.immediateFailedFuture(thrown);
+    }
+  }
+;
+  ListenableFuture<String> futureResult=Futures.whenAllComplete(futureInteger,futureBoolean).callAsync(combiner);
+  Integer integerPartial=1;
+  futureInteger.set(integerPartial);
+  Boolean booleanPartial=true;
+  futureBoolean.set(booleanPartial);
+  try {
+    futureResult.get();
+    fail("Expected ExecutionException");
+  }
+ catch (  ExecutionException expected) {
+    assertSame(thrown,expected.getCause());
+  }
+}

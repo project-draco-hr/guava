@@ -1,0 +1,17 @@
+{
+  thrownByExecute=false;
+  if (!isDone()) {
+    try {
+      setValue();
+    }
+ catch (    ExecutionException e) {
+      setException(e.getCause());
+    }
+catch (    CancellationException e) {
+      cancel(false);
+    }
+catch (    Throwable e) {
+      setException(e);
+    }
+  }
+}

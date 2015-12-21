@@ -1,0 +1,9 @@
+{
+  CombinedFutureInterruptibleTask localTask=task;
+  if (localTask != null) {
+    localTask.execute();
+  }
+ else {
+    checkState(isDone());
+  }
+}

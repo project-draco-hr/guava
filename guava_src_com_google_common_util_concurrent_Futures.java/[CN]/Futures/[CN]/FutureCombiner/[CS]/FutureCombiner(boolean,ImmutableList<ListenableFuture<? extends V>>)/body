@@ -1,0 +1,4 @@
+{
+  this.allMustSucceed=allMustSucceed;
+  this.futures=futures;
+}

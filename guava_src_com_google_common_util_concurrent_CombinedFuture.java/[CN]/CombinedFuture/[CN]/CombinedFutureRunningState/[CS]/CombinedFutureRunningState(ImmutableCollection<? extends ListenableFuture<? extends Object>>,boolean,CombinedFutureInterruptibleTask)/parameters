@@ -1,0 +1,3 @@
+ImmutableCollection<? extends ListenableFuture<? extends Object>> futures
+boolean allMustSucceed
+CombinedFutureInterruptibleTask task

@@ -1,0 +1,10 @@
+{
+  try {
+    listenerExecutor.execute(this);
+  }
+ catch (  RejectedExecutionException e) {
+    if (thrownByExecute) {
+      setException(e);
+    }
+  }
+}

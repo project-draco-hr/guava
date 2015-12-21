@@ -1,0 +1,4 @@
+ImmutableCollection<? extends ListenableFuture<?>> futures
+boolean allMustSucceed
+Executor listenerExecutor
+Callable<V> callable
