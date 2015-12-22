@@ -1,6 +1,11 @@
 {
   ImmutableRangeSet<Integer> rangeSet=ImmutableRangeSet.of(Range.closedOpen(1,5));
   assertThat(rangeSet.asRanges()).contains(Range.closedOpen(1,5));
+  assertTrue(rangeSet.intersects(Range.closed(3,4)));
+  assertTrue(rangeSet.intersects(Range.closedOpen(0,2)));
+  assertTrue(rangeSet.intersects(Range.closedOpen(3,7)));
+  assertTrue(rangeSet.intersects(Range.greaterThan(2)));
+  assertFalse(rangeSet.intersects(Range.greaterThan(7)));
   assertTrue(rangeSet.encloses(Range.closed(3,4)));
   assertTrue(rangeSet.encloses(Range.closedOpen(1,4)));
   assertTrue(rangeSet.encloses(Range.closedOpen(1,5)));

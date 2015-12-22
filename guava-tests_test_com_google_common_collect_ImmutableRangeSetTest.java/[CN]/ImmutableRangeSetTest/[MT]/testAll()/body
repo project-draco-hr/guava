@@ -2,6 +2,8 @@
   ImmutableRangeSet<Integer> rangeSet=ImmutableRangeSet.all();
   assertThat(rangeSet.asRanges()).contains(Range.<Integer>all());
   assertTrue(rangeSet.contains(0));
+  assertTrue(rangeSet.intersects(Range.singleton(0)));
+  assertTrue(rangeSet.intersects(Range.<Integer>all()));
   assertTrue(rangeSet.encloses(Range.<Integer>all()));
   assertTrue(rangeSet.enclosesAll(rangeSet));
   assertEquals(ImmutableRangeSet.<Integer>of(),rangeSet.complement());

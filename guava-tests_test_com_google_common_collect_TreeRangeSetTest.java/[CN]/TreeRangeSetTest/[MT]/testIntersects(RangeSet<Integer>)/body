@@ -1,0 +1,12 @@
+{
+  for (  Range<Integer> query : QUERY_RANGES) {
+    boolean expectIntersect=false;
+    for (    Range<Integer> expectedRange : rangeSet.asRanges()) {
+      if (expectedRange.isConnected(query) && !expectedRange.intersection(query).isEmpty()) {
+        expectIntersect=true;
+        break;
+      }
+    }
+    assertEquals(rangeSet + " was incorrect on intersects(" + query+ ")",expectIntersect,rangeSet.intersects(query));
+  }
+}

@@ -1,0 +1,7 @@
+{
+  int ceilingIndex=SortedLists.binarySearch(ranges,Range.<C>lowerBoundFn(),otherRange.lowerBound,Ordering.natural(),ANY_PRESENT,NEXT_HIGHER);
+  if (ceilingIndex < ranges.size() && ranges.get(ceilingIndex).isConnected(otherRange) && !ranges.get(ceilingIndex).intersection(otherRange).isEmpty()) {
+    return true;
+  }
+  return ceilingIndex > 0 && ranges.get(ceilingIndex - 1).isConnected(otherRange) && !ranges.get(ceilingIndex - 1).intersection(otherRange).isEmpty();
+}

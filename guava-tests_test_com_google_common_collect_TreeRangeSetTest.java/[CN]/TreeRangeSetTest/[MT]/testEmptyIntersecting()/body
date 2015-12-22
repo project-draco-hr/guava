@@ -1,0 +1,4 @@
+{
+  testIntersects(TreeRangeSet.<Integer>create());
+  testIntersects(TreeRangeSet.<Integer>create().complement());
+}

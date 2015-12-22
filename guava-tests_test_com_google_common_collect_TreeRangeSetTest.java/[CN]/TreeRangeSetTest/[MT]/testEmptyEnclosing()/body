@@ -1,0 +1,4 @@
+{
+  testEnclosing(TreeRangeSet.<Integer>create());
+  testEnclosing(TreeRangeSet.<Integer>create().complement());
+}

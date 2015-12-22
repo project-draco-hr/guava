@@ -3,6 +3,7 @@
   assertThat(rangeSet.asRanges()).isEmpty();
   assertEquals(ImmutableRangeSet.<Integer>all(),rangeSet.complement());
   assertFalse(rangeSet.contains(0));
+  assertFalse(rangeSet.intersects(Range.singleton(0)));
   assertFalse(rangeSet.encloses(Range.singleton(0)));
   assertTrue(rangeSet.enclosesAll(rangeSet));
   assertTrue(rangeSet.isEmpty());

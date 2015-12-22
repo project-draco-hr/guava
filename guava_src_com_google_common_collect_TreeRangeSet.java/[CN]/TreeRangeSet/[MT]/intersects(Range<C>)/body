@@ -1,0 +1,9 @@
+{
+  checkNotNull(range);
+  Entry<Cut<C>,Range<C>> ceilingEntry=rangesByLowerBound.ceilingEntry(range.lowerBound);
+  if (ceilingEntry != null && ceilingEntry.getValue().isConnected(range) && !ceilingEntry.getValue().intersection(range).isEmpty()) {
+    return true;
+  }
+  Entry<Cut<C>,Range<C>> priorEntry=rangesByLowerBound.lowerEntry(range.lowerBound);
+  return priorEntry != null && priorEntry.getValue().isConnected(range) && !priorEntry.getValue().intersection(range).isEmpty();
+}
