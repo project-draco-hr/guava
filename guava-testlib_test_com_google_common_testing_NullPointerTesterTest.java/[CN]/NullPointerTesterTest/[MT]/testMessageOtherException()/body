@@ -1,0 +1,13 @@
+{
+  Method method=OneArg.class.getMethod("staticOneArgThrowsOtherThanNpe",String.class);
+  boolean foundProblem=false;
+  try {
+    new NullPointerTester().testMethodParameter(new OneArg(),method,0);
+  }
+ catch (  AssertionFailedError expected) {
+    assertThat(expected.getMessage()).contains("index 0");
+    assertThat(expected.getMessage()).contains("[null]");
+    foundProblem=true;
+  }
+  assertTrue("Should report error when different exception is thrown",foundProblem);
+}
