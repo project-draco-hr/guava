@@ -12,17 +12,31 @@
  catch (  IllegalStateException expected) {
   }
   try {
+    emptyAccumulatorByAddAllEmptyStats.sampleStandardDeviation();
+    fail("Expected IllegalStateException");
+  }
+ catch (  IllegalStateException expected) {
+  }
+  try {
     oneValueAccumulator.sampleStandardDeviation();
     fail("Expected IllegalStateException");
   }
  catch (  IllegalStateException expected) {
   }
+  try {
+    oneValueAccumulatorByAddAllEmptyStats.sampleStandardDeviation();
+    fail("Expected IllegalStateException");
+  }
+ catch (  IllegalStateException expected) {
+  }
   assertThat(twoValuesAccumulator.sampleStandardDeviation()).isWithin(ALLOWED_ERROR).of(sqrt(TWO_VALUES_SUM_OF_SQUARES_OF_DELTAS));
+  assertThat(twoValuesAccumulatorByAddAllStats.sampleStandardDeviation()).isWithin(ALLOWED_ERROR).of(sqrt(TWO_VALUES_SUM_OF_SQUARES_OF_DELTAS));
   assertThat(manyValuesAccumulatorByAddAllIterable.sampleStandardDeviation()).isWithin(ALLOWED_ERROR).of(sqrt(MANY_VALUES_SUM_OF_SQUARES_OF_DELTAS / (MANY_VALUES_COUNT - 1)));
   assertThat(manyValuesAccumulatorByAddAllIterator.sampleStandardDeviation()).isWithin(ALLOWED_ERROR).of(sqrt(MANY_VALUES_SUM_OF_SQUARES_OF_DELTAS / (MANY_VALUES_COUNT - 1)));
   assertThat(manyValuesAccumulatorByAddAllVarargs.sampleStandardDeviation()).isWithin(ALLOWED_ERROR).of(sqrt(MANY_VALUES_SUM_OF_SQUARES_OF_DELTAS / (MANY_VALUES_COUNT - 1)));
   assertThat(manyValuesAccumulatorByRepeatedAdd.sampleStandardDeviation()).isWithin(ALLOWED_ERROR).of(sqrt(MANY_VALUES_SUM_OF_SQUARES_OF_DELTAS / (MANY_VALUES_COUNT - 1)));
   assertThat(manyValuesAccumulatorByAddAndAddAll.sampleStandardDeviation()).isWithin(ALLOWED_ERROR).of(sqrt(MANY_VALUES_SUM_OF_SQUARES_OF_DELTAS / (MANY_VALUES_COUNT - 1)));
+  assertThat(manyValuesAccumulatorByAddAllStats.sampleStandardDeviation()).isWithin(ALLOWED_ERROR).of(sqrt(MANY_VALUES_SUM_OF_SQUARES_OF_DELTAS / (MANY_VALUES_COUNT - 1)));
   assertThat(integerManyValuesAccumulatorByAddAllIterable.sampleStandardDeviation()).isWithin(ALLOWED_ERROR).of(sqrt(INTEGER_MANY_VALUES_SUM_OF_SQUARES_OF_DELTAS / (INTEGER_MANY_VALUES_COUNT - 1)));
   assertThat(longManyValuesAccumulatorByAddAllIterator.sampleStandardDeviation()).isWithin(ALLOWED_ERROR).of(sqrt(LONG_MANY_VALUES_SUM_OF_SQUARES_OF_DELTAS / (LONG_MANY_VALUES_COUNT - 1)));
   assertThat(longManyValuesAccumulatorByAddAllVarargs.sampleStandardDeviation()).isWithin(ALLOWED_ERROR).of(sqrt(LONG_MANY_VALUES_SUM_OF_SQUARES_OF_DELTAS / (LONG_MANY_VALUES_COUNT - 1)));

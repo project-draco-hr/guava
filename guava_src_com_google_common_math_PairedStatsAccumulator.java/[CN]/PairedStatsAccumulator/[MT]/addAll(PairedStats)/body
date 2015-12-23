@@ -1,0 +1,16 @@
+{
+  if (values.count() == 0) {
+    return;
+  }
+  if (count() == 0) {
+    sumOfProductsOfDeltas=values.sumOfProductsOfDeltas();
+  }
+ else {
+    long nextCount=count() + values.count();
+    double xMeanDelta=xStats.mean() - values.xStats().mean();
+    double yMeanDelta=yStats.mean() - values.yStats().mean();
+    sumOfProductsOfDeltas+=values.sumOfProductsOfDeltas() + xMeanDelta * yMeanDelta * count()* values.count() / nextCount;
+  }
+  xStats.addAll(values.xStats());
+  yStats.addAll(values.yStats());
+}

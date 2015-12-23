@@ -11,32 +11,52 @@
   }
  catch (  IllegalStateException expected) {
   }
-  assertThat(oneValueAccumulator.mean()).isWithin(ALLOWED_ERROR).of(ONE_VALUE);
-  assertThat(twoValuesAccumulator.mean()).isWithin(ALLOWED_ERROR).of(TWO_VALUES_MEAN);
-  for (  ManyValues values : ALL_MANY_VALUES) {
-    StatsAccumulator accumulator=new StatsAccumulator();
-    accumulator.addAll(values.asIterable());
-    double mean=accumulator.mean();
-    if (values.hasAnyNaN()) {
-      assertThat(mean).named("mean of " + values).isNaN();
-    }
- else     if (values.hasAnyPositiveInfinity() && values.hasAnyNegativeInfinity()) {
-      assertThat(mean).named("mean of " + values).isNaN();
-    }
- else     if (values.hasAnyPositiveInfinity()) {
-      assertThat(mean).named("mean of " + values).isPositiveInfinity();
-    }
- else     if (values.hasAnyNegativeInfinity()) {
-      assertThat(mean).named("mean of " + values).isNegativeInfinity();
-    }
- else {
-      assertThat(mean).named("mean of " + values).isWithin(ALLOWED_ERROR).of(MANY_VALUES_MEAN);
-    }
+  try {
+    emptyAccumulatorByAddAllEmptyStats.mean();
+    fail("Expected IllegalStateException");
   }
+ catch (  IllegalStateException expected) {
+  }
+  assertThat(oneValueAccumulator.mean()).isWithin(ALLOWED_ERROR).of(ONE_VALUE);
+  assertThat(oneValueAccumulatorByAddAllEmptyStats.mean()).isWithin(ALLOWED_ERROR).of(ONE_VALUE);
+  assertThat(twoValuesAccumulator.mean()).isWithin(ALLOWED_ERROR).of(TWO_VALUES_MEAN);
+  assertThat(twoValuesAccumulatorByAddAllStats.mean()).isWithin(ALLOWED_ERROR).of(TWO_VALUES_MEAN);
+  assertThat(manyValuesAccumulatorByAddAllIterable.mean()).isWithin(ALLOWED_ERROR).of(MANY_VALUES_MEAN);
   assertThat(manyValuesAccumulatorByAddAllIterator.mean()).isWithin(ALLOWED_ERROR).of(MANY_VALUES_MEAN);
   assertThat(manyValuesAccumulatorByAddAllVarargs.mean()).isWithin(ALLOWED_ERROR).of(MANY_VALUES_MEAN);
   assertThat(manyValuesAccumulatorByRepeatedAdd.mean()).isWithin(ALLOWED_ERROR).of(MANY_VALUES_MEAN);
   assertThat(manyValuesAccumulatorByAddAndAddAll.mean()).isWithin(ALLOWED_ERROR).of(MANY_VALUES_MEAN);
+  assertThat(manyValuesAccumulatorByAddAllStats.mean()).isWithin(ALLOWED_ERROR).of(MANY_VALUES_MEAN);
+  for (  ManyValues values : ALL_MANY_VALUES) {
+    StatsAccumulator accumulator=new StatsAccumulator();
+    StatsAccumulator accumulatorByAddAllStats=new StatsAccumulator();
+    accumulator.addAll(values.asIterable());
+    for (    double value : values.asIterable()) {
+      accumulatorByAddAllStats.addAll(Stats.of(value));
+    }
+    double mean=accumulator.mean();
+    double meanByAddAllStats=accumulatorByAddAllStats.mean();
+    if (values.hasAnyNaN()) {
+      assertThat(mean).named("mean of " + values).isNaN();
+      assertThat(meanByAddAllStats).named("mean by addAll(Stats) of " + values).isNaN();
+    }
+ else     if (values.hasAnyPositiveInfinity() && values.hasAnyNegativeInfinity()) {
+      assertThat(mean).named("mean of " + values).isNaN();
+      assertThat(meanByAddAllStats).named("mean by addAll(Stats) of " + values).isNaN();
+    }
+ else     if (values.hasAnyPositiveInfinity()) {
+      assertThat(mean).named("mean of " + values).isPositiveInfinity();
+      assertThat(meanByAddAllStats).named("mean by addAll(Stats) of " + values).isPositiveInfinity();
+    }
+ else     if (values.hasAnyNegativeInfinity()) {
+      assertThat(mean).named("mean of " + values).isNegativeInfinity();
+      assertThat(meanByAddAllStats).named("mean by addAll(Stats) of " + values).isNegativeInfinity();
+    }
+ else {
+      assertThat(mean).named("mean of " + values).isWithin(ALLOWED_ERROR).of(MANY_VALUES_MEAN);
+      assertThat(meanByAddAllStats).named("mean by addAll(Stats) of " + values).isWithin(ALLOWED_ERROR).of(MANY_VALUES_MEAN);
+    }
+  }
   assertThat(integerManyValuesAccumulatorByAddAllIterable.mean()).isWithin(ALLOWED_ERROR).of(INTEGER_MANY_VALUES_MEAN);
   assertThat(longManyValuesAccumulatorByAddAllIterator.mean()).isWithin(ALLOWED_ERROR).of(LONG_MANY_VALUES_MEAN);
   assertThat(longManyValuesAccumulatorByAddAllVarargs.mean()).isWithin(ALLOWED_ERROR).of(LONG_MANY_VALUES_MEAN);

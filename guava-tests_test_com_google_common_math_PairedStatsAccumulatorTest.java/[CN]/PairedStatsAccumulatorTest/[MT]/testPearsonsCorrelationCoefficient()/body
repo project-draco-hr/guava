@@ -6,24 +6,48 @@
  catch (  IllegalStateException expected) {
   }
   try {
+    emptyAccumulatorByAddAllEmptyPairedStats.pearsonsCorrelationCoefficient();
+    fail("Expected IllegalStateException");
+  }
+ catch (  IllegalStateException expected) {
+  }
+  try {
     oneValueAccumulator.pearsonsCorrelationCoefficient();
     fail("Expected IllegalStateException");
   }
  catch (  IllegalStateException expected) {
   }
+  try {
+    oneValueAccumulatorByAddAllEmptyPairedStats.pearsonsCorrelationCoefficient();
+    fail("Expected IllegalStateException");
+  }
+ catch (  IllegalStateException expected) {
+  }
   assertThat(twoValuesAccumulator.pearsonsCorrelationCoefficient()).isWithin(ALLOWED_ERROR).of(twoValuesAccumulator.populationCovariance() / (twoValuesAccumulator.xStats().populationStandardDeviation() * twoValuesAccumulator.yStats().populationStandardDeviation()));
+  assertThat(manyValuesAccumulator.pearsonsCorrelationCoefficient()).isWithin(ALLOWED_ERROR).of(manyValuesAccumulator.populationCovariance() / (manyValuesAccumulator.xStats().populationStandardDeviation() * manyValuesAccumulator.yStats().populationStandardDeviation()));
+  assertThat(manyValuesAccumulatorByAddAllPartitionedPairedStats.pearsonsCorrelationCoefficient()).isWithin(ALLOWED_ERROR).of(manyValuesAccumulatorByAddAllPartitionedPairedStats.populationCovariance() / (manyValuesAccumulatorByAddAllPartitionedPairedStats.xStats().populationStandardDeviation() * manyValuesAccumulatorByAddAllPartitionedPairedStats.yStats().populationStandardDeviation()));
   for (  ManyValues values : ALL_MANY_VALUES) {
     PairedStatsAccumulator accumulator=createFilledPairedStatsAccumulator(MANY_VALUES,values.asIterable());
+    PairedStatsAccumulator accumulatorByAddAllPartitionedPairedStats=createPartitionedFilledPairedStatsAccumulator(MANY_VALUES,values.asIterable(),2);
     double pearsonsCorrelationCoefficient=accumulator.pearsonsCorrelationCoefficient();
+    double pearsonsCorrelationCoefficientByAddAllPartitionedPairedStats=accumulatorByAddAllPartitionedPairedStats.pearsonsCorrelationCoefficient();
     if (values.hasAnyNonFinite()) {
       assertThat(pearsonsCorrelationCoefficient).named("Pearson's correlation coefficient of " + values).isNaN();
+      assertThat(pearsonsCorrelationCoefficient).named("Pearson's correlation coefficient by addAll(PairedStats) of " + values).isNaN();
     }
  else {
       assertThat(pearsonsCorrelationCoefficient).named("Pearson's correlation coefficient of " + values).isWithin(ALLOWED_ERROR).of(accumulator.populationCovariance() / (accumulator.xStats().populationStandardDeviation() * accumulator.yStats().populationStandardDeviation()));
+      assertThat(pearsonsCorrelationCoefficientByAddAllPartitionedPairedStats).named("Pearson's correlation coefficient by addAll(PairedStats) of " + values).isWithin(ALLOWED_ERROR).of(accumulatorByAddAllPartitionedPairedStats.populationCovariance() / (accumulatorByAddAllPartitionedPairedStats.xStats().populationStandardDeviation() * accumulatorByAddAllPartitionedPairedStats.yStats().populationStandardDeviation()));
     }
   }
   try {
     horizontalValuesAccumulator.pearsonsCorrelationCoefficient();
+    fail("Expected IllegalStateException");
+  }
+ catch (  IllegalStateException expected) {
+  }
+  try {
+    horizontalValuesAccumulatorByAddAllPartitionedPairedStats.pearsonsCorrelationCoefficient();
     fail("Expected IllegalStateException");
   }
  catch (  IllegalStateException expected) {
@@ -35,7 +59,19 @@
  catch (  IllegalStateException expected) {
   }
   try {
+    verticalValuesAccumulatorByAddAllPartitionedPairedStats.pearsonsCorrelationCoefficient();
+    fail("Expected IllegalStateException");
+  }
+ catch (  IllegalStateException expected) {
+  }
+  try {
     constantValuesAccumulator.pearsonsCorrelationCoefficient();
+    fail("Expected IllegalStateException");
+  }
+ catch (  IllegalStateException expected) {
+  }
+  try {
+    constantValuesAccumulatorByAddAllPartitionedPairedStats.pearsonsCorrelationCoefficient();
     fail("Expected IllegalStateException");
   }
  catch (  IllegalStateException expected) {

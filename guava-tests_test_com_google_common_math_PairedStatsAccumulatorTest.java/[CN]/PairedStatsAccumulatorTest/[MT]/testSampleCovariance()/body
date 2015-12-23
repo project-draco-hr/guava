@@ -6,14 +6,31 @@
  catch (  IllegalStateException expected) {
   }
   try {
+    emptyAccumulatorByAddAllEmptyPairedStats.sampleCovariance();
+    fail("Expected IllegalStateException");
+  }
+ catch (  IllegalStateException expected) {
+  }
+  try {
     oneValueAccumulator.sampleCovariance();
     fail("Expected IllegalStateException");
   }
  catch (  IllegalStateException expected) {
   }
+  try {
+    oneValueAccumulatorByAddAllEmptyPairedStats.sampleCovariance();
+    fail("Expected IllegalStateException");
+  }
+ catch (  IllegalStateException expected) {
+  }
   assertThat(twoValuesAccumulator.sampleCovariance()).isWithin(ALLOWED_ERROR).of(TWO_VALUES_SUM_OF_PRODUCTS_OF_DELTAS);
+  assertThat(twoValuesAccumulatorByAddAllPartitionedPairedStats.sampleCovariance()).isWithin(ALLOWED_ERROR).of(TWO_VALUES_SUM_OF_PRODUCTS_OF_DELTAS);
   assertThat(manyValuesAccumulator.sampleCovariance()).isWithin(ALLOWED_ERROR).of(MANY_VALUES_SUM_OF_PRODUCTS_OF_DELTAS / (MANY_VALUES_COUNT - 1));
+  assertThat(manyValuesAccumulatorByAddAllPartitionedPairedStats.sampleCovariance()).isWithin(ALLOWED_ERROR).of(MANY_VALUES_SUM_OF_PRODUCTS_OF_DELTAS / (MANY_VALUES_COUNT - 1));
   assertThat(horizontalValuesAccumulator.sampleCovariance()).isWithin(ALLOWED_ERROR).of(0.0);
+  assertThat(horizontalValuesAccumulatorByAddAllPartitionedPairedStats.sampleCovariance()).isWithin(ALLOWED_ERROR).of(0.0);
   assertThat(verticalValuesAccumulator.sampleCovariance()).isWithin(ALLOWED_ERROR).of(0.0);
+  assertThat(verticalValuesAccumulatorByAddAllPartitionedPairedStats.sampleCovariance()).isWithin(ALLOWED_ERROR).of(0.0);
   assertThat(constantValuesAccumulator.sampleCovariance()).isWithin(ALLOWED_ERROR).of(0.0);
+  assertThat(constantValuesAccumulatorByAddAllPartitionedPairedStats.sampleCovariance()).isWithin(ALLOWED_ERROR).of(0.0);
 }

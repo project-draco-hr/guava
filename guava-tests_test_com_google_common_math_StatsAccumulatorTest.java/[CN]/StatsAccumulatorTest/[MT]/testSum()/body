@@ -1,13 +1,17 @@
 {
-  assertThat(emptyAccumulator.sum()).isEqualTo(0.0);
-  assertThat(emptyAccumulatorByAddAllEmptyIterable.sum()).isEqualTo(0.0);
+  assertThat(emptyAccumulator.sum()).isWithin(0.0).of(0.0);
+  assertThat(emptyAccumulatorByAddAllEmptyIterable.sum()).isWithin(0.0).of(0.0);
+  assertThat(emptyAccumulatorByAddAllEmptyStats.sum()).isWithin(0.0).of(0.0);
   assertThat(oneValueAccumulator.sum()).isWithin(ALLOWED_ERROR).of(ONE_VALUE);
+  assertThat(oneValueAccumulatorByAddAllEmptyStats.sum()).isWithin(ALLOWED_ERROR).of(ONE_VALUE);
   assertThat(twoValuesAccumulator.sum()).isWithin(ALLOWED_ERROR).of(TWO_VALUES_MEAN * 2);
+  assertThat(twoValuesAccumulatorByAddAllStats.sum()).isWithin(ALLOWED_ERROR).of(TWO_VALUES_MEAN * 2);
   assertThat(manyValuesAccumulatorByAddAllIterable.sum()).isWithin(ALLOWED_ERROR).of(MANY_VALUES_MEAN * MANY_VALUES_COUNT);
   assertThat(manyValuesAccumulatorByAddAllIterator.sum()).isWithin(ALLOWED_ERROR).of(MANY_VALUES_MEAN * MANY_VALUES_COUNT);
   assertThat(manyValuesAccumulatorByAddAllVarargs.sum()).isWithin(ALLOWED_ERROR).of(MANY_VALUES_MEAN * MANY_VALUES_COUNT);
   assertThat(manyValuesAccumulatorByRepeatedAdd.sum()).isWithin(ALLOWED_ERROR).of(MANY_VALUES_MEAN * MANY_VALUES_COUNT);
   assertThat(manyValuesAccumulatorByAddAndAddAll.sum()).isWithin(ALLOWED_ERROR).of(MANY_VALUES_MEAN * MANY_VALUES_COUNT);
+  assertThat(manyValuesAccumulatorByAddAllStats.sum()).isWithin(ALLOWED_ERROR).of(MANY_VALUES_MEAN * MANY_VALUES_COUNT);
   assertThat(integerManyValuesAccumulatorByAddAllIterable.sum()).isWithin(ALLOWED_ERROR).of(INTEGER_MANY_VALUES_MEAN * INTEGER_MANY_VALUES_COUNT);
   assertThat(longManyValuesAccumulatorByAddAllIterator.sum()).isWithin(ALLOWED_ERROR).of(LONG_MANY_VALUES_MEAN * LONG_MANY_VALUES_COUNT);
   assertThat(longManyValuesAccumulatorByAddAllVarargs.sum()).isWithin(ALLOWED_ERROR).of(LONG_MANY_VALUES_MEAN * LONG_MANY_VALUES_COUNT);

@@ -1,0 +1,3 @@
+List<Double> xValues
+List<Double> yValues
+int partitionSize

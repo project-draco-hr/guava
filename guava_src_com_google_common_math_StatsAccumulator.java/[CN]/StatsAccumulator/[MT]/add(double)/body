@@ -18,11 +18,7 @@
       mean=calculateNewMeanNonFinite(mean,value);
       sumOfSquaresOfDeltas=NaN;
     }
-    if (value < min || isNaN(value)) {
-      min=value;
-    }
-    if (value > max || isNaN(value)) {
-      max=value;
-    }
+    min=Math.min(min,value);
+    max=Math.max(max,value);
   }
 }

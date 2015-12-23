@@ -1,13 +1,17 @@
 {
   assertThat(emptyAccumulator.count()).isEqualTo(0);
   assertThat(emptyAccumulatorByAddAllEmptyIterable.count()).isEqualTo(0);
+  assertThat(emptyAccumulatorByAddAllEmptyStats.count()).isEqualTo(0);
   assertThat(oneValueAccumulator.count()).isEqualTo(1);
+  assertThat(oneValueAccumulatorByAddAllEmptyStats.count()).isEqualTo(1);
   assertThat(twoValuesAccumulator.count()).isEqualTo(2);
+  assertThat(twoValuesAccumulatorByAddAllStats.count()).isEqualTo(2);
   assertThat(manyValuesAccumulatorByAddAllIterable.count()).isEqualTo(MANY_VALUES_COUNT);
   assertThat(manyValuesAccumulatorByAddAllIterator.count()).isEqualTo(MANY_VALUES_COUNT);
   assertThat(manyValuesAccumulatorByAddAllVarargs.count()).isEqualTo(MANY_VALUES_COUNT);
   assertThat(manyValuesAccumulatorByRepeatedAdd.count()).isEqualTo(MANY_VALUES_COUNT);
   assertThat(manyValuesAccumulatorByAddAndAddAll.count()).isEqualTo(MANY_VALUES_COUNT);
+  assertThat(manyValuesAccumulatorByAddAllStats.count()).isEqualTo(MANY_VALUES_COUNT);
   assertThat(integerManyValuesAccumulatorByAddAllIterable.count()).isEqualTo(StatsTesting.INTEGER_MANY_VALUES_COUNT);
   assertThat(longManyValuesAccumulatorByAddAllIterator.count()).isEqualTo(StatsTesting.LONG_MANY_VALUES_COUNT);
   assertThat(longManyValuesAccumulatorByAddAllVarargs.count()).isEqualTo(StatsTesting.LONG_MANY_VALUES_COUNT);

@@ -3,10 +3,18 @@
   emptyAccumulator=new StatsAccumulator();
   emptyAccumulatorByAddAllEmptyIterable=new StatsAccumulator();
   emptyAccumulatorByAddAllEmptyIterable.addAll(ImmutableList.<Double>of());
+  emptyAccumulatorByAddAllEmptyStats=new StatsAccumulator();
+  emptyAccumulatorByAddAllEmptyStats.addAll(Stats.of());
   oneValueAccumulator=new StatsAccumulator();
   oneValueAccumulator.add(ONE_VALUE);
+  oneValueAccumulatorByAddAllEmptyStats=new StatsAccumulator();
+  oneValueAccumulatorByAddAllEmptyStats.add(ONE_VALUE);
+  oneValueAccumulatorByAddAllEmptyStats.addAll(Stats.of());
   twoValuesAccumulator=new StatsAccumulator();
   twoValuesAccumulator.addAll(TWO_VALUES);
+  twoValuesAccumulatorByAddAllStats=new StatsAccumulator();
+  twoValuesAccumulatorByAddAllStats.addAll(Stats.of(ONE_VALUE));
+  twoValuesAccumulatorByAddAllStats.addAll(Stats.of(OTHER_ONE_VALUE));
   manyValuesAccumulatorByAddAllIterable=new StatsAccumulator();
   manyValuesAccumulatorByAddAllIterable.addAll(MANY_VALUES);
   manyValuesAccumulatorByAddAllIterator=new StatsAccumulator();
@@ -20,6 +28,9 @@
   manyValuesAccumulatorByAddAndAddAll=new StatsAccumulator();
   manyValuesAccumulatorByAddAndAddAll.add(MANY_VALUES.get(0));
   manyValuesAccumulatorByAddAndAddAll.addAll(MANY_VALUES.subList(1,MANY_VALUES.size()));
+  manyValuesAccumulatorByAddAllStats=new StatsAccumulator();
+  manyValuesAccumulatorByAddAllStats.addAll(Stats.of(MANY_VALUES.subList(0,MANY_VALUES.size() / 2)));
+  manyValuesAccumulatorByAddAllStats.addAll(Stats.of(MANY_VALUES.subList(MANY_VALUES.size() / 2,MANY_VALUES.size())));
   integerManyValuesAccumulatorByAddAllIterable=new StatsAccumulator();
   integerManyValuesAccumulatorByAddAllIterable.addAll(INTEGER_MANY_VALUES);
   longManyValuesAccumulatorByAddAllIterator=new StatsAccumulator();

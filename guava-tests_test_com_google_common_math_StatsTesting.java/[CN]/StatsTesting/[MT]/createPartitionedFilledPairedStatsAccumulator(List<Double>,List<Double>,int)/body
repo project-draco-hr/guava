@@ -1,0 +1,11 @@
+{
+  checkArgument(xValues.size() == yValues.size());
+  checkArgument(partitionSize > 0);
+  PairedStatsAccumulator accumulator=new PairedStatsAccumulator();
+  List<List<Double>> xPartitions=Lists.partition(xValues,partitionSize);
+  List<List<Double>> yPartitions=Lists.partition(yValues,partitionSize);
+  for (int index=0; index < xPartitions.size(); index++) {
+    accumulator.addAll(createPairedStatsOf(xPartitions.get(index),yPartitions.get(index)));
+  }
+  return accumulator;
+}

@@ -6,26 +6,53 @@
  catch (  IllegalStateException expected) {
   }
   try {
+    emptyAccumulatorByAddAllEmptyPairedStats.leastSquaresFit();
+    fail("Expected IllegalStateException");
+  }
+ catch (  IllegalStateException expected) {
+  }
+  try {
     oneValueAccumulator.leastSquaresFit();
     fail("Expected IllegalStateException");
   }
  catch (  IllegalStateException expected) {
   }
+  try {
+    oneValueAccumulatorByAddAllEmptyPairedStats.leastSquaresFit();
+    fail("Expected IllegalStateException");
+  }
+ catch (  IllegalStateException expected) {
+  }
   assertDiagonalLinearTransformation(twoValuesAccumulator.leastSquaresFit(),twoValuesAccumulator.xStats().mean(),twoValuesAccumulator.yStats().mean(),twoValuesAccumulator.xStats().populationVariance(),twoValuesAccumulator.populationCovariance());
+  assertDiagonalLinearTransformation(twoValuesAccumulatorByAddAllPartitionedPairedStats.leastSquaresFit(),twoValuesAccumulatorByAddAllPartitionedPairedStats.xStats().mean(),twoValuesAccumulatorByAddAllPartitionedPairedStats.yStats().mean(),twoValuesAccumulatorByAddAllPartitionedPairedStats.xStats().populationVariance(),twoValuesAccumulatorByAddAllPartitionedPairedStats.populationCovariance());
+  assertDiagonalLinearTransformation(manyValuesAccumulator.leastSquaresFit(),manyValuesAccumulator.xStats().mean(),manyValuesAccumulator.yStats().mean(),manyValuesAccumulator.xStats().populationVariance(),manyValuesAccumulator.populationCovariance());
+  assertDiagonalLinearTransformation(manyValuesAccumulatorByAddAllPartitionedPairedStats.leastSquaresFit(),manyValuesAccumulatorByAddAllPartitionedPairedStats.xStats().mean(),manyValuesAccumulatorByAddAllPartitionedPairedStats.yStats().mean(),manyValuesAccumulatorByAddAllPartitionedPairedStats.xStats().populationVariance(),manyValuesAccumulatorByAddAllPartitionedPairedStats.populationCovariance());
   for (  ManyValues values : ALL_MANY_VALUES) {
     PairedStatsAccumulator accumulator=createFilledPairedStatsAccumulator(values.asIterable(),OTHER_MANY_VALUES);
+    PairedStatsAccumulator accumulatorByAddAllPartitionedPairedStats=createPartitionedFilledPairedStatsAccumulator(values.asIterable(),OTHER_MANY_VALUES,2);
     LinearTransformation fit=accumulator.leastSquaresFit();
+    LinearTransformation fitByAddAllPartitionedPairedStats=accumulatorByAddAllPartitionedPairedStats.leastSquaresFit();
     if (values.hasAnyNonFinite()) {
       assertLinearTransformationNaN(fit);
+      assertLinearTransformationNaN(fitByAddAllPartitionedPairedStats);
     }
  else {
       assertDiagonalLinearTransformation(fit,accumulator.xStats().mean(),accumulator.yStats().mean(),accumulator.xStats().populationVariance(),accumulator.populationCovariance());
+      assertDiagonalLinearTransformation(fitByAddAllPartitionedPairedStats,accumulatorByAddAllPartitionedPairedStats.xStats().mean(),accumulatorByAddAllPartitionedPairedStats.yStats().mean(),accumulatorByAddAllPartitionedPairedStats.xStats().populationVariance(),accumulatorByAddAllPartitionedPairedStats.populationCovariance());
     }
   }
   assertHorizontalLinearTransformation(horizontalValuesAccumulator.leastSquaresFit(),horizontalValuesAccumulator.yStats().mean());
+  assertHorizontalLinearTransformation(horizontalValuesAccumulatorByAddAllPartitionedPairedStats.leastSquaresFit(),horizontalValuesAccumulatorByAddAllPartitionedPairedStats.yStats().mean());
   assertVerticalLinearTransformation(verticalValuesAccumulator.leastSquaresFit(),verticalValuesAccumulator.xStats().mean());
+  assertVerticalLinearTransformation(verticalValuesAccumulatorByAddAllPartitionedPairedStats.leastSquaresFit(),verticalValuesAccumulatorByAddAllPartitionedPairedStats.xStats().mean());
   try {
     constantValuesAccumulator.leastSquaresFit();
+    fail("Expected IllegalStateException");
+  }
+ catch (  IllegalStateException expected) {
+  }
+  try {
+    constantValuesAccumulatorByAddAllPartitionedPairedStats.leastSquaresFit();
     fail("Expected IllegalStateException");
   }
  catch (  IllegalStateException expected) {

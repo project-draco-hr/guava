@@ -1,0 +1,21 @@
+{
+  if (values.count() == 0) {
+    return;
+  }
+  if (count == 0) {
+    count=values.count();
+    mean=values.mean();
+    sumOfSquaresOfDeltas=values.sumOfSquaresOfDeltas();
+    min=values.min();
+    max=values.max();
+  }
+ else {
+    long nextCount=count + values.count();
+    double delta=values.mean() - mean;
+    mean=(sum() + values.sum()) / nextCount;
+    sumOfSquaresOfDeltas+=values.sumOfSquaresOfDeltas() + values.count() * delta * (values.mean() - mean);
+    count=nextCount;
+    min=Math.min(min,values.min());
+    max=Math.max(max,values.max());
+  }
+}

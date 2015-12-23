@@ -1,20 +1,21 @@
 {
   super.setUp();
   emptyAccumulator=new PairedStatsAccumulator();
+  emptyAccumulatorByAddAllEmptyPairedStats=new PairedStatsAccumulator();
+  emptyAccumulatorByAddAllEmptyPairedStats.addAll(emptyAccumulator.snapshot());
   oneValueAccumulator=new PairedStatsAccumulator();
   oneValueAccumulator.add(ONE_VALUE,OTHER_ONE_VALUE);
+  oneValueAccumulatorByAddAllEmptyPairedStats=new PairedStatsAccumulator();
+  oneValueAccumulatorByAddAllEmptyPairedStats.add(ONE_VALUE,OTHER_ONE_VALUE);
+  oneValueAccumulatorByAddAllEmptyPairedStats.addAll(emptyAccumulator.snapshot());
   twoValuesAccumulator=createFilledPairedStatsAccumulator(TWO_VALUES,OTHER_TWO_VALUES);
+  twoValuesAccumulatorByAddAllPartitionedPairedStats=createPartitionedFilledPairedStatsAccumulator(TWO_VALUES,OTHER_TWO_VALUES,1);
   manyValuesAccumulator=createFilledPairedStatsAccumulator(MANY_VALUES,OTHER_MANY_VALUES);
-  horizontalValuesAccumulator=new PairedStatsAccumulator();
-  for (  double x : MANY_VALUES) {
-    horizontalValuesAccumulator.add(x,OTHER_ONE_VALUE);
-  }
-  verticalValuesAccumulator=new PairedStatsAccumulator();
-  for (  double y : OTHER_MANY_VALUES) {
-    verticalValuesAccumulator.add(ONE_VALUE,y);
-  }
-  constantValuesAccumulator=new PairedStatsAccumulator();
-  for (int i=0; i < MANY_VALUES_COUNT; ++i) {
-    constantValuesAccumulator.add(ONE_VALUE,OTHER_ONE_VALUE);
-  }
+  manyValuesAccumulatorByAddAllPartitionedPairedStats=createPartitionedFilledPairedStatsAccumulator(MANY_VALUES,OTHER_MANY_VALUES,2);
+  horizontalValuesAccumulator=createFilledPairedStatsAccumulator(MANY_VALUES,Collections.nCopies(MANY_VALUES_COUNT,OTHER_ONE_VALUE));
+  horizontalValuesAccumulatorByAddAllPartitionedPairedStats=createPartitionedFilledPairedStatsAccumulator(MANY_VALUES,Collections.nCopies(MANY_VALUES_COUNT,OTHER_ONE_VALUE),2);
+  verticalValuesAccumulator=createFilledPairedStatsAccumulator(Collections.nCopies(OTHER_MANY_VALUES_COUNT,ONE_VALUE),OTHER_MANY_VALUES);
+  verticalValuesAccumulatorByAddAllPartitionedPairedStats=createPartitionedFilledPairedStatsAccumulator(Collections.nCopies(OTHER_MANY_VALUES_COUNT,ONE_VALUE),OTHER_MANY_VALUES,2);
+  constantValuesAccumulator=createFilledPairedStatsAccumulator(Collections.nCopies(MANY_VALUES_COUNT,ONE_VALUE),Collections.nCopies(MANY_VALUES_COUNT,OTHER_ONE_VALUE));
+  constantValuesAccumulatorByAddAllPartitionedPairedStats=createPartitionedFilledPairedStatsAccumulator(Collections.nCopies(MANY_VALUES_COUNT,ONE_VALUE),Collections.nCopies(MANY_VALUES_COUNT,OTHER_ONE_VALUE),2);
 }

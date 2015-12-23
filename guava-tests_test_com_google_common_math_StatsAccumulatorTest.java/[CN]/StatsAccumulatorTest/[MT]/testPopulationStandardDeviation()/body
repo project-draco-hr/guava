@@ -11,13 +11,22 @@
   }
  catch (  IllegalStateException expected) {
   }
+  try {
+    emptyAccumulatorByAddAllEmptyStats.populationStandardDeviation();
+    fail("Expected IllegalStateException");
+  }
+ catch (  IllegalStateException expected) {
+  }
   assertThat(oneValueAccumulator.populationStandardDeviation()).isWithin(0.0).of(0.0);
+  assertThat(oneValueAccumulatorByAddAllEmptyStats.populationStandardDeviation()).isWithin(0.0).of(0.0);
   assertThat(twoValuesAccumulator.populationStandardDeviation()).isWithin(ALLOWED_ERROR).of(sqrt(TWO_VALUES_SUM_OF_SQUARES_OF_DELTAS / 2));
+  assertThat(twoValuesAccumulatorByAddAllStats.populationStandardDeviation()).isWithin(ALLOWED_ERROR).of(sqrt(TWO_VALUES_SUM_OF_SQUARES_OF_DELTAS / 2));
   assertThat(manyValuesAccumulatorByAddAllIterable.populationStandardDeviation()).isWithin(ALLOWED_ERROR).of(sqrt(MANY_VALUES_SUM_OF_SQUARES_OF_DELTAS / MANY_VALUES_COUNT));
   assertThat(manyValuesAccumulatorByAddAllIterator.populationStandardDeviation()).isWithin(ALLOWED_ERROR).of(sqrt(MANY_VALUES_SUM_OF_SQUARES_OF_DELTAS / MANY_VALUES_COUNT));
   assertThat(manyValuesAccumulatorByAddAllVarargs.populationStandardDeviation()).isWithin(ALLOWED_ERROR).of(sqrt(MANY_VALUES_SUM_OF_SQUARES_OF_DELTAS / MANY_VALUES_COUNT));
   assertThat(manyValuesAccumulatorByRepeatedAdd.populationStandardDeviation()).isWithin(ALLOWED_ERROR).of(sqrt(MANY_VALUES_SUM_OF_SQUARES_OF_DELTAS / MANY_VALUES_COUNT));
   assertThat(manyValuesAccumulatorByAddAndAddAll.populationStandardDeviation()).isWithin(ALLOWED_ERROR).of(sqrt(MANY_VALUES_SUM_OF_SQUARES_OF_DELTAS / MANY_VALUES_COUNT));
+  assertThat(manyValuesAccumulatorByAddAllStats.populationStandardDeviation()).isWithin(ALLOWED_ERROR).of(sqrt(MANY_VALUES_SUM_OF_SQUARES_OF_DELTAS / MANY_VALUES_COUNT));
   assertThat(integerManyValuesAccumulatorByAddAllIterable.populationStandardDeviation()).isWithin(ALLOWED_ERROR).of(sqrt(INTEGER_MANY_VALUES_SUM_OF_SQUARES_OF_DELTAS / INTEGER_MANY_VALUES_COUNT));
   assertThat(longManyValuesAccumulatorByAddAllIterator.populationStandardDeviation()).isWithin(ALLOWED_ERROR).of(sqrt(LONG_MANY_VALUES_SUM_OF_SQUARES_OF_DELTAS / LONG_MANY_VALUES_COUNT));
   assertThat(longManyValuesAccumulatorByAddAllVarargs.populationStandardDeviation()).isWithin(ALLOWED_ERROR).of(sqrt(LONG_MANY_VALUES_SUM_OF_SQUARES_OF_DELTAS / LONG_MANY_VALUES_COUNT));

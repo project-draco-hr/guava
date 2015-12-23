@@ -11,28 +11,44 @@
   }
  catch (  IllegalStateException expected) {
   }
+  try {
+    emptyAccumulatorByAddAllEmptyStats.min();
+    fail("Expected IllegalStateException");
+  }
+ catch (  IllegalStateException expected) {
+  }
   assertThat(oneValueAccumulator.min()).isWithin(ALLOWED_ERROR).of(ONE_VALUE);
+  assertThat(oneValueAccumulatorByAddAllEmptyStats.min()).isWithin(ALLOWED_ERROR).of(ONE_VALUE);
   assertThat(twoValuesAccumulator.min()).isWithin(ALLOWED_ERROR).of(TWO_VALUES_MIN);
+  assertThat(twoValuesAccumulatorByAddAllStats.min()).isWithin(ALLOWED_ERROR).of(TWO_VALUES_MIN);
   assertThat(manyValuesAccumulatorByAddAllIterable.min()).isWithin(ALLOWED_ERROR).of(MANY_VALUES_MIN);
   assertThat(manyValuesAccumulatorByAddAllIterator.min()).isWithin(ALLOWED_ERROR).of(MANY_VALUES_MIN);
   assertThat(manyValuesAccumulatorByAddAllVarargs.min()).isWithin(ALLOWED_ERROR).of(MANY_VALUES_MIN);
+  assertThat(manyValuesAccumulatorByRepeatedAdd.min()).isWithin(ALLOWED_ERROR).of(MANY_VALUES_MIN);
+  assertThat(manyValuesAccumulatorByAddAndAddAll.min()).isWithin(ALLOWED_ERROR).of(MANY_VALUES_MIN);
+  assertThat(manyValuesAccumulatorByAddAllStats.min()).isWithin(ALLOWED_ERROR).of(MANY_VALUES_MIN);
   for (  ManyValues values : ALL_MANY_VALUES) {
     StatsAccumulator accumulator=new StatsAccumulator();
+    StatsAccumulator accumulatorByAddAllStats=new StatsAccumulator();
     for (    double value : values.asIterable()) {
       accumulator.add(value);
+      accumulatorByAddAllStats.addAll(Stats.of(value));
     }
     double min=accumulator.min();
+    double minByAddAllStats=accumulatorByAddAllStats.min();
     if (values.hasAnyNaN()) {
       assertThat(min).named("min of " + values).isNaN();
+      assertThat(minByAddAllStats).named("min by addAll(Stats) of " + values).isNaN();
     }
  else     if (values.hasAnyNegativeInfinity()) {
       assertThat(min).named("min of " + values).isNegativeInfinity();
+      assertThat(minByAddAllStats).named("min by addAll(Stats) of " + values).isNegativeInfinity();
     }
  else {
       assertThat(min).named("min of " + values).isWithin(ALLOWED_ERROR).of(MANY_VALUES_MIN);
+      assertThat(minByAddAllStats).named("min by addAll(Stats) of " + values).isWithin(ALLOWED_ERROR).of(MANY_VALUES_MIN);
     }
   }
-  assertThat(manyValuesAccumulatorByAddAndAddAll.min()).isWithin(ALLOWED_ERROR).of(MANY_VALUES_MIN);
   assertThat(integerManyValuesAccumulatorByAddAllIterable.min()).isWithin(ALLOWED_ERROR).of(INTEGER_MANY_VALUES_MIN);
   assertThat(longManyValuesAccumulatorByAddAllIterator.min()).isWithin(ALLOWED_ERROR).of(LONG_MANY_VALUES_MIN);
   assertThat(longManyValuesAccumulatorByAddAllVarargs.min()).isWithin(ALLOWED_ERROR).of(LONG_MANY_VALUES_MIN);

@@ -11,26 +11,44 @@
   }
  catch (  IllegalStateException expected) {
   }
+  try {
+    emptyAccumulatorByAddAllEmptyStats.max();
+    fail("Expected IllegalStateException");
+  }
+ catch (  IllegalStateException expected) {
+  }
   assertThat(oneValueAccumulator.max()).isWithin(ALLOWED_ERROR).of(ONE_VALUE);
+  assertThat(oneValueAccumulatorByAddAllEmptyStats.max()).isWithin(ALLOWED_ERROR).of(ONE_VALUE);
   assertThat(twoValuesAccumulator.max()).isWithin(ALLOWED_ERROR).of(TWO_VALUES_MAX);
+  assertThat(twoValuesAccumulatorByAddAllStats.max()).isWithin(ALLOWED_ERROR).of(TWO_VALUES_MAX);
   assertThat(manyValuesAccumulatorByAddAllIterable.max()).isWithin(ALLOWED_ERROR).of(MANY_VALUES_MAX);
   assertThat(manyValuesAccumulatorByAddAllIterator.max()).isWithin(ALLOWED_ERROR).of(MANY_VALUES_MAX);
+  assertThat(manyValuesAccumulatorByAddAllVarargs.max()).isWithin(ALLOWED_ERROR).of(MANY_VALUES_MAX);
+  assertThat(manyValuesAccumulatorByRepeatedAdd.max()).isWithin(ALLOWED_ERROR).of(MANY_VALUES_MAX);
+  assertThat(manyValuesAccumulatorByAddAndAddAll.max()).isWithin(ALLOWED_ERROR).of(MANY_VALUES_MAX);
+  assertThat(manyValuesAccumulatorByAddAllStats.max()).isWithin(ALLOWED_ERROR).of(MANY_VALUES_MAX);
   for (  ManyValues values : ALL_MANY_VALUES) {
     StatsAccumulator accumulator=new StatsAccumulator();
+    StatsAccumulator accumulatorByAddAllStats=new StatsAccumulator();
     accumulator.addAll(values.asArray());
+    for (    double value : values.asIterable()) {
+      accumulatorByAddAllStats.addAll(Stats.of(value));
+    }
     double max=accumulator.max();
+    double maxByAddAllStats=accumulatorByAddAllStats.max();
     if (values.hasAnyNaN()) {
       assertThat(max).named("max of " + values).isNaN();
+      assertThat(maxByAddAllStats).named("max by addAll(Stats) of " + values).isNaN();
     }
  else     if (values.hasAnyPositiveInfinity()) {
       assertThat(max).named("max of " + values).isPositiveInfinity();
+      assertThat(maxByAddAllStats).named("max by addAll(Stats) of " + values).isPositiveInfinity();
     }
  else {
       assertThat(max).named("max of " + values).isWithin(ALLOWED_ERROR).of(MANY_VALUES_MAX);
+      assertThat(maxByAddAllStats).named("max by addAll(Stats) of " + values).isWithin(ALLOWED_ERROR).of(MANY_VALUES_MAX);
     }
   }
-  assertThat(manyValuesAccumulatorByRepeatedAdd.max()).isWithin(ALLOWED_ERROR).of(MANY_VALUES_MAX);
-  assertThat(manyValuesAccumulatorByAddAndAddAll.max()).isWithin(ALLOWED_ERROR).of(MANY_VALUES_MAX);
   assertThat(integerManyValuesAccumulatorByAddAllIterable.max()).isWithin(ALLOWED_ERROR).of(INTEGER_MANY_VALUES_MAX);
   assertThat(longManyValuesAccumulatorByAddAllIterator.max()).isWithin(ALLOWED_ERROR).of(LONG_MANY_VALUES_MAX);
   assertThat(longManyValuesAccumulatorByAddAllVarargs.max()).isWithin(ALLOWED_ERROR).of(LONG_MANY_VALUES_MAX);

@@ -11,23 +11,40 @@
   }
  catch (  IllegalStateException expected) {
   }
-  assertThat(oneValueAccumulator.populationVariance()).isWithin(0.0).of(0.0);
-  assertThat(twoValuesAccumulator.populationVariance()).isWithin(ALLOWED_ERROR).of(TWO_VALUES_SUM_OF_SQUARES_OF_DELTAS / 2);
-  assertThat(manyValuesAccumulatorByAddAllIterable.populationVariance()).isWithin(ALLOWED_ERROR).of(MANY_VALUES_SUM_OF_SQUARES_OF_DELTAS / MANY_VALUES_COUNT);
-  for (  ManyValues values : ALL_MANY_VALUES) {
-    StatsAccumulator accumulator=new StatsAccumulator();
-    accumulator.addAll(values.asIterable().iterator());
-    double populationVariance=accumulator.populationVariance();
-    if (values.hasAnyNonFinite()) {
-      assertThat(populationVariance).named("population variance of " + values).isNaN();
-    }
- else {
-      assertThat(populationVariance).named("population variance of " + values).isWithin(ALLOWED_ERROR).of(MANY_VALUES_SUM_OF_SQUARES_OF_DELTAS / MANY_VALUES_COUNT);
-    }
+  try {
+    emptyAccumulatorByAddAllEmptyStats.populationVariance();
+    fail("Expected IllegalStateException");
   }
+ catch (  IllegalStateException expected) {
+  }
+  assertThat(oneValueAccumulator.populationVariance()).isWithin(0.0).of(0.0);
+  assertThat(oneValueAccumulatorByAddAllEmptyStats.populationVariance()).isWithin(0.0).of(0.0);
+  assertThat(twoValuesAccumulator.populationVariance()).isWithin(ALLOWED_ERROR).of(TWO_VALUES_SUM_OF_SQUARES_OF_DELTAS / 2);
+  assertThat(twoValuesAccumulatorByAddAllStats.populationVariance()).isWithin(ALLOWED_ERROR).of(TWO_VALUES_SUM_OF_SQUARES_OF_DELTAS / 2);
+  assertThat(manyValuesAccumulatorByAddAllIterable.populationVariance()).isWithin(ALLOWED_ERROR).of(MANY_VALUES_SUM_OF_SQUARES_OF_DELTAS / MANY_VALUES_COUNT);
+  assertThat(manyValuesAccumulatorByAddAllIterator.populationVariance()).isWithin(ALLOWED_ERROR).of(MANY_VALUES_SUM_OF_SQUARES_OF_DELTAS / MANY_VALUES_COUNT);
   assertThat(manyValuesAccumulatorByAddAllVarargs.populationVariance()).isWithin(ALLOWED_ERROR).of(MANY_VALUES_SUM_OF_SQUARES_OF_DELTAS / MANY_VALUES_COUNT);
   assertThat(manyValuesAccumulatorByRepeatedAdd.populationVariance()).isWithin(ALLOWED_ERROR).of(MANY_VALUES_SUM_OF_SQUARES_OF_DELTAS / MANY_VALUES_COUNT);
   assertThat(manyValuesAccumulatorByAddAndAddAll.populationVariance()).isWithin(ALLOWED_ERROR).of(MANY_VALUES_SUM_OF_SQUARES_OF_DELTAS / MANY_VALUES_COUNT);
+  assertThat(manyValuesAccumulatorByAddAllStats.populationVariance()).isWithin(ALLOWED_ERROR).of(MANY_VALUES_SUM_OF_SQUARES_OF_DELTAS / MANY_VALUES_COUNT);
+  for (  ManyValues values : ALL_MANY_VALUES) {
+    StatsAccumulator accumulator=new StatsAccumulator();
+    StatsAccumulator accumulatorByAddAllStats=new StatsAccumulator();
+    accumulator.addAll(values.asIterable().iterator());
+    for (    double value : values.asIterable()) {
+      accumulatorByAddAllStats.addAll(Stats.of(value));
+    }
+    double populationVariance=accumulator.populationVariance();
+    double populationVarianceByAddAllStats=accumulatorByAddAllStats.populationVariance();
+    if (values.hasAnyNonFinite()) {
+      assertThat(populationVariance).named("population variance of " + values).isNaN();
+      assertThat(populationVarianceByAddAllStats).named("population variance by addAll(Stats) of " + values).isNaN();
+    }
+ else {
+      assertThat(populationVariance).named("population variance of " + values).isWithin(ALLOWED_ERROR).of(MANY_VALUES_SUM_OF_SQUARES_OF_DELTAS / MANY_VALUES_COUNT);
+      assertThat(populationVarianceByAddAllStats).named("population variance by addAll(Stats) of " + values).isWithin(ALLOWED_ERROR).of(MANY_VALUES_SUM_OF_SQUARES_OF_DELTAS / MANY_VALUES_COUNT);
+    }
+  }
   assertThat(integerManyValuesAccumulatorByAddAllIterable.populationVariance()).isWithin(ALLOWED_ERROR).of(INTEGER_MANY_VALUES_SUM_OF_SQUARES_OF_DELTAS / INTEGER_MANY_VALUES_COUNT);
   assertThat(longManyValuesAccumulatorByAddAllIterator.populationVariance()).isWithin(ALLOWED_ERROR).of(LONG_MANY_VALUES_SUM_OF_SQUARES_OF_DELTAS / LONG_MANY_VALUES_COUNT);
   assertThat(longManyValuesAccumulatorByAddAllVarargs.populationVariance()).isWithin(ALLOWED_ERROR).of(LONG_MANY_VALUES_SUM_OF_SQUARES_OF_DELTAS / LONG_MANY_VALUES_COUNT);

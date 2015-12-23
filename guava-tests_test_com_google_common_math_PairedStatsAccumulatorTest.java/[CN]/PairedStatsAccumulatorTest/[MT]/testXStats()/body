@@ -1,6 +1,10 @@
 {
   assertStatsApproxEqual(EMPTY_STATS_ITERABLE,emptyAccumulator.xStats());
+  assertStatsApproxEqual(EMPTY_STATS_ITERABLE,emptyAccumulatorByAddAllEmptyPairedStats.xStats());
   assertStatsApproxEqual(ONE_VALUE_STATS,oneValueAccumulator.xStats());
+  assertStatsApproxEqual(ONE_VALUE_STATS,oneValueAccumulatorByAddAllEmptyPairedStats.xStats());
   assertStatsApproxEqual(TWO_VALUES_STATS,twoValuesAccumulator.xStats());
+  assertStatsApproxEqual(TWO_VALUES_STATS,twoValuesAccumulatorByAddAllPartitionedPairedStats.xStats());
   assertStatsApproxEqual(MANY_VALUES_STATS_ITERABLE,manyValuesAccumulator.xStats());
+  assertStatsApproxEqual(MANY_VALUES_STATS_ITERABLE,manyValuesAccumulatorByAddAllPartitionedPairedStats.xStats());
 }

@@ -1,0 +1,9 @@
+{
+  StatsAccumulator accumulator=new StatsAccumulator();
+  accumulator.add(ONE_VALUE);
+  for (int power=1; power < Long.SIZE - 1; power++) {
+    accumulator.addAll(accumulator.snapshot());
+  }
+  accumulator.addAll(accumulator.snapshot());
+  assertThat(accumulator.count()).isLessThan(0L);
+}
