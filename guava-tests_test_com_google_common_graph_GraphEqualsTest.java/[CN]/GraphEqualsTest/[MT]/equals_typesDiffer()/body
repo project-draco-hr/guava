@@ -12,5 +12,5 @@ default :
 throw new IllegalStateException("Unexpected graph type: " + graphType);
 }
 g2.addEdge(E12,N1,N2);
-assertThat(graph.equals(g2)).isFalse();
+new EqualsTester().addEqualityGroup(graph).addEqualityGroup(g2).testEquals();
 }

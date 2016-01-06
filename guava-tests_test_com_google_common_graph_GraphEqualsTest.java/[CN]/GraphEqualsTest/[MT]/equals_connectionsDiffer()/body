@@ -4,5 +4,5 @@
   Graph<Integer,String> g2=createGraph();
   g2.addEdge(E13,N1,N2);
   g2.addEdge(E12,N1,N3);
-  assertThat(graph.equals(g2)).isFalse();
+  new EqualsTester().addEqualityGroup(graph).addEqualityGroup(g2).testEquals();
 }

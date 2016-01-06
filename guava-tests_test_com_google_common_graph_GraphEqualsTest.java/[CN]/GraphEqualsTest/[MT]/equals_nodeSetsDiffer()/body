@@ -2,5 +2,5 @@
   graph.addNode(N1);
   Graph<Integer,String> g2=createGraph();
   g2.addNode(N2);
-  assertThat(graph.equals(g2)).isFalse();
+  new EqualsTester().addEqualityGroup(graph).addEqualityGroup(g2).testEquals();
 }

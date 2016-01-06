@@ -2,5 +2,5 @@
   graph.addEdge(E12,N1,N2);
   Graph<Integer,String> g2=createGraph(MULTIGRAPH.noSelfLoops());
   g2.addEdge(E12,N1,N2);
-  assertThat(graph.equals(g2)).isTrue();
+  new EqualsTester().addEqualityGroup(graph,g2).testEquals();
 }
