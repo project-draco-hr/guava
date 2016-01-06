@@ -10,11 +10,16 @@
     max=values.max();
   }
  else {
-    long nextCount=count + values.count();
-    double delta=values.mean() - mean;
-    mean=(sum() + values.sum()) / nextCount;
-    sumOfSquaresOfDeltas+=values.sumOfSquaresOfDeltas() + values.count() * delta * (values.mean() - mean);
-    count=nextCount;
+    count+=values.count();
+    if (isFinite(mean) && isFinite(values.mean())) {
+      double delta=values.mean() - mean;
+      mean+=delta * values.count() / count;
+      sumOfSquaresOfDeltas+=values.sumOfSquaresOfDeltas() + delta * (values.mean() - mean) * values.count();
+    }
+ else {
+      mean=calculateNewMeanNonFinite(mean,values.mean());
+      sumOfSquaresOfDeltas=NaN;
+    }
     min=Math.min(min,values.min());
     max=Math.max(max,values.max());
   }

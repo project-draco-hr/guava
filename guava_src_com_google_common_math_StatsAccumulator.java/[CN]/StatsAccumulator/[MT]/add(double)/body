@@ -1,6 +1,6 @@
 {
-  count++;
-  if (count == 1) {
+  if (count == 0) {
+    count=1;
     mean=value;
     min=value;
     max=value;
@@ -9,6 +9,7 @@
     }
   }
  else {
+    count++;
     if (isFinite(value) && isFinite(mean)) {
       double delta=value - mean;
       mean+=delta / count;
