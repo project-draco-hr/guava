@@ -1,22 +1,10 @@
 {
   MultiExceptionListIterator reference=new MultiExceptionListIterator(expectedElements);
   I target=newTargetIterator();
-  boolean shouldStopTestingCallsToRemove=false;
   for (int i=0; i < stimuli.length; i++) {
-    Stimulus<E,? super I> stimulus=stimuli[i];
-    if (stimulus.equals(remove) && shouldStopTestingCallsToRemove) {
-      break;
-    }
     try {
-      boolean threwException=stimulus.executeAndCompare(reference,target);
-      if (threwException && stimulus.equals(next) && whenNextThrowsExceptionStopTestingCallsToRemove) {
-        shouldStopTestingCallsToRemove=true;
-      }
-      if (threwException && stimulus.equals(add) && whenAddThrowsExceptionStopTesting) {
-        break;
-      }
-      List<E> elements=reference.getElements();
-      verify(elements);
+      stimuli[i].executeAndCompare(reference,target);
+      verify(reference.getElements());
     }
  catch (    AssertionFailedError cause) {
       Helpers.fail(cause,"failed with stimuli " + subListCopy(stimuli,i + 1));

@@ -28,11 +28,10 @@ catch (  UnknownElementException e) {
       Helpers.fail(targetException,"Target threw exception when reference did not");
     }
     assertEquals(referenceReturnValue,targetReturnValue);
-    return false;
+    return;
   }
   if (targetException == null) {
     fail("Target failed to throw " + referenceException);
   }
   referenceException.assertPermitted(targetException);
-  return true;
 }
