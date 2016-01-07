@@ -1,5 +1,0 @@
-{
-  AssertionError e=new AssertionError(message);
-  e.initCause(cause);
-  return e;
-}
