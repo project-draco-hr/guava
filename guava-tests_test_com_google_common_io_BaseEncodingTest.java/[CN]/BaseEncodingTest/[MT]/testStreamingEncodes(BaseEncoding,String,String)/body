@@ -1,7 +1,7 @@
 {
   StringWriter writer=new StringWriter();
   OutputStream encodingStream=encoding.encodingStream(writer);
-  encodingStream.write(getBytes(decoded));
+  encodingStream.write(decoded.getBytes(UTF_8));
   encodingStream.close();
-  assertEquals(encoded,writer.toString());
+  assertThat(writer.toString()).isEqualTo(encoded);
 }

@@ -1,4 +1,4 @@
 {
   assertTrue(encoding.canDecode(encoded));
-  assertEquals(getBytes(decoded),encoding.decode(encoded));
+  assertThat(encoding.decode(encoded)).isEqualTo(decoded.getBytes(UTF_8));
 }

@@ -1,3 +1,3 @@
 {
-  assertEquals(encoded,encoding.encode(getBytes(decoded)));
+  assertThat(encoding.encode(decoded.getBytes(UTF_8))).isEqualTo(encoded);
 }
