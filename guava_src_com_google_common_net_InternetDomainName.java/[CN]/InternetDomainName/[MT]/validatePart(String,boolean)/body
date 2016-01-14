@@ -6,7 +6,7 @@
   if (!PART_CHAR_MATCHER.matchesAllOf(asciiChars)) {
     return false;
   }
-  if (DASH_OR_UNDERSCORE_MATCHER.matches(part.charAt(0)) || UNDERSCORE_MATCHER.matches(part.charAt(part.length() - 1))) {
+  if (DASH_MATCHER.matches(part.charAt(0)) || DASH_MATCHER.matches(part.charAt(part.length() - 1))) {
     return false;
   }
   if (isFinalPart && CharMatcher.DIGIT.matches(part.charAt(0))) {
