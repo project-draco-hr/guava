@@ -5,9 +5,9 @@
     nodeToEdgesBuilder.put(node,ImmutableSet.copyOf(undirectedGraph.incidentEdges(node)));
   }
   nodeToIncidentEdges=nodeToEdgesBuilder.build();
-  ImmutableMap.Builder<E,ImmutableSet<N>> edgeToNodesBuilder=ImmutableMap.builder();
+  ImmutableMap.Builder<E,UndirectedIncidentNodes<N>> edgeToNodesBuilder=ImmutableMap.builder();
   for (  E edge : undirectedGraph.edges()) {
-    edgeToNodesBuilder.put(edge,ImmutableSet.copyOf(undirectedGraph.incidentNodes(edge)));
+    edgeToNodesBuilder.put(edge,UndirectedIncidentNodes.of(undirectedGraph.incidentNodes(edge)));
   }
   edgeToIncidentNodes=edgeToNodesBuilder.build();
   config=undirectedGraph.config();

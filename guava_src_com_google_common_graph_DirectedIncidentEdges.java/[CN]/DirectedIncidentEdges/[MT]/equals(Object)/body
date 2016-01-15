@@ -1,0 +1,7 @@
+{
+  if (object instanceof DirectedIncidentEdges) {
+    DirectedIncidentEdges<?> that=(DirectedIncidentEdges<?>)object;
+    return this.inEdges.equals(that.inEdges) && this.outEdges.equals(that.outEdges);
+  }
+  return false;
+}

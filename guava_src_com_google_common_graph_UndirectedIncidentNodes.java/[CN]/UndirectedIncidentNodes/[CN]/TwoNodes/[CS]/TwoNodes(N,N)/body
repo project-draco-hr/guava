@@ -1,0 +1,5 @@
+{
+  this.node1=checkNotNull(node1);
+  this.node2=checkNotNull(node2);
+  checkArgument(!node1.equals(node2));
+}

@@ -1,14 +1,14 @@
 {
   DirectedGraph<N,E> directedGraph=builder.directedGraph;
-  ImmutableMap.Builder<N,IncidentEdges<E>> nodeToIncidentEdgesBuilder=ImmutableMap.builder();
+  ImmutableMap.Builder<N,DirectedIncidentEdges<E>> nodeToIncidentEdgesBuilder=ImmutableMap.builder();
   for (  N node : directedGraph.nodes()) {
-    IncidentEdges<E> incidentEdges=IncidentEdges.ofImmutable(directedGraph.inEdges(node),directedGraph.outEdges(node));
+    DirectedIncidentEdges<E> incidentEdges=DirectedIncidentEdges.ofImmutable(directedGraph.inEdges(node),directedGraph.outEdges(node));
     nodeToIncidentEdgesBuilder.put(node,incidentEdges);
   }
   nodeToIncidentEdges=nodeToIncidentEdgesBuilder.build();
-  ImmutableMap.Builder<E,IncidentNodes<N>> edgeToIncidentNodesBuilder=ImmutableMap.builder();
+  ImmutableMap.Builder<E,DirectedIncidentNodes<N>> edgeToIncidentNodesBuilder=ImmutableMap.builder();
   for (  E edge : directedGraph.edges()) {
-    IncidentNodes<N> incidentNodes=IncidentNodes.of(directedGraph.source(edge),directedGraph.target(edge));
+    DirectedIncidentNodes<N> incidentNodes=DirectedIncidentNodes.of(directedGraph.source(edge),directedGraph.target(edge));
     edgeToIncidentNodesBuilder.put(edge,incidentNodes);
   }
   edgeToIncidentNodes=edgeToIncidentNodesBuilder.build();

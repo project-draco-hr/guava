@@ -1,3 +1,0 @@
-{
-  new EqualsTester().addEqualityGroup(IncidentNodes.of("foo","bar")).addEqualityGroup(IncidentNodes.of("bar","foo")).testEquals();
-}

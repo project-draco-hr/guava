@@ -5,7 +5,7 @@
   if (node1.equals(node2)) {
     Set<E> returnSet=Sets.newLinkedHashSet();
     for (    E edge : incidentEdgesN1) {
-      if (edgeToIncidentNodes.get(edge).size() == 1) {
+      if (edgeToIncidentNodes.get(edge).isSelfLoop()) {
         returnSet.add(edge);
       }
     }

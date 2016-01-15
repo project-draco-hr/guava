@@ -3,6 +3,6 @@
   if (containsNode(node)) {
     return false;
   }
-  nodeToIncidentEdges.put(node,IncidentEdges.<E>of());
+  nodeToIncidentEdges.put(node,DirectedIncidentEdges.<E>of());
   return true;
 }

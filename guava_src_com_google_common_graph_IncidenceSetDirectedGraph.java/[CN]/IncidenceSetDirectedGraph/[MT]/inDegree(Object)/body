@@ -1,6 +1,6 @@
 {
   checkNotNull(node,"node");
-  IncidentEdges<E> incidentEdges=nodeToIncidentEdges.get(node);
+  DirectedIncidentEdges<E> incidentEdges=nodeToIncidentEdges.get(node);
   checkArgument(incidentEdges != null,NODE_NOT_IN_GRAPH,node);
   return incidentEdges.inEdges().size();
 }

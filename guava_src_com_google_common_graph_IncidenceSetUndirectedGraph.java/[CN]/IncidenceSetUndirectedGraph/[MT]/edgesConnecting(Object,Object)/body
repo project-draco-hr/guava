@@ -11,7 +11,7 @@
       @Override Set<E> elements(){
         Set<E> selfLoopEdges=Sets.newLinkedHashSet();
         for (        E edge : incidentEdgesN1) {
-          if (edgeToIncidentNodes.get(edge).size() == 1) {
+          if (edgeToIncidentNodes.get(edge).isSelfLoop()) {
             selfLoopEdges.add(edge);
           }
         }

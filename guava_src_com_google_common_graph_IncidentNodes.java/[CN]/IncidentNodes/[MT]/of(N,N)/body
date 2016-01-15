@@ -1,3 +1,0 @@
-{
-  return new IncidentNodes<N>(source,target);
-}
