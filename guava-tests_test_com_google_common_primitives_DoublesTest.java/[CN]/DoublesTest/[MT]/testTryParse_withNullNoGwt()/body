@@ -1,0 +1,9 @@
+{
+  assertNull(Doubles.tryParse("null"));
+  try {
+    double unused=Doubles.tryParse(null);
+    fail("Expected NPE");
+  }
+ catch (  NullPointerException expected) {
+  }
+}

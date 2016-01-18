@@ -1,0 +1,9 @@
+{
+  assertNull(Longs.tryParse("null"));
+  try {
+    long unused=Longs.tryParse(null);
+    fail("Expected NPE");
+  }
+ catch (  NullPointerException expected) {
+  }
+}
