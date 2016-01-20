@@ -1,0 +1,7 @@
+{
+  if (other instanceof StandardBaseEncoding) {
+    StandardBaseEncoding that=(StandardBaseEncoding)other;
+    return this.alphabet.equals(that.alphabet) && Objects.equal(this.paddingChar,that.paddingChar);
+  }
+  return false;
+}

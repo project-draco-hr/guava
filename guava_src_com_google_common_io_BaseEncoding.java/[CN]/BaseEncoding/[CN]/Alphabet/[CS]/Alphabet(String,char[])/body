@@ -8,8 +8,13 @@
     throw new IllegalArgumentException("Illegal alphabet length " + chars.length,e);
   }
   int gcd=Math.min(8,Integer.lowestOneBit(bitsPerChar));
-  this.charsPerChunk=8 / gcd;
-  this.bytesPerChunk=bitsPerChar / gcd;
+  try {
+    this.charsPerChunk=8 / gcd;
+    this.bytesPerChunk=bitsPerChar / gcd;
+  }
+ catch (  ArithmeticException e) {
+    throw new IllegalArgumentException("Illegal alphabet " + new String(chars),e);
+  }
   this.mask=chars.length - 1;
   byte[] decodabet=new byte[Ascii.MAX + 1];
   Arrays.fill(decodabet,(byte)-1);
