@@ -1,3 +1,3 @@
 {
-  return WHITESPACE.trimFrom(string);
+  return whitespace().trimFrom(string);
 }
