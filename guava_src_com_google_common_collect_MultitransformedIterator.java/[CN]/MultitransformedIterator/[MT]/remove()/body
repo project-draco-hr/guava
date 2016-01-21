@@ -1,0 +1,5 @@
+{
+  checkRemove(removeFrom != null);
+  removeFrom.remove();
+  removeFrom=null;
+}

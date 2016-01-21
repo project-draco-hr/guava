@@ -1,0 +1,13 @@
+{
+  checkNotNull(current);
+  if (current.hasNext()) {
+    return true;
+  }
+  while (backingIterator.hasNext()) {
+    checkNotNull(current=transform(backingIterator.next()));
+    if (current.hasNext()) {
+      return true;
+    }
+  }
+  return false;
+}

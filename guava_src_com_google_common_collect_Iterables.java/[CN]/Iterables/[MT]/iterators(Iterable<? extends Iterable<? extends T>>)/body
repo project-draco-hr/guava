@@ -1,8 +1,0 @@
-{
-  return new TransformedIterator<Iterable<? extends T>,Iterator<? extends T>>(iterables.iterator()){
-    @Override Iterator<? extends T> transform(    Iterable<? extends T> from){
-      return from.iterator();
-    }
-  }
-;
-}
