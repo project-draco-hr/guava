@@ -1,9 +1,3 @@
 {
-  checkNotNull(inputs);
-  return new FluentIterable<T>(){
-    @Override public Iterator<T> iterator(){
-      return Iterators.concat(Iterables.transform(inputs,Iterables.<T>toIterator()).iterator());
-    }
-  }
-;
+  return FluentIterable.concat(inputs);
 }

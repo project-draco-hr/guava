@@ -1,0 +1,6 @@
+{
+  Iterable<Integer> iterable=asList(1,2,3);
+  int n=4;
+  FluentIterable<Integer> repeated=FluentIterable.concat(Collections.nCopies(n,iterable));
+  assertThat(repeated).containsExactly(1,2,3,1,2,3,1,2,3,1,2,3).inOrder();
+}

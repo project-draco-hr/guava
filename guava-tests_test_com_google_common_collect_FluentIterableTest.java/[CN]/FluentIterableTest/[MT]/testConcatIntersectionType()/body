@@ -1,0 +1,7 @@
+{
+  Iterable<A> aIterable=ImmutableList.of();
+  Iterable<B> bIterable=ImmutableList.of();
+  Predicate<X> xPredicate=Predicates.alwaysTrue();
+  Predicate<Y> yPredicate=Predicates.alwaysTrue();
+  FluentIterable<?> unused=FluentIterable.concat(aIterable,bIterable).filter(xPredicate).filter(yPredicate);
+}
