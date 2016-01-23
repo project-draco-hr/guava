@@ -2,5 +2,5 @@
   this.prototype=getMessageDigest(algorithmName);
   this.bytes=prototype.getDigestLength();
   this.toString=checkNotNull(toString);
-  this.supportsClone=supportsClone();
+  this.supportsClone=supportsClone(prototype);
 }

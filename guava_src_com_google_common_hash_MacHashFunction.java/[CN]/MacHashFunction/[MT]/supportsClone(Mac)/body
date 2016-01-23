@@ -1,6 +1,6 @@
 {
   try {
-    prototype.clone();
+    mac.clone();
     return true;
   }
  catch (  CloneNotSupportedException e) {

@@ -3,5 +3,5 @@
   this.key=checkNotNull(key);
   this.toString=checkNotNull(toString);
   this.bits=getMac(algorithmName,key).getMacLength() * Byte.SIZE;
-  this.supportsClone=supportsClone();
+  this.supportsClone=supportsClone(prototype);
 }

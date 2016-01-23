@@ -1,6 +1,6 @@
 {
   try {
-    prototype.clone();
+    digest.clone();
     return true;
   }
  catch (  CloneNotSupportedException e) {
