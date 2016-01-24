@@ -1,6 +1,6 @@
 {
-  checkNotNull(s);
-  if (s.length() == 0) {
+  checkNotNull(string);
+  if (string.length() == 0) {
     throw new NumberFormatException("empty string");
   }
   if (radix < Character.MIN_RADIX || radix > Character.MAX_RADIX) {
@@ -8,13 +8,13 @@
   }
   int max_safe_pos=maxSafeDigits[radix] - 1;
   long value=0;
-  for (int pos=0; pos < s.length(); pos++) {
-    int digit=Character.digit(s.charAt(pos),radix);
+  for (int pos=0; pos < string.length(); pos++) {
+    int digit=Character.digit(string.charAt(pos),radix);
     if (digit == -1) {
-      throw new NumberFormatException(s);
+      throw new NumberFormatException(string);
     }
     if (pos > max_safe_pos && overflowInParse(value,digit,radix)) {
-      throw new NumberFormatException("Too large for unsigned long: " + s);
+      throw new NumberFormatException("Too large for unsigned long: " + string);
     }
     value=(value * radix) + digit;
   }
