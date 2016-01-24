@@ -3,7 +3,7 @@
     boolean haveBeenCalled;
     @Override public Integer computeNext(){
       if (haveBeenCalled) {
-        endOfData();
+        Integer unused=endOfData();
       }
       haveBeenCalled=true;
       return 0;

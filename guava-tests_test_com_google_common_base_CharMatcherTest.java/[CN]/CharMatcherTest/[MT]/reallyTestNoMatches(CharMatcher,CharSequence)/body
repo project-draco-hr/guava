@@ -5,13 +5,13 @@
   assertEquals(-1,matcher.indexIn(s,1));
   assertEquals(-1,matcher.indexIn(s,s.length()));
   try {
-    matcher.indexIn(s,s.length() + 1);
+    int unused=matcher.indexIn(s,s.length() + 1);
     fail();
   }
  catch (  IndexOutOfBoundsException expected) {
   }
   try {
-    matcher.indexIn(s,-1);
+    int unused=matcher.indexIn(s,-1);
     fail();
   }
  catch (  IndexOutOfBoundsException expected) {

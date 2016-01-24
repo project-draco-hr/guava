@@ -2,13 +2,13 @@
   assertEquals(-1,matcher.indexIn(""));
   assertEquals(-1,matcher.indexIn("",0));
   try {
-    matcher.indexIn("",1);
+    int unused=matcher.indexIn("",1);
     fail();
   }
  catch (  IndexOutOfBoundsException expected) {
   }
   try {
-    matcher.indexIn("",-1);
+    int unused=matcher.indexIn("",-1);
     fail();
   }
  catch (  IndexOutOfBoundsException expected) {

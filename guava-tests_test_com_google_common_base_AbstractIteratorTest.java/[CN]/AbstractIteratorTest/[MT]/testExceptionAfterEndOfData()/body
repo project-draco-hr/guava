@@ -1,13 +1,13 @@
 {
   Iterator<Integer> iter=new AbstractIterator<Integer>(){
     @Override public Integer computeNext(){
-      endOfData();
+      Integer unused=endOfData();
       throw new SomeUncheckedException();
     }
   }
 ;
   try {
-    iter.hasNext();
+    boolean unused=iter.hasNext();
     fail("No exception thrown");
   }
  catch (  SomeUncheckedException expected) {
