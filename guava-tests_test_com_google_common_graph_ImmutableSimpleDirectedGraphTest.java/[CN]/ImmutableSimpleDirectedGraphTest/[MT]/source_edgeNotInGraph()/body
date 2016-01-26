@@ -1,6 +1,6 @@
 {
   try {
-    immutableGraph.source(EDGE_NOT_IN_GRAPH);
+    Integer unused=immutableGraph.source(EDGE_NOT_IN_GRAPH);
     fail(ERROR_EDGE_NOT_IN_GRAPH);
   }
  catch (  IllegalArgumentException e) {
