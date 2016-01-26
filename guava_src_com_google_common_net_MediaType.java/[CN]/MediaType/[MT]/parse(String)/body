@@ -18,7 +18,7 @@
         while ('"' != tokenizer.previewChar()) {
           if ('\\' == tokenizer.previewChar()) {
             tokenizer.consumeCharacter('\\');
-            valueBuilder.append(tokenizer.consumeCharacter(ASCII));
+            valueBuilder.append(tokenizer.consumeCharacter(ascii()));
           }
  else {
             valueBuilder.append(tokenizer.consumeToken(QUOTED_TEXT_MATCHER));
