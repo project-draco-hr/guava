@@ -1,3 +1,10 @@
 {
-  return buildTesterRequirements(testerMethod);
+synchronized (methodTesterRequirementsCache) {
+    TesterRequirements requirements=methodTesterRequirementsCache.get(testerMethod);
+    if (requirements == null) {
+      requirements=buildTesterRequirements(testerMethod);
+      methodTesterRequirementsCache.put(testerMethod,requirements);
+    }
+    return requirements;
+  }
 }

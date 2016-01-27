@@ -1,3 +1,5 @@
 {
-  return intersection(new Set[]{set1,set2});
+  Set<T> result=Helpers.<T>copyToSet(set1);
+  result.retainAll(set2);
+  return result;
 }

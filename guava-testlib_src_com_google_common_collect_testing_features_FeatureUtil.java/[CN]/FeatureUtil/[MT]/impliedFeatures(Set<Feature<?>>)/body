@@ -1,8 +1,13 @@
 {
-  Set<Feature<?>> implied=new LinkedHashSet<Feature<?>>();
-  for (  Feature<?> feature : features) {
-    implied.addAll(feature.getImpliedFeatures());
+  Set<Feature<?>> impliedSet=new LinkedHashSet<Feature<?>>();
+  Queue<Feature<?>> queue=new ArrayDeque<Feature<?>>(features);
+  while (!queue.isEmpty()) {
+    Feature<?> feature=queue.remove();
+    for (    Feature<?> implied : feature.getImpliedFeatures()) {
+      if (!features.contains(implied) && impliedSet.add(implied)) {
+        queue.add(implied);
+      }
+    }
   }
-  addImpliedFeatures(implied);
-  return implied;
+  return impliedSet;
 }

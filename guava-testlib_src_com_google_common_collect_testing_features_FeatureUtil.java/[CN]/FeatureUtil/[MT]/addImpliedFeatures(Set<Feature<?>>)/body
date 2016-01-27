@@ -1,6 +1,12 @@
 {
-  if (!features.isEmpty()) {
-    features.addAll(impliedFeatures(features));
+  Queue<Feature<?>> queue=new ArrayDeque<Feature<?>>(features);
+  while (!queue.isEmpty()) {
+    Feature<?> feature=queue.remove();
+    for (    Feature<?> implied : feature.getImpliedFeatures()) {
+      if (features.add(implied)) {
+        queue.add(implied);
+      }
+    }
   }
   return features;
 }

@@ -1,18 +1,16 @@
 {
-  List<Annotation> result=new ArrayList<Annotation>();
-  Annotation[] annotations;
 synchronized (annotationCache) {
-    annotations=annotationCache.get(classOrMethod);
+    List<Annotation> annotations=annotationCache.get(classOrMethod);
     if (annotations == null) {
-      annotations=classOrMethod.getDeclaredAnnotations();
+      annotations=new ArrayList<Annotation>();
+      for (      Annotation a : classOrMethod.getDeclaredAnnotations()) {
+        if (a.annotationType().isAnnotationPresent(TesterAnnotation.class)) {
+          annotations.add(a);
+        }
+      }
+      annotations=Collections.unmodifiableList(annotations);
       annotationCache.put(classOrMethod,annotations);
     }
+    return annotations;
   }
-  for (  Annotation a : annotations) {
-    Class<? extends Annotation> annotationClass=a.annotationType();
-    if (annotationClass.isAnnotationPresent(TesterAnnotation.class)) {
-      result.add(a);
-    }
-  }
-  return result;
 }
