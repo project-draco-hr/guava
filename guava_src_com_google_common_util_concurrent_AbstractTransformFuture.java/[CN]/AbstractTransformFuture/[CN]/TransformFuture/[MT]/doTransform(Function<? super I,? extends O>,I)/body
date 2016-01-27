@@ -1,3 +1,3 @@
 {
-  set(function.apply(input));
+  return function.apply(input);
 }

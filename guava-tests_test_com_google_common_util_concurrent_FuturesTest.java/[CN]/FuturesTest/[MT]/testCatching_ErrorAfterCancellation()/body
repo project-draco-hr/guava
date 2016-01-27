@@ -1,0 +1,15 @@
+{
+class Fallback implements Function<Throwable,Object> {
+    ListenableFuture<Object> output;
+    @Override public Object apply(    Throwable input){
+      output.cancel(false);
+      throw new MyError();
+    }
+  }
+  Fallback fallback=new Fallback();
+  SettableFuture<Object> input=SettableFuture.create();
+  ListenableFuture<Object> output=Futures.catching(input,Throwable.class,fallback);
+  fallback.output=output;
+  input.setException(new MyException());
+  assertTrue(output.isCancelled());
+}

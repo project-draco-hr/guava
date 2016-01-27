@@ -1,1 +1,1 @@
-AbstractTransformFuture<I,O,AsyncFunction<? super I,? extends O>>
+AbstractTransformFuture<I,O,AsyncFunction<? super I,? extends O>,ListenableFuture<? extends O>>

@@ -1,0 +1,16 @@
+{
+  SettableFuture<Object> input=SettableFuture.create();
+  ListenableFuture<Object> output=Futures.transform(input,identity());
+  output.addListener(new Runnable(){
+    @Override public void run(){
+      throw new MyError();
+    }
+  }
+,directExecutor());
+  try {
+    input.set("foo");
+    fail();
+  }
+ catch (  MyError expected) {
+  }
+}

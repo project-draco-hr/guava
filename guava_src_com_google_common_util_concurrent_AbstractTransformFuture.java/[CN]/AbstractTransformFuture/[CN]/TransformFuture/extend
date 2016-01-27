@@ -1,1 +1,1 @@
-AbstractTransformFuture<I,O,Function<? super I,? extends O>>
+AbstractTransformFuture<I,O,Function<? super I,? extends O>,O>

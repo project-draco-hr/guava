@@ -1,1 +1,1 @@
-AbstractCatchingFuture<V,X,AsyncFunction<? super X,? extends V>>
+AbstractCatchingFuture<V,X,AsyncFunction<? super X,? extends V>,ListenableFuture<? extends V>>

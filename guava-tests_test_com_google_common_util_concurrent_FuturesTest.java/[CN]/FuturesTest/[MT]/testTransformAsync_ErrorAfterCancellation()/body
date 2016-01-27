@@ -1,0 +1,15 @@
+{
+class Transformer implements AsyncFunction<Object,Object> {
+    ListenableFuture<Object> output;
+    @Override public ListenableFuture<Object> apply(    Object input){
+      output.cancel(false);
+      throw new MyError();
+    }
+  }
+  Transformer transformer=new Transformer();
+  SettableFuture<Object> input=SettableFuture.create();
+  ListenableFuture<Object> output=Futures.transformAsync(input,transformer);
+  transformer.output=output;
+  input.set("foo");
+  assertTrue(output.isCancelled());
+}

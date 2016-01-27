@@ -1,0 +1,15 @@
+{
+class Fallback implements AsyncFunction<Throwable,Object> {
+    ListenableFuture<Object> output;
+    @Override public ListenableFuture<Object> apply(    Throwable input){
+      output.cancel(false);
+      throw new MyRuntimeException();
+    }
+  }
+  Fallback fallback=new Fallback();
+  SettableFuture<Object> input=SettableFuture.create();
+  ListenableFuture<Object> output=Futures.catchingAsync(input,Throwable.class,fallback);
+  fallback.output=output;
+  input.setException(new MyException());
+  assertTrue(output.isCancelled());
+}

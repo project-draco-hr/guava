@@ -1,0 +1,16 @@
+{
+  SettableFuture<Object> input=SettableFuture.create();
+  ListenableFuture<Object> output=Futures.catchingAsync(input,Throwable.class,asyncIdentity());
+  output.addListener(new Runnable(){
+    @Override public void run(){
+      throw new MyError();
+    }
+  }
+,directExecutor());
+  try {
+    input.setException(new MyException());
+    fail();
+  }
+ catch (  MyError expected) {
+  }
+}

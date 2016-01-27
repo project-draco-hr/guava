@@ -8,27 +8,33 @@
   inputFuture=null;
   exceptionType=null;
   fallback=null;
-  Throwable throwable;
+  V sourceResult=null;
+  Throwable throwable=null;
   try {
-    set(getUninterruptibly(localInputFuture));
-    return;
+    sourceResult=getUninterruptibly(localInputFuture);
   }
  catch (  ExecutionException e) {
-    throwable=e.getCause();
+    throwable=checkNotNull(e.getCause());
   }
 catch (  Throwable e) {
     throwable=e;
   }
+  if (throwable == null) {
+    set(sourceResult);
+    return;
+  }
+  if (!isInstanceOfThrowableClass(throwable,localExceptionType)) {
+    setException(throwable);
+    return;
+  }
+  @SuppressWarnings("unchecked") X castThrowable=(X)throwable;
+  T fallbackResult;
   try {
-    if (isInstanceOfThrowableClass(throwable,localExceptionType)) {
-      @SuppressWarnings("unchecked") X castThrowable=(X)throwable;
-      doFallback(localFallback,castThrowable);
-    }
- else {
-      setException(throwable);
-    }
+    fallbackResult=doFallback(localFallback,castThrowable);
   }
- catch (  Throwable e) {
-    setException(e);
+ catch (  Throwable t) {
+    setException(t);
+    return;
   }
+  setResult(fallbackResult);
 }

@@ -1,0 +1,11 @@
+{
+  AbstractFuture<Object> input=new AbstractFuture<Object>(){
+    @Override public Object get(){
+      throw new MyError();
+    }
+  }
+;
+  ListenableFuture<Object> output=Futures.catching(input,Throwable.class,identity());
+  input.setException(new MyException());
+  assertThat(output.get()).isInstanceOf(MyError.class);
+}
