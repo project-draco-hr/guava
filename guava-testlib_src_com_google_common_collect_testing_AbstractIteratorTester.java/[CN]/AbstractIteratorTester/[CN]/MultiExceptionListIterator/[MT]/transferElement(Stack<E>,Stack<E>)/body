@@ -1,6 +1,6 @@
 {
   if (source.isEmpty()) {
-    throw new PermittedMetaException(NoSuchElementException.class);
+    throw PermittedMetaException.NSEE;
   }
   destination.push(source.pop());
   stackWithLastReturnedElementAtTop=destination;

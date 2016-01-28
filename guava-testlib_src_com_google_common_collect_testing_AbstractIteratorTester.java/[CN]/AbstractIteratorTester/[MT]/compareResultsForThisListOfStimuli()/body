@@ -1,4 +1,8 @@
 {
+  int removes=Collections.frequency(Arrays.asList(stimuli),remove);
+  if ((!features.contains(IteratorFeature.SUPPORTS_REMOVE) && removes > 1) || (stimuli.length >= 5 && removes > 2)) {
+    return;
+  }
   MultiExceptionListIterator reference=new MultiExceptionListIterator(expectedElements);
   I target=newTargetIterator();
   for (int i=0; i < stimuli.length; i++) {
