@@ -1,3 +1,0 @@
-{
-  return withFallback(input,fallback,directExecutor());
-}

@@ -1,8 +1,0 @@
-{
-  SettableFuture<Integer> primary=SettableFuture.create();
-  FutureFallback<Integer> fallback=unexpectedFallback();
-  ListenableFuture<Integer> derived=Futures.withFallback(primary,fallback);
-  derived.cancel(true);
-  assertTrue(primary.isCancelled());
-  assertTrue(primary.wasInterrupted());
-}

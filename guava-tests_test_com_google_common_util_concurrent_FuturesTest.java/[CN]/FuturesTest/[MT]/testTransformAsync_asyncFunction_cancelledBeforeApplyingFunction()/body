@@ -9,7 +9,7 @@
 ;
   SettableFuture<String> inputFuture=SettableFuture.create();
   ExecutorService executor=newSingleThreadExecutor();
-  ListenableFuture<Integer> future=Futures.transform(inputFuture,function,executor);
+  ListenableFuture<Integer> future=Futures.transformAsync(inputFuture,function,executor);
   final CountDownLatch beforeFunction=new CountDownLatch(1);
   executor.submit(new Runnable(){
     @Override public void run(){

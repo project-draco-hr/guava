@@ -1,7 +1,0 @@
-{
-  SettableFuture<String> f1=SettableFuture.create();
-  ListenableFuture<Object> f2=Futures.transform(f1,Functions.identity());
-  f1.cancel(true);
-  assertTrue(f2.isCancelled());
-  assertFalse(((AbstractFuture<?>)f2).wasInterrupted());
-}

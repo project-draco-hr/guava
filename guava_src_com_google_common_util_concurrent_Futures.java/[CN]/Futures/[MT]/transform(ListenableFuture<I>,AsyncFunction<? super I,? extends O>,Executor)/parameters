@@ -1,3 +1,0 @@
-ListenableFuture<I> input
-AsyncFunction<? super I,? extends O> function
-Executor executor
