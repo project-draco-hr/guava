@@ -1,6 +1,6 @@
 {
   try {
-    Maps.<SomeEnum,Long>newEnumMap((Class<MapsTest.SomeEnum>)null);
+    Map<SomeEnum,Long> unused=Maps.<SomeEnum,Long>newEnumMap((Class<MapsTest.SomeEnum>)null);
     fail("no exception thrown");
   }
  catch (  NullPointerException expected) {

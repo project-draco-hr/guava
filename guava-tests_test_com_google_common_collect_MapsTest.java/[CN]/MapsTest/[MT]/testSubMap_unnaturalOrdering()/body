@@ -1,7 +1,7 @@
 {
   ImmutableSortedMap<Integer,Integer> map=ImmutableSortedMap.<Integer,Integer>reverseOrder().put(2,0).put(4,0).put(6,0).put(8,0).put(10,0).build();
   try {
-    Maps.subMap(map,Range.closed(4,8));
+    Map<Integer,Integer> unused=Maps.subMap(map,Range.closed(4,8));
     fail("IllegalArgumentException expected");
   }
  catch (  IllegalArgumentException expected) {

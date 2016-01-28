@@ -2,7 +2,7 @@
   Map<Integer,Boolean> map=new LinkedHashMap<Integer,Boolean>();
   map.put(2,true);
   try {
-    Sets.newSetFromMap(map);
+    Set<Integer> unused=Sets.newSetFromMap(map);
     fail();
   }
  catch (  IllegalArgumentException expected) {

@@ -1,12 +1,12 @@
 {
   try {
-    powerSet(newHashSet('a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','1','2','3','4','5'));
+    Set<Set<Character>> unused=powerSet(newHashSet('a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','1','2','3','4','5'));
     fail();
   }
  catch (  IllegalArgumentException expected) {
   }
   try {
-    powerSet(singleton(null));
+    Set<Set<Object>> unused=powerSet(singleton(null));
     fail();
   }
  catch (  NullPointerException expected) {

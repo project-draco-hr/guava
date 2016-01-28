@@ -1,7 +1,7 @@
 {
   List<String> oneStringList=Lists.newArrayList("foo");
   try {
-    Maps.uniqueIndex(oneStringList,Functions.constant(null));
+    Map<Object,String> unused=Maps.uniqueIndex(oneStringList,Functions.constant(null));
     fail();
   }
  catch (  NullPointerException expected) {

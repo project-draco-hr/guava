@@ -1,6 +1,6 @@
 {
   try {
-    Maps.uniqueIndex(ImmutableSet.of("one","uno"),Functions.constant(1));
+    Map<Integer,String> unused=Maps.uniqueIndex(ImmutableSet.of("one","uno"),Functions.constant(1));
     fail();
   }
  catch (  IllegalArgumentException expected) {
