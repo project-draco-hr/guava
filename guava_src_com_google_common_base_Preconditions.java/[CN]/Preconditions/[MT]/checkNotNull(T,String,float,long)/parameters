@@ -1,0 +1,4 @@
+T obj
+String errorMessageTemplate
+float p1
+long p2

@@ -1,0 +1,4 @@
+T obj
+String errorMessageTemplate
+short p1
+boolean p2

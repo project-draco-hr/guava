@@ -1,0 +1,4 @@
+boolean b
+String errorMessageTemplate
+short p1
+short p2

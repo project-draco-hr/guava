@@ -1,0 +1,9 @@
+{
+  Boolean boxedBoolean=null;
+  boolean aBoolean=true;
+  Long boxedLong=null;
+  int anInt=1;
+  checkState(boxedBoolean.booleanValue(),"",1);
+  checkState(boxedBoolean,"",(Object)boxedLong);
+  checkState(aBoolean,"",aBoolean ? "" : anInt,(Object)anInt);
+}
