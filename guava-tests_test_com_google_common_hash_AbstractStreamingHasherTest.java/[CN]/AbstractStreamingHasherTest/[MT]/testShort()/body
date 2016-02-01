@@ -1,7 +1,7 @@
 {
   Sink sink=new Sink(4);
   sink.putShort((short)0x0201);
-  sink.hash();
+  HashCode unused=sink.hash();
   sink.assertInvariants(2);
   sink.assertBytes(new byte[]{1,2,0,0});
 }

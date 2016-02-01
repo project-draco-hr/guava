@@ -6,7 +6,7 @@
   sink.putByte((byte)7);
   sink.putBytes(new byte[]{});
   sink.putBytes(new byte[]{8});
-  sink.hash();
+  HashCode unused=sink.hash();
   sink.assertInvariants(8);
   sink.assertBytes(expected);
 }

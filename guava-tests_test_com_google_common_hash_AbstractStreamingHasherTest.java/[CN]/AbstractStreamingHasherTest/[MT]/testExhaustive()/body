@@ -18,7 +18,7 @@
       hasher.putInt(intToPut);
     }
     for (    Sink sink : sinks) {
-      sink.hash();
+      HashCode unused=sink.hash();
     }
     byte[] expected=controlSink.hash().asBytes();
     for (    Sink sink : sinks) {

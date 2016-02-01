@@ -1,7 +1,10 @@
 {
-  byte[] value=new byte[random.nextInt(128)];
-  random.nextBytes(value);
+  char[] value=new char[random.nextInt(128)];
+  for (int i=0; i < value.length; i++) {
+    value[i]=(char)random.nextInt();
+  }
+  String s=new String(value);
   for (  PrimitiveSink sink : sinks) {
-    sink.putBytes(value);
+    sink.putUnencodedChars(s);
   }
 }
