@@ -1,5 +1,5 @@
 {
-  UndirectedGraph<Integer,String> graph=Graphs.createUndirected(immutableGraph.config());
+  UndirectedGraph<Integer,String> graph=Graphs.createUndirected(undirectedGraph.config());
   populateInputGraph(graph);
   builder.addEdge(E12,N1,N2);
   builder.addGraph(graph);

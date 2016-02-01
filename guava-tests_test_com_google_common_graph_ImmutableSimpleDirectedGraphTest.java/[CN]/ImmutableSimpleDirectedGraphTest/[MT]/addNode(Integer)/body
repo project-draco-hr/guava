@@ -1,4 +1,5 @@
 {
-  graph=immutableGraph=builder.addNode(n).build();
-  return true;
+  DirectedGraph<Integer,String> oldGraph=Graphs.copyOf(directedGraph);
+  graph=directedGraph=builder.addNode(n).build();
+  return !graph.equals(oldGraph);
 }

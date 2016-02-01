@@ -1,6 +1,6 @@
 {
   addEdge(E11,N1,N1);
-  assertThat(immutableGraph.predecessors(N1)).containsExactly(N1);
+  assertThat(directedGraph.predecessors(N1)).containsExactly(N1);
   addEdge(E41,N4,N1);
-  assertThat(immutableGraph.predecessors(N1)).containsExactly(N1,N4).inOrder();
+  assertThat(directedGraph.predecessors(N1)).containsExactly(N1,N4).inOrder();
 }

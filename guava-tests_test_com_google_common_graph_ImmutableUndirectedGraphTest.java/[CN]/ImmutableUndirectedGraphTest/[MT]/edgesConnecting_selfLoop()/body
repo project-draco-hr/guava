@@ -1,7 +1,7 @@
 {
   addEdge(E11,N1,N1);
-  assertThat(immutableGraph.edgesConnecting(N1,N1)).containsExactly(E11);
+  assertThat(undirectedGraph.edgesConnecting(N1,N1)).containsExactly(E11);
   addEdge(E12,N1,N2);
-  assertThat(immutableGraph.edgesConnecting(N1,N2)).containsExactly(E12);
-  assertThat(immutableGraph.edgesConnecting(N2,N1)).containsExactly(E12);
+  assertThat(undirectedGraph.edgesConnecting(N1,N2)).containsExactly(E12);
+  assertThat(undirectedGraph.edgesConnecting(N2,N1)).containsExactly(E12);
 }

@@ -1,4 +1,0 @@
-{
-  addEdge(E12,N1,N2);
-  assertThat(graph.toString()).isEqualTo(String.format("config: %s, nodes: %s, edges: {%s=[%s, %s]}",graph.config(),graph.nodes(),E12,N1,N2));
-}

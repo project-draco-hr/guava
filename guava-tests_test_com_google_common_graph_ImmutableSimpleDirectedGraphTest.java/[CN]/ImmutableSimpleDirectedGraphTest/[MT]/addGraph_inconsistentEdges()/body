@@ -1,5 +1,5 @@
 {
-  DirectedGraph<Integer,String> graph=Graphs.createDirected(immutableGraph.config());
+  DirectedGraph<Integer,String> graph=Graphs.createDirected(directedGraph.config());
   populateInputGraph(graph);
   builder.addEdge(E21,N3,N1);
   try {

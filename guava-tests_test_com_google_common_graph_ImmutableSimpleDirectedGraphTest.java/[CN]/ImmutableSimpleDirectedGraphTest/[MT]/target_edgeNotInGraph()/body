@@ -1,9 +1,0 @@
-{
-  try {
-    Integer unused=immutableGraph.target(EDGE_NOT_IN_GRAPH);
-    fail(ERROR_EDGE_NOT_IN_GRAPH);
-  }
- catch (  IllegalArgumentException e) {
-    assertEdgeNotInGraphErrorMessage(e);
-  }
-}

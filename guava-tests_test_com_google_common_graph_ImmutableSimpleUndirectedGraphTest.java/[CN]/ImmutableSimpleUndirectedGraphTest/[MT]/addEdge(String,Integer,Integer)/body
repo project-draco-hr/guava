@@ -1,4 +1,5 @@
 {
-  graph=immutableGraph=builder.addEdge(e,n1,n2).build();
-  return true;
+  UndirectedGraph<Integer,String> oldGraph=Graphs.copyOf(undirectedGraph);
+  graph=undirectedGraph=builder.addEdge(e,n1,n2).build();
+  return !graph.equals(oldGraph);
 }

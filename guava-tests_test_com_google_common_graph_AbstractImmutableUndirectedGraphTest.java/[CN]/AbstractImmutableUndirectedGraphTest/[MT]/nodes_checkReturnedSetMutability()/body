@@ -1,0 +1,4 @@
+{
+  expectedException.expect(UnsupportedOperationException.class);
+  graph.nodes().add(N2);
+}

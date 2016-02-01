@@ -1,5 +1,5 @@
 {
-  UndirectedGraph<Integer,String> graph=Graphs.createUndirected(immutableGraph.config());
+  UndirectedGraph<Integer,String> graph=Graphs.createUndirected(undirectedGraph.config());
   populateInputGraph(graph);
   assertThat(ImmutableUndirectedGraph.copyOf(graph)).isEqualTo(graph);
 }

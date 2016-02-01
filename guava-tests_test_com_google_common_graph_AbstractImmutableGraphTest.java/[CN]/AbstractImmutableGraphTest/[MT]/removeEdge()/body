@@ -1,4 +1,0 @@
-{
-  expectedException.expect(UnsupportedOperationException.class);
-  graph.removeEdge(E12);
-}

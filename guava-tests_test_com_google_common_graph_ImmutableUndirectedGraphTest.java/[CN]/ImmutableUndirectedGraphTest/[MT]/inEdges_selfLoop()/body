@@ -1,6 +1,6 @@
 {
   addEdge(E11,N1,N1);
-  assertThat(immutableGraph.inEdges(N1)).containsExactly(E11);
+  assertThat(undirectedGraph.inEdges(N1)).containsExactly(E11);
   addEdge(E12,N1,N2);
-  assertThat(immutableGraph.inEdges(N1)).containsExactly(E11,E12).inOrder();
+  assertThat(undirectedGraph.inEdges(N1)).containsExactly(E11,E12).inOrder();
 }

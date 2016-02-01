@@ -1,5 +1,0 @@
-{
-  addEdge(E12,N1,N2);
-  assertThat(immutableGraph.predecessors(N2)).containsExactly(N1);
-  assertThat(immutableGraph.predecessors(N1)).containsExactly(N2);
-}
