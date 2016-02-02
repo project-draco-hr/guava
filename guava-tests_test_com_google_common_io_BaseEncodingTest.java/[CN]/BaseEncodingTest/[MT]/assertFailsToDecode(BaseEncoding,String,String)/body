@@ -1,7 +1,7 @@
 {
   assertFalse(encoding.canDecode(cannotDecode));
   try {
-    byte[] unused=encoding.decode(cannotDecode);
+    encoding.decode(cannotDecode);
     fail("Expected IllegalArgumentException");
   }
  catch (  IllegalArgumentException expected) {
@@ -10,7 +10,7 @@
     }
   }
   try {
-    byte[] unused=encoding.decodeChecked(cannotDecode);
+    encoding.decodeChecked(cannotDecode);
     fail("Expected DecodingException");
   }
  catch (  DecodingException expected) {

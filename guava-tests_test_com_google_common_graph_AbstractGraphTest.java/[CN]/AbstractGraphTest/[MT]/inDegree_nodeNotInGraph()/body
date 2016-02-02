@@ -1,6 +1,6 @@
 {
   try {
-    long unused=graph.inDegree(NODE_NOT_IN_GRAPH);
+    graph.inDegree(NODE_NOT_IN_GRAPH);
     fail(ERROR_NODE_NOT_IN_GRAPH);
   }
  catch (  IllegalArgumentException e) {

@@ -1,7 +1,7 @@
 {
   List<Integer> source=Collections.singletonList(1);
   try {
-    List<List<Integer>> unused=Lists.partition(source,0);
+    Lists.partition(source,0);
     fail();
   }
  catch (  IllegalArgumentException expected) {

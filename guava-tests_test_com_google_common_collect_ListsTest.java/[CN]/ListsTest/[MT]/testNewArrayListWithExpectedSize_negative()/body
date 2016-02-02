@@ -1,6 +1,6 @@
 {
   try {
-    List<Object> unused=Lists.newArrayListWithExpectedSize(-1);
+    Lists.newArrayListWithExpectedSize(-1);
     fail();
   }
  catch (  IllegalArgumentException expected) {

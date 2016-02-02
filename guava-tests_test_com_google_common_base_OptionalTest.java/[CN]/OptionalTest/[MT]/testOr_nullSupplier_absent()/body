@@ -2,7 +2,7 @@
   Supplier<Object> nullSupplier=Suppliers.ofInstance(null);
   Optional<Object> absentOptional=Optional.absent();
   try {
-    Object unused=absentOptional.or(nullSupplier);
+    absentOptional.or(nullSupplier);
     fail();
   }
  catch (  NullPointerException expected) {

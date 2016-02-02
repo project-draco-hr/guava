@@ -1,3 +1,3 @@
 {
-  Object unused=Iterables.getLast(iterable);
+  Iterables.getLast(iterable);
 }

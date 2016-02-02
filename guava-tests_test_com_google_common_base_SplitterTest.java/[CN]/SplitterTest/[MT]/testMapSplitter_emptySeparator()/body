@@ -1,6 +1,6 @@
 {
   try {
-    Splitter.MapSplitter unused=COMMA_SPLITTER.withKeyValueSeparator("");
+    COMMA_SPLITTER.withKeyValueSeparator("");
     fail();
   }
  catch (  IllegalArgumentException expected) {

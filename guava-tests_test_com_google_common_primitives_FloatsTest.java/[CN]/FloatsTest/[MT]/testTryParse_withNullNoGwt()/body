@@ -1,7 +1,7 @@
 {
   assertNull(Floats.tryParse("null"));
   try {
-    Float unused=Floats.tryParse(null);
+    Floats.tryParse(null);
     fail("Expected NPE");
   }
  catch (  NullPointerException expected) {

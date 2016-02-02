@@ -1,6 +1,6 @@
 {
   try {
-    long unused=Longs.fromByteArray(new byte[Longs.BYTES - 1]);
+    Longs.fromByteArray(new byte[Longs.BYTES - 1]);
     fail();
   }
  catch (  IllegalArgumentException expected) {

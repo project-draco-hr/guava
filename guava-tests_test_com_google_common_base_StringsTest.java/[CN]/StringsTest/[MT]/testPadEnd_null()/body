@@ -1,6 +1,6 @@
 {
   try {
-    String unused=Strings.padEnd(null,5,'0');
+    Strings.padEnd(null,5,'0');
     fail();
   }
  catch (  NullPointerException expected) {

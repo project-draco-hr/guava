@@ -4,25 +4,25 @@
   checkResult(J,ITERABLE_12,"1-2");
   checkResult(J,ITERABLE_123,"1-2-3");
   try {
-    String unused=J.join(ITERABLE_NULL);
+    J.join(ITERABLE_NULL);
     fail();
   }
  catch (  NullPointerException expected) {
   }
   try {
-    String unused=J.join(ITERABLE_1_NULL_2);
+    J.join(ITERABLE_1_NULL_2);
     fail();
   }
  catch (  NullPointerException expected) {
   }
   try {
-    String unused=J.join(ITERABLE_NULL.iterator());
+    J.join(ITERABLE_NULL.iterator());
     fail();
   }
  catch (  NullPointerException expected) {
   }
   try {
-    String unused=J.join(ITERABLE_1_NULL_2.iterator());
+    J.join(ITERABLE_1_NULL_2.iterator());
     fail();
   }
  catch (  NullPointerException expected) {

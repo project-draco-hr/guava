@@ -1,7 +1,7 @@
 {
   ImmutableSortedSet<Integer> set=ImmutableSortedSet.<Integer>reverseOrder().add(2,4,6,8,10).build();
   try {
-    Set<Integer> unused=Sets.subSet(set,Range.closed(4,8));
+    Sets.subSet(set,Range.closed(4,8));
     fail("IllegalArgumentException expected");
   }
  catch (  IllegalArgumentException expected) {

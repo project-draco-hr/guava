@@ -1,6 +1,6 @@
 {
   try {
-    float unused=Floats.max();
+    Floats.max();
     fail();
   }
  catch (  IllegalArgumentException expected) {

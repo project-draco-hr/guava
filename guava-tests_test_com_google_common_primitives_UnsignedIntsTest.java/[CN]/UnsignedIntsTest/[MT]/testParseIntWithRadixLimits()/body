@@ -5,7 +5,7 @@
     try {
       long overflow=1L << 32;
       String overflowAsString=Long.toString(overflow,radix);
-      int unused=UnsignedInts.parseUnsignedInt(overflowAsString,radix);
+      UnsignedInts.parseUnsignedInt(overflowAsString,radix);
       fail();
     }
  catch (    NumberFormatException expected) {

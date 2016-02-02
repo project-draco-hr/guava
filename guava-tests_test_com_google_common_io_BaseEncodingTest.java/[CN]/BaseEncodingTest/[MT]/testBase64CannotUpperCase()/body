@@ -1,6 +1,6 @@
 {
   try {
-    BaseEncoding unused=base64().upperCase();
+    base64().upperCase();
     fail();
   }
  catch (  IllegalStateException expected) {

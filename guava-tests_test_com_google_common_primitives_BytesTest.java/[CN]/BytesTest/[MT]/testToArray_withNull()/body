@@ -1,7 +1,7 @@
 {
   List<Byte> list=Arrays.asList((byte)0,(byte)1,null);
   try {
-    byte[] unused=Bytes.toArray(list);
+    Bytes.toArray(list);
     fail();
   }
  catch (  NullPointerException expected) {

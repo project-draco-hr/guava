@@ -1,6 +1,6 @@
 {
   try {
-    Queue<Object> unused=Queues.newLinkedBlockingDeque(0);
+    Queues.newLinkedBlockingDeque(0);
     fail("Should have thrown IllegalArgumentException");
   }
  catch (  IllegalArgumentException expected) {

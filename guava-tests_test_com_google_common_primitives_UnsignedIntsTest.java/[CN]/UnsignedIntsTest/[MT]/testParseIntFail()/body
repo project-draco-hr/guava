@@ -1,6 +1,6 @@
 {
   try {
-    int unused=UnsignedInts.parseUnsignedInt(Long.toString(1L << 32));
+    UnsignedInts.parseUnsignedInt(Long.toString(1L << 32));
     fail("Expected NumberFormatException");
   }
  catch (  NumberFormatException expected) {

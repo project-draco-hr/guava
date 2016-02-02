@@ -1,12 +1,12 @@
 {
   try {
-    byte[] unused=Bytes.ensureCapacity(ARRAY1,-1,1);
+    Bytes.ensureCapacity(ARRAY1,-1,1);
     fail();
   }
  catch (  IllegalArgumentException expected) {
   }
   try {
-    byte[] unused=Bytes.ensureCapacity(ARRAY1,1,-1);
+    Bytes.ensureCapacity(ARRAY1,1,-1);
     fail();
   }
  catch (  IllegalArgumentException expected) {

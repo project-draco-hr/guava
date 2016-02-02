@@ -11,13 +11,13 @@
   mapWithNulls.put(null,"b");
   Set<Map.Entry<String,String>> entriesWithNulls=mapWithNulls.entrySet();
   try {
-    String unused=j.join(entriesWithNulls);
+    j.join(entriesWithNulls);
     fail();
   }
  catch (  NullPointerException expected) {
   }
   try {
-    String unused=j.join(entriesWithNulls.iterator());
+    j.join(entriesWithNulls.iterator());
     fail();
   }
  catch (  NullPointerException expected) {

@@ -1,6 +1,6 @@
 {
   try {
-    Splitter unused=Splitter.on("");
+    Splitter.on("");
     fail();
   }
  catch (  IllegalArgumentException expected) {

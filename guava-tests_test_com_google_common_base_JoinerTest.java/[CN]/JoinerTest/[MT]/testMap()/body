@@ -6,7 +6,7 @@
   mapWithNulls.put("a",null);
   mapWithNulls.put(null,"b");
   try {
-    String unused=j.join(mapWithNulls);
+    j.join(mapWithNulls);
     fail();
   }
  catch (  NullPointerException expected) {

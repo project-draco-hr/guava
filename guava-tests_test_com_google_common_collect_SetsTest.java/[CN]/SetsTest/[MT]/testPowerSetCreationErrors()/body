@@ -6,7 +6,7 @@
  catch (  IllegalArgumentException expected) {
   }
   try {
-    Set<Set<Object>> unused=powerSet(singleton(null));
+    powerSet(singleton(null));
     fail();
   }
  catch (  NullPointerException expected) {

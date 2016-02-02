@@ -1,6 +1,6 @@
 {
   try {
-    long unused=Longs.max();
+    Longs.max();
     fail();
   }
  catch (  IllegalArgumentException expected) {

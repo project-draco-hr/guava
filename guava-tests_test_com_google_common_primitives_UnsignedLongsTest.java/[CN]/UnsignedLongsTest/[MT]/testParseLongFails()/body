@@ -1,6 +1,6 @@
 {
   try {
-    long unused=UnsignedLongs.parseUnsignedLong("18446744073709551616");
+    UnsignedLongs.parseUnsignedLong("18446744073709551616");
     fail();
   }
  catch (  NumberFormatException expected) {

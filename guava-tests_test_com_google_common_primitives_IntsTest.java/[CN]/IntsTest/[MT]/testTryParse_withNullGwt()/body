@@ -1,7 +1,7 @@
 {
   assertNull(Ints.tryParse("null"));
   try {
-    Integer unused=Ints.tryParse(null);
+    Ints.tryParse(null);
     fail("Expected NPE");
   }
  catch (  NullPointerException expected) {

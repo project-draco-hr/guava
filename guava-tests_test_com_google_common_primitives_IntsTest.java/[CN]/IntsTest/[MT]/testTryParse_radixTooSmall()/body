@@ -1,6 +1,6 @@
 {
   try {
-    Integer unused=Ints.tryParse("0",Character.MIN_RADIX - 1);
+    Ints.tryParse("0",Character.MIN_RADIX - 1);
     fail();
   }
  catch (  IllegalArgumentException expected) {

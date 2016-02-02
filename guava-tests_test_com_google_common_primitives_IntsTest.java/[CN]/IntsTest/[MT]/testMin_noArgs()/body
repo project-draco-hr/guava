@@ -1,6 +1,6 @@
 {
   try {
-    int unused=Ints.min();
+    Ints.min();
     fail();
   }
  catch (  IllegalArgumentException expected) {

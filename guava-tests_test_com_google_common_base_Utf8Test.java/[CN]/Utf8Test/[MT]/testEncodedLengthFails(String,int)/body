@@ -1,6 +1,6 @@
 {
   try {
-    int unused=Utf8.encodedLength(invalidString);
+    Utf8.encodedLength(invalidString);
     fail();
   }
  catch (  IllegalArgumentException expected) {

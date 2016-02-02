@@ -6,7 +6,7 @@
   assertEquals(expectedHashCode.asInt,hash.asInt());
   if (expectedHashCode.asLong == null) {
     try {
-      long unused=hash.asLong();
+      hash.asLong();
       fail();
     }
  catch (    IllegalStateException expected) {

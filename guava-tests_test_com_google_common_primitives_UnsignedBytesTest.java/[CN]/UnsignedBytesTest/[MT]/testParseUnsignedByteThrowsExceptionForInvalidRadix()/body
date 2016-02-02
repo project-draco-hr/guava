@@ -1,18 +1,18 @@
 {
   try {
-    byte unused=UnsignedBytes.parseUnsignedByte("0",Character.MIN_RADIX - 1);
+    UnsignedBytes.parseUnsignedByte("0",Character.MIN_RADIX - 1);
     fail();
   }
  catch (  NumberFormatException nfe) {
   }
   try {
-    byte unused=UnsignedBytes.parseUnsignedByte("0",Character.MAX_RADIX + 1);
+    UnsignedBytes.parseUnsignedByte("0",Character.MAX_RADIX + 1);
     fail();
   }
  catch (  NumberFormatException nfe) {
   }
   try {
-    byte unused=UnsignedBytes.parseUnsignedByte("0",-1);
+    UnsignedBytes.parseUnsignedByte("0",-1);
     fail();
   }
  catch (  NumberFormatException nfe) {

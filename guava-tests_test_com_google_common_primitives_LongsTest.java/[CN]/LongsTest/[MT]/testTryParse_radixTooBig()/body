@@ -1,6 +1,6 @@
 {
   try {
-    Long unused=Longs.tryParse("0",Character.MAX_RADIX + 1);
+    Longs.tryParse("0",Character.MAX_RADIX + 1);
     fail();
   }
  catch (  IllegalArgumentException expected) {

@@ -1,6 +1,6 @@
 {
   try {
-    Optional<Object> unused=Optional.of(null);
+    Optional.of(null);
     fail();
   }
  catch (  NullPointerException expected) {

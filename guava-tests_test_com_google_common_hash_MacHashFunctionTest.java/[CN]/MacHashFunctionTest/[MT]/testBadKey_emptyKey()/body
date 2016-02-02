@@ -12,7 +12,7 @@
   }
 ;
   try {
-    HashFunction unused=Hashing.hmacMd5(badKey);
+    Hashing.hmacMd5(badKey);
     fail();
   }
  catch (  IllegalArgumentException expected) {

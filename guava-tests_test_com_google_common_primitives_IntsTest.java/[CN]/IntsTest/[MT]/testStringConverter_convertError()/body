@@ -1,6 +1,6 @@
 {
   try {
-    int unused=Ints.stringConverter().convert("notanumber");
+    Ints.stringConverter().convert("notanumber");
     fail();
   }
  catch (  NumberFormatException expected) {

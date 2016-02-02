@@ -1,24 +1,24 @@
 {
   try {
-    BloomFilter<String> unused=BloomFilter.create(Funnels.unencodedCharsFunnel(),-1);
+    BloomFilter.create(Funnels.unencodedCharsFunnel(),-1);
     fail();
   }
  catch (  IllegalArgumentException expected) {
   }
   try {
-    BloomFilter<String> unused=BloomFilter.create(Funnels.unencodedCharsFunnel(),-1,0.03);
+    BloomFilter.create(Funnels.unencodedCharsFunnel(),-1,0.03);
     fail();
   }
  catch (  IllegalArgumentException expected) {
   }
   try {
-    BloomFilter<String> unused=BloomFilter.create(Funnels.unencodedCharsFunnel(),1,0.0);
+    BloomFilter.create(Funnels.unencodedCharsFunnel(),1,0.0);
     fail();
   }
  catch (  IllegalArgumentException expected) {
   }
   try {
-    BloomFilter<String> unused=BloomFilter.create(Funnels.unencodedCharsFunnel(),1,1.0);
+    BloomFilter.create(Funnels.unencodedCharsFunnel(),1,1.0);
     fail();
   }
  catch (  IllegalArgumentException expected) {

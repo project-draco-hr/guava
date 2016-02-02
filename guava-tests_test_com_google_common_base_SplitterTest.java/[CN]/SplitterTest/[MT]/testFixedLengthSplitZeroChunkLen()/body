@@ -1,6 +1,6 @@
 {
   try {
-    Splitter unused=Splitter.fixedLength(0);
+    Splitter.fixedLength(0);
     fail();
   }
  catch (  IllegalArgumentException expected) {

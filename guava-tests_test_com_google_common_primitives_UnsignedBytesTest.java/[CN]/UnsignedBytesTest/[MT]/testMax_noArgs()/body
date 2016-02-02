@@ -1,6 +1,6 @@
 {
   try {
-    byte unused=UnsignedBytes.max();
+    UnsignedBytes.max();
     fail();
   }
  catch (  IllegalArgumentException expected) {

@@ -1,12 +1,12 @@
 {
   try {
-    float[] unused=Floats.ensureCapacity(ARRAY1,-1,1);
+    Floats.ensureCapacity(ARRAY1,-1,1);
     fail();
   }
  catch (  IllegalArgumentException expected) {
   }
   try {
-    float[] unused=Floats.ensureCapacity(ARRAY1,1,-1);
+    Floats.ensureCapacity(ARRAY1,1,-1);
     fail();
   }
  catch (  IllegalArgumentException expected) {

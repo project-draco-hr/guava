@@ -1,6 +1,6 @@
 {
   try {
-    Set<String> unused=graph.adjacentEdges(EDGE_NOT_IN_GRAPH);
+    graph.adjacentEdges(EDGE_NOT_IN_GRAPH);
     fail(ERROR_EDGE_NOT_IN_GRAPH);
   }
  catch (  IllegalArgumentException e) {

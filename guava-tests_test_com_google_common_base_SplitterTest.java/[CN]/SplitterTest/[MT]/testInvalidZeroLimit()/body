@@ -1,6 +1,6 @@
 {
   try {
-    Splitter unused=COMMA_SPLITTER.limit(0);
+    COMMA_SPLITTER.limit(0);
     fail();
   }
  catch (  IllegalArgumentException expected) {

@@ -1,6 +1,6 @@
 {
   try {
-    char unused=Chars.fromByteArray(new byte[Chars.BYTES - 1]);
+    Chars.fromByteArray(new byte[Chars.BYTES - 1]);
     fail();
   }
  catch (  IllegalArgumentException expected) {

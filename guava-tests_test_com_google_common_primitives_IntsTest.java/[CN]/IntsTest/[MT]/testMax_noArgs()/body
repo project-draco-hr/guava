@@ -1,6 +1,6 @@
 {
   try {
-    int unused=Ints.max();
+    Ints.max();
     fail();
   }
  catch (  IllegalArgumentException expected) {

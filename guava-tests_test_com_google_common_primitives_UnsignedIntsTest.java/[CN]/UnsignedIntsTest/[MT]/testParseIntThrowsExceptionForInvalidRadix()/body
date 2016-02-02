@@ -1,18 +1,18 @@
 {
   try {
-    int unused=UnsignedInts.parseUnsignedInt("0",Character.MIN_RADIX - 1);
+    UnsignedInts.parseUnsignedInt("0",Character.MIN_RADIX - 1);
     fail();
   }
  catch (  NumberFormatException expected) {
   }
   try {
-    int unused=UnsignedInts.parseUnsignedInt("0",Character.MAX_RADIX + 1);
+    UnsignedInts.parseUnsignedInt("0",Character.MAX_RADIX + 1);
     fail();
   }
  catch (  NumberFormatException expected) {
   }
   try {
-    int unused=UnsignedInts.parseUnsignedInt("0",-1);
+    UnsignedInts.parseUnsignedInt("0",-1);
     fail();
   }
  catch (  NumberFormatException expected) {

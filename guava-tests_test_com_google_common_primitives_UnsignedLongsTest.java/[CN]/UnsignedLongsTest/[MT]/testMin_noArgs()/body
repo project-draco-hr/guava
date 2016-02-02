@@ -1,6 +1,6 @@
 {
   try {
-    long unused=UnsignedLongs.min();
+    UnsignedLongs.min();
     fail();
   }
  catch (  IllegalArgumentException expected) {

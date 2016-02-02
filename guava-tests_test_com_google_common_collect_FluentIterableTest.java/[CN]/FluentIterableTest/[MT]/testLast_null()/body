@@ -1,7 +1,7 @@
 {
   List<String> list=Lists.newArrayList("a","b",null);
   try {
-    Optional<String> unused=FluentIterable.from(list).last();
+    FluentIterable.from(list).last();
     fail();
   }
  catch (  NullPointerException expected) {

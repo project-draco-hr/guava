@@ -1,6 +1,6 @@
 {
   try {
-    GraphConfig unused=config().expectedEdgeCount(-1);
+    config().expectedEdgeCount(-1);
     fail(ERROR_NEGATIVE_EDGE_COUNT);
   }
  catch (  IllegalArgumentException e) {

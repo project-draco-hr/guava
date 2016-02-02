@@ -1,7 +1,7 @@
 {
   Set<SomeEnum> set=Collections.emptySet();
   try {
-    Set<SomeEnum> unused=Sets.complementOf(set);
+    Sets.complementOf(set);
     fail();
   }
  catch (  IllegalArgumentException expected) {

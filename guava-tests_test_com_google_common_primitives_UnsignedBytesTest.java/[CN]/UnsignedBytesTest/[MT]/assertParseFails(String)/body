@@ -1,6 +1,6 @@
 {
   try {
-    byte unused=UnsignedBytes.parseUnsignedByte(value);
+    UnsignedBytes.parseUnsignedByte(value);
     fail();
   }
  catch (  NumberFormatException expected) {

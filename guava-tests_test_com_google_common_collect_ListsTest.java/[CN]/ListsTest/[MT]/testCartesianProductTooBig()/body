@@ -1,7 +1,7 @@
 {
   List<String> list=Collections.nCopies(10000,"foo");
   try {
-    List<List<String>> unused=Lists.cartesianProduct(list,list,list,list,list);
+    Lists.cartesianProduct(list,list,list,list,list);
     fail("Expected IAE");
   }
  catch (  IllegalArgumentException expected) {

@@ -1,6 +1,6 @@
 {
   try {
-    short unused=Shorts.stringConverter().convert("notanumber");
+    Shorts.stringConverter().convert("notanumber");
     fail();
   }
  catch (  NumberFormatException expected) {

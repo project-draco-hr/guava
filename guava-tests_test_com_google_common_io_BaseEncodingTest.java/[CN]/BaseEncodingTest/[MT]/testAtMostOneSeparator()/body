@@ -1,7 +1,7 @@
 {
   BaseEncoding separated=base64().withSeparator("\n",3);
   try {
-    BaseEncoding unused=separated.withSeparator("$",4);
+    separated.withSeparator("$",4);
     fail("Expected UnsupportedOperationException");
   }
  catch (  UnsupportedOperationException expected) {
