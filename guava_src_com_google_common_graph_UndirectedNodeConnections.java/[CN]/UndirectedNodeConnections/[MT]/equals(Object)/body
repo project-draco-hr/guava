@@ -1,0 +1,7 @@
+{
+  if (object instanceof UndirectedNodeConnections) {
+    UndirectedNodeConnections<?,?> that=(UndirectedNodeConnections<?,?>)object;
+    return this.adjacentNodes.equals(that.adjacentNodes) && this.incidentEdges.equals(that.incidentEdges);
+  }
+  return false;
+}

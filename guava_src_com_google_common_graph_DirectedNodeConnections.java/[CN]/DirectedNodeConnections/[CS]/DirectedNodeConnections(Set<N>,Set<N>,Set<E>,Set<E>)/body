@@ -1,0 +1,6 @@
+{
+  this.predecessors=checkNotNull(predecessors,"predecessors");
+  this.successors=checkNotNull(successors,"successors");
+  this.inEdges=checkNotNull(inEdges,"inEdges");
+  this.outEdges=checkNotNull(outEdges,"outEdges");
+}

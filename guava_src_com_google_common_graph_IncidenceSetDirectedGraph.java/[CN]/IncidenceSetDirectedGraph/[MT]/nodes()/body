@@ -1,3 +1,3 @@
 {
-  return Collections.unmodifiableSet(nodeToIncidentEdges.keySet());
+  return Collections.unmodifiableSet(nodeConnections.keySet());
 }

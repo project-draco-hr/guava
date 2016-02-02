@@ -4,8 +4,8 @@
   if (endpoints == null) {
     return false;
   }
-  nodeToIncidentEdges.get(endpoints.source()).outEdges().remove(edge);
-  nodeToIncidentEdges.get(endpoints.target()).inEdges().remove(edge);
+  nodeConnections.get(endpoints.source()).removeEdge(edge);
+  nodeConnections.get(endpoints.target()).removeEdge(edge);
   edgeToIncidentNodes.remove(edge);
   return true;
 }

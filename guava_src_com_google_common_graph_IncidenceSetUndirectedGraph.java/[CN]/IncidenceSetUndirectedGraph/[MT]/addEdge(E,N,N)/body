@@ -9,13 +9,17 @@
     checkArgument(previousIncidentNodes.equals(incidentNodes),REUSING_EDGE,edge,previousIncidentNodes,incidentNodes);
     return false;
   }
- else   if (!config.isMultigraph() && containsNode(node1) && containsNode(node2)) {
+ else   if (!config.isMultigraph() && nodes().contains(node1) && nodes().contains(node2)) {
     E edgeConnecting=Iterables.getOnlyElement(edgesConnecting(node1,node2),null);
     checkArgument(edgeConnecting == null,ADDING_PARALLEL_EDGE,node1,node2,edgeConnecting);
   }
-  for (  N node : incidentNodes) {
-    addNode(node);
-    nodeToIncidentEdges.get(node).add(edge);
+  addNode(node1);
+  NodeConnections<N,E> connectionsN1=nodeConnections.get(node1);
+  connectionsN1.addSuccessor(node2,edge);
+  if (!incidentNodes.isSelfLoop()) {
+    addNode(node2);
+    NodeConnections<N,E> connectionsN2=nodeConnections.get(node2);
+    connectionsN2.addPredecessor(node1,edge);
   }
   edgeToIncidentNodes.put(edge,incidentNodes);
   return true;

@@ -1,3 +1,0 @@
-{
-  return nodeToIncidentEdges.containsKey(node);
-}

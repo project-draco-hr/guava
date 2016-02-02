@@ -1,18 +1,3 @@
 {
-  checkNotNull(node,"node");
-  final Set<E> incidentEdges=nodeToIncidentEdges.get(node);
-  checkArgument(incidentEdges != null,NODE_NOT_IN_GRAPH,node);
-  return new SetView<N>(){
-    @Override public boolean isEmpty(){
-      return incidentEdges.isEmpty();
-    }
-    @Override Set<N> elements(){
-      Set<N> nodes=Sets.newLinkedHashSetWithExpectedSize(incidentEdges.size());
-      for (      E edge : incidentEdges) {
-        nodes.add(oppositeNode(IncidenceSetUndirectedGraph.this,edge,node));
-      }
-      return nodes;
-    }
-  }
-;
+  return checkedConnections(node).adjacentNodes();
 }

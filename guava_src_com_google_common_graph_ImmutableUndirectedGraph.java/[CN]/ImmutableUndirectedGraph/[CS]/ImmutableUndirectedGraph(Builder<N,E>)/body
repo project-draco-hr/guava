@@ -1,14 +1,14 @@
 {
   UndirectedGraph<N,E> undirectedGraph=builder.undirectedGraph;
-  ImmutableMap.Builder<N,ImmutableSet<E>> nodeToEdgesBuilder=ImmutableMap.builder();
+  ImmutableMap.Builder<N,NodeConnections<N,E>> nodeConnectionsBuilder=ImmutableMap.builder();
   for (  N node : undirectedGraph.nodes()) {
-    nodeToEdgesBuilder.put(node,ImmutableSet.copyOf(undirectedGraph.incidentEdges(node)));
+    nodeConnectionsBuilder.put(node,UndirectedNodeConnections.ofImmutable(undirectedGraph.adjacentNodes(node),undirectedGraph.incidentEdges(node)));
   }
-  nodeToIncidentEdges=nodeToEdgesBuilder.build();
+  this.nodeConnections=nodeConnectionsBuilder.build();
   ImmutableMap.Builder<E,UndirectedIncidentNodes<N>> edgeToNodesBuilder=ImmutableMap.builder();
   for (  E edge : undirectedGraph.edges()) {
     edgeToNodesBuilder.put(edge,UndirectedIncidentNodes.of(undirectedGraph.incidentNodes(edge)));
   }
-  edgeToIncidentNodes=edgeToNodesBuilder.build();
-  config=undirectedGraph.config();
+  this.edgeToIncidentNodes=edgeToNodesBuilder.build();
+  this.config=undirectedGraph.config();
 }

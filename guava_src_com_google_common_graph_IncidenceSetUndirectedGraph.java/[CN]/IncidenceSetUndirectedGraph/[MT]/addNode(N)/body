@@ -1,8 +1,8 @@
 {
   checkNotNull(node,"node");
-  if (containsNode(node)) {
+  if (nodes().contains(node)) {
     return false;
   }
-  nodeToIncidentEdges.put(node,new LinkedHashSet<E>());
+  nodeConnections.put(node,UndirectedNodeConnections.<N,E>of());
   return true;
 }

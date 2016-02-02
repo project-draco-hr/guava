@@ -1,0 +1,9 @@
+{
+  checkNotNull(graph,"graph");
+  return new Predicate<E>(){
+    @Override public boolean apply(    E edge){
+      return (graph.incidentNodes(edge).size() == 1);
+    }
+  }
+;
+}

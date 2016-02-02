@@ -1,0 +1,4 @@
+{
+  this.adjacentNodes=checkNotNull(adjacentNodes,"adjacentNodes");
+  this.incidentEdges=checkNotNull(incidentEdges,"incidentEdges");
+}

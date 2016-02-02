@@ -5,7 +5,7 @@
     return false;
   }
   for (  N node : incidentNodes) {
-    nodeToIncidentEdges.get(node).remove(edge);
+    nodeConnections.get(node).removeEdge(edge);
   }
   edgeToIncidentNodes.remove(edge);
   return true;

@@ -1,0 +1,3 @@
+{
+  return new UndirectedNodeConnections<N,E>(ImmutableSet.copyOf(adjacentNodes),ImmutableSet.copyOf(incidentEdges));
+}
