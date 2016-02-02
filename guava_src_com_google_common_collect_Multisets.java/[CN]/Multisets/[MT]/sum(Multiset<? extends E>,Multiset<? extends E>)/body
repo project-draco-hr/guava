@@ -9,7 +9,7 @@
       return multiset1.isEmpty() && multiset2.isEmpty();
     }
     @Override public int size(){
-      return multiset1.size() + multiset2.size();
+      return IntMath.saturatedAdd(multiset1.size(),multiset2.size());
     }
     @Override public int count(    Object element){
       return multiset1.count(element) + multiset2.count(element);

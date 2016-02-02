@@ -4,7 +4,7 @@
   final Set<? extends E> set2minus1=difference(set2,set1);
   return new SetView<E>(){
     @Override public int size(){
-      return set1.size() + set2minus1.size();
+      return IntMath.saturatedAdd(set1.size(),set2minus1.size());
     }
     @Override public boolean isEmpty(){
       return set1.isEmpty() && set2.isEmpty();
