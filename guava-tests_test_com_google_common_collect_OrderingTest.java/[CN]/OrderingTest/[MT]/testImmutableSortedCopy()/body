@@ -5,7 +5,7 @@
   assertEquals(Collections.<Integer>emptyList(),numberOrdering.immutableSortedCopy(Collections.<Integer>emptyList()));
   List<Integer> listWithNull=Arrays.asList(5,3,null,9);
   try {
-    Ordering.natural().nullsFirst().immutableSortedCopy(listWithNull);
+    List<Integer> unused=Ordering.natural().nullsFirst().immutableSortedCopy(listWithNull);
     fail();
   }
  catch (  NullPointerException expected) {

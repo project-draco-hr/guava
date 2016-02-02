@@ -1,6 +1,6 @@
 {
   try {
-    Ordering.explicit(1,2,3,4,2);
+    Ordering<Integer> unused=Ordering.explicit(1,2,3,4,2);
     fail();
   }
  catch (  IllegalArgumentException expected) {

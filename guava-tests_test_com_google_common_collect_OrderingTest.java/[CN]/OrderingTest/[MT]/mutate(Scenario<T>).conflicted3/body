@@ -1,11 +1,5 @@
 {
-  List<Iterable<T>> words=Lists.newArrayList();
-  words.add(Collections.<T>emptyList());
-  for (  T t : scenario.strictlyOrderedList) {
-    words.add(Arrays.asList(t));
-    for (    T s : scenario.strictlyOrderedList) {
-      words.add(Arrays.asList(t,s));
-    }
-  }
-  return new Scenario<Iterable<T>>(scenario.ordering.lexicographical(),words,new Iterable[0]);
+  List<T> newList=Lists.newArrayList(scenario.strictlyOrderedList);
+  Collections.reverse(newList);
+  return new Scenario<T>(scenario.ordering.reverse(),newList,scenario.emptyArray);
 }
