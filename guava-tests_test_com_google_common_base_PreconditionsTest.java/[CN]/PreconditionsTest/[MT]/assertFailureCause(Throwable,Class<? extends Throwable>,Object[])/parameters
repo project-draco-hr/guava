@@ -1,3 +1,0 @@
-Throwable throwable
-Class<? extends Throwable> clazz
-Object[] params
