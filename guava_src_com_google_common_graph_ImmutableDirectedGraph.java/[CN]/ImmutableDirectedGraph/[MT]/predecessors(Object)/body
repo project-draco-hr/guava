@@ -1,3 +1,7 @@
 {
-  return checkedConnections(node).predecessors();
+  ImmutableSet.Builder<N> predecessorsBuilder=ImmutableSet.builder();
+  for (  E edge : inEdges(node)) {
+    predecessorsBuilder.add(source(edge));
+  }
+  return predecessorsBuilder.build();
 }

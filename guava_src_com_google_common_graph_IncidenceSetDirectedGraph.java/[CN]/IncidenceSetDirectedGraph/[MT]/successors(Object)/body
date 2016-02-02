@@ -1,3 +1,19 @@
 {
-  return checkedConnections(node).successors();
+  checkNotNull(node,"node");
+  DirectedIncidentEdges<E> incidentEdges=nodeToIncidentEdges.get(node);
+  checkArgument(incidentEdges != null,NODE_NOT_IN_GRAPH,node);
+  final Set<E> outEdges=incidentEdges.outEdges();
+  return new SetView<N>(){
+    @Override public boolean isEmpty(){
+      return outEdges.isEmpty();
+    }
+    @Override Set<N> elements(){
+      Set<N> nodes=Sets.newLinkedHashSet();
+      for (      E edge : outEdges) {
+        nodes.add(target(edge));
+      }
+      return nodes;
+    }
+  }
+;
 }

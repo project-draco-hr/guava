@@ -1,3 +1,6 @@
 {
-  return Sets.union(inEdges(node),outEdges(node));
+  checkNotNull(node,"node");
+  DirectedIncidentEdges<E> incidentEdges=nodeToIncidentEdges.get(node);
+  checkArgument(incidentEdges != null,NODE_NOT_IN_GRAPH,node);
+  return Sets.union(incidentEdges.inEdges(),incidentEdges.outEdges());
 }

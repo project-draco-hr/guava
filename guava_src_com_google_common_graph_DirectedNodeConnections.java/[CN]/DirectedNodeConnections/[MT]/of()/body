@@ -1,3 +1,0 @@
-{
-  return new DirectedNodeConnections<N,E>(Sets.<N>newLinkedHashSet(),Sets.<N>newLinkedHashSet(),Sets.<E>newLinkedHashSet(),Sets.<E>newLinkedHashSet());
-}

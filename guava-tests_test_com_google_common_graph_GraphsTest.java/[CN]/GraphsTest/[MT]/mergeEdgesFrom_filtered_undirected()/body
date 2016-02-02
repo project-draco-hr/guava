@@ -1,7 +1,7 @@
 {
   UndirectedGraph<Integer,String> undirectedGraph=buildUndirectedTestGraph();
   undirectedGraph.addNode(N3);
-  Predicate<String> edgePredicate=Predicates.not(selfLoopPredicate(undirectedGraph));
+  Predicate<String> edgePredicate=noSelfLoopPredicate(undirectedGraph);
   UndirectedGraph<Integer,String> actualGraph=Graphs.createUndirected(MULTIGRAPH);
   actualGraph.addEdge(E11,N1,N1);
   actualGraph.addEdge(E22,N2,N2);

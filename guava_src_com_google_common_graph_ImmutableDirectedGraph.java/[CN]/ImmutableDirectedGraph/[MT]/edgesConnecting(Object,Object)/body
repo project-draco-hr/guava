@@ -1,8 +1,7 @@
 {
+  checkNotNull(node1,"node1");
+  checkNotNull(node2,"node2");
   Set<E> sourceOutEdges=outEdges(node1);
-  if (!config.isSelfLoopsAllowed() && node1.equals(node2)) {
-    return ImmutableSet.of();
-  }
   Set<E> targetInEdges=inEdges(node2);
-  return (sourceOutEdges.size() <= targetInEdges.size()) ? Sets.intersection(sourceOutEdges,targetInEdges).immutableCopy() : Sets.intersection(targetInEdges,sourceOutEdges).immutableCopy();
+  return sourceOutEdges.size() <= targetInEdges.size() ? Sets.intersection(sourceOutEdges,targetInEdges).immutableCopy() : Sets.intersection(targetInEdges,sourceOutEdges).immutableCopy();
 }

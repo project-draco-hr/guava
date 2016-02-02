@@ -1,8 +1,8 @@
 {
   checkNotNull(node,"node");
-  if (nodes().contains(node)) {
+  if (containsNode(node)) {
     return false;
   }
-  nodeConnections.put(node,DirectedNodeConnections.<N,E>of());
+  nodeToIncidentEdges.put(node,DirectedIncidentEdges.<E>of());
   return true;
 }

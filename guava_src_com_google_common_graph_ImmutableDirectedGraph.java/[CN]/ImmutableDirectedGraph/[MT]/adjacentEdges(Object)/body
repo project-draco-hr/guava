@@ -1,6 +1,9 @@
 {
+  checkNotNull(edge,"edge");
+  DirectedIncidentNodes<N> endpoints=edgeToIncidentNodes.get(edge);
+  checkArgument(endpoints != null,EDGE_NOT_IN_GRAPH,edge);
   Set<E> adjacentEdges=Sets.newLinkedHashSet();
-  for (  N node : incidentNodes(edge)) {
+  for (  N node : endpoints.asImmutableSet()) {
     adjacentEdges.addAll(incidentEdges(node));
   }
   adjacentEdges.remove(edge);

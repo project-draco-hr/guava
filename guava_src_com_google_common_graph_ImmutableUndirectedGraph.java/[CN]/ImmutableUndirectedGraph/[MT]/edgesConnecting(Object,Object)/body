@@ -1,11 +1,16 @@
 {
+  checkNotNull(node1,"node1");
+  checkNotNull(node2,"node2");
   Set<E> incidentEdgesN1=incidentEdges(node1);
   if (node1.equals(node2)) {
-    if (!config.isSelfLoopsAllowed()) {
-      return ImmutableSet.of();
+    Set<E> returnSet=Sets.newLinkedHashSet();
+    for (    E edge : incidentEdgesN1) {
+      if (edgeToIncidentNodes.get(edge).isSelfLoop()) {
+        returnSet.add(edge);
+      }
     }
-    return ImmutableSet.copyOf(Iterables.filter(incidentEdgesN1,Graphs.selfLoopPredicate(this)));
+    return Collections.unmodifiableSet(returnSet);
   }
   Set<E> incidentEdgesN2=incidentEdges(node2);
-  return (incidentEdgesN1.size() <= incidentEdgesN2.size()) ? Sets.intersection(incidentEdgesN1,incidentEdgesN2).immutableCopy() : Sets.intersection(incidentEdgesN2,incidentEdgesN1).immutableCopy();
+  return incidentEdgesN1.size() <= incidentEdgesN2.size() ? Sets.intersection(incidentEdgesN1,incidentEdgesN2).immutableCopy() : Sets.intersection(incidentEdgesN2,incidentEdgesN1).immutableCopy();
 }

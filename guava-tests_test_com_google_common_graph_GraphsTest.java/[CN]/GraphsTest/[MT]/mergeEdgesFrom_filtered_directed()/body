@@ -1,7 +1,7 @@
 {
   DirectedGraph<Integer,String> directedGraph=buildDirectedTestGraph();
   directedGraph.addNode(N3);
-  Predicate<String> edgePredicate=Predicates.not(selfLoopPredicate(directedGraph));
+  Predicate<String> edgePredicate=noSelfLoopPredicate(directedGraph);
   DirectedGraph<Integer,String> actualGraph=Graphs.createDirected(MULTIGRAPH);
   actualGraph.addEdge(E11,N1,N1);
   actualGraph.addEdge(E22,N2,N2);

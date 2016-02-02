@@ -1,8 +1,11 @@
 {
-  Set<E> sourceOutEdges=outEdges(node1);
-  if (!config.isSelfLoopsAllowed() && node1.equals(node2)) {
-    return ImmutableSet.of();
-  }
-  Set<E> targetInEdges=inEdges(node2);
-  return (sourceOutEdges.size() <= targetInEdges.size()) ? Sets.intersection(sourceOutEdges,targetInEdges) : Sets.intersection(targetInEdges,sourceOutEdges);
+  checkNotNull(node1,"node1");
+  checkNotNull(node2,"node2");
+  DirectedIncidentEdges<E> incidentEdgesN1=nodeToIncidentEdges.get(node1);
+  checkArgument(incidentEdgesN1 != null,NODE_NOT_IN_GRAPH,node1);
+  DirectedIncidentEdges<E> incidentEdgesN2=nodeToIncidentEdges.get(node2);
+  checkArgument(incidentEdgesN2 != null,NODE_NOT_IN_GRAPH,node2);
+  Set<E> outEdges=incidentEdgesN1.outEdges();
+  Set<E> inEdges=incidentEdgesN2.inEdges();
+  return outEdges.size() <= inEdges.size() ? Sets.intersection(outEdges,inEdges) : Sets.intersection(inEdges,outEdges);
 }

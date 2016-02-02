@@ -1,3 +1,4 @@
 {
-  return incidentEdges(node).size();
+  checkNotNull(node,"node");
+  return config.isSelfLoopsAllowed() ? inDegree(node) + outDegree(node) - edgesConnecting(node,node).size() : inDegree(node) + outDegree(node);
 }

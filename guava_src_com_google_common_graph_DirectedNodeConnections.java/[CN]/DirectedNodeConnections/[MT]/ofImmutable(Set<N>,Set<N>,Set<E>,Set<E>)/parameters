@@ -1,4 +1,0 @@
-Set<N> predecessors
-Set<N> successors
-Set<E> inEdges
-Set<E> outEdges

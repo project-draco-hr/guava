@@ -1,12 +1,26 @@
 {
-  Set<E> incidentEdgesN1=incidentEdges(node1);
+  checkNotNull(node1,"node1");
+  checkNotNull(node2,"node2");
+  final Set<E> incidentEdgesN1=nodeToIncidentEdges.get(node1);
+  checkArgument(incidentEdgesN1 != null,NODE_NOT_IN_GRAPH,node1);
   if (node1.equals(node2)) {
     if (!config.isSelfLoopsAllowed()) {
       return ImmutableSet.of();
     }
-    Set<E> selfLoopEdges=Sets.filter(incidentEdgesN1,Graphs.selfLoopPredicate(this));
-    return Collections.unmodifiableSet(selfLoopEdges);
+    return new SetView<E>(){
+      @Override Set<E> elements(){
+        Set<E> selfLoopEdges=Sets.newLinkedHashSet();
+        for (        E edge : incidentEdgesN1) {
+          if (edgeToIncidentNodes.get(edge).isSelfLoop()) {
+            selfLoopEdges.add(edge);
+          }
+        }
+        return selfLoopEdges;
+      }
+    }
+;
   }
-  Set<E> incidentEdgesN2=incidentEdges(node2);
-  return (incidentEdgesN1.size() <= incidentEdgesN2.size()) ? Sets.intersection(incidentEdgesN1,incidentEdgesN2) : Sets.intersection(incidentEdgesN2,incidentEdgesN1);
+  final Set<E> incidentEdgesN2=nodeToIncidentEdges.get(node2);
+  checkArgument(incidentEdgesN2 != null,NODE_NOT_IN_GRAPH,node2);
+  return incidentEdgesN1.size() <= incidentEdgesN2.size() ? Sets.intersection(incidentEdgesN1,incidentEdgesN2) : Sets.intersection(incidentEdgesN2,incidentEdgesN1);
 }

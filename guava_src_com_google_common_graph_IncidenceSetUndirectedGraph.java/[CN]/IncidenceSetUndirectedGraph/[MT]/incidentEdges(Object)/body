@@ -1,3 +1,6 @@
 {
-  return checkedConnections(node).incidentEdges();
+  checkNotNull(node,"node");
+  Set<E> incidentEdges=nodeToIncidentEdges.get(node);
+  checkArgument(incidentEdges != null,NODE_NOT_IN_GRAPH,node);
+  return Collections.unmodifiableSet(incidentEdges);
 }

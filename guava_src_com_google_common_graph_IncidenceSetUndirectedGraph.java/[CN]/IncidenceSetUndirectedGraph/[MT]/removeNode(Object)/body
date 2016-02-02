@@ -1,15 +1,12 @@
 {
   checkNotNull(node,"node");
-  NodeConnections<N,E> connections=nodeConnections.get(node);
-  if (connections == null) {
+  Set<E> incidentEdges=nodeToIncidentEdges.get(node);
+  if (incidentEdges == null) {
     return false;
   }
-  for (  E edge : ImmutableList.copyOf(incidentEdges(node))) {
+  for (  Object edge : incidentEdges.toArray()) {
     removeEdge(edge);
   }
-  for (  N adjacentNode : ImmutableList.copyOf(connections.adjacentNodes())) {
-    nodeConnections.get(adjacentNode).removeNode(node);
-  }
-  nodeConnections.remove(node);
+  nodeToIncidentEdges.remove(node);
   return true;
 }

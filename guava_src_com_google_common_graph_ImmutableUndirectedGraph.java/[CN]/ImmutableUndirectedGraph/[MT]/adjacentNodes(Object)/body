@@ -1,3 +1,7 @@
 {
-  return checkedConnections(node).adjacentNodes();
+  ImmutableSet.Builder<N> adjacentNodesBuilder=ImmutableSet.builder();
+  for (  E edge : incidentEdges(node)) {
+    adjacentNodesBuilder.add(oppositeNode(this,edge,node));
+  }
+  return adjacentNodesBuilder.build();
 }

@@ -2,7 +2,7 @@
   DirectedGraph<Integer,String> directedGraph=buildDirectedTestGraph();
   directedGraph.addNode(N3);
   Predicate<Integer> nodePredicate=connectedNodePredicate(directedGraph);
-  Predicate<String> edgePredicate=Predicates.not(selfLoopPredicate(directedGraph));
+  Predicate<String> edgePredicate=noSelfLoopPredicate(directedGraph);
   DirectedGraph<Integer,String> filteredCopy=copyOf(directedGraph,nodePredicate,edgePredicate);
   DirectedGraph<Integer,String> expectedGraph=Graphs.createDirected(MULTIGRAPH);
   expectedGraph.addEdge(E12,N1,N2);

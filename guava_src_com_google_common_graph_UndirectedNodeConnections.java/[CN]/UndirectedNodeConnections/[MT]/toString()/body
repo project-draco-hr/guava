@@ -1,3 +1,0 @@
-{
-  return MoreObjects.toStringHelper(this).add("adjacentNodes",adjacentNodes).add("incidentEdges",incidentEdges).toString();
-}
