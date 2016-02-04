@@ -1,0 +1,3 @@
+{
+  return MoreObjects.toStringHelper(this).add("predecessors",predecessors).add("successors",successors).add("inEdges",inEdges).add("outEdges",outEdges).toString();
+}

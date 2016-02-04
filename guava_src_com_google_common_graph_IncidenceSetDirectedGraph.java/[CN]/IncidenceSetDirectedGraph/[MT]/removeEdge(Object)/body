@@ -4,8 +4,16 @@
   if (endpoints == null) {
     return false;
   }
-  nodeToIncidentEdges.get(endpoints.source()).outEdges().remove(edge);
-  nodeToIncidentEdges.get(endpoints.target()).inEdges().remove(edge);
+  N source=endpoints.source();
+  N target=endpoints.target();
+  NodeConnections<N,E> sourceConnections=nodeConnections.get(source);
+  NodeConnections<N,E> targetConnections=nodeConnections.get(target);
+  if (!config.isMultigraph() || edgesConnecting(source,target).size() <= 1) {
+    sourceConnections.removeSuccessor(target);
+    targetConnections.removePredecessor(source);
+  }
+  sourceConnections.removeOutEdge(edge);
+  targetConnections.removeInEdge(edge);
   edgeToIncidentNodes.remove(edge);
   return true;
 }

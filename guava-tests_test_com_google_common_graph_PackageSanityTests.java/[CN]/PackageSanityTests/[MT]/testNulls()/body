@@ -1,0 +1,8 @@
+{
+  try {
+    super.testNulls();
+  }
+ catch (  AssertionFailedError e) {
+    assertThat(e.getCause().getMessage()).contains(AbstractGraphTest.ERROR_ELEMENT_NOT_IN_GRAPH);
+  }
+}

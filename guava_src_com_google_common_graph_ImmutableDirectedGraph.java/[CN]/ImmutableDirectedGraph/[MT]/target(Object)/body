@@ -1,6 +1,3 @@
 {
-  checkNotNull(edge,"edge");
-  DirectedIncidentNodes<N> endpoints=edgeToIncidentNodes.get(edge);
-  checkArgument(endpoints != null,EDGE_NOT_IN_GRAPH,edge);
-  return endpoints.target();
+  return checkedEndpoints(edge).target();
 }

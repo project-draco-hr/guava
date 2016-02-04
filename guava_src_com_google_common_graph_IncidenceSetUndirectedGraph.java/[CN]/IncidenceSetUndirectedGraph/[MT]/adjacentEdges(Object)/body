@@ -1,8 +1,5 @@
 {
-  checkNotNull(edge,"edge");
-  UndirectedIncidentNodes<N> incidentNodes=edgeToIncidentNodes.get(edge);
-  checkArgument(incidentNodes != null,EDGE_NOT_IN_GRAPH,edge);
-  Iterator<N> incidentNodesIterator=incidentNodes.iterator();
+  Iterator<N> incidentNodesIterator=incidentNodes(edge).iterator();
   Set<E> endpointsIncidentEdges=incidentEdges(incidentNodesIterator.next());
   while (incidentNodesIterator.hasNext()) {
     endpointsIncidentEdges=Sets.union(incidentEdges(incidentNodesIterator.next()),endpointsIncidentEdges);

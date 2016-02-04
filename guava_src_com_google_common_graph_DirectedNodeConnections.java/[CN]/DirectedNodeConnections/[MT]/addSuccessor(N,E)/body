@@ -1,0 +1,6 @@
+{
+  checkNotNull(node,"node");
+  checkNotNull(edge,"edge");
+  successors.add(node);
+  outEdges.add(edge);
+}

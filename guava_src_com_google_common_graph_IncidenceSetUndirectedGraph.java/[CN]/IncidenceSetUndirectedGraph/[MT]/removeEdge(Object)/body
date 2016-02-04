@@ -4,9 +4,16 @@
   if (incidentNodes == null) {
     return false;
   }
-  for (  N node : incidentNodes) {
-    nodeToIncidentEdges.get(node).remove(edge);
+  N node1=Iterables.get(incidentNodes,0);
+  N node2=Iterables.get(incidentNodes,1,node1);
+  NodeConnections<N,E> node1Connections=nodeConnections.get(node1);
+  NodeConnections<N,E> node2Connections=nodeConnections.get(node2);
+  if (!config.isMultigraph() || edgesConnecting(node1,node2).size() <= 1) {
+    node1Connections.removeSuccessor(node2);
+    node2Connections.removePredecessor(node1);
   }
+  node1Connections.removeOutEdge(edge);
+  node2Connections.removeInEdge(edge);
   edgeToIncidentNodes.remove(edge);
   return true;
 }

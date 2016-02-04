@@ -1,0 +1,4 @@
+{
+  checkNotNull(node,"node");
+  successors.remove(node);
+}

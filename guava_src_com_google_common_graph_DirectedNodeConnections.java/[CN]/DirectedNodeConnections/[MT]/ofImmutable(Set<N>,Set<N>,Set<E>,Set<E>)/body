@@ -1,0 +1,3 @@
+{
+  return new DirectedNodeConnections<N,E>(ImmutableSet.copyOf(predecessors),ImmutableSet.copyOf(successors),ImmutableSet.copyOf(inEdges),ImmutableSet.copyOf(outEdges));
+}

@@ -1,4 +1,0 @@
-{
-  this.inEdges=checkNotNull(inEdges,"inEdges");
-  this.outEdges=checkNotNull(outEdges,"outEdges");
-}

@@ -1,3 +1,0 @@
-{
-  return new DirectedIncidentEdges<E>(new LinkedHashSet<E>(),new LinkedHashSet<E>());
-}

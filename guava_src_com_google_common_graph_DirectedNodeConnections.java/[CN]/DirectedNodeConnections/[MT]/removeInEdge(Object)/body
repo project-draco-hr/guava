@@ -1,0 +1,4 @@
+{
+  checkNotNull(edge,"edge");
+  inEdges.remove(edge);
+}

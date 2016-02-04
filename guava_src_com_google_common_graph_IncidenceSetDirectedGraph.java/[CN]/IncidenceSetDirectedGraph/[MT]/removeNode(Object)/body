@@ -1,11 +1,25 @@
 {
   checkNotNull(node,"node");
-  if (!containsNode(node)) {
+  NodeConnections<N,E> connections=nodeConnections.get(node);
+  if (connections == null) {
     return false;
   }
-  for (  Object edge : incidentEdges(node).toArray()) {
-    removeEdge(edge);
+  for (  E inEdge : ImmutableList.copyOf(inEdges(node))) {
+    DirectedIncidentNodes<N> endpoints=edgeToIncidentNodes.get(inEdge);
+    N predecessor=endpoints.source();
+    NodeConnections<N,E> predecessorConnections=nodeConnections.get(predecessor);
+    predecessorConnections.removeSuccessor(node);
+    predecessorConnections.removeOutEdge(inEdge);
+    edgeToIncidentNodes.remove(inEdge);
   }
-  nodeToIncidentEdges.remove(node);
+  for (  E outEdge : ImmutableList.copyOf(outEdges(node))) {
+    DirectedIncidentNodes<N> endpoints=edgeToIncidentNodes.get(outEdge);
+    N successor=endpoints.target();
+    NodeConnections<N,E> successorConnections=nodeConnections.get(successor);
+    successorConnections.removePredecessor(node);
+    successorConnections.removeInEdge(outEdge);
+    edgeToIncidentNodes.remove(outEdge);
+  }
+  nodeConnections.remove(node);
   return true;
 }

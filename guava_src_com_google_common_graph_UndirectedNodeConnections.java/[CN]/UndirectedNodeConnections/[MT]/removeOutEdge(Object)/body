@@ -1,0 +1,4 @@
+{
+  checkNotNull(edge,"edge");
+  incidentEdges.remove(edge);
+}

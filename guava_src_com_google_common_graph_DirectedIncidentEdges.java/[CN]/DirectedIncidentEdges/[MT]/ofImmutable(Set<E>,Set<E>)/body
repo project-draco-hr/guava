@@ -1,3 +1,0 @@
-{
-  return new DirectedIncidentEdges<E>(ImmutableSet.copyOf(inEdges),ImmutableSet.copyOf(outEdges));
-}
