@@ -1,0 +1,7 @@
+{
+  List<Graph<Integer,String>> testGraphs=ImmutableList.of(Graphs.<Integer,String>createDirected(),Graphs.<Integer,String>createUndirected());
+  for (  Graph<Integer,String> graph : testGraphs) {
+    graph.addEdge(E11,N1,N1);
+    assertThat(oppositeNode(graph,E11,N1)).isEqualTo(N1);
+  }
+}

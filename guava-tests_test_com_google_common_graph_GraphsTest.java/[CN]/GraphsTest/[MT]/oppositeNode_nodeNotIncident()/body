@@ -1,0 +1,13 @@
+{
+  List<Graph<Integer,String>> testGraphs=ImmutableList.of(Graphs.<Integer,String>createDirected(),Graphs.<Integer,String>createUndirected());
+  for (  Graph<Integer,String> graph : testGraphs) {
+    graph.addEdge(E12,N1,N2);
+    graph.addEdge(E13,N1,N3);
+    try {
+      Integer unused=oppositeNode(graph,E12,N3);
+      fail("Should have rejected oppositeNode() called without a node incident to edge");
+    }
+ catch (    IllegalArgumentException expected) {
+    }
+  }
+}
