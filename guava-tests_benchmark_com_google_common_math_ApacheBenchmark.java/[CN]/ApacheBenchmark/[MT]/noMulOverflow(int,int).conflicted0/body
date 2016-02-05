@@ -1,6 +1,6 @@
 {
   try {
-    IntMath.checkedMultiply(a,b);
+    int unused=IntMath.checkedMultiply(a,b);
     return true;
   }
  catch (  ArithmeticException e) {

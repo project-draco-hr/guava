@@ -1,6 +1,6 @@
 {
   try {
-    LongMath.checkedMultiply(a,b);
+    long unused=LongMath.checkedMultiply(a,b);
     return true;
   }
  catch (  ArithmeticException e) {

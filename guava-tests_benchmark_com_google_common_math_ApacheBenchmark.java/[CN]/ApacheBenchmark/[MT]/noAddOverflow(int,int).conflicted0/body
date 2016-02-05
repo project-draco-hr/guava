@@ -1,6 +1,6 @@
 {
   try {
-    IntMath.checkedAdd(a,b);
+    int unused=IntMath.checkedAdd(a,b);
     return true;
   }
  catch (  ArithmeticException e) {

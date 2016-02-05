@@ -1,6 +1,6 @@
 {
   try {
-    LongMath.checkedAdd(a,b);
+    long unused=LongMath.checkedAdd(a,b);
     return true;
   }
  catch (  ArithmeticException e) {
