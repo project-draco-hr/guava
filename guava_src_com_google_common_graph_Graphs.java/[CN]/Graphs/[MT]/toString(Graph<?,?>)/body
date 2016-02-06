@@ -1,0 +1,9 @@
+{
+  Function<Object,String> edgeToIncidentNodes=new Function<Object,String>(){
+    @Override public String apply(    Object edge){
+      return graph.incidentNodes(edge).toString();
+    }
+  }
+;
+  return String.format("config: %s, nodes: %s, edges: %s",graph.config(),graph.nodes(),Maps.asMap(graph.edges(),edgeToIncidentNodes));
+}

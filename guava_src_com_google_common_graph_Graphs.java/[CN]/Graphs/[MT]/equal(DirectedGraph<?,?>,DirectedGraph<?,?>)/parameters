@@ -1,2 +1,2 @@
-DirectedGraph<?,?> g1
-DirectedGraph<?,?> g2
+DirectedGraph<?,?> graph1
+DirectedGraph<?,?> graph2
