@@ -1,4 +1,0 @@
-{
-  this.source=checkNotNull(source,"source");
-  this.target=checkNotNull(target,"target");
-}

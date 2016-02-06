@@ -1,11 +1,11 @@
 {
   checkNotNull(edge,"edge");
-  UndirectedIncidentNodes<N> incidentNodes=edgeToIncidentNodes.get(edge);
+  IncidentNodes<N> incidentNodes=edgeToIncidentNodes.get(edge);
   if (incidentNodes == null) {
     return false;
   }
-  N node1=Iterables.get(incidentNodes,0);
-  N node2=Iterables.get(incidentNodes,1,node1);
+  N node1=incidentNodes.node1();
+  N node2=incidentNodes.node2();
   NodeConnections<N,E> node1Connections=nodeConnections.get(node1);
   NodeConnections<N,E> node2Connections=nodeConnections.get(node2);
   if (!config.isMultigraph() || edgesConnecting(node1,node2).size() <= 1) {

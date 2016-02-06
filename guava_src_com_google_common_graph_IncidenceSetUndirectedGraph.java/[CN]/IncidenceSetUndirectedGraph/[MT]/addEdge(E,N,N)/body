@@ -2,9 +2,9 @@
   checkNotNull(edge,"edge");
   checkNotNull(node1,"node1");
   checkNotNull(node2,"node2");
-  UndirectedIncidentNodes<N> incidentNodes=UndirectedIncidentNodes.of(node1,node2);
+  IncidentNodes<N> incidentNodes=IncidentNodes.of(node1,node2);
   checkArgument(config.isSelfLoopsAllowed() || !incidentNodes.isSelfLoop(),SELF_LOOPS_NOT_ALLOWED,node1);
-  UndirectedIncidentNodes<N> previousIncidentNodes=edgeToIncidentNodes.get(edge);
+  IncidentNodes<N> previousIncidentNodes=edgeToIncidentNodes.get(edge);
   if (previousIncidentNodes != null) {
     checkArgument(previousIncidentNodes.equals(incidentNodes),REUSING_EDGE,edge,previousIncidentNodes,incidentNodes);
     return false;

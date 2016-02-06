@@ -1,0 +1,5 @@
+{
+  IncidentNodes<String> incidentNodes=IncidentNodes.of(ImmutableSet.of("foo","bar"));
+  assertThat(incidentNodes.node1()).isEqualTo("foo");
+  assertThat(incidentNodes.node2()).isEqualTo("bar");
+}

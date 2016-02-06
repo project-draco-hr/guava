@@ -1,0 +1,11 @@
+{
+  Iterator<N> nodesIterator=nodes.iterator();
+switch (nodes.size()) {
+case 1:
+    return new OneNode<N>(nodesIterator.next());
+case 2:
+  return new TwoNodes<N>(nodesIterator.next(),nodesIterator.next());
+default :
+throw new IllegalArgumentException("Hypergraphs are not currently supported. An edge in a" + " non-hypergraph cannot be incident to " + nodes.size() + " nodes: "+ nodes);
+}
+}

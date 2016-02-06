@@ -1,19 +1,19 @@
 {
   checkNotNull(edge,"edge");
-  DirectedIncidentNodes<N> endpoints=edgeToIncidentNodes.get(edge);
-  if (endpoints == null) {
+  IncidentNodes<N> incidentNodes=edgeToIncidentNodes.get(edge);
+  if (incidentNodes == null) {
     return false;
   }
-  N source=endpoints.source();
-  N target=endpoints.target();
-  NodeConnections<N,E> sourceConnections=nodeConnections.get(source);
-  NodeConnections<N,E> targetConnections=nodeConnections.get(target);
-  if (!config.isMultigraph() || edgesConnecting(source,target).size() <= 1) {
-    sourceConnections.removeSuccessor(target);
-    targetConnections.removePredecessor(source);
+  N node1=incidentNodes.node1();
+  N node2=incidentNodes.node2();
+  NodeConnections<N,E> connectionsN1=nodeConnections.get(node1);
+  NodeConnections<N,E> connectionsN2=nodeConnections.get(node2);
+  if (!config.isMultigraph() || edgesConnecting(node1,node2).size() <= 1) {
+    connectionsN1.removeSuccessor(node2);
+    connectionsN2.removePredecessor(node1);
   }
-  sourceConnections.removeOutEdge(edge);
-  targetConnections.removeInEdge(edge);
+  connectionsN1.removeOutEdge(edge);
+  connectionsN2.removeInEdge(edge);
   edgeToIncidentNodes.remove(edge);
   return true;
 }

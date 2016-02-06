@@ -1,3 +1,0 @@
-{
-  return new DirectedIncidentNodes<N>(source,target);
-}

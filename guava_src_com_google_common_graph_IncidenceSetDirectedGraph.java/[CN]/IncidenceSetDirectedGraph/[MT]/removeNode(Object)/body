@@ -5,16 +5,14 @@
     return false;
   }
   for (  E inEdge : ImmutableList.copyOf(inEdges(node))) {
-    DirectedIncidentNodes<N> endpoints=edgeToIncidentNodes.get(inEdge);
-    N predecessor=endpoints.source();
+    N predecessor=Graphs.oppositeNode(this,inEdge,node);
     NodeConnections<N,E> predecessorConnections=nodeConnections.get(predecessor);
     predecessorConnections.removeSuccessor(node);
     predecessorConnections.removeOutEdge(inEdge);
     edgeToIncidentNodes.remove(inEdge);
   }
   for (  E outEdge : ImmutableList.copyOf(outEdges(node))) {
-    DirectedIncidentNodes<N> endpoints=edgeToIncidentNodes.get(outEdge);
-    N successor=endpoints.target();
+    N successor=Graphs.oppositeNode(this,outEdge,node);
     NodeConnections<N,E> successorConnections=nodeConnections.get(successor);
     successorConnections.removePredecessor(node);
     successorConnections.removeInEdge(outEdge);
