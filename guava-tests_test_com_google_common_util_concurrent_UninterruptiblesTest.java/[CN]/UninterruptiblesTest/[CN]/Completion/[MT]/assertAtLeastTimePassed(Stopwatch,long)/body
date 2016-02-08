@@ -1,4 +1,4 @@
 {
   long elapsedMillis=stopwatch.elapsed(MILLISECONDS);
-  assertTrue("Expected elapsed millis to be >= " + expectedMillis + " but was "+ elapsedMillis,elapsedMillis >= expectedMillis);
+  assertTrue("Expected elapsed millis to be >= " + expectedMillis + " but was "+ elapsedMillis,elapsedMillis + 5 >= expectedMillis);
 }
