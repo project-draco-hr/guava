@@ -1,0 +1,6 @@
+{
+  super(tMinus);
+  assertFalse(queue.isEmpty());
+  assertFalse(queue.offer("shouldBeRejected"));
+  this.queue=queue;
+}

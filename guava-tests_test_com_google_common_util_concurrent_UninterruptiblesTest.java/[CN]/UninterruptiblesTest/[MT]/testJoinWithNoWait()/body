@@ -1,0 +1,12 @@
+{
+  Stopwatch stopwatch=Stopwatch.createStarted();
+  Thread thread=new Thread(new JoinTarget(15));
+  thread.start();
+  thread.join();
+  assertFalse(thread.isAlive());
+  joinUninterruptibly(thread);
+  joinUninterruptibly(thread,0,MILLISECONDS);
+  joinUninterruptibly(thread,-42,MILLISECONDS);
+  joinUninterruptibly(thread,LONG_DELAY_MS,MILLISECONDS);
+  assertTimeNotPassed(stopwatch,LONG_DELAY_MS);
+}

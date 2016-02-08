@@ -1,0 +1,6 @@
+{
+  TimedPutQueue queue=TimedPutQueue.createWithDelay(100);
+  repeatedlyInterruptTestThread(20,tearDownStack);
+  queue.putSuccessfully();
+  assertInterrupted();
+}

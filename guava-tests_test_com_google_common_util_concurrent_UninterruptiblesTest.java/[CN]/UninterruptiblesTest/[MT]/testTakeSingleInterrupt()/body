@@ -1,0 +1,6 @@
+{
+  TimedTakeQueue queue=TimedTakeQueue.createWithDelay(50);
+  requestInterruptIn(10);
+  queue.takeSuccessfully();
+  assertInterrupted();
+}

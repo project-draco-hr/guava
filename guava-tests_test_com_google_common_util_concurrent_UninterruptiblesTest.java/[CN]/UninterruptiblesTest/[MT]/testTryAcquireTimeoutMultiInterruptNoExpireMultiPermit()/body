@@ -1,0 +1,6 @@
+{
+  TimedSemaphore semaphore=TimedSemaphore.createWithDelay(100);
+  repeatedlyInterruptTestThread(20,tearDownStack);
+  semaphore.tryAcquireSuccessfully(10,LONG_DELAY_MS);
+  assertInterrupted();
+}

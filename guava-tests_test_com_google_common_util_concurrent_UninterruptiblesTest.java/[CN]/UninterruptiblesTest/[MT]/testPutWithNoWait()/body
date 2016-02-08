@@ -1,0 +1,7 @@
+{
+  Stopwatch stopwatch=Stopwatch.createStarted();
+  BlockingQueue<String> queue=new ArrayBlockingQueue<String>(999);
+  putUninterruptibly(queue,"");
+  assertTimeNotPassed(stopwatch,LONG_DELAY_MS);
+  assertEquals("",queue.peek());
+}

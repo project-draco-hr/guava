@@ -1,0 +1,5 @@
+{
+  Uninterruptibles.joinUninterruptibly(thread,timeoutMillis,MILLISECONDS);
+  completed.assertCompletionNotExpected(timeoutMillis);
+  assertFalse(Thread.State.TERMINATED.equals(thread.getState()));
+}

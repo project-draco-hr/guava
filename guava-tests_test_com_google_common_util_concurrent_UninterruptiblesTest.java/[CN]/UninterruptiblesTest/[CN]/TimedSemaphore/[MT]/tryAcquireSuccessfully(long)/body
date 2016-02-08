@@ -1,0 +1,4 @@
+{
+  assertTrue(tryAcquireUninterruptibly(semaphore,timeoutMillis,MILLISECONDS));
+  completed.assertCompletionExpected();
+}

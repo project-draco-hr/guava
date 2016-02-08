@@ -1,0 +1,4 @@
+{
+  this.expectedCompletionWaitMillis=expectedCompletionWaitMillis;
+  stopwatch=Stopwatch.createStarted();
+}

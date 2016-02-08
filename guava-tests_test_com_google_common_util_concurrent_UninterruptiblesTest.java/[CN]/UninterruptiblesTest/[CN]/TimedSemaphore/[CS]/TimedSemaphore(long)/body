@@ -1,0 +1,5 @@
+{
+  this.semaphore=new Semaphore(0);
+  this.completed=new Completion(countdownInMillis);
+  scheduleRelease(countdownInMillis);
+}

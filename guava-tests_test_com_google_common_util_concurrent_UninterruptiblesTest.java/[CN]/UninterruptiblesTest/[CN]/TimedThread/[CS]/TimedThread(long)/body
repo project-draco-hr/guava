@@ -1,0 +1,5 @@
+{
+  completed=new Completion(expectedCompletionWaitMillis);
+  thread=new Thread(new JoinTarget(expectedCompletionWaitMillis));
+  thread.start();
+}

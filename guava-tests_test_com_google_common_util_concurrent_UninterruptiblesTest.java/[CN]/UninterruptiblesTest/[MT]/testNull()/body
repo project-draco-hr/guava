@@ -1,0 +1,3 @@
+{
+  new NullPointerTester().setDefault(CountDownLatch.class,new CountDownLatch(0)).setDefault(Semaphore.class,new Semaphore(999)).testAllPublicStaticMethods(Uninterruptibles.class);
+}

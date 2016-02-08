@@ -1,0 +1,5 @@
+{
+  Preconditions.checkArgument(timeout < expectedCompletionWaitMillis);
+  assertAtLeastTimePassed(stopwatch,timeout);
+  assertTimeNotPassed(stopwatch,expectedCompletionWaitMillis);
+}

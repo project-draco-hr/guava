@@ -1,0 +1,6 @@
+{
+  TimedPutQueue queue=TimedPutQueue.createWithDelay(50);
+  requestInterruptIn(10);
+  queue.putSuccessfully();
+  assertInterrupted();
+}

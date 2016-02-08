@@ -1,0 +1,16 @@
+{
+  return new FutureTask<Boolean>(new Callable<Boolean>(){
+    @Override public Boolean call() throws Exception {
+      Object actual;
+      if (allowInterruption) {
+        actual=future.get();
+      }
+ else {
+        actual=getUninterruptibly(future);
+      }
+      assertEquals(RESULT,actual);
+      return Thread.interrupted();
+    }
+  }
+);
+}

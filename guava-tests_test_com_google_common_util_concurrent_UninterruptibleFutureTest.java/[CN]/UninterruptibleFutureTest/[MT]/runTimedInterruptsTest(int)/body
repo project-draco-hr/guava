@@ -1,0 +1,5 @@
+{
+  SettableFuture<String> future=SettableFuture.create();
+  FutureTask<Boolean> interruptReporter=timedInterruptReporter(future);
+  runNInterruptsTest(times,future,interruptReporter);
+}

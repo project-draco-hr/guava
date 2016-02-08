@@ -1,0 +1,3 @@
+int times
+SettableFuture<String> future
+FutureTask<Boolean> interruptReporter

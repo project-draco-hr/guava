@@ -1,0 +1,5 @@
+{
+  Completion completed=new Completion(sleepMillis - SLEEP_SLACK);
+  Uninterruptibles.sleepUninterruptibly(sleepMillis,MILLISECONDS);
+  completed.assertCompletionExpected();
+}

@@ -1,0 +1,6 @@
+{
+  TimedTakeQueue queue=TimedTakeQueue.createWithDelay(100);
+  repeatedlyInterruptTestThread(20,tearDownStack);
+  queue.takeSuccessfully();
+  assertInterrupted();
+}

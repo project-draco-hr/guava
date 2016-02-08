@@ -1,0 +1,4 @@
+{
+  long elapsedMillis=stopwatch.elapsed(MILLISECONDS);
+  assertTrue(elapsedMillis < timelimitMillis);
+}

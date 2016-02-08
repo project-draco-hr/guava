@@ -1,0 +1,5 @@
+{
+  requestInterruptIn(10);
+  sleepSuccessfully(50);
+  assertInterrupted();
+}

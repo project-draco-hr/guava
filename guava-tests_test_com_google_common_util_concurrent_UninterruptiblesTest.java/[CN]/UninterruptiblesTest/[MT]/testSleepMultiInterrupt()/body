@@ -1,0 +1,5 @@
+{
+  repeatedlyInterruptTestThread(10,tearDownStack);
+  sleepSuccessfully(100);
+  assertInterrupted();
+}

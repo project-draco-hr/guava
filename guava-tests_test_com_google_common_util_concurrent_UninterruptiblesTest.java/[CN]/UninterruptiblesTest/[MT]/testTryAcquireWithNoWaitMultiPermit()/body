@@ -1,0 +1,8 @@
+{
+  Stopwatch stopwatch=Stopwatch.createStarted();
+  Semaphore semaphore=new Semaphore(99);
+  assertTrue(tryAcquireUninterruptibly(semaphore,10,0,MILLISECONDS));
+  assertTrue(tryAcquireUninterruptibly(semaphore,10,-42,MILLISECONDS));
+  assertTrue(tryAcquireUninterruptibly(semaphore,10,LONG_DELAY_MS,MILLISECONDS));
+  assertTimeNotPassed(stopwatch,LONG_DELAY_MS);
+}

@@ -1,0 +1,6 @@
+{
+  TimedThread thread=TimedThread.createWithDelay(100);
+  repeatedlyInterruptTestThread(20,tearDownStack);
+  thread.joinSuccessfully();
+  assertInterrupted();
+}

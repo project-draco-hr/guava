@@ -1,0 +1,17 @@
+{
+  final ExecutorService executor=Executors.newSingleThreadExecutor();
+  tearDownStack.addTearDown(new TearDown(){
+    @Override public void tearDown(){
+      executor.shutdownNow();
+    }
+  }
+);
+  sleeper=new SleepingRunnable(1000);
+  delayedFuture=executor.submit(sleeper,true);
+  tearDownStack.addTearDown(new TearDown(){
+    @Override public void tearDown(){
+      Thread.interrupted();
+    }
+  }
+);
+}

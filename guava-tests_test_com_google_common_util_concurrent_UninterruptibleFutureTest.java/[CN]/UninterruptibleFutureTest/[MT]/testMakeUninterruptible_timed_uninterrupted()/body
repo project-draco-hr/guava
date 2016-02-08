@@ -1,0 +1,3 @@
+{
+  runTimedInterruptsTest(0);
+}

@@ -1,0 +1,5 @@
+{
+  super(tMinus);
+  assertTrue(queue.isEmpty());
+  this.queue=queue;
+}

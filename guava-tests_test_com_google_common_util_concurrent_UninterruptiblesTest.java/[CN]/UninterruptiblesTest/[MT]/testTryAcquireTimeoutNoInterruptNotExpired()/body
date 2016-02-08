@@ -1,0 +1,5 @@
+{
+  TimedSemaphore semaphore=TimedSemaphore.createWithDelay(20);
+  semaphore.tryAcquireSuccessfully(LONG_DELAY_MS);
+  assertNotInterrupted();
+}

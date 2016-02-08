@@ -1,0 +1,14 @@
+{
+  repeatedlyInterruptTestThread(100,tearDownStack);
+  try {
+    getUninterruptibly(delayedFuture,500,TimeUnit.MILLISECONDS);
+    fail("expected to time out");
+  }
+ catch (  TimeoutException expected) {
+  }
+  assertTrue(Thread.interrupted());
+  assertFalse(sleeper.completed);
+  assertTrue(getUninterruptibly(delayedFuture));
+  assertTrue(Thread.interrupted());
+  assertTrue(sleeper.completed);
+}

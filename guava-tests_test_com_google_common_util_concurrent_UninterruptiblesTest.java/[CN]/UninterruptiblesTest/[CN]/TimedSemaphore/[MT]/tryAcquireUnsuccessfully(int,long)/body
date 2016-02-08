@@ -1,0 +1,4 @@
+{
+  assertFalse(tryAcquireUninterruptibly(semaphore,permits,timeoutMillis,MILLISECONDS));
+  completed.assertCompletionNotExpected(timeoutMillis);
+}

@@ -1,0 +1,9 @@
+{
+  return new FutureTask<Boolean>(new Callable<Boolean>(){
+    @Override public Boolean call() throws Exception {
+      assertEquals(RESULT,getUninterruptibly(future,10,MINUTES));
+      return Thread.interrupted();
+    }
+  }
+);
+}

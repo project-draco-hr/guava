@@ -1,0 +1,5 @@
+{
+  TimedTakeQueue queue=TimedTakeQueue.createWithDelay(20);
+  queue.takeSuccessfully();
+  assertNotInterrupted();
+}

@@ -1,0 +1,6 @@
+{
+  TimedThread thread=TimedThread.createWithDelay(50);
+  requestInterruptIn(10);
+  thread.joinSuccessfully();
+  assertInterrupted();
+}

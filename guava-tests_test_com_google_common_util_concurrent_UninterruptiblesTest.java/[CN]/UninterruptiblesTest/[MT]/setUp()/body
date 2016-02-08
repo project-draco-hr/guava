@@ -1,0 +1,11 @@
+{
+  if (Thread.currentThread().isInterrupted()) {
+    throw new AssertionError("Thread interrupted on test entry. " + "Some test probably didn't clear the interrupt state");
+  }
+  tearDownStack.addTearDown(new TearDown(){
+    @Override public void tearDown(){
+      Thread.interrupted();
+    }
+  }
+);
+}

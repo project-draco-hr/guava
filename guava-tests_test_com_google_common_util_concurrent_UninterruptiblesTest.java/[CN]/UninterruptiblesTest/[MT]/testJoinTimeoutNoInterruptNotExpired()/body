@@ -1,0 +1,5 @@
+{
+  TimedThread thread=TimedThread.createWithDelay(20);
+  thread.joinSuccessfully(LONG_DELAY_MS);
+  assertNotInterrupted();
+}

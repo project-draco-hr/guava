@@ -1,0 +1,4 @@
+{
+  assertAtLeastTimePassed(stopwatch,expectedCompletionWaitMillis);
+  assertTimeNotPassed(stopwatch,expectedCompletionWaitMillis + LONG_DELAY_MS);
+}

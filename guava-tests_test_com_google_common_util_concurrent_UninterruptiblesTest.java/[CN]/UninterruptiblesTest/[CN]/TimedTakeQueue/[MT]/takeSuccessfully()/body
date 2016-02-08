@@ -1,0 +1,5 @@
+{
+  assertEquals(EXPECTED_TAKE,takeUninterruptibly(queue));
+  completed.assertCompletionExpected();
+  assertTrue(queue.isEmpty());
+}

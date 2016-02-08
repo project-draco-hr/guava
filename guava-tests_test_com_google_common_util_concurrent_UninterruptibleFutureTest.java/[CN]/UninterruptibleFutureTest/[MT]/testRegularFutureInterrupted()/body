@@ -1,0 +1,22 @@
+{
+  InterruptionUtil.requestInterruptIn(200,TimeUnit.MILLISECONDS);
+  assertFalse(Thread.interrupted());
+  try {
+    delayedFuture.get(1000,TimeUnit.MILLISECONDS);
+    fail("expected to be interrupted");
+  }
+ catch (  InterruptedException expected) {
+  }
+catch (  TimeoutException e) {
+    throw new RuntimeException(e);
+  }
+  assertFalse(Thread.interrupted());
+  assertFalse(sleeper.completed);
+  try {
+    assertTrue(delayedFuture.get());
+  }
+ catch (  InterruptedException e) {
+    throw new RuntimeException(e);
+  }
+  assertTrue(sleeper.completed);
+}

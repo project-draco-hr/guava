@@ -1,0 +1,5 @@
+{
+  putUninterruptibly(queue,"");
+  completed.assertCompletionExpected();
+  assertEquals("",queue.peek());
+}

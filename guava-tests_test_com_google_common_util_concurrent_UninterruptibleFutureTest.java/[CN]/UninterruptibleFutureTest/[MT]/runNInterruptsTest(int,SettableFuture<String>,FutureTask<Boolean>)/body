@@ -1,0 +1,9 @@
+{
+  Thread waitingThread=new Thread(interruptReporter);
+  waitingThread.start();
+  for (int i=0; i < times; i++) {
+    waitingThread.interrupt();
+  }
+  future.set(RESULT);
+  assertEquals(times > 0,(boolean)interruptReporter.get(20,SECONDS));
+}
