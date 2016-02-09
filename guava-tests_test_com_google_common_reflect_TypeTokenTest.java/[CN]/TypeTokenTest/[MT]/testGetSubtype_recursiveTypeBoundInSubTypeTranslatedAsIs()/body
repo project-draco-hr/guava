@@ -14,7 +14,7 @@ class Sub2<Y extends Sub2<Y>> extends BaseWithTypeVar<List<Y>> {
   assertThat(subtype.getActualTypeArguments()[0]).isInstanceOf(WildcardType.class);
   ParameterizedType owner=(ParameterizedType)subtype.getOwnerType();
   assertEquals(Outer.class,owner.getRawType());
-  new TypeToken<BaseWithTypeVar<List<?>>>(){
+  TypeToken<?> unused=new TypeToken<BaseWithTypeVar<List<?>>>(){
   }
 .getSubtype(Outer.Sub2.class);
 }

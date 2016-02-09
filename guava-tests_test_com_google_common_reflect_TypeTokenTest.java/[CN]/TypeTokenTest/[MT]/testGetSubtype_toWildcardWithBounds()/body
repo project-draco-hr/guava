@@ -10,5 +10,5 @@ class StringForFirstTypeArg<V> extends TwoTypeArgs<String,V> {
   }
 ;
   assertTrue(subType.isSubtypeOf(superType));
-  superType.getSubtype(subType.getRawType());
+  TypeToken<?> unused=superType.getSubtype(subType.getRawType());
 }
