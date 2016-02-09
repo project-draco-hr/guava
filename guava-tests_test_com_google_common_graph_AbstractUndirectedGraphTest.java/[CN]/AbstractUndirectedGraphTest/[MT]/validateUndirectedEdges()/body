@@ -1,0 +1,9 @@
+{
+  for (  Integer node : undirectedGraph.nodes()) {
+    new EqualsTester().addEqualityGroup(undirectedGraph.inEdges(node),undirectedGraph.outEdges(node),undirectedGraph.incidentEdges(node)).testEquals();
+    new EqualsTester().addEqualityGroup(undirectedGraph.predecessors(node),undirectedGraph.successors(node),undirectedGraph.adjacentNodes(node)).testEquals();
+    for (    Integer adjacentNode : undirectedGraph.adjacentNodes(node)) {
+      assertThat(undirectedGraph.edgesConnecting(node,adjacentNode)).containsExactlyElementsIn(undirectedGraph.edgesConnecting(adjacentNode,node));
+    }
+  }
+}
