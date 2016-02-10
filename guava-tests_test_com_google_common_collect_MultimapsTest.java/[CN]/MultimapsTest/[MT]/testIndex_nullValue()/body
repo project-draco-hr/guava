@@ -1,9 +1,9 @@
 {
   List<Integer> values=Arrays.asList(1,null);
   try {
-    Multimap<Object,Integer> unused=Multimaps.index(values,Functions.identity());
+    Multimaps.index(values,Functions.identity());
     fail();
   }
- catch (  NullPointerException e) {
+ catch (  NullPointerException expected) {
   }
 }

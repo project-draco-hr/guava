@@ -1,7 +1,7 @@
 {
   List<String> listWithNull=Lists.newArrayList((String)null);
   try {
-    Map<Integer,String> unused=Maps.uniqueIndex(listWithNull,Functions.constant(1));
+    Maps.uniqueIndex(listWithNull,Functions.constant(1));
     fail();
   }
  catch (  NullPointerException expected) {

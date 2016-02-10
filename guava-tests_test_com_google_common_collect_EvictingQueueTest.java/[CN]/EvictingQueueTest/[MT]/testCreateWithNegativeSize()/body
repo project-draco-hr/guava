@@ -1,6 +1,6 @@
 {
   try {
-    EvictingQueue<Object> unused=EvictingQueue.create(-1);
+    EvictingQueue.create(-1);
     fail();
   }
  catch (  IllegalArgumentException expected) {

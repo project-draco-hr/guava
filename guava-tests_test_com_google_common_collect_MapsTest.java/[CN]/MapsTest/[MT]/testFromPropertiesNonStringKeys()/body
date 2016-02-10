@@ -6,7 +6,7 @@
   }
 ;
   try {
-    Map<String,String> unused=Maps.fromProperties(properties);
+    Maps.fromProperties(properties);
     fail();
   }
  catch (  ClassCastException expected) {

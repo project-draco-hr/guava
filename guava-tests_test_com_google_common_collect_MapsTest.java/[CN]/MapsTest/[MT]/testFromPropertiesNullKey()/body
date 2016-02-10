@@ -8,7 +8,7 @@
   properties.setProperty("first","true");
   properties.setProperty("second","null");
   try {
-    Map<String,String> unused=Maps.fromProperties(properties);
+    Maps.fromProperties(properties);
     fail();
   }
  catch (  NullPointerException expected) {

@@ -2,19 +2,19 @@
   Ordering<Integer> comparator=Ordering.natural();
   Helpers.testComparator(comparator,Integer.MIN_VALUE,-1,0,1,Integer.MAX_VALUE);
   try {
-    int unused=comparator.compare(1,null);
+    comparator.compare(1,null);
     fail();
   }
  catch (  NullPointerException expected) {
   }
   try {
-    int unused=comparator.compare(null,2);
+    comparator.compare(null,2);
     fail();
   }
  catch (  NullPointerException expected) {
   }
   try {
-    int unused=comparator.compare(null,null);
+    comparator.compare(null,null);
     fail();
   }
  catch (  NullPointerException expected) {

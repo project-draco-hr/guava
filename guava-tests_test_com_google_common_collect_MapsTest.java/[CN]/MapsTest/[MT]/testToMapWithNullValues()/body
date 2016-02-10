@@ -1,7 +1,7 @@
 {
   Iterable<String> strings=ImmutableList.of("one","two","three");
   try {
-    Map<String,Object> unused=Maps.toMap(strings,Functions.constant(null));
+    Maps.toMap(strings,Functions.constant(null));
     fail();
   }
  catch (  NullPointerException expected) {

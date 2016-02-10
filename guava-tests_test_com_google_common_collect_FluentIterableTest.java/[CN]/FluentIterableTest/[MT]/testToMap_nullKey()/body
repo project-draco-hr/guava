@@ -1,6 +1,6 @@
 {
   try {
-    ImmutableMap<Integer,String> unused=fluent(1,null,2).toMap(Functions.constant("foo"));
+    fluent(1,null,2).toMap(Functions.constant("foo"));
     fail();
   }
  catch (  NullPointerException expected) {

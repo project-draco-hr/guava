@@ -1,6 +1,6 @@
 {
   try {
-    ImmutableMap<Object,Integer> unused=fluent(1,2,3).uniqueIndex(Functions.constant(null));
+    fluent(1,2,3).uniqueIndex(Functions.constant(null));
     fail();
   }
  catch (  NullPointerException expected) {

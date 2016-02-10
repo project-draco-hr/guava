@@ -1,7 +1,7 @@
 {
   Map<SomeEnum,Integer> original=Maps.newHashMap();
   try {
-    Map<SomeEnum,Integer> unused=Maps.newEnumMap(original);
+    Maps.newEnumMap(original);
     fail("Empty map must result in an IllegalArgumentException");
   }
  catch (  IllegalArgumentException expected) {
