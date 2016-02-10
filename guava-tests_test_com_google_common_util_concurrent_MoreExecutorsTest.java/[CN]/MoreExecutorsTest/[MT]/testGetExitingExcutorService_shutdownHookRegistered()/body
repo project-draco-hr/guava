@@ -3,7 +3,7 @@
   ThreadPoolExecutor executor=mock(ThreadPoolExecutor.class);
   ThreadFactory threadFactory=mock(ThreadFactory.class);
   when(executor.getThreadFactory()).thenReturn(threadFactory);
-  application.getExitingExecutorService(executor);
+  ExecutorService unused=application.getExitingExecutorService(executor);
   application.shutdown();
   verify(executor).shutdown();
 }

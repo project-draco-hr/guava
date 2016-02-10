@@ -1,5 +1,5 @@
 {
   if (!isCancelled()) {
-    addCausalChain(seen,trustedGetException());
+    boolean unused=addCausalChain(seen,trustedGetException());
   }
 }

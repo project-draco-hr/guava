@@ -10,7 +10,7 @@
   l.add(null);
   try {
     invokeAnyImpl(e,l,false,0);
-    shouldThrow();
+    fail();
   }
  catch (  NullPointerException success) {
   }

@@ -1,6 +1,6 @@
 {
   try {
-    return barrier.await();
+    barrier.await();
   }
  catch (  Exception e) {
     throw new RuntimeException(e);

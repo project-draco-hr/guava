@@ -3,7 +3,7 @@
   ScheduledThreadPoolExecutor executor=mock(ScheduledThreadPoolExecutor.class);
   ThreadFactory threadFactory=mock(ThreadFactory.class);
   when(executor.getThreadFactory()).thenReturn(threadFactory);
-  application.getExitingScheduledExecutorService(executor);
+  ScheduledExecutorService unused=application.getExitingScheduledExecutorService(executor);
   application.shutdown();
   verify(executor).shutdown();
 }

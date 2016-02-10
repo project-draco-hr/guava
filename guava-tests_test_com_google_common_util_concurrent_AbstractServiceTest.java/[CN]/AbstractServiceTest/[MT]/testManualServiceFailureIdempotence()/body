@@ -1,6 +1,6 @@
 {
   ManualSwitchedService service=new ManualSwitchedService();
-  RecordingListener.record(service);
+  RecordingListener unused=RecordingListener.record(service);
   service.startAsync();
   service.notifyFailed(new Exception("1"));
   service.notifyFailed(new Exception("2"));

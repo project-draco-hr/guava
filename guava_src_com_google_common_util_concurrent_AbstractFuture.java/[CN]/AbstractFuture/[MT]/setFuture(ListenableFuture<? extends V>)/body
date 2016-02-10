@@ -18,7 +18,7 @@
  catch (        Throwable oomMostLikely) {
           failure=Failure.FALLBACK_INSTANCE;
         }
-        ATOMIC_HELPER.casValue(this,valueToSet,failure);
+        boolean unused=ATOMIC_HELPER.casValue(this,valueToSet,failure);
       }
       return true;
     }

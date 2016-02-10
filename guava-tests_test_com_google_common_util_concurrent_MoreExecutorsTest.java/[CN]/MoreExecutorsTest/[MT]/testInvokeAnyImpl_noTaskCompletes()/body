@@ -4,7 +4,7 @@
   l.add(new NPETask());
   try {
     invokeAnyImpl(e,l,false,0);
-    shouldThrow();
+    fail();
   }
  catch (  ExecutionException success) {
     assertThat(success.getCause()).isInstanceOf(NullPointerException.class);

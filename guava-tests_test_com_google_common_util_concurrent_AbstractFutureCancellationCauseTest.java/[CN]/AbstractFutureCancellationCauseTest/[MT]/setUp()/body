@@ -1,5 +1,5 @@
 {
-  SettableFuture.create();
+  SettableFuture<?> unused=SettableFuture.create();
   System.setProperty("guava.concurrent.generate_cancellation_cause","true");
   final String concurrentPackage=SettableFuture.class.getPackage().getName();
   classReloader=new URLClassLoader(((URLClassLoader)SettableFuture.class.getClassLoader()).getURLs()){

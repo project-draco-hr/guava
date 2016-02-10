@@ -3,7 +3,7 @@
   assertEquals(0,aa.length());
   try {
     aa.get(0);
-    shouldThrow();
+    fail();
   }
  catch (  IndexOutOfBoundsException success) {
   }

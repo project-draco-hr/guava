@@ -1,4 +1,5 @@
 {
-  builder.build();
-  builder.build();
+  ThreadFactory unused;
+  unused=builder.build();
+  unused=builder.build();
 }

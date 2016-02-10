@@ -1,7 +1,7 @@
 {
 {
     SettableFuture<Object> root=SettableFuture.create();
-    Futures.transformAsync(root,asyncIdentity());
+    ListenableFuture<Object> unused=Futures.transformAsync(root,asyncIdentity());
     root.set("foo");
   }
   SettableFuture<Object> root=SettableFuture.create();

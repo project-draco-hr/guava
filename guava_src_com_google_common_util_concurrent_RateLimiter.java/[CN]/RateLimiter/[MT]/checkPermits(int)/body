@@ -1,4 +1,3 @@
 {
   checkArgument(permits > 0,"Requested permits (%s) must be positive",permits);
-  return permits;
 }

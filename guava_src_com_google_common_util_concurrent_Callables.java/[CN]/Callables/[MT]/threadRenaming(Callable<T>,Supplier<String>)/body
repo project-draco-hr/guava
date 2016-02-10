@@ -11,7 +11,7 @@
       }
   finally {
         if (restoreName) {
-          trySetName(oldName,currentThread);
+          boolean unused=trySetName(oldName,currentThread);
         }
       }
     }
