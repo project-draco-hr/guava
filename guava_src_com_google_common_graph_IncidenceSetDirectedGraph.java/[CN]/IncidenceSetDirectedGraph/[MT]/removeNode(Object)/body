@@ -1,22 +1,10 @@
 {
   checkNotNull(node,"node");
-  NodeConnections<N,E> connections=nodeConnections.get(node);
-  if (connections == null) {
+  if (!nodes().contains(node)) {
     return false;
   }
-  for (  E inEdge : ImmutableList.copyOf(inEdges(node))) {
-    N predecessor=Graphs.oppositeNode(this,inEdge,node);
-    NodeConnections<N,E> predecessorConnections=nodeConnections.get(predecessor);
-    predecessorConnections.removeSuccessor(node);
-    predecessorConnections.removeOutEdge(inEdge);
-    edgeToIncidentNodes.remove(inEdge);
-  }
-  for (  E outEdge : ImmutableList.copyOf(outEdges(node))) {
-    N successor=Graphs.oppositeNode(this,outEdge,node);
-    NodeConnections<N,E> successorConnections=nodeConnections.get(successor);
-    successorConnections.removePredecessor(node);
-    successorConnections.removeInEdge(outEdge);
-    edgeToIncidentNodes.remove(outEdge);
+  for (  E edge : ImmutableList.copyOf(incidentEdges(node))) {
+    removeEdgeAndUpdateConnections(edge,true);
   }
   nodeConnections.remove(node);
   return true;

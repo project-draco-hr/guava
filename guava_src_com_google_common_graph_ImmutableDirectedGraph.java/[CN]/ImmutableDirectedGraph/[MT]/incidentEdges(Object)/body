@@ -1,3 +1,3 @@
 {
-  return Sets.union(inEdges(node),outEdges(node));
+  return checkedConnections(node).incidentEdges();
 }

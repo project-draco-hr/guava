@@ -1,0 +1,15 @@
+{
+  UndirectedGraph<Integer,String> undirectedGraph=Graphs.createUndirected(MULTIGRAPH);
+  undirectedGraph.addEdge(E12,N1,N2);
+  undirectedGraph.addEdge(E12_A,N1,N2);
+  Set<String> parallelEdges=Graphs.parallelEdges(undirectedGraph,E12);
+  assertThat(parallelEdges).containsExactly(E12_A);
+  undirectedGraph.addEdge(E12_B,N1,N2);
+  assertThat(parallelEdges).containsExactly(E12_A,E12_B);
+  try {
+    parallelEdges.add(E21);
+    fail("Set returned by parallelEdges() should be unmodifiable");
+  }
+ catch (  UnsupportedOperationException expected) {
+  }
+}

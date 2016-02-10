@@ -1,0 +1,9 @@
+{
+  UndirectedGraph<Integer,String> undirectedGraph=Graphs.createUndirected(MULTIGRAPH);
+  undirectedGraph.addEdge(E12,N1,N2);
+  undirectedGraph.addEdge(E12_A,N1,N2);
+  undirectedGraph.addEdge(E21,N2,N1);
+  assertThat(Graphs.parallelEdges(undirectedGraph,E12)).containsExactly(E12_A,E21);
+  assertThat(Graphs.parallelEdges(undirectedGraph,E12_A)).containsExactly(E12,E21);
+  assertThat(Graphs.parallelEdges(undirectedGraph,E21)).containsExactly(E12,E12_A);
+}

@@ -1,19 +1,8 @@
 {
   checkNotNull(edge,"edge");
-  IncidentNodes<N> incidentNodes=edgeToIncidentNodes.get(edge);
-  if (incidentNodes == null) {
+  if (!edges().contains(edge)) {
     return false;
   }
-  N node1=incidentNodes.node1();
-  N node2=incidentNodes.node2();
-  NodeConnections<N,E> connectionsN1=nodeConnections.get(node1);
-  NodeConnections<N,E> connectionsN2=nodeConnections.get(node2);
-  if (!config.isMultigraph() || edgesConnecting(node1,node2).size() <= 1) {
-    connectionsN1.removeSuccessor(node2);
-    connectionsN2.removePredecessor(node1);
-  }
-  connectionsN1.removeOutEdge(edge);
-  connectionsN2.removeInEdge(edge);
-  edgeToIncidentNodes.remove(edge);
+  removeEdgeAndUpdateConnections(edge,Graphs.parallelEdges(this,edge).isEmpty());
   return true;
 }

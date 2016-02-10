@@ -1,0 +1,13 @@
+{
+  Set<N> incidentNodes=graph.incidentNodes(edge);
+  if (graph instanceof Hypergraph) {
+    throw new UnsupportedOperationException();
+  }
+  if (!graph.config().isMultigraph()) {
+    return ImmutableSet.of();
+  }
+  Iterator<N> incidentNodesIterator=incidentNodes.iterator();
+  N node1=incidentNodesIterator.next();
+  N node2=incidentNodesIterator.hasNext() ? incidentNodesIterator.next() : node1;
+  return Sets.difference(graph.edgesConnecting(node1,node2),ImmutableSet.of(edge));
+}
