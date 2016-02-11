@@ -1,8 +1,3 @@
 {
-  Entry<Class,Number> entry1=Maps.immutableEntry((Class)Integer.class,(Number)0);
-  Entry<Class,Number> entry2=Maps.immutableEntry((Class)Number.class,(Number)1);
-  Entry<Class,Number> entry3=Maps.immutableEntry((Class)Double.class,(Number)2.0);
-  Entry<Class,Number> entry4=Maps.immutableEntry((Class)Byte.class,(Number)(byte)0x03);
-  Entry<Class,Number> entry5=Maps.immutableEntry((Class)Long.class,(Number)0x0FF1C1AL);
-  return new SampleElements<Entry<Class,Number>>(entry1,entry2,entry3,entry4,entry5);
+  return new SampleElements<Entry<Class,Impl>>(immutableEntry((Class)One.class,new Impl(1)),immutableEntry((Class)Two.class,new Impl(2)),immutableEntry((Class)Three.class,new Impl(3)),immutableEntry((Class)Four.class,new Impl(4)),immutableEntry((Class)Five.class,new Impl(5)));
 }

@@ -1,14 +1,9 @@
 {
-  Entry<TypeToken,Object> entry1=Maps.immutableEntry((TypeToken)TypeToken.of(Integer.class),(Object)0);
-  Entry<TypeToken,Object> entry2=Maps.immutableEntry((TypeToken)TypeToken.of(Number.class),(Object)1);
-  Entry<TypeToken,Object> entry3=Maps.immutableEntry((TypeToken)new TypeToken<ImmutableList<Integer>>(){
+  return new SampleElements<Entry<TypeToken,Object>>(entry(TypeToken.of(Integer.class),0),entry(TypeToken.of(Number.class),1),entry(new TypeToken<ImmutableList<Integer>>(){
   }
-,(Object)ImmutableList.of(2));
-  Entry<TypeToken,Object> entry4=Maps.immutableEntry((TypeToken)new TypeToken<int[]>(){
+,ImmutableList.of(2)),entry(new TypeToken<int[]>(){
   }
-,(Object)new int[]{3});
-  Entry<TypeToken,Object> entry5=Maps.immutableEntry((TypeToken)new TypeToken<Iterable<?>>(){
+,new int[]{3}),entry(new TypeToken<Iterable<?>>(){
   }
-,(Object)ImmutableList.of("4"));
-  return new SampleElements<Entry<TypeToken,Object>>(entry1,entry2,entry3,entry4,entry5);
+,ImmutableList.of("4")));
 }

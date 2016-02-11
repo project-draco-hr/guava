@@ -1,13 +1,6 @@
 {
   TestSuite suite=new TestSuite();
   suite.addTestSuite(MutableTypeToInstanceMapTest.class);
-  Method remapTest=null;
-  try {
-    remapTest=MapPutTester.class.getMethod("testPut_replaceNullValueWithNonNullSupported");
-  }
- catch (  NoSuchMethodException e) {
-    throw new AssertionError();
-  }
   suite.addTest(MapTestSuiteBuilder.using(new TestTypeToInstanceMapGenerator(){
     @Override @SuppressWarnings("unchecked") public Map<TypeToken,Object> create(    Object... elements){
       MutableTypeToInstanceMap<Object> map=new MutableTypeToInstanceMap<Object>();
@@ -18,6 +11,6 @@
       return (Map)map;
     }
   }
-).named("MutableTypeToInstanceMap").withFeatures(MapFeature.SUPPORTS_REMOVE,MapFeature.RESTRICTS_KEYS,MapFeature.ALLOWS_NULL_VALUES,CollectionFeature.SUPPORTS_ITERATOR_REMOVE,CollectionSize.ANY,MapFeature.ALLOWS_ANY_NULL_QUERIES).suppressing(remapTest).createTestSuite());
+).named("MutableTypeToInstanceMap").withFeatures(MapFeature.SUPPORTS_REMOVE,MapFeature.RESTRICTS_KEYS,MapFeature.ALLOWS_NULL_VALUES,CollectionFeature.SUPPORTS_ITERATOR_REMOVE,CollectionSize.ANY,MapFeature.ALLOWS_ANY_NULL_QUERIES).createTestSuite());
   return suite;
 }

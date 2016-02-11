@@ -2,10 +2,10 @@
   TestSuite suite=new TestSuite();
   suite.addTestSuite(ImmutableClassToInstanceMapTest.class);
   suite.addTest(MapTestSuiteBuilder.using(new TestClassToInstanceMapGenerator(){
-    @Override @SuppressWarnings("unchecked") public Map<Class,Number> create(    Object... elements){
-      ImmutableClassToInstanceMap.Builder<Number> builder=ImmutableClassToInstanceMap.builder();
+    @Override @SuppressWarnings("unchecked") public Map<Class,Impl> create(    Object... elements){
+      ImmutableClassToInstanceMap.Builder<Impl> builder=ImmutableClassToInstanceMap.builder();
       for (      Object object : elements) {
-        Entry<Class,Number> entry=(Entry<Class,Number>)object;
+        Entry<Class,Impl> entry=(Entry<Class,Impl>)object;
         builder.put(entry.getKey(),entry.getValue());
       }
       return (Map)builder.build();
