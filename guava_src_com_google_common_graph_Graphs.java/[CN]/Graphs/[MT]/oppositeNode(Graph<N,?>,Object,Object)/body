@@ -1,22 +1,16 @@
 {
-  checkNotNull(graph,"graph");
-  checkNotNull(edge,"edge");
-  checkNotNull(node,"node");
   if (graph instanceof Hypergraph) {
     throw new UnsupportedOperationException();
   }
+  checkNotNull(node,"node");
   Iterator<N> incidentNodesIterator=graph.incidentNodes(edge).iterator();
-  N oppositeNode=incidentNodesIterator.next();
-  N equalNode=oppositeNode;
-  if (incidentNodesIterator.hasNext()) {
-    if (node.equals(oppositeNode)) {
-      oppositeNode=incidentNodesIterator.next();
-    }
- else {
-      equalNode=incidentNodesIterator.next();
-    }
-    checkState(!incidentNodesIterator.hasNext());
+  N node1=incidentNodesIterator.next();
+  N node2=incidentNodesIterator.hasNext() ? incidentNodesIterator.next() : node1;
+  if (node.equals(node1)) {
+    return node2;
   }
-  checkArgument(node.equals(equalNode),"Edge %s is not incident to node %s",edge,node);
-  return oppositeNode;
+ else {
+    checkArgument(node.equals(node2),"Edge %s is not incident to node %s",edge,node);
+    return node1;
+  }
 }

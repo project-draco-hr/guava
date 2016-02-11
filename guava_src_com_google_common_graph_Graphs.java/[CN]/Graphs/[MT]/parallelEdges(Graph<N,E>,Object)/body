@@ -1,8 +1,8 @@
 {
-  Set<N> incidentNodes=graph.incidentNodes(edge);
   if (graph instanceof Hypergraph) {
     throw new UnsupportedOperationException();
   }
+  Set<N> incidentNodes=graph.incidentNodes(edge);
   if (!graph.config().isMultigraph()) {
     return ImmutableSet.of();
   }
