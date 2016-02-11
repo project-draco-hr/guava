@@ -10,5 +10,10 @@
       assertThat(directedGraph.source(outEdge)).isEqualTo(node);
       assertThat(directedGraph.target(outEdge)).isEqualTo(oppositeNode);
     }
+    for (    Integer adjacentNode : directedGraph.adjacentNodes(node)) {
+      Set<String> edges=directedGraph.edgesConnecting(node,adjacentNode);
+      Set<String> antiParallelEdges=directedGraph.edgesConnecting(adjacentNode,node);
+      assertTrue(node.equals(adjacentNode) || Collections.disjoint(edges,antiParallelEdges));
+    }
   }
 }
