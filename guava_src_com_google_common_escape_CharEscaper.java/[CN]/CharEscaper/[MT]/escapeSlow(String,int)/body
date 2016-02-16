@@ -6,7 +6,9 @@
   int lastEscape=0;
   for (; index < slen; index++) {
     char[] r=escape(s.charAt(index));
-    if (r == null)     continue;
+    if (r == null) {
+      continue;
+    }
     int rlen=r.length;
     int charsSkipped=index - lastEscape;
     int sizeNeeded=destIndex + charsSkipped + rlen;
