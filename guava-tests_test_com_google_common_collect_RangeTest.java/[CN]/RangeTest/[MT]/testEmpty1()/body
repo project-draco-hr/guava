@@ -10,6 +10,6 @@
   assertEquals(4,(int)range.upperEndpoint());
   assertEquals(OPEN,range.upperBoundType());
   assertTrue(range.isEmpty());
-  assertEquals("[4\u20254)",range.toString());
+  assertEquals("[4..4)",range.toString());
   reserializeAndAssert(range);
 }

@@ -8,6 +8,6 @@
   assertEquals(4,(int)range.upperEndpoint());
   assertEquals(CLOSED,range.upperBoundType());
   assertFalse(range.isEmpty());
-  assertEquals("(-\u221e\u20254]",range.toString());
+  assertEquals("(-\u221e..4]",range.toString());
   reserializeAndAssert(range);
 }

@@ -8,6 +8,6 @@
   assertEquals(CLOSED,range.lowerBoundType());
   assertUnboundedAbove(range);
   assertFalse(range.isEmpty());
-  assertEquals("[6\u2025+\u221e)",range.toString());
+  assertEquals("[6..+\u221e)",range.toString());
   reserializeAndAssert(range);
 }

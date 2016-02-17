@@ -8,6 +8,6 @@
   assertEquals(8,(int)range.upperEndpoint());
   assertEquals(OPEN,range.upperBoundType());
   assertFalse(range.isEmpty());
-  assertEquals("[5\u20258)",range.toString());
+  assertEquals("[5..8)",range.toString());
   reserializeAndAssert(range);
 }
