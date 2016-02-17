@@ -1,7 +1,7 @@
 {
   long nanos=unit.toNanos(timeout);
 synchronized (lock) {
-    for (; ; ) {
+    while (true) {
       if (shutdown && runningTasks == 0) {
         return true;
       }

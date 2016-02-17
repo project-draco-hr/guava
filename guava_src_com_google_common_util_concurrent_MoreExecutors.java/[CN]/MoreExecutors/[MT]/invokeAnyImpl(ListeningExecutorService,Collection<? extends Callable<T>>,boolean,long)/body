@@ -11,7 +11,7 @@
     futures.add(submitAndAddQueueListener(executorService,it.next(),futureQueue));
     --ntasks;
     int active=1;
-    for (; ; ) {
+    while (true) {
       Future<T> f=futureQueue.poll();
       if (f == null) {
         if (ntasks > 0) {

@@ -1,6 +1,7 @@
 {
   if (nowMicros > nextFreeTicketMicros) {
-    storedPermits=min(maxPermits,storedPermits + (nowMicros - nextFreeTicketMicros) / coolDownIntervalMicros());
+    double newPermits=(nowMicros - nextFreeTicketMicros) / coolDownIntervalMicros();
+    storedPermits=min(maxPermits,storedPermits + newPermits);
     nextFreeTicketMicros=nowMicros;
   }
 }
