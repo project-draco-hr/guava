@@ -1,9 +1,0 @@
-{
-  Function<Object,String> edgeToEndpoints=new Function<Object,String>(){
-    @Override public String apply(    Object edge){
-      return String.format("<%s -> %s>",graph.source(edge),graph.target(edge));
-    }
-  }
-;
-  return String.format("config: %s, nodes: %s, edges: %s",graph.config(),graph.nodes(),Maps.asMap(graph.edges(),edgeToEndpoints));
-}

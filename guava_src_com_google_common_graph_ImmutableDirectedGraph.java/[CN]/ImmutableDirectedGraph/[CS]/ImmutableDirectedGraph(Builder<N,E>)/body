@@ -1,4 +1,5 @@
 {
+  super(builder.directedGraph.config());
   DirectedGraph<N,E> directedGraph=builder.directedGraph;
   ImmutableMap.Builder<N,NodeConnections<N,E>> nodeConnectionsBuilder=ImmutableMap.builder();
   for (  N node : directedGraph.nodes()) {
@@ -12,5 +13,4 @@
     edgeToIncidentNodesBuilder.put(edge,incidentNodes);
   }
   this.edgeToIncidentNodes=edgeToIncidentNodesBuilder.build();
-  this.config=directedGraph.config();
 }

@@ -1,0 +1,17 @@
+{
+  if (graph instanceof DirectedGraph) {
+    @SuppressWarnings("unchecked") final DirectedGraph<?,?> directedGraph=(DirectedGraph<?,?>)graph;
+    return new Function<Object,String>(){
+      @Override public String apply(      Object edge){
+        return String.format("<%s -> %s>",directedGraph.source(edge),directedGraph.target(edge));
+      }
+    }
+;
+  }
+  return new Function<Object,String>(){
+    @Override public String apply(    Object edge){
+      return graph.incidentNodes(edge).toString();
+    }
+  }
+;
+}

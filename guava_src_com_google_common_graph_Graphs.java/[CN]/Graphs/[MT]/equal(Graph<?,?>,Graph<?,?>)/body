@@ -5,11 +5,17 @@
   if (graph1 == null || graph2 == null) {
     return false;
   }
-  if (!graph1.nodes().equals(graph2.nodes()) || !graph1.edges().equals(graph2.edges())) {
+  if (graph1.edges().size() != graph2.edges().size()) {
     return false;
   }
-  for (  Object edge : graph1.edges()) {
-    if (!graph1.incidentNodes(edge).equals(graph2.incidentNodes(edge))) {
+  if (!graph1.nodes().equals(graph2.nodes())) {
+    return false;
+  }
+  for (  Object node : graph1.nodes()) {
+    if (!graph1.inEdges(node).equals(graph2.inEdges(node))) {
+      return false;
+    }
+    if (!graph1.outEdges(node).equals(graph2.outEdges(node))) {
       return false;
     }
   }

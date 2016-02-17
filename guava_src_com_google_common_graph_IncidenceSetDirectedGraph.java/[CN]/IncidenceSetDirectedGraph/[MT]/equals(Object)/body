@@ -1,3 +1,0 @@
-{
-  return (other instanceof DirectedGraph) && Graphs.equal(this,(DirectedGraph<?,?>)other);
-}

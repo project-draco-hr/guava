@@ -1,3 +1,0 @@
-{
-  return (object instanceof UndirectedGraph) && Graphs.equal(this,(UndirectedGraph<?,?>)object);
-}
