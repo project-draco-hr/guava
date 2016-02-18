@@ -1,6 +1,6 @@
 {
   final Iterator<Entry<E>> readOnlyIterator=new AbstractIterator<Entry<E>>(){
-    private Iterator<Map.Entry<E,AtomicInteger>> mapEntries=countMap.entrySet().iterator();
+    private final Iterator<Map.Entry<E,AtomicInteger>> mapEntries=countMap.entrySet().iterator();
     @Override protected Entry<E> computeNext(){
       while (true) {
         if (!mapEntries.hasNext()) {
