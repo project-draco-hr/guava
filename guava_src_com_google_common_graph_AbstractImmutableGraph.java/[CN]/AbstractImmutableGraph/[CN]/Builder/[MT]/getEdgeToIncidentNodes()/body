@@ -1,0 +1,7 @@
+{
+  ImmutableMap.Builder<E,IncidentNodes<N>> edgeToIncidentNodes=ImmutableMap.builder();
+  for (  E edge : graph.edges()) {
+    edgeToIncidentNodes.put(edge,IncidentNodes.of(graph.incidentNodes(edge)));
+  }
+  return edgeToIncidentNodes.build();
+}

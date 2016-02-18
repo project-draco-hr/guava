@@ -1,3 +1,0 @@
-{
-  return checkedConnections(node).inEdges();
-}

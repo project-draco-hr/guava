@@ -1,0 +1,3 @@
+{
+  return ImmutableSet.copyOf(super.edgesConnecting(node1,node2));
+}

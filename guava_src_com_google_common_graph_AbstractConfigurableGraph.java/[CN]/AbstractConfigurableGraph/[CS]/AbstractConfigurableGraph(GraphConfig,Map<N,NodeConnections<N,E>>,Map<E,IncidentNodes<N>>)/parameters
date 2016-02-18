@@ -1,0 +1,3 @@
+GraphConfig config
+Map<N,NodeConnections<N,E>> nodeConnections
+Map<E,IncidentNodes<N>> edgeToIncidentNodes

@@ -1,8 +1,0 @@
-{
-  checkNotNull(node,"node");
-  if (nodes().contains(node)) {
-    return false;
-  }
-  nodeConnections.put(node,DirectedNodeConnections.<N,E>of());
-  return true;
-}

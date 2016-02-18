@@ -1,0 +1,5 @@
+{
+  super(config);
+  this.nodeConnections=nodeConnections;
+  this.edgeToIncidentNodes=edgeToIncidentNodes;
+}

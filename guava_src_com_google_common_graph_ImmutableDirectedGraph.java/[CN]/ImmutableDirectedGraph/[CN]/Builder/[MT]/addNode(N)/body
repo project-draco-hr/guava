@@ -1,4 +1,3 @@
 {
-  directedGraph.addNode(node);
-  return this;
+  return (Builder<N,E>)super.addNode(node);
 }

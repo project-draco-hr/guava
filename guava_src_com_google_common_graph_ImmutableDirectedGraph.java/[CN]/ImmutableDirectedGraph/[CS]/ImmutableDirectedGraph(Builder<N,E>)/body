@@ -1,16 +1,3 @@
 {
-  super(builder.directedGraph.config());
-  DirectedGraph<N,E> directedGraph=builder.directedGraph;
-  ImmutableMap.Builder<N,NodeConnections<N,E>> nodeConnectionsBuilder=ImmutableMap.builder();
-  for (  N node : directedGraph.nodes()) {
-    NodeConnections<N,E> connections=DirectedNodeConnections.ofImmutable(directedGraph.predecessors(node),directedGraph.successors(node),directedGraph.inEdges(node),directedGraph.outEdges(node));
-    nodeConnectionsBuilder.put(node,connections);
-  }
-  this.nodeConnections=nodeConnectionsBuilder.build();
-  ImmutableMap.Builder<E,IncidentNodes<N>> edgeToIncidentNodesBuilder=ImmutableMap.builder();
-  for (  E edge : directedGraph.edges()) {
-    IncidentNodes<N> incidentNodes=IncidentNodes.of(directedGraph.source(edge),directedGraph.target(edge));
-    edgeToIncidentNodesBuilder.put(edge,incidentNodes);
-  }
-  this.edgeToIncidentNodes=edgeToIncidentNodesBuilder.build();
+  super(builder);
 }

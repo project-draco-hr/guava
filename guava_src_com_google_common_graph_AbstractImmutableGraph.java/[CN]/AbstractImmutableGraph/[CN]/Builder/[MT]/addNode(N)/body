@@ -1,0 +1,4 @@
+{
+  graph.addNode(node);
+  return this;
+}

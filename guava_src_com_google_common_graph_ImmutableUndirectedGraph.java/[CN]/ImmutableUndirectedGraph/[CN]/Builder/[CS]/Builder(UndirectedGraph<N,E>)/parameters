@@ -1,1 +1,1 @@
-UndirectedGraph<N,E> undirectedGraph
+UndirectedGraph<N,E> graph

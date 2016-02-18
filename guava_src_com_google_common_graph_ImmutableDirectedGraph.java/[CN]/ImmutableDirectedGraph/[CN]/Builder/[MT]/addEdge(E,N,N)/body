@@ -1,4 +1,3 @@
 {
-  directedGraph.addEdge(edge,node1,node2);
-  return this;
+  return (Builder<N,E>)super.addEdge(edge,node1,node2);
 }
