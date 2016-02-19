@@ -3,6 +3,5 @@
   if (ownerType != null) {
     builder.append(JavaVersion.CURRENT.typeName(ownerType)).append('.');
   }
-  builder.append(rawType.getName()).append('<').append(COMMA_JOINER.join(transform(argumentsList,TYPE_NAME))).append('>');
-  return builder.toString();
+  return builder.append(rawType.getName()).append('<').append(COMMA_JOINER.join(transform(argumentsList,TYPE_NAME))).append('>').toString();
 }
