@@ -1,4 +1,10 @@
 {
   checkNotNull(that,"that");
-  return this.multigraph == that.multigraph && this.selfLoopsAllowed == that.selfLoopsAllowed;
+  if (that.multigraph && !this.multigraph) {
+    return false;
+  }
+  if (that.selfLoopsAllowed && !this.selfLoopsAllowed) {
+    return false;
+  }
+  return true;
 }
