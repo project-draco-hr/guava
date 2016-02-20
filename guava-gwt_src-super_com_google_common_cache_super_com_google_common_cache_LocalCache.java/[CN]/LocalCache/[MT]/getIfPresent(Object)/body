@@ -1,5 +1,5 @@
 {
-  key=checkNotNull(key);
+  checkNotNull(key);
   Timestamped<V> value=cachingHashMap.get(key);
   if (value == null) {
     return null;

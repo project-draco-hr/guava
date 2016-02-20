@@ -1,6 +1,6 @@
 {
-  key=checkNotNull(key);
-  value=checkNotNull(value);
+  checkNotNull(key);
+  checkNotNull(value);
   Timestamped<V> oldValue=cachingHashMap.put(key,new Timestamped<V>(value,ticker));
   if (oldValue == null) {
     return null;
