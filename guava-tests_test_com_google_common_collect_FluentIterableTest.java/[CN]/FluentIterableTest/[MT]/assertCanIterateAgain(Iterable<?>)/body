@@ -1,3 +1,4 @@
 {
-  Iterables.getLast(iterable);
+  for (  Object unused : iterable) {
+  }
 }
