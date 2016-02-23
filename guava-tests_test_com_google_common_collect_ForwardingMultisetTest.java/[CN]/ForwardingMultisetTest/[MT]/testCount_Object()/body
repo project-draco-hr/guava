@@ -1,4 +1,4 @@
 {
-  forward().count(null);
+  int unused=forward().count(null);
   assertEquals("[count(Object)]",getCalls());
 }

@@ -1,4 +1,4 @@
 {
-  forward().elementSet();
+  Set<String> unused=forward().elementSet();
   assertEquals("[elementSet]",getCalls());
 }

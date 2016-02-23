@@ -1,4 +1,4 @@
 {
-  forward().iterator();
+  Iterator<String> unused=forward().iterator();
   assertEquals("[iterator]",getCalls());
 }

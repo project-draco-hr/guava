@@ -1,5 +1,0 @@
-{
-  int result=value;
-  value=result + delta;
-  return result;
-}

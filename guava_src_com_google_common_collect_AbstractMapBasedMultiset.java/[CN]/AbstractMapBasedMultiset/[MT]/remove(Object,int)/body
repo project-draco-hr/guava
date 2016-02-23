@@ -16,7 +16,7 @@
     numberRemoved=oldCount;
     backingMap.remove(element);
   }
-  frequency.addAndGet(-numberRemoved);
+  frequency.add(-numberRemoved);
   size-=numberRemoved;
   return oldCount;
 }

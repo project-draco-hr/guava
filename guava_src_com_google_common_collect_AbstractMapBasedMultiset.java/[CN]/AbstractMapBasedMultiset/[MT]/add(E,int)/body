@@ -13,7 +13,7 @@
     oldCount=frequency.get();
     long newCount=(long)oldCount + (long)occurrences;
     checkArgument(newCount <= Integer.MAX_VALUE,"too many occurrences: %s",newCount);
-    frequency.getAndAdd(occurrences);
+    frequency.add(occurrences);
   }
   size+=occurrences;
   return oldCount;

@@ -1,4 +1,4 @@
 {
-  forward().hashCode();
+  int unused=forward().hashCode();
   assertEquals("[hashCode]",getCalls());
 }

@@ -1,4 +1,4 @@
 {
-  forward().containsAll(EMPTY_COLLECTION);
+  boolean unused=forward().containsAll(EMPTY_COLLECTION);
   assertEquals("[containsAll(Collection)]",getCalls());
 }

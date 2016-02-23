@@ -1,4 +1,4 @@
 {
-  forward().entrySet();
+  Set<Entry<String>> unused=forward().entrySet();
   assertEquals("[entrySet]",getCalls());
 }

@@ -1,4 +1,4 @@
 {
-  forward().equals("asdf");
+  boolean unused=forward().equals("asdf");
   assertEquals("[equals(Object)]",getCalls());
 }
