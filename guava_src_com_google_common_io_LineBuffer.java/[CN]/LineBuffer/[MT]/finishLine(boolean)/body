@@ -1,5 +1,6 @@
 {
-  handleLine(line.toString(),sawReturn ? (sawNewline ? "\r\n" : "\r") : (sawNewline ? "\n" : ""));
+  String separator=sawReturn ? (sawNewline ? "\r\n" : "\r") : (sawNewline ? "\n" : "");
+  handleLine(line.toString(),separator);
   line=new StringBuilder();
   sawReturn=false;
   return sawNewline;
