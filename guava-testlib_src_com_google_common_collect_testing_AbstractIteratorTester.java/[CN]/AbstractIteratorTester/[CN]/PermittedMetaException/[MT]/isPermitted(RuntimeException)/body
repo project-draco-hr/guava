@@ -1,8 +1,0 @@
-{
-  for (  Class<? extends RuntimeException> clazz : exceptionClasses) {
-    if (Platform.checkIsInstance(clazz,exception)) {
-      return true;
-    }
-  }
-  return false;
-}

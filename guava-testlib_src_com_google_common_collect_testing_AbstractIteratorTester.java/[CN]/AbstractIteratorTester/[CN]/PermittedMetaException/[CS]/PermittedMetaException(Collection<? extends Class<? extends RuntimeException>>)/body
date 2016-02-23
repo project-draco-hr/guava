@@ -1,4 +1,0 @@
-{
-  super("one of " + exceptionClasses);
-  this.exceptionClasses=exceptionClasses;
-}

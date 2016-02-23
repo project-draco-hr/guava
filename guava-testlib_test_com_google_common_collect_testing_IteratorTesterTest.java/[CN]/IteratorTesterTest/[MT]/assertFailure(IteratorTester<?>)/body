@@ -1,8 +1,9 @@
 {
   try {
     tester.test();
-    fail();
   }
  catch (  AssertionFailedError expected) {
+    return;
   }
+  fail();
 }
