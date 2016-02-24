@@ -1,0 +1,6 @@
+{
+  for (  long x : POSITIVE_LONG_CANDIDATES) {
+    BigInteger expectedResult=BigIntegerMath.floorPowerOfTwo(BigInteger.valueOf(x));
+    assertEquals(expectedResult.longValue(),LongMath.floorPowerOfTwo(x));
+  }
+}

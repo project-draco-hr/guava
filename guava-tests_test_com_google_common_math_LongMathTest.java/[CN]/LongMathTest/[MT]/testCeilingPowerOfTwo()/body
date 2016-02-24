@@ -1,0 +1,16 @@
+{
+  for (  long x : POSITIVE_LONG_CANDIDATES) {
+    BigInteger expectedResult=BigIntegerMath.ceilingPowerOfTwo(BigInteger.valueOf(x));
+    if (fitsInLong(expectedResult)) {
+      assertEquals(expectedResult.longValue(),LongMath.ceilingPowerOfTwo(x));
+    }
+ else {
+      try {
+        LongMath.ceilingPowerOfTwo(x);
+        fail("Expected ArithmeticException");
+      }
+ catch (      ArithmeticException expected) {
+      }
+    }
+  }
+}

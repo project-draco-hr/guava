@@ -1,0 +1,8 @@
+{
+  for (  BigInteger x : POSITIVE_BIGINTEGER_CANDIDATES) {
+    BigInteger result=BigIntegerMath.floorPowerOfTwo(x);
+    assertTrue(BigIntegerMath.isPowerOfTwo(result));
+    assertTrue(result.compareTo(x) <= 0);
+    assertTrue(result.add(result).compareTo(x) > 0);
+  }
+}

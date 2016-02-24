@@ -1,0 +1,10 @@
+{
+  for (  long x : NEGATIVE_LONG_CANDIDATES) {
+    try {
+      LongMath.ceilingPowerOfTwo(x);
+      fail("Expected IllegalArgumentException");
+    }
+ catch (    IllegalArgumentException expected) {
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  try {
+    BigIntegerMath.floorPowerOfTwo(BigInteger.ZERO);
+    fail("Expected IllegalArgumentException");
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}

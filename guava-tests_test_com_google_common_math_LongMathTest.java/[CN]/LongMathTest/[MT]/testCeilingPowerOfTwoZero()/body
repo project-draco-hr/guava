@@ -1,0 +1,8 @@
+{
+  try {
+    LongMath.ceilingPowerOfTwo(0L);
+    fail("Expected IllegalArgumentException");
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}

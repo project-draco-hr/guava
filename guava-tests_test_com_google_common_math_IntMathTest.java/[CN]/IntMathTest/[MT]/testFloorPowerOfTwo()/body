@@ -1,0 +1,6 @@
+{
+  for (  int x : POSITIVE_INTEGER_CANDIDATES) {
+    BigInteger expectedResult=BigIntegerMath.floorPowerOfTwo(BigInteger.valueOf(x));
+    assertEquals(expectedResult.intValue(),IntMath.floorPowerOfTwo(x));
+  }
+}

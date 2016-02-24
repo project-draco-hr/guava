@@ -1,0 +1,7 @@
+{
+  checkPositive("x",x);
+  if (x > MAX_SIGNED_POWER_OF_TWO) {
+    throw new ArithmeticException("ceilingPowerOfTwo(" + x + ") not representable as an int");
+  }
+  return 1 << -Integer.numberOfLeadingZeros(x - 1);
+}

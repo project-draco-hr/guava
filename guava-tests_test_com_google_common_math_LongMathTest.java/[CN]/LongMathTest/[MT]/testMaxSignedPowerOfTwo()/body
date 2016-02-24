@@ -1,0 +1,4 @@
+{
+  assertTrue(LongMath.isPowerOfTwo(LongMath.MAX_SIGNED_POWER_OF_TWO));
+  assertFalse(LongMath.isPowerOfTwo(LongMath.MAX_SIGNED_POWER_OF_TWO * 2));
+}

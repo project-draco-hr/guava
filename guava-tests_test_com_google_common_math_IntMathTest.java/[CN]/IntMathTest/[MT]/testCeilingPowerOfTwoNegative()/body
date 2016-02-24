@@ -1,0 +1,10 @@
+{
+  for (  int x : NEGATIVE_INTEGER_CANDIDATES) {
+    try {
+      IntMath.ceilingPowerOfTwo(x);
+      fail("Expected IllegalArgumentException");
+    }
+ catch (    IllegalArgumentException expected) {
+    }
+  }
+}

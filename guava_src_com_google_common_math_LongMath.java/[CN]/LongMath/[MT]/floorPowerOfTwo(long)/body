@@ -1,0 +1,4 @@
+{
+  checkPositive("x",x);
+  return 1L << ((Long.SIZE - 1) - Long.numberOfLeadingZeros(x));
+}

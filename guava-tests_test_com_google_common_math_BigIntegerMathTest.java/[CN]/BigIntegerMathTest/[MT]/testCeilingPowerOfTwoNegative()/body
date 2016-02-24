@@ -1,0 +1,10 @@
+{
+  for (  BigInteger x : NEGATIVE_BIGINTEGER_CANDIDATES) {
+    try {
+      BigIntegerMath.ceilingPowerOfTwo(x);
+      fail("Expected IllegalArgumentException");
+    }
+ catch (    IllegalArgumentException expected) {
+    }
+  }
+}

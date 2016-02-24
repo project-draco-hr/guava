@@ -1,0 +1,16 @@
+{
+  for (  int x : POSITIVE_INTEGER_CANDIDATES) {
+    BigInteger expectedResult=BigIntegerMath.ceilingPowerOfTwo(BigInteger.valueOf(x));
+    if (fitsInInt(expectedResult)) {
+      assertEquals(expectedResult.intValue(),IntMath.ceilingPowerOfTwo(x));
+    }
+ else {
+      try {
+        IntMath.ceilingPowerOfTwo(x);
+        fail("Expected ArithmeticException");
+      }
+ catch (      ArithmeticException expected) {
+      }
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  for (  BigInteger x : POSITIVE_BIGINTEGER_CANDIDATES) {
+    BigInteger result=BigIntegerMath.ceilingPowerOfTwo(x);
+    assertTrue(BigIntegerMath.isPowerOfTwo(result));
+    assertTrue(result.compareTo(x) >= 0);
+    assertTrue(result.compareTo(x.add(x)) < 0);
+  }
+}

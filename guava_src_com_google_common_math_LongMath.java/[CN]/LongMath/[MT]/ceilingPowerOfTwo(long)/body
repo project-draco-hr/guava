@@ -1,0 +1,7 @@
+{
+  checkPositive("x",x);
+  if (x > (1L << (Long.SIZE - 2))) {
+    throw new ArithmeticException("ceilingPowerOfTwo(" + x + ") is not representable as a long");
+  }
+  return 1L << -Long.numberOfLeadingZeros(x - 1);
+}

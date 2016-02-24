@@ -1,0 +1,4 @@
+{
+  checkPositive("x",x);
+  return Integer.highestOneBit(x);
+}

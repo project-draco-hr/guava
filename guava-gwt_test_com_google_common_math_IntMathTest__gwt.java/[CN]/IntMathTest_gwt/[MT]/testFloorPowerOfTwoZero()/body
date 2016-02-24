@@ -1,0 +1,4 @@
+{
+  com.google.common.math.IntMathTest testCase=new com.google.common.math.IntMathTest();
+  testCase.testFloorPowerOfTwoZero();
+}

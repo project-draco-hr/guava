@@ -1,0 +1,10 @@
+{
+  for (  int x : NEGATIVE_INTEGER_CANDIDATES) {
+    try {
+      IntMath.floorPowerOfTwo(x);
+      fail("Expected IllegalArgumentException");
+    }
+ catch (    IllegalArgumentException expected) {
+    }
+  }
+}
