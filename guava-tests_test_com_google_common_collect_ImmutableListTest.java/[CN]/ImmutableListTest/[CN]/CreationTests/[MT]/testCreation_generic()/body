@@ -1,4 +1,4 @@
 {
   List<String> a=ImmutableList.of("a");
-  ImmutableList.of(a,a);
+  ImmutableList<List<String>> unused=ImmutableList.of(a,a);
 }
