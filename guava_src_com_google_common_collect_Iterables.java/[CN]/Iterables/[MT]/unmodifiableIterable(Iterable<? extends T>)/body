@@ -1,7 +1,8 @@
 {
   checkNotNull(iterable);
   if (iterable instanceof UnmodifiableIterable || iterable instanceof ImmutableCollection) {
-    return iterable;
+    @SuppressWarnings("unchecked") Iterable<T> result=(Iterable<T>)iterable;
+    return result;
   }
   return new UnmodifiableIterable<T>(iterable);
 }

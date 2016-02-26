@@ -1,7 +1,8 @@
 {
   checkNotNull(iterator);
   if (iterator instanceof UnmodifiableIterator) {
-    return (UnmodifiableIterator<T>)iterator;
+    @SuppressWarnings("unchecked") UnmodifiableIterator<T> result=(UnmodifiableIterator<T>)iterator;
+    return result;
   }
   return new UnmodifiableIterator<T>(){
     @Override public boolean hasNext(){
