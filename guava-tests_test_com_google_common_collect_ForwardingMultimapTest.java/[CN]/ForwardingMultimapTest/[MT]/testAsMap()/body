@@ -1,4 +1,4 @@
 {
-  forward.asMap();
+  Map<String,Collection<Boolean>> unused=forward.asMap();
   assertEquals("[asMap]",getCalls());
 }

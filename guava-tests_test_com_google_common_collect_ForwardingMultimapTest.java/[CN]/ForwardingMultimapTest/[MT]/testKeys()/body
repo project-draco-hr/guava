@@ -1,4 +1,4 @@
 {
-  forward.keys();
+  Multiset<String> unused=forward.keys();
   assertEquals("[keys]",getCalls());
 }

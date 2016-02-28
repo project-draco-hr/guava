@@ -1,4 +1,4 @@
 {
-  forward.values();
+  Collection<Boolean> unused=forward.values();
   assertEquals("[values]",getCalls());
 }

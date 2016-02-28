@@ -1,4 +1,4 @@
 {
-  forward.cellSet();
+  Set<Cell<String,Integer,Boolean>> unused=forward.cellSet();
   assertEquals("[cellSet]",getCalls());
 }

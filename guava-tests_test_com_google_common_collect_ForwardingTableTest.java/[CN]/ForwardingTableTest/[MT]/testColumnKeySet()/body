@@ -1,4 +1,4 @@
 {
-  forward.columnKeySet();
+  Set<Integer> unused=forward.columnKeySet();
   assertEquals("[columnKeySet]",getCalls());
 }

@@ -1,4 +1,4 @@
 {
-  forward.containsValue("asdf");
+  boolean unused=forward.containsValue("asdf");
   assertEquals("[containsValue(Object)]",getCalls());
 }

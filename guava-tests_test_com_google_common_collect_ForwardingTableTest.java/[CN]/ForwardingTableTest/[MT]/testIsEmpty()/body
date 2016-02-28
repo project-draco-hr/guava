@@ -1,4 +1,4 @@
 {
-  forward.isEmpty();
+  boolean unused=forward.isEmpty();
   assertEquals("[isEmpty]",getCalls());
 }

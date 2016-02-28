@@ -1,4 +1,4 @@
 {
-  forward.contains("blah",1);
+  boolean unused=forward.contains("blah",1);
   assertEquals("[contains(Object,Object)]",getCalls());
 }

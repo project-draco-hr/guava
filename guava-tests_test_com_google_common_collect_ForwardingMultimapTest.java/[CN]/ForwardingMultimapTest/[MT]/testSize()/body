@@ -1,4 +1,4 @@
 {
-  forward.size();
+  int unused=forward.size();
   assertEquals("[size]",getCalls());
 }

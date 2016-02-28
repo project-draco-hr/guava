@@ -1,4 +1,4 @@
 {
-  forward.column(1);
+  Map<String,Boolean> unused=forward.column(1);
   assertEquals("[column(Object)]",getCalls());
 }

@@ -1,4 +1,4 @@
 {
-  forward.entries();
+  Collection<Entry<String,Boolean>> unused=forward.entries();
   assertEquals("[entries]",getCalls());
 }

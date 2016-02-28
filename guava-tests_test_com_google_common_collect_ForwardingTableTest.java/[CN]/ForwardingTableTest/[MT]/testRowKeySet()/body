@@ -1,4 +1,4 @@
 {
-  forward.rowKeySet();
+  Set<String> unused=forward.rowKeySet();
   assertEquals("[rowKeySet]",getCalls());
 }

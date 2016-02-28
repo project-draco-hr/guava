@@ -1,4 +1,4 @@
 {
-  forward.row("String");
+  Map<Integer,Boolean> unused=forward.row("String");
   assertEquals("[row(Object)]",getCalls());
 }

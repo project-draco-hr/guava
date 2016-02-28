@@ -1,4 +1,4 @@
 {
-  forward.rowMap();
+  Map<String,Map<Integer,Boolean>> unused=forward.rowMap();
   assertEquals("[rowMap]",getCalls());
 }

@@ -1,4 +1,4 @@
 {
-  forward.keySet();
+  Set<String> unused=forward.keySet();
   assertEquals("[keySet]",getCalls());
 }

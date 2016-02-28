@@ -1,4 +1,4 @@
 {
-  forward.get("blah",1);
+  Boolean unused=forward.get("blah",1);
   assertEquals("[get(Object,Object)]",getCalls());
 }

@@ -1,4 +1,4 @@
 {
-  forward.containsColumn(1);
+  boolean unused=forward.containsColumn(1);
   assertEquals("[containsColumn(Object)]",getCalls());
 }
