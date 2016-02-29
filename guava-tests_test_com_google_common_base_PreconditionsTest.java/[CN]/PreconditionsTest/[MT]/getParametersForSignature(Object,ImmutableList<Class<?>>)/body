@@ -1,0 +1,13 @@
+{
+  Object[] params=new Object[sig.size()];
+  params[0]=firstParam;
+  if (params.length > 1) {
+    params[1]="";
+    if (params.length > 2) {
+      for (int i=2; i < params.length; i++) {
+        params[i]=ArbitraryInstances.get(sig.get(i));
+      }
+    }
+  }
+  return params;
+}

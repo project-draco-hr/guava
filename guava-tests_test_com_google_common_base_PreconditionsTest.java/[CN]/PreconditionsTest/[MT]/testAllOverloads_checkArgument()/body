@@ -1,0 +1,14 @@
+{
+  for (  ImmutableList<Class<?>> sig : allSignatures(boolean.class)) {
+    Method checkArgumentMethod=Preconditions.class.getMethod("checkArgument",sig.toArray(new Class<?>[]{}));
+    checkArgumentMethod.invoke(null,getParametersForSignature(true,sig));
+    Object[] failingParams=getParametersForSignature(false,sig);
+    try {
+      checkArgumentMethod.invoke(null,failingParams);
+      fail();
+    }
+ catch (    InvocationTargetException ite) {
+      assertFailureCause(ite.getCause(),IllegalArgumentException.class,failingParams);
+    }
+  }
+}
