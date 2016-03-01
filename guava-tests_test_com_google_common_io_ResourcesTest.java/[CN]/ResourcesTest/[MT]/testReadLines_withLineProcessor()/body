@@ -3,7 +3,7 @@
   LineProcessor<List<String>> collectAndLowercaseAndTrim=new LineProcessor<List<String>>(){
     List<String> collector=new ArrayList<String>();
     @Override public boolean processLine(    String line){
-      collector.add(WHITESPACE.trimFrom(line));
+      collector.add(whitespace().trimFrom(line));
       return true;
     }
     @Override public List<String> getResult(){

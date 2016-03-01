@@ -20,7 +20,7 @@
   Arrays.fill(decodabet,(byte)-1);
   for (int i=0; i < chars.length; i++) {
     char c=chars[i];
-    checkArgument(CharMatcher.ASCII.matches(c),"Non-ASCII character: %s",c);
+    checkArgument(CharMatcher.ascii().matches(c),"Non-ASCII character: %s",c);
     checkArgument(decodabet[c] == -1,"Duplicate character: %s",c);
     decodabet[c]=(byte)i;
   }
