@@ -1,7 +1,7 @@
 {
   SettableFuture<Foo> input=SettableFuture.create();
-  Function<Foo,Foo> identity=identity();
-  ListenableFuture<Foo> transformed=Futures.transform(input,identity,REJECTING_EXECUTOR);
+  AsyncFunction<Foo,Foo> asyncIdentity=asyncIdentity();
+  ListenableFuture<Foo> transformed=Futures.transformAsync(input,asyncIdentity,REJECTING_EXECUTOR);
   input.set(new Foo());
   try {
     transformed.get(5,TimeUnit.SECONDS);
