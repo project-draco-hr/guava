@@ -1,3 +1,8 @@
 {
-  return Platform.setsFilterSortedSet(unfiltered,predicate);
+  if (unfiltered instanceof FilteredSet) {
+    FilteredSet<E> filtered=(FilteredSet<E>)unfiltered;
+    Predicate<E> combinedPredicate=Predicates.<E>and(filtered.predicate,predicate);
+    return new FilteredSortedSet<E>((SortedSet<E>)filtered.unfiltered,combinedPredicate);
+  }
+  return new FilteredSortedSet<E>(checkNotNull(unfiltered),checkNotNull(predicate));
 }

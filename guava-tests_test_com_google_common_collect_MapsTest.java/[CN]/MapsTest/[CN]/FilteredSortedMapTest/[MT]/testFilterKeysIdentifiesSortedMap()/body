@@ -1,4 +1,0 @@
-{
-  SortedMap<String,Integer> map=createUnfiltered();
-  assertTrue(Maps.filterKeys((Map<String,Integer>)map,NOT_LENGTH_3) instanceof SortedMap);
-}

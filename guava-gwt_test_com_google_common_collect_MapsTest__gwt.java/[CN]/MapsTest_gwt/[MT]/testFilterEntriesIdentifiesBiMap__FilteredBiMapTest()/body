@@ -1,4 +1,0 @@
-{
-  com.google.common.collect.MapsTest.FilteredBiMapTest testCase=new com.google.common.collect.MapsTest.FilteredBiMapTest();
-  testCase.testFilterEntriesIdentifiesBiMap();
-}

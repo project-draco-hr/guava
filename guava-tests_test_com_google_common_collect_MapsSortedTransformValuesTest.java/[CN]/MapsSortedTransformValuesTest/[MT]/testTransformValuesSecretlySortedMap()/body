@@ -1,4 +1,0 @@
-{
-  Map<String,String> sortedMap=Maps.newTreeMap();
-  assertTrue(Maps.transformValues(sortedMap,Functions.<String>identity()) instanceof SortedMap);
-}

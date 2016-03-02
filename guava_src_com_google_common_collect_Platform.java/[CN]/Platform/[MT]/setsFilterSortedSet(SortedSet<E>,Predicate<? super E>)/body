@@ -1,3 +1,0 @@
-{
-  return (set instanceof NavigableSet) ? Sets.filter((NavigableSet<E>)set,predicate) : Sets.filterSortedIgnoreNavigable(set,predicate);
-}

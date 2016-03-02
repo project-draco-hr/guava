@@ -1,3 +1,0 @@
-{
-  return (fromMap instanceof NavigableMap) ? Maps.transformEntries((NavigableMap<K,V1>)fromMap,transformer) : Maps.transformEntriesIgnoreNavigable(fromMap,transformer);
-}

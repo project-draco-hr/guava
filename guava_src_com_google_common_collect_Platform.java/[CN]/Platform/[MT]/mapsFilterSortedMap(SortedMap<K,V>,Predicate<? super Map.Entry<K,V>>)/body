@@ -1,3 +1,0 @@
-{
-  return (map instanceof NavigableMap) ? Maps.filterEntries((NavigableMap<K,V>)map,predicate) : Maps.filterSortedIgnoreNavigable(map,predicate);
-}

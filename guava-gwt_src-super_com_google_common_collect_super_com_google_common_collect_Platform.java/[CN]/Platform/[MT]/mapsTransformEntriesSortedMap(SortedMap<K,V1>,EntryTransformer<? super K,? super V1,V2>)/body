@@ -1,3 +1,0 @@
-{
-  return Maps.transformEntriesIgnoreNavigable(fromMap,transformer);
-}
