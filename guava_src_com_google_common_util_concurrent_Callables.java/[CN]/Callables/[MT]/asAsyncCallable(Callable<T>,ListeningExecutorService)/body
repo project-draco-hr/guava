@@ -1,0 +1,10 @@
+{
+  checkNotNull(callable);
+  checkNotNull(listeningExecutorService);
+  return new AsyncCallable<T>(){
+    @Override public ListenableFuture<T> call() throws Exception {
+      return listeningExecutorService.submit(callable);
+    }
+  }
+;
+}

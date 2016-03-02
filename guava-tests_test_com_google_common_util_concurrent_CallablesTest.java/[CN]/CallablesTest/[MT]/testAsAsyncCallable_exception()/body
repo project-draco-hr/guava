@@ -1,0 +1,18 @@
+{
+  final Exception expected=new IllegalArgumentException();
+  Callable<String> callable=new Callable<String>(){
+    @Override public String call() throws Exception {
+      throw expected;
+    }
+  }
+;
+  AsyncCallable<String> asyncCallable=Callables.asAsyncCallable(callable,MoreExecutors.newDirectExecutorService());
+  ListenableFuture<String> future=asyncCallable.call();
+  try {
+    future.get();
+    fail("Expected exception to be thrown");
+  }
+ catch (  ExecutionException e) {
+    assertSame(expected,e.getCause());
+  }
+}

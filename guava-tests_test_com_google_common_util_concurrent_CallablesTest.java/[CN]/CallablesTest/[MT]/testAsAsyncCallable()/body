@@ -1,0 +1,12 @@
+{
+  final String expected="MyCallableString";
+  Callable<String> callable=new Callable<String>(){
+    @Override public String call() throws Exception {
+      return expected;
+    }
+  }
+;
+  AsyncCallable<String> asyncCallable=Callables.asAsyncCallable(callable,MoreExecutors.newDirectExecutorService());
+  ListenableFuture<String> future=asyncCallable.call();
+  assertSame(expected,future.get());
+}
