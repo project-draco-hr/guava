@@ -1,0 +1,8 @@
+{
+  try {
+    getDone(immediateCancelledFuture());
+    fail();
+  }
+ catch (  CancellationException expected) {
+  }
+}

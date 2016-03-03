@@ -1,0 +1,4 @@
+{
+  checkState(future.isDone());
+  return getUninterruptibly(future);
+}

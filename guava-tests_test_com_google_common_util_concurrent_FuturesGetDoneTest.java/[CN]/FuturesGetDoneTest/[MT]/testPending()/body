@@ -1,0 +1,8 @@
+{
+  try {
+    getDone(SettableFuture.create());
+    fail();
+  }
+ catch (  IllegalStateException expected) {
+  }
+}

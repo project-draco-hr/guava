@@ -1,0 +1,4 @@
+{
+  com.google.common.util.concurrent.FuturesGetDoneTest testCase=new com.google.common.util.concurrent.FuturesGetDoneTest();
+  testCase.testFailed();
+}

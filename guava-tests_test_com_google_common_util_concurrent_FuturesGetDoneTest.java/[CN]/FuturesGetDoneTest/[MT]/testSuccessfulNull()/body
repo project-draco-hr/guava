@@ -1,0 +1,3 @@
+{
+  assertThat(getDone(immediateFuture((String)null))).isEqualTo(null);
+}

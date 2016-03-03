@@ -1,0 +1,10 @@
+{
+  Exception failureCause=new Exception();
+  try {
+    getDone(immediateFailedFuture(failureCause));
+    fail();
+  }
+ catch (  ExecutionException expected) {
+    assertThat(expected.getCause()).isEqualTo(failureCause);
+  }
+}
