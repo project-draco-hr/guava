@@ -1,3 +1,7 @@
 {
-  return Arrays.asList(getContainsEntryWithIncomparableKeyMethod(),getContainsEntryWithIncomparableValueMethod());
+  List<Method> methods=newArrayList();
+  methods.addAll(super.suppressForConcurrentSkipListMap());
+  methods.add(getContainsEntryWithIncomparableKeyMethod());
+  methods.add(getContainsEntryWithIncomparableValueMethod());
+  return methods;
 }

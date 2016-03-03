@@ -1,0 +1,3 @@
+{
+  return Helpers.getMethod(MapEntrySetTester.class,"testSetValue");
+}

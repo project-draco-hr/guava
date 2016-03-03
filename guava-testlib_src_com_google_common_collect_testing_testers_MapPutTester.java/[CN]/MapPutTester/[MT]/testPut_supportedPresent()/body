@@ -1,0 +1,4 @@
+{
+  assertEquals("put(present, value) should return the old value",v0(),getMap().put(k0(),v3()));
+  expectReplacement(entry(k0(),v3()));
+}
