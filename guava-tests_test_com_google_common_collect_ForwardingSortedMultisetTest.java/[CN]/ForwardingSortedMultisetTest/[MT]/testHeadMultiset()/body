@@ -1,4 +1,4 @@
 {
-  forward().headMultiset("abcd",CLOSED);
+  Multiset<String> unused=forward().headMultiset("abcd",CLOSED);
   assertEquals("[headMultiset(Object,BoundType)]",getCalls());
 }

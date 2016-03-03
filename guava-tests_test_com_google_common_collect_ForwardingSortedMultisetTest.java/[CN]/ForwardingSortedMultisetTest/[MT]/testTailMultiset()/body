@@ -1,4 +1,4 @@
 {
-  forward().tailMultiset("last",OPEN);
+  Multiset<String> unused=forward().tailMultiset("last",OPEN);
   assertEquals("[tailMultiset(Object,BoundType)]",getCalls());
 }

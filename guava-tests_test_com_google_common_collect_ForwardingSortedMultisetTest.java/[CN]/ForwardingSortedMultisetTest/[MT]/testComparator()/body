@@ -1,4 +1,4 @@
 {
-  forward().comparator();
+  Comparator<?> unused=forward().comparator();
   assertEquals("[comparator]",getCalls());
 }

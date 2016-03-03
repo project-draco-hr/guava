@@ -10,7 +10,7 @@
       map.put(keyOne,valueOne);
       assertTrue(segment.recencyQueue.isEmpty());
       for (int i=0; i < DRAIN_THRESHOLD / 2; i++) {
-        map.get(keyOne);
+        Object unused=map.get(keyOne);
       }
       assertFalse(segment.recencyQueue.isEmpty());
       map.put(keyTwo,valueTwo);

@@ -8,11 +8,11 @@
       map.put(keyOne,valueOne);
       assertTrue(segment.recencyQueue.isEmpty());
       for (int i=0; i < DRAIN_THRESHOLD / 2; i++) {
-        map.get(keyOne);
+        Object unused=map.get(keyOne);
       }
       assertFalse(segment.recencyQueue.isEmpty());
       for (int i=0; i < DRAIN_THRESHOLD * 2; i++) {
-        map.get(keyOne);
+        Object unused=map.get(keyOne);
         assertTrue(segment.recencyQueue.size() <= DRAIN_THRESHOLD);
       }
       for (int i=0; i < DRAIN_THRESHOLD * 2; i++) {
@@ -20,11 +20,11 @@
       }
       assertTrue(segment.recencyQueue.isEmpty());
       for (int i=0; i < DRAIN_THRESHOLD / 2; i++) {
-        map.get(keyOne);
+        Object unused=map.get(keyOne);
       }
       assertFalse(segment.recencyQueue.isEmpty());
       for (      Object key : map.keySet()) {
-        map.get(key);
+        Object unused=map.get(key);
         assertTrue(segment.recencyQueue.size() <= DRAIN_THRESHOLD);
       }
     }

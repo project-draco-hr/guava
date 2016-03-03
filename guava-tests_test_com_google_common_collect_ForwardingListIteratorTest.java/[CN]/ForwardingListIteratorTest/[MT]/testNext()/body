@@ -1,4 +1,4 @@
 {
-  forward.next();
+  String unused=forward.next();
   assertEquals("[next]",getCalls());
 }

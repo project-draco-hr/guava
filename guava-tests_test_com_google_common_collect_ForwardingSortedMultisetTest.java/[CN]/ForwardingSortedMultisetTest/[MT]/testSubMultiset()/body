@@ -1,4 +1,4 @@
 {
-  forward().subMultiset("abcd",CLOSED,"dcba",OPEN);
+  Multiset<String> unused=forward().subMultiset("abcd",CLOSED,"dcba",OPEN);
   assertEquals("[subMultiset(Object,BoundType,Object,BoundType)]",getCalls());
 }

@@ -1,4 +1,4 @@
 {
-  forward().pollFirstEntry();
+  Entry<String> unused=forward().pollFirstEntry();
   assertEquals("[pollFirstEntry]",getCalls());
 }

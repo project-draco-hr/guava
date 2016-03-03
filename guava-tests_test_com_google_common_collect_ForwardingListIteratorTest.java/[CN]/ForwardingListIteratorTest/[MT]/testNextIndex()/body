@@ -1,4 +1,4 @@
 {
-  forward.nextIndex();
+  int unused=forward.nextIndex();
   assertEquals("[nextIndex]",getCalls());
 }

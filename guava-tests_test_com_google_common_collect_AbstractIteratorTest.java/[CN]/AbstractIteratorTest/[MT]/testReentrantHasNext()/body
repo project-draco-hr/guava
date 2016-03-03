@@ -1,7 +1,7 @@
 {
   Iterator<Integer> iter=new AbstractIterator<Integer>(){
     @Override protected Integer computeNext(){
-      hasNext();
+      boolean unused=hasNext();
       return null;
     }
   }

@@ -22,7 +22,7 @@
     while (i.hasNext()) {
       ReferenceEntry<Object,Object> entry=i.next();
       if (random.nextBoolean()) {
-        map.get(entry.getKey());
+        Object unused=map.get(entry.getKey());
         reads.add(entry);
         i.remove();
         assertTrue(segment.recencyQueue.size() <= DRAIN_THRESHOLD);

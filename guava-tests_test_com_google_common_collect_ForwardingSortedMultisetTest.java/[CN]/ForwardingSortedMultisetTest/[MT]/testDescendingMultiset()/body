@@ -1,4 +1,4 @@
 {
-  forward().descendingMultiset();
+  Multiset<String> unused=forward().descendingMultiset();
   assertEquals("[descendingMultiset]",getCalls());
 }
