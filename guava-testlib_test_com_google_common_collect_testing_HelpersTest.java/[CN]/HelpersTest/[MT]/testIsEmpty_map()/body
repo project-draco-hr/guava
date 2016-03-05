@@ -4,7 +4,7 @@
   map.put("a","b");
   try {
     Helpers.assertEmpty(map);
-    fail();
+    throw new Error();
   }
  catch (  AssertionFailedError expected) {
   }

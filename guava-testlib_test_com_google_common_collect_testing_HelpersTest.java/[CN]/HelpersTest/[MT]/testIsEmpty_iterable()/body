@@ -4,7 +4,7 @@
   list.add("a");
   try {
     Helpers.assertEmpty(list);
-    fail();
+    throw new Error();
   }
  catch (  AssertionFailedError expected) {
   }

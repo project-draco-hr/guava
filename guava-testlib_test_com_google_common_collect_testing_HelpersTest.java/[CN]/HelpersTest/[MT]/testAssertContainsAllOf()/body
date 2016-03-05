@@ -6,19 +6,19 @@
   Helpers.assertContainsAllOf(list,"a","b","c","a");
   try {
     Helpers.assertContainsAllOf(list,"d");
-    fail();
+    throw new Error();
   }
  catch (  AssertionFailedError expected) {
   }
   try {
     Helpers.assertContainsAllOf(list,"a","b","c","d");
-    fail();
+    throw new Error();
   }
  catch (  AssertionFailedError expected) {
   }
   try {
     Helpers.assertContainsAllOf(list,"a","a","a");
-    fail();
+    throw new Error();
   }
  catch (  AssertionFailedError expected) {
   }

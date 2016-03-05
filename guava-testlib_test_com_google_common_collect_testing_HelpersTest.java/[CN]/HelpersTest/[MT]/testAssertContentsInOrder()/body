@@ -3,25 +3,25 @@
   Helpers.assertContentsInOrder(list,"a","b","c");
   try {
     Helpers.assertContentsInOrder(list,"a","b");
-    fail();
+    throw new Error();
   }
  catch (  AssertionFailedError expected) {
   }
   try {
     Helpers.assertContentsInOrder(list,"a","b","c","d");
-    fail();
+    throw new Error();
   }
  catch (  AssertionFailedError expected) {
   }
   try {
     Helpers.assertContentsInOrder(list,"a","c","b");
-    fail();
+    throw new Error();
   }
  catch (  AssertionFailedError expected) {
   }
   try {
     Helpers.assertContentsInOrder(list,"a","B","c");
-    fail();
+    throw new Error();
   }
  catch (  AssertionFailedError expected) {
   }

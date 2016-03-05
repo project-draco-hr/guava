@@ -4,7 +4,7 @@
   Helpers.assertContains(list,"b");
   try {
     Helpers.assertContains(list,"c");
-    fail();
+    throw new Error();
   }
  catch (  AssertionFailedError expected) {
   }

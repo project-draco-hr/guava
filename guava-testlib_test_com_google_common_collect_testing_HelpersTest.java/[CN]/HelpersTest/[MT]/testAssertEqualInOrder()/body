@@ -4,27 +4,27 @@
   List<?> fewer=Arrays.asList("a","b");
   try {
     Helpers.assertEqualInOrder(list,fewer);
-    fail();
+    throw new Error();
   }
  catch (  AssertionFailedError expected) {
   }
   try {
     Helpers.assertEqualInOrder(fewer,list);
-    fail();
+    throw new Error();
   }
  catch (  AssertionFailedError expected) {
   }
   List<?> differentOrder=Arrays.asList("a","c","b");
   try {
     Helpers.assertEqualInOrder(list,differentOrder);
-    fail();
+    throw new Error();
   }
  catch (  AssertionFailedError expected) {
   }
   List<?> differentContents=Arrays.asList("a","b","C");
   try {
     Helpers.assertEqualInOrder(list,differentContents);
-    fail();
+    throw new Error();
   }
  catch (  AssertionFailedError expected) {
   }
