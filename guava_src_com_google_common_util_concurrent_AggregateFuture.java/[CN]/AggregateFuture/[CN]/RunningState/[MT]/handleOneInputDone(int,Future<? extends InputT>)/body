@@ -7,14 +7,14 @@
         AggregateFuture.super.cancel(false);
       }
  else {
-        InputT result=getUninterruptibly(future);
+        InputT result=getDone(future);
         if (collectsValues) {
           collectOneValue(allMustSucceed,index,result);
         }
       }
     }
  else     if (collectsValues && !future.isCancelled()) {
-      collectOneValue(allMustSucceed,index,getUninterruptibly(future));
+      collectOneValue(allMustSucceed,index,getDone(future));
     }
   }
  catch (  ExecutionException e) {

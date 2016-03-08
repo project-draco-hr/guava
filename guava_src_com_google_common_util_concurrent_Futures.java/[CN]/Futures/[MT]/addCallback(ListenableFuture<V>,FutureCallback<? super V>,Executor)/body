@@ -4,7 +4,7 @@
     @Override public void run(){
       final V value;
       try {
-        value=getUninterruptibly(future);
+        value=getDone(future);
       }
  catch (      ExecutionException e) {
         callback.onFailure(e.getCause());

@@ -5,7 +5,7 @@
   }
  else {
     try {
-      V v=Uninterruptibles.getUninterruptibly(future);
+      V v=getDone(future);
       valueToSet=v == null ? NULL : v;
     }
  catch (    ExecutionException exception) {

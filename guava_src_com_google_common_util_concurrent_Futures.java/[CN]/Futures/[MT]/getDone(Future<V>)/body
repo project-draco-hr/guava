@@ -1,4 +1,4 @@
 {
-  checkState(future.isDone());
+  checkState(future.isDone(),"Future was expected to be done: %s",future);
   return getUninterruptibly(future);
 }

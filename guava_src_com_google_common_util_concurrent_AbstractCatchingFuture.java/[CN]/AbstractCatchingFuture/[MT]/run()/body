@@ -11,7 +11,7 @@
   V sourceResult=null;
   Throwable throwable=null;
   try {
-    sourceResult=getUninterruptibly(localInputFuture);
+    sourceResult=getDone(localInputFuture);
   }
  catch (  ExecutionException e) {
     throwable=checkNotNull(e.getCause());

@@ -8,7 +8,7 @@
   function=null;
   I sourceResult;
   try {
-    sourceResult=getUninterruptibly(localInputFuture);
+    sourceResult=getDone(localInputFuture);
   }
  catch (  CancellationException e) {
     cancel(false);
