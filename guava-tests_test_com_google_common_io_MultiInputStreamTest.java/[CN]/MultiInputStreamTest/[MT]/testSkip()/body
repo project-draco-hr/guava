@@ -10,9 +10,9 @@
     }
   }
 ).iterator());
-  multi.skip(-1);
-  multi.skip(-1);
-  multi.skip(0);
+  assertEquals(0,multi.skip(-1));
+  assertEquals(0,multi.skip(-1));
+  assertEquals(0,multi.skip(0));
   ByteStreams.skipFully(multi,20);
   assertEquals(20,multi.read());
 }
