@@ -11,7 +11,7 @@
 ,directExecutor());
   firstFuture.cancel(false);
   try {
-    bulkFuture.get();
+    getDone(bulkFuture);
     fail();
   }
  catch (  CancellationException expected) {

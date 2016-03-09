@@ -7,8 +7,8 @@
     }
   }
 );
-  ListenableFuture<Integer> failingFuture=Futures.immediateFailedFuture(raisedException);
-  ListenableFuture<Integer> faultTolerantFuture=Futures.catching(failingFuture,Throwable.class,fallback);
-  assertEquals(20,faultTolerantFuture.get().intValue());
+  ListenableFuture<Integer> failingFuture=immediateFailedFuture(raisedException);
+  ListenableFuture<Integer> faultTolerantFuture=catching(failingFuture,Throwable.class,fallback);
+  assertEquals(20,getDone(faultTolerantFuture).intValue());
   fallback.verifyCallCount(1);
 }

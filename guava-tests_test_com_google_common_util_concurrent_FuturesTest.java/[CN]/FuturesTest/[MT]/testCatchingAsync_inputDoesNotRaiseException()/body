@@ -1,6 +1,6 @@
 {
   AsyncFunction<Throwable,Integer> fallback=unexpectedAsyncFunction();
-  ListenableFuture<Integer> originalFuture=Futures.immediateFuture(7);
-  ListenableFuture<Integer> faultToleranteFuture=Futures.catchingAsync(originalFuture,Throwable.class,fallback);
-  assertEquals(7,faultToleranteFuture.get().intValue());
+  ListenableFuture<Integer> originalFuture=immediateFuture(7);
+  ListenableFuture<Integer> faultTolerantFuture=catchingAsync(originalFuture,Throwable.class,fallback);
+  assertEquals(7,getDone(faultTolerantFuture).intValue());
 }

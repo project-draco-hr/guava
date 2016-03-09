@@ -1,34 +1,34 @@
 {
   SettableFuture<String> future=SettableFuture.create();
-  CheckedFuture<String,TestException> checked=Futures.makeChecked(future,mapper);
-  Thread.currentThread().interrupt();
+  CheckedFuture<String,TestException> checked=makeChecked(future,mapper);
+  currentThread().interrupt();
   try {
     checked.get();
     fail();
   }
- catch (  InterruptedException e) {
+ catch (  InterruptedException expected) {
   }
-  Thread.currentThread().interrupt();
+  currentThread().interrupt();
   try {
-    checked.get(5,TimeUnit.SECONDS);
+    checked.get(5,SECONDS);
     fail();
   }
- catch (  InterruptedException e) {
+ catch (  InterruptedException expected) {
   }
-  Thread.currentThread().interrupt();
+  currentThread().interrupt();
   try {
     checked.checkedGet();
     fail();
   }
- catch (  TestException e) {
-    assertThat(e.getCause()).isInstanceOf(InterruptedException.class);
+ catch (  TestException expected) {
+    assertThat(expected.getCause()).isInstanceOf(InterruptedException.class);
   }
-  Thread.currentThread().interrupt();
+  currentThread().interrupt();
   try {
-    checked.checkedGet(5,TimeUnit.SECONDS);
+    checked.checkedGet(5,SECONDS);
     fail();
   }
- catch (  TestException e) {
-    assertThat(e.getCause()).isInstanceOf(InterruptedException.class);
+ catch (  TestException expected) {
+    assertThat(expected.getCause()).isInstanceOf(InterruptedException.class);
   }
 }

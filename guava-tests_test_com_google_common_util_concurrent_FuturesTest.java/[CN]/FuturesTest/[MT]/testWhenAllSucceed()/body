@@ -9,14 +9,13 @@ class PartialResultException extends Exception {
     }
   }
 ;
-  ListenableFuture<String> futureResult=Futures.whenAllSucceed(futureInteger,futureBoolean).callAsync(combiner);
+  ListenableFuture<String> futureResult=whenAllSucceed(futureInteger,futureBoolean).callAsync(combiner);
   PartialResultException partialResultException=new PartialResultException();
   futureInteger.setException(partialResultException);
   Boolean booleanPartial=true;
   futureBoolean.set(booleanPartial);
-  assertTrue(futureResult.isDone());
   try {
-    futureResult.get();
+    getDone(futureResult);
     fail();
   }
  catch (  ExecutionException expected) {

@@ -2,7 +2,7 @@
   SingleCallListener listener=new SingleCallListener();
   SettableFuture<String> future1=SettableFuture.create();
   SettableFuture<String> future2=SettableFuture.create();
-  @SuppressWarnings("unchecked") ListenableFuture<List<String>> compound=Futures.allAsList(future1,future2);
+  @SuppressWarnings("unchecked") ListenableFuture<List<String>> compound=allAsList(future1,future2);
   compound.addListener(listener,directExecutor());
   listener.expectCall();
   Throwable exception=new Throwable("failed1");
@@ -11,10 +11,10 @@
   assertTrue(listener.wasCalled());
   future2.set("result2");
   try {
-    compound.get();
-    fail("Expected exception not thrown");
+    getDone(compound);
+    fail();
   }
- catch (  ExecutionException e) {
-    assertSame(exception,e.getCause());
+ catch (  ExecutionException expected) {
+    assertSame(exception,expected.getCause());
   }
 }

@@ -1,5 +1,5 @@
 {
-  assertEquals(Lists.newArrayList((Object)null),Futures.successfulAsList(immediateFailedFuture(new MyError())).get());
+  assertEquals(newArrayList((Object)null),getDone(successfulAsList(immediateFailedFuture(new MyError()))));
   List<LogRecord> logged=aggregateFutureLogHandler.getStoredLogRecords();
   assertThat(logged).hasSize(1);
   assertThat(logged.get(0).getThrown()).isInstanceOf(MyError.class);

@@ -11,7 +11,7 @@
   }
 ;
   SettableFuture<String> inputFuture=SettableFuture.create();
-  ListenableFuture<Integer> future=Futures.transformAsync(inputFuture,function,Executors.newSingleThreadExecutor());
+  ListenableFuture<Integer> future=transformAsync(inputFuture,function,newSingleThreadExecutor());
   inputFuture.set("value");
   inFunction.await();
   future.cancel(false);

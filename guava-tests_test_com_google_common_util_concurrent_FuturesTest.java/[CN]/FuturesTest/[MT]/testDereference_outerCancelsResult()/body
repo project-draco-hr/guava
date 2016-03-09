@@ -1,6 +1,6 @@
 {
   ListenableFuture<ListenableFuture<Foo>> outer=SettableFuture.create();
-  ListenableFuture<Foo> dereferenced=Futures.dereference(outer);
+  ListenableFuture<Foo> dereferenced=dereference(outer);
   outer.cancel(true);
   assertTrue(dereferenced.isCancelled());
 }

@@ -1,13 +1,13 @@
 {
   ListenableFuture<Integer> inputFuture=immediateFailedFuture(new Exception());
-  ListenableFuture<?> chainedFuture=Futures.catchingAsync(inputFuture,Throwable.class,new AsyncFunction<Throwable,Integer>(){
+  ListenableFuture<?> chainedFuture=catchingAsync(inputFuture,Throwable.class,new AsyncFunction<Throwable,Integer>(){
     @Override @SuppressWarnings("AsyncFunctionReturnsNull") public ListenableFuture<Integer> apply(    Throwable t){
       return null;
     }
   }
 );
   try {
-    chainedFuture.get();
+    getDone(chainedFuture);
     fail();
   }
  catch (  ExecutionException expected) {

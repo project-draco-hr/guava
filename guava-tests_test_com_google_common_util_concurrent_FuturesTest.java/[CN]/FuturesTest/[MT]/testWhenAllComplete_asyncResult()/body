@@ -5,14 +5,14 @@
     @Override public ListenableFuture<String> call() throws Exception {
       assertTrue(futureInteger.isDone());
       assertTrue(futureBoolean.isDone());
-      return Futures.immediateFuture(createCombinedResult(futureInteger.get(),futureBoolean.get()));
+      return immediateFuture(createCombinedResult(getDone(futureInteger),getDone(futureBoolean)));
     }
   }
 ;
-  ListenableFuture<String> futureResult=Futures.whenAllComplete(futureInteger,futureBoolean).callAsync(combiner);
+  ListenableFuture<String> futureResult=whenAllComplete(futureInteger,futureBoolean).callAsync(combiner);
   Integer integerPartial=1;
   futureInteger.set(integerPartial);
   Boolean booleanPartial=true;
   futureBoolean.set(booleanPartial);
-  assertEquals(createCombinedResult(integerPartial,booleanPartial),futureResult.get());
+  assertEquals(createCombinedResult(integerPartial,booleanPartial),getDone(futureResult));
 }

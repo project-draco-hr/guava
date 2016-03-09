@@ -1,14 +1,8 @@
 {
-  AbstractFuture<Object> input=new AbstractFuture<Object>(){
-    @Override public Object get(){
-      throw new MyRuntimeException();
-    }
-  }
-;
-  ListenableFuture<Object> output=Futures.transform(input,identity());
-  input.set("foo");
+  ListenableFuture<Object> input=UncheckedThrowingFuture.throwingRuntimeException(new MyRuntimeException());
+  ListenableFuture<Object> output=transform(input,identity());
   try {
-    output.get();
+    getDone(output);
     fail();
   }
  catch (  ExecutionException expected) {

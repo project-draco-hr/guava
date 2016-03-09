@@ -1,6 +1,6 @@
 {
   SettableFuture<String> future=SettableFuture.create();
-  CheckedFuture<String,TestException> checked=Futures.makeChecked(future,new Function<Exception,TestException>(){
+  CheckedFuture<String,TestException> checked=makeChecked(future,new Function<Exception,TestException>(){
     @Override public TestException apply(    Exception from){
       throw new NullPointerException();
     }

@@ -7,13 +7,13 @@
   }
 ;
   SettableFuture<String> inputFuture=SettableFuture.create();
-  ListenableFuture<Integer> outputFuture=Futures.transformAsync(inputFuture,function);
+  ListenableFuture<Integer> outputFuture=transformAsync(inputFuture,function);
   inputFuture.set("value");
   try {
-    outputFuture.get();
-    fail("should have thrown error");
+    getDone(outputFuture);
+    fail();
   }
- catch (  ExecutionException e) {
-    assertSame(error,e.getCause());
+ catch (  ExecutionException expected) {
+    assertSame(error,expected.getCause());
   }
 }

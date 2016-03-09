@@ -1,5 +1,5 @@
 {
-  ListenableFuture<FooChild> future=Futures.immediateFuture(null);
+  ListenableFuture<FooChild> future=immediateFuture(null);
   final BarChild barChild=new BarChild();
   AsyncFunction<Foo,BarChild> function=new AsyncFunction<Foo,BarChild>(){
     @Override public AbstractFuture<BarChild> apply(    Foo unused){
@@ -11,6 +11,6 @@
     }
   }
 ;
-  Bar bar=Futures.transformAsync(future,function).get();
+  Bar bar=getDone(transformAsync(future,function));
   assertSame(barChild,bar);
 }

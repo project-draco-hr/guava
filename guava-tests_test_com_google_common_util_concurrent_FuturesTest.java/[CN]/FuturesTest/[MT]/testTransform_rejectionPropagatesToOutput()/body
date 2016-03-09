@@ -1,10 +1,10 @@
 {
   SettableFuture<Foo> input=SettableFuture.create();
   Function<Foo,Foo> identity=identity();
-  ListenableFuture<Foo> transformed=Futures.transform(input,identity,REJECTING_EXECUTOR);
+  ListenableFuture<Foo> transformed=transform(input,identity,REJECTING_EXECUTOR);
   input.set(new Foo());
   try {
-    transformed.get(5,TimeUnit.SECONDS);
+    getDone(transformed);
     fail();
   }
  catch (  ExecutionException expected) {

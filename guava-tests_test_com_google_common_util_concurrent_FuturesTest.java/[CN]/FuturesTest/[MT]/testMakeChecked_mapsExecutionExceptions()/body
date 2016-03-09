@@ -1,6 +1,6 @@
 {
   SettableFuture<String> future=SettableFuture.create();
-  CheckedFuture<String,TestException> checked=Futures.makeChecked(future,mapper);
+  CheckedFuture<String,TestException> checked=makeChecked(future,mapper);
   future.setException(new IOException("checked"));
   assertTrue(checked.isDone());
   assertFalse(checked.isCancelled());
@@ -8,28 +8,28 @@
     checked.get();
     fail();
   }
- catch (  ExecutionException e) {
-    assertThat(e.getCause()).isInstanceOf(IOException.class);
+ catch (  ExecutionException expected) {
+    assertThat(expected.getCause()).isInstanceOf(IOException.class);
   }
   try {
-    checked.get(5,TimeUnit.SECONDS);
+    checked.get(5,SECONDS);
     fail();
   }
- catch (  ExecutionException e) {
-    assertThat(e.getCause()).isInstanceOf(IOException.class);
+ catch (  ExecutionException expected) {
+    assertThat(expected.getCause()).isInstanceOf(IOException.class);
   }
   try {
     checked.checkedGet();
     fail();
   }
- catch (  TestException e) {
-    assertThat(e.getCause()).isInstanceOf(IOException.class);
+ catch (  TestException expected) {
+    assertThat(expected.getCause()).isInstanceOf(IOException.class);
   }
   try {
-    checked.checkedGet(5,TimeUnit.SECONDS);
+    checked.checkedGet(5,SECONDS);
     fail();
   }
- catch (  TestException e) {
-    assertThat(e.getCause()).isInstanceOf(IOException.class);
+ catch (  TestException expected) {
+    assertThat(expected.getCause()).isInstanceOf(IOException.class);
   }
 }

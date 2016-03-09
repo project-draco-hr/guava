@@ -1,4 +1,5 @@
 {
-  ListenableFuture<String> future=Futures.immediateFuture(DATA1);
-  assertSame(DATA1,future.get(0L,TimeUnit.MILLISECONDS));
+  ListenableFuture<String> future=immediateFuture(DATA1);
+  assertSame(DATA1,getDone(future));
+  assertSame(DATA1,getDoneFromTimeoutOverload(future));
 }

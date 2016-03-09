@@ -1,0 +1,12 @@
+{
+  checkState(future.isDone(),"Future was expected to be done: %s",future);
+  try {
+    return future.get(0,SECONDS);
+  }
+ catch (  InterruptedException e) {
+    throw new AssertionError();
+  }
+catch (  TimeoutException e) {
+    throw new AssertionError();
+  }
+}

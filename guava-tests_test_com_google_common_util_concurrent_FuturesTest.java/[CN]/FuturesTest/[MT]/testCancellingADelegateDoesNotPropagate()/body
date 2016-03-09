@@ -1,10 +1,10 @@
 {
   SettableFuture<Long> future1=SettableFuture.create();
   SettableFuture<Long> future2=SettableFuture.create();
-  ImmutableList<ListenableFuture<Long>> delegates=Futures.inCompletionOrder(ImmutableList.<ListenableFuture<Long>>of(future1,future2));
+  ImmutableList<ListenableFuture<Long>> delegates=inCompletionOrder(ImmutableList.<ListenableFuture<Long>>of(future1,future2));
   future1.set(1L);
   assertFalse(delegates.get(0).cancel(true));
   assertTrue(delegates.get(1).cancel(true));
   assertTrue(future2.set(2L));
-  assertEquals((Long)2L,future2.get());
+  assertEquals((Long)2L,getDone(future2));
 }

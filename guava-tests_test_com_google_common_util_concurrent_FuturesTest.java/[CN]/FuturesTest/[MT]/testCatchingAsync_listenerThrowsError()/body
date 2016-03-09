@@ -1,6 +1,6 @@
 {
   SettableFuture<Object> input=SettableFuture.create();
-  ListenableFuture<Object> output=Futures.catchingAsync(input,Throwable.class,asyncIdentity());
+  ListenableFuture<Object> output=catchingAsync(input,Throwable.class,asyncIdentity());
   output.addListener(new Runnable(){
     @Override public void run(){
       throw new MyError();

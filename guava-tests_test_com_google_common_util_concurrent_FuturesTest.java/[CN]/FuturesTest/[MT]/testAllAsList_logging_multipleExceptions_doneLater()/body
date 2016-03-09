@@ -2,14 +2,15 @@
   SettableFuture<Object> future1=SettableFuture.create();
   SettableFuture<Object> future2=SettableFuture.create();
   SettableFuture<Object> future3=SettableFuture.create();
-  ListenableFuture<List<Object>> all=Futures.allAsList(future1,future2,future3);
+  ListenableFuture<List<Object>> all=allAsList(future1,future2,future3);
   future1.setException(new MyException());
   future2.setException(new MyException());
   future3.setException(new MyException());
   try {
-    all.get();
+    getDone(all);
+    fail();
   }
- catch (  ExecutionException e) {
+ catch (  ExecutionException expected) {
     List<LogRecord> logged=aggregateFutureLogHandler.getStoredLogRecords();
     assertThat(logged).hasSize(2);
     assertThat(logged.get(0).getThrown()).isInstanceOf(MyException.class);

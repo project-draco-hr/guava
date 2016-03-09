@@ -11,7 +11,7 @@
 ,directExecutor());
   firstFuture.setException(sameInstance);
   try {
-    bulkFuture.get();
+    getDone(bulkFuture);
     fail();
   }
  catch (  ExecutionException expected) {

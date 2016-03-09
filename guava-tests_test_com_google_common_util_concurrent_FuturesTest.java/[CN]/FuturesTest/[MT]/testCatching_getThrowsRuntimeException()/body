@@ -1,11 +1,5 @@
 {
-  AbstractFuture<Object> input=new AbstractFuture<Object>(){
-    @Override public Object get(){
-      throw new MyRuntimeException();
-    }
-  }
-;
-  ListenableFuture<Object> output=Futures.catching(input,Throwable.class,identity());
-  input.setException(new MyException());
-  assertThat(output.get()).isInstanceOf(MyRuntimeException.class);
+  ListenableFuture<Object> input=UncheckedThrowingFuture.throwingRuntimeException(new MyRuntimeException());
+  ListenableFuture<Object> output=catching(input,Throwable.class,identity());
+  assertThat(getDone(output)).isInstanceOf(MyRuntimeException.class);
 }

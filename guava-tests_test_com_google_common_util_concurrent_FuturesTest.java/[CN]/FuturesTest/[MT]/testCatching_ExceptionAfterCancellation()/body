@@ -8,7 +8,7 @@ class Fallback implements Function<Throwable,Object> {
   }
   Fallback fallback=new Fallback();
   SettableFuture<Object> input=SettableFuture.create();
-  ListenableFuture<Object> output=Futures.catching(input,Throwable.class,fallback);
+  ListenableFuture<Object> output=catching(input,Throwable.class,fallback);
   fallback.output=output;
   input.setException(new MyException());
   assertTrue(output.isCancelled());

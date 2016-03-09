@@ -1,12 +1,19 @@
 {
   CancellationException exception=new CancellationException();
-  ListenableFuture<String> future=Futures.immediateFailedFuture(exception);
+  ListenableFuture<String> future=immediateFailedFuture(exception);
+  assertFalse(future.isCancelled());
   try {
-    future.get(0L,TimeUnit.MILLISECONDS);
-    fail("This call was supposed to throw an ExecutionException");
+    getDone(future);
+    fail();
   }
  catch (  ExecutionException expected) {
     assertSame(exception,expected.getCause());
-    assertFalse(future.isCancelled());
+  }
+  try {
+    getDoneFromTimeoutOverload(future);
+    fail();
+  }
+ catch (  ExecutionException expected) {
+    assertSame(exception,expected.getCause());
   }
 }

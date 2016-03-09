@@ -1,0 +1,4 @@
+{
+  checkNotNull(listener);
+  executor.execute(listener);
+}

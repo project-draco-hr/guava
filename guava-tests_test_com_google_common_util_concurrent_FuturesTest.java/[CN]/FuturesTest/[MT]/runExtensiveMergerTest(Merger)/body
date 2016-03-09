@@ -9,7 +9,7 @@
         ListenableFuture<List<String>> future=merger.merged(iFuture,jFuture);
         try {
           List<String> result=future.get(0,MILLISECONDS);
-          assertTrue("Got " + result,Arrays.asList("a",null).containsAll(result));
+          assertTrue("Got " + result,asList("a",null).containsAll(result));
         }
  catch (        CancellationException e) {
           assertTrue(merger == Merger.allMerger);
@@ -24,7 +24,7 @@ catch (        TimeoutException e) {
         }
         try {
           List<String> result=conditionalPseudoTimedGetUninterruptibly(inputs,iFuture,jFuture,future,20,MILLISECONDS);
-          assertTrue("Got " + result,Arrays.asList("a",null).containsAll(result));
+          assertTrue("Got " + result,asList("a",null).containsAll(result));
         }
  catch (        CancellationException e) {
           assertTrue(merger == Merger.allMerger);
@@ -40,8 +40,8 @@ catch (        TimeoutException e) {
         inputs.allFutures.get(iBeforeJ ? i : j).finisher.run();
         inputs.allFutures.get(iBeforeJ ? j : i).finisher.run();
         try {
-          List<String> result=future.get();
-          assertTrue("Got " + result,Arrays.asList("a","b",null).containsAll(result));
+          List<String> result=getDone(future);
+          assertTrue("Got " + result,asList("a","b",null).containsAll(result));
         }
  catch (        CancellationException e) {
           assertTrue(merger == Merger.allMerger);

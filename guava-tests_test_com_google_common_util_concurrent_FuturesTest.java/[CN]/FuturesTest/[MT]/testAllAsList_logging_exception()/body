@@ -1,10 +1,10 @@
 {
   try {
-    Futures.allAsList(immediateFailedFuture(new MyException())).get();
+    getDone(allAsList(immediateFailedFuture(new MyException())));
     fail();
   }
- catch (  ExecutionException e) {
-    assertThat(e.getCause()).isInstanceOf(MyException.class);
+ catch (  ExecutionException expected) {
+    assertThat(expected.getCause()).isInstanceOf(MyException.class);
     assertEquals("Nothing should be logged",0,aggregateFutureLogHandler.getStoredLogRecords().size());
   }
 }

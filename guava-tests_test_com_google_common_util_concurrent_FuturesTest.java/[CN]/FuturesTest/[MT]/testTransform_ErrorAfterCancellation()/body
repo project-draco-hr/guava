@@ -8,7 +8,7 @@ class Transformer implements Function<Object,Object> {
   }
   Transformer transformer=new Transformer();
   SettableFuture<Object> input=SettableFuture.create();
-  ListenableFuture<Object> output=Futures.transform(input,transformer);
+  ListenableFuture<Object> output=transform(input,transformer);
   transformer.output=output;
   input.set("foo");
   assertTrue(output.isCancelled());

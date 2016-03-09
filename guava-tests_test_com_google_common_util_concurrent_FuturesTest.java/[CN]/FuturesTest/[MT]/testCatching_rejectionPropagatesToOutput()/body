@@ -1,9 +1,9 @@
 {
   SettableFuture<String> input=SettableFuture.create();
-  ListenableFuture<String> transformed=Futures.catching(input,Throwable.class,constant("foo"),REJECTING_EXECUTOR);
+  ListenableFuture<String> transformed=catching(input,Throwable.class,constant("foo"),REJECTING_EXECUTOR);
   input.setException(new Exception());
   try {
-    transformed.get(5,TimeUnit.SECONDS);
+    getDone(transformed);
     fail();
   }
  catch (  ExecutionException expected) {

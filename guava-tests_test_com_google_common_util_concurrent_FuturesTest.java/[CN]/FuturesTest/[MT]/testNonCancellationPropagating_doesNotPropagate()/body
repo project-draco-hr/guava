@@ -1,6 +1,6 @@
 {
   SettableFuture<Foo> input=SettableFuture.create();
-  ListenableFuture<Foo> wrapper=Futures.nonCancellationPropagating(input);
+  ListenableFuture<Foo> wrapper=nonCancellationPropagating(input);
   assertTrue(wrapper.cancel(true));
   assertTrue(wrapper.isCancelled());
   assertTrue(wrapper.isDone());

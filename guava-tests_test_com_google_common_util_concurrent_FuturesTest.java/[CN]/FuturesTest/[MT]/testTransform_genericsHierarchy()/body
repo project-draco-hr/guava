@@ -1,5 +1,5 @@
 {
-  ListenableFuture<FooChild> future=Futures.immediateFuture(null);
+  ListenableFuture<FooChild> future=immediateFuture(null);
   final BarChild barChild=new BarChild();
   Function<Foo,BarChild> function=new Function<Foo,BarChild>(){
     @Override public BarChild apply(    Foo unused){
@@ -7,6 +7,6 @@
     }
   }
 ;
-  Bar bar=Futures.transform(future,function).get();
+  Bar bar=getDone(transform(future,function));
   assertSame(barChild,bar);
 }

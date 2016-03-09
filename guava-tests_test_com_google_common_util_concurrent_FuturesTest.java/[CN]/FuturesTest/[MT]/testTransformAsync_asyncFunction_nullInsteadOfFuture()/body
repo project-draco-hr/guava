@@ -1,8 +1,8 @@
 {
   ListenableFuture<?> inputFuture=immediateFuture("a");
-  ListenableFuture<?> chainedFuture=Futures.transformAsync(inputFuture,constantAsyncFunction(null));
+  ListenableFuture<?> chainedFuture=transformAsync(inputFuture,constantAsyncFunction(null));
   try {
-    chainedFuture.get();
+    getDone(chainedFuture);
     fail();
   }
  catch (  ExecutionException expected) {

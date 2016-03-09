@@ -8,8 +8,8 @@
     }
   }
 );
-  ListenableFuture<Integer> failingFuture=Futures.immediateFailedFuture(raisedException);
-  ListenableFuture<Integer> derived=Futures.catchingAsync(failingFuture,Throwable.class,fallback);
+  ListenableFuture<Integer> failingFuture=immediateFailedFuture(raisedException);
+  ListenableFuture<Integer> derived=catchingAsync(failingFuture,Throwable.class,fallback);
   derived.cancel(false);
   assertTrue(secondary.isCancelled());
   assertFalse(secondary.wasInterrupted());

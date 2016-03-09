@@ -7,7 +7,7 @@
     }
   }
 ;
-  ListenableFuture<Bar> f2=Futures.transformAsync(f1,function);
+  ListenableFuture<Bar> f2=transformAsync(f1,function);
   f1.cancel(true);
   assertTrue(f2.isCancelled());
   assertFalse(((AbstractFuture<?>)f2).wasInterrupted());

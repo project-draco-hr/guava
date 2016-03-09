@@ -1,6 +1,6 @@
 {
   try {
-    future.get(0,TimeUnit.SECONDS);
+    future.get(0,SECONDS);
     fail();
   }
  catch (  Exception e) {

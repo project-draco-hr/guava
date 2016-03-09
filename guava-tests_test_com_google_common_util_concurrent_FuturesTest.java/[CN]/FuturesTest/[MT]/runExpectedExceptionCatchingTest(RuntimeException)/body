@@ -5,14 +5,14 @@
     }
   }
 );
-  ListenableFuture<Integer> failingFuture=Futures.immediateFailedFuture(new RuntimeException());
-  ListenableFuture<Integer> faultToleranteFuture=Futures.catching(failingFuture,Throwable.class,fallback);
+  ListenableFuture<Integer> failingFuture=immediateFailedFuture(new RuntimeException());
+  ListenableFuture<Integer> faultTolerantFuture=catching(failingFuture,Throwable.class,fallback);
   try {
-    faultToleranteFuture.get();
-    fail("An Exception should have been thrown!");
+    getDone(faultTolerantFuture);
+    fail();
   }
- catch (  ExecutionException ee) {
-    assertSame(expectedException,ee.getCause());
+ catch (  ExecutionException expected) {
+    assertSame(expectedException,expected.getCause());
   }
   fallback.verifyCallCount(1);
 }

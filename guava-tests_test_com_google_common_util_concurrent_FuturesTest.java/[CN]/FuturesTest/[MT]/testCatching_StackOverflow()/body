@@ -1,13 +1,13 @@
 {
 {
     SettableFuture<Object> root=SettableFuture.create();
-    ListenableFuture<Object> unused=Futures.catching(root,MyException.class,identity());
+    ListenableFuture<Object> unused=catching(root,MyException.class,identity());
     root.setException(new MyException());
   }
   SettableFuture<Object> root=SettableFuture.create();
   ListenableFuture<Object> output=root;
   for (int i=0; i < 10000; i++) {
-    output=Futures.catching(output,MyException.class,identity());
+    output=catching(output,MyException.class,identity());
   }
   try {
     root.setException(new MyException());

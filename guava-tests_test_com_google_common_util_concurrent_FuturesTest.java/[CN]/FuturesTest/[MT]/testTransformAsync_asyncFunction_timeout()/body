@@ -1,8 +1,8 @@
 {
-  AsyncFunction<String,Integer> function=constantAsyncFunction(Futures.immediateFuture(1));
-  ListenableFuture<Integer> future=Futures.transformAsync(SettableFuture.<String>create(),function);
+  AsyncFunction<String,Integer> function=constantAsyncFunction(immediateFuture(1));
+  ListenableFuture<Integer> future=transformAsync(SettableFuture.<String>create(),function);
   try {
-    future.get(1,TimeUnit.MILLISECONDS);
+    future.get(1,MILLISECONDS);
     fail();
   }
  catch (  TimeoutException expected) {

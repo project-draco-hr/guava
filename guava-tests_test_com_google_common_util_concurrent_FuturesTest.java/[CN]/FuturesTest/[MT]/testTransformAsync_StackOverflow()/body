@@ -1,13 +1,13 @@
 {
 {
     SettableFuture<Object> root=SettableFuture.create();
-    ListenableFuture<Object> unused=Futures.transformAsync(root,asyncIdentity());
+    ListenableFuture<Object> unused=transformAsync(root,asyncIdentity());
     root.set("foo");
   }
   SettableFuture<Object> root=SettableFuture.create();
   ListenableFuture<Object> output=root;
   for (int i=0; i < 10000; i++) {
-    output=Futures.transformAsync(output,asyncIdentity());
+    output=transformAsync(output,asyncIdentity());
   }
   try {
     root.set("foo");

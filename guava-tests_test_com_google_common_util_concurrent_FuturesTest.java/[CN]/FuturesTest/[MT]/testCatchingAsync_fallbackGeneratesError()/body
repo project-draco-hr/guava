@@ -6,10 +6,10 @@
     }
   }
 ;
-  ListenableFuture<Integer> failingFuture=Futures.immediateFailedFuture(new RuntimeException());
+  ListenableFuture<Integer> failingFuture=immediateFailedFuture(new RuntimeException());
   try {
-    Futures.catchingAsync(failingFuture,Throwable.class,fallback).get();
-    fail("An Exception should have been thrown!");
+    getDone(catchingAsync(failingFuture,Throwable.class,fallback));
+    fail();
   }
  catch (  ExecutionException expected) {
     assertSame(error,expected.getCause());

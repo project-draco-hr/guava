@@ -1,4 +1,4 @@
 {
-  ListenableFuture<String> future=CallerClass1.immediateCancelledFuture();
+  ListenableFuture<String> future=CallerClass1.makeImmediateCancelledFuture();
   assertTrue(future.isCancelled());
 }

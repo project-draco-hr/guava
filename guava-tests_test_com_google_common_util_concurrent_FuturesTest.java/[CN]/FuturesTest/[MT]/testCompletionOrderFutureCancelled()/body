@@ -4,25 +4,25 @@
   SettableFuture<Long> future3=SettableFuture.create();
   SettableFuture<Long> future4=SettableFuture.create();
   SettableFuture<Long> future5=SettableFuture.create();
-  ImmutableList<ListenableFuture<Long>> futures=Futures.inCompletionOrder(ImmutableList.<ListenableFuture<Long>>of(future1,future2,future3,future4,future5));
+  ImmutableList<ListenableFuture<Long>> futures=inCompletionOrder(ImmutableList.<ListenableFuture<Long>>of(future1,future2,future3,future4,future5));
   future2.set(1L);
   future5.set(2L);
   future1.set(3L);
   future3.cancel(true);
   future4.set(5L);
-  long expected=1L;
+  long expectedResult=1L;
   for (  ListenableFuture<Long> future : futures) {
-    if (expected != 4) {
-      assertEquals((Long)expected,future.get());
+    if (expectedResult != 4) {
+      assertEquals((Long)expectedResult,getDone(future));
     }
  else {
       try {
-        future.get();
+        getDone(future);
         fail();
       }
- catch (      CancellationException e) {
+ catch (      CancellationException expected) {
       }
     }
-    expected++;
+    expectedResult++;
   }
 }

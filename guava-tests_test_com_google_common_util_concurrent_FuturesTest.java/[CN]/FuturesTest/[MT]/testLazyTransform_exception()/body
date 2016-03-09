@@ -6,16 +6,16 @@
     }
   }
 ;
-  Future<String> transformed=Futures.lazyTransform(Futures.immediateFuture(1),function);
+  Future<String> transformed=lazyTransform(immediateFuture(1),function);
   try {
-    transformed.get();
+    getDone(transformed);
     fail();
   }
  catch (  ExecutionException expected) {
     assertSame(exception,expected.getCause());
   }
   try {
-    transformed.get(1,TimeUnit.SECONDS);
+    getDoneFromTimeoutOverload(transformed);
     fail();
   }
  catch (  ExecutionException expected) {

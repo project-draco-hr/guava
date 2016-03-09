@@ -6,7 +6,7 @@
     }
   }
 ;
-  assertTrue(Futures.transformAsync(input,function).cancel(true));
+  assertTrue(transformAsync(input,function).cancel(true));
   assertTrue(input.isCancelled());
   assertTrue(input.wasInterrupted());
 }

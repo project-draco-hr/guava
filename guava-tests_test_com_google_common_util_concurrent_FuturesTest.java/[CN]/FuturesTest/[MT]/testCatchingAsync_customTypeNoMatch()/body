@@ -1,9 +1,9 @@
 {
   AsyncFunction<IOException,Integer> fallback=asyncFunctionReturningOne();
   ListenableFuture<Integer> originalFuture=immediateFailedFuture(new RuntimeException());
-  ListenableFuture<Integer> faultTolerantFuture=Futures.catchingAsync(originalFuture,IOException.class,fallback);
+  ListenableFuture<Integer> faultTolerantFuture=catchingAsync(originalFuture,IOException.class,fallback);
   try {
-    faultTolerantFuture.get();
+    getDone(faultTolerantFuture);
     fail();
   }
  catch (  ExecutionException expected) {

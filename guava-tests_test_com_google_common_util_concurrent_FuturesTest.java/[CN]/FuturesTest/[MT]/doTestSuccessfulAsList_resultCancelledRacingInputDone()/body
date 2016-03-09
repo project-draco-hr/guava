@@ -1,8 +1,8 @@
 {
-  Futures.successfulAsList(ImmutableList.of(SettableFuture.create())).cancel(true);
+  successfulAsList(ImmutableList.of(SettableFuture.create())).cancel(true);
   final SettableFuture<String> future1=SettableFuture.create();
   final SettableFuture<String> future2=SettableFuture.create();
-  @SuppressWarnings("unchecked") ListenableFuture<List<String>> compound=Futures.successfulAsList(future1,future2);
+  @SuppressWarnings("unchecked") ListenableFuture<List<String>> compound=successfulAsList(future1,future2);
   future1.addListener(new Runnable(){
     @Override public void run(){
       assertTrue(future1.isCancelled());
@@ -16,9 +16,9 @@
   assertTrue(future1.isCancelled());
   assertFalse(future2.isCancelled());
   try {
-    compound.get();
-    fail("Expected exception not thrown");
+    getDone(compound);
+    fail();
   }
- catch (  CancellationException e) {
+ catch (  CancellationException expected) {
   }
 }

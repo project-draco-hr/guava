@@ -7,11 +7,11 @@
     exception1.initCause(sameInstance);
     exception2.initCause(sameInstance);
     exception3.initCause(exception2);
-    Futures.allAsList(immediateFailedFuture(exception1),immediateFailedFuture(exception3)).get();
+    getDone(allAsList(immediateFailedFuture(exception1),immediateFailedFuture(exception3)));
     fail();
   }
- catch (  ExecutionException e) {
-    assertThat(e.getCause()).isInstanceOf(MyException.class);
+ catch (  ExecutionException expected) {
+    assertThat(expected.getCause()).isInstanceOf(MyException.class);
     assertEquals("Nothing should be logged",0,aggregateFutureLogHandler.getStoredLogRecords().size());
   }
 }

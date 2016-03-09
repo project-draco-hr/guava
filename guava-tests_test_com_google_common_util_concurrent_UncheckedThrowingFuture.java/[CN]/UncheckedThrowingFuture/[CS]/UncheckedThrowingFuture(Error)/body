@@ -1,0 +1,4 @@
+{
+  this.error=checkNotNull(error);
+  this.runtime=null;
+}

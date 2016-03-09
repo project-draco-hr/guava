@@ -1,16 +1,16 @@
 {
   MyException exception=new MyException();
-  CheckedFuture<String,MyException> future=Futures.immediateFailedCheckedFuture(exception);
+  CheckedFuture<String,MyException> future=immediateFailedCheckedFuture(exception);
   try {
-    future.get(0L,TimeUnit.MILLISECONDS);
-    fail("This call was supposed to throw an ExecutionException");
+    future.get(0L,MILLISECONDS);
+    fail();
   }
  catch (  ExecutionException expected) {
     assertSame(exception,expected.getCause());
   }
   try {
-    future.checkedGet(0L,TimeUnit.MILLISECONDS);
-    fail("This call was supposed to throw an MyException");
+    future.checkedGet(0L,MILLISECONDS);
+    fail();
   }
  catch (  MyException expected) {
     assertSame(exception,expected);

@@ -1,21 +1,12 @@
 {
-  Handler throwingHandler=new Handler(){
-    @Override public void publish(    LogRecord record){
-      AssertionFailedError error=new AssertionFailedError();
-      error.initCause(record.getThrown());
-      throw error;
-    }
-    @Override public void flush(){
-    }
-    @Override public void close(){
-    }
-  }
-;
-  ExecutionList.log.addHandler(throwingHandler);
+  TestLogHandler listenerLoggerHandler=new TestLogHandler();
+  Logger exceptionLogger=Logger.getLogger(AbstractFuture.class.getName());
+  exceptionLogger.addHandler(listenerLoggerHandler);
   try {
     doTestSuccessfulAsList_resultCancelledRacingInputDone();
+    assertWithMessage("Nothing should be logged").that(listenerLoggerHandler.getStoredLogRecords()).isEmpty();
   }
   finally {
-    ExecutionList.log.removeHandler(throwingHandler);
+    exceptionLogger.removeHandler(listenerLoggerHandler);
   }
 }

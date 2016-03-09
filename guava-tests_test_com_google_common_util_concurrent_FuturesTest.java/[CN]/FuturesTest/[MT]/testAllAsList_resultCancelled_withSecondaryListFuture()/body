@@ -1,8 +1,8 @@
 {
   SettableFuture<String> future1=SettableFuture.create();
   SettableFuture<String> future2=SettableFuture.create();
-  ListenableFuture<List<String>> compound=Futures.allAsList(future1,future2);
-  ListenableFuture<List<String>> unused=Futures.allAsList(future1,future2);
+  ListenableFuture<List<String>> compound=allAsList(future1,future2);
+  ListenableFuture<List<String>> unused=allAsList(future1,future2);
   assertTrue(compound.cancel(false));
   assertTrue(future1.isCancelled());
   assertFalse(future1.wasInterrupted());

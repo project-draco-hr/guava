@@ -1,13 +1,13 @@
 {
   Throwable exception=new Throwable("failed");
-  ListenableFuture<String> future1=Futures.immediateFailedFuture(exception);
-  ListenableFuture<String> future2=Futures.immediateFuture("results");
-  ListenableFuture<List<String>> compound=Futures.allAsList(ImmutableList.of(future1,future2));
+  ListenableFuture<String> future1=immediateFailedFuture(exception);
+  ListenableFuture<String> future2=immediateFuture("results");
+  ListenableFuture<List<String>> compound=allAsList(ImmutableList.of(future1,future2));
   try {
-    compound.get();
-    fail("Expected exception not thrown");
+    getDone(compound);
+    fail();
   }
- catch (  ExecutionException e) {
-    assertSame(exception,e.getCause());
+ catch (  ExecutionException expected) {
+    assertSame(exception,expected.getCause());
   }
 }

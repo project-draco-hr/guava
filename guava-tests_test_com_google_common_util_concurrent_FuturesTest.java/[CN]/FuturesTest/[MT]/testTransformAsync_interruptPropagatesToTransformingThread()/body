@@ -17,7 +17,7 @@
     }
   }
 ;
-  ListenableFuture<String> futureResult=Futures.transformAsync(input,function,newSingleThreadExecutor());
+  ListenableFuture<String> futureResult=transformAsync(input,function,newSingleThreadExecutor());
   input.set("value");
   inFunction.await();
   futureResult.cancel(true);

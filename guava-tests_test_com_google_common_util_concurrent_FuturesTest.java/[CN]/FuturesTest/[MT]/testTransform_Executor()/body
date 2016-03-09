@@ -2,7 +2,7 @@
   Object value=new Object();
   ExecutorSpy spy=new ExecutorSpy(directExecutor());
   assertFalse(spy.wasExecuted);
-  ListenableFuture<Object> future=Futures.transform(Futures.immediateFuture(value),Functions.identity(),spy);
-  assertSame(value,future.get());
+  ListenableFuture<Object> future=transform(immediateFuture(value),identity(),spy);
+  assertSame(value,getDone(future));
   assertTrue(spy.wasExecuted);
 }

@@ -1,8 +1,8 @@
 {
-  CheckedFuture<String,MyException> future1=Futures.immediateCheckedFuture(DATA1);
-  CheckedFuture<String,MyException> future2=Futures.immediateCheckedFuture(DATA2);
-  assertSame(DATA1,future1.get(0L,TimeUnit.MILLISECONDS));
-  assertSame(DATA1,future1.checkedGet(0L,TimeUnit.MILLISECONDS));
-  assertSame(DATA2,future2.get(0L,TimeUnit.MILLISECONDS));
-  assertSame(DATA2,future2.checkedGet(0L,TimeUnit.MILLISECONDS));
+  CheckedFuture<String,MyException> future1=immediateCheckedFuture(DATA1);
+  CheckedFuture<String,MyException> future2=immediateCheckedFuture(DATA2);
+  assertSame(DATA1,future1.get(0L,MILLISECONDS));
+  assertSame(DATA1,future1.checkedGet(0L,MILLISECONDS));
+  assertSame(DATA2,future2.get(0L,MILLISECONDS));
+  assertSame(DATA2,future2.checkedGet(0L,MILLISECONDS));
 }

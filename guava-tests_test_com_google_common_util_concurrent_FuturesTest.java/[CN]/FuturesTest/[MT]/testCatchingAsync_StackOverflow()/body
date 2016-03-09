@@ -1,13 +1,13 @@
 {
 {
     SettableFuture<Object> root=SettableFuture.create();
-    ListenableFuture<Object> unused=Futures.catchingAsync(root,MyException.class,asyncIdentity());
+    ListenableFuture<Object> unused=catchingAsync(root,MyException.class,asyncIdentity());
     root.setException(new MyException());
   }
   SettableFuture<Object> root=SettableFuture.create();
   ListenableFuture<Object> output=root;
   for (int i=0; i < 10000; i++) {
-    output=Futures.catchingAsync(output,MyException.class,asyncIdentity());
+    output=catchingAsync(output,MyException.class,asyncIdentity());
   }
   try {
     root.setException(new MyException());

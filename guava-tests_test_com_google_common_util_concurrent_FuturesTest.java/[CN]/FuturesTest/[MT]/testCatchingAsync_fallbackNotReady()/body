@@ -7,7 +7,7 @@
     }
   }
 ;
-  ListenableFuture<Integer> derived=Futures.catchingAsync(primary,Throwable.class,fallback);
+  ListenableFuture<Integer> derived=catchingAsync(primary,Throwable.class,fallback);
   secondary.set(1);
-  assertEquals(1,(int)derived.get());
+  assertEquals(1,(int)getDone(derived));
 }

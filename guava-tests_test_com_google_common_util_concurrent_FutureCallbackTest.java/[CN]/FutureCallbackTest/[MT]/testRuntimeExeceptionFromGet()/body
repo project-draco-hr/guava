@@ -1,6 +1,6 @@
 {
   RuntimeException e=new IllegalArgumentException("foo not found");
-  ListenableFuture<String> f=ThrowingFuture.throwingRuntimeException(e);
+  ListenableFuture<String> f=UncheckedThrowingFuture.throwingRuntimeException(e);
   MockCallback callback=new MockCallback(e);
   Futures.addCallback(f,callback);
 }

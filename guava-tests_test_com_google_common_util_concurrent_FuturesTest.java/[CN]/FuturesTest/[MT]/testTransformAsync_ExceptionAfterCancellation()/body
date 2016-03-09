@@ -8,7 +8,7 @@ class Transformer implements AsyncFunction<Object,Object> {
   }
   Transformer transformer=new Transformer();
   SettableFuture<Object> input=SettableFuture.create();
-  ListenableFuture<Object> output=Futures.transformAsync(input,transformer);
+  ListenableFuture<Object> output=transformAsync(input,transformer);
   transformer.output=output;
   input.set("foo");
   assertTrue(output.isCancelled());

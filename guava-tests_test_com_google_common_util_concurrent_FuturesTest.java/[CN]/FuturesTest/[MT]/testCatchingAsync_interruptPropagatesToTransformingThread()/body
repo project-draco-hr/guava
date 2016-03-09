@@ -17,7 +17,7 @@
     }
   }
 ;
-  ListenableFuture<String> futureResult=Futures.catchingAsync(input,Exception.class,function,newSingleThreadExecutor());
+  ListenableFuture<String> futureResult=catchingAsync(input,Exception.class,function,newSingleThreadExecutor());
   input.setException(new Exception());
   inFunction.await();
   futureResult.cancel(true);

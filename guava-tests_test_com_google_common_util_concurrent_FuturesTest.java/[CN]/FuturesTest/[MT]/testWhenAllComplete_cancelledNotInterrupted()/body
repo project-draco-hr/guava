@@ -12,7 +12,7 @@
     }
   }
 ;
-  ListenableFuture<String> futureResult=Futures.whenAllComplete(stringFuture,booleanFuture).callAsync(combiner,newSingleThreadExecutor());
+  ListenableFuture<String> futureResult=whenAllComplete(stringFuture,booleanFuture).callAsync(combiner,newSingleThreadExecutor());
   stringFuture.set("value");
   booleanFuture.set(true);
   inFunction.await();

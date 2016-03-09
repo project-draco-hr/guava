@@ -1,7 +1,7 @@
 {
   SettableFuture<Integer> primary=SettableFuture.create();
   Function<Throwable,Integer> fallback=unexpectedFunction();
-  ListenableFuture<Integer> derived=Futures.catching(primary,Throwable.class,fallback);
+  ListenableFuture<Integer> derived=catching(primary,Throwable.class,fallback);
   derived.cancel(false);
   assertTrue(primary.isCancelled());
   assertFalse(primary.wasInterrupted());

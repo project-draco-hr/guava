@@ -1,5 +1,5 @@
 {
-  ListenableFuture<?> nullFuture=Futures.immediateFuture(null);
-  ListenableFuture<?> transformedFuture=Futures.transform(nullFuture,Functions.constant(null));
-  assertNull(transformedFuture.get());
+  ListenableFuture<?> nullFuture=immediateFuture(null);
+  ListenableFuture<?> transformedFuture=transform(nullFuture,constant(null));
+  assertNull(getDone(transformedFuture));
 }
