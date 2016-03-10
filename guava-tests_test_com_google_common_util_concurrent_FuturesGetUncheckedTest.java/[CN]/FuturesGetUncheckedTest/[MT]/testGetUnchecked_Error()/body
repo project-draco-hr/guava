@@ -1,0 +1,10 @@
+{
+  try {
+    getUnchecked(ERROR_FUTURE);
+  }
+ catch (  Error expected) {
+    assertEquals(ERROR,expected);
+    return;
+  }
+  fail();
+}

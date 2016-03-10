@@ -1,0 +1,10 @@
+{
+  try {
+    getChecked(ERROR_FUTURE,TwoArgConstructorException.class);
+  }
+ catch (  Error expected) {
+    assertEquals(ERROR,expected);
+    return;
+  }
+  fail();
+}
