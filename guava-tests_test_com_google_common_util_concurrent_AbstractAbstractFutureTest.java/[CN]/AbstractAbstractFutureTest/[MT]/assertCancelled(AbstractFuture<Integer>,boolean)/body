@@ -3,13 +3,13 @@
   assertThat(future.isCancelled()).isTrue();
   assertThat(future.wasInterrupted()).isEqualTo(expectWasInterrupted);
   try {
-    future.get();
+    getDone(future);
     fail();
   }
  catch (  CancellationException expected) {
   }
   try {
-    future.get(0,SECONDS);
+    getDoneFromTimeoutOverload(future);
     fail();
   }
  catch (  CancellationException expected) {

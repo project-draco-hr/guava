@@ -10,7 +10,7 @@
   assertTrue(task.isDone());
   assertFalse(task.isCancelled());
   try {
-    task.get();
+    getDone(task);
     fail();
   }
  catch (  ExecutionException executionException) {

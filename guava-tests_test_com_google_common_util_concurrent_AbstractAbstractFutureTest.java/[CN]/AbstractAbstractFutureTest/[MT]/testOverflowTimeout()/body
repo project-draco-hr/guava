@@ -1,0 +1,9 @@
+{
+  long nanosPerSecond=NANOSECONDS.convert(1,SECONDS);
+  assertThat(nanosPerSecond * Long.MAX_VALUE).isLessThan(0L);
+  TimedWaiterThread waiter=new TimedWaiterThread(future,Long.MAX_VALUE,SECONDS);
+  waiter.start();
+  waiter.awaitWaiting();
+  future.set(1);
+  waiter.join();
+}

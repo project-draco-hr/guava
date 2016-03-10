@@ -6,7 +6,7 @@
   assertTrue(task.isCancelled());
   assertFalse(task.wasInterrupted());
   try {
-    task.get();
+    getDone(task);
     fail();
   }
  catch (  CancellationException expected) {

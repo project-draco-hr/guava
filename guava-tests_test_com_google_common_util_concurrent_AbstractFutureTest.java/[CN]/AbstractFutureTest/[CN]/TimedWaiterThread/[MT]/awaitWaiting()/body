@@ -1,0 +1,8 @@
+{
+  while (LockSupport.getBlocker(this) != future) {
+    if (getState() == State.TERMINATED) {
+      throw new RuntimeException("Thread exited");
+    }
+    Thread.yield();
+  }
+}

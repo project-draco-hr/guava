@@ -1,0 +1,4 @@
+{
+  future.set(1);
+  assertEquals(1,future.get(-1,SECONDS).intValue());
+}

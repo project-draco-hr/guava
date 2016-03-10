@@ -1,7 +1,6 @@
 {
   assertDone(future);
   assertThat(future.isCancelled()).isFalse();
-  assertThat(future.get()).isEqualTo(expectedResult);
-  assertThat(future.get(0,SECONDS)).isEqualTo(expectedResult);
-  assertThat(future.get(-1,SECONDS)).isEqualTo(expectedResult);
+  assertThat(getDone(future)).isEqualTo(expectedResult);
+  assertThat(getDoneFromTimeoutOverload(future)).isEqualTo(expectedResult);
 }

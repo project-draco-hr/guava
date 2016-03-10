@@ -4,5 +4,5 @@
   task.run();
   assertTrue(task.isDone());
   assertFalse(task.isCancelled());
-  assertEquals(2,task.get().intValue());
+  assertEquals(2,getDone(task).intValue());
 }
