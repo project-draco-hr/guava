@@ -1,3 +1,0 @@
-{
-  throw cancellationExceptionWithCause("Task was cancelled.",thrown);
-}
