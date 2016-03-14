@@ -8,11 +8,11 @@
     if (placeholderStart == -1) {
       break;
     }
-    builder.append(template.substring(templateStart,placeholderStart));
+    builder.append(template,templateStart,placeholderStart);
     builder.append(args[i++]);
     templateStart=placeholderStart + 2;
   }
-  builder.append(template.substring(templateStart));
+  builder.append(template,templateStart,template.length());
   if (i < args.length) {
     builder.append(" [");
     builder.append(args[i++]);
