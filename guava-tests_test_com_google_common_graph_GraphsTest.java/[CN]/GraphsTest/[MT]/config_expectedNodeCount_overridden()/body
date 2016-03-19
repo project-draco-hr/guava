@@ -1,7 +1,0 @@
-{
-  GraphConfig oldConfig=config().expectedNodeCount(NODE_COUNT);
-  assertThat(oldConfig.getExpectedNodeCount().get()).isEqualTo(NODE_COUNT);
-  GraphConfig newConfig=oldConfig.expectedNodeCount(NODE_COUNT + 1);
-  assertThat(oldConfig.getExpectedNodeCount().get()).isEqualTo(NODE_COUNT);
-  assertThat(newConfig.getExpectedNodeCount().get()).isEqualTo(NODE_COUNT + 1);
-}

@@ -1,4 +1,0 @@
-{
-  addEdge(E11,N1,N1);
-  assertEquals(N1,directedGraph.target(E11));
-}

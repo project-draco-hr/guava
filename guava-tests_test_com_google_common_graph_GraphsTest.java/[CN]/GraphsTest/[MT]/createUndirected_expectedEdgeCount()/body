@@ -1,5 +1,5 @@
 {
-  UndirectedGraph<Integer,String> undirectedGraph=Graphs.createUndirected(config().expectedEdgeCount(EDGE_COUNT));
+  Graph<Integer,String> undirectedGraph=GraphBuilder.undirected().expectedEdgeCount(EDGE_COUNT).build();
   assertThat(undirectedGraph.addEdge(E12,N1,N2)).isTrue();
   assertThat(undirectedGraph.edgesConnecting(N1,N2)).isEqualTo(ImmutableSet.of(E12));
   assertThat(undirectedGraph.edgesConnecting(N2,N1)).isEqualTo(ImmutableSet.of(E12));

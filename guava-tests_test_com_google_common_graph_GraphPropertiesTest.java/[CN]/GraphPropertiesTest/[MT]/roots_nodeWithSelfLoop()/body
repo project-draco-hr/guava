@@ -1,5 +1,5 @@
 {
-  DirectedGraph<Integer,String> directedGraph=Graphs.createDirected();
+  Graph<Integer,String> directedGraph=GraphBuilder.directed().build();
   directedGraph.addNode(N1);
   directedGraph.addEdge(E11,N1,N1);
   assertThat(roots(directedGraph)).isEmpty();

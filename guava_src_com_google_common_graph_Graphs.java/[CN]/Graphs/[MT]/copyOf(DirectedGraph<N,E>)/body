@@ -1,7 +1,0 @@
-{
-  checkNotNull(graph,"graph");
-  DirectedGraph<N,E> copy=createDirected(graph.config().expectedNodeCount(graph.nodes().size()).expectedEdgeCount(graph.edges().size()));
-  mergeNodesFrom(graph,copy);
-  mergeEdgesFrom(graph,copy);
-  return copy;
-}

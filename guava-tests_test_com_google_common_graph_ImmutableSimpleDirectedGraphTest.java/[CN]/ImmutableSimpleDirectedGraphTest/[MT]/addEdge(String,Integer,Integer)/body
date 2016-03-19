@@ -1,5 +1,0 @@
-{
-  DirectedGraph<Integer,String> oldGraph=Graphs.copyOf(directedGraph);
-  graph=directedGraph=builder.addEdge(e,n1,n2).build();
-  return !graph.equals(oldGraph);
-}

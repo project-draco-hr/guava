@@ -1,3 +1,0 @@
-{
-  assertThat(Graphs.config().toString()).isEqualTo("self-loops allowed");
-}

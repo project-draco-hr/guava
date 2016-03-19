@@ -1,0 +1,7 @@
+{
+  Graph<Integer,String> graphA=createGraph();
+  graphA.addNode(N1);
+  Graph<Integer,String> graphB=createGraph();
+  graphA.addNode(N2);
+  new EqualsTester().addEqualityGroup(graphA).addEqualityGroup(graphB).testEquals();
+}

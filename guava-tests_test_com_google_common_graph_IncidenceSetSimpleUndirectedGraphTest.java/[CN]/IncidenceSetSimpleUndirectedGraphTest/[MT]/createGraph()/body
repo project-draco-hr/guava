@@ -1,3 +1,0 @@
-{
-  return Graphs.createUndirected(Graphs.config().noSelfLoops());
-}

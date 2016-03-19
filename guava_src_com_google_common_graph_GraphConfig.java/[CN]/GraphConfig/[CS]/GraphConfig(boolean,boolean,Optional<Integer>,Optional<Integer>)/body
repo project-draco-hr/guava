@@ -1,6 +1,0 @@
-{
-  this.multigraph=multigraph;
-  this.selfLoopsAllowed=selfLoopsAllowed;
-  this.expectedNodeCount=expectedNodeCount;
-  this.expectedEdgeCount=expectedEdgeCount;
-}

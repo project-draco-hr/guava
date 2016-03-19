@@ -1,5 +1,0 @@
-{
-  DirectedGraph<Integer,String> graph=Graphs.createDirected(directedGraph.config());
-  populateInputGraph(graph);
-  assertThat(builder.addGraph(graph).build()).isEqualTo(graph);
-}

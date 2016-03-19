@@ -1,3 +1,0 @@
-{
-  super(builder.graph.config(),builder.getNodeConnections(),builder.getEdgeToIncidentNodes());
-}

@@ -1,7 +1,3 @@
 {
-  checkNotNull(original,"original");
-  checkNotNull(copy,"copy");
-  for (  N node : original.nodes()) {
-    copy.addNode(node);
-  }
+  mergeNodesFrom(original,copy,Predicates.alwaysTrue());
 }

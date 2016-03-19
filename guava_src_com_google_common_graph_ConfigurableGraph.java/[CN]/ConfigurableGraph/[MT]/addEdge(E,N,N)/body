@@ -1,0 +1,28 @@
+{
+  checkNotNull(edge,"edge");
+  checkNotNull(node1,"node1");
+  checkNotNull(node2,"node2");
+  IncidentNodes<N> incidentNodes=IncidentNodes.of(node1,node2);
+  checkArgument(allowsSelfLoops || !incidentNodes.isSelfLoop(),SELF_LOOPS_NOT_ALLOWED,node1);
+  boolean containsN1=nodes().contains(node1);
+  boolean containsN2=nodes().contains(node2);
+  if (edges().contains(edge)) {
+    checkArgument(containsN1 && containsN2 && edgesConnecting(node1,node2).contains(edge),REUSING_EDGE,edge,incidentNodes(edge),incidentNodes);
+    return false;
+  }
+ else   if (!allowsParallelEdges) {
+    checkArgument(!(containsN1 && containsN2 && successors(node1).contains(node2)),ADDING_PARALLEL_EDGE,node1,node2);
+  }
+  if (!containsN1) {
+    addNode(node1);
+  }
+  NodeConnections<N,E> connectionsN1=nodeConnections.get(node1);
+  connectionsN1.addSuccessor(node2,edge);
+  if (!containsN2) {
+    addNode(node2);
+  }
+  NodeConnections<N,E> connectionsN2=nodeConnections.get(node2);
+  connectionsN2.addPredecessor(node1,edge);
+  edgeToIncidentNodes.put(edge,incidentNodes);
+  return true;
+}

@@ -1,0 +1,4 @@
+{
+  this.allowsParallelEdges=allowsParallelEdges;
+  return this;
+}

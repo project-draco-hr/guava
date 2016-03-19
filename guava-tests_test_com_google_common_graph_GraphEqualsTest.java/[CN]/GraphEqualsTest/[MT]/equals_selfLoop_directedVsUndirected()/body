@@ -1,16 +1,6 @@
 {
   graph.addEdge(E11,N1,N1);
-  Graph<Integer,String> g2;
-switch (graphType) {
-case UNDIRECTED:
-    g2=Graphs.createDirected();
-  break;
-case DIRECTED:
-g2=Graphs.createUndirected();
-break;
-default :
-throw new IllegalStateException("Unexpected graph type: " + graphType);
-}
-g2.addEdge(E11,N1,N1);
-new EqualsTester().addEqualityGroup(graph,g2).testEquals();
+  Graph<Integer,String> g2=createGraph(oppositeType(graphType));
+  g2.addEdge(E11,N1,N1);
+  new EqualsTester().addEqualityGroup(graph,g2).testEquals();
 }

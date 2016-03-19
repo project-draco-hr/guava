@@ -1,7 +1,0 @@
-{
-  checkNotNull(graph,"graph");
-  UndirectedGraph<N,E> copy=createUndirected(graph.config().expectedNodeCount(graph.nodes().size()).expectedEdgeCount(graph.edges().size()));
-  mergeNodesFrom(graph,copy);
-  mergeEdgesFrom(graph,copy);
-  return copy;
-}

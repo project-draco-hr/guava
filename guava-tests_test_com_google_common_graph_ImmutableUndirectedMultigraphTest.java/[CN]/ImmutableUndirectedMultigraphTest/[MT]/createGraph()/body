@@ -1,4 +1,0 @@
-{
-  builder=ImmutableUndirectedGraph.builder(Graphs.MULTIGRAPH);
-  return builder.build();
-}

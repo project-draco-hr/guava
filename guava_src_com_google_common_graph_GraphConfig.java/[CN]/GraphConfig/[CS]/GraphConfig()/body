@@ -1,6 +1,0 @@
-{
-  multigraph=false;
-  selfLoopsAllowed=true;
-  expectedNodeCount=Optional.absent();
-  expectedEdgeCount=Optional.absent();
-}

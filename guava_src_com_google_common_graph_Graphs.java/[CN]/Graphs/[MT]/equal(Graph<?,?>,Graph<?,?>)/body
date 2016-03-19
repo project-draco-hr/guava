@@ -15,7 +15,8 @@
     if (!graph1.inEdges(node).equals(graph2.inEdges(node))) {
       return false;
     }
-    if (!graph1.outEdges(node).equals(graph2.outEdges(node))) {
+    boolean bothUndirected=!graph1.isDirected() && !graph2.isDirected();
+    if (!bothUndirected && !graph1.outEdges(node).equals(graph2.outEdges(node))) {
       return false;
     }
   }

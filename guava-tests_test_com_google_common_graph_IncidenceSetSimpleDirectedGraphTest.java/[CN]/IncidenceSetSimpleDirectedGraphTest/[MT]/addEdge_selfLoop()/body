@@ -1,9 +1,0 @@
-{
-  try {
-    addEdge(E11,N1,N1);
-    fail(ERROR_ADDED_SELF_LOOP);
-  }
- catch (  IllegalArgumentException e) {
-    assertThat(e.getMessage()).contains(ERROR_SELF_LOOP);
-  }
-}

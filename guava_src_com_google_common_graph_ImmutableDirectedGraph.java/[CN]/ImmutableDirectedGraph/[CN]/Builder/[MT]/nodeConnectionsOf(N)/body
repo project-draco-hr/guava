@@ -1,3 +1,0 @@
-{
-  return DirectedNodeConnections.ofImmutable(graph.predecessors(node),graph.successors(node),graph.inEdges(node),graph.outEdges(node));
-}

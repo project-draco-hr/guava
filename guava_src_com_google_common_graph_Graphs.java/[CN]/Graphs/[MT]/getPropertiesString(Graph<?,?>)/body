@@ -1,0 +1,3 @@
+{
+  return String.format("isDirected: %s , allowsParallelEdges: %s, allowsSelfLoops: %s",graph.isDirected(),graph.allowsParallelEdges(),graph.allowsSelfLoops());
+}

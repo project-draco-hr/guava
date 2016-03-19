@@ -1,4 +1,0 @@
-boolean multigraph
-boolean selfLoopsAllowed
-Optional<Integer> expectedNodeCount
-Optional<Integer> expectedEdgeCount

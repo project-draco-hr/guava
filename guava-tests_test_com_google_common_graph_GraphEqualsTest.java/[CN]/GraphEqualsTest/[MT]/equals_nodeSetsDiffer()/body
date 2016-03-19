@@ -1,6 +1,6 @@
 {
   graph.addNode(N1);
-  Graph<Integer,String> g2=createGraph();
+  Graph<Integer,String> g2=createGraph(graphType);
   g2.addNode(N2);
   new EqualsTester().addEqualityGroup(graph).addEqualityGroup(g2).testEquals();
 }

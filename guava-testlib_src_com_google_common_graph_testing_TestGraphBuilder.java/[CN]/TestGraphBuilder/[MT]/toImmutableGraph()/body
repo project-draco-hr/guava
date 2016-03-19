@@ -1,0 +1,3 @@
+{
+  return ImmutableGraph.copyOf(graph);
+}

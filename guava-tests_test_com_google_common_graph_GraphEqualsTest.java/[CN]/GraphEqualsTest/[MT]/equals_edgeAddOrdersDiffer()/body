@@ -1,6 +1,7 @@
 {
-  Graph<Integer,String> g1=createGraph(MULTIGRAPH);
-  Graph<Integer,String> g2=createGraph(MULTIGRAPH);
+  GraphBuilder<Integer,String> builder=GraphBuilder.from(graph).allowsParallelEdges(true);
+  Graph<Integer,String> g1=builder.build();
+  Graph<Integer,String> g2=builder.build();
   g1.addEdge(E12,N1,N2);
   g1.addEdge(E12_A,N1,N2);
   g2.addEdge(E12_A,N1,N2);

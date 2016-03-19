@@ -1,4 +1,4 @@
 {
   this.graphType=graphType;
-  this.graph=createGraph();
+  this.graph=createGraph(graphType);
 }

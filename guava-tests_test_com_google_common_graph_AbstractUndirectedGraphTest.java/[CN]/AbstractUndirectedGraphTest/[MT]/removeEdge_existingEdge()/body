@@ -1,7 +1,7 @@
 {
   addEdge(E12,N1,N2);
-  assertTrue(undirectedGraph.removeEdge(E12));
-  assertThat(undirectedGraph.edges()).doesNotContain(E12);
-  assertThat(undirectedGraph.edgesConnecting(N1,N2)).isEmpty();
-  assertThat(undirectedGraph.edgesConnecting(N2,N1)).isEmpty();
+  assertTrue(graph.removeEdge(E12));
+  assertThat(graph.edges()).doesNotContain(E12);
+  assertThat(graph.edgesConnecting(N1,N2)).isEmpty();
+  assertThat(graph.edgesConnecting(N2,N1)).isEmpty();
 }

@@ -1,5 +1,5 @@
 {
-  UndirectedGraph<Integer,String> undirectedGraph=Graphs.createUndirected(MULTIGRAPH);
+  Graph<Integer,String> undirectedGraph=GraphBuilder.undirected().allowsParallelEdges(true).build();
   undirectedGraph.addEdge(E11,N1,N1);
   undirectedGraph.addEdge(E11_A,N1,N1);
   assertThat(Graphs.parallelEdges(undirectedGraph,E11)).containsExactly(E11_A);

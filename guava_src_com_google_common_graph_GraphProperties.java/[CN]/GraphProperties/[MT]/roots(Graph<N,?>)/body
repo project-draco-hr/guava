@@ -1,0 +1,9 @@
+{
+  ImmutableSet.Builder<N> builder=ImmutableSet.builder();
+  for (  N node : graph.nodes()) {
+    if (graph.predecessors(node).isEmpty()) {
+      builder.add(node);
+    }
+  }
+  return builder.build();
+}

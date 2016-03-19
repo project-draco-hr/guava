@@ -1,3 +1,0 @@
-{
-  assertThat(Graphs.config().noSelfLoops().compatibleWith(Graphs.config())).isFalse();
-}

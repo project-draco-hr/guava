@@ -1,8 +1,0 @@
-{
-  checkNotNull(original,"original");
-  checkNotNull(copy,"copy");
-  checkNotNull(nodePredicate,"nodePredicate");
-  checkNotNull(edgePredicate,"edgePredicate");
-  mergeNodesFrom(original,copy,nodePredicate);
-  mergeEdgesFrom(original,copy,edgePredicate);
-}

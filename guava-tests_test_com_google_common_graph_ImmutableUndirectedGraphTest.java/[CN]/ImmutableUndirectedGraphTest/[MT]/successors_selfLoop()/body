@@ -1,6 +1,0 @@
-{
-  addEdge(E11,N1,N1);
-  assertThat(undirectedGraph.successors(N1)).containsExactly(N1);
-  addEdge(E12,N2,N1);
-  assertThat(undirectedGraph.successors(N1)).containsExactly(N1,N2);
-}

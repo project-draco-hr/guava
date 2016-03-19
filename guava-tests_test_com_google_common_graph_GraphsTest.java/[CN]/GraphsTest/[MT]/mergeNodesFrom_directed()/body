@@ -1,11 +1,11 @@
 {
-  DirectedGraph<Integer,String> directedGraph=buildDirectedTestGraph();
+  Graph<Integer,String> directedGraph=buildDirectedTestGraph();
   directedGraph.addNode(N3);
-  DirectedGraph<Integer,String> actualGraph=Graphs.createDirected();
+  Graph<Integer,String> actualGraph=GraphBuilder.directed().build();
   actualGraph.addNode(N4);
   actualGraph.addNode(N2);
   mergeNodesFrom(directedGraph,actualGraph);
-  DirectedGraph<Integer,String> expectedGraph=Graphs.createDirected();
+  Graph<Integer,String> expectedGraph=GraphBuilder.directed().build();
   expectedGraph.addNode(N1);
   expectedGraph.addNode(N2);
   expectedGraph.addNode(N3);

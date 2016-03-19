@@ -1,7 +1,3 @@
 {
-  checkNotNull(original,"original");
-  checkNotNull(copy,"copy");
-  for (  E edge : original.edges()) {
-    addEdge(copy,edge,original.incidentNodes(edge));
-  }
+  mergeEdgesFrom(original,copy,Predicates.alwaysTrue());
 }

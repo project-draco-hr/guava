@@ -1,0 +1,10 @@
+{
+  addEdge(E12,N1,N2);
+  Set<Integer> incidentNodes=graph.incidentNodes(E12);
+  try {
+    incidentNodes.add(N3);
+    fail(ERROR_MODIFIABLE_SET);
+  }
+ catch (  UnsupportedOperationException expected) {
+  }
+}

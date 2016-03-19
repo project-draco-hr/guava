@@ -1,5 +1,5 @@
 {
-  DirectedGraph<Integer,String> directedGraph=Graphs.createDirected();
+  Graph<Integer,String> directedGraph=GraphBuilder.directed().build();
   directedGraph.addNode(N1);
   assertThat(isCyclic(directedGraph)).isFalse();
   directedGraph.addNode(N2);

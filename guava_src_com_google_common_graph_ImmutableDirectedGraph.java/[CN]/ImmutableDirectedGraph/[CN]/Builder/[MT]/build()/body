@@ -1,3 +1,0 @@
-{
-  return new ImmutableDirectedGraph<N,E>(this);
-}

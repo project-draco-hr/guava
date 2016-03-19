@@ -1,6 +1,0 @@
-{
-  addEdge(E11,N1,N1);
-  assertEquals(1,directedGraph.inDegree(N1));
-  addEdge(E41,N4,N1);
-  assertEquals(2,directedGraph.inDegree(N1));
-}

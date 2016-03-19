@@ -1,11 +1,11 @@
 {
-  UndirectedGraph<Integer,String> undirectedGraph=buildUndirectedTestGraph();
+  Graph<Integer,String> undirectedGraph=buildUndirectedTestGraph();
   undirectedGraph.addNode(N3);
-  UndirectedGraph<Integer,String> actualGraph=Graphs.createUndirected();
+  Graph<Integer,String> actualGraph=GraphBuilder.undirected().build();
   actualGraph.addNode(N4);
   actualGraph.addNode(N2);
   mergeNodesFrom(undirectedGraph,actualGraph);
-  UndirectedGraph<Integer,String> expectedGraph=Graphs.createUndirected();
+  Graph<Integer,String> expectedGraph=GraphBuilder.undirected().build();
   expectedGraph.addNode(N1);
   expectedGraph.addNode(N2);
   expectedGraph.addNode(N3);

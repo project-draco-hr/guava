@@ -1,3 +1,0 @@
-{
-  return checkedIncidentNodes(edge).node1();
-}

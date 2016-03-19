@@ -1,7 +1,0 @@
-{
-  DirectedGraph<Integer,String> graph=Graphs.createDirected(directedGraph.config());
-  populateInputGraph(graph);
-  builder.addEdge(E12,N1,N2);
-  builder.addGraph(graph);
-  assertThat(builder.build()).isEqualTo(graph);
-}

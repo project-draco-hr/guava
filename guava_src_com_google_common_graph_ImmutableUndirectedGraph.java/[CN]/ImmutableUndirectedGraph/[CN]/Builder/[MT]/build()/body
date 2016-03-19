@@ -1,3 +1,0 @@
-{
-  return new ImmutableUndirectedGraph<N,E>(this);
-}

@@ -1,0 +1,4 @@
+{
+  this.allowsSelfLoops=allowsSelfLoops;
+  return this;
+}

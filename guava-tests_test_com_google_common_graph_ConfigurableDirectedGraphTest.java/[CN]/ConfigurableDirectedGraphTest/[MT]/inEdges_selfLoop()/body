@@ -1,0 +1,6 @@
+{
+  addEdge(E11,N1,N1);
+  assertThat(graph.inEdges(N1)).containsExactly(E11);
+  addEdge(E41,N4,N1);
+  assertThat(graph.inEdges(N1)).containsExactly(E11,E41);
+}

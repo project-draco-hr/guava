@@ -1,3 +1,0 @@
-{
-  return (Builder<N,E>)super.addGraph(graphToAdd);
-}

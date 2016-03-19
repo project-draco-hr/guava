@@ -1,6 +1,6 @@
 {
   try {
-    addEdge(Graphs.createDirected(),E11,null);
+    addEdge(GraphBuilder.directed().build(),E11,null);
     fail("Should have rejected null nodes");
   }
  catch (  NullPointerException expected) {

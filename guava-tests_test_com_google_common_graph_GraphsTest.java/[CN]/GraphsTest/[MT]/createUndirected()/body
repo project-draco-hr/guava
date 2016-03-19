@@ -1,5 +1,5 @@
 {
-  UndirectedGraph<Integer,String> undirectedGraph=Graphs.createUndirected();
+  Graph<Integer,String> undirectedGraph=GraphBuilder.undirected().build();
   assertThat(undirectedGraph.nodes()).isEmpty();
   assertThat(undirectedGraph.edges()).isEmpty();
   assertThat(undirectedGraph.addEdge(E12,N1,N2)).isTrue();

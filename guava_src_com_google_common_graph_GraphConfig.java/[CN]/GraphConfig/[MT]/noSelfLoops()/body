@@ -1,3 +1,0 @@
-{
-  return new GraphConfig(multigraph,false,expectedNodeCount,expectedEdgeCount);
-}

@@ -1,4 +1,4 @@
 {
-  DirectedGraph<Integer,String> directedGraph=Graphs.createDirected();
+  Graph<Integer,String> directedGraph=GraphBuilder.directed().build();
   assertThat(roots(directedGraph)).isEmpty();
 }

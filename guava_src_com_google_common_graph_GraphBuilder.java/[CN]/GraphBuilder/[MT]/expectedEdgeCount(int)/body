@@ -1,0 +1,5 @@
+{
+  checkArgument(expectedEdgeCount >= 0,"The expected number of edges can't be negative: %s",expectedEdgeCount);
+  this.expectedEdgeCount=Optional.of(expectedEdgeCount);
+  return this;
+}

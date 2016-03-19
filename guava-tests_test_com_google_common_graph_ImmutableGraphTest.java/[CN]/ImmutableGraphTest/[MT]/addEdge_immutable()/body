@@ -1,0 +1,10 @@
+{
+  Graph<String,String> graph=TestGraphBuilder.<String,String>init(GraphBuilder.directed()).toImmutableGraph();
+  try {
+    graph.addEdge("edge","node1","node2");
+    fail("Expected UnsupportedOperationException");
+  }
+ catch (  UnsupportedOperationException expected) {
+  }
+  assertThat(graph.edges()).isEmpty();
+}

@@ -1,0 +1,3 @@
+{
+  return new GraphBuilder<N,E>().directed(graph.isDirected()).allowsParallelEdges(graph.allowsParallelEdges()).allowsSelfLoops(graph.allowsSelfLoops());
+}

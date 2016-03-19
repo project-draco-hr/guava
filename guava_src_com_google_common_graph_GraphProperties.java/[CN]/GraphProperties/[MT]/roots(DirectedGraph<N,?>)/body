@@ -1,9 +1,0 @@
-{
-  ImmutableSet.Builder<N> builder=ImmutableSet.builder();
-  for (  N node : directedGraph.nodes()) {
-    if (directedGraph.predecessors(node).isEmpty()) {
-      builder.add(node);
-    }
-  }
-  return builder.build();
-}

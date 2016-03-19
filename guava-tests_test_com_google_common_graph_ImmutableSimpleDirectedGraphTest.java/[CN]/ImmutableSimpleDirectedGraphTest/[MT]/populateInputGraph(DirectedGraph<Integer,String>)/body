@@ -1,6 +1,0 @@
-{
-  graph.addEdge(E12,N1,N2);
-  graph.addEdge(E21,N2,N1);
-  graph.addEdge(E23,N2,N3);
-  graph.addNode(N5);
-}

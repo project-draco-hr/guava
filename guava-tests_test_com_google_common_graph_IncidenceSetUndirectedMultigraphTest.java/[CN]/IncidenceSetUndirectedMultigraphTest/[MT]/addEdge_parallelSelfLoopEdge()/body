@@ -1,5 +1,0 @@
-{
-  assertTrue(addEdge(E11,N1,N1));
-  assertTrue(addEdge(E11_A,N1,N1));
-  assertThat(undirectedGraph.edgesConnecting(N1,N1)).containsExactly(E11,E11_A);
-}

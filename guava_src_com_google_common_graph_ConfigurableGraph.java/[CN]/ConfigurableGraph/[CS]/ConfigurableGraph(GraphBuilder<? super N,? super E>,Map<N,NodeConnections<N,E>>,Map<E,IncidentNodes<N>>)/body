@@ -1,0 +1,7 @@
+{
+  this.isDirected=builder.directed;
+  this.allowsParallelEdges=builder.allowsParallelEdges;
+  this.allowsSelfLoops=builder.allowsSelfLoops;
+  this.nodeConnections=checkNotNull(nodeConnections);
+  this.edgeToIncidentNodes=checkNotNull(edgeToIncidentNodes);
+}

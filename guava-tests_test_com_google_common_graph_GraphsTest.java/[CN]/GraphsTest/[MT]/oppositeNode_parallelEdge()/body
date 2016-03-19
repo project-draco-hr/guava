@@ -1,5 +1,5 @@
 {
-  List<Graph<Integer,String>> testGraphs=ImmutableList.of(Graphs.<Integer,String>createDirected(MULTIGRAPH),Graphs.<Integer,String>createUndirected(MULTIGRAPH));
+  List<Graph<Integer,String>> testGraphs=ImmutableList.of(GraphBuilder.directed().allowsParallelEdges(true).<Integer,String>build(),GraphBuilder.undirected().allowsParallelEdges(true).<Integer,String>build());
   for (  Graph<Integer,String> graph : testGraphs) {
     graph.addEdge(E12,N1,N2);
     graph.addEdge(E12_A,N1,N2);

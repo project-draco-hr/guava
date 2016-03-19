@@ -1,5 +1,5 @@
 {
-  DirectedGraph<Integer,String> directedGraph=Graphs.createDirected();
+  Graph<Integer,String> directedGraph=GraphBuilder.directed().build();
   assertThat(addEdge(directedGraph,E11,ImmutableSet.of(N1))).isTrue();
   assertThat(directedGraph.edges()).containsExactly(E11);
   assertThat(directedGraph.nodes()).containsExactly(N1);

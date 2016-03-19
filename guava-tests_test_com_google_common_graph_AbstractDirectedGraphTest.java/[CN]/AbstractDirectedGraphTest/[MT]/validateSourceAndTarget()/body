@@ -1,18 +1,18 @@
 {
-  for (  Integer node : directedGraph.nodes()) {
-    for (    String inEdge : directedGraph.inEdges(node)) {
-      Integer oppositeNode=Graphs.oppositeNode(directedGraph,inEdge,node);
-      assertThat(directedGraph.source(inEdge)).isEqualTo(oppositeNode);
-      assertThat(directedGraph.target(inEdge)).isEqualTo(node);
+  for (  Integer node : graph.nodes()) {
+    for (    String inEdge : graph.inEdges(node)) {
+      Integer oppositeNode=Graphs.oppositeNode(graph,inEdge,node);
+      assertThat(graph.source(inEdge)).isEqualTo(oppositeNode);
+      assertThat(graph.target(inEdge)).isEqualTo(node);
     }
-    for (    String outEdge : directedGraph.outEdges(node)) {
-      Integer oppositeNode=Graphs.oppositeNode(directedGraph,outEdge,node);
-      assertThat(directedGraph.source(outEdge)).isEqualTo(node);
-      assertThat(directedGraph.target(outEdge)).isEqualTo(oppositeNode);
+    for (    String outEdge : graph.outEdges(node)) {
+      Integer oppositeNode=Graphs.oppositeNode(graph,outEdge,node);
+      assertThat(graph.source(outEdge)).isEqualTo(node);
+      assertThat(graph.target(outEdge)).isEqualTo(oppositeNode);
     }
-    for (    Integer adjacentNode : directedGraph.adjacentNodes(node)) {
-      Set<String> edges=directedGraph.edgesConnecting(node,adjacentNode);
-      Set<String> antiParallelEdges=directedGraph.edgesConnecting(adjacentNode,node);
+    for (    Integer adjacentNode : graph.adjacentNodes(node)) {
+      Set<String> edges=graph.edgesConnecting(node,adjacentNode);
+      Set<String> antiParallelEdges=graph.edgesConnecting(adjacentNode,node);
       assertTrue(node.equals(adjacentNode) || Collections.disjoint(edges,antiParallelEdges));
     }
   }

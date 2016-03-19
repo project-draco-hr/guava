@@ -1,9 +1,8 @@
 {
-  if (graph instanceof DirectedGraph) {
-    @SuppressWarnings("unchecked") final DirectedGraph<?,?> directedGraph=(DirectedGraph<?,?>)graph;
+  if (graph.isDirected()) {
     return new Function<Object,String>(){
       @Override public String apply(      Object edge){
-        return String.format("<%s -> %s>",directedGraph.source(edge),directedGraph.target(edge));
+        return String.format("<%s -> %s>",graph.source(edge),graph.target(edge));
       }
     }
 ;

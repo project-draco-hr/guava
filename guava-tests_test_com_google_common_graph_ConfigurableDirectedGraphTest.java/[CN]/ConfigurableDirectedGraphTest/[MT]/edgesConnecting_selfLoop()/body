@@ -1,0 +1,7 @@
+{
+  addEdge(E11,N1,N1);
+  assertThat(graph.edgesConnecting(N1,N1)).containsExactly(E11);
+  addEdge(E12,N1,N2);
+  assertThat(graph.edgesConnecting(N1,N2)).containsExactly(E12);
+  assertThat(graph.edgesConnecting(N1,N1)).containsExactly(E11);
+}

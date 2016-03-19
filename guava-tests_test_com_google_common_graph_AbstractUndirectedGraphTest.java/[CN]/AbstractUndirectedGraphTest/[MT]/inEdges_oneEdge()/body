@@ -1,5 +1,5 @@
 {
   addEdge(E12,N1,N2);
-  assertThat(undirectedGraph.inEdges(N2)).containsExactly(E12);
-  assertThat(undirectedGraph.inEdges(N1)).containsExactly(E12);
+  assertThat(graph.inEdges(N2)).containsExactly(E12);
+  assertThat(graph.inEdges(N1)).containsExactly(E12);
 }

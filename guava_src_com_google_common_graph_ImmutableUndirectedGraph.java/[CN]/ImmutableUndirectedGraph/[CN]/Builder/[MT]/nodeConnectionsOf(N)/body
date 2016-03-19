@@ -1,3 +1,0 @@
-{
-  return UndirectedNodeConnections.ofImmutable(graph.adjacentNodes(node),graph.incidentEdges(node));
-}

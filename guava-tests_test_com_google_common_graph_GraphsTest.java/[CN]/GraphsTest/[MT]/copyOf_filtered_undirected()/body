@@ -1,10 +1,10 @@
 {
-  UndirectedGraph<Integer,String> undirectedGraph=buildUndirectedTestGraph();
+  Graph<Integer,String> undirectedGraph=buildUndirectedTestGraph();
   undirectedGraph.addNode(N3);
   Predicate<Integer> nodePredicate=connectedNodePredicate(undirectedGraph);
   Predicate<String> edgePredicate=Predicates.not(selfLoopPredicate(undirectedGraph));
-  UndirectedGraph<Integer,String> filteredCopy=copyOf(undirectedGraph,nodePredicate,edgePredicate);
-  UndirectedGraph<Integer,String> expectedGraph=Graphs.createUndirected(MULTIGRAPH);
+  Graph<Integer,String> filteredCopy=copyOf(undirectedGraph,nodePredicate,edgePredicate);
+  Graph<Integer,String> expectedGraph=GraphBuilder.undirected().allowsParallelEdges(true).build();
   expectedGraph.addEdge(E12,N1,N2);
   expectedGraph.addEdge(E12_A,N1,N2);
   expectedGraph.addEdge(E21,N2,N1);

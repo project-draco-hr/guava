@@ -3,7 +3,7 @@
     throw new UnsupportedOperationException();
   }
   Set<N> incidentNodes=graph.incidentNodes(edge);
-  if (!graph.config().isMultigraph()) {
+  if (!graph.allowsParallelEdges()) {
     return ImmutableSet.of();
   }
   Iterator<N> incidentNodesIterator=incidentNodes.iterator();

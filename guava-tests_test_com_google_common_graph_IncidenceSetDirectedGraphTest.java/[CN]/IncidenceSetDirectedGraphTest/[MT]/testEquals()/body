@@ -1,7 +1,0 @@
-{
-  DirectedGraph<Integer,String> graphA=createGraph();
-  graphA.addNode(N1);
-  DirectedGraph<Integer,String> graphB=createGraph();
-  graphA.addNode(N2);
-  new EqualsTester().addEqualityGroup(graphA).addEqualityGroup(graphB).testEquals();
-}

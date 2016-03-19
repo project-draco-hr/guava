@@ -1,0 +1,4 @@
+{
+  addEdge(E11,N1,N1);
+  assertThat(graph.toString()).isEqualTo(String.format("%s, nodes: %s, edges: {%s=[%s]}",getPropertiesString(graph),graph.nodes(),E11,N1));
+}

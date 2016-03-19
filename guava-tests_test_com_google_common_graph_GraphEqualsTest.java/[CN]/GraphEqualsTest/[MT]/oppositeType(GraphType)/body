@@ -1,0 +1,10 @@
+{
+switch (graphType) {
+case UNDIRECTED:
+    return GraphType.DIRECTED;
+case DIRECTED:
+  return GraphType.UNDIRECTED;
+default :
+throw new IllegalStateException("Unexpected graph type: " + graphType);
+}
+}

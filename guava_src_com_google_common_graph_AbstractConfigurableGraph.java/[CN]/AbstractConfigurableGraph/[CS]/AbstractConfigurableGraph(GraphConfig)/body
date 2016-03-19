@@ -1,5 +1,0 @@
-{
-  super(config);
-  this.nodeConnections=Maps.newLinkedHashMapWithExpectedSize(config.getExpectedNodeCount().or(DEFAULT_MAP_SIZE));
-  this.edgeToIncidentNodes=Maps.newLinkedHashMapWithExpectedSize(config.getExpectedEdgeCount().or(DEFAULT_MAP_SIZE));
-}

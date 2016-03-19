@@ -1,3 +1,0 @@
-{
-  assertThat(Graphs.config().noSelfLoops().multigraph().toString()).isEqualTo("multigraph,self-loops disallowed");
-}

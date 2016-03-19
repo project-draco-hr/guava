@@ -1,3 +1,0 @@
-UndirectedGraph<N,E> graph
-Predicate<? super N> nodePredicate
-Predicate<? super E> edgePredicate

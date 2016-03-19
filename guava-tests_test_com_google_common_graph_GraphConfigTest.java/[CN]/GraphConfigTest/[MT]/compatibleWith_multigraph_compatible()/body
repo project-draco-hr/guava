@@ -1,4 +1,0 @@
-{
-  assertThat(Graphs.config().multigraph().compatibleWith(Graphs.config().multigraph())).isTrue();
-  assertThat(Graphs.config().multigraph().compatibleWith(Graphs.config())).isTrue();
-}

@@ -1,4 +1,0 @@
-{
-  expectedException.expect(UnsupportedOperationException.class);
-  super.removeEdge_invalidArgument();
-}

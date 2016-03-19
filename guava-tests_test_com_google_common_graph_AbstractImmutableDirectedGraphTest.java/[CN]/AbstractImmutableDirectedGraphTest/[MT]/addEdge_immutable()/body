@@ -1,4 +1,0 @@
-{
-  expectedException.expect(UnsupportedOperationException.class);
-  graph.addEdge(E13,N1,N3);
-}

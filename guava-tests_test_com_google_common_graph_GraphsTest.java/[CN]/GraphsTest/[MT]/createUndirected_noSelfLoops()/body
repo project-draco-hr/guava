@@ -1,5 +1,5 @@
 {
-  UndirectedGraph<Integer,String> undirectedGraph=Graphs.createUndirected(config().noSelfLoops());
+  Graph<Integer,String> undirectedGraph=GraphBuilder.undirected().allowsSelfLoops(false).build();
   try {
     undirectedGraph.addEdge(E11,N1,N1);
     fail(ERROR_ADDED_SELF_LOOP);
