@@ -2,7 +2,7 @@
   if (isCancelled()) {
     return;
   }
-  if (delegate instanceof TrustedFuture) {
+  if (delegate instanceof AbstractFuture) {
     AbstractFuture<? extends V> other=(AbstractFuture<? extends V>)delegate;
     value=other.value;
     throwable=other.throwable;
@@ -12,7 +12,7 @@
     return;
   }
   try {
-    forceSet(getUninterruptibly(delegate));
+    forceSet(getDone(delegate));
   }
  catch (  ExecutionException exception) {
     forceSetException(exception.getCause());
