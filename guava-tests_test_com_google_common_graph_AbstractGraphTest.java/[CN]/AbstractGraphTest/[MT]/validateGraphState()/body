@@ -1,6 +1,15 @@
 {
   new EqualsTester().addEqualityGroup(graph,ImmutableGraph.copyOf(graph)).testEquals();
+  String graphString=graph.toString();
+  assertThat(graphString).contains("isDirected: " + graph.isDirected());
+  assertThat(graphString).contains("allowsParallelEdges: " + graph.allowsParallelEdges());
+  assertThat(graphString).contains("allowsSelfLoops: " + graph.allowsSelfLoops());
+  int nodeStart=graphString.indexOf("nodes:");
+  int edgeStart=graphString.indexOf("edges:");
+  String nodeString=graphString.substring(nodeStart,edgeStart);
+  String edgeString=graphString.substring(edgeStart);
   for (  String edge : graph.edges()) {
+    assertThat(edgeString).contains(edge);
     if (!(graph instanceof Hypergraph)) {
       Iterator<Integer> incidentNodesIterator=graph.incidentNodes(edge).iterator();
       Integer node1=incidentNodesIterator.next();
@@ -24,6 +33,7 @@
     }
   }
   for (  Integer node : graph.nodes()) {
+    assertThat(nodeString).contains(node.toString());
     for (    String incidentEdge : graph.incidentEdges(node)) {
       assertTrue(graph.inEdges(node).contains(incidentEdge) || graph.outEdges(node).contains(incidentEdge));
       assertThat(graph.edges()).contains(incidentEdge);

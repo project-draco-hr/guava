@@ -1,7 +1,0 @@
-{
-  addEdge(E12,N1,N2);
-  addEdge(E12_A,N1,N2);
-  addEdge(E11,N1,N1);
-  addEdge(E11_A,N1,N1);
-  assertThat(graph.toString()).isEqualTo(String.format("%s, nodes: %s, edges: {%s=<%s -> %s>, %s=<%s -> %s>, %s=<%s -> %s>, %s=<%s -> %s>}",getPropertiesString(graph),graph.nodes(),E12,N1,N2,E12_A,N1,N2,E11,N1,N1,E11_A,N1,N1));
-}
