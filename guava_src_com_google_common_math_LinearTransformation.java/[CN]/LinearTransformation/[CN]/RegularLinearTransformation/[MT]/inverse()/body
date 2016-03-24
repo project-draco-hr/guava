@@ -1,0 +1,4 @@
+{
+  LinearTransformation result=inverse;
+  return (result == null) ? inverse=createInverse() : result;
+}

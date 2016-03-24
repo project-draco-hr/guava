@@ -3,9 +3,14 @@
   checkArgument(yDelta != 0.0);
   assertThat(transformation.isHorizontal()).isFalse();
   assertThat(transformation.isVertical()).isFalse();
-  assertThat(transformation.transformX(x1)).isWithin(ALLOWED_ERROR).of(y1);
-  assertThat(transformation.transformX(x1 + xDelta)).isWithin(ALLOWED_ERROR).of(y1 + yDelta);
-  assertThat(transformation.transformY(y1)).isWithin(ALLOWED_ERROR).of(x1);
-  assertThat(transformation.transformY(y1 + yDelta)).isWithin(ALLOWED_ERROR).of(x1 + xDelta);
+  assertThat(transformation.inverse().isHorizontal()).isFalse();
+  assertThat(transformation.inverse().isVertical()).isFalse();
+  assertThat(transformation.transform(x1)).isWithin(ALLOWED_ERROR).of(y1);
+  assertThat(transformation.transform(x1 + xDelta)).isWithin(ALLOWED_ERROR).of(y1 + yDelta);
+  assertThat(transformation.inverse().transform(y1)).isWithin(ALLOWED_ERROR).of(x1);
+  assertThat(transformation.inverse().transform(y1 + yDelta)).isWithin(ALLOWED_ERROR).of(x1 + xDelta);
   assertThat(transformation.slope()).isWithin(ALLOWED_ERROR).of(yDelta / xDelta);
+  assertThat(transformation.inverse().slope()).isWithin(ALLOWED_ERROR).of(xDelta / yDelta);
+  assertThat(transformation.inverse()).isSameAs(transformation.inverse());
+  assertThat(transformation.inverse().inverse()).isSameAs(transformation);
 }

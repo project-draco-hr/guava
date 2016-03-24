@@ -2,6 +2,6 @@
   assertThat(transformation.isHorizontal()).isFalse();
   assertThat(transformation.isVertical()).isFalse();
   assertThat(transformation.slope()).isNaN();
-  assertThat(transformation.transformX(0.0)).isNaN();
-  assertThat(transformation.transformY(0.0)).isNaN();
+  assertThat(transformation.transform(0.0)).isNaN();
+  assertThat(transformation.inverse()).isSameAs(transformation);
 }

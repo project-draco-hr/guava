@@ -1,18 +1,23 @@
 {
   assertThat(transformation.isHorizontal()).isFalse();
   assertThat(transformation.isVertical()).isTrue();
+  assertThat(transformation.inverse().isHorizontal()).isTrue();
+  assertThat(transformation.inverse().isVertical()).isFalse();
   try {
-    transformation.transformX(0.0);
+    transformation.transform(0.0);
     fail("Expected IllegalStateException");
   }
  catch (  IllegalStateException expected) {
   }
-  assertThat(transformation.transformY(-1.0)).isWithin(ALLOWED_ERROR).of(x);
-  assertThat(transformation.transformY(1.0)).isWithin(ALLOWED_ERROR).of(x);
+  assertThat(transformation.inverse().transform(-1.0)).isWithin(ALLOWED_ERROR).of(x);
+  assertThat(transformation.inverse().transform(1.0)).isWithin(ALLOWED_ERROR).of(x);
   try {
     transformation.slope();
     fail("Expected IllegalStateException");
   }
  catch (  IllegalStateException expected) {
   }
+  assertThat(transformation.inverse().slope()).isWithin(ALLOWED_ERROR).of(0.0);
+  assertThat(transformation.inverse()).isSameAs(transformation.inverse());
+  assertThat(transformation.inverse().inverse()).isSameAs(transformation);
 }

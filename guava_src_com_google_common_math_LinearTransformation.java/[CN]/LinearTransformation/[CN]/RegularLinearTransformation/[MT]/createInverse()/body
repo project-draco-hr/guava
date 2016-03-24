@@ -1,0 +1,8 @@
+{
+  if (slope != 0.0) {
+    return new RegularLinearTransformation(1.0 / slope,-1.0 * yIntercept / slope,this);
+  }
+ else {
+    return new VerticalLinearTransformation(yIntercept,this);
+  }
+}

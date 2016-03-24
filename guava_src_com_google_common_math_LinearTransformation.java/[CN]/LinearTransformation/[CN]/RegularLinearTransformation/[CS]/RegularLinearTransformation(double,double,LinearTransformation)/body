@@ -1,5 +1,5 @@
 {
   this.slope=slope;
   this.yIntercept=yIntercept;
-  this.inverse=null;
+  this.inverse=inverse;
 }

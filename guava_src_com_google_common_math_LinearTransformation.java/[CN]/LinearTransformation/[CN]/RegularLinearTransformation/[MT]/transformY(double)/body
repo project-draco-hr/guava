@@ -1,4 +1,0 @@
-{
-  checkState(slope != 0.0);
-  return (y - yIntercept) / slope;
-}
