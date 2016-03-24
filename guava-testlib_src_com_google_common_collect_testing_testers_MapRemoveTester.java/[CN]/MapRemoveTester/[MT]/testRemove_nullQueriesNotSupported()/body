@@ -1,6 +1,6 @@
 {
   try {
-    assertNull("remove(null) should return null or throw " + "NullPointerException",getMap().remove(null));
+    assertNull("remove(null) should return null or throw NullPointerException",getMap().remove(null));
   }
  catch (  NullPointerException tolerated) {
   }

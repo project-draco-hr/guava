@@ -1,5 +1,5 @@
 {
   List<E> other=new ArrayList<E>(getSampleElements());
   other.set(other.size() / 2,null);
-  assertFalse("Two Lists should not be equal if exactly one of them has " + "null at a given index.",getList().equals(other));
+  assertFalse("Two Lists should not be equal if exactly one of them has null at a given index.",getList().equals(other));
 }

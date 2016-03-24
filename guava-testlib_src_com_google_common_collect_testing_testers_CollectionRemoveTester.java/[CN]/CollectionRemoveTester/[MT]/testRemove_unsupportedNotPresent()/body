@@ -1,6 +1,6 @@
 {
   try {
-    assertFalse("remove(notPresent) should return false or throw " + "UnsupportedOperationException",collection.remove(e3()));
+    assertFalse("remove(notPresent) should return false or throw UnsupportedOperationException",collection.remove(e3()));
   }
  catch (  UnsupportedOperationException tolerated) {
   }

@@ -1,6 +1,6 @@
 {
   for (  Entry<K,V> entry : entries) {
     assertFalse("Should not contain entry " + entry,actualContents().contains(entry));
-    assertFalse("Should not contain key " + entry.getKey() + " mapped to"+ " value "+ entry.getValue(),equal(getMap().get(entry.getKey()),entry.getValue()));
+    assertFalse("Should not contain key " + entry.getKey() + " mapped to value "+ entry.getValue(),equal(getMap().get(entry.getKey()),entry.getValue()));
   }
 }

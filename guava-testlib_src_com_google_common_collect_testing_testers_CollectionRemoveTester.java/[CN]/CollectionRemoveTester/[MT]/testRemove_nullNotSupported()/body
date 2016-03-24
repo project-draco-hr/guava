@@ -1,6 +1,6 @@
 {
   try {
-    assertFalse("remove(null) should return false or throw " + "NullPointerException",collection.remove(null));
+    assertFalse("remove(null) should return false or throw NullPointerException",collection.remove(null));
   }
  catch (  NullPointerException tolerated) {
   }

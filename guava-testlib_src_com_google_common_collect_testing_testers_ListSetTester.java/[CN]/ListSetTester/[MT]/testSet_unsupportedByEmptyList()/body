@@ -1,7 +1,7 @@
 {
   try {
     getList().set(0,e3());
-    fail("set() should throw UnsupportedOperationException " + "or IndexOutOfBoundsException");
+    fail("set() should throw UnsupportedOperationException or IndexOutOfBoundsException");
   }
  catch (  UnsupportedOperationException tolerated) {
   }

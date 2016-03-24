@@ -3,5 +3,5 @@
   elements.set(elements.size() / 2,null);
   collection=getSubjectGenerator().create(elements.toArray());
   List<E> other=new ArrayList<E>(getSampleElements());
-  assertFalse("Two Lists should not be equal if exactly one of them has " + "null at a given index.",getList().equals(other));
+  assertFalse("Two Lists should not be equal if exactly one of them has null at a given index.",getList().equals(other));
 }

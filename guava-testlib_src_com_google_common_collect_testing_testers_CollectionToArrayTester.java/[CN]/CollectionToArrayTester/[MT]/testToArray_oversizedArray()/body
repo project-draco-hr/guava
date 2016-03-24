@@ -8,5 +8,5 @@
   for (int i=0; i < getNumElements(); i++) {
     assertTrue("toArray(overSizedE[]) should contain element " + expectedSubArray[i],subArray.contains(expectedSubArray[i]));
   }
-  assertNull("The array element " + "immediately following the end of the collection should be nulled",array[getNumElements()]);
+  assertNull("The array element immediately following the end of the collection should be nulled",array[getNumElements()]);
 }

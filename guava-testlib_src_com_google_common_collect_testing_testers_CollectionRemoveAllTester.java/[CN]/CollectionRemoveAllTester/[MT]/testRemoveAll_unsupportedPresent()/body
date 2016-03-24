@@ -1,7 +1,7 @@
 {
   try {
     collection.removeAll(MinimalCollection.of(e0()));
-    fail("removeAll(intersectingCollection) should throw " + "UnsupportedOperationException");
+    fail("removeAll(intersectingCollection) should throw UnsupportedOperationException");
   }
  catch (  UnsupportedOperationException expected) {
   }

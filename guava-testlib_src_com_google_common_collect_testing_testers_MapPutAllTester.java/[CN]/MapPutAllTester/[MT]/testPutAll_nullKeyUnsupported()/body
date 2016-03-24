@@ -6,5 +6,5 @@
  catch (  NullPointerException expected) {
   }
   expectUnchanged();
-  expectNullKeyMissingWhenNullKeysUnsupported("Should not contain null key after unsupported " + "putAll(containsNullKey)");
+  expectNullKeyMissingWhenNullKeysUnsupported("Should not contain null key after unsupported putAll(containsNullKey)");
 }

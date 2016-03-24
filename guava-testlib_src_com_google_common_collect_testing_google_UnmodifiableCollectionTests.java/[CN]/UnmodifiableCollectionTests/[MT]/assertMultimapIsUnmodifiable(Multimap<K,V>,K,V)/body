@@ -92,13 +92,13 @@
     assertMultimapRemainsUnmodified(multimap,originalEntries);
     try {
       multimap.asMap().values().iterator().next().remove(sampleValue);
-      fail("asMap().values().iterator().next().remove() succeeded on " + "unmodifiable multimap");
+      fail("asMap().values().iterator().next().remove() succeeded on unmodifiable multimap");
     }
  catch (    UnsupportedOperationException expected) {
     }
     try {
       ((Collection<?>)multimap.asMap().values().toArray()[0]).clear();
-      fail("asMap().values().toArray()[0].clear() succeeded on " + "unmodifiable multimap");
+      fail("asMap().values().toArray()[0].clear() succeeded on unmodifiable multimap");
     }
  catch (    UnsupportedOperationException expected) {
     }

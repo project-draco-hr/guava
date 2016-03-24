@@ -1,7 +1,7 @@
 {
   try {
     getMultiset().setCount(e3(),-1,1);
-    fail("calling setCount() with a negative oldCount should throw " + "IllegalArgumentException");
+    fail("calling setCount() with a negative oldCount should throw IllegalArgumentException");
   }
  catch (  IllegalArgumentException expected) {
   }

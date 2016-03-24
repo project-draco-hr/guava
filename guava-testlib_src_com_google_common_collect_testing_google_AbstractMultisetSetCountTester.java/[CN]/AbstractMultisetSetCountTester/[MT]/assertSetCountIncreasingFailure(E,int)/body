@@ -1,7 +1,7 @@
 {
   try {
     setCountNoCheckReturnValue(element,count);
-    fail("a call to multiset.setCount() to increase an element's count " + "should throw");
+    fail("a call to multiset.setCount() to increase an element's count should throw");
   }
  catch (  UnsupportedOperationException expected) {
   }
