@@ -1,0 +1,9 @@
+{
+  Reader reader=new StringReader(ASCII);
+  assertEquals(ASCII.length(),CharStreams.exhaust(reader));
+  assertEquals(-1,reader.read());
+  assertEquals(0,CharStreams.exhaust(reader));
+  Reader empty=new StringReader("");
+  assertEquals(0,CharStreams.exhaust(empty));
+  assertEquals(-1,empty.read());
+}

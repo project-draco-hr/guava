@@ -1,0 +1,9 @@
+{
+  CharBuffer buf=CharBuffer.wrap(ASCII);
+  assertEquals(ASCII.length(),CharStreams.exhaust(buf));
+  assertEquals(0,buf.remaining());
+  assertEquals(0,CharStreams.exhaust(buf));
+  CharBuffer empty=CharBuffer.wrap("");
+  assertEquals(0,CharStreams.exhaust(empty));
+  assertEquals(0,empty.remaining());
+}

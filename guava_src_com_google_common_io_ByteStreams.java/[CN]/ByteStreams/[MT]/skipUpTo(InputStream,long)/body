@@ -1,15 +1,25 @@
 {
-  long totalSkipped=0;
-  while (totalSkipped < n) {
-    long remaining=n - totalSkipped;
-    long skipped=skipSafely(in,remaining);
-    if (skipped == 0) {
-      int skip=(int)Math.min(remaining,skipBuffer.length);
-      if ((skipped=in.read(skipBuffer,0,skip)) == -1) {
-        break;
+  try {
+    long totalSkipped=0;
+    while (totalSkipped < n) {
+      long remaining=n - totalSkipped;
+      long skipped=skipSafely(in,remaining);
+      if (skipped == 0) {
+        int skip=(int)Math.min(remaining,skipBuffer.length);
+        if ((skipped=in.read(skipBuffer,0,skip)) == -1) {
+          break;
+        }
+ else {
+          Arrays.fill(skipBuffer,0,(int)skipped,(byte)0);
+        }
       }
+      totalSkipped+=skipped;
     }
-    totalSkipped+=skipped;
+    return totalSkipped;
   }
-  return totalSkipped;
+ catch (  Throwable e) {
+    Arrays.fill(skipBuffer,(byte)0);
+    Throwables.propagateIfPossible(e,IOException.class);
+    throw new AssertionError(e);
+  }
 }

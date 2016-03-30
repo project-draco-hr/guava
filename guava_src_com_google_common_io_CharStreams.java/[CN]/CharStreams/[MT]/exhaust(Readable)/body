@@ -1,0 +1,21 @@
+{
+  if (readable instanceof Reader) {
+    return exhaust((Reader)readable);
+  }
+  try {
+    CharBuffer buf=CharBuffer.wrap(skipBuffer);
+    long total=0;
+    while (true) {
+      int read=readable.read(buf);
+      if (read == -1) {
+        break;
+      }
+      total+=read;
+      buf.clear();
+    }
+    return total;
+  }
+  finally {
+    Arrays.fill(skipBuffer,'\0');
+  }
+}
