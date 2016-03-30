@@ -14,7 +14,7 @@
  while (copied > 0 || position < sourceChannel.size());
     return position - oldPosition;
   }
-  ByteBuffer buf=ByteBuffer.allocate(BUF_SIZE);
+  ByteBuffer buf=ByteBuffer.wrap(createBuffer());
   long total=0;
   while (from.read(buf) != -1) {
     buf.flip();

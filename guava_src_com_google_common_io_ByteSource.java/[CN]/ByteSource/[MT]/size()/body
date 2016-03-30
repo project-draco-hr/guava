@@ -16,7 +16,7 @@
   closer=Closer.create();
   try {
     InputStream in=closer.register(openStream());
-    return countByReading(in);
+    return ByteStreams.exhaust(in);
   }
  catch (  Throwable e) {
     throw closer.rethrow(e);

@@ -1,7 +1,7 @@
 {
   checkNotNull(from);
   checkNotNull(to);
-  byte[] buf=new byte[BUF_SIZE];
+  byte[] buf=createBuffer();
   long total=0;
   while (true) {
     int r=from.read(buf);

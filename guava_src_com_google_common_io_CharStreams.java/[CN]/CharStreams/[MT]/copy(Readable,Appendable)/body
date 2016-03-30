@@ -1,7 +1,7 @@
 {
   checkNotNull(from);
   checkNotNull(to);
-  CharBuffer buf=CharBuffer.allocate(BUF_SIZE);
+  CharBuffer buf=createBuffer();
   long total=0;
   while (from.read(buf) != -1) {
     buf.flip();

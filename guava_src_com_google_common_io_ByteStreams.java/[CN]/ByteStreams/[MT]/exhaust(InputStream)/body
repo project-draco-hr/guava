@@ -1,16 +1,9 @@
 {
-  try {
-    long total=0;
-    while (true) {
-      int read=in.read(skipBuffer);
-      if (read == -1) {
-        break;
-      }
-      total+=read;
-    }
-    return total;
+  long total=0;
+  long read;
+  byte[] buf=createBuffer();
+  while ((read=in.read(buf)) != -1) {
+    total+=read;
   }
-  finally {
-    Arrays.fill(skipBuffer,(byte)0);
-  }
+  return total;
 }
