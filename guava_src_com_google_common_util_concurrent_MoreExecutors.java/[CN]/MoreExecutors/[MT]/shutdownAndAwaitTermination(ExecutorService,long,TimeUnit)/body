@@ -1,8 +1,7 @@
 {
-  checkNotNull(unit);
+  long halfTimeoutNanos=unit.toNanos(timeout) / 2;
   service.shutdown();
   try {
-    long halfTimeoutNanos=TimeUnit.NANOSECONDS.convert(timeout,unit) / 2;
     if (!service.awaitTermination(halfTimeoutNanos,TimeUnit.NANOSECONDS)) {
       service.shutdownNow();
       service.awaitTermination(halfTimeoutNanos,TimeUnit.NANOSECONDS);
