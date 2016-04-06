@@ -19,7 +19,6 @@
           ++modCount;
           setValue(e,value);
           if (!valueReference.isComputingReference()) {
-            enqueueNotification(key,hash,entryValue,RemovalCause.COLLECTED);
             newCount=this.count;
           }
  else           if (evictEntries()) {
@@ -34,7 +33,6 @@
         }
  else {
           ++modCount;
-          enqueueNotification(key,hash,entryValue,RemovalCause.REPLACED);
           setValue(e,value);
           return entryValue;
         }
@@ -52,6 +50,5 @@
   }
   finally {
     unlock();
-    postWriteCleanup();
   }
 }

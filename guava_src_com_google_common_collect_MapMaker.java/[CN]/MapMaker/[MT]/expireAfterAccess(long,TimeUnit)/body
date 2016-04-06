@@ -1,8 +1,8 @@
 {
   checkExpiration(duration,unit);
   this.expireAfterAccessNanos=unit.toNanos(duration);
-  if (duration == 0 && this.nullRemovalCause == null) {
-    this.nullRemovalCause=RemovalCause.EXPIRED;
+  if (duration == 0) {
+    this.evictImmediately=true;
   }
   useCustomMap=true;
   return this;

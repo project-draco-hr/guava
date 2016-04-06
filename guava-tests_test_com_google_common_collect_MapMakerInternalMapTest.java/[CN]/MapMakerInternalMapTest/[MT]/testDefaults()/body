@@ -8,8 +8,6 @@
   assertEquals(0,map.expireAfterWriteNanos);
   assertEquals(MapMaker.UNSET_INT,map.maximumSize);
   assertSame(EntryFactory.STRONG,map.entryFactory);
-  assertSame(MapMaker.NullListener.INSTANCE,map.removalListener);
-  assertSame(DISCARDING_QUEUE,map.removalNotificationQueue);
   assertSame(Ticker.systemTicker(),map.ticker);
   assertEquals(4,map.concurrencyLevel);
   assertThat(map.segments).hasLength(4);

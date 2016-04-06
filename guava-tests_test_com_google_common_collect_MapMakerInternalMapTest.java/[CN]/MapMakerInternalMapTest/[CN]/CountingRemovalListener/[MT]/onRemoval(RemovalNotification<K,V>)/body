@@ -1,5 +1,0 @@
-{
-  count.incrementAndGet();
-  lastKey=notification.getKey();
-  lastValue=notification.getValue();
-}

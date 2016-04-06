@@ -1,6 +1,5 @@
 {
-  CountingRemovalListener<Object,Object> listener=new CountingRemovalListener<Object,Object>();
-  MapMakerInternalMap<Object,Object> map=makeMap(createMapMaker().concurrencyLevel(1).initialCapacity(1).maximumSize(SMALL_MAX_SIZE).expireAfterWrite(99999,SECONDS).removalListener(listener));
+  MapMakerInternalMap<Object,Object> map=makeMap(createMapMaker().concurrencyLevel(1).initialCapacity(1).maximumSize(SMALL_MAX_SIZE).expireAfterWrite(99999,SECONDS));
   Segment<Object,Object> segment=map.segments[0];
   AtomicReferenceArray<ReferenceEntry<Object,Object>> table=segment.table;
   assertEquals(1,table.length());
@@ -15,10 +14,6 @@
   table.set(0,entry);
   segment.count=1;
   assertTrue(segment.reclaimValue(key,hash,valueRef));
-  assertEquals(1,listener.getCount());
-  assertSame(key,listener.getLastEvictedKey());
-  assertSame(value,listener.getLastEvictedValue());
-  assertTrue(map.removalNotificationQueue.isEmpty());
   assertFalse(segment.evictionQueue.contains(entry));
   assertFalse(segment.expirationQueue.contains(entry));
   assertEquals(0,segment.count);
@@ -27,9 +22,5 @@
   DummyValueReference<Object,Object> otherValueRef=DummyValueReference.create(value,entry);
   entry.setValueReference(otherValueRef);
   assertFalse(segment.reclaimValue(key,hash,valueRef));
-  assertEquals(1,listener.getCount());
   assertTrue(segment.reclaimValue(key,hash,otherValueRef));
-  assertEquals(2,listener.getCount());
-  assertSame(key,listener.getLastEvictedKey());
-  assertSame(value,listener.getLastEvictedValue());
 }

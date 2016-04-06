@@ -3,15 +3,6 @@
     lock();
     try {
       AtomicReferenceArray<ReferenceEntry<K,V>> table=this.table;
-      if (map.removalNotificationQueue != DISCARDING_QUEUE) {
-        for (int i=0; i < table.length(); ++i) {
-          for (ReferenceEntry<K,V> e=table.get(i); e != null; e=e.getNext()) {
-            if (!e.getValueReference().isComputingReference()) {
-              enqueueNotification(e,RemovalCause.EXPLICIT);
-            }
-          }
-        }
-      }
       for (int i=0; i < table.length(); ++i) {
         table.set(i,null);
       }
@@ -24,7 +15,6 @@
     }
   finally {
       unlock();
-      postWriteCleanup();
     }
   }
 }

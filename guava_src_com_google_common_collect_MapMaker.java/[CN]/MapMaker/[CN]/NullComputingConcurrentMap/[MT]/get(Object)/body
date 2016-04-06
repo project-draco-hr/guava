@@ -1,0 +1,6 @@
+{
+  K key=(K)k;
+  V value=compute(key);
+  checkNotNull(value,"%s returned null for key %s.",computingFunction,key);
+  return value;
+}

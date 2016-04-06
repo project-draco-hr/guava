@@ -9,8 +9,6 @@
   expireAfterWriteNanos=builder.getExpireAfterWriteNanos();
   entryFactory=EntryFactory.getFactory(keyStrength,expires(),evictsBySize());
   ticker=builder.getTicker();
-  removalListener=builder.getRemovalListener();
-  removalNotificationQueue=(removalListener == NullListener.INSTANCE) ? MapMakerInternalMap.<RemovalNotification<K,V>>discardingQueue() : new ConcurrentLinkedQueue<RemovalNotification<K,V>>();
   int initialCapacity=Math.min(builder.getInitialCapacity(),MAXIMUM_CAPACITY);
   if (evictsBySize()) {
     initialCapacity=Math.min(initialCapacity,maximumSize);

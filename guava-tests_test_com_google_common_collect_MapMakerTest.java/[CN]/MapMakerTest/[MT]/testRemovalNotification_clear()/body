@@ -1,8 +1,7 @@
 {
   final CountDownLatch computingLatch=new CountDownLatch(1);
   Function<String,String> computingFunction=new DelayingIdentityLoader<String>(computingLatch);
-  QueuingRemovalListener<String,String> listener=new QueuingRemovalListener<String,String>();
-  @SuppressWarnings("deprecation") final ConcurrentMap<String,String> map=new MapMaker().concurrencyLevel(1).removalListener(listener).makeComputingMap(computingFunction);
+  @SuppressWarnings("deprecation") final ConcurrentMap<String,String> map=new MapMaker().concurrencyLevel(1).makeComputingMap(computingFunction);
   map.put("a","a");
   final CountDownLatch computationStarted=new CountDownLatch(1);
   final CountDownLatch computationComplete=new CountDownLatch(1);
@@ -18,10 +17,6 @@
   map.clear();
   computingLatch.countDown();
   computationComplete.await();
-  assertEquals(1,listener.size());
-  RemovalNotification<String,String> notification=listener.remove();
-  assertEquals("a",notification.getKey());
-  assertEquals("a",notification.getValue());
   assertEquals(1,map.size());
   assertEquals("b",map.get("b"));
 }

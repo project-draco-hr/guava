@@ -2,7 +2,7 @@
   if (map.evictsBySize() && count >= maxSegmentSize) {
     drainRecencyQueue();
     ReferenceEntry<K,V> e=evictionQueue.remove();
-    if (!removeEntry(e,e.getHash(),RemovalCause.SIZE)) {
+    if (!removeEntry(e,e.getHash())) {
       throw new AssertionError();
     }
     return true;

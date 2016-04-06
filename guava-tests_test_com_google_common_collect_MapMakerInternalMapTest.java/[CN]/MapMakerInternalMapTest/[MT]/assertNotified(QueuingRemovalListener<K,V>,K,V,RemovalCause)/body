@@ -1,6 +1,0 @@
-{
-  RemovalNotification<K,V> notification=listener.remove();
-  assertSame(key,notification.getKey());
-  assertSame(value,notification.getValue());
-  assertSame(cause,notification.getCause());
-}

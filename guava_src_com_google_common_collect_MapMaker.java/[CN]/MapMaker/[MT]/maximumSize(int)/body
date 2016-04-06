@@ -4,7 +4,7 @@
   this.maximumSize=size;
   this.useCustomMap=true;
   if (maximumSize == 0) {
-    this.nullRemovalCause=RemovalCause.SIZE;
+    this.evictImmediately=true;
   }
   return this;
 }

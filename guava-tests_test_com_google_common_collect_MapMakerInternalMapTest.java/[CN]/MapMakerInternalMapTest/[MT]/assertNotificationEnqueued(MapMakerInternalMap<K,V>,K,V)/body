@@ -1,5 +1,0 @@
-{
-  RemovalNotification<K,V> notification=map.removalNotificationQueue.poll();
-  assertSame(key,notification.getKey());
-  assertSame(value,notification.getValue());
-}

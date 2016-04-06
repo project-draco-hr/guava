@@ -29,10 +29,8 @@
  else {
                 V value=e.getValueReference().get();
                 if (value == null) {
-                  enqueueNotification(entryKey,hash,value,RemovalCause.COLLECTED);
                 }
  else                 if (map.expires() && map.isExpired(e)) {
-                  enqueueNotification(entryKey,hash,value,RemovalCause.EXPIRED);
                 }
  else {
                   recordLockedRead(e);
@@ -59,7 +57,6 @@
         }
   finally {
           unlock();
-          postWriteCleanup();
         }
         if (createNewEntry) {
           return compute(key,hash,e,computingValueReference);

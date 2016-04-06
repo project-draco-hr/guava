@@ -16,10 +16,8 @@
     }
   }
 ;
-  QueuingRemovalListener<Object,Object> listener=new QueuingRemovalListener<Object,Object>();
-  MapMaker maker=(MapMaker)createMapMaker().removalListener(listener);
+  MapMaker maker=(MapMaker)createMapMaker();
   final ComputingConcurrentHashMap<Object,Object> map=makeComputingMap(maker,computingFunction);
-  assertTrue(listener.isEmpty());
   final Object one=new Object();
   final Object two=new Object();
   final Object three=new Object();
@@ -50,6 +48,4 @@
     throw new RuntimeException(e);
   }
   assertNotNull(map.putIfAbsent(one,three));
-  assertNotified(listener,one,computedObject,RemovalCause.REPLACED);
-  assertTrue(listener.isEmpty());
 }

@@ -1,13 +1,5 @@
 {
-  final List<RemovalNotification<String,Number>> notificationQueue=Lists.newArrayList();
-  RemovalListener<String,Number> removalListener=new RemovalListener<String,Number>(){
-    @Override public void onRemoval(    RemovalNotification<String,Number> notification){
-      notificationQueue.add(notification);
-    }
-  }
-;
   @SuppressWarnings("deprecation") MapMaker mapMaker=new MapMaker().concurrencyLevel(1).maximumSize(1);
-  mapMaker.removalListener(removalListener);
   ConcurrentHashMultiset<String> multiset=ConcurrentHashMultiset.create(mapMaker);
   multiset.add("a",5);
   assertTrue(multiset.contains("a"));
@@ -16,7 +8,4 @@
   assertFalse(multiset.contains("a"));
   assertTrue(multiset.contains("b"));
   assertEquals(3,multiset.count("b"));
-  RemovalNotification<String,Number> notification=Iterables.getOnlyElement(notificationQueue);
-  assertEquals("a",notification.getKey());
-  assertEquals(5,notification.getValue().intValue());
 }

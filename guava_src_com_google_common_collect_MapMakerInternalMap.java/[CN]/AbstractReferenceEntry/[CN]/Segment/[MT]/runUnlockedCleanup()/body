@@ -1,5 +1,0 @@
-{
-  if (!isHeldByCurrentThread()) {
-    map.processPendingNotifications();
-  }
-}

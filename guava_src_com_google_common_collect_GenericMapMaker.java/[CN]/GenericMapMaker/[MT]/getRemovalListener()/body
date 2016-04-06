@@ -1,3 +1,0 @@
-{
-  return (RemovalListener<K,V>)MoreObjects.firstNonNull(removalListener,NullListener.INSTANCE);
-}

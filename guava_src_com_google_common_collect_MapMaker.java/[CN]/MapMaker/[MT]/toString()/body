@@ -24,8 +24,5 @@
   if (keyEquivalence != null) {
     s.addValue("keyEquivalence");
   }
-  if (removalListener != null) {
-    s.addValue("removalListener");
-  }
   return s.toString();
 }

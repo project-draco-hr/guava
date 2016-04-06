@@ -5,10 +5,7 @@ synchronized (e) {
       value=computingValueReference.compute(key,hash);
     }
     if (value != null) {
-      V oldValue=put(key,hash,value,true);
-      if (oldValue != null) {
-        enqueueNotification(key,hash,value,RemovalCause.REPLACED);
-      }
+      V unused=put(key,hash,value,true);
     }
     return value;
   }
