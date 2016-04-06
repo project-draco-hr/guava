@@ -1,3 +1,0 @@
-long expirationMillis
-int maximumSize
-int initialCapacity

@@ -1,0 +1,5 @@
+{
+  super(initialCapacity,0.75f,true);
+  this.expirationMillis=expirationMillis;
+  this.computer=computer;
+}

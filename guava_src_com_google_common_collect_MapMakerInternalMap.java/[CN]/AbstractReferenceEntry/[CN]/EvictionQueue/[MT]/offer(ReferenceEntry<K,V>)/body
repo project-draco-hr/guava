@@ -1,6 +1,0 @@
-{
-  connectEvictables(entry.getPreviousEvictable(),entry.getNextEvictable());
-  connectEvictables(head.getPreviousEvictable(),entry);
-  connectEvictables(entry,head);
-  return true;
-}

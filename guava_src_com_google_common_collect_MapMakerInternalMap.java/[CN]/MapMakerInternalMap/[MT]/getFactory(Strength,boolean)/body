@@ -1,0 +1,4 @@
+{
+  int flags=(expireAfterWrite ? EXPIRABLE_MASK : 0) | 0;
+  return factories[keyStrength.ordinal()][flags];
+}

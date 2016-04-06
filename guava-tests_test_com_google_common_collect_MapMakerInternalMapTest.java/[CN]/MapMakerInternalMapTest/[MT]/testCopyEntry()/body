@@ -11,9 +11,6 @@
     int hashTwo=map.hash(keyTwo);
     ReferenceEntry<Object,Object> entryTwo=map.newEntry(keyTwo,hashTwo,entryOne);
     entryTwo.setValueReference(map.newValueReference(entryTwo,valueTwo));
-    if (map.evictsBySize()) {
-      MapMakerInternalMap.connectEvictables(entryOne,entryTwo);
-    }
     if (map.expires()) {
       MapMakerInternalMap.connectExpirables(entryOne,entryTwo);
     }

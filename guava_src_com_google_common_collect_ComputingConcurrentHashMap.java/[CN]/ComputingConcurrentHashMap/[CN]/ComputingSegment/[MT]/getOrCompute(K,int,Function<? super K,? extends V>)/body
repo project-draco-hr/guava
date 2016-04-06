@@ -36,7 +36,6 @@
                   recordLockedRead(e);
                   return value;
                 }
-                evictionQueue.remove(e);
                 expirationQueue.remove(e);
                 this.count=newCount;
               }

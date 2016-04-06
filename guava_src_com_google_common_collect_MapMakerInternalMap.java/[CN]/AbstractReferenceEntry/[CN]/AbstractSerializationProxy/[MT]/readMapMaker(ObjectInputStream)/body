@@ -7,8 +7,5 @@
   if (expireAfterAccessNanos > 0) {
     mapMaker.expireAfterAccess(expireAfterAccessNanos,TimeUnit.NANOSECONDS);
   }
-  if (maximumSize != MapMaker.UNSET_INT) {
-    mapMaker.maximumSize(maximumSize);
-  }
   return mapMaker;
 }

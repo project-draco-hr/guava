@@ -1,3 +1,3 @@
 {
-  return new ExpiringComputingMap<K,V>(expirationMillis,computer,maximumSize,initialCapacity);
+  return new ExpiringComputingMap<K,V>(expirationMillis,computer,initialCapacity);
 }

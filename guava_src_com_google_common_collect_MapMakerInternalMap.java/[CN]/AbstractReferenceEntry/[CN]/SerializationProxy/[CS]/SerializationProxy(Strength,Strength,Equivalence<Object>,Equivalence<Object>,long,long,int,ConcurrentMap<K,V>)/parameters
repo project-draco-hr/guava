@@ -1,0 +1,8 @@
+Strength keyStrength
+Strength valueStrength
+Equivalence<Object> keyEquivalence
+Equivalence<Object> valueEquivalence
+long expireAfterWriteNanos
+long expireAfterAccessNanos
+int concurrencyLevel
+ConcurrentMap<K,V> delegate

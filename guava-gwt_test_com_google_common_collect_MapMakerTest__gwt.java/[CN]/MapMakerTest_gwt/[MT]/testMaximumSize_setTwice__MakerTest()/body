@@ -1,4 +1,0 @@
-{
-  com.google.common.collect.MapMakerTest.MakerTest testCase=new com.google.common.collect.MapMakerTest.MakerTest();
-  testCase.testMaximumSize_setTwice();
-}

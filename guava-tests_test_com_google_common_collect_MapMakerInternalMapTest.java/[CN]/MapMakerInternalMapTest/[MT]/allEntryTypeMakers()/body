@@ -1,19 +1,10 @@
 {
   List<MapMaker> result=newArrayList(allKeyValueStrengthMakers());
   for (  MapMaker maker : allKeyValueStrengthMakers()) {
-    result.add(maker.maximumSize(SMALL_MAX_SIZE));
-  }
-  for (  MapMaker maker : allKeyValueStrengthMakers()) {
     result.add(maker.expireAfterAccess(99999,SECONDS));
   }
   for (  MapMaker maker : allKeyValueStrengthMakers()) {
     result.add(maker.expireAfterWrite(99999,SECONDS));
-  }
-  for (  MapMaker maker : allKeyValueStrengthMakers()) {
-    result.add(maker.maximumSize(SMALL_MAX_SIZE).expireAfterAccess(99999,SECONDS));
-  }
-  for (  MapMaker maker : allKeyValueStrengthMakers()) {
-    result.add(maker.maximumSize(SMALL_MAX_SIZE).expireAfterWrite(99999,SECONDS));
   }
   return result;
 }

@@ -1,4 +1,0 @@
-{
-  com.google.common.collect.MapMakerTest.MaximumSizeTest testCase=new com.google.common.collect.MapMakerTest.MaximumSizeTest();
-  testCase.testSizeBasedEviction();
-}

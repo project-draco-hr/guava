@@ -1,9 +1,0 @@
-{
-  MapMaker maker=new MapMaker().maximumSize(16);
-  try {
-    maker.maximumSize(16);
-    fail();
-  }
- catch (  IllegalStateException expected) {
-  }
-}

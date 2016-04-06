@@ -1,0 +1,2 @@
+long expirationMillis
+int initialCapacity

@@ -4,6 +4,7 @@
   cms.add("b",3);
   try {
     cms.removeExactly("a",-2);
+    fail();
   }
  catch (  IllegalArgumentException expected) {
   }
