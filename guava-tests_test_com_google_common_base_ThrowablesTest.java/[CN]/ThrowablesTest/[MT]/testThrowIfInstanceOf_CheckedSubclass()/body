@@ -1,0 +1,10 @@
+{
+  try {
+    throwIfInstanceOf(new SomeCheckedException(){
+    }
+,SomeCheckedException.class);
+    fail();
+  }
+ catch (  SomeCheckedException expected) {
+  }
+}

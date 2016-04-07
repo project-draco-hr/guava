@@ -1,0 +1,8 @@
+{
+  try {
+    throwIfUnchecked(null);
+    fail();
+  }
+ catch (  NullPointerException expected) {
+  }
+}

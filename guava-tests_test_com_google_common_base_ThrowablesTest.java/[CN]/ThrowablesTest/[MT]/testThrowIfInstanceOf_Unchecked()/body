@@ -1,0 +1,3 @@
+{
+  throwIfInstanceOf(new SomeUncheckedException(),SomeCheckedException.class);
+}

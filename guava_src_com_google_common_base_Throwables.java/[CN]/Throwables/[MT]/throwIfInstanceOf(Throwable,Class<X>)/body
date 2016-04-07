@@ -1,0 +1,6 @@
+{
+  checkNotNull(throwable);
+  if (declaredType.isInstance(throwable)) {
+    throw declaredType.cast(throwable);
+  }
+}

@@ -1,0 +1,8 @@
+{
+  try {
+    throwIfUnchecked(new SomeError());
+    fail();
+  }
+ catch (  SomeError expected) {
+  }
+}

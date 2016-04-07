@@ -1,4 +1,5 @@
 {
-  propagateIfInstanceOf(throwable,Error.class);
-  propagateIfInstanceOf(throwable,RuntimeException.class);
+  if (throwable != null) {
+    throwIfUnchecked(throwable);
+  }
 }

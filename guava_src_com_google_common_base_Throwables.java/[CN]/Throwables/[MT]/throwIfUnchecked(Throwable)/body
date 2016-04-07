@@ -1,0 +1,9 @@
+{
+  checkNotNull(throwable);
+  if (throwable instanceof RuntimeException) {
+    throw (RuntimeException)throwable;
+  }
+  if (throwable instanceof Error) {
+    throw (Error)throwable;
+  }
+}

@@ -1,4 +1,4 @@
 {
-  propagateIfPossible(checkNotNull(throwable));
+  throwIfUnchecked(throwable);
   throw new RuntimeException(throwable);
 }
