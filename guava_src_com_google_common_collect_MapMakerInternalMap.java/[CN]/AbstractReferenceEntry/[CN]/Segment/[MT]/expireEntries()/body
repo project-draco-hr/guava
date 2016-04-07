@@ -1,5 +1,4 @@
 {
-  drainRecencyQueue();
   if (expirationQueue.isEmpty()) {
     return;
   }

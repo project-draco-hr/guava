@@ -25,7 +25,6 @@
           return null;
         }
  else         if (onlyIfAbsent) {
-          recordLockedRead(e);
           return entryValue;
         }
  else {

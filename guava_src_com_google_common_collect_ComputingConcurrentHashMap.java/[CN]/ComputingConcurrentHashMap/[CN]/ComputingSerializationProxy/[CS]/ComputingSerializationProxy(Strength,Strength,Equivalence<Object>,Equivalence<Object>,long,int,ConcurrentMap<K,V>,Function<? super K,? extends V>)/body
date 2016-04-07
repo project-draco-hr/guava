@@ -1,0 +1,4 @@
+{
+  super(keyStrength,valueStrength,keyEquivalence,valueEquivalence,expireAfterWriteNanos,concurrencyLevel,delegate);
+  this.computingFunction=computingFunction;
+}

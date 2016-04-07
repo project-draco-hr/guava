@@ -4,12 +4,6 @@
   }
   for (  Segment<K,V> segment : map.segments) {
     long lastExpirationTime=0;
-    for (    ReferenceEntry<K,V> e : segment.recencyQueue) {
-      long expirationTime=e.getExpirationTime();
-      assertTrue(expirationTime >= lastExpirationTime);
-      lastExpirationTime=expirationTime;
-    }
-    lastExpirationTime=0;
     for (    ReferenceEntry<K,V> e : segment.expirationQueue) {
       long expirationTime=e.getExpirationTime();
       assertTrue(expirationTime >= lastExpirationTime);

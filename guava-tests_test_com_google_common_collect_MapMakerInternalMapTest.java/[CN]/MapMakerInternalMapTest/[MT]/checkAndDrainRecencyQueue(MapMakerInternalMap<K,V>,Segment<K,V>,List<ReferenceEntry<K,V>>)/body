@@ -1,6 +1,0 @@
-{
-  if (map.expiresAfterAccess()) {
-    assertSameEntries(reads,ImmutableList.copyOf(segment.recencyQueue));
-  }
-  segment.drainRecencyQueue();
-}

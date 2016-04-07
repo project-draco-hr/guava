@@ -4,7 +4,6 @@
   this.keyEquivalence=keyEquivalence;
   this.valueEquivalence=valueEquivalence;
   this.expireAfterWriteNanos=expireAfterWriteNanos;
-  this.expireAfterAccessNanos=expireAfterAccessNanos;
   this.concurrencyLevel=concurrencyLevel;
   this.delegate=delegate;
 }

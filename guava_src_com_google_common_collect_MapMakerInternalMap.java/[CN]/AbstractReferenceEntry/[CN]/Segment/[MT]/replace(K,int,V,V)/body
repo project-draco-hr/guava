@@ -27,7 +27,6 @@
           return true;
         }
  else {
-          recordLockedRead(e);
           return false;
         }
       }

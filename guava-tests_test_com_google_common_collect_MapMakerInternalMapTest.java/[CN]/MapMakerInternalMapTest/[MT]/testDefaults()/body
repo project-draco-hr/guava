@@ -4,7 +4,6 @@
   assertSame(Strength.STRONG,map.valueStrength);
   assertSame(map.keyStrength.defaultEquivalence(),map.keyEquivalence);
   assertSame(map.valueStrength.defaultEquivalence(),map.valueEquivalence);
-  assertEquals(0,map.expireAfterAccessNanos);
   assertEquals(0,map.expireAfterWriteNanos);
   assertSame(EntryFactory.STRONG,map.entryFactory);
   assertSame(Ticker.systemTicker(),map.ticker);
@@ -12,6 +11,4 @@
   assertThat(map.segments).hasLength(4);
   assertEquals(16 / map.segments.length,map.segments[0].table.length());
   assertFalse(map.expires());
-  assertFalse(map.expiresAfterWrite());
-  assertFalse(map.expiresAfterAccess());
 }

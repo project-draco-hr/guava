@@ -4,7 +4,6 @@
   valueStrength=builder.getValueStrength();
   keyEquivalence=builder.getKeyEquivalence();
   valueEquivalence=valueStrength.defaultEquivalence();
-  expireAfterAccessNanos=builder.getExpireAfterAccessNanos();
   expireAfterWriteNanos=builder.getExpireAfterWriteNanos();
   entryFactory=EntryFactory.getFactory(keyStrength,expires());
   ticker=builder.getTicker();

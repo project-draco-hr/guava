@@ -15,7 +15,6 @@
     }
     checkEvictionQueues(map,segment,readOrder,writeOrder);
     checkExpirationTimes(map);
-    assertTrue(segment.recencyQueue.isEmpty());
     Random random=new Random();
     List<ReferenceEntry<Object,Object>> reads=Lists.newArrayList();
     Iterator<ReferenceEntry<Object,Object>> i=readOrder.iterator();
@@ -25,11 +24,8 @@
         map.getOrCompute(entry.getKey());
         reads.add(entry);
         i.remove();
-        assertTrue(segment.recencyQueue.size() <= DRAIN_THRESHOLD);
       }
     }
-    int undrainedIndex=reads.size() - segment.recencyQueue.size();
-    checkAndDrainRecencyQueue(map,segment,reads.subList(undrainedIndex,reads.size()));
     readOrder.addAll(reads);
     checkEvictionQueues(map,segment,readOrder,writeOrder);
     checkExpirationTimes(map);

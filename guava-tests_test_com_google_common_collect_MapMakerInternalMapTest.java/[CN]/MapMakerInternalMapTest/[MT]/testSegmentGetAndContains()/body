@@ -1,5 +1,5 @@
 {
-  MapMakerInternalMap<Object,Object> map=makeMap(createMapMaker().concurrencyLevel(1).expireAfterAccess(99999,SECONDS));
+  MapMakerInternalMap<Object,Object> map=makeMap(createMapMaker().concurrencyLevel(1));
   Segment<Object,Object> segment=map.segments[0];
   Object key=new Object();
   int hash=map.hash(key);
@@ -46,9 +46,4 @@
   assertTrue(segment.containsKey(key,hash));
   assertTrue(segment.containsValue(value));
   assertTrue(segment.containsValue(dummyValue));
-  dummy.setExpirationTime(0);
-  assertNull(segment.get(key,hash));
-  assertFalse(segment.containsKey(key,hash));
-  assertTrue(segment.containsValue(value));
-  assertFalse(segment.containsValue(dummyValue));
 }

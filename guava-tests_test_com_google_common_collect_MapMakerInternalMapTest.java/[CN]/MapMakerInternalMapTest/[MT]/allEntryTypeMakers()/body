@@ -1,9 +1,6 @@
 {
   List<MapMaker> result=newArrayList(allKeyValueStrengthMakers());
   for (  MapMaker maker : allKeyValueStrengthMakers()) {
-    result.add(maker.expireAfterAccess(99999,SECONDS));
-  }
-  for (  MapMaker maker : allKeyValueStrengthMakers()) {
     result.add(maker.expireAfterWrite(99999,SECONDS));
   }
   return result;

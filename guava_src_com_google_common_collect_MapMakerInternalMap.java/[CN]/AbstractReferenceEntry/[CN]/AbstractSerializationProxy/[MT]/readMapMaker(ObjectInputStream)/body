@@ -4,8 +4,5 @@
   if (expireAfterWriteNanos > 0) {
     mapMaker.expireAfterWrite(expireAfterWriteNanos,TimeUnit.NANOSECONDS);
   }
-  if (expireAfterAccessNanos > 0) {
-    mapMaker.expireAfterAccess(expireAfterAccessNanos,TimeUnit.NANOSECONDS);
-  }
   return mapMaker;
 }

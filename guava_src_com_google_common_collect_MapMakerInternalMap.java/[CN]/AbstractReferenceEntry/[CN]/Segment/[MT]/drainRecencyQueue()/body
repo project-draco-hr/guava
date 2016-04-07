@@ -1,8 +1,0 @@
-{
-  ReferenceEntry<K,V> e;
-  while ((e=recencyQueue.poll()) != null) {
-    if (map.expiresAfterAccess() && expirationQueue.contains(e)) {
-      expirationQueue.add(e);
-    }
-  }
-}

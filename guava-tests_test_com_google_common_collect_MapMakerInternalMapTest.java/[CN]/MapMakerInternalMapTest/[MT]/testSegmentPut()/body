@@ -1,5 +1,5 @@
 {
-  MapMakerInternalMap<Object,Object> map=makeMap(createMapMaker().concurrencyLevel(1).expireAfterAccess(99999,SECONDS));
+  MapMakerInternalMap<Object,Object> map=makeMap(createMapMaker().concurrencyLevel(1));
   Segment<Object,Object> segment=map.segments[0];
   Object key=new Object();
   int hash=map.hash(key);

@@ -5,7 +5,6 @@
       if (e != null) {
         V value=getLiveValue(e);
         if (value != null) {
-          recordRead(e);
           return value;
         }
       }
@@ -33,7 +32,6 @@
  else                 if (map.expires() && map.isExpired(e)) {
                 }
  else {
-                  recordLockedRead(e);
                   return value;
                 }
                 expirationQueue.remove(e);
@@ -64,7 +62,6 @@
       checkState(!Thread.holdsLock(e),"Recursive computation");
       V value=e.getValueReference().waitForValue();
       if (value != null) {
-        recordRead(e);
         return value;
       }
       continue outer;

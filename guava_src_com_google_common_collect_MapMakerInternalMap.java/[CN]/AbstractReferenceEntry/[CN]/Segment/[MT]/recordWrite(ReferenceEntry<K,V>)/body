@@ -1,7 +1,6 @@
 {
-  drainRecencyQueue();
   if (map.expires()) {
-    long expiration=map.expiresAfterAccess() ? map.expireAfterAccessNanos : map.expireAfterWriteNanos;
+    long expiration=map.expireAfterWriteNanos;
     recordExpirationTime(entry,expiration);
     expirationQueue.add(entry);
   }

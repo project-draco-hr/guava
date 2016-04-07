@@ -21,12 +21,10 @@
     while (i.hasNext()) {
       ReferenceEntry<Object,Object> entry=i.next();
       if (random.nextBoolean()) {
-        segment.recordRead(entry);
         reads.add(entry);
         i.remove();
       }
     }
-    checkAndDrainRecencyQueue(map,segment,reads);
     readOrder.addAll(reads);
     checkEvictionQueues(map,segment,readOrder,writeOrder);
     checkExpirationTimes(map);
