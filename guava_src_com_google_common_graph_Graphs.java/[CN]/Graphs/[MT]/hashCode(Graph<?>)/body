@@ -1,0 +1,3 @@
+{
+  return (graph instanceof Network) ? hashCode((Network<?,?>)graph) : nodeToAdjacentNodes(graph).hashCode();
+}

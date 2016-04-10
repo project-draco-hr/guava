@@ -1,0 +1,5 @@
+{
+  Network<Integer,String> directedGraph=buildDirectedTestNetwork();
+  Network<Integer,String> copy=copyOf(directedGraph);
+  assertThat(copy).isEqualTo(directedGraph);
+}

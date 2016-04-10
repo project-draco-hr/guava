@@ -1,0 +1,3 @@
+{
+  return new UndirectedNodeAdjacencies<N>(Sets.<N>newHashSet());
+}

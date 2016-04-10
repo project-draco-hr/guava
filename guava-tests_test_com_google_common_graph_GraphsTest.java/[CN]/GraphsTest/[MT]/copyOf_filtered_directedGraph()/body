@@ -1,0 +1,11 @@
+{
+  MutableGraph<Integer> directedGraph=buildDirectedTestGraph();
+  directedGraph.addEdge(N3,N1);
+  Predicate<Integer> nodePredicate=Predicates.in(ImmutableSet.of(N1,N2));
+  Graph<Integer> filteredCopy=copyOf(directedGraph,nodePredicate);
+  MutableGraph<Integer> expectedGraph=GraphBuilder.directed().build();
+  expectedGraph.addEdge(N1,N1);
+  expectedGraph.addEdge(N1,N2);
+  expectedGraph.addEdge(N2,N1);
+  assertThat(filteredCopy).isEqualTo(expectedGraph);
+}

@@ -1,4 +1,4 @@
 {
-  Graph<Integer,String> directedGraph=GraphBuilder.directed().build();
+  Network<Integer,String> directedGraph=NetworkBuilder.directed().build();
   assertThat(isCyclic(directedGraph)).isFalse();
 }

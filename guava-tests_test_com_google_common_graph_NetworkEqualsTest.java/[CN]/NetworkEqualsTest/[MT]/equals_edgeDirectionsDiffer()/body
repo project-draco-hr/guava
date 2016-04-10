@@ -1,0 +1,15 @@
+{
+  graph.addEdge(E12,N1,N2);
+  MutableNetwork<Integer,String> g2=createGraph(graphType);
+  g2.addEdge(E12,N2,N1);
+switch (graphType) {
+case UNDIRECTED:
+    new EqualsTester().addEqualityGroup(graph,g2).testEquals();
+  break;
+case DIRECTED:
+new EqualsTester().addEqualityGroup(graph).addEqualityGroup(g2).testEquals();
+break;
+default :
+throw new IllegalStateException("Unexpected graph type: " + graphType);
+}
+}

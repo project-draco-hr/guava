@@ -1,0 +1,8 @@
+{
+  addEdge(E12,N1,N2);
+  addEdge(E41,N4,N1);
+  assertTrue(graph.removeNode(N1));
+  assertThat(graph.nodes()).containsExactly(N2,N4);
+  assertThat(graph.edges()).doesNotContain(E12);
+  assertThat(graph.edges()).doesNotContain(E41);
+}

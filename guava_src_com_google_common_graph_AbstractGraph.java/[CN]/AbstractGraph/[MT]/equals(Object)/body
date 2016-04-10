@@ -2,5 +2,5 @@
   if (!(object instanceof Graph)) {
     return false;
   }
-  return Graphs.equal(this,(Graph<?,?>)object);
+  return Graphs.equal(this,(Graph<?>)object);
 }

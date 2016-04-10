@@ -1,9 +1,0 @@
-{
-  Graph<String,String> mutableGraph=GraphBuilder.undirected().build();
-  mutableGraph.addEdge("AA","A","A");
-  mutableGraph.addEdge("AB","A","B");
-  Graph<String,String> graph=ImmutableGraph.copyOf(mutableGraph);
-  assertThat(graph.edgesConnecting("A","A")).containsExactly("AA");
-  assertThat(graph.edgesConnecting("A","B")).containsExactly("AB");
-  assertThat(graph.edgesConnecting("B","A")).containsExactly("AB");
-}

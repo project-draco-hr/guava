@@ -1,0 +1,5 @@
+{
+  Network<String,String> graph1=ImmutableNetwork.copyOf(NetworkBuilder.directed().<String,String>build());
+  Network<String,String> graph2=ImmutableNetwork.copyOf(graph1);
+  assertThat(graph2).isSameAs(graph1);
+}

@@ -1,0 +1,6 @@
+{
+  if (!(object instanceof Network)) {
+    return false;
+  }
+  return Graphs.equal(this,(Network<?,?>)object);
+}

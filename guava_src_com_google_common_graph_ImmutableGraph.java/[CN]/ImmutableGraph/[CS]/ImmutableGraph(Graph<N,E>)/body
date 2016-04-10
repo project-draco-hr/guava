@@ -1,3 +1,0 @@
-{
-  super(GraphBuilder.from(graph),getNodeConnections(graph),getEdgeToIncidentNodes(graph));
-}

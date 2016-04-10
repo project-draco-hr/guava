@@ -1,3 +1,0 @@
-{
-  return new TestGraphBuilder<N,E>(builder.<N,E>build());
-}

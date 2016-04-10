@@ -1,0 +1,21 @@
+{
+  checkNotNull(node1,"node1");
+  checkNotNull(node2,"node2");
+  checkArgument(allowsSelfLoops() || !node1.equals(node2),SELF_LOOPS_NOT_ALLOWED,node1);
+  boolean containsN1=nodes().contains(node1);
+  boolean containsN2=nodes().contains(node2);
+  if (containsN1 && containsN2 && nodeConnections.get(node1).successors().contains(node2)) {
+    return false;
+  }
+  if (!containsN1) {
+    addNode(node1);
+  }
+  NodeAdjacencies<N> connectionsN1=nodeConnections.get(node1);
+  connectionsN1.addSuccessor(node2);
+  if (!containsN2) {
+    addNode(node2);
+  }
+  NodeAdjacencies<N> connectionsN2=nodeConnections.get(node2);
+  connectionsN2.addPredecessor(node1);
+  return true;
+}

@@ -1,0 +1,7 @@
+{
+  if (object instanceof UndirectedNodeAdjacencies) {
+    UndirectedNodeAdjacencies<?> that=(UndirectedNodeAdjacencies<?>)object;
+    return this.adjacentNodes.equals(that.adjacentNodes);
+  }
+  return false;
+}

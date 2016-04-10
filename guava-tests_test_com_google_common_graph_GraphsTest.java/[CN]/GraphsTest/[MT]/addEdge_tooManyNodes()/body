@@ -1,6 +1,6 @@
 {
   try {
-    addEdge(GraphBuilder.directed().<Integer,String>build(),E11,ImmutableSet.of(N1,N2,N3));
+    addEdge(NetworkBuilder.directed().<Integer,String>build(),E11,ImmutableSet.of(N1,N2,N3));
     fail("Should have rejected adding an edge to a Graph with > 2 nodes");
   }
  catch (  IllegalArgumentException expected) {

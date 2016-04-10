@@ -1,0 +1,7 @@
+{
+  addNode(N1);
+  addEdge(E11,N1,N1);
+  assertTrue(graph.removeNode(N1));
+  assertThat(graph.nodes()).isEmpty();
+  assertThat(graph.edges()).doesNotContain(E11);
+}

@@ -1,9 +1,7 @@
 {
-  Graph<Integer,String> undirectedGraph=GraphBuilder.undirected().allowsParallelEdges(true).build();
-  undirectedGraph.addEdge(E11,N1,N1);
-  undirectedGraph.addEdge(E12,N1,N2);
-  undirectedGraph.addEdge(E11_A,N1,N1);
-  undirectedGraph.addEdge(E12_A,N1,N2);
-  undirectedGraph.addEdge(E21,N2,N1);
+  MutableGraph<Integer> undirectedGraph=GraphBuilder.undirected().build();
+  undirectedGraph.addEdge(N1,N1);
+  undirectedGraph.addEdge(N1,N2);
+  undirectedGraph.addEdge(N2,N1);
   return undirectedGraph;
 }

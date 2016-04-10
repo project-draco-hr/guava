@@ -1,5 +1,5 @@
 {
-  Graph<Integer,String> undirectedMultigraph=GraphBuilder.undirected().allowsParallelEdges(true).build();
+  MutableNetwork<Integer,String> undirectedMultigraph=NetworkBuilder.undirected().allowsParallelEdges(true).build();
   assertThat(undirectedMultigraph.addEdge(E12,N1,N2)).isTrue();
   assertThat(undirectedMultigraph.addEdge(E12_A,N1,N2)).isTrue();
   assertThat(undirectedMultigraph.addEdge(E21,N2,N1)).isTrue();

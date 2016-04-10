@@ -1,0 +1,3 @@
+{
+  return checkedConnections(node).adjacentNodes();
+}

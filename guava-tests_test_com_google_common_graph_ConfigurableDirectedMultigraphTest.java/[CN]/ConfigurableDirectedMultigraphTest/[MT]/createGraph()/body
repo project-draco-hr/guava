@@ -1,3 +1,0 @@
-{
-  return GraphBuilder.directed().allowsParallelEdges(true).build();
-}

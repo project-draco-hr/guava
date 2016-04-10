@@ -1,5 +1,5 @@
 {
-  assertTrue(addEdge(E11,N1,N1));
-  assertThat(graph.edges()).contains(E11);
-  assertThat(graph.edgesConnecting(N1,N1)).containsExactly(E11);
+  assertTrue(addEdge(N1,N1));
+  assertThat(graph.successors(N1)).containsExactly(N1);
+  assertThat(graph.predecessors(N1)).containsExactly(N1);
 }

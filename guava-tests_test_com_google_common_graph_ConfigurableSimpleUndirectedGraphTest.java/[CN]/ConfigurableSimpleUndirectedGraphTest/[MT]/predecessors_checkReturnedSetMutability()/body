@@ -6,7 +6,7 @@
     fail(ERROR_MODIFIABLE_SET);
   }
  catch (  UnsupportedOperationException e) {
-    addEdge(E12,N1,N2);
+    addEdge(N1,N2);
     assertThat(graph.predecessors(N2)).containsExactlyElementsIn(predecessors);
   }
 }

@@ -1,0 +1,6 @@
+{
+  graph.addEdge(E12,N1,N2);
+  MutableNetwork<Integer,String> g2=NetworkBuilder.from(graph).allowsParallelEdges(!graph.allowsParallelEdges()).allowsSelfLoops(!graph.allowsSelfLoops()).build();
+  g2.addEdge(E12,N1,N2);
+  new EqualsTester().addEqualityGroup(graph,g2).testEquals();
+}

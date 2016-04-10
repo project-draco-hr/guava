@@ -1,0 +1,2 @@
+Graph<N> original
+MutableNetwork<N,?> copy

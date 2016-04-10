@@ -1,5 +1,5 @@
 {
-  Graph<Integer,String> undirectedGraph=GraphBuilder.undirected().build();
+  MutableNetwork<Integer,String> undirectedGraph=NetworkBuilder.undirected().build();
   assertThat(undirectedGraph.nodes()).isEmpty();
   assertThat(undirectedGraph.edges()).isEmpty();
   assertThat(undirectedGraph.addEdge(E12,N1,N2)).isTrue();

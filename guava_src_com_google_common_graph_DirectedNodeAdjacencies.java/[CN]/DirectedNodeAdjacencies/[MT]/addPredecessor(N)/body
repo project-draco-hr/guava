@@ -1,0 +1,4 @@
+{
+  checkNotNull(node,"node");
+  return predecessors.add(node);
+}

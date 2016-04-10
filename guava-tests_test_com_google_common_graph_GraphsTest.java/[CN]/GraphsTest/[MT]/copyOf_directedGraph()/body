@@ -1,5 +1,5 @@
 {
-  Graph<Integer,String> directedGraph=buildDirectedTestGraph();
-  Graph<Integer,String> copy=copyOf(directedGraph);
+  Graph<Integer> directedGraph=buildDirectedTestGraph();
+  Graph<Integer> copy=copyOf(directedGraph);
   assertThat(copy).isEqualTo(directedGraph);
 }

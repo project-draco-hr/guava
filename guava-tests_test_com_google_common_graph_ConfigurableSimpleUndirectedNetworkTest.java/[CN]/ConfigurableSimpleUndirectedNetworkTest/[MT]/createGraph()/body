@@ -1,0 +1,3 @@
+{
+  return NetworkBuilder.undirected().allowsSelfLoops(false).build();
+}

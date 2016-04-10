@@ -1,6 +1,0 @@
-{
-  graph.addEdge(E12,N1,N2);
-  Graph<Integer,String> g2=createGraph(graphType);
-  g2.addEdge(E13,N1,N2);
-  new EqualsTester().addEqualityGroup(graph).addEqualityGroup(g2).testEquals();
-}

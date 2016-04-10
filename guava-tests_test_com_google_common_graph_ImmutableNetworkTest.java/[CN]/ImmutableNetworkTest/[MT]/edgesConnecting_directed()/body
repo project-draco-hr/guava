@@ -1,0 +1,9 @@
+{
+  MutableNetwork<String,String> mutableGraph=NetworkBuilder.directed().build();
+  mutableGraph.addEdge("AA","A","A");
+  mutableGraph.addEdge("AB","A","B");
+  Network<String,String> graph=ImmutableNetwork.copyOf(mutableGraph);
+  assertThat(graph.edgesConnecting("A","A")).containsExactly("AA");
+  assertThat(graph.edgesConnecting("A","B")).containsExactly("AB");
+  assertThat(graph.edgesConnecting("B","A")).isEmpty();
+}

@@ -1,0 +1,12 @@
+{
+  MutableNetwork<Integer,String> undirectedGraph=buildUndirectedTestNetwork();
+  undirectedGraph.addEdge(E13,N1,N3);
+  Predicate<Integer> nodePredicate=Predicates.in(ImmutableSet.of(N1,N2));
+  Predicate<String> edgePredicate=Predicates.not(selfLoopPredicate(undirectedGraph));
+  Network<Integer,String> filteredCopy=copyOf(undirectedGraph,nodePredicate,edgePredicate);
+  MutableNetwork<Integer,String> expectedGraph=NetworkBuilder.undirected().allowsParallelEdges(true).build();
+  expectedGraph.addEdge(E12,N1,N2);
+  expectedGraph.addEdge(E12_A,N1,N2);
+  expectedGraph.addEdge(E21,N2,N1);
+  assertThat(filteredCopy).isEqualTo(expectedGraph);
+}

@@ -1,0 +1,4 @@
+{
+  assertThat(throwable.getMessage()).startsWith(NODE_STRING);
+  assertThat(throwable.getMessage()).contains(ERROR_ELEMENT_NOT_IN_GRAPH);
+}

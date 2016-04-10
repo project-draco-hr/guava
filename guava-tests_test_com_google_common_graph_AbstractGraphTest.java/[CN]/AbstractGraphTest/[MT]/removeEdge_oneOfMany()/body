@@ -1,8 +1,7 @@
 {
-  addEdge(E12,N1,N2);
-  addEdge(E13,N1,N3);
-  addEdge(E14,N1,N4);
-  assertThat(graph.edges()).containsExactly(E12,E13,E14);
-  assertTrue(graph.removeEdge(E13));
-  assertThat(graph.edges()).containsExactly(E12,E14);
+  addEdge(N1,N2);
+  addEdge(N1,N3);
+  addEdge(N1,N4);
+  assertTrue(graph.removeEdge(N1,N3));
+  assertThat(graph.adjacentNodes(N1)).containsExactly(N2,N4);
 }

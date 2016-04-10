@@ -1,0 +1,14 @@
+{
+  MutableGraph<Integer> undirectedGraph=buildUndirectedTestGraph();
+  undirectedGraph.addNode(N3);
+  MutableGraph<Integer> actualGraph=GraphBuilder.undirected().build();
+  actualGraph.addNode(N4);
+  actualGraph.addNode(N2);
+  mergeNodesFrom(undirectedGraph,actualGraph);
+  MutableGraph<Integer> expectedGraph=GraphBuilder.undirected().build();
+  expectedGraph.addNode(N1);
+  expectedGraph.addNode(N2);
+  expectedGraph.addNode(N3);
+  expectedGraph.addNode(N4);
+  assertThat(actualGraph).isEqualTo(expectedGraph);
+}

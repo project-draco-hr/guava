@@ -1,5 +1,5 @@
 {
-  Graph<String,String> graph1=ImmutableGraph.copyOf(GraphBuilder.directed().<String,String>build());
-  Graph<String,String> graph2=ImmutableGraph.copyOf(graph1);
+  Graph<String> graph1=ImmutableGraph.copyOf(GraphBuilder.directed().<String>build());
+  Graph<String> graph2=ImmutableGraph.copyOf(graph1);
   assertThat(graph2).isSameAs(graph1);
 }

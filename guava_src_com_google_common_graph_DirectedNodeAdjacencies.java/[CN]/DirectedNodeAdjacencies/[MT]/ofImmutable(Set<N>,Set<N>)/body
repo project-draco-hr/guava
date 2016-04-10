@@ -1,0 +1,3 @@
+{
+  return new DirectedNodeAdjacencies<N>(ImmutableSet.copyOf(predecessors),ImmutableSet.copyOf(successors));
+}

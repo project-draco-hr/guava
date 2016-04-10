@@ -1,0 +1,4 @@
+{
+  checkNotNull(node,"node");
+  return adjacentNodes.add(node);
+}

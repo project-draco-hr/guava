@@ -1,6 +1,6 @@
 {
-  List<Graph<Integer,String>> testGraphs=ImmutableList.of(GraphBuilder.directed().allowsParallelEdges(true).<Integer,String>build(),GraphBuilder.undirected().allowsParallelEdges(true).<Integer,String>build());
-  for (  Graph<Integer,String> graph : testGraphs) {
+  List<MutableNetwork<Integer,String>> testNetworks=ImmutableList.of(NetworkBuilder.directed().allowsParallelEdges(true).<Integer,String>build(),NetworkBuilder.undirected().allowsParallelEdges(true).<Integer,String>build());
+  for (  MutableNetwork<Integer,String> graph : testNetworks) {
     graph.addEdge(E12,N1,N2);
     graph.addEdge(E12_A,N1,N2);
     assertThat(oppositeNode(graph,E12,N1)).isEqualTo(N2);

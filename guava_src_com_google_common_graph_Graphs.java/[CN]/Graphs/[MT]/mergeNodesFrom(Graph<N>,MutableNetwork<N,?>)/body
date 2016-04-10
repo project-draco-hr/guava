@@ -1,0 +1,3 @@
+{
+  mergeNodesFrom(original,copy,Predicates.alwaysTrue());
+}

@@ -1,5 +1,5 @@
 {
-  Graph<Integer,String> directedGraph=GraphBuilder.directed().build();
+  MutableNetwork<Integer,String> directedGraph=NetworkBuilder.directed().build();
   directedGraph.addNode(N1);
   directedGraph.addNode(N2);
   assertThat(roots(directedGraph)).isEqualTo(ImmutableSet.of(N1,N2));

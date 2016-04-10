@@ -1,3 +1,0 @@
-Graph<?,?> graph
-Map<Object,NodeVisitState> nodeToVisitState
-Object node

@@ -1,0 +1,5 @@
+{
+  addEdge(E12,N1,N2);
+  assertThat(graph.successors(N1)).containsExactly(N2);
+  assertThat(graph.successors(N2)).isEmpty();
+}

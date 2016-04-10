@@ -1,0 +1,10 @@
+{
+switch (graphType) {
+case UNDIRECTED:
+    return NetworkBuilder.undirected().build();
+case DIRECTED:
+  return NetworkBuilder.directed().build();
+default :
+throw new IllegalStateException("Unexpected graph type: " + graphType);
+}
+}

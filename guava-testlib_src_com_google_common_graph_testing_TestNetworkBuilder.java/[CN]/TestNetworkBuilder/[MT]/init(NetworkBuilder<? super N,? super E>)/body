@@ -1,0 +1,3 @@
+{
+  return new TestNetworkBuilder<N,E>(builder.<N,E>build());
+}

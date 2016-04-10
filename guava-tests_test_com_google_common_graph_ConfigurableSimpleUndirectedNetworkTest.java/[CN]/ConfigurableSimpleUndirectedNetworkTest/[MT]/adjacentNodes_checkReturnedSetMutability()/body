@@ -1,0 +1,12 @@
+{
+  addNode(N1);
+  Set<Integer> adjacentNodes=graph.adjacentNodes(N1);
+  try {
+    adjacentNodes.add(N2);
+    fail(ERROR_MODIFIABLE_SET);
+  }
+ catch (  UnsupportedOperationException e) {
+    addEdge(E12,N1,N2);
+    assertThat(graph.adjacentNodes(N1)).containsExactlyElementsIn(adjacentNodes);
+  }
+}

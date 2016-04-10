@@ -1,0 +1,10 @@
+{
+  Network<Integer,String> directedGraph=buildDirectedTestNetwork();
+  MutableNetwork<Integer,String> actualGraph=NetworkBuilder.directed().allowsParallelEdges(true).build();
+  actualGraph.addEdge(E11,N1,N1);
+  actualGraph.addEdge(E22,N2,N2);
+  mergeEdgesFrom(directedGraph,actualGraph);
+  MutableNetwork<Integer,String> expectedGraph=buildDirectedTestNetwork();
+  expectedGraph.addEdge(E22,N2,N2);
+  assertThat(actualGraph).isEqualTo(expectedGraph);
+}

@@ -1,5 +1,5 @@
 {
-  Graph<Integer,String> directedGraph=GraphBuilder.directed().build();
+  MutableNetwork<Integer,String> directedGraph=NetworkBuilder.directed().build();
   assertThat(addEdge(directedGraph,E12,ImmutableSet.of(N1,N2))).isTrue();
   assertThat(directedGraph.edges()).containsExactly(E12);
   assertThat(directedGraph.nodes()).containsExactly(N1,N2).inOrder();

@@ -1,4 +1,0 @@
-{
-  this.directed=directed;
-  return this;
-}

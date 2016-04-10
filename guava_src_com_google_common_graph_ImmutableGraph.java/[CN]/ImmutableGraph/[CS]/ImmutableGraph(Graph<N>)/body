@@ -1,0 +1,3 @@
+{
+  super(GraphBuilder.from(graph),getNodeConnections(graph));
+}

@@ -1,0 +1,14 @@
+{
+  MutableGraph<Integer> undirectedGraph=buildUndirectedTestGraph();
+  undirectedGraph.addEdge(N3,N1);
+  Predicate<Integer> nodePredicate=Predicates.in(ImmutableSet.of(N1,N2));
+  MutableGraph<Integer> actualGraph=GraphBuilder.undirected().build();
+  actualGraph.addNode(N4);
+  actualGraph.addNode(N2);
+  mergeNodesFrom(undirectedGraph,actualGraph,nodePredicate);
+  MutableGraph<Integer> expectedGraph=GraphBuilder.undirected().build();
+  expectedGraph.addNode(N1);
+  expectedGraph.addNode(N2);
+  expectedGraph.addNode(N4);
+  assertThat(actualGraph).isEqualTo(expectedGraph);
+}

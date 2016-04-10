@@ -1,0 +1,12 @@
+{
+  addNode(N1);
+  Set<Integer> successors=graph.successors(N1);
+  try {
+    successors.add(N2);
+    fail(ERROR_MODIFIABLE_SET);
+  }
+ catch (  UnsupportedOperationException e) {
+    addEdge(E12,N1,N2);
+    assertThat(graph.successors(N1)).containsExactlyElementsIn(successors);
+  }
+}

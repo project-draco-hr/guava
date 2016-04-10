@@ -1,9 +1,0 @@
-{
-  checkNotNull(graph,"graph");
-  return new Predicate<N>(){
-    @Override public boolean apply(    N node){
-      return graph.degree(node) > 0;
-    }
-  }
-;
-}

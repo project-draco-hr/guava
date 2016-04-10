@@ -1,0 +1,7 @@
+{
+  if (object instanceof DirectedNodeAdjacencies) {
+    DirectedNodeAdjacencies<?> that=(DirectedNodeAdjacencies<?>)object;
+    return this.predecessors.equals(that.predecessors) && this.successors.equals(that.successors);
+  }
+  return false;
+}

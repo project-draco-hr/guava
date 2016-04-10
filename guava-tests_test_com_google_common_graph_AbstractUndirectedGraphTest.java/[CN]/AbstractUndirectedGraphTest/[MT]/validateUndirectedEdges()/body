@@ -1,9 +1,5 @@
 {
   for (  Integer node : graph.nodes()) {
-    new EqualsTester().addEqualityGroup(graph.inEdges(node),graph.outEdges(node),graph.incidentEdges(node)).testEquals();
     new EqualsTester().addEqualityGroup(graph.predecessors(node),graph.successors(node),graph.adjacentNodes(node)).testEquals();
-    for (    Integer adjacentNode : graph.adjacentNodes(node)) {
-      assertThat(graph.edgesConnecting(node,adjacentNode)).containsExactlyElementsIn(graph.edgesConnecting(adjacentNode,node));
-    }
   }
 }

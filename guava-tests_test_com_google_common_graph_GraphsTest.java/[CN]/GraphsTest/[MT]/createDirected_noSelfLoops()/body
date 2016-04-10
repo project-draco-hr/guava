@@ -1,5 +1,5 @@
 {
-  Graph<Integer,String> directedGraph=GraphBuilder.directed().allowsSelfLoops(false).build();
+  MutableNetwork<Integer,String> directedGraph=NetworkBuilder.directed().allowsSelfLoops(false).build();
   try {
     directedGraph.addEdge(E11,N1,N1);
     fail(ERROR_ADDED_SELF_LOOP);

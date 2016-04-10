@@ -1,0 +1,3 @@
+Graph<N> original
+MutableNetwork<N,?> copy
+Predicate<? super N> nodePredicate

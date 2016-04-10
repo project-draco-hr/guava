@@ -1,0 +1,12 @@
+{
+  checkNotNull(node1,"node1");
+  checkNotNull(node2,"node2");
+  NodeAdjacencies<N> connectionsN1=nodeConnections.get(node1);
+  NodeAdjacencies<N> connectionsN2=nodeConnections.get(node2);
+  if (connectionsN1 == null || connectionsN2 == null) {
+    return false;
+  }
+  boolean result=connectionsN1.removeSuccessor(node2);
+  connectionsN2.removePredecessor(node1);
+  return result;
+}

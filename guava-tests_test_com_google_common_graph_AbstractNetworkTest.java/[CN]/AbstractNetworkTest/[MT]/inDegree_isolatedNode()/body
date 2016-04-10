@@ -1,0 +1,4 @@
+{
+  addNode(N1);
+  assertEquals(0,graph.inDegree(N1));
+}

@@ -1,7 +1,7 @@
 {
-  graph.addEdge(E12,N1,N2);
-  Graph<Integer,String> g2=createGraph(graphType);
-  g2.addEdge(E12,N2,N1);
+  graph.addEdge(N1,N2);
+  MutableGraph<Integer> g2=createGraph(graphType);
+  g2.addEdge(N2,N1);
 switch (graphType) {
 case UNDIRECTED:
     new EqualsTester().addEqualityGroup(graph,g2).testEquals();

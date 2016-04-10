@@ -1,6 +1,6 @@
 {
-  List<Graph<Integer,String>> testGraphs=ImmutableList.of(GraphBuilder.directed().<Integer,String>build(),GraphBuilder.undirected().<Integer,String>build());
-  for (  Graph<Integer,String> graph : testGraphs) {
+  List<MutableNetwork<Integer,String>> testNetworks=ImmutableList.of(NetworkBuilder.directed().<Integer,String>build(),NetworkBuilder.undirected().<Integer,String>build());
+  for (  MutableNetwork<Integer,String> graph : testNetworks) {
     graph.addEdge(E12,N1,N2);
     assertThat(oppositeNode(graph,E12,N1)).isEqualTo(N2);
     assertThat(oppositeNode(graph,E12,N2)).isEqualTo(N1);

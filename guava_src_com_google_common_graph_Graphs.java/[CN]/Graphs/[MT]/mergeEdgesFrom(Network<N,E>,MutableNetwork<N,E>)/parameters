@@ -1,0 +1,2 @@
+Network<N,E> original
+MutableNetwork<N,E> copy

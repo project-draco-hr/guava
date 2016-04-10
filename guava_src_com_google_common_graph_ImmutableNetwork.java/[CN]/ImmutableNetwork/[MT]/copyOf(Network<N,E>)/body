@@ -1,0 +1,3 @@
+{
+  return (graph instanceof ImmutableNetwork) ? (ImmutableNetwork<N,E>)graph : new ImmutableNetwork<N,E>(graph);
+}

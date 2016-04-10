@@ -1,6 +1,6 @@
 {
-  addEdge(E11,N1,N1);
-  assertTrue(graph.removeEdge(E11));
-  assertThat(graph.edges()).doesNotContain(E11);
-  assertThat(graph.edgesConnecting(N1,N1)).isEmpty();
+  addEdge(N1,N1);
+  assertTrue(graph.removeEdge(N1,N1));
+  assertThat(graph.nodes()).containsExactly(N1);
+  assertThat(graph.successors(N1)).isEmpty();
 }
