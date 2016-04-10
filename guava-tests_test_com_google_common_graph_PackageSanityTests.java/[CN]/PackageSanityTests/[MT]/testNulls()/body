@@ -1,6 +1,7 @@
 {
   try {
     super.testNulls();
+    throw new Error("Should have thrown AssertionFailedError");
   }
  catch (  AssertionFailedError e) {
     assertThat(e.getCause().getMessage()).contains(AbstractNetworkTest.ERROR_ELEMENT_NOT_IN_GRAPH);

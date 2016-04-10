@@ -1,3 +1,0 @@
-{
-  new EqualsTester().addEqualityGroup(IncidentNodes.of("foo","bar"),IncidentNodes.of("bar","foo"),IncidentNodes.of(ImmutableSet.of("foo","bar")),IncidentNodes.of(ImmutableSet.of("bar","foo"))).addEqualityGroup(IncidentNodes.of("test","test"),IncidentNodes.of(ImmutableSet.of("test"))).testEquals();
-}
