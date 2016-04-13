@@ -5,8 +5,8 @@
     return result;
   }
   TypeVariable<Class<T>>[] typeParams=cls.getTypeParameters();
-  Type ownerType=cls.isMemberClass() ? toGenericType(cls.getEnclosingClass()).runtimeType : null;
-  if ((typeParams.length > 0) || (ownerType != cls.getEnclosingClass())) {
+  Type ownerType=cls.isMemberClass() && !Modifier.isStatic(cls.getModifiers()) ? toGenericType(cls.getEnclosingClass()).runtimeType : null;
+  if ((typeParams.length > 0) || ((ownerType != null) && ownerType != cls.getEnclosingClass())) {
     @SuppressWarnings("unchecked") TypeToken<? extends T> type=(TypeToken<? extends T>)of(Types.newParameterizedTypeWithOwner(ownerType,cls,typeParams));
     return type;
   }

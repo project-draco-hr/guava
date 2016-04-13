@@ -1,0 +1,6 @@
+{
+  return new GenericClass<T>(){
+    @SuppressWarnings("unused") public T innerValue=value;
+  }
+;
+}

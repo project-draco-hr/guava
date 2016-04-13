@@ -1,0 +1,6 @@
+{
+  Method getStaticAnonymousClassMethod=TypeTokenTest.class.getDeclaredMethod("getStaticAnonymousClass",Object.class);
+  ParameterizedType javacReturnType=(ParameterizedType)getStaticAnonymousClassMethod.getGenericReturnType();
+  ParameterizedType parameterizedType=(ParameterizedType)TypeToken.toGenericType(GenericClass.class).getType();
+  assertThat(parameterizedType.getOwnerType()).isEqualTo(javacReturnType.getOwnerType());
+}

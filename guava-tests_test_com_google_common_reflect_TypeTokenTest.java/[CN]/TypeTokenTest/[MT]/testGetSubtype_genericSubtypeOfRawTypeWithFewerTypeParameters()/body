@@ -1,0 +1,12 @@
+{
+  TypeToken<List> superType=new TypeToken<List>(){
+  }
+;
+  TypeToken<MySpecialList> subType=new TypeToken<MySpecialList>(){
+  }
+;
+  assertTrue(subType.isSubtypeOf(superType));
+  Class<?> actualSubType=(Class<?>)superType.getSubtype(subType.getRawType()).getType();
+  assertEquals(MySpecialList.class,actualSubType);
+  assertTrue(TypeToken.of(actualSubType).isSubtypeOf(superType));
+}

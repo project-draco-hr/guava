@@ -1,5 +1,5 @@
 {
-  if (runtimeType instanceof Class) {
+  if (runtimeType instanceof Class && ((subclass.getTypeParameters().length == 0) || (getRawType().getTypeParameters().length != 0))) {
     return subclass;
   }
   TypeToken<?> genericSubtype=toGenericType(subclass);

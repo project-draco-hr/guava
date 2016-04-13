@@ -1,7 +1,7 @@
 {
-class SingleGenericExtendsBase<T> extends Base {
+class SingleGenericExtendsBase<T> implements GenericClass.Base {
   }
-  TypeToken<Base> superType=new TypeToken<Base>(){
+  TypeToken<GenericClass.Base> superType=new TypeToken<GenericClass.Base>(){
   }
 ;
   TypeToken<SingleGenericExtendsBase<String>> subType=new TypeToken<SingleGenericExtendsBase<String>>(){
@@ -10,4 +10,5 @@ class SingleGenericExtendsBase<T> extends Base {
   assertTrue(subType.isSubtypeOf(superType));
   ParameterizedType actualSubType=(ParameterizedType)superType.getSubtype(subType.getRawType()).getType();
   assertEquals(SingleGenericExtendsBase.class,actualSubType.getRawType());
+  assertTrue(TypeToken.of(actualSubType).isSubtypeOf(superType));
 }
