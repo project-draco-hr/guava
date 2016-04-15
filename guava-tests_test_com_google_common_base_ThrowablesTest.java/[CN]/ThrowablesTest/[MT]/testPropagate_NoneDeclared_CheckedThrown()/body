@@ -15,6 +15,6 @@
     fail();
   }
  catch (  RuntimeException expected) {
-    assertThat(expected.getCause()).isInstanceOf(SomeCheckedException.class);
+    assertTrue(expected.getCause() instanceof SomeCheckedException);
   }
 }

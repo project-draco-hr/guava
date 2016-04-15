@@ -1,10 +1,10 @@
 {
-  FileNotFoundException fnfe=new FileNotFoundException();
-  IllegalArgumentException iae=new IllegalArgumentException(fnfe);
+  SomeUncheckedException sue=new SomeUncheckedException();
+  IllegalArgumentException iae=new IllegalArgumentException(sue);
   RuntimeException re=new RuntimeException(iae);
   IllegalStateException ex=new IllegalStateException(re);
-  assertEquals(asList(ex,re,iae,fnfe),Throwables.getCausalChain(ex));
-  assertSame(fnfe,Iterables.getOnlyElement(Throwables.getCausalChain(fnfe)));
+  assertEquals(asList(ex,re,iae,sue),Throwables.getCausalChain(ex));
+  assertSame(sue,Iterables.getOnlyElement(Throwables.getCausalChain(sue)));
   List<Throwable> causes=Throwables.getCausalChain(ex);
   try {
     causes.add(new RuntimeException());
