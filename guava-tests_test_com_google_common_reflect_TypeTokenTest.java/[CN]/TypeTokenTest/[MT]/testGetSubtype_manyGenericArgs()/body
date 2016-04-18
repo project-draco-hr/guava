@@ -3,14 +3,14 @@ class FourTypeArgs<T1,T2,T3,T4> {
   }
 class ThreeTypeArgs<T1,T2,T3> extends FourTypeArgs<T1,T2,T3,String> {
   }
-  TypeToken<FourTypeArgs<T,Integer,?,?>> superType=new TypeToken<FourTypeArgs<T,Integer,?,?>>(){
+  TypeToken<FourTypeArgs<T,Integer,?,?>> supertype=new TypeToken<FourTypeArgs<T,Integer,?,?>>(){
   }
 ;
-  TypeToken<ThreeTypeArgs<T,Integer,String>> subType=new TypeToken<ThreeTypeArgs<T,Integer,String>>(){
+  TypeToken<ThreeTypeArgs<T,Integer,String>> subtype=new TypeToken<ThreeTypeArgs<T,Integer,String>>(){
   }
 ;
-  assertTrue(subType.isSubtypeOf(superType));
+  assertTrue(subtype.isSubtypeOf(supertype));
   assertEquals(new TypeToken<ThreeTypeArgs<T,Integer,?>>(){
   }
-,superType.getSubtype(subType.getRawType()));
+,supertype.getSubtype(subtype.getRawType()));
 }

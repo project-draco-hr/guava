@@ -3,14 +3,14 @@ class TwoTypeArgs<K,V> {
   }
 class StringForFirstTypeArg<V> extends TwoTypeArgs<String,V> {
   }
-  TypeToken<TwoTypeArgs<?,?>> superType=new TypeToken<TwoTypeArgs<?,?>>(){
+  TypeToken<TwoTypeArgs<?,?>> supertype=new TypeToken<TwoTypeArgs<?,?>>(){
   }
 ;
-  TypeToken<StringForFirstTypeArg<String>> subType=new TypeToken<StringForFirstTypeArg<String>>(){
+  TypeToken<StringForFirstTypeArg<String>> subtype=new TypeToken<StringForFirstTypeArg<String>>(){
   }
 ;
-  assertTrue(subType.isSubtypeOf(superType));
+  assertTrue(subtype.isSubtypeOf(supertype));
   assertEquals(new TypeToken<StringForFirstTypeArg<?>>(){
   }
-,superType.getSubtype(subType.getRawType()));
+,supertype.getSubtype(subtype.getRawType()));
 }

@@ -1,5 +1,5 @@
 {
-  Type subType=new TypeCapture<TypedKeyMap<T>>(){
+  Type subtype=new TypeCapture<TypedKeyMap<T>>(){
   }
 .capture();
   assertEquals(new TypeCapture<TypedKeyMap<String>>(){
@@ -8,5 +8,5 @@
   }
 .capture(),new TypeCapture<Map<?,String>>(){
   }
-.capture()).resolveType(subType));
+.capture()).resolveType(subtype));
 }

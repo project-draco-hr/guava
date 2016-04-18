@@ -1,13 +1,13 @@
 {
-  TypeToken<Serializable> superType=new TypeToken<Serializable>(){
+  TypeToken<Serializable> supertype=new TypeToken<Serializable>(){
   }
 ;
-  TypeToken<ArrayList<String>> subType=new TypeToken<ArrayList<String>>(){
+  TypeToken<ArrayList<String>> subtype=new TypeToken<ArrayList<String>>(){
   }
 ;
-  assertTrue(subType.isSubtypeOf(superType));
-  ParameterizedType actualSubType=(ParameterizedType)superType.getSubtype(subType.getRawType()).getType();
-  assertEquals(ArrayList.class,actualSubType.getRawType());
-  assertThat(actualSubType.getActualTypeArguments()[0]).isInstanceOf(TypeVariable.class);
-  assertTrue(TypeToken.of(actualSubType).isSubtypeOf(superType));
+  assertTrue(subtype.isSubtypeOf(supertype));
+  ParameterizedType actualSubtype=(ParameterizedType)supertype.getSubtype(subtype.getRawType()).getType();
+  assertEquals(ArrayList.class,actualSubtype.getRawType());
+  assertThat(actualSubtype.getActualTypeArguments()[0]).isInstanceOf(TypeVariable.class);
+  assertTrue(TypeToken.of(actualSubtype).isSubtypeOf(supertype));
 }

@@ -1,10 +1,10 @@
 {
-  Type subType=new TypeCapture<TypedKeyMap<T>>(){
+  Type subtype=new TypeCapture<TypedKeyMap<T>>(){
   }
 .capture();
   Type unused=new TypeResolver().where(new TypeCapture<Map<Integer,T>>(){
   }
 .capture(),new TypeCapture<Map<? extends Number,? extends Number>>(){
   }
-.capture()).resolveType(subType);
+.capture()).resolveType(subtype);
 }

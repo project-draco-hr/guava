@@ -10,7 +10,7 @@
     return runtimeType.equals(supertype) || any(((TypeVariable<?>)runtimeType).getBounds()).isSubtypeOf(supertype);
   }
   if (runtimeType instanceof GenericArrayType) {
-    return of(supertype).isSuperTypeOfArray((GenericArrayType)runtimeType);
+    return of(supertype).isSupertypeOfArray((GenericArrayType)runtimeType);
   }
   if (supertype instanceof Class) {
     return this.someRawTypeIsSubclassOf((Class<?>)supertype);
@@ -19,7 +19,7 @@
     return this.isSubtypeOfParameterizedType((ParameterizedType)supertype);
   }
  else   if (supertype instanceof GenericArrayType) {
-    return this.isSubTypeOfArrayType((GenericArrayType)supertype);
+    return this.isSubtypeOfArrayType((GenericArrayType)supertype);
   }
  else {
     return false;

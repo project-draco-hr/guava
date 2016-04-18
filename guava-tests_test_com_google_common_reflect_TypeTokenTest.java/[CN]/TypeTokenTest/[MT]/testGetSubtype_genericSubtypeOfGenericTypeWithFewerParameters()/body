@@ -1,14 +1,14 @@
 {
-  TypeToken<List<String>> superType=new TypeToken<List<String>>(){
+  TypeToken<List<String>> supertype=new TypeToken<List<String>>(){
   }
 ;
-  TypeToken<MySpecialList<String,?>> subType=new TypeToken<MySpecialList<String,?>>(){
+  TypeToken<MySpecialList<String,?>> subtype=new TypeToken<MySpecialList<String,?>>(){
   }
 ;
-  assertTrue(subType.isSubtypeOf(superType));
-  ParameterizedType actualSubType=(ParameterizedType)superType.getSubtype(subType.getRawType()).getType();
-  assertEquals(MySpecialList.class,actualSubType.getRawType());
-  assertThat(actualSubType.getActualTypeArguments()[0]).isEqualTo(String.class);
-  assertThat(actualSubType.getActualTypeArguments()[1]).isInstanceOf(TypeVariable.class);
-  assertTrue(TypeToken.of(actualSubType).isSubtypeOf(superType));
+  assertTrue(subtype.isSubtypeOf(supertype));
+  ParameterizedType actualSubtype=(ParameterizedType)supertype.getSubtype(subtype.getRawType()).getType();
+  assertEquals(MySpecialList.class,actualSubtype.getRawType());
+  assertThat(actualSubtype.getActualTypeArguments()[0]).isEqualTo(String.class);
+  assertThat(actualSubtype.getActualTypeArguments()[1]).isInstanceOf(TypeVariable.class);
+  assertTrue(TypeToken.of(actualSubtype).isSubtypeOf(supertype));
 }
