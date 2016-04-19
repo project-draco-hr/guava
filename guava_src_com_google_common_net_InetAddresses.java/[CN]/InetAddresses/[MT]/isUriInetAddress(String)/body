@@ -1,9 +1,3 @@
 {
-  try {
-    forUriString(ipString);
-    return true;
-  }
- catch (  IllegalArgumentException e) {
-    return false;
-  }
+  return forUriStringNoThrow(ipString) != null;
 }
