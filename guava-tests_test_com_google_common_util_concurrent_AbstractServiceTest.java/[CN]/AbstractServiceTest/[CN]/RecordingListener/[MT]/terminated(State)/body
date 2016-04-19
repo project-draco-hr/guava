@@ -9,7 +9,7 @@
     }
  catch (    IllegalStateException expected) {
       assertNull(expected.getCause());
-      assertTrue(expected.getMessage().equals("Expected the service to be RUNNING, but was TERMINATED"));
+      assertTrue(expected.getMessage().equals("Expected the service " + service + " to be RUNNING, but was TERMINATED"));
     }
   }
   completionLatch.countDown();

@@ -8,7 +8,7 @@
     }
  catch (    IllegalStateException expected) {
       assertNull(expected.getCause());
-      assertTrue(expected.getMessage().equals("Expected the service to be RUNNING, but was STOPPING"));
+      assertTrue(expected.getMessage().equals("Expected the service " + service + " to be RUNNING, but was STOPPING"));
     }
   }
   assertNotSame(from,service.state());
