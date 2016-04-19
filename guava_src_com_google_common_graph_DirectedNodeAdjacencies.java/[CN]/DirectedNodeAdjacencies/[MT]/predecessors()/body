@@ -1,3 +1,19 @@
 {
-  return Collections.unmodifiableSet(predecessors);
+  return new AbstractSet<N>(){
+    @Override public Iterator<N> iterator(){
+      return Iterators.filter(adjacentNodes().iterator(),new Predicate<N>(){
+        @Override public boolean apply(        N node){
+          return isPredecessor(node);
+        }
+      }
+);
+    }
+    @Override public int size(){
+      return predecessorCount;
+    }
+    @Override public boolean contains(    Object o){
+      return isPredecessor(o);
+    }
+  }
+;
 }

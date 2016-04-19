@@ -1,0 +1,5 @@
+{
+  this.adjacentNodes=checkNotNull(adjacentNodes,"adjacentNodes");
+  this.predecessorCount=predecessorCount;
+  this.successorCount=successorCount;
+}

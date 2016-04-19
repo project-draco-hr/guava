@@ -1,0 +1,4 @@
+{
+  Adjacency adjacency=adjacentNodes.get(node);
+  return (adjacency == Adjacency.SUCC || adjacency == Adjacency.BOTH);
+}

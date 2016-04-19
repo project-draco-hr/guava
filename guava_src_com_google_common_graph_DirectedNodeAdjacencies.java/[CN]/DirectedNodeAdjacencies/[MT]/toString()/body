@@ -1,3 +1,0 @@
-{
-  return MoreObjects.toStringHelper(this).add("predecessors",predecessors).add("successors",successors).toString();
-}

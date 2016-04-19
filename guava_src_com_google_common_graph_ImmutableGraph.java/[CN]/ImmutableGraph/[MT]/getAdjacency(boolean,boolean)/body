@@ -1,0 +1,14 @@
+{
+  if (isPredecessor && isSuccesor) {
+    return Adjacency.BOTH;
+  }
+ else   if (isPredecessor) {
+    return Adjacency.PRED;
+  }
+ else   if (isSuccesor) {
+    return Adjacency.SUCC;
+  }
+ else {
+    throw new IllegalStateException();
+  }
+}

@@ -1,14 +1,15 @@
 {
   checkNotNull(node,"node");
-  if (!nodes().contains(node)) {
+  NodeAdjacencies<N> connections=nodeConnections.get(node);
+  if (connections == null) {
     return false;
   }
-  for (  N successor : nodeConnections.get(node).successors()) {
+  for (  N successor : connections.successors()) {
     if (!node.equals(successor)) {
       nodeConnections.get(successor).removePredecessor(node);
     }
   }
-  for (  N predecessor : nodeConnections.get(node).predecessors()) {
+  for (  N predecessor : connections.predecessors()) {
     nodeConnections.get(predecessor).removeSuccessor(node);
   }
   nodeConnections.remove(node);
