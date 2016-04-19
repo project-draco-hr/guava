@@ -1,0 +1,3 @@
+{
+  return new DirectedMultiNodeConnections<N,E>(Maps.<E,N>newHashMapWithExpectedSize(EXPECTED_DEGREE),Maps.<E,N>newHashMapWithExpectedSize(EXPECTED_DEGREE));
+}

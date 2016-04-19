@@ -1,12 +1,8 @@
 {
-  Set<E> outEdgesN1=outEdges(node1);
-  if (node1.equals(node2)) {
-    if (!allowsSelfLoops) {
-      return ImmutableSet.of();
-    }
-    Set<E> selfLoopEdges=Sets.filter(outEdgesN1,Graphs.selfLoopPredicate(this));
-    return Collections.unmodifiableSet(selfLoopEdges);
+  NodeConnections<N,E> connectionsN1=checkedConnections(node1);
+  if (!allowsSelfLoops && node1.equals(node2)) {
+    return ImmutableSet.of();
   }
-  Set<E> inEdgesN2=inEdges(node2);
-  return (outEdgesN1.size() <= inEdgesN2.size()) ? Sets.intersection(outEdgesN1,inEdgesN2) : Sets.intersection(inEdgesN2,outEdgesN1);
+  checkArgument(nodeConnections.get(node2) != null,NODE_NOT_IN_GRAPH,node2);
+  return connectionsN1.edgesConnecting(node2);
 }

@@ -3,6 +3,6 @@
   if (nodes().contains(node)) {
     return false;
   }
-  nodeConnections.put(node,newNodeConnections(isDirected()));
+  nodeConnections.put(node,newNodeConnections());
   return true;
 }

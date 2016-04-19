@@ -1,0 +1,10 @@
+{
+  checkNotNull(edge,"edge");
+  checkNotNull(node,"node");
+  N previousNode=inEdgeMap.put(edge,node);
+  if (previousNode != null) {
+    checkArgument(node.equals(previousNode));
+    return false;
+  }
+  return true;
+}

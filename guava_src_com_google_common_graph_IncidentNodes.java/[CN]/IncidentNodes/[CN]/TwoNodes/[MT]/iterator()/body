@@ -1,3 +1,0 @@
-{
-  return Iterators.forArray(node1,node2);
-}

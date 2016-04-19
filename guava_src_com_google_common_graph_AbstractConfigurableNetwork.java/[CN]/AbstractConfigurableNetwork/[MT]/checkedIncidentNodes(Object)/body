@@ -1,6 +1,0 @@
-{
-  checkNotNull(edge,"edge");
-  IncidentNodes<N> incidentNodes=edgeToIncidentNodes.get(edge);
-  checkArgument(incidentNodes != null,EDGE_NOT_IN_GRAPH,edge);
-  return incidentNodes;
-}

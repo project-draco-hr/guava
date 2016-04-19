@@ -1,7 +1,0 @@
-{
-  if (object instanceof DirectedNodeConnections) {
-    DirectedNodeConnections<?,?> that=(DirectedNodeConnections<?,?>)object;
-    return this.predecessors.equals(that.predecessors) && this.successors.equals(that.successors) && this.inEdges.equals(that.inEdges)&& this.outEdges.equals(that.outEdges);
-  }
-  return false;
-}

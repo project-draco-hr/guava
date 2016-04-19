@@ -1,0 +1,6 @@
+{
+  if (reference == null) {
+    return null;
+  }
+  return reference.get();
+}

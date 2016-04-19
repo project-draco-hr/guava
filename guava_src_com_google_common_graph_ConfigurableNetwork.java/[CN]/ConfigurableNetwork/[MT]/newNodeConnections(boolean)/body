@@ -1,3 +1,0 @@
-{
-  return isDirected ? DirectedNodeConnections.<N,E>of() : UndirectedNodeConnections.<N,E>of();
-}

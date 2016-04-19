@@ -1,5 +1,0 @@
-{
-  IncidentNodes<String> incidentNodes=IncidentNodes.of(new String("node"),new String("node"));
-  assertThat(incidentNodes).containsExactly("node").inOrder();
-  new EqualsTester().addEqualityGroup(incidentNodes,ImmutableSet.of("node")).testEquals();
-}

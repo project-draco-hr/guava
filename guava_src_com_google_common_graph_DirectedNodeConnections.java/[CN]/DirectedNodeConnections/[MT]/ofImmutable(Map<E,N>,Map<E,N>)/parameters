@@ -1,0 +1,2 @@
+Map<E,N> inEdges
+Map<E,N> outEdges

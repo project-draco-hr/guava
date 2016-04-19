@@ -1,0 +1,16 @@
+{
+  return new AbstractSet<E>(){
+    @Override public Iterator<E> iterator(){
+      Map<N,E> adjacentNodes=((BiMap<E,N>)incidentEdgeMap).inverse();
+      E connectingEdge=adjacentNodes.get(node);
+      if (connectingEdge == null) {
+        return ImmutableSet.<E>of().iterator();
+      }
+      return Iterators.singletonIterator(connectingEdge);
+    }
+    @Override public int size(){
+      return adjacentNodes().contains(node) ? 1 : 0;
+    }
+  }
+;
+}

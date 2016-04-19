@@ -2,5 +2,5 @@
   if (!isDirected) {
     throw new UnsupportedOperationException(NOT_AVAILABLE_ON_UNDIRECTED);
   }
-  return checkedIncidentNodes(edge).node1();
+  return checkedReferenceNode(edge);
 }

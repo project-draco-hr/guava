@@ -1,0 +1,12 @@
+{
+  return new AbstractSet<E>(){
+    @Override public Iterator<E> iterator(){
+      E connectingEdge=((BiMap<E,N>)outEdgeMap).inverse().get(node);
+      return (connectingEdge == null) ? ImmutableSet.<E>of().iterator() : Iterators.singletonIterator(connectingEdge);
+    }
+    @Override public int size(){
+      return successors().contains(node) ? 1 : 0;
+    }
+  }
+;
+}

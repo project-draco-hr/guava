@@ -1,0 +1,3 @@
+{
+  this.incidentEdgeMap=checkNotNull(incidentEdgeMap,"incidentEdgeMap");
+}

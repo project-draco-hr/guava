@@ -1,0 +1,10 @@
+{
+  if (super.addInEdge(edge,node)) {
+    Multiset<N> predecessors=getReference(predecessorsReference);
+    if (predecessors != null) {
+      checkState(predecessors.add(node));
+    }
+    return true;
+  }
+  return false;
+}

@@ -1,8 +1,12 @@
 {
   checkNotNull(edge,"edge");
-  if (!edges().contains(edge)) {
+  N node1=edgeToReferenceNode.get(edge);
+  if (node1 == null) {
     return false;
   }
-  removeEdgeAndUpdateConnections(edge,Graphs.parallelEdges(this,edge).isEmpty());
+  N node2=nodeConnections.get(node1).oppositeNode(edge);
+  nodeConnections.get(node1).removeOutEdge(edge);
+  nodeConnections.get(node2).removeInEdge(edge);
+  edgeToReferenceNode.remove(edge);
   return true;
 }

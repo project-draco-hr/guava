@@ -1,3 +1,11 @@
 {
-  return graph.isDirected() ? DirectedNodeConnections.ofImmutable(graph.predecessors(node),graph.successors(node),graph.inEdges(node),graph.outEdges(node)) : UndirectedNodeConnections.ofImmutable(graph.adjacentNodes(node),graph.incidentEdges(node));
+  if (graph.isDirected()) {
+    Map<E,N> inEdgeMap=Maps.asMap(graph.inEdges(node),sourceNodeFn(graph));
+    Map<E,N> outEdgeMap=Maps.asMap(graph.outEdges(node),targetNodeFn(graph));
+    return graph.allowsParallelEdges() ? DirectedMultiNodeConnections.ofImmutable(inEdgeMap,outEdgeMap) : DirectedNodeConnections.ofImmutable(inEdgeMap,outEdgeMap);
+  }
+ else {
+    Map<E,N> incidentEdgeMap=Maps.asMap(graph.incidentEdges(node),oppositeNodeFn(graph,node));
+    return graph.allowsParallelEdges() ? UndirectedMultiNodeConnections.ofImmutable(incidentEdgeMap) : UndirectedNodeConnections.ofImmutable(incidentEdgeMap);
+  }
 }

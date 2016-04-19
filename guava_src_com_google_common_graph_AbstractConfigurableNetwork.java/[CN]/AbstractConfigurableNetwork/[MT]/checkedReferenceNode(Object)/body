@@ -1,0 +1,6 @@
+{
+  checkNotNull(edge,"edge");
+  N referenceNode=edgeToReferenceNode.get(edge);
+  checkArgument(referenceNode != null,EDGE_NOT_IN_GRAPH,edge);
+  return referenceNode;
+}
