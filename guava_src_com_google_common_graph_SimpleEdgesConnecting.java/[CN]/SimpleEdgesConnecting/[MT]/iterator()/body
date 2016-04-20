@@ -1,0 +1,4 @@
+{
+  E connectingEdge=getConnectingEdge();
+  return (connectingEdge == null) ? ImmutableSet.<E>of().iterator() : Iterators.singletonIterator(connectingEdge);
+}

@@ -1,0 +1,3 @@
+{
+  return getConnectingEdge() == null ? 0 : 1;
+}

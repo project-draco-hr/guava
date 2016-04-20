@@ -1,0 +1,4 @@
+{
+  E connectingEdge=getConnectingEdge();
+  return (connectingEdge != null && connectingEdge.equals(obj));
+}

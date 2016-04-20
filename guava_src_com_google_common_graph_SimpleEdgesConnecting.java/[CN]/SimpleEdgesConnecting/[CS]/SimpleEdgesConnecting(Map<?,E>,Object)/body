@@ -1,0 +1,4 @@
+{
+  this.nodeToEdgeMap=checkNotNull(nodeToEdgeMap);
+  this.targetNode=checkNotNull(targetNode);
+}
