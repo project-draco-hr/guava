@@ -1,0 +1,3 @@
+{
+  return runnerUpdater.compareAndSet(task,expect,update);
+}

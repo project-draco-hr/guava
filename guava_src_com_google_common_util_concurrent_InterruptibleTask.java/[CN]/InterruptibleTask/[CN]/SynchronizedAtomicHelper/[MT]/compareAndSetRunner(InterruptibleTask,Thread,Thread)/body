@@ -1,0 +1,8 @@
+{
+synchronized (task) {
+    if (task.runner == expect) {
+      task.runner=update;
+    }
+  }
+  return true;
+}

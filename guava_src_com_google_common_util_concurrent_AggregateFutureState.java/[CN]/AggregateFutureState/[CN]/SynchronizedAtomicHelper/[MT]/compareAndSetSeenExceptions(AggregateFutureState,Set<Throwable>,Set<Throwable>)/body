@@ -1,0 +1,7 @@
+{
+synchronized (state) {
+    if (state.seenExceptions == expect) {
+      state.seenExceptions=update;
+    }
+  }
+}

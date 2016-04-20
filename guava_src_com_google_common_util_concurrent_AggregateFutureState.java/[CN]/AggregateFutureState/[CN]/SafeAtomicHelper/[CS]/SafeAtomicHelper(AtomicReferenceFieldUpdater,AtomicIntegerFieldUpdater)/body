@@ -1,0 +1,4 @@
+{
+  this.seenExceptionsUpdater=seenExceptionsUpdater;
+  this.remainingCountUpdater=remainingCountUpdater;
+}

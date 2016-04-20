@@ -1,3 +1,3 @@
 {
-  return REMAINING_COUNT_UPDATER.decrementAndGet(this);
+  return ATOMIC_HELPER.decrementAndGetRemainingCount(this);
 }

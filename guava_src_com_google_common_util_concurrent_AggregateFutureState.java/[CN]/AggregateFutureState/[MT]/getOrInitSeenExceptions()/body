@@ -3,7 +3,7 @@
   if (seenExceptionsLocal == null) {
     seenExceptionsLocal=newConcurrentHashSet();
     addInitialException(seenExceptionsLocal);
-    SEEN_EXCEPTIONS_UDPATER.compareAndSet(this,null,seenExceptionsLocal);
+    ATOMIC_HELPER.compareAndSetSeenExceptions(this,null,seenExceptionsLocal);
     seenExceptionsLocal=seenExceptions;
   }
   return seenExceptionsLocal;

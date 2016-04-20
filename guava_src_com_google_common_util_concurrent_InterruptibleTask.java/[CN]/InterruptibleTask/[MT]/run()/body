@@ -1,5 +1,5 @@
 {
-  if (!RUNNER.compareAndSet(this,null,Thread.currentThread())) {
+  if (!ATOMIC_HELPER.compareAndSetRunner(this,null,Thread.currentThread())) {
     return;
   }
   try {

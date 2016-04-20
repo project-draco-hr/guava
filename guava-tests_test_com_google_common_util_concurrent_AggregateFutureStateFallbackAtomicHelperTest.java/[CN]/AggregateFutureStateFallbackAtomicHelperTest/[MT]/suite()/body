@@ -1,0 +1,9 @@
+{
+  TestSuite suite=new TestSuite(AggregateFutureStateFallbackAtomicHelperTest.class.getName());
+  for (  Method method : FuturesTest.class.getDeclaredMethods()) {
+    if (Modifier.isPublic(method.getModifiers()) && method.getName().startsWith("test")) {
+      suite.addTest(TestSuite.createTest(AggregateFutureStateFallbackAtomicHelperTest.class,method.getName()));
+    }
+  }
+  return suite;
+}

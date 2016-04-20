@@ -1,0 +1,6 @@
+{
+synchronized (state) {
+    state.remaining--;
+    return state.remaining;
+  }
+}
