@@ -1,8 +1,8 @@
 {
-  return Maps.filterEntries(incidentEdgeMap,new Predicate<Entry<E,N>>(){
+  return Collections.unmodifiableSet(Maps.filterEntries(incidentEdgeMap,new Predicate<Entry<E,N>>(){
     @Override public boolean apply(    Entry<E,N> entry){
       return entry.getValue().equals(node);
     }
   }
-).keySet();
+).keySet());
 }
