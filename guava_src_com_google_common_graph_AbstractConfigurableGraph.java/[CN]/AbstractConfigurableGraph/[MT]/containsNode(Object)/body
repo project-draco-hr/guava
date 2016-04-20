@@ -1,0 +1,3 @@
+{
+  return nodeConnections.containsKey(node);
+}

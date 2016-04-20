@@ -3,6 +3,6 @@
   if (!allowsSelfLoops && node1.equals(node2)) {
     return ImmutableSet.of();
   }
-  checkArgument(nodeConnections.get(node2) != null,NODE_NOT_IN_GRAPH,node2);
+  checkArgument(containsNode(node2),NODE_NOT_IN_GRAPH,node2);
   return connectionsN1.edgesConnecting(node2);
 }

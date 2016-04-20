@@ -1,6 +1,6 @@
 {
   checkNotNull(node,"node");
-  if (!nodes().contains(node)) {
+  if (!containsNode(node)) {
     return false;
   }
   for (  E edge : ImmutableList.copyOf(incidentEdges(node))) {
