@@ -9,4 +9,5 @@
     adjacentNodes.put(node,Adjacency.BOTH);
     predecessorCount++;
   }
+  checkState(predecessorCount >= 1);
 }

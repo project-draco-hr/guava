@@ -9,4 +9,5 @@
     adjacentNodes.remove(node);
     successorCount--;
   }
+  checkState(successorCount >= 0);
 }

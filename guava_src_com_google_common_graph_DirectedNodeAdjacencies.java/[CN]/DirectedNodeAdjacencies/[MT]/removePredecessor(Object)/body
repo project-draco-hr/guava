@@ -9,4 +9,5 @@
     adjacentNodes.remove(node);
     predecessorCount--;
   }
+  checkState(predecessorCount >= 0);
 }
