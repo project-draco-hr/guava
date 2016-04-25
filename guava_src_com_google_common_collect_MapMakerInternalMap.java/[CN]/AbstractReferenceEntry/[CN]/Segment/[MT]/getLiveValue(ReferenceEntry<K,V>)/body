@@ -8,9 +8,5 @@
     tryDrainReferenceQueues();
     return null;
   }
-  if (map.expires() && map.isExpired(entry)) {
-    tryExpireEntries();
-    return null;
-  }
   return value;
 }

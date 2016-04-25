@@ -1,0 +1,7 @@
+Strength keyStrength
+Strength valueStrength
+Equivalence<Object> keyEquivalence
+Equivalence<Object> valueEquivalence
+int concurrencyLevel
+ConcurrentMap<K,V> delegate
+Function<? super K,? extends V> computingFunction

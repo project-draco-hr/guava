@@ -1,5 +1,0 @@
-{
-  connectEvictables(original.getPreviousEvictable(),newEntry);
-  connectEvictables(newEntry,original.getNextEvictable());
-  nullifyEvictable(original);
-}

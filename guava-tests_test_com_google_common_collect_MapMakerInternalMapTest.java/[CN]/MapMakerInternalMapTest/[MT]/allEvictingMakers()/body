@@ -1,3 +1,0 @@
-{
-  return ImmutableList.of(createMapMaker().expireAfterWrite(99999,SECONDS),createMapMaker().expireAfterWrite(SMALL_MAX_SIZE,TimeUnit.SECONDS));
-}

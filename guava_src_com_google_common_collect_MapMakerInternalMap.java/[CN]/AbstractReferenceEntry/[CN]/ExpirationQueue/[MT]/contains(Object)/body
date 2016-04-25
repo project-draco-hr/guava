@@ -1,4 +1,0 @@
-{
-  ReferenceEntry<K,V> e=(ReferenceEntry)o;
-  return e.getNextExpirable() != NullEntry.INSTANCE;
-}

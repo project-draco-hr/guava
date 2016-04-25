@@ -4,9 +4,7 @@
   valueStrength=builder.getValueStrength();
   keyEquivalence=builder.getKeyEquivalence();
   valueEquivalence=valueStrength.defaultEquivalence();
-  expireAfterWriteNanos=builder.getExpireAfterWriteNanos();
-  entryFactory=EntryFactory.getFactory(keyStrength,expires());
-  ticker=builder.getTicker();
+  entryFactory=EntryFactory.getFactory(keyStrength);
   int initialCapacity=Math.min(builder.getInitialCapacity(),MAXIMUM_CAPACITY);
   int segmentShift=0;
   int segmentCount=1;

@@ -1,5 +1,5 @@
 {
-  for (  MapMaker maker : allEntryTypeMakers()) {
+  for (  MapMaker maker : allKeyValueStrengthMakers()) {
     MapMakerInternalMap<Object,Object> map=makeMap(maker);
     Object keyOne=new Object();
     Object valueOne=new Object();

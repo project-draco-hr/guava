@@ -1,5 +1,4 @@
 {
-  expirationQueue.remove(entry);
   int newCount=count;
   ReferenceEntry<K,V> newFirst=entry.getNext();
   for (ReferenceEntry<K,V> e=first; e != entry; e=e.getNext()) {
@@ -8,7 +7,6 @@
       newFirst=next;
     }
  else {
-      removeCollectedEntry(e);
       newCount--;
     }
   }

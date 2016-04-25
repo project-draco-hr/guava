@@ -1,5 +1,0 @@
-{
-  ReferenceEntry<K,V> newEntry=super.copyEntry(segment,original,newNext);
-  copyEvictableEntry(original,newEntry);
-  return newEntry;
-}

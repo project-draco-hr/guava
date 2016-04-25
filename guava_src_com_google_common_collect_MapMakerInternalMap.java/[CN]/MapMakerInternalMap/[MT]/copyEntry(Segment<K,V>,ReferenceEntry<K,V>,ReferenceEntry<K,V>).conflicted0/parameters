@@ -1,3 +1,0 @@
-Segment<K,V> segment
-ReferenceEntry<K,V> original
-ReferenceEntry<K,V> newNext

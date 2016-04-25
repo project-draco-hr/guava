@@ -1,5 +1,5 @@
 {
-  MapMakerInternalMap<Object,Object> map=makeMap(createMapMaker().concurrencyLevel(1).initialCapacity(1).expireAfterWrite(99999,SECONDS));
+  MapMakerInternalMap<Object,Object> map=makeMap(createMapMaker().concurrencyLevel(1).initialCapacity(1));
   Segment<Object,Object> segment=map.segments[0];
   AtomicReferenceArray<ReferenceEntry<Object,Object>> table=segment.table;
   assertEquals(1,table.length());
@@ -7,15 +7,12 @@
   Object value=new Object();
   int hash=map.hash(key);
   DummyEntry<Object,Object> entry=createDummyEntry(key,hash,value,null);
-  segment.recordWrite(entry);
   segment.table.set(0,entry);
   segment.readCount.incrementAndGet();
   segment.count=1;
   assertSame(entry,table.get(0));
-  assertSame(entry,segment.expirationQueue.peek());
   segment.clear();
   assertNull(table.get(0));
-  assertTrue(segment.expirationQueue.isEmpty());
   assertEquals(0,segment.readCount.get());
   assertEquals(0,segment.count);
 }

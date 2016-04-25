@@ -1,9 +1,0 @@
-{
-  checkExpiration(duration,unit);
-  this.expireAfterWriteNanos=unit.toNanos(duration);
-  if (duration == 0) {
-    this.evictImmediately=true;
-  }
-  useCustomMap=true;
-  return this;
-}

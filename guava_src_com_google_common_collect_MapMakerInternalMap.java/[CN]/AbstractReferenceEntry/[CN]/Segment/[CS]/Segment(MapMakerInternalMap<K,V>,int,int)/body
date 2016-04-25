@@ -4,5 +4,4 @@
   initTable(newEntryArray(initialCapacity));
   keyReferenceQueue=map.usesKeyReferences() ? new ReferenceQueue<K>() : null;
   valueReferenceQueue=map.usesValueReferences() ? new ReferenceQueue<V>() : null;
-  expirationQueue=map.expires() ? new ExpirationQueue<K,V>() : MapMakerInternalMap.<ReferenceEntry<K,V>>discardingQueue();
 }

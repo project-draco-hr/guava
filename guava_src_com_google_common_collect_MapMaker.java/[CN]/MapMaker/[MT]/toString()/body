@@ -6,9 +6,6 @@
   if (concurrencyLevel != UNSET_INT) {
     s.add("concurrencyLevel",concurrencyLevel);
   }
-  if (expireAfterWriteNanos != UNSET_INT) {
-    s.add("expireAfterWrite",expireAfterWriteNanos + "ns");
-  }
   if (keyStrength != null) {
     s.add("keyStrength",Ascii.toLowerCase(keyStrength.toString()));
   }

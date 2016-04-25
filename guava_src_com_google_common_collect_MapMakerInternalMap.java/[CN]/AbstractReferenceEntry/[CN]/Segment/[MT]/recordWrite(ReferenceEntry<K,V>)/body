@@ -1,7 +1,0 @@
-{
-  if (map.expires()) {
-    long expiration=map.expireAfterWriteNanos;
-    recordExpirationTime(entry,expiration);
-    expirationQueue.add(entry);
-  }
-}

@@ -1,0 +1,8 @@
+{
+  this.keyStrength=keyStrength;
+  this.valueStrength=valueStrength;
+  this.keyEquivalence=keyEquivalence;
+  this.valueEquivalence=valueEquivalence;
+  this.concurrencyLevel=concurrencyLevel;
+  this.delegate=delegate;
+}

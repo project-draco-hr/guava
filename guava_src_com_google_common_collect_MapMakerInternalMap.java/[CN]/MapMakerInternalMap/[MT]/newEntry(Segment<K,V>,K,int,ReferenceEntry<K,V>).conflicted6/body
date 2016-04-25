@@ -1,3 +1,0 @@
-{
-  return new StrongEvictableEntry<K,V>(key,hash,next);
-}

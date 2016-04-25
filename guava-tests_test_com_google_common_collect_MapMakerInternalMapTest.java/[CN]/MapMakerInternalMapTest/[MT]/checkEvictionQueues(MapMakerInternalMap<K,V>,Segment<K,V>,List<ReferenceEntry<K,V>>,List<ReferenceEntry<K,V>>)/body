@@ -1,5 +1,0 @@
-{
-  if (map.expires()) {
-    assertSameEntries(writeOrder,ImmutableList.copyOf(segment.expirationQueue));
-  }
-}

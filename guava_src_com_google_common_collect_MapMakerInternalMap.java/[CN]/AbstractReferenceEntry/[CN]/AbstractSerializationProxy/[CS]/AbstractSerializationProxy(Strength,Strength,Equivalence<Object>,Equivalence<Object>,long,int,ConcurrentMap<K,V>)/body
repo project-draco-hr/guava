@@ -1,9 +1,0 @@
-{
-  this.keyStrength=keyStrength;
-  this.valueStrength=valueStrength;
-  this.keyEquivalence=keyEquivalence;
-  this.valueEquivalence=valueEquivalence;
-  this.expireAfterWriteNanos=expireAfterWriteNanos;
-  this.concurrencyLevel=concurrencyLevel;
-  this.delegate=delegate;
-}

@@ -1,5 +1,0 @@
-{
-  if (map.expires()) {
-    assertSame(two,one.getNextExpirable());
-  }
-}

@@ -1,3 +1,0 @@
-{
-  return new WeakEntry<K,V>(segment.keyReferenceQueue,key,hash,next);
-}

@@ -1,8 +1,0 @@
-{
-  setTimeout(new Callback(){
-    @Override public void run(){
-      remove(key,value);
-    }
-  }
-,(int)expirationMillis);
-}

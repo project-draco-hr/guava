@@ -27,14 +27,9 @@
               }
  else {
                 V value=e.getValueReference().get();
-                if (value == null) {
-                }
- else                 if (map.expires() && map.isExpired(e)) {
-                }
- else {
+                if (value != null) {
                   return value;
                 }
-                expirationQueue.remove(e);
                 this.count=newCount;
               }
               break;

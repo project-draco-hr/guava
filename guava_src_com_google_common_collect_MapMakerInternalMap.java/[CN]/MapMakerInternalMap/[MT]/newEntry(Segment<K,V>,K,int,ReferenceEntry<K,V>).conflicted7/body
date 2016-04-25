@@ -1,3 +1,0 @@
-{
-  return new WeakExpirableEvictableEntry<K,V>(segment.keyReferenceQueue,key,hash,next);
-}

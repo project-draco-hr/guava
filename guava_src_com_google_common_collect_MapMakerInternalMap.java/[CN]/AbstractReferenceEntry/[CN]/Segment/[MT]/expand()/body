@@ -35,7 +35,6 @@
             newTable.set(newIndex,newFirst);
           }
  else {
-            removeCollectedEntry(e);
             newCount--;
           }
         }

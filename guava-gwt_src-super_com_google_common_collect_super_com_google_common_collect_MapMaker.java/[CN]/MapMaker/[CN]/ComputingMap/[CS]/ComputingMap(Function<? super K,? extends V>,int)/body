@@ -1,0 +1,4 @@
+{
+  super(initialCapacity,0.75f,true);
+  this.computer=computer;
+}
