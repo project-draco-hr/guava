@@ -1,3 +1,0 @@
-{
-  return segmentFor(hash).newEntry(key,hash,next);
-}

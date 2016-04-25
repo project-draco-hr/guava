@@ -1,3 +1,0 @@
-{
-  return MapMakerInternalMap.this.remove(o) != null;
-}

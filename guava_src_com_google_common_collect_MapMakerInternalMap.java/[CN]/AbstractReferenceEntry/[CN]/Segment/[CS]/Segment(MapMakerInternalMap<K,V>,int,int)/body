@@ -1,7 +1,0 @@
-{
-  this.map=map;
-  this.maxSegmentSize=maxSegmentSize;
-  initTable(newEntryArray(initialCapacity));
-  keyReferenceQueue=map.usesKeyReferences() ? new ReferenceQueue<K>() : null;
-  valueReferenceQueue=map.usesValueReferences() ? new ReferenceQueue<V>() : null;
-}

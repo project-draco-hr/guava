@@ -1,4 +1,0 @@
-{
-  int size=in.readInt();
-  return new MapMaker().initialCapacity(size).setKeyStrength(keyStrength).setValueStrength(valueStrength).keyEquivalence(keyEquivalence).concurrencyLevel(concurrencyLevel);
-}

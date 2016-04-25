@@ -1,5 +1,0 @@
-{
-  if ((readCount.incrementAndGet() & DRAIN_THRESHOLD) == 0) {
-    runCleanup();
-  }
-}

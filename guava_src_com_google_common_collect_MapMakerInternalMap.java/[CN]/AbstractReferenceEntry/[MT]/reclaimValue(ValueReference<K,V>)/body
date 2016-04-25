@@ -1,5 +1,0 @@
-{
-  ReferenceEntry<K,V> entry=valueReference.getEntry();
-  int hash=entry.getHash();
-  segmentFor(hash).reclaimValue(entry.getKey(),hash,valueReference);
-}

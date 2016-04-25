@@ -1,8 +1,0 @@
-{
-  if (map.usesKeyReferences()) {
-    drainKeyReferenceQueue();
-  }
-  if (map.usesValueReferences()) {
-    drainValueReferenceQueue();
-  }
-}

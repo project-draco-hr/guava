@@ -1,3 +1,0 @@
-{
-  return map.entryFactory.newEntry(this,key,hash,next);
-}

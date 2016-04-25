@@ -1,3 +1,0 @@
-{
-  return (ReferenceEntry<K,V>)NullEntry.INSTANCE;
-}

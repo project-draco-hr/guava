@@ -1,7 +1,0 @@
-{
-  ReferenceEntry<K,V> e=getEntry(key,hash);
-  if (e == null) {
-    return null;
-  }
-  return e;
-}
