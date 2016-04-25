@@ -4,8 +4,6 @@ case STRONG:
     return EntryFactory.STRONG;
 case WEAK:
   return EntryFactory.WEAK;
-case SOFT:
-throw new IllegalArgumentException();
 }
 throw new AssertionError();
 }

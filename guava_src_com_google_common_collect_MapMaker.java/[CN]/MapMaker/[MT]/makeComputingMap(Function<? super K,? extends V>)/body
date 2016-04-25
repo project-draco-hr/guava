@@ -1,3 +1,3 @@
 {
-  return evictImmediately ? new NullComputingConcurrentMap<K,V>(computingFunction) : new MapMaker.ComputingMapAdapter<K,V>(this,computingFunction);
+  return new MapMaker.ComputingMapAdapter<K,V>(this,computingFunction);
 }

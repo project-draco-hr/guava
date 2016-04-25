@@ -2,5 +2,5 @@
   if (!useCustomMap) {
     return new ConcurrentHashMap<K,V>(getInitialCapacity(),0.75f,getConcurrencyLevel());
   }
-  return evictImmediately ? new NullConcurrentMap<K,V>() : new MapMakerInternalMap<K,V>(this);
+  return new MapMakerInternalMap<K,V>(this);
 }
