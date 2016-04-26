@@ -1,3 +1,0 @@
-{
-  new EqualsTester().addEqualityGroup(Predicates.assignableFrom(Integer.class),Predicates.assignableFrom(Integer.class)).addEqualityGroup(Predicates.assignableFrom(Number.class)).addEqualityGroup(Predicates.assignableFrom(Float.class)).testEquals();
-}

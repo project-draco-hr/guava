@@ -1,3 +1,0 @@
-{
-  return "Predicates.assignableFrom(" + clazz.getName() + ")";
-}

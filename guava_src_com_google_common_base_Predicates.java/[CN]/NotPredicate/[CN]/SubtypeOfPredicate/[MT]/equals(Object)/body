@@ -1,0 +1,7 @@
+{
+  if (obj instanceof SubtypeOfPredicate) {
+    SubtypeOfPredicate that=(SubtypeOfPredicate)obj;
+    return clazz == that.clazz;
+  }
+  return false;
+}

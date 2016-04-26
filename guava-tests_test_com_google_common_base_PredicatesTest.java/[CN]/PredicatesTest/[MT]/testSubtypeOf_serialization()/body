@@ -1,5 +1,5 @@
 {
-  Predicate<Class<?>> predicate=Predicates.assignableFrom(Integer.class);
+  Predicate<Class<?>> predicate=Predicates.subtypeOf(Integer.class);
   Predicate<Class<?>> reserialized=SerializableTester.reserializeAndAssert(predicate);
   assertEvalsLike(predicate,reserialized,Integer.class);
   assertEvalsLike(predicate,reserialized,Float.class);

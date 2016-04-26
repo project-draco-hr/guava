@@ -1,5 +1,5 @@
 {
-  Predicate<Class<?>> isInteger=Predicates.assignableFrom(Integer.class);
+  Predicate<Class<?>> isInteger=Predicates.subtypeOf(Integer.class);
   assertTrue(isInteger.apply(Integer.class));
   assertFalse(isInteger.apply(Float.class));
   try {
