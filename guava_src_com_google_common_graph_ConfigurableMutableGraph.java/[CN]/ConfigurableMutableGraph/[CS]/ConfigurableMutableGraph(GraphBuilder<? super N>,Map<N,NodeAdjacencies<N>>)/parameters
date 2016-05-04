@@ -1,2 +1,0 @@
-GraphBuilder<? super N> builder
-Map<N,NodeAdjacencies<N>> nodeConnections
