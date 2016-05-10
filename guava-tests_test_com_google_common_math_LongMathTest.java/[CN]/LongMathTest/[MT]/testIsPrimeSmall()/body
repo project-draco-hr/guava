@@ -1,0 +1,5 @@
+{
+  for (int i=2; i < 1000; i++) {
+    assertEquals(BigInteger.valueOf(i).isProbablePrime(100),LongMath.isPrime(i));
+  }
+}

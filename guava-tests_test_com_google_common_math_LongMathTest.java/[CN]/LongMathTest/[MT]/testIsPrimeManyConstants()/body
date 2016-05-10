@@ -1,0 +1,5 @@
+{
+  for (  long l : POSITIVE_LONG_CANDIDATES) {
+    assertEquals(BigInteger.valueOf(l).isProbablePrime(100),LongMath.isPrime(l));
+  }
+}

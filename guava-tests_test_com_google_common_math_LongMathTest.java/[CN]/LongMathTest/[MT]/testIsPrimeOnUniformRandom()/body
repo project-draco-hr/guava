@@ -1,0 +1,9 @@
+{
+  Random rand=new Random(1);
+  for (int bits=10; bits < 63; bits++) {
+    for (int i=0; i < 2000; i++) {
+      long l=rand.nextLong() & ((1L << bits) - 1);
+      assertEquals(BigInteger.valueOf(l).isProbablePrime(100),LongMath.isPrime(l));
+    }
+  }
+}

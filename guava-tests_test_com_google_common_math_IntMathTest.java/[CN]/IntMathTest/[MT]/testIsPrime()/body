@@ -1,0 +1,10 @@
+{
+  for (int i=0; i < 100000; i++) {
+    assertEquals(LongMath.isPrime(i),IntMath.isPrime(i));
+  }
+  Random rand=new Random(1);
+  for (int i=0; i < 1000; i++) {
+    int n=rand.nextInt(Integer.MAX_VALUE);
+    assertEquals(LongMath.isPrime(n),IntMath.isPrime(n));
+  }
+}
