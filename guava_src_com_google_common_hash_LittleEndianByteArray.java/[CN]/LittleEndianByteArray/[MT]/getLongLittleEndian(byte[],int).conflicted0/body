@@ -1,4 +1,3 @@
 {
-  long bigEndian=theUnsafe.getLong(array,(long)offset + BYTE_ARRAY_BASE_OFFSET);
-  return Long.reverseBytes(bigEndian);
+  return theUnsafe.getLong(array,(long)offset + BYTE_ARRAY_BASE_OFFSET);
 }
