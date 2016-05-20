@@ -1,18 +1,25 @@
 {
   return new AbstractSet<N>(){
     @Override public Iterator<N> iterator(){
-      return Iterators.filter(adjacentNodes().iterator(),new Predicate<N>(){
-        @Override public boolean apply(        N node){
-          return isPredecessor(node);
+      final Iterator<Entry<N,Adjacency>> entries=adjacentNodes.entrySet().iterator();
+      return new AbstractIterator<N>(){
+        @Override protected N computeNext(){
+          while (entries.hasNext()) {
+            Entry<N,Adjacency> entry=entries.next();
+            if (isPredecessor(entry.getValue())) {
+              return entry.getKey();
+            }
+          }
+          return endOfData();
         }
       }
-);
+;
     }
     @Override public int size(){
       return predecessorCount;
     }
-    @Override public boolean contains(    Object o){
-      return isPredecessor(o);
+    @Override public boolean contains(    Object obj){
+      return isPredecessor(adjacentNodes.get(obj));
     }
   }
 ;

@@ -1,4 +1,3 @@
 {
-  Adjacency adjacency=adjacentNodes.get(node);
   return (adjacency == Adjacency.PRED || adjacency == Adjacency.BOTH);
 }
