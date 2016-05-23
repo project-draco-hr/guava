@@ -1,0 +1,8 @@
+{
+  this.comparator=checkNotNull(comparator,"comparator");
+  this.k=k;
+  checkArgument(k >= 0,"k must be nonnegative, was %s",k);
+  this.buffer=(T[])new Object[k * 2];
+  this.bufferSize=0;
+  this.threshold=null;
+}

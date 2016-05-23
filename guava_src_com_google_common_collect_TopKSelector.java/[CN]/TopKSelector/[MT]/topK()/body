@@ -1,0 +1,9 @@
+{
+  Arrays.sort(buffer,0,bufferSize,comparator);
+  if (bufferSize > k) {
+    Arrays.fill(buffer,k,buffer.length,null);
+    bufferSize=k;
+    threshold=buffer[k - 1];
+  }
+  return Collections.unmodifiableList(Arrays.asList(Arrays.copyOf(buffer,bufferSize)));
+}

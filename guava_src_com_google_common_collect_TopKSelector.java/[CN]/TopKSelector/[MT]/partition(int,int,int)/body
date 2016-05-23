@@ -1,0 +1,14 @@
+{
+  T pivotValue=buffer[pivotIndex];
+  buffer[pivotIndex]=buffer[right];
+  int pivotNewIndex=left;
+  for (int i=left; i < right; i++) {
+    if (comparator.compare(buffer[i],pivotValue) < 0) {
+      swap(pivotNewIndex,i);
+      pivotNewIndex++;
+    }
+  }
+  buffer[right]=buffer[pivotNewIndex];
+  buffer[pivotNewIndex]=pivotValue;
+  return pivotNewIndex;
+}

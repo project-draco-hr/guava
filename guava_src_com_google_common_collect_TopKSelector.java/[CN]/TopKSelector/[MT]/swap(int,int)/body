@@ -1,0 +1,5 @@
+{
+  T tmp=buffer[i];
+  buffer[i]=buffer[j];
+  buffer[j]=tmp;
+}

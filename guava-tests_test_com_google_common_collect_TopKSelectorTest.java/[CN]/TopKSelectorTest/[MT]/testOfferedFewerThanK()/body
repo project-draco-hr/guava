@@ -1,0 +1,7 @@
+{
+  TopKSelector<Integer> top=TopKSelector.least(10);
+  top.offer(3);
+  top.offer(5);
+  top.offer(2);
+  assertThat(top.topK()).containsExactly(2,3,5).inOrder();
+}

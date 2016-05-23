@@ -1,0 +1,4 @@
+{
+  TopKSelector<Integer> top=TopKSelector.least(10);
+  assertThat(top.topK()).isEmpty();
+}

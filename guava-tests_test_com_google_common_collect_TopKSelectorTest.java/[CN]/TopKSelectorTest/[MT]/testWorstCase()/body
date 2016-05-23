@@ -1,0 +1,19 @@
+{
+  int n=2000000;
+  int k=200000;
+  final long[] compareCalls={0};
+  Comparator<Integer> cmp=new Comparator<Integer>(){
+    @Override public int compare(    Integer o1,    Integer o2){
+      compareCalls[0]++;
+      return o1.compareTo(o2);
+    }
+  }
+;
+  TopKSelector<Integer> top=TopKSelector.least(k,cmp);
+  top.offer(1);
+  for (int i=1; i < n; i++) {
+    top.offer(0);
+  }
+  assertThat(top.topK()).containsExactlyElementsIn(Collections.nCopies(k,0));
+  assertThat(compareCalls[0]).isAtMost(10L * n * IntMath.log2(k,RoundingMode.CEILING));
+}

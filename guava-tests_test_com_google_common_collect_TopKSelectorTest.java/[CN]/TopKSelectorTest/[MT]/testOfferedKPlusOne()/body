@@ -1,0 +1,7 @@
+{
+  for (  List<Integer> list : Collections2.permutations(Ints.asList(1,2,3,4,5))) {
+    TopKSelector<Integer> top=TopKSelector.least(4);
+    top.offerAll(list);
+    assertThat(top.topK()).containsExactly(1,2,3,4).inOrder();
+  }
+}

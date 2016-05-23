@@ -1,0 +1,26 @@
+{
+  try {
+    TopKSelector.least(-1);
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+  try {
+    TopKSelector.greatest(-1);
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+  try {
+    TopKSelector.least(-1,Ordering.natural());
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+  try {
+    TopKSelector.greatest(-1,Ordering.natural());
+    fail();
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}
