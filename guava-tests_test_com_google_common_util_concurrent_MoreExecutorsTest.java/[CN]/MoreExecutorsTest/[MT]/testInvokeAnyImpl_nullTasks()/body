@@ -1,7 +1,7 @@
 {
   ListeningExecutorService e=newDirectExecutorService();
   try {
-    invokeAnyImpl(e,null,false,0);
+    invokeAnyImpl(e,null,false,0,TimeUnit.NANOSECONDS);
     fail();
   }
  catch (  NullPointerException success) {

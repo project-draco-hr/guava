@@ -4,7 +4,7 @@
     List<Callable<String>> l=new ArrayList<Callable<String>>();
     l.add(new StringTask());
     l.add(new StringTask());
-    String result=invokeAnyImpl(e,l,false,0);
+    String result=invokeAnyImpl(e,l,false,0,TimeUnit.NANOSECONDS);
     assertSame(TEST_STRING,result);
   }
   finally {

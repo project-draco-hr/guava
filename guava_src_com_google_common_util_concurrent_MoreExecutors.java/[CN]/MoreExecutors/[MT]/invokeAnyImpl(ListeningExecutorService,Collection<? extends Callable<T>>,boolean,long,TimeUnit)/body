@@ -1,9 +1,11 @@
 {
   checkNotNull(executorService);
+  checkNotNull(unit);
   int ntasks=tasks.size();
   checkArgument(ntasks > 0);
   List<Future<T>> futures=Lists.newArrayListWithCapacity(ntasks);
   BlockingQueue<Future<T>> futureQueue=Queues.newLinkedBlockingQueue();
+  long timeoutNanos=unit.toNanos(timeout);
   try {
     ExecutionException ee=null;
     long lastTime=timed ? System.nanoTime() : 0;
@@ -23,12 +25,12 @@
           break;
         }
  else         if (timed) {
-          f=futureQueue.poll(nanos,TimeUnit.NANOSECONDS);
+          f=futureQueue.poll(timeoutNanos,TimeUnit.NANOSECONDS);
           if (f == null) {
             throw new TimeoutException();
           }
           long now=System.nanoTime();
-          nanos-=now - lastTime;
+          timeoutNanos-=now - lastTime;
           lastTime=now;
         }
  else {
