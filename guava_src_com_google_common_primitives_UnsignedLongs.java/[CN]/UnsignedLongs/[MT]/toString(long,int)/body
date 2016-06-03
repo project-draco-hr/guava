@@ -3,18 +3,36 @@
   if (x == 0) {
     return "0";
   }
+ else   if (x > 0) {
+    return Long.toString(x,radix);
+  }
  else {
     char[] buf=new char[64];
     int i=buf.length;
-    if (x < 0) {
-      long quotient=divide(x,radix);
+    if ((radix & (radix - 1)) == 0) {
+      int shift=Integer.numberOfTrailingZeros(radix);
+      int mask=radix - 1;
+      do {
+        buf[--i]=Character.forDigit(((int)x) & mask,radix);
+        x>>>=shift;
+      }
+ while (x != 0);
+    }
+ else {
+      long quotient;
+      if ((radix & 1) == 0) {
+        quotient=(x >>> 1) / (radix >>> 1);
+      }
+ else {
+        quotient=divide(x,radix);
+      }
       long rem=x - quotient * radix;
       buf[--i]=Character.forDigit((int)rem,radix);
       x=quotient;
-    }
-    while (x > 0) {
-      buf[--i]=Character.forDigit((int)(x % radix),radix);
-      x/=radix;
+      while (x > 0) {
+        buf[--i]=Character.forDigit((int)(x % radix),radix);
+        x/=radix;
+      }
     }
     return new String(buf,i,buf.length - i);
   }
