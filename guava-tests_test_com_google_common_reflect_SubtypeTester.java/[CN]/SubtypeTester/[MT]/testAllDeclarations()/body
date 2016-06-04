@@ -1,0 +1,18 @@
+{
+  checkState(method == null);
+  Method[] methods=getClass().getMethods();
+  Arrays.sort(methods,new Comparator<Method>(){
+    @Override public int compare(    Method a,    Method b){
+      return a.getName().compareTo(b.getName());
+    }
+  }
+);
+  for (  Method method : methods) {
+    if (method.isAnnotationPresent(TestSubtype.class)) {
+      method.setAccessible(true);
+      SubtypeTester tester=(SubtypeTester)clone();
+      tester.method=method;
+      method.invoke(tester,new Object[]{null});
+    }
+  }
+}

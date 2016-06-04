@@ -1,0 +1,4 @@
+{
+  assertThat(method.getGenericParameterTypes()).hasLength(1);
+  return method.getGenericParameterTypes()[0];
+}

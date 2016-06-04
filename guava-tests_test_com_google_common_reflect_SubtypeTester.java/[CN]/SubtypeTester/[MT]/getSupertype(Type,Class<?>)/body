@@ -1,0 +1,4 @@
+{
+  Class rawType=superclass;
+  return TypeToken.of(type).getSupertype(rawType).getType();
+}

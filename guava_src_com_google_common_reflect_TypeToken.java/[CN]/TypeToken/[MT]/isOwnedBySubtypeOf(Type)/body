@@ -1,0 +1,9 @@
+{
+  for (  TypeToken<?> type : getTypes()) {
+    Type ownerType=type.getOwnerTypeIfPresent();
+    if (ownerType != null && of(ownerType).isSubtypeOf(supertype)) {
+      return true;
+    }
+  }
+  return false;
+}

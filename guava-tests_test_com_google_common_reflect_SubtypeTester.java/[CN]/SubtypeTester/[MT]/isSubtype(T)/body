@@ -1,0 +1,14 @@
+{
+  Type returnType=method.getGenericReturnType();
+  Type paramType=getOnlyParameterType();
+  TestSubtype spec=method.getAnnotation(TestSubtype.class);
+  assertThat(TypeToken.of(paramType).isSubtypeOf(returnType)).isTrue();
+  assertThat(TypeToken.of(returnType).isSupertypeOf(paramType)).isTrue();
+  if (!spec.suppressGetSubtype()) {
+    assertThat(getSubtype(returnType,TypeToken.of(paramType).getRawType())).isEqualTo(paramType);
+  }
+  if (!spec.suppressGetSupertype()) {
+    assertThat(getSupertype(paramType,TypeToken.of(returnType).getRawType())).isEqualTo(returnType);
+  }
+  return sub;
+}

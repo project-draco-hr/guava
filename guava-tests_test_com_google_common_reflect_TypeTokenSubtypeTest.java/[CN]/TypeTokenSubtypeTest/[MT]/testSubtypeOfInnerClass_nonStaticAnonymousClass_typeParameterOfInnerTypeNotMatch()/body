@@ -1,0 +1,9 @@
+{
+  TypeToken<?> supertype=new TypeToken<Mall<Outdoor>.Shop<Electronics>>(){
+  }
+;
+  Class<?> subclass=new Mall<Outdoor>().new Shop<Grocery>(){
+  }
+.getClass();
+  assertFalse(TypeToken.of(subclass).isSubtypeOf(supertype));
+}
