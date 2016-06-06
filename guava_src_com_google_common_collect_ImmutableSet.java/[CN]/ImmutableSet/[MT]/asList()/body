@@ -1,0 +1,4 @@
+{
+  ImmutableList<E> result=asList;
+  return (result == null) ? asList=createAsList() : result;
+}
