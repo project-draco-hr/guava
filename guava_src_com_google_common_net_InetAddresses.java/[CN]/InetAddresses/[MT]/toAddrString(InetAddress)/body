@@ -1,9 +1,9 @@
 {
-  Preconditions.checkNotNull(ip);
+  checkNotNull(ip);
   if (ip instanceof Inet4Address) {
     return ip.getHostAddress();
   }
-  Preconditions.checkArgument(ip instanceof Inet6Address);
+  checkArgument(ip instanceof Inet6Address);
   byte[] bytes=ip.getAddress();
   int[] hextets=new int[IPV6_PART_COUNT];
   for (int i=0; i < hextets.length; i++) {

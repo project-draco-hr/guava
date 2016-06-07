@@ -1,5 +1,5 @@
 {
-  Preconditions.checkNotNull(hostAddr);
+  checkNotNull(hostAddr);
   String ipString;
   int expectBytes;
   if (hostAddr.startsWith("[") && hostAddr.endsWith("]")) {

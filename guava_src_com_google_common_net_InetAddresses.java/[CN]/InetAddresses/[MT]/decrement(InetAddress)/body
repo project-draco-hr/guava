@@ -5,7 +5,7 @@
     addr[i]=(byte)0xff;
     i--;
   }
-  Preconditions.checkArgument(i >= 0,"Decrementing %s would wrap.",address);
+  checkArgument(i >= 0,"Decrementing %s would wrap.",address);
   addr[i]--;
   return bytesToInetAddress(addr);
 }
