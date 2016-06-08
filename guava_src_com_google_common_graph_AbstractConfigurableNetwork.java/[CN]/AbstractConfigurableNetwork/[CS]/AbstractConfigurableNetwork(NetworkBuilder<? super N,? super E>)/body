@@ -1,3 +1,3 @@
 {
-  this(builder,Maps.<N,NodeConnections<N,E>>newLinkedHashMapWithExpectedSize(builder.expectedNodeCount.or(DEFAULT_MAP_SIZE)),Maps.<E,N>newLinkedHashMapWithExpectedSize(builder.expectedEdgeCount.or(DEFAULT_MAP_SIZE)));
+  this(builder,AbstractConfigurableNetwork.<N,E>getNodeMapForBuilder(builder),AbstractConfigurableNetwork.<N,E>getEdgeMapForBuilder(builder));
 }

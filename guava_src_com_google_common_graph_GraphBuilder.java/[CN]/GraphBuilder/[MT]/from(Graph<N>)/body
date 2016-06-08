@@ -1,3 +1,4 @@
 {
-  return new GraphBuilder<N>(graph.isDirected()).allowsSelfLoops(graph.allowsSelfLoops());
+  checkNotNull(graph);
+  return new GraphBuilder<Object>(graph.isDirected()).allowsSelfLoops(graph.allowsSelfLoops()).orderNodes(graph.nodeOrder()).cast();
 }

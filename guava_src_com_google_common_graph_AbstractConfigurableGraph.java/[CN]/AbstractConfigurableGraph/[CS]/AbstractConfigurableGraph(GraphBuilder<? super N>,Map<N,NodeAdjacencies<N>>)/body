@@ -1,5 +1,6 @@
 {
   this.isDirected=builder.directed;
   this.allowsSelfLoops=builder.allowsSelfLoops;
+  this.nodeOrder=builder.nodeOrder;
   this.nodeConnections=checkNotNull(nodeConnections);
 }

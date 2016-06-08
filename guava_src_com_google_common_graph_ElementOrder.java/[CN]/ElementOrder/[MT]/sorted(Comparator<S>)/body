@@ -1,0 +1,3 @@
+{
+  return new ElementOrder<S>(Type.SORTED,comparator);
+}

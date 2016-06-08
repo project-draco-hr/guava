@@ -2,6 +2,8 @@
   this.isDirected=builder.directed;
   this.allowsParallelEdges=builder.allowsParallelEdges;
   this.allowsSelfLoops=builder.allowsSelfLoops;
+  this.nodeOrder=builder.nodeOrder;
+  this.edgeOrder=builder.edgeOrder;
   this.nodeConnections=checkNotNull(nodeConnections);
   this.edgeToReferenceNode=checkNotNull(edgeToReferenceNode);
 }

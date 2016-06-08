@@ -1,0 +1,5 @@
+{
+  graph.addNode(3);
+  graph.addNode(1);
+  graph.addNode(4);
+}

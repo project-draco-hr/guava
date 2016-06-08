@@ -1,0 +1,6 @@
+{
+  checkNotNull(edgeOrder);
+  NetworkBuilder<N,E1> newBuilder=cast();
+  newBuilder.edgeOrder=edgeOrder;
+  return newBuilder;
+}

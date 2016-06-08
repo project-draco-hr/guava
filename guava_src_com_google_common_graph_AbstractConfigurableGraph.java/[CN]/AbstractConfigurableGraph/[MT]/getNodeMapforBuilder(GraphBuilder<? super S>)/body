@@ -1,0 +1,13 @@
+{
+  int expectedNodeSize=builder.expectedNodeCount.or(DEFAULT_MAP_SIZE);
+switch (builder.nodeOrder.type()) {
+case UNORDERED:
+    return Maps.newHashMapWithExpectedSize(expectedNodeSize);
+case INSERTION:
+  return Maps.newLinkedHashMapWithExpectedSize(expectedNodeSize);
+case SORTED:
+return Maps.newTreeMap(builder.nodeOrder.comparator());
+default :
+throw new IllegalArgumentException("Unrecognized node ElementOrder type");
+}
+}

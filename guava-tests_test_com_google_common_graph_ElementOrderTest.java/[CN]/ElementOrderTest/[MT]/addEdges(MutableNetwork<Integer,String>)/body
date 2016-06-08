@@ -1,0 +1,5 @@
+{
+  graph.addEdge("i",3,1);
+  graph.addEdge("e",1,4);
+  graph.addEdge("p",4,3);
+}

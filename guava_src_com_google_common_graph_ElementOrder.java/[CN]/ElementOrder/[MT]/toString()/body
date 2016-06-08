@@ -1,0 +1,7 @@
+{
+  ToStringHelper helper=MoreObjects.toStringHelper(this).add("type",this.type);
+  if (this.comparator != null) {
+    helper.add("comparator",this.comparator);
+  }
+  return helper.toString();
+}
