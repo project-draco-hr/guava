@@ -2,7 +2,7 @@
   Set<Integer> nodes=graph.nodes();
   try {
     nodes.add(N2);
-    fail(ERROR_MODIFIABLE_SET);
+    fail(ERROR_MODIFIABLE_COLLECTION);
   }
  catch (  UnsupportedOperationException e) {
     addNode(N1);

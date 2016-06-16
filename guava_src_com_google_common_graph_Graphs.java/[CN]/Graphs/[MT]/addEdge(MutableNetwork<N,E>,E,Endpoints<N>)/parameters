@@ -1,0 +1,3 @@
+MutableNetwork<N,E> graph
+E edge
+Endpoints<N> endpoints

@@ -1,8 +1,8 @@
 {
-  NodeConnections<N,E> connectionsN1=checkedConnections(node1);
-  if (!allowsSelfLoops && node1.equals(node2)) {
+  NodeConnections<N,E> connectionsN1=checkedConnections(nodeA);
+  if (!allowsSelfLoops && nodeA.equals(nodeB)) {
     return ImmutableSet.of();
   }
-  checkArgument(containsNode(node2),NODE_NOT_IN_GRAPH,node2);
-  return connectionsN1.edgesConnecting(node2);
+  checkArgument(containsNode(nodeB),NODE_NOT_IN_GRAPH,nodeB);
+  return connectionsN1.edgesConnecting(nodeB);
 }

@@ -1,8 +1,0 @@
-{
-  try {
-    addEdge(NetworkBuilder.directed().build(),E11,null);
-    fail("Should have rejected null nodes");
-  }
- catch (  NullPointerException expected) {
-  }
-}

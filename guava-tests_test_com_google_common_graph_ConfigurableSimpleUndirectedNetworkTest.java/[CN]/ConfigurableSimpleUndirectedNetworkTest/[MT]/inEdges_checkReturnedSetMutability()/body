@@ -3,7 +3,7 @@
   Set<String> inEdges=graph.inEdges(N2);
   try {
     inEdges.add(E12);
-    fail(ERROR_MODIFIABLE_SET);
+    fail(ERROR_MODIFIABLE_COLLECTION);
   }
  catch (  UnsupportedOperationException e) {
     addEdge(E12,N1,N2);

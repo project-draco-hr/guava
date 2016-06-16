@@ -1,13 +1,7 @@
 {
-  if (graph instanceof Hypergraph) {
-    throw new UnsupportedOperationException();
-  }
-  Set<N> incidentNodes=graph.incidentNodes(edge);
+  Endpoints<N> endpoints=graph.incidentNodes(edge);
   if (!graph.allowsParallelEdges()) {
     return ImmutableSet.of();
   }
-  Iterator<N> incidentNodesIterator=incidentNodes.iterator();
-  N node1=incidentNodesIterator.next();
-  N node2=incidentNodesIterator.hasNext() ? incidentNodesIterator.next() : node1;
-  return Sets.difference(graph.edgesConnecting(node1,node2),ImmutableSet.of(edge));
+  return Sets.difference(graph.edgesConnecting(endpoints.nodeA(),endpoints.nodeB()),ImmutableSet.of(edge));
 }

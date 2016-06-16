@@ -1,4 +1,0 @@
-{
-  N source=source(edge);
-  return nodeConnections.get(source).oppositeNode(edge);
-}

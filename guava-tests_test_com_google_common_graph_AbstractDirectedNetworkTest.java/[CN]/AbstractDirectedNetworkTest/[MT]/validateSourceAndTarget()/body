@@ -2,13 +2,15 @@
   for (  Integer node : graph.nodes()) {
     for (    String inEdge : graph.inEdges(node)) {
       Integer oppositeNode=Graphs.oppositeNode(graph,inEdge,node);
-      assertThat(graph.source(inEdge)).isEqualTo(oppositeNode);
-      assertThat(graph.target(inEdge)).isEqualTo(node);
+      Endpoints<Integer> endpoints=graph.incidentNodes(inEdge);
+      assertThat(endpoints.source()).isEqualTo(oppositeNode);
+      assertThat(endpoints.target()).isEqualTo(node);
     }
     for (    String outEdge : graph.outEdges(node)) {
       Integer oppositeNode=Graphs.oppositeNode(graph,outEdge,node);
-      assertThat(graph.source(outEdge)).isEqualTo(node);
-      assertThat(graph.target(outEdge)).isEqualTo(oppositeNode);
+      Endpoints<Integer> endpoints=graph.incidentNodes(outEdge);
+      assertThat(endpoints.source()).isEqualTo(node);
+      assertThat(endpoints.target()).isEqualTo(oppositeNode);
     }
     for (    Integer adjacentNode : graph.adjacentNodes(node)) {
       Set<String> edges=graph.edgesConnecting(node,adjacentNode);

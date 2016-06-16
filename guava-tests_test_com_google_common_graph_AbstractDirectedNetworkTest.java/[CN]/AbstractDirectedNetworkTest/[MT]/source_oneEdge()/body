@@ -1,4 +1,4 @@
 {
   addEdge(E12,N1,N2);
-  assertEquals(N1,graph.source(E12));
+  assertEquals(N1,graph.incidentNodes(E12).source());
 }

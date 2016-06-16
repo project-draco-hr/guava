@@ -1,5 +1,5 @@
 {
-  N node1=checkedReferenceNode(edge);
-  N node2=nodeConnections.get(node1).oppositeNode(edge);
-  return ImmutableSet.of(node1,node2);
+  N nodeA=checkedReferenceNode(edge);
+  N nodeB=nodeConnections.get(nodeA).oppositeNode(edge);
+  return isDirected ? Endpoints.ofDirected(nodeA,nodeB) : Endpoints.ofUndirected(nodeA,nodeB);
 }

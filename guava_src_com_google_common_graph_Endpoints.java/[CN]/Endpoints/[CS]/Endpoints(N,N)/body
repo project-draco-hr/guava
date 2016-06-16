@@ -1,0 +1,4 @@
+{
+  this.nodeA=checkNotNull(nodeA);
+  this.nodeB=checkNotNull(nodeB);
+}

@@ -1,0 +1,4 @@
+{
+  Endpoints<String> undirected=Endpoints.ofUndirected("node","node");
+  assertThat(undirected).hasSize(2);
+}

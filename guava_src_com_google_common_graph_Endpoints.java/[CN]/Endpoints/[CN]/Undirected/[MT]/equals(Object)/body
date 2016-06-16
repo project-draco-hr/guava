@@ -1,0 +1,10 @@
+{
+  if (obj == this) {
+    return true;
+  }
+  if (!(obj instanceof Undirected)) {
+    return false;
+  }
+  Undirected<?> other=(Undirected<?>)obj;
+  return (nodeA().equals(other.nodeA()) && nodeB().equals(other.nodeB())) || (nodeA().equals(other.nodeB()) && nodeB().equals(other.nodeA()));
+}

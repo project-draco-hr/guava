@@ -1,12 +1,12 @@
 {
   checkNotNull(edge,"edge");
-  N node1=edgeToReferenceNode.get(edge);
-  if (node1 == null) {
+  N nodeA=edgeToReferenceNode.get(edge);
+  if (nodeA == null) {
     return false;
   }
-  N node2=nodeConnections.get(node1).oppositeNode(edge);
-  nodeConnections.get(node1).removeOutEdge(edge);
-  nodeConnections.get(node2).removeInEdge(edge);
+  N nodeB=nodeConnections.get(nodeA).oppositeNode(edge);
+  nodeConnections.get(nodeA).removeOutEdge(edge);
+  nodeConnections.get(nodeB).removeInEdge(edge);
   edgeToReferenceNode.remove(edge);
   return true;
 }

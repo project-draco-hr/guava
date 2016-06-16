@@ -1,12 +1,5 @@
 {
-  if (graph.isDirected()) {
-    return new Function<Object,String>(){
-      @Override public String apply(      Object edge){
-        return String.format("<%s -> %s>",graph.source(edge),graph.target(edge));
-      }
-    }
-;
-  }
+  checkNotNull(graph,"graph");
   return new Function<Object,String>(){
     @Override public String apply(    Object edge){
       return graph.incidentNodes(edge).toString();

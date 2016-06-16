@@ -1,6 +1,6 @@
 {
   try {
-    graph.target(EDGE_NOT_IN_GRAPH);
+    graph.incidentNodes(EDGE_NOT_IN_GRAPH).target();
     fail(ERROR_EDGE_NOT_IN_GRAPH);
   }
  catch (  IllegalArgumentException e) {

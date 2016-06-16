@@ -2,7 +2,8 @@
   checkNotNull(graph,"graph");
   return new Predicate<E>(){
     @Override public boolean apply(    E edge){
-      return (graph.incidentNodes(edge).size() == 1);
+      Endpoints<?> endpoints=graph.incidentNodes(edge);
+      return endpoints.nodeA().equals(endpoints.nodeB());
     }
   }
 ;

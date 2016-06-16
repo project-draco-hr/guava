@@ -1,8 +1,0 @@
-{
-  try {
-    addEdge(null,E11,ImmutableSet.of(N1));
-    fail("Should have rejected null graph");
-  }
- catch (  NullPointerException expected) {
-  }
-}

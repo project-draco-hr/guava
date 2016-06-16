@@ -1,0 +1,3 @@
+{
+  return nodeA.equals(obj) || nodeB.equals(obj);
+}

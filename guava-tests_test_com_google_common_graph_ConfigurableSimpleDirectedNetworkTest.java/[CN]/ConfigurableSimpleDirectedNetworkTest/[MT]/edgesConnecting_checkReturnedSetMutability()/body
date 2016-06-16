@@ -4,7 +4,7 @@
   Set<String> edgesConnecting=graph.edgesConnecting(N1,N2);
   try {
     edgesConnecting.add(E23);
-    fail(ERROR_MODIFIABLE_SET);
+    fail(ERROR_MODIFIABLE_COLLECTION);
   }
  catch (  UnsupportedOperationException e) {
     addEdge(E12,N1,N2);

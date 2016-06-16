@@ -4,12 +4,10 @@
   checkNotNull(edgePredicate,"edgePredicate");
   MutableNetwork<N,E> copy=NetworkBuilder.from(graph).expectedNodeCount(graph.nodes().size()).expectedEdgeCount(graph.edges().size()).build();
   mergeNodesFrom(graph,copy,nodePredicate);
-  for (  E edge : graph.edges()) {
-    if (edgePredicate.apply(edge)) {
-      Set<N> incidentNodes=graph.incidentNodes(edge);
-      if (copy.nodes().containsAll(incidentNodes)) {
-        addEdge(copy,edge,incidentNodes);
-      }
+  for (  E edge : Sets.filter(graph.edges(),edgePredicate)) {
+    Endpoints<N> endpoints=graph.incidentNodes(edge);
+    if (copy.nodes().containsAll(endpoints)) {
+      addEdge(copy,edge,endpoints);
     }
   }
   return copy;

@@ -1,0 +1,10 @@
+{
+  if (obj == this) {
+    return true;
+  }
+  if (!(obj instanceof Directed)) {
+    return false;
+  }
+  Directed<?> other=(Directed<?>)obj;
+  return source().equals(other.source()) && target().equals(other.target());
+}

@@ -2,7 +2,7 @@
   Set<String> edges=graph.edges();
   try {
     edges.add(E12);
-    fail(ERROR_MODIFIABLE_SET);
+    fail(ERROR_MODIFIABLE_COLLECTION);
   }
  catch (  UnsupportedOperationException e) {
     addEdge(E12,N1,N2);

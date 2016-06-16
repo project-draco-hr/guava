@@ -1,8 +1,0 @@
-{
-  try {
-    addEdge(NetworkBuilder.directed().build(),E11,ImmutableSet.of());
-    fail("Should have rejected adding an edge to a Graph with < 1 nodes");
-  }
- catch (  IllegalArgumentException expected) {
-  }
-}

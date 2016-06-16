@@ -1,0 +1,8 @@
+{
+  try {
+    addEdge(NetworkBuilder.undirected().<Integer,String>build(),E12,Endpoints.ofDirected(N1,N2));
+    fail("Should have rejected adding an edge with directed endpoints to a undirected graph.");
+  }
+ catch (  IllegalArgumentException expected) {
+  }
+}

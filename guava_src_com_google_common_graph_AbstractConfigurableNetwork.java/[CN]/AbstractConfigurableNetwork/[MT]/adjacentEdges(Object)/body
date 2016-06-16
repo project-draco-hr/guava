@@ -1,8 +1,5 @@
 {
-  Iterator<N> incidentNodesIterator=incidentNodes(edge).iterator();
-  Set<E> endpointsIncidentEdges=incidentEdges(incidentNodesIterator.next());
-  while (incidentNodesIterator.hasNext()) {
-    endpointsIncidentEdges=Sets.union(incidentEdges(incidentNodesIterator.next()),endpointsIncidentEdges);
-  }
+  Endpoints<N> endpoints=incidentNodes(edge);
+  Set<E> endpointsIncidentEdges=Sets.union(incidentEdges(endpoints.nodeA()),incidentEdges(endpoints.nodeB()));
   return Sets.difference(endpointsIncidentEdges,ImmutableSet.of(edge));
 }
