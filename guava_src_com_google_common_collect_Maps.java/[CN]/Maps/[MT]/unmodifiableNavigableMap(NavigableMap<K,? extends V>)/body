@@ -1,7 +1,8 @@
 {
   checkNotNull(map);
   if (map instanceof UnmodifiableNavigableMap) {
-    return map;
+    @SuppressWarnings("unchecked") NavigableMap<K,V> result=(NavigableMap)map;
+    return result;
   }
  else {
     return new UnmodifiableNavigableMap<K,V>(map);

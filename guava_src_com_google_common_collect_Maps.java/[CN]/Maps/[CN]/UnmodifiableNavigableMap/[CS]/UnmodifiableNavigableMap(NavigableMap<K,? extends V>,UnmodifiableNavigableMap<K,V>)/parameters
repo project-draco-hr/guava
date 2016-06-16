@@ -1,2 +1,2 @@
-NavigableMap<K,V> delegate
+NavigableMap<K,? extends V> delegate
 UnmodifiableNavigableMap<K,V> descendingMap
