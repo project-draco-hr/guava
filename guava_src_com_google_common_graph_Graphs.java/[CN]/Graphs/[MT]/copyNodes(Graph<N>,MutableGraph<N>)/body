@@ -1,0 +1,3 @@
+{
+  copyNodesInteral(src,dest,Predicates.alwaysTrue());
+}

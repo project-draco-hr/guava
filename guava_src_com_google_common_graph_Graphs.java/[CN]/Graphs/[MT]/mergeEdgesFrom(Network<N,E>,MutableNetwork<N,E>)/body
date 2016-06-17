@@ -1,3 +1,0 @@
-{
-  mergeEdgesFrom(original,copy,Predicates.alwaysTrue());
-}

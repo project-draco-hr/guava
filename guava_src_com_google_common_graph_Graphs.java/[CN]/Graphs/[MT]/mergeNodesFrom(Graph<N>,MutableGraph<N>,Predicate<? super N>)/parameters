@@ -1,3 +1,0 @@
-Graph<N> original
-MutableGraph<N> copy
-Predicate<? super N> nodePredicate

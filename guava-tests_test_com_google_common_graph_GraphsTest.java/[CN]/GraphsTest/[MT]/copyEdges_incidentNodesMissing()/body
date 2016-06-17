@@ -1,0 +1,11 @@
+{
+  MutableNetwork<Integer,String> srcGraph=NetworkBuilder.undirected().build();
+  srcGraph.addEdge(E12,N1,N2);
+  srcGraph.addEdge(E13,N1,N3);
+  MutableNetwork<Integer,String> destGraph=NetworkBuilder.undirected().build();
+  destGraph.addNode(N1);
+  destGraph.addNode(N2);
+  copyEdges(srcGraph,destGraph);
+  assertThat(destGraph.edges()).containsExactly(E12);
+  assertThat(destGraph.nodes()).doesNotContain(N3);
+}

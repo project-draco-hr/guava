@@ -1,8 +1,0 @@
-{
-  checkNotNull(original,"original");
-  checkNotNull(copy,"copy");
-  checkNotNull(nodePredicate,"nodePredicate");
-  for (  N node : Sets.filter(original.nodes(),nodePredicate)) {
-    copy.addNode(node);
-  }
-}

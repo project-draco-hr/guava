@@ -1,0 +1,8 @@
+{
+  checkNotNull(src,"src");
+  checkNotNull(dest,"dest");
+  checkNotNull(nodePredicate,"nodePredicate");
+  for (  N node : Sets.filter(src.nodes(),nodePredicate)) {
+    dest.addNode(node);
+  }
+}

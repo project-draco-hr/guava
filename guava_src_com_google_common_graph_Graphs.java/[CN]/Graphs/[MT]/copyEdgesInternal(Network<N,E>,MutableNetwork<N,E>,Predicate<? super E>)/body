@@ -1,0 +1,11 @@
+{
+  checkNotNull(src,"src");
+  checkNotNull(dest,"dest");
+  checkNotNull(edgePredicate,"edgePredicate");
+  for (  E edge : Sets.filter(src.edges(),edgePredicate)) {
+    Endpoints<N> endpoints=src.incidentNodes(edge);
+    if (dest.nodes().containsAll(endpoints)) {
+      addEdge(dest,edge,endpoints);
+    }
+  }
+}

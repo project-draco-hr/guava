@@ -1,3 +1,0 @@
-Network<N,E> original
-MutableNetwork<N,E> copy
-Predicate<? super E> edgePredicate

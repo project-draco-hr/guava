@@ -1,8 +1,0 @@
-{
-  checkNotNull(original,"original");
-  checkNotNull(copy,"copy");
-  checkNotNull(edgePredicate,"edgePredicate");
-  for (  E edge : Sets.filter(original.edges(),edgePredicate)) {
-    addEdge(copy,edge,original.incidentNodes(edge));
-  }
-}

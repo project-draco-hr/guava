@@ -1,0 +1,14 @@
+{
+  MutableNetwork<Integer,String> undirectedGraph=buildUndirectedTestNetwork();
+  undirectedGraph.addNode(N3);
+  MutableNetwork<Integer,String> actualGraph=NetworkBuilder.undirected().build();
+  actualGraph.addNode(N4);
+  actualGraph.addNode(N2);
+  copyNodes(undirectedGraph,actualGraph);
+  MutableNetwork<Integer,String> expectedGraph=NetworkBuilder.undirected().build();
+  expectedGraph.addNode(N1);
+  expectedGraph.addNode(N2);
+  expectedGraph.addNode(N3);
+  expectedGraph.addNode(N4);
+  assertThat(actualGraph).isEqualTo(expectedGraph);
+}
