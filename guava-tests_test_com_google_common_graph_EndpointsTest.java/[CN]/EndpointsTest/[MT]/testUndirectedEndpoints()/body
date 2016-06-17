@@ -1,4 +1,6 @@
 {
   Endpoints<String> undirected=Endpoints.ofUndirected("chicken","egg");
   assertThat(undirected).containsExactly("chicken","egg");
+  assertThat(undirected.toString()).contains("chicken");
+  assertThat(undirected.toString()).contains("egg");
 }

@@ -3,4 +3,5 @@
   assertThat(directed.source()).isEqualTo("source");
   assertThat(directed.target()).isEqualTo("target");
   assertThat(directed).containsExactly("source","target").inOrder();
+  assertThat(directed.toString()).isEqualTo("<source -> target>");
 }
