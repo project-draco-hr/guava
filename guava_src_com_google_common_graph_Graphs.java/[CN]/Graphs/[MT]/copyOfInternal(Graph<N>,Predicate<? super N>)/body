@@ -1,6 +1,7 @@
 {
   checkNotNull(graph,"graph");
   checkNotNull(nodePredicate,"nodePredicate");
+  checkArgument(!((graph instanceof Network) && ((Network<N,?>)graph).allowsParallelEdges()),NETWORK_WITH_PARALLEL_EDGE);
   MutableGraph<N> copy=GraphBuilder.from(graph).expectedNodeCount(graph.nodes().size()).build();
   for (  N node : Sets.filter(graph.nodes(),nodePredicate)) {
     copy.addNode(node);
