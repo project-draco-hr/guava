@@ -1,5 +1,5 @@
 {
-  int expectedNodeSize=builder.expectedNodeCount.or(DEFAULT_MAP_SIZE);
+  int expectedNodeSize=builder.expectedNodeCount.or(DEFAULT_NODE_COUNT);
 switch (builder.nodeOrder.type()) {
 case UNORDERED:
     return Maps.newHashMapWithExpectedSize(expectedNodeSize);

@@ -1,5 +1,5 @@
 {
-  int expectedEdgeSize=builder.expectedEdgeCount.or(DEFAULT_MAP_SIZE);
+  int expectedEdgeSize=builder.expectedEdgeCount.or(DEFAULT_EDGE_COUNT);
 switch (builder.edgeOrder.type()) {
 case UNORDERED:
     return Maps.newHashMapWithExpectedSize(expectedEdgeSize);

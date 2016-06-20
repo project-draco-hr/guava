@@ -1,3 +1,4 @@
 {
-  return new DirectedNodeAdjacencies<N>(Maps.<N,Adjacency>newHashMapWithExpectedSize(EXPECTED_DEGREE),0,0);
+  int inAndOutDegree=EXPECTED_DEGREE * 2;
+  return new DirectedNodeAdjacencies<N>(Maps.<N,Adjacency>newHashMapWithExpectedSize(inAndOutDegree),0,0);
 }
