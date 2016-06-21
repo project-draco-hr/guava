@@ -1,5 +1,5 @@
 {
   N nodeA=checkedReferenceNode(edge);
   N nodeB=nodeConnections.get(nodeA).oppositeNode(edge);
-  return isDirected ? Endpoints.ofDirected(nodeA,nodeB) : Endpoints.ofUndirected(nodeA,nodeB);
+  return Endpoints.of(nodeA,nodeB,isDirected);
 }

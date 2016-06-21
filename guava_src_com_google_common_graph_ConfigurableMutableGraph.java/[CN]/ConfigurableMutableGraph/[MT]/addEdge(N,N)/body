@@ -1,21 +1,22 @@
 {
   checkNotNull(nodeA,"nodeA");
   checkNotNull(nodeB,"nodeB");
-  checkArgument(allowsSelfLoops() || !nodeA.equals(nodeB),SELF_LOOPS_NOT_ALLOWED,nodeA);
-  boolean containsA=containsNode(nodeA);
-  boolean containsB=containsNode(nodeB);
-  if (containsA && containsB && nodeConnections.get(nodeA).successors().contains(nodeB)) {
-    return false;
-  }
-  if (!containsA) {
-    addNode(nodeA);
+  boolean isSelfLoop=nodeA.equals(nodeB);
+  if (!allowsSelfLoops()) {
+    checkArgument(!isSelfLoop,SELF_LOOPS_NOT_ALLOWED,nodeA);
   }
   NodeAdjacencies<N> connectionsA=nodeConnections.get(nodeA);
-  connectionsA.addSuccessor(nodeB);
-  if (!containsB) {
-    addNode(nodeB);
-  }
   NodeAdjacencies<N> connectionsB=nodeConnections.get(nodeB);
+  if (connectionsA != null && connectionsB != null && connectionsA.successors().contains(nodeB)) {
+    return false;
+  }
+  if (connectionsA == null) {
+    connectionsA=addNodeInternal(nodeA);
+  }
+  connectionsA.addSuccessor(nodeB);
+  if (connectionsB == null) {
+    connectionsB=isSelfLoop ? connectionsA : addNodeInternal(nodeB);
+  }
   connectionsB.addPredecessor(nodeA);
   return true;
 }

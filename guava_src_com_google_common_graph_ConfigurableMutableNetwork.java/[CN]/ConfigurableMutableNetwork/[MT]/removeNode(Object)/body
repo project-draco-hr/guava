@@ -1,9 +1,10 @@
 {
   checkNotNull(node,"node");
-  if (!containsNode(node)) {
+  NodeConnections<N,E> connections=nodeConnections.get(node);
+  if (connections == null) {
     return false;
   }
-  for (  E edge : ImmutableList.copyOf(incidentEdges(node))) {
+  for (  E edge : ImmutableList.copyOf(connections.incidentEdges())) {
     removeEdge(edge);
   }
   nodeConnections.remove(node);

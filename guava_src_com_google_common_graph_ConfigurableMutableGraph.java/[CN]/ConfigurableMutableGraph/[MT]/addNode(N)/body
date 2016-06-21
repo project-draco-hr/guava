@@ -3,6 +3,6 @@
   if (containsNode(node)) {
     return false;
   }
-  nodeConnections.put(node,newNodeConnections());
+  addNodeInternal(node);
   return true;
 }

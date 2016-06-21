@@ -2,25 +2,28 @@
   checkNotNull(edge,"edge");
   checkNotNull(nodeA,"nodeA");
   checkNotNull(nodeB,"nodeB");
-  checkArgument(allowsSelfLoops() || !nodeA.equals(nodeB),SELF_LOOPS_NOT_ALLOWED,nodeA);
-  boolean containsA=containsNode(nodeA);
-  boolean containsB=containsNode(nodeB);
   if (containsEdge(edge)) {
-    checkArgument(containsA && containsB && edgesConnecting(nodeA,nodeB).contains(edge),REUSING_EDGE,edge,incidentNodes(edge),nodeA,nodeB);
+    Endpoints<N> existingEndpoints=incidentNodes(edge);
+    Endpoints<N> newEndpoints=Endpoints.of(nodeA,nodeB,isDirected());
+    checkArgument(existingEndpoints.equals(newEndpoints),REUSING_EDGE,edge,existingEndpoints,newEndpoints);
     return false;
   }
- else   if (!allowsParallelEdges()) {
-    checkArgument(!(containsA && containsB && successors(nodeA).contains(nodeB)),ADDING_PARALLEL_EDGE,nodeA,nodeB);
-  }
-  if (!containsA) {
-    addNode(nodeA);
+  boolean isSelfLoop=nodeA.equals(nodeB);
+  if (!allowsSelfLoops()) {
+    checkArgument(!isSelfLoop,SELF_LOOPS_NOT_ALLOWED,nodeA);
   }
   NodeConnections<N,E> connectionsA=nodeConnections.get(nodeA);
-  connectionsA.addOutEdge(edge,nodeB);
-  if (!containsB) {
-    addNode(nodeB);
-  }
   NodeConnections<N,E> connectionsB=nodeConnections.get(nodeB);
+  if (!allowsParallelEdges()) {
+    checkArgument(!(connectionsA != null && connectionsB != null && connectionsA.successors().contains(nodeB)),ADDING_PARALLEL_EDGE,nodeA,nodeB);
+  }
+  if (connectionsA == null) {
+    connectionsA=addNodeInternal(nodeA);
+  }
+  connectionsA.addOutEdge(edge,nodeB);
+  if (connectionsB == null) {
+    connectionsB=isSelfLoop ? connectionsA : addNodeInternal(nodeB);
+  }
   connectionsB.addInEdge(edge,nodeA);
   edgeToReferenceNode.put(edge,nodeA);
   return true;

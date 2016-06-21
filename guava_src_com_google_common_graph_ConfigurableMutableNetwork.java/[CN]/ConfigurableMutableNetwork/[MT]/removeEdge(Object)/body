@@ -4,9 +4,11 @@
   if (nodeA == null) {
     return false;
   }
-  N nodeB=nodeConnections.get(nodeA).oppositeNode(edge);
-  nodeConnections.get(nodeA).removeOutEdge(edge);
-  nodeConnections.get(nodeB).removeInEdge(edge);
+  NodeConnections<N,E> connectionsA=nodeConnections.get(nodeA);
+  N nodeB=connectionsA.oppositeNode(edge);
+  NodeConnections<N,E> connectionsB=nodeConnections.get(nodeB);
+  connectionsA.removeOutEdge(edge);
+  connectionsB.removeInEdge(edge);
   edgeToReferenceNode.remove(edge);
   return true;
 }
