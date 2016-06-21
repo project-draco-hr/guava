@@ -1,4 +1,0 @@
-{
-  MutableGraph<Integer> graph=GraphBuilder.directed().orderNodes(unordered()).build();
-  assertThat(graph.nodeOrder()).isEqualTo(unordered());
-}

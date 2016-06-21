@@ -1,5 +1,5 @@
 {
-  MutableNetwork<Integer,String> graph=NetworkBuilder.directed().orderEdges(insertion()).build();
+  MutableNetwork<Integer,String> graph=NetworkBuilder.directed().edgeOrder(insertion()).build();
   addEdges(graph);
   assertThat(graph.edgeOrder()).isEqualTo(ElementOrder.insertion());
   assertThat(graph.edges()).containsExactly("i","e","p").inOrder();
