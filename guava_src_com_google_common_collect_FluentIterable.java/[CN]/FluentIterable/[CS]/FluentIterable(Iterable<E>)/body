@@ -1,3 +1,4 @@
 {
-  this.iterable=checkNotNull(iterable);
+  checkNotNull(iterable);
+  this.iterableDelegate=Optional.fromNullable(this != iterable ? iterable : null);
 }

@@ -1,4 +1,4 @@
 {
-  Iterator<E> iterator=iterable.iterator();
+  Iterator<E> iterator=getDelegate().iterator();
   return iterator.hasNext() ? Optional.of(iterator.next()) : Optional.<E>absent();
 }

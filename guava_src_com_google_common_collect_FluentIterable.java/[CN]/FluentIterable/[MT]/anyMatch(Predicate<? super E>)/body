@@ -1,3 +1,3 @@
 {
-  return Iterables.any(iterable,predicate);
+  return Iterables.any(getDelegate(),predicate);
 }

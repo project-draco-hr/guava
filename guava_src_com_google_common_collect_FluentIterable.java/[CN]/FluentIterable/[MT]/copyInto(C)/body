@@ -1,5 +1,6 @@
 {
   checkNotNull(collection);
+  Iterable<E> iterable=getDelegate();
   if (iterable instanceof Collection) {
     collection.addAll(Collections2.cast(iterable));
   }

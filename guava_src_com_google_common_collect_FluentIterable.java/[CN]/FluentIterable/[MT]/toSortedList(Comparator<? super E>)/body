@@ -1,3 +1,3 @@
 {
-  return Ordering.from(comparator).immutableSortedCopy(iterable);
+  return Ordering.from(comparator).immutableSortedCopy(getDelegate());
 }
