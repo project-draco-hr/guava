@@ -2,13 +2,12 @@
   SettableFuture<String> stringFuture=SettableFuture.create();
   SettableFuture<Boolean> booleanFuture=SettableFuture.create();
   final CountDownLatch inFunction=new CountDownLatch(1);
-  final CountDownLatch shouldCompleteFunction=new CountDownLatch(1);
   final CountDownLatch gotException=new CountDownLatch(1);
   AsyncCallable<String> combiner=new AsyncCallable<String>(){
     @Override public ListenableFuture<String> call() throws Exception {
       inFunction.countDown();
       try {
-        shouldCompleteFunction.await();
+        new CountDownLatch(1).await();
       }
  catch (      InterruptedException expected) {
         gotException.countDown();
@@ -23,7 +22,6 @@
   booleanFuture.set(true);
   inFunction.await();
   futureResult.cancel(true);
-  shouldCompleteFunction.countDown();
   try {
     futureResult.get();
     fail();
