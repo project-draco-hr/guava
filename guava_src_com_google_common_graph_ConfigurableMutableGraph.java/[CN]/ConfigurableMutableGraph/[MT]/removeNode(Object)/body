@@ -4,8 +4,10 @@
   if (connections == null) {
     return false;
   }
-  connections.removeSuccessor(node);
-  connections.removePredecessor(node);
+  if (allowsSelfLoops()) {
+    connections.removeSuccessor(node);
+    connections.removePredecessor(node);
+  }
   for (  N successor : connections.successors()) {
     nodeConnections.get(successor).removePredecessor(node);
   }
