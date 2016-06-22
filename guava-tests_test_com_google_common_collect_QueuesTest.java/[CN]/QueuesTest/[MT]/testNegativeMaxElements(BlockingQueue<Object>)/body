@@ -4,5 +4,5 @@
   int elements=Queues.drain(q,buf,-1,Long.MAX_VALUE,TimeUnit.NANOSECONDS);
   assertEquals(elements,0);
   assertTrue(buf.isEmpty());
-  Queues.drain(q,buf,1,Long.MAX_VALUE,TimeUnit.NANOSECONDS);
+  q.take();
 }
