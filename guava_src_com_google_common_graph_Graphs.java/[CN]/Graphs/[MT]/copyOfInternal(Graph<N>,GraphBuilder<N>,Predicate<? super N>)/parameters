@@ -1,2 +1,3 @@
 Graph<N> graph
+GraphBuilder<N> copyBuilder
 Predicate<? super N> nodePredicate
