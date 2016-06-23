@@ -1,3 +1,3 @@
 {
-  return Striped.lock(stripes);
+  return new Striped.SmallLazyStriped<Lock>(stripes,LOCK_SUPPLIER);
 }

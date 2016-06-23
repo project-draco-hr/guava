@@ -1,7 +1,7 @@
 {
-  Map<Element,Element> map=new MapMaker().concurrencyLevel(1).makeMap();
+  ImmutableMap.Builder<Element,Element> builder=ImmutableMap.builder();
   for (  Element element : keys) {
-    map.put(element,element);
+    builder.put(element,element);
   }
-  return map;
+  return builder.build();
 }

@@ -1,3 +1,7 @@
 {
-  return Collections.synchronizedMap(Hash.create(keys));
+  Map<Element,Element> map=new ConcurrentHashMap<Element,Element>(keys.size(),0.75f,16);
+  for (  Element element : keys) {
+    map.put(element,element);
+  }
+  return map;
 }

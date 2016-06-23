@@ -1,7 +1,7 @@
 {
-  double sum=0.0;
-  for (  double value : values) {
-    sum+=value;
+  double mean=values[0];
+  for (int i=1; i < values.length; i++) {
+    mean=mean + (values[i] - mean) / (i + 1);
   }
-  return sum / values.length;
+  return mean;
 }

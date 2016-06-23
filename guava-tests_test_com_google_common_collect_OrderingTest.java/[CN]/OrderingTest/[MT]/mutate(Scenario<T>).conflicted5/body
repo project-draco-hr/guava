@@ -1,10 +1,9 @@
 {
-  List<T> newList=Lists.newArrayList();
+  @SuppressWarnings("unchecked") List<T> newList=Lists.newArrayList((T)null);
   for (  T t : scenario.strictlyOrderedList) {
     if (t != null) {
       newList.add(t);
     }
   }
-  newList.add(null);
-  return new Scenario<T>(scenario.ordering.nullsLast(),newList,scenario.emptyArray);
+  return new Scenario<T>(scenario.ordering.nullsFirst(),newList,scenario.emptyArray);
 }
