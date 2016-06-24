@@ -1,10 +1,8 @@
 {
-  N node=super.removeOutEdge(edge);
-  if (node != null) {
-    Multiset<N> successors=getReference(successorsReference);
-    if (successors != null) {
-      checkState(successors.remove(node));
-    }
+  N node=checkNotNull(super.removeOutEdge(edge));
+  Multiset<N> successors=getReference(successorsReference);
+  if (successors != null) {
+    checkState(successors.remove(node));
   }
   return node;
 }

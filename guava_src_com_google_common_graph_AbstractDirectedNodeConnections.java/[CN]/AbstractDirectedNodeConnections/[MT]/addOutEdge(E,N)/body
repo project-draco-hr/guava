@@ -2,9 +2,5 @@
   checkNotNull(edge,"edge");
   checkNotNull(node,"node");
   N previousNode=outEdgeMap.put(edge,node);
-  if (previousNode != null) {
-    checkState(node.equals(previousNode));
-    return false;
-  }
-  return true;
+  checkState(previousNode == null);
 }

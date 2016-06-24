@@ -4,5 +4,6 @@
     selfLoopCount--;
     checkState(selfLoopCount >= 0);
   }
-  return inEdgeMap.remove(edge);
+  N previousNode=inEdgeMap.remove(edge);
+  return checkNotNull(previousNode);
 }

@@ -1,10 +1,8 @@
 {
-  N node=super.removeOutEdge(edge);
-  if (node != null) {
-    Multiset<N> adjacentNodes=getReference(adjacentNodesReference);
-    if (adjacentNodes != null) {
-      checkState(adjacentNodes.remove(node));
-    }
+  N node=checkNotNull(super.removeOutEdge(edge));
+  Multiset<N> adjacentNodes=getReference(adjacentNodesReference);
+  if (adjacentNodes != null) {
+    checkState(adjacentNodes.remove(node));
   }
   return node;
 }

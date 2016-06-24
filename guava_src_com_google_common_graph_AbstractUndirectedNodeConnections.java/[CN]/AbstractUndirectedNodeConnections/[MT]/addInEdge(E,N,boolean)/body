@@ -1,6 +1,5 @@
 {
-  if (isSelfLoop) {
-    return false;
+  if (!isSelfLoop) {
+    addOutEdge(edge,node);
   }
-  return addOutEdge(edge,node);
 }

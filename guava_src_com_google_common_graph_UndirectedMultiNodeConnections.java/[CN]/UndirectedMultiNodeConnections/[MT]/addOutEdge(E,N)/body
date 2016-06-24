@@ -1,10 +1,7 @@
 {
-  if (super.addOutEdge(edge,node)) {
-    Multiset<N> adjacentNodes=getReference(adjacentNodesReference);
-    if (adjacentNodes != null) {
-      checkState(adjacentNodes.add(node));
-    }
-    return true;
+  super.addOutEdge(edge,node);
+  Multiset<N> adjacentNodes=getReference(adjacentNodesReference);
+  if (adjacentNodes != null) {
+    checkState(adjacentNodes.add(node));
   }
-  return false;
 }

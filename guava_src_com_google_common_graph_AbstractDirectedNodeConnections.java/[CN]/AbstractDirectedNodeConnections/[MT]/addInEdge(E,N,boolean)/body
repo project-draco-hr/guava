@@ -6,9 +6,5 @@
     checkState(selfLoopCount >= 1);
   }
   N previousNode=inEdgeMap.put(edge,node);
-  if (previousNode != null) {
-    checkState(node.equals(previousNode));
-    return false;
-  }
-  return true;
+  checkState(previousNode == null);
 }
