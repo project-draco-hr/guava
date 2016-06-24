@@ -1,3 +1,3 @@
 {
-  return new UndirectedNodeAdjacencies<N>(Sets.<N>newHashSetWithExpectedSize(EXPECTED_DEGREE));
+  return new UndirectedNodeAdjacencies<N>(new HashSet<N>(INNER_CAPACITY,INNER_LOAD_FACTOR));
 }

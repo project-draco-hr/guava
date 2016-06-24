@@ -1,4 +1,4 @@
 {
-  int inAndOutDegree=EXPECTED_DEGREE * 2;
-  return new DirectedNodeAdjacencies<N>(Maps.<N,Adjacency>newHashMapWithExpectedSize(inAndOutDegree),0,0);
+  int initialCapacity=INNER_CAPACITY * 2;
+  return new DirectedNodeAdjacencies<N>(new HashMap<N,Adjacency>(initialCapacity,INNER_LOAD_FACTOR),0,0);
 }
