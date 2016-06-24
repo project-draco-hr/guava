@@ -1,0 +1,6 @@
+{
+  if (isSelfLoop) {
+    return null;
+  }
+  return removeOutEdge(edge);
+}

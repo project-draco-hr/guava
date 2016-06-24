@@ -1,0 +1,3 @@
+Map<E,N> inEdgeMap
+Map<E,N> outEdgeMap
+int selfLoopCount

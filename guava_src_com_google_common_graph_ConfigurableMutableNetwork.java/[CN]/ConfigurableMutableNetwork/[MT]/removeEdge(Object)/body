@@ -6,9 +6,10 @@
   }
   NodeConnections<N,E> connectionsA=nodeConnections.get(nodeA);
   N nodeB=connectionsA.oppositeNode(edge);
-  NodeConnections<N,E> connectionsB=nodeConnections.get(nodeB);
+  boolean isSelfLoop=allowsSelfLoops() && nodeA.equals(nodeB);
+  NodeConnections<N,E> connectionsB=isSelfLoop ? connectionsA : nodeConnections.get(nodeB);
   connectionsA.removeOutEdge(edge);
-  connectionsB.removeInEdge(edge);
+  connectionsB.removeInEdge(edge,isSelfLoop);
   edgeToReferenceNode.remove(edge);
   return true;
 }

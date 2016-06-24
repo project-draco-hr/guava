@@ -1,3 +1,0 @@
-{
-  return new DirectedNodeConnections<N,E>(ImmutableBiMap.copyOf(inEdges),ImmutableBiMap.copyOf(outEdges));
-}

@@ -1,0 +1,8 @@
+{
+  checkNotNull(edge,"edge");
+  if (isSelfLoop) {
+    selfLoopCount--;
+    checkState(selfLoopCount >= 0);
+  }
+  return inEdgeMap.remove(edge);
+}

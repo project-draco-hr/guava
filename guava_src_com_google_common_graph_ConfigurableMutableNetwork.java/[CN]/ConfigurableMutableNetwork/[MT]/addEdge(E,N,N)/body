@@ -12,7 +12,6 @@
   if (!allowsParallelEdges()) {
     checkArgument(!(connectionsA != null && connectionsA.successors().contains(nodeB)),ADDING_PARALLEL_EDGE,nodeA,nodeB);
   }
-  NodeConnections<N,E> connectionsB=nodeConnections.get(nodeB);
   boolean isSelfLoop=nodeA.equals(nodeB);
   if (!allowsSelfLoops()) {
     checkArgument(!isSelfLoop,SELF_LOOPS_NOT_ALLOWED,nodeA);
@@ -21,10 +20,11 @@
     connectionsA=addNodeInternal(nodeA);
   }
   connectionsA.addOutEdge(edge,nodeB);
+  NodeConnections<N,E> connectionsB=isSelfLoop ? connectionsA : nodeConnections.get(nodeB);
   if (connectionsB == null) {
-    connectionsB=isSelfLoop ? connectionsA : addNodeInternal(nodeB);
+    connectionsB=addNodeInternal(nodeB);
   }
-  connectionsB.addInEdge(edge,nodeA);
+  connectionsB.addInEdge(edge,nodeA,isSelfLoop);
   edgeToReferenceNode.put(edge,nodeA);
   return true;
 }

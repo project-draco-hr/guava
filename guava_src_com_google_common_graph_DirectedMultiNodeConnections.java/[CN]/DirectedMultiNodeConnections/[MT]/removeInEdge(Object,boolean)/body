@@ -1,0 +1,10 @@
+{
+  N node=super.removeInEdge(edge,isSelfLoop);
+  if (node != null) {
+    Multiset<N> predecessors=getReference(predecessorsReference);
+    if (predecessors != null) {
+      checkState(predecessors.remove(node));
+    }
+  }
+  return node;
+}
