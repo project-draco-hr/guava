@@ -1,0 +1,3 @@
+{
+  return value.compareTo(other.value);
+}
