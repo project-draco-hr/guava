@@ -6,5 +6,8 @@
     return false;
   }
   Undirected<?> other=(Undirected<?>)obj;
-  return (nodeA().equals(other.nodeA()) && nodeB().equals(other.nodeB())) || (nodeA().equals(other.nodeB()) && nodeB().equals(other.nodeA()));
+  if (nodeA().equals(other.nodeA())) {
+    return nodeB().equals(other.nodeB());
+  }
+  return nodeA().equals(other.nodeB()) && nodeB().equals(other.nodeA());
 }
