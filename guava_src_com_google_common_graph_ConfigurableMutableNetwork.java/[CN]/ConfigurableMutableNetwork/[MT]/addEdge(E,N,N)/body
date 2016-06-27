@@ -10,7 +10,7 @@
   }
   NodeConnections<N,E> connectionsA=nodeConnections.get(nodeA);
   if (!allowsParallelEdges()) {
-    checkArgument(!(connectionsA != null && connectionsA.successors().contains(nodeB)),ADDING_PARALLEL_EDGE,nodeA,nodeB);
+    checkArgument(!(connectionsA != null && connectionsA.successors().contains(nodeB)),PARALLEL_EDGES_NOT_ALLOWED,nodeA,nodeB);
   }
   boolean isSelfLoop=nodeA.equals(nodeB);
   if (!allowsSelfLoops()) {
