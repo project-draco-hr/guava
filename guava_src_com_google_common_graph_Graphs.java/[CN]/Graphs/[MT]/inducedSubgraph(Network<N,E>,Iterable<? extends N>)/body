@@ -1,0 +1,19 @@
+{
+  NetworkBuilder<N,E> builder=NetworkBuilder.from(graph);
+  if (nodes instanceof Collection) {
+    builder=builder.expectedNodeCount(((Collection<?>)nodes).size());
+  }
+  MutableNetwork<N,E> subgraph=builder.build();
+  for (  N node : nodes) {
+    subgraph.addNode(node);
+  }
+  for (  N node : subgraph.nodes()) {
+    for (    E edge : graph.outEdges(node)) {
+      N oppositeNode=Graphs.oppositeNode(graph,edge,node);
+      if (subgraph.nodes().contains(oppositeNode)) {
+        subgraph.addEdge(edge,node,oppositeNode);
+      }
+    }
+  }
+  return subgraph;
+}
