@@ -1,3 +1,0 @@
-Graph<N> src
-MutableGraph<N> dest
-Predicate<? super N> nodePredicate

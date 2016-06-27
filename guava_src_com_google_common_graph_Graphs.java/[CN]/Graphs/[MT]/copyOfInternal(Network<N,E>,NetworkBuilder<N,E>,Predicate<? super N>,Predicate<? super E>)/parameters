@@ -1,4 +1,0 @@
-Network<N,E> graph
-NetworkBuilder<N,E> copyBuilder
-Predicate<? super N> nodePredicate
-Predicate<? super E> edgePredicate

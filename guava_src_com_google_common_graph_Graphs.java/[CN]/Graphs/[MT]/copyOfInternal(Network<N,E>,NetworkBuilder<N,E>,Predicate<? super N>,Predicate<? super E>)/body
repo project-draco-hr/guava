@@ -1,9 +1,0 @@
-{
-  checkNotNull(graph,"graph");
-  checkNotNull(nodePredicate,"nodePredicate");
-  checkNotNull(edgePredicate,"edgePredicate");
-  MutableNetwork<N,E> copy=copyBuilder.build();
-  copyNodesInternal(graph,copy,nodePredicate);
-  copyEdgesInternal(graph,copy,edgePredicate);
-  return copy;
-}

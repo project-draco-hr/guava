@@ -1,3 +1,0 @@
-{
-  copyEdgesInternal(src,dest,Predicates.alwaysTrue());
-}

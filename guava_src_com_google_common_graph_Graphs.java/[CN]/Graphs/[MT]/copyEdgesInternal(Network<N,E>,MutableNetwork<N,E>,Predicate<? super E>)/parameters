@@ -1,3 +1,0 @@
-Network<N,E> src
-MutableNetwork<N,E> dest
-Predicate<? super E> edgePredicate
