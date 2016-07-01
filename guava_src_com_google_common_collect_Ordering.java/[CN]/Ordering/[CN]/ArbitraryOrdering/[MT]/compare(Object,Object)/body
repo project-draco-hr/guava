@@ -13,7 +13,7 @@
   if (leftCode != rightCode) {
     return leftCode < rightCode ? -1 : 1;
   }
-  int result=uids.get(left).compareTo(uids.get(right));
+  int result=getUid(left).compareTo(getUid(right));
   if (result == 0) {
     throw new AssertionError();
   }

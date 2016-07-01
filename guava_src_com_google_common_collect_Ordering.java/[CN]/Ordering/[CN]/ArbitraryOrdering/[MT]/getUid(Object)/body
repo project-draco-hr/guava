@@ -1,0 +1,11 @@
+{
+  Integer uid=uids.get(obj);
+  if (uid == null) {
+    uid=counter.getAndIncrement();
+    Integer alreadySet=uids.putIfAbsent(obj,uid);
+    if (alreadySet != null) {
+      uid=alreadySet;
+    }
+  }
+  return uid;
+}
