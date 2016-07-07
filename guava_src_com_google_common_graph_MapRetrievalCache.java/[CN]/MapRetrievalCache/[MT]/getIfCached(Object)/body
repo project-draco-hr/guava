@@ -1,0 +1,17 @@
+{
+  V value=super.getIfCached(key);
+  if (value != null) {
+    return value;
+  }
+  CacheEntry<K,V> entry;
+  entry=cacheEntry1;
+  if (entry != null && entry.key == key) {
+    return entry.value;
+  }
+  entry=cacheEntry2;
+  if (entry != null && entry.key == key) {
+    addToCache(entry);
+    return entry.value;
+  }
+  return null;
+}

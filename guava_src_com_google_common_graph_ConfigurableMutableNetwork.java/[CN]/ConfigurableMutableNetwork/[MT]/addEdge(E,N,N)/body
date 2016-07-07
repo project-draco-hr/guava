@@ -20,7 +20,7 @@
     connectionsA=addNodeInternal(nodeA);
   }
   connectionsA.addOutEdge(edge,nodeB);
-  NodeConnections<N,E> connectionsB=isSelfLoop ? connectionsA : nodeConnections.get(nodeB);
+  NodeConnections<N,E> connectionsB=nodeConnections.get(nodeB);
   if (connectionsB == null) {
     connectionsB=addNodeInternal(nodeB);
   }

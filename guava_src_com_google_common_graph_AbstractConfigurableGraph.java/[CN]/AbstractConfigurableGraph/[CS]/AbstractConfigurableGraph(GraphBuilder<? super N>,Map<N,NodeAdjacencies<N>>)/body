@@ -2,5 +2,5 @@
   this.isDirected=builder.directed;
   this.allowsSelfLoops=builder.allowsSelfLoops;
   this.nodeOrder=builder.nodeOrder;
-  this.nodeConnections=checkNotNull(nodeConnections);
+  this.nodeConnections=new MapRetrievalCache<N,NodeAdjacencies<N>>(nodeConnections);
 }

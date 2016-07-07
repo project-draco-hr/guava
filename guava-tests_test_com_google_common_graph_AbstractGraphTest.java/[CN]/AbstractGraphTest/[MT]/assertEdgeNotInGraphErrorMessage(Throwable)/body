@@ -1,4 +1,0 @@
-{
-  assertThat(throwable.getMessage()).startsWith(EDGE_STRING);
-  assertThat(throwable.getMessage()).contains(ERROR_ELEMENT_NOT_IN_GRAPH);
-}

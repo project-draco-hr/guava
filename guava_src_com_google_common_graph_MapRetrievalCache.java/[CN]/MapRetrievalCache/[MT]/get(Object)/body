@@ -1,0 +1,11 @@
+{
+  V value=getIfCached(key);
+  if (value != null) {
+    return value;
+  }
+  value=getWithoutCaching(key);
+  if (value != null) {
+    addToCache((K)key,value);
+  }
+  return value;
+}

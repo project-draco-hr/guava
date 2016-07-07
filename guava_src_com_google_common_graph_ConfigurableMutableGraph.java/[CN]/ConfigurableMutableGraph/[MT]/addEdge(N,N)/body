@@ -13,7 +13,7 @@
     connectionsA=addNodeInternal(nodeA);
   }
   connectionsA.addSuccessor(nodeB);
-  NodeAdjacencies<N> connectionsB=isSelfLoop ? connectionsA : nodeConnections.get(nodeB);
+  NodeAdjacencies<N> connectionsB=nodeConnections.get(nodeB);
   if (connectionsB == null) {
     connectionsB=addNodeInternal(nodeB);
   }

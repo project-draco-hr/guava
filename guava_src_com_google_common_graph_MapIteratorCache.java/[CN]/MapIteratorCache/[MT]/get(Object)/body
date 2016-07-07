@@ -1,0 +1,4 @@
+{
+  V value=getIfCached(key);
+  return (value != null) ? value : getWithoutCaching(key);
+}

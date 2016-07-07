@@ -1,0 +1,4 @@
+{
+  clearCache();
+  return backingMap.remove(key);
+}

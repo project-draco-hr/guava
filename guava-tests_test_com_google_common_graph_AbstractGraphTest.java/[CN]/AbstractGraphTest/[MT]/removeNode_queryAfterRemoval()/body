@@ -1,0 +1,12 @@
+{
+  addNode(N1);
+  Set<Integer> unused=graph.adjacentNodes(N1);
+  assertTrue(graph.removeNode(N1));
+  try {
+    graph.adjacentNodes(N1);
+    fail(ERROR_NODE_NOT_IN_GRAPH);
+  }
+ catch (  IllegalArgumentException e) {
+    assertNodeNotInGraphErrorMessage(e);
+  }
+}

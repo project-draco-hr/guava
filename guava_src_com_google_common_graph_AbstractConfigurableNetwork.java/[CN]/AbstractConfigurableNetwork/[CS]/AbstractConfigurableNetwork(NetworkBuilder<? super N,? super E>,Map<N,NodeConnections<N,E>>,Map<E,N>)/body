@@ -4,6 +4,6 @@
   this.allowsSelfLoops=builder.allowsSelfLoops;
   this.nodeOrder=builder.nodeOrder;
   this.edgeOrder=builder.edgeOrder;
-  this.nodeConnections=checkNotNull(nodeConnections);
-  this.edgeToReferenceNode=checkNotNull(edgeToReferenceNode);
+  this.nodeConnections=new MapRetrievalCache<N,NodeConnections<N,E>>(nodeConnections);
+  this.edgeToReferenceNode=new MapIteratorCache<E,N>(edgeToReferenceNode);
 }

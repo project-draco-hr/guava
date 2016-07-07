@@ -1,0 +1,5 @@
+{
+  super.clearCache();
+  cacheEntry1=null;
+  cacheEntry2=null;
+}

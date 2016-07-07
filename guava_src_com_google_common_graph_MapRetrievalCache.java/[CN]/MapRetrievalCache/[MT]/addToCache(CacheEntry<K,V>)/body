@@ -1,0 +1,4 @@
+{
+  cacheEntry2=cacheEntry1;
+  cacheEntry1=entry;
+}
