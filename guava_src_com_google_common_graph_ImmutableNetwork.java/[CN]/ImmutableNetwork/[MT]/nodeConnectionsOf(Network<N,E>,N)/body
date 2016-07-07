@@ -6,7 +6,7 @@
     return graph.allowsParallelEdges() ? DirectedMultiNodeConnections.ofImmutable(inEdgeMap,outEdgeMap,selfLoopCount) : DirectedNodeConnections.ofImmutable(inEdgeMap,outEdgeMap,selfLoopCount);
   }
  else {
-    Map<E,N> incidentEdgeMap=Maps.asMap(graph.incidentEdges(node),oppositeNodeFn(graph,node));
+    Map<E,N> incidentEdgeMap=Maps.asMap(graph.incidentEdges(node),otherNodeFn(graph,node));
     return graph.allowsParallelEdges() ? UndirectedMultiNodeConnections.ofImmutable(incidentEdgeMap) : UndirectedNodeConnections.ofImmutable(incidentEdgeMap);
   }
 }

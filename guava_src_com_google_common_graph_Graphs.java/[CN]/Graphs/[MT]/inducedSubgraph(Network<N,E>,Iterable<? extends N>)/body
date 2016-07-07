@@ -9,9 +9,9 @@
   }
   for (  N node : subgraph.nodes()) {
     for (    E edge : graph.outEdges(node)) {
-      N oppositeNode=Graphs.oppositeNode(graph,edge,node);
-      if (subgraph.nodes().contains(oppositeNode)) {
-        subgraph.addEdge(edge,node,oppositeNode);
+      N otherNode=graph.incidentNodes(edge).otherNode(node);
+      if (subgraph.nodes().contains(otherNode)) {
+        subgraph.addEdge(edge,node,otherNode);
       }
     }
   }

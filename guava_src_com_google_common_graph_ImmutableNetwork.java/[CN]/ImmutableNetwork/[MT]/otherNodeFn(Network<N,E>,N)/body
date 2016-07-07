@@ -1,7 +1,7 @@
 {
   return new Function<E,N>(){
     @Override public N apply(    E edge){
-      return Graphs.oppositeNode(graph,edge,node);
+      return graph.incidentNodes(edge).otherNode(node);
     }
   }
 ;

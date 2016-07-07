@@ -1,0 +1,12 @@
+{
+  checkNotNull(node,"node");
+  if (node.equals(nodeA())) {
+    return nodeB();
+  }
+ else   if (node.equals(nodeB())) {
+    return nodeA();
+  }
+ else {
+    throw new IllegalArgumentException(String.format("Endpoints %s does not contain node %s",this,node));
+  }
+}
