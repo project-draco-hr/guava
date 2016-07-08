@@ -1,6 +1,6 @@
 {
   if (graph1 instanceof Network && graph2 instanceof Network) {
-    return equal((Network<?,?>)graph1,(Network<?,?>)graph2);
+    return equal(castToNetwork(graph1),castToNetwork(graph2));
   }
   if (graph1 instanceof Network || graph2 instanceof Network) {
     return false;

@@ -1,0 +1,9 @@
+{
+  checkState(!successorIterator.hasNext());
+  if (!nodeIterator.hasNext()) {
+    return false;
+  }
+  node=nodeIterator.next();
+  successorIterator=graph.successors(node).iterator();
+  return true;
+}

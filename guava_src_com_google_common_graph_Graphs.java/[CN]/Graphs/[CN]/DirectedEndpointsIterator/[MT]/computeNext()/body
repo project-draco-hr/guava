@@ -1,0 +1,10 @@
+{
+  while (true) {
+    if (successorIterator.hasNext()) {
+      return Endpoints.ofDirected(node,successorIterator.next());
+    }
+    if (!advance()) {
+      return endOfData();
+    }
+  }
+}

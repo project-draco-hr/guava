@@ -2,10 +2,10 @@
   checkNotNull(graph,"graph");
   MutableNetwork<N,E> copy=NetworkBuilder.from(graph).expectedNodeCount(graph.nodes().size()).expectedEdgeCount(graph.edges().size()).build();
   for (  N node : graph.nodes()) {
-    copy.addNode(node);
+    checkState(copy.addNode(node));
   }
   for (  E edge : graph.edges()) {
-    addEdge(copy,edge,graph.incidentNodes(edge));
+    checkState(addEdge(copy,edge,graph.incidentNodes(edge)));
   }
   return copy;
 }

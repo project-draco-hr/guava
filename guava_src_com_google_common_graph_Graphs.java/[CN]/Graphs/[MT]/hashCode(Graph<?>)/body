@@ -1,6 +1,6 @@
 {
   if (graph instanceof Network) {
-    return hashCode((Network<?,?>)graph);
+    return hashCode(castToNetwork(graph));
   }
   return nodeToAdjacentNodes(graph).hashCode();
 }

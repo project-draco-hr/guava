@@ -1,0 +1,7 @@
+{
+  assertThat(collection).hasSize(varargs.length);
+  for (  Object obj : varargs) {
+    assertThat(collection).contains(obj);
+  }
+  assertThat(collection).containsExactly(varargs);
+}

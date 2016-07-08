@@ -1,0 +1,23 @@
+{
+  checkState(!graph.allowsParallelEdges());
+  return new AbstractSet<Endpoints<N>>(){
+    @Override public Iterator<Endpoints<N>> iterator(){
+      return Iterators.transform(graph.edges().iterator(),new Function<Object,Endpoints<N>>(){
+        @Override public Endpoints<N> apply(        Object edge){
+          return graph.incidentNodes(edge);
+        }
+      }
+);
+    }
+    @Override public int size(){
+      return graph.edges().size();
+    }
+    @Override public boolean contains(    Object obj){
+      if (!(obj instanceof Endpoints)) {
+        return false;
+      }
+      return containsEndpoints(graph,(Endpoints<?>)obj);
+    }
+  }
+;
+}

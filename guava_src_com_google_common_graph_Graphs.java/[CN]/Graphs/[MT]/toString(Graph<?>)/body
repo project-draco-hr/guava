@@ -1,6 +1,6 @@
 {
   if (graph instanceof Network) {
-    return toString((Network<?,?>)graph);
+    return toString(castToNetwork(graph));
   }
-  return String.format(GRAPH_FORMAT,getPropertiesString(graph),graph.nodes(),adjacentNodesString(graph));
+  return String.format(GRAPH_FORMAT,getPropertiesString(graph),graph.nodes(),endpointsString(graph));
 }

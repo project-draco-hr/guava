@@ -1,0 +1,4 @@
+{
+  super(graph);
+  this.visitedNodes=Sets.newHashSetWithExpectedSize(graph.nodes().size());
+}
