@@ -1,4 +1,0 @@
-{
-  int a=random.nextInt(max);
-  return (int)Math.pow(a,1.0 / concentration);
-}

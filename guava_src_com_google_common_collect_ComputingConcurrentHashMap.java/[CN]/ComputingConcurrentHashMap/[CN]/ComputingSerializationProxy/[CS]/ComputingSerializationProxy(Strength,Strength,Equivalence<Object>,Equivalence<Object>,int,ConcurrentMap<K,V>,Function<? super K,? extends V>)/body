@@ -1,4 +1,0 @@
-{
-  super(keyStrength,valueStrength,keyEquivalence,valueEquivalence,concurrencyLevel,delegate);
-  this.computingFunction=computingFunction;
-}

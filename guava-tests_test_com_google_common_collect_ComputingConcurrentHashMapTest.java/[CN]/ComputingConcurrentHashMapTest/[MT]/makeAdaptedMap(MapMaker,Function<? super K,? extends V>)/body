@@ -1,3 +1,0 @@
-{
-  return new ComputingMapAdapter<K,V>(maker,computingFunction);
-}

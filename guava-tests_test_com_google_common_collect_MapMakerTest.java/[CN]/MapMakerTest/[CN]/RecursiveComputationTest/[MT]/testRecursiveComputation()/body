@@ -1,3 +1,0 @@
-{
-  assertEquals("3, 2, 1, 0",recursiveMap.get(3));
-}

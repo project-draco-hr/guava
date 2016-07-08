@@ -1,5 +1,0 @@
-{
-  Function<Object,Object> computingFunction=Functions.identity();
-  ComputingConcurrentHashMap<Object,Object> map=makeComputingMap(createMapMaker(),computingFunction);
-  assertSame(computingFunction,map.computingFunction);
-}

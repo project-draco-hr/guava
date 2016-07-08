@@ -1,4 +1,0 @@
-{
-  com.google.common.collect.MapMakerTest.RecursiveComputationTest testCase=new com.google.common.collect.MapMakerTest.RecursiveComputationTest();
-  testCase.testRecursiveComputation();
-}

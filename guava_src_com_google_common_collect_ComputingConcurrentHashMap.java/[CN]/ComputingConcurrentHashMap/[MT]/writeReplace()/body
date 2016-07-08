@@ -1,3 +1,0 @@
-{
-  return new ComputingSerializationProxy<K,V>(keyStrength,valueStrength,keyEquivalence,valueEquivalence,concurrencyLevel,this,computingFunction);
-}

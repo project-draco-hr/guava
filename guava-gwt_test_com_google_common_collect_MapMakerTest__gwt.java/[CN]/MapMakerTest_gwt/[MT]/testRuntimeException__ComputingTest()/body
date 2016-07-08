@@ -1,4 +1,0 @@
-{
-  com.google.common.collect.MapMakerTest.ComputingTest testCase=new com.google.common.collect.MapMakerTest.ComputingTest();
-  testCase.testRuntimeException();
-}
