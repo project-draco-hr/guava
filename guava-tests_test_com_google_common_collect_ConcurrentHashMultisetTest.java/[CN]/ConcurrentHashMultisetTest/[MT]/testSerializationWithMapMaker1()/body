@@ -1,5 +1,5 @@
 {
-  MapMaker mapMaker=new MapMaker();
-  multiset=ConcurrentHashMultiset.create(mapMaker);
+  ConcurrentMap<String,AtomicInteger> map=new MapMaker().makeMap();
+  multiset=ConcurrentHashMultiset.create(map);
   reserializeAndAssert(multiset);
 }

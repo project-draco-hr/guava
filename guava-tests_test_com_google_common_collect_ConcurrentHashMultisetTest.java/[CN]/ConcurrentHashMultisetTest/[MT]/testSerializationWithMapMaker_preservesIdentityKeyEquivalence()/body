@@ -1,6 +1,6 @@
 {
-  MapMaker mapMaker=new MapMaker().keyEquivalence(Equivalence.identity());
-  ConcurrentHashMultiset<String> multiset=ConcurrentHashMultiset.create(mapMaker);
+  ConcurrentMap<String,AtomicInteger> map=new MapMaker().keyEquivalence(Equivalence.identity()).makeMap();
+  ConcurrentHashMultiset<String> multiset=ConcurrentHashMultiset.create(map);
   multiset=reserializeAndAssert(multiset);
   String s1=new String("a");
   String s2=new String("a");

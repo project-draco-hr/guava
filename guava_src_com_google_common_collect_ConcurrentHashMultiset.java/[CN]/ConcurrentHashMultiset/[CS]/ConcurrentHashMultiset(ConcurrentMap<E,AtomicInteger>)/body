@@ -1,4 +1,4 @@
 {
-  checkArgument(countMap.isEmpty());
+  checkArgument(countMap.isEmpty(),"the backing map (%s) must be empty",countMap);
   this.countMap=countMap;
 }
