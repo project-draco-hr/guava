@@ -11,15 +11,14 @@
   if (graph1 == null || graph2 == null) {
     return false;
   }
+  if (graph1.isDirected() != graph2.isDirected()) {
+    return false;
+  }
   if (!graph1.nodes().equals(graph2.nodes())) {
     return false;
   }
   for (  Object node : graph1.nodes()) {
     if (!graph1.successors(node).equals(graph2.successors(node))) {
-      return false;
-    }
-    boolean bothUndirected=!graph1.isDirected() && !graph2.isDirected();
-    if (!bothUndirected && !graph1.predecessors(node).equals(graph2.predecessors(node))) {
       return false;
     }
   }

@@ -5,18 +5,14 @@
   if (graph1 == null || graph2 == null) {
     return false;
   }
-  if (graph1.edges().size() != graph2.edges().size()) {
+  if (graph1.isDirected() != graph2.isDirected()) {
     return false;
   }
-  if (!graph1.nodes().equals(graph2.nodes())) {
+  if (!graph1.nodes().equals(graph2.nodes()) || !graph1.edges().equals(graph2.edges())) {
     return false;
   }
-  for (  Object node : graph1.nodes()) {
-    if (!graph1.inEdges(node).equals(graph2.inEdges(node))) {
-      return false;
-    }
-    boolean bothUndirected=!graph1.isDirected() && !graph2.isDirected();
-    if (!bothUndirected && !graph1.outEdges(node).equals(graph2.outEdges(node))) {
+  for (  Object edge : graph1.edges()) {
+    if (!graph1.incidentNodes(edge).equals(graph2.incidentNodes(edge))) {
       return false;
     }
   }

@@ -2,5 +2,5 @@
   if (graph instanceof Network) {
     return hashCode(castToNetwork(graph));
   }
-  return nodeToAdjacentNodes(graph).hashCode();
+  return nodeToSuccessorNodes(graph).hashCode();
 }

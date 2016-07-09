@@ -2,5 +2,5 @@
   graph.addEdge(N1,N1);
   MutableGraph<Integer> g2=createGraph(oppositeType(graphType));
   g2.addEdge(N1,N1);
-  new EqualsTester().addEqualityGroup(graph,g2).testEquals();
+  new EqualsTester().addEqualityGroup(graph).addEqualityGroup(g2).testEquals();
 }
