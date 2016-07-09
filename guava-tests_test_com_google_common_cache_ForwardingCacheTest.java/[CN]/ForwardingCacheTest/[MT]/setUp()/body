@@ -1,6 +1,6 @@
 {
   super.setUp();
-  mock=createMock(Cache.class);
+  mock=mock(Cache.class);
   forward=new ForwardingCache<String,Boolean>(){
     @Override protected Cache<String,Boolean> delegate(){
       return mock;

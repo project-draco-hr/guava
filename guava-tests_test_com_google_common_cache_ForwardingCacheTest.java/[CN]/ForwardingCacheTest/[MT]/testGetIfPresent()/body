@@ -1,6 +1,4 @@
 {
-  expect(mock.getIfPresent("key")).andReturn(Boolean.TRUE);
-  replay(mock);
+  when(mock.getIfPresent("key")).thenReturn(Boolean.TRUE);
   assertSame(Boolean.TRUE,forward.getIfPresent("key"));
-  verify(mock);
 }

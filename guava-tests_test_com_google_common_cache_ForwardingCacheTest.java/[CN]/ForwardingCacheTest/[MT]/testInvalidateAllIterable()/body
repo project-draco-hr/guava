@@ -1,6 +1,4 @@
 {
-  mock.invalidateAll(ImmutableList.of("key"));
-  replay(mock);
   forward.invalidateAll(ImmutableList.of("key"));
-  verify(mock);
+  verify(mock).invalidateAll(ImmutableList.of("key"));
 }

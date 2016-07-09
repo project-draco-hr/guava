@@ -1,6 +1,4 @@
 {
-  expect(mock.size()).andReturn(0L);
-  replay(mock);
-  forward.size();
-  verify(mock);
+  when(mock.size()).thenReturn(0L);
+  assertEquals(0,forward.size());
 }

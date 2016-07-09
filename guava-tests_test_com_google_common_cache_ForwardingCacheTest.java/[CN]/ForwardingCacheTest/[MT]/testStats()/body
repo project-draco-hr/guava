@@ -1,6 +1,4 @@
 {
-  expect(mock.stats()).andReturn(null);
-  replay(mock);
+  when(mock.stats()).thenReturn(null);
   assertNull(forward.stats());
-  verify(mock);
 }

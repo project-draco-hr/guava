@@ -1,6 +1,4 @@
 {
-  expect(mock.getAllPresent(ImmutableList.of("key"))).andReturn(ImmutableMap.of("key",Boolean.TRUE));
-  replay(mock);
+  when(mock.getAllPresent(ImmutableList.of("key"))).thenReturn(ImmutableMap.of("key",Boolean.TRUE));
   assertEquals(ImmutableMap.of("key",Boolean.TRUE),forward.getAllPresent(ImmutableList.of("key")));
-  verify(mock);
 }

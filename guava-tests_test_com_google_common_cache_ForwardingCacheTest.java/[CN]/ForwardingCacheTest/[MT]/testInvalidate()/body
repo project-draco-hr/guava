@@ -1,6 +1,4 @@
 {
-  mock.invalidate("key");
-  replay(mock);
   forward.invalidate("key");
-  verify(mock);
+  verify(mock).invalidate("key");
 }

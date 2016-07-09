@@ -1,6 +1,4 @@
 {
-  mock.invalidateAll();
-  replay(mock);
   forward.invalidateAll();
-  verify(mock);
+  verify(mock).invalidateAll();
 }

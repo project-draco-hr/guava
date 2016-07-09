@@ -1,6 +1,4 @@
 {
-  mock.refresh("key");
-  replay(mock);
   forward.refresh("key");
-  verify(mock);
+  verify(mock).refresh("key");
 }

@@ -1,6 +1,4 @@
 {
-  expect(mock.asMap()).andReturn(null);
-  replay(mock);
+  when(mock.asMap()).thenReturn(null);
   assertNull(forward.asMap());
-  verify(mock);
 }
