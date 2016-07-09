@@ -10,5 +10,5 @@
       fail("Threw exception");
     }
   }
-  verify(closeable);
+  verify(closeable).close();
 }

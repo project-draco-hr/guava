@@ -1,3 +1,0 @@
-{
-  mockCloseable=createStrictMock(Closeable.class);
-}

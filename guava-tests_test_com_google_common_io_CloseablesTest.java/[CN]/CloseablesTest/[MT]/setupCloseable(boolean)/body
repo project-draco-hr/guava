@@ -1,8 +1,6 @@
 {
-  reset(mockCloseable);
-  mockCloseable.close();
+  mockCloseable=mock(Closeable.class);
   if (shouldThrow) {
-    expectThrown();
+    doThrow(new IOException("This should only appear in the logs. It should not be rethrown.")).when(mockCloseable).close();
   }
-  replay(mockCloseable);
 }

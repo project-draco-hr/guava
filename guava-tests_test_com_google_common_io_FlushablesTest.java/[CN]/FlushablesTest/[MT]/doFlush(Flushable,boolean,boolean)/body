@@ -10,5 +10,5 @@
       fail("Threw exception");
     }
   }
-  verify(flushable);
+  verify(flushable).flush();
 }
