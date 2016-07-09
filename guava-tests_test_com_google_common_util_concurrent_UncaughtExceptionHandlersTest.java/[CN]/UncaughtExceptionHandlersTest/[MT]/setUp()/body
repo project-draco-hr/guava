@@ -1,3 +1,3 @@
 {
-  runtimeMock=createMock(Runtime.class);
+  runtimeMock=mock(Runtime.class);
 }
