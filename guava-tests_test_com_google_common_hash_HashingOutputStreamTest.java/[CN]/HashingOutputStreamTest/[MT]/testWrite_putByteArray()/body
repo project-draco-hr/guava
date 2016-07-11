@@ -1,9 +1,8 @@
 {
   byte[] buf=new byte[]{'y','a','m','s'};
-  EasyMock.expect(hasher.putBytes(buf,0,buf.length)).andReturn(hasher).once();
-  EasyMock.replay(hasher);
   HashingOutputStream out=new HashingOutputStream(hashFunction,buffer);
   out.write(buf);
-  EasyMock.verify(hashFunction);
-  EasyMock.verify(hasher);
+  verify(hashFunction).newHasher();
+  verify(hasher).putBytes(buf,0,buf.length);
+  verifyNoMoreInteractions(hashFunction,hasher);
 }

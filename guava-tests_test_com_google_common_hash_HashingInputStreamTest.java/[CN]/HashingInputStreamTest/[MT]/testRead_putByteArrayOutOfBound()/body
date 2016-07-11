@@ -2,14 +2,13 @@
   byte[] buf=new byte[100];
   byte[] expectedBytes=buf.clone();
   System.arraycopy(testBytes,0,expectedBytes,0,testBytes.length);
-  EasyMock.expect(hasher.putBytes(aryEq(expectedBytes),eq(0),eq(4))).andReturn(hasher).once();
-  EasyMock.replay(hasher);
   HashingInputStream in=new HashingInputStream(hashFunction,buffer);
   int numOfByteRead=in.read(buf,0,100);
   assertEquals(4,numOfByteRead);
   for (int i=0; i < numOfByteRead; i++) {
     assertEquals(testBytes[i],buf[i]);
   }
-  EasyMock.verify(hashFunction);
-  EasyMock.verify(hasher);
+  verify(hasher).putBytes(expectedBytes,0,4);
+  verify(hashFunction).newHasher();
+  verifyNoMoreInteractions(hashFunction,hasher);
 }

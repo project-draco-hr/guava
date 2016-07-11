@@ -1,8 +1,7 @@
 {
   super.setUp();
-  hasher=EasyMock.createMock(Hasher.class);
-  hashFunction=EasyMock.createMock(HashFunction.class);
+  hasher=mock(Hasher.class);
+  hashFunction=mock(HashFunction.class);
   buffer=new ByteArrayInputStream(testBytes);
-  EasyMock.expect(hashFunction.newHasher()).andReturn(hasher).once();
-  EasyMock.replay(hashFunction);
+  when(hashFunction.newHasher()).thenReturn(hasher);
 }

@@ -1,9 +1,8 @@
 {
   int b='q';
-  EasyMock.expect(hasher.putByte((byte)b)).andReturn(hasher).once();
-  EasyMock.replay(hasher);
   HashingOutputStream out=new HashingOutputStream(hashFunction,buffer);
   out.write(b);
-  EasyMock.verify(hashFunction);
-  EasyMock.verify(hasher);
+  verify(hashFunction).newHasher();
+  verify(hasher).putByte((byte)b);
+  verifyNoMoreInteractions(hashFunction,hasher);
 }

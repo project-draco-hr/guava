@@ -1,6 +1,4 @@
 {
-  EasyMock.expect(hasher.putBytes(aryEq(Arrays.copyOfRange(testBytes,0,3)),eq(0),eq(3))).andReturn(hasher).once();
-  EasyMock.replay(hasher);
   HashingInputStream in=new HashingInputStream(hashFunction,buffer);
   byte[] buf=new byte[3];
   int numOfByteRead=in.read(buf,0,3);
@@ -8,6 +6,7 @@
   for (int i=0; i < numOfByteRead; i++) {
     assertEquals(testBytes[i],buf[i]);
   }
-  EasyMock.verify(hashFunction);
-  EasyMock.verify(hasher);
+  verify(hasher).putBytes(Arrays.copyOf(testBytes,3),0,3);
+  verify(hashFunction).newHasher();
+  verifyNoMoreInteractions(hashFunction,hasher);
 }
