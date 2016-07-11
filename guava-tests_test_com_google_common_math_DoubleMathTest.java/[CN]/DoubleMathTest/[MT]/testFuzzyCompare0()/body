@@ -1,0 +1,3 @@
+{
+  runTestFuzzyCompare(0);
+}

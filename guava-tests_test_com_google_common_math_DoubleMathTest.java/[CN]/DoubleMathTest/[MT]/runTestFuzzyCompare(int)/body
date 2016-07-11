@@ -1,0 +1,10 @@
+{
+  double tolerance=get(TOLERANCE_CANDIDATES,toleranceIndex);
+  for (  double a : ALL_DOUBLE_CANDIDATES) {
+    for (    double b : ALL_DOUBLE_CANDIDATES) {
+      int expected=DoubleMath.fuzzyEquals(a,b,tolerance) ? 0 : Double.compare(a,b);
+      int actual=DoubleMath.fuzzyCompare(a,b,tolerance);
+      assertEquals(Integer.signum(expected),Integer.signum(actual));
+    }
+  }
+}

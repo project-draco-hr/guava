@@ -1,0 +1,3 @@
+{
+  assertEquals(7,size(TOLERANCE_CANDIDATES));
+}
