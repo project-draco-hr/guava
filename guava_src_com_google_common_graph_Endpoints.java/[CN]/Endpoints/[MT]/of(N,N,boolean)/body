@@ -1,3 +1,0 @@
-{
-  return isDirected ? ofDirected(nodeA,nodeB) : ofUndirected(nodeA,nodeB);
-}

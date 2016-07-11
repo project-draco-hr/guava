@@ -5,7 +5,8 @@
     checkState(copy.addNode(node));
   }
   for (  E edge : graph.edges()) {
-    checkState(addEdge(copy,edge,graph.incidentNodes(edge)));
+    Endpoints<N> endpoints=graph.incidentNodes(edge);
+    checkState(copy.addEdge(edge,endpoints.nodeA(),endpoints.nodeB()));
   }
   return copy;
 }

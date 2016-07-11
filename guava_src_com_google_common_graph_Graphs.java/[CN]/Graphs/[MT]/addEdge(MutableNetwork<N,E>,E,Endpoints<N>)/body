@@ -1,7 +1,0 @@
-{
-  checkNotNull(graph,"graph");
-  checkNotNull(edge,"edge");
-  checkNotNull(endpoints,"endpoints");
-  checkArgument(endpoints.isDirected() == graph.isDirected(),ENDPOINTS_GRAPH_DIRECTEDNESS,endpoints.isDirected(),graph.isDirected());
-  return graph.addEdge(edge,endpoints.nodeA(),endpoints.nodeB());
-}

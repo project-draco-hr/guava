@@ -1,6 +1,0 @@
-{
-  MutableNetwork<Integer,String> directedGraph=NetworkBuilder.directed().build();
-  assertThat(addEdge(directedGraph,E12,Endpoints.ofDirected(N1,N2))).isTrue();
-  assertThat(directedGraph.edgesConnecting(N1,N2)).containsExactly(E12);
-  assertThat(directedGraph.edgesConnecting(N2,N1)).isEmpty();
-}

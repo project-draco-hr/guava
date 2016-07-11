@@ -1,5 +1,0 @@
-{
-  MutableNetwork<Integer,String> undirectedGraph=NetworkBuilder.undirected().build();
-  assertThat(addEdge(undirectedGraph,E11,Endpoints.ofUndirected(N1,N1))).isTrue();
-  assertThat(undirectedGraph.edgesConnecting(N1,N1)).containsExactly(E11);
-}
