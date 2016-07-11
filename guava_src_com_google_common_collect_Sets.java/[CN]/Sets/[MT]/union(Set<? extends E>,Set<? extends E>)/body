@@ -9,7 +9,7 @@
     @Override public boolean isEmpty(){
       return set1.isEmpty() && set2.isEmpty();
     }
-    @Override public Iterator<E> iterator(){
+    @Override public UnmodifiableIterator<E> iterator(){
       return Iterators.unmodifiableIterator(Iterators.concat(set1.iterator(),set2minus1.iterator()));
     }
     @Override public boolean contains(    Object object){

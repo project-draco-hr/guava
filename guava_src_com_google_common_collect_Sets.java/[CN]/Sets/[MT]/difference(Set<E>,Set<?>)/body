@@ -3,7 +3,7 @@
   checkNotNull(set2,"set2");
   final Predicate<Object> notInSet2=Predicates.not(Predicates.in(set2));
   return new SetView<E>(){
-    @Override public Iterator<E> iterator(){
+    @Override public UnmodifiableIterator<E> iterator(){
       return Iterators.filter(set1.iterator(),notInSet2);
     }
     @Override public int size(){

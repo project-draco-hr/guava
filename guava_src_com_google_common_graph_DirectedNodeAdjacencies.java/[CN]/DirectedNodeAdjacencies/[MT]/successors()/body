@@ -1,6 +1,6 @@
 {
   return new AbstractSet<N>(){
-    @Override public Iterator<N> iterator(){
+    @Override public UnmodifiableIterator<N> iterator(){
       final Iterator<Entry<N,Adjacency>> entries=adjacentNodes.entrySet().iterator();
       return new AbstractIterator<N>(){
         @Override protected N computeNext(){

@@ -2,7 +2,7 @@
   checkNotNull(set1,"set1");
   checkNotNull(set2,"set2");
   return new SetView<E>(){
-    @Override public Iterator<E> iterator(){
+    @Override public UnmodifiableIterator<E> iterator(){
       final Iterator<? extends E> itr1=set1.iterator();
       final Iterator<? extends E> itr2=set2.iterator();
       return new AbstractIterator<E>(){
