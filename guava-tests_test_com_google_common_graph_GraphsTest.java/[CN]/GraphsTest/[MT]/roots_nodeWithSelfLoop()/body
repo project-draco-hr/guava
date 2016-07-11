@@ -1,6 +1,0 @@
-{
-  MutableNetwork<Integer,String> directedGraph=NetworkBuilder.directed().build();
-  directedGraph.addNode(N1);
-  directedGraph.addEdge(E11,N1,N1);
-  assertThat(roots(directedGraph)).isEmpty();
-}

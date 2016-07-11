@@ -1,4 +1,0 @@
-{
-  Network<Integer,String> directedGraph=NetworkBuilder.directed().build();
-  assertThat(roots(directedGraph)).isEmpty();
-}

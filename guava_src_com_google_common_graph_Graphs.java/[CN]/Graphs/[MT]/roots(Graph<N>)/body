@@ -1,8 +1,0 @@
-{
-  return Sets.filter(graph.nodes(),new Predicate<N>(){
-    @Override public boolean apply(    N node){
-      return graph.predecessors(node).isEmpty();
-    }
-  }
-);
-}
