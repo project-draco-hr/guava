@@ -1,15 +1,5 @@
 {
-  @SuppressWarnings("unchecked") final Map<String,Boolean> map=createMock(Map.class);
-  @SuppressWarnings("unchecked") final Set<Map.Entry<String,Boolean>> entrySet=createMock(Set.class);
-  expect(map.containsKey(anyObject())).andReturn(false).anyTimes();
-  expect(map.get(anyObject())).andReturn(null).anyTimes();
-  expect(map.isEmpty()).andReturn(true).anyTimes();
-  expect(map.remove(anyObject())).andReturn(null).anyTimes();
-  expect(map.size()).andReturn(0).anyTimes();
-  expect(entrySet.iterator()).andReturn(Iterators.<Entry<String,Boolean>>emptyIterator()).anyTimes();
-  map.clear();
-  expectLastCall().anyTimes();
-  replay(map,entrySet);
+  @SuppressWarnings("unchecked") final Map<String,Boolean> map=mock(Map.class);
   Map<String,Boolean> forward=new ForwardingMap<String,Boolean>(){
     @Override protected Map<String,Boolean> delegate(){
       return map;
@@ -17,7 +7,7 @@
     @Override public Set<Entry<String,Boolean>> entrySet(){
       return new StandardEntrySet(){
         @Override public Iterator<Entry<String,Boolean>> iterator(){
-          return entrySet.iterator();
+          return Iterators.emptyIterator();
         }
       }
 ;
@@ -25,5 +15,11 @@
   }
 ;
   callAllPublicMethods(Set.class,forward.entrySet());
-  verify(map,entrySet);
+  verify(map,atLeast(0)).clear();
+  verify(map,atLeast(0)).containsKey(anyObject());
+  verify(map,atLeast(0)).get(anyObject());
+  verify(map,atLeast(0)).isEmpty();
+  verify(map,atLeast(0)).remove(anyObject());
+  verify(map,atLeast(0)).size();
+  verifyNoMoreInteractions(map);
 }

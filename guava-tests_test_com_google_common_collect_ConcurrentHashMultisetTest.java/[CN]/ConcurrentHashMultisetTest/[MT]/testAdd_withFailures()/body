@@ -1,16 +1,14 @@
 {
   AtomicInteger existing=new AtomicInteger(12);
   AtomicInteger existingZero=new AtomicInteger(0);
-  expect(backingMap.get(KEY)).andReturn(null);
-  expect(backingMap.putIfAbsent(eq(KEY),isA(AtomicInteger.class))).andReturn(existingZero);
-  expect(backingMap.replace(eq(KEY),eq(existingZero),isA(AtomicInteger.class))).andReturn(false);
-  expect(backingMap.putIfAbsent(eq(KEY),isA(AtomicInteger.class))).andReturn(existing);
-  expect(backingMap.get(KEY)).andReturn(existingZero);
-  expect(backingMap.replace(eq(KEY),eq(existingZero),isA(AtomicInteger.class))).andReturn(false);
-  expect(backingMap.putIfAbsent(eq(KEY),isA(AtomicInteger.class))).andReturn(existing);
-  expect(backingMap.get(KEY)).andReturn(existing);
-  replay();
+  when(backingMap.get(KEY)).thenReturn(null);
+  when(backingMap.putIfAbsent(eq(KEY),isA(AtomicInteger.class))).thenReturn(existingZero);
+  when(backingMap.replace(eq(KEY),eq(existingZero),isA(AtomicInteger.class))).thenReturn(false);
+  when(backingMap.putIfAbsent(eq(KEY),isA(AtomicInteger.class))).thenReturn(existing);
+  when(backingMap.get(KEY)).thenReturn(existingZero);
+  when(backingMap.replace(eq(KEY),eq(existingZero),isA(AtomicInteger.class))).thenReturn(false);
+  when(backingMap.putIfAbsent(eq(KEY),isA(AtomicInteger.class))).thenReturn(existing);
+  when(backingMap.get(KEY)).thenReturn(existing);
   assertEquals(multiset.add(KEY,3),12);
   assertEquals(15,existing.get());
-  verify();
 }

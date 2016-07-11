@@ -2,9 +2,7 @@
   int initialCount=20;
   int countToSet=40;
   AtomicInteger current=new AtomicInteger(initialCount);
-  expect(backingMap.get(KEY)).andReturn(current);
-  replay();
+  when(backingMap.get(KEY)).thenReturn(current);
   assertEquals(initialCount,multiset.setCount(KEY,countToSet));
   assertEquals(countToSet,current.get());
-  verify();
 }

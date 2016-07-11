@@ -1,7 +1,5 @@
 {
   final int COUNT=12;
-  expect(backingMap.get(KEY)).andReturn(new AtomicInteger(COUNT));
-  replay();
+  when(backingMap.get(KEY)).thenReturn(new AtomicInteger(COUNT));
   assertEquals(COUNT,multiset.count(KEY));
-  verify();
 }

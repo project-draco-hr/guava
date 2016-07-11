@@ -10,12 +10,10 @@ class TestHashSet<E> extends HashSet<E> {
       return super.toArray(a);
     }
   }
-  SortedMultiset<String> toCopy=EasyMock.createMock(SortedMultiset.class);
+  SortedMultiset<String> toCopy=mock(SortedMultiset.class);
   TestHashSet<Entry<String>> entrySet=new TestHashSet<Entry<String>>();
-  EasyMock.expect((Comparator<Comparable>)toCopy.comparator()).andReturn(Ordering.natural());
-  EasyMock.expect(toCopy.entrySet()).andReturn(entrySet);
-  EasyMock.replay(toCopy);
-  ImmutableSortedMultiset<String> multiset=ImmutableSortedMultiset.copyOfSorted(toCopy);
-  EasyMock.verify(toCopy);
+  when((Comparator<Comparable<String>>)toCopy.comparator()).thenReturn(Ordering.<Comparable<String>>natural());
+  when(toCopy.entrySet()).thenReturn(entrySet);
+  ImmutableSortedMultiset<String> unused=ImmutableSortedMultiset.copyOfSorted(toCopy);
   assertTrue(entrySet.toArrayCalled);
 }

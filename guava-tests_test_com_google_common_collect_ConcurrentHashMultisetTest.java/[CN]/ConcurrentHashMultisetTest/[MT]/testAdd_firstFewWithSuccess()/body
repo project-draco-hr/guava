@@ -1,8 +1,6 @@
 {
   final int COUNT=400;
-  expect(backingMap.get(KEY)).andReturn(null);
-  expect(backingMap.putIfAbsent(eq(KEY),isA(AtomicInteger.class))).andReturn(null);
-  replay();
+  when(backingMap.get(KEY)).thenReturn(null);
+  when(backingMap.putIfAbsent(eq(KEY),isA(AtomicInteger.class))).thenReturn(null);
   assertEquals(0,multiset.add(KEY,COUNT));
-  verify();
 }

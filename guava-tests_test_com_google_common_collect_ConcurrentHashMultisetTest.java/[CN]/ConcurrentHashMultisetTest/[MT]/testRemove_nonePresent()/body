@@ -1,6 +1,4 @@
 {
-  expect(backingMap.get(KEY)).andReturn(null);
-  replay();
+  when(backingMap.get(KEY)).thenReturn(null);
   assertEquals(0,multiset.remove(KEY,400));
-  verify();
 }
