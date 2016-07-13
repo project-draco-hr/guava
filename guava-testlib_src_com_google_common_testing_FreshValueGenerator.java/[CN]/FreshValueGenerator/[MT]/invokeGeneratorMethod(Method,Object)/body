@@ -3,9 +3,11 @@
     return generator.invoke(this,args);
   }
  catch (  InvocationTargetException e) {
-    throw Throwables.propagate(e.getCause());
+    throwIfUnchecked(e.getCause());
+    throw new RuntimeException(e.getCause());
   }
 catch (  Exception e) {
-    throw Throwables.propagate(e);
+    throwIfUnchecked(e);
+    throw new RuntimeException(e);
   }
 }

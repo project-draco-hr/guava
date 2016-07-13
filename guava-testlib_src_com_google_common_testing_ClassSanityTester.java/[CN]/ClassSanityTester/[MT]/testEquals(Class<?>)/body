@@ -3,6 +3,7 @@
     doTestEquals(cls);
   }
  catch (  Exception e) {
-    throw Throwables.propagate(e);
+    throwIfUnchecked(e);
+    throw new RuntimeException(e);
   }
 }

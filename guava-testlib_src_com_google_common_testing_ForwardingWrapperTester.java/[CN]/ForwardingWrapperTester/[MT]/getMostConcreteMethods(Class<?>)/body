@@ -5,7 +5,8 @@
       methods[i]=type.getMethod(methods[i].getName(),methods[i].getParameterTypes());
     }
  catch (    Exception e) {
-      throw Throwables.propagate(e);
+      throwIfUnchecked(e);
+      throw new RuntimeException(e);
     }
   }
   return methods;
