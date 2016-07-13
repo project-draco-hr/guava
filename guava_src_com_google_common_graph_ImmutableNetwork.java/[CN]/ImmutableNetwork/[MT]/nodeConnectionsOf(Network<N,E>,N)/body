@@ -2,7 +2,7 @@
   if (graph.isDirected()) {
     Map<E,N> inEdgeMap=Maps.asMap(graph.inEdges(node),sourceNodeFn(graph));
     Map<E,N> outEdgeMap=Maps.asMap(graph.outEdges(node),targetNodeFn(graph));
-    int selfLoopCount=graph.allowsSelfLoops() ? Sets.intersection(inEdgeMap.keySet(),outEdgeMap.keySet()).size() : 0;
+    int selfLoopCount=graph.allowsSelfLoops() ? IntMath.saturatedAdd(inEdgeMap.size() - graph.degree(node),outEdgeMap.size()) : 0;
     return graph.allowsParallelEdges() ? DirectedMultiNodeConnections.ofImmutable(inEdgeMap,outEdgeMap,selfLoopCount) : DirectedNodeConnections.ofImmutable(inEdgeMap,outEdgeMap,selfLoopCount);
   }
  else {
