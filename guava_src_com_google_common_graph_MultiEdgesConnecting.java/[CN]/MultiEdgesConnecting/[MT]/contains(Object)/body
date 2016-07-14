@@ -1,0 +1,3 @@
+{
+  return targetNode.equals(outEdgeToNode.get(edge));
+}

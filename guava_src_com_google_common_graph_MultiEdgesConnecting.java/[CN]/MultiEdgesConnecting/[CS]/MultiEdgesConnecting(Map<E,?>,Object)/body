@@ -1,0 +1,4 @@
+{
+  this.outEdgeToNode=checkNotNull(outEdgeToNode);
+  this.targetNode=checkNotNull(targetNode);
+}

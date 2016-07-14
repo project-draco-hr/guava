@@ -1,0 +1,8 @@
+{
+  Multiset<N> adjacentNodes=getReference(adjacentNodesReference);
+  if (adjacentNodes == null) {
+    adjacentNodes=HashMultiset.create(incidentEdgeMap.values());
+    adjacentNodesReference=new SoftReference<Multiset<N>>(adjacentNodes);
+  }
+  return adjacentNodes;
+}

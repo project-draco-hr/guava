@@ -1,0 +1,8 @@
+{
+  Multiset<N> successors=getReference(successorsReference);
+  if (successors == null) {
+    successors=HashMultiset.create(outEdgeMap.values());
+    successorsReference=new SoftReference<Multiset<N>>(successors);
+  }
+  return successors;
+}

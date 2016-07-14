@@ -1,8 +1,3 @@
 {
-  Multiset<N> predecessors=getReference(predecessorsReference);
-  if (predecessors == null) {
-    predecessors=HashMultiset.create(inEdgeMap.values());
-    predecessorsReference=new SoftReference<Multiset<N>>(predecessors);
-  }
-  return Collections.unmodifiableSet(predecessors.elementSet());
+  return Collections.unmodifiableSet(predecessorsMultiset().elementSet());
 }
