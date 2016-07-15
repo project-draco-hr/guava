@@ -12,7 +12,7 @@
   if (!nodes().equals(other.nodes()) || !edges().equals(other.edges())) {
     return false;
   }
-  for (  Object edge : edges()) {
+  for (  E edge : edges()) {
     if (!incidentNodes(edge).equals(other.incidentNodes(edge))) {
       return false;
     }

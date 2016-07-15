@@ -1,3 +1,5 @@
 {
-  return String.format(GRAPH_STRING_FORMAT,getPropertiesString(),nodes(),endpointsString());
+  String propertiesString=String.format("isDirected: %s, allowsSelfLoops: %s",isDirected(),allowsSelfLoops());
+  String endpointsString=String.format("{%s}",Joiner.on(", ").join(Graphs.endpointsInternal(this)));
+  return String.format(GRAPH_STRING_FORMAT,propertiesString,nodes(),endpointsString);
 }

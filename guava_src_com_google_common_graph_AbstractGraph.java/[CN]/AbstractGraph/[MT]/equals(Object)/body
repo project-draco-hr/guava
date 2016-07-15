@@ -15,7 +15,7 @@
   if (!nodes().equals(other.nodes())) {
     return false;
   }
-  for (  Object node : nodes()) {
+  for (  N node : nodes()) {
     if (!successors(node).equals(other.successors(node))) {
       return false;
     }

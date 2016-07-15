@@ -1,3 +1,0 @@
-{
-  return String.format("{%s}",Joiner.on(", ").join(Graphs.endpointsInternal(this)));
-}

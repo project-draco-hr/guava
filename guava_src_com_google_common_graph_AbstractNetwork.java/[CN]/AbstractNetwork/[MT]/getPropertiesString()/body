@@ -1,3 +1,0 @@
-{
-  return String.format("isDirected: %s, allowsParallelEdges: %s, allowsSelfLoops: %s",isDirected(),allowsParallelEdges(),allowsSelfLoops());
-}

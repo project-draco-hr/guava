@@ -1,3 +1,0 @@
-{
-  return String.format("isDirected: %s, allowsSelfLoops: %s",isDirected(),allowsSelfLoops());
-}

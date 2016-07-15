@@ -1,8 +1,9 @@
 {
-  return Maps.asMap(nodes(),new Function<N,Set<E>>(){
+  Function<N,Set<E>> nodeToOutEdges=new Function<N,Set<E>>(){
     @Override public Set<E> apply(    N node){
       return outEdges(node);
     }
   }
-).hashCode();
+;
+  return Maps.asMap(nodes(),nodeToOutEdges).hashCode();
 }
