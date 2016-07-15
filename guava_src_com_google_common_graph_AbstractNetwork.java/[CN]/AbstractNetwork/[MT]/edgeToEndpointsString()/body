@@ -1,8 +1,7 @@
 {
-  checkNotNull(graph,"graph");
   return new Function<Object,String>(){
     @Override public String apply(    Object edge){
-      return graph.incidentNodes(edge).toString();
+      return incidentNodes(edge).toString();
     }
   }
 ;

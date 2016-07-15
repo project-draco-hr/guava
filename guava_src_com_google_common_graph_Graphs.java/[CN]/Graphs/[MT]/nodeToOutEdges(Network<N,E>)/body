@@ -1,9 +1,0 @@
-{
-  checkNotNull(graph,"graph");
-  return Maps.asMap(graph.nodes(),new Function<N,Set<E>>(){
-    @Override public Set<E> apply(    N node){
-      return graph.outEdges(node);
-    }
-  }
-);
-}

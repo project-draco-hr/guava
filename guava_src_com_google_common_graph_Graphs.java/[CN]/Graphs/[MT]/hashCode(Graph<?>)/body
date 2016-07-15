@@ -1,6 +1,0 @@
-{
-  if (graph instanceof Network) {
-    return hashCode(castToNetwork(graph));
-  }
-  return nodeToSuccessorNodes(graph).hashCode();
-}

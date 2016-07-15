@@ -1,9 +1,0 @@
-{
-  checkNotNull(graph,"graph");
-  return Maps.asMap(graph.nodes(),new Function<N,Set<N>>(){
-    @Override public Set<N> apply(    N node){
-      return graph.successors(node);
-    }
-  }
-);
-}

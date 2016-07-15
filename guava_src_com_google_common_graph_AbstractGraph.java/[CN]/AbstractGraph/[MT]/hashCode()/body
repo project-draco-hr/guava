@@ -1,3 +1,8 @@
 {
-  return Graphs.hashCode(this);
+  return Maps.asMap(nodes(),new Function<N,Set<N>>(){
+    @Override public Set<N> apply(    N node){
+      return successors(node);
+    }
+  }
+).hashCode();
 }

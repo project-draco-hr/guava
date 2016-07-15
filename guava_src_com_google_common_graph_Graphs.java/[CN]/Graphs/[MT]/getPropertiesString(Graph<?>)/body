@@ -1,6 +1,0 @@
-{
-  if (graph instanceof Network) {
-    return getPropertiesString(castToNetwork(graph));
-  }
-  return String.format("isDirected: %s, allowsSelfLoops: %s",graph.isDirected(),graph.allowsSelfLoops());
-}

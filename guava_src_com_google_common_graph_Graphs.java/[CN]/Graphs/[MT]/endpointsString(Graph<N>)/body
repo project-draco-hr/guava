@@ -1,4 +1,0 @@
-{
-  checkNotNull(graph,"graph");
-  return String.format("{%s}",Joiner.on(", ").join(endpointsInternal(graph)));
-}

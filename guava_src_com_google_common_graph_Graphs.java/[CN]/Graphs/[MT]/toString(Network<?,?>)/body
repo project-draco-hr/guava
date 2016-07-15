@@ -1,3 +1,0 @@
-{
-  return String.format(GRAPH_FORMAT,getPropertiesString(graph),graph.nodes(),Maps.asMap(graph.edges(),edgeToEndpointsString(graph)));
-}

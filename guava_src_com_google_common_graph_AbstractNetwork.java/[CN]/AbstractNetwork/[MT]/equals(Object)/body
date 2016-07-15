@@ -1,6 +1,21 @@
 {
-  if (!(object instanceof Network)) {
+  if (obj == this) {
+    return true;
+  }
+  if (!(obj instanceof Network)) {
     return false;
   }
-  return Graphs.equal(this,(Network<?,?>)object);
+  Network<?,?> other=(Network<?,?>)obj;
+  if (isDirected() != other.isDirected()) {
+    return false;
+  }
+  if (!nodes().equals(other.nodes()) || !edges().equals(other.edges())) {
+    return false;
+  }
+  for (  Object edge : edges()) {
+    if (!incidentNodes(edge).equals(other.incidentNodes(edge))) {
+      return false;
+    }
+  }
+  return true;
 }
