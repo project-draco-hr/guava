@@ -1,4 +1,5 @@
 {
+  addNode(N1);
   ImmutableSet<Integer> nodes=ImmutableSet.copyOf(graph.nodes());
   assertFalse(graph.removeNode(NODE_NOT_IN_GRAPH));
   assertThat(graph.nodes()).containsExactlyElementsIn(nodes);
