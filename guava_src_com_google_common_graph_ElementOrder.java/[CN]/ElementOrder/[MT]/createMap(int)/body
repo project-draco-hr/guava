@@ -1,0 +1,12 @@
+{
+switch (type) {
+case UNORDERED:
+    return Maps.newHashMapWithExpectedSize(expectedSize);
+case INSERTION:
+  return Maps.newLinkedHashMapWithExpectedSize(expectedSize);
+case SORTED:
+return Maps.newTreeMap(comparator());
+default :
+throw new IllegalArgumentException("Unrecognized ElementOrder type");
+}
+}
