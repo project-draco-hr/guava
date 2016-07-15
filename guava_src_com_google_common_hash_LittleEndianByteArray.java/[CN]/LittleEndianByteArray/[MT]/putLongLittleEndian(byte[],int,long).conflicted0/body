@@ -1,3 +1,4 @@
 {
-  theUnsafe.putLong(array,(long)offset + BYTE_ARRAY_BASE_OFFSET,value);
+  long littleEndianValue=Long.reverseBytes(value);
+  theUnsafe.putLong(array,(long)offset + BYTE_ARRAY_BASE_OFFSET,littleEndianValue);
 }
