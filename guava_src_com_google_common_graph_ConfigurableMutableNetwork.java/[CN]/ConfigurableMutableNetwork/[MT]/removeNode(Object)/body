@@ -1,6 +1,6 @@
 {
   checkNotNull(node,"node");
-  NodeConnections<N,E> connections=nodeConnections.get(node);
+  NetworkConnections<N,E> connections=nodeConnections.get(node);
   if (connections == null) {
     return false;
   }

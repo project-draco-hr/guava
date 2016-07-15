@@ -1,3 +1,0 @@
-{
-  return new UndirectedNodeAdjacencies<N>(new HashSet<N>(INNER_CAPACITY,INNER_LOAD_FACTOR));
-}

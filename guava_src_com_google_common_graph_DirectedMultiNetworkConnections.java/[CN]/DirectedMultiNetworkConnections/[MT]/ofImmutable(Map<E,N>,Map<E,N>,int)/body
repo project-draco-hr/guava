@@ -1,0 +1,3 @@
+{
+  return new DirectedMultiNetworkConnections<N,E>(ImmutableMap.copyOf(inEdges),ImmutableMap.copyOf(outEdges),selfLoopCount);
+}

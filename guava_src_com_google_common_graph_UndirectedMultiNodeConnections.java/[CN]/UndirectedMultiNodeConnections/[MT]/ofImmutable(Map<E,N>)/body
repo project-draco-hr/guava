@@ -1,3 +1,0 @@
-{
-  return new UndirectedMultiNodeConnections<N,E>(ImmutableMap.copyOf(incidentEdges));
-}

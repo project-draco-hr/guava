@@ -1,3 +1,0 @@
-{
-  return new UndirectedNodeConnections<N,E>(HashBiMap.<E,N>create(EXPECTED_DEGREE));
-}

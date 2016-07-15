@@ -1,0 +1,3 @@
+{
+  return graph.isDirected() ? DirectedGraphConnections.ofImmutable(createAdjacencyMap(graph,node),graph.predecessors(node).size(),graph.successors(node).size()) : UndirectedGraphConnections.ofImmutable(graph.adjacentNodes(node));
+}

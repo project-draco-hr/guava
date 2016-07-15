@@ -1,5 +1,5 @@
 {
-  NodeConnections<N,E> connections=newNodeConnections();
+  NetworkConnections<N,E> connections=newConnections();
   checkState(nodeConnections.put(node,connections) == null);
   return connections;
 }

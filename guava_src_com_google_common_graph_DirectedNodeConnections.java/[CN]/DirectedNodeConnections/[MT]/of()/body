@@ -1,3 +1,0 @@
-{
-  return new DirectedNodeConnections<N,E>(HashBiMap.<E,N>create(EXPECTED_DEGREE),HashBiMap.<E,N>create(EXPECTED_DEGREE),0);
-}

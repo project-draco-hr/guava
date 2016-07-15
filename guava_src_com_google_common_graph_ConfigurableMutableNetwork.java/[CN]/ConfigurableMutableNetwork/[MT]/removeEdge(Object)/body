@@ -4,9 +4,9 @@
   if (nodeA == null) {
     return false;
   }
-  NodeConnections<N,E> connectionsA=nodeConnections.get(nodeA);
+  NetworkConnections<N,E> connectionsA=nodeConnections.get(nodeA);
   N nodeB=connectionsA.oppositeNode(edge);
-  NodeConnections<N,E> connectionsB=nodeConnections.get(nodeB);
+  NetworkConnections<N,E> connectionsB=nodeConnections.get(nodeB);
   connectionsA.removeOutEdge(edge);
   connectionsB.removeInEdge(edge,allowsSelfLoops() && nodeA.equals(nodeB));
   edgeToReferenceNode.remove(edge);

@@ -1,9 +1,0 @@
-{
-  this.isDirected=builder.directed;
-  this.allowsParallelEdges=builder.allowsParallelEdges;
-  this.allowsSelfLoops=builder.allowsSelfLoops;
-  this.nodeOrder=builder.nodeOrder;
-  this.edgeOrder=builder.edgeOrder;
-  this.nodeConnections=(nodeConnections instanceof TreeMap) ? new MapRetrievalCache<N,NodeConnections<N,E>>(nodeConnections) : new MapIteratorCache<N,NodeConnections<N,E>>(nodeConnections);
-  this.edgeToReferenceNode=new MapIteratorCache<E,N>(edgeToReferenceNode);
-}

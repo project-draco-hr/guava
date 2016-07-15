@@ -1,3 +1,0 @@
-{
-  return new DirectedMultiNodeConnections<N,E>(ImmutableMap.copyOf(inEdges),ImmutableMap.copyOf(outEdges),selfLoopCount);
-}

@@ -1,0 +1,3 @@
+{
+  return new DirectedMultiNetworkConnections<N,E>(new HashMap<E,N>(INNER_CAPACITY,INNER_LOAD_FACTOR),new HashMap<E,N>(INNER_CAPACITY,INNER_LOAD_FACTOR),0);
+}

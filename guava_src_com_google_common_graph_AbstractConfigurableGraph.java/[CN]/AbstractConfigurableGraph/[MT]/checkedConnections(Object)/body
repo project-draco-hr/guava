@@ -1,6 +1,6 @@
 {
   checkNotNull(node,"node");
-  NodeAdjacencies<N> connections=nodeConnections.get(node);
+  GraphConnections<N> connections=nodeConnections.get(node);
   checkArgument(connections != null,NODE_NOT_IN_GRAPH,node);
   return connections;
 }

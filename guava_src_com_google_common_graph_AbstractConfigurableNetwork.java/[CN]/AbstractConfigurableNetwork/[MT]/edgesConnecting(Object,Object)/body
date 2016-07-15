@@ -1,5 +1,5 @@
 {
-  NodeConnections<N,E> connectionsA=checkedConnections(nodeA);
+  NetworkConnections<N,E> connectionsA=checkedConnections(nodeA);
   if (!allowsSelfLoops && nodeA.equals(nodeB)) {
     return ImmutableSet.of();
   }

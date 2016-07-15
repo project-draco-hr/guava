@@ -1,3 +1,0 @@
-{
-  return isDirected() ? DirectedNodeAdjacencies.<N>of() : UndirectedNodeAdjacencies.<N>of();
-}

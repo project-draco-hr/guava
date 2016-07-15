@@ -1,0 +1,3 @@
+{
+  return new UndirectedMultiNetworkConnections<N,E>(ImmutableMap.copyOf(incidentEdges));
+}

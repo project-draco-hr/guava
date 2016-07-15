@@ -1,6 +1,6 @@
 {
   checkNotNull(node,"node");
-  NodeAdjacencies<N> connections=nodeConnections.get(node);
+  GraphConnections<N> connections=nodeConnections.get(node);
   if (connections == null) {
     return false;
   }

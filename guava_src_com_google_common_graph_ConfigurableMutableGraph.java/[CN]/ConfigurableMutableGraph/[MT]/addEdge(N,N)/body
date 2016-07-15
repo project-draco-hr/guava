@@ -1,7 +1,7 @@
 {
   checkNotNull(nodeA,"nodeA");
   checkNotNull(nodeB,"nodeB");
-  NodeAdjacencies<N> connectionsA=nodeConnections.get(nodeA);
+  GraphConnections<N> connectionsA=nodeConnections.get(nodeA);
   if (connectionsA != null && connectionsA.successors().contains(nodeB)) {
     return false;
   }
@@ -13,7 +13,7 @@
     connectionsA=addNodeInternal(nodeA);
   }
   connectionsA.addSuccessor(nodeB);
-  NodeAdjacencies<N> connectionsB=nodeConnections.get(nodeB);
+  GraphConnections<N> connectionsB=nodeConnections.get(nodeB);
   if (connectionsB == null) {
     connectionsB=addNodeInternal(nodeB);
   }

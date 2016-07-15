@@ -1,0 +1,3 @@
+{
+  return isDirected() ? allowsParallelEdges() ? DirectedMultiNetworkConnections.<N,E>of() : DirectedNetworkConnections.<N,E>of() : allowsParallelEdges() ? UndirectedMultiNetworkConnections.<N,E>of() : UndirectedNetworkConnections.<N,E>of();
+}

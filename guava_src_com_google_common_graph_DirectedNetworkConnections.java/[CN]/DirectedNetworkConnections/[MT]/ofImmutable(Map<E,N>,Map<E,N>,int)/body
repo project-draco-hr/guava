@@ -1,0 +1,3 @@
+{
+  return new DirectedNetworkConnections<N,E>(ImmutableBiMap.copyOf(inEdges),ImmutableBiMap.copyOf(outEdges),selfLoopCount);
+}

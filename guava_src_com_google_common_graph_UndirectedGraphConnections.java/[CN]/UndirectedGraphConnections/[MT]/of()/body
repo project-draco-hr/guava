@@ -1,0 +1,3 @@
+{
+  return new UndirectedGraphConnections<N>(new HashSet<N>(INNER_CAPACITY,INNER_LOAD_FACTOR));
+}

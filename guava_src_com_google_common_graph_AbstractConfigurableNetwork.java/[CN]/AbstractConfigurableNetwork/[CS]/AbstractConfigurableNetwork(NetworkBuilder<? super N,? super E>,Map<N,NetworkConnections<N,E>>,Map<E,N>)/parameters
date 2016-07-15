@@ -1,0 +1,3 @@
+NetworkBuilder<? super N,? super E> builder
+Map<N,NetworkConnections<N,E>> nodeConnections
+Map<E,N> edgeToReferenceNode
