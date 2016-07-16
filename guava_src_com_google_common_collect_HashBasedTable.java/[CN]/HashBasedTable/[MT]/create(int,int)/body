@@ -1,5 +1,5 @@
 {
   checkNonnegative(expectedCellsPerRow,"expectedCellsPerRow");
-  Map<R,Map<C,V>> backingMap=Maps.newHashMapWithExpectedSize(expectedRows);
+  Map<R,Map<C,V>> backingMap=Maps.newLinkedHashMapWithExpectedSize(expectedRows);
   return new HashBasedTable<R,C,V>(backingMap,new Factory<C,V>(expectedCellsPerRow));
 }
