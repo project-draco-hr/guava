@@ -1,3 +1,3 @@
 {
-  return TreeMultiset.create(contents);
+  return ImmutableSortedMultiset.copyOf(contents);
 }

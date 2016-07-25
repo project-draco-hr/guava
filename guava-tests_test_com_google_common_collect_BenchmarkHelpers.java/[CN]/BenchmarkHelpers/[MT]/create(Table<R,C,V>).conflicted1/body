@@ -1,3 +1,8 @@
 {
-  return HashBasedTable.create(contents);
+  if (contents.isEmpty()) {
+    return ImmutableTable.of();
+  }
+ else {
+    return ArrayTable.create(contents);
+  }
 }

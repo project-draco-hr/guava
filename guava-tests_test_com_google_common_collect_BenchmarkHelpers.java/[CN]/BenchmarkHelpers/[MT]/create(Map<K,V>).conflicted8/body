@@ -1,0 +1,6 @@
+{
+  ConcurrentMap<K,V> newMap=new MapMaker().weakKeys().weakValues().makeMap();
+  checkState(newMap instanceof MapMakerInternalMap);
+  newMap.putAll(map);
+  return newMap;
+}
