@@ -1,3 +1,3 @@
 {
-  return Platform.stringIsNullOrEmpty(string);
+  return string == null || string.isEmpty();
 }
