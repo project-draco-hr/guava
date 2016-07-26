@@ -9,7 +9,7 @@
     columns.put(col,new LinkedHashMap<R,V>());
   }
   int[] cellRowIndices=new int[cellList.size()];
-  int[] cellColumnIndices=new int[cellList.size()];
+  int[] cellColumnInRowIndices=new int[cellList.size()];
   for (int i=0; i < cellList.size(); i++) {
     Cell<R,C,V> cell=cellList.get(i);
     R rowKey=cell.getRowKey();
@@ -17,7 +17,7 @@
     V value=cell.getValue();
     cellRowIndices[i]=rowIndex.get(rowKey);
     Map<C,V> thisRow=rows.get(rowKey);
-    cellColumnIndices[i]=thisRow.size();
+    cellColumnInRowIndices[i]=thisRow.size();
     V oldValue=thisRow.put(columnKey,value);
     if (oldValue != null) {
       throw new IllegalArgumentException("Duplicate value for row=" + rowKey + ", column="+ columnKey+ ": "+ value+ ", "+ oldValue);
@@ -25,7 +25,7 @@
     columns.get(columnKey).put(rowKey,value);
   }
   this.cellRowIndices=cellRowIndices;
-  this.cellColumnIndices=cellColumnIndices;
+  this.cellColumnInRowIndices=cellColumnInRowIndices;
   ImmutableMap.Builder<R,Map<C,V>> rowBuilder=new ImmutableMap.Builder<R,Map<C,V>>(rows.size());
   for (  Map.Entry<R,Map<C,V>> row : rows.entrySet()) {
     rowBuilder.put(row.getKey(),ImmutableMap.copyOf(row.getValue()));

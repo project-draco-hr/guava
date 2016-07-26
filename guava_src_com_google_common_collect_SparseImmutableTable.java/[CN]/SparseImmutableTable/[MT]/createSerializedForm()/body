@@ -1,3 +1,9 @@
 {
+  Map<C,Integer> columnKeyToIndex=Maps.indexMap(columnKeySet());
+  int[] cellColumnIndices=new int[cellSet().size()];
+  int i=0;
+  for (  Cell<R,C,V> cell : cellSet()) {
+    cellColumnIndices[i++]=columnKeyToIndex.get(cell.getColumnKey());
+  }
   return SerializedForm.create(this,cellRowIndices,cellColumnIndices);
 }

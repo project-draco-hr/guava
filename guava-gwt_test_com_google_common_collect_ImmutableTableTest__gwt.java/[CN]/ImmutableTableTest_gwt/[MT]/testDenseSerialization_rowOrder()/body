@@ -1,5 +1,5 @@
 {
   com.google.common.collect.ImmutableTableTest testCase=new com.google.common.collect.ImmutableTableTest();
   testCase.setUp();
-  testCase.testSerialization_columnOrder();
+  testCase.testDenseSerialization_rowOrder();
 }

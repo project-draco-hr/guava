@@ -3,5 +3,7 @@
   builder.put('b',2,"foo");
   builder.put('b',1,"bar");
   builder.put('a',2,"baz");
-  validateReserialization(builder.build());
+  Table<Character,Integer,String> table=builder.build();
+  assertThat(table).isInstanceOf(DenseImmutableTable.class);
+  validateReserialization(table);
 }
