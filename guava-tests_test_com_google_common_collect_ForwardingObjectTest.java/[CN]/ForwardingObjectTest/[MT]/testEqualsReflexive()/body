@@ -6,5 +6,5 @@
     }
   }
 ;
-  assertTrue(forward.equals(forward));
+  new EqualsTester().addEqualityGroup(forward).testEquals();
 }
