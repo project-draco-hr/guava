@@ -1,7 +1,7 @@
 {
   Endpoints<String> undirected=Endpoints.ofUndirected("chicken","egg");
-  assertThat(undirected.otherNode("chicken")).isEqualTo("egg");
-  assertThat(undirected.otherNode("egg")).isEqualTo("chicken");
+  assertThat(undirected.adjacentNode("chicken")).isEqualTo("egg");
+  assertThat(undirected.adjacentNode("egg")).isEqualTo("chicken");
   assertThat(undirected).containsExactly("chicken","egg");
   assertThat(undirected.toString()).contains("chicken");
   assertThat(undirected.toString()).contains("egg");

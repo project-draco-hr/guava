@@ -4,8 +4,8 @@
     graph.addEdge("1-2",1,2);
     Endpoints<Integer> endpoints=graph.incidentNodes("1-2");
     try {
-      endpoints.otherNode(3);
-      fail("Should have rejected otherNode() called with a node not incident to edge.");
+      endpoints.adjacentNode(3);
+      fail("Should have rejected adjacentNode() called with a node not incident to edge.");
     }
  catch (    IllegalArgumentException expected) {
     }

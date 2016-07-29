@@ -1,6 +1,6 @@
 {
   Endpoints<String> undirected=Endpoints.ofUndirected("node","node");
-  assertThat(undirected.otherNode("node")).isEqualTo("node");
+  assertThat(undirected.adjacentNode("node")).isEqualTo("node");
   assertThat(undirected).hasSize(2);
   assertThat(undirected.toString()).isEqualTo("[node, node]");
 }
