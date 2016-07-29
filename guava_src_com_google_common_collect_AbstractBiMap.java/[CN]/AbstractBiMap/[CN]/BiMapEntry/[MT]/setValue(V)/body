@@ -1,0 +1,11 @@
+{
+  checkState(entrySet().contains(this),"entry no longer in map");
+  if (Objects.equal(value,getValue())) {
+    return value;
+  }
+  checkArgument(!containsValue(value),"value already present: %s",value);
+  V oldValue=delegate.setValue(value);
+  checkState(Objects.equal(value,get(getKey())),"entry no longer in map");
+  updateInverseMap(getKey(),true,oldValue,value);
+  return oldValue;
+}

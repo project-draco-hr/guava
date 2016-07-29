@@ -1,0 +1,4 @@
+{
+  com.google.common.collect.HashBiMapTest testCase=new com.google.common.collect.HashBiMapTest();
+  testCase.testInsertionOrderAfterRemoveFirst();
+}

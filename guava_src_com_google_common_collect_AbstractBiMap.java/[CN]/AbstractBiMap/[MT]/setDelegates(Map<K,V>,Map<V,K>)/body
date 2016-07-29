@@ -5,5 +5,5 @@
   checkArgument(backward.isEmpty());
   checkArgument(forward != backward);
   delegate=forward;
-  inverse=new Inverse<V,K>(backward,this);
+  inverse=makeInverse(backward);
 }
