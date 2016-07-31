@@ -19,7 +19,7 @@
         @Override public int size(){
           return AbstractNetwork.this.edges().size();
         }
-        @Override public boolean contains(        Object obj){
+        @Override public boolean contains(        @Nullable Object obj){
           if (!(obj instanceof EndpointPair)) {
             return false;
           }

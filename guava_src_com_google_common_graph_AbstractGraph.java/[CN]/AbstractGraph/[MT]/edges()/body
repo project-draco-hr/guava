@@ -6,7 +6,7 @@
     @Override public int size(){
       return Ints.saturatedCast(edgeCount());
     }
-    @Override public boolean contains(    Object obj){
+    @Override public boolean contains(    @Nullable Object obj){
       if (!(obj instanceof EndpointPair)) {
         return false;
       }
