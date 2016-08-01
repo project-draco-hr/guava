@@ -1,4 +1,4 @@
 {
   addEdge(E11,N1,N1);
-  assertThat(graph.incidentEdges(N1)).containsExactly(E11);
+  assertThat(network.incidentEdges(N1)).containsExactly(E11);
 }

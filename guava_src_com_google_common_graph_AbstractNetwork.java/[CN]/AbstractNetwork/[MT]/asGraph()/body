@@ -1,0 +1,26 @@
+{
+  return new AbstractGraph<N>(){
+    @Override public Set<N> nodes(){
+      return AbstractNetwork.this.nodes();
+    }
+    @Override public ElementOrder<? super N> nodeOrder(){
+      return AbstractNetwork.this.nodeOrder();
+    }
+    @Override public boolean isDirected(){
+      return AbstractNetwork.this.isDirected();
+    }
+    @Override public boolean allowsSelfLoops(){
+      return AbstractNetwork.this.allowsSelfLoops();
+    }
+    @Override public Set<N> adjacentNodes(    Object node){
+      return AbstractNetwork.this.adjacentNodes(node);
+    }
+    @Override public Set<N> predecessors(    Object node){
+      return AbstractNetwork.this.predecessors(node);
+    }
+    @Override public Set<N> successors(    Object node){
+      return AbstractNetwork.this.successors(node);
+    }
+  }
+;
+}

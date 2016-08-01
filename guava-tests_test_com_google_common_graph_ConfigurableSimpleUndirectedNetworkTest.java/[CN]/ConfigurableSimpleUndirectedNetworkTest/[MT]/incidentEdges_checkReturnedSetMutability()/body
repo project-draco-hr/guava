@@ -1,12 +1,12 @@
 {
   addNode(N1);
-  Set<String> incidentEdges=graph.incidentEdges(N1);
+  Set<String> incidentEdges=network.incidentEdges(N1);
   try {
     incidentEdges.add(E12);
     fail(ERROR_MODIFIABLE_COLLECTION);
   }
  catch (  UnsupportedOperationException e) {
     addEdge(E12,N1,N2);
-    assertThat(graph.incidentEdges(N1)).containsExactlyElementsIn(incidentEdges);
+    assertThat(network.incidentEdges(N1)).containsExactlyElementsIn(incidentEdges);
   }
 }

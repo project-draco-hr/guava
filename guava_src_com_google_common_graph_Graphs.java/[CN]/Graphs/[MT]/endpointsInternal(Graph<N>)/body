@@ -1,7 +1,4 @@
 {
-  if (graph instanceof Network && !allowsParallelEdges(graph)) {
-    return endpointsSimpleNetwork(castToNetwork(graph));
-  }
   return new AbstractSet<Endpoints<N>>(){
     @Override public Iterator<Endpoints<N>> iterator(){
       return graph.isDirected() ? new DirectedEndpointsIterator<N>(graph) : new UndirectedEndpointsIterator<N>(graph);

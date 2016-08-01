@@ -1,6 +1,6 @@
 {
   try {
-    graph.predecessors(NODE_NOT_IN_GRAPH);
+    network.predecessors(NODE_NOT_IN_GRAPH);
     fail(ERROR_NODE_NOT_IN_GRAPH);
   }
  catch (  IllegalArgumentException e) {

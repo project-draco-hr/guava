@@ -1,6 +1,6 @@
 {
-  assertThat(graph.edges()).isEmpty();
+  assertThat(network.edges()).isEmpty();
   addNode(N1);
   addNode(N2);
-  assertThat(graph.edges()).isEmpty();
+  assertThat(network.edges()).isEmpty();
 }

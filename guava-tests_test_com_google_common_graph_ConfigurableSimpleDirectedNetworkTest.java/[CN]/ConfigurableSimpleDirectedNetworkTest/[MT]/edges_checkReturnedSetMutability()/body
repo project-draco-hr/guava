@@ -1,11 +1,11 @@
 {
-  Set<String> edges=graph.edges();
+  Set<String> edges=network.edges();
   try {
     edges.add(E12);
     fail(ERROR_MODIFIABLE_COLLECTION);
   }
  catch (  UnsupportedOperationException e) {
     addEdge(E12,N1,N2);
-    assertThat(graph.edges()).containsExactlyElementsIn(edges);
+    assertThat(network.edges()).containsExactlyElementsIn(edges);
   }
 }

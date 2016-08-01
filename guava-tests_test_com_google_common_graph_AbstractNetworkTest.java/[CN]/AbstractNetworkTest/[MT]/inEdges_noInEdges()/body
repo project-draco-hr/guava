@@ -1,4 +1,4 @@
 {
   addNode(N1);
-  assertThat(graph.inEdges(N1)).isEmpty();
+  assertThat(network.inEdges(N1)).isEmpty();
 }

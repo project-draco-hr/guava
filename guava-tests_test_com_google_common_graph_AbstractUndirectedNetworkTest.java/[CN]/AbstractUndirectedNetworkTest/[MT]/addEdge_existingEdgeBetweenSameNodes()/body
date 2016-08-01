@@ -1,8 +1,8 @@
 {
   addEdge(E12,N1,N2);
-  ImmutableSet<String> edges=ImmutableSet.copyOf(graph.edges());
+  ImmutableSet<String> edges=ImmutableSet.copyOf(network.edges());
   assertFalse(addEdge(E12,N1,N2));
-  assertThat(graph.edges()).containsExactlyElementsIn(edges);
+  assertThat(network.edges()).containsExactlyElementsIn(edges);
   assertFalse(addEdge(E12,N2,N1));
-  assertThat(graph.edges()).containsExactlyElementsIn(edges);
+  assertThat(network.edges()).containsExactlyElementsIn(edges);
 }

@@ -1,6 +1,0 @@
-{
-  MutableNetwork<Integer,String> directedGraph=NetworkBuilder.directed().allowsParallelEdges(true).build();
-  directedGraph.addEdge(E12,N1,N2);
-  directedGraph.addEdge(E12_A,N1,N2);
-  assertThat(isCyclic(directedGraph)).isFalse();
-}

@@ -1,5 +1,5 @@
 {
   addEdge(E12,N1,N2);
-  assertThat(graph.adjacentNodes(N1)).containsExactly(N2);
-  assertThat(graph.adjacentNodes(N2)).containsExactly(N1);
+  assertThat(network.adjacentNodes(N1)).containsExactly(N2);
+  assertThat(network.adjacentNodes(N2)).containsExactly(N1);
 }

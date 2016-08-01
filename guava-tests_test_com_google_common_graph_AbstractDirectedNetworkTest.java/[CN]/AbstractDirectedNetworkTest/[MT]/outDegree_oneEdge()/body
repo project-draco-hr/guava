@@ -1,5 +1,5 @@
 {
   addEdge(E12,N1,N2);
-  assertEquals(1,graph.outDegree(N1));
-  assertEquals(0,graph.outDegree(N2));
+  assertEquals(1,network.outDegree(N1));
+  assertEquals(0,network.outDegree(N2));
 }

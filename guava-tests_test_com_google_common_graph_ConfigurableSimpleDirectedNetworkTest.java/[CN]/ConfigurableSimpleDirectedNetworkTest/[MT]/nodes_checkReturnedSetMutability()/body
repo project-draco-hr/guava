@@ -1,11 +1,11 @@
 {
-  Set<Integer> nodes=graph.nodes();
+  Set<Integer> nodes=network.nodes();
   try {
     nodes.add(N2);
     fail(ERROR_MODIFIABLE_COLLECTION);
   }
  catch (  UnsupportedOperationException e) {
     addNode(N1);
-    assertThat(graph.nodes()).containsExactlyElementsIn(nodes);
+    assertThat(network.nodes()).containsExactlyElementsIn(nodes);
   }
 }

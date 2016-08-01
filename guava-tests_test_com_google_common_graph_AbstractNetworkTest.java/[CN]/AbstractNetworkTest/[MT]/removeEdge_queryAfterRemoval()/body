@@ -1,9 +1,9 @@
 {
   addEdge(E12,N1,N2);
-  Endpoints<Integer> unused=graph.incidentNodes(E12);
-  assertTrue(graph.removeEdge(E12));
+  Endpoints<Integer> unused=network.incidentNodes(E12);
+  assertTrue(network.removeEdge(E12));
   try {
-    graph.incidentNodes(E12);
+    network.incidentNodes(E12);
     fail(ERROR_EDGE_NOT_IN_GRAPH);
   }
  catch (  IllegalArgumentException e) {

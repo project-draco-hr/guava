@@ -1,3 +1,0 @@
-{
-  return (graph instanceof Network) && castToNetwork(graph).allowsParallelEdges();
-}

@@ -1,6 +1,5 @@
 {
   checkNotNull(graph,"graph");
-  checkArgument(!allowsParallelEdges(graph),NETWORK_WITH_PARALLEL_EDGE);
   MutableGraph<N> copy=GraphBuilder.from(graph).expectedNodeCount(graph.nodes().size()).build();
   for (  N node : graph.nodes()) {
     checkState(copy.addNode(node));

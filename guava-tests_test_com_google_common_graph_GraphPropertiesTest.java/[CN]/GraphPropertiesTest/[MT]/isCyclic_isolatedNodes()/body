@@ -1,7 +1,7 @@
 {
-  MutableNetwork<Integer,String> directedGraph=NetworkBuilder.directed().build();
-  directedGraph.addNode(N1);
+  MutableGraph<Integer> directedGraph=GraphBuilder.directed().build();
+  directedGraph.addNode(1);
   assertThat(isCyclic(directedGraph)).isFalse();
-  directedGraph.addNode(N2);
+  directedGraph.addNode(2);
   assertThat(isCyclic(directedGraph)).isFalse();
 }

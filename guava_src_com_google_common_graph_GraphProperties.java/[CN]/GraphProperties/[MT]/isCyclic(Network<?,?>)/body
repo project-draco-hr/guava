@@ -1,0 +1,3 @@
+{
+  return isCyclic(network.asGraph());
+}

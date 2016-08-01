@@ -1,12 +1,12 @@
 {
   addNode(N1);
-  Set<String> outEdges=graph.outEdges(N1);
+  Set<String> outEdges=network.outEdges(N1);
   try {
     outEdges.add(E12);
     fail(ERROR_MODIFIABLE_COLLECTION);
   }
  catch (  UnsupportedOperationException e) {
     addEdge(E12,N1,N2);
-    assertThat(graph.outEdges(N1)).containsExactlyElementsIn(outEdges);
+    assertThat(network.outEdges(N1)).containsExactlyElementsIn(outEdges);
   }
 }

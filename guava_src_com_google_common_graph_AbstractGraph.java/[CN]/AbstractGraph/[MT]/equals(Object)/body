@@ -6,9 +6,6 @@
     return false;
   }
   Graph<?> other=(Graph<?>)obj;
-  if (other instanceof Network) {
-    return false;
-  }
   if (isDirected() != other.isDirected()) {
     return false;
   }
