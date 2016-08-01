@@ -1,9 +1,0 @@
-{
-switch (keyStrength) {
-case STRONG:
-    return EntryFactory.STRONG;
-case WEAK:
-  return EntryFactory.WEAK;
-}
-throw new AssertionError();
-}

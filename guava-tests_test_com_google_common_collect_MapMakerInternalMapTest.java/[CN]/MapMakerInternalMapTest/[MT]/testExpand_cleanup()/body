@@ -1,9 +1,9 @@
 {
-  MapMakerInternalMap<Object,Object> map=makeMap(createMapMaker().concurrencyLevel(1).initialCapacity(1));
-  Segment<Object,Object> segment=map.segments[0];
+  MapMakerInternalMap<Object,Object,?,?> map=makeMap(createMapMaker().concurrencyLevel(1).initialCapacity(1));
+  Segment<Object,Object,?,?> segment=map.segments[0];
   assertEquals(1,segment.table.length());
   int originalCount=1024;
-  ReferenceEntry<Object,Object> entry=null;
+  InternalEntry<Object,Object,?> entry=null;
   for (int i=0; i < originalCount; i++) {
     Object key=new Object();
     Object value=(i % 3 == 0) ? null : new Object();
@@ -11,11 +11,10 @@
     if (i % 3 == 1) {
       key=null;
     }
-    entry=DummyEntry.create(key,hash,entry);
-    ValueReference<Object,Object> valueRef=DummyValueReference.create(value,entry);
-    entry.setValueReference(valueRef);
+    entry=segment.newEntryForTesting(key,hash,entry);
+    segment.setValueForTesting(entry,value);
   }
-  segment.table.set(0,entry);
+  segment.setTableEntryForTesting(0,entry);
   segment.count=originalCount;
   int liveCount=originalCount / 3;
   assertEquals(1,segment.table.length());

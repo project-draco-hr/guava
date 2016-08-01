@@ -8,7 +8,7 @@
     }
   }
 ;
-  MapMakerInternalMap<Object,Object> map=makeMap(createMapMaker().keyEquivalence(testEquivalence));
+  MapMakerInternalMap<Object,Object,?,?> map=makeMap(createMapMaker().keyEquivalence(testEquivalence));
   assertSame(testEquivalence,map.keyEquivalence);
-  assertSame(map.valueStrength.defaultEquivalence(),map.valueEquivalence);
+  assertSame(map.valueStrength().defaultEquivalence(),map.valueEquivalence());
 }

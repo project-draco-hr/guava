@@ -1,6 +1,6 @@
 {
-  MapMakerInternalMap<Object,Object> map=makeMap(createMapMaker().concurrencyLevel(1));
-  Segment<Object,Object> segment=map.segments[0];
+  MapMakerInternalMap<Object,Object,?,?> map=makeMap(createMapMaker().concurrencyLevel(1).weakValues());
+  Segment<Object,Object,?,?> segment=map.segments[0];
   Object key=new Object();
   int hash=map.hash(key);
   Object oldValue=new Object();
@@ -11,11 +11,11 @@
   assertSame(oldValue,segment.put(key,hash,newValue,true));
   assertEquals(1,segment.count);
   assertSame(oldValue,segment.get(key,hash));
-  ReferenceEntry<Object,Object> entry=segment.getEntry(key,hash);
-  DummyValueReference<Object,Object> oldValueRef=DummyValueReference.create(oldValue,entry);
-  entry.setValueReference(oldValueRef);
+  InternalEntry<Object,Object,?> entry=segment.getEntry(key,hash);
+  WeakValueReference<Object,Object,?> oldValueRef=segment.newWeakValueReferenceForTesting(entry,oldValue);
+  segment.setWeakValueReferenceForTesting(entry,oldValueRef);
   assertSame(oldValue,segment.get(key,hash));
-  oldValueRef.clear(null);
+  oldValueRef.clear();
   assertNull(segment.put(key,hash,newValue,true));
   assertEquals(1,segment.count);
   assertSame(newValue,segment.get(key,hash));

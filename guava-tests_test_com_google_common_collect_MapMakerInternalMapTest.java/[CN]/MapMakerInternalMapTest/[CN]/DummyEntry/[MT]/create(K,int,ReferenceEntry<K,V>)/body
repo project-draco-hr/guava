@@ -1,3 +1,0 @@
-{
-  return new DummyEntry<K,V>(key,hash,next);
-}

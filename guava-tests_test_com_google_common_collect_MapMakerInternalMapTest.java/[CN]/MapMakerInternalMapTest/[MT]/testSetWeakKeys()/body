@@ -1,5 +1,5 @@
 {
-  MapMakerInternalMap<Object,Object> map=makeMap(createMapMaker().weakKeys());
+  MapMakerInternalMap<Object,Object,?,?> map=makeMap(createMapMaker().weakKeys());
   checkStrength(map,Strength.WEAK,Strength.STRONG);
-  assertSame(EntryFactory.WEAK,map.entryFactory);
+  assertThat(map.entryHelper).isInstanceOf(MapMakerInternalMap.WeakKeyStrongValueEntry.Helper.class);
 }

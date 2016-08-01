@@ -1,27 +1,28 @@
 {
-  for (  MapMaker maker : allKeyValueStrengthMakers()) {
-    MapMakerInternalMap<Object,Object> map=makeMap(maker);
+  for (  MapMaker maker : allWeakValueStrengthMakers()) {
+    MapMakerInternalMap<Object,Object,?,?> map=makeMap(maker);
+    Segment<Object,Object,?,?> segment=map.segments[0];
     Object keyOne=new Object();
     Object valueOne=new Object();
     int hashOne=map.hash(keyOne);
-    ReferenceEntry<Object,Object> entryOne=map.newEntry(keyOne,hashOne,null);
-    ValueReference<Object,Object> valueRefOne=map.newValueReference(entryOne,valueOne);
+    InternalEntry<Object,Object,?> entryOne=segment.newEntryForTesting(keyOne,hashOne,null);
+    WeakValueReference<Object,Object,?> valueRefOne=segment.newWeakValueReferenceForTesting(entryOne,valueOne);
     assertSame(valueOne,valueRefOne.get());
-    entryOne.setValueReference(valueRefOne);
+    segment.setWeakValueReferenceForTesting(entryOne,valueRefOne);
     assertSame(keyOne,entryOne.getKey());
     assertEquals(hashOne,entryOne.getHash());
     assertNull(entryOne.getNext());
-    assertSame(valueRefOne,entryOne.getValueReference());
+    assertSame(valueRefOne,segment.getWeakValueReferenceForTesting(entryOne));
     Object keyTwo=new Object();
     Object valueTwo=new Object();
     int hashTwo=map.hash(keyTwo);
-    ReferenceEntry<Object,Object> entryTwo=map.newEntry(keyTwo,hashTwo,entryOne);
-    ValueReference<Object,Object> valueRefTwo=map.newValueReference(entryTwo,valueTwo);
+    InternalEntry<Object,Object,?> entryTwo=segment.newEntryForTesting(keyTwo,hashTwo,entryOne);
+    WeakValueReference<Object,Object,?> valueRefTwo=segment.newWeakValueReferenceForTesting(entryTwo,valueTwo);
     assertSame(valueTwo,valueRefTwo.get());
-    entryTwo.setValueReference(valueRefTwo);
+    segment.setWeakValueReferenceForTesting(entryTwo,valueRefTwo);
     assertSame(keyTwo,entryTwo.getKey());
     assertEquals(hashTwo,entryTwo.getHash());
     assertSame(entryOne,entryTwo.getNext());
-    assertSame(valueRefTwo,entryTwo.getValueReference());
+    assertSame(valueRefTwo,segment.getWeakValueReferenceForTesting(entryTwo));
   }
 }

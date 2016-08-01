@@ -1,25 +1,26 @@
 {
-  for (  MapMaker maker : allKeyValueStrengthMakers()) {
-    MapMakerInternalMap<Object,Object> map=makeMap(maker);
+  for (  MapMaker maker : allWeakValueStrengthMakers()) {
+    MapMakerInternalMap<Object,Object,?,?> map=makeMap(maker);
+    Segment<Object,Object,?,?> segment=map.segments[0];
     Object keyOne=new Object();
     Object valueOne=new Object();
     int hashOne=map.hash(keyOne);
-    ReferenceEntry<Object,Object> entryOne=map.newEntry(keyOne,hashOne,null);
-    entryOne.setValueReference(map.newValueReference(entryOne,valueOne));
+    InternalEntry<Object,Object,?> entryOne=segment.newEntryForTesting(keyOne,hashOne,null);
+    segment.setValueForTesting(entryOne,valueOne);
     Object keyTwo=new Object();
     Object valueTwo=new Object();
     int hashTwo=map.hash(keyTwo);
-    ReferenceEntry<Object,Object> entryTwo=map.newEntry(keyTwo,hashTwo,entryOne);
-    entryTwo.setValueReference(map.newValueReference(entryTwo,valueTwo));
-    ReferenceEntry<Object,Object> copyOne=map.copyEntry(entryOne,null);
+    InternalEntry<Object,Object,?> entryTwo=segment.newEntryForTesting(keyTwo,hashTwo,null);
+    segment.setValueForTesting(entryTwo,valueTwo);
+    InternalEntry<Object,Object,?> copyOne=segment.copyForTesting(entryOne,null);
     assertSame(keyOne,entryOne.getKey());
     assertEquals(hashOne,entryOne.getHash());
     assertNull(entryOne.getNext());
-    assertSame(valueOne,copyOne.getValueReference().get());
-    ReferenceEntry<Object,Object> copyTwo=map.copyEntry(entryTwo,copyOne);
+    assertSame(valueOne,copyOne.getValue());
+    InternalEntry<Object,Object,?> copyTwo=segment.copyForTesting(entryTwo,copyOne);
     assertSame(keyTwo,copyTwo.getKey());
     assertEquals(hashTwo,copyTwo.getHash());
     assertSame(copyOne,copyTwo.getNext());
-    assertSame(valueTwo,copyTwo.getValueReference().get());
+    assertSame(valueTwo,copyTwo.getValue());
   }
 }

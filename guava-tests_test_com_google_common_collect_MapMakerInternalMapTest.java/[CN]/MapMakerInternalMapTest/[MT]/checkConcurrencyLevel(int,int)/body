@@ -1,4 +1,4 @@
 {
-  MapMakerInternalMap<Object,Object> map=makeMap(createMapMaker().concurrencyLevel(concurrencyLevel));
+  MapMakerInternalMap<Object,Object,?,?> map=makeMap(createMapMaker().concurrencyLevel(concurrencyLevel));
   assertThat(map.segments).hasLength(segmentCount);
 }

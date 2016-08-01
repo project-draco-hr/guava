@@ -1,5 +1,5 @@
 {
-  MapMakerInternalMap<Object,Object> map=makeMap(createMapMaker().concurrencyLevel(concurrencyLevel).initialCapacity(initialCapacity));
+  MapMakerInternalMap<Object,Object,?,?> map=makeMap(createMapMaker().concurrencyLevel(concurrencyLevel).initialCapacity(initialCapacity));
   int totalCapacity=0;
   for (int i=0; i < map.segments.length; i++) {
     totalCapacity+=map.segments[i].maxSegmentSize;

@@ -2,5 +2,5 @@
   if (!useCustomMap) {
     return new ConcurrentHashMap<K,V>(getInitialCapacity(),0.75f,getConcurrencyLevel());
   }
-  return new MapMakerInternalMap<K,V>(this);
+  return MapMakerInternalMap.create(this);
 }

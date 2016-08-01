@@ -1,23 +1,23 @@
 {
-  MapMakerInternalMap<Object,Object> map=makeMap(createMapMaker().concurrencyLevel(1).initialCapacity(1));
-  Segment<Object,Object> segment=map.segments[0];
-  AtomicReferenceArray<ReferenceEntry<Object,Object>> table=segment.table;
+  MapMakerInternalMap<Object,Object,?,?> map=makeMap(createMapMaker().concurrencyLevel(1).initialCapacity(1).weakValues());
+  Segment<Object,Object,?,?> segment=map.segments[0];
+  AtomicReferenceArray<? extends InternalEntry<Object,Object,?>> table=segment.table;
   assertEquals(1,table.length());
   Object key=new Object();
   Object value=new Object();
   int hash=map.hash(key);
-  DummyEntry<Object,Object> entry=DummyEntry.create(key,hash,null);
-  DummyValueReference<Object,Object> valueRef=DummyValueReference.create(value,entry);
-  entry.setValueReference(valueRef);
-  assertFalse(segment.clearValue(key,hash,valueRef));
-  table.set(0,entry);
-  assertTrue(segment.clearValue(key,hash,valueRef));
+  InternalEntry<Object,Object,?> entry=segment.newEntryForTesting(key,hash,null);
+  segment.setValueForTesting(entry,value);
+  WeakValueReference<Object,Object,?> valueRef=segment.getWeakValueReferenceForTesting(entry);
+  assertFalse(segment.clearValueForTesting(key,hash,valueRef));
+  segment.setTableEntryForTesting(0,entry);
+  assertTrue(segment.clearValueForTesting(key,hash,valueRef));
   assertEquals(0,segment.count);
   assertNull(table.get(0));
-  table.set(0,entry);
-  DummyValueReference<Object,Object> otherValueRef=DummyValueReference.create(value,entry);
-  entry.setValueReference(otherValueRef);
-  assertFalse(segment.clearValue(key,hash,valueRef));
-  entry.setValueReference(valueRef);
-  assertTrue(segment.clearValue(key,hash,valueRef));
+  segment.setTableEntryForTesting(0,entry);
+  WeakValueReference<Object,Object,?> otherValueRef=segment.newWeakValueReferenceForTesting(entry,value);
+  segment.setWeakValueReferenceForTesting(entry,otherValueRef);
+  assertFalse(segment.clearValueForTesting(key,hash,valueRef));
+  segment.setWeakValueReferenceForTesting(entry,valueRef);
+  assertTrue(segment.clearValueForTesting(key,hash,valueRef));
 }

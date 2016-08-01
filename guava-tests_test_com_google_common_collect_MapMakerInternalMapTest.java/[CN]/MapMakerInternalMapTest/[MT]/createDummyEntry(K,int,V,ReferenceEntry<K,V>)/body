@@ -1,6 +1,0 @@
-{
-  DummyEntry<K,V> entry=DummyEntry.create(key,hash,next);
-  DummyValueReference<K,V> valueRef=DummyValueReference.create(value,entry);
-  entry.setValueReference(valueRef);
-  return entry;
-}

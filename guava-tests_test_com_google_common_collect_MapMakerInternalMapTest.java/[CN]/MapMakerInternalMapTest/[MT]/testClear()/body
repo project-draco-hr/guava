@@ -1,13 +1,14 @@
 {
-  MapMakerInternalMap<Object,Object> map=makeMap(createMapMaker().concurrencyLevel(1).initialCapacity(1));
-  Segment<Object,Object> segment=map.segments[0];
-  AtomicReferenceArray<ReferenceEntry<Object,Object>> table=segment.table;
+  MapMakerInternalMap<Object,Object,?,?> map=makeMap(createMapMaker().concurrencyLevel(1).initialCapacity(1));
+  Segment<Object,Object,?,?> segment=map.segments[0];
+  AtomicReferenceArray<? extends InternalEntry<Object,Object,?>> table=segment.table;
   assertEquals(1,table.length());
   Object key=new Object();
   Object value=new Object();
   int hash=map.hash(key);
-  DummyEntry<Object,Object> entry=createDummyEntry(key,hash,value,null);
-  segment.table.set(0,entry);
+  InternalEntry<Object,Object,?> entry=segment.newEntryForTesting(key,hash,null);
+  segment.setValueForTesting(entry,value);
+  segment.setTableEntryForTesting(0,entry);
   segment.readCount.incrementAndGet();
   segment.count=1;
   assertSame(entry,table.get(0));

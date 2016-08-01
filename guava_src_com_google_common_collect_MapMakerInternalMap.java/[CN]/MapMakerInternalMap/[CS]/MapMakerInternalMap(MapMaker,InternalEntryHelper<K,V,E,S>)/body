@@ -1,0 +1,26 @@
+{
+  concurrencyLevel=Math.min(builder.getConcurrencyLevel(),MAX_SEGMENTS);
+  keyEquivalence=builder.getKeyEquivalence();
+  this.entryHelper=entryHelper;
+  int initialCapacity=Math.min(builder.getInitialCapacity(),MAXIMUM_CAPACITY);
+  int segmentShift=0;
+  int segmentCount=1;
+  while (segmentCount < concurrencyLevel) {
+    ++segmentShift;
+    segmentCount<<=1;
+  }
+  this.segmentShift=32 - segmentShift;
+  segmentMask=segmentCount - 1;
+  this.segments=newSegmentArray(segmentCount);
+  int segmentCapacity=initialCapacity / segmentCount;
+  if (segmentCapacity * segmentCount < initialCapacity) {
+    ++segmentCapacity;
+  }
+  int segmentSize=1;
+  while (segmentSize < segmentCapacity) {
+    segmentSize<<=1;
+  }
+  for (int i=0; i < this.segments.length; ++i) {
+    this.segments[i]=createSegment(segmentSize,MapMaker.UNSET_INT);
+  }
+}

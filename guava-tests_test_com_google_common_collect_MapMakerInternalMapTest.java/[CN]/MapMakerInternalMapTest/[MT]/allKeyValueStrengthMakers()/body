@@ -1,3 +1,0 @@
-{
-  return ImmutableList.of(createMapMaker(),createMapMaker().weakValues(),createMapMaker().weakKeys(),createMapMaker().weakKeys().weakValues());
-}
