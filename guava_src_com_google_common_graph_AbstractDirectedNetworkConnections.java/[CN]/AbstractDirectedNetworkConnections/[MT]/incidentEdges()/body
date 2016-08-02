@@ -1,7 +1,8 @@
 {
   return new AbstractSet<E>(){
     @Override public UnmodifiableIterator<E> iterator(){
-      return selfLoopCount == 0 ? Iterators.unmodifiableIterator(Iterators.concat(inEdgeMap.keySet().iterator(),outEdgeMap.keySet().iterator())) : Sets.union(inEdgeMap.keySet(),outEdgeMap.keySet()).iterator();
+      Iterable<E> incidentEdges=(selfLoopCount == 0) ? Iterables.concat(inEdgeMap.keySet(),outEdgeMap.keySet()) : Sets.union(inEdgeMap.keySet(),outEdgeMap.keySet());
+      return Iterators.unmodifiableIterator(incidentEdges.iterator());
     }
     @Override public int size(){
       return IntMath.saturatedAdd(inEdgeMap.size() - selfLoopCount,outEdgeMap.size());
