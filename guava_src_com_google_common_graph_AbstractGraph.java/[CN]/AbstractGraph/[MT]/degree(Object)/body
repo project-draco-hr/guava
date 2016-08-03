@@ -1,3 +1,0 @@
-{
-  return adjacentNodes(node).size();
-}

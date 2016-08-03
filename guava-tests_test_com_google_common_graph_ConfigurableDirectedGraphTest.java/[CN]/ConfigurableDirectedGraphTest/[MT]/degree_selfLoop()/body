@@ -1,6 +1,0 @@
-{
-  addEdge(N1,N1);
-  assertEquals(1,graph.degree(N1));
-  addEdge(N1,N2);
-  assertEquals(2,graph.degree(N1));
-}

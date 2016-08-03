@@ -1,4 +1,0 @@
-{
-  addNode(N1);
-  assertEquals(0,network.degree(N1));
-}

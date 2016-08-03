@@ -8,9 +8,6 @@
   String nodeString=graphString.substring(nodeStart,edgeStart);
   for (  Integer node : graph.nodes()) {
     assertThat(nodeString).contains(node.toString());
-    assertThat(graph.adjacentNodes(node)).hasSize(graph.degree(node));
-    assertThat(graph.predecessors(node)).hasSize(graph.inDegree(node));
-    assertThat(graph.successors(node)).hasSize(graph.outDegree(node));
     for (    Integer adjacentNode : graph.adjacentNodes(node)) {
       assertTrue(graph.predecessors(node).contains(adjacentNode) || graph.successors(node).contains(adjacentNode));
     }

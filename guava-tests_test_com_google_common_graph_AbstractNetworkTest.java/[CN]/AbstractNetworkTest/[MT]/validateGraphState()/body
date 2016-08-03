@@ -39,12 +39,6 @@
     assertThat(network.adjacentNodes(node)).isEqualTo(asGraph.adjacentNodes(node));
     assertThat(network.predecessors(node)).isEqualTo(asGraph.predecessors(node));
     assertThat(network.successors(node)).isEqualTo(asGraph.successors(node));
-    assertThat(network.incidentEdges(node)).hasSize(network.degree(node));
-    assertThat(network.degree(node)).isAtLeast(network.adjacentNodes(node).size());
-    assertThat(network.inEdges(node)).hasSize(network.inDegree(node));
-    assertThat(network.inDegree(node)).isAtLeast(network.predecessors(node).size());
-    assertThat(network.outEdges(node)).hasSize(network.outDegree(node));
-    assertThat(network.outDegree(node)).isAtLeast(network.successors(node).size());
     for (    Integer otherNode : network.nodes()) {
       Set<String> edgesConnecting=network.edgesConnecting(node,otherNode);
       boolean isSelfLoop=node.equals(otherNode);

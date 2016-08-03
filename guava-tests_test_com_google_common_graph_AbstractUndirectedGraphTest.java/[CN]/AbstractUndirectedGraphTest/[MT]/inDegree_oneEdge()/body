@@ -1,5 +1,0 @@
-{
-  addEdge(N1,N2);
-  assertEquals(1,graph.inDegree(N2));
-  assertEquals(1,graph.inDegree(N1));
-}

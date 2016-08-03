@@ -1,6 +1,0 @@
-{
-  addEdge(E11,N1,N1);
-  assertEquals(1,network.outDegree(N1));
-  addEdge(E12,N2,N1);
-  assertEquals(2,network.outDegree(N1));
-}
