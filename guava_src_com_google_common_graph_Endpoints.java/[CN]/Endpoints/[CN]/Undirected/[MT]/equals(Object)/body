@@ -2,10 +2,13 @@
   if (obj == this) {
     return true;
   }
-  if (!(obj instanceof Undirected)) {
+  if (!(obj instanceof Endpoints)) {
     return false;
   }
-  Undirected<?> other=(Undirected<?>)obj;
+  Endpoints<?> other=(Endpoints<?>)obj;
+  if (isDirected() != other.isDirected()) {
+    return false;
+  }
   if (nodeA().equals(other.nodeA())) {
     return nodeB().equals(other.nodeB());
   }
