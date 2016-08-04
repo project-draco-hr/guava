@@ -30,7 +30,7 @@
     for (    Integer incidentNode : network.incidentNodes(edge)) {
       assertThat(network.nodes()).contains(incidentNode);
       for (      String adjacentEdge : network.incidentEdges(incidentNode)) {
-        assertTrue(edge.equals(adjacentEdge) || network.adjacentEdges(edge).contains(adjacentEdge));
+        assertTrue(edge.equals(adjacentEdge) || Graphs.adjacentEdges(network,edge).contains(adjacentEdge));
       }
     }
   }

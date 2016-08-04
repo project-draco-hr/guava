@@ -1,5 +1,5 @@
 {
-  Endpoints<N> endpoints=graph.incidentNodes(edge);
+  Endpoints<?> endpoints=graph.incidentNodes(edge);
   if (!graph.allowsParallelEdges()) {
     return ImmutableSet.of();
   }

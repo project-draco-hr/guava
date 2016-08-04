@@ -1,0 +1,16 @@
+{
+  MutableNetwork<Integer,String> undirectedGraph=NetworkBuilder.undirected().build();
+  undirectedGraph.addEdge(E12,N1,N2);
+  Set<String> adjacentEdges=adjacentEdges(undirectedGraph,E12);
+  assertThat(adjacentEdges).isEmpty();
+  undirectedGraph.addEdge(E23,N2,N3);
+  assertThat(adjacentEdges).containsExactly(E23);
+  undirectedGraph.addEdge(E31,N3,N1);
+  assertThat(adjacentEdges).containsExactly(E23,E31);
+  try {
+    adjacentEdges.add(E34);
+    fail("Set returned by adjacentEdges() should be unmodifiable");
+  }
+ catch (  UnsupportedOperationException expected) {
+  }
+}
