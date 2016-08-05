@@ -1,0 +1,6 @@
+{
+  if (!(o instanceof JdkPattern)) {
+    return false;
+  }
+  return pattern.equals(((JdkPattern)o).pattern);
+}

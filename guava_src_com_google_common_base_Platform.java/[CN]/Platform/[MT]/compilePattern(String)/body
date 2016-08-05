@@ -1,0 +1,4 @@
+{
+  Preconditions.checkNotNull(pattern);
+  return patternCompiler.compile(pattern);
+}
