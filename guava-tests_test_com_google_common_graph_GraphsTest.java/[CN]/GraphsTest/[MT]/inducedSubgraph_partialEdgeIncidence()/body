@@ -1,14 +1,14 @@
 {
   Set<Integer> nodeSubset=ImmutableSet.of(N1,N2,N4);
   MutableNetwork<Integer,String> directedGraph=NetworkBuilder.directed().build();
-  directedGraph.addEdge(E12,N1,N2);
-  directedGraph.addEdge(E21,N2,N1);
-  directedGraph.addEdge(E13,N1,N3);
-  directedGraph.addEdge(E44,N4,N4);
-  directedGraph.addEdge("5-6",5,6);
+  directedGraph.addEdgeV2(N1,N2,E12);
+  directedGraph.addEdgeV2(N2,N1,E21);
+  directedGraph.addEdgeV2(N1,N3,E13);
+  directedGraph.addEdgeV2(N4,N4,E44);
+  directedGraph.addEdgeV2(5,6,"5-6");
   MutableNetwork<Integer,String> expectedSubgraph=NetworkBuilder.directed().build();
-  expectedSubgraph.addEdge(E12,N1,N2);
-  expectedSubgraph.addEdge(E21,N2,N1);
-  expectedSubgraph.addEdge(E44,N4,N4);
+  expectedSubgraph.addEdgeV2(N1,N2,E12);
+  expectedSubgraph.addEdgeV2(N2,N1,E21);
+  expectedSubgraph.addEdgeV2(N4,N4,E44);
   assertThat(inducedSubgraph(directedGraph,nodeSubset)).isEqualTo(expectedSubgraph);
 }

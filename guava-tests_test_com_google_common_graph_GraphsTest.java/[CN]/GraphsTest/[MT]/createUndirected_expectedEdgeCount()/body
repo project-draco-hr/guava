@@ -1,6 +1,6 @@
 {
   MutableNetwork<Integer,String> undirectedGraph=NetworkBuilder.undirected().expectedEdgeCount(EDGE_COUNT).build();
-  assertThat(undirectedGraph.addEdge(E12,N1,N2)).isTrue();
+  assertThat(undirectedGraph.addEdgeV2(N1,N2,E12)).isTrue();
   assertThat(undirectedGraph.edgesConnecting(N1,N2)).isEqualTo(ImmutableSet.of(E12));
   assertThat(undirectedGraph.edgesConnecting(N2,N1)).isEqualTo(ImmutableSet.of(E12));
 }

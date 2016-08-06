@@ -1,8 +1,8 @@
 {
   MutableNetwork<Integer,String> directedGraph=NetworkBuilder.directed().build();
-  directedGraph.addEdge(E12,N1,N2);
-  directedGraph.addEdge(E23,N2,N3);
-  directedGraph.addEdge(E31,N3,N1);
-  directedGraph.addEdge(E34,N3,N4);
+  directedGraph.addEdgeV2(N1,N2,E12);
+  directedGraph.addEdgeV2(N2,N3,E23);
+  directedGraph.addEdgeV2(N3,N1,E31);
+  directedGraph.addEdgeV2(N3,N4,E34);
   assertThat(adjacentEdges(directedGraph,E12)).containsExactly(E31,E23);
 }

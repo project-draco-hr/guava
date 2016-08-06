@@ -1,8 +1,8 @@
 {
-  graph.addEdge(E12,N1,N2);
-  graph.addEdge(E13,N1,N3);
+  graph.addEdgeV2(N1,N2,E12);
+  graph.addEdgeV2(N1,N3,E13);
   MutableNetwork<Integer,String> g2=createGraph(graphType);
-  g2.addEdge(E13,N1,N2);
-  g2.addEdge(E12,N1,N3);
+  g2.addEdgeV2(N1,N2,E13);
+  g2.addEdgeV2(N1,N3,E12);
   new EqualsTester().addEqualityGroup(graph).addEqualityGroup(g2).testEquals();
 }

@@ -1,6 +1,6 @@
 {
-  graph.addEdge(E11,N1,N1);
+  graph.addEdgeV2(N1,N1,E11);
   MutableNetwork<Integer,String> g2=createGraph(oppositeType(graphType));
-  g2.addEdge(E11,N1,N1);
+  g2.addEdgeV2(N1,N1,E11);
   new EqualsTester().addEqualityGroup(graph).addEqualityGroup(g2).testEquals();
 }

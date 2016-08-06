@@ -1,5 +1,5 @@
 {
   MutableGraph<Integer> directedGraph=GraphBuilder.directed().build();
-  directedGraph.addEdge(1,2);
+  directedGraph.putEdge(1,2);
   assertThat(isCyclic(directedGraph)).isFalse();
 }

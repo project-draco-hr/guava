@@ -1,4 +1,4 @@
 {
-  graph.addEdge(edge,nodeA,nodeB);
+  graph.addEdgeV2(nodeA,nodeB,edge);
   return this;
 }

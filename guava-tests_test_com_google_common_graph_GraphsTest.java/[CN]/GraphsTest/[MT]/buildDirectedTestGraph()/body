@@ -1,7 +1,7 @@
 {
   MutableGraph<Integer> directedGraph=GraphBuilder.directed().build();
-  directedGraph.addEdge(N1,N1);
-  directedGraph.addEdge(N1,N2);
-  directedGraph.addEdge(N2,N1);
+  directedGraph.putEdge(N1,N1);
+  directedGraph.putEdge(N1,N2);
+  directedGraph.putEdge(N2,N1);
   return directedGraph;
 }

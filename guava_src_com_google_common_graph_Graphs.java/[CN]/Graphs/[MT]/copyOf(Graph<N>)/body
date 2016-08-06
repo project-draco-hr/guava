@@ -5,7 +5,7 @@
     checkState(copy.addNode(node));
   }
   for (  Endpoints<N> endpoints : endpointsInternal(graph)) {
-    checkState(copy.addEdge(endpoints.nodeA(),endpoints.nodeB()));
+    checkState(copy.putEdge(endpoints.nodeA(),endpoints.nodeB()));
   }
   return copy;
 }
