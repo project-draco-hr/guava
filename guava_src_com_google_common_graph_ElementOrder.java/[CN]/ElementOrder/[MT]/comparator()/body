@@ -2,5 +2,5 @@
   if (comparator != null) {
     return comparator;
   }
-  throw new IllegalStateException("This ordering does not define a comparator");
+  throw new UnsupportedOperationException("This ordering does not define a comparator.");
 }

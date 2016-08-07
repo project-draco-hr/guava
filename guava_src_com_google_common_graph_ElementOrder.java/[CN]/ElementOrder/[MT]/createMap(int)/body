@@ -7,6 +7,6 @@ case INSERTION:
 case SORTED:
 return Maps.newTreeMap(comparator());
 default :
-throw new IllegalArgumentException("Unrecognized ElementOrder type");
+throw new IllegalStateException(type.toString());
 }
 }

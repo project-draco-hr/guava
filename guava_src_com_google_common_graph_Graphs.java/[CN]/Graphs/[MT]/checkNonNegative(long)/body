@@ -1,4 +1,4 @@
 {
-  checkState(value >= 0,"Not true that %s is non-negative.",value);
+  checkArgument(value >= 0,"Not true that %s is non-negative.",value);
   return value;
 }

@@ -1,9 +1,9 @@
 {
   try {
     NetworkBuilder.directed().expectedNodeCount(-1);
-    fail(ERROR_NEGATIVE_NODE_COUNT);
+    fail("Should have rejected negative expected node count.");
   }
  catch (  IllegalArgumentException e) {
-    assertThat(e.getMessage()).contains(ERROR_NEGATIVE_NODE_COUNT);
+    assertThat(e.getMessage()).contains(ERROR_NEGATIVE_COUNT);
   }
 }
