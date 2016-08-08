@@ -18,5 +18,6 @@
     connectionsB=addNodeInternal(nodeB);
   }
   connectionsB.addPredecessor(nodeA);
+  checkPositive(++edgeCount);
   return true;
 }

@@ -1,0 +1,3 @@
+{
+  return graph.isDirected() ? new Directed<N>(graph) : new Undirected<N>(graph);
+}

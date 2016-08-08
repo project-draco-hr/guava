@@ -5,17 +5,23 @@
     return false;
   }
   if (allowsSelfLoops()) {
-    connections.removeSuccessor(node);
-    connections.removePredecessor(node);
+    if (connections.successors().contains(node)) {
+      connections.removeSuccessor(node);
+      connections.removePredecessor(node);
+      --edgeCount;
+    }
   }
   for (  N successor : connections.successors()) {
     nodeConnections.getWithoutCaching(successor).removePredecessor(node);
+    --edgeCount;
   }
   if (isDirected()) {
     for (    N predecessor : connections.predecessors()) {
       nodeConnections.getWithoutCaching(predecessor).removeSuccessor(node);
+      --edgeCount;
     }
   }
   nodeConnections.remove(node);
+  checkNonNegative(edgeCount);
   return true;
 }

@@ -1,0 +1,7 @@
+{
+  this.isDirected=builder.directed;
+  this.allowsSelfLoops=builder.allowsSelfLoops;
+  this.nodeOrder=builder.nodeOrder;
+  this.nodeConnections=(nodeConnections instanceof TreeMap) ? new MapRetrievalCache<N,GraphConnections<N>>(nodeConnections) : new MapIteratorCache<N,GraphConnections<N>>(nodeConnections);
+  this.edgeCount=checkNonNegative(edgeCount);
+}

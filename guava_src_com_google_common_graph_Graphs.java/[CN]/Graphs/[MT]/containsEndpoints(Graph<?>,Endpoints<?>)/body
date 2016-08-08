@@ -1,3 +1,0 @@
-{
-  return graph.isDirected() == endpoints.isDirected() && graph.nodes().contains(endpoints.nodeA()) && graph.successors(endpoints.nodeA()).contains(endpoints.nodeB());
-}

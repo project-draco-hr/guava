@@ -1,0 +1,9 @@
+{
+  MutableNetwork<Integer,String> undirectedNetwork=NetworkBuilder.undirected().allowsParallelEdges(true).build();
+  undirectedNetwork.addNode(N0);
+  undirectedNetwork.addEdgeV2(N1,N2,E12);
+  undirectedNetwork.addEdgeV2(N2,N1,E12_A);
+  undirectedNetwork.addEdgeV2(N1,N3,E13);
+  undirectedNetwork.addEdgeV2(N4,N4,E44);
+  containsExactlySanityCheck(undirectedNetwork.asGraph().edges(),Endpoints.ofUndirected(N1,N2),Endpoints.ofUndirected(N1,N3),Endpoints.ofUndirected(N4,N4));
+}

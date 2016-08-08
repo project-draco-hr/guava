@@ -1,5 +1,6 @@
 {
   this.inEdgeMap=checkNotNull(inEdgeMap,"inEdgeMap");
   this.outEdgeMap=checkNotNull(outEdgeMap,"outEdgeMap");
-  this.selfLoopCount=selfLoopCount;
+  this.selfLoopCount=checkNonNegative(selfLoopCount);
+  checkState(selfLoopCount <= inEdgeMap.size() && selfLoopCount <= outEdgeMap.size());
 }

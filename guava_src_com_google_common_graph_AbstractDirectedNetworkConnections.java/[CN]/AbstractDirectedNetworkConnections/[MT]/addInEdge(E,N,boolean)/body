@@ -2,8 +2,7 @@
   checkNotNull(edge,"edge");
   checkNotNull(node,"node");
   if (isSelfLoop) {
-    selfLoopCount++;
-    checkState(selfLoopCount >= 1);
+    checkPositive(++selfLoopCount);
   }
   N previousNode=inEdgeMap.put(edge,node);
   checkState(previousNode == null);

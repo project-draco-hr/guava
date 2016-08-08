@@ -1,0 +1,9 @@
+{
+  MutableGraph<Integer> undirectedGraph=GraphBuilder.undirected().build();
+  undirectedGraph.addNode(N0);
+  undirectedGraph.putEdge(N1,N2);
+  undirectedGraph.putEdge(N2,N1);
+  undirectedGraph.putEdge(N1,N3);
+  undirectedGraph.putEdge(N4,N4);
+  containsExactlySanityCheck(undirectedGraph.edges(),Endpoints.ofUndirected(N1,N2),Endpoints.ofUndirected(N1,N3),Endpoints.ofUndirected(N4,N4));
+}

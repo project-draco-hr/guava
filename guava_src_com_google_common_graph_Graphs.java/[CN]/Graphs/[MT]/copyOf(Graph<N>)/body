@@ -4,7 +4,7 @@
   for (  N node : graph.nodes()) {
     checkState(copy.addNode(node));
   }
-  for (  Endpoints<N> endpoints : endpointsInternal(graph)) {
+  for (  Endpoints<N> endpoints : graph.edges()) {
     checkState(copy.putEdge(endpoints.nodeA(),endpoints.nodeB()));
   }
   return copy;

@@ -1,8 +1,7 @@
 {
   checkNotNull(edge,"edge");
   if (isSelfLoop) {
-    selfLoopCount--;
-    checkState(selfLoopCount >= 0);
+    checkNonNegative(--selfLoopCount);
   }
   N previousNode=inEdgeMap.remove(edge);
   return checkNotNull(previousNode);

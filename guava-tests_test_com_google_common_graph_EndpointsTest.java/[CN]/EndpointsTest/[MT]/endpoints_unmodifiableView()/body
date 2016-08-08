@@ -1,0 +1,17 @@
+{
+  MutableGraph<Integer> directedGraph=GraphBuilder.directed().build();
+  Collection<Endpoints<Integer>> endpoints=directedGraph.edges();
+  directedGraph.putEdge(N1,N2);
+  containsExactlySanityCheck(endpoints,Endpoints.ofDirected(N1,N2));
+  directedGraph.putEdge(N2,N1);
+  containsExactlySanityCheck(endpoints,Endpoints.ofDirected(N1,N2),Endpoints.ofDirected(N2,N1));
+  directedGraph.removeEdge(N1,N2);
+  directedGraph.removeEdge(N2,N1);
+  containsExactlySanityCheck(endpoints);
+  try {
+    endpoints.add(Endpoints.ofDirected(N1,N2));
+    fail("Collection returned by endpoints() should be unmodifiable");
+  }
+ catch (  UnsupportedOperationException expected) {
+  }
+}

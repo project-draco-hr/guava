@@ -1,0 +1,4 @@
+{
+  checkState(value > 0,"Not true that %s is positive.",value);
+  return value;
+}

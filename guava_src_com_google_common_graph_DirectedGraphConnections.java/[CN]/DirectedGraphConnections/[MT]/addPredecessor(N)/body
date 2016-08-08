@@ -3,11 +3,11 @@
   Adjacency adjacency=adjacentNodes.get(node);
   if (adjacency == null) {
     adjacentNodes.put(node,Adjacency.PRED);
-    predecessorCount++;
+    ++predecessorCount;
   }
  else   if (adjacency == Adjacency.SUCC) {
     adjacentNodes.put(node,Adjacency.BOTH);
-    predecessorCount++;
+    ++predecessorCount;
   }
-  checkState(predecessorCount >= 1);
+  checkPositive(predecessorCount);
 }

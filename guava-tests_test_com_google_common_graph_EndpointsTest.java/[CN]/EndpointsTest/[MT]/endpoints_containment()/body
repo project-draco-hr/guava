@@ -1,0 +1,13 @@
+{
+  MutableGraph<Integer> undirectedGraph=GraphBuilder.undirected().build();
+  undirectedGraph.putEdge(N1,N1);
+  undirectedGraph.putEdge(N1,N2);
+  Collection<Endpoints<Integer>> endpoints=undirectedGraph.edges();
+  assertThat(endpoints).hasSize(2);
+  assertThat(endpoints).contains(Endpoints.ofUndirected(N1,N1));
+  assertThat(endpoints).contains(Endpoints.ofUndirected(N1,N2));
+  assertThat(endpoints).contains(Endpoints.ofUndirected(N2,N1));
+  assertThat(endpoints).doesNotContain(Endpoints.ofUndirected(N2,N2));
+  assertThat(endpoints).doesNotContain(Endpoints.ofDirected(N1,N2));
+  assertThat(endpoints).doesNotContain(Endpoints.ofUndirected(N3,N4));
+}

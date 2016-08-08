@@ -8,5 +8,6 @@
   GraphConnections<N> connectionsB=nodeConnections.get(nodeB);
   connectionsA.removeSuccessor(nodeB);
   connectionsB.removePredecessor(nodeA);
+  checkNonNegative(--edgeCount);
   return true;
 }

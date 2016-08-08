@@ -1,5 +1,6 @@
 {
   this.adjacentNodes=checkNotNull(adjacentNodes,"adjacentNodes");
-  this.predecessorCount=predecessorCount;
-  this.successorCount=successorCount;
+  this.predecessorCount=checkNonNegative(predecessorCount);
+  this.successorCount=checkNonNegative(successorCount);
+  checkState(predecessorCount <= adjacentNodes.size() && successorCount <= adjacentNodes.size());
 }
