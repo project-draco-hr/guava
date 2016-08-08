@@ -29,7 +29,7 @@
       }
 ;
     }
-    @Override public ElementOrder<? super N> nodeOrder(){
+    @Override public ElementOrder<N> nodeOrder(){
       return AbstractNetwork.this.nodeOrder();
     }
     @Override public boolean isDirected(){
