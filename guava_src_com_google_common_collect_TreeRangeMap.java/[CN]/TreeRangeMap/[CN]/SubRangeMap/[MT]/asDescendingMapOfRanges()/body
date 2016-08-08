@@ -7,7 +7,7 @@
       final Iterator<RangeMapEntry<K,V>> backingItr=entriesByLowerBound.headMap(subRange.upperBound,false).descendingMap().values().iterator();
       return new AbstractIterator<Entry<Range<K>,V>>(){
         @Override protected Entry<Range<K>,V> computeNext(){
-          while (backingItr.hasNext()) {
+          if (backingItr.hasNext()) {
             RangeMapEntry<K,V> entry=backingItr.next();
             if (entry.getUpperBound().compareTo(subRange.lowerBound) <= 0) {
               return endOfData();
