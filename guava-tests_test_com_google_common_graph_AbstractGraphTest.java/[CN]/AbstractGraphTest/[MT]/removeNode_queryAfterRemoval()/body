@@ -1,7 +1,7 @@
 {
   addNode(N1);
   Set<Integer> unused=graph.adjacentNodes(N1);
-  assertTrue(graph.removeNode(N1));
+  assertThat(graph.removeNode(N1)).isTrue();
   try {
     graph.adjacentNodes(N1);
     fail(ERROR_NODE_NOT_IN_GRAPH);

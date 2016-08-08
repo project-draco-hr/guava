@@ -9,7 +9,7 @@
   for (  Integer node : graph.nodes()) {
     assertThat(nodeString).contains(node.toString());
     for (    Integer adjacentNode : graph.adjacentNodes(node)) {
-      assertTrue(graph.predecessors(node).contains(adjacentNode) || graph.successors(node).contains(adjacentNode));
+      assertThat(graph.predecessors(node).contains(adjacentNode) || graph.successors(node).contains(adjacentNode)).isTrue();
     }
     for (    Integer predecessor : graph.predecessors(node)) {
       assertThat(graph.successors(predecessor)).contains(node);

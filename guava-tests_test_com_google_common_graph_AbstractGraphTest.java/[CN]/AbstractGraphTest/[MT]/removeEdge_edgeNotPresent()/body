@@ -1,6 +1,6 @@
 {
   addEdge(N1,N2);
   addNode(N3);
-  assertFalse(graph.removeEdge(N1,N3));
+  assertThat(graph.removeEdge(N1,N3)).isFalse();
   assertThat(graph.successors(N1)).contains(N2);
 }

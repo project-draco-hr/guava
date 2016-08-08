@@ -2,6 +2,6 @@
   addEdge(N1,N2);
   addEdge(N1,N3);
   addEdge(N1,N4);
-  assertTrue(graph.removeEdge(N1,N3));
+  assertThat(graph.removeEdge(N1,N3)).isTrue();
   assertThat(graph.adjacentNodes(N1)).containsExactly(N2,N4);
 }
