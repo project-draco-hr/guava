@@ -1,3 +1,3 @@
 {
-  return iterationOrderRow.length;
+  return cellRowIndices.length;
 }

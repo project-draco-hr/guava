@@ -1,0 +1,7 @@
+{
+  ImmutableTable.Builder<Character,Integer,String> builder=ImmutableTable.builder();
+  builder.put('b',2,"foo");
+  builder.put('b',1,"bar");
+  builder.put('a',2,"baz");
+  validateReserialization(builder.build());
+}

@@ -1,0 +1,3 @@
+ImmutableTable<?,?,?> table
+int[] cellRowIndices
+int[] cellColumnIndices

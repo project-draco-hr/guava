@@ -1,3 +1,3 @@
 {
-  return values[iterationOrderRow[index]][iterationOrderColumn[index]];
+  return values[cellRowIndices[index]][cellColumnIndices[index]];
 }

@@ -1,0 +1,7 @@
+{
+  this.rowKeys=rowKeys;
+  this.columnKeys=columnKeys;
+  this.cellValues=cellValues;
+  this.cellRowIndices=cellRowIndices;
+  this.cellColumnIndices=cellColumnIndices;
+}

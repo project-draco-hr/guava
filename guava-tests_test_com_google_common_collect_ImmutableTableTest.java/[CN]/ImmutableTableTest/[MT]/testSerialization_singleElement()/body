@@ -1,0 +1,3 @@
+{
+  validateReserialization(ImmutableTable.of('a',2,"foo"));
+}

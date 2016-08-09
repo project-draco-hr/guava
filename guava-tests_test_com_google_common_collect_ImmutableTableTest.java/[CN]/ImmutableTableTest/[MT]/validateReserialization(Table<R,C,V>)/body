@@ -1,5 +1,6 @@
 {
+  Table<R,C,V> copy=SerializableTester.reserializeAndAssert(original);
   assertThat(copy.cellSet()).containsExactlyElementsIn(original.cellSet()).inOrder();
   assertThat(copy.rowKeySet()).containsExactlyElementsIn(original.rowKeySet()).inOrder();
-  assertThat(copy.values()).containsExactlyElementsIn(original.values()).inOrder();
+  assertThat(copy.columnKeySet()).containsExactlyElementsIn(original.columnKeySet()).inOrder();
 }

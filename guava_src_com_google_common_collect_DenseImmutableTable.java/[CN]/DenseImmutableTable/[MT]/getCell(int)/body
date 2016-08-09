@@ -1,6 +1,6 @@
 {
-  int rowIndex=iterationOrderRow[index];
-  int columnIndex=iterationOrderColumn[index];
+  int rowIndex=cellRowIndices[index];
+  int columnIndex=cellColumnIndices[index];
   R rowKey=rowKeySet().asList().get(rowIndex);
   C columnKey=columnKeySet().asList().get(columnIndex);
   V value=values[rowIndex][columnIndex];

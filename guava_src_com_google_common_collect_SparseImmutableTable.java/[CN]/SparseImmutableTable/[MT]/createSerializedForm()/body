@@ -1,0 +1,3 @@
+{
+  return SerializedForm.create(this,cellRowIndices,cellColumnIndices);
+}
