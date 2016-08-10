@@ -16,9 +16,9 @@
   assertThat(network.allowsSelfLoops()).isEqualTo(asGraph.allowsSelfLoops());
   for (  String edge : network.edges()) {
     assertThat(edgeString).contains(edge);
-    Iterator<Integer> endpointsIterator=network.incidentNodes(edge).iterator();
-    Integer nodeA=endpointsIterator.next();
-    Integer nodeB=endpointsIterator.next();
+    Endpoints<Integer> endpoints=network.incidentNodes(edge);
+    Integer nodeA=endpoints.nodeA();
+    Integer nodeB=endpoints.nodeB();
     assertThat(asGraph.edges()).contains(Endpoints.of(network,nodeA,nodeB));
     assertThat(network.edgesConnecting(nodeA,nodeB)).contains(edge);
     assertThat(network.successors(nodeA)).contains(nodeB);
@@ -29,7 +29,7 @@
     assertThat(network.adjacentNodes(nodeB)).contains(nodeA);
     assertThat(network.inEdges(nodeB)).contains(edge);
     assertThat(network.incidentEdges(nodeB)).contains(edge);
-    for (    Integer incidentNode : network.incidentNodes(edge)) {
+    for (    Integer incidentNode : ImmutableSet.of(network.incidentNodes(edge).nodeA(),network.incidentNodes(edge).nodeB())) {
       assertThat(network.nodes()).contains(incidentNode);
       for (      String adjacentEdge : network.incidentEdges(incidentNode)) {
         assertTrue(edge.equals(adjacentEdge) || Graphs.adjacentEdges(network,edge).contains(adjacentEdge));
@@ -60,7 +60,7 @@
     for (    String incidentEdge : network.incidentEdges(node)) {
       assertTrue(network.inEdges(node).contains(incidentEdge) || network.outEdges(node).contains(incidentEdge));
       assertThat(network.edges()).contains(incidentEdge);
-      assertThat(network.incidentNodes(incidentEdge)).contains(node);
+      assertTrue(network.incidentNodes(incidentEdge).nodeA().equals(node) || network.incidentNodes(incidentEdge).nodeB().equals(node));
     }
     for (    String inEdge : network.inEdges(node)) {
       assertThat(network.incidentEdges(node)).contains(inEdge);

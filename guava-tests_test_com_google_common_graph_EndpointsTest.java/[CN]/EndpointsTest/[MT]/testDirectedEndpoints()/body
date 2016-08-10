@@ -2,8 +2,9 @@
   Endpoints<String> directed=Endpoints.ofDirected("source","target");
   assertThat(directed.source()).isEqualTo("source");
   assertThat(directed.target()).isEqualTo("target");
+  assertThat(directed.nodeA()).isEqualTo("source");
+  assertThat(directed.nodeB()).isEqualTo("target");
   assertThat(directed.adjacentNode("source")).isEqualTo("target");
   assertThat(directed.adjacentNode("target")).isEqualTo("source");
-  assertThat(directed).containsExactly("source","target").inOrder();
   assertThat(directed.toString()).isEqualTo("<source -> target>");
 }
