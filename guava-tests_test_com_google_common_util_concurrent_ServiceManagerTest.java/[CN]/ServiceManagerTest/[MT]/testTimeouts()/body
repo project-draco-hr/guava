@@ -8,7 +8,7 @@
   }
  catch (  TimeoutException expected) {
   }
-  manager.awaitHealthy(100,TimeUnit.MILLISECONDS);
+  manager.awaitHealthy(5,SECONDS);
   manager.stopAsync();
   try {
     manager.awaitStopped(1,TimeUnit.MILLISECONDS);
@@ -16,5 +16,5 @@
   }
  catch (  TimeoutException expected) {
   }
-  manager.awaitStopped(100,TimeUnit.MILLISECONDS);
+  manager.awaitStopped(5,SECONDS);
 }
