@@ -7,6 +7,6 @@
     return nodeA;
   }
  else {
-    throw new IllegalArgumentException(String.format("Endpoints %s is not incident to node %s",this,node));
+    throw new IllegalArgumentException(String.format("Endpoints %s does not contain node %s",this,node));
   }
 }
