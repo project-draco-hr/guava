@@ -1,9 +1,9 @@
 {
   MutableNetwork<Integer,String> directedNetwork=NetworkBuilder.directed().build();
   directedNetwork.addNode(N0);
-  directedNetwork.addEdgeV2(N1,N2,E12);
-  directedNetwork.addEdgeV2(N2,N1,E21);
-  directedNetwork.addEdgeV2(N1,N3,E13);
-  directedNetwork.addEdgeV2(N4,N4,E44);
+  directedNetwork.addEdge(N1,N2,E12);
+  directedNetwork.addEdge(N2,N1,E21);
+  directedNetwork.addEdge(N1,N3,E13);
+  directedNetwork.addEdge(N4,N4,E44);
   containsExactlySanityCheck(directedNetwork.asGraph().edges(),Endpoints.ofDirected(N1,N2),Endpoints.ofDirected(N2,N1),Endpoints.ofDirected(N1,N3),Endpoints.ofDirected(N4,N4));
 }

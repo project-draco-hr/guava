@@ -1,7 +1,7 @@
 {
   MutableNetwork<Integer,String> undirectedGraph=NetworkBuilder.undirected().allowsSelfLoops(true).allowsParallelEdges(true).build();
-  undirectedGraph.addEdgeV2(N1,N1,E11);
-  undirectedGraph.addEdgeV2(N1,N1,E11_A);
-  undirectedGraph.addEdgeV2(N2,N3,E23);
+  undirectedGraph.addEdge(N1,N1,E11);
+  undirectedGraph.addEdge(N1,N1,E11_A);
+  undirectedGraph.addEdge(N2,N3,E23);
   assertThat(adjacentEdges(undirectedGraph,E11)).containsExactly(E11_A);
 }

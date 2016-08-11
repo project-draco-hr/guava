@@ -11,7 +11,7 @@
     for (    E edge : graph.outEdges(node)) {
       N adjacentNode=graph.incidentNodes(edge).adjacentNode(node);
       if (subgraph.nodes().contains(adjacentNode)) {
-        subgraph.addEdgeV2(node,adjacentNode,edge);
+        subgraph.addEdge(node,adjacentNode,edge);
       }
     }
   }

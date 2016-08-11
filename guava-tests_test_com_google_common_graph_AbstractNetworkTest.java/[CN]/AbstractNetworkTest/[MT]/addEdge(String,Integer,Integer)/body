@@ -1,5 +1,5 @@
 {
   network.addNode(n1);
   network.addNode(n2);
-  return network.addEdgeV2(n1,n2,e);
+  return network.addEdge(n1,n2,e);
 }

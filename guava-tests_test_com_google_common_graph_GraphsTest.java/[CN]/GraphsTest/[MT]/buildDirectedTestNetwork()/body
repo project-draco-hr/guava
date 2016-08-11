@@ -1,9 +1,9 @@
 {
   MutableNetwork<Integer,String> directedGraph=NetworkBuilder.directed().allowsParallelEdges(true).build();
-  directedGraph.addEdgeV2(N1,N1,E11);
-  directedGraph.addEdgeV2(N1,N2,E12);
-  directedGraph.addEdgeV2(N1,N1,E11_A);
-  directedGraph.addEdgeV2(N1,N2,E12_A);
-  directedGraph.addEdgeV2(N2,N1,E21);
+  directedGraph.addEdge(N1,N1,E11);
+  directedGraph.addEdge(N1,N2,E12);
+  directedGraph.addEdge(N1,N1,E11_A);
+  directedGraph.addEdge(N1,N2,E12_A);
+  directedGraph.addEdge(N2,N1,E21);
   return directedGraph;
 }
