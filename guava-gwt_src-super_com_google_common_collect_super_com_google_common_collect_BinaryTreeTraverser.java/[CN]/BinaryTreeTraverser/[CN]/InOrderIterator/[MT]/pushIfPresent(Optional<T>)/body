@@ -1,5 +1,0 @@
-{
-  if (node.isPresent()) {
-    stack.addLast(new InOrderNode<T>(node.get()));
-  }
-}

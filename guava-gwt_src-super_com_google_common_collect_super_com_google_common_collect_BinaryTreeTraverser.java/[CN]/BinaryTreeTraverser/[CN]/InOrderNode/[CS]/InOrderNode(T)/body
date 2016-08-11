@@ -1,4 +1,0 @@
-{
-  this.node=checkNotNull(node);
-  this.hasExpandedLeft=false;
-}
