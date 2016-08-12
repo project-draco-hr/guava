@@ -1,2 +1,2 @@
-Iterator<E> elements
+Iterator<E> iterator
 int k
