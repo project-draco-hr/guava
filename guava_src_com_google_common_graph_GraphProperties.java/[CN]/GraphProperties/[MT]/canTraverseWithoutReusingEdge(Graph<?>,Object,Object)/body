@@ -1,0 +1,6 @@
+{
+  if (graph.isDirected() || !Objects.equal(previousNode,nextNode)) {
+    return true;
+  }
+  return false;
+}

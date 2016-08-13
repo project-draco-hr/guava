@@ -1,0 +1,3 @@
+Graph<?> graph
+Object nextNode
+Object previousNode

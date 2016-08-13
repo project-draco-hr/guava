@@ -1,11 +1,15 @@
 {
-  checkArgument(graph.isDirected(),"isCyclic() currently only works on directed graphs");
-  Map<Object,NodeVisitState> nodeToVisitState=Maps.newHashMap();
+  int numEdges=graph.edges().size();
+  if (numEdges == 0) {
+    return false;
+  }
+  if (!graph.isDirected() && numEdges >= graph.nodes().size()) {
+    return true;
+  }
+  Map<Object,NodeState> visitedNodes=Maps.newHashMapWithExpectedSize(graph.nodes().size());
   for (  Object node : graph.nodes()) {
-    if (nodeToVisitState.get(node) == null) {
-      if (isSubgraphCyclic(graph,nodeToVisitState,node)) {
-        return true;
-      }
+    if (isSubgraphCyclic(graph,visitedNodes,node,null)) {
+      return true;
     }
   }
   return false;

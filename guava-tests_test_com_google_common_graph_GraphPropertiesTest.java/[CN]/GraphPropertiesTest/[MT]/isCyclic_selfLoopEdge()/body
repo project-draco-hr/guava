@@ -1,5 +1,7 @@
 {
-  MutableGraph<Integer> directedGraph=GraphBuilder.directed().build();
-  directedGraph.putEdge(1,1);
+  for (  MutableGraph<Integer> graph : graphsToTest) {
+    graph.putEdge(1,1);
+  }
   assertThat(isCyclic(directedGraph)).isTrue();
+  assertThat(isCyclic(undirectedGraph)).isTrue();
 }
