@@ -14,6 +14,9 @@
   assertThat(network.nodeOrder()).isEqualTo(asGraph.nodeOrder());
   assertThat(network.isDirected()).isEqualTo(asGraph.isDirected());
   assertThat(network.allowsSelfLoops()).isEqualTo(asGraph.allowsSelfLoops());
+  sanityCheckCollection(network.nodes());
+  sanityCheckCollection(network.edges());
+  sanityCheckCollection(asGraph.edges());
   for (  String edge : network.edges()) {
     assertThat(edgeString).contains(edge);
     Endpoints<Integer> endpoints=network.incidentNodes(edge);
@@ -41,6 +44,12 @@
     assertThat(network.adjacentNodes(node)).isEqualTo(asGraph.adjacentNodes(node));
     assertThat(network.predecessors(node)).isEqualTo(asGraph.predecessors(node));
     assertThat(network.successors(node)).isEqualTo(asGraph.successors(node));
+    sanityCheckCollection(network.adjacentNodes(node));
+    sanityCheckCollection(network.predecessors(node));
+    sanityCheckCollection(network.successors(node));
+    sanityCheckCollection(network.incidentEdges(node));
+    sanityCheckCollection(network.inEdges(node));
+    sanityCheckCollection(network.outEdges(node));
     for (    Integer otherNode : network.nodes()) {
       Set<String> edgesConnecting=network.edgesConnecting(node,otherNode);
       boolean isSelfLoop=node.equals(otherNode);

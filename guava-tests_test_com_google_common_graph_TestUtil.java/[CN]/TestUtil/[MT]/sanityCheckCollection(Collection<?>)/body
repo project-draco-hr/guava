@@ -1,0 +1,6 @@
+{
+  assertThat(collection).hasSize(Iterators.size(collection.iterator()));
+  for (  Object element : collection) {
+    assertThat(collection).contains(element);
+  }
+}

@@ -1,26 +1,3 @@
 {
-  new EqualsTester().addEqualityGroup(graph,Graphs.copyOf(graph),ImmutableGraph.copyOf(graph)).testEquals();
-  String graphString=graph.toString();
-  assertThat(graphString).contains("isDirected: " + graph.isDirected());
-  assertThat(graphString).contains("allowsSelfLoops: " + graph.allowsSelfLoops());
-  int nodeStart=graphString.indexOf("nodes:");
-  int edgeStart=graphString.indexOf("edges:");
-  String nodeString=graphString.substring(nodeStart,edgeStart);
-  Set<Endpoints<Integer>> allEndpoints=new HashSet<Endpoints<Integer>>();
-  for (  Integer node : graph.nodes()) {
-    assertThat(nodeString).contains(node.toString());
-    for (    Integer adjacentNode : graph.adjacentNodes(node)) {
-      assertThat(graph.predecessors(node).contains(adjacentNode) || graph.successors(node).contains(adjacentNode)).isTrue();
-    }
-    for (    Integer predecessor : graph.predecessors(node)) {
-      assertThat(graph.successors(predecessor)).contains(node);
-    }
-    for (    Integer successor : graph.successors(node)) {
-      Endpoints<Integer> endpoints=Endpoints.of(graph,node,successor);
-      allEndpoints.add(endpoints);
-      assertThat(graph.edges()).contains(endpoints);
-      assertThat(graph.predecessors(successor)).contains(node);
-    }
-  }
-  assertThat(graph.edges()).isEqualTo(allEndpoints);
+  validateGraph(graph);
 }

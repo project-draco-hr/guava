@@ -1,0 +1,4 @@
+{
+  assertThat(buildDirectedTestGraph()).isNotInstanceOf(ValueGraph.class);
+  assertThat(buildUndirectedTestGraph()).isNotInstanceOf(ValueGraph.class);
+}

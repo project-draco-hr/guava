@@ -1,8 +1,0 @@
-{
-  addEdge(N1,N2);
-  assertThat(graph.successors(N1)).containsExactly(N2);
-  assertThat(graph.predecessors(N2)).containsExactly(N1);
-  assertTrue(graph.removeEdge(N1,N2));
-  assertThat(graph.successors(N1)).isEmpty();
-  assertThat(graph.predecessors(N2)).isEmpty();
-}
