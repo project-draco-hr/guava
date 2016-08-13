@@ -1,0 +1,2 @@
+Set<N> predecessors
+Map<N,V> successorValues

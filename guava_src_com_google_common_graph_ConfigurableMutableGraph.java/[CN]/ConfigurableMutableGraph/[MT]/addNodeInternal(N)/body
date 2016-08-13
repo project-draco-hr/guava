@@ -1,5 +1,0 @@
-{
-  GraphConnections<N> connections=newConnections();
-  checkState(nodeConnections.put(node,connections) == null);
-  return connections;
-}

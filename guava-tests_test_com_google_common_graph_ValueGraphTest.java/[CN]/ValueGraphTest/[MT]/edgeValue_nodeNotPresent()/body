@@ -1,0 +1,11 @@
+{
+  graph=ValueGraphBuilder.undirected().build();
+  graph.putEdgeValue(1,2,"value");
+  try {
+    graph.edgeValue(2,3);
+    fail("Should have rejected edgeValue() if node not present in graph.");
+  }
+ catch (  IllegalArgumentException e) {
+    assertThat(e).hasMessage("Node 3 is not an element of this graph.");
+  }
+}

@@ -1,26 +1,3 @@
 {
-  return new AbstractSet<N>(){
-    @Override public UnmodifiableIterator<N> iterator(){
-      final Iterator<Entry<N,Adjacency>> entries=adjacentNodes.entrySet().iterator();
-      return new AbstractIterator<N>(){
-        @Override protected N computeNext(){
-          while (entries.hasNext()) {
-            Entry<N,Adjacency> entry=entries.next();
-            if (isPredecessor(entry.getValue())) {
-              return entry.getKey();
-            }
-          }
-          return endOfData();
-        }
-      }
-;
-    }
-    @Override public int size(){
-      return predecessorCount;
-    }
-    @Override public boolean contains(    Object obj){
-      return isPredecessor(adjacentNodes.get(obj));
-    }
-  }
-;
+  return Collections.unmodifiableSet(predecessors);
 }

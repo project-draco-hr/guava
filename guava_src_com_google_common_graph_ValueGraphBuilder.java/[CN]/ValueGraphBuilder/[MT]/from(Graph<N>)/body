@@ -1,0 +1,4 @@
+{
+  checkNotNull(graph);
+  return new ValueGraphBuilder<N,Object>(graph.isDirected()).allowsSelfLoops(graph.allowsSelfLoops()).nodeOrder(graph.nodeOrder());
+}

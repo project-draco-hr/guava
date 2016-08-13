@@ -1,4 +1,3 @@
 {
-  int initialCapacity=INNER_CAPACITY * 2;
-  return new DirectedGraphConnections<N>(new HashMap<N,Adjacency>(initialCapacity,INNER_LOAD_FACTOR),0,0);
+  return new DirectedGraphConnections<N,V>(new HashSet<N>(INNER_CAPACITY,INNER_LOAD_FACTOR),new HashMap<N,V>(INNER_CAPACITY,INNER_LOAD_FACTOR));
 }

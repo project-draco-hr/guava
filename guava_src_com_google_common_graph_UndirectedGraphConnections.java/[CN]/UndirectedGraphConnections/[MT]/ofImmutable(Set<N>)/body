@@ -1,3 +1,0 @@
-{
-  return new UndirectedGraphConnections<N>(ImmutableSet.copyOf(adjacentNodes));
-}

@@ -1,13 +1,3 @@
 {
-  checkNotNull(node,"node");
-  Adjacency adjacency=adjacentNodes.get(node);
-  if (adjacency == Adjacency.BOTH) {
-    adjacentNodes.put((N)node,Adjacency.SUCC);
-    --predecessorCount;
-  }
- else   if (adjacency == Adjacency.PRED) {
-    adjacentNodes.remove(node);
-    --predecessorCount;
-  }
-  checkNonNegative(predecessorCount);
+  predecessors.remove(node);
 }

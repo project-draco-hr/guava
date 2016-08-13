@@ -1,0 +1,15 @@
+{
+  graph=ValueGraphBuilder.directed().build();
+  graph.addNode(1);
+  graph.addNode(2);
+  assertThat(graph.edgeValueOrDefault(1,2,"default")).isEqualTo("default");
+  assertThat(graph.edgeValueOrDefault(2,1,"default")).isEqualTo("default");
+  graph.putEdgeValue(1,2,"valueA");
+  graph.putEdgeValue(2,1,"valueB");
+  assertThat(graph.edgeValueOrDefault(1,2,"default")).isEqualTo("valueA");
+  assertThat(graph.edgeValueOrDefault(2,1,"default")).isEqualTo("valueB");
+  graph.removeEdge(1,2);
+  graph.putEdgeValue(2,1,"valueC");
+  assertThat(graph.edgeValueOrDefault(1,2,"default")).isEqualTo("default");
+  assertThat(graph.edgeValueOrDefault(2,1,"default")).isEqualTo("valueC");
+}

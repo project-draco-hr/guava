@@ -1,4 +1,3 @@
 {
-  checkNotNull(node,"node");
-  adjacentNodes.remove(node);
+  return adjacentNodeValues.remove(node);
 }

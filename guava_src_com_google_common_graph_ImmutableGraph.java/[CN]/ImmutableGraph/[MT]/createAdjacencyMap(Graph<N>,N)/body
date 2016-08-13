@@ -1,9 +1,0 @@
-{
-  Set<N> predecessors=graph.predecessors(node);
-  Set<N> successors=graph.successors(node);
-  ImmutableMap.Builder<N,Adjacency> nodeAdjacencies=ImmutableMap.builder();
-  for (  N adjacentNode : graph.adjacentNodes(node)) {
-    nodeAdjacencies.put(adjacentNode,getAdjacency(predecessors.contains(adjacentNode),successors.contains(adjacentNode)));
-  }
-  return nodeAdjacencies.build();
-}

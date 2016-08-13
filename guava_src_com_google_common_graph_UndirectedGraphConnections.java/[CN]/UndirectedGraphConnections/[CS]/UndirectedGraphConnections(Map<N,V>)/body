@@ -1,0 +1,3 @@
+{
+  this.adjacentNodeValues=checkNotNull(adjacentNodeValues,"adjacentNodeValues");
+}

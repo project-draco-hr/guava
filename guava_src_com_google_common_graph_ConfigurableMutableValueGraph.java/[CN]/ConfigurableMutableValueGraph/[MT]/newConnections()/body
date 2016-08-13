@@ -1,0 +1,3 @@
+{
+  return isDirected() ? DirectedGraphConnections.<N,V>of() : UndirectedGraphConnections.<N,V>of();
+}

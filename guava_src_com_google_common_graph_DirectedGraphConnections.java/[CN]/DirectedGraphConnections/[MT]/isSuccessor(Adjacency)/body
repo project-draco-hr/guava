@@ -1,3 +1,0 @@
-{
-  return (adjacency == Adjacency.SUCC || adjacency == Adjacency.BOTH);
-}

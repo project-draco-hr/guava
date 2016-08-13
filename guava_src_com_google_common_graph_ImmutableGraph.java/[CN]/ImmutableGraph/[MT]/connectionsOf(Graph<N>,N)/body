@@ -1,3 +1,3 @@
 {
-  return graph.isDirected() ? DirectedGraphConnections.ofImmutable(createAdjacencyMap(graph,node),graph.predecessors(node).size(),graph.successors(node).size()) : UndirectedGraphConnections.ofImmutable(graph.adjacentNodes(node));
+  return graph.isDirected() ? DirectedGraphConnections.ofImmutable(graph.predecessors(node),Maps.asMap(graph.successors(node),Functions.constant(DUMMY_EDGE_VALUE))) : UndirectedGraphConnections.ofImmutable(Maps.asMap(graph.adjacentNodes(node),Functions.constant(DUMMY_EDGE_VALUE)));
 }

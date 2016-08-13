@@ -1,1 +1,1 @@
-AbstractConfigurableGraph<N>
+AbstractConfigurableGraph<N,Object>

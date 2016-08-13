@@ -1,3 +1,0 @@
-GraphBuilder<? super N> builder
-Map<N,GraphConnections<N>> nodeConnections
-long edgeCount

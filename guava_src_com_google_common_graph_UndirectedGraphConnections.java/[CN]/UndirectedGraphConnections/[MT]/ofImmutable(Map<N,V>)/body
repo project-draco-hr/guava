@@ -1,0 +1,3 @@
+{
+  return new UndirectedGraphConnections<N,V>(ImmutableMap.copyOf(adjacentNodeValues));
+}

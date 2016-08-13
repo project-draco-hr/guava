@@ -1,3 +1,0 @@
-Map<N,Adjacency> adjacentNodes
-int predecessorCount
-int successorCount
