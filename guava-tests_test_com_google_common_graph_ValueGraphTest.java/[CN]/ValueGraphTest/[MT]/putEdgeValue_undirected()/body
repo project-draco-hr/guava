@@ -4,5 +4,4 @@
   assertThat(graph.putEdgeValue(2,1,"valueB")).isEqualTo("valueA");
   assertThat(graph.putEdgeValue(1,2,"valueC")).isEqualTo("valueB");
   assertThat(graph.putEdgeValue(2,1,"valueD")).isEqualTo("valueC");
-  assertThat(graph).isEqualTo(ImmutableValueGraph.copyOf(graph));
 }

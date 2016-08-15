@@ -1,5 +1,7 @@
 {
-  new EqualsTester().addEqualityGroup(graph,Graphs.copyOf(graph),ImmutableGraph.copyOf(graph)).testEquals();
+  if (!(graph instanceof ValueGraph)) {
+    new EqualsTester().addEqualityGroup(graph,Graphs.copyOf(graph),ImmutableGraph.copyOf(graph)).testEquals();
+  }
   String graphString=graph.toString();
   assertThat(graphString).contains("isDirected: " + graph.isDirected());
   assertThat(graphString).contains("allowsSelfLoops: " + graph.allowsSelfLoops());

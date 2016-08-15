@@ -1,0 +1,10 @@
+{
+  MutableValueGraph<N,V> copy=ValueGraphBuilder.from(graph).expectedNodeCount(graph.nodes().size()).build();
+  for (  N node : graph.nodes()) {
+    copy.addNode(node);
+  }
+  for (  Endpoints<N> edge : graph.edges()) {
+    copy.putEdgeValue(edge.nodeA(),edge.nodeB(),graph.edgeValue(edge.nodeA(),edge.nodeB()));
+  }
+  return copy;
+}

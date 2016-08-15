@@ -1,11 +1,10 @@
 {
-  checkNotNull(graph,"graph");
   MutableGraph<N> copy=GraphBuilder.from(graph).expectedNodeCount(graph.nodes().size()).build();
   for (  N node : graph.nodes()) {
-    checkState(copy.addNode(node));
+    copy.addNode(node);
   }
   for (  Endpoints<N> endpoints : graph.edges()) {
-    checkState(copy.putEdge(endpoints.nodeA(),endpoints.nodeB()));
+    copy.putEdge(endpoints.nodeA(),endpoints.nodeB());
   }
   return copy;
 }

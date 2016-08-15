@@ -1,1 +1,1 @@
-AbstractConfigurableValueGraph<N,V>
+ConfigurableValueGraph<N,V>

@@ -8,5 +8,9 @@
   assertThat(graph.edgeValue(2,1)).isEqualTo("valueB");
   assertThat(graph.edgeValue(2,3)).isEqualTo("valueC");
   assertThat(graph.edgeValue(4,4)).isEqualTo("valueD");
-  assertThat(graph).isEqualTo(ImmutableValueGraph.copyOf(graph));
+  String toString=graph.toString();
+  assertThat(toString).contains("valueA");
+  assertThat(toString).contains("valueB");
+  assertThat(toString).contains("valueC");
+  assertThat(toString).contains("valueD");
 }

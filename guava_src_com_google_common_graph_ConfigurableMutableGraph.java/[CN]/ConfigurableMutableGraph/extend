@@ -1,1 +1,1 @@
-AbstractGraph<N>
+ForwardingGraph<N>

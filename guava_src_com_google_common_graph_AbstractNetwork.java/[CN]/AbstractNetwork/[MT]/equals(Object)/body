@@ -6,10 +6,7 @@
     return false;
   }
   Network<?,?> other=(Network<?,?>)obj;
-  if (isDirected() != other.isDirected()) {
-    return false;
-  }
-  if (!nodes().equals(other.nodes()) || !edges().equals(other.edges())) {
+  if (isDirected() != other.isDirected() || !nodes().equals(other.nodes()) || !edges().equals(other.edges())) {
     return false;
   }
   for (  E edge : edges()) {

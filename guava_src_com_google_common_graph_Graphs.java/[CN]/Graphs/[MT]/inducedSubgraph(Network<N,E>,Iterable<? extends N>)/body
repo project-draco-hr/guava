@@ -1,17 +1,13 @@
 {
-  NetworkBuilder<N,E> builder=NetworkBuilder.from(graph);
-  if (nodes instanceof Collection) {
-    builder=builder.expectedNodeCount(((Collection<?>)nodes).size());
-  }
-  MutableNetwork<N,E> subgraph=builder.build();
+  MutableNetwork<N,E> subgraph=NetworkBuilder.from(graph).build();
   for (  N node : nodes) {
     subgraph.addNode(node);
   }
   for (  N node : subgraph.nodes()) {
     for (    E edge : graph.outEdges(node)) {
-      N adjacentNode=graph.incidentNodes(edge).adjacentNode(node);
-      if (subgraph.nodes().contains(adjacentNode)) {
-        subgraph.addEdge(node,adjacentNode,edge);
+      N successorNode=graph.incidentNodes(edge).adjacentNode(node);
+      if (subgraph.nodes().contains(successorNode)) {
+        subgraph.addEdge(node,successorNode,edge);
       }
     }
   }

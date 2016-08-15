@@ -1,0 +1,9 @@
+{
+  Function<Endpoints<N>,V> edgeToValueFn=new Function<Endpoints<N>,V>(){
+    @Override public V apply(    Endpoints<N> edge){
+      return edgeValue(edge.nodeA(),edge.nodeB());
+    }
+  }
+;
+  return Maps.asMap(edges(),edgeToValueFn);
+}

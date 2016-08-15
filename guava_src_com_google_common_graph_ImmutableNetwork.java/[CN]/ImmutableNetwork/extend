@@ -1,1 +1,1 @@
-AbstractConfigurableNetwork<N,E>
+ConfigurableNetwork<N,E>
