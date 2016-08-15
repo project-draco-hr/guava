@@ -1,5 +1,5 @@
 {
-  MutableNetwork<Integer,String> undirectedGraph=NetworkBuilder.undirected().allowsParallelEdges(true).build();
+  MutableNetwork<Integer,String> undirectedGraph=NetworkBuilder.undirected().allowsSelfLoops(true).allowsParallelEdges(true).build();
   undirectedGraph.addEdge(N1,N1,E11);
   undirectedGraph.addEdge(N1,N2,E12);
   undirectedGraph.addEdge(N1,N1,E11_A);

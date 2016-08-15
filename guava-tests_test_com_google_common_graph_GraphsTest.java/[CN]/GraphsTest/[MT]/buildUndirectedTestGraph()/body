@@ -1,5 +1,5 @@
 {
-  MutableGraph<Integer> undirectedGraph=GraphBuilder.undirected().build();
+  MutableGraph<Integer> undirectedGraph=GraphBuilder.undirected().allowsSelfLoops(true).build();
   undirectedGraph.putEdge(N1,N1);
   undirectedGraph.putEdge(N1,N2);
   undirectedGraph.putEdge(N2,N1);
