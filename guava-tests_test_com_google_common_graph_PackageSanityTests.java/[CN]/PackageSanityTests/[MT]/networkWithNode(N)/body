@@ -1,0 +1,5 @@
+{
+  MutableNetwork<N,N> network=NetworkBuilder.directed().build();
+  network.addNode(node);
+  return ImmutableNetwork.copyOf(network);
+}

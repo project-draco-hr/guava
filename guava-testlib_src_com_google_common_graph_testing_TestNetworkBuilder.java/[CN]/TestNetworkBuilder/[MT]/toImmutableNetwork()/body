@@ -1,3 +1,0 @@
-{
-  return ImmutableNetwork.copyOf(graph);
-}

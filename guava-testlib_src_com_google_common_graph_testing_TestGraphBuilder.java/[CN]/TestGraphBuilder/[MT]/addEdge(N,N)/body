@@ -1,4 +1,0 @@
-{
-  graph.putEdge(nodeA,nodeB);
-  return this;
-}
