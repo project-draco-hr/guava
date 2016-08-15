@@ -1,8 +1,0 @@
-{
-  for (  MutableNetwork<Integer,String> network : networksToTest) {
-    network.addEdge(1,2,"1-2a");
-    network.addEdge(1,2,"1-2b");
-  }
-  assertThat(isCyclic(directedNetwork)).isFalse();
-  assertThat(isCyclic(undirectedNetwork)).isTrue();
-}

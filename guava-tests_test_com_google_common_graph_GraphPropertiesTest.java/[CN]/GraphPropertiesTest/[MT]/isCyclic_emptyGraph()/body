@@ -1,4 +1,0 @@
-{
-  assertThat(isCyclic(directedGraph)).isFalse();
-  assertThat(isCyclic(undirectedGraph)).isFalse();
-}

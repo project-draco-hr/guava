@@ -1,6 +1,0 @@
-{
-  if (!network.isDirected() && network.allowsParallelEdges() && network.edges().size() > network.asGraph().edges().size()) {
-    return true;
-  }
-  return isCyclic(network.asGraph());
-}

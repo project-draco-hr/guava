@@ -1,4 +1,0 @@
-Graph<?> graph
-Map<Object,NodeState> visitedNodes
-Object node
-Object previousNode
