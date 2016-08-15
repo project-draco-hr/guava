@@ -1,0 +1,2 @@
+Graph<N> originalGraph
+Graph<N> expectedClosure
