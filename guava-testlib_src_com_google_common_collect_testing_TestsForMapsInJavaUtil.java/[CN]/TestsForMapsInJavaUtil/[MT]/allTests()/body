@@ -3,6 +3,7 @@
   suite.addTest(testsForEmptyMap());
   suite.addTest(testsForSingletonMap());
   suite.addTest(testsForHashMap());
+  suite.addTest(testsForHashtable());
   suite.addTest(testsForLinkedHashMap());
   suite.addTest(testsForTreeMapNatural());
   suite.addTest(testsForTreeMapWithComparator());
