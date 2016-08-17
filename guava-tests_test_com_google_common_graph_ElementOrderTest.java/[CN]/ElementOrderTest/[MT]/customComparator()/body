@@ -5,7 +5,7 @@
     }
   }
 ;
-  MutableGraph<NonComparableSuperClass> graph=GraphBuilder.undirected().nodeOrder(ElementOrder.sorted(comparator)).build();
+  MutableBasicGraph<NonComparableSuperClass> graph=BasicGraphBuilder.undirected().nodeOrder(ElementOrder.sorted(comparator)).build();
   NonComparableSuperClass node1=new NonComparableSuperClass(1);
   NonComparableSuperClass node3=new NonComparableSuperClass(3);
   NonComparableSuperClass node5=new NonComparableSuperClass(5);

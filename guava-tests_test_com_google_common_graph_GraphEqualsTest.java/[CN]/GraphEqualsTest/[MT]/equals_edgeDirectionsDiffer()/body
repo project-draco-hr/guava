@@ -1,6 +1,6 @@
 {
   graph.putEdge(N1,N2);
-  MutableGraph<Integer> g2=createGraph(graphType);
+  MutableBasicGraph<Integer> g2=createGraph(graphType);
   g2.putEdge(N2,N1);
 switch (graphType) {
 case UNDIRECTED:

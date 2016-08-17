@@ -1,5 +1,5 @@
 {
-  MutableGraph<Integer> directedGraph=GraphBuilder.directed().build();
+  MutableBasicGraph<Integer> directedGraph=BasicGraphBuilder.directed().build();
   directedGraph.addNode(N0);
   directedGraph.putEdge(N1,N2);
   directedGraph.putEdge(N2,N1);

@@ -1,3 +1,0 @@
-{
-  this.backingGraph=new ConfigurableMutableValueGraph<N,Object>(builder);
-}

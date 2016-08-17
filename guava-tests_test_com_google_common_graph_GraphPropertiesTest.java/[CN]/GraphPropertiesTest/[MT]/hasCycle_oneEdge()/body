@@ -1,5 +1,5 @@
 {
-  for (  MutableGraph<Integer> graph : graphsToTest) {
+  for (  MutableBasicGraph<Integer> graph : graphsToTest) {
     graph.putEdge(1,2);
   }
   assertThat(hasCycle(directedGraph)).isFalse();

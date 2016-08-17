@@ -1,6 +1,6 @@
 {
   graph.addNode(N1);
-  MutableGraph<Integer> g2=createGraph(graphType);
+  MutableBasicGraph<Integer> g2=createGraph(graphType);
   g2.addNode(N2);
   new EqualsTester().addEqualityGroup(graph).addEqualityGroup(g2).testEquals();
 }

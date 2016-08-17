@@ -1,3 +1,0 @@
-{
-  return (GraphBuilder<N1>)this;
-}

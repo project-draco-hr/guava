@@ -1,5 +1,5 @@
 {
-  MutableGraph<Integer> undirectedGraph=GraphBuilder.undirected().build();
+  MutableBasicGraph<Integer> undirectedGraph=BasicGraphBuilder.undirected().build();
   undirectedGraph.putEdge(N1,N1);
   undirectedGraph.putEdge(N1,N2);
   Collection<Endpoints<Integer>> endpoints=undirectedGraph.edges();

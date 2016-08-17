@@ -1,5 +1,5 @@
 {
-  MutableGraph<Integer> directedGraph=GraphBuilder.directed().build();
+  MutableBasicGraph<Integer> directedGraph=BasicGraphBuilder.directed().build();
   Collection<Endpoints<Integer>> endpoints=directedGraph.edges();
   directedGraph.putEdge(N1,N2);
   containsExactlySanityCheck(endpoints,Endpoints.ofDirected(N1,N2));

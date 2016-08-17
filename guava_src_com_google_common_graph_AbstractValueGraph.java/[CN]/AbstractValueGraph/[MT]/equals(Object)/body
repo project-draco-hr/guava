@@ -9,7 +9,7 @@
   if (isDirected() != other.isDirected() || !nodes().equals(other.nodes()) || !edges().equals(other.edges())) {
     return false;
   }
-  for (  Endpoints<?> edge : edges()) {
+  for (  Endpoints<N> edge : edges()) {
     if (!edgeValue(edge.nodeA(),edge.nodeB()).equals(other.edgeValue(edge.nodeA(),edge.nodeB()))) {
       return false;
     }

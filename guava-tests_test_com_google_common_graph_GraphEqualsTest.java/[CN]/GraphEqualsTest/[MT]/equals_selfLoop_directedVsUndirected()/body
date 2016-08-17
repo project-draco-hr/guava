@@ -1,6 +1,6 @@
 {
   graph.putEdge(N1,N1);
-  MutableGraph<Integer> g2=createGraph(oppositeType(graphType));
+  MutableBasicGraph<Integer> g2=createGraph(oppositeType(graphType));
   g2.putEdge(N1,N1);
   new EqualsTester().addEqualityGroup(graph).addEqualityGroup(g2).testEquals();
 }

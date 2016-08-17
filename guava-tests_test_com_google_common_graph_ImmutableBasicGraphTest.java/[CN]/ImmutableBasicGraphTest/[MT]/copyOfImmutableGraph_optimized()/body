@@ -1,0 +1,5 @@
+{
+  BasicGraph<String> graph1=ImmutableBasicGraph.copyOf(BasicGraphBuilder.directed().<String>build());
+  BasicGraph<String> graph2=ImmutableBasicGraph.copyOf(graph1);
+  assertThat(graph2).isSameAs(graph1);
+}

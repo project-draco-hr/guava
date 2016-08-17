@@ -1,6 +1,0 @@
-{
-  checkNotNull(nodeOrder);
-  GraphBuilder<N1> newBuilder=cast();
-  newBuilder.nodeOrder=nodeOrder;
-  return newBuilder;
-}

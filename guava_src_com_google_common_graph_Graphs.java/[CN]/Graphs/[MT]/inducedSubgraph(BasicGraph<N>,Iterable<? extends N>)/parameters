@@ -1,0 +1,2 @@
+BasicGraph<N> graph
+Iterable<? extends N> nodes

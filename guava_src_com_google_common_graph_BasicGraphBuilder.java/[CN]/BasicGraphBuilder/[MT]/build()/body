@@ -1,0 +1,3 @@
+{
+  return new ConfigurableMutableBasicGraph<N1>(this);
+}

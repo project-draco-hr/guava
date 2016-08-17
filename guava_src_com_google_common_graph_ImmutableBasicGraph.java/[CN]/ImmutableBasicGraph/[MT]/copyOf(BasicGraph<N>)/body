@@ -1,0 +1,3 @@
+{
+  return (graph instanceof ImmutableBasicGraph) ? (ImmutableBasicGraph<N>)graph : new ImmutableBasicGraph<N>(graph);
+}

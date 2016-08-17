@@ -1,0 +1,3 @@
+{
+  return backingGraph.putEdgeValue(nodeA,nodeB,Presence.EDGE_EXISTS) == null;
+}

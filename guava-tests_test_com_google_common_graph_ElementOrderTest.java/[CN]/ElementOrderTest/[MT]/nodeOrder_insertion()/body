@@ -1,5 +1,5 @@
 {
-  MutableGraph<Integer> graph=GraphBuilder.directed().nodeOrder(insertion()).build();
+  MutableBasicGraph<Integer> graph=BasicGraphBuilder.directed().nodeOrder(insertion()).build();
   addNodes(graph);
   assertThat(graph.nodeOrder()).isEqualTo(insertion());
   assertThat(graph.nodes()).containsExactly(3,1,4).inOrder();

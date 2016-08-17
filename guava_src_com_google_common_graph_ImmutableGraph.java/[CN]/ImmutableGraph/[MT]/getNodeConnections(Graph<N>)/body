@@ -1,7 +1,0 @@
-{
-  ImmutableMap.Builder<N,GraphConnections<N,Object>> nodeConnections=ImmutableMap.builder();
-  for (  N node : graph.nodes()) {
-    nodeConnections.put(node,connectionsOf(graph,node));
-  }
-  return nodeConnections.build();
-}

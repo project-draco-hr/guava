@@ -1,5 +1,5 @@
 {
-  Graph<Integer> undirectedGraph=buildUndirectedTestGraph();
-  Graph<Integer> copy=copyOf(undirectedGraph);
+  BasicGraph<Integer> undirectedGraph=buildUndirectedTestGraph();
+  BasicGraph<Integer> copy=copyOf(undirectedGraph);
   assertThat(copy).isEqualTo(undirectedGraph);
 }

@@ -1,6 +1,6 @@
 {
   setDistinctValues(AbstractGraphBuilder.class,GRAPH_BUILDER_A,GRAPH_BUILDER_B);
-  setDistinctValues(Graph.class,IMMUTABLE_GRAPH_A,IMMUTABLE_GRAPH_B);
+  setDistinctValues(BasicGraph.class,IMMUTABLE_GRAPH_A,IMMUTABLE_GRAPH_B);
   setDistinctValues(NetworkBuilder.class,NETWORK_BUILDER_A,NETWORK_BUILDER_B);
   setDistinctValues(Network.class,IMMUTABLE_NETWORK_A,IMMUTABLE_NETWORK_B);
 }

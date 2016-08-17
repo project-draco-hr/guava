@@ -1,5 +1,5 @@
 {
-  graphsToTest=ImmutableList.of(GraphBuilder.directed().<Integer>build(),GraphBuilder.undirected().<Integer>build());
+  graphsToTest=ImmutableList.of(BasicGraphBuilder.directed().<Integer>build(),BasicGraphBuilder.undirected().<Integer>build());
   directedGraph=graphsToTest.get(0);
   undirectedGraph=graphsToTest.get(1);
   networksToTest=ImmutableList.of(NetworkBuilder.directed().allowsParallelEdges(true).<Integer,String>build(),NetworkBuilder.undirected().allowsParallelEdges(true).<Integer,String>build());

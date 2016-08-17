@@ -1,10 +1,10 @@
 {
-  MutableGraph<Integer> directedGraph=GraphBuilder.directed().allowsSelfLoops(false).build();
+  MutableBasicGraph<Integer> directedGraph=BasicGraphBuilder.directed().allowsSelfLoops(false).build();
   directedGraph.putEdge(N1,N2);
   directedGraph.putEdge(N2,N3);
   directedGraph.putEdge(N3,N4);
   directedGraph.putEdge(N4,N1);
-  MutableGraph<Integer> expectedClosure=GraphBuilder.directed().allowsSelfLoops(true).build();
+  MutableBasicGraph<Integer> expectedClosure=BasicGraphBuilder.directed().allowsSelfLoops(true).build();
   expectedClosure.putEdge(N1,N1);
   expectedClosure.putEdge(N1,N2);
   expectedClosure.putEdge(N1,N3);

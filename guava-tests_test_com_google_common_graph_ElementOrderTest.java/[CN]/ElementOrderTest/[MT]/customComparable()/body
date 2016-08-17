@@ -1,5 +1,5 @@
 {
-  MutableGraph<ComparableSubClass> graph=GraphBuilder.undirected().nodeOrder(ElementOrder.<ComparableSubClass>natural()).build();
+  MutableBasicGraph<ComparableSubClass> graph=BasicGraphBuilder.undirected().nodeOrder(ElementOrder.<ComparableSubClass>natural()).build();
   ComparableSubClass node2=new ComparableSubClass(2);
   ComparableSubClass node4=new ComparableSubClass(4);
   ComparableSubClass node6=new ComparableSubClass(6);

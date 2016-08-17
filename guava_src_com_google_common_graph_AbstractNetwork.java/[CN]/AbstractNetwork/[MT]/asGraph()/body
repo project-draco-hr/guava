@@ -1,5 +1,5 @@
 {
-  return new AbstractGraph<N>(){
+  return new AbstractValueGraph<N,Set<E>>(){
     @Override public Set<N> nodes(){
       return AbstractNetwork.this.nodes();
     }
@@ -46,6 +46,12 @@
     }
     @Override public Set<N> successors(    Object node){
       return AbstractNetwork.this.successors(node);
+    }
+    @Override public Set<E> edgeValue(    Object nodeA,    Object nodeB){
+      return checkNotNull(edgesConnecting(nodeA,nodeB));
+    }
+    @Override public Set<E> edgeValueOrDefault(    Object nodeA,    Object nodeB,    Set<E> defaultValue){
+      return checkNotNull(edgesConnecting(nodeA,nodeB));
     }
   }
 ;

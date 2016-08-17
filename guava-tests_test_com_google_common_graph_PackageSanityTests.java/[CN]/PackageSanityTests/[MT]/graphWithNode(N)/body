@@ -1,5 +1,5 @@
 {
-  MutableGraph<N> graph=GraphBuilder.directed().build();
+  MutableBasicGraph<N> graph=BasicGraphBuilder.directed().build();
   graph.addNode(node);
-  return ImmutableGraph.copyOf(graph);
+  return ImmutableBasicGraph.copyOf(graph);
 }
