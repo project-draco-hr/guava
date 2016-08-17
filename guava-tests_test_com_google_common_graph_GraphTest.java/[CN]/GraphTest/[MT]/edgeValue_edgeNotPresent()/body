@@ -1,0 +1,12 @@
+{
+  graph=GraphBuilder.directed().build();
+  graph.addNode(1);
+  graph.addNode(2);
+  try {
+    graph.edgeValue(2,1);
+    fail("Should have rejected edgeValue() if edge not present in graph.");
+  }
+ catch (  IllegalArgumentException e) {
+    assertThat(e).hasMessage("Edge connecting 2 to 1 is not present in this graph.");
+  }
+}

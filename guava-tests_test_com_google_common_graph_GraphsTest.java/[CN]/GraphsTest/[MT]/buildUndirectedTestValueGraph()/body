@@ -1,7 +1,0 @@
-{
-  MutableValueGraph<Integer,String> undirectedGraph=ValueGraphBuilder.undirected().allowsSelfLoops(true).build();
-  undirectedGraph.putEdgeValue(N1,N1,E11);
-  undirectedGraph.putEdgeValue(N1,N2,E12);
-  undirectedGraph.putEdgeValue(N2,N1,E21);
-  return undirectedGraph;
-}

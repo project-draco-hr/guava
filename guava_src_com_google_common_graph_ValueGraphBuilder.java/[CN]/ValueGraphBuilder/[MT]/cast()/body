@@ -1,3 +1,0 @@
-{
-  return (ValueGraphBuilder<N1,V1>)this;
-}

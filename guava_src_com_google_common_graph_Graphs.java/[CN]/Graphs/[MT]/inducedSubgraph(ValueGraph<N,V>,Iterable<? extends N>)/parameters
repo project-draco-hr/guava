@@ -1,2 +1,0 @@
-ValueGraph<N,V> graph
-Iterable<? extends N> nodes

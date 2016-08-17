@@ -1,1 +1,1 @@
-ImmutableValueGraph<N,Presence>
+ImmutableGraph<N,Presence>

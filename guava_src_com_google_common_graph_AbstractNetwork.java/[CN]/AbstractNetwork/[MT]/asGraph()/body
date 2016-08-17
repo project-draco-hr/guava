@@ -1,5 +1,5 @@
 {
-  return new AbstractValueGraph<N,Set<E>>(){
+  return new AbstractGraph<N,Set<E>>(){
     @Override public Set<N> nodes(){
       return AbstractNetwork.this.nodes();
     }

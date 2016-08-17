@@ -1,5 +1,0 @@
-{
-  ValueGraph<Integer,String> directedGraph=buildDirectedTestValueGraph();
-  ValueGraph<Integer,String> copy=copyOf(directedGraph);
-  assertThat(copy).isEqualTo(directedGraph);
-}

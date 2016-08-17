@@ -1,7 +1,0 @@
-{
-  new EqualsTester().addEqualityGroup(graph,Graphs.copyOf(graph),ImmutableValueGraph.copyOf(graph)).testEquals();
-  for (  Endpoints<Integer> edge : graph.edges()) {
-    assertThat(graph.edgeValue(edge.nodeA(),edge.nodeB())).isNotNull();
-  }
-  AbstractGraphTest.validateGraph(graph);
-}
