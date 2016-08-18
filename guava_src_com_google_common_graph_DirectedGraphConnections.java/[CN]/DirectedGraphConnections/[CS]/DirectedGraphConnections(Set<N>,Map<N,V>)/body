@@ -1,4 +1,0 @@
-{
-  this.predecessors=checkNotNull(predecessors,"predecessors");
-  this.successorValues=checkNotNull(successorValues,"successorValues");
-}

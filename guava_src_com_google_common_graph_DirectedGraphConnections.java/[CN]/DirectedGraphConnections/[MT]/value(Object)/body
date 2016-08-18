@@ -1,3 +1,10 @@
 {
-  return successorValues.get(node);
+  Object value=adjacentNodeValues.get(node);
+  if (value == PRED) {
+    return null;
+  }
+  if (value instanceof PredAndSucc) {
+    return (V)((PredAndSucc)value).successorValue;
+  }
+  return (V)value;
 }

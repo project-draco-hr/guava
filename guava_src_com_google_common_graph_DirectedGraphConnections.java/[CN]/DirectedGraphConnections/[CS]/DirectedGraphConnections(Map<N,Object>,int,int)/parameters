@@ -1,0 +1,3 @@
+Map<N,Object> adjacentNodeValues
+int predecessorCount
+int successorCount

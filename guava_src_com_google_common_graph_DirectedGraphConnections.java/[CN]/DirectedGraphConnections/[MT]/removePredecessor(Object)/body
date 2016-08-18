@@ -1,3 +1,11 @@
 {
-  predecessors.remove(node);
+  Object previousValue=adjacentNodeValues.get(node);
+  if (previousValue == PRED) {
+    adjacentNodeValues.remove(node);
+    checkNonNegative(--predecessorCount);
+  }
+ else   if (previousValue instanceof PredAndSucc) {
+    adjacentNodeValues.put((N)node,((PredAndSucc)previousValue).successorValue);
+    checkNonNegative(--predecessorCount);
+  }
 }

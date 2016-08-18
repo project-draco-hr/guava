@@ -1,3 +1,13 @@
 {
-  predecessors.add(node);
+  Object previousValue=adjacentNodeValues.put(node,PRED);
+  if (previousValue == null) {
+    checkPositive(++predecessorCount);
+  }
+ else   if (previousValue instanceof PredAndSucc) {
+    adjacentNodeValues.put(node,previousValue);
+  }
+ else   if (previousValue != PRED) {
+    adjacentNodeValues.put(node,new PredAndSucc(previousValue));
+    checkPositive(++predecessorCount);
+  }
 }

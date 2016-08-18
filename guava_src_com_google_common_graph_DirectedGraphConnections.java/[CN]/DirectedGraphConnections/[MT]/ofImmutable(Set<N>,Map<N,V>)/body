@@ -1,3 +1,11 @@
 {
-  return new DirectedGraphConnections<N,V>(ImmutableSet.copyOf(predecessors),ImmutableMap.copyOf(successorValues));
+  Map<N,Object> adjacentNodeValues=new HashMap<N,Object>();
+  adjacentNodeValues.putAll(successorValues);
+  for (  N predecessor : predecessors) {
+    Object value=adjacentNodeValues.put(predecessor,PRED);
+    if (value != null) {
+      adjacentNodeValues.put(predecessor,new PredAndSucc(value));
+    }
+  }
+  return new DirectedGraphConnections<N,V>(ImmutableMap.copyOf(adjacentNodeValues),predecessors.size(),successorValues.size());
 }
