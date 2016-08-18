@@ -48,10 +48,13 @@
       return AbstractNetwork.this.successors(node);
     }
     @Override public Set<E> edgeValue(    Object nodeA,    Object nodeB){
-      return checkNotNull(edgesConnecting(nodeA,nodeB));
+      Set<E> edges=edgesConnecting(nodeA,nodeB);
+      checkArgument(!edges.isEmpty(),EDGE_CONNECTING_NOT_IN_GRAPH,nodeA,nodeB);
+      return edges;
     }
     @Override public Set<E> edgeValueOrDefault(    Object nodeA,    Object nodeB,    Set<E> defaultValue){
-      return checkNotNull(edgesConnecting(nodeA,nodeB));
+      Set<E> edges=edgesConnecting(nodeA,nodeB);
+      return edges.isEmpty() ? defaultValue : edges;
     }
   }
 ;
