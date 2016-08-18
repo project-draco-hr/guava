@@ -1,0 +1,3 @@
+{
+  return isDirected() ? outEdges(node).size() : degree(node);
+}

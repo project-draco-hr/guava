@@ -1,7 +1,7 @@
 {
   addNode(N1);
   addEdge(E11,N1,N1);
-  assertTrue(network.removeNode(N1));
+  assertThat(network.removeNode(N1)).isTrue();
   assertThat(network.nodes()).isEmpty();
   assertThat(network.edges()).doesNotContain(E11);
 }

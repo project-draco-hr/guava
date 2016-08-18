@@ -1,0 +1,6 @@
+{
+  addEdge(E11,N1,N1);
+  assertThat(network.inDegree(N1)).isEqualTo(2);
+  addEdge(E12,N1,N2);
+  assertThat(network.inDegree(N1)).isEqualTo(3);
+}

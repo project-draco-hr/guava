@@ -1,0 +1,3 @@
+{
+  return isDirected() ? successors(node).size() : degree(node);
+}

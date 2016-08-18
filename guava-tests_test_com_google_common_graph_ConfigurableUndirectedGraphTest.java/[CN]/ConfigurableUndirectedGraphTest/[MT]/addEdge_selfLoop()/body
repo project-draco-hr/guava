@@ -1,4 +1,4 @@
 {
-  assertTrue(addEdge(N1,N1));
+  assertThat(addEdge(N1,N1)).isTrue();
   assertThat(graph.adjacentNodes(N1)).containsExactly(N1);
 }

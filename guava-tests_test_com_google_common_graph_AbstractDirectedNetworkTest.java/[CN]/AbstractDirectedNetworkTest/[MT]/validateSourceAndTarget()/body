@@ -13,7 +13,7 @@
     for (    Integer adjacentNode : network.adjacentNodes(node)) {
       Set<String> edges=network.edgesConnecting(node,adjacentNode);
       Set<String> antiParallelEdges=network.edgesConnecting(adjacentNode,node);
-      assertTrue(node.equals(adjacentNode) || Collections.disjoint(edges,antiParallelEdges));
+      assertThat(node.equals(adjacentNode) || Collections.disjoint(edges,antiParallelEdges)).isTrue();
     }
   }
 }

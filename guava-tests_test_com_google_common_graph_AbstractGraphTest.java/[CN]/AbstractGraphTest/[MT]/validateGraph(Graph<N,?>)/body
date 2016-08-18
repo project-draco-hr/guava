@@ -17,7 +17,21 @@
     sanityCheckCollection(graph.adjacentNodes(node));
     sanityCheckCollection(graph.predecessors(node));
     sanityCheckCollection(graph.successors(node));
+    if (graph.isDirected()) {
+      assertThat(graph.degree(node)).isEqualTo(graph.predecessors(node).size() + graph.successors(node).size());
+      assertThat(graph.predecessors(node)).hasSize(graph.inDegree(node));
+      assertThat(graph.successors(node)).hasSize(graph.outDegree(node));
+    }
+ else {
+      Set<N> neighbors=graph.adjacentNodes(node);
+      assertThat(graph.degree(node)).isEqualTo(neighbors.size() + (neighbors.contains(node) ? 1 : 0));
+      assertThat(graph.inDegree(node)).isEqualTo(graph.degree(node));
+      assertThat(graph.outDegree(node)).isEqualTo(graph.degree(node));
+    }
     for (    N adjacentNode : graph.adjacentNodes(node)) {
+      if (!graph.allowsSelfLoops()) {
+        assertThat(node).isNotEqualTo(adjacentNode);
+      }
       assertThat(graph.predecessors(node).contains(adjacentNode) || graph.successors(node).contains(adjacentNode)).isTrue();
     }
     for (    N predecessor : graph.predecessors(node)) {

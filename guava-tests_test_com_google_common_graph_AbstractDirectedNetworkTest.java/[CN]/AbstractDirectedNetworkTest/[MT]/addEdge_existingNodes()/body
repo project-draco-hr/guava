@@ -1,7 +1,7 @@
 {
   addNode(N1);
   addNode(N2);
-  assertTrue(addEdge(E12,N1,N2));
+  assertThat(addEdge(E12,N1,N2)).isTrue();
   assertThat(network.edges()).contains(E12);
   assertThat(network.edgesConnecting(N1,N2)).containsExactly(E12);
   assertThat(network.edgesConnecting(N2,N1)).isEmpty();

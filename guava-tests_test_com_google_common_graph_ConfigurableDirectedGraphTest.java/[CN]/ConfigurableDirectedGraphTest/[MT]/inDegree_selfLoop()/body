@@ -1,0 +1,6 @@
+{
+  addEdge(N1,N1);
+  assertThat(graph.inDegree(N1)).isEqualTo(1);
+  addEdge(N4,N1);
+  assertThat(graph.inDegree(N1)).isEqualTo(2);
+}

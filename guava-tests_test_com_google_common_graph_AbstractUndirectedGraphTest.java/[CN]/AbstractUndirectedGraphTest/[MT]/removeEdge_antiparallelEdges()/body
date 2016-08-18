@@ -1,8 +1,8 @@
 {
   addEdge(N1,N2);
   addEdge(N2,N1);
-  assertTrue(graph.removeEdge(N1,N2));
+  assertThat(graph.removeEdge(N1,N2)).isTrue();
   assertThat(graph.adjacentNodes(N1)).isEmpty();
   assertThat(graph.edges()).isEmpty();
-  assertFalse(graph.removeEdge(N2,N1));
+  assertThat(graph.removeEdge(N2,N1)).isFalse();
 }
