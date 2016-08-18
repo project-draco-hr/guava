@@ -1,0 +1,9 @@
+{
+  MutableGraph<String,Integer> mutableGraph=GraphBuilder.directed().build();
+  mutableGraph.addNode("A");
+  Graph<String,Integer> immutableGraph=ImmutableGraph.copyOf(mutableGraph);
+  assertThat(immutableGraph).isNotInstanceOf(MutableGraph.class);
+  assertThat(immutableGraph).isEqualTo(mutableGraph);
+  mutableGraph.addNode("B");
+  assertThat(immutableGraph).isNotEqualTo(mutableGraph);
+}

@@ -1,0 +1,9 @@
+{
+  MutableNetwork<String,Integer> mutableNetwork=NetworkBuilder.directed().build();
+  mutableNetwork.addNode("A");
+  Network<String,Integer> immutableNetwork=ImmutableNetwork.copyOf(mutableNetwork);
+  assertThat(immutableNetwork).isNotInstanceOf(MutableNetwork.class);
+  assertThat(immutableNetwork).isEqualTo(mutableNetwork);
+  mutableNetwork.addNode("B");
+  assertThat(immutableNetwork).isNotEqualTo(mutableNetwork);
+}
