@@ -1,4 +1,4 @@
 {
-  checkNotNull(graph);
-  return new NetworkBuilder<Object,Object>(graph.isDirected()).allowsParallelEdges(graph.allowsParallelEdges()).allowsSelfLoops(graph.allowsSelfLoops()).nodeOrder(graph.nodeOrder()).edgeOrder(graph.edgeOrder());
+  checkNotNull(network);
+  return new NetworkBuilder<Object,Object>(network.isDirected()).allowsParallelEdges(network.allowsParallelEdges()).allowsSelfLoops(network.allowsSelfLoops()).nodeOrder(network.nodeOrder()).edgeOrder(network.edgeOrder());
 }
