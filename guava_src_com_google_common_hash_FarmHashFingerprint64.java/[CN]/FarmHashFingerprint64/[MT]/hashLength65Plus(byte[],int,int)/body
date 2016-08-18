@@ -1,7 +1,7 @@
 {
   final int seed=81;
   long x=seed;
-  long y=seed * K1 + 113;
+  @SuppressWarnings("ConstantOverflow") long y=seed * K1 + 113;
   long z=shiftMix(y * K2 + 113) * K2;
   long[] v=new long[2], w=new long[2];
   x=x * K2 + load64(bytes,offset);
