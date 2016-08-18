@@ -1,0 +1,3 @@
+{
+  testBasicGraph(BasicGraphBuilder.directed());
+}
