@@ -2,14 +2,19 @@
   Random gen=new Random(42);
   for (int trial=0; trial < NUM_TRIALS; ++trial) {
     MutableBasicGraph<Integer> graph=graphBuilder.allowsSelfLoops(true).build();
+    assertThat(graph.nodes()).isEmpty();
+    assertThat(graph.edges()).isEmpty();
+    AbstractGraphTest.validateGraph(graph);
     while (graph.nodes().size() < NUM_NODES) {
-      graph.addNode(gen.nextInt());
+      graph.addNode(gen.nextInt(NODE_POOL_SIZE));
     }
     ArrayList<Integer> nodeList=new ArrayList<Integer>(graph.nodes());
     while (graph.edges().size() < NUM_EDGES) {
       graph.putEdge(getRandomElement(nodeList,gen),getRandomElement(nodeList,gen));
     }
     ArrayList<Endpoints<Integer>> edgeList=new ArrayList<Endpoints<Integer>>(graph.edges());
+    assertThat(graph.nodes()).hasSize(NUM_NODES);
+    assertThat(graph.edges()).hasSize(NUM_EDGES);
     AbstractGraphTest.validateGraph(graph);
     Collections.shuffle(edgeList,gen);
     int numEdgesToRemove=gen.nextInt(NUM_EDGES);
@@ -33,9 +38,11 @@
     assertThat(graph.nodes()).isEmpty();
     assertThat(graph.edges()).isEmpty();
     AbstractGraphTest.validateGraph(graph);
+    Collections.shuffle(nodeList,gen);
     for (    Integer node : nodeList) {
       assertThat(graph.addNode(node)).isTrue();
     }
+    Collections.shuffle(edgeList,gen);
     for (    Endpoints<Integer> edge : edgeList) {
       assertThat(graph.putEdge(edge.nodeA(),edge.nodeB())).isTrue();
     }

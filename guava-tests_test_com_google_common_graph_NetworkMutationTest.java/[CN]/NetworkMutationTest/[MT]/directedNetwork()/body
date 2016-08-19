@@ -1,0 +1,3 @@
+{
+  testNetworkMutation(NetworkBuilder.directed());
+}
