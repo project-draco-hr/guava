@@ -36,7 +36,7 @@
     for (    N incidentNode : ImmutableSet.of(network.incidentNodes(edge).nodeA(),network.incidentNodes(edge).nodeB())) {
       assertThat(network.nodes()).contains(incidentNode);
       for (      E adjacentEdge : network.incidentEdges(incidentNode)) {
-        assertTrue(edge.equals(adjacentEdge) || Graphs.adjacentEdges(network,edge).contains(adjacentEdge));
+        assertTrue(edge.equals(adjacentEdge) || network.adjacentEdges(edge).contains(adjacentEdge));
       }
     }
   }

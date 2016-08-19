@@ -1,7 +1,0 @@
-{
-  Endpoints<?> endpoints=graph.incidentNodes(edge);
-  if (!graph.allowsParallelEdges()) {
-    return ImmutableSet.of();
-  }
-  return Sets.difference(graph.edgesConnecting(endpoints.nodeA(),endpoints.nodeB()),ImmutableSet.of(edge));
-}

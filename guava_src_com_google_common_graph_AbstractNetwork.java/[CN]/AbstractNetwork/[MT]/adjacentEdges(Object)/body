@@ -1,0 +1,5 @@
+{
+  Endpoints<?> endpoints=incidentNodes(edge);
+  Set<E> endpointsIncidentEdges=Sets.union(incidentEdges(endpoints.nodeA()),incidentEdges(endpoints.nodeB()));
+  return Sets.difference(endpointsIncidentEdges,ImmutableSet.of(edge));
+}
