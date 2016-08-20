@@ -1,5 +1,5 @@
 {
-  MutableNetwork<Integer,String> directedNetwork=NetworkBuilder.directed().build();
+  MutableNetwork<Integer,String> directedNetwork=NetworkBuilder.directed().allowsSelfLoops(true).build();
   directedNetwork.addNode(N0);
   directedNetwork.addEdge(N1,N2,E12);
   directedNetwork.addEdge(N2,N1,E21);

@@ -1,3 +1,3 @@
 {
-  return NetworkBuilder.undirected().allowsParallelEdges(true).build();
+  return NetworkBuilder.undirected().allowsParallelEdges(true).allowsSelfLoops(true).build();
 }
