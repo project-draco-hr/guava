@@ -1,5 +1,5 @@
 {
-  N node=checkNotNull(super.removeOutEdge(edge));
+  N node=super.removeOutEdge(edge);
   Multiset<N> successors=getReference(successorsReference);
   if (successors != null) {
     checkState(successors.remove(node));

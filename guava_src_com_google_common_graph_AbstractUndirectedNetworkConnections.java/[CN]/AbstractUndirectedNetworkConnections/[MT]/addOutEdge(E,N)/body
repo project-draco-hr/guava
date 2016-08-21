@@ -1,6 +1,4 @@
 {
-  checkNotNull(edge,"edge");
-  checkNotNull(node,"node");
   N previousNode=incidentEdgeMap.put(edge,node);
   checkState(previousNode == null);
 }

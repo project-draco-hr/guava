@@ -1,5 +1,4 @@
 {
-  checkNotNull(edge,"edge");
   N previousNode=incidentEdgeMap.remove(edge);
   return checkNotNull(previousNode);
 }
