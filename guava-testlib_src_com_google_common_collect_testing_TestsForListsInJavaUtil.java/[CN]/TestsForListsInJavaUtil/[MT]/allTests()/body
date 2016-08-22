@@ -10,5 +10,6 @@
   suite.addTest(testsForCheckedList());
   suite.addTest(testsForAbstractList());
   suite.addTest(testsForAbstractSequentialList());
+  suite.addTest(testsForVector());
   return suite;
 }
