@@ -1,0 +1,5 @@
+{
+  MutableGraph<Integer,String> undirectedGraph=GraphBuilder.undirected().build();
+  undirectedGraph.putEdgeValue(N1,N2,E12);
+  assertThat(transpose(undirectedGraph)).isEqualTo(undirectedGraph);
+}

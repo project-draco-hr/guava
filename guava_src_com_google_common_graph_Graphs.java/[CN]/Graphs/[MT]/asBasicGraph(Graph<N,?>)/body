@@ -1,0 +1,42 @@
+{
+  if (graph instanceof BasicGraph) {
+    @SuppressWarnings("unchecked") BasicGraph<N> basicGraph=(BasicGraph<N>)graph;
+    return basicGraph;
+  }
+  checkNotNull(graph);
+  return new AbstractBasicGraph<N>(){
+    @Override public Set<N> nodes(){
+      return graph.nodes();
+    }
+    @Override public Set<Endpoints<N>> edges(){
+      return graph.edges();
+    }
+    @Override public boolean isDirected(){
+      return graph.isDirected();
+    }
+    @Override public boolean allowsSelfLoops(){
+      return graph.allowsSelfLoops();
+    }
+    @Override public ElementOrder<N> nodeOrder(){
+      return graph.nodeOrder();
+    }
+    @Override public Set<N> adjacentNodes(    Object node){
+      return graph.adjacentNodes(node);
+    }
+    @Override public Set<N> predecessors(    Object node){
+      return graph.predecessors(node);
+    }
+    @Override public Set<N> successors(    Object node){
+      return graph.successors(node);
+    }
+    @Override public Presence edgeValue(    Object nodeA,    Object nodeB){
+      checkNotNull(graph.edgeValue(nodeA,nodeB));
+      return Presence.EDGE_EXISTS;
+    }
+    @Override public Presence edgeValueOrDefault(    Object nodeA,    Object nodeB,    Presence defaultValue){
+      Object value=graph.edgeValueOrDefault(nodeA,nodeB,null);
+      return (value == null) ? defaultValue : Presence.EDGE_EXISTS;
+    }
+  }
+;
+}

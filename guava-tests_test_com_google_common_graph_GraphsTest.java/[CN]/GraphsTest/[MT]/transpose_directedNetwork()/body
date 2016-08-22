@@ -1,0 +1,20 @@
+{
+  MutableNetwork<Integer,String> directedGraph=NetworkBuilder.directed().allowsSelfLoops(true).build();
+  directedGraph.addEdge(N3,N1,E31);
+  directedGraph.addEdge(N1,N2,E12);
+  directedGraph.addEdge(N1,N1,E11);
+  directedGraph.addEdge(N3,N4,E34);
+  MutableNetwork<Integer,String> expectedTranspose=NetworkBuilder.directed().allowsSelfLoops(true).build();
+  expectedTranspose.addEdge(N1,N3,E31);
+  expectedTranspose.addEdge(N2,N1,E12);
+  expectedTranspose.addEdge(N1,N1,E11);
+  expectedTranspose.addEdge(N4,N3,E34);
+  Network<Integer,String> transpose=Graphs.transpose(directedGraph);
+  assertThat(transpose).isEqualTo(expectedTranspose);
+  assertThat(transpose(transpose)).isEqualTo(directedGraph);
+  AbstractNetworkTest.validateNetwork(transpose);
+  assertThat(transpose.edgesConnecting(N1,N2)).isEmpty();
+  directedGraph.addEdge(N2,N1,E21);
+  assertThat(transpose.edgesConnecting(N1,N2)).containsExactly(E21);
+  AbstractNetworkTest.validateNetwork(transpose);
+}

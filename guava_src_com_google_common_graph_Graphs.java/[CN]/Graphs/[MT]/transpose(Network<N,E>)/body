@@ -1,0 +1,57 @@
+{
+  if (!network.isDirected()) {
+    return network;
+  }
+  return new AbstractNetwork<N,E>(){
+    @Override public Set<N> nodes(){
+      return network.nodes();
+    }
+    @Override public Set<E> edges(){
+      return network.edges();
+    }
+    @Override public boolean isDirected(){
+      return network.isDirected();
+    }
+    @Override public boolean allowsParallelEdges(){
+      return network.allowsParallelEdges();
+    }
+    @Override public boolean allowsSelfLoops(){
+      return network.allowsSelfLoops();
+    }
+    @Override public ElementOrder<N> nodeOrder(){
+      return network.nodeOrder();
+    }
+    @Override public ElementOrder<E> edgeOrder(){
+      return network.edgeOrder();
+    }
+    @Override public Set<N> adjacentNodes(    Object node){
+      return network.adjacentNodes(node);
+    }
+    @Override public Set<N> predecessors(    Object node){
+      return network.successors(node);
+    }
+    @Override public Set<N> successors(    Object node){
+      return network.predecessors(node);
+    }
+    @Override public Set<E> incidentEdges(    Object node){
+      return network.incidentEdges(node);
+    }
+    @Override public Set<E> inEdges(    Object node){
+      return network.outEdges(node);
+    }
+    @Override public Set<E> outEdges(    Object node){
+      return network.inEdges(node);
+    }
+    @Override public Endpoints<N> incidentNodes(    Object edge){
+      Endpoints<N> endpoints=network.incidentNodes(edge);
+      return Endpoints.of(network,endpoints.nodeB(),endpoints.nodeA());
+    }
+    @Override public Set<E> adjacentEdges(    Object edge){
+      return network.adjacentEdges(edge);
+    }
+    @Override public Set<E> edgesConnecting(    Object nodeA,    Object nodeB){
+      return network.edgesConnecting(nodeB,nodeA);
+    }
+  }
+;
+}

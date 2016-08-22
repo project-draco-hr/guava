@@ -1,0 +1,38 @@
+{
+  if (!graph.isDirected()) {
+    return graph;
+  }
+  return new AbstractGraph<N,V>(){
+    @Override public Set<N> nodes(){
+      return graph.nodes();
+    }
+    @Override public boolean isDirected(){
+      return graph.isDirected();
+    }
+    @Override public boolean allowsSelfLoops(){
+      return graph.allowsSelfLoops();
+    }
+    @Override public ElementOrder<N> nodeOrder(){
+      return graph.nodeOrder();
+    }
+    @Override public Set<N> adjacentNodes(    Object node){
+      return graph.adjacentNodes(node);
+    }
+    @Override public Set<N> predecessors(    Object node){
+      return graph.successors(node);
+    }
+    @Override public Set<N> successors(    Object node){
+      return graph.predecessors(node);
+    }
+    @Override public V edgeValue(    Object nodeA,    Object nodeB){
+      return graph.edgeValue(nodeB,nodeA);
+    }
+    @Override public V edgeValueOrDefault(    Object nodeA,    Object nodeB,    V defaultValue){
+      return graph.edgeValueOrDefault(nodeB,nodeA,defaultValue);
+    }
+    @Override protected long edgeCount(){
+      return graph.edges().size();
+    }
+  }
+;
+}
