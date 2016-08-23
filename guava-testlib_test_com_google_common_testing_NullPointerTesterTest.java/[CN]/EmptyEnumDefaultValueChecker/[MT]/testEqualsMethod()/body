@@ -1,0 +1,4 @@
+{
+  shouldPass(new OverridesEquals());
+  shouldFail(new DoesNotOverrideEquals());
+}

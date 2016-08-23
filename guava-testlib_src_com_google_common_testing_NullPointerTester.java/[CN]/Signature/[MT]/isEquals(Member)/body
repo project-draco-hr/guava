@@ -1,0 +1,17 @@
+{
+  if (!(member instanceof Method)) {
+    return false;
+  }
+  Method method=(Method)member;
+  if (!method.getName().contentEquals("equals")) {
+    return false;
+  }
+  Class<?>[] parameters=method.getParameterTypes();
+  if (parameters.length != 1) {
+    return false;
+  }
+  if (!parameters[0].equals(Object.class)) {
+    return false;
+  }
+  return true;
+}
