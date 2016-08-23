@@ -1,9 +1,26 @@
 {
   List<Object> list=new ArrayList<Object>();
   Helpers.assertEmpty(list);
+  Helpers.assertEmpty(new Iterable<Object>(){
+    @Override public Iterator<Object> iterator(){
+      return Collections.emptyList().iterator();
+    }
+  }
+);
   list.add("a");
   try {
     Helpers.assertEmpty(list);
+    throw new Error();
+  }
+ catch (  AssertionFailedError expected) {
+  }
+  try {
+    Helpers.assertEmpty(new Iterable<String>(){
+      @Override public Iterator<String> iterator(){
+        return Collections.singleton("a").iterator();
+      }
+    }
+);
     throw new Error();
   }
  catch (  AssertionFailedError expected) {
