@@ -1,4 +1,0 @@
-{
-  com.google.common.collect.MinMaxPriorityQueueTest testCase=new com.google.common.collect.MinMaxPriorityQueueTest();
-  testCase.testRemoveFromStringHeap();
-}

@@ -1,4 +1,4 @@
 {
-  this.queue=new ArrayDeque<T>(elements.length);
+  this.queue=Platform.newFastestDeque(elements.length);
   Collections.addAll(queue,elements);
 }

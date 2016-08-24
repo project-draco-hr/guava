@@ -1,0 +1,7 @@
+{
+  T result=queue.remove();
+  for (  T child : children(result)) {
+    queue.add(checkNotNull(child));
+  }
+  return result;
+}

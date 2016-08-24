@@ -1,5 +1,5 @@
 {
-  this.stack=new ArrayDeque<T>(8);
+  this.stack=Platform.newFastestDeque(8);
   this.hasExpandedLeft=new BitSet();
   stack.addLast(root);
 }

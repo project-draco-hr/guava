@@ -1,4 +1,4 @@
 {
-  this.stack=new ArrayDeque<T>(8);
+  this.stack=Platform.newFastestDeque(8);
   stack.addLast(root);
 }
