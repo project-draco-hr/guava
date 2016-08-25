@@ -1,26 +1,25 @@
 {
-  final CyclicBarrier barrier=new CyclicBarrier(2 + 50 + 50+ 1);
+  final int size=50;
+  final CyclicBarrier barrier=new CyclicBarrier(2 + size + size+ 1);
   final ExecutorService executor=Executors.newFixedThreadPool(barrier.getParties());
   final AtomicReference<AbstractFuture<String>> currentFuture=Atomics.newReference();
   final AtomicReference<AbstractFuture<String>> setFutureFuture=Atomics.newReference();
   final AtomicBoolean setFutureSetSucess=new AtomicBoolean();
   final AtomicBoolean setFutureCompletionSucess=new AtomicBoolean();
   final AtomicBoolean cancellationSucess=new AtomicBoolean();
-  Callable<Void> cancelRunnable=new Callable<Void>(){
-    @Override public Void call(){
+  Runnable cancelRunnable=new Runnable(){
+    @Override public void run(){
       cancellationSucess.set(currentFuture.get().cancel(true));
       awaitUnchecked(barrier);
-      return null;
     }
   }
 ;
-  Callable<Void> setFutureCompleteSucessFullyRunnable=new Callable<Void>(){
-    @Override public Void call(){
+  Runnable setFutureCompleteSucessFullyRunnable=new Runnable(){
+    @Override public void run(){
       AbstractFuture<String> future=setFutureFuture.get();
       setFutureSetSucess.set(currentFuture.get().setFuture(future));
       setFutureCompletionSucess.set(future.set("hello-async-world"));
       awaitUnchecked(barrier);
-      return null;
     }
   }
 ;
@@ -67,16 +66,15 @@ catch (        TimeoutException e) {
     }
   }
 ;
-  List<Callable<?>> allTasks=new ArrayList<Callable<?>>();
+  List<Runnable> allTasks=new ArrayList<Runnable>();
   allTasks.add(cancelRunnable);
   allTasks.add(setFutureCompleteSucessFullyRunnable);
-  for (int k=0; k < 50; k++) {
+  for (int k=0; k < size; k++) {
     final Runnable listener=k % 2 == 0 ? collectResultsRunnable : collectResultsTimedGetRunnable;
-    allTasks.add(Executors.callable(listener));
-    allTasks.add(new Callable<Void>(){
-      @Override public Void call() throws Exception {
+    allTasks.add(listener);
+    allTasks.add(new Runnable(){
+      @Override public void run(){
         currentFuture.get().addListener(listener,executor);
-        return null;
       }
     }
 );
@@ -92,8 +90,8 @@ catch (        TimeoutException e) {
 ;
     currentFuture.set(future);
     setFutureFuture.set(setFuture);
-    for (    Callable<?> task : allTasks) {
-      executor.submit(task);
+    for (    Runnable task : allTasks) {
+      executor.execute(task);
     }
     awaitUnchecked(barrier);
     assertThat(future.isDone()).isTrue();

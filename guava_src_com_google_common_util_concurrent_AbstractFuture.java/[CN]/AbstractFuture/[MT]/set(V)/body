@@ -1,7 +1,7 @@
 {
   Object valueToSet=value == null ? NULL : value;
   if (ATOMIC_HELPER.casValue(this,null,valueToSet)) {
-    complete();
+    complete(this);
     return true;
   }
   return false;

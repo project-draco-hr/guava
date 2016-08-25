@@ -1,0 +1,15 @@
+{
+  Listener head;
+  do {
+    head=listeners;
+  }
+ while (!ATOMIC_HELPER.casListeners(this,head,Listener.TOMBSTONE));
+  Listener reversedList=onto;
+  while (head != null) {
+    Listener tmp=head;
+    head=head.next;
+    tmp.next=reversedList;
+    reversedList=tmp;
+  }
+  return reversedList;
+}

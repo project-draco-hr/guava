@@ -1,4 +1,14 @@
 {
   super.afterDone();
-  this.runningState=null;
+  RunningState localRunningState=runningState;
+  if (localRunningState != null) {
+    this.runningState=null;
+    ImmutableCollection<? extends ListenableFuture<? extends InputT>> futures=localRunningState.futures;
+    if (isCancelled() & futures != null) {
+      boolean mayInterruptIfRunning=wasInterrupted();
+      for (      ListenableFuture<?> future : futures) {
+        future.cancel(mayInterruptIfRunning);
+      }
+    }
+  }
 }

@@ -1,0 +1,11 @@
+{
+  SettableFuture<String> orig=SettableFuture.create();
+  SettableFuture<String> prev=orig;
+  for (int i=0; i < 100000; i++) {
+    SettableFuture<String> curr=SettableFuture.create();
+    prev.setFuture(curr);
+    prev=curr;
+  }
+  prev.set("done");
+  assertTrue(orig.isDone());
+}

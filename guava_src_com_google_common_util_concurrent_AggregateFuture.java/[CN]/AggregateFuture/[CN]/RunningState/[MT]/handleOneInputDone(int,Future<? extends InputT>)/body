@@ -4,7 +4,8 @@
     checkState(future.isDone(),"Tried to set value from future which is not done");
     if (allMustSucceed) {
       if (future.isCancelled()) {
-        AggregateFuture.super.cancel(false);
+        runningState=null;
+        cancel(false);
       }
  else {
         InputT result=getDone(future);

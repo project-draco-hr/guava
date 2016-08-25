@@ -3,9 +3,14 @@
   Object localValue=value;
   if (localValue == null) {
     if (future.isDone()) {
-      return completeWithFuture(future,null);
+      Object value=getFutureValue(future);
+      if (ATOMIC_HELPER.casValue(this,null,value)) {
+        complete(this);
+        return true;
+      }
+      return false;
     }
-    SetFuture valueToSet=new SetFuture(future);
+    SetFuture valueToSet=new SetFuture<V>(this,future);
     if (ATOMIC_HELPER.casValue(this,null,valueToSet)) {
       try {
         future.addListener(valueToSet,directExecutor());

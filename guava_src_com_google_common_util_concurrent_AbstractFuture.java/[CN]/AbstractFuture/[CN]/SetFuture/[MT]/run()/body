@@ -1,6 +1,9 @@
 {
-  if (value != this) {
+  if (owner.value != this) {
     return;
   }
-  completeWithFuture(future,this);
+  Object valueToSet=getFutureValue(future);
+  if (ATOMIC_HELPER.casValue(owner,this,valueToSet)) {
+    complete(owner);
+  }
 }
