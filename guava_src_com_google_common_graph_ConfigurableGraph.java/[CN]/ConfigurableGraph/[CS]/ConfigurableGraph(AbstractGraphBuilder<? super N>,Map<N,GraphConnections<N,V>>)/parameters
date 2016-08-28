@@ -1,3 +1,2 @@
 AbstractGraphBuilder<? super N> builder
 Map<N,GraphConnections<N,V>> nodeConnections
-long edgeCount

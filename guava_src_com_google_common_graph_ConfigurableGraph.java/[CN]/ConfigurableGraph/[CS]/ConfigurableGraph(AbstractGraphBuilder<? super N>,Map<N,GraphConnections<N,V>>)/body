@@ -3,5 +3,4 @@
   this.allowsSelfLoops=builder.allowsSelfLoops;
   this.nodeOrder=builder.nodeOrder.cast();
   this.nodeConnections=(nodeConnections instanceof TreeMap) ? new MapRetrievalCache<N,GraphConnections<N,V>>(nodeConnections) : new MapIteratorCache<N,GraphConnections<N,V>>(nodeConnections);
-  this.edgeCount=checkNonNegative(edgeCount);
 }
