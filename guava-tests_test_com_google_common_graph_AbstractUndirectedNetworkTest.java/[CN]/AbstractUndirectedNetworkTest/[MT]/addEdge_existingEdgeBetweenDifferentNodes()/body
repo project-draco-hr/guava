@@ -1,7 +1,7 @@
 {
-  addEdge(E12,N1,N2);
+  addEdge(N1,N2,E12);
   try {
-    addEdge(E12,N4,N5);
+    addEdge(N4,N5,E12);
     fail(ERROR_ADDED_EXISTING_EDGE);
   }
  catch (  IllegalArgumentException e) {

@@ -1,5 +1,5 @@
 {
-  addEdge(E12,N1,N2);
-  addEdge(E34,N3,N4);
+  addEdge(N1,N2,E12);
+  addEdge(N3,N4,E34);
   assertThat(network.adjacentEdges(E12)).isEmpty();
 }

@@ -1,5 +1,5 @@
 {
-  addEdge(N1,N1);
-  addEdge(N1,N2);
+  putEdge(N1,N1);
+  putEdge(N1,N2);
   assertThat(graph.adjacentNodes(N1)).containsExactly(N1,N2);
 }

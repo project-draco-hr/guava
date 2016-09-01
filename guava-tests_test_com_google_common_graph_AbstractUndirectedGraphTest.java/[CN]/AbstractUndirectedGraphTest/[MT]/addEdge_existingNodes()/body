@@ -1,5 +1,5 @@
 {
   addNode(N1);
   addNode(N2);
-  assertThat(addEdge(N1,N2)).isTrue();
+  assertThat(putEdge(N1,N2)).isTrue();
 }

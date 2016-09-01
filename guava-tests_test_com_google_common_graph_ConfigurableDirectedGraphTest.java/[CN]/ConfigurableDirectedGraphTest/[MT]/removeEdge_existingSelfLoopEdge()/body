@@ -1,5 +1,5 @@
 {
-  addEdge(N1,N1);
+  putEdge(N1,N1);
   assertThat(graph.removeEdge(N1,N1)).isTrue();
   assertThat(graph.nodes()).containsExactly(N1);
   assertThat(graph.successors(N1)).isEmpty();

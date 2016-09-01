@@ -1,6 +1,6 @@
 {
-  addEdge(N1,N1);
+  putEdge(N1,N1);
   assertThat(graph.degree(N1)).isEqualTo(2);
-  addEdge(N1,N2);
+  putEdge(N1,N2);
   assertThat(graph.degree(N1)).isEqualTo(3);
 }

@@ -1,5 +1,5 @@
 {
-  addEdge(E11,N1,N1);
+  addEdge(N1,N1,E11);
   assertThat(network.removeEdge(E11)).isTrue();
   assertThat(network.edges()).doesNotContain(E11);
   assertThat(network.edgesConnecting(N1,N1)).isEmpty();

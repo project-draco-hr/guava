@@ -1,6 +1,6 @@
 {
-  addEdge(N1,N1);
+  putEdge(N1,N1);
   assertThat(graph.predecessors(N1)).containsExactly(N1);
-  addEdge(N4,N1);
+  putEdge(N4,N1);
   assertThat(graph.predecessors(N1)).containsExactly(N1,N4);
 }

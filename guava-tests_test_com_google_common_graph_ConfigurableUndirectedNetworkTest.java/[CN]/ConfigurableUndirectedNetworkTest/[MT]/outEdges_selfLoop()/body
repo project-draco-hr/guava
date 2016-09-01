@@ -1,6 +1,6 @@
 {
-  addEdge(E11,N1,N1);
+  addEdge(N1,N1,E11);
   assertThat(network.outEdges(N1)).containsExactly(E11);
-  addEdge(E12,N2,N1);
+  addEdge(N2,N1,E12);
   assertThat(network.outEdges(N1)).containsExactly(E11,E12);
 }

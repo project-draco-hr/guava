@@ -1,7 +1,7 @@
 {
-  addEdge(E11,N1,N1);
+  addEdge(N1,N1,E11);
   try {
-    addEdge(EDGE_NOT_IN_GRAPH,N1,N1);
+    addEdge(N1,N1,EDGE_NOT_IN_GRAPH);
     fail("Adding a parallel self-loop edge succeeded");
   }
  catch (  IllegalArgumentException e) {

@@ -1,4 +1,4 @@
 {
-  addEdge(N1,N1);
-  assertThat(addEdge(N1,N1)).isFalse();
+  putEdge(N1,N1);
+  assertThat(putEdge(N1,N1)).isFalse();
 }

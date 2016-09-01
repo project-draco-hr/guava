@@ -1,4 +1,4 @@
 {
-  addEdge(E12,N1,N2);
+  addEdge(N1,N2,E12);
   assertThat(network.incidentNodes(E12).source()).isEqualTo(N1);
 }

@@ -1,5 +1,5 @@
 {
-  addEdge(E12,N1,N2);
+  addEdge(N1,N2,E12);
   assertThat(network.predecessors(N2)).containsExactly(N1);
   assertThat(network.predecessors(N1)).isEmpty();
 }

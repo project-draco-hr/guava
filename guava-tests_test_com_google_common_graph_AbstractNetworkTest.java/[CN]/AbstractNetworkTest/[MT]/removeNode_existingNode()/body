@@ -1,6 +1,6 @@
 {
-  addEdge(E12,N1,N2);
-  addEdge(E41,N4,N1);
+  addEdge(N1,N2,E12);
+  addEdge(N4,N1,E41);
   assertTrue(network.removeNode(N1));
   assertFalse(network.removeNode(N1));
   assertThat(network.nodes()).containsExactly(N2,N4);

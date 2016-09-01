@@ -1,6 +1,6 @@
 {
   try {
-    addEdge(N1,N1);
+    putEdge(N1,N1);
     fail(ERROR_ADDED_SELF_LOOP);
   }
  catch (  IllegalArgumentException e) {
