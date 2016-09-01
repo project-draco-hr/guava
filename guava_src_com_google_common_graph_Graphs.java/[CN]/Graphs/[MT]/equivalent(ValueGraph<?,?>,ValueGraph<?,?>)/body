@@ -5,13 +5,5 @@
   if (graphA == null || graphB == null) {
     return false;
   }
-  if (graphA.isDirected() != graphB.isDirected() || !graphA.nodes().equals(graphB.nodes()) || !graphA.edges().equals(graphB.edges())) {
-    return false;
-  }
-  for (  EndpointPair<?> edge : graphA.edges()) {
-    if (!graphA.edgeValue(edge.nodeU(),edge.nodeV()).equals(graphB.edgeValue(edge.nodeU(),edge.nodeV()))) {
-      return false;
-    }
-  }
-  return true;
+  return graphA.isDirected() == graphB.isDirected() && graphA.nodes().equals(graphB.nodes()) && graphA.edgeValues().equals(graphB.edgeValues());
 }

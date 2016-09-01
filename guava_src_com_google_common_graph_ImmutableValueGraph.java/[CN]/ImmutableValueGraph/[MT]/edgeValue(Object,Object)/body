@@ -1,5 +1,8 @@
 {
-  V value=edgeValueOrDefault(nodeU,nodeV,null);
-  checkArgument(value != null,EDGE_CONNECTING_NOT_IN_GRAPH,nodeU,nodeV);
+  V value=backingGraph.checkedConnections(nodeU).value(nodeV);
+  if (value == null) {
+    checkArgument(backingGraph.containsNode(nodeV),NODE_NOT_IN_GRAPH,nodeV);
+    throw new IllegalArgumentException(String.format(EDGE_CONNECTING_NOT_IN_GRAPH,nodeU,nodeV));
+  }
   return value;
 }

@@ -1,3 +1,0 @@
-{
-  return graph.edgeValueOrDefault(nodeV,nodeU,defaultValue);
-}

@@ -1,13 +1,17 @@
 {
   assertThat(Graphs.equivalent(graph,Graphs.copyOf(graph))).isTrue();
   assertThat(Graphs.equivalent(graph,ImmutableValueGraph.copyOf(graph))).isTrue();
+  assertThat(graph.edgeValues().keySet()).isEqualTo(graph.edges());
   for (  Integer node : graph.nodes()) {
     for (    Integer otherNode : graph.nodes()) {
+      EndpointPair<Integer> endpointPair=EndpointPair.of(graph,node,otherNode);
       if (graph.successors(node).contains(otherNode)) {
-        assertThat(graph.edgeValue(node,otherNode)).isNotNull();
+        String value=graph.edgeValue(node,otherNode);
+        assertThat(value).isNotNull();
+        assertThat(value).isEqualTo(graph.edgeValues().get(endpointPair));
       }
  else {
-        assertThat(graph.edgeValueOrDefault(node,otherNode,null)).isNull();
+        assertThat(graph.edgeValues()).doesNotContainKey(endpointPair);
       }
     }
   }
