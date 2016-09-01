@@ -1,0 +1,3 @@
+{
+  this.backingGraph=new ConfigurableValueGraph<N,V>(builder,nodeConnections,edgeCount);
+}

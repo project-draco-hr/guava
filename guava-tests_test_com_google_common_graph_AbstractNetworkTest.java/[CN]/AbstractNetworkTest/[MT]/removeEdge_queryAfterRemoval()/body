@@ -1,6 +1,6 @@
 {
   addEdge(E12,N1,N2);
-  Endpoints<Integer> unused=network.incidentNodes(E12);
+  EndpointPair<Integer> unused=network.incidentNodes(E12);
   assertTrue(network.removeEdge(E12));
   try {
     network.incidentNodes(E12);

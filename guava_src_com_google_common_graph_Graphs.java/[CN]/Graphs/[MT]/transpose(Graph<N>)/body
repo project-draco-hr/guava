@@ -1,0 +1,9 @@
+{
+  if (!graph.isDirected()) {
+    return graph;
+  }
+  if (graph instanceof TransposedGraph) {
+    return ((TransposedGraph<N>)graph).graph;
+  }
+  return new TransposedGraph<N>(graph);
+}

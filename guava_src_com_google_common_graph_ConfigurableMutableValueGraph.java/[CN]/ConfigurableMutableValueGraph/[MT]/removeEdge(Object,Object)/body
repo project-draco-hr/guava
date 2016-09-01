@@ -1,0 +1,15 @@
+{
+  checkNotNull(nodeU,"nodeU");
+  checkNotNull(nodeV,"nodeV");
+  GraphConnections<N,V> connectionsU=nodeConnections.get(nodeU);
+  GraphConnections<N,V> connectionsV=nodeConnections.get(nodeV);
+  if (connectionsU == null || connectionsV == null) {
+    return null;
+  }
+  V previousValue=connectionsU.removeSuccessor(nodeV);
+  if (previousValue != null) {
+    connectionsV.removePredecessor(nodeU);
+    checkNonNegative(--edgeCount);
+  }
+  return previousValue;
+}

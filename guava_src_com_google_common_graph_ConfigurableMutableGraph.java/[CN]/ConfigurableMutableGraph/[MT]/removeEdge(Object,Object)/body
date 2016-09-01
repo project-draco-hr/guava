@@ -1,15 +1,3 @@
 {
-  checkNotNull(nodeA,"nodeA");
-  checkNotNull(nodeB,"nodeB");
-  GraphConnections<N,V> connectionsA=nodeConnections.get(nodeA);
-  GraphConnections<N,V> connectionsB=nodeConnections.get(nodeB);
-  if (connectionsA == null || connectionsB == null) {
-    return null;
-  }
-  V previousValue=connectionsA.removeSuccessor(nodeB);
-  if (previousValue != null) {
-    connectionsB.removePredecessor(nodeA);
-    checkNonNegative(--edgeCount);
-  }
-  return previousValue;
+  return backingGraph.removeEdge(nodeU,nodeV) != null;
 }

@@ -1,4 +1,4 @@
 {
   String propertiesString=String.format("isDirected: %s, allowsParallelEdges: %s, allowsSelfLoops: %s",isDirected(),allowsParallelEdges(),allowsSelfLoops());
-  return String.format(GRAPH_STRING_FORMAT,propertiesString,nodes(),edgeEndpointsMap());
+  return String.format(GRAPH_STRING_FORMAT,propertiesString,nodes(),edgeIncidentNodesMap());
 }

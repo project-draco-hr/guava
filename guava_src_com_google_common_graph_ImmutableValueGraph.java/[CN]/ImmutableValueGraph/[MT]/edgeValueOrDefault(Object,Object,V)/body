@@ -1,0 +1,8 @@
+{
+  V value=backingGraph.checkedConnections(nodeU).value(nodeV);
+  if (value == null) {
+    checkArgument(backingGraph.containsNode(nodeV),NODE_NOT_IN_GRAPH,nodeV);
+    return defaultValue;
+  }
+  return value;
+}

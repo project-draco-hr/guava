@@ -1,16 +1,16 @@
 {
-  return new AbstractGraph<N,Set<E>>(){
+  return new AbstractGraph<N>(){
     @Override public Set<N> nodes(){
       return AbstractNetwork.this.nodes();
     }
-    @Override public Set<Endpoints<N>> edges(){
+    @Override public Set<EndpointPair<N>> edges(){
       if (allowsParallelEdges()) {
         return super.edges();
       }
-      return new AbstractSet<Endpoints<N>>(){
-        @Override public Iterator<Endpoints<N>> iterator(){
-          return Iterators.transform(AbstractNetwork.this.edges().iterator(),new Function<E,Endpoints<N>>(){
-            @Override public Endpoints<N> apply(            E edge){
+      return new AbstractSet<EndpointPair<N>>(){
+        @Override public Iterator<EndpointPair<N>> iterator(){
+          return Iterators.transform(AbstractNetwork.this.edges().iterator(),new Function<E,EndpointPair<N>>(){
+            @Override public EndpointPair<N> apply(            E edge){
               return incidentNodes(edge);
             }
           }
@@ -20,11 +20,11 @@
           return AbstractNetwork.this.edges().size();
         }
         @Override public boolean contains(        Object obj){
-          if (!(obj instanceof Endpoints)) {
+          if (!(obj instanceof EndpointPair)) {
             return false;
           }
-          Endpoints<?> endpoints=(Endpoints<?>)obj;
-          return isDirected() == endpoints.isDirected() && !edgesConnecting(endpoints.nodeA(),endpoints.nodeB()).isEmpty();
+          EndpointPair<?> endpointPair=(EndpointPair<?>)obj;
+          return isDirected() == endpointPair.isOrdered() && nodes().contains(endpointPair.nodeU()) && successors(endpointPair.nodeU()).contains(endpointPair.nodeV());
         }
       }
 ;
@@ -46,15 +46,6 @@
     }
     @Override public Set<N> successors(    Object node){
       return AbstractNetwork.this.successors(node);
-    }
-    @Override public Set<E> edgeValue(    Object nodeA,    Object nodeB){
-      Set<E> edges=edgesConnecting(nodeA,nodeB);
-      checkArgument(!edges.isEmpty(),EDGE_CONNECTING_NOT_IN_GRAPH,nodeA,nodeB);
-      return edges;
-    }
-    @Override public Set<E> edgeValueOrDefault(    Object nodeA,    Object nodeB,    Set<E> defaultValue){
-      Set<E> edges=edgesConnecting(nodeA,nodeB);
-      return edges.isEmpty() ? defaultValue : edges;
     }
   }
 ;

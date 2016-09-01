@@ -1,0 +1,10 @@
+{
+  while (true) {
+    if (successorIterator.hasNext()) {
+      return EndpointPair.ordered(node,successorIterator.next());
+    }
+    if (!advance()) {
+      return endOfData();
+    }
+  }
+}

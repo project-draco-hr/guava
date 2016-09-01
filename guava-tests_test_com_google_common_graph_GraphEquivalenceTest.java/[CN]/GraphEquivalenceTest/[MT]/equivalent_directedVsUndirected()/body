@@ -1,0 +1,6 @@
+{
+  graph.putEdge(N1,N2);
+  MutableGraph<Integer> g2=createGraph(oppositeType(graphType));
+  g2.putEdge(N1,N2);
+  assertThat(Graphs.equivalent(graph,g2)).isFalse();
+}

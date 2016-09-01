@@ -1,8 +1,0 @@
-{
-  V value=checkedConnections(nodeA).value(nodeB);
-  if (value == null) {
-    checkArgument(containsNode(nodeB),NODE_NOT_IN_GRAPH,nodeB);
-    return defaultValue;
-  }
-  return value;
-}

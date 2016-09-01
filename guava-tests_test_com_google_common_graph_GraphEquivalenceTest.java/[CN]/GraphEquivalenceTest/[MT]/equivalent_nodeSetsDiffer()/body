@@ -1,0 +1,6 @@
+{
+  graph.addNode(N1);
+  MutableGraph<Integer> g2=createGraph(graphType);
+  g2.addNode(N2);
+  assertThat(Graphs.equivalent(graph,g2)).isFalse();
+}

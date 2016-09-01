@@ -1,0 +1,3 @@
+AbstractGraphBuilder<? super N> builder
+ImmutableMap<N,GraphConnections<N,V>> nodeConnections
+long edgeCount

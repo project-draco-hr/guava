@@ -1,8 +1,0 @@
-{
-  Endpoints<String> undirected=Endpoints.ofUndirected("node","node");
-  assertThat(undirected).containsExactly("node","node");
-  assertThat(undirected.nodeA()).isEqualTo("node");
-  assertThat(undirected.nodeB()).isEqualTo("node");
-  assertThat(undirected.adjacentNode("node")).isEqualTo("node");
-  assertThat(undirected.toString()).isEqualTo("[node, node]");
-}

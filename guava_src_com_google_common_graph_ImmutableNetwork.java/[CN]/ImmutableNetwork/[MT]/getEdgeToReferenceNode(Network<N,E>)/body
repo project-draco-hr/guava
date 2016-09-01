@@ -1,7 +1,7 @@
 {
   ImmutableMap.Builder<E,N> edgeToReferenceNode=ImmutableMap.builder();
   for (  E edge : graph.edges()) {
-    edgeToReferenceNode.put(edge,graph.incidentNodes(edge).nodeA());
+    edgeToReferenceNode.put(edge,graph.incidentNodes(edge).nodeU());
   }
   return edgeToReferenceNode.build();
 }

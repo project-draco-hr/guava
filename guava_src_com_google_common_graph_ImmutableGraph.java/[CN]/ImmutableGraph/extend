@@ -1,1 +1,1 @@
-ConfigurableGraph<N,V>
+ForwardingGraph<N>

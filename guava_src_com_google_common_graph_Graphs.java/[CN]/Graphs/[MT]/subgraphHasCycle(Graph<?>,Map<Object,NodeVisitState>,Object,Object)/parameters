@@ -1,0 +1,4 @@
+Graph<?> graph
+Map<Object,NodeVisitState> visitedNodes
+Object node
+Object previousNode

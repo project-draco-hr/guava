@@ -10,8 +10,8 @@
   expectedTranspose.addEdge(N1,N1,E11);
   expectedTranspose.addEdge(N4,N3,E34);
   Network<Integer,String> transpose=Graphs.transpose(directedGraph);
-  assertThat(transpose).isEqualTo(expectedTranspose);
-  assertThat(transpose(transpose)).isEqualTo(directedGraph);
+  assertThat(Graphs.equivalent(transpose,expectedTranspose)).isTrue();
+  assertThat(transpose(transpose)).isSameAs(directedGraph);
   AbstractNetworkTest.validateNetwork(transpose);
   assertThat(transpose.edgesConnecting(N1,N2)).isEmpty();
   directedGraph.addEdge(N2,N1,E21);

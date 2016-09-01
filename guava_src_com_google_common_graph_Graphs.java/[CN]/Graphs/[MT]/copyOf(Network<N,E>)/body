@@ -4,8 +4,8 @@
     copy.addNode(node);
   }
   for (  E edge : graph.edges()) {
-    Endpoints<N> endpoints=graph.incidentNodes(edge);
-    copy.addEdge(endpoints.nodeA(),endpoints.nodeB(),edge);
+    EndpointPair<N> endpointPair=graph.incidentNodes(edge);
+    copy.addEdge(endpointPair.nodeU(),endpointPair.nodeV(),edge);
   }
   return copy;
 }

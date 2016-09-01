@@ -1,9 +1,0 @@
-{
-  MutableBasicGraph<Integer> directedGraph=BasicGraphBuilder.directed().allowsSelfLoops(true).build();
-  directedGraph.addNode(N0);
-  directedGraph.putEdge(N1,N2);
-  directedGraph.putEdge(N2,N1);
-  directedGraph.putEdge(N1,N3);
-  directedGraph.putEdge(N4,N4);
-  containsExactlySanityCheck(directedGraph.edges(),Endpoints.ofDirected(N1,N2),Endpoints.ofDirected(N2,N1),Endpoints.ofDirected(N1,N3),Endpoints.ofDirected(N4,N4));
-}

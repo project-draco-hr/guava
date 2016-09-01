@@ -1,3 +1,0 @@
-{
-  return new Directed<N>(source,target);
-}

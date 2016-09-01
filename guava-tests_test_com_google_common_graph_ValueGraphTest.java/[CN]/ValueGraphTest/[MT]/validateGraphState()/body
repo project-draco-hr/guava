@@ -1,0 +1,15 @@
+{
+  assertThat(Graphs.equivalent(graph,Graphs.copyOf(graph))).isTrue();
+  assertThat(Graphs.equivalent(graph,ImmutableValueGraph.copyOf(graph))).isTrue();
+  for (  Integer node : graph.nodes()) {
+    for (    Integer otherNode : graph.nodes()) {
+      if (graph.successors(node).contains(otherNode)) {
+        assertThat(graph.edgeValue(node,otherNode)).isNotNull();
+      }
+ else {
+        assertThat(graph.edgeValueOrDefault(node,otherNode,null)).isNull();
+      }
+    }
+  }
+  AbstractGraphTest.validateGraph(graph);
+}

@@ -1,20 +1,20 @@
 {
-  MutableGraph<Integer,String> directedGraph=GraphBuilder.directed().allowsSelfLoops(true).build();
-  directedGraph.putEdgeValue(N3,N1,E31);
-  directedGraph.putEdgeValue(N1,N2,E12);
-  directedGraph.putEdgeValue(N1,N1,E11);
-  directedGraph.putEdgeValue(N3,N4,E34);
-  MutableGraph<Integer,String> expectedTranspose=GraphBuilder.directed().allowsSelfLoops(true).build();
-  expectedTranspose.putEdgeValue(N1,N3,E31);
-  expectedTranspose.putEdgeValue(N2,N1,E12);
-  expectedTranspose.putEdgeValue(N1,N1,E11);
-  expectedTranspose.putEdgeValue(N4,N3,E34);
-  Graph<Integer,String> transpose=Graphs.transpose(directedGraph);
-  assertThat(transpose).isEqualTo(expectedTranspose);
-  assertThat(transpose(transpose)).isEqualTo(directedGraph);
+  MutableGraph<Integer> directedGraph=GraphBuilder.directed().allowsSelfLoops(true).build();
+  directedGraph.putEdge(N3,N1);
+  directedGraph.putEdge(N1,N2);
+  directedGraph.putEdge(N1,N1);
+  directedGraph.putEdge(N3,N4);
+  MutableGraph<Integer> expectedTranspose=GraphBuilder.directed().allowsSelfLoops(true).build();
+  expectedTranspose.putEdge(N1,N3);
+  expectedTranspose.putEdge(N2,N1);
+  expectedTranspose.putEdge(N1,N1);
+  expectedTranspose.putEdge(N4,N3);
+  Graph<Integer> transpose=Graphs.transpose(directedGraph);
+  assertThat(Graphs.equivalent(transpose,expectedTranspose)).isTrue();
+  assertThat(transpose(transpose)).isSameAs(directedGraph);
   AbstractGraphTest.validateGraph(transpose);
-  assertThat(transpose.edgeValueOrDefault(N1,N2,null)).isNull();
-  directedGraph.putEdgeValue(N2,N1,E21);
-  assertThat(transpose.edgeValueOrDefault(N1,N2,null)).isEqualTo(E21);
+  assertThat(transpose.successors(N1)).doesNotContain(N2);
+  directedGraph.putEdge(N2,N1);
+  assertThat(transpose.successors(N1)).contains(N2);
   AbstractGraphTest.validateGraph(transpose);
 }

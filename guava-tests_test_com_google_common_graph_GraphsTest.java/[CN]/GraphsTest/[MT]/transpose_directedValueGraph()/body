@@ -1,0 +1,20 @@
+{
+  MutableValueGraph<Integer,String> directedGraph=ValueGraphBuilder.directed().allowsSelfLoops(true).build();
+  directedGraph.putEdgeValue(N3,N1,E31);
+  directedGraph.putEdgeValue(N1,N2,E12);
+  directedGraph.putEdgeValue(N1,N1,E11);
+  directedGraph.putEdgeValue(N3,N4,E34);
+  MutableValueGraph<Integer,String> expectedTranspose=ValueGraphBuilder.directed().allowsSelfLoops(true).build();
+  expectedTranspose.putEdgeValue(N1,N3,E31);
+  expectedTranspose.putEdgeValue(N2,N1,E12);
+  expectedTranspose.putEdgeValue(N1,N1,E11);
+  expectedTranspose.putEdgeValue(N4,N3,E34);
+  ValueGraph<Integer,String> transpose=Graphs.transpose(directedGraph);
+  assertThat(Graphs.equivalent(transpose,expectedTranspose)).isTrue();
+  assertThat(transpose(transpose)).isSameAs(directedGraph);
+  AbstractGraphTest.validateGraph(transpose);
+  assertThat(transpose.edgeValueOrDefault(N1,N2,null)).isNull();
+  directedGraph.putEdgeValue(N2,N1,E21);
+  assertThat(transpose.edgeValueOrDefault(N1,N2,null)).isEqualTo(E21);
+  AbstractGraphTest.validateGraph(transpose);
+}

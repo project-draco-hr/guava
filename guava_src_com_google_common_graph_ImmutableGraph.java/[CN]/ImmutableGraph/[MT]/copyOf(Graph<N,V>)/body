@@ -1,3 +1,0 @@
-{
-  return (graph instanceof ImmutableGraph) ? (ImmutableGraph<N,V>)graph : new ImmutableGraph<N,V>(graph);
-}

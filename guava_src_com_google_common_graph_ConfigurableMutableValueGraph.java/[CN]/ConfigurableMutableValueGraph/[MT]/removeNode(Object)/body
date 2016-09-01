@@ -1,0 +1,26 @@
+{
+  checkNotNull(node,"node");
+  GraphConnections<N,V> connections=nodeConnections.get(node);
+  if (connections == null) {
+    return false;
+  }
+  if (allowsSelfLoops()) {
+    if (connections.removeSuccessor(node) != null) {
+      connections.removePredecessor(node);
+      --edgeCount;
+    }
+  }
+  for (  N successor : connections.successors()) {
+    nodeConnections.getWithoutCaching(successor).removePredecessor(node);
+    --edgeCount;
+  }
+  if (isDirected()) {
+    for (    N predecessor : connections.predecessors()) {
+      checkState(nodeConnections.getWithoutCaching(predecessor).removeSuccessor(node) != null);
+      --edgeCount;
+    }
+  }
+  nodeConnections.remove(node);
+  checkNonNegative(edgeCount);
+  return true;
+}

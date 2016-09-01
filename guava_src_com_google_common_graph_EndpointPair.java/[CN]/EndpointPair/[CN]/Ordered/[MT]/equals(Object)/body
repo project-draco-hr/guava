@@ -1,0 +1,13 @@
+{
+  if (obj == this) {
+    return true;
+  }
+  if (!(obj instanceof EndpointPair)) {
+    return false;
+  }
+  EndpointPair<?> other=(EndpointPair<?>)obj;
+  if (isOrdered() != other.isOrdered()) {
+    return false;
+  }
+  return source().equals(other.source()) && target().equals(other.target());
+}

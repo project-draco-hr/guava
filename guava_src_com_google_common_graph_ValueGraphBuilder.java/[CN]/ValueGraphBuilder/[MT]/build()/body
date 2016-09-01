@@ -1,0 +1,3 @@
+{
+  return new ConfigurableMutableValueGraph<N1,V1>(this);
+}

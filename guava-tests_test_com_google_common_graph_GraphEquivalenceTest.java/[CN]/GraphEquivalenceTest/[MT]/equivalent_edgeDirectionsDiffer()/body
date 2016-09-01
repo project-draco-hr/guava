@@ -1,0 +1,15 @@
+{
+  graph.putEdge(N1,N2);
+  MutableGraph<Integer> g2=createGraph(graphType);
+  g2.putEdge(N2,N1);
+switch (graphType) {
+case UNDIRECTED:
+    assertThat(Graphs.equivalent(graph,g2)).isTrue();
+  break;
+case DIRECTED:
+assertThat(Graphs.equivalent(graph,g2)).isFalse();
+break;
+default :
+throw new IllegalStateException("Unexpected graph type: " + graphType);
+}
+}

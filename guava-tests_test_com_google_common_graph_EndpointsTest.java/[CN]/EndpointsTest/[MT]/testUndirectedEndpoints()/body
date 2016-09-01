@@ -1,9 +1,0 @@
-{
-  Endpoints<String> undirected=Endpoints.ofUndirected("chicken","egg");
-  assertThat(undirected).containsExactly("chicken","egg");
-  assertThat(ImmutableSet.of(undirected.nodeA(),undirected.nodeB())).containsExactly("chicken","egg");
-  assertThat(undirected.adjacentNode(undirected.nodeA())).isEqualTo(undirected.nodeB());
-  assertThat(undirected.adjacentNode(undirected.nodeB())).isEqualTo(undirected.nodeA());
-  assertThat(undirected.toString()).contains("chicken");
-  assertThat(undirected.toString()).contains("egg");
-}

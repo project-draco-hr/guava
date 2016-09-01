@@ -1,4 +1,0 @@
-{
-  super(GraphBuilder.from(graph),getNodeConnections(graph));
-  this.edgeCount=checkNonNegative(graph.edges().size());
-}

@@ -1,5 +1,5 @@
 {
-  N nodeA=checkedReferenceNode(edge);
-  N nodeB=nodeConnections.get(nodeA).oppositeNode(edge);
-  return Endpoints.of(this,nodeA,nodeB);
+  N nodeU=checkedReferenceNode(edge);
+  N nodeV=nodeConnections.get(nodeU).oppositeNode(edge);
+  return EndpointPair.of(this,nodeU,nodeV);
 }

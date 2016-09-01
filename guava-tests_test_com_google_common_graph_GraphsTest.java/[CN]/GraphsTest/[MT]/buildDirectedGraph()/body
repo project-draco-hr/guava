@@ -1,7 +1,7 @@
 {
-  MutableGraph<Integer,String> directedGraph=GraphBuilder.directed().allowsSelfLoops(true).build();
-  directedGraph.putEdgeValue(N1,N1,E11);
-  directedGraph.putEdgeValue(N1,N2,E12);
-  directedGraph.putEdgeValue(N2,N1,E21);
+  MutableGraph<Integer> directedGraph=GraphBuilder.directed().allowsSelfLoops(true).build();
+  directedGraph.putEdge(N1,N1);
+  directedGraph.putEdge(N1,N2);
+  directedGraph.putEdge(N2,N1);
   return directedGraph;
 }

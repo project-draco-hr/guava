@@ -1,0 +1,16 @@
+{
+  graph=ValueGraphBuilder.undirected().allowsSelfLoops(true).build();
+  graph.putEdgeValue(1,2,"valueA");
+  graph.putEdgeValue(2,1,"valueB");
+  graph.putEdgeValue(2,3,"valueC");
+  graph.putEdgeValue(4,4,"valueD");
+  assertThat(graph.edgeValue(1,2)).isEqualTo("valueB");
+  assertThat(graph.edgeValue(2,1)).isEqualTo("valueB");
+  assertThat(graph.edgeValue(2,3)).isEqualTo("valueC");
+  assertThat(graph.edgeValue(4,4)).isEqualTo("valueD");
+  String toString=graph.toString();
+  assertThat(toString).doesNotContain("valueA");
+  assertThat(toString).contains("valueB");
+  assertThat(toString).contains("valueC");
+  assertThat(toString).contains("valueD");
+}

@@ -1,0 +1,6 @@
+{
+  for (  N node : originalGraph.nodes()) {
+    assertThat(reachableNodes(originalGraph,node)).isEqualTo(expectedClosure.successors(node));
+  }
+  assertThat(Graphs.equivalent(transitiveClosure(originalGraph),expectedClosure)).isTrue();
+}

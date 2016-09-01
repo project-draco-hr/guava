@@ -1,0 +1,10 @@
+{
+switch (graphType) {
+case UNDIRECTED:
+    return GraphBuilder.undirected().allowsSelfLoops(true).build();
+case DIRECTED:
+  return GraphBuilder.directed().allowsSelfLoops(true).build();
+default :
+throw new IllegalStateException("Unexpected graph type: " + graphType);
+}
+}

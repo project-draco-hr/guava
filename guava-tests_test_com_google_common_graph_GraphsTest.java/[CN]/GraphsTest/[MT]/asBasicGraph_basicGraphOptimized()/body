@@ -1,5 +1,0 @@
-{
-  BasicGraph<Integer> basicGraph=BasicGraphBuilder.undirected().build();
-  assertThat(asBasicGraph(basicGraph)).isSameAs(basicGraph);
-  assertThat(asBasicGraph((Graph<Integer,Presence>)basicGraph)).isSameAs(basicGraph);
-}

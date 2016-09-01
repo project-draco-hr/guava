@@ -1,0 +1,9 @@
+{
+  final Graph<N> asGraph=super.asGraph();
+  return new ImmutableGraph<N>(){
+    @Override protected Graph<N> delegate(){
+      return asGraph;
+    }
+  }
+;
+}

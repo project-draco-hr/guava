@@ -1,5 +1,0 @@
-{
-  V value=edgeValueOrDefault(nodeA,nodeB,null);
-  checkArgument(value != null,EDGE_CONNECTING_NOT_IN_GRAPH,nodeA,nodeB);
-  return value;
-}

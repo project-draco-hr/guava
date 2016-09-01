@@ -1,0 +1,11 @@
+{
+  graph=ValueGraphBuilder.undirected().build();
+  graph.putEdgeValue(1,2,"valueA");
+  MutableValueGraph<Integer,String> otherGraph=ValueGraphBuilder.undirected().build();
+  otherGraph.putEdgeValue(1,2,"valueA");
+  assertThat(Graphs.equivalent(graph,otherGraph)).isTrue();
+  assertThat(Graphs.equivalent((Graph<Integer>)graph,otherGraph)).isTrue();
+  otherGraph.putEdgeValue(1,2,"valueB");
+  assertThat(Graphs.equivalent(graph,otherGraph)).isFalse();
+  assertThat(Graphs.equivalent((Graph<Integer>)graph,otherGraph)).isTrue();
+}

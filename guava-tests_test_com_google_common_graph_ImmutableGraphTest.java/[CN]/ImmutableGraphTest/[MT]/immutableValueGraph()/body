@@ -1,0 +1,10 @@
+{
+  MutableValueGraph<String,Integer> mutableGraph=ValueGraphBuilder.directed().build();
+  mutableGraph.addNode("A");
+  ValueGraph<String,Integer> immutableGraph=ImmutableValueGraph.copyOf(mutableGraph);
+  assertThat(immutableGraph).isInstanceOf(ImmutableGraph.class);
+  assertThat(immutableGraph).isNotInstanceOf(MutableValueGraph.class);
+  assertThat(Graphs.equivalent(immutableGraph,mutableGraph)).isTrue();
+  mutableGraph.addNode("B");
+  assertThat(Graphs.equivalent(immutableGraph,mutableGraph)).isFalse();
+}

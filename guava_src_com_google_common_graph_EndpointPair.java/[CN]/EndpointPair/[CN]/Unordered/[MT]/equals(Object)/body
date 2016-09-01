@@ -1,0 +1,16 @@
+{
+  if (obj == this) {
+    return true;
+  }
+  if (!(obj instanceof EndpointPair)) {
+    return false;
+  }
+  EndpointPair<?> other=(EndpointPair<?>)obj;
+  if (isOrdered() != other.isOrdered()) {
+    return false;
+  }
+  if (nodeU().equals(other.nodeU())) {
+    return nodeV().equals(other.nodeV());
+  }
+  return nodeU().equals(other.nodeV()) && nodeV().equals(other.nodeU());
+}

@@ -1,17 +1,17 @@
 {
-  return new AbstractSet<Endpoints<N>>(){
-    @Override public Iterator<Endpoints<N>> iterator(){
-      return EndpointsIterator.of(AbstractGraph.this);
+  return new AbstractSet<EndpointPair<N>>(){
+    @Override public Iterator<EndpointPair<N>> iterator(){
+      return EndpointPairIterator.of(AbstractGraph.this);
     }
     @Override public int size(){
       return Ints.saturatedCast(edgeCount());
     }
     @Override public boolean contains(    Object obj){
-      if (!(obj instanceof Endpoints)) {
+      if (!(obj instanceof EndpointPair)) {
         return false;
       }
-      Endpoints<?> endpoints=(Endpoints<?>)obj;
-      return isDirected() == endpoints.isDirected() && nodes().contains(endpoints.nodeA()) && successors(endpoints.nodeA()).contains(endpoints.nodeB());
+      EndpointPair<?> endpointPair=(EndpointPair<?>)obj;
+      return isDirected() == endpointPair.isOrdered() && nodes().contains(endpointPair.nodeU()) && successors(endpointPair.nodeU()).contains(endpointPair.nodeV());
     }
   }
 ;

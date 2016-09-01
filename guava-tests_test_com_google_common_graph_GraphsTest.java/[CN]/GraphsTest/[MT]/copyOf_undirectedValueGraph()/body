@@ -1,0 +1,5 @@
+{
+  ValueGraph<Integer,String> undirectedGraph=buildUndirectedValueGraph();
+  ValueGraph<Integer,String> copy=copyOf(undirectedGraph);
+  assertThat(Graphs.equivalent(copy,undirectedGraph)).isTrue();
+}

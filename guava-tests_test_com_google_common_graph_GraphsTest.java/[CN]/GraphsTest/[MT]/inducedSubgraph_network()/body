@@ -10,5 +10,5 @@
   expectedSubgraph.addEdge(N1,N2,E12);
   expectedSubgraph.addEdge(N2,N1,E21);
   expectedSubgraph.addEdge(N4,N4,E44);
-  assertThat(inducedSubgraph(directedGraph,nodeSubset)).isEqualTo(expectedSubgraph);
+  assertThat(Graphs.equivalent(inducedSubgraph(directedGraph,nodeSubset),expectedSubgraph)).isTrue();
 }

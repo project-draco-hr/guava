@@ -1,3 +1,0 @@
-{
-  return nodeA().hashCode() ^ nodeB().hashCode();
-}

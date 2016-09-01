@@ -1,0 +1,12 @@
+{
+  checkNotNull(node,"node");
+  if (node.equals(nodeU)) {
+    return nodeV;
+  }
+ else   if (node.equals(nodeV)) {
+    return nodeU;
+  }
+ else {
+    throw new IllegalArgumentException(String.format("EndpointPair %s does not contain node %s",this,node));
+  }
+}

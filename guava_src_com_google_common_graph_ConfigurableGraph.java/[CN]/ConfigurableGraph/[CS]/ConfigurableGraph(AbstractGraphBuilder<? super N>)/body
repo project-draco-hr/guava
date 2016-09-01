@@ -1,3 +1,0 @@
-{
-  this(builder,builder.nodeOrder.<N,GraphConnections<N,V>>createMap(builder.expectedNodeCount.or(DEFAULT_NODE_COUNT)));
-}

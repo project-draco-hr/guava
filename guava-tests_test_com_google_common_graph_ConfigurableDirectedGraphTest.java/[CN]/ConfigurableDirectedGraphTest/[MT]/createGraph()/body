@@ -1,3 +1,3 @@
 {
-  return BasicGraphBuilder.directed().allowsSelfLoops(true).build();
+  return GraphBuilder.directed().allowsSelfLoops(true).build();
 }

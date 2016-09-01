@@ -1,6 +1,6 @@
 {
-  MutableBasicGraph<Integer> mutableDirectedGraph=BasicGraphBuilder.directed().allowsSelfLoops(true).build();
-  MutableBasicGraph<Integer> mutableUndirectedGraph=BasicGraphBuilder.undirected().allowsSelfLoops(true).build();
+  MutableGraph<Integer> mutableDirectedGraph=GraphBuilder.directed().allowsSelfLoops(true).build();
+  MutableGraph<Integer> mutableUndirectedGraph=GraphBuilder.undirected().allowsSelfLoops(true).build();
   graphsToTest=ImmutableList.of(mutableDirectedGraph,mutableUndirectedGraph);
   directedGraph=mutableDirectedGraph;
   undirectedGraph=mutableUndirectedGraph;

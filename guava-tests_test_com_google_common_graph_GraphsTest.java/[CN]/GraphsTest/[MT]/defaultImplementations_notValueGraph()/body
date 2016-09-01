@@ -1,0 +1,6 @@
+{
+  assertThat(buildDirectedGraph()).isNotInstanceOf(ValueGraph.class);
+  assertThat(buildUndirectedGraph()).isNotInstanceOf(ValueGraph.class);
+  assertThat(ImmutableGraph.copyOf(buildDirectedGraph())).isNotInstanceOf(ValueGraph.class);
+  assertThat(ImmutableGraph.copyOf(buildUndirectedGraph())).isNotInstanceOf(ValueGraph.class);
+}

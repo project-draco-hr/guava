@@ -1,6 +1,0 @@
-{
-  graph.putEdge(N1,N2);
-  MutableBasicGraph<Integer> g2=BasicGraphBuilder.from(graph).allowsSelfLoops(!graph.allowsSelfLoops()).build();
-  g2.putEdge(N1,N2);
-  new EqualsTester().addEqualityGroup(graph,g2).testEquals();
-}

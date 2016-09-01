@@ -1,0 +1,3 @@
+{
+  return (graph instanceof ImmutableGraph) ? (ImmutableGraph<N>)graph : new ValueBackedImpl<N,Presence>(GraphBuilder.from(graph),getNodeConnections(graph),graph.edges().size());
+}

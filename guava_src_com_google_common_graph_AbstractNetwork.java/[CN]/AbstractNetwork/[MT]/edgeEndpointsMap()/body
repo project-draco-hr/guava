@@ -1,9 +1,0 @@
-{
-  Function<E,Endpoints<N>> edgeToEndpointsFn=new Function<E,Endpoints<N>>(){
-    @Override public Endpoints<N> apply(    E edge){
-      return incidentNodes(edge);
-    }
-  }
-;
-  return Maps.asMap(edges(),edgeToEndpointsFn);
-}

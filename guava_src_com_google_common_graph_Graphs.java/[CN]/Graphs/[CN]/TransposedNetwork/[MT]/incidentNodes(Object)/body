@@ -1,4 +1,4 @@
 {
-  Endpoints<N> endpoints=network.incidentNodes(edge);
-  return Endpoints.of(network,endpoints.nodeB(),endpoints.nodeA());
+  EndpointPair<N> endpointPair=network.incidentNodes(edge);
+  return EndpointPair.of(network,endpointPair.nodeV(),endpointPair.nodeU());
 }

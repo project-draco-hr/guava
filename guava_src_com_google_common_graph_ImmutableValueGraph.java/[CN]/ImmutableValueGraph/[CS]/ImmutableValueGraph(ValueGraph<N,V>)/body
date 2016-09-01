@@ -1,0 +1,3 @@
+{
+  super(ValueGraphBuilder.from(graph),getNodeConnections(graph),graph.edges().size());
+}

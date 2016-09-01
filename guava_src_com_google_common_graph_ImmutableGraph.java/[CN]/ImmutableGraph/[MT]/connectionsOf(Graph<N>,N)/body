@@ -1,0 +1,4 @@
+{
+  Function<Object,Presence> edgeValueFn=Functions.constant(Presence.EDGE_EXISTS);
+  return graph.isDirected() ? DirectedGraphConnections.ofImmutable(graph.predecessors(node),Maps.asMap(graph.successors(node),edgeValueFn)) : UndirectedGraphConnections.ofImmutable(Maps.asMap(graph.adjacentNodes(node),edgeValueFn));
+}

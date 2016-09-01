@@ -1,7 +1,0 @@
-{
-  Endpoints<String> directed=Endpoints.ofDirected("a","b");
-  Endpoints<String> directedMirror=Endpoints.ofDirected("b","a");
-  Endpoints<String> undirected=Endpoints.ofUndirected("a","b");
-  Endpoints<String> undirectedMirror=Endpoints.ofUndirected("b","a");
-  new EqualsTester().addEqualityGroup(directed).addEqualityGroup(directedMirror).addEqualityGroup(undirected,undirectedMirror).testEquals();
-}

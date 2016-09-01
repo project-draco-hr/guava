@@ -1,3 +1,0 @@
-{
-  return network.isDirected() ? ofDirected(nodeA,nodeB) : ofUndirected(nodeA,nodeB);
-}

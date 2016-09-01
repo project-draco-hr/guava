@@ -1,0 +1,15 @@
+{
+  while (true) {
+    while (successorIterator.hasNext()) {
+      N otherNode=successorIterator.next();
+      if (!visitedNodes.contains(otherNode)) {
+        return EndpointPair.unordered(node,otherNode);
+      }
+    }
+    visitedNodes.add(node);
+    if (!advance()) {
+      visitedNodes=null;
+      return endOfData();
+    }
+  }
+}
