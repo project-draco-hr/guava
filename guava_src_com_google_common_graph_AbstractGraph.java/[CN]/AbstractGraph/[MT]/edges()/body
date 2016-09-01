@@ -1,6 +1,6 @@
 {
   return new AbstractSet<EndpointPair<N>>(){
-    @Override public Iterator<EndpointPair<N>> iterator(){
+    @Override public UnmodifiableIterator<EndpointPair<N>> iterator(){
       return EndpointPairIterator.of(AbstractGraph.this);
     }
     @Override public int size(){
