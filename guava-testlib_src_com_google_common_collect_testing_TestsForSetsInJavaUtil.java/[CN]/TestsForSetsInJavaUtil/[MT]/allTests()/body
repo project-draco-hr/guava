@@ -10,6 +10,7 @@
   suite.addTest(testsForCopyOnWriteArraySet());
   suite.addTest(testsForUnmodifiableSet());
   suite.addTest(testsForCheckedSet());
+  suite.addTest(testsForCheckedSortedSet());
   suite.addTest(testsForAbstractSet());
   suite.addTest(testsForBadlyCollidingHashSet());
   suite.addTest(testsForConcurrentSkipListSetNatural());

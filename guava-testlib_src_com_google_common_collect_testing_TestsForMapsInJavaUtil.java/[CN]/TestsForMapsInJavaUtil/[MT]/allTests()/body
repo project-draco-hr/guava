@@ -1,5 +1,7 @@
 {
   TestSuite suite=new TestSuite("java.util Maps");
+  suite.addTest(testsForCheckedMap());
+  suite.addTest(testsForCheckedSortedMap());
   suite.addTest(testsForEmptyMap());
   suite.addTest(testsForSingletonMap());
   suite.addTest(testsForHashMap());
