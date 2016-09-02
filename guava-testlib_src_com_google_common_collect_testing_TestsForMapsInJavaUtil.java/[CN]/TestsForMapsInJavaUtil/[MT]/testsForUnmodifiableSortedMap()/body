@@ -1,0 +1,9 @@
+{
+  return MapTestSuiteBuilder.using(new TestStringSortedMapGenerator(){
+    @Override protected SortedMap<String,String> create(    Entry<String,String>[] entries){
+      SortedMap<String,String> map=populate(new TreeMap<String,String>(),entries);
+      return Collections.unmodifiableSortedMap(map);
+    }
+  }
+).named("unmodifiableSortedMap/TreeMap, natural").withFeatures(MapFeature.ALLOWS_NULL_VALUES,CollectionFeature.KNOWN_ORDER,CollectionFeature.SERIALIZABLE,CollectionSize.ANY).suppressing(suppressForUnmodifiableSortedMap()).createTestSuite();
+}

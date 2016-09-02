@@ -10,6 +10,7 @@
   suite.addTest(testsForTreeMapNatural());
   suite.addTest(testsForTreeMapWithComparator());
   suite.addTest(testsForUnmodifiableMap());
+  suite.addTest(testsForUnmodifiableSortedMap());
   suite.addTest(testsForEnumMap());
   suite.addTest(testsForConcurrentHashMap());
   suite.addTest(testsForConcurrentSkipListMapNatural());
