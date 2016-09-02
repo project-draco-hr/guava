@@ -7,6 +7,7 @@
   suite.addTest(testsForLinkedHashMap());
   suite.addTest(testsForTreeMapNatural());
   suite.addTest(testsForTreeMapWithComparator());
+  suite.addTest(testsForUnmodifiableMap());
   suite.addTest(testsForEnumMap());
   suite.addTest(testsForConcurrentHashMap());
   suite.addTest(testsForConcurrentSkipListMapNatural());
