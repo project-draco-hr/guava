@@ -1,5 +1,4 @@
 {
-  checkNotNull(node,"node");
   if (node.equals(nodeU)) {
     return nodeV;
   }

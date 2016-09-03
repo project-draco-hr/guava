@@ -1,6 +1,5 @@
 {
-  checkNotNull(nodeOrder);
   ValueGraphBuilder<N1,V> newBuilder=cast();
-  newBuilder.nodeOrder=nodeOrder;
+  newBuilder.nodeOrder=checkNotNull(nodeOrder);
   return newBuilder;
 }

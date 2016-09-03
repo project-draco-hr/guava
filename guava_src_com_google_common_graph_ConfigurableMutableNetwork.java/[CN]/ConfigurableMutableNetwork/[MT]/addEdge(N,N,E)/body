@@ -1,7 +1,7 @@
 {
-  checkNotNull(edge,"edge");
   checkNotNull(nodeU,"nodeU");
   checkNotNull(nodeV,"nodeV");
+  checkNotNull(edge,"edge");
   if (containsEdge(edge)) {
     EndpointPair<N> existingIncidentNodes=incidentNodes(edge);
     EndpointPair<N> newIncidentNodes=EndpointPair.of(this,nodeU,nodeV);

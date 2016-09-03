@@ -1,5 +1,5 @@
 {
-  this.type=Preconditions.checkNotNull(type);
-  Preconditions.checkArgument((type == Type.SORTED) == (comparator != null),"if the type is SORTED, the comparator should be non-null; otherwise, it should be null");
+  this.type=checkNotNull(type);
+  checkArgument((type == Type.SORTED) == (comparator != null),"if the type is SORTED, the comparator should be non-null; otherwise, it should be null");
   this.comparator=comparator;
 }

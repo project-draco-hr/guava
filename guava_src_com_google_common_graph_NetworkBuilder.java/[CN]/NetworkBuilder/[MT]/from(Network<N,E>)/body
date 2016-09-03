@@ -1,4 +1,3 @@
 {
-  checkNotNull(network);
   return new NetworkBuilder<Object,Object>(network.isDirected()).allowsParallelEdges(network.allowsParallelEdges()).allowsSelfLoops(network.allowsSelfLoops()).nodeOrder(network.nodeOrder()).edgeOrder(network.edgeOrder());
 }
