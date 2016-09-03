@@ -1,6 +1,6 @@
 {
   addNode(N1);
-  Set<Integer> unused=network.adjacentNodes(N1);
+  @SuppressWarnings("unused") Set<Integer> unused=network.adjacentNodes(N1);
   assertTrue(network.removeNode(N1));
   try {
     network.adjacentNodes(N1);
