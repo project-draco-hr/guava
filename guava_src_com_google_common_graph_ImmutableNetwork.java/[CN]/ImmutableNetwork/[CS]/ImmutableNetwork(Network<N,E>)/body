@@ -1,3 +1,3 @@
 {
-  super(NetworkBuilder.from(graph),getNodeConnections(graph),getEdgeToReferenceNode(graph));
+  super(NetworkBuilder.from(network),getNodeConnections(network),getEdgeToReferenceNode(network));
 }

@@ -1,5 +1,5 @@
 {
-  graph.addEdge(3,1,"i");
-  graph.addEdge(1,4,"e");
-  graph.addEdge(4,3,"p");
+  network.addEdge(3,1,"i");
+  network.addEdge(1,4,"e");
+  network.addEdge(4,3,"p");
 }

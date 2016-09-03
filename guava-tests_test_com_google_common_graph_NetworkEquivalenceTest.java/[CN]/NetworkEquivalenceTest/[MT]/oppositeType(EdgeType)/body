@@ -1,0 +1,10 @@
+{
+switch (edgeType) {
+case UNDIRECTED:
+    return EdgeType.DIRECTED;
+case DIRECTED:
+  return EdgeType.UNDIRECTED;
+default :
+throw new IllegalStateException("Unexpected edge type: " + edgeType);
+}
+}

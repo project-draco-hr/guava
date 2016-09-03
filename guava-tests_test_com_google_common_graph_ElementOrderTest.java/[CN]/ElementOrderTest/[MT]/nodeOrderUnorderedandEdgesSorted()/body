@@ -1,8 +1,8 @@
 {
-  MutableNetwork<Integer,String> graph=NetworkBuilder.directed().nodeOrder(unordered()).edgeOrder(ElementOrder.sorted(Ordering.<String>natural().reverse())).build();
-  addEdges(graph);
-  assertThat(graph.edgeOrder()).isEqualTo(ElementOrder.sorted(Ordering.<String>natural().reverse()));
-  assertThat(graph.edges()).containsExactly("p","i","e").inOrder();
-  assertThat(graph.nodeOrder()).isEqualTo(unordered());
-  assertThat(graph.nodes()).containsExactly(4,1,3);
+  MutableNetwork<Integer,String> network=NetworkBuilder.directed().nodeOrder(unordered()).edgeOrder(ElementOrder.sorted(Ordering.<String>natural().reverse())).build();
+  addEdges(network);
+  assertThat(network.edgeOrder()).isEqualTo(ElementOrder.sorted(Ordering.<String>natural().reverse()));
+  assertThat(network.edges()).containsExactly("p","i","e").inOrder();
+  assertThat(network.nodeOrder()).isEqualTo(unordered());
+  assertThat(network.nodes()).containsExactly(4,1,3);
 }

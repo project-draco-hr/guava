@@ -1,5 +1,5 @@
 {
-  NetworkBuilder<Integer,String> builder=NetworkBuilder.from(graph).allowsParallelEdges(true);
+  NetworkBuilder<Integer,String> builder=NetworkBuilder.from(network).allowsParallelEdges(true);
   MutableNetwork<Integer,String> g1=builder.build();
   MutableNetwork<Integer,String> g2=builder.build();
   g1.addEdge(N1,N2,E12);

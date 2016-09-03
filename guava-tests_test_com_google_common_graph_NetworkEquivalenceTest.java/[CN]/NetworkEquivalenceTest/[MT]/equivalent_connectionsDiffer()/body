@@ -1,8 +1,8 @@
 {
-  graph.addEdge(N1,N2,E12);
-  graph.addEdge(N1,N3,E13);
-  MutableNetwork<Integer,String> g2=createGraph(graphType);
+  network.addEdge(N1,N2,E12);
+  network.addEdge(N1,N3,E13);
+  MutableNetwork<Integer,String> g2=createNetwork(edgeType);
   g2.addEdge(N1,N2,E13);
   g2.addEdge(N1,N3,E12);
-  assertThat(Graphs.equivalent(graph,g2)).isFalse();
+  assertThat(Graphs.equivalent(network,g2)).isFalse();
 }

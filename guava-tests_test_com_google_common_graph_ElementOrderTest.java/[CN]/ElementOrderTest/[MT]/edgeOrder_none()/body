@@ -1,5 +1,5 @@
 {
-  MutableNetwork<Integer,String> graph=NetworkBuilder.directed().edgeOrder(unordered()).build();
-  assertThat(graph.edgeOrder()).isEqualTo(unordered());
-  assertThat(graph.nodeOrder()).isEqualTo(insertion());
+  MutableNetwork<Integer,String> network=NetworkBuilder.directed().edgeOrder(unordered()).build();
+  assertThat(network.edgeOrder()).isEqualTo(unordered());
+  assertThat(network.nodeOrder()).isEqualTo(insertion());
 }

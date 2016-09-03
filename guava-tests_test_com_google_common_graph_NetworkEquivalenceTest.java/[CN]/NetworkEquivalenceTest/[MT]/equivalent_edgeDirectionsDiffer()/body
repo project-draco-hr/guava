@@ -1,15 +1,15 @@
 {
-  graph.addEdge(N1,N2,E12);
-  MutableNetwork<Integer,String> g2=createGraph(graphType);
+  network.addEdge(N1,N2,E12);
+  MutableNetwork<Integer,String> g2=createNetwork(edgeType);
   g2.addEdge(N2,N1,E12);
-switch (graphType) {
+switch (edgeType) {
 case UNDIRECTED:
-    assertThat(Graphs.equivalent(graph,g2)).isTrue();
+    assertThat(Graphs.equivalent(network,g2)).isTrue();
   break;
 case DIRECTED:
-assertThat(Graphs.equivalent(graph,g2)).isFalse();
+assertThat(Graphs.equivalent(network,g2)).isFalse();
 break;
 default :
-throw new IllegalStateException("Unexpected graph type: " + graphType);
+throw new IllegalStateException("Unexpected edge type: " + edgeType);
 }
 }

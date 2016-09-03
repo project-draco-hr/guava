@@ -1,7 +1,7 @@
 {
   return new Function<E,N>(){
     @Override public N apply(    E edge){
-      return graph.incidentNodes(edge).source();
+      return network.incidentNodes(edge).source();
     }
   }
 ;

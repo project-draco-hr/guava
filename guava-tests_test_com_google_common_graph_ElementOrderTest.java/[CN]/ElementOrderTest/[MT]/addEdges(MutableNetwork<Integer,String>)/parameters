@@ -1,1 +1,1 @@
-MutableNetwork<Integer,String> graph
+MutableNetwork<Integer,String> network

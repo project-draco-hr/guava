@@ -1,2 +1,2 @@
-Network<N,E> graph
+Network<N,E> network
 Iterable<? extends N> nodes

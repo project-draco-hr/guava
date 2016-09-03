@@ -1,0 +1,4 @@
+{
+  this.edgeType=edgeType;
+  this.network=createNetwork(edgeType);
+}
