@@ -1,6 +1,6 @@
 {
   NetworkConnections<N,E> connectionsU=checkedConnections(nodeU);
-  if (!allowsSelfLoops && nodeU.equals(nodeV)) {
+  if (!allowsSelfLoops && nodeU == nodeV) {
     return ImmutableSet.of();
   }
   checkArgument(containsNode(nodeV),NODE_NOT_IN_GRAPH,nodeV);
