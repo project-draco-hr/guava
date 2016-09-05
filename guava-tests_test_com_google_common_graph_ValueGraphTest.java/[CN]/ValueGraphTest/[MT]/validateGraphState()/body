@@ -1,6 +1,6 @@
 {
-  assertThat(Graphs.equivalent(graph,Graphs.copyOf(graph))).isTrue();
-  assertThat(Graphs.equivalent(graph,ImmutableValueGraph.copyOf(graph))).isTrue();
+  assertStronglyEquivalent(graph,Graphs.copyOf(graph));
+  assertStronglyEquivalent(graph,ImmutableValueGraph.copyOf(graph));
   assertThat(graph.edgeValues().keySet()).isEqualTo(graph.edges());
   for (  Integer node : graph.nodes()) {
     for (    Integer otherNode : graph.nodes()) {

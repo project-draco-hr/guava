@@ -1,6 +1,6 @@
 {
-  assertThat(Graphs.equivalent(graph,Graphs.copyOf(graph))).isTrue();
-  assertThat(Graphs.equivalent(graph,ImmutableGraph.copyOf(graph))).isTrue();
+  assertStronglyEquivalent(graph,Graphs.copyOf(graph));
+  assertStronglyEquivalent(graph,ImmutableGraph.copyOf(graph));
   String graphString=graph.toString();
   assertThat(graphString).contains("isDirected: " + graph.isDirected());
   assertThat(graphString).contains("allowsSelfLoops: " + graph.allowsSelfLoops());

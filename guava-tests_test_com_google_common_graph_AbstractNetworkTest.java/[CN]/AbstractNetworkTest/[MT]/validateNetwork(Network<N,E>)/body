@@ -1,6 +1,6 @@
 {
-  assertThat(Graphs.equivalent(network,Graphs.copyOf(network))).isTrue();
-  assertThat(Graphs.equivalent(network,ImmutableNetwork.copyOf(network))).isTrue();
+  assertStronglyEquivalent(network,Graphs.copyOf(network));
+  assertStronglyEquivalent(network,ImmutableNetwork.copyOf(network));
   String networkString=network.toString();
   assertThat(networkString).contains("isDirected: " + network.isDirected());
   assertThat(networkString).contains("allowsParallelEdges: " + network.allowsParallelEdges());

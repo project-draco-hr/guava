@@ -1,0 +1,7 @@
+{
+  assertThat(networkA.allowsParallelEdges()).isEqualTo(networkB.allowsParallelEdges());
+  assertThat(networkA.allowsSelfLoops()).isEqualTo(networkB.allowsSelfLoops());
+  assertThat(networkA.nodeOrder()).isEqualTo(networkB.nodeOrder());
+  assertThat(networkA.edgeOrder()).isEqualTo(networkB.edgeOrder());
+  assertThat(Graphs.equivalent(networkA,networkB)).isTrue();
+}

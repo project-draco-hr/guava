@@ -1,0 +1,5 @@
+{
+  assertThat(graphA.allowsSelfLoops()).isEqualTo(graphB.allowsSelfLoops());
+  assertThat(graphA.nodeOrder()).isEqualTo(graphB.nodeOrder());
+  assertThat(Graphs.equivalent(graphA,graphB)).isTrue();
+}
