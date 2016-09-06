@@ -1,3 +1,0 @@
-{
-  return AbstractGraph.toString(delegate());
-}

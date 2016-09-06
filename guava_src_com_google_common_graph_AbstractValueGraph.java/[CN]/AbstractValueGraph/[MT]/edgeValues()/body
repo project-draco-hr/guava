@@ -1,3 +1,12 @@
 {
-  return edgeValues(this);
+  if (edgeValueMap == null) {
+    Function<EndpointPair<N>,V> edgeToValueFn=new Function<EndpointPair<N>,V>(){
+      @Override public V apply(      EndpointPair<N> edge){
+        return edgeValue(edge.nodeU(),edge.nodeV());
+      }
+    }
+;
+    edgeValueMap=Maps.asMap(edges(),edgeToValueFn);
+  }
+  return edgeValueMap;
 }

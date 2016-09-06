@@ -1,4 +1,0 @@
-{
-  String propertiesString=String.format("isDirected: %s, allowsSelfLoops: %s",graph.isDirected(),graph.allowsSelfLoops());
-  return String.format(GRAPH_STRING_FORMAT,propertiesString,graph.nodes(),graph.edges());
-}

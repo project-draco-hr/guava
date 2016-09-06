@@ -1,3 +1,3 @@
 {
-  return backingGraph.putEdgeValue(nodeU,nodeV,Presence.EDGE_EXISTS) == null;
+  return backingValueGraph.putEdgeValue(nodeU,nodeV,Presence.EDGE_EXISTS) == null;
 }
