@@ -7,6 +7,6 @@ case INSERTION:
 case SORTED:
 return Maps.newTreeMap(comparator());
 default :
-throw new IllegalStateException(type.toString());
+throw new AssertionError();
 }
 }
