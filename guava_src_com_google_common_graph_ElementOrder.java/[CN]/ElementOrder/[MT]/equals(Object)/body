@@ -6,5 +6,5 @@
     return false;
   }
   ElementOrder<?> other=(ElementOrder<?>)obj;
-  return other.type == this.type && Objects.equal(other.comparator,this.comparator);
+  return (type == other.type) && Objects.equal(comparator,other.comparator);
 }

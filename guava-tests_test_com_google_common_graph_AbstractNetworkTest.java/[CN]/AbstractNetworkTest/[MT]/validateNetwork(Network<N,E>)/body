@@ -34,7 +34,7 @@
     assertThat(network.adjacentNodes(nodeV)).contains(nodeU);
     assertThat(network.inEdges(nodeV)).contains(edge);
     assertThat(network.incidentEdges(nodeV)).contains(edge);
-    for (    N incidentNode : ImmutableSet.of(network.incidentNodes(edge).nodeU(),network.incidentNodes(edge).nodeV())) {
+    for (    N incidentNode : network.incidentNodes(edge)) {
       assertThat(network.nodes()).contains(incidentNode);
       for (      E adjacentEdge : network.incidentEdges(incidentNode)) {
         assertTrue(edge.equals(adjacentEdge) || network.adjacentEdges(edge).contains(adjacentEdge));
