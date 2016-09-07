@@ -1,0 +1,14 @@
+{
+  ListenableFuture<?> futureA=immediateFuture("a");
+  ListenableFuture<?> futureB=immediateFuture("b");
+  ListenableFuture<?>[] futures=new ListenableFuture<?>[0];
+  Callable<String> combiner=new Callable<String>(){
+    @Override public String call() throws Exception {
+      return "hi";
+    }
+  }
+;
+  ListenableFuture<String> unused;
+  unused=whenAllComplete(futureA,futureB).call(combiner);
+  unused=whenAllComplete(asList(futures)).call(combiner);
+}
