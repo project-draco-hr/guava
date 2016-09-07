@@ -1,3 +1,3 @@
 {
-  return Objects.hashCode(this.type,this.comparator);
+  return Objects.hashCode(type,comparator);
 }
