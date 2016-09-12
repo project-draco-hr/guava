@@ -1,6 +1,6 @@
 {
   checkArgument(graph.nodes().contains(node),NODE_NOT_IN_GRAPH,node);
-  Set<N> visitedNodes=new HashSet<N>();
+  Set<N> visitedNodes=new LinkedHashSet<N>();
   Queue<N> queuedNodes=new ArrayDeque<N>();
   visitedNodes.add((N)node);
   queuedNodes.add((N)node);

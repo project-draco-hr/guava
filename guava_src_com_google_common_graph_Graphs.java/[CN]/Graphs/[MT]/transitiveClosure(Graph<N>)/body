@@ -11,12 +11,11 @@
     Set<N> visitedNodes=new HashSet<N>();
     for (    N node : graph.nodes()) {
       if (!visitedNodes.contains(node)) {
-        ImmutableList<N> reachableNodes=ImmutableList.copyOf(reachableNodes(graph,node));
+        Set<N> reachableNodes=reachableNodes(graph,node);
         visitedNodes.addAll(reachableNodes);
-        for (int a=0; a < reachableNodes.size(); ++a) {
-          N nodeU=reachableNodes.get(a);
-          for (int b=a; b < reachableNodes.size(); ++b) {
-            N nodeV=reachableNodes.get(b);
+        int pairwiseMatch=1;
+        for (        N nodeU : reachableNodes) {
+          for (          N nodeV : Iterables.limit(reachableNodes,pairwiseMatch++)) {
             transitiveClosure.putEdge(nodeU,nodeV);
           }
         }
