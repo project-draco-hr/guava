@@ -14,5 +14,6 @@
   graph.addNode(node7);
   graph.addNode(node5);
   graph.addNode(node3);
+  assertThat(graph.nodeOrder().comparator()).isEqualTo(comparator);
   assertThat(graph.nodes()).containsExactly(node1,node3,node5,node7).inOrder();
 }

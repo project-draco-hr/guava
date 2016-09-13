@@ -8,5 +8,6 @@
   graph.addNode(node2);
   graph.addNode(node6);
   graph.addNode(node8);
+  assertThat(graph.nodeOrder().comparator()).isEqualTo(Ordering.natural());
   assertThat(graph.nodes()).containsExactly(node2,node4,node6,node8).inOrder();
 }
