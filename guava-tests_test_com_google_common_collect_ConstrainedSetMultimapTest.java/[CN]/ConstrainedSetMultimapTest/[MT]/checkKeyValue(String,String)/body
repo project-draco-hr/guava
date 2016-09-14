@@ -1,4 +1,0 @@
-{
-  checkArgument(!"test".equals(key));
-  checkArgument(!"test".equals(value));
-}

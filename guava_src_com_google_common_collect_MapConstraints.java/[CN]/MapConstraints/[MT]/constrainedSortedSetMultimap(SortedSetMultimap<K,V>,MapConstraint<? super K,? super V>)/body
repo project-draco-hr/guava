@@ -1,3 +1,0 @@
-{
-  return new ConstrainedSortedSetMultimap<K,V>(multimap,constraint);
-}

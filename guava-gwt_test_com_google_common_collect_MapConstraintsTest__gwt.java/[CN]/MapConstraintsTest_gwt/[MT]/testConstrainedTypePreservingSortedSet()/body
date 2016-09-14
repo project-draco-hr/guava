@@ -1,4 +1,0 @@
-{
-  com.google.common.collect.MapConstraintsTest testCase=new com.google.common.collect.MapConstraintsTest();
-  testCase.testConstrainedTypePreservingSortedSet();
-}
