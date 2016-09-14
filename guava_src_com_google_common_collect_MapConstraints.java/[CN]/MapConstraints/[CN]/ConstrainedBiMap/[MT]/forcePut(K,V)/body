@@ -1,4 +1,0 @@
-{
-  constraint.checkKeyValue(key,value);
-  return delegate().forcePut(key,value);
-}

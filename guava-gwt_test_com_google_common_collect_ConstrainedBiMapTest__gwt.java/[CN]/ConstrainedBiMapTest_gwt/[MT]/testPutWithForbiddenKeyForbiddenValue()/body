@@ -1,4 +1,0 @@
-{
-  com.google.common.collect.ConstrainedBiMapTest testCase=new com.google.common.collect.ConstrainedBiMapTest();
-  testCase.testPutWithForbiddenKeyForbiddenValue();
-}

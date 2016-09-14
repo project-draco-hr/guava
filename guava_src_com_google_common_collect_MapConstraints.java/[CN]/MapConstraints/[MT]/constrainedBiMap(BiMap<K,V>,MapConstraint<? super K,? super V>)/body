@@ -1,3 +1,0 @@
-{
-  return new ConstrainedBiMap<K,V>(map,null,constraint);
-}
