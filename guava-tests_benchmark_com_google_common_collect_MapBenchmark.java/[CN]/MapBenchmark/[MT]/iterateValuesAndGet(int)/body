@@ -1,0 +1,11 @@
+{
+  Map<Element,Element> map=mapToTest;
+  boolean dummy=false;
+  for (int i=0; i < reps; i++) {
+    for (    Element key : map.values()) {
+      Element value=map.get(key);
+      dummy^=key != value;
+    }
+  }
+  return dummy;
+}

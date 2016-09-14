@@ -1,5 +1,5 @@
 {
-  Map<Element,Element> map=new ConcurrentSkipListMap<Element,Element>();
+  Map<Element,Element> map=new MapMaker().concurrencyLevel(1).makeMap();
   for (  Element element : keys) {
     map.put(element,element);
   }
