@@ -1,14 +1,13 @@
 {
-  double mean=meanAlgorithm.mean(values);
-  double sumOfSquaresOfDeltas=0.0;
-  double c=0.0;
-  for (  double value : values) {
-    double delta=value - mean;
-    double deltaSquared=delta * delta;
-    double y=deltaSquared - c;
-    double t=sumOfSquaresOfDeltas + deltaSquared;
-    c=(t - sumOfSquaresOfDeltas) - y;
-    sumOfSquaresOfDeltas=t;
+  if (meanAlgorithm != MeanAlgorithm.KNUTH) {
+    throw new SkipThisScenarioException();
   }
-  return new MeanAndVariance(mean,sumOfSquaresOfDeltas / values.length);
+  double mean=values[0];
+  double s=0.0;
+  for (int i=1; i < values.length; i++) {
+    double nextMean=mean + (values[i] - mean) / (i + 1);
+    s+=(values[i] - mean) * (values[i] - nextMean);
+    mean=nextMean;
+  }
+  return new MeanAndVariance(mean,s / values.length);
 }

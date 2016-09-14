@@ -1,6 +1,3 @@
 {
-  ConcurrentMap<K,V> newMap=new MapMaker().keyEquivalence(Equivalence.equals()).makeMap();
-  checkState(newMap instanceof MapMakerInternalMap);
-  newMap.putAll(map);
-  return newMap;
+  return new ConcurrentHashMap<K,V>(map);
 }

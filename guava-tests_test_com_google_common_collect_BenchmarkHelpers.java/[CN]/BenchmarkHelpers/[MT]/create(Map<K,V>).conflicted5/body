@@ -1,3 +1,5 @@
 {
-  return ImmutableMap.copyOf(map);
+  SortedMap<K,V> result=Maps.newTreeMap();
+  result.putAll(map);
+  return result;
 }

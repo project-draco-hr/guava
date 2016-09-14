@@ -1,14 +1,16 @@
 {
   return new ExecutionListWrapper(){
-    final NewExecutionListQueue list=new NewExecutionListQueue();
+    final AbstractFuture<?> future=new AbstractFuture<Object>(){
+    }
+;
     @Override public void add(    Runnable runnable,    Executor executor){
-      list.add(runnable,executor);
+      future.addListener(runnable,executor);
     }
     @Override public void execute(){
-      list.execute();
+      future.set(null);
     }
     @Override public Object getImpl(){
-      return list;
+      return future;
     }
   }
 ;

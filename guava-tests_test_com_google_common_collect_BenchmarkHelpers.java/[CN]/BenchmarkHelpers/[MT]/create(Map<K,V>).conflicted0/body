@@ -1,3 +1,6 @@
 {
-  return new ConcurrentSkipListMap<K,V>(map);
+  ConcurrentMap<K,V> newMap=new MapMaker().weakKeys().makeMap();
+  checkState(newMap instanceof MapMakerInternalMap);
+  newMap.putAll(map);
+  return newMap;
 }

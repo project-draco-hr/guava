@@ -2,9 +2,9 @@
   if (a.length != b.length) {
     return false;
   }
-  boolean areEqual=true;
+  byte result=0;
   for (int i=0; i < a.length; i++) {
-    areEqual&=(a[i] == b[i]);
+    result=(byte)(result | a[i] ^ b[i]);
   }
-  return areEqual;
+  return (result == 0);
 }

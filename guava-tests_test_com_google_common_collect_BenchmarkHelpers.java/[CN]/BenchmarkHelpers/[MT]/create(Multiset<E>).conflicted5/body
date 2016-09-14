@@ -1,3 +1,3 @@
 {
-  return ConcurrentHashMultiset.create(contents);
+  return TreeMultiset.create(contents);
 }

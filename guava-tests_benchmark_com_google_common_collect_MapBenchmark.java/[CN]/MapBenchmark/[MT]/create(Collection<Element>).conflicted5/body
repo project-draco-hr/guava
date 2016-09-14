@@ -1,3 +1,7 @@
 {
-  return Collections.synchronizedMap(Hash.create(keys));
+  ImmutableSortedMap.Builder<Element,Element> builder=ImmutableSortedMap.naturalOrder();
+  for (  Element element : keys) {
+    builder.put(element,element);
+  }
+  return builder.build();
 }
