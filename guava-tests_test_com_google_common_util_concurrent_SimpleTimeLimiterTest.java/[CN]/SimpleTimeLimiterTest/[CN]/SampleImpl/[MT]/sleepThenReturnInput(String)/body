@@ -1,6 +1,6 @@
 {
   try {
-    TimeUnit.MILLISECONDS.sleep(DELAY_MS);
+    TimeUnit.MILLISECONDS.sleep(delayMillis);
     finished=true;
     return input;
   }

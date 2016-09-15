@@ -1,5 +1,5 @@
 {
-  SampleImpl target=new SampleImpl();
+  SampleImpl target=new SampleImpl(9999);
   Sample proxy=service.newProxy(target,Sample.class,NOT_ENOUGH_MS,TimeUnit.MILLISECONDS);
   long start=System.nanoTime();
   try {
@@ -8,7 +8,7 @@
   }
  catch (  UncheckedTimeoutException expected) {
   }
-  assertTheCallTookBetween(start,NOT_ENOUGH_MS,DELAY_MS);
+  assertTheCallTookBetween(start,NOT_ENOUGH_MS,DELAY_MS * 2);
   assertFalse(target.finished);
   TimeUnit.MILLISECONDS.sleep(ENOUGH_MS);
   assertFalse(target.finished);

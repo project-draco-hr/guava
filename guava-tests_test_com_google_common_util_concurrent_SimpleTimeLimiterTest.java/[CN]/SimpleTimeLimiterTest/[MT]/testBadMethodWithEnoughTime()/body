@@ -1,5 +1,5 @@
 {
-  SampleImpl target=new SampleImpl();
+  SampleImpl target=new SampleImpl(DELAY_MS);
   Sample proxy=service.newProxy(target,Sample.class,ENOUGH_MS,TimeUnit.MILLISECONDS);
   long start=System.nanoTime();
   try {
