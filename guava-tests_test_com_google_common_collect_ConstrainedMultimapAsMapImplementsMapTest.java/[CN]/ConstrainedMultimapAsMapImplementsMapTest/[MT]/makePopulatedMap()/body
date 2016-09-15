@@ -1,5 +1,0 @@
-{
-  Multimap<String,Integer> delegate=ArrayListMultimap.create();
-  populate(delegate);
-  return MapConstraints.constrainedMultimap(delegate,MapConstraintsTest.TEST_CONSTRAINT).asMap();
-}

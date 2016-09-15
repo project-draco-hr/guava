@@ -1,7 +1,0 @@
-{
-  Multimap<String,Integer> multimap=LinkedListMultimap.create();
-  Multimap<String,Integer> constrained=MapConstraints.constrainedMultimap(multimap,TEST_CONSTRAINT);
-  Collection<Integer> onceIterable=ConstraintsTest.onceIterableCollection(1);
-  constrained.putAll("foo",onceIterable);
-  assertEquals(ImmutableList.of(1),constrained.get("foo"));
-}

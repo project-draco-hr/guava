@@ -1,2 +1,0 @@
-Multimap<K,V> multimap
-MapConstraint<? super K,? super V> constraint

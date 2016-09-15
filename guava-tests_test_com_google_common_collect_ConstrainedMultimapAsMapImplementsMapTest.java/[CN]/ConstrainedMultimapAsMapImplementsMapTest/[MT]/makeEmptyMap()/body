@@ -1,3 +1,0 @@
-{
-  return MapConstraints.constrainedMultimap(ArrayListMultimap.<String,Integer>create(),MapConstraintsTest.TEST_CONSTRAINT).asMap();
-}

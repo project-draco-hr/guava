@@ -1,4 +1,0 @@
-{
-  com.google.common.collect.ConstrainedMultimapAsMapImplementsMapTest testCase=new com.google.common.collect.ConstrainedMultimapAsMapImplementsMapTest();
-  testCase.testEqualsForEmptyMap();
-}

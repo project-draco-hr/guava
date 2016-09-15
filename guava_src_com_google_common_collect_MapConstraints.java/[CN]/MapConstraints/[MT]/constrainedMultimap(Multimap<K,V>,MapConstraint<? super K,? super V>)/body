@@ -1,3 +1,0 @@
-{
-  return new ConstrainedMultimap<K,V>(multimap,constraint);
-}
