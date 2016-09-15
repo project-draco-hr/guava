@@ -1,0 +1,3 @@
+{
+  assertThat(iterationOrder(ADAPTER_USING_USING.preOrderTraversal(h))).isEqualTo("hdabcegf");
+}
