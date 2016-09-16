@@ -1,0 +1,3 @@
+{
+  return EndpointPairIterator.of(AbstractGraph.this);
+}

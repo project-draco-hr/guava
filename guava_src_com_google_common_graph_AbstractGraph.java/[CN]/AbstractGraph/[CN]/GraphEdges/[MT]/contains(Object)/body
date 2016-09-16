@@ -1,0 +1,7 @@
+{
+  if (!(obj instanceof EndpointPair)) {
+    return false;
+  }
+  EndpointPair<?> endpointPair=(EndpointPair<?>)obj;
+  return isDirected() == endpointPair.isOrdered() && contains(endpointPair.nodeU(),endpointPair.nodeV());
+}
