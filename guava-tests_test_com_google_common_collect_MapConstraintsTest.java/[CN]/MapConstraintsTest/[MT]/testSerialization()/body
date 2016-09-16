@@ -1,3 +1,0 @@
-{
-  assertSame(MapConstraints.notNull(),SerializableTester.reserialize(MapConstraints.notNull()));
-}
