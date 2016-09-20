@@ -1,9 +1,0 @@
-{
-  checkNotNull(nodeToChildrenFunction);
-  return new TreeTraverser<T>(){
-    @Override public Iterable<T> children(    T root){
-      return nodeToChildrenFunction.apply(root);
-    }
-  }
-;
-}
