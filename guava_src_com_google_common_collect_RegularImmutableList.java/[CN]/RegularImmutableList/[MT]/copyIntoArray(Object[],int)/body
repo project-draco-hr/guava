@@ -1,4 +1,4 @@
 {
-  System.arraycopy(array,offset,dst,dstOff,size);
-  return dstOff + size;
+  System.arraycopy(array,0,dst,dstOff,array.length);
+  return dstOff + array.length;
 }

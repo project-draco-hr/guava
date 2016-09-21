@@ -1,4 +1,3 @@
 {
-  Preconditions.checkElementIndex(index,size);
-  return (E)array[index + offset];
+  return (E)array[index];
 }
