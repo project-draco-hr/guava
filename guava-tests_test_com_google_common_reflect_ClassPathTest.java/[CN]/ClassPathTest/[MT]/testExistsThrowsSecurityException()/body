@@ -1,0 +1,9 @@
+{
+  SecurityManager oldSecurityManager=System.getSecurityManager();
+  try {
+    doTestExistsThrowsSecurityException();
+  }
+  finally {
+    System.setSecurityManager(oldSecurityManager);
+  }
+}

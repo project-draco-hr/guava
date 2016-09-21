@@ -1,0 +1,29 @@
+{
+  URLClassLoader myLoader=(URLClassLoader)getClass().getClassLoader();
+  URL[] urls=myLoader.getURLs();
+  ImmutableList.Builder<File> filesBuilder=ImmutableList.builder();
+  for (  URL url : urls) {
+    if (url.getProtocol().equalsIgnoreCase("file")) {
+      filesBuilder.add(new File(url.toURI()));
+    }
+  }
+  ImmutableList<File> files=filesBuilder.build();
+  assertThat(files).isNotEmpty();
+  SecurityManager disallowFilesSecurityManager=new SecurityManager(){
+    @Override public void checkPermission(    Permission p){
+      if (p instanceof FilePermission) {
+        throw new SecurityException("Disallowed: " + p);
+      }
+    }
+  }
+;
+  System.setSecurityManager(disallowFilesSecurityManager);
+  try {
+    files.get(0).exists();
+    fail("Did not get expected SecurityException");
+  }
+ catch (  SecurityException expected) {
+  }
+  ClassPath classPath=ClassPath.from(myLoader);
+  assertThat(classPath.getResources()).isEmpty();
+}

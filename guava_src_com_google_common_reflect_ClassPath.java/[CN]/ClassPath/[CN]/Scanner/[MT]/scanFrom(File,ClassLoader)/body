@@ -1,5 +1,11 @@
 {
-  if (!file.exists()) {
+  try {
+    if (!file.exists()) {
+      return;
+    }
+  }
+ catch (  SecurityException e) {
+    logger.warning("Cannot access " + file + ": "+ e);
     return;
   }
   if (file.isDirectory()) {
