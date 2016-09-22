@@ -1,8 +1,8 @@
 {
-  assertEquals("::1",HostAndPort.fromString("[::1]").requireBracketsForIPv6().getHostText());
-  assertEquals("::1",HostAndPort.fromString("[::1]:80").requireBracketsForIPv6().getHostText());
-  assertEquals("x",HostAndPort.fromString("x").requireBracketsForIPv6().getHostText());
-  assertEquals("x",HostAndPort.fromString("x:80").requireBracketsForIPv6().getHostText());
+  assertEquals("::1",HostAndPort.fromString("[::1]").requireBracketsForIPv6().getHost());
+  assertEquals("::1",HostAndPort.fromString("[::1]:80").requireBracketsForIPv6().getHost());
+  assertEquals("x",HostAndPort.fromString("x").requireBracketsForIPv6().getHost());
+  assertEquals("x",HostAndPort.fromString("x:80").requireBracketsForIPv6().getHost());
   try {
     HostAndPort.fromString("::1").requireBracketsForIPv6();
     fail("Expected IllegalArgumentException");

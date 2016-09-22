@@ -1,9 +1,9 @@
 {
   HostAndPort hp=HostAndPort.fromHost("gmail.com");
-  assertEquals("gmail.com",hp.getHostText());
+  assertEquals("gmail.com",hp.getHost());
   assertFalse(hp.hasPort());
   hp=HostAndPort.fromHost("[::1]");
-  assertEquals("::1",hp.getHostText());
+  assertEquals("::1",hp.getHost());
   assertFalse(hp.hasPort());
   try {
     HostAndPort.fromHost("gmail.com:80");
